@@ -2,7 +2,7 @@
 //  HKAppleWalkingSteadinessClassification.h
 //  HealthKit
 //
-//  Copyright © 2021 Apple. All rights reserved.
+//  Copyright © 2021-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, HKAppleWalkingSteadinessClassification) {
     HKAppleWalkingSteadinessClassificationOK NS_SWIFT_NAME(ok) = 1,
     HKAppleWalkingSteadinessClassificationLow,
     HKAppleWalkingSteadinessClassificationVeryLow,
-} API_AVAILABLE(ios(15.0), watchos(8.0));
+} API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 /*!
  @abstract Determines the Apple Walking Steadiness classification for the provided Apple Walking Steadiness value.
@@ -31,18 +31,18 @@ typedef NS_ENUM(NSInteger, HKAppleWalkingSteadinessClassification) {
  @param errorOut A pointer to an error describing why an unknown classification was returned.
  @return YES if the classification was successful. NO otherwise, meaning the provided value could not be classified.
  */
-HK_EXTERN BOOL HKAppleWalkingSteadinessClassificationForQuantity(HKQuantity *value, HKAppleWalkingSteadinessClassification *classificationOut, NSError **errorOut) API_AVAILABLE(ios(15.0), watchos(8.0)) NS_REFINED_FOR_SWIFT;
+HK_EXTERN BOOL HKAppleWalkingSteadinessClassificationForQuantity(HKQuantity *value, HKAppleWalkingSteadinessClassification *classificationOut, NSError **errorOut) API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0)) NS_REFINED_FOR_SWIFT;
 
 /*!
  @abstract Retrieves the minimum quantity in percent unit for an Apple Walking Steadiness classification.
  @param classification Apple Walking Steadiness classification for desired minimum value.
  */
-HK_EXTERN HKQuantity * HKAppleWalkingSteadinessMinimumQuantityForClassification(HKAppleWalkingSteadinessClassification classification) API_AVAILABLE(ios(15.0), watchos(8.0)) NS_REFINED_FOR_SWIFT;
+HK_EXTERN HKQuantity * HKAppleWalkingSteadinessMinimumQuantityForClassification(HKAppleWalkingSteadinessClassification classification) API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0)) NS_REFINED_FOR_SWIFT;
 
 /*!
  @abstract Retrieves the maximum quantity in percent unit for an Apple Walking Steadiness classification.
  @param classification Apple Walking Steadiness classification for desired maximum value.
  */
-HK_EXTERN HKQuantity * HKAppleWalkingSteadinessMaximumQuantityForClassification(HKAppleWalkingSteadinessClassification classification) API_AVAILABLE(ios(15.0), watchos(8.0)) NS_REFINED_FOR_SWIFT;
+HK_EXTERN HKQuantity * HKAppleWalkingSteadinessMaximumQuantityForClassification(HKAppleWalkingSteadinessClassification classification) API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0)) NS_REFINED_FOR_SWIFT;
 
 NS_ASSUME_NONNULL_END

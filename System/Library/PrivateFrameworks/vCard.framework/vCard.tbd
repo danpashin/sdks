@@ -3,12 +3,22 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/vCard.framework/vCard
-current-version:       3535.11
+current-version:       3570.1
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CNUseVCard21Format, _CNVCard21Encoding,
+    symbols:              [ _$s5vCard33CNVCardNameComponentPostProcessorC11postProcess10componentsySo0b7MutableC10ComponentsC_tFZTj,
+                            _$s5vCard33CNVCardNameComponentPostProcessorC11postProcess10componentsySo0b7MutableC10ComponentsC_tFZTq,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCACycfC,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCACycfc,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCMa,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCMn,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCMo,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCMu,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCN,
+                            _$s5vCard33CNVCardNameComponentPostProcessorCfD,
+                            _CNUseVCard21Format, _CNVCard21Encoding,
                             _CNVCardABPersonFlagsProperty,
                             _CNVCardActivityAlertCallKey,
                             _CNVCardActivityAlertIgnoreMuteKey,
@@ -208,10 +218,9 @@ exports:
                             CNVCardLineSerializationStrategy,
                             CNVCardLineSerializationStrategyImpl,
                             CNVCardLiteralLine, CNVCardMutableImage,
-                            CNVCardMutableNameComponents,
-                            CNVCardNameComponentPostProcessor,
-                            CNVCardNameComponents, CNVCardNameSerialization,
-                            CNVCardOptions, CNVCardPHOTOParser, CNVCardParameter,
+                            CNVCardMutableNameComponents, CNVCardNameComponents,
+                            CNVCardNameSerialization, CNVCardOptions,
+                            CNVCardPHOTOParser, CNVCardParameter,
                             CNVCardParameterDecoder, CNVCardParameterEncoder,
                             CNVCardParsedDictionaryResultBuilder,
                             CNVCardParsedLine, CNVCardParsedParameter,
@@ -232,7 +241,8 @@ exports:
                             CNVCardXSOCIALPROFILEParser,
                             _CNVCardParsedResultBuilderBlockFactory,
                             _CNVCardParsingConcurrentStrategy,
-                            _CNVCardParsingSerialStrategy ]
+                            _CNVCardParsingSerialStrategy,
+                            _TtC5vCard33CNVCardNameComponentPostProcessor ]
     objc-ivars:           [ CNVCard30PHOTOHelper._maxBytes,
                             CNVCard30PHOTOHelper._options,
                             CNVCard30PHOTOHelper._person,
@@ -250,8 +260,6 @@ exports:
                             CNVCardDateScanner._position,
                             CNVCardDateScanner._string, CNVCardEncoding._name,
                             CNVCardEncoding._stringEncoding,
-                            CNVCardFilteredPersonScope._blacklist,
-                            CNVCardFilteredPersonScope._filterOptions,
                             CNVCardImage._cropRects, CNVCardImage._data,
                             CNVCardImage._size, CNVCardLexer._activeTokenSets,
                             CNVCardLexer._bytes, CNVCardLexer._cursor,

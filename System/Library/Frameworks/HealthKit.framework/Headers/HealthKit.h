@@ -2,19 +2,23 @@
 //  HealthKit.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2018 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKActivitySummary.h>
 #import <HealthKit/HKActivitySummaryQuery.h>
 #import <HealthKit/HKAnchoredObjectQuery.h>
 #import <HealthKit/HKAppleWalkingSteadinessClassification.h>
+#import <HealthKit/HKAttachment.h>
+#import <HealthKit/HKAttachmentStore.h>
 #import <HealthKit/HKAudiogramSample.h>
 #import <HealthKit/HKCDADocumentSample.h>
 #import <HealthKit/HKCategorySample.h>
 #import <HealthKit/HKCharacteristicObjects.h>
 #import <HealthKit/HKClinicalRecord.h>
 #import <HealthKit/HKClinicalType.h>
+#import <HealthKit/HKContactsLensSpecification.h>
+#import <HealthKit/HKContactsPrescription.h>
 #import <HealthKit/HKCorrelation.h>
 #import <HealthKit/HKCorrelationQuery.h>
 #import <HealthKit/HKCumulativeQuantitySample.h>
@@ -30,10 +34,13 @@
 #import <HealthKit/HKFHIRRelease.h>
 #import <HealthKit/HKFHIRResource.h>
 #import <HealthKit/HKFHIRVersion.h>
+#import <HealthKit/HKGlassesLensSpecification.h>
+#import <HealthKit/HKGlassesPrescription.h>
 #import <HealthKit/HKHealthStore.h>
 #import <HealthKit/HKHeartbeatSeriesBuilder.h>
 #import <HealthKit/HKHeartbeatSeriesQuery.h>
 #import <HealthKit/HKHeartbeatSeriesSample.h>
+#import <HealthKit/HKLensSpecification.h>
 #import <HealthKit/HKLiveWorkoutBuilder.h>
 #import <HealthKit/HKLiveWorkoutDataSource.h>
 #import <HealthKit/HKMetadata.h>
@@ -59,10 +66,13 @@
 #import <HealthKit/HKStatisticsQuery.h>
 #import <HealthKit/HKTypeIdentifiers.h>
 #import <HealthKit/HKUnit.h>
+#import <HealthKit/HKVisionPrescription.h>
+#import <HealthKit/HKVisionPrism.h>
 #import <HealthKit/HKVerifiableClinicalRecord.h>
 #import <HealthKit/HKVerifiableClinicalRecordQuery.h>
 #import <HealthKit/HKVerifiableClinicalRecordSubject.h>
 #import <HealthKit/HKWorkout.h>
+#import <HealthKit/HKWorkoutActivity.h>
 #import <HealthKit/HKWorkoutBuilder.h>
 #import <HealthKit/HKWorkoutConfiguration.h>
 #import <HealthKit/HKWorkoutRoute.h>

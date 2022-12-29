@@ -2,7 +2,7 @@
 //  HKWorkoutRouteBuilder.h
 //  HealthKit
 //
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKSeriesBuilder.h>
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                      Calling finishRouteWithWorkout:metadata: will stop and complete the route. If the builder is deleted,
                      or the client goes away before calling the finish method, data will be lost.
  */
-HK_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0))
+HK_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0))
 @interface HKWorkoutRouteBuilder : HKSeriesBuilder
 
 /*!

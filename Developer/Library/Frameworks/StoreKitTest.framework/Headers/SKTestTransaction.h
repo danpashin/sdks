@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0))
+SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0)) NS_SWIFT_SENDABLE
 @interface SKTestTransaction : NSObject
 
 @property(nonatomic, readonly) BOOL autoRenewingEnabled;

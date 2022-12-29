@@ -7,15 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           67C272E8-F199-3D4B-9706-606152498B7C
   - target:          arm64-ios
-    value:           488F4859-A129-3328-890F-417840894C87
+    value:           888A3F8C-25A9-31A7-8C88-B639B608982D
   - target:          arm64e-ios
-    value:           8BEA5CAC-D70F-314C-AFB4-501D519CAD14
+    value:           D0F5CF54-9DC7-381D-B129-37FD19422453
 install-name:    '/usr/lib/libgermantok.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___gt_mutex, _btrie_build, _btrie_close, _btrie_common_prefix_search, 
                        _btrie_data, _btrie_exact_match_search, _btrie_open, _btrie_prefix_match_search, 
                        _btrie_wildcard_match_search ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _germantok_tokenize ]
 ...

@@ -5,6 +5,11 @@
    All rights reserved. 
 */
 
+#ifndef CIIMAGEPROCESSOR_H
+#define CIIMAGEPROCESSOR_H
+
+#ifdef __OBJC__
+
 #import <CoreImage/CIImage.h>
 
 #if TARGET_OS_OSX
@@ -165,6 +170,10 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
 // This texture must not be modified by the block.
 @property (nonatomic, readonly, nullable) id<MTLTexture> metalTexture;
 
+// A 64-bit digest that uniquely descibes the contents of the input to a processor.
+// This digest will change if the graph of the input changes in any way.
+@property (nonatomic, readonly) uint64_t digest NS_AVAILABLE(13_0, 16_0);
+
 @end
 
 
@@ -199,7 +208,15 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
 // Returns a MTLCommandBuffer that can be used for encoding commands (if rendering using Metal).
 @property (nonatomic, readonly, nullable) id<MTLCommandBuffer> metalCommandBuffer;
 
+// A 64-bit digest that uniquely descibes the contents of the output of a processor.
+// This digest will change if the graph up to and including the output of the processor changes in any way.
+@property (nonatomic, readonly) uint64_t digest NS_AVAILABLE(13_0, 16_0);
+
 @end
 
 
 NS_ASSUME_NONNULL_END
+
+#endif /* __OBJC__ */
+
+#endif /* CIIMAGEPROCESSOR_H */

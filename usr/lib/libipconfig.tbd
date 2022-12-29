@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           11013E6D-9722-3B81-8363-66F264EEA048
   - target:          arm64-ios
-    value:           5831F21C-C1CC-38F5-87BC-454E29C47138
+    value:           B81505D5-F298-3147-B126-CEA35B3F69E1
   - target:          arm64e-ios
-    value:           23FB8F75-3EEE-398D-888E-3C92E8213071
+    value:           D80EF401-551B-3346-8DA9-A5400D482F3D
 install-name:    '/usr/lib/libipconfig.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ipconfigVersionNumber, _ipconfigVersionString, _my_CFStringAppendBytesAsHex, 
                        _my_CFStringCreateWithIPAddress, _my_CFStringCreateWithIPv6Address, 
                        _my_CFStringToCString ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _IPConfigurationForgetNetwork, _IPConfigurationServiceCopyInformation, 
                        _IPConfigurationServiceCreate, _IPConfigurationServiceGetNotificationKey, 
                        _IPConfigurationServiceGetTypeID, _IPConfigurationServiceRefreshConfiguration, 

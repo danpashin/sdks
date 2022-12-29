@@ -66,9 +66,9 @@
 #ifndef _MACH_VM_STATISTICS_H_
 #define _MACH_VM_STATISTICS_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <sys/cdefs.h>
+
+__BEGIN_DECLS
 
 #include <mach/machine/vm_types.h>
 #include <mach/machine/kern_return.h>
@@ -272,6 +272,7 @@ typedef struct vm_purgeable_info        *vm_purgeable_info_t;
 #define VM_FLAGS_RESILIENT_CODESIGN     0x00000020
 #define VM_FLAGS_RESILIENT_MEDIA        0x00000040
 #define VM_FLAGS_PERMANENT              0x00000080
+#define VM_FLAGS_TPRO                   0x00001000
 #define VM_FLAGS_OVERWRITE              0x00004000  /* delete any existing mappings first */
 /*
  * VM_FLAGS_SUPERPAGE_MASK
@@ -298,6 +299,7 @@ typedef struct vm_purgeable_info        *vm_purgeable_info_t;
 	                         VM_FLAGS_PERMANENT |           \
 	                         VM_FLAGS_OVERWRITE |           \
 	                         VM_FLAGS_SUPERPAGE_MASK |      \
+	                         VM_FLAGS_TPRO |                \
 	                         VM_FLAGS_ALIAS_MASK)
 #define VM_FLAGS_USER_MAP       (VM_FLAGS_USER_ALLOCATE |       \
 	                         VM_FLAGS_RETURN_4K_DATA_ADDR | \
@@ -325,7 +327,10 @@ typedef struct vm_purgeable_info        *vm_purgeable_info_t;
 
 /* Reasons for exception for virtual memory */
 enum virtual_memory_guard_exception_codes {
-	kGUARD_EXC_DEALLOC_GAP  = 1u << 0
+	kGUARD_EXC_DEALLOC_GAP  = 1u << 0,
+	kGUARD_EXC_RECLAIM_COPYIO_FAILURE = 1u << 1,
+	kGUARD_EXC_RECLAIM_INDEX_FAILURE = 1u << 2,
+	kGUARD_EXC_RECLAIM_DEALLOCATE_FAILURE = 1u << 3,
 };
 
 
@@ -340,6 +345,8 @@ enum virtual_memory_guard_exception_codes {
 #define VM_LEDGER_TAG_GRAPHICS  0x00000004
 #define VM_LEDGER_TAG_NEURAL    0x00000005
 #define VM_LEDGER_TAG_MAX       0x00000005
+#define VM_LEDGER_TAG_UNCHANGED ((int)-1)
+
 /* individual bits: */
 #define VM_LEDGER_FLAG_NO_FOOTPRINT               (1 << 0)
 #define VM_LEDGER_FLAG_NO_FOOTPRINT_FOR_DEBUG    (1 << 1)
@@ -531,6 +538,9 @@ enum virtual_memory_guard_exception_codes {
 /* ColorSync is using mmap for read-only copies of ICC profile data */
 #define VM_MEMORY_COLORSYNC 104
 
+/* backtrace info for simulated crashes */
+#define VM_MEMORY_BTINFO 105
+
 /* Reserve 230-239 for Rosetta */
 #define VM_MEMORY_ROSETTA 230
 #define VM_MEMORY_ROSETTA_THREAD_CONTEXT 231
@@ -545,12 +555,12 @@ enum virtual_memory_guard_exception_codes {
 #define VM_MEMORY_APPLICATION_SPECIFIC_1 240
 #define VM_MEMORY_APPLICATION_SPECIFIC_16 255
 
+#define VM_MEMORY_COUNT 256
+
 #define VM_MAKE_TAG(tag) ((tag) << 24)
 
 
 
-#ifdef __cplusplus
-}
-#endif
+__END_DECLS
 
 #endif  /* _MACH_VM_STATISTICS_H_ */

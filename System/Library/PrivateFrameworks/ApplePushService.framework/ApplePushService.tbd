@@ -29,6 +29,7 @@ exports:
                             _APSGetIgnoredTopicsFromXPCDictionary,
                             _APSGetNonWakingTopicsFromXPCDictionary,
                             _APSGetOpportunisticTopicsFromXPCDictionary,
+                            _APSGetTrackActivityPresence,
                             _APSGetUsesAppLaunchStats,
                             _APSGetXPCArrayFromDictionary,
                             _APSGetXPCBoolFromDictionary,
@@ -61,7 +62,8 @@ exports:
                             _APSPropertyListFromNSData, _APSPubSubError,
                             _APSPubSubErrorDomain, _APSPushWakeEntitlement,
                             _APSSafeArrayOfStrings, _APSSetXPCConnectionContext,
-                            _APSSystemUsersKey, _APSTrustAllHosts,
+                            _APSSystemUsersKey, _APSTokenInfosKey,
+                            _APSURLTokenError, _APSURLTokenErrorDomain,
                             _APSUnderlyingError, _APSUsesAppLaunchStatsKey,
                             _APSXPCConfigureConnection,
                             _APSXPCConnectionSetEventHandlers,
@@ -69,10 +71,11 @@ exports:
                             _APSXPCCreateConnectionForServiceWithQueue,
                             _APSXPCCreateServerConnection, _APSXPCMessageTypeKey,
                             _kAPSTaskClientServiceName ]
-    objc-classes:         [ APSAccessCheck, APSChannelSubscriptionFailure,
-                            APSConnection, APSDNSRequest, APSDNSResponse,
-                            APSIncomingMessage, APSLog, APSMessage,
-                            APSOutgoingMessage, APSTaskClient ]
+    objc-classes:         [ APSAccessCheck, APSAppTokenInfo,
+                            APSChannelSubscriptionFailure, APSConnection,
+                            APSDNSRequest, APSDNSResponse, APSIncomingMessage,
+                            APSLog, APSMessage, APSOutgoingMessage, APSTaskClient,
+                            APSURLToken, APSURLTokenInfo ]
     objc-ivars:           [ APSDNSRequest._environment, APSDNSRequest._flags,
                             APSDNSRequest._hostname,
                             APSDNSRequest._requestStartTime,

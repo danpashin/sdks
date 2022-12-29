@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           98E8F9BE-B5F7-3387-B41E-DE5DE8497AC4
   - target:          arm64-ios
-    value:           D0566204-4E03-3AE3-A0EC-262770FC40DD
+    value:           6D498210-59EB-3067-B5E2-72533350E010
   - target:          arm64e-ios
-    value:           8A18234F-C5A1-308D-8F23-938FF41355D2
+    value:           60F722B6-8B4A-3BD7-819D-C9EFF18552B1
 install-name:    '/System/Library/Frameworks/WatchConnectivity.framework/WatchConnectivity'
-current-version: 200.1
+current-version: 203
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _LZ4_compress, _LZ4_compressBound, _LZ4_compress_continue, 
@@ -34,7 +34,7 @@ exports:
                        _WatchConnectivityVersionNumber, _WatchConnectivityVersionString, 
                        _isAllowedFileForProcess ]
     objc-classes:    [ WCQueuedMessage ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _WCApplicationContextFileName, _WCApplicationSupportURLInContainer, 
                        _WCCheckFileAndConsumeSandboxTokenForProcessID, _WCCheckFileAndCreateExtensionForProcess, 
                        _WCCompactStringFromCollection, _WCComplicationUserInfoIDFileName, 

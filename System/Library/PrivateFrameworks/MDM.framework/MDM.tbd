@@ -16,9 +16,6 @@ exports:
                             _MDMKeybagDeleteMDMEscrowSecret,
                             _MDMKeybagRetrieveMDMEscrowDataIfPresent,
                             _MDMKeybagRetrieveSupervisionEscrowSecret,
-                            _MDMSendManagedBooksChangedNotification,
-                            _MDMSendManagingOrgInfoChangedNotification,
-                            _MDMSendTriggerRollKeybagsNotification,
                             _MDMVersionNumber, _MDMVersionString, _kIdentifierKey,
                             _kInstalledApplicationListCommandName,
                             _kInstalledApplicationListKeyBundleSize,
@@ -27,6 +24,7 @@ exports:
                             _kInstalledApplicationListKeyHasUpdateAvailable,
                             _kInstalledApplicationListKeyIdentifier,
                             _kInstalledApplicationListKeyIsAdHocCodeSigned,
+                            _kInstalledApplicationListKeyIsAppClip,
                             _kInstalledApplicationListKeyIsAppStoreVendable,
                             _kInstalledApplicationListKeyIsBetaApp,
                             _kInstalledApplicationListKeyIsDeviceBasedVPP,
@@ -46,6 +44,7 @@ exports:
                             _kMCDMDAppPropertyKeyHasUpdateAvailable,
                             _kMCDMDAppPropertyKeyInstallationState,
                             _kMCDMDAppPropertyKeyIsAdHocCodeSigned,
+                            _kMCDMDAppPropertyKeyIsAppClip,
                             _kMCDMDAppPropertyKeyIsAppStoreVendable,
                             _kMCDMDAppPropertyKeyIsBetaApp,
                             _kMCDMDAppPropertyKeyIsDeviceBasedVPP,
@@ -122,6 +121,7 @@ exports:
                             _kMDMPRequestTypeTriggerDiagnostics,
                             _kMDMPRequestTypeUserList,
                             _kMDMPRequestTypeValidateApplications,
+                            _kMDMPSettingsAccessibility,
                             _kMDMPSettingsSettingsAppAttributes,
                             _kMDMPSettingsSettingsAppConfig,
                             _kMDMPSettingsSettingsBluetooth,
@@ -136,14 +136,17 @@ exports:
                             _kMDMPStatusNotNow, _kMDMPStatusNotPermitted,
                             _kMDMPTokenKey, _kMDMPTopicKey, _kMDMPUnlockTokenKey,
                             _kSettingsSettingsSoftwareUpdatePathKey ]
-    objc-classes:         [ MDMAbstractTunnelParser, MDMAppPropertyShim,
-                            MDMAppPropertyShimException,
-                            MDMDeclarativeManagementCommand, MDMEvents,
-                            MDMFollowUp, MDMInstalledApplicationListCommand,
+    objc-classes:         [ MDMAbstractTunnelParser, MDMAccessibilityManager,
+                            MDMAppPropertyShim, MDMAppPropertyShimException,
+                            MDMAttestation, MDMDeclarativeManagementCommand,
+                            MDMEvents, MDMFollowUp,
+                            MDMInstalledApplicationListCommand,
                             MDMKeybagUtilities, MDMMCInterface,
-                            MDMManagedAssetManager, MDMParser,
+                            MDMManagedAssetManager, MDMMigrator, MDMParser,
                             MDMSSAuthenticationRequestDelegate,
-                            MDMSSRequestDelegate, MDMServerCore, MDMUserParser ]
+                            MDMSSRequestDelegate, MDMServerAppInstallBlocking,
+                            MDMServerCore, MDMServiceDelegate, MDMServicerCore,
+                            MDMUserParser ]
     objc-eh-types:        [ MDMAppPropertyShimException ]
     objc-ivars:           [ MDMSSAuthenticationRequestDelegate._authenticatedAccount ]
 ...

@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARSCNPlaneGeometry.h>)
 //
 //  ARSCNPlaneGeometry.h
 //  ARKit
@@ -37,3 +38,6 @@ API_AVAILABLE(ios(11.3))
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitUI/ARSCNPlaneGeometry.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARSCNPlaneGeometry.h>)

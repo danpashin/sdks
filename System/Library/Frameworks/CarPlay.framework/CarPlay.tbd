@@ -7,15 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           6B08A4C8-4DD9-3E63-9D31-D741503AE6F0
+    value:           4CD064BD-D3A5-3AC4-93BF-4D7D98849F0B
   - target:          arm64e-ios
-    value:           F5121472-3BE6-3D54-A306-537FBEF7CFBC
+    value:           6718840F-EB48-35CC-A39A-6288A81EE72E
 install-name:    '/System/Library/Frameworks/CarPlay.framework/CarPlay'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CPButtonMaximumImageSize, _CPColorMeetsContrastRequirement, 
                        _CPContrastRatioForColors, _CPContrastingColorForColor, _CPCurrentProcessHasAudioEntitlement, 
                        _CPCurrentProcessHasChargingEntitlement, _CPCurrentProcessHasCommunicationEntitlement, 
+                       _CPCurrentProcessHasDrivingTaskEntitlement, _CPCurrentProcessHasFuelingEntitlement, 
                        _CPCurrentProcessHasMapsEntitlement, _CPCurrentProcessHasParkingEntitlement, 
                        _CPCurrentProcessHasPublicSafetyEntitlement, _CPCurrentProcessHasQuickOrderingEntitlement, 
                        _CPCurrentProcessHasTemplateEntitlement, _CPDistanceUnitsFromNSUnitLength, 
@@ -33,6 +34,7 @@ exports:
                        _NSUnitLengthFromCPDistanceUnits, _kCPControlEnabledKey, _kCPControlIdentifierKey, 
                        _kCPControlImageSetKey, _kCPControlTitleKey, _kCPSAudioEntitlementKey, 
                        _kCPSChargingEntitlementKey, _kCPSCommunicationEntitlementKey, 
+                       _kCPSDrivingTaskEntitlementKey, _kCPSFuelingEntitlementKey, 
                        _kCPSMapsEntitlementKey, _kCPSParkingEntitlementKey, _kCPSPublicSafetyEntitlementKey, 
                        _kCPSQuickOrderingEntitlementKey ]
     objc-classes:    [ CPAccNavInfoType, CPAccNavParam, CPAccNavParamKey, CPAccNavUpdate, 

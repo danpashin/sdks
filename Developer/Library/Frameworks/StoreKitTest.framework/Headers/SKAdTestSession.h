@@ -19,7 +19,7 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,tvos,watchos)
 
 #pragma mark - Methods
 
-- (nullable instancetype)init;
+- (instancetype)init;
 
 /// Use this method to validate an impression against the requirements that SKAdNetwork impressions
 /// are expected to satisfy. This method is to be used for StoreKit rendered ads.

@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARCoachingOverlayView.h>)
 //
 //  ARCoachingOverlayView.h
 //  ARKit
@@ -6,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -133,3 +133,6 @@ API_AVAILABLE(ios(13.0))
 
 NS_ASSUME_NONNULL_END
 
+#else
+#import <ARKitUI/ARCoachingOverlayView.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARCoachingOverlayView.h>)

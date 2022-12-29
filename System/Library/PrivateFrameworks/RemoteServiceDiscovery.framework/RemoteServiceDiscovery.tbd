@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/RemoteServiceDiscovery
-current-version:       55.120.1
+current-version:       95
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -17,6 +17,13 @@ exports:
                             _bridge_version_serialize, _bridge_version_unparse,
                             _local_device_copy_description,
                             _local_device_copy_service_names,
+                            _remote_compute_controller_add_node,
+                            _remote_compute_controller_browse,
+                            _remote_compute_controller_browse_cancel,
+                            _remote_compute_controller_remove_node,
+                            _remote_compute_node_disconnect_controller,
+                            _remote_compute_node_listen,
+                            _remote_compute_node_listen_cancel,
                             _remote_control_attach_loopback,
                             _remote_control_connect_loopback,
                             _remote_control_connect_network_peer,

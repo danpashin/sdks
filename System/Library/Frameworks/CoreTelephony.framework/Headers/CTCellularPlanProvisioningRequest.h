@@ -5,6 +5,8 @@
 //  Copyright (c) 2018 Apple Inc. All rights reserved.
 //
 
+#ifdef __OBJC__
+
 #import <Foundation/Foundation.h>
 #import <CoreTelephony/CoreTelephonyDefines.h>
 
@@ -30,3 +32,4 @@ API_UNAVAILABLE(macos, tvos)
 @end
 API_AVAILABLE_END
 
+#endif // __OBJC__

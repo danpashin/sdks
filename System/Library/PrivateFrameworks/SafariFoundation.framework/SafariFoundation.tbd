@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
-current-version:       613.2.7
+current-version:       614.1.25
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -23,15 +23,20 @@ exports:
                             _SFCredentialProviderExtensionPointIdentifier,
                             _SFCredentialProviderShowsConfigurationUIKey,
                             _SFCredentialProviderSystemEntitlement,
+                            _SFCreditCardCardholderNameKey,
+                            _SFCreditCardExpirationDateKey, _SFCreditCardNameKey,
+                            _SFCreditCardNumberKey, _SFCreditCardSecurityCodeKey,
                             _SFExternalCredentialIdentityStoreErrorDomain,
                             _SFPasswordCredentialIdentityInvalidRowIdentifier,
                             _SFPasswordGenerationNoLengthLimit,
                             _SFSharablePasswordURLSchemeForAirDrop,
                             _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
     objc-classes:         [ SFAppAutoFillOneTimeCodeProvider,
+                            SFAppAutoFillPasskeyProvider,
                             SFAutoFillFeatureManager, SFAutoFillHelperProxy,
                             SFAutoFillOneTimeCode,
                             SFAutoFillOneTimeCodeEmbeddedDomainPair,
+                            SFAutoFillPasskey, SFAutoFillPasskeyIdentifier,
                             SFCredentialProviderExtensionHelperProxy,
                             SFCredentialProviderExtensionManager,
                             SFCredentialProviderExtensionState,
@@ -39,8 +44,8 @@ exports:
                             SFExternalCredentialIdentityStore,
                             SFExternalCredentialIdentityStoreManager,
                             SFPasswordCredentialIdentity, SFSafariCredential,
-                            SFSafariCredentialStore, SFSharablePassword,
-                            SFSharablePasswordReceiver,
+                            SFSafariCredentialStore, SFSafariCreditCardStore,
+                            SFSharablePassword, SFSharablePasswordReceiver,
                             SFSharedWebCredentialsDatabaseEntry,
                             SFStrongPasswordGenerator, SFSuggestedUser,
                             SFSuggestedUserProvider, TOTPGeneratorSnapshot,

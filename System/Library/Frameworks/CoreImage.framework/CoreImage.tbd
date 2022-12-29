@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           C2040FEA-134C-392B-83C3-88266F3A55E1
   - target:          arm64-ios
-    value:           C48D53F1-C3BD-341A-A014-BBD69E684F16
+    value:           8D2A2AEB-C07E-379E-91F4-69C51528ACDD
   - target:          arm64e-ios
-    value:           37278AB0-B518-3E7F-AF3E-F124841A8A88
+    value:           84BAACF5-F59E-3E11-AAC2-58D0165ED72E
 install-name:    '/System/Library/Frameworks/CoreImage.framework/CoreImage'
 current-version: 5
 exports:
@@ -27,7 +27,7 @@ exports:
                        _xy_to_tempTint, _xy_to_xy_matrix, _xyz_to_adobe_rgb_matrix, 
                        _xyz_to_rgb_matrix ]
     objc-ivars:      [ CIQRCodeFeature.messageString ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CIDetectorAccuracy, _CIDetectorAccuracyHigh, _CIDetectorAccuracyLow, 
                        _CIDetectorAspectRatio, _CIDetectorBetterEyeLocs, _CIDetectorDetectDiacritics, 
                        _CIDetectorExtraCharacters, _CIDetectorEyeBlink, _CIDetectorFocalLength, 
@@ -99,8 +99,9 @@ exports:
                        _kCIContextAllowHalfPrecision, _kCIContextAllowLowPower, _kCIContextCacheIntermediates, 
                        _kCIContextDefaultCGImageFormat, _kCIContextDisableSoftwareFallback, 
                        _kCIContextEnableBlending, _kCIContextHLGOpticalScale, _kCIContextHighQualityDownsample, 
-                       _kCIContextIntermediateMemoryTarget, _kCIContextLossyCompressedIntermediates, 
-                       _kCIContextName, _kCIContextOutputColorSpace, _kCIContextOutputPremultiplied, 
+                       _kCIContextIOSurfaceMemoryPoolID, _kCIContextIntermediateMemoryTarget, 
+                       _kCIContextLossyCompressedIntermediates, _kCIContextName, 
+                       _kCIContextOutputColorSpace, _kCIContextOutputPremultiplied, 
                        _kCIContextPriorityRequestHigh, _kCIContextPriorityRequestLow, 
                        _kCIContextQuality, _kCIContextUseMetalRenderer, _kCIContextUseSoftwareRenderer, 
                        _kCIContextWorkingColorSpace, _kCIContextWorkingFormat, _kCIFormat420f, 
@@ -136,7 +137,8 @@ exports:
                        _kCIImageAuxiliarySemanticSegmentationTeethMatte, _kCIImageCacheHint, 
                        _kCIImageCacheImmediately, _kCIImageClampToEdge, _kCIImageColorSpace, 
                        _kCIImageEdgeRepeat, _kCIImageEdgesAreClear, _kCIImageFlipped, 
-                       _kCIImageNearestSampling, _kCIImagePremultiplied, _kCIImageProcessorAllowPartialOutputRegion, 
+                       _kCIImageNearestSampling, _kCIImagePremultiplied, _kCIImageProcessorAllowCompressedInputsAndOutputs, 
+                       _kCIImageProcessorAllowPartialOutputRegion, _kCIImageProcessorCanOutputLossyCompressed, 
                        _kCIImageProcessorSynchronizeInputs, _kCIImageProperties, 
                        _kCIImageProviderContentDigest, _kCIImageProviderMaximumTileSize, 
                        _kCIImageProviderName, _kCIImageProviderTileSize, _kCIImageProviderUserInfo, 
@@ -148,15 +150,16 @@ exports:
                        _kCIImageRepresentationSemanticSegmentationSkinMatteImage, 
                        _kCIImageRepresentationSemanticSegmentationSkyMatteImage, 
                        _kCIImageRepresentationSemanticSegmentationTeethMatteImage, 
-                       _kCIImageTextScaleFactor, _kCIImageToneMapHDRtoSDR, _kCIImageYCCMatrix, 
-                       _kCIInputAllowDraftModeKey, _kCIInputAmountKey, _kCIInputAngleKey, 
-                       _kCIInputAspectRatioKey, _kCIInputBackgroundImageKey, _kCIInputBaselineExposureKey, 
-                       _kCIInputBiasKey, _kCIInputBoostKey, _kCIInputBoostShadowAmountKey, 
-                       _kCIInputBrightnessKey, _kCIInputCenterKey, _kCIInputColorKey, 
-                       _kCIInputColorNoiseReductionAmountKey, _kCIInputContrastKey, 
-                       _kCIInputDecoderVersionKey, _kCIInputDepthImageKey, _kCIInputDisableGamutMapKey, 
-                       _kCIInputDisparityImageKey, _kCIInputEVKey, _kCIInputEnableChromaticNoiseTrackingKey, 
-                       _kCIInputEnableEDRModeKey, _kCIInputEnableSharpeningKey, _kCIInputEnableVendorLensCorrectionKey, 
+                       _kCIImageTextPadding, _kCIImageTextScaleFactor, _kCIImageToneMapHDRtoSDR, 
+                       _kCIImageYCCMatrix, _kCIInputAllowDraftModeKey, _kCIInputAmountKey, 
+                       _kCIInputAngleKey, _kCIInputAspectRatioKey, _kCIInputBackgroundImageKey, 
+                       _kCIInputBaselineExposureKey, _kCIInputBiasKey, _kCIInputBoostKey, 
+                       _kCIInputBoostShadowAmountKey, _kCIInputBrightnessKey, _kCIInputCenterKey, 
+                       _kCIInputColorKey, _kCIInputColorNoiseReductionAmountKey, 
+                       _kCIInputContrastKey, _kCIInputDecoderVersionKey, _kCIInputDepthImageKey, 
+                       _kCIInputDisableGamutMapKey, _kCIInputDisparityImageKey, _kCIInputEVKey, 
+                       _kCIInputEnableChromaticNoiseTrackingKey, _kCIInputEnableEDRModeKey, 
+                       _kCIInputEnableSharpeningKey, _kCIInputEnableVendorLensCorrectionKey, 
                        _kCIInputExtentKey, _kCIInputGradientImageKey, _kCIInputIgnoreImageOrientationKey, 
                        _kCIInputImageKey, _kCIInputImageOrientationKey, _kCIInputIntensityKey, 
                        _kCIInputLinearSpaceFilter, _kCIInputLocalToneMapAmountKey, 
@@ -177,13 +180,13 @@ exports:
                        _kCIKernelThreadsPerThreadgroup, _kCIOutputImageKey, _kCIOutputNativeSizeKey, 
                        _kCIPhotoFilterBinaryArchive, _kCIPortraitFilterV2FullSizeBinaryArchive, 
                        _kCIPortraitFilterV2ProxySizeBinaryArchive, _kCIPropertiesKey, 
-                       _kCISamplerAffineMatrix, _kCISamplerBlur, _kCISamplerBlurFormat, 
-                       _kCISamplerColorSpace, _kCISamplerFilterLinear, _kCISamplerFilterMode, 
-                       _kCISamplerFilterNearest, _kCISamplerFilterPoint, _kCISamplerWrapBlack, 
-                       _kCISamplerWrapClamp, _kCISamplerWrapMode, _kCISamplerWrapPeriodic, 
-                       _kCISupportedDecoderVersionsKey, _kCIUIParameterSet, _kCIUISetAdvanced, 
-                       _kCIUISetBasic, _kCIUISetDevelopment, _kCIUISetIntermediate, 
-                       _metaFilterForFilter ]
+                       _kCIRedEyeRepairBinaryArchive, _kCISamplerAffineMatrix, _kCISamplerBlur, 
+                       _kCISamplerBlurFormat, _kCISamplerColorSpace, _kCISamplerFilterLinear, 
+                       _kCISamplerFilterMode, _kCISamplerFilterNearest, _kCISamplerFilterPoint, 
+                       _kCISamplerWrapBlack, _kCISamplerWrapClamp, _kCISamplerWrapMode, 
+                       _kCISamplerWrapPeriodic, _kCISupportedDecoderVersionsKey, 
+                       _kCIUIParameterSet, _kCIUISetAdvanced, _kCIUISetBasic, _kCIUISetDevelopment, 
+                       _kCIUISetIntermediate ]
     objc-classes:    [ CIAztecCodeDescriptor, CIBarcodeDescriptor, CIBitmapContext, 
                        CIBlendKernel, CIBurstImageSet, CIColor, CIColorKernel, CIContext, 
                        CIContextCache, CIDataMatrixCodeDescriptor, CIDetector, CIDualRedEyeRepairSession, 

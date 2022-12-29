@@ -2,7 +2,7 @@
 //  HKMetadata.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2018 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -14,14 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      Represents the serial number of the device that created the HKObject.
  @discussion    The expected value type is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeyDeviceSerialNumber API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyDeviceSerialNumber API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyBodyTemperatureSensorLocation
  @abstract      Represents the location where a particular body temperature reading was taken.
  @discussion    The expected value type is an NSNumber containing a HKBodyTemperatureSensorLocation value.
  */
-HK_EXTERN NSString * const HKMetadataKeyBodyTemperatureSensorLocation API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyBodyTemperatureSensorLocation API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 typedef NS_ENUM(NSInteger, HKBodyTemperatureSensorLocation) {
     HKBodyTemperatureSensorLocationOther = 0,
@@ -36,14 +36,14 @@ typedef NS_ENUM(NSInteger, HKBodyTemperatureSensorLocation) {
     HKBodyTemperatureSensorLocationEarDrum,
     HKBodyTemperatureSensorLocationTemporalArtery,
     HKBodyTemperatureSensorLocationForehead,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyHeartRateSensorLocation
  @abstract      Represents the location where a particular heart rate reading was taken.
  @discussion    The expected value type is an NSNumber containing a HKHeartRateSensorLocation value.
  */
-HK_EXTERN NSString * const HKMetadataKeyHeartRateSensorLocation API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyHeartRateSensorLocation API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 typedef NS_ENUM(NSInteger, HKHeartRateSensorLocation) {
     HKHeartRateSensorLocationOther = 0,
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSInteger, HKHeartRateSensorLocation) {
     HKHeartRateSensorLocationHand,
     HKHeartRateSensorLocationEarLobe,
     HKHeartRateSensorLocationFoot,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyHeartRateMotionContext
@@ -62,13 +62,77 @@ typedef NS_ENUM(NSInteger, HKHeartRateSensorLocation) {
                 (HKHeartRateMotionContextActive) if the user is in motion or working out, sedentary if the user is
                 still (HKHeartRateMotionContextSedentary), or not set (HKHeartRateMotionContextNotSet) otherwise.
  */
-HK_EXTERN NSString * const HKMetadataKeyHeartRateMotionContext API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeyHeartRateMotionContext API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 typedef NS_ENUM(NSInteger, HKHeartRateMotionContext) {
     HKHeartRateMotionContextNotSet = 0,
     HKHeartRateMotionContextSedentary,
     HKHeartRateMotionContextActive,
-} API_AVAILABLE(ios(11.0), watchos(4.0));
+} API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyUserMotionContext
+ @abstract      Represents the user's motion when a particular sample was taken.
+ @discussion    The expected value type is an NSNumber containing a HKUserMotionContext value. The value is active
+                (HKUserMotionContextActive) if the user is in motion or working out, stationary if the user is
+                still (HKUserMotionContextStationary), or not set (HKUserMotionContextNotSet) otherwise.
+ */
+HK_EXTERN NSString * const HKMetadataKeyUserMotionContext API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+typedef NS_ENUM(NSInteger, HKUserMotionContext) {
+    HKUserMotionContextNotSet = 0,
+    HKUserMotionContextStationary,
+    HKUserMotionContextActive,
+} API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeySessionEstimate
+ @abstract      Represents a per-session estimate prior to longitudinal smoothing applied to the value stored in the associated HKQuantitySample.
+ @discussion    The expected value type is an HKQuantity object with a unit compatible with the associated HKQuantitySample.
+ */
+HK_EXTERN NSString * const HKMetadataKeySessionEstimate API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @enum          HKHeartRateRecoveryTestType
+ @abstract      Represents the test used to determine a Heart Rate Recovery value
+
+ @constant      HKHeartRateRecoveryTestTypeMaxExercise                  The user was exerted to their physical limit to evaluate actual Heart Rate Recovery.
+ @constant      HKHeartRateRecoveryTestTypePredictionSubMaxExercise     A specific test protocol was used to calculate and correlate a predicted Heart Rate Recovery.
+ @constant      HKHeartRateRecoveryTestTypePredictionNonExercise        A non-exercise equation was used based on user metrics to calculate a predicted Heart Rate Recovery.
+ */
+typedef NS_ENUM(NSInteger, HKHeartRateRecoveryTestType) {
+    HKHeartRateRecoveryTestTypeMaxExercise = 1,
+    HKHeartRateRecoveryTestTypePredictionSubMaxExercise,
+    HKHeartRateRecoveryTestTypePredictionNonExercise,
+} API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyHeartRateRecoveryTestType
+ @abstract      Represents the test used to determine a Heart Rate Recovery value
+ @discussion    The expected value type is an NSNumber containing a HKHeartRateRecoveryTestType value.
+ */
+HK_EXTERN NSString * const HKMetadataKeyHeartRateRecoveryTestType API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyHeartRateRecoveryActivityType
+ @abstract      Represents the activity which preceded a Heart Rate Recovery value
+ @discussion    The expected value type is an NSNumber containing a HKWorkoutActivityType value.
+ */
+HK_EXTERN NSString * const HKMetadataKeyHeartRateRecoveryActivityType API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyHeartRateRecoveryActivityDuration
+ @abstract      Represents the duration of activity which preceded a Heart Rate Recovery value
+ @discussion    The expected value type is an HKQuantity object compatible with a time unit.
+ */
+HK_EXTERN NSString * const HKMetadataKeyHeartRateRecoveryActivityDuration API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyHeartRateRecoveryMaxObservedRecoveryHeartRate
+ @abstract      Represents the maximum heart rate observed during the corresponding Heart Rate Recovery sample interval
+ @discussion    The expected value type is an HKQuantity object compatible with "count/min" unit (eg "BPM").
+ */
+HK_EXTERN NSString * const HKMetadataKeyHeartRateRecoveryMaxObservedRecoveryHeartRate API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyFoodType
@@ -76,7 +140,7 @@ typedef NS_ENUM(NSInteger, HKHeartRateMotionContext) {
  @discussion    This should be a short string representing the type of food, such as 'Banana'. The expected value type
                 is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeyFoodType API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyFoodType API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyUDIDeviceIdentifier
@@ -86,7 +150,7 @@ HK_EXTERN NSString * const HKMetadataKeyFoodType API_AVAILABLE(ios(8.0), watchos
  
                 ** Note that the use of this key is now discouraged in favor of the HKDevice class.
  */
-HK_EXTERN NSString * const HKMetadataKeyUDIDeviceIdentifier API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyUDIDeviceIdentifier API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyUDIProductionIdentifier
@@ -97,7 +161,7 @@ HK_EXTERN NSString * const HKMetadataKeyUDIDeviceIdentifier API_AVAILABLE(ios(8.
                 needed.
                 The expected value type is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeyUDIProductionIdentifier API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyUDIProductionIdentifier API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyDigitalSignature
@@ -110,7 +174,7 @@ HK_EXTERN NSString * const HKMetadataKeyUDIProductionIdentifier API_AVAILABLE(io
                 Standard Elliptic Curve P-256. See documentation for details.
 
  */
-HK_EXTERN NSString * const HKMetadataKeyDigitalSignature API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyDigitalSignature API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyExternalUUID
@@ -118,7 +182,7 @@ HK_EXTERN NSString * const HKMetadataKeyDigitalSignature API_AVAILABLE(ios(8.0),
                 Uniqueness of objects with the same value of this key is not enforced by HealthKit.
  @discussion    The expected value type is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeyExternalUUID API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyExternalUUID API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeySyncIdentifier
@@ -130,7 +194,7 @@ HK_EXTERN NSString * const HKMetadataKeyExternalUUID API_AVAILABLE(ios(8.0), wat
                 HKMetadataKeySyncVersion must be provided if HKMetadataKeySyncIdentifier is provided.
                 The expected value type is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeySyncIdentifier API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeySyncIdentifier API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeySyncVersion
@@ -139,14 +203,14 @@ HK_EXTERN NSString * const HKMetadataKeySyncIdentifier API_AVAILABLE(ios(11.0), 
  @discussion    HKMetadataKeySyncVersion may not be provided if HKMetadataKeySyncIdentifier is not provided.
                 The expected value type is NSNumber.
  */
-HK_EXTERN NSString * const HKMetadataKeySyncVersion API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeySyncVersion API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyTimeZone
  @abstract      Represents the time zone that the user was in when the HKObject was created.
  @discussion    The expected value type is an NSString compatible with NSTimeZone's +timeZoneWithName:.
  */
-HK_EXTERN NSString * const HKMetadataKeyTimeZone API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyTimeZone API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 
 /*!
@@ -156,7 +220,7 @@ HK_EXTERN NSString * const HKMetadataKeyTimeZone API_AVAILABLE(ios(8.0), watchos
  
                 ** Note that the use of this key is now discouraged in favor of the HKDevice class.
  */
-HK_EXTERN NSString * const HKMetadataKeyDeviceName API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyDeviceName API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyDeviceManufacturerName
@@ -165,63 +229,63 @@ HK_EXTERN NSString * const HKMetadataKeyDeviceName API_AVAILABLE(ios(8.0), watch
  
                 ** Note that the use of this key is now discouraged in favor of the HKDevice class.
  */
-HK_EXTERN NSString * const HKMetadataKeyDeviceManufacturerName API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyDeviceManufacturerName API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyWasTakenInLab
  @abstract      Represents whether or not the reading was taken in a lab.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyWasTakenInLab API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyWasTakenInLab API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyReferenceRangeLowerLimit
  @abstract      Represents the lower limit of the reference range for a lab result.
  @discussion    The expected value type is an NSNumber.
  */
-HK_EXTERN NSString * const HKMetadataKeyReferenceRangeLowerLimit API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyReferenceRangeLowerLimit API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyReferenceRangeUpperLimit
  @abstract      Represents the upper limit of the reference range for a lab result.
  @discussion    The expected value type is an NSNumber.
  */
-HK_EXTERN NSString * const HKMetadataKeyReferenceRangeUpperLimit API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyReferenceRangeUpperLimit API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyWasUserEntered
  @abstract      Represents whether or not the reading was entered by the user.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyWasUserEntered API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyWasUserEntered API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyWorkoutBrandName
  @abstract      Represents the brand name of a particular workout.
  @discussion    The expected value type is NSString.
  */
-HK_EXTERN NSString * const HKMetadataKeyWorkoutBrandName API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyWorkoutBrandName API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyGroupFitness
  @abstract      Represents whether or not a workout was performed as part of a group fitness class.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyGroupFitness API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyGroupFitness API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyIndoorWorkout
  @abstract      Represents whether or not a workout was performed indoors as opposed to outdoors.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyIndoorWorkout API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyIndoorWorkout API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyCoachedWorkout
  @abstract      Represents whether or not a workout was performed with a coach or personal trainer.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyCoachedWorkout API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyCoachedWorkout API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 typedef NS_ENUM(NSInteger, HKWeatherCondition) {
     HKWeatherConditionNone = 0,
@@ -252,7 +316,7 @@ typedef NS_ENUM(NSInteger, HKWeatherCondition) {
     HKWeatherConditionTropicalStorm,
     HKWeatherConditionHurricane,
     HKWeatherConditionTornado,
-} API_AVAILABLE(ios(10.0), watchos(3.0));
+} API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyWeatherCondition
@@ -260,7 +324,7 @@ typedef NS_ENUM(NSInteger, HKWeatherCondition) {
  @discussion    The expected value type is an NSNumber containing an HKWeatherCondition value. This key may be set on an
                 HKWorkout object to represent the overall weather condition during the workout.
  */
-HK_EXTERN NSString * const HKMetadataKeyWeatherCondition API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeyWeatherCondition API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyWeatherTemperature
@@ -268,15 +332,15 @@ HK_EXTERN NSString * const HKMetadataKeyWeatherCondition API_AVAILABLE(ios(10.0)
  @discussion    The expected value type is an HKQuantity expressed in a temperature unit. This key may be set on an
                 HKWorkout object to represent the overall temperature during the workout.
  */
-HK_EXTERN NSString * const HKMetadataKeyWeatherTemperature API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeyWeatherTemperature API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
- @constant      HKMetadataKeyHumidity
+ @constant      HKMetadataKeyWeatherHumidity
  @abstract      Represents the weather humidity during the sample.
  @discussion    The expected value type is an HKQuantity expressed in percent. This key may be set on an HKWorkout
                 object to represent the overall humidity during the workout.
  */
-HK_EXTERN NSString * const HKMetadataKeyWeatherHumidity API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeyWeatherHumidity API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeySexualActivityProtectionUsed
@@ -284,7 +348,7 @@ HK_EXTERN NSString * const HKMetadataKeyWeatherHumidity API_AVAILABLE(ios(10.0),
                 protection from STIs or protection from pregnancy.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeySexualActivityProtectionUsed API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeySexualActivityProtectionUsed API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyMenstrualCycleStart
@@ -292,7 +356,7 @@ HK_EXTERN NSString * const HKMetadataKeySexualActivityProtectionUsed API_AVAILAB
                 metadata key for category samples of type HKCategoryTypeIdentifierMenstrualFlow.
  @discussion    The expected value type is an NSNumber containing a BOOL value.
  */
-HK_EXTERN NSString * const HKMetadataKeyMenstrualCycleStart API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKMetadataKeyMenstrualCycleStart API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyLapLength
@@ -300,7 +364,7 @@ HK_EXTERN NSString * const HKMetadataKeyMenstrualCycleStart API_AVAILABLE(ios(9.
  @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
                 HKWorkout object to represent the length of a lap.
  */
-HK_EXTERN NSString * const HKMetadataKeyLapLength API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeyLapLength API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKWorkoutSwimmingLocationType
@@ -311,7 +375,7 @@ typedef NS_ENUM(NSInteger, HKWorkoutSwimmingLocationType) {
     HKWorkoutSwimmingLocationTypeUnknown = 0,
     HKWorkoutSwimmingLocationTypePool,
     HKWorkoutSwimmingLocationTypeOpenWater,
-} API_AVAILABLE(ios(10.0), watchos(3.0));
+} API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeySwimmingLocationType
@@ -319,7 +383,7 @@ typedef NS_ENUM(NSInteger, HKWorkoutSwimmingLocationType) {
  @discussion    The expected value type is an NSNumber containing an HKWorkoutSwimmingLocationType value. This key may
                 be set on an HKWorkout object to represent the swimming location type.
  */
-HK_EXTERN NSString * const HKMetadataKeySwimmingLocationType API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeySwimmingLocationType API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKSwimmingStrokeStyle
@@ -332,7 +396,8 @@ typedef NS_ENUM(NSInteger, HKSwimmingStrokeStyle) {
     HKSwimmingStrokeStyleBackstroke,
     HKSwimmingStrokeStyleBreaststroke,
     HKSwimmingStrokeStyleButterfly,
-} API_AVAILABLE(ios(10.0), watchos(3.0));
+    HKSwimmingStrokeStyleKickboard API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)),
+} API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeySwimmingStrokeStyle
@@ -341,7 +406,7 @@ typedef NS_ENUM(NSInteger, HKSwimmingStrokeStyle) {
                 an HKWorkoutEvent object with the type HKWorkoutEventTypeLap to represent the predominant style used
                 during the lap.
  */
-HK_EXTERN NSString * const HKMetadataKeySwimmingStrokeStyle API_AVAILABLE(ios(10.0), watchos(3.0));
+HK_EXTERN NSString * const HKMetadataKeySwimmingStrokeStyle API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKInsulinDeliveryReason
@@ -357,7 +422,7 @@ HK_EXTERN NSString * const HKMetadataKeySwimmingStrokeStyle API_AVAILABLE(ios(10
 typedef NS_ENUM(NSInteger, HKInsulinDeliveryReason) {
     HKInsulinDeliveryReasonBasal = 1,
     HKInsulinDeliveryReasonBolus,
-} API_AVAILABLE(ios(11.0), watchos(4.0));
+} API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyInsulinDeliveryReason
@@ -365,7 +430,7 @@ typedef NS_ENUM(NSInteger, HKInsulinDeliveryReason) {
                 samples of type HKQuantityTypeIdentifierInsulinDelivery.
  @discussion    The expected value type is an NSNumber containing a HKInsulinDeliveryReason value.
  */
-HK_EXTERN NSString * const HKMetadataKeyInsulinDeliveryReason API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeyInsulinDeliveryReason API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKBloodGlucoseMealTime
@@ -377,7 +442,7 @@ HK_EXTERN NSString * const HKMetadataKeyInsulinDeliveryReason API_AVAILABLE(ios(
 typedef NS_ENUM(NSInteger, HKBloodGlucoseMealTime) {
     HKBloodGlucoseMealTimePreprandial = 1,
     HKBloodGlucoseMealTimePostprandial,
-} API_AVAILABLE(ios(11.0), watchos(4.0));
+} API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyBloodGlucoseMealTime
@@ -388,7 +453,7 @@ typedef NS_ENUM(NSInteger, HKBloodGlucoseMealTime) {
                 HKQuantityTypeIdentifierDietaryCarbohydrates. The expected value type is an NSNumber containing a
                 HKBloodGlucoseMealTime value.
  */
-HK_EXTERN NSString * const HKMetadataKeyBloodGlucoseMealTime API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeyBloodGlucoseMealTime API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKVO2MaxTestType
@@ -402,14 +467,14 @@ typedef NS_ENUM(NSInteger, HKVO2MaxTestType) {
     HKVO2MaxTestTypeMaxExercise = 1,
     HKVO2MaxTestTypePredictionSubMaxExercise,
     HKVO2MaxTestTypePredictionNonExercise,
-} API_AVAILABLE(ios(11.0), watchos(4.0));
+} API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyVO2MaxTestType
  @abstract      Represents the test used to create VO2 Max Sample
  @discussion    The expected value type is an NSNumber containing a HKVO2MaxTestType value.
  */
-HK_EXTERN NSString * const HKMetadataKeyVO2MaxTestType API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKMetadataKeyVO2MaxTestType API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAverageSpeed
@@ -421,7 +486,7 @@ HK_EXTERN NSString * const HKMetadataKeyVO2MaxTestType API_AVAILABLE(ios(11.0), 
  set on quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
  representing a skiing run.
  */
-HK_EXTERN NSString * const HKMetadataKeyAverageSpeed API_AVAILABLE(ios(11.2), watchos(4.2));
+HK_EXTERN NSString * const HKMetadataKeyAverageSpeed API_AVAILABLE(ios(11.2), watchos(4.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyMaximumSpeed
@@ -430,7 +495,7 @@ HK_EXTERN NSString * const HKMetadataKeyAverageSpeed API_AVAILABLE(ios(11.2), wa
  set on quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
  representing a skiing run.
  */
-HK_EXTERN NSString * const HKMetadataKeyMaximumSpeed API_AVAILABLE(ios(11.2), watchos(4.2));
+HK_EXTERN NSString * const HKMetadataKeyMaximumSpeed API_AVAILABLE(ios(11.2), watchos(4.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAlpineSlopeGrade
@@ -441,7 +506,7 @@ HK_EXTERN NSString * const HKMetadataKeyMaximumSpeed API_AVAILABLE(ios(11.2), wa
  quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
  representing a skiing run.
  */
-HK_EXTERN NSString * const HKMetadataKeyAlpineSlopeGrade API_AVAILABLE(ios(11.2), watchos(4.2));
+HK_EXTERN NSString * const HKMetadataKeyAlpineSlopeGrade API_AVAILABLE(ios(11.2), watchos(4.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyElevationAscended
@@ -449,7 +514,7 @@ HK_EXTERN NSString * const HKMetadataKeyAlpineSlopeGrade API_AVAILABLE(ios(11.2)
  @discussion    The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
  workout, workout segments or distance samples.
  */
-HK_EXTERN NSString * const HKMetadataKeyElevationAscended API_AVAILABLE(ios(11.2), watchos(4.2));
+HK_EXTERN NSString * const HKMetadataKeyElevationAscended API_AVAILABLE(ios(11.2), watchos(4.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyElevationDescended
@@ -457,7 +522,7 @@ HK_EXTERN NSString * const HKMetadataKeyElevationAscended API_AVAILABLE(ios(11.2
  @discussion    The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
  workout, workout segments or distance samples.
  */
-HK_EXTERN NSString * const HKMetadataKeyElevationDescended API_AVAILABLE(ios(11.2), watchos(4.2));
+HK_EXTERN NSString * const HKMetadataKeyElevationDescended API_AVAILABLE(ios(11.2), watchos(4.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyFitnessMachineDuration
@@ -466,7 +531,7 @@ HK_EXTERN NSString * const HKMetadataKeyElevationDescended API_AVAILABLE(ios(11.
                 HKWorkout object to represent the duration of the workout as displayed by a GymKit connected fitness
                 machine.
  */
-HK_EXTERN NSString * const HKMetadataKeyFitnessMachineDuration API_AVAILABLE(ios(12.0), watchos(5.0));
+HK_EXTERN NSString * const HKMetadataKeyFitnessMachineDuration API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyIndoorBikeDistance
@@ -474,7 +539,7 @@ HK_EXTERN NSString * const HKMetadataKeyFitnessMachineDuration API_AVAILABLE(ios
  @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
                 HKWorkout object to represent the distance covered during an indoor bike workout.
  */
-HK_EXTERN NSString * const HKMetadataKeyIndoorBikeDistance API_AVAILABLE(ios(12.0), watchos(5.0));
+HK_EXTERN NSString * const HKMetadataKeyIndoorBikeDistance API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyCrossTrainerDistance
@@ -482,7 +547,7 @@ HK_EXTERN NSString * const HKMetadataKeyIndoorBikeDistance API_AVAILABLE(ios(12.
  @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
                 HKWorkout object to represent the distance covered during a cross trainer workout.
  */
-HK_EXTERN NSString * const HKMetadataKeyCrossTrainerDistance API_AVAILABLE(ios(12.0), watchos(5.0));
+HK_EXTERN NSString * const HKMetadataKeyCrossTrainerDistance API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyHeartRateEventThreshold
@@ -491,7 +556,7 @@ HK_EXTERN NSString * const HKMetadataKeyCrossTrainerDistance API_AVAILABLE(ios(1
                 This key will be set on heart rate event samples of type HKCategoryTypeIdentifierHighHeartRateEvent and
                 HKCategoryTypeIdentifierLowHeartRateEvent.
  */
-HK_EXTERN NSString * const HKMetadataKeyHeartRateEventThreshold API_AVAILABLE(ios(12.2), watchos(5.2));
+HK_EXTERN NSString * const HKMetadataKeyHeartRateEventThreshold API_AVAILABLE(ios(12.2), watchos(5.2), macCatalyst(13.0), macos(13.0));
 
 
 /*!
@@ -500,7 +565,7 @@ HK_EXTERN NSString * const HKMetadataKeyHeartRateEventThreshold API_AVAILABLE(io
  @discussion    The expected value type is an HKQuantity expressed in a METs (kcal/(kg*hr)) unit. This key may be set on an
                 HKWorkout object to represent the average workout intensity represented as METs over the entire workout duration.
  */
-HK_EXTERN NSString * const HKMetadataKeyAverageMETs API_AVAILABLE(ios(13.0), watchos(6.0));
+HK_EXTERN NSString * const HKMetadataKeyAverageMETs API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAudioExposureLevel
@@ -508,7 +573,7 @@ HK_EXTERN NSString * const HKMetadataKeyAverageMETs API_AVAILABLE(ios(13.0), wat
  @discussion    The expected value is an HKQuantity whose value is the audio level
                 associated with the event measured in dBASPL units.
  */
-HK_EXTERN NSString * const HKMetadataKeyAudioExposureLevel API_AVAILABLE(ios(13.0), watchos(6.0));
+HK_EXTERN NSString * const HKMetadataKeyAudioExposureLevel API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
 @constant      HKMetadataKeyAudioExposureDuration
@@ -517,7 +582,7 @@ HK_EXTERN NSString * const HKMetadataKeyAudioExposureLevel API_AVAILABLE(ios(13.
                This key may be set on headphone audio exposure event samples to indicate
                the duration of time that the user was actually exposed to audio through their headphones.
 */
-HK_EXTERN NSString * const HKMetadataKeyAudioExposureDuration API_AVAILABLE(ios(14.2), watchos(7.1));
+HK_EXTERN NSString * const HKMetadataKeyAudioExposureDuration API_AVAILABLE(ios(14.2), watchos(7.1), macCatalyst(14.2), macos(13.0));
 
 /*!
  @enum          HKAppleECGAlgorithmVersion
@@ -527,15 +592,15 @@ HK_EXTERN NSString * const HKMetadataKeyAudioExposureDuration API_AVAILABLE(ios(
  */
 typedef NS_ENUM(NSInteger, HKAppleECGAlgorithmVersion) {
     HKAppleECGAlgorithmVersion1 = 1,
-    HKAppleECGAlgorithmVersion2 API_AVAILABLE(ios(14.3), watchos(7.2)) = 2,
-} API_AVAILABLE(ios(14.0), watchos(7.0));
+    HKAppleECGAlgorithmVersion2 API_AVAILABLE(ios(14.3), watchos(7.2), macCatalyst(14.3), macos(13.0)) = 2,
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAppleECGAlgorithmVersion
  @abstract      Represents the ECG algorithm version that was used to generate a particular HKElectrocardiogram.
  @discussion    The expected value type is an an NSNumber containing a HKAppleECGAlgorithmVersion value.
  */
-HK_EXTERN NSString * const HKMetadataKeyAppleECGAlgorithmVersion API_AVAILABLE(ios(14.0), watchos(7.0));
+HK_EXTERN NSString * const HKMetadataKeyAppleECGAlgorithmVersion API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
  @enum          HKDevicePlacementSide
@@ -550,7 +615,7 @@ typedef NS_ENUM(NSInteger, HKDevicePlacementSide) {
     HKDevicePlacementSideLeft,
     HKDevicePlacementSideRight,
     HKDevicePlacementSideCentral,
-} API_AVAILABLE(ios(14.0), watchos(7.0));
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyDevicePlacementSide
@@ -558,48 +623,77 @@ typedef NS_ENUM(NSInteger, HKDevicePlacementSide) {
  @discussion    The expected value type is an NSNumber containing a HKDevicePlacementSide value.  This key is expected to
                 be written for Walking Aymmetry Percentage.
  */
-HK_EXTERN NSString * const HKMetadataKeyDevicePlacementSide API_AVAILABLE(ios(14.0), watchos(7.0));
+HK_EXTERN NSString * const HKMetadataKeyDevicePlacementSide API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
 @constant      HKMetadataKeyBarometricPressure
 @abstract      Represents the barometric pressure recorded at the time of a sample.
 @discussion    The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals, millimeters of Mercury).
 */
-HK_EXTERN NSString * const HKMetadataKeyBarometricPressure API_AVAILABLE(ios(14.0), watchos(7.0));
+HK_EXTERN NSString * const HKMetadataKeyBarometricPressure API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAppleDeviceCalibrated
  @abstract      Represents the calibration status of the devices used to generate this sample.
  @discussion    The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
  */
-HK_EXTERN NSString * const HKMetadataKeyAppleDeviceCalibrated API_AVAILABLE(ios(14.0), watchos(7.0));
+HK_EXTERN NSString * const HKMetadataKeyAppleDeviceCalibrated API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
 @constant      HKMetadataKeyVO2MaxValue
 @abstract      Represents a VO2Max value that can be associated with, for example, Cardio Fitness Events
 @discussion    This key should be used to store an HKQuantity with a unit of `ml/kg·min`
 */
-HK_EXTERN NSString * const HKMetadataKeyVO2MaxValue API_AVAILABLE(ios(14.3), watchos(7.2));
+HK_EXTERN NSString * const HKMetadataKeyVO2MaxValue API_AVAILABLE(ios(14.3), watchos(7.2), macCatalyst(14.3), macos(13.0));
 
 /*!
 @constant      HKMetadataKeyLowCardioFitnessEventThreshold
 @abstract      Can be used to store a snapshot of the threshold used to classify VO2Max values as "low"
 @discussion    This key should be used to store an HKQuantity, with a unit of `ml/kg·min`, representing the low fitness threshold.
 */
-HK_EXTERN NSString * const HKMetadataKeyLowCardioFitnessEventThreshold API_AVAILABLE(ios(14.3), watchos(7.2));
+HK_EXTERN NSString * const HKMetadataKeyLowCardioFitnessEventThreshold API_AVAILABLE(ios(14.3), watchos(7.2), macCatalyst(14.3), macos(13.0));
 
 /*!
 @constant      HKMetadataKeyDateOfEarliestDataUsedForEstimate
 @abstract      Represents how far back an estimation algorithm incorporated data from.
 @discussion    The expected value is an NSDate indicating the earliest date of data used to produce an estimated value for an HKSample.
 */
-HK_EXTERN NSString * const HKMetadataKeyDateOfEarliestDataUsedForEstimate API_AVAILABLE(ios(15.0), watchos(8.0));
+HK_EXTERN NSString * const HKMetadataKeyDateOfEarliestDataUsedForEstimate API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 /*!
  @constant      HKMetadataKeyAlgorithmVersion
  @abstract      The version of the algorithm used to generate the sample.
  @discussion    The key for an NSNumber containing an NSInteger indicating the version of the algorithm used to generate the sample.
  */
-HK_EXTERN NSString * const HKMetadataKeyAlgorithmVersion API_AVAILABLE(ios(15.0), watchos(8.0));
+HK_EXTERN NSString * const HKMetadataKeyAlgorithmVersion API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeySWOLFScore
+ @abstract      Represents sum of strokes per length and time for the length. Calculated for each lap event and segment event during swimming workout.
+ @discussion    The expected value type is an NSNumber containing a score. This key may be set on an HKWorkout object to represent the SWOLF Score during the whole workout.
+ */
+HK_EXTERN NSString * const HKMetadataKeySWOLFScore API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyQuantityClampedToLowerBound
+ @abstract      Indicates the quantity was clamped to a lower bound.
+ @discussion    Value is a BOOL indicating whether or not the quantity value in the sample has been clamped to some lower bound
+ */
+HK_EXTERN NSString * const HKMetadataKeyQuantityClampedToLowerBound API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyQuantityClampedToUpperBound
+ @abstract      Indicates the quantity was clamped to an upper bound.
+ @discussion    Value is a BOOL indicating whether or not the quantity value in the sample has been clamped to some upper bound
+ */
+HK_EXTERN NSString * const HKMetadataKeyQuantityClampedToUpperBound API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @constant      HKMetadataKeyGlassesPrescriptionDescription
+ @abstract      Represents the description that may be associated with a HKGlassesPrescription.
+ @discussion    Glasses are often customized for different purposes like reading or distance. Prescriptions received by an eye care professional can provide different ocular functions.
+                Users may also customize their glasses for different scenarios. The value of the metadata is a NSString that describes the purpose of a HKGlassesPrescription.
+  */
+ HK_EXTERN NSString * const HKMetadataKeyGlassesPrescriptionDescription API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

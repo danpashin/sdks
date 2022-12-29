@@ -3,15 +3,15 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleCV3DHA.framework/AppleCV3DHA
-current-version:       4.42
-compatibility-version: 4.42
-objc-constraint:       retain_release
+current-version:       5.54.7
+compatibility-version: 5.54.7
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CV3DHAFeatureExtractionConfigCreate,
                             _CV3DHAFeatureExtractionConfigGetDetectionFlow,
                             _CV3DHAFeatureExtractionConfigGetDisablePostProcessing,
                             _CV3DHAFeatureExtractionConfigGetEnableDynamicThresholding,
+                            _CV3DHAFeatureExtractionConfigGetEnableFeatureMatching,
                             _CV3DHAFeatureExtractionConfigGetEnableOrientationAssignment,
                             _CV3DHAFeatureExtractionConfigGetEnableParedGrid,
                             _CV3DHAFeatureExtractionConfigGetExtraTestEnable,
@@ -40,6 +40,7 @@ exports:
                             _CV3DHAFeatureExtractionConfigSetDetectionFlow,
                             _CV3DHAFeatureExtractionConfigSetDisablePostProcessing,
                             _CV3DHAFeatureExtractionConfigSetEnableDynamicThresholding,
+                            _CV3DHAFeatureExtractionConfigSetEnableFeatureMatching,
                             _CV3DHAFeatureExtractionConfigSetEnableOrientationAssignment,
                             _CV3DHAFeatureExtractionConfigSetEnableParedGrid,
                             _CV3DHAFeatureExtractionConfigSetExtraTestEnable,
@@ -66,6 +67,8 @@ exports:
                             _CV3DHAFeatureExtractionGetActionBuffer,
                             _CV3DHAFeatureExtractionGetActionSizeInBytes,
                             _CV3DHAFeatureExtractionGetDynamicThresholdingEnable,
+                            _CV3DHAFeatureExtractionGetDynamicThresholdingMaxKeypointsAtIndex,
+                            _CV3DHAFeatureExtractionGetDynamicThresholdingMaxKeypointsConfigCount,
                             _CV3DHAFeatureExtractionGetDynamicThresholdingTargetKeypointsAtIndex,
                             _CV3DHAFeatureExtractionGetDynamicThresholdingTargetKeypointsConfigCount,
                             _CV3DHAFeatureExtractionGetKeypointAndDescriptorSizeInBytes,
@@ -80,6 +83,7 @@ exports:
                             _CV3DHAFeatureExtractionProcessHwOutputs,
                             _CV3DHAFeatureExtractionProcessKeyOutputs,
                             _CV3DHAFeatureExtractionRelease,
+                            _CV3DHAFeatureExtractionUpdateConfig,
                             _kCV3DHAFeatureDetectionFlow0,
                             _kCV3DHAFeatureDetectionFlow1,
                             _kCV3DHAFeatureDetectionFlow2 ]

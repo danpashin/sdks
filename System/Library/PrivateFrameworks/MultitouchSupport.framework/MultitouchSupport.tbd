@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MultitouchSupport.framework/MultitouchSupport
-current-version:       5100.25
+current-version:       6100.37
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -59,6 +59,7 @@ exports:
                             _MTDeviceGetGUID, _MTDeviceGetGenerateRingCentroid,
                             _MTDeviceGetMTActuator,
                             _MTDeviceGetMinDigitizerPressureValue,
+                            _MTDeviceGetMultipleFirmwaresConfig,
                             _MTDeviceGetOpenRows, _MTDeviceGetParserEnabled,
                             _MTDeviceGetParserOptions, _MTDeviceGetParserType,
                             _MTDeviceGetReport, _MTDeviceGetResetCount,
@@ -89,6 +90,7 @@ exports:
                             _MTDevicePowerSetEnabled, _MTDevicePowerSetState,
                             _MTDeviceRelease, _MTDeviceScheduleOnRunLoop,
                             _MTDeviceSendExternalMessage,
+                            _MTDeviceSetBinaryFiltersProperty,
                             _MTDeviceSetDisableTipCentroid,
                             _MTDeviceSetFaceDetectionModeEnabled,
                             _MTDeviceSetGenerateRingCentroid,
@@ -106,7 +108,8 @@ exports:
                             _MTDeviceSetTouchMode, _MTDeviceSetZephyrParameter,
                             _MTDeviceShouldDispatchNormalizedVelocity,
                             _MTDeviceShouldDispatchRelativeCoordinates,
-                            _MTDeviceShouldResetOnButton, _MTDeviceStart,
+                            _MTDeviceShouldResetOnButton,
+                            _MTDeviceShouldSkipFaceDetectionMode, _MTDeviceStart,
                             _MTDeviceStop, _MTDeviceSupportsActuation,
                             _MTDeviceSupportsForce, _MTDeviceSupportsSilentClick,
                             _MTDeviceSupportsTapToWake,
@@ -223,4 +226,5 @@ exports:
                             _mt_DeviceGetSensorRegionDescriptor,
                             _mt_DeviceGetSensorRegionParam, _mt_GetTimeStamp_ms,
                             _mt_UpdateStatisticChannelValue ]
+    objc-classes:         [ MTAHTSupport ]
 ...

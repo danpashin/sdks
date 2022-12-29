@@ -1,0 +1,19 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           36FA4B3A-DDC4-3835-8C81-432D22B80A9F
+  - target:          arm64e-ios
+    value:           23B32878-976A-3641-B546-63C464672957
+install-name:    '/System/Library/Frameworks/MetalFX.framework/MetalFX'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ MFXSpatialScalingEffectDescriptor, MFXTemporalScalingEffectDescriptor, 
+                       MTLFXSpatialScalerDescriptor, MTLFXTemporalScalerDescriptor, 
+                       _MTLFXSpatialScaler, _MTLFXTemporalScaler ]
+...

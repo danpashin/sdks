@@ -15,6 +15,7 @@
 #import <IOSurface/IOSurfaceRef.h>
 #import <Metal/MTLCounters.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 @protocol MTLCommandQueue;
 @protocol MTLDevice;
@@ -34,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class MTLRasterizationRateMapDescriptor;
 @class MTLTileRenderPipelineDescriptor;
 @class MTLTilePipelineColorAttachmentDescriptor;
+@class MTLMeshRenderPipelineDescriptor;
 @class MTLSamplerDescriptor;
 @class MTLRenderPipelineColorAttachmentDescriptor;
 @class MTLDepthStencilDescriptor;
@@ -67,6 +69,22 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MTLIntersectionFunctionTable;
 @class MTLIntersectionFunctionTableDescriptor;
 @class MTLStitchedLibraryDescriptor;
+@protocol MTLArgumentEncoder;
+
+@protocol MTLIOFileHandle;
+@protocol MTLIOCommandQueue;
+@class MTLIOCommandQueueDescriptor;
+
+
+typedef NS_ENUM(NSInteger, MTLIOCompressionMethod) {
+    MTLIOCompressionMethodZlib = 0,
+    MTLIOCompressionMethodLZFSE = 1,
+    MTLIOCompressionMethodLZ4 = 2,
+    MTLIOCompressionMethodLZMA = 3,
+    MTLIOCompressionMethodLZBitmap = 4,
+};
+
+
 
 /*!
  @brief Returns a reference to the preferred system default Metal device.
@@ -131,28 +149,30 @@ typedef NS_ENUM(NSUInteger, MTLFeatureSet)
     MTLFeatureSet_tvOS_GPUFamily1_v3 API_AVAILABLE(tvos(11.0)) API_UNAVAILABLE(macos, ios) = 30002,
     
     MTLFeatureSet_tvOS_GPUFamily1_v4 API_AVAILABLE(tvos(12.0)) API_UNAVAILABLE(macos, ios) = 30004,
-} API_AVAILABLE(macos(10.11), ios(8.0), tvos(9.0));
+} API_DEPRECATED("Use MTLGPUFamily instead", macos(10.11, 13.0), ios(8.0, 16.0), tvos(9.0, 16.0));
 
 typedef NS_ENUM(NSInteger, MTLGPUFamily)
 {
-    MTLGPUFamilyApple1 = 1001,
-    MTLGPUFamilyApple2 = 1002,
-    MTLGPUFamilyApple3 = 1003,
-    MTLGPUFamilyApple4 = 1004,
-    MTLGPUFamilyApple5 = 1005,
-    MTLGPUFamilyApple6 = 1006,
-    MTLGPUFamilyApple7 = 1007,
-    MTLGPUFamilyApple8 = 1008,
+    MTLGPUFamilyApple1  = 1001,
+    MTLGPUFamilyApple2  = 1002,
+    MTLGPUFamilyApple3  = 1003,
+    MTLGPUFamilyApple4  = 1004,
+    MTLGPUFamilyApple5  = 1005,
+    MTLGPUFamilyApple6  = 1006,
+    MTLGPUFamilyApple7  = 1007,
+    MTLGPUFamilyApple8  = 1008,
     
-    MTLGPUFamilyMac1 = 2001,
+    MTLGPUFamilyMac1 API_DEPRECATED_WITH_REPLACEMENT("MTLGPUFamilyMac2", macos(10.15, 13.0), ios(13.0, 16.0)) = 2001,
     MTLGPUFamilyMac2 = 2002,
     
     MTLGPUFamilyCommon1 = 3001,
     MTLGPUFamilyCommon2 = 3002,
     MTLGPUFamilyCommon3 = 3003,
     
-    MTLGPUFamilyMacCatalyst1 = 4001,
-    MTLGPUFamilyMacCatalyst2 = 4002,
+    MTLGPUFamilyMacCatalyst1 API_DEPRECATED_WITH_REPLACEMENT("MTLGPUFamilyMac2", macos(10.15, 13.0), ios(13.0, 16.0)) = 4001,
+    MTLGPUFamilyMacCatalyst2 API_DEPRECATED_WITH_REPLACEMENT("MTLGPUFamilyMac2", macos(10.15, 13.0), ios(13.0, 16.0)) = 4002,
+    
+    MTLGPUFamilyMetal3 API_AVAILABLE(macos(13.0), ios(16.0)) = 5001,
 } API_AVAILABLE(macos(10.15), ios(13.0));
 
 
@@ -198,6 +218,17 @@ typedef NS_ENUM(NSUInteger, MTLSparseTextureRegionAlignmentMode)
     MTLSparseTextureRegionAlignmentModeOutward   = 0,
     MTLSparseTextureRegionAlignmentModeInward    = 1,
 } API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(13.0));
+
+/*!
+ @enum MTLSparsePageSize
+ @abstract Physical size of sparse resource page in KBs.
+ */
+typedef NS_ENUM(NSInteger, MTLSparsePageSize)
+{
+    MTLSparsePageSize16 = 101,
+    MTLSparsePageSize64 = 102,
+    MTLSparsePageSize256 = 103,
+} API_AVAILABLE(macos(13.0), ios(16.0));
 
 /**
  * @brief Describes the memory requirements for an acceleration structure
@@ -323,7 +354,6 @@ MTL_EXPORT API_AVAILABLE(macos(10.13), ios(11.0))
 @end
 
 
-
 /*!
  @protocol MTLDevice
  @abstract MTLDevice represents a processor capable of data parallel computations
@@ -344,6 +374,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  to identify the GPU across task boundaries.
 */
 @property (readonly) uint64_t registryID API_AVAILABLE(macos(10.13), ios(11.0)) ;
+
 
 /*!
  @property maxThreadsPerThreadgroup
@@ -455,7 +486,8 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @abstract Query device for Barycentric coordinates support; deprecated, use supportsShaderBarycentricCoordinates
  @return BOOL value. If YES, the device barycentric coordinates
  */
-@property(readonly, getter=areBarycentricCoordsSupported) BOOL barycentricCoordsSupported API_AVAILABLE(macos(10.15), ios(14.0));
+@property(readonly, getter=areBarycentricCoordsSupported) BOOL barycentricCoordsSupported API_DEPRECATED_WITH_REPLACEMENT("supportsShaderBarycentricCoordinates", macos(10.15, 13.0), ios(14.0, 16.0)) API_UNAVAILABLE(tvos);
+
 /*!
  @property supportsShaderBarycentricCoordinates
  @abstract Query device for Barycentric Coordinates support.
@@ -592,7 +624,8 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @method newLibraryWithFile:
  @abstract Load a MTLLibrary from a metallib file.
  */
-- (nullable id <MTLLibrary>)newLibraryWithFile:(NSString *)filepath error:(__autoreleasing NSError **)error;
+- (nullable id <MTLLibrary>)newLibraryWithFile:(NSString *)filepath error:(__autoreleasing NSError **)error
+API_DEPRECATED("Use -newLibraryWithURL:error: instead", macos(10.11, 13.0), ios(8.0, 16.0));
 
 /*!
  @method newLibraryWithURL:
@@ -702,7 +735,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @method supportsFeatureSet:
  @abstract Returns TRUE if the feature set is supported by this MTLDevice.
  */
-- (BOOL)supportsFeatureSet:(MTLFeatureSet)featureSet;
+- (BOOL)supportsFeatureSet:(MTLFeatureSet)featureSet API_DEPRECATED("Use supportsFamily instead", macos(10.11, 13.0), ios(8.0, 16.0), tvos(9.0, 16.0));
 
 /*!
  @method supportsFamily:
@@ -742,6 +775,23 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @abstract Create and compile a new MTLRenderPipelineState object asynchronously given a MTLTileRenderPipelineDescriptor.
  */
 - (void)newRenderPipelineStateWithTileDescriptor:(MTLTileRenderPipelineDescriptor *)descriptor options:(MTLPipelineOption)options completionHandler:(MTLNewRenderPipelineStateWithReflectionCompletionHandler)completionHandler API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0), tvos(14.5));
+
+/*!
+ @method newRenderPipelineStateWithMeshDescriptor:options:reflection:error:
+ @abstract Create and compile a new MTLRenderPipelineState object synchronously given a MTLMeshRenderPipelineDescriptor.
+ */
+- (nullable id <MTLRenderPipelineState>)newRenderPipelineStateWithMeshDescriptor:(MTLMeshRenderPipelineDescriptor*)descriptor
+                                                                         options:(MTLPipelineOption)options
+                                                                      reflection:(MTLAutoreleasedRenderPipelineReflection * __nullable)reflection
+                                                                           error:(__autoreleasing NSError **)error API_AVAILABLE(macos(13.0), ios(16.0));
+
+/*!
+ @method newRenderPipelineStateWithMeshDescriptor:options:completionHandler:
+ @abstract Create and compile a new MTLRenderPipelineState object asynchronously given a MTLMeshRenderPipelineDescriptor.
+ */
+- (void)newRenderPipelineStateWithMeshDescriptor:(MTLMeshRenderPipelineDescriptor *)descriptor
+                                         options:(MTLPipelineOption)options
+                               completionHandler:(MTLNewRenderPipelineStateWithReflectionCompletionHandler)completionHandler API_AVAILABLE(macos(13.0), ios(16.0));
 
 /*!
  @property maxThreadgroupMemoryLength
@@ -827,7 +877,42 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 
 
 
-//Keep around to keep building
+
+
+/*!
+ * @method newIOHandleWithURL:url:error:
+ * @abstract Create and return a handle that points to a raw file on disk. This object can be used by
+ * MTLIOCommandBuffer load commands to source data for MTLResources. If the creation
+ * of the handle fails the return value will be nil and the optional error if passed in will be non-nil
+ * with details of the error.
+ */
+-(nullable id<MTLIOFileHandle>) newIOHandleWithURL:(NSURL *)url
+                                error:(NSError **)error API_AVAILABLE(macos(13.0), ios(16.0));
+
+
+/*!
+ * @method newIOCommandQueueWithDescriptor:descriptor:error:
+ * @abstract Create and return an IO queue. If the creation
+ * of the queue fails the return value will be nil and the optional error if passed in will be non-nil
+ * with details of the error.
+ */
+-(nullable id<MTLIOCommandQueue>) newIOCommandQueueWithDescriptor:(MTLIOCommandQueueDescriptor*)descriptor
+                                            error:(NSError **)error API_AVAILABLE(macos(13.0), ios(16.0));
+
+
+/*!
+ * @method newIOHandleWithURL:url:compressionMethod:error:
+ * @abstract Create and return a handle that points to a compressed file on disk (a file that was
+ * created with MTLIOCompressionContext). This object can be used by
+ * MTLIOCommandBuffer load commands to source data for MTLResources. If the creation
+ * of the handle fails the return value will be nil and the optional error if passed in will be non-nil
+ * with details of the error.
+ */
+-(nullable id<MTLIOFileHandle>) newIOHandleWithURL:(NSURL *)url
+                    compressionMethod:(MTLIOCompressionMethod)compressionMethod
+                                error:(NSError **)error API_AVAILABLE(macos(13.0), ios(16.0));
+
+
 
 /*!
  * @method sparseTileSizeWithTextureType:pixelFormat:sampleCount:
@@ -867,6 +952,22 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 @required
 
 
+/*!
+ @property sparseTileSizeInBytesForSparsePageSize
+ @abstract Returns the number of bytes required to map one sparse texture tile for a given MTLSparsePageSize
+ */
+- (NSUInteger) sparseTileSizeInBytesForSparsePageSize:(MTLSparsePageSize)sparsePageSize API_AVAILABLE(macos(13.0), ios(16.0));
+
+/*!
+ * @method sparseTileSizeWithTextureType:pixelFormat:sampleCount:sparsePageSize
+ * @abstract Returns tile size for sparse texture with given type, pixel format and sample count.
+ */
+-(MTLSize) sparseTileSizeWithTextureType:(MTLTextureType)textureType
+                             pixelFormat:(MTLPixelFormat)pixelFormat
+                             sampleCount:(NSUInteger)sampleCount
+                          sparsePageSize:(MTLSparsePageSize)sparsePageSize API_AVAILABLE(macos(13.0), ios(16.0));
+
+
 
 @property (readonly) NSUInteger maxBufferLength API_AVAILABLE(macos(10.14), ios(12.0));
 
@@ -903,6 +1004,9 @@ typedef uint64_t MTLTimestamp;
 -(void)sampleTimestamps:(MTLTimestamp *)cpuTimestamp
            gpuTimestamp:(MTLTimestamp *)gpuTimestamp
     API_AVAILABLE(macos(10.15), ios(14.0));
+
+
+-(id<MTLArgumentEncoder>)newArgumentEncoderWithBufferBinding:(id<MTLBufferBinding>)bufferBinding API_AVAILABLE(macos(13.0), ios(16.0));
 
 /*!
  @method supportsCounterSampling:
@@ -976,6 +1080,22 @@ typedef uint64_t MTLTimestamp;
 - (nullable id <MTLAccelerationStructure>)newAccelerationStructureWithSize:(NSUInteger)size API_AVAILABLE(macos(11.0), ios(14.0));
 - (nullable id <MTLAccelerationStructure>)newAccelerationStructureWithDescriptor:(MTLAccelerationStructureDescriptor *)descriptor API_AVAILABLE(macos(11.0), ios(14.0));
 
+
+/*!
+ @method heapAccelerationStructureSizeAndAlignWithSize:
+ @abstract Determine the byte size of acceleration structures when sub-allocated from a heap.
+ @discussion This method can be used to help determine the required heap size.
+ */
+- (MTLSizeAndAlign)heapAccelerationStructureSizeAndAlignWithSize:(NSUInteger)size API_AVAILABLE(macos(13.0), ios(16.0));
+
+/*!
+ @method heapAccelerationStructureSizeAndAlignWithDescriptor:
+ @abstract Determine the byte size of acceleration structures when sub-allocated from a heap. This is a convenience method which computes the acceleration structure size based on the descriptor.
+ @discussion This method can be used to help determine the required heap size.
+ */
+- (MTLSizeAndAlign)heapAccelerationStructureSizeAndAlignWithDescriptor:(MTLAccelerationStructureDescriptor *)descriptor API_AVAILABLE(macos(13.0), ios(16.0));
+
+
 /*!
  @property supportsFunctionPointers
  @abstract Query device support for using function pointers from compute pipelines.
@@ -1003,6 +1123,7 @@ typedef uint64_t MTLTimestamp;
  @return BOOL value. If YES, the device supports the primitive motion blur api. If NO, the device does not.
  */
 @property (readonly) BOOL supportsPrimitiveMotionBlur API_AVAILABLE(macos(11.0), ios(14.0));
+
 
 @end
 NS_ASSUME_NONNULL_END

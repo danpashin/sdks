@@ -2,7 +2,7 @@
 //  HKStatistics.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -39,16 +39,16 @@ typedef NS_OPTIONS(NSUInteger, HKStatisticsOptions) {
     HKStatisticsOptionDiscreteMin               = 1 << 2,
     HKStatisticsOptionDiscreteMax               = 1 << 3,
     HKStatisticsOptionCumulativeSum             = 1 << 4,
-    HKStatisticsOptionMostRecent API_AVAILABLE(ios(13.0), watchos(6.0))  = 1 << 5,
+    HKStatisticsOptionMostRecent API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))  = 1 << 5,
     HKStatisticsOptionDiscreteMostRecent API_DEPRECATED_WITH_REPLACEMENT("HKStatisticsOptionMostRecent", ios(12.0, 13.0), watchos(5.0, 6.0))  = HKStatisticsOptionMostRecent,
-    HKStatisticsOptionDuration API_AVAILABLE(ios(13.0), watchos(6.0))  = 1 << 6,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+    HKStatisticsOptionDuration API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))  = 1 << 6,
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @class         HKStatistics
  @abstract      Represents statistics for quantity samples over a period of time.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKStatistics : NSObject <NSSecureCoding, NSCopying>
 
 @property (readonly, strong) HKQuantityType *quantityType;
@@ -105,13 +105,13 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @abstract      Returns the most recent quantity for the given source in the time period represented by the receiver.
  @discussion    If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
  */
-- (nullable HKQuantity *)mostRecentQuantityForSource:(HKSource *)source API_AVAILABLE(ios(12.0), watchos(5.0));
+- (nullable HKQuantity *)mostRecentQuantityForSource:(HKSource *)source API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        mostRecentQuantity
  @abstract      Returns the most recent quantity in the time period represented by the receiver.
  */
-- (nullable HKQuantity *)mostRecentQuantity API_AVAILABLE(ios(12.0), watchos(5.0));
+- (nullable HKQuantity *)mostRecentQuantity API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        mostRecentQuantityDateIntervalForSource:
@@ -119,13 +119,13 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 represented by the receiver.
  @discussion    If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
  */
-- (nullable NSDateInterval *)mostRecentQuantityDateIntervalForSource:(HKSource *)source API_AVAILABLE(ios(12.0), watchos(5.0));
+- (nullable NSDateInterval *)mostRecentQuantityDateIntervalForSource:(HKSource *)source API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        mostRecentQuantityDateInterval
  @abstract      Returns the date interval of the most recent quantity in the time period represented by the receiver.
  */
-- (nullable NSDateInterval *)mostRecentQuantityDateInterval API_AVAILABLE(ios(12.0), watchos(5.0));
+- (nullable NSDateInterval *)mostRecentQuantityDateInterval API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /* Cumulative Quantities */
 
@@ -149,14 +149,14 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @abstract      Total duration, as a time-unit compatible quantity, covered by the samples represented by these statistics.
  @discussion    Only present if HKStatisticsOptionDuration is is specified.
  */
-- (nullable HKQuantity *)duration API_AVAILABLE(ios(13.0), watchos(6.0));
+- (nullable HKQuantity *)duration API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        durationForSource:
  @abstract      Returns the duration, as a time-unit compatible quantity, for the given source in the time period represented by the receiver.
  @discussion    If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
  */
-- (nullable HKQuantity *)durationForSource:(HKSource *)source API_AVAILABLE(ios(13.0), watchos(6.0));
+- (nullable HKQuantity *)durationForSource:(HKSource *)source API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 @end
 

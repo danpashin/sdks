@@ -1,4 +1,4 @@
-
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARGeoTrackingTypes.h>)
 //
 //  ARGeoTrackingTypes.h
 //  ARKit
@@ -125,3 +125,6 @@ API_AVAILABLE(ios(14.0))
 
 NS_ASSUME_NONNULL_END
 
+#else
+#import <ARKitCore/ARGeoTrackingTypes.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARGeoTrackingTypes.h>)

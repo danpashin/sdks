@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           602A1EF3-32E5-3AF0-8981-C97CA2270479
+    value:           0DF20E82-DADF-3423-BC22-D5147CD06B7F
   - target:          arm64e-ios
-    value:           0E45393C-EF81-3635-8096-63B42BE46BDA
+    value:           142E630E-F18A-3363-ACC9-2901A8F6F41F
 install-name:    '/System/Library/Frameworks/IdentityLookup.framework/IdentityLookup'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _ILClassificationUIExtensionPointIdentifier, _ILDefaultLog, 
                        _ILMessageFilterErrorDomain, _ILMessageFilterExtensionPointIdentifier, 
                        _ILMessageFilterPrivateErrorDomain ]
@@ -20,6 +20,7 @@ exports:
                        ILClassificationController, ILClassificationReportRequest, 
                        ILClassificationRequest, ILClassificationResponse, ILCommunication, 
                        ILMessageClassificationRequest, ILMessageCommunication, ILMessageFilter, 
+                       ILMessageFilterCapabilitiesQueryRequest, ILMessageFilterCapabilitiesQueryResponse, 
                        ILMessageFilterExtension, ILMessageFilterExtensionContext, 
                        ILMessageFilterExtensionHostContext, ILMessageFilterQueryRequest, 
                        ILMessageFilterQueryResponse, ILMessageFilterReportRequest, 

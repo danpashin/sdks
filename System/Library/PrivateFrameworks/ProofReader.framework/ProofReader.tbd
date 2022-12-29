@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
-current-version:       552.1
+current-version:       583
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -22,8 +22,9 @@ exports:
                             _PRParameterNameTransformerLanguageModelWeight,
                             _PRScoreKey ]
     objc-classes:         [ AppleSpell, PRAutocorrectionContext, PRErrorModel,
-                            PRModification, PRPinyinContext, PRPinyinModification,
-                            PRPinyinString, PRZhuyinContext, PRZhuyinModification ]
+                            PRJyutpingContext, PRModification, PRPinyinContext,
+                            PRPinyinModification, PRPinyinString, PRZhuyinContext,
+                            PRZhuyinModification ]
     objc-ivars:           [ PRAutocorrectionContext._modificationMask,
                             PRPinyinContext._abbreviatedSyllableCount,
                             PRPinyinContext._addedModifications,
@@ -46,6 +47,7 @@ exports:
                             PRPinyinContext._prefixes,
                             PRPinyinContext._previouslyAnalyzedLength,
                             PRPinyinContext._removedModifications,
+                            PRPinyinContext._romanization,
                             PRPinyinContext._startIndex,
                             PRPinyinContext._startingPoint,
                             PRPinyinContext._syllableLengthArray,

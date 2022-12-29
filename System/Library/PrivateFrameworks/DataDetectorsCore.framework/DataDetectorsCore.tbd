@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
-current-version:       697.2
+current-version:       723
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -36,7 +36,7 @@ exports:
                             _DDBinderMailURLKey, _DDBinderMapsURLKey,
                             _DDBinderMoneyKey, _DDBinderNoResultKey,
                             _DDBinderPOBoxKey, _DDBinderParsecSourceKey,
-                            _DDBinderPhoneNumberKey,
+                            _DDBinderPhoneNumberKey, _DDBinderPhysicalAmountKey,
                             _DDBinderQuotedShortPhoneNumberKey,
                             _DDBinderSignatureBlockKey,
                             _DDBinderSpecialDateTimeKey, _DDBinderStateKey,
@@ -96,6 +96,7 @@ exports:
                             _DDResultCreateXMLRepresentation,
                             _DDResultCurrencyExtraction,
                             _DDResultDateExtractionDependsOnContextTense,
+                            _DDResultDisableURLSchemeChecking,
                             _DDResultExtractDayAndMonthWithSpecialDayIdentifierInYear,
                             _DDResultGetCFTypeID, _DDResultGetCategory,
                             _DDResultGetContextualData,
@@ -123,7 +124,10 @@ exports:
                             _DDResultIsPartialDateRangeOrTimeRange,
                             _DDResultIsPastDate, _DDResultIsPastDateWithLocale,
                             _DDResultNeedsMeridianGuess,
-                            _DDResultOffsetAbsoluteRange, _DDResultProximitySort,
+                            _DDResultOffsetAbsoluteRange,
+                            _DDResultPhysicalUnitExtraction,
+                            _DDResultPhysicalUnitsExtraction,
+                            _DDResultProximitySort,
                             _DDResultRemoveSubresultWithType,
                             _DDResultSelectBest, _DDResultSetAbsoluteRange,
                             _DDResultSetContent,

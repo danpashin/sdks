@@ -2,7 +2,7 @@
 //  HKCumulativeQuantitySeriesSample.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKCumulativeQuantitySample.h>

@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           6D6C994A-7053-3738-9591-2E21A42AA88C
   - target:          arm64-ios
-    value:           D5ECD625-C786-3B27-8FE8-9E5D6BBB259B
+    value:           890E2AD3-CEAC-396D-BBFF-F6D627F174AC
   - target:          arm64e-ios
-    value:           1CE24790-D173-3FC4-8159-2A04BF64B1E9
+    value:           C555EDCD-B8D0-3590-9D83-95D7F9CADAA6
 install-name:    '/usr/lib/libbsm.0.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _audit_set_terminal_host, _audit_set_terminal_port ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _au_bsm_to_domain, _au_bsm_to_errno, _au_bsm_to_fcntl_cmd, 
                        _au_bsm_to_socket_type, _au_close, _au_close_buffer, _au_close_token, 
                        _au_close_with_errors, _au_domain_to_bsm, _au_errno_to_bsm, 

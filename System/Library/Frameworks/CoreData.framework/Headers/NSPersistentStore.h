@@ -1,7 +1,7 @@
 /*
     NSPersistentStore.h
     Core Data
-    Copyright (c) 2004-2021, Apple Inc.
+    Copyright (c) 2004-2022, Apple Inc.
     All rights reserved.
 */
 
@@ -11,6 +11,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSError.h>
 #import <Foundation/NSURL.h>
+#import <CoreData/CoreDataDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class NSPersistentStoreRequest;
 @class NSPersistentStoreCoordinator;
 
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 @class NSCoreDataCoreSpotlightDelegate;
+#endif
 
 API_AVAILABLE(macosx(10.5),ios(3.0))
 @interface NSPersistentStore : NSObject {
@@ -33,7 +36,7 @@ API_AVAILABLE(macosx(10.5),ios(3.0))
    attempting to read from it. This method should never raise an exception.
  */
 + (nullable NSDictionary<NSString *, id> *)metadataForPersistentStoreWithURL:(NSURL *)url error:(NSError **)error;
-/* Set the medatada of the store at url to metadata. Must be overriden by subclasses. */
+/* Set the metadata of the store at url to metadata. Must be overriden by subclasses. */
 + (BOOL)setMetadata:(nullable NSDictionary<NSString *, id> *)metadata forPersistentStoreWithURL:(NSURL*)url error:(NSError **)error;
 
 /* Returns the NSMigrationManager class optimized for this store class.  Subclasses of NSPersistentStore can override this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to improve migration performance).
@@ -71,9 +74,11 @@ API_AVAILABLE(macosx(10.5),ios(3.0))
 // before removal.
 - (void)willRemoveFromPersistentStoreCoordinator:(nullable NSPersistentStoreCoordinator *)coordinator;
 
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 /* Return the Core Spotlight exporter if one exists for this store. The exporter
     can be set as part of the store options when it is added to the coordinator. */
 @property (nonatomic, readonly) NSCoreDataCoreSpotlightDelegate *coreSpotlightExporter API_AVAILABLE(macosx(10.13),ios(11.0)) API_UNAVAILABLE(tvos,watchos);
+#endif
 
 @end
 

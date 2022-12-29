@@ -7,13 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E26EBD15-BD44-3650-9F58-9AF539710500
+    value:           B0DF1C41-1D29-34B9-8B8C-EE7F9B917889
   - target:          arm64e-ios
-    value:           EB6B40DC-0932-3493-8CDB-74EC110ADC31
+    value:           DF1FF0CC-5E56-3585-AD0B-79947E38E812
 install-name:    '/System/Library/Frameworks/Accessibility.framework/Accessibility'
 swift-abi-version: 7
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '_$s10Foundation15AttributeScopesO13AccessibilityE0D10AttributesV010TextCustomB0O12markdownNameSSvgZ', 
                        '_$s10Foundation15AttributeScopesO13AccessibilityE0D10AttributesV010TextCustomB0O4nameSSvgZ', 
                        '_$s10Foundation15AttributeScopesO13AccessibilityE0D10AttributesV010TextCustomB0OAA19AttributedStringKeyADMc', 
@@ -193,9 +193,11 @@ exports:
                        '_$sSo27AXNumericDataAxisDescriptorC13AccessibilityE5rangeSNySdGvs', 
                        '_$sSo27AXNumericDataAxisDescriptorC13AccessibilityE5title5range17gridlinePositions24valueDescriptionProviderABSS_SNySdGSaySdGSSSdctcfC', 
                        '_$sSo27AXNumericDataAxisDescriptorC13AccessibilityE5title5range17gridlinePositions24valueDescriptionProviderABSS_SNySdGSaySdGSSSdctcfc', 
-                       _AXMFiHearingDevicePairedUUIDs, _AXMFiHearingDevicePairedUUIDsDidChangeNotification, 
-                       _AXMFiHearingDeviceStreamingEar, _AXMFiHearingDeviceStreamingEarDidChangeNotification, 
-                       _AXNameFromColor, _AXSupportsBidirectionalAXMFiHearingDeviceStreaming ]
+                       _AXApplicationFocusDidChange, _AXApplicationFocusItemFrame, 
+                       _AXApplicationFocusItemLabel, _AXMFiHearingDevicePairedUUIDs, 
+                       _AXMFiHearingDevicePairedUUIDsDidChangeNotification, _AXMFiHearingDeviceStreamingEar, 
+                       _AXMFiHearingDeviceStreamingEarDidChangeNotification, _AXNameFromColor, 
+                       _AXSupportsBidirectionalAXMFiHearingDeviceStreaming ]
     objc-classes:    [ AXBrailleMap, AXCategoricalDataAxisDescriptor, AXCategoricalScale, 
                        AXChartDescriptor, AXCustomContent, AXDataAnnotation, AXDataPoint, 
                        AXDataPointValue, AXDataSeriesDescriptor, AXLiveAudioGraph, 

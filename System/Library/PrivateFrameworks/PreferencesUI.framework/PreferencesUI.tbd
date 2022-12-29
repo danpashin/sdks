@@ -3,16 +3,18 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
-current-version:       1
-compatibility-version: 1
+current-version:       0
+compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _PSUILogForCategory,
                             _PSUI_BundleForPreferencesUIFramework,
+                            _PSUI_LocalizedStringForLockdownMode,
                             _PSUI_LocalizedStringForPasscodeLock,
                             _PSUI_LocalizedStringForPasscodePeriocular,
-                            _PSUI_LocalizedStringForPearlPeriocular ]
+                            _PSUI_LocalizedStringForPearlPeriocular,
+                            _PSUI_LocalizedStringForSettings ]
     objc-classes:         [ PSBiometricPINController,
                             PSEnrollContainerViewController,
                             PSEnrollmentNavigationController,

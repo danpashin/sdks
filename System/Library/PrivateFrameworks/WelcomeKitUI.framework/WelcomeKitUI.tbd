@@ -10,16 +10,21 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _WelcomeKitUIVersionNumber,
                             _WelcomeKitUIVersionString ]
-    objc-classes:         [ WLCompletedViewController,
+    objc-classes:         [ WLCancellationViewController,
+                            WLCompletedViewController, WLDetailItem,
+                            WLDetailViewController, WLFailureViewController,
+                            WLImportCancellationViewController,
+                            WLImportViewController,
                             WLOnboardingProgressViewController,
                             WLOnboardingViewController,
                             WLPairingCodeViewController,
                             WLPreparationViewController, WLQRCode,
                             WLQRCodeController, WLQRCodeDefaultViewController,
                             WLQRCodeListViewController, WLQRCodeProvider,
-                            WLQRCodeViewController, WLRequest,
-                            WLRetryViewController, WLTransferringViewController,
-                            WLUIClient,
+                            WLQRCodeViewController, WLRejectViewController,
+                            WLRequest, WLRetryViewController,
+                            WLTransferCancellationViewController,
+                            WLTransferringViewController, WLUIClient,
                             WLWaitingForDataTypeSelectionViewController,
                             WLWelcomeController, WLWelcomeViewController ]
 ...

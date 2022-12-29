@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARMeshGeometry.h>)
 //
 //  ARMeshGeometry.h
 //  ARKit
@@ -124,22 +125,22 @@ A three-dimensional shape that represents the geometry of a mesh.
 API_AVAILABLE(ios(13.4))
 @interface ARMeshGeometry : NSObject<NSSecureCoding>
 
-/*
+/**
  The vertices of the mesh.
  */
 @property (nonatomic, strong, readonly) ARGeometrySource *vertices;
 
-/*
+/**
  Normal of each vertex in the mesh.
  */
 @property (nonatomic, strong, readonly) ARGeometrySource *normals;
 
-/*
+/**
  A list of all faces in the mesh.
  */
 @property (nonatomic, strong, readonly) ARGeometryElement *faces;
 
-/*
+/**
  Classification for each face in the mesh.
  */
 @property (nonatomic, strong, readonly, nullable) ARGeometrySource *classification;
@@ -152,3 +153,6 @@ API_AVAILABLE(ios(13.4))
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARMeshGeometry.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARMeshGeometry.h>)

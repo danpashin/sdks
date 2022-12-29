@@ -11,10 +11,6 @@
 #import <Metal/MTLResource.h>
 
 NS_ASSUME_NONNULL_BEGIN
-/*!
- @header MTLBuffer.h
- @discussion Header file for MTLBuffer
- */
 
 @class MTLTextureDescriptor;
 @protocol MTLTexture;
@@ -82,6 +78,13 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  */
 - (void)removeAllDebugMarkers API_AVAILABLE(macos(10.12), ios(10.0));
 
+
+
+/*!
+ @property gpuAddress
+ @abstract Represents the GPU virtual address of a buffer resource
+ */
+@property (readonly) uint64_t gpuAddress API_AVAILABLE(macos(13.0), ios(16.0));
 
 @end
 NS_ASSUME_NONNULL_END

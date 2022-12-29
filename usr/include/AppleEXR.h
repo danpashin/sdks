@@ -456,7 +456,7 @@ const char * __nonnull axr_type_get_name( axr_type_t type ) AXR_AVAILABILITY_v1;
  *  @constant   axr_level_mode_round_down When downsampling, round the size of odd dimensions down
  *  @constant   axr_level_mode_round_up      When downsampling, round the size of odd dimensions up
  *
- *  @memberof   axr_data_t
+ *  @memberof   axr_type_t
  */
 #if defined(DOXYGEN)
 typedef enum axr_level_mode_t
@@ -514,7 +514,7 @@ size_t axr_type_get_size( axr_type_t )  AXR_AVAILABILITY_v1;
  *  @constant   axr_channel_type_distance  Distance of the front of a sample from the viewer.
  *  @constant   axr_channel_type_distance_back    Distance of the back of a sample from the viewer.
  *  @constant   axr_channel_type_id                      a numerical identifier for an object
- *  @memberof   axr_data_t
+ *  @memberof   axr_type_t
  */
 #if defined(DOXYGEN)
 typedef enum axr_channel_type_t
@@ -567,7 +567,8 @@ OS_ENUM( axr_channel_type, uint32_t,
 );
 #endif
     
-/*! @abstract Return a human readable string for a axr_channel_type_t value*/
+/*! @abstract Return a human readable string for a axr_channel_type_t value
+ *  @memberof axr_channel_type_t */
 const char * __nonnull axr_channel_type_get_name( axr_channel_type_t type ) AXR_AVAILABILITY_v1;
     
     
@@ -667,7 +668,7 @@ const char * __nonnull axr_line_order_get_name( axr_line_order_t line_orderType 
  *  @constant   axr_property_flags_part_info_v1   Information in this property is redundant with the information presented in the axr_part_info_t
  *  @constant   axr_property_flags_channel_info_v1 Information in this property is redundant with the information presented in the axr_channel_info_t
  *
- *  @memberof   axr_data_t
+ *  @memberof   axr_property_flags_t
  */
 #if defined(DOXYGEN)
 typedef enum axr_property_flags_t
@@ -694,7 +695,8 @@ OS_ENUM( axr_property_flags, uint64_t,
 );
 #endif
 
-/*! @abstract Return a human readable name for the properties flags */
+/*! @abstract Return a human readable name for the properties flags
+ *  @memberof axr_property_flags_t  */
 const char * __nonnull axr_property_flags_get_name( axr_property_flags_t flags) AXR_AVAILABILITY_v1;
     
 typedef struct axr_box2i
@@ -758,7 +760,8 @@ __nullable axr_data_t axr_data_create(
                                         __nullable axr_data_destructor_t dataDestructor _AXR_DEFAULT(NULL)
                                     ) AXR_RETURNS_RETAINED AXR_AVAILABILITY_v1;
     
-/*! @abstract   Get the number of parts contained within the EXR file */
+/*! @abstract   Get the number of parts contained within the EXR file
+ *  @memberof axr_data_ */
 unsigned long axr_data_get_part_count( __nullable axr_data_t ) AXR_AVAILABILITY_v1;
 
 /*! @abstract   A height and width of a rectangular region of pixels */
@@ -954,6 +957,7 @@ axr_property_t axr_data_get_property( __nullable axr_data_t fileData,
                                       AXR_AVAILABILITY_v1;
     
 /*! @abstract return the number of mip- or ripmap levels for a part
+ *  @memberof axr_data_t
  *  @param      fileData              The AppleEXR file reference
  *  @param      partIndex          The index of the part in the file
  *  @return   The number of mip- or ripmap levels in a part. If axr_level_mode_one_level, 1 is returned. */
@@ -962,6 +966,7 @@ unsigned long axr_data_get_level_count( __nullable axr_data_t fileData,
                                         AXR_AVAILABILITY_v1;
     
 /*! @abstract return the number of mip- or ripmap levels for an part
+ *  @memberof axr_data_t
  *  @param      fileData              The AppleEXR file reference
  *  @param      partIndex          The index of the part in the file
  *  @param      levelIndex          The index of the level in the index
@@ -1018,6 +1023,7 @@ axr_size_t axr_data_get_level_size( __nullable axr_data_t fileData,
  *              for compression formats that are not B44, B44a and uncompressed.
  *
  *
+ *  @memberof axr_decoder_t
  *  @param      fileData    The file reference that will be used with the decoder. Retained by read decoder.
  *                        Used to provide sensible default values for decoder.
  *  @param      partIndex The index of the part within the OpenEXR file to decode
@@ -1047,6 +1053,7 @@ axr_decoder_t __nonnull axr_decoder_create( __nonnull axr_data_t fileData,
  *              If the channels have unusual names (i.e. axr_channel_info_t.channelType doesn't identify them) then it is likely
  *              your application will need to fall back to selecting the channels by hand.
  *
+ *  @memberof axr_decoder_t
  *  @param      fileData    The file reference that will be used with the decoder. Retained by read decoder.
  *                        Used to provide sensible default values for decoder.
  *  @param      layerName  If not NULL, the algorithm will restrict its search for channels in the indicated layer.
@@ -1066,6 +1073,7 @@ axr_decoder_t __nullable axr_decoder_create_rgba( __nonnull axr_data_t fileData,
  *  @abstract Create a copy of the axr_decoder_t
  *  @discussion A copy may be necessary for managing multiple decoders on the same axr_data_t, particularly
  *              achieving thread safety for changes to decoder properties while the decoder is reading pixels or planes
+ *  @memberof axr_decoder_t
  *  @return   A copy of the decoder */
 axr_decoder_t __nonnull axr_decoder_copy( axr_decoder_t __nonnull decoder ) AXR_RETURNS_RETAINED AXR_AVAILABILITY_v1;
     
@@ -1087,6 +1095,7 @@ axr_decoder_t __nonnull axr_decoder_copy( axr_decoder_t __nonnull decoder ) AXR_
  *              in a packed fashion to the right and downward from there.
  *              See: axr_part_info_t.tileSize
  *
+ *  @memberof axr_decoder_t
  *  @param      xOrigin     The horizontal position of the left edge of the region of interest in the dataWindow coordinate space.
  *  @param      yOrigin     The vertical position of the top edge of the subregion of interest in the dataWindow coordinate space.
  *  @param      xSize          The number of pixels to read in the horizontal dimension. Should be tile aligned for best performance.
@@ -1127,6 +1136,7 @@ axr_error_t axr_decoder_set_subregion( __nonnull axr_decoder_t d,
  *          in different parts should be considered different layers. They may be associated
  *          with one another through some other dimension like time while still being different frames.
  *
+ *  @memberof axr_decoder_t
  *  @param  decoder        The decoder
  *  @param  channelIndex    The index of the new channel to be appended to the result list.
  *                        If the channel will be used with axr_decoder_read_pixels, the
@@ -1144,6 +1154,7 @@ axr_error_t axr_decoder_append_channel( __nonnull axr_decoder_t decoder,
  *              everywhere, then append a constant value channel after red, green, blue with value 1.0.
  *              The x- and y-sampling rates are inferred from the other channels present in the part.
  *              It is an error to use constant value channels with axr_decoder_read_planes.
+ *  @memberof axr_decoder_t
  *  @param  decoder              The axr_decoder_t
  *  @param  value                   The value held by the channel. All pixels in the image will contain this value.
  *                        A IEEE-754 double precision value can represent all uint32_t, float and __fp16
@@ -1175,6 +1186,7 @@ uint32_t axr_decoder_get_channel_count( __nonnull axr_decoder_t decoder);
     
 /*! @function axr_decoder_translate_channel_index
  *  @abstract Get the part index of an individual decoder channel
+ *  @memberof axr_decoder_t
  *  @discussion  A decoder may reference channels {1, 2, 5, 9} as the set of channels
  *               to be decoded. When your application calls axr_decoder_get_channel_info()
  *               it will refer to these as channel indices {0,1,2,3}. However, it may be necessary
@@ -1331,6 +1343,7 @@ axr_error_t axr_decoder_read_pixels( __nonnull axr_decoder_t decoder,
  *          memory in the row will not be modified. SampleBytes is 2 for half, and 4 for float. Uint32_t is not supported
  *          by this function.
  *
+ *  @memberof axr_decoder_t
  *  @param  decoder      The decoder object that specifies which part of the data to read
  *  @param  destination     A pointer to the top left corner of the place to write the output data. See discussion above for special treatment of axr_line_order_decreasing_y
  *  @param  destinationRowBytes  The distance in bytes from a sample to the next vertically adjacent sample in the destination buffer. Supports negative rowBytes. See  discussion above for special treatment of axr_line_order_decreasing_y
@@ -1427,6 +1440,7 @@ axr_error_t axr_decoder_read_planes( __nonnull axr_decoder_t decoder,
  *  @discussion Use this to create a CGColorSpaceRef suitable for use to represent the data with CoreGraphics
  *              in a CGImageRef, CGColorConversionInfoRef or a CGContextRef.  Note that if the data is YCbCr,
  *              the CGColorSpaceRef for the corresponding RGB colorspace is returned.
+ *  @memberof axr_decoder_t
  *  @param      decoder   A valid axr_decoder_t
  *  @param      options         An options dictionary to used to provide additional configuration at the CGColorSpaceRef creation step.
  *                   Available options:
@@ -1453,6 +1467,7 @@ void * __nullable /*CGColorSpaceRef*/
      *              CAUTION: The colorspace returned by this function is not guaranteed to be a RGBA colorspace. If the
      *              part chromaticities indicate XYZ, the colorspace will be XYZ instead.
      *
+     *  @memberof axr_decoder_t
      *  @param      decoder   A valid axr_decoder_t
      *  @param      options         An options dictionary to used to provide additional configuration at the CGColorSpaceRef creation step.
      *                   Available options:
@@ -1495,7 +1510,8 @@ void * __nullable /*CGColorSpaceRef*/
 /*! @abstract  Create a mutable axr_encoder_t object
  *  @discussion In version 1, deep data is not supported.
  *  @param      flags               A default set of flags to use with the object, when  other flags are not available
- *  @return     On success, a pointer to a axr_encoder_t */
+ *  @return     On success, a pointer to a axr_encoder_t
+ *  @memberof   axr_encoder_t */
 __nonnull axr_encoder_t axr_encoder_create( axr_flags_t flags ) AXR_RETURNS_RETAINED AXR_AVAILABILITY_v1;
     
 
@@ -1522,6 +1538,7 @@ __nonnull axr_encoder_t axr_encoder_create( axr_flags_t flags ) AXR_RETURNS_RETA
  *
  *               The parts are saved in the order they are created.
  *
+ *  @memberof axr_encoder_t
  *  @param  viewName  An optional human readable name for the part  (attribute: view)
  *  @param  compression     The compression style to use. ZIP is a good choice. PIZ (also lossless) can be better for size
  *                        for large images. B44 (lossy) is better for speedy random access into image subregions, and
@@ -1561,6 +1578,7 @@ __nonnull axr_part_t axr_encoder_append_part(__nonnull axr_encoder_t encoder,
  *  @discussion  If parameters x or y are NULL, the chromaticities are inferred from the CGColorSpaceModel.
  *  Channel names are in part inferred from the colorspace model. The ColorSpace model must be set before
  *
+ *  @memberof axr_part_t
  *  @param   part      The part
  *  @param   cgColorSpaceModel    The CGColorSpaceModel for the colorspace:
  *                                  kCGColorSpaceModelUnknown        Suitable when the image has only  non-color data
@@ -1584,6 +1602,7 @@ void axr_part_set_chromaticities( __nonnull axr_part_t part,
  *               AppleEXR many times. Use appropriate synchronization primitives to ensure your code in the
  *               destructor is thread safe and run on the main thread if necessary.  This destructor will be
  *               called even if data is NULL. Destructors are not guaranteed to be called in any particular order.
+ *  @memberof axr_part_t
  *  @param  data            A pointer to your data to be freed / released
  *  @param  userInfo   This is extra information you can hand to yourself to help with the destruction of data.
  *                    It might be a type code, a size, or a pointer to some other data structure of yours, for example.
@@ -1593,6 +1612,7 @@ typedef void (*axr_user_data_destructor_t)(const void * __nullable data, uintptr
     
 /*! @abstract add a preview image to the axr_part_t
  *  @discussion  There can only be 1 preview image.
+ *  @memberof axr_part_t
  *  @param  part  The part
  *  @param  data    A pointer to the top left corner of a RGBA unorm8 image
  *  @param  width  The number of pixel columns in the preview image
@@ -1614,6 +1634,7 @@ void axr_part_set_preview( __nonnull axr_part_t part,
  *              EXR uses little endian byte order for types larger than one byte. Your application needs to apply this permutation before handing the data to AppleEXR.
  *              All data is packed, with no byte padding for alignment.  No effort is made to avoid creating duplicate attributes. This interface is not intended as a method
  *              to change data passed to axr_part_create()
+ *  @memberof axr_part_t
  *  @param  part   The part to add the attribute
  *  @param  attributeName   A '\0' terminated C-string. See URL in discussion for attribute names.
  *  @param  attributeType   A '\0' terminated C string. See URL in discussion for type names.
@@ -1630,6 +1651,7 @@ axr_error_t axr_part_append_attribute( __nonnull axr_part_t part,
 /*! @abstract   Create a CGColorSpaceRef to match the image content to be written to a axr_part_t
  *  @discussion Your application is responsible for converting  image pixels to this colorspace before handing
  *              it to AppleEXR.  Please see vImageConvert_AnyToAny for one way to do this.
+ *  @memberof axr_part_t
  *  @param      part  The part to contain the data
  *  @param      flags  Flags to control the operation
  *  @param      options  A set of optional options to add to the colorspace you get back
@@ -1644,6 +1666,7 @@ axr_size_t axr_part_get_rip_level_counts( __nonnull axr_part_t part );
 
 /*! @abstract Get the tile size used by the part.
  *  @discussion This information may be needed to correctly size the pixel information passed to the axr_data_provider_read_t.
+ *  @memberof axr_part_t
  *  @part            The part
  *  @return   The tile size used for encoding the part.   */
 axr_size_t axr_part_get_tile_size( __nonnull axr_part_t part ) AXR_AVAILABILITY_v2;
@@ -1699,6 +1722,7 @@ typedef void (*axr_data_provider_release_t)( uintptr_t userInfo ) AXR_AVAILABILI
  *              toward thread safety.  Data access within a particular channel group (as delineated by each separate call to
  *              axr_part_append_channels) is serialized.
  *
+ *  @memberof axr_part_t
  *  @param   part  The part to append the channels
  *  @param   layerName  A name prefix to prepend to the channels to help group them.  The
  *                     name may be reused for multiple calls to axr_part_append_channels
@@ -1776,6 +1800,7 @@ typedef void (*axr_encoder_storage_destroy_proc_t)( __nullable axr_encoder_stora
  *
  *               Flags:
  *                  axr_flags_disable_multithreading — Pass this flag to force the compressor to run synchronously.
+ *  @memberof axr_encoder_t
  *  @param encoder           A valid AppleEXR encoder
  *  @param storage           A pointer to your storage object.  AppleEXR doesn't know what this object is and will interact with it only through writeProc, seekProc, and destroyProc
  *  @param writeProc       A pointer to a function to write bytes to the storage

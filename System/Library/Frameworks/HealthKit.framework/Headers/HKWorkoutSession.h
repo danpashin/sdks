@@ -2,12 +2,13 @@
 //  HKWorkoutSession.h
 //  HealthKit
 //
-//  Copyright (c) 2015-2018 Apple. All rights reserved.
+//  Copyright (c) 2015-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKLiveWorkoutBuilder.h>
 #import <HealthKit/HKMetadata.h>
 #import <HealthKit/HKWorkout.h>
+#import <HealthKit/HKWorkoutActivity.h>
 #import <HealthKit/HKWorkoutBuilder.h>
 #import <HealthKit/HKWorkoutConfiguration.h>
 
@@ -90,6 +91,15 @@ HK_EXTERN API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios)
                 changes to HKWorkoutSessionStateEnded.
  */
 @property (readonly, nullable) NSDate *endDate;
+
+/*!
+ @property      currentActivity
+ @abstract      The current workout activity.
+ @discussion    This returns a copy of the session's current workout activity. It will return
+                a copy of the main workout activity if no new activity has begun. Changes made
+                to the returned object have no impact on the HKWorkoutSession.
+ */
+@property (readonly, copy) HKWorkoutActivity *currentActivity API_AVAILABLE(watchos(9.0));
 
 /*!
  @method        initWithActivityType:locationType:
@@ -194,8 +204,27 @@ HK_EXTERN API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios)
  */
 - (HKLiveWorkoutBuilder *)associatedWorkoutBuilder API_AVAILABLE(watchos(5.0));
 
-@end
+/*!
+ @method        beginNewActivityWithConfiguration:date:metadata:
+ @abstract      Begins a new workout activity for this session.
+ @discussion    This method will asynchronously begin the workout activity. The delegate for this session would be
+                informed once the activity effectively begins.  Sensor algorithms to generate data would be updated
+                to match the new activity.
+ */
+- (void)beginNewActivityWithConfiguration:(HKWorkoutConfiguration *)workoutConfiguration
+                                     date:(NSDate *)date
+                                 metadata:(nullable NSDictionary<NSString *, id> *)metadata API_AVAILABLE(watchos(9.0)) NS_SWIFT_NAME(beginNewActivity(configuration:date:metadata:));
 
+/*!
+ @method        endCurrentActivityOnDate:
+ @abstract      Ends the current workout activity.
+ @discussion    This method will end the current activity, reverting to the main session activity. The delegate for this session
+                would be informed once the activity effectively ends. Sensor algorithms to generate data would be updated to
+                match the main session activity.
+ */
+- (void)endCurrentActivityOnDate:(NSDate *)date API_AVAILABLE(watchos(9.0));
+
+@end
 
 /*!
  @enum          HKWorkoutSessionStateDelegate
@@ -235,6 +264,28 @@ API_AVAILABLE(watchos(2.0)) API_UNAVAILABLE(ios)
                 HKWorkout object.
  */
 - (void)workoutSession:(HKWorkoutSession *)workoutSession didGenerateEvent:(HKWorkoutEvent *)event API_AVAILABLE(ios(10.0), watchos(3.0));
+
+/*!
+ @method        workoutSession:didBeginActivityWithConfiguration:date:
+ @abstract      This method is called whenever a new activity begins.
+ @discussion    Whenever a new workout activity begins, the new configuration would be passed to the session delegate
+                via this method. Clients may use this data to create a workout activity to save when building an HKWorkout
+                object.
+ */
+- (void)workoutSession:(HKWorkoutSession *)workoutSession
+didBeginActivityWithConfiguration:(HKWorkoutConfiguration *)workoutConfiguration
+                  date:(NSDate *)date API_AVAILABLE(watchos(9.0));
+
+/*!
+ @method        workoutSession:didEndActivityWithConfiguration:date:
+ @abstract      This method is called whenever the current workout activity ends.
+ @discussion    Whenever a new workout activity ends, the new configuration would be passed to the session delegate
+                via this method. Clients may use this data to create a workout activity to save when building an HKWorkout
+                object.
+ */
+- (void)workoutSession:(HKWorkoutSession *)workoutSession
+didEndActivityWithConfiguration:(HKWorkoutConfiguration *)workoutConfiguration
+                  date:(NSDate *)date API_AVAILABLE(watchos(9.0));
 
 @end
 

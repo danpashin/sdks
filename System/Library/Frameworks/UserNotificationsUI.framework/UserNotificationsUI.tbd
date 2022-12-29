@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           F4DEBF8C-D3A1-3733-947C-09366DAEB634
   - target:          arm64-ios
-    value:           65149A48-728E-376C-8D74-20125B2D7FFE
+    value:           03809865-CE2E-3647-99E4-56C0C22957FC
   - target:          arm64e-ios
-    value:           E4D1810C-1622-3F7D-B5EE-DBE38C00504C
+    value:           18FA9193-2BDE-3154-9C1B-36E6ECEBE562
 install-name:    '/System/Library/Frameworks/UserNotificationsUI.framework/UserNotificationsUI'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _UserNotificationsUIVersionNumber, _UserNotificationsUIVersionString ]
     objc-classes:    [ _UNNotificationContentExtensionContext, _UNNotificationExtensionHostViewController, 
                        _UNNotificationExtensionRemoteViewController ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _UNAppLaunchOriginContentExtension, _UNLogExtensions, _UNLogExtensionsHost, 
                        _UNLogExtensionsService, _UNRegisterUserNotificationsUILogging, 
                        __UNNotificationExtensionActionsKey ]

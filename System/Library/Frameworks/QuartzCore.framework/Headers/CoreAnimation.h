@@ -1,6 +1,6 @@
 /* CoreAnimation - CoreAnimation.h
 
-   Copyright (c) 2006-2021, Apple Inc.
+   Copyright (c) 2006-2022, Apple Inc.
    All rights reserved. */
 
 #ifndef COREANIMATION_H
@@ -22,6 +22,7 @@
 #import <QuartzCore/CALayer.h>
 #import <QuartzCore/CAMediaTiming.h>
 #import <QuartzCore/CAMediaTimingFunction.h>
+#import <QuartzCore/CARenderer.h>
 #import <QuartzCore/CAReplicatorLayer.h>
 #import <QuartzCore/CAScrollLayer.h>
 #import <QuartzCore/CAShapeLayer.h>
@@ -31,6 +32,7 @@
 #import <QuartzCore/CATransform3D.h>
 #import <QuartzCore/CATransformLayer.h>
 #import <QuartzCore/CAValueFunction.h>
+#import <QuartzCore/CAEDRMetadata.h>
 #endif
 
 #endif /* COREANIMATION_H */

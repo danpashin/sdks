@@ -1,14 +1,19 @@
 /*
     NSCoreDataCoreSpotlightDelegate.h
     Core Data
-    Copyright (c) 2017-2021, Apple Inc.
+    Copyright (c) 2017-2022, Apple Inc.
     All rights reserved.
 */
 
 #import <Foundation/NSArray.h>
+#import <Foundation/NSNotification.h>
 
+#import <CoreData/CoreDataDefines.h>
+
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 
 @class NSManagedObjectContext;
+@class NSPersistentStoreCoordinator;
 @class NSPersistentStoreDescription;
 @class NSManagedObjectModel;
 @class NSManagedObject;
@@ -97,3 +102,4 @@ API_AVAILABLE(macosx(10.13),ios(11.0)) API_UNAVAILABLE(tvos,watchos)
 
 NS_ASSUME_NONNULL_END
 
+#endif

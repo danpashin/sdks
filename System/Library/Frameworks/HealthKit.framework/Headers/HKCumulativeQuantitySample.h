@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKCumulativeQuantitySample
  @abstract      An HKQuantitySample subclass representing a quantity measurement with cumulative aggregation style.
  */
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKCumulativeQuantitySample : HKQuantitySample
 
 /*!
@@ -27,6 +27,6 @@ HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
 @end
 
 // Predicate Key Paths
-HK_EXTERN NSString * const HKPredicateKeyPathSum API_AVAILABLE(ios(12.0), watchos(5.0));
+HK_EXTERN NSString * const HKPredicateKeyPathSum API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HRTFEnrollment.framework/HRTFEnrollment
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _HRTFEnrollmentLog, _HRTFEnrollmentLogInit,
+                            _HRTFEnrollmentVersionNumber,
+                            _HRTFEnrollmentVersionString,
+                            _kHRTFEnrollmentErrorDomain,
+                            _kHRTFStateInfoEarPoseStatusKey,
+                            _kHRTFStateInfoErrorInfoKey,
+                            _kHRTFStateInfoFacePoseStatusKey,
+                            _kHRTFStateInfoLeftEarPoseStatusKey,
+                            _kHRTFStateInfoProgressKey,
+                            _kHRTFStateInfoRightEarPoseStatusKey,
+                            _kHRTFStateInfoStateKey, _kHRTFStateInfoSubStateKey ]
+    objc-classes:         [ HRTFEnrollmentAssetDownloadProgress,
+                            HRTFEnrollmentAssetDownloadSession,
+                            HRTFEnrollmentCaptureAngle,
+                            HRTFEnrollmentEarPoseStatus,
+                            HRTFEnrollmentPoseStatus, HRTFEnrollmentSession,
+                            HRTFSerializableCaptureData,
+                            HRTFSerializableFaceData, HRTFSyncedCaptureSource,
+                            RecordingManager, _SerializableCVPixelBuffer ]
+...

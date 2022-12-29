@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
-current-version:       1
+current-version:       303
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -26,8 +26,21 @@ exports:
                             _AVTMemojiAssetUsedKey, _AVTMoreButtonImage,
                             _AVTOutfitGroupEnabled, _AVTPlusButtonImage,
                             _AVTPrereleaseCategoriesEnabled,
-                            _AVTPresetSettingKind, _AVTRoundToScale,
-                            _AVTRoundToViewScale, _AVTUIAreAvatarsSupported,
+                            _AVTPresetSettingKind,
+                            _AVTRenderingScopeFramingModeKey,
+                            _AVTRenderingScopePoseKey,
+                            _AVTRenderingScopeRenderingTypeKey,
+                            _AVTRenderingScopeScaleKey,
+                            _AVTRenderingScopeSizeKey,
+                            _AVTRenderingScopeSizeModifierKey, _AVTRoundToScale,
+                            _AVTRoundToViewScale,
+                            _AVTSCNNodeModificationsFieldOfViewKey,
+                            _AVTSCNNodeModificationsFramingModeKey,
+                            _AVTSCNNodeModificationsLensShiftKey,
+                            _AVTSCNNodeModificationsProjectionDirectionKey,
+                            _AVTStickerResourceClippingRectKey,
+                            _AVTStickerResourceImageKey,
+                            _AVTStickerResourceURLKey, _AVTUIAreAvatarsSupported,
                             _AVTUIIsFacetrackingSupported,
                             _AVTUITypeMismatchExceptionName,
                             _AVTUsageTrackingMemojiUsageCategoryWhitelist,
@@ -132,6 +145,7 @@ exports:
                             _kAVTUsageTrackingPrefixAnimoji,
                             _kAVTUsageTrackingPrefixDefault,
                             _kAVTUsageTrackingPrefixFuncam,
+                            _kAVTUsageTrackingPrefixMemoji,
                             _kAVTUsageTrackingPrefixStaryu,
                             _kAVTUsageTrackingPrefixStickers,
                             _maskForDifferenceImpact, _sIndexSetToIndexPaths ]
@@ -218,6 +232,7 @@ exports:
                             AVTAvatarRecordDataSource,
                             AVTAvatarRecordImageGenerator,
                             AVTAvatarRecordImageProvider,
+                            AVTAvatarRemoteImageRenderer,
                             AVTAvatarSettingKindValue, AVTAvatarStore,
                             AVTAvatarToLiveTransition,
                             AVTAvatarToStaticTransition, AVTAvatarUpdaterFactory,
@@ -284,8 +299,8 @@ exports:
                             AVTPresetImageProvider, AVTPresetResourceLoader,
                             AVTPresetResources, AVTPresetResourcesLoadingTask,
                             AVTRecordingButton, AVTRenderingScope,
-                            AVTResourceCacheSupport, AVTSectionItemLoadingTask,
-                            AVTSectionItemTransition,
+                            AVTResourceCacheSupport, AVTSCNNodeModifications,
+                            AVTSectionItemLoadingTask, AVTSectionItemTransition,
                             AVTSelectableStickerSheetController,
                             AVTSerialTaskScheduler, AVTShadowView,
                             AVTSimpleAvatarPicker,
@@ -309,6 +324,7 @@ exports:
                             AVTStickerRecentsStickerCollectionViewCell,
                             AVTStickerRecentsStickerItem,
                             AVTStickerRecentsViewController, AVTStickerResource,
+                            AVTStickerSheetCollectionView,
                             AVTStickerSheetController, AVTStickerSheetModel,
                             AVTStickerTask, AVTStickerTaskScheduler,
                             AVTStickerViewController,
@@ -320,7 +336,8 @@ exports:
                             AVTTwoLevelsImageCache, AVTUIAnimatingImageView,
                             AVTUICapabilities, AVTUIColorRepository,
                             AVTUIControllerPresentation, AVTUIEnvironment,
-                            AVTUIFontRepository, AVTUIImageUtilities, AVTUINSURL,
+                            AVTUIFontRepository, AVTUIImageRenderService,
+                            AVTUIImageUtilities, AVTUINSURL,
                             AVTUIRaiseGestureManager, AVTUIStickerGeneratorPool,
                             AVTUIStickerItem,
                             AVTUIStickerPlaceholderProviderFactory,

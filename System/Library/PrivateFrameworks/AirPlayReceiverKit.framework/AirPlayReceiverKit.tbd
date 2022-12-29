@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AirPlayReceiverKit.framework/AirPlayReceiverKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AirPlayReceiverKitVersionNumber,
+                            _AirPlayReceiverKitVersionString,
+                            _SBufConsumerCreate,
+                            _SBufConsumerRegisterAudioSampleBufferCallbackForRendering,
+                            _SBufConsumerRegisterCallbackForCopyProperty,
+                            _SBufConsumerRegisterCallbackForDisconnect,
+                            _SBufConsumerRegisterVideoSampleBufferCallbackForRendering,
+                            _gLogCategory_AirPlayReceiverKit,
+                            _kReachabilityChangedNotification ]
+    objc-classes:         [ APRKContentKeyHelper, APRKMediaPlayer, APRKMetadata,
+                            APRKPlayerItem, APRKReachability,
+                            APRKResourceLoaderHelper, APRKStreamRecorder,
+                            APRKStreamRenderer, APRKStreamRenderingManager,
+                            APRKUtilities, AWDLActivator ]
+    objc-ivars:           [ AWDLActivator._browser, AWDLActivator._queue,
+                            AWDLActivator._timer ]
+...

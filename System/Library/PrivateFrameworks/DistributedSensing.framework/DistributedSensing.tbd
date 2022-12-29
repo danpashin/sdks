@@ -9,10 +9,13 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _DSErrorDomain ]
-    objc-classes:         [ DSClientMotionDataOptions,
-                            DSCoreAnalyticsEventHandler, DSKeychainPersistence,
+    objc-classes:         [ DSAdvertiseManager, DSClientMotionDataOptions,
+                            DSCohortManager, DSConsensusDataManager,
+                            DSConsensusDatum, DSCoreAnalyticsEventHandler,
+                            DSDeviceContext, DSKappaSession, DSKeychainPersistence,
                             DSListener, DSListenerDevice, DSLogging,
-                            DSMotionListener, DSMotionProvider,
+                            DSMotionListener, DSMotionProvider, DSMotionSession,
                             DSMotionStateListenerProxy, DSProvider,
-                            DSProviderDevice, DSRapportDevice, DSSessionMetric ]
+                            DSProviderDevice, DSRapportDevice, DSScanManager,
+                            DSSessionMetric, DSXPCConnection, DSXPCServer ]
 ...

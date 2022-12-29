@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
-current-version:       190.40.36
+current-version:       252.1.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,15 +20,16 @@ exports:
                             _TVRCDeviceModelTypeAirplayTelevision,
                             _TVRCDeviceNameKey, _TVRCErrorDomain,
                             _TVRCErrorMediaRemotePairingLockoutDelayKey,
+                            _TVRCFetchAttentionState,
                             _TVRCFetchLaunchableApplicationsEvent,
                             _TVRCFetchUserAccountsEvent, _TVRCMakeError,
                             _TVRCMatchPointServiceAddedNotification,
                             _TVRCMatchPointServiceNameChangedNotification,
                             _TVRCMatchPointServiceRemovedNotification,
-                            _TVRCMediaRemoteEndpointManagerLog,
-                            _TVRCMediaRemoteIDKey, _TVRCReduceLoundSoundsEnabled,
-                            _TVRCSwitchAccountID, _TVRCSwitchUserAccountEvent,
-                            _TVRCSystemAppearanceLight,
+                            _TVRCMediaRemoteIDKey, _TVRCRSSIThreshold,
+                            _TVRCReduceLoundSoundsEnabled, _TVRCSwitchAccountID,
+                            _TVRCSwitchUserAccountEvent,
+                            _TVRCSystemAppearanceLight, _TVRCSystemStatus,
                             _TVRCToggleReduceLoudSounds,
                             _TVRCToggleSystemAppearance,
                             _TVRCTouchPhaseDescription,
@@ -89,10 +90,12 @@ exports:
                             _TVRXManagedConfigManagerTVRemoteAllowedTVAdded,
                             _TVRemoteCoreVersionNumber,
                             _TVRemoteCoreVersionString,
+                            __TVRCAddStateHandlerWithName,
                             __TVRCButtonLongPressBeginActionKey,
                             __TVRCButtonLongPressEndActionKey, __TVRCGeneralLog,
                             __TVRCHomeKitLog, __TVRCMDMLog,
-                            __TVRCMediaEventsManagerLog, __TVRCRMSLog,
+                            __TVRCMediaEventsManagerLog,
+                            __TVRCMediaRemoteEndpointManagerLog, __TVRCRMSLog,
                             __TVRCRapportLog, __TVRCRemoteTextInputLog,
                             _generateRandomPasscode,
                             _kReachabilityChangedNotification ]
@@ -104,7 +107,8 @@ exports:
                             TVRCGameControllerEvent, TVRCHMHomeObserver,
                             TVRCHMServiceWrapper, TVRCKeyboardAttributes,
                             TVRCKeyboardController, TVRCKeyboardState,
-                            TVRCMatchPointDeviceImpl, TVRCMatchPointDeviceQuery,
+                            TVRCLogBuilder, TVRCMatchPointDeviceImpl,
+                            TVRCMatchPointDeviceQuery,
                             TVRCMediaRemoteEndpointManager,
                             TVRCPINEntryAttributes, TVRCPreferredDeviceManager,
                             TVRCRPCompanionLinkClientWrapper,

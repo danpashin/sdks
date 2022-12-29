@@ -7,22 +7,18 @@ uuids:
   - target:          armv7s-ios
     value:           9FAC1322-2F94-3187-AA5B-AF07890A4295
   - target:          arm64-ios
-    value:           760E38A8-23FB-3879-B663-86D7B838A4F8
+    value:           CAF8687D-B9C5-3B4E-8C28-6FBE46C00368
   - target:          arm64e-ios
-    value:           AE1AE12D-715C-331F-94D2-17958C20A9F2
+    value:           A207F0DA-1D80-31AA-BA3A-4B6B461A6725
 install-name:    '/usr/lib/swift/libswiftCoreGraphics.dylib'
-current-version: 3
+current-version: 15
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ '_$s12CoreGraphics7CGFloatV12floatLiteralACSf_tcfC', '_$s12CoreGraphics7CGFloatV6nativeSfvM', 
                        '_$s12CoreGraphics7CGFloatV6nativeSfvg', '_$s12CoreGraphics7CGFloatV6nativeSfvpMV', 
                        '_$s12CoreGraphics7CGFloatV6nativeSfvs' ]
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ '_$s12CoreGraphics7CGFloatV12floatLiteralACSd_tcfC', '_$s12CoreGraphics7CGFloatV6nativeSdvM', 
-                       '_$s12CoreGraphics7CGFloatV6nativeSdvg', '_$s12CoreGraphics7CGFloatV6nativeSdvpMV', 
-                       '_$s12CoreGraphics7CGFloatV6nativeSdvs' ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftCoreGraphics.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftCoreGraphics.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftCoreGraphics.dylib', 
@@ -235,24 +231,34 @@ exports:
                        '_$sSo16CGMutablePathRefa12CoreGraphicsE8addCurve2to8control18control29transformySo7CGPointV_A2JSo17CGAffineTransformVtF', 
                        '_$sSo16CGMutablePathRefa12CoreGraphicsE8addLines7between9transformySaySo7CGPointVG_So17CGAffineTransformVtF', 
                        '_$sSo16CGMutablePathRefa12CoreGraphicsE8addRects_9transformySaySo6CGRectVG_So17CGAffineTransformVtF', 
+                       '_$sSo17CGAffineTransformV12CoreGraphicsE10isIdentitySbvpMV', 
                        '_$sSo17CGAffineTransformV12CoreGraphicsE2eeoiySbAB_ABtFZ', 
                        '_$sSo17CGAffineTransformV12CoreGraphicsE4fromABs7Decoder_p_tKcfC', 
                        '_$sSo17CGAffineTransformV12CoreGraphicsE6encode2toys7Encoder_p_tKF', 
                        '_$sSo17CGAffineTransformV12CoreGraphicsE8identityABvgZ', 
                        '_$sSo17CGAffineTransformVSE12CoreGraphicsMc', '_$sSo17CGAffineTransformVSQ12CoreGraphicsMc', 
-                       '_$sSo17CGAffineTransformVSe12CoreGraphicsMc', '_$sSo6CGRectV12CoreGraphicsE12customMirrors0E0Vvg', 
-                       '_$sSo6CGRectV12CoreGraphicsE12customMirrors0E0VvpMV', '_$sSo6CGRectV12CoreGraphicsE16debugDescriptionSSvg', 
+                       '_$sSo17CGAffineTransformVSe12CoreGraphicsMc', '_$sSo6CGRectV12CoreGraphicsE10isInfiniteSbvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE12customMirrors0E0Vvg', '_$sSo6CGRectV12CoreGraphicsE12customMirrors0E0VvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE12standardizedABvpMV', '_$sSo6CGRectV12CoreGraphicsE16debugDescriptionSSvg', 
                        '_$sSo6CGRectV12CoreGraphicsE16debugDescriptionSSvpMV', '_$sSo6CGRectV12CoreGraphicsE1x1y5width6heightABSd_S3dtcfC', 
                        '_$sSo6CGRectV12CoreGraphicsE1x1y5width6heightABSi_S3itcfC', 
                        '_$sSo6CGRectV12CoreGraphicsE1x1y5width6heightAbC7CGFloatV_A3ItcfC', 
                        '_$sSo6CGRectV12CoreGraphicsE1xAC7CGFloatVvg', '_$sSo6CGRectV12CoreGraphicsE1xAC7CGFloatVvpMV', 
                        '_$sSo6CGRectV12CoreGraphicsE1yAC7CGFloatVvg', '_$sSo6CGRectV12CoreGraphicsE1yAC7CGFloatVvpMV', 
                        '_$sSo6CGRectV12CoreGraphicsE24dictionaryRepresentationABSgSo15CFDictionaryRefa_tcfC', 
+                       '_$sSo6CGRectV12CoreGraphicsE24dictionaryRepresentationSo15CFDictionaryRefavpMV', 
                        '_$sSo6CGRectV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0Ovg', 
                        '_$sSo6CGRectV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0OvpMV', 
                        '_$sSo6CGRectV12CoreGraphicsE2eeoiySbAB_ABtFZ', '_$sSo6CGRectV12CoreGraphicsE4fromABs7Decoder_p_tKcfC', 
-                       '_$sSo6CGRectV12CoreGraphicsE4zeroABvgZ', '_$sSo6CGRectV12CoreGraphicsE6encode2toys7Encoder_p_tKF', 
+                       '_$sSo6CGRectV12CoreGraphicsE4maxXAC7CGFloatVvpMV', '_$sSo6CGRectV12CoreGraphicsE4maxYAC7CGFloatVvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE4midXAC7CGFloatVvpMV', '_$sSo6CGRectV12CoreGraphicsE4midYAC7CGFloatVvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE4minXAC7CGFloatVvpMV', '_$sSo6CGRectV12CoreGraphicsE4minYAC7CGFloatVvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE4zeroABvgZ', '_$sSo6CGRectV12CoreGraphicsE5widthAC7CGFloatVvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE6encode2toys7Encoder_p_tKF', 
+                       '_$sSo6CGRectV12CoreGraphicsE6heightAC7CGFloatVvpMV', '_$sSo6CGRectV12CoreGraphicsE6isNullSbvpMV', 
                        '_$sSo6CGRectV12CoreGraphicsE7divided10atDistance4fromAB5slice_AB9remaindertAC7CGFloatV_So0A4EdgeVtF', 
+                       '_$sSo6CGRectV12CoreGraphicsE7isEmptySbvpMV', '_$sSo6CGRectV12CoreGraphicsE8integralABvpMV', 
+                       '_$sSo6CGRectV12CoreGraphicsE9__divided5slice9remainder10atDistance4fromySpyABG_AiC7CGFloatVSo0A4EdgeVtF', 
                        '_$sSo6CGRectVSE12CoreGraphicsMc', '_$sSo6CGRectVSQ12CoreGraphicsMc', 
                        '_$sSo6CGRectVSe12CoreGraphicsMc', '_$sSo6CGRectVs17CustomReflectable12CoreGraphicsMc', 
                        '_$sSo6CGRectVs28CustomDebugStringConvertible12CoreGraphicsMc', 
@@ -260,6 +266,7 @@ exports:
                        '_$sSo6CGSizeV12CoreGraphicsE12customMirrors0E0Vvg', '_$sSo6CGSizeV12CoreGraphicsE12customMirrors0E0VvpMV', 
                        '_$sSo6CGSizeV12CoreGraphicsE16debugDescriptionSSvg', '_$sSo6CGSizeV12CoreGraphicsE16debugDescriptionSSvpMV', 
                        '_$sSo6CGSizeV12CoreGraphicsE24dictionaryRepresentationABSgSo15CFDictionaryRefa_tcfC', 
+                       '_$sSo6CGSizeV12CoreGraphicsE24dictionaryRepresentationSo15CFDictionaryRefavpMV', 
                        '_$sSo6CGSizeV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0Ovg', 
                        '_$sSo6CGSizeV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0OvpMV', 
                        '_$sSo6CGSizeV12CoreGraphicsE2eeoiySbAB_ABtFZ', '_$sSo6CGSizeV12CoreGraphicsE4fromABs7Decoder_p_tKcfC', 
@@ -273,6 +280,7 @@ exports:
                        '_$sSo7CGPointV12CoreGraphicsE16debugDescriptionSSvg', '_$sSo7CGPointV12CoreGraphicsE16debugDescriptionSSvpMV', 
                        '_$sSo7CGPointV12CoreGraphicsE1x1yABSd_SdtcfC', '_$sSo7CGPointV12CoreGraphicsE1x1yABSi_SitcfC', 
                        '_$sSo7CGPointV12CoreGraphicsE24dictionaryRepresentationABSgSo15CFDictionaryRefa_tcfC', 
+                       '_$sSo7CGPointV12CoreGraphicsE24dictionaryRepresentationSo15CFDictionaryRefavpMV', 
                        '_$sSo7CGPointV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0Ovg', 
                        '_$sSo7CGPointV12CoreGraphicsE25customPlaygroundQuickLooks01_efG0OvpMV', 
                        '_$sSo7CGPointV12CoreGraphicsE2eeoiySbAB_ABtFZ', '_$sSo7CGPointV12CoreGraphicsE4fromABs7Decoder_p_tKcfC', 
@@ -287,12 +295,26 @@ exports:
                        '_$sSo8CGVectorV12CoreGraphicsE4zeroABvgZ', '_$sSo8CGVectorV12CoreGraphicsE6encode2toys7Encoder_p_tKF', 
                        '_$sSo8CGVectorVSE12CoreGraphicsMc', '_$sSo8CGVectorVSQ12CoreGraphicsMc', 
                        '_$sSo8CGVectorVSe12CoreGraphicsMc', '_$sSo8CGVectorVs28CustomDebugStringConvertible12CoreGraphicsMc', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE10intersects_5usingSbAB_AC0A8FillRuleOtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE10normalized5usingAbC0A8FillRuleO_tF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE11subtracting_5usingA2B_AC0A8FillRuleOtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE12intersection_5usingA2B_AC0A8FillRuleOtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE15lineSubtracting_5usingA2B_AC0A8FillRuleOtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE16lineIntersection_5usingA2B_AC0A8FillRuleOtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE19componentsSeparated5usingSayABGAC0A8FillRuleO_tF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE19symmetricDifference_5usingA2B_AC0A8FillRuleOtF', 
                        '_$sSo9CGPathRefa12CoreGraphicsE4copy16dashingWithPhase7lengths9transformAbC7CGFloatV_SayAIGSo17CGAffineTransformVtF', 
                        '_$sSo9CGPathRefa12CoreGraphicsE4copy17strokingWithWidth7lineCap0I4Join10miterLimit9transformAbC7CGFloatV_So06CGLineJ0VSo0pK0VAKSo17CGAffineTransformVtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE5union_5usingA2B_AC0A8FillRuleOtF', 
                        '_$sSo9CGPathRefa12CoreGraphicsE8contains_5using9transformSbSo7CGPointV_AC0A8FillRuleOSo17CGAffineTransformVtF', 
+                       '_$sSo9CGPathRefa12CoreGraphicsE9flattened9thresholdAbC7CGFloatV_tF', 
                        '_$sSu12CoreGraphicsEySuAA7CGFloatVcfC', '_$ss4Int8V12CoreGraphicsEyAbC7CGFloatVcfC', 
                        '_$ss5Int16V12CoreGraphicsEyAbC7CGFloatVcfC', '_$ss5Int32V12CoreGraphicsEyAbC7CGFloatVcfC', 
                        '_$ss5Int64V12CoreGraphicsEyAbC7CGFloatVcfC', '_$ss5UInt8V12CoreGraphicsEyAbC7CGFloatVcfC', 
                        '_$ss6UInt16V12CoreGraphicsEyAbC7CGFloatVcfC', '_$ss6UInt32V12CoreGraphicsEyAbC7CGFloatVcfC', 
                        '_$ss6UInt64V12CoreGraphicsEyAbC7CGFloatVcfC', '__swift_FORCE_LOAD_$_swiftCoreGraphics' ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ '_$s12CoreGraphics7CGFloatV12floatLiteralACSd_tcfC', '_$s12CoreGraphics7CGFloatV6nativeSdvM', 
+                       '_$s12CoreGraphics7CGFloatV6nativeSdvg', '_$s12CoreGraphics7CGFloatV6nativeSdvpMV', 
+                       '_$s12CoreGraphics7CGFloatV6nativeSdvs' ]
 ...

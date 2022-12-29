@@ -171,6 +171,7 @@ exports:
                             _kSymptomDiagnosticErrorInvalidParameters,
                             _kSymptomDiagnosticErrorNone,
                             _kSymptomDiagnosticErrorNotSupported,
+                            _kSymptomDiagnosticErrorPayloadSandboxTokenError,
                             _kSymptomDiagnosticErrorRandomizedSuppression,
                             _kSymptomDiagnosticErrorRequestThrottled,
                             _kSymptomDiagnosticErrorServiceInterrupted,
@@ -254,7 +255,7 @@ exports:
                             _kSymptomsDiagExtAttachments,
                             _kSymptomsDiagExtAttachmentsTotalSize,
                             _liaisonLogHandle, _persistenceLogHandle,
-                            _storageLogHandle, _summaryLogHandle,
+                            _responseDict, _storageLogHandle, _summaryLogHandle,
                             _symptomsLogHandle, _uploadLogHandle, _xpcLogHandle ]
     objc-classes:         [ ABCAdministrator, ABCConfigurationManager,
                             ABCDailyMaintenanceActivity,
@@ -275,6 +276,6 @@ exports:
                             DiagnosticStatisticsManager,
                             DiagnosticStorageManager, DiagnosticsController,
                             IDSCrossDeviceTransport, NetDiagnosticsShim,
-                            ObjectAnalytics, SystemProperties, UploadSession ]
+                            ObjectAnalytics, SystemProperties ]
     objc-ivars:           [ ABCPersistentStoreController._workspace ]
 ...

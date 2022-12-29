@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @abstract A simple room representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for the purposes of CHIP accessory setup.
  */
 HM_EXTERN API_AVAILABLE(ios(15.0))
-@interface HMMatterRoom : NSObject <NSCopying, NSSecureCoding>
+    @interface HMMatterRoom : NSObject<NSCopying, NSSecureCoding>
 
 /*!
  *  @abstract   The UUID of the receiver

@@ -1,0 +1,39 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           9761E34E-2A04-369A-894B-D5E9C35EFEC3
+  - target:          arm64e-ios
+    value:           8A52770F-491F-3FD1-AF89-99B3C35AD37E
+install-name:    '/System/Library/Frameworks/SharedWithYouCore.framework/SharedWithYouCore'
+swift-abi-version: 7
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ '_$sSo21SWCollaborationOptionC17SharedWithYouCoreE5title10identifier8subtitle8selected26requiredOptionsIdentifiersABSS_S2SSbSaySSGtcfC', 
+                       '_$sSo21SWCollaborationOptionC17SharedWithYouCoreE5title10identifier8subtitle8selected26requiredOptionsIdentifiersABSS_S2SSbSaySSGtcfc', 
+                       _SWCollaborationMetadataForDocumentURL, _SWCollaborationNoticeTransmissionMessageReadFrom, 
+                       _SWContextMenuIdentifier, _SWCopyRepresentationTypeIdentifier, 
+                       _SWCoreFrameworkBundle, _SWFrameworkBundle, _SWFrameworkLogHandle, 
+                       _SWGeneralTelemetryLogHandle, _SWHideContextMenuIdentifier, 
+                       _SWMobileSMSBundleIdentifier, _SWPerformActionForDocumentURL, 
+                       _SWReplyContextMenuIdentifier, _SharedWithYouCoreVersionNumber, 
+                       _SharedWithYouCoreVersionString, _UTCollaborationOptionsTypeIdentifier, 
+                       __SWActionResponseErrorDomain, __SWPendingCollaborationTypeIdentifier ]
+    objc-classes:    [ SWAction, SWCollaborationCoordinator, SWCollaborationMetadata, 
+                       SWCollaborationNoticeTransmissionMessage, SWCollaborationOption, 
+                       SWCollaborationOptionsGroup, SWCollaborationOptionsPickerGroup, 
+                       SWCollaborationShareOptions, SWPerson, SWPersonIdentity, SWPersonIdentityProof, 
+                       SWSignedPersonIdentityProof, SWStartCollaborationAction, SWUpdateCollaborationParticipantsAction, 
+                       _SWActionResponse, _SWBaseCollaborationSource, _SWCollaborationCoordinator, 
+                       _SWCollaborationMetadata, _SWCollaborationOption, _SWCollaborationOptionsGroup, 
+                       _SWCollaborationOptionsPickerGroup, _SWCollaborationServiceSource, 
+                       _SWCollaborationServiceSourceEntitled, _SWCollaborationShareOptions, 
+                       _SWMutableCollaborationMetadata, _SWPendingCollaboration, 
+                       _SWPerson, _SWPersonIdentity, _SWPersonIdentityProof, _SWStartCollaborationAction, 
+                       _SWStartCollaborationActionResponse, _SWUpdateCollaborationParticipantsAction ]
+...

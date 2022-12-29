@@ -3,17 +3,19 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore
-current-version:       125.5
+current-version:       126.0.16
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MPSConvertFloatToHalf, _MPSConvertHalfToFloat,
+    symbols:              [ _IsPluginDisabled, _MPSConvertFloatToHalf,
+                            _MPSConvertHalfToFloat,
                             _MPSCopyToFromNetworkByteOrder16,
                             _MPSCopyToFromNetworkByteOrder32,
                             _MPSCreateFunctionConstantValues,
-                            _MPSEncodeCopyTexture, _MPSForcePlugin,
-                            _MPSGetCGFunction, _MPSGetDataTypeName,
+                            _MPSEncodeCopyTexture, _MPSForceGEMMPlugin,
+                            _MPSForcePlugin, _MPSGetCGFunction,
+                            _MPSGetDataTypeName,
                             _MPSGetEffectiveFeatureChannelsCount,
                             _MPSGetHeapSizeForCommandBuffer, _MPSGetImageType,
                             _MPSGetLinearTextureSize2D, _MPSGetOSLogHandle,
@@ -21,6 +23,7 @@ exports:
                             _MPSGetOriginalMTLCommandBuffer,
                             _MPSGetOriginalMTLComputeCommandEncoder,
                             _MPSGetOriginalMTLObject,
+                            _MPSGetProtectionOptionsForCommandBuffer,
                             _MPSGetTemporaryBufferFromCommandBufferCache,
                             _MPSGetTemporaryTextureFromCommandBufferCache,
                             _MPSGetUIntDivisorMagicNumber,
@@ -43,6 +46,7 @@ exports:
                             __Z21MPSDecrementReadCountP18MPSTemporaryMatrix,
                             __Z21MPSDecrementReadCountP18MPSTemporaryVector,
                             __Z21MPSDecrementReadCountP19MPSTemporaryNDArray,
+                            __Z21MPSDecrementReadCountP19MPSTemporaryNDArrayl,
                             __Z21MPSDecrementReadCountP7NSArrayIP8MPSImageE,
                             __Z21MPSDecrementReadCountP7NSArrayIP8MPSStateE,
                             __Z21MPSDecrementReadCountP8MPSImage,
@@ -57,7 +61,7 @@ exports:
                             __ZN10BaseTensorC2ERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN10BaseTensorD1Ev, __ZN10BaseTensorD2Ev,
                             __ZN10MPSLibrary12RetainMPSKeyEP11MPSKey_data,
-                            __ZN10MPSLibrary13MPSKey_CreateEPK17PrivateKernelInfoRK23MPSFunctionConstantListb30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsPFvPS0_EP8NSStringm,
+                            __ZN10MPSLibrary13MPSKey_CreateEPK17PrivateKernelInfoRK23MPSFunctionConstantListb30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsPFvPS0_EP8NSStringmy,
                             __ZN10MPSLibrary13ReleaseMPSKeyEP11MPSKey_data,
                             __ZN10MPSLibrary14MPSKey_CompileEP11MPSKey_data,
                             __ZN10MPSLibrary15GetComputeStateEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP8NSStringm,
@@ -219,7 +223,7 @@ exports:
                             __ZN9MPSDevice10GetLibraryEPK14MPSLibraryInfo,
                             __ZN9MPSDevice10GetSamplerE16MPSImageEdgeMode21MPSFilterSamplingMode23MPSFilterCoordinateMode,
                             __ZN9MPSDevice11DeleteQueueEPU26objcproto15MTLCommandQueue11objc_object,
-                            __ZN9MPSDevice12GetHeapBlockEm,
+                            __ZN9MPSDevice12GetHeapBlockEmy,
                             __ZN9MPSDevice12GetMPSDeviceEPU19objcproto9MTLDevice11objc_object,
                             __ZN9MPSDevice12GetPixelInfoE14MTLPixelFormat28MPSImageFeatureChannelFormat,
                             __ZN9MPSDevice15ReturnHeapBlockEP11objc_objecty,

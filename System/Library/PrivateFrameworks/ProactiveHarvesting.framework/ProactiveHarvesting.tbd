@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveHarvesting.framework/ProactiveHarvesting
-current-version:       1153.18
+current-version:       1193.0.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -100,7 +100,9 @@ exports:
                             HVContentAdmissionKVOObserver, HVContentState,
                             HVDataSourceContentState, HVDonationReceiver,
                             HVEligibilityCheckResult, HVFileErrorCode,
-                            HVHarvestEligibility, HVInteraction, HVNotifications,
+                            HVHarvestEligibility, HVHtmlParser,
+                            HVHtmlParserHyperlink, HVImmutableContentState,
+                            HVInteraction, HVMutableContentState, HVNotifications,
                             HVPBContentState, HVPBContentStateEntry,
                             HVPBDataSourceContentState, HVPaths, HVPathsBase,
                             HVPowerBudget, HVPowerBudgetThrottlingState,
@@ -113,7 +115,8 @@ exports:
                             HVXPCInternalServerDelegate, HVXPCInternalService,
                             HVXPCSysdiagnoseServer,
                             HVXPCSysdiagnoseServerDelegate,
-                            HVXPCSysdiagnoseService ]
+                            HVXPCSysdiagnoseService,
+                            _HVNSStringEncodingEnumerator ]
     objc-ivars:           [ HVConsumerCoordinatorGuardedData._budget,
                             HVConsumerCoordinatorGuardedData._interactionConsumers,
                             HVConsumerCoordinatorGuardedData._mailConsumers,
@@ -132,6 +135,8 @@ exports:
                             HVContentAdmissionGuardedData._learnFromThisAppBundleIdentifierDenylist,
                             HVContentAdmissionGuardedData._observers,
                             HVContentAdmissionGuardedData._suggestionsShouldShowPastEvents,
+                            HVContentState._consumers,
+                            HVContentState._levelOfService,
                             HVPBContentState._consumers, HVPBContentState._has,
                             HVPBContentState._levelOfService,
                             HVPBContentStateEntry._state,

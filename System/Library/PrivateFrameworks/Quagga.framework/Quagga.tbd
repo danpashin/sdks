@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Quagga.framework/Quagga
-current-version:       125.5
+current-version:       155
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -25,11 +25,15 @@ exports:
                             _ACBSCreateFrameInfoBySearchingForBarcodesInCVPixelBuffer,
                             _ACBSCreateSymbolDescriptorFromBasicDescriptor,
                             _ACBSCreateSymbolDescriptorFromBasicDescriptorWithDefaultPayloadEncoding,
-                            _MRCDecoderCreateWithOptions,
+                            _MRCContextCreate, _MRCContextGetTypeID,
+                            _MRCContextPerform, _MRCContextPerformAsync,
+                            _MRCContextPurge, _MRCDecoderCreateWithOptions,
                             _MRCDecoderDecodeSample,
+                            _MRCDecoderDecodeSampleWithRegions,
                             _MRCDecoderDecodeSampleWithSegmentationMask,
                             _MRCDecoderGetTypeID, _MRCDecoderOptionAccuracy,
                             _MRCDecoderOptionAlgorithmVersion,
+                            _MRCDecoderOptionContext,
                             _MRCDecoderOptionLocatingMode,
                             _MRCDecoderOptionMaximum1DSymbologyDecodingScanlineCount,
                             _MRCDecoderOptionMaximum1DSymbologyDecodingTime,
@@ -78,11 +82,16 @@ exports:
                             _MRCDescriptorPayloadDecodingOptionDefaultEncoding,
                             _MRCDescriptorPayloadDecodingOptionShouldForceInProcessDecoding,
                             _MRCErrorACBSReturnCodeKey, _MRCErrorDomain,
+                            _MRCRegionCreate, _MRCRegionGetConfidence,
+                            _MRCRegionGetCornerPoints, _MRCRegionGetOrientation,
+                            _MRCRegionGetSymbology, _MRCRegionGetTransform,
+                            _MRCRegionGetTypeID,
                             _MRCSampleAttributeCameraIntrinsicMatrix,
                             _MRCSampleAttributePresentationTimeStamp,
                             _MRCSampleAttributePyramid,
                             _MRCSampleAttributeRegionOfInterest,
                             _MRCSampleCopyAttribute, _MRCSampleCopyAttributes,
+                            _MRCSampleCreateByGeneratingPyramid,
                             _MRCSampleCreateWithCVPixelBuffer,
                             _MRCSampleCreateWithCVPixelBufferAndAttributes,
                             _MRCSampleCreateWithCVPixelBufferAndPyramid,
@@ -118,7 +127,9 @@ exports:
                             _MRCSymbologyGS1DataBarLimited, _MRCSymbologyI2of5,
                             _MRCSymbologyI2of5Checksum, _MRCSymbologyITF14,
                             _MRCSymbologyMicroPDF417, _MRCSymbologyMicroQR,
-                            _MRCSymbologyPDF417, _MRCSymbologyQR,
+                            _MRCSymbologyPDF417, _MRCSymbologyPseudo1D,
+                            _MRCSymbologyPseudo2D, _MRCSymbologyPseudoExternal,
+                            _MRCSymbologyPseudoPDF417, _MRCSymbologyQR,
                             _MRCSymbologyUPCE, _Quagga_framework_build_date,
                             _Quagga_version,
                             _kACBarcodeDescriptionAcceptanceThreshold,

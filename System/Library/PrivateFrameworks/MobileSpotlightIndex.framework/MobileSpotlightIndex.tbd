@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileSpotlightIndex.framework/MobileSpotlightIndex
-current-version:       2183.21
+current-version:       2222.0.5
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -58,6 +58,7 @@ exports:
                             _MDPlistContainerAddObject,
                             _MDPlistContainerAddPlistObject,
                             _MDPlistContainerAddUUIDValue,
+                            _MDPlistContainerAllocFailure,
                             _MDPlistContainerBeginArray,
                             _MDPlistContainerBeginContainer,
                             _MDPlistContainerBeginDictionary,
@@ -144,8 +145,8 @@ exports:
                             _SIDeleteCSItems, _SIExecuteQuery,
                             _SIExecuteQueryWithResultsCallback,
                             _SIExecuteQueryWithResultsCallbackForTags,
-                            _SIFetchCSClientState, _SIFixupPaths,
-                            _SIFlushAndSuspendIndex, _SIForceResume,
+                            _SIFetchCSClientState, _SIFetchTopKTerms,
+                            _SIFixupPaths, _SIFlushAndSuspendIndex, _SIForceResume,
                             _SIGetAccumulatedCountForBundleId,
                             _SIGetAccumulatedSizeForGroup,
                             _SIGetAccumulatedStorageSizeForBundleId,
@@ -180,8 +181,8 @@ exports:
                             _SIPersistentIDStoreSupportsDirMap,
                             _SIPersistentIDStoreSync, _SIPreHeatIndex,
                             _SIProcessTerminating, _SIQueryAddResultFilter,
-                            _SIQueryAddResults, _SIQueryCreate,
-                            _SIQueryCreateWithItems,
+                            _SIQueryAddResultGenerator, _SIQueryAddResults,
+                            _SIQueryCreate, _SIQueryCreateWithItems,
                             _SIQueryCreateWithItemsAndCompletionString,
                             _SIQueryCreateWithItemsAndCompletionStringWithCurrentTime,
                             _SIQueryCreateWithItemsAndCompletionStringWithWeights,
@@ -223,8 +224,12 @@ exports:
                             _SIUINT64SetContainsValue, _SIUINT64SetCreate,
                             _SIUINT64SetGetTypeID, _SIUINT64SetIterate,
                             _SIUINT64SetRemoveValue,
-                            _SIUserCtxCreateWithLanguages, _SIValidIndex,
+                            _SIUserCtxCreateWithLanguages,
+                            _SIUserCtxGetEntitlements,
+                            _SIUserCtxSetArgumentDictionary,
+                            _SIUserCtxSetEntitlements, _SIValidIndex,
                             _SIWaitResults, _SI_PersistentIDStoreGetTypeID,
+                            _SRSodiumStemWordWithCString,
                             __MDCreateSimpleQueryEvaluator,
                             __MDCreateSimpleQueryEvaluatorWithBlock,
                             __MDCreateSimpleQueryEvaluatorWithOptions,
@@ -268,7 +273,8 @@ exports:
                             __SISetKnownContactCounts,
                             __SISetKnownContactEmailMapping, __SISetLastUsedDate,
                             __SISetMeEmailAddresses, __SISetMemoryPressureStatus,
-                            __SISetProtectionClass, __SIStartPreheatScheduler,
+                            __SISetProtectionClass, __SISetQueryBehavior,
+                            __SIStartPreheatScheduler,
                             __SITemporarilyChangeProtectionClass,
                             __SITermIndexIterate,
                             __SIUserCopyUserFSCriteriaForQuery,

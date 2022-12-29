@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitFoundation/ARDepthData.h>)
 //
 //  ARDepthData.h
 //  ARKit
@@ -37,3 +38,6 @@ API_AVAILABLE(ios(14.0))
 
 @end
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitFoundation/ARDepthData.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitFoundation/ARDepthData.h>)

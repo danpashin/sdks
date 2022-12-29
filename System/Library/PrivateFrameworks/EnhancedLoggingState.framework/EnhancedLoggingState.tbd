@@ -8,11 +8,12 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ELSDefaultConsent, _ELSDefaultDates,
+    symbols:              [ _ELSDefaultConsent, _ELSDefaultConsentData,
+                            _ELSDefaultConsentHandles, _ELSDefaultDates,
                             _ELSDefaultFollowUpOptions,
                             _ELSDefaultIdentifiersToRetry, _ELSDefaultMetadata,
                             _ELSDefaultQueue, _ELSDefaultRetriesRemaining,
-                            _ELSDefaultStatus,
+                            _ELSDefaultSessionDevice, _ELSDefaultStatus,
                             _ELSDefaultUploadCompletedPercentage,
                             _ELSDidBatchUpdate, _ELSDidUpdateStatus, _ELSDomain,
                             _ELSEventRecordCKRecordType,
@@ -47,22 +48,27 @@ exports:
                             _ELSEventTypeUploadStarted,
                             _ELSFollowUpOptionFrequency,
                             _ELSFollowUpOptionUseSpringBoardNotification,
+                            _ELSHealthKitCertValue, _ELSInternalString,
                             _ELSLogHandleForCategory,
                             _ELSMetadataDeviceSerialNumber,
                             _ELSMetadataDeviceType,
                             _ELSMetadataEnrollmentTicketNumber,
                             _ELSMetadataGigafilesToken, _ELSMetadataPayload,
                             _ELSMetadataUserAppleID, _ELSParameterCommand,
-                            _ELSParameterPayload, _ELSParameterPayloadsDict,
-                            _ELSParameterRetries, _ELSSubDefaultDatesEnd,
-                            _ELSSubDefaultDatesStart,
+                            _ELSParameterEncryption, _ELSParameterPayload,
+                            _ELSParameterPayloadsDict, _ELSParameterRetries,
+                            _ELSPlatformIOS, _ELSPlatformWatchOS,
+                            _ELSSubDefaultConsentHandleEntryHandle,
+                            _ELSSubDefaultDatesEnd, _ELSSubDefaultDatesStart,
                             _ELSSubDefaultQueueEntryExecuteAfterDuration,
                             _ELSSubDefaultQueueEntryName,
                             _ELSSubDefaultQueueEntryParameters,
+                            _ELSSubDefaultQueueEntryPlatform,
                             _ELSSubDefaultQueueEntryRetry,
                             _ELSSubDefaultQueueEntryType, _ELSUserInfoKey,
                             _kELSClientEntitlement ]
-    objc-classes:         [ ELSEntitlementUtilities, ELSEvent, ELSManager,
-                            ELSQueueEntry, ELSSnapshot, ELSWhitelist,
-                            ELSWhitelistEntry ]
+    objc-classes:         [ ELSDocumentHelper, ELSEncryptorFactory,
+                            ELSEntitlementUtilities, ELSEvent,
+                            ELSHealthLogsEncryptor, ELSManager, ELSQueueEntry,
+                            ELSSnapshot, ELSWhitelist, ELSWhitelistEntry ]
 ...

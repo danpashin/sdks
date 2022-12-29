@@ -2,7 +2,7 @@
 //  HKQueryDescriptor.h
 //  HealthKit
 //
-//  Copyright © 2021 Apple. All rights reserved.
+//  Copyright © 2021-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-HK_EXTERN API_AVAILABLE(ios(15.0), watchos(8.0))
+HK_EXTERN API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0))
 @interface HKQueryDescriptor : NSObject<NSCopying, NSSecureCoding>
 
 /*!

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           7B21880C-1E3A-3FAB-AB96-CF6ABAA45573
   - target:          arm64-ios
-    value:           6A4A65E5-27E9-383F-B401-C20DCA330087
+    value:           8A2E3B46-B839-3598-8414-83871FDBCE79
   - target:          arm64e-ios
-    value:           3FCD46F6-5353-3B23-9897-F33C534B0E25
+    value:           B0456C53-B65C-3542-B2B9-18F82BCED333
 install-name:    '/usr/lib/libPPM.dylib'
 current-version: 0
 compatibility-version: 0
@@ -18,7 +18,7 @@ exports:
     symbols:         [ _clientNumberAlrt, _clientNumberBsbd, _clientNumberPlat, _clientNumberStck, 
                        _clientNumberWifi, _kPPMDriver ]
     objc-classes:    [ IOKitUserClientInterface ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _gNotifyPort ]
     objc-classes:    [ PPMClient, PPMClientUserClientInterface ]
 ...

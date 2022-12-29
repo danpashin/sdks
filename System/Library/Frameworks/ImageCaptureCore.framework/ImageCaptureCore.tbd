@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           361B7B5C-0847-3529-9751-D47E579ABD14
+    value:           517C9530-38AA-3AD2-9ED5-4BAC2C7E2788
   - target:          arm64e-ios
-    value:           F385781F-E43B-396F-91AE-4147B655F2EE
+    value:           9629FD85-38D7-357E-AA7C-3F84FFABB498
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/ImageCaptureCore'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _ICAuthorizationStatusAuthorized, _ICAuthorizationStatusDenied, 
                        _ICAuthorizationStatusNotDetermined, _ICAuthorizationStatusRestricted, 
                        _ICCameraDeviceCanAcceptPTPCommands, _ICCameraDeviceCanDeleteAllFiles, 
@@ -23,7 +23,9 @@ exports:
                        _ICCameraDeviceSupportsPLRUUID, _ICDeleteAfterSuccessfulDownload, 
                        _ICDeleteCanceled, _ICDeleteErrorCanceled, _ICDeleteErrorDeviceMissing, 
                        _ICDeleteErrorFileMissing, _ICDeleteErrorReadOnly, _ICDeleteFailed, 
-                       _ICDeleteSuccessful, _ICDeviceCanEjectOrDisconnect, _ICDownloadSidecarFiles, 
+                       _ICDeleteSuccessful, _ICDeviceCanEjectOrDisconnect, _ICDeviceLocationDescriptionBluetooth, 
+                       _ICDeviceLocationDescriptionFireWire, _ICDeviceLocationDescriptionMassStorage, 
+                       _ICDeviceLocationDescriptionUSB, _ICDownloadSidecarFiles, 
                        _ICDownloadsDirectoryURL, _ICEnumerationChronologicalOrder, 
                        _ICEnumerationPrioritizeSpeed, _ICErrorDomain, _ICImageSourceShouldCache, 
                        _ICImageSourceThumbnailMaxPixelSize, _ICLoggingDomain, _ICLoggingLevel, 

@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.35 clang-1316.0.20.9)
-// swift-module-flags: -target arm64-apple-ios15.5 -enable-objc-interop -enable-library-evolution -module-link-name swiftSystem -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name System
-// swift-module-flags-ignorable: -user-module-version 21
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -module-link-name swiftSystem -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name System
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 21
 import Darwin
 import Swift
 import _Concurrency
+import _StringProcessing
 @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
 @frozen public struct FileDescriptor : Swift.RawRepresentable, Swift.Hashable, Swift.Codable {
   @_alwaysEmitIntoClient public let rawValue: Swift.CInt
@@ -378,7 +379,7 @@ extension System.FilePath.ComponentView : Swift.BidirectionalCollection {
 @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
 extension System.FilePath.ComponentView : Swift.RangeReplaceableCollection {
   public init()
-  public mutating func replaceSubrange<C>(_ subrange: Swift.Range<System.FilePath.ComponentView.Index>, with newElements: C) where C : Swift.Collection, C.Element == System.FilePath.ComponentView.Element
+  public mutating func replaceSubrange<C>(_ subrange: Swift.Range<System.FilePath.ComponentView.Index>, with newElements: C) where C : Swift.Collection, C.Element == System.FilePath.Component
 }
 @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
 extension System.FilePath {
@@ -1061,8 +1062,8 @@ extension System.FilePath {
 }
 @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
 extension System.FilePath : Swift.Hashable, Swift.Codable {
-  public static func == (a: System.FilePath, b: System.FilePath) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: System.FilePath, b: System.FilePath) -> Swift.Bool
   public func encode(to encoder: Swift.Encoder) throws
   public var hashValue: Swift.Int {
     get

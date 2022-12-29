@@ -7,12 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           75E3C642-4FA5-3655-8153-32E81A7B6E16
+    value:           A09FFE0D-AB92-32E7-934E-C0C2A63481A4
   - target:          arm64e-ios
-    value:           45619C19-93A5-3F28-8767-151A0A4FFBD3
+    value:           2AEAC4C8-DF2A-32F1-9318-D9B18B6F6019
 install-name:    '/System/Library/Frameworks/PHASE.framework/PHASE'
+current-version: 163
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _PHASEActionTreePrepareStatePrepareInProgress, _PHASEActionTreePrepareStatePrepareNotStarted, 
                        _PHASEActionTreePrepareStatePrepared, _PHASEAssetErrorDomain, 
                        _PHASECullOptionKill, _PHASEDirectPathTransmissionKey, _PHASEEarlyReflectionsKey, 
@@ -32,28 +33,32 @@ exports:
                        PHASEEnvelopeSegment, PHASEEnvironment, PHASEExternalInputStream, 
                        PHASEExternalInputStreamDefinition, PHASEExternalOutputStream, 
                        PHASEExternalOutputStreamController, PHASEExternalOutputStreamDefinition, 
-                       PHASEExternalStream, PHASEGeneratorNodeDefinition, PHASEGeneratorParameters, 
-                       PHASEGeometricSpreadingDistanceModelParameters, PHASEGeometryView, 
-                       PHASEGlobalMetaParameterAsset, PHASEGroup, PHASEGroupPreset, 
-                       PHASEGroupPresetSetting, PHASEListener, PHASEMappedMetaParameterDefinition, 
-                       PHASEMaterial, PHASEMedium, PHASEMeshView, PHASEMetaParameter, 
-                       PHASEMetaParameterDefinition, PHASEMixer, PHASEMixerDefinition, 
-                       PHASEMixerInformation, PHASEMixerParameters, PHASENumberMetaParameter, 
-                       PHASENumberMetaParameterDefinition, PHASENumericPair, PHASEObject, 
-                       PHASEOccluder, PHASEPreSpatialTapSource, PHASEPresetMedium, 
-                       PHASEProcedureNodeDefinition, PHASEPushStreamNode, PHASEPushStreamNodeDefinition, 
-                       PHASERandomNodeDefinition, PHASERoomSimulationDataSet, PHASERoomSimulationView, 
+                       PHASEExternalStream, PHASEExternalStreamCollection, PHASEExternalStreamDebugInfo, 
+                       PHASEExternalStreamGroupDebugInfo, PHASEGeneratorNodeDefinition, 
+                       PHASEGeneratorParameters, PHASEGeometricSpreadingDistanceModelParameters, 
+                       PHASEGeometryView, PHASEGlobalMetaParameterAsset, PHASEGroup, 
+                       PHASEGroupPreset, PHASEGroupPresetSetting, PHASEListener, 
+                       PHASEMappedMetaParameterDefinition, PHASEMaterial, PHASEMedium, 
+                       PHASEMeshView, PHASEMetaParameter, PHASEMetaParameterDefinition, 
+                       PHASEMixer, PHASEMixerDefinition, PHASEMixerInformation, PHASEMixerParameters, 
+                       PHASENumberMetaParameter, PHASENumberMetaParameterDefinition, 
+                       PHASENumericPair, PHASEObject, PHASEOccluder, PHASEPreSpatialTapSource, 
+                       PHASEPresetMedium, PHASEProcedureNodeDefinition, PHASEPushStreamNode, 
+                       PHASEPushStreamNodeDefinition, PHASERandomNodeDefinition, 
                        PHASERouteChangeInfo, PHASESamplerNodeDefinition, PHASEScatteringData, 
-                       PHASEShape, PHASEShapeElement, PHASESoundAsset, PHASESoundEvent, 
-                       PHASESoundEventNodeAsset, PHASESoundEventNodeDefinition, PHASESoundPrototype, 
-                       PHASESoundReductionIndex, PHASESource, PHASESpatialMixer, 
-                       PHASESpatialMixerDefinition, PHASESpatialModelerSendDefinition, 
+                       PHASEServiceSharedEntityDebugInfo, PHASESessionVolume, PHASEShape, 
+                       PHASEShapeElement, PHASESharedEngine, PHASESharedEntityDebugInfo, 
+                       PHASESharedListener, PHASESharedListenerDebugInfo, PHASESoundAsset, 
+                       PHASESoundEvent, PHASESoundEventNodeAsset, PHASESoundEventNodeDefinition, 
+                       PHASESoundPrototype, PHASESoundReductionIndex, PHASESource, 
+                       PHASESpatialMixer, PHASESpatialMixerDefinition, PHASESpatialModelerSendDefinition, 
                        PHASESpatialPipeline, PHASESpatialPipelineEntry, PHASESphericalCapDirectivityModelParameters, 
                        PHASEStringMetaParameter, PHASEStringMetaParameterDefinition, 
                        PHASESubband, PHASESubtreeView, PHASESwitchNodeDefinition, 
-                       PHASETapDescription, PHASETapRegistry, PHASETargetRoomAcousticParameters, 
-                       PHASETargetRoomAcousticSubbandParameters, PHASETransmissionModelerSourcePointSet, 
-                       PHASETransmissionModelerView, PHASETriangleSet, PHASEVoxelLevelView, 
-                       PHASEVoxelSet3D, PHASEVoxelTreeView, PHASEWaterProcedureNodeDefinition, 
-                       PHASEXPCService ]
+                       PHASETapDescription, PHASETapRegistry, PHASETransmissionModelerSourcePointSet, 
+                       PHASETransmissionModelerView, PHASETriangleSet, PHASEVolumeCommand, 
+                       PHASEVolumeCommandForAllSessions, PHASEVolumeCommandForSession, 
+                       PHASEVolumeCommandForVolumeCategoryMode, PHASEVolumeCommandForVolumeCategoryModeAndSession, 
+                       PHASEVoxelLevelView, PHASEVoxelSet3D, PHASEVoxelTreeView, 
+                       PHASEWaterProcedureNodeDefinition, PHASEXPCService ]
 ...

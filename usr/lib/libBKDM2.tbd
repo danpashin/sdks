@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           9C1C4E51-13B0-3D63-85BA-040EF1AC86C1
+    value:           08778E02-4028-3FA6-9D36-F8F818635AEB
   - target:          arm64e-ios
-    value:           42629837-95D3-3F8E-8C56-C6CE8C0ED4C7
+    value:           CC8151CC-0AB5-39A2-978D-1133454833CE
 install-name:    '/usr/lib/libBKDM2.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _AWDBiometricKitAttentionCheckReadFrom, _AWDBiometricKitBioLockoutEventReadFrom, 
                        _AWDBiometricKitDailyUpdateReadFrom, _AWDBiometricKitEnrollAttemptReadFrom, 
                        _AWDBiometricKitFaceDetectAttemptReadFrom, _AWDBiometricKitMatchAttemptReadFrom, 
@@ -98,9 +98,13 @@ exports:
                        _Img4DecodeRestoreInfoExists, _Img4DecodeSectionExists, _LOCAL_EC256_SHA256_ROOT_CA_CERTIFICATE, 
                        _LOCAL_EC256_SHA256_ROOT_CA_CERTIFICATE_SIZE, _LOCAL_EC384_SHA384_ROOT_CA_CERTIFICATE, 
                        _LOCAL_EC384_SHA384_ROOT_CA_CERTIFICATE_SIZE, _LOCAL_RSA4K_SHA384_LP_ROOT_CA_CERTIFICATE, 
-                       _LOCAL_RSA4K_SHA384_LP_ROOT_CA_CERTIFICATE_SIZE, _RETENTION_QUEUE_LABEL, 
+                       _LOCAL_RSA4K_SHA384_LP_ROOT_CA_CERTIFICATE_SIZE, _QA_EC384_SHA384_ROOT_CA_CERTIFICATE, 
+                       _QA_EC384_SHA384_ROOT_CA_CERTIFICATE_SIZE, _RETENTION_QUEUE_LABEL, 
                        _ROOT_CA_CERTIFICATE, _ROOT_CA_CERTIFICATE_SIZE, _RSA3K_SHA384_ROOT_CA_CERTIFICATE, 
-                       _RSA3K_SHA384_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_DDI_ROOT_CA_CERTIFICATE, 
+                       _RSA3K_SHA384_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_DDI_FAKE_GLOBAL_ROOT_CA_CERTIFICATE, 
+                       _RSA4K_SHA384_DDI_FAKE_GLOBAL_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_DDI_FAKE_ROOT_CA_CERTIFICATE, 
+                       _RSA4K_SHA384_DDI_FAKE_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_DDI_GLOBAL_ROOT_CA_CERTIFICATE, 
+                       _RSA4K_SHA384_DDI_GLOBAL_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_DDI_ROOT_CA_CERTIFICATE, 
                        _RSA4K_SHA384_DDI_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_LP_ROOT_CA_CERTIFICATE, 
                        _RSA4K_SHA384_LP_ROOT_CA_CERTIFICATE_SIZE, _RSA4K_SHA384_ROOT_CA_CERTIFICATE, 
                        _RSA4K_SHA384_ROOT_CA_CERTIFICATE_AWG1, _RSA4K_SHA384_ROOT_CA_CERTIFICATE_AWG1_SIZE, 
@@ -115,16 +119,17 @@ exports:
                        _awdMetrics, _awdPassChallengeMetric, _awdPassChallengeMetricName, 
                        _biolog_cert_pem, _biolog_cert_pem_len, _crop_packed_raw10, 
                        _getSensorSerialNumStringUT, _img4_verify_signature_with_chain, 
-                       _installDiagsProfile, _isDiagsProfileInstalled, _kAMSupportChainValidationKeySize3k, 
-                       _kAMSupportChainValidationKeySize4k, _kAMSupportDigestInfoSha1, 
-                       _kAMSupportDigestInfoSha256, _kAMSupportDigestInfoSha384, 
+                       _kAMSupportChainValidationKeySize3k, _kAMSupportChainValidationKeySize4k, 
+                       _kAMSupportDigestInfoSha1, _kAMSupportDigestInfoSha256, _kAMSupportDigestInfoSha384, 
                        _kAMSupportDigestInfoSha512, _kAnalyticsDisabled, _kImg4DecodeLocalPolicyEc384Sha384, 
-                       _kImg4DecodeLocalPolicyEc384Sha384Hacktivate, _kImg4DecodeLocalPolicyRsa4kSha384, 
-                       _kImg4DecodeLocalPolicyRsa4kSha384Hacktivate, _kImg4DecodeSecureBootEc192Sha256, 
-                       _kImg4DecodeSecureBootEc256Sha256, _kImg4DecodeSecureBootEc384Sha384, 
-                       _kImg4DecodeSecureBootEc521Sha512, _kImg4DecodeSecureBootRsa1kSha1, 
-                       _kImg4DecodeSecureBootRsa3kSha384, _kImg4DecodeSecureBootRsa4kSha384, 
-                       _kImg4DecodeSecureBootRsa4kSha384AWG1, _kImg4DecodeSecureBootRsa4kSha384DDI, 
+                       _kImg4DecodeLocalPolicyEc384Sha384Hacktivate, _kImg4DecodeLocalPolicyEc384Sha384QA, 
+                       _kImg4DecodeLocalPolicyRsa4kSha384, _kImg4DecodeLocalPolicyRsa4kSha384Hacktivate, 
+                       _kImg4DecodeSecureBootEc192Sha256, _kImg4DecodeSecureBootEc256Sha256, 
+                       _kImg4DecodeSecureBootEc384Sha384, _kImg4DecodeSecureBootEc521Sha512, 
+                       _kImg4DecodeSecureBootRsa1kSha1, _kImg4DecodeSecureBootRsa3kSha384, 
+                       _kImg4DecodeSecureBootRsa4kSha384, _kImg4DecodeSecureBootRsa4kSha384AWG1, 
+                       _kImg4DecodeSecureBootRsa4kSha384DDI, _kImg4DecodeSecureBootRsa4kSha384DDIFake, 
+                       _kImg4DecodeSecureBootRsa4kSha384DDIFakeGlobal, _kImg4DecodeSecureBootRsa4kSha384DDIGlobal, 
                        _kImg4DecodeSecureBootRsa4kSha384X86, _kPearlAbcDomain, _kPearlAbcProcess, 
                        _kPearlAbcTypeFrameIssue, _kPearlAbcTypeFrameTiming, _kPearlAbcTypeMatchStartFailure, 
                        _md5_digest_info, _oidAdCAIssuer, _oidAdOCSP, _oidAnsip384r1, 
@@ -188,13 +193,14 @@ exports:
                        _pearlCADailyUpdateEventName, _pearlCAEnrollEventName, _pearlCAFaceDetectEventName, 
                        _pearlCAGlassesBannerEventName, _pearlCALogPath, _pearlCALogPrefix, 
                        _pearlCAMatchEventName, _pearlCAPassChallengeEventName, _pearlCAToAWDNames, 
-                       _registerForDiagsProfileRemoval, _removeDiagsProfile, _scale_rect_from_center_and_pin, 
-                       _sha1_digest, _sha1_digest_info, _sha256_digest_info, _sha384_digest_info, 
-                       _sha512_digest_info, _size_of_minimum_cropped_packed_raw10, 
-                       _stride_of_packed_raw10_for_alignment, _stride_of_packed_raw10_minimum, 
-                       _verify_chain_img4_ddi, _verify_chain_img4_ec_v1, _verify_chain_img4_ecdsa256, 
-                       _verify_chain_img4_ecdsa384, _verify_chain_img4_ecdsa384_hacktivate, 
-                       _verify_chain_img4_ecdsa384_local_policy, _verify_chain_img4_tatsu_local_policy, 
+                       _scale_rect_from_center_and_pin, _sha1_digest, _sha1_digest_info, 
+                       _sha256_digest_info, _sha384_digest_info, _sha512_digest_info, 
+                       _size_of_minimum_cropped_packed_raw10, _stride_of_packed_raw10_for_alignment, 
+                       _stride_of_packed_raw10_minimum, _verify_chain_img4_ddi, _verify_chain_img4_ddi_fake, 
+                       _verify_chain_img4_ddi_fake_global, _verify_chain_img4_ddi_global, 
+                       _verify_chain_img4_ec_v1, _verify_chain_img4_ecdsa256, _verify_chain_img4_ecdsa384, 
+                       _verify_chain_img4_ecdsa384_hacktivate, _verify_chain_img4_ecdsa384_local_policy, 
+                       _verify_chain_img4_ecdsa384_qa, _verify_chain_img4_tatsu_local_policy, 
                        _verify_chain_img4_tatsu_local_policy_hacktivate, _verify_chain_img4_v1, 
                        _verify_chain_img4_v2, _verify_chain_img4_v2_AWG1, _verify_chain_img4_v2_rsa3k, 
                        _verify_chain_img4_x86, _verify_signature_ecdsa, _verify_signature_rsa, 
@@ -205,9 +211,9 @@ exports:
                        AWDBiometricKitPassCodeChallengeAttempt, BLHelper, BLRetention, 
                        BLScoreData, BioLog, BiometricEnrollOperationPearl, BiometricKitXPCServerPearl, 
                        BiometricMatchOperationPearl, BiometricPresenceDetectOperationPearl, 
-                       DiagsProfileListener, PearlAutoBugCapture, PearlCoreAnalytics, 
-                       PearlCoreAnalyticsDailyTemplateMatchCountsEvent, PearlCoreAnalyticsDailyUpdateEvent, 
-                       PearlCoreAnalyticsEnrollEvent, PearlCoreAnalyticsEvent, PearlCoreAnalyticsGlassesBannerEvent, 
+                       PearlAutoBugCapture, PearlCoreAnalytics, PearlCoreAnalyticsDailyTemplateMatchCountsEvent, 
+                       PearlCoreAnalyticsDailyUpdateEvent, PearlCoreAnalyticsEnrollEvent, 
+                       PearlCoreAnalyticsEvent, PearlCoreAnalyticsGlassesBannerEvent, 
                        PearlCoreAnalyticsMatchEvent, PearlCoreAnalyticsPasscodeChallengeEvent ]
     objc-ivars:      [ AWDBiometricKitAttentionCheck._ambientLux, AWDBiometricKitAttentionCheck._attentionDetectFailed, 
                        AWDBiometricKitAttentionCheck._camRectH, AWDBiometricKitAttentionCheck._camRectW, 

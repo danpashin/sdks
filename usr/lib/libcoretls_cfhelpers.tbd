@@ -7,18 +7,18 @@ uuids:
   - target:          armv7s-ios
     value:           DD64D933-009B-3B7F-8B79-627A9F8801CD
   - target:          arm64-ios
-    value:           DFE96297-A405-3239-95B6-27E8A669FB71
+    value:           04A11D94-3769-3744-BA5A-CA52A041D163
   - target:          arm64e-ios
-    value:           B019F4B6-D23E-3F91-9C3F-E7DBD0434887
+    value:           946ACDCF-836C-31F9-B32C-7727F9291CC5
 install-name:    '/usr/lib/libcoretls_cfhelpers.dylib'
-current-version: 178
+current-version: 183
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _SSLAllocBuffer, _SSLAllocCopyBuffer, _SSLCopyBuffer, _SSLCopyBufferFromData, 
                        _SSLCopyBufferTerm, _SSLFreeBuffer, _SSLReallocBuffer, _coretls_cfhelpersVersionNumber, 
                        _coretls_cfhelpersVersionString, _sslAllocCopy, _sslFree, 
                        _sslMalloc, _sslRealloc, _tls_copy_buffer_list, _tls_free_buffer_list ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _tls_helper_SSLProtocol_from_version, _tls_helper_create_peer_acceptable_dn_array, 
                        _tls_helper_create_peer_trust, _tls_helper_set_identity_from_array, 
                        _tls_helper_set_peer_pubkey, _tls_helper_version_from_SSLProtocol ]

@@ -8,12 +8,18 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MADSignpostLog, _MediaAnalysisServicesVersionNumber,
+    symbols:              [ _MADSignpostLog, _MADVIDomainArt, _MADVIDomainMedia,
+                            _MADVIDomainPackagedProducts,
+                            _MADVIFeatureARKitThirdParty,
+                            _MediaAnalysisServicesVersionNumber,
                             _MediaAnalysisServicesVersionString ]
     objc-classes:         [ MADEmbeddingGenerationRequest,
                             MADEmbeddingGenerationResult,
                             MADImageSafetyClassificationRequest,
-                            MADImageSafetyClassificationResult, MADRequest,
+                            MADImageSafetyClassificationResult,
+                            MADPersonIdentificationRequest,
+                            MADPersonIdentificationResult,
+                            MADPersonIdentificationResultItem, MADRequest,
                             MADResult, MADService, MADServicePrivate,
                             MADServiceProxy, MADServicePublic,
                             MADVIDocumentRecognitionRequest,
@@ -21,11 +27,18 @@ exports:
                             MADVIMachineReadableCodeDetectionRequest,
                             MADVIMachineReadableCodeDetectionResult,
                             MADVIMachineReadableCodeDetectionResultItem,
+                            MADVIRectangleDetectionRequest,
+                            MADVIRectangleDetectionResult,
+                            MADVIRemoveBackgroundRequest,
+                            MADVIRemoveBackgroundResult, MADVITextLookupRequest,
+                            MADVITextLookupResult, MADVIUserFeedbackRequest,
+                            MADVIUserFeedbackResult,
                             MADVIVisualSearchGatingDomainInfo,
                             MADVIVisualSearchGatingRequest,
                             MADVIVisualSearchGatingResult,
                             MADVIVisualSearchGatingResultItem,
                             MADVIVisualSearchRegionAttributes,
                             MADVIVisualSearchRequest, MADVIVisualSearchResult,
-                            MADVIVisualSearchResultItem ]
+                            MADVIVisualSearchResultItem,
+                            MADVIVisualSearchThirdPartyObject ]
 ...

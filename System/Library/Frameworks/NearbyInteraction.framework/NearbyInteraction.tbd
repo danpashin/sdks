@@ -7,24 +7,34 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           04168E22-5F5D-3B86-8347-001ABAD661DA
+    value:           115B67E2-9CF5-359C-9117-EB54AAA96637
   - target:          arm64e-ios
-    value:           1F29FBE6-E3BF-3D60-B9D4-6CC67CDA83B5
+    value:           89AEA0FF-98DC-3384-AC8E-56875D0F18F4
 install-name:    '/System/Library/Frameworks/NearbyInteraction.framework/NearbyInteraction'
 current-version: 0
 compatibility-version: 0
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _NIErrorDomain, _NINearbyObjectAzimuthNotAvailable, _NINearbyObjectDirectionNotAvailable, 
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _NIAlgorithmConvergenceStatusReasonDescription, _NIAlgorithmConvergenceStatusReasonDescription_Private, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientHorizontalSweep, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientLighting, _NIAlgorithmConvergenceStatusReasonInsufficientMovement, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientSignalStrength, 
+                       _NIAlgorithmConvergenceStatusReasonInsufficientVerticalSweep, 
+                       _NIErrorDomain, _NINearbyObjectAngleNotAvailable, _NINearbyObjectAngleNotAvailable_Private, 
+                       _NINearbyObjectAzimuthNotAvailable, _NINearbyObjectDirectionNotAvailable, 
                        _NINearbyObjectDirectionNotAvailable_Private, _NINearbyObjectDistanceNotAvailable, 
                        _NINearbyObjectDistanceNotAvailable_Private, _NINearbyObjectElevationNotAvailable, 
-                       _NINearbyObjectQuaternionNotAvailable, _NINotifySystemShutdownWithReason, 
-                       _NITruthTagLabelKey, _NITruthTagSourceClientApp, _NITruthTagSourceDirectUserInput, 
-                       _NITruthTagSourceKey, _kNISystemShutdownCompletionTimeoutSeconds ]
-    objc-classes:    [ NIAlgorithmConvergenceState, NIBluetoothSample, NICarKeyConfiguration, 
-                       NICarKeyEventNotifier, NIConfiguration, NIDeviceCapabilities, 
+                       _NINearbyObjectQuaternionNotAvailable, _NINearbyObjectRangeBiasEstimateNotAvailable, 
+                       _NINearbyObjectRangeUncertaintyNotAvailable, _NINearbyObjectRemoteTxAntennaMaskNotAvailable, 
+                       _NINearbyObjectSignalStrengthNotAvailable, _NINearbyObjectSignalStrengthNotAvailable_Private, 
+                       _NINearbyObjectWorldTransformNotAvailable, _NINearbyObjectWorldTransformNotAvailable_Private, 
+                       _NINotifySystemShutdownWithReason, _NITruthTagLabelKey, _NITruthTagSourceClientApp, 
+                       _NITruthTagSourceDirectUserInput, _NITruthTagSourceKey, _kNISystemShutdownCompletionTimeoutSeconds ]
+    objc-classes:    [ NIAlgorithmConvergence, NIAlgorithmConvergenceState, NIBluetoothSample, 
+                       NICarKeyConfiguration, NICarKeyEventNotifier, NIConfiguration, 
                        NIDevicePresenceConfiguration, NIDevicePresenceNotifier, NIDiscoveryToken, 
                        NIHomeDeviceConfiguration, NINearbyAccessoryConfiguration, 
-                       NINearbyObject, NINearbyPeerConfiguration, NIRegionPredicate, 
-                       NISession, _NIWiFiRangingTestConfiguration ]
+                       NINearbyObject, NINearbyPeerConfiguration, NIRangingAuthConfiguration, 
+                       NIRegionPredicate, NISession, NISpatialBrowsingConfiguration, 
+                       NIVisionInput, _NIWiFiRangingTestConfiguration ]
 ...

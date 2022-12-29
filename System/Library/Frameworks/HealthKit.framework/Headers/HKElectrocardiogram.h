@@ -2,7 +2,7 @@
 //  HKElectrocardiogram.h
 //  HealthKit
 //
-//  Copyright © 2020 Apple. All rights reserved.
+//  Copyright © 2020-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKSample.h>
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 */
 typedef NS_ENUM(NSInteger, HKElectrocardiogramLead) {
     HKElectrocardiogramLeadAppleWatchSimilarToLeadI = 1
-} API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(HKElectrocardiogram.Lead);
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(HKElectrocardiogram.Lead);
 
 /*!
 @enum          HKElectrocardiogramClassification
@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, HKElectrocardiogramClassification) {
     HKElectrocardiogramClassificationInconclusiveOther,
     
     HKElectrocardiogramClassificationUnrecognized = 100,
-} API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(HKElectrocardiogram.Classification);
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(HKElectrocardiogram.Classification);
 
 /*!
 @enum          HKElectrocardiogramSymptomsStatus
@@ -59,14 +59,14 @@ typedef NS_ENUM(NSInteger, HKElectrocardiogramSymptomsStatus) {
     HKElectrocardiogramSymptomsStatusNotSet = 0,
     HKElectrocardiogramSymptomsStatusNone = 1,
     HKElectrocardiogramSymptomsStatusPresent = 2,
-} API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(HKElectrocardiogram.SymptomsStatus);
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(HKElectrocardiogram.SymptomsStatus);
 
 /*!
  @class         HKElectrocardiogram
  @abstract      An HKElectrocardiogram is a collection of voltage values as waveforms
                 from one or more leads
 */
-HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0))
+HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0))
 @interface HKElectrocardiogram : HKSample
 
 /*!
@@ -98,8 +98,8 @@ HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0))
 
 
 // Predicate Key Paths
-HK_EXTERN NSString * const HKPredicateKeyPathAverageHeartRate API_AVAILABLE(ios(14.0), watchos(7.0));
-HK_EXTERN NSString * const HKPredicateKeyPathECGClassification API_AVAILABLE(ios(14.0), watchos(7.0));
-HK_EXTERN NSString * const HKPredicateKeyPathECGSymptomsStatus API_AVAILABLE(ios(14.0), watchos(7.0));
+HK_EXTERN NSString * const HKPredicateKeyPathAverageHeartRate API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathECGClassification API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathECGSymptomsStatus API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

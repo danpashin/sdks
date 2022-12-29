@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           DB95959B-677E-3EE7-8B18-4A9A50CC530A
+  - target:          arm64e-ios
+    value:           4666673A-3871-37F6-B99C-859C14E48A8B
+install-name:    '/usr/lib/libcanary_os.dylib'
+current-version: 32.0.2
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ __canary_chirp_chirp ]
+...

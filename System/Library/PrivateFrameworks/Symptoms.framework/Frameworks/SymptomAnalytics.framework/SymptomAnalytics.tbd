@@ -3,13 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/SymptomAnalytics
-current-version:       1617.120.7
+current-version:       1730
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SymptomAnalyticsFrameworkDidSaveNotification,
-                            _kProcessKeyTypeBundleName, _kProcessKeyTypeProcName,
+                            _countOfDistinctKeyDescriptor, _countOfKeyDescriptor,
+                            _entityConstValueForNameDescriptor,
+                            _entityKeyPathForNameDescriptor,
+                            _functionOnKeyDescriptor, _kProcessKeyTypeBundleName,
+                            _kProcessKeyTypeProcName,
                             _kStateMachineStatusKeyAdminState,
                             _kStateMachineStatusKeyInternalVariables,
                             _kStateMachineStatusKeyState,
@@ -149,16 +153,18 @@ exports:
                             _kSymptomAnalyticsServiceWatchpointValue,
                             _kSymptomAnalyticsTypeBundleIdentifier,
                             _kSymptomAnalyticsTypeProcessName,
-                            _kSymptomAnalyticsWorkspacePersistenceOptionPersistentKey ]
+                            _kSymptomAnalyticsWorkspacePersistenceOptionPersistentKey,
+                            _kSymptomForcePreferCellOverWiFiAutoDisableTimestampKey,
+                            _kSymptomForcePreferCellOverWiFiEnableKey ]
     objc-classes:         [ AggregatePropertyDescriptor, AnalyticsWorkspace,
                             AnalyticsWorkspaceRetrievalCallback, AppAnalytics,
                             DiagnosticCaseUsage, DiagnosticCaseUsageAnalytics,
                             FetchRequestPropertiesDescriptor, LiveUsage,
                             NWActivityFragment, NWActivityMetricData,
-                            NetworkAttachmentAnalytics, ObjectAnalytics, Process,
-                            ProcessAnalytics, SFApp, SFAppCalendarUsage,
-                            SFAppDomainUsage, SFAppEndpoint, SFAppExperience,
-                            SFAppRun, SFAppTypicalUsage, SFFlow, SFLiveFlowPerf,
-                            SFLiveRoutePerf, SFNetworkAttachment,
+                            NWActivityXPC, NetworkAttachmentAnalytics,
+                            ObjectAnalytics, Process, ProcessAnalytics, SFApp,
+                            SFAppCalendarUsage, SFAppDomainUsage, SFAppEndpoint,
+                            SFAppExperience, SFAppRun, SFAppTypicalUsage, SFFlow,
+                            SFLiveFlowPerf, SFLiveRoutePerf, SFNetworkAttachment,
                             SFProvisioningData, SFTrackerDomain, UsageAnalytics ]
 ...

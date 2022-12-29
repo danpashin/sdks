@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PreviewsOSSupportUI.framework/PreviewsOSSupportUI
-current-version:       19.40.15
+current-version:       20.0.49
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -145,6 +145,7 @@ exports:
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC12bringToFrontyyF,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC12forceEnabled33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLSbvpfi,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC12messageCount33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLSivpfi,
+                            _$s19PreviewsOSSupportUI19PreviewDebugOverlayC12secondsTimer33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLSo7NSTimerCSgvpfi,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC13AlignmentEdgeO21__derived_enum_equalsySbAE_AEtFZ,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC13AlignmentEdgeO4hash4intoys6HasherVz_tF,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC13AlignmentEdgeO9hashValueSivg,
@@ -156,6 +157,7 @@ exports:
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC13AlignmentEdgeOSQAAMc,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC15contentsUpdatedyyF,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC15settingsEnabled33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLSbvpfi,
+                            _$s19PreviewsOSSupportUI19PreviewDebugOverlayC17secondsSinceShown33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLSivpfi,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC22$__lazy_storage_$_view33_2167D653BE9BA0FB6EEBD3EBB5DDB070LLAC0F4ViewAELLCSgvpfi,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC4edge6parentA2C13AlignmentEdgeO_So6UIViewCtcfC,
                             _$s19PreviewsOSSupportUI19PreviewDebugOverlayC4edge6parentA2C13AlignmentEdgeO_So6UIViewCtcfCTq,
@@ -225,22 +227,31 @@ exports:
                             _$s19PreviewsOSSupportUI20UVAgentSceneRegistryCMn,
                             _$s19PreviewsOSSupportUI20UVAgentSceneRegistryCN,
                             _$s19PreviewsOSSupportUI20UVAgentSceneRegistryCfD,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV07previewE00A9Messaging07PrevieweF0Vvg,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV07previewE00A9Messaging07PrevieweF0VvpMV,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV07previewE014widgetInfoDataAC0A9Messaging07PrevieweF0V_10Foundation0J0VtcfC,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV0A10Foundation25PropertyListRepresentableAAMc,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV14widgetInfoData10Foundation0I0Vvg,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV14widgetInfoData10Foundation0I0VvpMV,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV17propertyListValue0A10Foundation08PropertyH0Vvg,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV17propertyListValue0A10Foundation08PropertyH0VvpMV,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadV17propertyListValueAC0A10Foundation08PropertyH0V_tKcfC,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadVMa,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadVMn,
-                            _$s19PreviewsOSSupportUI21WidgetInstancePayloadVN,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF00H11OrientationACSo6UIViewC_So011UIInterfaceI0VtcfC,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF00H11OrientationACSo6UIViewC_So011UIInterfaceI0VtcfCTq,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF00H11OrientationACSo6UIViewC_So011UIInterfaceI0Vtcfc,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF0So6UIViewCvg,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF0So6UIViewCvpMV,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC07contentF0So6UIViewCvpWvd,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC11viewDidLoadyyF,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC18contentOrientationSo011UIInterfaceI0Vvg,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC18contentOrientationSo011UIInterfaceI0VvpMV,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC18contentOrientationSo011UIInterfaceI0VvpWvd,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC18viewWillTransition2to4withySo6CGSizeV_So06UIViewgJ11Coordinator_ptF,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC22viewWillLayoutSubviewsyyF,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfC,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerCMa,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerCMn,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerCN,
+                            _$s19PreviewsOSSupportUI29CounterRotationViewControllerCfD,
                             _$sSo13CATransactionC19PreviewsOSSupportUIE11afterCommit0B10Foundation6FutureCyytGyFZ,
                             _$sSo13CATransactionC19PreviewsOSSupportUIE11afterCommit2on_y0B10Foundation13ExecutionLaneV_yyctFZ,
                             _$sSo13CATransactionC19PreviewsOSSupportUIE16afterSynchronize0B10Foundation6FutureCyytGyFZ,
                             _$sSo13CATransactionC19PreviewsOSSupportUIE16afterSynchronize2on_y0B10Foundation13ExecutionLaneV_yyctFZ,
+                            _$sSo17CGAffineTransformV19PreviewsOSSupportUIE08integralB0ABvg,
+                            _$sSo17CGAffineTransformV19PreviewsOSSupportUIE08integralB0ABvpMV,
+                            _$sSo17CGAffineTransformV19PreviewsOSSupportUIE9transform4from2toABSo22UIInterfaceOrientationV_AHtFZ,
                             _$sSo7UISceneC19PreviewsOSSupportUIE020previewAgentDisplaysD0Sbvg,
                             _$sSo7UISceneC19PreviewsOSSupportUIE020previewAgentDisplaysD0SbvpMV,
                             _$sSo7UISceneC19PreviewsOSSupportUIE22sendPreviewSceneActionyy0b8ServicesD009UVPreviewgH0CF,
@@ -256,5 +267,6 @@ exports:
                             UVFauxPreviewAgent,
                             _TtC19PreviewsOSSupportUI19PreviewDebugOverlay,
                             _TtC19PreviewsOSSupportUI20UVAgentSceneRegistry,
+                            _TtC19PreviewsOSSupportUI29CounterRotationViewController,
                             _UVBSActionHandler ]
 ...

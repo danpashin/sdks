@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AddressBookLegacy.framework/AddressBookLegacy
-current-version:       12646.8
+current-version:       12668
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -193,6 +193,7 @@ exports:
                             _ABAddressBookSetMe, _ABAddressBookSetMeCard,
                             _ABAddressBookSetSaveTransactionIdentifier,
                             _ABAddressBookSetSectionDictionary,
+                            _ABAddressBookSetSuppressChangeNotifications,
                             _ABAddressBookSetUniqueIdentifierToNULL,
                             _ABAddressBookSetUsedByContacts,
                             _ABAddressBookSetValue,
@@ -223,6 +224,7 @@ exports:
                             _ABCCopyAllLabelsForProperty,
                             _ABCCopyArrayOfAllGroups,
                             _ABCCopyArrayOfAllGroupsInSource,
+                            _ABCCopyArrayOfAllGroupsWithMembersOfTypeWithUUIDs,
                             _ABCCopyArrayOfAllGroupsWithSortOrdering,
                             _ABCCopyArrayOfAllInstancesOfClassInAccountWithSortOrdering,
                             _ABCCopyArrayOfAllInstancesOfClassInSourceMatchingPredicate,
@@ -530,6 +532,7 @@ exports:
                             _ABGetProcessDistributedNotificationIdentifier,
                             _ABGetSharedAddressFormatsDictionary,
                             _ABGroupAddMember, _ABGroupAddSubgroup,
+                            _ABGroupCopyArrayOfAllGroupsWithMembersOfTypeWithUUIDs,
                             _ABGroupCopyArrayOfAllMembers,
                             _ABGroupCopyArrayOfAllMembersAndSubgroups,
                             _ABGroupCopyArrayOfAllMembersWithSortOrdering,
@@ -1142,7 +1145,8 @@ exports:
                             _sourceContainsPerson, _timerInterval,
                             _updateRecordsForMoveToSource ]
     objc-classes:         [ ABAccountScorer, ABAnyValuePredicate, ABBinders,
-                            ABBufferQuery, ABBufferQueryCursor, ABCCallbackInvoker,
+                            ABBufferQuery, ABBufferQueryCount, ABBufferQueryCursor,
+                            ABBufferQueryCursorCount, ABCCallbackInvoker,
                             ABChangeHistoryEvent, ABDowntimeWhitelistMigrator,
                             ABDynamicLoader, ABFacebookMigrator, ABFavoritesEntry,
                             ABFavoritesListManager,
@@ -1164,7 +1168,11 @@ exports:
                             ABVCardValueSetter, ABVCardWatchdogTimer,
                             ABValuePredicate, NamePredicateSortKeyWrapper,
                             _ABVCardTimeProvider ]
-    objc-ivars:           [ ABCCallbackInvoker.ab, ABCCallbackInvoker.cb,
+    objc-ivars:           [ ABBufferQuery._addressBook,
+                            ABBufferQuery._fetchLinkedContacts,
+                            ABBufferQuery._managedConfiguration,
+                            ABBufferQuery._predicate, ABBufferQuery._sortOrder,
+                            ABCCallbackInvoker.ab, ABCCallbackInvoker.cb,
                             ABCCallbackInvoker.context,
                             ABFavoritesLookupChangeRecord.abDatabaseUUID,
                             ABFavoritesLookupChangeRecord.identifier,

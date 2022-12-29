@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, LAPolicy)
 {
-    /// Device owner is going to be authenticated using a biometric method (Touch ID or Face ID).
+    /// Device owner will be authenticated using a biometric method (Touch ID or Face ID).
     ///
     /// @discussion Biometric authentication is required. If the biometry is not available, not enrolled,
     ///             or locked out, then the evaluation of this policy will fail with LAErrorBiometryNotAvailable,
@@ -38,9 +38,9 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///             Lock Screen or even in app by the means of LAPolicyDeviceOwnerAuthentication.
     ///             The Lock Screen unlock is preferred user experience because we generaly don't want users to
     ///             enter their passcode at app's request.
-    LAPolicyDeviceOwnerAuthenticationWithBiometrics API_AVAILABLE(ios(8.0), macos(10.12.2), watchos(3.0), tvos(10.0)) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
+    LAPolicyDeviceOwnerAuthenticationWithBiometrics API_AVAILABLE(ios(8.0), macos(10.12.2)) API_UNAVAILABLE(watchos, tvos) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
 
-    /// Device owner is going to be authenticated by biometry or device passcode.
+    /// Device owner will be authenticated by biometry or device passcode.
     ///
     /// @discussion Biometric or passcode authentication is required. If the biometry is available, enrolled and
     ///             not locked out, users are asked for it first. Otherwise they are asked to enter device
@@ -53,9 +53,9 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///
     ///             Passcode authentication will get locked after 6 unsuccessful attempts with progressively
     ///             increased backoff delay.
-    LAPolicyDeviceOwnerAuthentication API_AVAILABLE(ios(9.0), macos(10.11), watchos(3.0), tvos(10.0)) = kLAPolicyDeviceOwnerAuthentication,
+    LAPolicyDeviceOwnerAuthentication API_AVAILABLE(ios(9.0), macos(10.11), watchos(3.0)) API_UNAVAILABLE(tvos) = kLAPolicyDeviceOwnerAuthentication,
     
-    /// Device owner is going to be authenticated by Watch.
+    /// Device owner will be authenticated by Watch.
     ///
     /// @discussion Watch authentication is required. If no nearby paired watch device can be found,
     ///             LAErrorWatchNotAvailable is returned.
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///             confirm authentication by double-clicking the side button on their watch.
     LAPolicyDeviceOwnerAuthenticationWithWatch API_AVAILABLE(macos(10.15), macCatalyst(13.0)) API_UNAVAILABLE(ios, watchos, tvos) = kLAPolicyDeviceOwnerAuthenticationWithWatch,
     
-    /// Device owner is going to be authenticated by biometry or Watch.
+    /// Device owner will be authenticated by biometry or Watch.
     ///
     /// @discussion Watch or biometric authentication is required. If no nearby paired watch device can be found,
     ///             it behaves as LAPolicyDeviceOwnerAuthenticationWithBiometrics. Similarly, if biometry is
@@ -73,8 +73,12 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///             Watch authentication dialog looks and behaves similarly to biometric variant. When both
     ///             machanisms are available, user is asked to use biometry and watch authentication will run in
     ///             parallel.
-    LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch API_AVAILABLE(macos(10.15), macCatalyst(13.0)) API_UNAVAILABLE(ios, watchos, tvos) = kLAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch
-} API_AVAILABLE(ios(8.0), macos(10.10), watchos(3.0), tvos(10.0));
+    LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch API_AVAILABLE(macos(10.15), macCatalyst(13.0)) API_UNAVAILABLE(ios, watchos, tvos) = kLAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch,
+    
+    /// Device owner will be authenticated by device passcode. The authentication will also succeed if the wrist detection is enabled,
+    /// correct passcode was entered in the past and the watch has been on the wrist ever since.
+    LAPolicyDeviceOwnerAuthenticationWithWristDetection API_AVAILABLE(watchos(9.0)) API_UNAVAILABLE(macos, ios, tvos) = kLAPolicyDeviceOwnerAuthenticationWithWristDetection,
+} API_AVAILABLE(ios(8.0), macos(10.10), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// The maximum value for LAContext touchIDAuthenticationAllowableReuseDuration property.
 extern const NSTimeInterval LATouchIDAuthenticationMaximumAllowableReuseDuration API_AVAILABLE(macos(10.12), ios(9.0)) API_UNAVAILABLE(watchos, tvos);
@@ -84,7 +88,7 @@ extern const NSTimeInterval LATouchIDAuthenticationMaximumAllowableReuseDuration
 /// @discussion This context can be used for evaluating policies.
 ///
 /// @see LAPolicy
-API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
+API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0)) API_UNAVAILABLE(tvos)
 @interface LAContext : NSObject
 
 /// Determines if a particular policy can be evaluated.
@@ -109,7 +113,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
 /// @return YES if the policy can be evaluated, NO otherwise.
 - (BOOL)canEvaluatePolicy:(LAPolicy)policy error:(NSError * __autoreleasing *)error
     NS_SWIFT_NOTHROW
-    API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
+    API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Evaluates the specified policy.
 ///
@@ -168,7 +172,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
        localizedReason:(NSString *)localizedReason
                  reply:(void(^)(BOOL success, NSError * __nullable error))reply
     NS_SWIFT_ASYNC_THROWS_ON_FALSE(0)
-    API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
+    API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Invalidates the context.
 ///
@@ -180,7 +184,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
 ///             used for policy evaluation and an attempt to do so will fail with LAErrorInvalidContext.
 ///
 ///             Invalidating a context that has been already invalidated has no effect.
-- (void)invalidate API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
+- (void)invalidate API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 typedef NS_ENUM(NSInteger, LACredentialType)
 {
@@ -201,8 +205,8 @@ typedef NS_ENUM(NSInteger, LACredentialType)
     ///             LocalAuthentication will not show the smart card PIN user interface.
     ///             When entered from the LocalAuthentication user interface, the PIN is stored as
     ///             UTF-8 encoded string.
-    LACredentialTypeSmartCardPIN API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2), tvos(13.4)) = kLACredentialSmartCardPIN,
-} API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
+    LACredentialTypeSmartCardPIN API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2)) API_UNAVAILABLE(tvos) = kLACredentialSmartCardPIN,
+} API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Sets a credential to this context.
 ///
@@ -217,7 +221,7 @@ typedef NS_ENUM(NSInteger, LACredentialType)
 /// @return YES if the credential was set successfully, NO otherwise.
 ///
 - (BOOL)setCredential:(nullable NSData *)credential
-                 type:(LACredentialType)type API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
+                 type:(LACredentialType)type API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Reveals if credential was set with this context.
 ///
@@ -225,7 +229,7 @@ typedef NS_ENUM(NSInteger, LACredentialType)
 ///
 /// @return YES on success, NO otherwise.
 ///
-- (BOOL)isCredentialSet:(LACredentialType)type API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
+- (BOOL)isCredentialSet:(LACredentialType)type API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 {
@@ -242,11 +246,11 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
     LAAccessControlOperationUseKeySign,
     
     /// Access control will be used for data decryption using existing key.
-    LAAccessControlOperationUseKeyDecrypt API_AVAILABLE(macos(10.12), ios(10.0)),
+    LAAccessControlOperationUseKeyDecrypt API_AVAILABLE(macos(10.12), ios(10.0), watchos(3.0)) API_UNAVAILABLE(tvos),
 
     /// Access control will be used for key exchange.
-    LAAccessControlOperationUseKeyKeyExchange API_AVAILABLE(macos(10.12), ios(10.0)),
-} API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0), tvos(10.0));
+    LAAccessControlOperationUseKeyKeyExchange API_AVAILABLE(macos(10.12), ios(10.0), watchos(3.0)) API_UNAVAILABLE(tvos),
+} API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Evaluates access control object for the specified operation.
 ///
@@ -308,7 +312,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 /// Fallback button title.
 /// @discussion Allows fallback button title customization. If set to empty string, the button will be hidden.
 ///             A default title "Enter Password" is used when this property is left nil.
-@property (nonatomic, nullable, copy) NSString *localizedFallbackTitle API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
+@property (nonatomic, nullable, copy) NSString *localizedFallbackTitle API_AVAILABLE(macos(10.10), ios(8.0)) API_UNAVAILABLE(watchos, tvos);
 
 /// This property is deprecated and setting it has no effect.
 @property (nonatomic, nullable) NSNumber *maxBiometryFailures API_DEPRECATED("No longer supported", ios(8.3, 9.0), macos(10.10.3, 10.11)) API_UNAVAILABLE(watchos, tvos);
@@ -316,7 +320,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 /// Cancel button title.
 /// @discussion Allows cancel button title customization. A default title "Cancel" is used when
 ///             this property is left nil or is set to empty string.
-@property (nonatomic, nullable, copy) NSString *localizedCancelTitle API_AVAILABLE(macos(10.12), ios(10.0), watchos(3.0), tvos(10.0));
+@property (nonatomic, nullable, copy) NSString *localizedCancelTitle API_AVAILABLE(macos(10.12), ios(10.0)) API_UNAVAILABLE(watchos, tvos);
 
 /// Contains policy domain state.
 ///
@@ -365,7 +369,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 ///
 ///             If this property is used with a LocalAuthentication evaluation, it will eventually fail with
 ///             LAErrorNotInteractive instead of displaying the authentication UI.
-@property (nonatomic) BOOL interactionNotAllowed API_AVAILABLE(macos(10.13), ios(11.0)) API_UNAVAILABLE(watchos, tvos);
+@property (nonatomic) BOOL interactionNotAllowed API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0)) API_UNAVAILABLE(tvos);
 
 
 typedef NS_ENUM(NSInteger, LABiometryType)

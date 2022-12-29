@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenTimeCore.framework/ScreenTimeCore
-current-version:       500.10.1
+current-version:       502.0.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _STActivationIdentifierDowntime,
                             _STActivationIdentifierUsageLimit,
+                            _STAppInfoCacheDidUpdateNotificationName,
                             _STAskForTimeMessageReceivedNotification,
                             _STAskMachServiceName,
                             _STAvailableCategoriesExcludingSystemCategories,
@@ -67,11 +68,13 @@ exports:
                             _STMachServiceEntitlementAsk,
                             _STMachServiceEntitlementCapabilities,
                             _STMachServiceEntitlementCommunication,
+                            _STMachServiceEntitlementDowntime,
                             _STMachServiceEntitlementSetup,
                             _STMachServiceNameAsk,
                             _STMachServiceNameCapabilities,
                             _STMachServiceNameCommunication,
                             _STMachServiceNameContacts,
+                            _STMachServiceNameDowntime,
                             _STMachServiceNameScreenTimePrivate,
                             _STMachServiceNameSetup, _STMailAppBundleID,
                             _STManagementStateStateDidChange,
@@ -172,8 +175,8 @@ exports:
                             STCoreUsersController, STDailySchedule, STDebouncer,
                             STDeviceCapabilitiesClient,
                             STDeviceDowntimeUserNotificationContext, STDowntime,
-                            STDowntimeConfiguration, STDowntimeOverride,
-                            STDowntimeOverrideBuilder,
+                            STDowntimeClient, STDowntimeConfiguration,
+                            STDowntimeOverride, STDowntimeOverrideBuilder,
                             STDowntimeOverrideCoreAnalyticsEvent,
                             STDowntimeOverrideTransformer,
                             STDowntimeOverrideUpdater,
@@ -181,11 +184,13 @@ exports:
                             STFamilyMember, STFamilyOrganization,
                             STFamilyOrganizationSettings, STFetchResultsRequest,
                             STGroupFetchedResultsController, STInstalledApp,
-                            STLocalOrganization, STLocations, STLog,
-                            STManagementState, STManagementStateObserver,
+                            STIntroductionModel, STLocalOrganization,
+                            STLocationSharingModificationClient, STLocations,
+                            STLog, STManagementState, STManagementStateObserver,
                             STOpaquePasscode, STPINController,
                             STPersistenceConfiguration, STPersistenceController,
-                            STReconciler, STRestrictionsCoreAnalyticsEvent,
+                            STPresetsClient, STPresetsConfiguration, STReconciler,
+                            STRestrictionsCoreAnalyticsEvent,
                             STScreenTimeAgentPrivateConnection,
                             STScreenTimeCoreBundle,
                             STScreenTimeEnabledUserNotificationContext,

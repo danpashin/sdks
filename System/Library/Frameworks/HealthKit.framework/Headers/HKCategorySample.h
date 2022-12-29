@@ -2,7 +2,7 @@
 //  HKCategorySample.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKObject.h>
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract   An HKObject subclass representing an category measurement
  @discussion Category samples are samples that can be categorized into an enum of concrete values
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKCategorySample : HKSample
 
 @property (readonly, strong) HKCategoryType *categoryType;
@@ -76,13 +76,13 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                              startDate:(NSDate *)startDate
                                endDate:(NSDate *)endDate
                                 device:(nullable HKDevice *)device
-                              metadata:(nullable NSDictionary<NSString *, id> *)metadata API_AVAILABLE(ios(9.0), watchos(2.0));
+                              metadata:(nullable NSDictionary<NSString *, id> *)metadata API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 @end
 
 /*!
  @constant     HKPredicateKeyPathCategoryValue
  */
-HK_EXTERN NSString * const HKPredicateKeyPathCategoryValue API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKPredicateKeyPathCategoryValue API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

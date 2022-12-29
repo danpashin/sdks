@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           8AD6BEB3-BAD5-337A-B859-E586D10708C7
+    value:           EC104A3D-0060-3A0C-A6EF-11CF8AD5C86F
   - target:          arm64e-ios
-    value:           D932DF1D-F690-375C-BDF3-C9D8B9AC3B4B
+    value:           AB2C6F90-E666-3CDA-B2C2-08BDBD676E3A
 install-name:    '/usr/lib/libfire3.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN4gnss6DeviceC2ENSt3__18functionIFvNS_6ResultEEEE, __ZN8gnssTest6DeviceC2ENSt3__18functionIFvN4gnss6ResultEEEE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _getGnssDeviceVersion, _getVersionString, _newGnssDevice, 
                        _newGnssDeviceTest ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN4gnss6DeviceC2ENSt3__18functionIFvNS_6ResultEEEE, __ZN8gnssTest6DeviceC2ENSt3__18functionIFvN4gnss6ResultEEEE ]
 ...

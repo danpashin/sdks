@@ -10,8 +10,20 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CalculateExpression, _CalculateExpressionError,
                             _CalculateInternationalExpression,
+                            _CalculateKeyAllowConversions,
+                            _CalculateKeyAllowPartialExpressions,
+                            _CalculateKeyAllowUnits,
+                            _CalculateKeyAutoScientificNotation,
+                            _CalculateKeyConvertTrivial, _CalculateKeyEngine,
+                            _CalculateKeyExpectedUnitTypes,
+                            _CalculateKeyFlexibleFractionDigits,
+                            _CalculateKeyIgnoreProbableSearches,
+                            _CalculateKeyLocales, _CalculateKeyLocalizeUnit,
+                            _CalculateKeyMaximumConversions,
+                            _CalculateKeyNumberFormatter,
                             _CalculatePerformExpression ]
-    objc-classes:         [ Converter, CurrencyCache ]
+    objc-classes:         [ Calculate, CalculateRequest, CalculateResult,
+                            CalculateTerm, CalculateUnit, Converter, CurrencyCache ]
     objc-ivars:           [ Converter._additionalResults,
                             Converter._conversionType,
                             Converter._currencyUpdateTimeOut,
@@ -28,5 +40,7 @@ exports:
                             CurrencyCache._currentString,
                             CurrencyCache._lastRefreshDate,
                             CurrencyCache._mutableCurrencyCache,
-                            CurrencyCache._serializer, CurrencyCache._uuid ]
+                            CurrencyCache._refreshInterval,
+                            CurrencyCache._serializer, CurrencyCache._timeout,
+                            CurrencyCache._uuid ]
 ...

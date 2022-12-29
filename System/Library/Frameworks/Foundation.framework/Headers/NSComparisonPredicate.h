@@ -4,7 +4,7 @@
 
 #import <Foundation/NSPredicate.h>
 
-NS_ASSUME_NONNULL_BEGIN
+NS_HEADER_AUDIT_BEGIN(nullability, sendability)
 
 // Flags(s) that can be passed to the factory to indicate that a operator operating on strings should do so in a case insensitive fashion.
 typedef NS_OPTIONS(NSUInteger, NSComparisonPredicateOptions) {
@@ -43,7 +43,6 @@ typedef NS_ENUM(NSUInteger, NSPredicateOperatorType) {
 @class NSExpression;
 
 // Comparison predicates are predicates which do some form of comparison between the results of two expressions and return a BOOL. They take an operator, a left expression, and a right expression, and return the result of invoking the operator with the results of evaluating the expressions.
-
 API_AVAILABLE(macos(10.4), ios(3.0), watchos(2.0), tvos(9.0))
 @interface NSComparisonPredicate : NSPredicate
 
@@ -63,4 +62,4 @@ API_AVAILABLE(macos(10.4), ios(3.0), watchos(2.0), tvos(9.0))
 
 @end
 
-NS_ASSUME_NONNULL_END
+NS_HEADER_AUDIT_END(nullability, sendability)

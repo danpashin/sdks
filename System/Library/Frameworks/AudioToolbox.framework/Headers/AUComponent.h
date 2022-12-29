@@ -453,7 +453,9 @@ CF_ENUM(UInt32) {
 
     @constant       kAudioUnitSubType_Reverb2
                     A lite reverb that can be used to simulate various and different spaces
-
+ 
+	@constant       kAudioUnitSubType_AUSoundIsolation
+					An audio unit that can be used to isolate a specified sound type
 */
 CF_ENUM(UInt32) {
 	kAudioUnitSubType_PeakLimiter			= 'lmtr',
@@ -468,7 +470,8 @@ CF_ENUM(UInt32) {
 	kAudioUnitSubType_Delay					= 'dely',
 	kAudioUnitSubType_SampleDelay			= 'sdly',
 	kAudioUnitSubType_NBandEQ				= 'nbeq',
-    kAudioUnitSubType_Reverb2               = 'rvb2'
+    kAudioUnitSubType_Reverb2               = 'rvb2',
+	kAudioUnitSubType_AUSoundIsolation API_AVAILABLE(macos(13.0), ios(16.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos) = 'vois',
 };
 
 #if !TARGET_OS_IPHONE

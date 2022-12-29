@@ -36,7 +36,7 @@ API_AVAILABLE(ios(15.0))
  * completion : Callback function to receive all credentials
  *
  */
-- (void)retrieveAllCredentials:(void (^)(NSSet<THCredentials*>* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(allCredentials());
+- (void)retrieveAllCredentials:(void (^)(NSSet<THCredentials*>* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(allCredentials());
 
 /*
  * @function deleteActiveDataSetRecordForBorderAgent
@@ -50,7 +50,7 @@ API_AVAILABLE(ios(15.0))
  * completion : Callback function to return the status of the delete operation
  *
  */
-- (void)deleteCredentialsForBorderAgent:(NSData *)borderAgentID completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst);
+- (void)deleteCredentialsForBorderAgent:(NSData *)borderAgentID completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0));
 
 /*
  * @function retrieveCredentialsForBorderAgent
@@ -62,7 +62,7 @@ API_AVAILABLE(ios(15.0))
  * completion : Callback function to receive the matching active dataset record
  *
  */
-- (void)retrieveCredentialsForBorderAgent:(NSData *)borderAgentID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(credentials(forBorderAgentID:));
+- (void)retrieveCredentialsForBorderAgent:(NSData *)borderAgentID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(credentials(forBorderAgentID:));
 
 /*
  * @function storeCredentialsForBorderAgent
@@ -79,7 +79,7 @@ API_AVAILABLE(ios(15.0))
 
 - (void)storeCredentialsForBorderAgent:(NSData *)borderAgentID
               activeOperationalDataSet:(NSData *)activeOperationalDataSet
-                            completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst);
+                            completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0));
 
 /*
  * @function retrievePreferredCredentials
@@ -92,7 +92,7 @@ API_AVAILABLE(ios(15.0))
  * completion : Callback function to receive preferred network active dataset record
  *
  */
-- (void)retrievePreferredCredentials:(void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(preferredCredentials());
+- (void)retrievePreferredCredentials:(void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(preferredCredentials());
 
 /*
  * @function retrieveActiveDataSetRecordForExtendedPANID
@@ -106,7 +106,8 @@ API_AVAILABLE(ios(15.0))
  * completion       : Callback function to receive the matching active dataset record
  *
  */
-- (void)retrieveCredentialsForExtendedPANID:(NSData *)extendedPANID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(credentials(forExtendedPANID:));
+- (void)retrieveCredentialsForExtendedPANID:(NSData *)extendedPANID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(credentials(forExtendedPANID:));
+
 /*
  * @function checkPreferredNetworkForActiveOperationalDataset
  *
@@ -120,7 +121,7 @@ API_AVAILABLE(ios(15.0))
  */
 
 - (void)checkPreferredNetworkForActiveOperationalDataset:(NSData *)activeOperationalDataSet
-                                           completion:(void (^)(BOOL isPreferred))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(isPreferred(forActiveOperationalDataset:));
+                                           completion:(void (^)(BOOL isPreferred))completion API_AVAILABLE(ios(15.0))  NS_SWIFT_ASYNC_NAME(isPreferred(forActiveOperationalDataset:));
 @end
 
 NS_ASSUME_NONNULL_END

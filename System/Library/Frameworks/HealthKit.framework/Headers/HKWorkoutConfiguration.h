@@ -2,7 +2,7 @@
 //  HKWorkoutConfiguration.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKMetadata.h>
@@ -19,13 +19,13 @@ typedef NS_ENUM(NSInteger, HKWorkoutSessionLocationType) {
     HKWorkoutSessionLocationTypeUnknown = 1,
     HKWorkoutSessionLocationTypeIndoor,
     HKWorkoutSessionLocationTypeOutdoor,
-} API_AVAILABLE(ios(10.0), watchos(2.0));
+} API_AVAILABLE(ios(10.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @class         HKWorkoutConfiguration
  @abstract      An HKWorkoutConfiguration is an object that can be used to describe the workout activity.
  */
-HK_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0))
+HK_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0))
 @interface HKWorkoutConfiguration : NSObject <NSCopying, NSSecureCoding>
 
 /*!

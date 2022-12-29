@@ -1,7 +1,7 @@
 /*
     NSManagedObjectContext.h
     Core Data
-    Copyright (c) 2004-2021, Apple Inc.
+    Copyright (c) 2004-2022, Apple Inc.
     All rights reserved.
 */
 
@@ -81,7 +81,11 @@ typedef NS_ENUM(NSUInteger, NSManagedObjectContextConcurrencyType) {
 } API_AVAILABLE(macosx(10.7), ios(5.0));
 
 API_AVAILABLE(macosx(10.4),ios(3.0))
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
+#else
+@interface NSManagedObjectContext : NSObject <NSCoding> {
+#endif
 }
 
 + (instancetype)new API_DEPRECATED( "Use -initWithConcurrencyType: instead", macosx(10.4,10.11), ios(3.0,9.0));
@@ -163,9 +167,11 @@ API_AVAILABLE(macosx(10.4),ios(3.0))
 /* calls -refreshObject:mergeChanges: on all currently registered objects with this context.  It handles dirtied objects and clearing the context reference queue */
 - (void)refreshAllObjects API_AVAILABLE(macosx(10.11),ios(8.3));
 
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 - (void)lock API_DEPRECATED( "Use a queue style context and -performBlockAndWait: instead", macosx(10.4,10.10), ios(3.0,8.0));
 - (void)unlock API_DEPRECATED( "Use a queue style context and -performBlockAndWait: instead", macosx(10.4,10.10), ios(3.0,8.0));
 - (BOOL)tryLock API_DEPRECATED( "Use a queue style context and -performBlock: instead", macosx(10.4,10.10), ios(3.0,8.0));
+#endif
     
 // whether or not the context propagates deletes to related objects at the end of the event, or only at save time
 @property (nonatomic) BOOL propagatesDeletesAtEndOfEvent;   // The default is YES.

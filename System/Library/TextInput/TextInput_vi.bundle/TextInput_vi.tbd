@@ -8,16 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __ZNK17TIInputManager_vi21create_quality_filterERKN2KB19CandidateCollectionENS0_10LookupTypeE,
+    symbols:              [ __ZNK17TIInputManager_vi21create_quality_filterEN2KB10LookupTypeENS0_20CandidateFilterFlagsE,
                             __ZNK17TIInputManager_vi23filter_pre_lookup_inputERKN2KB6StringE,
                             __ZNK17TIInputManager_vi27vni_filter_pre_lookup_inputERKN2KB6StringE,
                             __ZNK17TIInputManager_vi28viqr_filter_pre_lookup_inputERKN2KB6StringE,
                             __ZTV17TIInputManager_vi,
                             _kVietnameseVIQRSpecialCharacters ]
-    objc-classes:         [ TIKeyboardInputManager_vi,
+    objc-classes:         [ TIKeyboardFeatureSpecialization_vi,
+                            TIKeyboardInputManager_vi,
                             TIKeyboardInputManager_vi_VIQR,
                             TIKeyboardInputManager_vi_VNI ]
-    objc-ivars:           [ TIKeyboardInputManager_vi.m_compositionDisabled,
+    objc-ivars:           [ TIKeyboardInputManager_vi.m_lexiconID,
                             TIKeyboardInputManager_vi.m_transliterator,
                             TIKeyboardInputManager_vi.m_useInternalIndex ]
 ...

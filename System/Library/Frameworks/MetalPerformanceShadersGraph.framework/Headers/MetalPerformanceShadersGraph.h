@@ -15,6 +15,7 @@
 #import <MetalPerformanceShadersGraph/MPSGraphConvolutionOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphConvolutionTransposeOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphControlFlowOps.h>
+#import <MetalPerformanceShadersGraph/MPSGraphCumulativeOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphDepthwiseConvolutionOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphGatherOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphLinearAlgebraOps.h>
@@ -29,7 +30,9 @@
 #import <MetalPerformanceShadersGraph/MPSGraphRandomOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphReductionOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphResizeOps.h>
+#import <MetalPerformanceShadersGraph/MPSGraphRNNOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphScatterNDOps.h>
+#import <MetalPerformanceShadersGraph/MPSGraphSortOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphStencilOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphTensorShapeOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphTopKOps.h>

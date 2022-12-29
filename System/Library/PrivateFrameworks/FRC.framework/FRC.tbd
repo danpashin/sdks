@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FRC.framework/FRC
-current-version:       126
+current-version:       146
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -30,19 +30,21 @@ exports:
                             _createOpticalFlowFromFile, _createPixelBuffer,
                             _createPixelBufferPool,
                             _createPixelBufferPoolWithExtendedPixels,
-                            _createRGBATextureFromCVPixelBuffer, _createTextures,
+                            _createRGBATextureFromCVPixelBuffer,
+                            _createTensorBufferFlowFromFile, _createTextures,
                             _createTexturesFromCVPixelBuffer,
                             _createTexturesFromCVPixelBufferWithCommandBuffer,
                             _deinterleave2, _deinterleave3, _deinterleave4,
                             _deserializeLivePhotoMetadata, _findIRAPs,
                             _get4xDownSizeUsage, _getFigLivePhotoMetadataV3,
-                            _getOpticalFlowTensorSize, _getQuarterSizeUsage,
-                            _getSynthesisTensorSize, _interleave2, _interleave4,
+                            _getQuarterSizeUsage, _getSynthesisTensorSize,
+                            _interleave2, _interleave4,
                             _isBufferCopyNecessaryForCVtoTextureConversion,
                             _isBufferYUV, _isPackedRGBA, _loadTexture,
                             _loadTextureArray, _loadTextureInterleaved, _readBGRA,
                             _readBuffer, _readBufferInterlaeved, _readData,
-                            _readData32, _readPNG, _readYUVPlanar, _saveTensorBuffer,
+                            _readData32, _readFlo, _readPNG, _readYUVPlanar,
+                            _saveTensorBuffer,
                             _saveTensorBufferWithChannelOffset,
                             _saveTextureArray, _saveTextureBufferFlt32,
                             _saveTextureInterleaved, _swapWidthAndHeight,
@@ -50,7 +52,8 @@ exports:
                             _writeBuffer, _writeBufferFlt32,
                             _writeBufferInterlaeved,
                             _writeBufferWithVerticalOffset, _writeData,
-                            _writeData32, _writePNG, _writeYUVPlanar ]
+                            _writeData32, _writeFlo, _writeGrayscaldTiff, _writePNG,
+                            _writeYUVPlanar ]
     objc-classes:         [ Backwarp, BodyPoint, Correlation, EspressoModel,
                             FRCBodyBoundingBoxDetector, FRCFaceHandLegBlock,
                             FRCFaceHandLegRectangle, FRCFrame,

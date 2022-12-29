@@ -7,12 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E5CD04FD-D85A-35DF-A97B-231811119375
+    value:           8E7155A2-BBA8-3FE8-950A-7D7E954F9F0B
   - target:          arm64e-ios
-    value:           9148D7C2-A802-3348-BB3E-FCDE5349D3CE
+    value:           B98F65A8-8526-3F20-BDD8-89A0C472CF0E
 install-name:    '/System/Library/Frameworks/AutomaticAssessmentConfiguration.framework/AutomaticAssessmentConfiguration'
+current-version: 0
+compatibility-version: 0
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _AEAssessmentErrorDomain ]
     objc-classes:    [ AEAssessmentApplication, AEAssessmentConfiguration, AEAssessmentParticipantConfiguration, 
                        AEAssessmentSession ]

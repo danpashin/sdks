@@ -2,7 +2,7 @@
 //  HKFHIRResource.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,31 +12,31 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * HKFHIRResourceType NS_TYPED_ENUM API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+typedef NSString * HKFHIRResourceType NS_TYPED_ENUM API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeAllergyIntolerance API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCondition API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCoverage API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeImmunization API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationDispense API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationOrder API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationRequest API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationStatement API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeObservation API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
-HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeProcedure API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeAllergyIntolerance API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCondition API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeCoverage API_AVAILABLE(ios(14.0), macCatalyst(14.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeImmunization API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationDispense API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationOrder API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationRequest API_AVAILABLE(ios(14.0), macCatalyst(14.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeMedicationStatement API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeObservation API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
+HK_EXTERN HKFHIRResourceType const HKFHIRResourceTypeProcedure API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @class         HKFHIRResource
  @abstract      The HKFHIRResource class encapsulates a FHIR (Fast Healthcare Interoperability Resources) resource.
  */
-HK_EXTERN API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos)
+HK_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos)
 @interface HKFHIRResource : NSObject <NSSecureCoding, NSCopying>
 
 /*!
  @property      FHIRVersion
  @abstract      The FHIR version of the resource data.
  */
-@property (readonly, copy) HKFHIRVersion *FHIRVersion API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos);
+@property (readonly, copy) HKFHIRVersion *FHIRVersion API_AVAILABLE(ios(14.0), macCatalyst(14.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @property      resourceType

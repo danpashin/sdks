@@ -1,0 +1,40 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           B81DDC3F-2D18-37F9-A7EE-80F4C749EBCC
+  - target:          arm64e-ios
+    value:           4421E742-2659-34F3-8B83-F5E9E3007DD2
+install-name:    '/System/Library/Frameworks/BackgroundAssets.framework/BackgroundAssets'
+swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/CloudKit.framework/CloudKit' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _BAAppStoreClientErrorDomain, _BABackgroundDownloaderExtensionLabel, 
+                       _BADownloaderExtensionMetadataKeyApplicationCacheLocationURL, 
+                       _BADownloaderExtensionMetadataKeyApplicationIdentifier, _BADownloaderExtensionMetadataKeyApplicationLocationURL, 
+                       _BADownloaderExtensionMetadataKeyLocalizedApplicationName, 
+                       _BADownloaderPriorityDefault, _BADownloaderPriorityMax, _BADownloaderPriorityMin, 
+                       _BAErrorDomain, _BAInitialRestrictionsDomainAllowList, _BAInitialRestrictionsDownloadAllowance, 
+                       _BAInitialRestrictionsKey, _NSErrorWithBAErrorCode, _kBADownloaderExtensionLabel, 
+                       _kBADownloaderInfoDictionaryApplicationCacheLocationURLKey, 
+                       _kBADownloaderInfoDictionaryApplicationIdentifierKey, _kBADownloaderInfoDictionaryApplicationLocationURLKey, 
+                       _kBADownloaderInfoDictionaryLocalizedApplicationNameKey, _kBADownloaderInitialAllowListKey, 
+                       _kBADownloaderInitialAllowanceKey, _kBADownloaderInitialRestrictionsKey, 
+                       _kBackgroundAssetsAgentMachServiceName, _kBackgroundAssetsAgentSPIMachServiceName, 
+                       _kBackgroundAssetsAppInfoAllowedDomain, _kBackgroundAssetsAppInfoAmountDownloadAllowance, 
+                       _kBackgroundAssetsAppInfoAmountDownloadedKey, _kBackgroundAssetsAppInfoAppIdentifierKey, 
+                       _kBackgroundAssetsAppInfoAppTeamIdentifierKey, _kBackgroundAssetsAppInfoDeliveredAppDidInstall, 
+                       _kBackgroundAssetsAppInfoDeliveredAppHasLaunched, _kBackgroundAssetsAppInfoLastApplicationLaunchTime, 
+                       _kBackgroundAssetsAppInfoLastTimeCheckKey, _kBackgroundAssetsAppInfoPermittedForInitialBackgroundActivity, 
+                       _kBackgroundAssetsDeveloperTeamIdentifierEntitlement ]
+    objc-classes:    [ BAAgentSystemProxy, BAAppExtensionInfo, BAAppStoreClient, 
+                       BACloudKitDownload, BADownload, BADownloadManager, BAURLDownload ]
+...

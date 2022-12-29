@@ -2,10 +2,12 @@
 //  HKQuantityAggregationStyle.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2018 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @enum          HKQuantityAggregationStyle
@@ -19,8 +21,10 @@
  */
 typedef NS_ENUM(NSInteger, HKQuantityAggregationStyle) {
     HKQuantityAggregationStyleCumulative = 0,
-    HKQuantityAggregationStyleDiscreteArithmetic API_AVAILABLE(ios(13.0), watchos(6.0)),
+    HKQuantityAggregationStyleDiscreteArithmetic API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0)),
     HKQuantityAggregationStyleDiscrete API_DEPRECATED_WITH_REPLACEMENT("HKQuantityAggregationStyleDiscreteArithmetic", ios(8.0, 13.0), watchos(2.0, 6.0)) = HKQuantityAggregationStyleDiscreteArithmetic,
-    HKQuantityAggregationStyleDiscreteTemporallyWeighted API_AVAILABLE(ios(13.0), watchos(6.0)),
-    HKQuantityAggregationStyleDiscreteEquivalentContinuousLevel API_AVAILABLE(ios(13.0), watchos(6.0)),
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+    HKQuantityAggregationStyleDiscreteTemporallyWeighted API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0)),
+    HKQuantityAggregationStyleDiscreteEquivalentContinuousLevel API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0)),
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
+
+NS_ASSUME_NONNULL_END

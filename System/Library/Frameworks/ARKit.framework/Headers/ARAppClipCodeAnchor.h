@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARAppClipCodeAnchor.h>)
 //
 //  ARAppClipCodeAnchor.h
 //  ARKit
@@ -30,6 +31,7 @@ typedef NS_ENUM(NSInteger, ARAppClipCodeURLDecodingState) {
 API_AVAILABLE(ios(14.3))
 @interface ARAppClipCodeAnchor : ARAnchor <ARTrackable>
 
+
 /**
 The URL encoded in this app clip code. Not nil only if urlDecodingState is .decoded.
  */
@@ -52,3 +54,6 @@ The estimated radius of the app clip code in meters.
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARAppClipCodeAnchor.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARAppClipCodeAnchor.h>)

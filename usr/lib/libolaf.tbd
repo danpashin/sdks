@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           7EAAE18F-8FC6-3A43-AF1C-07F8CD375E49
+    value:           B5C9BECC-4625-3405-8441-E56AF1393F7D
   - target:          arm64e-ios
-    value:           DDCC89A9-1D53-3823-BC48-374134BE7AA5
+    value:           F63ADE57-E666-3B7C-98F6-327628285912
 install-name:    '/usr/lib/libolaf.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN4gnss6DeviceC2ENSt3__18functionIFvNS_6ResultEEEE, __ZN8gnssTest6DeviceC2ENSt3__18functionIFvN4gnss6ResultEEEE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _getGnssDeviceVersion, _getVersionString, _newGnssDevice, 
                        _newGnssDeviceTest ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN4gnss6DeviceC2ENSt3__18functionIFvNS_6ResultEEEE, __ZN8gnssTest6DeviceC2ENSt3__18functionIFvN4gnss6ResultEEEE ]
 ...

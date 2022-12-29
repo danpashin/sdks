@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           C2645AFD-0B37-318B-B7AA-E980DBB48B31
   - target:          arm64-ios
-    value:           D03AAA96-D91B-3BA8-ACF6-FBDCC14E5700
+    value:           46548253-4FFA-3800-9ADD-A16C039D1C13
   - target:          arm64e-ios
-    value:           060F5611-DADD-327B-BB2C-F60DE6167B03
+    value:           88D09322-2C7F-3D01-959E-5EC3BE0488A1
 install-name:    '/usr/lib/libsp.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -22,7 +22,7 @@ exports:
                        _spd_start_monitoring_all_sockets_for_pid, _spd_start_monitoring_socket, 
                        _spd_stop_monitoring_all_sockets, _spd_stop_monitoring_all_sockets_for_pid, 
                        _spd_stop_monitoring_socket ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _spd_client_checkin_socket, _spd_client_checkout_all_sockets, 
                        _spd_client_checkout_socket, _spd_client_create, _spd_client_destroy, 
                        _spd_client_session_create, _spd_client_session_destroy, _spd_client_session_set_callbacks, 

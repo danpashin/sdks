@@ -2,7 +2,7 @@
 //  HKSourceRevision.h
 //  HealthKit
 //
-//  Copyright © 2015 Apple. All rights reserved.
+//  Copyright © 2015-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      Represents a specific revision of an HKSource.
  */
 
-HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKSourceRevision : NSObject <NSSecureCoding, NSCopying>
 
 /*!
@@ -37,7 +37,7 @@ HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
  @abstract      Represents the product type of the device running HealthKit when the object was created.
  @discussion    This value may be nil for older data, which indicates an unknown product type.
  */
-@property (readonly, copy, nullable) NSString *productType API_AVAILABLE(ios(11.0), watchos(4.0));
+@property (readonly, copy, nullable) NSString *productType API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @property      operatingSystemVersion
@@ -45,7 +45,7 @@ HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
  @discussion    iOS versions after 8.0 but prior to 8.2 are saved as 8.0, and iOS version after 8.2 but prior to 9.0
                 are saved as 8.2.
  */
-@property (readonly, assign) NSOperatingSystemVersion operatingSystemVersion API_AVAILABLE(ios(11.0), watchos(4.0));
+@property (readonly, assign) NSOperatingSystemVersion operatingSystemVersion API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        initWithSource:version:productType:operatingSystemVersion:
@@ -55,7 +55,7 @@ HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
 - (instancetype)initWithSource:(HKSource *)source
                        version:(nullable NSString *)version
                    productType:(nullable NSString *)productType
-        operatingSystemVersion:(NSOperatingSystemVersion)operatingSystemVersion API_AVAILABLE(ios(11.0), watchos(4.0));
+        operatingSystemVersion:(NSOperatingSystemVersion)operatingSystemVersion API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        initWithSource:version:
@@ -68,8 +68,8 @@ HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
 @end
 
 // Constants to match on any value of that property when querying for samples from an HKSourceRevision
-HK_EXTERN NSString * const HKSourceRevisionAnyVersion API_AVAILABLE(ios(11.0), watchos(4.0));
-HK_EXTERN NSString * const HKSourceRevisionAnyProductType API_AVAILABLE(ios(11.0), watchos(4.0));
-HK_EXTERN NSOperatingSystemVersion const HKSourceRevisionAnyOperatingSystem API_AVAILABLE(ios(11.0), watchos(4.0));
+HK_EXTERN NSString * const HKSourceRevisionAnyVersion API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKSourceRevisionAnyProductType API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSOperatingSystemVersion const HKSourceRevisionAnyOperatingSystem API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

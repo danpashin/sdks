@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreNLP.framework/CoreNLP
-current-version:       273.2
+current-version:       301
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -11,7 +11,8 @@ exports:
     symbols:              [ _CoreLMClear, _CoreLMCopyBatchingConfig,
                             _CoreLMCopyConditionalProbabilities,
                             _CoreLMCopyConditionalProbabilitiesOverVocabulary,
-                            _CoreLMCopyPredictions, _CoreLMCopyTextForTokenIds,
+                            _CoreLMCopyPredictions, _CoreLMCopyPreprocessedText,
+                            _CoreLMCopyTextForTokenIds,
                             _CoreLMCopyTokenIdsForText, _CoreLMCopyVocabulary,
                             _CoreLMCreate, _CoreLMCreateCopy,
                             _CoreLMCreateCopyState,
@@ -35,6 +36,7 @@ exports:
                             _NLGazetteerCopyCompressedModel,
                             _NLGazetteerCopyLabel, _NLGazetteerCopyLocale,
                             _NLGazetteerCreate, _NLGazetteerSaveCompressedModel,
+                            _NLLanguageIdentifierClear,
                             _NLLanguageIdentifierConsumeCharacters,
                             _NLLanguageIdentifierConsumeString,
                             _NLLanguageIdentifierCreate,
@@ -168,7 +170,10 @@ exports:
                             __NLStringTokenizerTokenizeCompoundWord,
                             __NLStringTokenizerTokenizeWithTranscriptions,
                             _kCoreLMArchitectureKey, _kCoreLMArchitectureLSTM,
-                            _kCoreLMArchitectureTransformer, _kCoreLMEngineANE,
+                            _kCoreLMArchitectureTransformer,
+                            _kCoreLMAttentionTypeAutoencoding,
+                            _kCoreLMAttentionTypeAutoregressive,
+                            _kCoreLMAttentionTypeKey, _kCoreLMEngineANE,
                             _kCoreLMEngineCPU, _kCoreLMEngineKey,
                             _kCoreLMLocaleKey, _kCoreLMSamplingMaxLengthKey,
                             _kCoreLMSamplingMethodGREEDY,

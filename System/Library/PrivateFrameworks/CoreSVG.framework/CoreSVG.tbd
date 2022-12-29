@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSVG.framework/CoreSVG
-current-version:       175.5.1
+current-version:       228
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -21,6 +21,7 @@ exports:
                             _CGSVGAttributeCreateWithCString,
                             _CGSVGAttributeCreateWithClipPath,
                             _CGSVGAttributeCreateWithColor,
+                            _CGSVGAttributeCreateWithFilter,
                             _CGSVGAttributeCreateWithFloat,
                             _CGSVGAttributeCreateWithFloats,
                             _CGSVGAttributeCreateWithGradient,
@@ -33,7 +34,7 @@ exports:
                             _CGSVGAttributeCreateWithString,
                             _CGSVGAttributeCreateWithTransform,
                             _CGSVGAttributeGetAtom, _CGSVGAttributeGetClipPath,
-                            _CGSVGAttributeGetFloat,
+                            _CGSVGAttributeGetFilter, _CGSVGAttributeGetFloat,
                             _CGSVGAttributeGetFloatCount,
                             _CGSVGAttributeGetFloats, _CGSVGAttributeGetLength,
                             _CGSVGAttributeGetMask, _CGSVGAttributeGetName,
@@ -79,11 +80,19 @@ exports:
                             _CGSVGDocumentGetNamedStyle,
                             _CGSVGDocumentGetRootNode, _CGSVGDocumentGetTypeID,
                             _CGSVGDocumentIsMonochrome,
+                            _CGSVGDocumentOptionBaseProfileKey,
                             _CGSVGDocumentOptionSecurityLevelKey,
                             _CGSVGDocumentOptionShowPlaceholderKey,
                             _CGSVGDocumentOptionStrictKey, _CGSVGDocumentRelease,
                             _CGSVGDocumentRetain, _CGSVGDocumentWriteToData,
-                            _CGSVGDocumentWriteToURL, _CGSVGGradientAddStop,
+                            _CGSVGDocumentWriteToURL, _CGSVGFilterAddNode,
+                            _CGSVGFilterCreate, _CGSVGFilterGetChildAtIndex,
+                            _CGSVGFilterGetChildCount, _CGSVGFilterGetTypeID,
+                            _CGSVGFilterPrimitiveCreate,
+                            _CGSVGFilterPrimitiveGetTypeID,
+                            _CGSVGFilterPrimitiveRelease,
+                            _CGSVGFilterPrimitiveRetain, _CGSVGFilterRelease,
+                            _CGSVGFilterRetain, _CGSVGGradientAddStop,
                             _CGSVGGradientCreate, _CGSVGGradientGetCenter,
                             _CGSVGGradientGetEnd, _CGSVGGradientGetFocal,
                             _CGSVGGradientGetGradientTransform,
@@ -152,7 +161,9 @@ exports:
                             _CGSVGPathCommandGetFloatCount,
                             _CGSVGPathCommandGetType, _CGSVGPathCommandGetTypeID,
                             _CGSVGPathCreate, _CGSVGPathCreateCGPath,
+                            _CGSVGPathCreatePathDescription,
                             _CGSVGPathCreateWithCGPath,
+                            _CGSVGPathCreateWithPathDescription,
                             _CGSVGPathGetCommandAtIndex,
                             _CGSVGPathGetCommandCount, _CGSVGPathGetTypeID,
                             _CGSVGPathRelease, _CGSVGPathRetain,

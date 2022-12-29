@@ -7,20 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           AAB95DD4-1C05-3484-95A3-B1E6DFAE3540
   - target:          arm64-ios
-    value:           92290372-D5FC-306A-AFCA-61A2F06B48FF
+    value:           389DF5ED-C1D7-34F6-9F4C-1F86E55C12BC
   - target:          arm64e-ios
-    value:           3399198C-C9E7-3BA7-97DF-496212053AEE
+    value:           D64AFFB2-6B69-348A-9CB9-6C1E436ABBC1
 install-name:    '/usr/lib/libAWDProtobufGCK.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics19GCKLinkStatusReport27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE, 
                        __ZNK3awd7metrics19GCKLinkStatusReport24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE ]
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
-                       __ZN3awd7metrics19GCKLinkStatusReport27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
-                       __ZNK3awd7metrics19GCKLinkStatusReport24SerializeWithCachedSizesEPN20wireless_diagnostics6google8protobuf2io17CodedOutputStreamE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport10SharedCtorEv, __ZN3awd7metrics19GCKLinkStatusReport10SharedDtorEv, 
                        __ZN3awd7metrics19GCKLinkStatusReport15kPERFieldNumberE, __ZN3awd7metrics19GCKLinkStatusReport16default_instanceEv, 
                        __ZN3awd7metrics19GCKLinkStatusReport17default_instance_E, 
@@ -39,4 +35,8 @@ exports:
                        __ZNK3awd7metrics19GCKLinkStatusReport13SetCachedSizeEi, __ZNK3awd7metrics19GCKLinkStatusReport3NewEv, 
                        __ZNK3awd7metrics19GCKLinkStatusReport8ByteSizeEv, __ZTIN3awd7metrics19GCKLinkStatusReportE, 
                        __ZTSN3awd7metrics19GCKLinkStatusReportE, __ZTVN3awd7metrics19GCKLinkStatusReportE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
+                       __ZN3awd7metrics19GCKLinkStatusReport27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
+                       __ZNK3awd7metrics19GCKLinkStatusReport24SerializeWithCachedSizesEPN20wireless_diagnostics6google8protobuf2io17CodedOutputStreamE ]
 ...

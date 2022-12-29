@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-current-version:       787.2
+current-version:       844
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -200,9 +200,10 @@ exports:
                             _UIFontWeightLight, _UIFontWeightMedium,
                             _UIFontWeightRegular, _UIFontWeightSemibold,
                             _UIFontWeightThin, _UIFontWeightTrait,
-                            _UIFontWeightUltraLight, _UIFontWidthCondensed,
-                            _UIFontWidthExpanded, _UIFontWidthStandard,
-                            _UIFontWidthTrait, _UIInlinedValueMarker,
+                            _UIFontWeightUltraLight, _UIFontWidthCompressed,
+                            _UIFontWidthCondensed, _UIFontWidthExpanded,
+                            _UIFontWidthStandard, _UIFontWidthTrait,
+                            _UIInlinedValueMarker,
                             _UIMaximumCompatibleFormatVersion,
                             _UINibArchiveIndexFromNumber,
                             _UINibCoderValueTypeToString,
@@ -214,6 +215,8 @@ exports:
                             _UIRetainedValueUniquingSetCallbacks,
                             _UISystemFontBoldForSize, _UISystemFontCreate,
                             _UISystemFontForSize, _UIWriteArchiveToData,
+                            __CFArrayApplyBlock, __CFArraySortValuesWithBlock,
+                            __CFDictionaryApplyBlock, __CFSetApplyBlock,
                             __NSAttachmentCharacterSet,
                             __NSBidiControlCharacterSet,
                             __NSBidiEmbeddingAndOverrideCharSet,
@@ -234,6 +237,8 @@ exports:
                             __UIFoundationRoundedInverseTextScalingFactor,
                             __UIFoundationRoundedTextScalingFactor,
                             __UISystemFontName, ___CTFontGetExtraData,
+                            ___NSHTMLReaderDelegateDocumentOption,
+                            ___NSLineBreakStrategyStandardActualOptions,
                             ___NSTextLayoutManagerLinearLayoutFragmentsDump,
                             ___NSTokenizerLanguageSet,
                             _kUIFoundationUIFoundationVersionNumber,
@@ -268,9 +273,9 @@ exports:
                             NSTextCorrectionMarkerRendering, NSTextElement,
                             NSTextGraphicsContextProvider, NSTextLayoutFragment,
                             NSTextLayoutManager, NSTextLineFragment, NSTextList,
-                            NSTextParagraph, NSTextRange, NSTextSelection,
-                            NSTextSelectionNavigation, NSTextStorage, NSTextTab,
-                            NSTextTable, NSTextTableBlock,
+                            NSTextListElement, NSTextParagraph, NSTextRange,
+                            NSTextSelection, NSTextSelectionNavigation,
+                            NSTextStorage, NSTextTab, NSTextTable, NSTextTableBlock,
                             NSTextViewportLayoutController, NSTypesetter,
                             UIBoxcarFilterPointFIFO, UICTFont, UICTFontDescriptor,
                             UIFont, UIFontDescriptor, UINibCoderValue, UINibDecoder,
@@ -279,10 +284,11 @@ exports:
                             _NSAttributeRun, _NSAttributedStringIntentResolver,
                             _NSAttributedStringWithResolvedIntents,
                             _NSAttributes, _NSCachedAttributedString,
-                            _NSTextStorageSideData, _UICache, _UIFontCacheKey,
-                            _UIFontDescriptorCacheKey, _UIFontNameCacheKey,
-                            _UIFontSystemCacheKey, _UIFontTextStyleCacheKey,
-                            __NSATSStringSegment, __NSFontExtraData ]
+                            _NSOptimalLineBreaker, _NSTextStorageSideData,
+                            _UICache, _UIFontCacheKey, _UIFontDescriptorCacheKey,
+                            _UIFontNameCacheKey, _UIFontSystemCacheKey,
+                            _UIFontTextStyleCacheKey, __NSATSStringSegment,
+                            __NSFontExtraData ]
     objc-ivars:           [ NSAttributeDictionaryEnumerator.dictionary,
                             NSAttributeDictionaryEnumerator.nextElement,
                             NSHTMLWebDelegate._baseURL,

@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           D0EB14F2-E195-3221-ABA4-AB30C7F3CB1C
   - target:          arm64-ios
-    value:           9DCA9871-2C32-3EE7-8751-2B880F689B93
+    value:           527A78D9-5731-355E-822D-E928BF410208
   - target:          arm64e-ios
-    value:           2613AA0E-2601-35D9-9C1F-A0F8666156B6
+    value:           D6000152-13B9-38C8-BEA4-52DA4334D84D
 install-name:    '/usr/lib/swift/libswiftDispatch.dylib'
-current-version: 11
+current-version: 17
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __swift_dispatch_source_create_abort ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftDispatch.dylib', '$ld$install_name$os10.1$@rpath/libswiftDispatch.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftDispatch.dylib', '$ld$install_name$os10.3$@rpath/libswiftDispatch.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftDispatch.dylib', '$ld$install_name$os11.1$@rpath/libswiftDispatch.dylib', 

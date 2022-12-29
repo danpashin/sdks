@@ -1,11 +1,13 @@
+#if !__has_include(<PassKitCore/PKVehicleConnectionSession.h>) || PK_USE_PUBLIC_PASSKIT
 //
 //  PKVehicleConnectionSession.h
-//  PKVehicleConnectionSession
+//  PassKit
 //
 //  Copyright © 2021 Apple, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <PassKit/PKConstants.h>
 
 @class PKSecureElementPass;
 
@@ -27,6 +29,7 @@ typedef NS_ENUM(NSInteger, PKVehicleConnectionSessionConnectionState) {
 };
 
 API_AVAILABLE(ios(15.4))
+API_DEPRECATED("PKVehicleConnectionDelegate has been deprecated. Please migrate away from this as soon as possible.", ios(15.4, 16.0))
 @protocol PKVehicleConnectionDelegate <NSObject>
 
 - (void)sessionDidChangeConnectionState:(PKVehicleConnectionSessionConnectionState)newState;
@@ -37,6 +40,7 @@ API_AVAILABLE(ios(15.4))
 @end
 
 API_AVAILABLE(ios(15.4))
+API_DEPRECATED("PKVehicleConnectionSession has been deprecated. Please migrate away from this as soon as possible.", ios(15.4, 16.0))
 @interface PKVehicleConnectionSession : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -60,3 +64,7 @@ API_AVAILABLE(ios(15.4))
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <PassKitCore/PKVehicleConnectionSession.h>
+#endif

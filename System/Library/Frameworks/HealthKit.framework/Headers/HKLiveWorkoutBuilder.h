@@ -2,7 +2,7 @@
 //  HKLiveWorkoutBuilder.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HealthKit.h>
@@ -33,6 +33,26 @@ HK_EXTERN API_AVAILABLE(watchos(5.0)) API_UNAVAILABLE(ios)
  @param         workoutBuilder    The workout builder to which an event was added.
  */
 - (void)workoutBuilderDidCollectEvent:(HKLiveWorkoutBuilder *)workoutBuilder;
+
+@optional
+
+/*!
+ @method        workoutBuilder:didBeginActivity:
+ @abstract      Called every time new activity is started and added to the workout builder.
+ 
+ @param         workoutBuilder      The workout builder to which the activity was added to.
+ @param         workoutActivity     The activity that was added.
+ */
+- (void)workoutBuilder:(HKLiveWorkoutBuilder *)workoutBuilder didBeginActivity:(HKWorkoutActivity *)workoutActivity API_AVAILABLE(watchos(9.0));
+
+/*!
+ @method        workoutBuilder:didEndActivity:
+ @abstract      Called every time the end date is set on an activity in the workout builder.
+ 
+ @param         workoutBuilder      The workout builder to which the activity belongs to
+ @param         workoutActivity     The activity that was ended.
+ */
+- (void)workoutBuilder:(HKLiveWorkoutBuilder *)workoutBuilder didEndActivity:(HKWorkoutActivity *)workoutActivity API_AVAILABLE(watchos(9.0));
 
 @end
 
@@ -78,6 +98,14 @@ HK_EXTERN API_AVAILABLE(watchos(5.0)) API_UNAVAILABLE(ios)
                 when this occurs, the workoutBuilderDidCollectEvent: delegate method will be called.
  */
 @property (assign, readonly) NSTimeInterval elapsedTime;
+
+/*!
+ @property      currentWorkoutActivity
+ @abstract      The latest activity that has been added to this builder.
+ @discussion    When an activity is in progress it will be returned by this property. The end date of this activity will always
+                be nil. When the activity is ended, the property would be set to nil until a new activity begins.
+ */
+@property (copy, readonly, nullable) HKWorkoutActivity *currentWorkoutActivity API_AVAILABLE(watchos(9.0));
 
 @end
 

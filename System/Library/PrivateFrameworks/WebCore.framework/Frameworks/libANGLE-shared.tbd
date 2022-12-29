@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          "/System/Library/PrivateFrameworks/WebCore.framework/Frameworks/libANGLE-shared.dylib"
-current-version:       613.2.7
+current-version:       614.1.25
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -166,6 +166,7 @@ exports:
                             _GL_DrawArraysIndirect, _GL_DrawArraysInstanced,
                             _GL_DrawArraysInstancedANGLE,
                             _GL_DrawArraysInstancedBaseInstanceANGLE,
+                            _GL_DrawArraysInstancedBaseInstanceEXT,
                             _GL_DrawArraysInstancedEXT, _GL_DrawBuffers,
                             _GL_DrawBuffersEXT, _GL_DrawElements,
                             _GL_DrawElementsBaseVertex,
@@ -173,8 +174,10 @@ exports:
                             _GL_DrawElementsBaseVertexOES,
                             _GL_DrawElementsIndirect, _GL_DrawElementsInstanced,
                             _GL_DrawElementsInstancedANGLE,
+                            _GL_DrawElementsInstancedBaseInstanceEXT,
                             _GL_DrawElementsInstancedBaseVertex,
                             _GL_DrawElementsInstancedBaseVertexBaseInstanceANGLE,
+                            _GL_DrawElementsInstancedBaseVertexBaseInstanceEXT,
                             _GL_DrawElementsInstancedBaseVertexEXT,
                             _GL_DrawElementsInstancedBaseVertexOES,
                             _GL_DrawElementsInstancedEXT, _GL_DrawRangeElements,
@@ -477,17 +480,18 @@ exports:
                             _GL_SelectPerfMonitorCountersAMD,
                             _GL_SemaphoreParameterui64vEXT, _GL_SetFenceNV,
                             _GL_ShadeModel, _GL_ShaderBinary, _GL_ShaderSource,
-                            _GL_SignalSemaphoreEXT, _GL_StencilFunc,
-                            _GL_StencilFuncSeparate, _GL_StencilMask,
-                            _GL_StencilMaskSeparate, _GL_StencilOp,
-                            _GL_StencilOpSeparate, _GL_TestFenceNV, _GL_TexBuffer,
-                            _GL_TexBufferEXT, _GL_TexBufferOES, _GL_TexBufferRange,
-                            _GL_TexBufferRangeEXT, _GL_TexBufferRangeOES,
-                            _GL_TexCoordPointer, _GL_TexEnvf, _GL_TexEnvfv,
-                            _GL_TexEnvi, _GL_TexEnviv, _GL_TexEnvx, _GL_TexEnvxv,
-                            _GL_TexGenfOES, _GL_TexGenfvOES, _GL_TexGeniOES,
-                            _GL_TexGenivOES, _GL_TexGenxOES, _GL_TexGenxvOES,
-                            _GL_TexImage2D, _GL_TexImage2DExternalANGLE,
+                            _GL_ShadingRateQCOM, _GL_SignalSemaphoreEXT,
+                            _GL_StencilFunc, _GL_StencilFuncSeparate,
+                            _GL_StencilMask, _GL_StencilMaskSeparate,
+                            _GL_StencilOp, _GL_StencilOpSeparate, _GL_TestFenceNV,
+                            _GL_TexBuffer, _GL_TexBufferEXT, _GL_TexBufferOES,
+                            _GL_TexBufferRange, _GL_TexBufferRangeEXT,
+                            _GL_TexBufferRangeOES, _GL_TexCoordPointer,
+                            _GL_TexEnvf, _GL_TexEnvfv, _GL_TexEnvi, _GL_TexEnviv,
+                            _GL_TexEnvx, _GL_TexEnvxv, _GL_TexGenfOES,
+                            _GL_TexGenfvOES, _GL_TexGeniOES, _GL_TexGenivOES,
+                            _GL_TexGenxOES, _GL_TexGenxvOES, _GL_TexImage2D,
+                            _GL_TexImage2DExternalANGLE,
                             _GL_TexImage2DRobustANGLE, _GL_TexImage3D,
                             _GL_TexImage3DOES, _GL_TexImage3DRobustANGLE,
                             _GL_TexParameterIiv, _GL_TexParameterIivEXT,

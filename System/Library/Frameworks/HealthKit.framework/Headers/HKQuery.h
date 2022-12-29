@@ -2,7 +2,7 @@
 //  HKQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,10 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class HKSampleType;
 @class HKSource;
 
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKQuery : NSObject
 
-@property (readonly, strong, nullable) HKObjectType *objectType API_AVAILABLE(ios(9.3), watchos(2.2));
+@property (readonly, strong, nullable) HKObjectType *objectType API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0));
 @property (readonly, strong, nullable) HKSampleType *sampleType API_DEPRECATED_WITH_REPLACEMENT("objectType", ios(8.0, 9.3), watchos(2.0, 2.2));
 
 @property (readonly, strong, nullable) NSPredicate *predicate;
@@ -43,7 +43,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
     HKQueryOptionNone               = 0,
     HKQueryOptionStrictStartDate    = 1 << 0,
     HKQueryOptionStrictEndDate      = 1 << 1,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 @interface HKQuery (HKObjectPredicates)
 
@@ -104,7 +104,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         sourceRevisions The list of source revisions.
  */
-+ (NSPredicate *)predicateForObjectsFromSourceRevisions:(NSSet<HKSourceRevision *> *)sourceRevisions API_AVAILABLE(ios(9.0), watchos(2.0));
++ (NSPredicate *)predicateForObjectsFromSourceRevisions:(NSSet<HKSourceRevision *> *)sourceRevisions API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        predicateForObjectsFromDevices:
@@ -115,7 +115,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         devices     The set of devices that generated data.
  */
-+ (NSPredicate *)predicateForObjectsFromDevices:(NSSet<HKDevice *> *)devices API_AVAILABLE(ios(9.0), watchos(2.0));
++ (NSPredicate *)predicateForObjectsFromDevices:(NSSet<HKDevice *> *)devices API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        predicateForObjectsWithDeviceProperty:allowedValues:
@@ -128,7 +128,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         allowedValues   The set of values for which the device property can match. An empty set will match all
                 devices whose property value is nil.
  */
-+ (NSPredicate *)predicateForObjectsWithDeviceProperty:(NSString *)key allowedValues:(NSSet<NSString *> *)allowedValues API_AVAILABLE(ios(9.0), watchos(2.0));
++ (NSPredicate *)predicateForObjectsWithDeviceProperty:(NSString *)key allowedValues:(NSSet<NSString *> *)allowedValues API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        predicateForObjectWithUUID:
@@ -222,7 +222,18 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         value           The value that the sample's value is being compared to. It is the right hand side of the
                                 expression.
  */
+#if defined(__swift__) && __swift__
++ (NSPredicate *)predicateForCategorySamplesWithOperatorType:(NSPredicateOperatorType)operatorType value:(NSInteger)value API_DEPRECATED("Use HKCategoryValuePredicateProviding.predicateForSamples(_:value:)", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
+#else
 + (NSPredicate *)predicateForCategorySamplesWithOperatorType:(NSPredicateOperatorType)operatorType value:(NSInteger)value;
+#endif // defined(__swift__) && __swift__
+
+/*!
+ @method predicateForCategorySamplesEqualToValues:
+ @abstract Creates a predicate for use with HKQuery subclasses.
+ @discussion Creates a query predicate that matches all specified category values.
+ */
++ (NSPredicate *)predicateForCategorySamplesEqualToValues:(NSSet<NSNumber *> *)values NS_REFINED_FOR_SWIFT;
 
 @end
 
@@ -257,7 +268,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         totalEnergyBurned   The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
                                     expression. The unit for this value should be of type Energy.
  */
-+ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalEnergyBurned:(HKQuantity *)totalEnergyBurned;
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalEnergyBurned:(HKQuantity *)totalEnergyBurned API_DEPRECATED("Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the HKQuantityType for HKQuantityTypeIdentifierActiveEnergyBurned", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED), macCatalyst(13.0, API_TO_BE_DEPRECATED), macos(13.0, API_TO_BE_DEPRECATED));
 
 /*!
  @method        predicateForWorkoutsWithOperatorType:totalDistance:
@@ -268,8 +279,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         totalDistance   The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
                                 expression. The unit for this value should be of type Distance.
  */
-+ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalDistance:(HKQuantity *)totalDistance;
-
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalDistance:(HKQuantity *)totalDistance API_DEPRECATED("Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the HKQuantityType for the desired distance type", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED), macCatalyst(13.0, API_TO_BE_DEPRECATED), macos(13.0, API_TO_BE_DEPRECATED));
 /*!
  @method        predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:
  @abstract      Creates a predicate for use with HKQuery subclasses.
@@ -280,7 +290,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
                                             It is the right hand side of the expression. The unit for this value should
                                             be of type Count.
  */
-+ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalSwimmingStrokeCount:(HKQuantity *)totalSwimmingStrokeCount;
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalSwimmingStrokeCount:(HKQuantity *)totalSwimmingStrokeCount API_DEPRECATED("Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:", ios(10.0, API_TO_BE_DEPRECATED), watchos(3.0, API_TO_BE_DEPRECATED), macCatalyst(13.0, API_TO_BE_DEPRECATED), macos(13.0, API_TO_BE_DEPRECATED));
 
 /*!
  @method        predicateForWorkoutsWithOperatorType:totalFlightsClimbed:
@@ -292,7 +302,182 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
                                             It is the right hand side of the expression. The unit for this value should
                                             be of type Count.
  */
-+ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalFlightsClimbed:(HKQuantity *)totalFlightsClimbed API_AVAILABLE(ios(11.0), watchos(4.0));
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType totalFlightsClimbed:(HKQuantity *)totalFlightsClimbed API_DEPRECATED("Use predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the HKQuantityType for HKQuantityTypeIdentifierSwimmingStrokeCount", ios(11.0, API_TO_BE_DEPRECATED), watchos(4.0, API_TO_BE_DEPRECATED), macCatalyst(13.0, API_TO_BE_DEPRECATED), macos(13.0, API_TO_BE_DEPRECATED));
+                                                                                                                                                            
+/*!
+ @method        predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and sumQuantity in the statistics for
+                the specified type.
+ 
+ @param         operatorType    The operator type for the expression.
+ @param         quantityType    The quantity type to compare statistics for. Should be a cumulative quantity type.
+ @param         sumQuantity     The sum value that the workout statistics are being compared to. The unit for this value should
+                                match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType
+                                         quantityType:(HKQuantityType *)quantityType
+                                          sumQuantity:(HKQuantity *)sumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkouts(operatorType:quantityType:sumQuantity:));
+
+/*!
+ @method        predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and minimumQuantity in the statistics
+                for the specified type.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         minimumQuantity     The minumum value that the workout statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType
+                                         quantityType:(HKQuantityType *)quantityType
+                                      minimumQuantity:(HKQuantity *)minimumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkouts(operatorType:quantityType:minimumQuantity:));
+
+/*!
+ @method        predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and maximumQuantity in the statistics
+                for the specified type.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         maximumQuantity     The maximum value that the workout statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType
+                                         quantityType:(HKQuantityType *)quantityType
+                                      maximumQuantity:(HKQuantity *)maximumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkouts(operatorType:quantityType:maximumQuantity:));
+
+/*!
+ @method        predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and averageQuantity in the statistics
+                for the specified type.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         averageQuantity     The average value that the workout statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutsWithOperatorType:(NSPredicateOperatorType)operatorType
+                                         quantityType:(HKQuantityType *)quantityType
+                                      averageQuantity:(HKQuantity *)averageQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkouts(operatorType:quantityType:averageQuantity:));
+
+@end
+
+@interface HKQuery (HKWorkoutActivityPredicates)
+
+/*!
+ @method        predicateForWorkoutActivitiesWithWorkoutActivityType:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objects with the given HKWorkoutActivityType.
+                The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate: before being used in a query.
+ 
+ @param         workoutActivityType     The HKWorkoutActivity type of the workout
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithWorkoutActivityType:(HKWorkoutActivityType)workoutActivityType API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(workoutActivityType:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithOperatorType:duration:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objects by the given operator type and duration.
+                The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate: before being used in a query.
+ 
+ @param         operatorType    The operator type for the expression.
+ @param         duration        The value that the workout's duration is being compared to. It is the right hand side of the
+                                expression.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithOperatorType:(NSPredicateOperatorType)operatorType
+                                                      duration:(NSTimeInterval)duration API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(operatorType:duration:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithStartDate:endDate:options:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objects with a startDate and an endDate that lie inside of a
+                given time interval. The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate:
+                before being used in a query.
+ 
+ @param         startDate   The start date of the predicate's time interval.
+ @param         endDate     The end date of the predicate's time interval.
+ @param         options     The rules for how a activity's time interval overlaps with the predicate's time interval.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithStartDate:(nullable NSDate *)startDate
+                                                    endDate:(nullable NSDate *)endDate
+                                                    options:(HKQueryOptions)options API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(start:end:options:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objetcs by the given operator type and sumQuantity in the
+                statistics for the specified type. The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate:
+                before being used in a query.
+ 
+ @param         operatorType    The operator type for the expression.
+ @param         quantityType    The quantity type to compare statistics for. Should be a cumulative quantity type.
+ @param         sumQuantity     The sum value that the activity statistics are being compared to. The unit for this value should
+                                match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithOperatorType:(NSPredicateOperatorType)operatorType
+                                                  quantityType:(HKQuantityType *)quantityType
+                                                   sumQuantity:(HKQuantity *)sumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(operatorType:quantityType:sumQuantity:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objetcs  by the given operator type and minimumQuantity in the
+                statistics for the specified type. The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate:
+                before being used in a query.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         minimumQuantity     The minumum value that the activty statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithOperatorType:(NSPredicateOperatorType)operatorType
+                                                  quantityType:(HKQuantityType *)quantityType
+                                               minimumQuantity:(HKQuantity *)minimumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(operatorType:quantityType:minimumQuantity:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objetcs by the given operator type and maximumQuantity in the
+                statistics for the specified type. The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate:
+                before being used in a query.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         maximumQuantity     The maximum value that the activity statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithOperatorType:(NSPredicateOperatorType)operatorType
+                                                  quantityType:(HKQuantityType *)quantityType
+                                               maximumQuantity:(HKQuantity *)maximumQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(operatorType:quantityType:maximumQuantity:));
+
+/*!
+ @method        predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches HKWorkoutActivity objetcs by the given operator type and averageQuantity in the
+                statistics for the specified type. The resulting predicate should be wrapped using predicateForWorkoutsWithActivityPredicate:
+                before being used in a query.
+ 
+ @param         operatorType        The operator type for the expression.
+ @param         quantityType        The quantity type to compare statistics for. Should be a discrete quantity type.
+ @param         averageQuantity     The average value that the activity statistics are being compared to. The unit for this value should
+                                    match the allowed values for the quantityType.
+ */
++ (NSPredicate *)predicateForWorkoutActivitiesWithOperatorType:(NSPredicateOperatorType)operatorType
+                                                  quantityType:(HKQuantityType *)quantityType
+                                               averageQuantity:(HKQuantity *)averageQuantity API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkoutActivities(operatorType:quantityType:averageQuantity:));
+
+/*!
+ @method        predicateForWorkoutsWithActivityPredicate:
+ @abstract      Creates a predicate for use with HKQuery subclasses.
+ @discussion    Creates a query predicate that matches workouts containing an activity matching the passed predicate.
+ 
+ @param         activityPredicate   The predicate on the activities of the workout
+ */
++ (NSPredicate *)predicateForWorkoutsWithActivityPredicate:(NSPredicate *)activityPredicate API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(predicateForWorkouts(activityPredicate:));
 
 @end
 
@@ -306,7 +491,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         dateComponents  The date components of the activity summary. These date components should contain era, year, month,
                 and day components in the gregorian calendar.
  */
-+ (NSPredicate *)predicateForActivitySummaryWithDateComponents:(NSDateComponents *)dateComponents API_AVAILABLE(ios(9.3), watchos(2.2));
++ (NSPredicate *)predicateForActivitySummaryWithDateComponents:(NSDateComponents *)dateComponents API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:
@@ -319,7 +504,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  @param         endDateComponents   The date components that define the end of the range. These date components should contain era, 
                 year, month, and day components in the gregorian calendar.
  */
-+ (NSPredicate *)predicateForActivitySummariesBetweenStartDateComponents:(NSDateComponents *)startDateComponents endDateComponents:(NSDateComponents *)endDateComponents API_AVAILABLE(ios(9.3), watchos(2.2));
++ (NSPredicate *)predicateForActivitySummariesBetweenStartDateComponents:(NSDateComponents *)startDateComponents endDateComponents:(NSDateComponents *)endDateComponents API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0));
 
 @end
 
@@ -332,7 +517,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         resourceType    The FHIR resource type.
  */
-+ (NSPredicate *)predicateForClinicalRecordsWithFHIRResourceType:(HKFHIRResourceType)resourceType API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
++ (NSPredicate *)predicateForClinicalRecordsWithFHIRResourceType:(HKFHIRResourceType)resourceType API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @method        predicateForClinicalRecordsFromSource:withFHIRResourceType:identifier:
@@ -345,7 +530,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  */
 + (NSPredicate *)predicateForClinicalRecordsFromSource:(HKSource *)source
                                       FHIRResourceType:(HKFHIRResourceType)resourceType
-                                            identifier:(NSString *)identifier API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+                                            identifier:(NSString *)identifier API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 @end
 
@@ -358,7 +543,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         classification    The classification for the electrocardiogram.
  */
-+ (NSPredicate *)predicateForElectrocardiogramsWithClassification:(HKElectrocardiogramClassification)classification API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(predicateForElectrocardiograms(classification:));
++ (NSPredicate *)predicateForElectrocardiogramsWithClassification:(HKElectrocardiogramClassification)classification API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(predicateForElectrocardiograms(classification:));
 
 /*!
  @method        predicateForElectrocardiogramsWithSymptomsStatus:
@@ -367,7 +552,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         symptomsStatus    The symptoms status for the electrocardiogram.
  */
-+ (NSPredicate *)predicateForElectrocardiogramsWithSymptomsStatus:(HKElectrocardiogramSymptomsStatus)symptomsStatus API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(predicateForElectrocardiograms(symptomsStatus:));
++ (NSPredicate *)predicateForElectrocardiogramsWithSymptomsStatus:(HKElectrocardiogramSymptomsStatus)symptomsStatus API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(predicateForElectrocardiograms(symptomsStatus:));
 
 @end
 
@@ -380,7 +565,7 @@ typedef NS_OPTIONS(NSUInteger, HKQueryOptions) {
  
  @param         dateInterval      The date interval that the record's relevant date is in.
  */
-+ (NSPredicate *)predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:(NSDateInterval *)dateInterval API_AVAILABLE(ios(15.0)) NS_SWIFT_NAME(predicateForVerifiableClinicalRecords(withRelevantDateWithin:));
++ (NSPredicate *)predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:(NSDateInterval *)dateInterval API_AVAILABLE(ios(15.0), macCatalyst(15.0), macos(13.0)) NS_SWIFT_NAME(predicateForVerifiableClinicalRecords(withRelevantDateWithin:));
 
 @end
 

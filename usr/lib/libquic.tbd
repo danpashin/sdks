@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           4BCB0BE9-502A-3D6D-8BF0-8DF5EC0D64C2
+    value:           09BF75B5-3A16-3A7E-9962-60F69B91B5F0
   - target:          arm64e-ios
-    value:           3A5392A8-B95C-38AB-8692-5793D2FBF52A
+    value:           5E4F0B41-D8F9-3354-8637-CF391654C55B
 install-name:    '/usr/lib/libquic.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _quic_enable_nw_verbose_logging, _quic_enable_verbose_logging, 
                        _quic_fillout_definition_callbacks, _quic_shorthand_describe_entry ]
 ...

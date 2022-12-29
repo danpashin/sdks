@@ -7,18 +7,18 @@ uuids:
   - target:          armv7s-ios
     value:           0464FBD2-BD56-31E7-9007-9BD8E7F0FA72
   - target:          arm64-ios
-    value:           6BF90FF0-CE41-369B-9A06-459EEB061971
+    value:           E8043B08-D95F-37CC-8D33-2A6A731EEEBA
   - target:          arm64e-ios
-    value:           5B0462DD-E6F8-3D79-BA38-5422804ED916
+    value:           65F86009-D589-3F80-A338-367EFAA2B304
 install-name:    '/usr/lib/libdscsym.dylib'
-current-version: 302.4
+current-version: 323
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _dscsymVersionNumber, _dscsymVersionString, _kSPSharedCacheInfo_BinariesKey, 
                        _kSPSharedCacheInfo_BinaryLoadAddressKey, _kSPSharedCacheInfo_BinaryPathKey, 
                        _kSPSharedCacheInfo_BinaryTextSizeKey, _kSPSharedCacheInfo_BinaryUUIDKey, 
                        _kSPSharedCacheInfo_CacheUUIDKey ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _dscsym_buffer_iterate, _dscsym_buffer_iterate_binaries, _dscsym_copy_dscsym_files, 
                        _dscsym_generate_dscsym_file, _dscsym_iterate, _dscsym_iterate_binaries, 
                        _dscsym_iterate_buffer, _dscsym_mmap_dscsym_for_uuid, _dscsym_save_dscsyms_for_current_caches, 

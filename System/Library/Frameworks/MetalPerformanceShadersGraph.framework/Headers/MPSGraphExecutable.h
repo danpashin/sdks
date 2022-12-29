@@ -30,7 +30,7 @@ typedef void (^MPSGraphExecutableScheduledHandler)(NSArray<MPSGraphTensorData *>
                                                    NSError * _Nullable error);
 
 MPS_CLASS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0))
-@interface MPSGraphExecutableExecutionDescriptor : NSObject
+@interface MPSGraphExecutableExecutionDescriptor : NSObject<NSCopying>
 
 /*! @property   scheduledHandler
  *  @discussion scheduledHandler for the graph executable, default value is nil
@@ -46,6 +46,28 @@ MPS_CLASS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0))
  *  @discussion waitUntilCompleted for the graph executable, default value is false
  */
 @property (readwrite, atomic) BOOL waitUntilCompleted;
+
+/*!
+ *  @abstract   Executable waits on these shared events before scheduling execution on the HW, this does not include encoding which can still continue.
+ *
+ *  @param      event                                   shared event to wait on
+ *  @param      value                                   value for shared event to wait on
+ */
+-(void) waitForEvent:(id<MTLSharedEvent>) event
+               value:(uint64_t) value
+MPS_AVAILABLE_STARTING(macos(13.0), ios(16.0), tvos(16.0));
+
+/*!
+ *  @abstract   Executable signals these shared events at execution stage and immediately proceeds
+ *
+ *  @param      event                                   shared event to signal
+ *  @param      executionStage               execution stage to signal event at
+ *  @param      value                                   value for shared event to wait on
+ */
+-(void) signalEvent:(id<MTLSharedEvent>) event
+   atExecutionEvent:(MPSGraphExecutionStage) executionStage
+              value:(uint64_t) value
+MPS_AVAILABLE_STARTING(macos(13.0), ios(16.0), tvos(16.0));
 
 @end
 
@@ -73,10 +95,11 @@ MPS_CLASS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0))
 @property (readonly, atomic, nullable) NSArray<MPSGraphTensor *> *targetTensors;
 
 /*!
- *  @abstract   Specialize MLIR module and optimize it
+ *  @abstract   Specialize the MPSGraphExecutable and optimize it, use this method to choose when specialization happens, else it occurs at encode time automatically
  *
- *  @param      device                                   optional MPSGraph device to compile with
- *  @param      inputTypes                          input types
+ *  @param      device                                    optional MPSGraph device to compile with
+ *  @param      inputTypes                           input types
+ *  @param      compilationDescriptor  compilationDescriptor to be used to specialize, since the executable was created with a compilationDescriptor already this one overrides those settings to the extent it can
  *
  */
 -(void) specializeWithDevice:(MPSGraphDevice * _Nullable) device

@@ -3,11 +3,20 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/FeatureFlagsSupport
-current-version:       56
+current-version:       71
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _FFConfigurationValidateProfilePayload ]
-    objc-classes:         [ FFConfiguration, FFFeatureAttribute, FFFeatureState ]
+    symbols:              [ _FFConfigurationValidateProfilePayload,
+                            _FFParseErrorContextFilenameKey,
+                            _FFParseErrorContextKeyKey,
+                            _FFParseErrorContextOtherKey,
+                            _FFParseErrorContextSeverityError,
+                            _FFParseErrorContextSeverityKey,
+                            _FFParseErrorContextSeverityNotice,
+                            _FFParseErrorContextSeverityWarning,
+                            _FFParseErrorMessageKey ]
+    objc-classes:         [ FFConfiguration, FFFeatureAttribute, FFFeatureState,
+                            FFMinimumPhaseInReleaseSubscription, FFSubscription ]
 ...

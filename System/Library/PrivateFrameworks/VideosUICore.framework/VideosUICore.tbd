@@ -3,13 +3,12 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
-current-version:       644.50.25
+current-version:       762.0.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CALayerKeyBoundsSize, _CALayerKeyShadowPath,
-                            _VUIAccessibilityReduceMotionStatusDidChangeNotification,
+    symbols:              [ _VUIAccessibilityReduceMotionStatusDidChangeNotification,
                             _VUIAccessibilityVoiceOverStatusDidChangeNotification,
                             _VUIApplicationDidBecomeActiveNotification,
                             _VUIApplicationDidEnterBackgroundNotification,
@@ -39,6 +38,7 @@ exports:
                             _VUIDefaultsForceGDPRWhatsNewFlow,
                             _VUIDefaultsPageMaxCacheValueKey,
                             _VUIDefaultsPageRefreshTypeValueKey,
+                            _VUIDefaultsPlaybackURLOverrides,
                             _VUIDefaultsUTSBaseURL,
                             _VUIDefaultsWLKDefaultsDomain,
                             _VUIDurationValueTransformerName, _VUIError,
@@ -120,9 +120,8 @@ exports:
                             VUIModalPresentationConfiguration,
                             VUIModalPresentationNavigationController,
                             VUIModalPresenter, VUINetworkReachabilityMonitor,
-                            VUIPathAnimationAction, VUIRemoteImageDescriptor,
-                            VUIResourceImageDescriptor, VUIRestrictions,
-                            VUISortUtilities, VUIStackedImageView, VUIStateMachine,
-                            VUITitleSortDescriptor, VUIURLImageLoader,
-                            VUIURLRequestOperation ]
+                            VUIRemoteImageDescriptor, VUIResourceImageDescriptor,
+                            VUIRestrictions, VUISortUtilities, VUIStackedImageView,
+                            VUIStateMachine, VUITitleSortDescriptor,
+                            VUIURLImageLoader, VUIURLRequestOperation ]
 ...

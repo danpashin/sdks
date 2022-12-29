@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/AuthenticationServicesCore
-current-version:       613.2.7
+current-version:       614.1.25
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -38,8 +38,8 @@ exports:
                             _$s26AuthenticationServicesCore13ASCABLEClientC17cancelIfNecessaryyyFTq,
                             _$s26AuthenticationServicesCore13ASCABLEClientC28centralManagerDidUpdateStateyySo09CBCentralF0CFTj,
                             _$s26AuthenticationServicesCore13ASCABLEClientC28centralManagerDidUpdateStateyySo09CBCentralF0CFTq,
-                            _$s26AuthenticationServicesCore13ASCABLEClientC8delegateAcA0D8Delegate_p_tcfC,
-                            _$s26AuthenticationServicesCore13ASCABLEClientC8delegateAcA0D8Delegate_p_tcfc,
+                            _$s26AuthenticationServicesCore13ASCABLEClientC8delegate21isRegistrationRequestAcA0D8Delegate_p_SbtcfC,
+                            _$s26AuthenticationServicesCore13ASCABLEClientC8delegate21isRegistrationRequestAcA0D8Delegate_p_Sbtcfc,
                             _$s26AuthenticationServicesCore13ASCABLEClientC9qrCodeURL10Foundation0G0VvgTj,
                             _$s26AuthenticationServicesCore13ASCABLEClientC9qrCodeURL10Foundation0G0VvgTq,
                             _$s26AuthenticationServicesCore13ASCABLEClientC9qrCodeURL10Foundation0G0VvpMV,
@@ -78,21 +78,34 @@ exports:
                             _$s26AuthenticationServicesCore20ASCABLEAuthenticatorCMu,
                             _$s26AuthenticationServicesCore20ASCABLEAuthenticatorCN,
                             _$s26AuthenticationServicesCore20ASCABLEAuthenticatorCfD,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesC12isPasskeyURLySb10Foundation0H0VFZ,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesC13passkeURLType4fromSo010_ASPasskeyG0V10Foundation3URLV_tFZ,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesC24isPasskeyRegistrationURLySb10Foundation0I0VFZ,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesCMa,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesCMn,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesCMo,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesCN,
+                            _$s26AuthenticationServicesCore23_ASCABLEQRCodeUtilitiesCfD,
                             _$sSU26AuthenticationServicesCores17FixedWidthIntegerRzrlE16littleEndianData010preservingE010Foundation0I0VSb_tF,
                             _$sSU26AuthenticationServicesCores17FixedWidthIntegerRzrlE20littleEndianSequencexqd___tcSTRd__s5UInt8V7ElementRtd__lufC,
-                            _ASAllLoginChoiceClasses, _ASCAgentBundleIdentifier,
-                            _ASCAgentServiceName, _ASCAuthorizationErrorDomain,
+                            _ASAllLoginChoiceClasses,
+                            _ASAuthenticationRequestWebBrowserEntitlement,
+                            _ASCAgentBundleIdentifier, _ASCAgentServiceName,
+                            _ASCAuthorizationErrorDomain,
                             _ASCAuthorizationPresentationContextDataKey,
                             _ASCAuthorizationPresenterClientEntitlementName,
+                            _ASFIDOAuthenticatorAttachmentCrossPlatform,
+                            _ASFIDOAuthenticatorAttachmentPlatform,
+                            _ASKeychainSyncStatusMayHaveChangedNotification,
                             _ASViewServiceClientEntitlement,
                             _ASViewServiceProcess,
                             _ascCredentialRequestTypesAllPasskey,
                             _ascCredentialRequestTypesAllPublicKey,
                             _authenticationServicesViewServiceBundleIdentifier,
                             _descriptionForErrorCode ]
-    objc-classes:         [ ASCABLELoginChoice, ASCAgent, ASCAgentInterface,
-                            ASCAgentListener, ASCAgentProxy, ASCAppleIDCredential,
-                            ASCAppleIDLoginChoice,
+    objc-classes:         [ ASAgentAutoFillListener, ASCABLELoginChoice, ASCAgent,
+                            ASCAgentInterface, ASCAgentListener, ASCAgentProxy,
+                            ASCAppleIDCredential, ASCAppleIDLoginChoice,
                             ASCAuthorizationPresentationContext,
                             ASCAuthorizationPresenter,
                             ASCAuthorizationPresenterHostInterface,
@@ -110,7 +123,10 @@ exports:
                             ASCSecurityKeyPublicKeyCredentialRegistration,
                             ASCViewServiceInterface,
                             ASCWebAuthenticationExtensionsClientInputs,
-                            ASCWebKitSPISupport, ASFeatureManager, _ASDevice,
+                            ASCWebKitSPISupport, ASFeatureManager,
+                            ASGlobalFrameIdentifier, _ASCABLEPowerLogger,
+                            _ASDevice,
                             _TtC26AuthenticationServicesCore13ASCABLEClient,
-                            _TtC26AuthenticationServicesCore20ASCABLEAuthenticator ]
+                            _TtC26AuthenticationServicesCore20ASCABLEAuthenticator,
+                            _TtC26AuthenticationServicesCore23_ASCABLEQRCodeUtilities ]
 ...

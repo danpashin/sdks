@@ -9,9 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SBKKeyValuePayloadPairWithPreferredClass,
-                            _SBKLogFilter, _SBKLogProductionKeyBag,
-                            _SBKLogRuntimeOverride,
-                            _SBKLogRuntimeOverridePattern,
+                            _SBKLogProductionKeyBag,
                             _SBKPreferencesDidChangeNotification,
                             _SBKStoreAccount,
                             _SBKStoreAccountIdentifierFromDatabasePath,
@@ -19,7 +17,7 @@ exports:
                             _SBKStoreAccountLastFailedSyncIdentifier,
                             _SBKStoreAccountLastSyncedIdentifier,
                             _SBKSyncAnchorVersionBase,
-                            _SBKSyncAnchorVersionMaximum, _SBKTimeStamp,
+                            _SBKSyncAnchorVersionMaximum,
                             _SBKUniversalPlaybackPositionMediaItemPropertyAlbumTitle,
                             _SBKUniversalPlaybackPositionMediaItemPropertyBookmarkTime,
                             _SBKUniversalPlaybackPositionMediaItemPropertyEntityType,
@@ -33,7 +31,7 @@ exports:
                             _SBKUniversalPlaybackPositionMediaItemPropertySubscriptionStoreID,
                             _SBKUniversalPlaybackPositionMediaItemPropertyTitle,
                             _SBKUniversalPlaybackPositionStoreDidSynchronizeNotification ]
-    objc-classes:         [ SBKLoadDomainVersionRequestHandler, SBKLogger,
+    objc-classes:         [ SBKLoadDomainVersionRequestHandler,
                             SBKMutableStoreURLBagContext, SBKPreferences,
                             SBKPullValueTransaction, SBKPushValueTransaction,
                             SBKRequestHandler, SBKResponse,
@@ -43,7 +41,4 @@ exports:
                             SBKTransactionController,
                             SBKUniversalPlaybackPositionMetadata,
                             SBKUniversalPlaybackPositionStore ]
-    objc-ivars:           [ SBKLogger._auxPath, SBKLogger._fileHandle,
-                            SBKLogger._filter, SBKLogger._pid, SBKLogger._procName,
-                            SBKLogger._runtimeOverride ]
 ...

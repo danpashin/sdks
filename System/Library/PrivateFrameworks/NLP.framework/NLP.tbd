@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NLP.framework/NLP
-current-version:       215
+current-version:       231
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -86,12 +86,14 @@ exports:
                             _NLTextStructuredEventGetPeopleRanges,
                             _NLTextStructuredEventGetRecurrentEvent,
                             _NLTransliterationCandidateCopyInputString,
+                            _NLTransliterationCandidateCopyMetadata,
                             _NLTransliterationCandidateCopyOutputString,
                             _NLTransliterationCandidateCreate,
                             _NLTransliterationCandidateIsExtensionCandidate,
                             _NLTransliterationCandidateIsInVocabulary,
                             _NLTransliterationCandidateScore,
                             _NLTransliteratorAcceptCandidate,
+                            _NLTransliteratorAssetsAvailable,
                             _NLTransliteratorCopyCandidates,
                             _NLTransliteratorCreate,
                             _NLTransliteratorFlushDynamicLanguageModel,
@@ -127,6 +129,10 @@ exports:
                             _kNLTextSlotParserRecurrentFrequencyYearKey,
                             _kNLTextSlotParserReferenceDateKey,
                             _kNLTextSlotParserResourceDirectoryLocationKey,
+                            _kNLTransliteratorBundleURLKey,
+                            _kNLTransliteratorCandidateMetadataLMScoreKey,
+                            _kNLTransliteratorCandidateMetadataSeq2SeqScoreKey,
+                            _kNLTransliteratorCandidateMetadataTotalScoreKey,
                             _kNLTransliteratorTargetLocaleKey ]
     objc-classes:         [ NLParsecDataManager, NLSearchParserManager ]
 ...

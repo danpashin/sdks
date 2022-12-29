@@ -7,25 +7,17 @@ uuids:
   - target:          armv7s-ios
     value:           AC43A41B-99E0-3C47-9447-AE589BFDD866
   - target:          arm64-ios
-    value:           A20F0BFE-C4FF-3AE0-BD37-E48FE9FEDC9B
+    value:           95C75115-33F2-3516-A966-9990486AB08A
   - target:          arm64e-ios
-    value:           D85B0F43-A3F8-3640-AD27-DF5B09D11EC5
+    value:           73A3A477-06E4-37A4-9398-F1E5F4B539BC
 install-name:    '/System/Library/Frameworks/CoreMIDI.framework/CoreMIDI'
 current-version: 69
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MIDISetNotificationRunLoop ]
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN4MIDI11StreamState22update_with_v1_packetsENSt3__14spanIKjLm18446744073709551615EEE, 
-                       __ZN4MIDI11StreamState5chaseERNS_10PacketizerE, __ZN4MIDI11StreamState5clearEv, 
-                       __ZN4MIDI11StreamState5resetERNS_10PacketizerE, __ZN4MIDI11StreamStateC1Ej, 
-                       __ZN4MIDI11StreamStateC2Ej, __ZN4MIDI16LegacyPacketList4dumpERKS0_, 
-                       __ZN4MIDI16LegacyPacketList6createE14MIDIProtocolIDyNSt3__14spanIKhLm18446744073709551615EEE, 
-                       __ZN4MIDI16LegacyPacketList7destroyEPS0_, __ZN4MIDI9EventList4dumpERKS0_, 
-                       __ZN4MIDI9EventList6createE14MIDIProtocolIDyNSt3__14spanIKjLm18446744073709551615EEE, 
-                       __ZN4MIDI9EventList6createERKS0_, __ZNK4MIDI9EventList4sizeEv ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _MIDICapabilityGetDiscoveryMUID, _MIDICapabilityMUIDCollides, 
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _MIDIBluetoothDriverActivateAllConnections, _MIDIBluetoothDriverDisconnect, 
+                       _MIDICapabilityGetDiscoveryMUID, _MIDICapabilityMUIDCollides, 
                        _MIDIClientCreate, _MIDIClientCreateWithBlock, _MIDIClientDispose, 
                        _MIDIConfigCheckVirginState, _MIDIConfigDelete, _MIDIConfigDuplicate, 
                        _MIDIConfigExists, _MIDIConfigGetCurrent, _MIDIConfigGetList, 
@@ -83,4 +75,13 @@ exports:
     objc-classes:    [ BLEMIDIAccessor, MIDICIDeviceInfo, MIDICIDiscoveredNode, MIDICIDiscoveryManager, 
                        MIDICIProfile, MIDICIProfileState, MIDICIResponder, MIDICISession, 
                        MIDINetworkConnection, MIDINetworkHost, MIDINetworkSession ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN4MIDI11StreamState22update_with_v1_packetsENSt3__14spanIKjLm18446744073709551615EEE, 
+                       __ZN4MIDI11StreamState5chaseERNS_10PacketizerE, __ZN4MIDI11StreamState5clearEv, 
+                       __ZN4MIDI11StreamState5resetERNS_10PacketizerE, __ZN4MIDI11StreamStateC1Ej, 
+                       __ZN4MIDI11StreamStateC2Ej, __ZN4MIDI16LegacyPacketList4dumpEPKS0_, 
+                       __ZN4MIDI16LegacyPacketList6createE14MIDIProtocolIDyNSt3__14spanIKhLm18446744073709551615EEE, 
+                       __ZN4MIDI23LegacyPacketListDeleterclEPNS_16LegacyPacketListE, 
+                       __ZN4MIDI9EventList4dumpEPKS0_, __ZN4MIDI9EventList6createE14MIDIProtocolIDyNSt3__14spanIKjLm18446744073709551615EEE, 
+                       __ZN4MIDI9EventList6createEPKS0_, __ZNK4MIDI9EventList4sizeEv ]
 ...

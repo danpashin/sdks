@@ -2,7 +2,7 @@
 //  HKActivitySummary.h
 //  HealthKit
 //
-//  Copyright (c) 2015 Apple Inc. All rights reserved.
+//  Copyright (c) 2015-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKActivitySummary
  @abstract      An object that represents a summary of a user's activity for a given day.
  */
-HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
+HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0))
 @interface HKActivitySummary : NSObject <NSSecureCoding, NSCopying>
 
 /**
@@ -30,7 +30,7 @@ HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
   @abstract      The move mode of this activity summary
   @discussion    The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move ring.
   */
-@property (nonatomic, assign) HKActivityMoveMode activityMoveMode API_AVAILABLE(ios(14.0), watchos(7.0));
+@property (nonatomic, assign) HKActivityMoveMode activityMoveMode API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /**
   @property      activeEnergyBurned
@@ -45,7 +45,7 @@ HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
   @discussion    This quantity is compatible with time units. The measurement criteria of
                  move time time is defined by Apple.
   */
-@property (nonatomic, strong) HKQuantity *appleMoveTime API_AVAILABLE(ios(14.0), watchos(7.0));
+@property (nonatomic, strong) HKQuantity *appleMoveTime API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /**
   @property      appleExerciseTime
@@ -75,25 +75,39 @@ HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
   @abstract      The user's move time goal for the day.
   @discussion    This quantity is compatible with time units.
   */
-@property (nonatomic, strong) HKQuantity *appleMoveTimeGoal API_AVAILABLE(ios(14.0), watchos(7.0));
+@property (nonatomic, strong) HKQuantity *appleMoveTimeGoal API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /**
   @property      appleExerciseTimeGoal
   @abstract      The user's exercise time goal for the day.
   @discussion    This quantity is compatible with time units.
   */
-@property (nonatomic, strong) HKQuantity *appleExerciseTimeGoal;
+@property (nonatomic, strong) HKQuantity *appleExerciseTimeGoal API_DEPRECATED_WITH_REPLACEMENT("exerciseTimeGoal", ios(9.3, API_TO_BE_DEPRECATED), watchos(2.2, API_TO_BE_DEPRECATED));
+
+/**
+  @property      exerciseTimeGoal
+  @abstract      The user's exercise time goal for the day.
+  @discussion    This quantity is compatible with time units.
+  */
+@property (nonatomic, strong, nullable) HKQuantity *exerciseTimeGoal API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
 
 /**
   @property      appleStandHoursGoal
   @abstract      The user's active stand hours goal for the day.
   @discussion    This quantity is compatible with the count unit.
   */
-@property (nonatomic, strong) HKQuantity *appleStandHoursGoal;
+@property (nonatomic, strong) HKQuantity *appleStandHoursGoal API_DEPRECATED_WITH_REPLACEMENT("standHoursGoal", ios(9.3, API_TO_BE_DEPRECATED), watchos(2.2, API_TO_BE_DEPRECATED));
+
+/**
+  @property      standHoursGoal
+  @abstract      The user's active stand hours goal for the day.
+  @discussion    This quantity is compatible with the count unit.
+  */
+@property (nonatomic, strong, nullable) HKQuantity *standHoursGoal API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
 
 @end
 
 // Predicate Key Paths
-HK_EXTERN NSString * const HKPredicateKeyPathDateComponents API_AVAILABLE(ios(9.3), watchos(2.2));
+HK_EXTERN NSString * const HKPredicateKeyPathDateComponents API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARBodyAnchor.h>)
 //
 //  ARBodyAnchor.h
 //  ARKit
@@ -43,3 +44,6 @@ API_AVAILABLE(ios(13.0))
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARBodyAnchor.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARBodyAnchor.h>)

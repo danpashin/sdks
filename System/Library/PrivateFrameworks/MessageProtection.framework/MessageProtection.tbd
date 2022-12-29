@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MessageProtection.framework/MessageProtection
-current-version:       247.100.1
+current-version:       263.0.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -13,6 +13,20 @@ exports:
                             _$s17MessageProtection16SymmetricRatchetVMa,
                             _$s17MessageProtection16SymmetricRatchetVMn,
                             _$s17MessageProtection16SymmetricRatchetVN,
+                            _$s17MessageProtection17GLTDiversifiedKeyCACycfC,
+                            _$s17MessageProtection17GLTDiversifiedKeyCACycfc,
+                            _$s17MessageProtection17GLTDiversifiedKeyCMa,
+                            _$s17MessageProtection17GLTDiversifiedKeyCMn,
+                            _$s17MessageProtection17GLTDiversifiedKeyCN,
+                            _$s17MessageProtection17GLTDiversifiedKeyCfD,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftC9diversify10privateKey5docId22trackingPreventionSaltSo03SecH3RefaAI_SS10Foundation4DataVtKFZ,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftC9diversify9publicKey22trackingPreventionSalt5docIdAA014GLTDiversifiedH0CSo03SecH3Refa_10Foundation4DataVSgSStKFZ,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCACycfC,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCACycfc,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCMa,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCMn,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCN,
+                            _$s17MessageProtection26GLTKeyDiversificationSwiftCfD,
                             _$s17MessageProtection4HKDFC13deriveKeyWith_4salt10outputSizeSo6NSDataCAH_AHSitFZ,
                             _$s17MessageProtection4HKDFCACycfC,
                             _$s17MessageProtection4HKDFCACycfc,
@@ -42,7 +56,8 @@ exports:
                             _SecMWCreateEphemeralDeviceIdentity,
                             _SecMWCreateSessionSalt, _SecMWCreateSessionSeed,
                             _SecProtectStream ]
-    objc-classes:         [ GFTKeyWrapping, MPStatusKitIncomingRatchet,
+    objc-classes:         [ GFTKeyWrapping, GLTDiversifiedKeyAndTPS,
+                            GLTKeyDiversification, MPStatusKitIncomingRatchet,
                             MPStatusKitMessage, MPStatusKitOutgoingRatchet,
                             MPStatusKitSubscriptionKeys, NGMFullDeviceIdentity,
                             NGMKeyRollingTicket, NGMMessageHasher,
@@ -51,5 +66,7 @@ exports:
                             NGMTimeBasedEvaluations,
                             SecMessageLegacyFullIdentity,
                             SecMessageLegacyPublicIdentity,
+                            _TtC17MessageProtection17GLTDiversifiedKey,
+                            _TtC17MessageProtection26GLTKeyDiversificationSwift,
                             _TtC17MessageProtection4HKDF ]
 ...

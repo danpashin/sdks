@@ -10,14 +10,16 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _NSJSONSerializationNSStringErrorDomain,
                             _SAGeofenceEventTypeToString, _TAEventsLog,
-                            _TARegisterLogs, _TASALog, _TAStatusLog ]
-    objc-classes:         [ SAAnalytics, SAConnectionEvent, SADevice, SADeviceRecord,
+                            _TARegisterLogs, _TASAEventsLog, _TASALog, _TAStatusLog ]
+    objc-classes:         [ SAAnalytics, SAAnalyticsSettings, SAAudioAccessory,
+                            SAConnectionEvent, SADevice, SADeviceRecord,
                             SADeviceUpdateEvent, SADevicesWithSafeLocationsEvent,
                             SAFenceManager, SAGeofenceEvent, SAMonitoringSession,
                             SAMonitoringSessionManager, SAPersistenceManager,
                             SAPersistenceManagerSettings, SAPersistenceStore,
-                            SAPowerLog, SASafeLocation, SASafeLocationUpdateEvent,
-                            SASafeLocationsEvent, SAScenarioClassifier, SAService,
-                            SAServiceManager, SASingleDeviceRecord, SATime,
-                            SATimeEvent, SATravelTypeClassifier, SAWithYouDetector ]
+                            SAPowerLog, SAReplay, SASafeLocation,
+                            SASafeLocationUpdateEvent, SASafeLocationsEvent,
+                            SAScenarioClassifier, SAService, SAServiceManager,
+                            SASingleDeviceRecord, SATime, SATimeEvent,
+                            SATravelTypeClassifier, SAWithYouDetector ]
 ...

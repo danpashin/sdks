@@ -2,7 +2,7 @@
 //  HKDiscreteQuantitySample.h
 //  HealthKit
 //
-//  Copyright © 2019 Apple. All rights reserved.
+//  Copyright © 2019-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKQuantitySample.h>
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      An HKQuantitySample subclass representing a quantity measurement with
                 discrete aggregation style.
  */
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKDiscreteQuantitySample : HKQuantitySample
 
 /*!
@@ -52,12 +52,12 @@ HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
 @end
 
 // Predicate Key Paths
-HK_EXTERN NSString * const HKPredicateKeyPathMin API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathAverage API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathMax API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathMostRecent API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathMostRecentStartDate API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathMostRecentEndDate API_AVAILABLE(ios(13.0), watchos(6.0));
-HK_EXTERN NSString * const HKPredicateKeyPathMostRecentDuration API_AVAILABLE(ios(13.0), watchos(6.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMin API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathAverage API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMax API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMostRecent API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMostRecentStartDate API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMostRecentEndDate API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathMostRecentDuration API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

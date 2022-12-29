@@ -150,6 +150,16 @@ MPS_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 -(MPSGraphTensor *) erfWithTensor:(MPSGraphTensor *) tensor
                              name:(NSString * _Nullable) name;
 
+/*!
+ *  @abstract   Truncate op - floor for positive inputs, ceil for negative.
+ *  @param      tensor         The input
+ *  @param      name             Name for the operation
+ *  @return     A valid MPSGraphTensor object.
+ */
+-(MPSGraphTensor *) truncateWithTensor:(MPSGraphTensor *) tensor
+                                  name:(NSString * _Nullable) name
+MPS_SWIFT_NAME( truncate(_:name:) )
+MPS_AVAILABLE_STARTING(macos(13.0), ios(16.0), tvos(16.0));
 
 #pragma mark - BinaryArithmeticOps
 

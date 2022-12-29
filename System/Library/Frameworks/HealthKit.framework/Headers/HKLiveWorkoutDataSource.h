@@ -2,7 +2,7 @@
 //  HKLiveWorkoutDataSource.h
 //  HealthKit
 //
-//  Copyright © 2017-2018 Apple. All rights reserved.
+//  Copyright © 2017 Apple. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

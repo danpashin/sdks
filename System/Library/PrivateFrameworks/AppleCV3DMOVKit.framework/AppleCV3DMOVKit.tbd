@@ -3,12 +3,12 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleCV3DMOVKit.framework/AppleCV3DMOVKit
-current-version:       4.42
-compatibility-version: 4.42
+current-version:       5.54.7
+compatibility-version: 5.54.7
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CVPixelBufferAttachmentIntrinsicsKey, _dummy,
+    symbols:              [ _CVPixelBufferAttachmentIntrinsicsKey,
                             _kALSIdentifierPrefixValue,
                             _kAVMetadataIdentifierCalibration,
                             _kAVMetadataIdentifierFrameworkState,
@@ -16,7 +16,9 @@ exports:
                             _kAccelerometerIdentifierValue,
                             _kCMDataIdentifierValue,
                             _kCVACameraCalibrationIdentifierValue,
+                            _kCVADepthIRIdentifierValue,
                             _kCVADepthTOFIdentifierValue,
+                            _kCVAFeatureBufferFormatValue,
                             _kCVAFeatureBufferIdentifierValue,
                             _kCVAPRDeviceIdentifierValue,
                             _kCVATimedValueIdentifierValue,
@@ -34,23 +36,25 @@ exports:
                             _kMOVSummaryOSBuildVersion, _kMOVSummaryProductType,
                             _kMOVSummarySWtoWExtrinsics,
                             _kMOVSummarySerialNumber, _kMOVSummaryVersion,
+                            _kMOVSummaryiOS, _kMotionIdentifierValue,
                             _kRawALSIdentifierPrefixValue,
                             _kRawAccelerometerIdentifierValue,
                             _kRawCompassIdentifierValue,
                             _kRawGyroscopeIdentifierValue,
-                            _kSTFirmwareVersionData, _kUnitInfoData ]
+                            _kSTFirmwareVersionData, _kSpuIMUIdentifierValue,
+                            _kUnitInfoData ]
     objc-classes:         [ CMData, CMDataContainer, CMEvent, CMFileInterface,
                             CMMessage, CVACLLocation, CVACLMotionTypeDoubleVector3,
                             CVACLMotionTypeDoubleVector4, CVACLMotionTypeVector3,
                             CVACLMotionTypeVector4, CVACMALSData,
                             CVACMAccelerometerData, CVACMCompassData,
-                            CVACMDeviceMotionData, CVACMGyroData,
+                            CVACMDeviceMotionData, CVACMGyroData, CVACMMotionData,
                             CVACMMotionTypeDeviceMotionData, CVACalibration,
                             CVACameraCalibration, CVACameraCalibrationData,
                             CVADepthIR, CVADepthTOF, CVAFeatureBuffer,
                             CVAIMUCalibration, CVAPRAngleMeasurement, CVAPRDevice,
-                            CVAPRRangeMeasurement, CVATimedValue, CVAUserEvent,
-                            JasperDepthFrameProcessor, MOVReaderInterface,
-                            MOVWriterInterface, MetadataWrapper,
-                            StreamEncodingObject ]
+                            CVAPRRangeMeasurement, CVASpuFastPathComboAxisData,
+                            CVATimedValue, CVAUserEvent, JasperDepthFrameProcessor,
+                            MOVReaderInterface, MOVWriterInterface,
+                            MetadataWrapper, StreamEncodingObject ]
 ...

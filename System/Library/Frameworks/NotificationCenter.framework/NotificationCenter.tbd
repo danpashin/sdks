@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           D2ED7121-4108-3F86-9EEA-4E71906ADBCC
   - target:          arm64-ios
-    value:           3B024880-F3DE-3480-8F94-1F44F00C774B
+    value:           1618F608-3CED-3C0B-AF74-4DE0889AF458
   - target:          arm64e-ios
-    value:           CC45783D-8331-3464-AB57-5ACFEA390EB0
+    value:           F42EFF5B-AB84-3A1A-BF3E-E9F2DF5A0C9D
 install-name:    '/System/Library/Frameworks/NotificationCenter.framework/NotificationCenter'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _NCExtensionItemUserInfoInitialLargestAvailableDisplayModeKey, 
                        _NCWidgetRowHeightDidChangeNotification ]
     objc-classes:    [ NCDataSourceManager, NCWidgetDataSource, NCWidgetDatum ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _NCAppLaunchOriginWidget, _NCExtensionItemUserInfoContainerIdentifierKey, 
                        _NCExtensionItemUserInfoDefaultMarginsKey, _NCExtensionItemUserInfoInitialActiveDisplayModeKey, 
                        _NCExtensionItemUserInfoInitialBoundsKey, _NCExtensionItemUserInfoInitialLayoutMarginsKey, 

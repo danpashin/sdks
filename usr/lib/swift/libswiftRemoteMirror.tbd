@@ -7,19 +7,19 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           EA7C1535-32D8-3097-BFC8-93864F344D97
+    value:           94FC49E5-E470-3ED3-B599-ACDE71BB59A4
   - target:          arm64e-ios
-    value:           59F27155-6EB6-3A17-A312-8051DFFA8E3E
+    value:           8E1D2772-857A-31EF-A429-16A05D9761AD
 install-name:    '/usr/lib/swift/libswiftRemoteMirror.dylib'
 current-version: 0
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _swift_reflection_addImage, _swift_reflection_addReflectionInfo, 
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _swift_reflection_actorInfo, _swift_reflection_addImage, _swift_reflection_addReflectionInfo, 
                        _swift_reflection_addReflectionMappingInfo, _swift_reflection_allocationMetadataPointer, 
-                       _swift_reflection_asyncTaskSlabAllocations, _swift_reflection_asyncTaskSlabPointer, 
-                       _swift_reflection_childOfInstance, _swift_reflection_childOfMetadata, 
-                       _swift_reflection_childOfTypeRef, _swift_reflection_classIsSwiftMask, 
-                       _swift_reflection_copyDemangledNameForProtocolDescriptor, 
+                       _swift_reflection_asyncTaskInfo, _swift_reflection_asyncTaskSlabAllocations, 
+                       _swift_reflection_asyncTaskSlabPointer, _swift_reflection_childOfInstance, 
+                       _swift_reflection_childOfMetadata, _swift_reflection_childOfTypeRef, 
+                       _swift_reflection_classIsSwiftMask, _swift_reflection_copyDemangledNameForProtocolDescriptor, 
                        _swift_reflection_copyDemangledNameForTypeRef, _swift_reflection_createReflectionContext, 
                        _swift_reflection_createReflectionContextWithDataLayout, _swift_reflection_demangle, 
                        _swift_reflection_destroyReflectionContext, _swift_reflection_dumpInfoForInstance, 
@@ -31,7 +31,8 @@ exports:
                        _swift_reflection_iterateMetadataAllocationBacktraces, _swift_reflection_iterateMetadataAllocations, 
                        _swift_reflection_libraryVersion, _swift_reflection_metadataAllocationCacheNode, 
                        _swift_reflection_metadataAllocationTagName, _swift_reflection_metadataForObject, 
-                       _swift_reflection_metadataNominalTypeDescriptor, _swift_reflection_ownsAddress, 
+                       _swift_reflection_metadataIsActor, _swift_reflection_metadataNominalTypeDescriptor, 
+                       _swift_reflection_nextJob, _swift_reflection_ownsAddress, 
                        _swift_reflection_ownsObject, _swift_reflection_projectEnumValue, 
                        _swift_reflection_projectExistential, _swift_reflection_projectExistentialAndUnwrapClass, 
                        _swift_reflection_readIsaMask, _swift_reflection_typeRefForInstance, 

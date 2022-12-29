@@ -3,21 +3,20 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LearnedFeatures.framework/LearnedFeatures
-current-version:       4.60
-compatibility-version: 4.60
+current-version:       5.54.7
+compatibility-version: 5.54.7
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _LFComputeDescriptors, _LFDescriptorModelVersion,
+    symbols:              [ _LFComputeDescriptors,
+                            _LFComputeLocalGlobalDescriptors,
+                            _LFDescriptorModelVersion,
+                            _LFDescriptorProgramMetadata,
+                            _LFDescriptorResetPSHandle, _LFDescriptorSetPSHandle,
                             _LFDescriptorsRelease, _LFDetectAndComputeFeatures,
                             _LFDetectKeypoints, _LFDetectorModelVersion,
-                            _LFFeaturesRelease, _LFHandleCreate, _LFHandleRelease,
-                            _LFKeypointsRelease, _LearnedFeaturesGetVersion,
-                            __ZN4cv3d2lf5model4velf12ModelVersionEv,
-                            __ZN4cv3d2lf5model4velf9ModelPathEv,
-                            __ZN4cv3d2lf5model5kpnet12ModelVersionEv,
-                            __ZN4cv3d2lf5model5kpnet17DetectorModelPathEv,
-                            __ZN4cv3d2lf5model5kpnet19DescriptorModelPathEv,
-                            __ZN4cv3d2lf5model7hardnet12ModelVersionEv,
-                            __ZN4cv3d2lf5model7hardnet9ModelPathEv ]
+                            _LFDetectorResetPSHandle, _LFDetectorSetPSHandle,
+                            _LFFeaturesRelease, _LFHandleCreate,
+                            _LFHandleCreateOnDevice, _LFHandleRelease,
+                            _LFKeypointsRelease, _LearnedFeaturesGetVersion ]
 ...

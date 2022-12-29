@@ -25,7 +25,7 @@ exports:
                             _BSXPCServiceConnectionExecuteCallOut,
                             _NSStringFromBSServiceConnectionErrorCode,
                             _NSStringFromBSServiceDomainStartType ]
-    objc-classes:         [ BSMutableServiceInterface, BSService,
+    objc-classes:         [ BSMutableServiceInterface, BSNSXPCTransport, BSService,
                             BSServiceConnection, BSServiceConnectionEndpoint,
                             BSServiceConnectionEndpointInjector,
                             BSServiceConnectionEndpointMonitor,
@@ -34,6 +34,7 @@ exports:
                             BSServiceManager, BSServiceQuality,
                             BSServiceSpecification, BSServicesConfiguration,
                             BSXPCServiceConnection,
+                            BSXPCServiceConnectionActivationMessage,
                             BSXPCServiceConnectionChildContext,
                             BSXPCServiceConnectionContext,
                             BSXPCServiceConnectionEventHandler,
@@ -53,6 +54,7 @@ exports:
                             BSServiceInterface._clientWaitsForActivation,
                             BSServiceInterface._identifier,
                             BSServiceInterface._server,
+                            BSXPCServiceConnectionMessage._handshake,
                             BSXPCServiceConnectionMessage._sendFlag,
                             BSXPCServiceConnectionMessage._targetQueue ]
 ...

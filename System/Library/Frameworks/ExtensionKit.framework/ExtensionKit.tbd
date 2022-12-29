@@ -1,0 +1,24 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           206973E5-6427-3D06-9AB0-72770CC99EE8
+  - target:          arm64e-ios
+    value:           D4469BB1-08A2-3E8F-B1BA-DCB204895711
+install-name:    '/System/Library/Frameworks/ExtensionKit.framework/ExtensionKit'
+current-version: 34.5
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/ExtensionFoundation.framework/ExtensionFoundation' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    objc-classes:    [ EXHostViewController, _EXExtensionViewController, _EXHostViewController, 
+                       _EXHostViewControllerConfiguration, _EXNSExtensionUIShimExtension, 
+                       _EXRunningUIExtension, _EXRunningUISceneExtension, _EXRunningUIViewServiceExtension, 
+                       _EXViewControllerSceneConfiguration ]
+...

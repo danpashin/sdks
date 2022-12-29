@@ -2,7 +2,7 @@
 //  HKDevice.h
 //  HealthKit
 //
-//  Copyright © 2015 Apple. All rights reserved.
+//  Copyright © 2015-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -14,60 +14,60 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device name.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyName API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyName API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyManufacturer
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device manufacturer.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyManufacturer API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyManufacturer API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyModel
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device model.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyModel API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyModel API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyHardwareVersion
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a hardware version.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyHardwareVersion API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyHardwareVersion API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyFirmwareVersion
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a firmware version.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyFirmwareVersion API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyFirmwareVersion API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeySoftwareVersion
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a software version.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeySoftwareVersion API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeySoftwareVersion API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyLocalIdentifier
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a local identifier.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyLocalIdentifier API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyLocalIdentifier API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @constant      HKDevicePropertyKeyUDIDeviceIdentifier
  @abstract      Used with predicateForObjectsWithDeviceProperty to specify a UDI device identifier.
  @discussion    The expected value type is an NSString.
  */
-HK_EXTERN NSString * const HKDevicePropertyKeyUDIDeviceIdentifier API_AVAILABLE(ios(9.0), watchos(2.0));
+HK_EXTERN NSString * const HKDevicePropertyKeyUDIDeviceIdentifier API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 
 
-HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKDevice : NSObject <NSSecureCoding, NSCopying>
 
 /*!

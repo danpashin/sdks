@@ -7,15 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           AA1E1032-B798-3B14-A671-82B2ED039E53
   - target:          arm64-ios
-    value:           6D2D7D4E-6612-3541-86CD-26BC914E40F7
+    value:           5B25F6C1-C437-3E44-A789-6A1D7E426479
   - target:          arm64e-ios
-    value:           9F4C9DC7-3E73-3602-BA57-0927D0353FB2
+    value:           F22D10C8-E3CF-3FF3-8C3A-DE3385CD4CA6
 install-name:    '/usr/lib/libcompression.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _compression_stream_build_shared_dict, _compression_stream_init_with_options, 
                        _compression_stream_op_data_size ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _compression_decode_buffer, _compression_decode_scratch_buffer_size, 
                        _compression_encode_buffer, _compression_encode_scratch_buffer_size, 
                        _compression_stream_destroy, _compression_stream_get_decode_state_size, 
@@ -30,5 +30,5 @@ exports:
                        _yzip_image_create_with_payload, _yzip_image_decode, _yzip_image_destroy, 
                        _yzip_image_encode, _yzip_image_get_descriptor, _yzip_image_get_max_payload_size, 
                        _yzip_image_get_plane_descriptor, _yzip_image_set_data, _yzip_image_set_identifier, 
-                       _yzip_image_set_plane_data ]
+                       _yzip_image_set_plane_data, _zero_coder_decode, _zero_coder_encode ]
 ...

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           3E6A5869-36E8-3113-9589-163F9E791D78
   - target:          arm64-ios
-    value:           84A9321D-27B3-307D-9305-9DB66E3B43A5
+    value:           ABECE941-8C1B-381E-B8C3-C6333151A7C8
   - target:          arm64e-ios
-    value:           ED02C1ED-BF0E-3DC8-99F5-2E2C2E133966
+    value:           4A4E5F41-E818-3BF1-AF28-748B82FDFC44
 install-name:    '/usr/lib/libcmph.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -78,7 +78,7 @@ exports:
                        _vqueue_print, _vqueue_remove, _vstack_destroy, _vstack_empty, 
                        _vstack_new, _vstack_pop, _vstack_push, _vstack_reserve, _vstack_size, 
                        _vstack_top ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _cmph_config_destroy, _cmph_config_new, _cmph_config_set_algo, 
                        _cmph_config_set_b, _cmph_config_set_graphsize, _cmph_config_set_hashfuncs, 
                        _cmph_config_set_keys_per_bin, _cmph_config_set_memory_availability, 

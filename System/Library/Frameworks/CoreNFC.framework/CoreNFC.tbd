@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           1C684592-88E1-3881-9CAD-35FAF93F6DAB
+    value:           C2C4CFC9-5313-349D-AB58-989B46B46806
   - target:          arm64e-ios
-    value:           D3C84913-DCF3-3808-A541-2A66891B7D77
+    value:           EF44CA83-5331-3322-892E-4E810EEF6B5C
 install-name:    '/System/Library/Frameworks/CoreNFC.framework/CoreNFC'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _NFCErrorDomain, _NFCISO15693TagResponseErrorKey, _NFCTagResponseUnexpectedLengthErrorKey ]
     objc-classes:    [ NFCISO15693CustomCommandConfiguration, NFCISO15693ReadMultipleBlocksConfiguration, 
                        NFCISO15693ReaderSession, NFCISO7816APDU, NFCNDEFMessage, 

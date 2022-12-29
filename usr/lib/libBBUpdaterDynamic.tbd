@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           D7696FAC-A589-3E90-9261-31F8283C72E6
   - target:          arm64-ios
-    value:           CC1FE097-69F4-3C52-9E3D-041E41B9527A
+    value:           7F52717C-7CF1-3623-9408-2AB1558B9E63
   - target:          arm64e-ios
-    value:           90980B90-1350-32C5-8965-527B44E28FFF
+    value:           40DDE20D-9FBC-38EF-A84E-996C298C11DC
 install-name:    '/usr/lib/libBBUpdaterDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -42,7 +42,7 @@ exports:
                        _APPLIB_DIAG_PingBaseBand, _APPLIB_DIAG_PowerDown_BaseBand, 
                        _APPLIB_DIAG_Release_BB_RESET_DET_N, _APPLIB_DIAG_SendRawRequest, 
                        _APPLIB_DIAG_SetDownloadMode, _APPLIB_DIAG_SetOneRx, _BBUFSDebugRegisterDelegate, 
-                       _BBUReturnAsString, _CRCCCITT, _DetectAndFixSpecialCharacters, 
+                       _BBUReturnAsString, _BBUpdaterGetCommands, _CRCCCITT, _DetectAndFixSpecialCharacters, 
                        _DetectAndStripSpecialCharacters, _ETLBBCheckEchoResponse, 
                        _ETLBBCreateDeassertResetDetectCommand, _ETLBBCreateEchoCommand, 
                        _ETLBBCreatePingCommand, _ETLBBCreateSetModeCommand, _ETLBBCreateSimulateCrashCommand, 
@@ -416,13 +416,17 @@ exports:
                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16AuthPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16InitPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC20FinalizePersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _BBUBootModeAsString, _BBUFSServerCopyDefaultDestination, 
                        _BBUFSServerCreate, _BBUFSServerFlush, _BBUFSServerFlushInProgress, 
                        _BBUFSServerParametersInit, _BBUFSServerPrepare, _BBUFSServerRelease, 
-                       _BBUFSServerSetConfig, _BBUFSServerStart, _BBUFSServerStop, 
-                       _BBUpdaterExecCommand, _BBUpdaterExtremeCreate, _BBUpdaterExtremeCreateWithError, 
-                       _BBUpdaterExtremeCreateWithParams, _BBUpdaterExtremeCreateWithParamsWithError, 
-                       _BBUpdaterGetCommands, _BBUpdaterParametersInit, _BBUpdaterRegisterGlobalLogSink, 
-                       _BBUpdaterRegisterLogSink, _BBUpdaterSetOptions, __ZN14BBUEnvironment8validateERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE ]
+                       _BBUFSServerSetConfig, _BBUFSServerSetConfigDefaults, _BBUFSServerStart, 
+                       _BBUFSServerStop, _BBUpdaterExecCommand, _BBUpdaterExtremeCreate, 
+                       _BBUpdaterExtremeCreateWithError, _BBUpdaterExtremeCreateWithParams, 
+                       _BBUpdaterExtremeCreateWithParamsWithError, _BBUpdaterParametersInit, 
+                       _BBUpdaterRegisterGlobalLogSink, _BBUpdaterRegisterLogSink, 
+                       _BBUpdaterSetOptions, _BasebandUpdaterCreate, _BasebandUpdaterExecCommand, 
+                       _BasebandUpdaterIsDone, _BasebandUpdaterRegisterGlobalLogSink, 
+                       _BasebandUpdaterRegisterLogSink, _BasebandUpdaterSetOptions, 
+                       __ZN14BBUEnvironment8validateERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE ]
 ...

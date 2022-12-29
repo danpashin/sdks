@@ -3,18 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerUICore.framework/DocumentManagerUICore
-current-version:       229.5.4
+current-version:       280.1.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _DOCConstraintWithPriority,
-                            _DOCConstraintsToCenterWithSuperview,
                             _DOCConstraintsToResizeViewsWithSuperview,
                             _DOCConstraintsToResizeWithReferenceView,
                             _DOCConstraintsToResizeWithSuperview,
-                            _DOCConstraintsToResizeWithSuperviewMargins,
-                            _DOCConstraintsToResizeWithSuperviewSafeAreaInsets,
+                            _DOCConstraintsToResizeWithSuperviewSafeArea,
+                            _DOCConstraintsWithPriority,
                             _DOCCreateDefaultHomeScreenWidgetIntent,
                             _DOCDocumentPickerExtensionUpdateWithConfiguration,
                             _DOCIntentLocationTypeCustomFolder,
@@ -23,7 +22,6 @@ exports:
                             _DOCIntentLocationTypeRecents,
                             _DOCIntentLocationTypeShared,
                             _DOCIntentLocationTypeTag,
-                            _DOCIsKindOfContextMenuInteraction_SPI,
                             _DOCNewThumbnailFittingImageView,
                             _DOCShareInfoThumbnailForFPItem,
                             _DOCShareInfoThumbnailSizeForSizeClass,
@@ -32,12 +30,14 @@ exports:
                             _DocumentManagerUICoreVersionString,
                             _createICQBannerView,
                             _shouldShowICQBannerViewForOffer ]
-    objc-classes:         [ DOCBorderedFittingImageView, DOCByteCountFormatter,
-                            DOCDateFormatter, DOCDateParser,
+    objc-classes:         [ DOCBorderedFittingImageView, DOCDateFormatter,
+                            DOCDateParser, DOCDeprecatedUIMenuController,
                             DOCDeterminateProgressRingView,
                             DOCDownloadProgressView,
                             DOCFileProviderDomainMonitor, DOCFittingImageView,
-                            DOCGhostRingView, DOCIconPromise,
+                            DOCGhostRingView, DOCICloudQuotaInAppAction,
+                            DOCICloudQuotaInAppMessage,
+                            DOCICloudQuotaInAppMessaging, DOCIconPromise,
                             DOCIconThumbnailRequest,
                             DOCIndeterminateProgressRingView, DOCIntentLocation,
                             DOCIntentLocationResolutionResult,

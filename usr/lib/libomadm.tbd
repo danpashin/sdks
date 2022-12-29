@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           0723DF1A-3EBF-37E9-8E0F-D674DA97D3CE
   - target:          arm64-ios
-    value:           75E77FAF-B258-3842-87B3-34AFE3C5CEA1
+    value:           4955A8F9-8328-3410-846F-A178C5CDC383
   - target:          arm64e-ios
-    value:           4A6D1568-15F9-33B6-8A0A-5DADB423F527
+    value:           1903CB91-5D42-38C2-A19B-331AAAF25ED7
 install-name:    '/usr/lib/libomadm.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -20,11 +20,7 @@ exports:
                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN22CFHTTPServerConnection15_handleError_nlEiRNSt3__111unique_lockINS0_5mutexEEE, 
-                       __ZN22CFHTTPServerConnection4openEPiPKh, __ZN22CFHTTPServerConnection4sendEiPhj16E_HTTP_command_tPKh, 
-                       __ZN22CFHTTPServerConnection5closeEi, __ZN22CFHTTPServerConnection7receiveEPiPhjPjS2_PPv ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CFHTTP_close, _CFHTTP_destroyContext, _CFHTTP_getResponseHeader, 
                        _CFHTTP_getStatusCode, _CFHTTP_init, _CFHTTP_open, _CFHTTP_receive, 
                        _CFHTTP_send, _CFHTTP_setRequestHeader, _CFHTTP_term, _COMMS_RDM_fetchValue, 
@@ -533,4 +529,8 @@ exports:
                        _setAccountAddrTypeInactiveAcc, _setAccountAuthSecretInactiveAcc, 
                        _setAccountPortNbrInactiveAcc, _setAccountValue, _setResultCodes, 
                        _strToPcdata, _syncmlCon, _vtable ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __ZN22CFHTTPServerConnection15_handleError_nlEiRNSt3__111unique_lockINS0_5mutexEEE, 
+                       __ZN22CFHTTPServerConnection4openEPiPKh, __ZN22CFHTTPServerConnection4sendEiPhj16E_HTTP_command_tPKh, 
+                       __ZN22CFHTTPServerConnection5closeEi, __ZN22CFHTTPServerConnection7receiveEPiPhjPjS2_PPv ]
 ...

@@ -2,7 +2,7 @@
 //  HKQuantity.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKQuantity
  @abstract      The HKQuantity class provides an encapsulation of a quantity value and the unit of measurement.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKQuantity : NSObject <NSSecureCoding, NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

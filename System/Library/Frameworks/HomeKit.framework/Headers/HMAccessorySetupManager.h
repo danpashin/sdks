@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *              These APIs do not require that the current app has home data authorization
  */
 HM_EXTERN API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(macos, macCatalyst)
-@interface HMAccessorySetupManager : NSObject
+    @interface HMAccessorySetupManager : NSObject
 
 /*!
  *  @abstract   Launch system UI to perform the process of setting up accessories with the given request.
@@ -31,7 +31,7 @@ HM_EXTERN API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABL
  *  @param completion A block that is invoked once the setup process finishes. On failure, the result will be
  *                    nil and the error will provide additional information
  */
-- (void)performAccessorySetupUsingRequest:(HMAccessorySetupRequest *)request completionHandler:(void(^)(HMAccessorySetupResult * _Nullable result, NSError * _Nullable error))completion API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(watchos, tvos);
+- (void)performAccessorySetupUsingRequest:(HMAccessorySetupRequest *)request completionHandler:(void (^)(HMAccessorySetupResult *_Nullable result, NSError *_Nullable error))completion API_AVAILABLE(ios(15.4))API_UNAVAILABLE(watchos, tvos);
 
 /*!
  *  @abstract   Launch system UI to perform the process of setting up Matter accessories with a Matter Partner
@@ -47,7 +47,7 @@ HM_EXTERN API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABL
  */
 - (void)performMatterEcosystemAccessorySetupUsingRequest:(HMAccessorySetupRequest *)request
                                                 topology:(HMMatterTopology *)topology
-                                       completionHandler:(HMErrorBlock)completion API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(watchos, tvos);
+                                       completionHandler:(HMErrorBlock)completion API_AVAILABLE(ios(15.4))API_UNAVAILABLE(watchos, tvos);
 - (void)addAndSetUpAccessoriesForTopology:(HMMatterTopology *)topology completionHandler:(HMErrorBlock)completion API_DEPRECATED("Use -[HMAccessorySetupManager performAccessorySetupUsingRequest:topology:completionHandler:] instead", ios(15.0, 15.4));
 
 @end

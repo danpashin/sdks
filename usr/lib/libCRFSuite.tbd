@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           886FBDBB-89EE-30C9-81B1-59961118CA1E
   - target:          arm64-ios
-    value:           73F9E9AA-B48E-3976-95C6-E7BFBE609323
+    value:           D037790F-D14A-3262-97F5-0BF8721C4BDA
   - target:          arm64e-ios
-    value:           5474CED5-6731-346B-BD41-65E854C9A7E1
+    value:           C5F92F9B-05F7-3474-BD2F-367C50BE608A
 install-name:    '/usr/lib/libCRFSuite.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _crfsuite_dictionary_create_instance ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _crf_content_copy, _crf_content_init, _crf_content_set, _crf_create_instance, 
                        _crf_data_append, _crf_data_finish, _crf_data_init, _crf_data_maxlength, 
                        _crf_data_totalitems, _crf_evaluation_init, _crf_item_append_content, 

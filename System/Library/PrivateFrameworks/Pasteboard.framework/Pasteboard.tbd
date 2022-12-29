@@ -9,6 +9,8 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _PBAllowedMetadataClasses,
+                            _PBAssertIsOnCallbackQueue,
+                            _PBAuthorizationTimeoutInterval,
                             _PBBestMatchConformingToType,
                             _PBBestMatchConformingToTypes,
                             _PBBestMatchToConformingType,
@@ -65,15 +67,17 @@ exports:
                             _PBPreferredRepresentationFromNS,
                             _PBSHA1HashOfString,
                             _PBSchemaFileContentsWithVersion, _PBSchemaFilename,
-                            _PBSchemaVersionKey, _PBStorageRootURL,
-                            _PBTempFilePrefix, _PBTemporaryFileName,
-                            _PBTypeNotFoundError, _PBURLFromURLArchive,
+                            _PBSchemaVersionKey, _PBSharingTokenTimeoutInterval,
+                            _PBStorageRootURL, _PBTempFilePrefix,
+                            _PBTemporaryFileName, _PBTypeNotFoundError,
+                            _PBURLFromURLArchive,
                             __PBDefaultMaxGeneralPasteboardAge, __PBLog,
                             __PBStatLogPasteAge ]
     objc-classes:         [ PBCallbackSerialization, PBCoercionRegistry,
                             PBDataTransferMonitor, PBDataTransferRequest, PBItem,
                             PBItemCollection, PBItemDetection,
                             PBItemRepresentation, PBKeyedUnarchiver,
-                            PBPasteButtonTag, PBSecurityScopedURLWrapper,
-                            PBServerConnection ]
+                            PBLoadRequestContext, PBPasteButtonTag,
+                            PBResponseMetadata, PBSaveResponse,
+                            PBSecurityScopedURLWrapper, PBServerConnection ]
 ...

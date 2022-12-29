@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           93302BF1-3720-31B5-AB85-E8A8B453CE51
   - target:          arm64-ios
-    value:           7B0C1A02-9137-32BE-82C9-37F217C66F62
+    value:           C5B26737-26AC-388C-82E1-2A5731C92830
   - target:          arm64e-ios
-    value:           4BCA3201-7633-3150-B4CE-DD34F8E265A6
+    value:           6D497BFC-F15C-3063-B9A6-EC48570C02F1
 install-name:    '/usr/lib/swift/libswiftos.dylib'
-current-version: 1023
+current-version: 1034
 swift-abi-version: 7
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftos.dylib', '$ld$install_name$os10.1$@rpath/libswiftos.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftos.dylib', '$ld$install_name$os10.3$@rpath/libswiftos.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftos.dylib', '$ld$install_name$os11.1$@rpath/libswiftos.dylib', 
@@ -108,12 +108,12 @@ exports:
                        '_$s2os12OSSignposterV9logHandleSo03OS_a1_C0CvpMV', '_$s2os12OSSignposterV9subsystem8categoryACSS_SStcfC', 
                        '_$s2os12OSSignposterV9subsystem8categoryACSS_So03OS_A4_logCAAE8CategoryVtcfC', 
                        '_$s2os12OSSignposterVACycfC', '_$s2os12OSSignposterVMa', 
-                       '_$s2os12OSSignposterVMn', '_$s2os12OSSignposterVN', '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCGSgzSpyypGSgztcGvM', 
-                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCGSgzSpyypGSgztcGvg', 
-                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCGSgzSpyypGSgztcGvpMV', 
-                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCGSgzSpyypGSgztcGvs', 
+                       '_$s2os12OSSignposterVMn', '_$s2os12OSSignposterVN', '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCSgGSgzSpyypGSgztcGvM', 
+                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCSgGSgzSpyypGSgztcGvg', 
+                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCSgGSgzSpyypGSgztcGvpMV', 
+                       '_$s2os14OSLogArgumentsV16argumentClosuresSayySpys5UInt8VGz_SpySo8NSObjectCSgGSgzSpyypGSgztcGvs', 
                        '_$s2os14OSLogArgumentsV6appendyySSycF', '_$s2os14OSLogArgumentsV6appendyySVycF', 
-                       '_$s2os14OSLogArgumentsV6appendyySdycF', '_$s2os14OSLogArgumentsV6appendyySo8NSObjectCycF', 
+                       '_$s2os14OSLogArgumentsV6appendyySdycF', '_$s2os14OSLogArgumentsV6appendyySo8NSObjectCSgycF', 
                        '_$s2os14OSLogArgumentsV6appendyys5UInt8VF', '_$s2os14OSLogArgumentsV6appendyyxycs17FixedWidthIntegerRzlF', 
                        '_$s2os14OSLogArgumentsVACycfC', '_$s2os14OSLogArgumentsVMa', 
                        '_$s2os14OSLogArgumentsVMn', '_$s2os14OSLogArgumentsVN', '_$s2os15OSLogBoolFormatO2eeoiySbAC_ACtFZ', 
@@ -270,10 +270,17 @@ exports:
                        '_$s2os21AnimationFormatStringO12OSLogMessageVs43ExpressibleByExtendedGraphemeClusterLiteralAAMc', 
                        '_$s2os21AnimationFormatStringO27constructOSLogInterpolationyAA0fG0VSSFZ', 
                        '_$s2os21AnimationFormatStringOMa', '_$s2os21AnimationFormatStringOMn', 
-                       '_$s2os21AnimationFormatStringON', '_$s2os21maxOSLogArgumentCounts5UInt8Vvg', 
-                       '_$s2os22OSLogIntExtendedFormatO10bitrateIECyA2CmFWC', '_$s2os22OSLogIntExtendedFormatO12byteCountIECyA2CmFWC', 
-                       '_$s2os22OSLogIntExtendedFormatO2eeoiySbAC_ACtFZ', '_$s2os22OSLogIntExtendedFormatO3tagSSvpMV', 
-                       '_$s2os22OSLogIntExtendedFormatO4hash4intoys6HasherVz_tF', 
+                       '_$s2os21AnimationFormatStringON', '_$s2os21OSAllocatedUnfairLockV6__locks13ManagedBufferCyxSo0a8_unfair_E2_sVGvpMV', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipO2eeoiySbAEyx_G_AGtFZ', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipO4hash4intoys6HasherVz_tF', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipO9hashValueSivg', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipO9hashValueSivpMV', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipOMa', '_$s2os21OSAllocatedUnfairLockV9OwnershipOMn', 
+                       '_$s2os21OSAllocatedUnfairLockV9OwnershipOyx_GSHAAMc', '_$s2os21OSAllocatedUnfairLockV9OwnershipOyx_GSQAAMc', 
+                       '_$s2os21OSAllocatedUnfairLockVMa', '_$s2os21OSAllocatedUnfairLockVMn', 
+                       '_$s2os21maxOSLogArgumentCounts5UInt8Vvg', '_$s2os22OSLogIntExtendedFormatO10bitrateIECyA2CmFWC', 
+                       '_$s2os22OSLogIntExtendedFormatO12byteCountIECyA2CmFWC', '_$s2os22OSLogIntExtendedFormatO2eeoiySbAC_ACtFZ', 
+                       '_$s2os22OSLogIntExtendedFormatO3tagSSvpMV', '_$s2os22OSLogIntExtendedFormatO4hash4intoys6HasherVz_tF', 
                        '_$s2os22OSLogIntExtendedFormatO7bitrateyA2CmFWC', '_$s2os22OSLogIntExtendedFormatO9byteCountyA2CmFWC', 
                        '_$s2os22OSLogIntExtendedFormatO9hashValueSivg', '_$s2os22OSLogIntExtendedFormatO9hashValueSivpMV', 
                        '_$s2os22OSLogIntExtendedFormatOMa', '_$s2os22OSLogIntExtendedFormatOMn', 
@@ -331,9 +338,10 @@ exports:
                        '_$s2os24OSLogInt32ExtendedFormatO5truthyA2CmFWC', '_$s2os24OSLogInt32ExtendedFormatO6answeryA2CmFWC', 
                        '_$s2os24OSLogInt32ExtendedFormatO7bitrateyA2CmFWC', '_$s2os24OSLogInt32ExtendedFormatO9byteCountyA2CmFWC', 
                        '_$s2os24OSLogInt32ExtendedFormatO9hashValueSivg', '_$s2os24OSLogInt32ExtendedFormatO9hashValueSivpMV', 
-                       '_$s2os24OSLogInt32ExtendedFormatOMa', '_$s2os24OSLogInt32ExtendedFormatOMn', 
-                       '_$s2os24OSLogInt32ExtendedFormatON', '_$s2os24OSLogInt32ExtendedFormatOSHAAMc', 
-                       '_$s2os24OSLogInt32ExtendedFormatOSQAAMc', '_$s2os24OSSignpostAnimationBeginO09animationD0yA2CmFWC', 
+                       '_$s2os24OSLogInt32ExtendedFormatO9machErrnoyA2CmFWC', '_$s2os24OSLogInt32ExtendedFormatOMa', 
+                       '_$s2os24OSLogInt32ExtendedFormatOMn', '_$s2os24OSLogInt32ExtendedFormatON', 
+                       '_$s2os24OSLogInt32ExtendedFormatOSHAAMc', '_$s2os24OSLogInt32ExtendedFormatOSQAAMc', 
+                       '_$s2os24OSSignpostAnimationBeginO09animationD0yA2CmFWC', 
                        '_$s2os24OSSignpostAnimationBeginO2eeoiySbAC_ACtFZ', '_$s2os24OSSignpostAnimationBeginO4hash4intoys6HasherVz_tF', 
                        '_$s2os24OSSignpostAnimationBeginO9hashValueSivg', '_$s2os24OSSignpostAnimationBeginO9hashValueSivpMV', 
                        '_$s2os24OSSignpostAnimationBeginOMa', '_$s2os24OSSignpostAnimationBeginOMn', 

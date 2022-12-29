@@ -7,15 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           4CA638DD-A942-3B07-894A-F9F9D0053F6D
   - target:          arm64-ios
-    value:           09B962E5-C999-305B-BCDF-82D475849019
+    value:           0890F4E7-A2B0-3920-95EC-5FA0932E2195
   - target:          arm64e-ios
-    value:           B495726D-4DAC-3531-AAAC-700D799D6F6D
+    value:           66114E98-9313-349F-A1A4-C0DC26DD4D65
 install-name:    '/usr/lib/libcoretls.dylib'
-current-version: 178
+current-version: 183
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___ssl_debug, _coretlsVersionNumber, _coretlsVersionString ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CipherSuiteCount, _CurvesCount, _KnownCipherSuites, _KnownCurves, 
                        _KnownSigAlgs, _SigAlgsCount, _Ssl3Callouts, _Tls12Callouts, 
                        _Tls1Callouts, _sslCipherSuiteGetKeyExchangeMethod, _sslCipherSuiteGetKeydataSize, 

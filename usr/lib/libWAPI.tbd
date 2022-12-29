@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           839BE777-1490-3F4E-8313-D036F6866108
   - target:          arm64-ios
-    value:           AB244EA7-E797-31F0-8AE0-2EAB817F7CF1
+    value:           66F1DB6F-9D5C-3673-A387-0F51E8BB0647
   - target:          arm64e-ios
-    value:           D47914DB-8F90-33ED-8F1E-A92069E9D92D
+    value:           6EBB3FC8-6236-3AE1-AA69-631AE29D10BA
 install-name:    '/usr/lib/libWAPI.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _WAPIEnabled, _WAPIStart, _WAPIStatus, _WAPIStop, __WCwapic_start, 
                        __WCwapic_status, __WCwapic_stop, _isChinaRegion ]
 ...

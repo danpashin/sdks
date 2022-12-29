@@ -7,15 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           E723F7C6-F77A-362A-BD48-CA7F874EA960
   - target:          arm64-ios
-    value:           FC84C66E-0927-35A7-9F01-11087D991BF3
+    value:           57B8A44F-ED04-3C92-A0A6-D5926502D7E9
   - target:          arm64e-ios
-    value:           12C2BBC6-2737-334A-BA81-41C4A7A5D529
+    value:           79DE09EB-B2EF-3F7D-8484-A56A9B7329F9
 install-name:    '/usr/lib/libcharset.1.dylib'
 current-version: 2
 compatibility-version: 2
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___charset_1VersionNumber, ___charset_1VersionString, _libcharset_relocate ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _libcharset_set_relocation_prefix, _locale_charset ]
 ...

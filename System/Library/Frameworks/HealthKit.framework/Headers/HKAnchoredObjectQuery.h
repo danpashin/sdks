@@ -2,7 +2,7 @@
 //  HKAnchoredObjectQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKQuery.h>
@@ -24,7 +24,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKAnchoredObjectQueryDescriptor", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(8.0), watchos(2.0))
+API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 #endif
 @interface HKAnchoredObjectQuery : HKQuery
 
@@ -56,7 +56,7 @@ API_AVAILABLE(ios(8.0), watchos(2.0))
                    predicate:(nullable NSPredicate *)predicate
                       anchor:(nullable HKQueryAnchor *)anchor
                        limit:(NSUInteger)limit
-              resultsHandler:(void(^)(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error))handler API_AVAILABLE(ios(9.0), watchos(2.0));
+              resultsHandler:(void(^)(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error))handler API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 - (instancetype)initWithType:(HKSampleType *)type
                    predicate:(nullable NSPredicate *)predicate
@@ -83,7 +83,7 @@ API_AVAILABLE(ios(8.0), watchos(2.0))
 - (instancetype)initWithQueryDescriptors:(NSArray<HKQueryDescriptor *> *)queryDescriptors
                                   anchor:(nullable HKQueryAnchor *)anchor
                                    limit:(NSInteger)limit
-                          resultsHandler:(void(^)(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error))handler API_AVAILABLE(ios(15.0), watchos(8.0));
+                          resultsHandler:(void(^)(HKAnchoredObjectQuery *query, NSArray<__kindof HKSample *> * _Nullable sampleObjects, NSArray<HKDeletedObject *> * _Nullable deletedObjects, HKQueryAnchor * _Nullable newAnchor, NSError * _Nullable error))handler API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 @end
 

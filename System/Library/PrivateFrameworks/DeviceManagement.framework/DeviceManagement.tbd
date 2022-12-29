@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
-current-version:       67
+current-version:       114
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     re-exports:           [ /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst ]
     symbols:              [ _DMFAllConfigurationOrganizationTypes, _DMFAppLog,
+                            _DMFAppStatusDidChangeNotificationName,
                             _DMFBundleIdentifierErrorKey, _DMFCEMReasonCodeBad,
                             _DMFCEMReasonCodeConflict,
                             _DMFCEMReasonCodeCouldNotDecrypt,
@@ -206,9 +207,7 @@ exports:
                             _DMFErrorFailedConfigurationDatabaseStoreKey,
                             _DMFErrorWithCodeAndUserInfo,
                             _DMFHighestPolicyPriority,
-                            _DMFInterfaceOrientationFromUIInterfaceOrientation,
                             _DMFInterfaceOrientationIsValid,
-                            _DMFInterfaceOrientationToUIInterfaceOrientation,
                             _DMFInvalidParameterErrorKey,
                             _DMFInvalidPropertyErrorKey, _DMFItemNameErrorKey,
                             _DMFItemPathErrorKey, _DMFLowestPolicyPriority,
@@ -361,6 +360,7 @@ exports:
                             DMFSetAppAssociatedDomainsEnableDirectDownloadsRequest,
                             DMFSetAppAssociatedDomainsRequest,
                             DMFSetAppConfigurationRequest,
+                            DMFSetAppExtensionUUIDsRequest,
                             DMFSetAppRemovabilityRequest,
                             DMFSetAppVPNUUIDRequest,
                             DMFSetBluetoothEnabledRequest,

@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           63B319C5-6575-3A5D-8ABE-463110082317
+    value:           BE550F21-CF0C-32AB-8167-EA5DD3F0D159
   - target:          arm64e-ios
-    value:           0B698B05-BA9D-3A60-B870-54A9F619D59E
+    value:           CA275162-37A5-390C-AFCE-803FE2F81032
 install-name:    '/usr/lib/libIOReport.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _IOReportAddChannelDescription, _IOReportArrayGetValueAtIndex, 
                        _IOReportChannelCopyDescription, _IOReportChannelGetCategories, 
                        _IOReportChannelGetChannelID, _IOReportChannelGetChannelName, 
@@ -24,7 +24,8 @@ exports:
                        _IOReportCopyChannelsOfFormat, _IOReportCopyChannelsWithID, 
                        _IOReportCopyChannelsWithUnit, _IOReportCopyCurrentProcessName, 
                        _IOReportCopyDriverName, _IOReportCopyFilteredChannels, _IOReportCreateAggregate, 
-                       _IOReportCreateSamples, _IOReportCreateSamplesDelta, _IOReportCreateSamplesProcessed, 
+                       _IOReportCreateNewRawSamplesBuffer, _IOReportCreateSamples, 
+                       _IOReportCreateSamplesDelta, _IOReportCreateSamplesProcessed, 
                        _IOReportCreateSamplesRaw, _IOReportCreateSubscription, _IOReportCreateUnitInfo, 
                        _IOReportGetChannelCount, _IOReportHistogramGetBucketBounds, 
                        _IOReportHistogramGetBucketCount, _IOReportHistogramGetBucketHits, 

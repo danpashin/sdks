@@ -9,6 +9,10 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AWDLTrafficRegistrationServiceAVConference,
+                            _AWDLTrafficRegistrationServiceActiveWiFiCall,
+                            _AWDLTrafficRegistrationServiceAirDrop,
+                            _AWDLTrafficRegistrationServiceAirPlay,
+                            _AWDLTrafficRegistrationServiceAirPlayConnectivity,
                             _AWDLTrafficRegistrationServiceAirPlaySinkMode,
                             _AWDLTrafficRegistrationServiceAirdrop,
                             _AWDLTrafficRegistrationServiceAirplay,
@@ -18,11 +22,18 @@ exports:
                             _AWDLTrafficRegistrationServiceCentralizedAirTimeSchedulerPolicy,
                             _AWDLTrafficRegistrationServiceDeviceToDeviceMigration,
                             _AWDLTrafficRegistrationServiceEnsemble,
+                            _AWDLTrafficRegistrationServiceFaceTime,
+                            _AWDLTrafficRegistrationServiceMPRemoteCamera,
                             _AWDLTrafficRegistrationServiceRangingInitiator,
                             _AWDLTrafficRegistrationServiceRangingResponder,
+                            _AWDLTrafficRegistrationServiceRealTimeMode,
+                            _AWDLTrafficRegistrationServiceRemoteCamera,
                             _AWDLTrafficRegistrationServiceSidecar,
+                            _AWDLTrafficRegistrationServiceTimeSync,
                             _AWDLTrafficRegistrationServiceTimesync,
-                            _beginTransaction, _endTransaction ]
+                            _AWDLTrafficRegistrationServiceUniversalControl,
+                            _WiFiP2PErrorDomain, _beginTransaction,
+                            _endTransaction ]
     objc-classes:         [ AWDLServiceDiscoveryConfiguration,
                             AWDLServiceDiscoveryManager,
                             AWDLTrafficRegistrationConfiguration,
@@ -45,5 +56,9 @@ exports:
                             WiFiAwareSubscribeConfiguration, WiFiAwareSubscriber,
                             WiFiChannel, WiFiMACAddress, WiFiP2PAWDLState,
                             WiFiP2PAWDLStateMonitor,
-                            WiFiP2PSPITransactionRequestor, WiFiP2PXPCConnection ]
+                            WiFiP2PAWDLStateMonitorConfiguration,
+                            WiFiP2PDNSServiceDiscoveryManager,
+                            WiFiP2PSPITransactionRequestor,
+                            WiFiP2PTrafficRegistrationReservation,
+                            WiFiP2PUIAgent, WiFiP2PXPCConnection ]
 ...

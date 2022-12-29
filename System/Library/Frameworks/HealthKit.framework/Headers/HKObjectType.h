@@ -2,7 +2,7 @@
 //  HKObjectType.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2017 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKObjectType
  @abstract      An abstract class representing a type of object that can be stored by HealthKit.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKObjectType : NSObject <NSSecureCoding, NSCopying>
 
 /*!
@@ -40,7 +40,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
 
 - (instancetype)init NS_UNAVAILABLE;
 
-#if __swift__
+#if defined(__swift__) && __swift__
 + (nullable HKQuantityType *)quantityTypeForIdentifier:(HKQuantityTypeIdentifier)identifier API_DEPRECATED_WITH_REPLACEMENT("HKQuantityType(_:)", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
 + (nullable HKCategoryType *)categoryTypeForIdentifier:(HKCategoryTypeIdentifier)identifier API_DEPRECATED_WITH_REPLACEMENT("HKCategoryType(_:)", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
 + (nullable HKCharacteristicType *)characteristicTypeForIdentifier:(HKCharacteristicTypeIdentifier)identifier API_DEPRECATED_WITH_REPLACEMENT("HKCharacteristicType(_:)", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
@@ -51,13 +51,21 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
 + (nullable HKCategoryType *)categoryTypeForIdentifier:(HKCategoryTypeIdentifier)identifier;
 + (nullable HKCharacteristicType *)characteristicTypeForIdentifier:(HKCharacteristicTypeIdentifier)identifier;
 + (nullable HKCorrelationType *)correlationTypeForIdentifier:(HKCorrelationTypeIdentifier)identifier;
-+ (nullable HKDocumentType *)documentTypeForIdentifier:(HKDocumentTypeIdentifier)identifier API_AVAILABLE(ios(10.0), watchos(3.0));
-#endif
-+ (nullable HKSeriesType *)seriesTypeForIdentifier:(NSString *)identifier API_AVAILABLE(ios(11.0), watchos(4.0));
++ (nullable HKDocumentType *)documentTypeForIdentifier:(HKDocumentTypeIdentifier)identifier API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
+#endif // defined(__swift__) && __swift__
+
++ (nullable HKSeriesType *)seriesTypeForIdentifier:(NSString *)identifier API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));
 + (HKWorkoutType *)workoutType;
-+ (HKActivitySummaryType *)activitySummaryType API_AVAILABLE(ios(9.3), watchos(2.2));
-+ (HKAudiogramSampleType *)audiogramSampleType API_AVAILABLE(ios(13.0), watchos(6.0));
-+ (HKElectrocardiogramType *)electrocardiogramType API_AVAILABLE(ios(14.0), watchos(7.0));
++ (HKActivitySummaryType *)activitySummaryType API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0));
++ (HKAudiogramSampleType *)audiogramSampleType API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
++ (HKElectrocardiogramType *)electrocardiogramType API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
++ (HKPrescriptionType *)visionPrescriptionType API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @method        requiresPerObjectAuthorization
+ @abstract      Returns YES if the authorization for the object type needs to be requested on per object basis.
+ */
+- (BOOL)requiresPerObjectAuthorization;
 
 @end
 
@@ -65,7 +73,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKCharacteristicType
  @abstract      Represents a type of object that describes a characteristic of the user (such as date of birth).
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKCharacteristicType : HKObjectType
 @end
 
@@ -73,14 +81,14 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKSampleType
  @abstract      Represents a type of HKSample.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKSampleType : HKObjectType
 
 /*!
  @property      isMaximumDurationRestricted
  @abstract      Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
  */
-@property (nonatomic, readonly) BOOL isMaximumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0));
+@property (nonatomic, readonly) BOOL isMaximumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @property      maximumAllowedDuration
@@ -88,13 +96,13 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 calculated as the difference between end and start dates.
  @discussion    Throws an exception if there is no maximum restriction on duration for samples of this type.
  */
-@property (nonatomic, readonly) NSTimeInterval maximumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0));
+@property (nonatomic, readonly) NSTimeInterval maximumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @property      isMinimumDurationRestricted
  @abstract      Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
  */
-@property (nonatomic, readonly) BOOL isMinimumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0));
+@property (nonatomic, readonly) BOOL isMinimumDurationRestricted API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @property      minimumAllowedDuration
@@ -102,14 +110,14 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 calculated as the difference between end and start dates.
  @discussion    Throws an exception if there is no minimum restriction on duration for samples of this type.
  */
-@property (nonatomic, readonly) NSTimeInterval minimumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0));
+@property (nonatomic, readonly) NSTimeInterval minimumAllowedDuration API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @property      allowsRecalibrationForEstimates
  @abstract      Returns YES if first-party samples of this type are produced using a prediction algorithm, and that algorithm supports recalibration. To recalibrate the
                 estimates for a sample type, see -[HKHealthStore recalibrateEstimatesForSampleType:atDate:completion:]
  */
-@property (nonatomic, readonly) BOOL allowsRecalibrationForEstimates API_AVAILABLE(ios(15.0), watchos(8.0));
+@property (nonatomic, readonly) BOOL allowsRecalibrationForEstimates API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 @end
 
@@ -117,7 +125,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKCategoryType
  @abstract      Represent a type of HKCategorySample.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKCategoryType : HKSampleType
 @end
 
@@ -125,7 +133,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKCorrelationType
  @abstract      Represents a type of HKCorrelation
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKCorrelationType : HKSampleType
 @end
 
@@ -133,7 +141,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKDocumentType
  @abstract      Represents a type of HKDocument.
  */
-HK_EXTERN API_AVAILABLE(ios(10.0))
+HK_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0), macos(13.0))
 @interface HKDocumentType : HKSampleType
 @end
 
@@ -141,7 +149,7 @@ HK_EXTERN API_AVAILABLE(ios(10.0))
  @class         HKQuantityType
  @abstract      Represents types of HKQuantitySamples.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKQuantityType : HKSampleType
 
 @property (readonly) HKQuantityAggregationStyle aggregationStyle;
@@ -159,7 +167,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKWorkoutType
  @abstract      Represents a workout or exercise
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKWorkoutType : HKSampleType
 @end
 
@@ -167,11 +175,11 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @class         HKSeriesType
  @abstract      Represents a type of HKSeriesSample
  */
-HK_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0))
+HK_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0))
 @interface HKSeriesType : HKSampleType
 
 + (instancetype)workoutRouteType;
-+ (instancetype)heartbeatSeriesType API_AVAILABLE(ios(13.0), watchos(6.0));
++ (instancetype)heartbeatSeriesType API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 @end
 
@@ -179,7 +187,7 @@ HK_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0))
  @class         HKActivitySummaryType
  @abstract      Represents an HKActivitySummary
  */
-HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
+HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0))
 @interface HKActivitySummaryType : HKObjectType
 @end
 
@@ -187,7 +195,7 @@ HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2))
  @class    HKAudiogramSampleType
  @abstract Represents an audiogram sample.
  */
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKAudiogramSampleType : HKSampleType
 @end
 
@@ -195,8 +203,16 @@ HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
  @class    HKElectrocardiogramType
  @abstract Represents an electrocardiogram sample.
  */
-HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0))
+HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0))
 @interface HKElectrocardiogramType : HKSampleType
+@end
+
+/*!
+ @class         HKPrescriptionType
+ @abstract      Represents a prescription type
+ */
+HK_EXTERN API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0))
+@interface HKPrescriptionType : HKSampleType
 @end
 
 NS_ASSUME_NONNULL_END

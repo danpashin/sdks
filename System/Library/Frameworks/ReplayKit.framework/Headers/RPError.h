@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 extern NSString *const __nonnull RPRecordingErrorDomain;
+extern NSString *const __nonnull SCStreamErrorDomain;
 
 NS_ASSUME_NONNULL_BEGIN
 

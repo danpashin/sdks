@@ -2,7 +2,7 @@
 //  HKDocumentQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2016 Apple Inc. All rights reserved.
+//  Copyright (c) 2016-2022 Apple Inc. All rights reserved.
 //
 
 #include <HealthKit/HKQuery.h>
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      A concrete subclass of HKQuery that provides an interface to retrieve documents from the Health store.
  
  */
-HK_EXTERN API_AVAILABLE(ios(10.0))
+HK_EXTERN API_AVAILABLE(ios(10.0), macCatalyst(13.0), macos(13.0))
 @interface HKDocumentQuery : HKQuery
 
 /*!

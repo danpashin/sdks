@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1617.120.7
+current-version:       1730
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -49,13 +49,15 @@ exports:
                             _CTShimSubscriptionRATSelectionIsNR,
                             _CTShimSubscriptionRATSelectionMask,
                             _CTShimSubscriptionSupports5G, _CTShimSubscriptions,
-                            _activate_symptom_evaluator_handling, _boottime_secs,
+                            _activate_symptom_evaluator_handling,
+                            _activeTraceTargets, _apparentTime, _boottime_secs,
                             _client_transactions_release,
                             _configure_analytics_launchpad_for_helper,
                             _configure_symptom_evaluator_handling,
                             _configure_symptom_logging,
                             _dateStringMillisecondsFromReferenceInterval,
                             _dateStringMillisecondsFromTimeInterval,
+                            _dispatch_with_apparent_delay,
                             _formattedDateStringForCurrentTime,
                             _formattedDateStringForTimeInterval,
                             _hexStringForData, _init_analytics_portal_listening,
@@ -73,6 +75,8 @@ exports:
                             _kNWPVarModelEpsilonGreedyEpsilonValue,
                             _kNWPVarModelEpsilonGreedyLastRewardsRetained,
                             _kNWPVarModelEpsilonGreedyResetAtNthPull,
+                            _kNWPVarModelUpperConfidenceBoundConfidenceValue,
+                            _kNWPVarModelUpperConfidenceBoundResetAtNthPull,
                             _kNetDiagnosticsShim_TaskArchiveBaseDuration,
                             _kNetDiagnosticsShim_TaskArchiveBaseSize,
                             _kNetDiagnosticsShim_TaskArchiveHVDuration,
@@ -275,28 +279,32 @@ exports:
                             _kSymptomAnalyticsServiceWatchpointValue,
                             _kSymptomAnalyticsTypeBundleIdentifier,
                             _kSymptomAnalyticsTypeProcessName,
+                            _kSymptomForcePreferCellOverWiFiAutoDisableTimestampKey,
+                            _kSymptomForcePreferCellOverWiFiEnableKey,
                             _lowInternetModeScoresDL, _lowInternetModeScoresUL,
                             _machAbsoluteTimeFromNanoseconds,
                             _machAbsoluteTime_secs, _machContinuousTime_secs,
                             _nanosecondsFromMachAbsoluteTime,
                             _outrankHandlerEventToString,
-                            _secondsFromMachAbsoluteTime,
+                            _secondsFromMachAbsoluteTime, _setApparentTime,
                             _symptom_evaluator_shutdown,
+                            _timeIntervalFrom1970ToMidnight,
                             _timeIntervalFromMachAbsoluteTime,
                             _timeStringMillisecondsBetweenTimeIntervals,
                             _timeStringMillisecondsDuration,
                             _timeStringMillisecondsFromReferenceInterval,
                             _timeStringMillisecondsFromTimeInterval,
-                            _uptime_secs ]
+                            _traceCallout, _traceEntry, _traceItem, _uptime_secs ]
     objc-classes:         [ AlgosScoreHandler, AnalyticsEngineCore,
                             AppHistoryScreener, AppHistoryScreenerEpisode,
-                            CLIPSShim, COSMEventSummary, COSMStateSummary,
-                            CTServerConnection, CellFallbackHandler,
-                            CellOutrankController, CellOutrankHandler,
-                            CellOutrankHandlerSTM, CellularStateRelay,
-                            ConfigurationParams, CoreTelephonyShim, CountDown,
-                            DailyMaintenanceActivity, DateRounder, DecisionDetails,
-                            Evaluation, EventDescription, ExpertSystemHandlerCore,
+                            ApparentTimeHandler, CLIPSShim, COSMEventSummary,
+                            COSMStateSummary, CTServerConnection,
+                            CellFallbackHandler, CellOutrankController,
+                            CellOutrankHandler, CellOutrankHandlerSTM,
+                            CellularStateRelay, ConfigurationParams,
+                            CoreTelephonyShim, CountDown, DailyMaintenanceActivity,
+                            DateRounder, DecisionDetails, Evaluation,
+                            EventDescription, ExpertSystemHandlerCore,
                             ExpertSystemStateCore, FlowAnalyticsEngine,
                             HourlyMaintenanceActivity, ImpoExpoService,
                             JournalTimeStamp, LQMPredictionInternalRecord,
@@ -304,7 +312,8 @@ exports:
                             ManagedEventTransport, MathUtility, NWAppAdvice,
                             NWNetworkAdviceUpdate, NWNetworkOfInterest,
                             NWNetworkPredictions, NWPVar, NWPVarBandit,
-                            NWPVarValueItem, NetDiagnosticsShim, NetDomainsHandler,
+                            NWPVarStoreImpoExpo, NWPVarValueItem,
+                            NetDiagnosticsShim, NetDomainsHandler,
                             NetworkAnalyticsEngine, NetworkAnalyticsModel,
                             NetworkAnalyticsQueueStatistics,
                             NetworkAnalyticsQueueStatisticsSlotEntry,
@@ -314,7 +323,7 @@ exports:
                             SFEntitlements, SemiDailyMaintenanceActivity,
                             ServiceImpl, StateWatcher, StopWatch, SymptomEvaluator,
                             SymptomExpertSystemHandler, SystemProperties,
-                            SystemSettingsRelay, TCPProgressProbe,
+                            SystemSettingsRelay, TCPProgressProbe, TraceRecorder,
                             WeeklyMaintenanceActivity ]
     objc-ivars:           [ AnalyticsEngineCore.workspace ]
 ...

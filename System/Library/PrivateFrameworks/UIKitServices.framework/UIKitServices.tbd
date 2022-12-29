@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIKitServices.framework/UIKitServices
-current-version:       5612
+current-version:       6092.1.111
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -18,15 +18,19 @@ exports:
                             _UISApplicationStateServiceIdentifier,
                             _UISApplicationStateServiceMessageKeyBundleIdentifier,
                             _UISApplicationSupportServiceIdentifier,
-                            _UISCalloutBarFontSize, _UISCreateImageFromDrawing,
+                            _UISCalloutBarFontSize, _UISColorLuminance,
+                            _UISCreateCachedColorTransform,
+                            _UISCreateColorWithLuminance,
+                            _UISCreateImageFromDrawing,
                             _UISDeviceContextDeviceClassKey,
                             _UISDeviceContextDeviceCornerRadiusKey,
                             _UISDeviceContextDeviceIdiomKey,
                             _UISDeviceContextHomeButtonTypeKey,
                             _UISDidCreateWindowForSceneNotification,
-                            _UISFontWeightForIndex,
+                            _UISFontWeightForIndex, _UISGetColorSRGBComponents,
                             _UISGetFontContentSizeCategory,
-                            _UISIndexForFontWeight,
+                            _UISIndexForFontWeight, _UISIsColorInDisplayP3Gamut,
+                            _UISLocalizedStringForSecureName,
                             _UISMainHostWindowDidBecomeKeyNotification,
                             _UISMainHostWindowDidChangeNotification,
                             _UISMainHostWindowDidResignKeyNotification,
@@ -34,6 +38,9 @@ exports:
                             _UISOpenApplicationOptionClickAttribution,
                             _UISOpenApplicationOptionKeySceneSessionPersistentIdentifier,
                             _UISOpenApplicationOptionKeyTargetContentIdentifier,
+                            _UISOpenApplicationOptionPasteSharingToken,
+                            _UISSecureControlServiceInterface,
+                            _UISSlotMachineErrorDomain, _UISSlotMachineInterface,
                             _UISUserInterfaceStyleModeOverrideNone,
                             _UISUserInterfaceStyleModeOverridesEqual,
                             _UISUserInterfaceStyleModeScheduleDefault,
@@ -67,21 +74,25 @@ exports:
                             UISHandleCloudKitShareAction,
                             UISHandleRemoteNotificationAction,
                             UISIntentForwardingAction,
-                            UISIntentForwardingActionResponse,
+                            UISIntentForwardingActionResponse, UISLRUCache,
                             UISMutableApplicationInitializationContext,
                             UISMutableCompatibilityContext,
                             UISMutableDeviceContext, UISMutableDisplayContext,
                             UISMutableSlotStyle, UISNotificationResponseAction,
-                            UISOpenURLAction, UISPasteVariant,
+                            UISOpenURLAction, UISPasteSharingToken,
+                            UISPasteVariant, UISPathDrawing,
                             UISSceneRequestOptions, UISSlotEmptyContent,
                             UISSlotLocalContent, UISSlotMachine,
-                            UISSlotRemoteContent, UISSlotStyle, UISTextLineDrawing,
-                            UISTextParagraphDrawing, UISTransform3DGrader,
-                            UISUserInterfaceStyleMode, UISVectorGlyphDrawing ]
+                            UISSlotRemoteContent, UISSlotStyle, UISSlotTag,
+                            UISTextLineDrawing, UISTextParagraphDrawing,
+                            UISTransform3DGrader, UISUserInterfaceStyleMode,
+                            UISVectorGlyphDrawing, _UISSecureControlCategory,
+                            _UISSecureControlSizeSpec, _UISSecureControlTag ]
     objc-ivars:           [ UISApplicationInitializationContext._compatibilityContext,
                             UISApplicationInitializationContext._defaultSceneToken,
                             UISApplicationInitializationContext._deviceContext,
-                            UISApplicationInitializationContext._displayContext,
+                            UISApplicationInitializationContext._launchDisplayContext,
+                            UISApplicationInitializationContext._mainDisplayContext,
                             UISApplicationInitializationContext._persistedSceneIdentifiers,
                             UISApplicationInitializationContext._supportAppSceneRequests,
                             UISCompatibilityContext._supportedDisplaySizes,

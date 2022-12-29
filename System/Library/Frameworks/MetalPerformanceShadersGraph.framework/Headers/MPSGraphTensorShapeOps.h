@@ -49,13 +49,19 @@ MPS_SWIFT_NAME( reshape(_:shape:name:) );
 -(MPSGraphTensor *) reshapeTensor:(MPSGraphTensor *) tensor
                   withShapeTensor:(MPSGraphTensor *) shapeTensor
                              name:(NSString * _Nullable) name
-MPS_CLASS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0))
+MPS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0))
 MPS_SWIFT_NAME( reshape(_:shapeTensor:name:) );
 
 -(MPSGraphTensor *) transposeTensor:(MPSGraphTensor *) tensor
                           dimension:(NSUInteger) dimensionIndex
                       withDimension:(NSUInteger) dimensionIndex2
                                name:(NSString * _Nullable) name;
+
+-(MPSGraphTensor *) transposeTensor:(MPSGraphTensor *) tensor
+                        permutation:(NSArray<NSNumber *> *) permutation
+                               name:(NSString * _Nullable) name
+MPS_AVAILABLE_STARTING(macos(13.0), ios(16.0), tvos(16.0))
+MPS_SWIFT_NAME( transpose(_:permutation:name:) );
 
 -(MPSGraphTensor *) sliceTensor:(MPSGraphTensor *) tensor
                       dimension:(NSUInteger) dimensionIndex
@@ -424,7 +430,7 @@ MPS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0));
  */
 -(MPSGraphTensor *)castTensor:(MPSGraphTensor *)tensor
                        toType:(MPSDataType)type
-                         name:(NSString *)name
+                         name:(NSString * _Nullable)name
 MPS_AVAILABLE_STARTING(macos(12.0), ios(15.0), tvos(15.0));
 
 /*!

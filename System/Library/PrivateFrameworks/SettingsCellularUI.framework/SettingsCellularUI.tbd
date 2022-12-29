@@ -8,9 +8,7 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PSCDMARoamingSpecifiers,
-                            _PSDataRoamingSpecifierForService,
-                            _PSDataRoamingSpecifiers, _PSIsCDMARoamingEnabled,
+    symbols:              [ _PSCDMARoamingSpecifiers, _PSDataRoamingSpecifiers,
                             _PSIsCDMARoamingOptionAvailable,
                             _PSIsDataRoamingEnabled,
                             _PSIsDataRoamingEnabledForService,
@@ -23,7 +21,8 @@ exports:
                             _PSSetDataRoamingEnabledForService,
                             _PSSetVoiceRoamingEnabled,
                             _PSShouldIncludeMMSFooterNote,
-                            _PSUICellularPlanChanged, _PSUIFormatDataUsage,
+                            _PSUICellularPlanChanged,
+                            _PSUICellularPlanSetUpNeeded, _PSUIFormatDataUsage,
                             _PSUIFormatPlanStatusForPlan,
                             _PSUIGetPlanSubscriptionStatus,
                             _PSUIPRLVersionChanged ]

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveExperiments.framework/ProactiveExperiments
-current-version:       1153.18
+current-version:       1193.0.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -24,8 +24,19 @@ exports:
                             _ProactiveExperimentsVersionString,
                             _kPREDefaultResponseKitModelName,
                             _kPREQrChunkPlistBundledOnDevice,
+                            _kPREResponsesExperimentIncludeCannedResponsesDefault,
+                            _kPREResponsesExperimentIncludeCustomResponsesDefault,
+                            _kPREResponsesExperimentIncludeResponsesToRobotsDefault,
                             _kPREResponsesExperimentModelName,
-                            _kPREResponsesSuite, _pre_responses_handle,
+                            _kPREResponsesExperimentModelUserDefaultConfigName,
+                            _kPREResponsesExperimentModelUserDefaultEspressoName,
+                            _kPREResponsesExperimentModelUserDefaultFileName,
+                            _kPREResponsesExperimentModelUserDefaultVocabName,
+                            _kPREResponsesExperimentModelUserDirectory,
+                            _kPREResponsesExperimentModelUserLabel,
+                            _kPREResponsesExperimentUseResponseKitAsFallbackDefault,
+                            _kPREResponsesSuite, _kPREUserSpecifiedModelName,
+                            _pre_locale_handle, _pre_responses_handle,
                             _pre_scales_handle, _pre_signpost_handle,
                             _pre_xpc_handle ]
     objc-classes:         [ PREAMEngagedResponse, PREAMResponseItem,
@@ -33,7 +44,10 @@ exports:
                             PREExperimentResolver, PRELocaleDetection,
                             PREResponseItem, PREResponseSuggestionsExpConfig,
                             PREResponseTappedEvent, PREResponsesClient,
-                            PREResponsesExperiment, PREResponsesGeneratedEvent,
+                            PREResponsesExperiment,
+                            PREResponsesExperimentSuggestion,
+                            PREResponsesGeneratedEvent,
+                            PREResponsesGeneratedEventWrapper,
                             PREResponsesMetricsPET, PRETrialCompletionResult,
                             PREUMEngagedResponseList, PREUMMessageMetadata,
                             PREUMResponseItem, PREUMResponseList,
@@ -47,11 +61,13 @@ exports:
                             PREAMEngagedResponse._inputMethod,
                             PREAMEngagedResponse._isApricotDevice,
                             PREAMEngagedResponse._isCustomResponse,
+                            PREAMEngagedResponse._isRobotResponse,
                             PREAMEngagedResponse._lang,
                             PREAMEngagedResponse._locale,
                             PREAMEngagedResponse._modelId,
                             PREAMEngagedResponse._numberOfCustomResponses,
                             PREAMEngagedResponse._numberOfResponsesGenerated,
+                            PREAMEngagedResponse._numberOfRobotResponses,
                             PREAMEngagedResponse._position,
                             PREAMEngagedResponse._replyTextId,
                             PREAMEngagedResponse._responseClassId,
@@ -63,6 +79,7 @@ exports:
                             PREAMResponseItem._hostProcess,
                             PREAMResponseItem._isApricotDevice,
                             PREAMResponseItem._isCustomResponse,
+                            PREAMResponseItem._isRobotResponse,
                             PREAMResponseItem._lang, PREAMResponseItem._locale,
                             PREAMResponseItem._modelId,
                             PREAMResponseItem._position,
@@ -81,6 +98,7 @@ exports:
                             PREAMResponseListGenerated._locale,
                             PREAMResponseListGenerated._numberOfCustomResponses,
                             PREAMResponseListGenerated._numberOfResponsesGenerated,
+                            PREAMResponseListGenerated._numberOfRobotResponses,
                             PREAMResponseListGenerated._treatmentId,
                             PREAMResponseListGenerated._treatmentModelName,
                             PREAMResponsesViewed._ageGroup,
@@ -108,6 +126,7 @@ exports:
                             PREUMMessageMetadata._lang,
                             PREUMMessageMetadata._locale, PREUMResponseItem._has,
                             PREUMResponseItem._isCustomResponse,
+                            PREUMResponseItem._isRobotResponse,
                             PREUMResponseItem._modelId,
                             PREUMResponseItem._replyTextId,
                             PREUMResponseItem._responseClassId,

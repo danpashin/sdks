@@ -107,7 +107,7 @@ typedef NS_ENUM(NSInteger, MTLTextureCompressionType)
 {
     MTLTextureCompressionTypeLossless = 0,
     MTLTextureCompressionTypeLossy = 1,
-} API_AVAILABLE(macos(12.0), ios(15.0));
+} API_AVAILABLE(macos(12.5), ios(15.0));
 
 MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 @interface MTLTextureDescriptor : NSObject <NSCopying>
@@ -242,7 +242,7 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
  Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family supports the lossy compression feature for the pixelFormat requested.
  Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not benefit from either reduced bandwidth usage or reduced storage requirements, but have predictable CPU readback performance.
  */
-@property (readwrite, nonatomic) MTLTextureCompressionType compressionType API_AVAILABLE(macos(12.0), ios(15.0));
+@property (readwrite, nonatomic) MTLTextureCompressionType compressionType API_AVAILABLE(macos(12.5), ios(15.0));
 
 /*!
  @property swizzle
@@ -417,7 +417,14 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @abstract Returns the compression type of the texture
  @discussion See the compressionType property on MTLTextureDescriptor
  */
-@property (readonly) MTLTextureCompressionType compressionType API_AVAILABLE(macos(12.0), ios(15.0));
+@property (readonly) MTLTextureCompressionType compressionType API_AVAILABLE(macos(12.5), ios(15.0));
+
+
+/*!
+ @property gpuResourceID
+ @abstract Handle of the GPU resource suitable for storing in an Argument Buffer
+ */
+@property (readonly) MTLResourceID gpuResourceID API_AVAILABLE(macos(13.0), ios(16.0));
 
 /*!
  @method getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:

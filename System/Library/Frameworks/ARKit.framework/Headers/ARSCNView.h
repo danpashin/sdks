@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARSCNView.h>)
 //
 //  ARSCNView.h
 //  ARKit
@@ -182,3 +183,6 @@ API_AVAILABLE(ios(11.0))
 FOUNDATION_EXTERN const SCNDebugOptions ARSCNDebugOptionShowFeaturePoints NS_SWIFT_NAME(ARSCNDebugOptions.showFeaturePoints);
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitUI/ARSCNView.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitUI/ARSCNView.h>)

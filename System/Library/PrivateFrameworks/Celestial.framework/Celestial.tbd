@@ -236,7 +236,6 @@ exports:
                             _AVSystemController_HeadphoneJackIsConnectedDidChangeNotification,
                             _AVSystemController_HeadphoneVolumeLimitAttribute,
                             _AVSystemController_IAmTheiPodAppAttribute,
-                            _AVSystemController_InterruptAudioSessionIDForHandoff,
                             _AVSystemController_IsSomeoneRecordingAttribute,
                             _AVSystemController_LongFormVideoAppsAttribute,
                             _AVSystemController_MeasuredHDMILatencyAttribute,
@@ -272,7 +271,6 @@ exports:
                             _AVSystemController_PlayingSessionsDescriptionKey_MXSessionIDs,
                             _AVSystemController_PortStatusDidChangeNotification,
                             _AVSystemController_PostNotificationsFromMainThreadOnly,
-                            _AVSystemController_PostResumableInterruptionEndedNotification,
                             _AVSystemController_PreferredExternalRouteDidChangeNotification,
                             _AVSystemController_RecordingClientPIDNotificationParameter,
                             _AVSystemController_RecordingClientPIDsAttribute,
@@ -297,9 +295,7 @@ exports:
                             _AVSystemController_RouteDescriptionKey_BTDetails_IsAvailableForVoicePrompts,
                             _AVSystemController_RouteDescriptionKey_BTDetails_IsBTManaged,
                             _AVSystemController_RouteDescriptionKey_BTDetails_IsHFPRoute,
-                            _AVSystemController_RouteDescriptionKey_BTDetails_PartnerRoutePresent,
                             _AVSystemController_RouteDescriptionKey_BTDetails_ProductID,
-                            _AVSystemController_RouteDescriptionKey_BTDetails_SiblingRoutePresent,
                             _AVSystemController_RouteDescriptionKey_BTDetails_SupportsDoAP,
                             _AVSystemController_RouteDescriptionKey_BTDetails_SupportsLiveListen,
                             _AVSystemController_RouteDescriptionKey_BTDetails_SupportsStereoHFP,
@@ -330,7 +326,6 @@ exports:
                             _AVSystemController_RouteDescriptionKey_RouteSupportsAirPlayVideo,
                             _AVSystemController_RouteDescriptionKey_RouteType,
                             _AVSystemController_RouteDescriptionKey_RouteUID,
-                            _AVSystemController_RouteDescriptionKey_SupportsSharePlay,
                             _AVSystemController_ServerConnectionDiedNotification,
                             _AVSystemController_SharedAudioRouteHijackDeniedReason_AmbiguousPriority,
                             _AVSystemController_SharedAudioRouteHijackDeniedReason_LowerPriority,
@@ -431,18 +426,7 @@ exports:
                             _kFigJPEGSubsampling, _kFigJPEGTestDecodeTiming,
                             _kFigJPEGTestEncodeTiming,
                             _kFigJPEGUse601YCbCrMatrix ]
-    objc-classes:         [ AVFileProcessor,
-                            AVFromMainThreadPostNotificationNameDict,
-                            AVFromNotifySafeThreadPostNotificationNameDict,
-                            AVObjectRegistry,
-                            AVSafePerformOnMainThreadTargetDict,
-                            AVSafePostDelayedNotificationFromMainThreadTargetDict,
-                            AVSystemController, AVValue, FigCheckpointSupport ]
-    objc-ivars:           [ AVFromMainThreadPostNotificationNameDict._obj,
-                            AVFromNotifySafeThreadPostNotificationNameDict._obj,
-                            AVObjectRegistry._lock,
-                            AVObjectRegistry._registeredObjects,
-                            AVSafePerformOnMainThreadTargetDict._obj,
-                            AVSafePostDelayedNotificationFromMainThreadTargetDict._obj,
-                            AVSystemController._priv, AVValue._selector ]
+    objc-classes:         [ AVFileProcessor, AVSystemController,
+                            FigCheckpointSupport ]
+    objc-ivars:           [ AVSystemController._priv ]
 ...

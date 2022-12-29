@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           1DC879E3-0B74-3D0E-8D7B-2D8F48EB95FB
   - target:          arm64-ios
-    value:           1C1BA7B7-F7BD-3D08-BE3A-6C8C86EB83BC
+    value:           B665B159-2BA2-3370-ABC9-692B9580B896
   - target:          arm64e-ios
-    value:           21E36A49-8711-3E30-B9D8-9DC4C615F84C
+    value:           CB12988E-03C1-3C53-87EF-0347BC28702B
 install-name:    '/System/Library/Frameworks/UserNotifications.framework/UserNotifications'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -17,15 +17,16 @@ exports:
     objc-classes:    [ UNAudioNotificationAttachmentOptions, UNImageNotificationAttachmentOptions, 
                        UNMovieNotificationAttachmentOptions, UNRemoteNotificationRegistrar, 
                        _UNNotificationServiceExtensionContext, _UNNotificationServiceExtensionHostContext ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _UNAuthorizationStatusString, _UNDoubleIsZero, _UNEqualBools, 
                        _UNEqualDoubles, _UNEqualFloats, _UNEqualIntegers, _UNEqualObjects, 
                        _UNEqualStrings, _UNErrorDomain, _UNFloatIsZero, _UNFormatLocalizedString, 
                        _UNFormatLocalizedStringInBundleWithDefaultValue, _UNIsInternalInstall, 
-                       _UNLegacyNotificationTriggerInfiniteRepeatCount, _UNLocalizedStringForKey, 
-                       _UNLogAppLaunching, _UNLogAttachmentsRepository, _UNLogAttachmentsService, 
-                       _UNLogCommunicationNotifications, _UNLogConnections, _UNLogContentProtection, 
-                       _UNLogDataProvider, _UNLogDataProviderFactory, _UNLogDataStore, 
+                       _UNLegacyNotificationTriggerInfiniteRepeatCount, _UNLocalizedFormatStringForKey, 
+                       _UNLocalizedStringForKey, _UNLogAppLaunching, _UNLogAttachmentsRepository, 
+                       _UNLogAttachmentsService, _UNLogCommunicationNotifications, 
+                       _UNLogConnections, _UNLogContentProtection, _UNLogDataProvider, 
+                       _UNLogDataProviderFactory, _UNLogDataStore, _UNLogDeveloperAPIDomainDescriptionBadging, 
                        _UNLogDeveloperAPIDomainDescriptionCommunication, _UNLogLocalNotifications, 
                        _UNLogMigration, _UNLogRemoteNotifications, _UNLogServiceExtension, 
                        _UNLogSettings, _UNLogToDeveloper, _UNNotificationActionTextInputButtonTitleKey, 
@@ -36,12 +37,12 @@ exports:
                        _UNNotificationAttachmentOptionsThumbnailHiddenKey, _UNNotificationAttachmentOptionsThumbnailTimeKey, 
                        _UNNotificationAttachmentOptionsTypeHintKey, _UNNotificationDefaultActionIdentifier, 
                        _UNNotificationDestinationStrings, _UNNotificationDismissActionIdentifier, 
-                       _UNNotificationGroupingSettingString, _UNNotificationInterruptionLevelDefault, 
-                       _UNNotificationSandboxExtensionClassGenericReadOnly, _UNNotificationSandboxExtensionClassGenericReadWrite, 
-                       _UNNotificationSettingString, _UNNotificationSilenceActionIdentifier, 
-                       _UNRegisterUserNotificationsLogging, _UNSafeCast, _UNSafeCastAny, 
-                       _UNSafeConforms, _UNShowPreviewsSettingString, _UNSimilarArrays, 
-                       _UNSimilarSets, _UNSimilarStrings, _UNStringFromNotificationAttachmentDisplayLocation, 
+                       _UNNotificationFollowActivityActionIdentifier, _UNNotificationGroupingSettingString, 
+                       _UNNotificationInterruptionLevelDefault, _UNNotificationSandboxExtensionClassGenericReadOnly, 
+                       _UNNotificationSandboxExtensionClassGenericReadWrite, _UNNotificationSettingString, 
+                       _UNNotificationSilenceActionIdentifier, _UNRegisterUserNotificationsLogging, 
+                       _UNSafeCast, _UNSafeCastAny, _UNSafeConforms, _UNShowPreviewsSettingString, 
+                       _UNSimilarArrays, _UNSimilarSets, _UNSimilarStrings, _UNStringFromNotificationAttachmentDisplayLocation, 
                        _UNUserNotificationServiceName, __UNNotificationContentTypeAirDrop, 
                        __UNNotificationContentTypeCallOther, __UNNotificationContentTypeDefault, 
                        __UNNotificationContentTypeIncomingCall, __UNNotificationContentTypeIntercom, 

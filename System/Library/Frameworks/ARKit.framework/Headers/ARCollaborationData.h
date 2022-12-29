@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARCollaborationData.h>)
 //
 //  ARCollaborationData.h
 //  ARKit
@@ -46,3 +47,6 @@ NS_SWIFT_NAME(ARSession.CollaborationData)
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARCollaborationData.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARCollaborationData.h>)

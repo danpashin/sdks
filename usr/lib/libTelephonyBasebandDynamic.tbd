@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           80DF98BF-E482-3BD1-A1F7-B342555F8050
   - target:          arm64-ios
-    value:           0E0C711C-031C-3EDE-A5DA-7E0D0DAA1F99
+    value:           0D836404-C09B-3CE3-9F87-A60C2FFB1C9B
   - target:          arm64e-ios
-    value:           EA204EF8-0B3E-3AAC-BA6E-320AEDF7CC78
+    value:           385716DE-07FA-3569-8DF3-BE4D5ACE52D8
 install-name:    '/usr/lib/libTelephonyBasebandDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -22,25 +22,28 @@ exports:
                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _TelephonyBasebandAPTimeSync, _TelephonyBasebandAddFreqList, 
-                       _TelephonyBasebandClearFreqList, _TelephonyBasebandCreateController, 
+                       _TelephonyBasebandAddFreqListExt, _TelephonyBasebandClearFreqList, 
+                       _TelephonyBasebandClearFreqListExt, _TelephonyBasebandCrashModemWithSPMI, 
+                       _TelephonyBasebandCreateController, _TelephonyBasebandDebugCommand, 
                        _TelephonyBasebandEnableModemHSICHostReadyWithDuration, _TelephonyBasebandEnableModemHSICPort, 
                        _TelephonyBasebandEnableModemMux, _TelephonyBasebandEnableModemUSBEnumerationWithAP, 
                        _TelephonyBasebandEnableModemVBUS, _TelephonyBasebandForceResetModem, 
                        _TelephonyBasebandGetBasebandProperty, _TelephonyBasebandGetBasebandState, 
-                       _TelephonyBasebandGetDiagReady, _TelephonyBasebandGetFSEraseDone, 
-                       _TelephonyBasebandGetHSICPortStatistics, _TelephonyBasebandGetHSICUnexpectedPortDisableCount, 
-                       _TelephonyBasebandGetManagerState, _TelephonyBasebandGetMaximumBootupTime, 
-                       _TelephonyBasebandGetMaximumRecoveryTime, _TelephonyBasebandGetModemHSICDeviceReady, 
-                       _TelephonyBasebandGetModemHSICHostReady, _TelephonyBasebandGetPMUExtOn, 
-                       _TelephonyBasebandGetPowercycleDelay, _TelephonyBasebandGetRadioOnDelay, 
-                       _TelephonyBasebandGetReset, _TelephonyBasebandGetResetAssertHoldTime, 
-                       _TelephonyBasebandGetResetDeassertDelay, _TelephonyBasebandGetResetReq, 
-                       _TelephonyBasebandGetUsbDischargeTime, _TelephonyBasebandPollGPIO, 
-                       _TelephonyBasebandPowerOnModem, _TelephonyBasebandPowercycleModem, 
-                       _TelephonyBasebandRegisterForHSICNotifications, _TelephonyBasebandRegisterForReset, 
-                       _TelephonyBasebandRegisterQueueForHSICNotifications, _TelephonyBasebandRemoveFreqList, 
+                       _TelephonyBasebandGetCoredumpReadyStatus, _TelephonyBasebandGetDiagReady, 
+                       _TelephonyBasebandGetFSEraseDone, _TelephonyBasebandGetHSICPortStatistics, 
+                       _TelephonyBasebandGetHSICUnexpectedPortDisableCount, _TelephonyBasebandGetManagerState, 
+                       _TelephonyBasebandGetMaximumBootupTime, _TelephonyBasebandGetMaximumRecoveryTime, 
+                       _TelephonyBasebandGetModemHSICDeviceReady, _TelephonyBasebandGetModemHSICHostReady, 
+                       _TelephonyBasebandGetPMUExtOn, _TelephonyBasebandGetPowercycleDelay, 
+                       _TelephonyBasebandGetRadioOnDelay, _TelephonyBasebandGetReset, 
+                       _TelephonyBasebandGetResetAssertHoldTime, _TelephonyBasebandGetResetDeassertDelay, 
+                       _TelephonyBasebandGetResetReq, _TelephonyBasebandGetUsbDischargeTime, 
+                       _TelephonyBasebandPollGPIO, _TelephonyBasebandPowerOnModem, 
+                       _TelephonyBasebandPowercycleModem, _TelephonyBasebandRegisterForHSICNotifications, 
+                       _TelephonyBasebandRegisterForReset, _TelephonyBasebandRegisterQueueForHSICNotifications, 
+                       _TelephonyBasebandRemoveFreqList, _TelephonyBasebandRemoveFreqListExt, 
                        _TelephonyBasebandReportThermalData, _TelephonyBasebandResetModem, 
                        _TelephonyBasebandResetSPMI, _TelephonyBasebandSetBasebandProperty, 
                        _TelephonyBasebandSetBasebandState, _TelephonyBasebandSetChargerDesense, 

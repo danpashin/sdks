@@ -7,15 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           5FFCF5D9-93BB-3D1E-8CA4-239A369C12AB
   - target:          arm64-ios
-    value:           77BE64DD-DFBE-3D47-ACF1-5CD4819C4118
+    value:           302B60CE-74F9-3A7F-A028-E714D0BAF9B9
   - target:          arm64e-ios
-    value:           CA936962-3EE0-32C2-B9B0-72788926602D
+    value:           78D9BAD0-8DB6-3899-A9A2-CBB5DD2C92AA
 install-name:    '/System/Library/Frameworks/GSS.framework/GSS'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _decode_NegotiationToken, _decode_NegotiationTokenWin, _free_NegotiationToken, 
                        _free_NegotiationTokenWin ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _GSSCheckNTLMReflection, _GSSCreateCredentialFromUUID, _GSSCreateError, 
                        _GSSCreateName, _GSSCredCopyName, _GSSCredGetLifetime, _GSSCredentialCopyName, 
                        _GSSCredentialCopyUUID, _GSSCredentialGetLifetime, _GSSItemAdd, 

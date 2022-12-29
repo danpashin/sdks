@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           953F2BA8-15CD-38CA-80BC-917976FBD1A2
+  - target:          arm64e-ios
+    value:           3133A016-13F1-3A7F-AEF6-F04140F8415A
+install-name:    '/System/Library/Frameworks/AVRouting.framework/AVRouting'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _AVCustomRoutingControllerActiveRoutesDidChangeNotification, 
+                       _AVCustomRoutingControllerAuthorizedRoutesDidChangeNotification, 
+                       _AVCustomRoutingControllerCustomActionItemsDidChangeNotification ]
+    objc-classes:    [ AVCustomDeviceRoute, AVCustomRoutingActionItem, AVCustomRoutingController, 
+                       AVCustomRoutingEvent ]
+...

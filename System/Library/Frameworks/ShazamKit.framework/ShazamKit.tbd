@@ -7,33 +7,79 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           754FE4BE-3020-3A2C-8D34-66A968F2EE70
+    value:           B2DE032F-7290-3006-AD43-1377D8566828
   - target:          arm64e-ios
-    value:           5DEC5D26-B530-30BA-B8FB-9CD2BF66FC6E
+    value:           8B6E5505-74D2-3CF0-B62C-28AAFA8E8223
 install-name:    '/System/Library/Frameworks/ShazamKit.framework/ShazamKit'
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore' ]
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _SHErrorDeviceToDeviceEncryptionKey, _SHErrorDiscardedAudioDurationKey, 
                        _SHErrorDomain, _SHEventSignalIdentifierMusicRecognitionHistoryActivated, 
                        _SHEventSignalIdentifierMusicRecognitionRecognitionActivated, 
                        _SHMaximumSignatureDuration, _SHMediaItemAlbumName, _SHMediaItemAppleMusicID, 
                        _SHMediaItemAppleMusicURL, _SHMediaItemArtist, _SHMediaItemArtworkURL, 
                        _SHMediaItemAudioStartDate, _SHMediaItemExplicitContent, _SHMediaItemFrequencySkew, 
+                       _SHMediaItemFrequencySkewRanges, _SHMediaItemFrequencySkewRangesSwift, 
                        _SHMediaItemGenres, _SHMediaItemISRC, _SHMediaItemLyricsSnippet, 
                        _SHMediaItemMatchOffset, _SHMediaItemReleaseDate, _SHMediaItemShazamID, 
                        _SHMediaItemSpeedSkew, _SHMediaItemStaticLyricLines, _SHMediaItemSubtitle, 
-                       _SHMediaItemSyncedLyricsSnippet, _SHMediaItemTitle, _SHMediaItemVideoURL, 
-                       _SHMediaItemWebURL, _SHMediaLibraryErrorDomain, _SHMediaLibrarySyncStartConditionInitialFetch, 
+                       _SHMediaItemSyncedLyricsSnippet, _SHMediaItemTimeRanges, _SHMediaItemTimeRangesSwift, 
+                       _SHMediaItemTitle, _SHMediaItemVideoURL, _SHMediaItemWebURL, 
+                       _SHMediaLibraryErrorDomain, _SHMediaLibrarySyncStartConditionInitialFetch, 
                        _SHMediaLibrarySyncStartConditionInitialUpload, _SHMediaLibrarySyncStartConditionMigration, 
                        _SHMediaLibrarySyncStartConditionRemotePush, _SHMediaLibrarySyncStartConditionUserAction, 
                        _SHNotificationKeySessionError, _SHNotificationKeySessionMatch, 
-                       _SHNotificationKeySessionSignature, _SHNotificationNameSessionResult ]
+                       _SHNotificationKeySessionSignature, _SHNotificationNameSessionResult, 
+                       _SHShazamKitClientInterface, _SHShazamKitServiceInterface, 
+                       _SHShazamKitServiceName, _SHShazamKitUIClientInterface, _SHShazamKitUIServiceInterface, 
+                       _SHShazamKitUIServiceName ]
     objc-classes:    [ SHAttribution, SHCatalog, SHCustomCatalog, SHError, SHEventSignaller, 
                        SHLyricLine, SHManagedSession, SHMatch, SHMatchedMediaItem, 
-                       SHMatcherResponse, SHMediaItem, SHMediaLibrary, SHMediaLibraryChange, 
-                       SHMediaLibraryGroup, SHMediaLibraryInfo, SHMediaLibraryItemMetadata, 
-                       SHMediaLibraryLabel, SHMediaLibraryQueryParameters, SHMediaLibrarySnapshot, 
-                       SHMediaLibraryTrack, SHMediaLibraryTrackBuilder, SHMediaLibraryTrackUpdate, 
-                       SHMutableSignature, SHSession, SHShazamCatalog, SHShazamKey, 
-                       SHSignature, SHSignatureGenerator, SHSyncedLyrics ]
+                       SHMatcherResponse, SHMediaItem, SHMediaItemPropertyUtilities, 
+                       SHMediaLibrary, SHMediaLibraryChange, SHMediaLibraryGroup, 
+                       SHMediaLibraryInfo, SHMediaLibraryItemMetadata, SHMediaLibraryLabel, 
+                       SHMediaLibraryQueryParameters, SHMediaLibrarySnapshot, SHMediaLibraryTrack, 
+                       SHMediaLibraryTrackBuilder, SHMediaLibraryTrackUpdate, SHMutableSignature, 
+                       SHRange, SHSession, SHShazamKey, SHShazamKitServiceInterfaces, 
+                       SHShazamKitUIServiceInterfaces, SHSignature, SHSignatureGenerator, 
+                       SHSyncedLyrics ]
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           67392B74-ABCB-3E12-B344-DC9D24009645
+  - target:          arm64e-ios
+    value:           CE6A821F-E0BF-35FE-9556-D2682C134C72
+install-name:    '/System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore'
+current-version: 195.5
+compatibility-version: 0
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _SHAnalyticsActionAppleMusic, _SHAnalyticsActionNotificationTap, 
+                       _SHAnalyticsEventMusicRecognitionAlert, _SHAnalyticsEventMusicRecognitionEnabled, 
+                       _SHAnalyticsEventMusicRecognitionHistory, _SHAnalyticsEventMusicRecognitionList, 
+                       _SHAnalyticsEventMusicRecognitionResult, _SHAnalyticsEventMusicRecognitionResultAction, 
+                       _SHAnalyticsEventMusicRecognitionResultExpanded, _SHAnalyticsPayloadActionKey, 
+                       _SHAnalyticsPayloadEnabledKey, _SHAnalyticsPayloadErrorCodeKey, 
+                       _SHAnalyticsPayloadMatchKey, _SHAnalyticsPayloadNumberShazamsKey, 
+                       _SHAnalyticsPayloadSecureAccountKey, _SHAnalyticsPayloadSourceKey, 
+                       _SHCampaignTokenDefaultCampaignValue, _SHCoreErrorDomain, 
+                       _SHDefaultWorkerTimeout, _SHRecordingIntermissionDefaultValue, 
+                       _SHShazamKitExternalAudioRecordingEntitlement, _SHShazamKitInternalAudioRecordingEntitlement, 
+                       _SHShazamKitInternalClientEntitlement, _SHShazamKitTCCEntitlement, 
+                       _SHShazamKitTCCEntitlementMediaLibrary, _SHShazamKitTCCEntitlementMicrophone, 
+                       _sh_log_object ]
+    objc-classes:    [ SHAnalytics, SHBagContract, SHCampaignTokens, SHCompression, 
+                       SHCoreError, SHDefaultConfigurationValues, SHEndpoints, SHEntitlements, 
+                       SHFeatureFlags, SHHost, SHJSONLFileReader, SHJSONLFileWriter, 
+                       SHLocalization, SHRemoteConfiguration, SHService, SHStorefront, 
+                       SHTokenizedURL ]
 ...

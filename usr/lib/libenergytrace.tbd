@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           D19C13C5-C5CD-3931-BDF7-56B539E84D68
   - target:          arm64-ios
-    value:           456340C5-9B83-38D0-8EBE-1EA54C9724CE
+    value:           01889B6E-C6D1-3CD4-9AC9-4C860E7B1FF8
   - target:          arm64e-ios
-    value:           B129396D-CFFB-321A-85C6-F19B48F0C931
+    value:           E8C699F0-F617-3E95-A308-81B6FF8725D2
 install-name:    '/usr/lib/libenergytrace.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _entr_act_associate, _entr_act_begin, _entr_act_end, _entr_act_modify, 
                        _entr_act_set, _entr_act_setd, _entr_event, _entr_shouldtrace ]
 ...

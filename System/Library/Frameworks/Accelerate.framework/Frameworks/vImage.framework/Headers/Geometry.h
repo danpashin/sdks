@@ -145,6 +145,9 @@ VIMAGE_PF vImage_Error    vImageRotate_ARGB8888( const vImage_Buffer *src, const
 VIMAGE_PF vImage_Error    vImageRotate_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageRotate_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageRotate_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageRotate_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageRotate_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageRotate_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, float angleInRadians, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 /*
  * vImageScale_<fmt>
@@ -179,14 +182,22 @@ VIMAGE_PF vImage_Error    vImageRotate_ARGBFFFF( const vImage_Buffer *src, const
  * of the filter.
  *
  * vImageScale_<fmt>() does not work in place
- * The ARGB8888, ARGB16U, ARGB16S and ARGBFFFF functions work equally well on
+ * The ARGB8888, ARGB16U, ARGB16S, ARGB16F and ARGBFFFF functions work equally well on
  * other channel orderings of 4-channel images, such as RGBA or BGRA.
  *
  * Acceptable flags are kvImageEdgeExtend, kvImageDoNotTile,
- * kvImageHighQualityResampling, kvImageNoFlags.
+ * kvImageHighQualityResampling, kvImageNoFlags and, for 16F images,
+ * kvImageUseFP16Accumulator (see further details below).
  * If no edging mode is passed, kvImageEdgeExtend is used.
- * Developers using vImageScale_<fmt> on MacOS X.3 should pass kvImageEdgeExtend
- * in the flags field to avoid ringing artifacts at the edges of images
+ *
+ * For the scaling functions operating on Planar16F, CbCr16F, and ARGB16F images,
+ * the flag kvImageUseFP16Accumulator is also allowed. This will enforce all
+ * internal filtering operations to use 16-bit half-precision floating-point
+ * arithmetic rather than the default 32-bit single-precision arithmetic when
+ * the architecture of the CPU supports it. This results in up to 2x performance
+ * improvements but at the expense of a less precise result; typically 2-3 bits
+ * of precision is lost.
+
  */
 VIMAGE_PF vImage_Error    vImageScale_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
 VIMAGE_PF vImage_Error    vImageScale_Planar16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.10), ios(8.0), watchos(1.0), tvos(8.0));
@@ -196,6 +207,9 @@ VIMAGE_PF vImage_Error    vImageScale_ARGB8888( const vImage_Buffer *src, const 
 VIMAGE_PF vImage_Error    vImageScale_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageScale_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageScale_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageScale_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageScale_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageScale_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, vImage_Flags flags ) VIMAGE_NON_NULL(1,2)    API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 VIMAGE_PF vImage_Error
 vImageScale_CbCr8(
@@ -258,6 +272,9 @@ VIMAGE_PF vImage_Error    vImageAffineWarp_ARGB8888( const vImage_Buffer *src, c
 VIMAGE_PF vImage_Error    vImageAffineWarp_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageAffineWarp_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageAffineWarp_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageAffineWarp_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageAffineWarp_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageAffineWarp_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform *transform, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 #if VIMAGE_AFFINETRANSFORM_DOUBLE_IS_AVAILABLE
 /* A single precision transformation matrix is often not enough. This one uses double precision. */
@@ -267,6 +284,9 @@ VIMAGE_PF vImage_Error    vImageAffineWarpD_ARGB8888( const vImage_Buffer *src, 
 VIMAGE_PF vImage_Error    vImageAffineWarpD_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageAffineWarpD_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageAffineWarpD_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
+VIMAGE_PF vImage_Error    vImageAffineWarpD_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageAffineWarpD_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageAffineWarpD_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_AffineTransform_Double *transform, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 #endif
 
 #if VIMAGE_CGAFFINETRANSFORM_IS_AVAILABLE
@@ -310,6 +330,9 @@ VIMAGE_PF vImage_Error    vImageHorizontalReflect_ARGB8888( const vImage_Buffer 
 VIMAGE_PF vImage_Error    vImageHorizontalReflect_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalReflect_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalReflect_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageHorizontalReflect_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageHorizontalReflect_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageHorizontalReflect_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 VIMAGE_PF vImage_Error    vImageVerticalReflect_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
 VIMAGE_PF vImage_Error    vImageVerticalReflect_Planar16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(6.0), watchos(1.0), tvos(6.0));
@@ -318,6 +341,9 @@ VIMAGE_PF vImage_Error    vImageVerticalReflect_ARGB8888( const vImage_Buffer *s
 VIMAGE_PF vImage_Error    vImageVerticalReflect_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalReflect_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalReflect_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageVerticalReflect_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageVerticalReflect_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImageVerticalReflect_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 /*
  *     The Rotate90 function does simple 0, 90, 180 or 270 degree rotation according to the value of a rotation constant
@@ -356,6 +382,9 @@ VIMAGE_PF vImage_Error    vImageRotate90_ARGB8888( const vImage_Buffer *src, con
 VIMAGE_PF vImage_Error    vImageRotate90_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageRotate90_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageRotate90_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error    vImageRotate90_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(11.1), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error    vImageRotate90_CbCr16F( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(11.1), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error    vImageRotate90_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, uint8_t rotationConstant, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(11.1), ios(15.0), watchos(8.0), tvos(15.0));
 
 /*
  *    The Shearing functions use resampling to rescale a image and offset it to
@@ -369,16 +398,25 @@ VIMAGE_PF vImage_Error    vImageRotate90_ARGBFFFF( const vImage_Buffer *src, con
  *  is done by adjusting the resampling kernel.
  *
  *  All four channel geometry functions (i.e. those that support ARGB8888,
- *    ARGB16U, ARGB16S or ARGBFFFF images) work equally well on four channel
- *    images with other channel orderings such as RGBA or BGRA.
+ *    ARGB16U, ARGB16S, ARGB16F, or ARGBFFFF images) work equally well on four
+ *    channel images with other channel orderings such as RGBA or BGRA.
  *
  *  These functions do not work in place.
  *
  *  Acceptable flags are kvImageEdgeExtend, kvImageBackgroundColor,
- *  kvImageDoNotTile, kvImageNoFlags.
+ *  kvImageDoNotTile, kvImageNoFlags and, for 16F images,
+ *  kvImageUseFP16Accumulator (see further details below).
  *  Only one of kvImageEdgeExtend or kvImageBackgroundColor may be used.
  *  If none is used then the edging mode is undefined and the results may be
  *  unpredictable.
+ *
+ *  For the geometry functions operating on Planar16F, CbCr16F, and ARGB16F images,
+ *  the flag kvImageUseFP16Accumulator is also allowed. This will enforce all
+ *  internal filtering operations to use 16-bit half-precision floating-point
+ *  arithmetic rather than the default 32-bit single-precision arithmetic when
+ *  the architecture of the CPU supports it. This results in up to 2x performance
+ *  improvements but at the expense of a less precise result; typically 2-3 bits
+ *  of precision is lost.
  *
  *  The ResamplingFilter is created using vImageNewResamplingFilter or
  *  vImageNewResamplingFilterForFunctionUsingBuffer. The latter gives more
@@ -394,6 +432,9 @@ VIMAGE_PF vImage_Error    vImageHorizontalShear_ARGB8888( const vImage_Buffer *s
 VIMAGE_PF vImage_Error    vImageHorizontalShear_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalShear_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalShear_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error vImageHorizontalShear_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageHorizontalShear_CbCr16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageHorizontalShear_ARGB16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float xTranslate, float shearSlope, ResamplingFilter filter, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
 VIMAGE_PF vImage_Error    vImageVerticalShear_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, Pixel_8 backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
 VIMAGE_PF vImage_Error    vImageVerticalShear_Planar16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, Pixel_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.10), ios(8.0), watchos(1.0), tvos(8.0));
@@ -403,6 +444,9 @@ VIMAGE_PF vImage_Error    vImageVerticalShear_ARGB8888( const vImage_Buffer *src
 VIMAGE_PF vImage_Error    vImageVerticalShear_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter,  const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalShear_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter,  const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalShear_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.3), ios(5.0), watchos(1.0), tvos(5.0));
+VIMAGE_PF vImage_Error vImageVerticalShear_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageVerticalShear_CbCr16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageVerticalShear_ARGB16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, float yTranslate, float shearSlope, ResamplingFilter filter, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
 /* Versions of shear functions that take coordinates in double precision */
 VIMAGE_PF vImage_Error    vImageHorizontalShearD_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, Pixel_8 backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
@@ -411,6 +455,9 @@ VIMAGE_PF vImage_Error    vImageHorizontalShearD_ARGB8888( const vImage_Buffer *
 VIMAGE_PF vImage_Error    vImageHorizontalShearD_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalShearD_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageHorizontalShearD_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
+VIMAGE_PF vImage_Error vImageHorizontalShearD_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageHorizontalShearD_CbCr16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageHorizontalShearD_ARGB16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double xTranslate, double shearSlope, ResamplingFilter filter, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
 VIMAGE_PF vImage_Error    vImageVerticalShearD_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, Pixel_8 backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
 VIMAGE_PF vImage_Error    vImageVerticalShearD_PlanarF( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, Pixel_F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
@@ -418,6 +465,9 @@ VIMAGE_PF vImage_Error    vImageVerticalShearD_ARGB8888( const vImage_Buffer *sr
 VIMAGE_PF vImage_Error    vImageVerticalShearD_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter,  const Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalShearD_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter,  const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageVerticalShearD_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
+VIMAGE_PF vImage_Error vImageVerticalShearD_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, const Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageVerticalShearD_CbCr16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, const Pixel_16F16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+VIMAGE_PF vImage_Error vImageVerticalShearD_ARGB16F(const vImage_Buffer *src, const vImage_Buffer *dest, vImagePixelCount srcOffsetToROI_X, vImagePixelCount srcOffsetToROI_Y, double yTranslate, double shearSlope, ResamplingFilter filter, const Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2) API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
 VIMAGE_PF vImage_Error
 vImageHorizontalShear_CbCr8(

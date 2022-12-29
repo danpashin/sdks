@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           9D067BCA-DEF8-3B33-8727-0A5FF1B41098
+  - target:          arm64e-ios
+    value:           5F04803B-EDB9-3FC9-AE1F-53C635B04028
+install-name:    '/System/Library/Frameworks/PushToTalk.framework/PushToTalk'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _PTChannelErrorDomain, _PTInstantiationErrorDomain ]
+    objc-classes:    [ PTChannelDescriptor, PTChannelManager, PTParticipant, PTPushResult ]
+...

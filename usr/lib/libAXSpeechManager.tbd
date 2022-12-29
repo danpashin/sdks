@@ -7,20 +7,21 @@ uuids:
   - target:          armv7s-ios
     value:           F064D403-BB68-364A-B960-BCA389FF460E
   - target:          arm64-ios
-    value:           63A45511-DCA9-38D8-872B-2BBC7FBB9638
+    value:           5568D7D6-D679-3E9D-AE84-0076FFCABC3E
   - target:          arm64e-ios
-    value:           6C33C521-ED47-3087-932E-4F967854F80F
+    value:           B5AFBCB3-6C10-3FF0-8BE2-7856C8B8DD80
 install-name:    '/usr/lib/libAXSpeechManager.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
-    symbols:         [ _AXLanguageCanonicalFormToGeneralLanguage, __AXSpeechReplaceEmoticons ]
+    symbols:         [ _AXAVVoiceQualityFromTTSFootprint, _AXLanguageCanonicalFormToGeneralLanguage, 
+                       _AXRemapLanguageCodeForSpeech, __AXSpeechReplaceEmoticons ]
     objc-classes:    [ AXSpeechThread ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _AXAVSpeechSynthesisVoiceFromTTSSpeechVoice, _AXAVVoiceQualityFromTTSFootprint, 
-                       _AXAlexVoiceIdentifier, _AXNeuralSiriFemaleVoiceIdentifier, 
-                       _AXNeuralSiriMaleVoiceIdentifier, _AXRemapLanguageCodeForSpeech, 
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _AXAVSpeechSynthesisVoiceFromTTSSpeechVoice, _AXAlexVoiceIdentifier, 
+                       _AXNeuralSiriFemaleVoiceIdentifier, _AXNeuralSiriMaleVoiceIdentifier, 
                        _AXSiriFemaleVoiceIdentifier, _AXSiriMaleVoiceIdentifier, 
                        _AXSpeechLanguageCanonicalFormToGeneralLanguage, _AXSpeechTransformText, 
-                       _AXSpeechTransformTextWithLanguage, _VOTBundle, _isSpeakableEmojiString ]
+                       _AXSpeechTransformTextWithLanguage, _AXSpeechTransformTextWithLanguageAndVoiceIdentifier, 
+                       _VOTBundle, _isSpeakableEmojiString ]
     objc-classes:    [ AXEmojiUtilities, AXSpeechAction, AXSpeechManager ]
 ...

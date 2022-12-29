@@ -303,6 +303,36 @@ typedef uint16_t    Pixel_ARGB_16U[4];  /* four-channel 16-bit unsigned pixel */
 typedef int16_t     Pixel_ARGB_16S[4];  /* four-channel 16-bit signed pixel */
 
 /*!
+ @typedef    Pixel_16F
+ @abstract   A 16-bit half precision floating-point planar pixel value.
+ @discussion Typically, these have range [0,1] though other values are generally allowed.
+             Defined as a 16-bit integer since this is a storage format only.
+ */
+typedef uint16_t       Pixel_16F;            /* 16-bit floating point planar pixel value */
+
+/*!
+ @typedef   Pixel_16F16F
+ @abstract  A two-channel, 16-bit floating-point per channel pixel.
+ @discussion The channel order is generally given by the function that consumes the value.
+ */
+typedef uint16_t     Pixel_16F16F[2];    /* CbCr interleaved 16-bit floating point per channel pixel value. uint16_t[2] = { Cb, Cr } */
+
+/*!
+ @typedef   Pixel_ARGB_16F
+ @abstract  A four-channel, 16-bit floating-point per channel pixel.
+ @discussion The channel order is generally given by the function that consumes the value.
+ */
+typedef uint16_t     Pixel_ARGB_16F[4];    /* ARGB interleaved 16-bit floating point per channel pixel value. uint16_t[2] = { Cb, Cr } */
+
+
+/*!
+ @typedef   Pixel_FF
+ @abstract  A two-channel, single precision floating-point per channel pixel.
+ @discussion The channel order is generally given by the function that consumes the value.
+ */
+typedef float       Pixel_FF[2];      /* CbCr interleaved (floating point) pixel value. float[2] = { Cb, Cr } */
+
+/*!
  @typedef ResamplingFilter
  @abstract A ResamplingFilter is an opaque structure used by vImage to hold precalculated filter coefficients for a resampling filter,
              such as a Lanczos or Gaussian resampling filter. 
@@ -533,6 +563,13 @@ typedef VIMAGE_CHOICE_ENUM(vImage_Error, ssize_t)
                 encounter precision issues with HDR content.  For these cases, if you know you have HDR content,
                 pass kvImageHDRContent and a (typically slower) alternative method will be used for these
                 sources.
+ 
+ @constant kvImageUseFP16Accumulator    Use a faster and lower precision internal arithmetic, when available,
+               for the functions operating on 16-bit half-precision floating-point pixels (Pixel16_F).
+               This will enforce for example convolutions to be computed with 16-bit half-precision floating-point
+               arithmetic internally, when architecture of the CPU supports it. The arm64e architectures supports it
+               but none of the Intel architectures.
+ 
  */
 typedef VIMAGE_OPTIONS_ENUM(vImage_Flags, uint32_t)
 {
@@ -583,9 +620,14 @@ typedef VIMAGE_OPTIONS_ENUM(vImage_Flags, uint32_t)
 
     /* Pass to disable clamping is some conversions to floating point formats. Use this if the input data
        may describe values outside [0,1] which should be preserved.. */
-    kvImageDoNotClamp                 VIMAGE_ENUM_AVAILABLE_STARTING( __MAC_10_12, __IPHONE_9_3 )     =   2048
-};
+    kvImageDoNotClamp                 VIMAGE_ENUM_AVAILABLE_STARTING( __MAC_10_12, __IPHONE_9_3 )   =  2048,
     
+    /* Use a lower precision, faster floating-point arithmetic for all internal computations when available.
+       This applies to all functions operating on 16-bit half-precision floating-point pixels, Pixel_16F. */
+    kvImageUseFP16Accumulator     /*VIMAGE_ENUM_AVAILABLE_STARTING( __MAC_13_0, __IPHONE_16_0 )*/   =  4096,
+};
+
+
 /*!
     @class vImageConverterRef
     @abstract   An opaque type which contains a decription of a conversion from one CoreGraphics image format to another.

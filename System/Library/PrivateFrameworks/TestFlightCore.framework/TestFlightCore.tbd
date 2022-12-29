@@ -8,7 +8,13 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ TFBetaAppLaunchScreenProvider,
+    symbols:              [ _TFAlertActionsBundleIdentifierKey,
+                            _TFAlertActionsDidDismissWhatToTestNotification,
+                            _TFAlertActionsInitialImagesKey,
+                            _TFAlertActionsShowCrashFeedbackNotification,
+                            _TFAlertActionsShowVisualFeedbackNotification,
+                            _TFAlertActionsShowWhatToTestNotification ]
+    objc-classes:         [ TFAlertActions, TFBetaAppLaunchScreenProvider,
                             TFBetaApplicationProxy, TFBetaLaunchHandle,
                             TFBetaLaunchHandleConfiguration, TFFeedbackHandle,
                             TFFeedbackHandleConfiguration, TFFeedbackSession,

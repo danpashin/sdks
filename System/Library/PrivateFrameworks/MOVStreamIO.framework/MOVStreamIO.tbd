@@ -8,8 +8,11 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MIOCVPixelBufferGetBytesPerPixel,
+    symbols:              [ _MIOCVCreatePixelBuffer,
+                            _MIOCVPixelBufferGetBytesPerPixel,
                             _MIOCVPixelBufferGetBytesPerPixelOfPlane,
+                            _MIOCVPixelBufferGetBytesPerPixelOfPlaneFromLookup,
+                            _MIOCVPixelBufferSetBytesPerPixelOfPlaneToLookup,
                             _MIOCVPixelBufferUsablePlaneCount,
                             _MIOKnownTrackTypeDescription, _MIOMakeFrame,
                             _MIOTrackTypeAlphaDataOnly, _MIOTrackTypeIRData,
@@ -50,7 +53,7 @@ exports:
                             _kMIOProResEncodingQuality,
                             _kMIORawBayerRearrangeTypeKey,
                             _kMIOStreamConvertNonPlanarBuffersTo8bitMonochrome,
-                            _kMIOStreamEncoderType,
+                            _kMIOStreamEncoderType, _kMIOStreamEncodingQuality,
                             _kMIOTimestampWhenWrittenToFileKey,
                             _kMIOUseSlimXCompression, _kMIOVideoTrackTypeInfo,
                             _kMIOVideoTransform, _kMOVStreamReaderErrorDomain,
@@ -61,7 +64,7 @@ exports:
     objc-classes:         [ CompandedRawBayerPostProcessor,
                             CompandedRawBayerPreProcessor, DefaultPostProcessor,
                             DefaultPreProcessor, L008ToNonPlanarPostProcessor,
-                            L016Raw14PostProcessor, L016Raw14PreProcessor,
+                            L016Raw14PostProcessor, L016Raw14PreProcessor, MIOLog,
                             MOVStreamEncoderConfig, MOVStreamFrame,
                             MOVStreamFrameConverter, MOVStreamIOUtility,
                             MOVStreamOptions, MOVStreamOutputSettings,

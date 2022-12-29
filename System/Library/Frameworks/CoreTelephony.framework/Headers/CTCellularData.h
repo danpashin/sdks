@@ -5,7 +5,10 @@
 //  Copyright (c) 2015 Apple Inc. All rights reserved.
 //
 
+#ifdef __OBJC__
+
 #import <CoreTelephony/CoreTelephonyDefines.h>
+#import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, CTCellularDataRestrictedState) {
 	kCTCellularDataRestrictedStateUnknown,
@@ -33,3 +36,4 @@ CORETELEPHONY_CLASS_AVAILABLE(9_0)
 
 NS_ASSUME_NONNULL_END
 
+#endif // __OBJC__

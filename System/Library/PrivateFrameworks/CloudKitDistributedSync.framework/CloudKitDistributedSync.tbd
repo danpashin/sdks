@@ -3,12 +3,15 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudKitDistributedSync.framework/CloudKitDistributedSync
-current-version:       1960.13
+current-version:       2000.251.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CKByteTuple, _CKDSErrorDomain,
+    symbols:              [ _CKByteTuple, _CKDPDistributedTimestampsReadFrom,
+                            _CKDPDistributedTimestampsSiteVersionVectorsReadFrom,
+                            _CKDPDistributedTimestampsVersionVectorReadFrom,
+                            _CKDPSiteIdentifierReadFrom, _CKDSErrorDomain,
                             _CKDSStringForBackingStoreFormatVersion,
                             _CKDSStringForErrorCode,
                             _CKDistributedTimestampLWWCompare,
@@ -19,11 +22,15 @@ exports:
                             _CKXAtomBindingFormatVersionORC,
                             _CKXAtomBindingFormatVersionORCv2 ]
     objc-classes:         [ CKAtomBatch, CKAtomBatchEnumerationOptions,
-                            CKAtomBatchMetadata, CKAtomBatchMutableProxy,
-                            CKAtomBatchProxy, CKAtomLocation, CKAtomMutableProxy,
-                            CKAtomProxy, CKAtomReference,
+                            CKAtomBatchMutableProxy, CKAtomBatchProxy,
+                            CKAtomBatchReaderOptions, CKAtomBatchWriterOptions,
+                            CKAtomMutableProxy, CKAtomProxy, CKAtomReference,
                             CKAtomReferenceMutableProxy, CKAtomReferenceProxy,
-                            CKDSUtil, CKDistributedSiteIdentifier,
+                            CKDPDistributedTimestamps,
+                            CKDPDistributedTimestampsSiteVersionVectors,
+                            CKDPDistributedTimestampsVersionVector,
+                            CKDPSiteIdentifier, CKDSReadableStorage, CKDSStorage,
+                            CKDSWritableStorage, CKDistributedSiteIdentifier,
                             CKDistributedSiteIdentifierMutableProxy,
                             CKDistributedSiteIdentifierProxy,
                             CKDistributedTimestamp,
@@ -33,13 +40,26 @@ exports:
                             CKDistributedTimestampProxy,
                             CKDistributedTimestampSparseVector,
                             CKDistributedTimestampStateVector,
-                            CKDistributedTimestampVector, CKMergeableValueID,
+                            CKDistributedTimestampVector, CKIntervalMap,
+                            CKMergeableDeltaMetadata, CKMergeableValueID,
                             CKMergeableValueIDMutableProxy,
-                            CKMergeableValueIDProxy, CKXArrayProxyBase,
-                            CKXBackingStore, CKXORCReader, CKXORCReaderOptions,
-                            CKXORCWriter, CKXORCWriterOptions, CKXProxyBase,
-                            CKXProxyCache, CKXReaderBase, CKXSchema,
+                            CKMergeableValueIDProxy, CKMutableIntervalMap,
+                            CKXArrayProxyBase, CKXBackingStore, CKXORCReader,
+                            CKXORCReaderOptions, CKXORCWriter, CKXORCWriterOptions,
+                            CKXProxyBase, CKXProxyCache, CKXReaderBase, CKXSchema,
                             CKXStructArrayMutableProxy, CKXStructArrayProxy,
                             CKXStructMutableProxyBase, CKXStructProxyBase,
                             CKXVersionedReaderWriterStore, CKXWriterBase ]
+    objc-ivars:           [ CKDPDistributedTimestamps._siteIdentifiers,
+                            CKDPDistributedTimestamps._siteVersionVectors,
+                            CKDPDistributedTimestampsSiteVersionVectors._contentsVector,
+                            CKDPDistributedTimestampsSiteVersionVectors._dependenciesVector,
+                            CKDPDistributedTimestampsSiteVersionVectors._previousVector,
+                            CKDPDistributedTimestampsSiteVersionVectors._removalsVector,
+                            CKDPDistributedTimestampsVersionVector._clockValueLengths,
+                            CKDPDistributedTimestampsVersionVector._clockValues,
+                            CKDPDistributedTimestampsVersionVector._stateValueLengths,
+                            CKDPDistributedTimestampsVersionVector._stateValues,
+                            CKDPSiteIdentifier._identifier,
+                            CKDPSiteIdentifier._modifier ]
 ...

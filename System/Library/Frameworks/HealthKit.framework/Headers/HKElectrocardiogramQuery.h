@@ -2,7 +2,7 @@
 //  HKElectrocardiogramQuery.h
 //  HealthKit
 //
-//  Copyright © 2020 Apple. All rights reserved.
+//  Copyright © 2020-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKElectrocardiogram.h>
@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @abstract      An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of measurement.
 @discussion    Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given instance in time.
 */
-HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0)) NS_SWIFT_NAME(HKElectrocardiogram.VoltageMeasurement)
-@interface HKElectrocardiogramVoltageMeasurement : NSObject
+HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)) NS_SWIFT_NAME(HKElectrocardiogram.VoltageMeasurement)
+@interface HKElectrocardiogramVoltageMeasurement : NSObject <NSCopying>
 
 /*!
  The time interval between this voltage measurement and the start of the sample.
@@ -42,7 +42,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKElectrocardiogramQueryDescriptor", ios(14.0, API_TO_BE_DEPRECATED), watchos(7.0, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(14.0), watchos(7.0))
+API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0))
 #endif
 @interface HKElectrocardiogramQuery : HKQuery
 

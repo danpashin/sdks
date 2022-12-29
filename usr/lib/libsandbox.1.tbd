@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           3E5F186A-2024-3091-A71A-71E765FA1BAC
   - target:          arm64-ios
-    value:           2C459EE6-7DFF-33AC-925D-E95EE2119C9E
+    value:           D633B6AF-6767-3A61-B4AA-14C473C90EF6
   - target:          arm64e-ios
-    value:           076F6CCB-00B1-3095-AAA6-956A18C50191
+    value:           15F46B9A-0294-351A-B11F-EB74A1502C7A
 install-name:    '/usr/lib/libsandbox.1.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _sandbox_set_trace_path ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _SANDBOX_BUILD_ID, ___crashreporter_info__, _sandbox_apply, 
                        _sandbox_apply_container, _sandbox_compile_entitlements, _sandbox_compile_file, 
                        _sandbox_compile_named, _sandbox_compile_string, _sandbox_container_paths_iterate_items, 

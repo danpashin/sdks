@@ -2,7 +2,7 @@
 //  HKActivitySummaryQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2015 Apple Inc. All rights reserved.
+//  Copyright (c) 2015-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKQuery.h>
@@ -15,7 +15,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKActivitySummaryQueryDescriptor", ios(9.3, API_TO_BE_DEPRECATED), watchos(2.2, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(9.3), watchos(2.2))
+API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0))
 #endif
 @interface HKActivitySummaryQuery : HKQuery
 

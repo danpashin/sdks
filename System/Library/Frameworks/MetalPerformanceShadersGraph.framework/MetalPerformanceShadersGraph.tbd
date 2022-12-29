@@ -7,21 +7,21 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           9DFCD1BB-F242-3287-B53D-DEC01D9AA292
+    value:           D922B08F-D5E0-327B-A3AF-BFEFFC701F94
   - target:          arm64e-ios
-    value:           35810877-5CC0-3558-9CDD-02742CA2C1F3
+    value:           DA4EF613-D789-3E95-8723-9735482AC851
 install-name:    '/System/Library/Frameworks/MetalPerformanceShadersGraph.framework/MetalPerformanceShadersGraph'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _MPSGraphDeviceTypeANE, _MPSGraphDeviceTypeCPU ]
     objc-classes:    [ MPSGraph, MPSGraphAdamOptimizer, MPSGraphCompilationDescriptor, 
                        MPSGraphConvolution2DOpDescriptor, MPSGraphCreateSparseOpDescriptor, 
                        MPSGraphCropResizeOpDescriptor, MPSGraphDepthwiseConvolution2DOpDescriptor, 
                        MPSGraphDepthwiseConvolution3DOpDescriptor, MPSGraphDevice, 
                        MPSGraphExecutable, MPSGraphExecutableDescriptor, MPSGraphExecutableExecutionDescriptor, 
-                       MPSGraphExecutionDescriptor, MPSGraphLSTMDescriptor, MPSGraphList, 
-                       MPSGraphListData, MPSGraphListType, MPSGraphOperation, MPSGraphOptimizer, 
-                       MPSGraphPooling2DOpDescriptor, MPSGraphPooling4DOpDescriptor, 
+                       MPSGraphExecutionDescriptor, MPSGraphGRUDescriptor, MPSGraphLSTMDescriptor, 
+                       MPSGraphList, MPSGraphListData, MPSGraphListType, MPSGraphOperation, 
+                       MPSGraphOptimizer, MPSGraphPooling2DOpDescriptor, MPSGraphPooling4DOpDescriptor, 
                        MPSGraphPruningDescriptor, MPSGraphRandomOpDescriptor, MPSGraphShapedType, 
                        MPSGraphSingleGateRNNDescriptor, MPSGraphStencilOpDescriptor, 
                        MPSGraphStochasticGradientDescentOptimizer, MPSGraphTensor, 

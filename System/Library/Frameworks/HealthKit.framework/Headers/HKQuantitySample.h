@@ -2,7 +2,7 @@
 //  HKQuantitySample.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2019 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKSample.h>
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKQuantitySample
  @abstract      An abstract HKSample subclass representing a quantity measurement.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKQuantitySample : HKSample
 
 @property (readonly, copy) HKQuantityType *quantityType;
@@ -27,7 +27,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @abstract      The number of individual values making up the receiver's quantity.
  @discussion    Requests for the individual series quantities can be made using HKQuantitySeriesSampleQuery.
  */
-@property (readonly, assign) NSInteger count API_AVAILABLE(ios(12.0), watchos(5.0));
+@property (readonly, assign) NSInteger count API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        quantitySampleWithType:quantity:startDate:endDate:
@@ -68,12 +68,12 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                              startDate:(NSDate *)startDate
                                endDate:(NSDate *)endDate
                                 device:(nullable HKDevice *)device
-                              metadata:(nullable NSDictionary<NSString *, id> *)metadata API_AVAILABLE(ios(9.0), watchos(2.0));
+                              metadata:(nullable NSDictionary<NSString *, id> *)metadata API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 @end
 
 // Predicate Key Paths
-HK_EXTERN NSString * const HKPredicateKeyPathQuantity API_AVAILABLE(ios(8.0), watchos(2.0));
-HK_EXTERN NSString * const HKPredicateKeyPathCount API_AVAILABLE(ios(13.0), watchos(6.0));
+HK_EXTERN NSString * const HKPredicateKeyPathQuantity API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
+HK_EXTERN NSString * const HKPredicateKeyPathCount API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

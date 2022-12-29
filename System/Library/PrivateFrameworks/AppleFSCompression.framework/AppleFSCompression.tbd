@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleFSCompression.framework/AppleFSCompression
-current-version:       132.100.2
+current-version:       145
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -17,6 +17,7 @@ exports:
                             _FinishStreamCompressorQueue,
                             _VolumeSupportsCompression, _WriteToStreamCompressor,
                             _catFile, _decompressFile, _decompressWithCallback,
+                            _fqueryCompressionInfo, _fqueryCompressionType,
                             _kAFSCAllowLargeResourceForks,
                             _kAFSCAllowStoringDataInXattr,
                             _kAFSCCompressionLevel, _kAFSCCompressionRulesKey,
@@ -31,5 +32,5 @@ exports:
                             _kAFSCRuleTypeKey, _kAFSCSkipMachOFileTypes,
                             _kAFSCSkipMachOOverridePaths, _kAFSCSynchronous,
                             _kAFSCThrottledIO, _queryCompressionInfo,
-                            _type5_handler_function ]
+                            _queryCompressionType, _type5_handler_function ]
 ...

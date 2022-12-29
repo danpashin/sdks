@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ARKitFoundation.framework/ARKitFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _ARDepthCameraCalibrationCopy,
+                            _ARDepthCameraCalibrationCreate,
+                            _ARDepthCameraCalibrationGetDeviceTransform,
+                            _ARDepthCameraCalibrationGetExtrinsics,
+                            _ARDepthCameraCalibrationGetIntrinsics,
+                            _ARDepthCameraCalibrationGetTimestamp,
+                            _ARDepthCameraCalibrationRelease,
+                            _ARDepthCameraCalibrationSetDeviceTransform,
+                            _ARDepthCameraCalibrationSetExtrinsics,
+                            _ARDepthCameraCalibrationSetIntrinsics,
+                            _ARDepthCameraCalibrationSetTimestamp,
+                            _ARDepthCameraCalibrationSize,
+                            _ARKitFoundationBuildVersionString,
+                            _ARKitFoundationVersionNumber,
+                            _ARKitFoundationVersionString ]
+    objc-classes:         [ ARDepthData ]
+...

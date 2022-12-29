@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ClarityFoundation.framework/ClarityFoundation
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CLFCommunicationLimitContacts,
+                            _CLFCommunicationLimitEveryone, _CLFListLayoutGrid,
+                            _CLFListLayoutStack, _CLFMessagesSettingsBundleName,
+                            _CLFMusicSettingsBundleName,
+                            _CLFPhoneSettingsBundleName,
+                            _CLFSupportsClarityUIKey,
+                            _ClarityFoundationVersionNumber,
+                            _ClarityFoundationVersionString ]
+    objc-classes:         [ CLFBaseSettings, CLFLog, CLFMessagesSettings,
+                            CLFMusicSettings, CLFPhoneFaceTimeSettings,
+                            CLFSettings, CLFSystemShellSwitcher,
+                            _CLFSettingsObserver ]
+...

@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C69B663D-F83D-3B67-A9CD-F8ABE6F92551
+    value:           0E3AB60F-2697-349E-921F-F6D640E93F90
   - target:          arm64e-ios
-    value:           54ECFEB3-56CB-30E5-BA93-BBD22EEB5611
+    value:           CCD4B51E-DB2E-33BE-A44B-24D4BA764BAA
 install-name:    '/usr/lib/libThreadExternalCommissioner.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _kBorderAgentNotificationExistingCommissioner ]
     objc-classes:    [ BorderAgentConnector, BorderAgentFinder ]
 ...

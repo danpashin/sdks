@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           D57D3431-174C-36D6-8145-BB8831131F5F
   - target:          arm64-ios
-    value:           19905B5E-AC88-3DF0-9682-CBA6FAAD99E4
+    value:           D205FB84-77EE-3F9C-95DD-2443E960F852
   - target:          arm64e-ios
-    value:           63143D21-4762-3971-96E5-5A74D5486B8B
+    value:           85165261-39DA-3D64-AB5D-796899FE3853
 install-name:    '/usr/lib/libsysdiagnose.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _metricCompression, _metricGetLogCopying, _metricGetLogGeneration, 
                        _metricGetOSLogArchive, _metricGetTimeSensitive, _metricLogCopying, 
                        _metricLogGeneration, _metricOSLogarchiveGeneration, _metricStartToTar, 
-                       _metricTimeSensitive, _metricTotalSize, _sdProgressPercent, 
-                       _sdProgressPhase ]
+                       _metricTimeSensitive, _metricTotalSize, _sdProgressDiagnosticId, 
+                       _sdProgressPercent, _sdProgressPhase ]
     objc-classes:    [ Libsysdiagnose ]
 ...

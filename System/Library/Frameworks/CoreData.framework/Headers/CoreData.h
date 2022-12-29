@@ -1,7 +1,7 @@
 /*
     CoreData.h
     Core Data
-    Copyright (c) 2004-2021, Apple Inc.
+    Copyright (c) 2004-2022, Apple Inc.
     All rights reserved.
 */
 
@@ -64,4 +64,6 @@
 #import <CoreData/NSPersistentCloudKitContainerEvent.h>
 #import <CoreData/NSPersistentCloudKitContainerEventRequest.h>
 
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
 #import <CoreData/NSCoreDataCoreSpotlightDelegate.h>
+#endif

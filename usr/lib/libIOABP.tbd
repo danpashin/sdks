@@ -1,15 +1,11 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+targets:         [ arm64-ios, arm64e-ios ]
 uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           AE9803ED-FAB1-3D47-A9F0-3352C29496CF
+    value:           DFDF49B1-2155-3302-81C0-2D3F9167EFB7
   - target:          arm64e-ios
-    value:           E271EA92-8567-35FD-AC6A-F59CD7705F8A
+    value:           C404803F-C7B2-38F9-A477-B46CF9A407E6
 install-name:    '/usr/lib/libIOABP.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -17,7 +13,7 @@ exports:
                        __Z21getABPLinkStateString12abpLinkState, __Z24getABPAERErrorTypeString15abpAERErrorType, 
                        __Z24getABPBHIRegistersString15abpBHIRegisters, __Z24getABPBTIRegistersString15abpBTIRegisters, 
                        __ZN10IOABPClass10writeAsyncEPKvjPFvPviS2_ES2_, __ZN10IOABPClass12readRegisterEjPvPj, 
-                       __ZN10IOABPClass13timeSyncAsyncEPvjPFvS0_iS0_ES0_, __ZN10IOABPClass14clearIteratorsEv, 
+                       __ZN10IOABPClass13timeSyncAsyncEjPvjPFvS0_iS0_ES0_, __ZN10IOABPClass14clearIteratorsEv, 
                        __ZN10IOABPClass14mapMemoryAsyncEtPKvjPFvPviES2_, __ZN10IOABPClass14sendImageAsyncEPKvjPFvPviS2_S2_ES2_, 
                        __ZN10IOABPClass16interfaceMatchedEPvj, __ZN10IOABPClass16unmapMemoryAsyncEtPFvPviES0_, 
                        __ZN10IOABPClass17abortChannelAsyncE12abpDirectionPFvPviES1_, 

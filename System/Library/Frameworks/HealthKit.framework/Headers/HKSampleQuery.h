@@ -2,7 +2,7 @@
 //  HKSampleQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKQuery.h>
@@ -21,7 +21,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKSampleQueryDescriptor", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(8.0), watchos(2.0))
+API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 #endif
 @interface HKSampleQuery : HKQuery
 
@@ -67,7 +67,7 @@ API_AVAILABLE(ios(8.0), watchos(2.0))
  */
 - (instancetype)initWithQueryDescriptors:(NSArray<HKQueryDescriptor *> *)queryDescriptors
                                    limit:(NSInteger)limit
-                          resultsHandler:(void(^)(HKSampleQuery *query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error))resultsHandler API_AVAILABLE(ios(15.0), watchos(8.0));
+                          resultsHandler:(void(^)(HKSampleQuery *query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error))resultsHandler API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 /*!
  @method        initWithQueryDescriptors:limit:sortDescriptors:resultsHandler:
@@ -86,7 +86,7 @@ API_AVAILABLE(ios(8.0), watchos(2.0))
 - (instancetype)initWithQueryDescriptors:(NSArray<HKQueryDescriptor *> *)queryDescriptors
                                    limit:(NSInteger)limit
                          sortDescriptors:(NSArray<NSSortDescriptor *> *)sortDescriptors
-                          resultsHandler:(void(^)(HKSampleQuery *query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error))resultsHandler API_AVAILABLE(ios(15.0), watchos(8.0));
+                          resultsHandler:(void(^)(HKSampleQuery *query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error))resultsHandler API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 @end
 
 NS_ASSUME_NONNULL_END

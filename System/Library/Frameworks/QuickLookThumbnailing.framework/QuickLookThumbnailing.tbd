@@ -7,13 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           75E0540F-1C0A-3684-B9BB-1B014CBEA1B3
+    value:           B330B0DD-159B-3115-A095-01AE5CE0E32D
   - target:          arm64e-ios
-    value:           436DD226-E348-3B80-A77F-73A76817E457
+    value:           C3A7C494-E088-3BBF-9D2B-1F13E171D394
 install-name:    '/System/Library/Frameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing'
 current-version: 0
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _QLCGImageRefPNGRepresentation, _QLCompareVersion, _QLCreateCGImageWithData, 
                        _QLCreateCGImageWithDataAndFormat, _QLCreateColorSpaceForThumbnailExtension, 
                        _QLExternalThumbnailCacheDatabaseErrorDomain, _QLExternalThumbnailCacheErrorDomain, 
@@ -52,9 +52,9 @@ exports:
                        QLThumbnailAddition._additionURLSandboxToken, QLThumbnailAddition._metadata, 
                        QLThumbnailAddition._thumbnailDataDictionary, QLThumbnailAddition._thumbnailVersion, 
                        QLThumbnailGenerationQueue._queue, QLThumbnailGenerationQueue._queuedURLs, 
-                       QLThumbnailItem._computedContentType, QLThumbnailItem._data, 
-                       QLThumbnailItem._downloadStatus, QLThumbnailItem._fileExtensionHandle, 
-                       QLThumbnailItem._fileExtensionToken, QLThumbnailItem._overriddenContentType, 
+                       QLThumbnailItem._computedContentType, QLThumbnailItem._computedContentTypeIdentifier, 
+                       QLThumbnailItem._data, QLThumbnailItem._downloadStatus, QLThumbnailItem._fileExtensionHandle, 
+                       QLThumbnailItem._fileExtensionToken, QLThumbnailItem._overriddenContentTypeIdentifier, 
                        QLThumbnailItem._url, QLThumbnailItem._urlWrapperForExtension, 
                        QLThumbnailItem._urlWrapperForParentDirectory, QLThumbnailMetadata._baseline, 
                        QLThumbnailMetadata._inlinePreviewMode, QLThumbnailServiceProxy._connection, 

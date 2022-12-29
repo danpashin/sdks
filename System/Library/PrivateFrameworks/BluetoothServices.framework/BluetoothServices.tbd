@@ -8,12 +8,15 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _BTErrorDomain, _BTErrorF, _BTNestedErrorF,
+    symbols:              [ _BTCloudSoundProfileChangedNotification,
+                            _BTErrorDomain, _BTErrorF, _BTNestedErrorF,
                             _BTXPCGetNextClientID ]
-    objc-classes:         [ BTAudioRoutingRequest, BTAudioRoutingResponse,
-                            BTAudioSession, BTBannerUISession,
-                            BTBluetoothPairingSession, BTCloudAccountInfo,
-                            BTCloudDevice, BTCloudDeviceSupportInformation,
-                            BTCloudServicesClient, BTMagicPairingSettings,
-                            BTServicesClient, BTShareAudioSessionClient ]
+    objc-classes:         [ BTAirPodsControlServiceClient, BTAudioRoutingRequest,
+                            BTAudioRoutingResponse, BTAudioSession,
+                            BTBannerUISession, BTBluetoothPairingSession,
+                            BTCloudAccountInfo, BTCloudDevice,
+                            BTCloudDeviceSupportInformation,
+                            BTCloudServicesClient, BTCloudSoundProfileRecord,
+                            BTMagicPairingSettings, BTServicesClient,
+                            BTShareAudioSessionClient ]
 ...

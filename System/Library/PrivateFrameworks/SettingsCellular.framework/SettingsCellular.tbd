@@ -8,8 +8,7 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CSLogForCategory,
-                            _PSPerAppNetworkDataAccessPolicyChangedNotification,
+    symbols:              [ _PSPerAppNetworkDataAccessPolicyChangedNotification,
                             _PSSimIsMissing,
                             _PSSimStatusChangedToReadyNotification,
                             _kCellularSettingsLogSubsystem,
@@ -22,6 +21,8 @@ exports:
                             PSAppDataUsagePolicyTernaryControlSpecifier,
                             PSBillingPeriodSelectorSpecifier,
                             PSCellularManagementCache, PSDataUsageSpecifier,
-                            PSDataUsageStatisticsCache, PSSimStatusCache,
-                            PSWatchOnlyAppCellularUsageSpecifier ]
+                            PSDataUsageStatisticsCache,
+                            PSMultilineTitleTableCell, PSSimStatusCache,
+                            PSWatchOnlyAppCellularUsageSpecifier,
+                            SettingsCellularSharedUtils ]
 ...

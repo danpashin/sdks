@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           49C00C6F-F7A7-3018-89F0-72B8675F6EFF
   - target:          arm64-ios
-    value:           08C509AE-626B-39F7-A75E-690F86CEC1F3
+    value:           0A6AE37D-BD7E-3FBC-B38C-861F1B933DBC
   - target:          arm64e-ios
-    value:           E183357F-D5A2-3C2A-966C-A2593D2989BA
+    value:           222ACD71-AF15-371A-B01D-2CB4E2B959C3
 install-name:    '/System/Library/Frameworks/SceneKit.framework/SceneKit'
-current-version: 568.255
+current-version: 581.2
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _C3DAnimationManagerContainsSceneTimeBasedAnimation, _C3DAnimationManagerIsEmpty, 
@@ -66,7 +66,7 @@ exports:
                        SCNPhysicsCustomField, SCNPhysicsDragField, SCNPhysicsLinearGravityField, 
                        SCNPhysicsMagneticField, SCNPhysicsNoiseField, SCNPhysicsRadialGravityField, 
                        SCNPhysicsSpringField, SCNPhysicsTurbulenceField, SCNPhysicsVortexField ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _C3DGetFileDecryptionCallbacks, _C3DSetFileDecryptionCallbacks, 
                        _SCNAnimationCommitOnCompletion, _SCNBindingValueTransformerKey, 
                        _SCNCaptureDeviceOutputConsumerOptionContainsAlpha, _SCNConsistencyElementIDErrorKey, 
@@ -165,9 +165,8 @@ exports:
                        _SCNShaderModifierEntryPointSurface, _SCNTextureContentWithGLInfo, 
                        _SCNTextureOffsetXKey, _SCNTextureOffsetYKey, _SCNVector3EqualToVector3, 
                        _SCNVector3Zero, _SCNVector4EqualToVector4, _SCNVector4Zero, 
-                       _SCNViewTransform, _SCNWriteMTLTextureToData, __SCNGetCollectedShadersForPid, 
-                       __SCNGetPerformanceStatisticsForPid, __SCNSetLinearRenderingEnabled, 
-                       __SCNSetShaderCacheURL, __SCNSetShouldPostShadableCompilationNotifications, 
+                       _SCNViewTransform, __SCNGetCollectedShadersForPid, __SCNGetPerformanceStatisticsForPid, 
+                       __SCNSetLinearRenderingEnabled, __SCNSetShaderCacheURL, __SCNSetShouldPostShadableCompilationNotifications, 
                        __SCNShadableConvertShaderToMetalIfNeeded, __SCNShadableDidCompileNotificationName, 
                        __SCNShadableIssuesKey, __SCNStartCollectingPerformanceStatisticsForPid, 
                        __SCNStopCollectingPerformanceStatisticsForPid, __scnDebuggingInfo, 
@@ -182,16 +181,16 @@ exports:
                        SCNAuthoringEnvironment2, SCNAvoidOccluderConstraint, SCNBillboardConstraint, 
                        SCNBox, SCNCamera, SCNCameraControlEventHandler, SCNCameraController, 
                        SCNCameraNavigationController, SCNCapsule, SCNCone, SCNConstantScaleConstraint, 
-                       SCNConstraint, SCNCylinder, SCNDistanceConstraint, SCNEventHandler, 
-                       SCNExportOperation, SCNFloor, SCNGeometry, SCNGeometryElement, 
-                       SCNGeometrySource, SCNGeometryTessellator, SCNHitTestResult, 
-                       SCNIKConstraint, SCNImageSource, SCNKeyedArchiver, SCNKeyedUnarchiver, 
-                       SCNLevelOfDetail, SCNLight, SCNLookAtConstraint, SCNManipulableItem, 
-                       SCNManipulator, SCNMaterial, SCNMaterialProperty, SCNMetalLayer, 
-                       SCNMorpher, SCNNode, SCNNodeReference, SCNOffscreenRenderer, 
-                       SCNParticlePropertyController, SCNParticleSystem, SCNPass, 
-                       SCNPassContext, SCNPhysicsBallSocketJoint, SCNPhysicsBehavior, 
-                       SCNPhysicsBody, SCNPhysicsCharacter, SCNPhysicsConeTwistJoint, 
+                       SCNConstraint, SCNCylinder, SCNDistanceConstraint, SCNEffect, 
+                       SCNEventHandler, SCNExportOperation, SCNFloor, SCNGeometry, 
+                       SCNGeometryDeformer, SCNGeometryElement, SCNGeometrySource, 
+                       SCNGeometryTessellator, SCNHitTestResult, SCNIKConstraint, 
+                       SCNImageSource, SCNKeyedArchiver, SCNKeyedUnarchiver, SCNLevelOfDetail, 
+                       SCNLight, SCNLookAtConstraint, SCNManipulableItem, SCNManipulator, 
+                       SCNMaterial, SCNMaterialProperty, SCNMetalLayer, SCNMorpher, 
+                       SCNNode, SCNNodeReference, SCNOffscreenRenderer, SCNParticlePropertyController, 
+                       SCNParticleSystem, SCNPass, SCNPassContext, SCNPhysicsBallSocketJoint, 
+                       SCNPhysicsBehavior, SCNPhysicsBody, SCNPhysicsCharacter, SCNPhysicsConeTwistJoint, 
                        SCNPhysicsContact, SCNPhysicsField, SCNPhysicsHingeJoint, 
                        SCNPhysicsShape, SCNPhysicsSliderJoint, SCNPhysicsVehicle, 
                        SCNPhysicsVehicleWheel, SCNPhysicsWorld, SCNPlane, SCNProgram, 

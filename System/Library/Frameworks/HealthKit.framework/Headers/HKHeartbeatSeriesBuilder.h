@@ -2,7 +2,7 @@
 //  HKHeartbeatSeriesBuilder.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKSeriesBuilder.h>
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
                      Calling finishSeriesWithcompletion: will stop and complete the series. If the builder is deleted,
                      or the client goes away before calling the finish method, data will be lost.
  */
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKHeartbeatSeriesBuilder : HKSeriesBuilder
 
 /*!

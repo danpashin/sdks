@@ -7,17 +7,29 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           F54FCEDD-9F91-3BC4-8208-2D4EB25A4E6C
+    value:           88851C94-0787-3546-AAA5-84D9B97B77FE
   - target:          arm64e-ios
-    value:           342945C0-E685-3468-95AB-6C4C7DEBA59E
+    value:           28E28A9B-5EE3-35E5-8002-58BF539A2361
 install-name:    '/usr/lib/libAudioToolboxUtility.dylib'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ AudioDiagnostics, AudioToolbox, AudioToolboxCore, CoreAudio, 
-                       CoreAudioInternal, EmbeddedSystemAUs, PerformanceTests, VibeSynthEngine, 
-                       aupbregistrarservice, com.apple.audio.DiagnosticExtension, 
+                       CoreAudioInternal, EmbeddedSystemAUs, PerformanceTests, ValidationCapsule, 
+                       VibeSynthEngine, audiomxd, aupbregistrarservice, com.apple.audio.DiagnosticExtension, 
                        mediaserverd, systemsoundserver-simd, systemsoundserverd ]
 exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _CASDefaultLog, _CAShowAudioBufferList, _CAShowAudioChannelLayout, 
+                       _CAVectorUnit_Examine, _CAVectorUnit_GetByteWidth, _CrashIfClientProvidedBogusAudioBufferList, 
+                       _MSHCreateMIGServerSource, _MSHCreateMachServerSource, _MSHGetMachPortFromSource, 
+                       _MSHMIGDispatchMessage, _MSHMIGReceiveAndDispatchMessage, 
+                       _MSHMIGSourceSetNoSendersCallback, _MSHMIGSourceSetSendOnceCallback, 
+                       _MultiRadixFFT_CplxInPlaceTransform, _MultiRadixFFT_CplxOutOfPlaceTransform, 
+                       _MultiRadixFFT_Create, _MultiRadixFFT_Dispose, _MultiRadixFFT_Size, 
+                       _MultiRadixRealFFT_Create, _MultiRadixRealFFT_Dispose, _MultiRadixRealFFT_RealInPlaceTransform, 
+                       _MultiRadixRealFFT_RealOutOfPlaceForwardTransform, _MultiRadixRealFFT_RealOutOfPlaceInverseTransform, 
+                       _MultiRadixRealFFT_Size, _gBogusAuditToken, _gCAVectorUnitType, 
+                       _realFFTMultiply, _realFFTZeroPad, _realIFFTUnload, _sReadCounter_BSD ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z13NextMIDIEventPK10MIDIPacketPKh, __Z13NextMIDIEventPKhS0_, 
                        __Z17CAStringForOSTypejPcm, __Z18MIDIPacketList_NewPK14MIDIPacketList, 
@@ -135,7 +147,9 @@ exports:
                        __ZN12MemoryStreamC1ER7TStreami, __ZN12MemoryStreamC1Ev, __ZN12MemoryStreamC2ENSt3__110shared_ptrI7TStreamEEi, 
                        __ZN12MemoryStreamC2EPK8__CFData, __ZN12MemoryStreamC2ER7TStreami, 
                        __ZN12MemoryStreamC2Ev, __ZN12MemoryStreamD0Ev, __ZN12MemoryStreamD1Ev, 
-                       __ZN12MemoryStreamD2Ev, __ZN13MultiRadixFFT20CplxInPlaceTransformEP15DSPSplitComplexi, 
+                       __ZN12MemoryStreamD2Ev, __ZN13CAVolumeCurve10ResetRangeEv, 
+                       __ZN13CAVolumeCurve19SetTransferFunctionEj, __ZN13CAVolumeCurve8AddRangeEiiff, 
+                       __ZN13CAVolumeCurveC1Ev, __ZN13CAVolumeCurveC2Ev, __ZN13MultiRadixFFT20CplxInPlaceTransformEP15DSPSplitComplexi, 
                        __ZN13MultiRadixFFT21NearestSupportedSizesEj, __ZN13MultiRadixFFT23CplxOutOfPlaceTransformEPK15DSPSplitComplexPS0_i, 
                        __ZN13RamstadKernelC1Eiidb, __ZN13RamstadKernelC2Eiidb, __ZN13XOSTransactor14endTransactionEv, 
                        __ZN13XOSTransactor16beginTransactionEv, __ZN14CABundleLockerC1Ev, 
@@ -235,13 +249,13 @@ exports:
                        __ZN21PlatformUtilities_iOS13ProductIsiPodEv, __ZN21PlatformUtilities_iOS14GetProductTypeEv, 
                        __ZN21PlatformUtilities_iOS14IsCarrierBuildEv, __ZN21PlatformUtilities_iOS15IsInternalBuildEv, 
                        __ZN21PlatformUtilities_iOS15ProductIsAPhoneEv, __ZN21PlatformUtilities_iOS16ProductIsAppleTVEv, 
-                       __ZN21PlatformUtilities_iOS18GetBuiltInMicCountEv, __ZN21PlatformUtilities_iOS18ProductHasBasebandEv, 
-                       __ZN21PlatformUtilities_iOS19ProductIsAppleWatchEv, __ZN21PlatformUtilities_iOS19ProductIsMuseDeviceEv, 
-                       __ZN21PlatformUtilities_iOS20ProductSupportsBrookEv, __ZN21PlatformUtilities_iOS22ProductSupportsCarPlayEv, 
-                       __ZN21PlatformUtilities_iOS22ProductSupportsHapticsEv, __ZN21PlatformUtilities_iOS23CopyProductAssignedNameEv, 
-                       __ZN21PlatformUtilities_iOS23ProductSupportsVibratorEv, __ZN21PlatformUtilities_iOS24CopyAcousticIDFilePrefixEv, 
-                       __ZN21PlatformUtilities_iOS24ProductSupportsAssistantEv, __ZN21PlatformUtilities_iOS24ProductSupportsLivePhotoEv, 
-                       __ZN21PlatformUtilities_iOS25CopyProductTypeFilePrefixE14iOSProductType, 
+                       __ZN21PlatformUtilities_iOS16ProductIsHomePodEv, __ZN21PlatformUtilities_iOS18GetBuiltInMicCountEv, 
+                       __ZN21PlatformUtilities_iOS18ProductHasBasebandEv, __ZN21PlatformUtilities_iOS19ProductIsAppleWatchEv, 
+                       __ZN21PlatformUtilities_iOS19ProductIsMuseDeviceEv, __ZN21PlatformUtilities_iOS20ProductSupportsBrookEv, 
+                       __ZN21PlatformUtilities_iOS22ProductSupportsCarPlayEv, __ZN21PlatformUtilities_iOS22ProductSupportsHapticsEv, 
+                       __ZN21PlatformUtilities_iOS23CopyProductAssignedNameEv, __ZN21PlatformUtilities_iOS23ProductSupportsVibratorEv, 
+                       __ZN21PlatformUtilities_iOS24CopyAcousticIDFilePrefixEv, __ZN21PlatformUtilities_iOS24ProductSupportsAssistantEv, 
+                       __ZN21PlatformUtilities_iOS24ProductSupportsLivePhotoEv, __ZN21PlatformUtilities_iOS25CopyProductTypeFilePrefixE14iOSProductType, 
                        __ZN21PlatformUtilities_iOS25IsTelephonyCaptureAllowedE17CapturePreference, 
                        __ZN21PlatformUtilities_iOS25ProductSupportsSiriSpeaksEv, 
                        __ZN21PlatformUtilities_iOS26ProductSupportsSiriBargeInEv, 
@@ -257,6 +271,8 @@ exports:
                        __ZN24CAStreamBasicDescription11ResetFormatER27AudioStreamBasicDescription, 
                        __ZN24CAStreamBasicDescription13FillOutFormatER27AudioStreamBasicDescriptionRKS0_, 
                        __ZN24CAStreamBasicDescription23sTextParsingUsageStringE, 
+                       __ZN24CAStreamBasicDescription25VirtualizeLinearPCMFormatER27AudioStreamBasicDescription, 
+                       __ZN24CAStreamBasicDescription25VirtualizeLinearPCMFormatEbR27AudioStreamBasicDescription, 
                        __ZN24CAStreamBasicDescription8FromTextEPKcR27AudioStreamBasicDescription, 
                        __ZN27CACFDistributedNotification11AddObserverEPKvPFvP22__CFNotificationCenterPvPK10__CFStringS1_PK14__CFDictionaryES7_32CFNotificationSuspensionBehavior, 
                        __ZN27CACFDistributedNotification14RemoveObserverEPKvPK10__CFString, 
@@ -325,6 +341,12 @@ exports:
                        __ZNK10RamstadSRC28inputSamplesForOutputSamplesEi, __ZNK10RamstadSRC28outputSamplesForInputSamplesEiRi, 
                        __ZNK11PListLogger3logEPKcz, __ZNK11PListLogger4vlogEPKcPc, 
                        __ZNK12CADeprecated7CAMutex22IsOwnedByCurrentThreadEv, __ZNK12CADeprecated7CAMutex6IsFreeEv, 
+                       __ZNK13CAVolumeCurve12GetMaximumDBEv, __ZNK13CAVolumeCurve12GetMinimumDBEv, 
+                       __ZNK13CAVolumeCurve13GetMaximumRawEv, __ZNK13CAVolumeCurve13GetMinimumRawEv, 
+                       __ZNK13CAVolumeCurve14ConvertDBToRawEf, __ZNK13CAVolumeCurve14ConvertRawToDBEi, 
+                       __ZNK13CAVolumeCurve17ConvertDBToScalarEf, __ZNK13CAVolumeCurve17ConvertScalarToDBEf, 
+                       __ZNK13CAVolumeCurve18CheckForContinuityEv, __ZNK13CAVolumeCurve18ConvertRawToScalarEi, 
+                       __ZNK13CAVolumeCurve18ConvertScalarToRawEf, __ZNK13CAVolumeCurve29GetIsApplyingTransferFunctionEv, 
                        __ZNK14CACFDictionary10GetFixed32EPK10__CFStringRf, __ZNK14CACFDictionary10GetFixed64EPK10__CFStringRd, 
                        __ZNK14CACFDictionary10GetFloat32EPK10__CFStringRf, __ZNK14CACFDictionary10GetFloat64EPK10__CFStringRd, 
                        __ZNK14CACFDictionary12GetCACFArrayEPK10__CFStringR9CACFArray, 
@@ -408,16 +430,4 @@ exports:
                        __ZN9DFTHandleILb1EEC2Ev, __ZN9DFTHandleILb1EED0Ev, __ZN9DFTHandleILb1EED1Ev, 
                        __ZN9DFTHandleILb1EED2Ev, __ZN9DFTHandleILb1EEaSERKS0_, __ZNK9DFTHandleILb0EE4SizeEv, 
                        __ZNK9DFTHandleILb1EE4SizeEv, __ZTV9DFTHandleILb0EE, __ZTV9DFTHandleILb1EE ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _CASDefaultLog, _CAShowAudioBufferList, _CAShowAudioChannelLayout, 
-                       _CAVectorUnit_Examine, _CAVectorUnit_GetByteWidth, _CrashIfClientProvidedBogusAudioBufferList, 
-                       _MSHCreateMIGServerSource, _MSHCreateMachServerSource, _MSHGetMachPortFromSource, 
-                       _MSHMIGDispatchMessage, _MSHMIGReceiveAndDispatchMessage, 
-                       _MSHMIGSourceSetNoSendersCallback, _MSHMIGSourceSetSendOnceCallback, 
-                       _MultiRadixFFT_CplxInPlaceTransform, _MultiRadixFFT_CplxOutOfPlaceTransform, 
-                       _MultiRadixFFT_Create, _MultiRadixFFT_Dispose, _MultiRadixFFT_Size, 
-                       _MultiRadixRealFFT_Create, _MultiRadixRealFFT_Dispose, _MultiRadixRealFFT_RealInPlaceTransform, 
-                       _MultiRadixRealFFT_RealOutOfPlaceForwardTransform, _MultiRadixRealFFT_RealOutOfPlaceInverseTransform, 
-                       _MultiRadixRealFFT_Size, _gBogusAuditToken, _gCAVectorUnitType, 
-                       _realFFTMultiply, _realFFTZeroPad, _realIFFTUnload, _sReadCounter_BSD ]
 ...

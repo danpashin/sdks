@@ -2,7 +2,7 @@
 //  HKHealthStore.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2018 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class         HKHealthStore
  @abstract      The HKHealthStore class provides an interface for accessing and storing the user's health data.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKHealthStore : NSObject
 
 /*!
@@ -50,7 +50,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 restore or synchronization.
                 Call supportsHealthRecords before attempting to request authorization for any clinical types.
  */
-- (BOOL)supportsHealthRecords API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(watchos);
+- (BOOL)supportsHealthRecords API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @method        authorizationStatusForType:
@@ -80,6 +80,24 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                               completion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_REFINED_FOR_SWIFT_ASYNC(3) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
 
 /*!
+ @method        requestPerObjectReadAuthorizationForType:predicate:completion:
+ @abstract      For types that support per object authorization (like vision prescriptions), prompts the user to select
+                the objects for which they want to grant your app access.
+ @discussion    Before attempting to execute queries, the application should first request authorization from the user
+                to read objects for which the application may require access.
+ 
+                The request is performed asynchronously, and its completion will be executed on an arbitrary background
+                queue after the user has responded. The user will always be prompted to provide access to objects
+                regardless of whether access had been previously provided. The user can choose to toggle each object's
+                access with each prompt. The success parameter of the completion indicates whether prompting the user
+                completed successfully and was not cancelled. It does NOT indicate whether the application was granted
+                authorization.
+  */
+- (void)requestPerObjectReadAuthorizationForType:(HKObjectType *)objectType
+                                       predicate:(nullable NSPredicate *)predicate
+                                      completion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
+
+/*!
  @method        getRequestStatusForAuthorizationToShareTypes:readTypes:completion:
  @abstract      Determines whether requesting authorization for the given types is necessary.
  @discussion    Applications may call this method to determine whether the user would be prompted for authorization if
@@ -89,7 +107,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  */
 - (void)getRequestStatusForAuthorizationToShareTypes:(NSSet<HKSampleType *> *)typesToShare
                                            readTypes:(NSSet<HKObjectType *> *)typesToRead
-                                          completion:(void (^)(HKAuthorizationRequestStatus requestStatus, NSError * _Nullable error))completion NS_SWIFT_ASYNC_NAME(statusForAuthorizationRequest(toShare:read:)) API_AVAILABLE(ios(12.0), watchos(5.0));
+                                          completion:(void (^)(HKAuthorizationRequestStatus requestStatus, NSError * _Nullable error))completion NS_SWIFT_ASYNC_NAME(statusForAuthorizationRequest(toShare:read:)) API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        handleAuthorizationForExtensionWithCompletion:
@@ -103,7 +121,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 the user, if necessary, completed successfully and was not cancelled by the user.  It does NOT indicate
                 whether the application was granted authorization.
  */
-- (void)handleAuthorizationForExtensionWithCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos) NS_EXTENSION_UNAVAILABLE("Not available to extensions");
+- (void)handleAuthorizationForExtensionWithCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos) NS_EXTENSION_UNAVAILABLE("Not available to extensions");
 
 /*!
  @method        earliestPermittedSampleDate
@@ -111,7 +129,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    On some platforms, only samples with end dates newer than the value returned by earliestPermittedSampleDate
                 may be saved or retrieved.
  */
-- (NSDate *)earliestPermittedSampleDate API_AVAILABLE(ios(9.0), watchos(2.0));
+- (NSDate *)earliestPermittedSampleDate API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        saveObject:withCompletion:
@@ -151,7 +169,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    An application may only delete objects that it previously saved.  This operation is performed
                 asynchronously and the completion will be executed on an arbitrary background queue.
  */
-- (void)deleteObjects:(NSArray<HKObject *> *)objects withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0), watchos(2.0));
+- (void)deleteObjects:(NSArray<HKObject *> *)objects withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        deleteObjectsOfType:predicate:withCompletion:
@@ -159,7 +177,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    An application may only delete objects that it previously saved.  This operation is performed
                 asynchronously and the completion will be executed on an arbitrary background queue.
  */
-- (void)deleteObjectsOfType:(HKObjectType *)objectType predicate:(NSPredicate *)predicate withCompletion:(void (^)(BOOL success, NSUInteger deletedObjectCount, NSError * _Nullable error))completion  NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0), watchos(2.0));
+- (void)deleteObjectsOfType:(HKObjectType *)objectType predicate:(NSPredicate *)predicate withCompletion:(void (^)(BOOL success, NSUInteger deletedObjectCount, NSError * _Nullable error))completion  NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        executeQuery:
@@ -206,7 +224,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    Before calling this method, the application should request authorization to access objects with the
                 HKCharacteristicType identified by HKCharacteristicTypeIdentifierDateOfBirth.
  */
-- (nullable NSDateComponents *)dateOfBirthComponentsWithError:(NSError **)error API_AVAILABLE(ios(10.0), watchos(3.0));
+- (nullable NSDateComponents *)dateOfBirthComponentsWithError:(NSError **)error API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        biologicalSexWithError:
@@ -230,7 +248,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    Before calling this method, the application should request authorization to access objects with the
                 HKCharacteristicType identified by HKCharacteristicTypeIdentifierFitzpatrickSkinType.
  */
-- (nullable HKFitzpatrickSkinTypeObject *)fitzpatrickSkinTypeWithError:(NSError **)error API_AVAILABLE(ios(9.0), watchos(2.0));
+- (nullable HKFitzpatrickSkinTypeObject *)fitzpatrickSkinTypeWithError:(NSError **)error API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        wheelchairUseWithError:
@@ -238,7 +256,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    Before calling this method, the application should request authorization to access objects with the
                 HKCharacteristicType identified by HKCharacteristicTypeIdentifierWheelchairUse.
  */
-- (nullable HKWheelchairUseObject *)wheelchairUseWithError:(NSError **)error API_AVAILABLE(ios(10.0), watchos(3.0));
+- (nullable HKWheelchairUseObject *)wheelchairUseWithError:(NSError **)error API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method        activityMoveModeWithError:
@@ -246,7 +264,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    Before calling this method, the application should request authorization to access objects with the
                 HKCharacteristicType identified by HKCharacteristicTypeIdentifierActivityMoveMode.
  */
-- (nullable HKActivityMoveModeObject *)activityMoveModeWithError:(NSError **)error API_AVAILABLE(ios(14.0), watchos(7.0));
+- (nullable HKActivityMoveModeObject *)activityMoveModeWithError:(NSError **)error API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 @end
 
@@ -269,7 +287,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  @discussion    This method will asynchronously begin a workout session. The methods on the session's delegate will be 
                 called when the session has successfully started or fails to start.
  */
-- (void)startWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's start method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios);
+- (void)startWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's start method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios, macCatalyst, macos);
 
 /*!
  @method        endWorkoutSession:
@@ -278,7 +296,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 transition to HKWorkoutSessionStateEnded. Once a workout session is ended, it cannot be reused to start
                 a new workout session.
  */
-- (void)endWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's end method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios);
+- (void)endWorkoutSession:(HKWorkoutSession *)workoutSession API_DEPRECATED("Use HKWorkoutSession's end method", watchos(2.0, 5.0)) API_UNAVAILABLE(ios, macCatalyst, macos);
 
 /*!
  @method        pauseWorkoutSession:
@@ -306,14 +324,14 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 protocol will be called with the HKWorkoutConfiguration as a parameter. The receiving Watch app can use
                 this configuration object to create an HKWorkoutSession and start it with -startWorkoutSession:.
  */
-- (void)startWatchAppWithWorkoutConfiguration:(HKWorkoutConfiguration *)workoutConfiguration completion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) NS_SWIFT_ASYNC_NAME(startWatchApp(toHandle:)) API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos);
+- (void)startWatchAppWithWorkoutConfiguration:(HKWorkoutConfiguration *)workoutConfiguration completion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) NS_SWIFT_ASYNC_NAME(startWatchApp(toHandle:)) API_AVAILABLE(ios(10.0), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @method        recoverActiveWorkoutSessionWithCompletion:
  @abstract      Recovers an active workout session after a client crash. If no session is available to be re-attached,
                 nil will be returned. If an error occurs, session will be nil and error will be set appropriately.
  */
-- (void)recoverActiveWorkoutSessionWithCompletion:(void (^)(HKWorkoutSession * _Nullable_result session, NSError * _Nullable error))completion API_AVAILABLE(watchos(5.0)) API_UNAVAILABLE(ios);
+- (void)recoverActiveWorkoutSessionWithCompletion:(void (^)(HKWorkoutSession * _Nullable_result session, NSError * _Nullable error))completion API_AVAILABLE(watchos(5.0)) API_UNAVAILABLE(ios, macCatalyst, macos);
 
 @end
 
@@ -329,11 +347,11 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 HKQuantityTypeIdentifierStepCount) have a minimum frequency of HKUpdateFrequencyHourly. This is enforced
                 transparently to the caller.
  */
-- (void)enableBackgroundDeliveryForType:(HKObjectType *)type frequency:(HKUpdateFrequency)frequency withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0));
+- (void)enableBackgroundDeliveryForType:(HKObjectType *)type frequency:(HKUpdateFrequency)frequency withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0), macCatalyst(13.0), macos(13.0));
 
-- (void)disableBackgroundDeliveryForType:(HKObjectType *)type withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0));
+- (void)disableBackgroundDeliveryForType:(HKObjectType *)type withCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0), macCatalyst(13.0), macos(13.0));
 
-- (void)disableAllBackgroundDeliveryWithCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0));
+- (void)disableAllBackgroundDeliveryWithCompletion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) API_AVAILABLE(watchos(8.0), macCatalyst(13.0), macos(13.0));
 
 @end
 
@@ -345,7 +363,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
                 notification when this occurs, it is necessary to provide an HKHealthStore instance for the object
                 parameter of NSNotificationCenter's addObserver methods.
  */
-HK_EXTERN NSString * const HKUserPreferencesDidChangeNotification API_AVAILABLE(ios(8.2), watchos(2.0));
+HK_EXTERN NSString * const HKUserPreferencesDidChangeNotification API_AVAILABLE(ios(8.2), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 @interface HKHealthStore (HKUserPreferences)
 
@@ -363,7 +381,7 @@ HK_EXTERN NSString * const HKUserPreferencesDidChangeNotification API_AVAILABLE(
  
                 The returned dictionary will map HKQuantityType to HKUnit.
  */
-- (void)preferredUnitsForQuantityTypes:(NSSet<HKQuantityType *> *)quantityTypes completion:(void (^)(NSDictionary<HKQuantityType *, HKUnit *> *preferredUnits, NSError * _Nullable error))completion API_AVAILABLE(ios(8.2), watchos(2.0));
+- (void)preferredUnitsForQuantityTypes:(NSSet<HKQuantityType *> *)quantityTypes completion:(void (^)(NSDictionary<HKQuantityType *, HKUnit *> *preferredUnits, NSError * _Nullable error))completion API_AVAILABLE(ios(8.2), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 @end
 
@@ -377,7 +395,7 @@ HK_EXTERN NSString * const HKUserPreferencesDidChangeNotification API_AVAILABLE(
  */
 - (void)recalibrateEstimatesForSampleType:(HKSampleType *)sampleType
                                    atDate:(NSDate *)date
-                               completion:(void(^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(15.0), watchos(8.0)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) NS_SWIFT_NAME(recalibrateEstimates(sampleType:date:completion:));
+                               completion:(void(^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1) NS_SWIFT_NAME(recalibrateEstimates(sampleType:date:completion:));
 
 @end
 

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64552.29.1
+current-version:       64555.119.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -24,7 +24,7 @@ exports:
                             _VMUPlatformForTask, _VMUPlatformNameForPlatform,
                             _VMUPlatformNameForTask,
                             _VMUPurgeableDisplayCharacter,
-                            _VMURangeContainsRange,
+                            _VMURangeContainsRange, _VMURangeDescription,
                             _VMURangeIntersectsOrAbutsRange,
                             _VMURangeIntersectsRange,
                             _VMURegionTypeDescriptionForTagShareProtAndPager,
@@ -33,11 +33,12 @@ exports:
                             _VMUScanTypeScanDescription,
                             _VMUScanningMaskForAllReferences,
                             _VMUScanningMaskForOwningReferences,
+                            _VMUSimplifyCPlusPlusSymbolName,
                             _VMUSortIndexForLibraryPath, _VMUUnionRange,
                             _VMUVMRegionShareModeName,
                             _VMUWithRootNodeMarkingMap, _VMUmallocMetadataLabel,
-                            _VMUmappedFileLabel, _VMUobjcAdditionalDataLabel,
-                            _VMUunusedSharedLibDataLabel,
+                            _VMUmappedFileLabel, _VMUunusedSharedLibDataLabel,
+                            _VMUunusedSharedLibLabelOrPathPrefix,
                             _VMUunusedSharedLibLabelPrefix,
                             _VMUunusedSharedLibTextLabel,
                             __VMUEnumerateMarkedObjects, _dispositionDescription,
@@ -73,7 +74,8 @@ exports:
                             VMUInverseDepthGraphEnumerator, VMULeakDetector,
                             VMUMutableClassInfo, VMUMutableFieldInfo, VMUNodeGroup,
                             VMUNodeToStringMap, VMUNonOverlappingRangeArray,
-                            VMUObjectGraph, VMUObjectIdentifier, VMUOptionParser,
+                            VMUObjectGraph, VMUObjectIdentifier,
+                            VMUObjectIdentifierDriverKitSupport, VMUOptionParser,
                             VMUProcInfo, VMUProcList, VMUProcessDescription,
                             VMUProcessObjectGraph, VMUProgressBar, VMURangeArray,
                             VMURangeToStringMap, VMUReverseGraphEnumerator,
@@ -84,10 +86,11 @@ exports:
                             VMUTaskThreadStates, VMUTerminalColorizer, VMUVMRegion,
                             VMUVMRegionIdentifier, VMUVMRegionRangeInfo,
                             VMUVMRegionTracker ]
-    objc-ivars:           [ VMUBacktrace._callstack, VMUBacktrace._flavor,
-                            VMUCallTreeNode._address, VMUCallTreeNode._children,
-                            VMUCallTreeNode._count, VMUCallTreeNode._name,
-                            VMUCallTreeNode._numBytes,
+    objc-ivars:           [ VMUBacktrace._asyncCallstack,
+                            VMUBacktrace._callstack, VMUBacktrace._flavor,
+                            VMUBacktrace._timestamp, VMUCallTreeNode._address,
+                            VMUCallTreeNode._children, VMUCallTreeNode._count,
+                            VMUCallTreeNode._name, VMUCallTreeNode._numBytes,
                             VMUCallTreeNode._numChildren,
                             VMUCallTreeNode._parent,
                             VMUNodeToStringMap._nodeToStringIndexMapVoidPtr,
@@ -114,7 +117,8 @@ exports:
                             VMUSwiftRuntimeInfo._refcountIsSideTableMarkerMask,
                             VMUSwiftRuntimeInfo._refcountIsSideTableMarkerValue,
                             VMUSwiftRuntimeInfo._runtimeHasStableABI,
-                            VMUSwiftRuntimeInfo._sideTableLayout,
+                            VMUSwiftRuntimeInfo._sideTableLayoutWithScannableOwnerPointer,
+                            VMUSwiftRuntimeInfo._sideTableLayoutWithUnscannableOwnerPointer,
                             VMUSwiftRuntimeInfo._sideTablePointerLeftShift,
                             VMUSwiftRuntimeInfo._sideTablePointerMask,
                             VMUSwiftRuntimeInfo._sideTablePointerRightShift,

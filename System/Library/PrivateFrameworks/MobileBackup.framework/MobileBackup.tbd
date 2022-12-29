@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
-current-version:       1781
+current-version:       1816
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -19,7 +19,6 @@ exports:
                             _MBDeviceClass, _MBDeviceColor,
                             _MBDeviceCoverGlassColor, _MBDeviceEnclosureColor,
                             _MBDeviceHousingColor, _MBDeviceName,
-                            _MBDeviceSpecificLocalizedStringFromTable,
                             _MBDeviceUDID_Legacy, _MBDeviceUDID_Legacy_client,
                             _MBDeviceUUID, _MBEmptyArray, _MBEmptyDictionary,
                             _MBFreeDiskSpace, _MBFreeDiskSpaceForVolume,
@@ -36,7 +35,13 @@ exports:
                             _MBIsiCloudSnapshotPath,
                             _MBLivePathFromiCloudSnapshotPath,
                             _MBLivePathFromiTunesSnapshotPath, _MBLocale,
-                            _MBLocalizations, _MBLocalizedStringFromTable,
+                            _MBLocalizations, _MBLocalizedString,
+                            _MBLocalizedStringFromTable,
+                            _MBLocalizedStringWithFormat,
+                            _MBLocalizedStringWithGreenTeaSuffix,
+                            _MBLocalizedStringWithGreenTeaSuffixAndSubstitutions,
+                            _MBLocalizedStringWithSubstitutions,
+                            _MBLocalizedStringWithSubstitutionsFromTable,
                             _MBLogDeviceProperties, _MBLogEnableFileLogging,
                             _MBLogStashLogs, _MBLogStringForNSQualityOfService,
                             _MBMarketingName, _MBMobileFileAttributes,

@@ -2,7 +2,7 @@
 //  HKAudiogramSample.h
 //  HealthKit
 //
-//  Copyright © 2017 Apple. All rights reserved.
+//  Copyright © 2017-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKQuantity.h>
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class     HKAudiogramSample
  @abstract  A sample object representing the results of a standard hearing test.
  */
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKAudiogramSample : HKSample
 
 /*!
@@ -41,7 +41,7 @@ HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
 
 @end
 
-HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
+HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 @interface HKAudiogramSensitivityPoint : NSObject
 
 /*!

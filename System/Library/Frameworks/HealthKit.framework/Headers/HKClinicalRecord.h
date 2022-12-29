@@ -2,7 +2,7 @@
 //  HKClinicalRecord.h
 //  HealthKit
 //
-//  Copyright (c) 2018 Apple Inc. All rights reserved.
+//  Copyright (c) 2018-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKSample.h>
@@ -12,8 +12,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-HK_EXTERN NSString * const HKPredicateKeyPathClinicalRecordFHIRResourceIdentifier API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
-HK_EXTERN NSString * const HKPredicateKeyPathClinicalRecordFHIRResourceType API_AVAILABLE(ios(12.0)) __WATCHOS_PROHIBITED;
+HK_EXTERN NSString * const HKPredicateKeyPathClinicalRecordFHIRResourceIdentifier API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) __WATCHOS_PROHIBITED;
+HK_EXTERN NSString * const HKPredicateKeyPathClinicalRecordFHIRResourceType API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0)) __WATCHOS_PROHIBITED;
 
 /*!
  @class		   HKClinicalRecord
@@ -24,7 +24,7 @@ HK_EXTERN NSString * const HKPredicateKeyPathClinicalRecordFHIRResourceType API_
                FHIRResource.identifier instead.
 */
 HK_EXTERN
-API_AVAILABLE(ios(12.0))
+API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(13.0))
 __WATCHOS_PROHIBITED
 @interface HKClinicalRecord : HKSample <NSSecureCoding, NSCopying>
 

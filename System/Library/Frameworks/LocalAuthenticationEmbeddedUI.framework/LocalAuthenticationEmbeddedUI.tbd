@@ -1,0 +1,21 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           9C8F1E9E-1F57-3DD4-95D6-6D1D82152429
+  - target:          arm64e-ios
+    value:           4E92AE06-9860-3FC1-B2F0-EE9FF01B50C6
+install-name:    '/System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/LocalAuthenticationEmbeddedUI'
+current-version: 1131.2.3
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _LACustomPasswordTypeAlphanumeric, _LACustomPasswordTypeCustomDigits, 
+                       _LACustomPasswordTypeFourDigits, _LACustomPasswordTypeSixDigits ]
+    objc-classes:    [ LAContextUITrampoline, LACustomPasswordController, LACustomPasswordControllerConfiguration, 
+                       LACustomPasswordControllerStyle ]
+...

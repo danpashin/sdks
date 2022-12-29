@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARMeshAnchor.h>)
 //
 //  ARMeshAnchor.h
 //  ARKit
@@ -29,3 +30,6 @@ API_AVAILABLE(ios(13.4))
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARMeshAnchor.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARMeshAnchor.h>)

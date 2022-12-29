@@ -2,7 +2,7 @@
 //  HKQuantitySeriesSampleBuilder.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
                 -finishSeriesWithMetadata:completion:. Calling -discard invalidates the series and
                 discards any data that was previously associated with it.
  */
-HK_EXTERN API_AVAILABLE(ios(12.0), watchos(5.0))
+HK_EXTERN API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0))
 @interface HKQuantitySeriesSampleBuilder : NSObject
 
 /*!
@@ -81,7 +81,7 @@ HK_EXTERN API_AVAILABLE(ios(12.0), watchos(5.0))
  */
 - (BOOL)insertQuantity:(HKQuantity *)quantity
           dateInterval:(NSDateInterval *)dateInterval
-                 error:(NSError **)error NS_SWIFT_NAME(insert(_:for:)) API_AVAILABLE(ios(13.0), watchos(6.0));
+                 error:(NSError **)error NS_SWIFT_NAME(insert(_:for:)) API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @method            insertQuantity:date:completion:

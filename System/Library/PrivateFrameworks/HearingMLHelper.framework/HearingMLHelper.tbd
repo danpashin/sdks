@@ -8,6 +8,10 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _HearingMLHelperVersionNumber,
+    symbols:              [ _HearingMLHelperSecureCodingClasses,
+                            _HearingMLHelperServiceInterface,
+                            _HearingMLHelperVersionNumber,
                             _HearingMLHelperVersionString ]
+    objc-classes:         [ AXSDKShotModelCreationManager,
+                            HearingMLHelperService ]
 ...

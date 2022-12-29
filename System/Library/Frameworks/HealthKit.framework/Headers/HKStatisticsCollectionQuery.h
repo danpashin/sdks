@@ -2,7 +2,7 @@
 //  HKStatisticsCollectionQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKStatistics.h>
@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class HKStatistics;
 
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKStatisticsCollection : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -53,7 +53,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKStatisticsCollectionQueryDescriptor", ios(8.0, API_TO_BE_DEPRECATED), watchos(2.0, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(8.0), watchos(2.0))
+API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 #endif
 @interface HKStatisticsCollectionQuery : HKQuery
 

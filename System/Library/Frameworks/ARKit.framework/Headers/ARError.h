@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARError.h>)
 //
 //  ARError.h
 //  ARKit
@@ -31,6 +32,12 @@ typedef NS_ERROR_ENUM(ARErrorDomain, ARErrorCode) {
     
     /** App does not have permission to use the location data of the device. The user may change this in settings. */
     ARErrorCodeLocationUnauthorized          API_AVAILABLE(ios(14.0)) = 105,
+    
+    /** A high-resolution frame is requested while another one is being captured. */
+    ARErrorCodeHighResolutionFrameCaptureInProgress API_AVAILABLE(ios(16.0)) = 106,
+    
+    /** High-resolution frame capture failed. */
+    ARErrorCodeHighResolutionFrameCaptureFailed API_AVAILABLE(ios(16.0)) = 107,
     
     /** World tracking has encountered a fatal error. */
     ARErrorCodeWorldTrackingFailed                                    = 200,
@@ -73,3 +80,6 @@ typedef NS_ERROR_ENUM(ARErrorDomain, ARErrorCode) {
 };
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARError.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARError.h>)

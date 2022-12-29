@@ -2,14 +2,14 @@
 //  HKUnit.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKUnit : NSObject <NSSecureCoding, NSCopying>
 
 /// Returns a unique string representation for the unit that could be used with +unitFromString:
@@ -32,6 +32,8 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
 // Hz               (hertz)   [Frequency]
 // mol<molar mass>  (moles)   [Mass] <molar mass> is the number of grams per mole. For example, mol<180.1558>
 // V                (volts)   [Electrical Potential Difference]
+// W                (watts)   [Power]
+// rad              (radians) [Angle]
 
 // SI units can be prefixed as follows:
 // da   (deca-)   = 10                 d    (deci-)   = 1/10
@@ -116,7 +118,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
 typedef NS_ENUM(NSInteger, HKMetricPrefix) {
     HKMetricPrefixNone      = 0,    //10^0
     
-    HKMetricPrefixFemto     API_AVAILABLE(ios(13.0), watchos(6.0)) = 13, //10^-15
+    HKMetricPrefixFemto     API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0)) = 13, //10^-15
     HKMetricPrefixPico      = 1,    //10^-12
     HKMetricPrefixNano      = 2,    //10^-9
     HKMetricPrefixMicro     = 3,    //10^-6
@@ -129,7 +131,7 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
     HKMetricPrefixMega      = 10,   //10^6
     HKMetricPrefixGiga      = 11,   //10^9
     HKMetricPrefixTera      = 12,   //10^12
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /* Mass Units */
 @interface HKUnit (Mass)
@@ -148,7 +150,7 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 + (instancetype)meterUnit;  // m
 + (instancetype)inchUnit;   // in
 + (instancetype)footUnit;   // ft
-+ (instancetype)yardUnit API_AVAILABLE(ios(9.0), watchos(2.0));   // yd
++ (instancetype)yardUnit API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));   // yd
 + (instancetype)mileUnit;   // mi
 @end
 
@@ -160,8 +162,8 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 + (instancetype)fluidOunceImperialUnit; // fl_oz_imp
 + (instancetype)pintUSUnit;             // pt_us
 + (instancetype)pintImperialUnit;       // pt_imp
-+ (instancetype)cupUSUnit API_AVAILABLE(ios(9.0), watchos(2.0));       // cup_us
-+ (instancetype)cupImperialUnit API_AVAILABLE(ios(9.0), watchos(2.0)); // cup_imp
++ (instancetype)cupUSUnit API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));       // cup_us
++ (instancetype)cupImperialUnit API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0)); // cup_imp
 @end
 
 /* Pressure Units */
@@ -171,8 +173,8 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 + (instancetype)millimeterOfMercuryUnit;    // mmHg
 + (instancetype)centimeterOfWaterUnit;      // cmAq
 + (instancetype)atmosphereUnit;             // atm
-+ (instancetype)decibelAWeightedSoundPressureLevelUnit API_AVAILABLE(ios(13.0), watchos(6.0)); // dBASPL
-+ (instancetype)inchesOfMercuryUnit API_AVAILABLE(ios(14.0), watchos(7.0)); // inHg
++ (instancetype)decibelAWeightedSoundPressureLevelUnit API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0)); // dBASPL
++ (instancetype)inchesOfMercuryUnit API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)); // inHg
 @end
 
 /* Time Units */
@@ -189,8 +191,8 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 + (instancetype)jouleUnitWithMetricPrefix:(HKMetricPrefix)prefix;      // J
 + (instancetype)jouleUnit;          // J
 + (instancetype)kilocalorieUnit;    // 1 kcal = 4184.0 J
-+ (instancetype)smallCalorieUnit API_AVAILABLE(ios(11.0), watchos(4.0));    // 1 cal = 4.1840 J
-+ (instancetype)largeCalorieUnit API_AVAILABLE(ios(11.0), watchos(4.0));    // 1 Cal = 4184.0 J
++ (instancetype)smallCalorieUnit API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));    // 1 cal = 4.1840 J
++ (instancetype)largeCalorieUnit API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));    // 1 Cal = 4184.0 J
 + (instancetype)calorieUnit API_DEPRECATED("Use smallCalorieUnit or largeCalorieUnit, depending on which you mean", ios(8.0, 11.0), watchos(2.0, 4.0));
 @end
 
@@ -209,7 +211,7 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 
 /* Pharmacology Units */
 @interface HKUnit (Pharmacology)
-+ (instancetype)internationalUnit NS_SWIFT_NAME(internationalUnit()) API_AVAILABLE(ios(11.0), watchos(4.0));  // IU
++ (instancetype)internationalUnit NS_SWIFT_NAME(internationalUnit()) API_AVAILABLE(ios(11.0), watchos(4.0), macCatalyst(13.0), macos(13.0));  // IU
 @end
 
 /* Scalar Units */
@@ -220,7 +222,7 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 
 /* Hearing Sensitivity */
 @interface HKUnit (HearingSensitivity)
-+ (instancetype)decibelHearingLevelUnit API_AVAILABLE(ios(13.0), watchos(6.0));  // dBHL
++ (instancetype)decibelHearingLevelUnit API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));  // dBHL
 @end
 
 @interface HKUnit (Math)
@@ -232,14 +234,33 @@ typedef NS_ENUM(NSInteger, HKMetricPrefix) {
 
 /* Frequency Units */
 @interface HKUnit (Frequency)
-+ (instancetype)hertzUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(13.0), watchos(6.0));      // Hz
-+ (instancetype)hertzUnit API_AVAILABLE(ios(13.0), watchos(6.0));  // Hz
++ (instancetype)hertzUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));      // Hz
++ (instancetype)hertzUnit API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0));  // Hz
 @end
 
 /* Electrical Potential Difference Units */
 @interface HKUnit (ElectricPotentialDifference)
-+ (instancetype)voltUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(14.0), watchos(7.0));      // V
-+ (instancetype)voltUnit API_AVAILABLE(ios(14.0), watchos(7.0));  // V
++ (instancetype)voltUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));      // V
++ (instancetype)voltUnit API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));  // V
+@end
+
+/* Power Units */
+@interface HKUnit (Power)
++ (instancetype)wattUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));      // W
++ (instancetype)wattUnit API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // W
+@end
+
+/* Optical Power */
+@interface HKUnit (OpticalPower)
++ (instancetype)diopterUnit API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // D
++ (instancetype)prismDiopterUnit API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // pD
+@end
+
+/* Angle Units */
+@interface HKUnit (Angle)
++ (instancetype)radianAngleUnitWithMetricPrefix:(HKMetricPrefix)prefix API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // rad
++ (instancetype)radianAngleUnit API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // rad
++ (instancetype)degreeAngleUnit API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));  // deg
 @end
 
 /* Mole Constants */

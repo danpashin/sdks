@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaConversionService.framework/MediaConversionService
-current-version:       450.0.160
+current-version:       502.13.160
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -30,10 +30,13 @@ exports:
                             _PAMediaConversionServiceBlastDoorSourcePropertiesKey,
                             _PAMediaConversionServiceBlastDoorVideoComplementSourcePropertiesKey,
                             _PAMediaConversionServiceBookmarkKey,
+                            _PAMediaConversionServiceCalculatedAdjustmentInformationKey,
                             _PAMediaConversionServiceConversionDequeueAndStartProcessingDateKey,
                             _PAMediaConversionServiceConversionEndDateKey,
                             _PAMediaConversionServiceConversionPerfCheckDataKey,
                             _PAMediaConversionServiceConversionStartDateKey,
+                            _PAMediaConversionServiceConversionTotalDurationTimeIntervalClientSideKey,
+                            _PAMediaConversionServiceConversionTotalDurationTimeIntervalServiceSideKey,
                             _PAMediaConversionServiceDeduplicatedAgainstOriginalRequestIdentifierKey,
                             _PAMediaConversionServiceDestinationBookmarkCollectionKey,
                             _PAMediaConversionServiceErrorDomain,
@@ -61,6 +64,7 @@ exports:
                             _PAMediaConversionServiceOptionAdjustmentFinalizationCandidacyKey,
                             _PAMediaConversionServiceOptionAdjustmentInformationKey,
                             _PAMediaConversionServiceOptionApplyOrientationTransformKey,
+                            _PAMediaConversionServiceOptionAudioTrackGroupHandlingKey,
                             _PAMediaConversionServiceOptionBlastDoorMediaIsImageKey,
                             _PAMediaConversionServiceOptionBoundingBoxKey,
                             _PAMediaConversionServiceOptionColorSpaceKey,
@@ -70,6 +74,7 @@ exports:
                             _PAMediaConversionServiceOptionFormatConversionOnlyKey,
                             _PAMediaConversionServiceOptionIsGIFExportConversionKey,
                             _PAMediaConversionServiceOptionIsPassthroughConversionKey,
+                            _PAMediaConversionServiceOptionIsPhotosAdjustmentsCalculationKey,
                             _PAMediaConversionServiceOptionIsVideoMetadataTrackExtractionKey,
                             _PAMediaConversionServiceOptionJobPriorityKey,
                             _PAMediaConversionServiceOptionLivePhotoPairingIdentifierKey,
@@ -87,12 +92,10 @@ exports:
                             _PAMediaConversionServiceOptionRotationAngleDegreesKey,
                             _PAMediaConversionServiceOptionScaleFactorKey,
                             _PAMediaConversionServiceOptionTargetFileSizeKey,
-                            _PAMediaConversionServiceOptionTimeScaleMultiplierKey,
-                            _PAMediaConversionServiceOptionTimeScaleRangeKey,
-                            _PAMediaConversionServiceOptionTrimRangeKey,
                             _PAMediaConversionServiceOptionUnitTestSupportExtraEnvironmentVariablesKey,
                             _PAMediaConversionServiceOptionUnitTestSupportServiceShouldExitAfterRequestKey,
                             _PAMediaConversionServiceOptionUnitTestSupportServiceShouldExitDuringRequestKey,
+                            _PAMediaConversionServiceOptionUnitTestSupportServiceShouldSimulateCameraActiveKey,
                             _PAMediaConversionServiceOptionUnitTestSupportServiceShouldSimulateConversionHangKey,
                             _PAMediaConversionServiceOptionUseEmbeddedImageAsSourceKey,
                             _PAMediaConversionServiceOptionVideoAdjustmentsPropertyListKey,

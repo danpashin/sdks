@@ -7,12 +7,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           BEE3AED7-A343-3ED0-BF84-FBA5D3C3CFCE
+    value:           26FD5E5F-31CA-308E-9C00-02E51D427E51
   - target:          arm64e-ios
-    value:           C277EC29-1D87-366E-87B2-221DB6A9CF22
+    value:           99763FE9-0376-3348-B911-743BE31098F2
 install-name:    '/usr/lib/libperfcheck.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _ep_session_begin, _ep_session_config_with_argstr, _ep_session_create, 
                        _ep_session_destroy, _ep_session_end, _ep_session_process, 
                        _ep_session_set_perfdata_file, _ep_session_set_procpid, _ep_session_set_testname, 

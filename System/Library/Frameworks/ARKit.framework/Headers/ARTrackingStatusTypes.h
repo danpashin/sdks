@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARTrackingStatusTypes.h>)
 //
 //  ARTrackingStatusTypes.h
 //  ARKit
@@ -43,3 +44,6 @@ typedef NS_ENUM(NSInteger, ARTrackingStateReason) {
     ARTrackingStateReasonRelocalizing API_AVAILABLE(ios(11.3)),
 
 } NS_REFINED_FOR_SWIFT;
+#else
+#import <ARKitCore/ARTrackingStatusTypes.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARTrackingStatusTypes.h>)

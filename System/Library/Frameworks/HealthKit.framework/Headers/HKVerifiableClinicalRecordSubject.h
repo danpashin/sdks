@@ -2,7 +2,7 @@
 //  HKVerifiableClinicalRecordSubject.h
 //  HealthKit
 //
-//  Copyright © 2021 Apple. All rights reserved.
+//  Copyright © 2021-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKDefines.h>
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  @class     HKVerifiableClinicalRecordSubject
  @abstract  An NSObject that represents a verifiable clinical record subject.
  */
-HK_EXTERN API_AVAILABLE(ios(15.0)) __WATCHOS_PROHIBITED
+HK_EXTERN API_AVAILABLE(ios(15.0), macCatalyst(15.0), macos(13.0)) __WATCHOS_PROHIBITED
 @interface HKVerifiableClinicalRecordSubject : NSObject <NSSecureCoding, NSCopying>
 
 /*!

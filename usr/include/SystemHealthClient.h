@@ -11,16 +11,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*
- Clients must override getComponentStatusWithError in a sub Class of SystemHealthClient
+ *  Clients must override getComponentStatusWithError in a sub Class of SystemHealthClient
  */
 @interface SystemHealthClient : NSObject
 
 @property (nonatomic) SHComponentType componentType;
 
-- ( instancetype ) init __attribute__( (unavailable( "Please use initWithComponentType" ) ) );
-- ( instancetype ) initWithComponentType:(SHComponentType) component;
+- (instancetype) init __attribute__((unavailable( "Please use initWithComponentType" )));
+- (instancetype) initWithComponentType:(SHComponentType) component;
 
-- ( SHComponentStatus ) getComponentStatusWithError:(NSError **) error;
+- (SHComponentStatus) getComponentStatusWithError:(NSError **) error;
 
 @end
 

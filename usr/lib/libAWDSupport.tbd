@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           C475CB28-52DE-3D7B-BAA5-3C31250191ED
   - target:          arm64-ios
-    value:           D59BA684-C4E0-35C4-8269-987486D3299D
+    value:           7B9F748C-2A2E-3658-AD19-B1977E44458C
   - target:          arm64e-ios
-    value:           740FC183-F2BB-34B0-8D8C-20AA5B5C010E
+    value:           40A95C55-8ADF-3667-9CB3-53E5479C3842
 install-name:    '/usr/lib/libAWDSupport.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -137,22 +137,7 @@ exports:
                        __ZTSN5boost6detail17sp_counted_impl_pINS_10filesystem6detail11dir_itr_impEEE, 
                        __ZTSN5boost6system12system_errorE, __ZTSNSt3__120__shared_ptr_emplaceI17AwdMetadataLoaderNS_9allocatorIS1_EEEE, 
                        __ZTSNSt3__120__shared_ptr_emplaceIN10awdprofile8MetadataENS_9allocatorIS2_EEEE ]
-  - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __Z14sGetMetricNameRKNSt3__110shared_ptrI17AwdMetadataLoaderEEj, 
-                       __Z19sConvertMetricToXpcRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
-                       __Z20sConvertMetricToJsonRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
-                       __Z21sConvertTriggerToJsonRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
-                       __Z40sCreateAwdMetadataLoaderForXpcConversionv, __Z41sCreateAwdMetadataLoaderForJsonConversionv, 
-                       __Z44sCreateLazyAwdMetadataLoaderForXpcConversionv, __ZN18LazyMetadataLoader15setBaseMetadataEPv, 
-                       __ZN18LazyMetadataLoader19baseMetadataIsValidEv, __ZN18LazyMetadataLoader21shouldRequestMetadataEy, 
-                       __ZN18LazyMetadataLoader23hasMetadataForComponentEj, __ZN18LazyMetadataLoader23setMetadataForComponentEPvj, 
-                       __ZN32BestChoiceMetadataLoaderDelegate14getMetricIndexEv, 
-                       __ZN3awd14GetProtobufTagEPKhm, __ZN3awd15serializeMetricERKN20wireless_diagnostics6google8protobuf11MessageLiteEj, 
-                       __ZN3awd25getCoreAnalyticsEventNameEj, __ZN3awd7reflect13getPackedTypeENS0_4TypeE, 
-                       __ZN3awd8protobuf9skipFieldERN20wireless_diagnostics6google8protobuf2io16CodedInputStreamENS_7reflect8WireTypeE, 
-                       __ZNK14MetadataHandle10getMessageEv, __ZNK14MetadataHandle7getEnumEv, 
-                       __ZNK14MetadataHandle8getFieldEv, __ZNK17AwdMetadataLoader14getMetricIndexEv ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ __Z14sDumpMetricLogNSt3__110shared_ptrI17AwdMetadataLoaderEEPKvm10DumpFormat, 
                        __Z15sDumpMetricFileNSt3__110shared_ptrI17AwdMetadataLoaderEEPKvm10DumpFormat, 
                        __Z19sResolveMetricNamesRKNSt3__110shared_ptrI17AwdMetadataLoaderEERKNS_13unordered_setINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_4hashISB_EENS_8equal_toISB_EENS9_ISB_EEEE, 
@@ -216,4 +201,19 @@ exports:
                        __ZTS25AwdMetadataLoaderDelegate, __ZTS32BestChoiceMetadataLoaderDelegate, 
                        __ZTV25AwdMetadataLoaderDelegate, __ZTV32BestChoiceMetadataLoaderDelegate, 
                        _createDescriptionForMetriclogFile, _setupAWDConnection, _teardownAWDConnection ]
+  - targets:         [ arm64-ios, arm64e-ios ]
+    symbols:         [ __Z14sGetMetricNameRKNSt3__110shared_ptrI17AwdMetadataLoaderEEj, 
+                       __Z19sConvertMetricToXpcRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
+                       __Z20sConvertMetricToJsonRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
+                       __Z21sConvertTriggerToJsonRKNSt3__110shared_ptrI17AwdMetadataLoaderEEPKhm, 
+                       __Z40sCreateAwdMetadataLoaderForXpcConversionv, __Z41sCreateAwdMetadataLoaderForJsonConversionv, 
+                       __Z44sCreateLazyAwdMetadataLoaderForXpcConversionv, __ZN18LazyMetadataLoader15setBaseMetadataEPv, 
+                       __ZN18LazyMetadataLoader19baseMetadataIsValidEv, __ZN18LazyMetadataLoader21shouldRequestMetadataEy, 
+                       __ZN18LazyMetadataLoader23hasMetadataForComponentEj, __ZN18LazyMetadataLoader23setMetadataForComponentEPvj, 
+                       __ZN32BestChoiceMetadataLoaderDelegate14getMetricIndexEv, 
+                       __ZN3awd14GetProtobufTagEPKhm, __ZN3awd15serializeMetricERKN20wireless_diagnostics6google8protobuf11MessageLiteEj, 
+                       __ZN3awd25getCoreAnalyticsEventNameEj, __ZN3awd7reflect13getPackedTypeENS0_4TypeE, 
+                       __ZN3awd8protobuf9skipFieldERN20wireless_diagnostics6google8protobuf2io16CodedInputStreamENS_7reflect8WireTypeE, 
+                       __ZNK14MetadataHandle10getMessageEv, __ZNK14MetadataHandle7getEnumEv, 
+                       __ZNK14MetadataHandle8getFieldEv, __ZNK17AwdMetadataLoader14getMetricIndexEv ]
 ...

@@ -7,19 +7,20 @@ uuids:
   - target:          armv7s-ios
     value:           B0C5C8D7-E6B8-3A4C-9F73-0558E5F29267
   - target:          arm64-ios
-    value:           12C6B61D-5900-3B09-BB5B-38E74C4FAB08
+    value:           B48955A0-666C-3E1C-A461-1222547C8F3F
   - target:          arm64e-ios
-    value:           2B496BEF-718A-3D03-9288-E68F60DAFEE5
+    value:           F8562048-62C7-3B8E-BE04-28A6AC39F1ED
 install-name:    '/System/Library/Frameworks/Speech.framework/Speech'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     objc-classes:    [ SFSpeechRecordingRecognitionRequest ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _SFAnalyticsEventTypeGetName, _SFIsIOS, _SFIsInternalInstall, 
                        _SFIsMac, _SFIsTV, _SFLSRDelegateGetInterface, _SFLSRGetInterface, 
-                       _SFSupportsANE, _kSFCoreAnalyticsAppnameKey, _kSFCoreAnalyticsAsrInitializationTimeKey, 
-                       _kSFCoreAnalyticsAudioDurationKey, _kSFCoreAnalyticsCpuRtfKey, 
-                       _kSFCoreAnalyticsErrorCode, _kSFCoreAnalyticsErrorDomain, 
+                       _SFLogConnection, _SFLogFramework, _SFLogInitIfNeeded, _SFSupportsANE, 
+                       _SupportedASBD, _kLSRServiceName, _kSFCoreAnalyticsAppnameKey, 
+                       _kSFCoreAnalyticsAsrInitializationTimeKey, _kSFCoreAnalyticsAudioDurationKey, 
+                       _kSFCoreAnalyticsCpuRtfKey, _kSFCoreAnalyticsErrorCode, _kSFCoreAnalyticsErrorDomain, 
                        _kSFCoreAnalyticsIsFinalKey, _kSFCoreAnalyticsJitLmeProcessingTimeKey, 
                        _kSFCoreAnalyticsLanguageKey, _kSFCoreAnalyticsModelLoadTimeKey, 
                        _kSFCoreAnalyticsModelVersionKey, _kSFCoreAnalyticsNarrowbandKey, 
@@ -27,7 +28,9 @@ exports:
                        _kSFCoreAnalyticsRecognitionResponseTimeKey, _kSFCoreAnalyticsSuccessKey, 
                        _kSFCoreAnalyticsTTFWKey, _kSFCoreAnalyticsTaskKey, _kSFCoreAnalyticsTextNotEmptyKey, 
                        _kSFHindiLocaleIdentifier, _kSFHindiTranslitKeyboardIdentifier, 
-                       _kSFHindiTranslitReplacementLocaleIdentifier, _kSFSpeechRecognizerTaskDictation, 
+                       _kSFHindiTranslitReplacementLocaleIdentifier, _kSFLogConnection, 
+                       _kSFLogFramework, _kSFSpeechRecognizerDumpedTaskIdentifierKey, 
+                       _kSFSpeechRecognizerTaskCaptioning, _kSFSpeechRecognizerTaskDictation, 
                        _kSFSpeechRecognizerTaskVoiceMail ]
     objc-classes:    [ SFAcousticFeature, SFLocalSpeechRecognitionClient, SFRequestParameters, 
                        SFSpeechAssetManager, SFSpeechAudioBufferRecognitionRequest, 

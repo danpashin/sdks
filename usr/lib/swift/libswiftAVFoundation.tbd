@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           97C513C9-24E7-3D99-88CD-6DA14DF95CE5
   - target:          arm64-ios
-    value:           D97C01F0-E87B-3CED-B516-9DE35FBD8C98
+    value:           0D41C2F1-5934-340B-A593-31E7606A0AE4
   - target:          arm64e-ios
-    value:           927591D7-EB0C-3CD4-A11E-B87D3228F42B
+    value:           EC723BF0-1338-376D-ADA5-727B1CB8F5EC
 install-name:    '/usr/lib/swift/libswiftAVFoundation.dylib'
-current-version: 2085.12.1
+current-version: 2105.87.2
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -29,7 +29,7 @@ exports:
                        '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB18CVPixelFormatTypesSayypGSgvpMV', 
                        '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvg', 
                        '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvpMV' ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftAVFoundation.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftAVFoundation.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftAVFoundation.dylib', 
@@ -162,6 +162,8 @@ exports:
                        '_$sSo11CMTimeRangea12AVFoundationE34_conditionallyBridgeFromObjectiveC_6resultSbSo7NSValueC_ABSgztFZ', 
                        '_$sSo11CMTimeRangea12AVFoundationE36_unconditionallyBridgeFromObjectiveCyABSo7NSValueCSgFZ', 
                        '_$sSo11CMTimeRangeas21_ObjectiveCBridgeable12AVFoundationMc', 
+                       '_$sSo12AVPlayerItemC12AVFoundationE4seek2toSb10Foundation4DateV_tYaF', 
+                       '_$sSo12AVPlayerItemC12AVFoundationE4seek2toSb10Foundation4DateV_tYaFTu', 
                        '_$sSo12AVPlayerItemC12AVFoundationE5asset28automaticallyLoadedAssetKeysABSo7AVAssetC_SayAC22AVPartialAsyncPropertyCyAGGGtcfC', 
                        '_$sSo12AVPlayerItemC12AVFoundationE5asset28automaticallyLoadedAssetKeysABSo7AVAssetC_SayAC22AVPartialAsyncPropertyCyAGGGtcfc', 
                        '_$sSo13CMTimeMappinga12AVFoundationE19_bridgeToObjectiveCSo7NSValueCyF', 
@@ -185,8 +187,33 @@ exports:
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE09supportedB16PixelFormatTypes3forSaySo8NSNumberCGSo10AVFileTypea_tF', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo0aF4ModeVGvg', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo0aF4ModeVGvpMV', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE5image2atSo10CGImageRefaAD_So6CMTimea10actualTimetAI_tYaKF', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE5image2atSo10CGImageRefaAD_So6CMTimea10actualTimetAI_tYaKFTu', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV17makeAsyncIteratorAEyF', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV4nextAE7ElementOSgyYaF', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV4nextAE7ElementOSgyYaFTu', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO10actualTimeSo6CMTimeavg', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO10actualTimeSo6CMTimeavpMV', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO13requestedTimeSo6CMTimeavg', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO13requestedTimeSo6CMTimeavpMV', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO5imageSo10CGImageRefavg', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementO5imageSo10CGImageRefavpMV', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementOMa', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementOMn', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesV7ElementON', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesVMa', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesVMn', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesVN', '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesVScIACMc', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6ImagesVSciACMc', 
+                       '_$sSo21AVAssetImageGeneratorC12AVFoundationE6images3forAbCE6ImagesVSaySo6CMTimeaG_tF', 
                        '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo0aF5SpaceVGvg', 
                        '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo0aF5SpaceVGvpMV', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE27supportedMaxPhotoDimensionsSaySo07CMVideoH0aGvg', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE27supportedMaxPhotoDimensionsSaySo07CMVideoH0aGvpMV', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE36secondaryNativeResolutionZoomFactorsSay12CoreGraphics7CGFloatVGvg', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE36secondaryNativeResolutionZoomFactorsSay12CoreGraphics7CGFloatVGvpMV', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE45supportedVideoZoomFactorsForDepthDataDeliverySay12CoreGraphics7CGFloatVGvg', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE45supportedVideoZoomFactorsForDepthDataDeliverySay12CoreGraphics7CGFloatVGvpMV', 
                        '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSays6UInt32VGvg', 
                        '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSays6UInt32VGvpMV', 
                        '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB16PixelFormatTypesSays6UInt32VGvg', 

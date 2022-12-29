@@ -2,7 +2,7 @@
 //  HKCorrelationQuery.h
 //  HealthKit
 //
-//  Copyright (c) 2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2022 Apple Inc. All rights reserved.
 //
 
 #import <HealthKit/HKQuery.h>
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
                 accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
                 correlated samples.
  */
-HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
+HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0))
 @interface HKCorrelationQuery : HKQuery
 
 @property (readonly, copy) HKCorrelationType *correlationType;

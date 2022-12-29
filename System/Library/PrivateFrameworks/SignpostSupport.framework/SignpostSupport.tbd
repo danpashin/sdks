@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
-current-version:       76
+current-version:       89
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -18,12 +18,15 @@ exports:
                             _SignpostReporterCrossPlatformAppleAccountAllowlist,
                             _SignpostReporterCrossPlatformAppleIDAuthenticationAllowlist,
                             _SignpostReporterCrossPlatformAuthKitAllowlist,
+                            _SignpostReporterCrossPlatformIntelligencePlatformAllowlist,
                             _SignpostReporterCrossPlatformSharedAllowlist,
                             _SignpostReporterCrossPlatformSiriAudioStringPasslist,
                             _SignpostReporterCrossPlatformSiriHomeAutomationStringPasslist,
                             _SignpostReporterCrossPlatformSiriPersonalUpdateStringPasslist,
                             _SignpostReporterCrossPlatformSiriPlaybackControlsStringPasslist,
                             _SignpostReporterCrossPlatformSiriVideoUTSOperationRequestStringPasslist,
+                            _SignpostReporterCrossPlatformSiriVocabularyStringPasslist,
+                            _SignpostReporterCrossPlatformUserInteractionAllowlist,
                             _SignpostReporterShouldUseAllowlist,
                             _SignpostSupportAllowlistedStringSetForCurrentDevice,
                             _SignpostSupportAverageDurationMachContinuousTimeForIntervals,
@@ -47,6 +50,9 @@ exports:
                             __SignpostSerializeableObjectFromSerializedObjectDictionary,
                             __SignpostSupportSerializationDataFromObjectArray,
                             __signpost_debug_log,
+                            _kSignpostSupportDefaultFirstFrameGraceTimeMs,
+                            _kSignpostSupportDefaultUserInitiatedFirstFrameGraceTimeMs,
+                            _kSignpostSupportDefaultUserInteractiveFirstFrameGraceTimeMs,
                             _kSignpostSupportMachTimeTranslator_UnknownTime ]
     objc-classes:         [ SignpostAnimationAccumulatedState,
                             SignpostAnimationInterval,
@@ -57,15 +63,19 @@ exports:
                             SignpostCAProcessStallAggregation,
                             SignpostCAStallAggregation,
                             SignpostCAStallAggregationBuilder,
+                            SignpostClientDrawableInterval,
                             SignpostCommitInterval, SignpostContextFrameLifetime,
                             SignpostContextInfo, SignpostEvent,
                             SignpostFrameAccumulatedState,
                             SignpostFrameLatencyInterval,
                             SignpostFrameLifetimeInterval,
-                            SignpostHIDLatencyInterval, SignpostInterval,
+                            SignpostHIDLatencyInterval,
+                            SignpostImageQueueSampleEvent, SignpostInterval,
                             SignpostIntervalBuilder, SignpostMetrics,
-                            SignpostObject, SignpostRenderServerRenderInterval,
+                            SignpostObject, SignpostRenderAccumulatedState,
+                            SignpostRenderServerRenderInterval,
                             SignpostStackFrame, SignpostStreamEvent,
+                            SignpostSupportAnimationGraceTimeController,
                             SignpostSupportCompositorInterval,
                             SignpostSupportExactProcessNameAllowlist,
                             SignpostSupportExactProcessNameBlacklist,

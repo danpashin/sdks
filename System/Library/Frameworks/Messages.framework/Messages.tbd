@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           65AB4119-CBED-3744-83EF-7F17284B5865
   - target:          arm64-ios
-    value:           B2CBA904-1810-3EF5-8BC5-B6C74F4636FB
+    value:           5552D0FA-6C7D-3C44-AB10-D065E32388B4
   - target:          arm64e-ios
-    value:           9E0BC618-928B-303F-BA7D-172C569C3E08
+    value:           85B65F45-E2EA-3061-9279-FFC46D263F25
 install-name:    '/System/Library/Frameworks/Messages.framework/Messages'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -25,14 +25,14 @@ exports:
                        MSStickerBrowserViewLayoutSpeciPhone, MSStickerBrowserViewLayoutSpeciPhoneMini, 
                        MSStickerBrowserViewLayoutSpeciPhonePlus, _MSExtensionGlobalState, 
                        _MSSticker, _MSStickerCollectionViewCell ]
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _MSMessagesErrorDomain, _MSStickersErrorDomain, _MSStickersErrorStickerInfoKey, 
                        __MSExtensionContextIsPrimary, __MSExtensionItemConversationStateKey, 
                        __MSExtensionItemHostViewBoundsKey, __MSExtensionItemWantsLiveViewKey, 
                        _ms_defaultLog, _ms_traceLog ]
     objc-classes:    [ MSConversation, MSMessage, MSMessageLayout, MSMessageLiveLayout, 
-                       MSMessageTemplateLayout, MSMessagesAppViewController, MSRichLink, 
-                       MSSession, MSSticker, MSStickerBrowserView, MSStickerBrowserViewController, 
+                       MSMessageRichLinkLayout, MSMessageTemplateLayout, MSMessagesAppViewController, 
+                       MSRichLink, MSSession, MSSticker, MSStickerBrowserView, MSStickerBrowserViewController, 
                        MSStickerView, _MSConversationState, _MSMessageAppBundleContext, 
                        _MSMessageAppBundleHostContext, _MSMessageAppContext, _MSMessageAppExtensionContext, 
                        _MSMessageAppExtensionHostContext, _MSMessageExtensionRemoteViewController, 

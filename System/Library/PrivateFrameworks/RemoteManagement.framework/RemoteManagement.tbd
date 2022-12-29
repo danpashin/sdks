@@ -8,7 +8,9 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _InteractiveLegacyProfileIdentifierPrefix,
+    symbols:              [ _DatabaseDirectoryName, _HTTPLogsDirectoryName,
+                            _IdentitiesDirectoryName,
+                            _InteractiveLegacyProfileIdentifierPrefix,
                             _LegacyProfileIdentifierPrefix,
                             _RMAccountAdditionalInfoKeyManagedByOlympus,
                             _RMAccountPropertyKeyAccountScheme,
@@ -49,18 +51,18 @@ exports:
                             _RMConfigurationTypePasscodeSettings, _RMErrorDomain,
                             _RMErrorUserInfoKeyDescriptionKey,
                             _RMHTTPStatusCodeKey, _RMMobileKeyBagErrorCodeKey,
-                            _RMPersonaRestorationFailedException,
                             _RMXPCAgentMachServiceName,
-                            _RMXPCDaemonMachServiceName ]
+                            _RMXPCDaemonMachServiceName, _StatusDirectoryName ]
     objc-classes:         [ RMAccountHelper, RMAsset, RMAuthenticationCredential,
-                            RMBundle, RMConfiguration, RMDebounceTimer,
+                            RMBundle, RMConfiguration, RMDateFormat, RMDebounceTimer,
                             RMDeclarationKey, RMDevice,
                             RMDeviceAuthenticationCredential,
                             RMEnrollmentController, RMErrorUtilities,
                             RMFeatureFlags, RMFeatureOverrides,
-                            RMGenericAuthenticationCredential, RMLocations, RMLog,
-                            RMMDMHelper, RMManagementChannel, RMPersonaHelper,
-                            RMProfilesAdapter, RMProfilesController, RMSynchronous,
-                            RMTimedDispatch, RMXPCNotifications, RMXPCProxy,
-                            RemoteManagement_Subsystem ]
+                            RMGenericAuthenticationCredential, RMJSONUtilities,
+                            RMLocations, RMLog, RMMCAdapter, RMMDMHelper,
+                            RMManagementChannel, RMProfilesAdapter,
+                            RMProfilesController, RMSandbox, RMSharedLock,
+                            RMSynchronous, RMTimedDispatch, RMXPCNotifications,
+                            RMXPCProxy ]
 ...

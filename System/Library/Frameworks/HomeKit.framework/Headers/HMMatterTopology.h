@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @abstract Wraps the information a Matter Ecosystem Partner is expected to pass when initiating setup. The number of homes vended to HomeKit by this class dictate whether a home selection step will be presented as part of setup. If so, these homes will be represented in system UI for user selection.
  */
 HM_EXTERN API_AVAILABLE(ios(15.0))
-@interface HMMatterTopology: NSObject <NSCopying, NSSecureCoding>
+    @interface HMMatterTopology : NSObject<NSCopying, NSSecureCoding>
 
 /*!
  * @abstract HMMatterTopology initializer.

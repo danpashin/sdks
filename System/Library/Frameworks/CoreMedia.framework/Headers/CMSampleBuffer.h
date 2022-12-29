@@ -3,7 +3,7 @@
 	
 	Framework:  CoreMedia
  
-	Copyright © 2005-2019 Apple Inc. All rights reserved.
+	Copyright © 2005-2022 Apple Inc. All rights reserved.
  
 */
 
@@ -1878,6 +1878,7 @@ CM_EXPORT const CFStringRef kCMSampleBufferAttachmentKey_ForceKeyFrame
  */
 CM_EXPORT const CFStringRef kCMSampleAttachmentKey_CryptorSubsampleAuxiliaryData // CFData
 						API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0));
+
 
 CM_ASSUME_NONNULL_END
 

@@ -2,7 +2,7 @@
 //  HKWorkoutBuilder.h
 //  HealthKit
 //
-//  Copyright © 2017-2018 Apple. All rights reserved.
+//  Copyright © 2017-2022 Apple. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -65,6 +65,22 @@ HK_EXTERN API_AVAILABLE(ios(12.0), watchos(5.0))
                 completion is called.
  */
 @property (copy, readonly) NSArray<HKWorkoutEvent *> *workoutEvents;
+
+/*!
+ @property      workoutActivities
+ @abstract      Workout activities that have been added to the builder.
+ @discussion    New activities that are added using addWorkoutActivity:completion: will be appended to this array once the
+                completion is called.
+ */
+@property (copy, readonly) NSArray<HKWorkoutActivity *> *workoutActivities API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
+
+/*!
+ @property      allStatistics
+ @abstract      A dictionary of statistics per quantity type added to the builder
+ @discussion    This dictionary will contain HKStatistics objects containing the statistics by quantity
+                sample type for all of the samples that have been added to the builder.
+ */
+@property (readonly, copy) NSDictionary<HKQuantityType *, HKStatistics *> *allStatistics API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0));
 
 /*!
  @method        initWithHealthStore:configuration:device:
@@ -134,6 +150,56 @@ HK_EXTERN API_AVAILABLE(ios(12.0), watchos(5.0))
                             error occurs, the builder's metadata property will remain unchanged.
  */
 - (void)addMetadata:(NSDictionary<NSString *, id> *)metadata completion:(void (^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_ASYNC_NAME(addMetadata(_:)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
+
+/*!
+ @method        addWorkoutActivity:completion:
+ @discussion    Adds a new workout activity to the builder instance. This method can be called many times to add workout
+                activities incrementally to the builder. It is an error to call this method after
+                finishWorkoutWithCompletion: has been called. This operation is performed asynchronously and the
+                completion will be executed on an arbitrary background queue.
+ 
+ @param         workoutActivity     The activity to add to the builder.
+ @param         completion          Block to be called when the addition of the activity to the builder is complete. If success is
+                                    YES, the activity was added to the builder successfully. If success is NO, error will be
+                                    non-null and will contain the error encountered during the insertion operation.
+ */
+- (void)addWorkoutActivity:(HKWorkoutActivity *)workoutActivity
+                completion:(void (^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_ASYNC_NAME(addWorkoutActivity(_:)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
+
+/*!
+ @method        updateActivityWithUUID:endDate:completion:
+ @discussion    Sets the end date on an already added activity. It is an error to call this method after
+                finishWorkoutWithCompletion: has been called. This operation is performed asynchronously and the
+                completion will be executed on an arbitrary background queue.
+ 
+ @param         UUID        The UUID of the workout activity to update.
+ @param         endDate     The end date to set on the activity
+ @param         completion  Block to be called when the update of the end date on the activity is complete. If success is
+                            YES, the end date was set to the actvity successfully. If success is NO, error will be
+                            non-null and will contain the error encountered during the update operation.
+ */
+- (void)updateActivityWithUUID:(NSUUID *)UUID
+                       endDate:(NSDate *)endDate
+                    completion:(void (^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(updateActivity(uuid:end:completion:)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
+
+/*!
+ @method        updateActivityWithUUID:addMetadata:completion:
+ @discussion    Adds new metadata to an already added activity. This method can be called more than once; each time
+                the newly provided metadata will be merged with previously added metadata in the same manner as
+                -[NSMutableDictionary addEntriesFromDictionary:]. It is an error to call this method after
+                finishWorkoutWithCompletion: has been called. This operation is performed asynchronously and the
+                completion will be executed on an arbitrary background queue.
+ 
+ @param         UUID        The UUID of the workout activity to update.
+ @param         metadata    The metadata to add to the workout activity.
+ @param         completion  Block to be called when the addition of metadata to the activity is complete. If success is
+                            YES, the metadata has been added to the activity successfully. If success is NO, error will
+                            be non-null and will contain the error encountered during the insertion operation. When an
+                            error occurs, the activity's metadata property will remain unchanged.
+ */
+- (void)updateActivityWithUUID:(NSUUID *)UUID
+                   addMedatata:(NSDictionary<NSString *, id> *)metadata
+                    completion:(void (^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_SWIFT_NAME(updateActivity(uuid:adding:completion:)) NS_SWIFT_ASYNC_THROWS_ON_FALSE(1);
 
 /*!
  @method        endCollectionWithEndDate:error:

@@ -8,10 +8,12 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SKStatusPublishingErrorDomain,
+    symbols:              [ _SKPresenceErrorDomain,
+                            _SKStatusPublishingErrorDomain,
                             _SKStatusSubscriptionErrorDomain ]
     objc-classes:         [ SKHandle, SKHandleInvitability, SKInvitationPayload,
-                            SKPublishedStatus, SKStatusPayload,
+                            SKPresence, SKPresenceDaemonConnection,
+                            SKPresentDevice, SKPublishedStatus, SKStatusPayload,
                             SKStatusPublishRequest,
                             SKStatusPublishingDaemonConnection,
                             SKStatusPublishingService, SKStatusSubscription,

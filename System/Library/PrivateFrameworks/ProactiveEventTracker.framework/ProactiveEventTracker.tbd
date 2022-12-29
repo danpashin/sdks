@@ -3,19 +3,33 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveEventTracker.framework/ProactiveEventTracker
-current-version:       331.2
+current-version:       365.0.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PET1KeyReadFrom, _PETAggregatedMessageReadFrom,
+    symbols:              [ _$s21ProactiveEventTracker0bC0C3log7message13objcClassName8subGroupy21InternalSwiftProtobuf7Message_p_S2SSgtFTj,
+                            _$s21ProactiveEventTracker0bC0C3log7message13objcClassName8subGroupy21InternalSwiftProtobuf7Message_p_S2SSgtFTq,
+                            _$s21ProactiveEventTracker0bC0C3log7message13objcClassName8subGroupy21InternalSwiftProtobuf7Message_p_S2SSgtYaFTj,
+                            _$s21ProactiveEventTracker0bC0C3log7message13objcClassName8subGroupy21InternalSwiftProtobuf7Message_p_S2SSgtYaFTjTu,
+                            _$s21ProactiveEventTracker0bC0C3log7message13objcClassName8subGroupy21InternalSwiftProtobuf7Message_p_S2SSgtYaFTq,
+                            _$s21ProactiveEventTracker0bC0C6sharedACvgZ,
+                            _$s21ProactiveEventTracker0bC0CMa,
+                            _$s21ProactiveEventTracker0bC0CMm,
+                            _$s21ProactiveEventTracker0bC0CMn,
+                            _$s21ProactiveEventTracker0bC0CMo,
+                            _$s21ProactiveEventTracker0bC0CMu,
+                            _$s21ProactiveEventTracker0bC0CN,
+                            _$s21ProactiveEventTracker0bC0CfD,
+                            _$s21ProactiveEventTracker0bC0Cfd, _PET1KeyReadFrom,
+                            _PETAggregatedMessageReadFrom,
                             _PETAggregationKeyReadFrom, _PETDistributionReadFrom,
                             _PETMetadataReadFrom, _PETRawMessageReadFrom,
                             _PETUploadReadFrom,
                             _ProactiveEventTrackerVersionNumber,
                             _ProactiveEventTrackerVersionString ]
-    objc-classes:         [ PET1Key, PET2LoggingOutlet, PETAggdLoggingOutlet,
-                            PETAggregateState, PETAggregateStateStorage,
+    objc-classes:         [ PET1Key, PET2LoggingOutlet, PETAggregateState,
+                            PETAggregateStateStorage,
                             PETAggregateStateStorageInMemory,
                             PETAggregateStateStorageOnDisk, PETAggregatedMessage,
                             PETAggregationKey, PETConfig, PETConfigValidator,
@@ -50,7 +64,9 @@ exports:
                             PETMetadata._isTestingData,
                             PETMetadata._isTrialUpload, PETMetadata._language,
                             PETMetadata._messageGroup, PETMetadata._platform,
-                            PETMetadata._pseudoDeviceId, PETMetadata._uploadTime,
+                            PETMetadata._pseudoDeviceId,
+                            PETMetadata._uploadIdentifier,
+                            PETMetadata._uploadService, PETMetadata._uploadTime,
                             PETRawMessage._has, PETRawMessage._name,
                             PETRawMessage._rawBytes, PETRawMessage._typeId,
                             PETUpload._aggregatedMessages,

@@ -2,7 +2,7 @@
 //  HKDefines.h
 //  HealthKit
 //
-//  Copyright (c) 2013-2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2013-2022 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define HK_EXTERN extern "C" __attribute__((visibility("default")))
 #endif
 
-HK_EXTERN NSString * const HKErrorDomain API_AVAILABLE(ios(8.0), watchos(2.0));
+HK_EXTERN NSString * const HKErrorDomain API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum      HKErrorCode
@@ -45,11 +45,11 @@ typedef NS_ENUM(NSInteger, HKErrorCode) {
     HKErrorAuthorizationNotDetermined,
     HKErrorDatabaseInaccessible,
     HKErrorUserCanceled,
-    HKErrorAnotherWorkoutSessionStarted     API_AVAILABLE(ios(9.0), watchos(2.0)),
-    HKErrorUserExitedWorkoutSession         API_AVAILABLE(ios(9.0), watchos(2.0)),
-    HKErrorRequiredAuthorizationDenied      API_AVAILABLE(ios(12.0), watchos(5.0)),
-    HKErrorNoData                           API_AVAILABLE(ios(14.0), watchos(7.0)),
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+    HKErrorAnotherWorkoutSessionStarted     API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0)),
+    HKErrorUserExitedWorkoutSession         API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0)),
+    HKErrorRequiredAuthorizationDenied      API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0)),
+    HKErrorNoData                           API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0)),
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum      HKUpdateFrequency
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, HKUpdateFrequency) {
     HKUpdateFrequencyHourly,
     HKUpdateFrequencyDaily,
     HKUpdateFrequencyWeekly,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum      HKAuthorizationStatus
@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, HKAuthorizationStatus) {
     HKAuthorizationStatusNotDetermined = 0,
     HKAuthorizationStatusSharingDenied,
     HKAuthorizationStatusSharingAuthorized,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum      HKAuthorizationRequestStatus
@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger, HKAuthorizationRequestStatus) {
     HKAuthorizationRequestStatusUnknown = 0,
     HKAuthorizationRequestStatusShouldRequest,
     HKAuthorizationRequestStatusUnnecessary,
-} API_AVAILABLE(ios(12.0), watchos(5.0));
+} API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum       HKBiologicalSex
@@ -100,8 +100,8 @@ typedef NS_ENUM(NSInteger, HKBiologicalSex) {
     HKBiologicalSexNotSet = 0,
     HKBiologicalSexFemale,
     HKBiologicalSexMale,
-    HKBiologicalSexOther API_AVAILABLE(ios(8.2), watchos(2.0)),
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+    HKBiologicalSexOther API_AVAILABLE(ios(8.2), watchos(2.0), macCatalyst(13.0), macos(13.0)),
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum       HKBloodType
@@ -117,7 +117,7 @@ typedef NS_ENUM(NSInteger, HKBloodType) {
     HKBloodTypeABNegative,
     HKBloodTypeOPositive,
     HKBloodTypeONegative,
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueSleepAnalysis
@@ -128,12 +128,26 @@ typedef NS_ENUM(NSInteger, HKBloodType) {
                 2) The percentage of time in bed that the user actually spent sleeping,
                 3) The number of times the user woke while in bed
                 4) The total amount of time spent both in bed and asleep.
+
+ @constant HKCategoryValueSleepAnalysisInBed The user is in bed.
+ @constant HKCategoryValueSleepAnalysisAwake The user is awake.
+ @constant HKCategoryValueSleepAnalysisAsleepUnspecified The user is asleep and no specific stage is specified.
+ @constant HKCategoryValueSleepAnalysisAsleepCore Corresponds to Stages 1 and 2 of AASM scoring model.
+ @constant HKCategoryValueSleepAnalysisAsleepDeep  Corresponds to Stage 3 of AASM scoring model.
+ @constant HKCategoryValueSleepAnalysisAsleepREM Corresponds to REM stage of AASM scoring model.
  */
 typedef NS_ENUM(NSInteger, HKCategoryValueSleepAnalysis) {
-    HKCategoryValueSleepAnalysisInBed,
-    HKCategoryValueSleepAnalysisAsleep,
-    HKCategoryValueSleepAnalysisAwake API_AVAILABLE(ios(10.0), watchos(3.0)),
-} API_AVAILABLE(ios(8.0), watchos(2.0));
+    HKCategoryValueSleepAnalysisInBed = 0,
+    HKCategoryValueSleepAnalysisAsleepUnspecified API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) = 1,
+    HKCategoryValueSleepAnalysisAsleep API_DEPRECATED_WITH_REPLACEMENT("HKCategoryValueSleepAnalysisAsleepUnspecified", ios(8.0, 16.0), watchos(2.0, 9.0)) = HKCategoryValueSleepAnalysisAsleepUnspecified,
+    HKCategoryValueSleepAnalysisAwake API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0)) = 2,
+    HKCategoryValueSleepAnalysisAsleepCore API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) = 3,
+    HKCategoryValueSleepAnalysisAsleepDeep API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) = 4,
+    HKCategoryValueSleepAnalysisAsleepREM API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) = 5,
+} API_AVAILABLE(ios(8.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
+
+/// Returns the set of `HKCategoryValueSleepAnalysis` values that are considered to be asleep.
+HK_EXTERN NSSet<NSNumber *> * HKCategoryValueSleepAnalysisAsleepValues(void) API_AVAILABLE(ios(16.0), watchos(9.0), macCatalyst(16.0), macos(13.0)) NS_REFINED_FOR_SWIFT;
 
 
 /*!
@@ -148,7 +162,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueSleepAnalysis) {
 typedef NS_ENUM(NSInteger, HKCategoryValueAppleStandHour) {
     HKCategoryValueAppleStandHourStood = 0,
     HKCategoryValueAppleStandHourIdle,
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKFitzpatrickSkinType
@@ -171,7 +185,7 @@ typedef NS_ENUM(NSInteger, HKFitzpatrickSkinType) {
     HKFitzpatrickSkinTypeIV,
     HKFitzpatrickSkinTypeV,
     HKFitzpatrickSkinTypeVI,
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKWheelchairUse
@@ -184,7 +198,7 @@ typedef NS_ENUM(NSInteger, HKWheelchairUse) {
     HKWheelchairUseNotSet = 0,
     HKWheelchairUseNo,
     HKWheelchairUseYes,
-} API_AVAILABLE(ios(10.0), watchos(3.0));
+} API_AVAILABLE(ios(10.0), watchos(3.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueCervicalMucusQuality
@@ -197,7 +211,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueCervicalMucusQuality) {
     HKCategoryValueCervicalMucusQualityCreamy,
     HKCategoryValueCervicalMucusQualityWatery,
     HKCategoryValueCervicalMucusQualityEggWhite,
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueOvulationTestResult
@@ -211,7 +225,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueOvulationTestResult) {
     HKCategoryValueOvulationTestResultPositive API_DEPRECATED_WITH_REPLACEMENT("HKCategoryValueOvulationTestResultLuteinizingHormoneSurge", ios(9.0, 13.0), watchos(2.0, 6.0)) = HKCategoryValueOvulationTestResultLuteinizingHormoneSurge,
     HKCategoryValueOvulationTestResultIndeterminate = 3,
     HKCategoryValueOvulationTestResultEstrogenSurge API_AVAILABLE(ios(13.0), watchos(6.0)) = 4,
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValuePregnancyTestResult
@@ -223,7 +237,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValuePregnancyTestResult) {
     HKCategoryValuePregnancyTestResultNegative = 1,
     HKCategoryValuePregnancyTestResultPositive,
     HKCategoryValuePregnancyTestResultIndeterminate,
-} API_AVAILABLE(ios(15.0), watchos(8.0));
+} API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueProgesteroneTestResult
@@ -235,7 +249,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueProgesteroneTestResult) {
     HKCategoryValueProgesteroneTestResultNegative = 1,
     HKCategoryValueProgesteroneTestResultPositive,
     HKCategoryValueProgesteroneTestResultIndeterminate,
-} API_AVAILABLE(ios(15.0), watchos(8.0));
+} API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueMenstrualFlow
@@ -246,8 +260,8 @@ typedef NS_ENUM(NSInteger, HKCategoryValueMenstrualFlow) {
     HKCategoryValueMenstrualFlowLight,
     HKCategoryValueMenstrualFlowMedium,
     HKCategoryValueMenstrualFlowHeavy,
-    HKCategoryValueMenstrualFlowNone API_AVAILABLE(ios(12.0), watchos(5.0)),
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+    HKCategoryValueMenstrualFlowNone API_AVAILABLE(ios(12.0), watchos(5.0), macCatalyst(13.0), macos(13.0)),
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValue
@@ -255,7 +269,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueMenstrualFlow) {
  */
 typedef NS_ENUM(NSInteger, HKCategoryValue) {
     HKCategoryValueNotApplicable = 0,
-} API_AVAILABLE(ios(9.0), watchos(2.0));
+} API_AVAILABLE(ios(9.0), watchos(2.0), macCatalyst(13.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueAudioExposureEvent
@@ -274,7 +288,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAudioExposureEvent) {
  */
 typedef NS_ENUM(NSInteger, HKCategoryValueEnvironmentalAudioExposureEvent) {
     HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit = 1,
-} API_AVAILABLE(ios(14.0), watchos(7.0));
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
  @enum          HKCategoryValueContraceptive
@@ -288,7 +302,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueContraceptive) {
     HKCategoryValueContraceptiveIntravaginalRing,
     HKCategoryValueContraceptiveOral,
     HKCategoryValueContraceptivePatch,
-} API_AVAILABLE(ios(14.3), watchos(7.2));
+} API_AVAILABLE(ios(14.3), watchos(7.2), macCatalyst(14.3), macos(13.0));
 
 /*!
  @enum          HKCategoryValueSeverity
@@ -300,7 +314,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueSeverity) {
     HKCategoryValueSeverityMild,
     HKCategoryValueSeverityModerate,
     HKCategoryValueSeveritySevere,
-} API_AVAILABLE(ios(13.6), watchos(7.0));
+} API_AVAILABLE(ios(13.6), watchos(7.0), macCatalyst(13.6), macos(13.0));
 
 /*!
  @enum          HKCategoryValueAppetiteChanges
@@ -311,7 +325,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAppetiteChanges) {
     HKCategoryValueAppetiteChangesNoChange,
     HKCategoryValueAppetiteChangesDecreased,
     HKCategoryValueAppetiteChangesIncreased,
-} API_AVAILABLE(ios(13.6), watchos(7.0));
+} API_AVAILABLE(ios(13.6), watchos(7.0), macCatalyst(13.6), macos(13.0));
 
 /*!
  @enum          HKCategoryValuePresence
@@ -320,7 +334,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAppetiteChanges) {
 typedef NS_ENUM(NSInteger, HKCategoryValuePresence) {
     HKCategoryValuePresencePresent = 0,
     HKCategoryValuePresenceNotPresent,
-} API_AVAILABLE(ios(13.6), watchos(7.0));
+} API_AVAILABLE(ios(13.6), watchos(7.0), macCatalyst(13.6), macos(13.0));
 
 /*!
 @enum          HKCategoryValueHeadphoneAudioExposureEvent
@@ -329,7 +343,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValuePresence) {
 */
 typedef NS_ENUM(NSInteger, HKCategoryValueHeadphoneAudioExposureEvent) {
     HKCategoryValueHeadphoneAudioExposureEventSevenDayLimit = 1
-} API_AVAILABLE(ios(14.2), watchos(7.1));
+} API_AVAILABLE(ios(14.2), watchos(7.1), macCatalyst(14.2), macos(13.0));
 
 /*!
  @enum          HKCategoryValueLowCardioFitnessEvent
@@ -339,7 +353,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueHeadphoneAudioExposureEvent) {
   */
 typedef NS_ENUM(NSInteger, HKCategoryValueLowCardioFitnessEvent) {
     HKCategoryValueLowCardioFitnessEventLowFitness = 1,
-} API_AVAILABLE(ios(14.3), watchos(7.2));
+} API_AVAILABLE(ios(14.3), watchos(7.2), macCatalyst(14.3), macos(13.0));
 
 /*!
  @enum          HKActivityMoveMode
@@ -350,7 +364,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueLowCardioFitnessEvent) {
 typedef NS_ENUM(NSInteger, HKActivityMoveMode) {
     HKActivityMoveModeActiveEnergy = 1,
     HKActivityMoveModeAppleMoveTime = 2,
-} API_AVAILABLE(ios(14.0), watchos(7.0));
+} API_AVAILABLE(ios(14.0), watchos(7.0), macCatalyst(14.0), macos(13.0));
 
 /*!
 @enum          HKCategoryValueAppleWalkingSteadinessEvent
@@ -365,6 +379,6 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAppleWalkingSteadinessEvent) {
     HKCategoryValueAppleWalkingSteadinessEventInitialVeryLow = 2,
     HKCategoryValueAppleWalkingSteadinessEventRepeatLow = 3,
     HKCategoryValueAppleWalkingSteadinessEventRepeatVeryLow = 4,
-} API_AVAILABLE(ios(15.0), watchos(8.0));
+} API_AVAILABLE(ios(15.0), watchos(8.0), macCatalyst(15.0), macos(13.0));
 
 NS_ASSUME_NONNULL_END

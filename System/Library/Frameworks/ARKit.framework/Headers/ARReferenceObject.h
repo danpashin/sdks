@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARReferenceObject.h>)
 //
 //  ARReferenceObject.h
 //  ARKit
@@ -109,3 +110,6 @@ API_AVAILABLE(ios(12.0))
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARReferenceObject.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARReferenceObject.h>)

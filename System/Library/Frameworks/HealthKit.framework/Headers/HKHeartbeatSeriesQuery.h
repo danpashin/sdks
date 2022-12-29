@@ -2,7 +2,7 @@
 //  HKHeartbeatSeriesQuery.h
 //  HealthKit
 //
-//  Copyright © 2018 Apple. All rights reserved.
+//  Copyright © 2018-2022 Apple. All rights reserved.
 //
 
 #import <HealthKit/HKQuery.h>
@@ -20,7 +20,7 @@ HK_EXTERN
 #if defined(__swift__) && __swift__
 API_DEPRECATED("Use HKHeartbeatSeriesQueryDescriptor", ios(13.0, API_TO_BE_DEPRECATED), watchos(6.0, API_TO_BE_DEPRECATED));
 #else
-API_AVAILABLE(ios(13.0), watchos(6.0))
+API_AVAILABLE(ios(13.0), watchos(6.0), macCatalyst(13.0), macos(13.0))
 #endif
 @interface HKHeartbeatSeriesQuery : HKQuery
 

@@ -7,13 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           05321067-4F23-3757-9982-D057CE4C0317
+    value:           45FA02CD-9C4D-30A9-987F-4B31A5388F7E
   - target:          arm64e-ios
-    value:           CFC6D861-0868-33AC-A889-69240A2B4EC9
+    value:           56FFA0D4-B57D-35A6-A931-577E656D9CA3
 install-name:    '/usr/lib/libRoseBooter.dylib'
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _RoseBooterAllocate, _RoseBooterBootChip, _RoseBooterDestroy, 
                        _RoseBooterGetCal, _RoseBooterHasFailedForward, _RoseBooterPerformHealing, 
-                       _RoseBooterPreflight, _RoseBooterSendCal ]
+                       _RoseBooterPreflight, _RoseBooterSendCal, _RoseBooterSendCalWithOptions ]
 ...

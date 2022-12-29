@@ -3,12 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClipServices.framework/ClipServices
-current-version:       20.20
+current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CPSAccountPolicyOverride,
+    symbols:              [ _CPSAMSRestrictionsCodeOverride,
+                            _CPSAccountPolicyOverride,
                             _CPSAppClipBundleIdentifierPrefix,
                             _CPSBypassAccountEligibilityCheck,
                             _CPSBypassAccountEligibilityCheckKey,

@@ -7,13 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           F30112F0-7D8A-3FD5-8F16-79A9931C16DE
+    value:           41C0F83A-8FC6-3056-A3BB-B12187D36BE5
   - target:          arm64e-ios
-    value:           F18CCFFF-0572-3F7F-B127-61CCF11C6045
+    value:           35E63693-1AF3-32E4-8A4D-CCBCA3EDFCE7
 install-name:    '/System/Library/Frameworks/CoreServices.framework/CoreServices'
 current-version: 1141.1
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices', 
                        '$ld$install_name$os10.1$/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices', 
                        '$ld$install_name$os10.2$/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices', 
@@ -140,9 +140,10 @@ exports:
                        __LSVersionNumberGetBugFixComponent, __LSVersionNumberGetCurrentSystemVersion, 
                        __LSVersionNumberGetMajorComponent, __LSVersionNumberGetMinorComponent, 
                        __LSVersionNumberGetStringRepresentation, __LSVersionNumberHash, 
-                       __LSWriteApplicationPlaceholderToURL, __UTCopyDeclaredTypeIdentifiers, 
-                       __UTTypeCopyDescriptionLocalizationDictionary, __UTTypeCopyDynamicIdentifiersForTags, 
-                       __UTTypeCopyGlyphName, __UTTypeCopyIconName, __UTTypeCopyKindStringDictionaryForNonMaterializedItem, 
+                       __LSVersionNumberMakeWithString, __LSWriteApplicationPlaceholderToURL, 
+                       __UTCopyDeclaredTypeIdentifiers, __UTTypeCopyDescriptionLocalizationDictionary, 
+                       __UTTypeCopyDynamicIdentifiersForTags, __UTTypeCopyGlyphName, 
+                       __UTTypeCopyIconName, __UTTypeCopyKindStringDictionaryForNonMaterializedItem, 
                        __UTTypeCopyKindStringForNonMaterializedItem, __UTTypeCopyPedigree, 
                        __UTTypeCopyPedigreeSet, __UTTypeCreateDynamicIdentifierForTaggedPointerObject, 
                        __UTTypeCreateSuggestedFilename, __UTTypeGetStatus, __UTTypeHash, 
@@ -213,19 +214,21 @@ exports:
                        _kUTTypeVideo, _kUTTypeVolume, _kUTTypeWaveformAudio, _kUTTypeWebArchive, 
                        _kUTTypeWindowsExecutable, _kUTTypeX509Certificate, _kUTTypeXML, 
                        _kUTTypeXMLPropertyList, _kUTTypeXPCService, _kUTTypeZipArchive ]
-    objc-classes:    [ LSAppLink, LSApplicationExtensionRecord, LSApplicationIdentity, 
-                       LSApplicationProxy, LSApplicationRecord, LSApplicationWorkspace, 
-                       LSApplicationWorkspaceObserver, LSBundleInfoCachedValues, 
+    objc-classes:    [ LSAppClipMetadata, LSAppLink, LSApplicationExtensionRecord, 
+                       LSApplicationIdentity, LSApplicationIdentityMigrationResult, 
+                       LSApplicationIdentityMigrator, LSApplicationProxy, LSApplicationRecord, 
+                       LSApplicationWorkspace, LSApplicationWorkspaceObserver, LSBundleInfoCachedValues, 
                        LSBundleProxy, LSBundleRecord, LSClaimBinding, LSClaimBindingConfiguration, 
                        LSClaimRecord, LSDatabaseContext, LSDocumentProxy, LSEnumerator, 
-                       LSExtensionPoint, LSExtensionPointRecord, LSObserver, LSPlugInKitProxy, 
-                       LSPlugInQuery, LSPlugInQueryWithIdentifier, LSPlugInQueryWithQueryDictionary, 
-                       LSPlugInQueryWithURL, LSPropertyList, LSRecord, LSRecordPromise, 
-                       LSResourceProxy, LSSpotlightAction, LSVPNPluginProxy, UTTypeRecord, 
-                       _LSApplicationState, _LSDefaults, _LSDiskUsage, _LSDisplayNameConstructor, 
-                       _LSLazyPropertyList, _LSOpenConfiguration, _LSQuery, _LSQueryContext, 
-                       _LSQueryResult, _LSRecordEnumerator, _LSStringLocalizer, _LSURLOverride ]
+                       LSExtensionPoint, LSExtensionPointRecord, LSObserver, LSOperationRequestContext, 
+                       LSPlugInKitProxy, LSPlugInQuery, LSPlugInQueryWithIdentifier, 
+                       LSPlugInQueryWithQueryDictionary, LSPlugInQueryWithURL, LSPropertyList, 
+                       LSRecord, LSRecordPromise, LSResourceProxy, LSSettingsStore, 
+                       LSSpotlightAction, LSVPNPluginProxy, UTTypeRecord, _LSApplicationState, 
+                       _LSDefaults, _LSDiskUsage, _LSDisplayNameConstructor, _LSLazyPropertyList, 
+                       _LSOpenConfiguration, _LSQuery, _LSQueryContext, _LSQueryResult, 
+                       _LSRecordEnumerator, _LSStringLocalizer, _LSURLOverride ]
 reexports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     objc-classes:    [ NSUserActivity ]
 ...

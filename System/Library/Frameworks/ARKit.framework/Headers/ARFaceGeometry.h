@@ -1,3 +1,4 @@
+#if (defined(USE_ARKIT_PUBLIC_HEADERS) && USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARFaceGeometry.h>)
 //
 //  ARFaceGeometry.h
 //  ARKit
@@ -72,3 +73,6 @@ The number of mesh vertices of the geometry.
 @end
 
 NS_ASSUME_NONNULL_END
+#else
+#import <ARKitCore/ARFaceGeometry.h> 
+#endif // #if (defined(USE_ARKIT_PUBLIC_HEADERS) \&\& USE_ARKIT_PUBLIC_HEADERS) || !__has_include(<ARKitCore/ARFaceGeometry.h>)

@@ -7,14 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           90FA13FC-A8DB-3A60-AB0C-CECDB553232D
   - target:          arm64-ios
-    value:           B362B65A-C42B-37BA-8ECF-47DE85F87D5B
+    value:           5BE9D596-EA83-36E9-8C75-928B92E58F17
   - target:          arm64e-ios
-    value:           BC4A9AC6-E66F-3CA7-8131-69A713EDAA78
+    value:           79DDD587-30CD-3302-8174-43D81F5B998E
 install-name:    '/usr/lib/swift/libswiftObjectiveC.dylib'
-current-version: 2
+current-version: 6
 swift-abi-version: 7
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftObjectiveC.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftObjectiveC.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftObjectiveC.dylib', 
@@ -37,10 +37,24 @@ exports:
                        '$ld$install_name$os9.1$@rpath/libswiftObjectiveC.dylib', 
                        '$ld$install_name$os9.2$@rpath/libswiftObjectiveC.dylib', 
                        '$ld$install_name$os9.3$@rpath/libswiftObjectiveC.dylib', 
-                       '_$s10ObjectiveC15autoreleasepool8invokingxxyKXE_tKlF', '_$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF', 
-                       '_$s10ObjectiveC22_convertObjCBoolToBoolySbAA0cD0VF', '_$s10ObjectiveC2NOAA8ObjCBoolVvg', 
-                       '_$s10ObjectiveC3YESAA8ObjCBoolVvg', '_$s10ObjectiveC6NSZoneVMa', 
-                       '_$s10ObjectiveC6NSZoneVMn', '_$s10ObjectiveC6NSZoneVN', '_$s10ObjectiveC8ObjCBoolV11descriptionSSvg', 
+                       '_$s10ObjectiveC13ObjCClassListV12makeIteratorAC0F0CyF', '_$s10ObjectiveC13ObjCClassListV8IteratorC4nextyXlXpSgyFTj', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorC4nextyXlXpSgyFTq', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorCMa', '_$s10ObjectiveC13ObjCClassListV8IteratorCMm', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorCMn', '_$s10ObjectiveC13ObjCClassListV8IteratorCMo', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorCMu', '_$s10ObjectiveC13ObjCClassListV8IteratorCN', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorCStAAMc', '_$s10ObjectiveC13ObjCClassListV8IteratorCfD', 
+                       '_$s10ObjectiveC13ObjCClassListV8IteratorCfd', '_$s10ObjectiveC13ObjCClassListVMa', 
+                       '_$s10ObjectiveC13ObjCClassListVMn', '_$s10ObjectiveC13ObjCClassListVN', 
+                       '_$s10ObjectiveC13ObjCClassListVSTAAMc', '_$s10ObjectiveC15autoreleasepool8invokingxxyKXE_tKlF', 
+                       '_$s10ObjectiveC20ObjCEnumerationImageO10machHeaderyACSVcACmFWC', 
+                       '_$s10ObjectiveC20ObjCEnumerationImageO14dynamicClassesyA2CmFWC', 
+                       '_$s10ObjectiveC20ObjCEnumerationImageO5imageyACSVcACmFWC', 
+                       '_$s10ObjectiveC20ObjCEnumerationImageOMa', '_$s10ObjectiveC20ObjCEnumerationImageOMn', 
+                       '_$s10ObjectiveC20ObjCEnumerationImageON', '_$s10ObjectiveC21objc_enumerateClasses9fromImage18matchingNamePrefix12conformingTo11subclassingAA13ObjCClassListVAA0m12CEnumerationF0O_SSSgSo8ProtocolCSgyXlXpSgtF', 
+                       '_$s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF', '_$s10ObjectiveC22_convertObjCBoolToBoolySbAA0cD0VF', 
+                       '_$s10ObjectiveC2NOAA8ObjCBoolVvg', '_$s10ObjectiveC3YESAA8ObjCBoolVvg', 
+                       '_$s10ObjectiveC6NSZoneVMa', '_$s10ObjectiveC6NSZoneVMn', 
+                       '_$s10ObjectiveC6NSZoneVN', '_$s10ObjectiveC8ObjCBoolV11descriptionSSvg', 
                        '_$s10ObjectiveC8ObjCBoolV11descriptionSSvpMV', '_$s10ObjectiveC8ObjCBoolV12customMirrors0E0Vvg', 
                        '_$s10ObjectiveC8ObjCBoolV12customMirrors0E0VvpMV', '_$s10ObjectiveC8ObjCBoolV14booleanLiteralACSb_tcfC', 
                        '_$s10ObjectiveC8ObjCBoolV6_valueSbvM', '_$s10ObjectiveC8ObjCBoolV6_valueSbvg', 

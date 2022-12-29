@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           F2CD5A71-3215-34CE-817D-EB25EA02937D
+  - target:          arm64e-ios
+    value:           7CD60766-1E8A-3079-9C75-16462334F549
+install-name:    '/usr/lib/libBASupport.dylib'
+exports:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ _ba_is_current_process_extension, _ba_is_process_extension ]
+...
