@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           D8CF27BD-3A19-349D-9E05-D784B92C851B
   - target:          arm64-ios
-    value:           719CCDC1-E094-39A0-A8D0-9AE7FE45F3C3
+    value:           5B140A02-B201-39B5-9AAE-E8BE6915481B
   - target:          arm64e-ios
-    value:           27DCC6FF-CC82-3C2E-9AE0-2EFEB29E989B
+    value:           E676185B-6EF7-37E6-ABEB-6A68896BD94F
 install-name:    '/System/Library/Frameworks/GameKit.framework/GameKit'
-current-version: 815.4.8
+current-version: 815.5.2
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/System/Library/Frameworks/Metal.framework/Metal', '/System/Library/Frameworks/MetalKit.framework/MetalKit', 
@@ -39,9 +39,9 @@ uuids:
   - target:          armv7s-ios
     value:           351D0BD4-D5B6-3333-B2FB-6FAE4D13A976
   - target:          arm64-ios
-    value:           80A73C5D-0F5E-39D9-B8E6-FA40EF356920
+    value:           D77A183C-ED00-3D1E-B53E-F4C6E4159C7D
   - target:          arm64e-ios
-    value:           2612C146-30F1-3100-8023-2ED4C211DF09
+    value:           5EB29452-8176-3DAF-8F98-3798C1AD26C1
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -260,35 +260,44 @@ exports:
                        _GKMatchmakerProtocolName, _GKMaxGameStateSizeTurnBased, _GKMaxPlayersHosted, 
                        _GKMaxPlayersP2P, _GKMaxPlayersTurnBased, _GKMaxRecentPlayersCount, 
                        _GKMaxRecentPlayersTime, _GKMessageInviteInitiate, _GKMessageInviteProcessingTime, 
-                       _GKMessagesIndentifier, _GKMetricsEventAdamID, _GKMetricsEventAnalyticsClientID, 
-                       _GKMetricsEventApp, _GKMetricsEventAppVersion, _GKMetricsEventBaseVersion, 
+                       _GKMessagesIndentifier, _GKMetricEventMatch, _GKMetricsEventAdamID, 
+                       _GKMetricsEventAll, _GKMetricsEventAnalyticsClientID, _GKMetricsEventApp, 
+                       _GKMetricsEventAppVersion, _GKMetricsEventAutoMatch, _GKMetricsEventBaseVersion, 
                        _GKMetricsEventCanaryIdentifier, _GKMetricsEventCategory, 
-                       _GKMetricsEventClick, _GKMetricsEventClientBuildType, _GKMetricsEventClientEventId, 
-                       _GKMetricsEventConnection, _GKMetricsEventDSID, _GKMetricsEventDialog, 
-                       _GKMetricsEventEnter, _GKMetricsEventExit, _GKMetricsEventHardwareFamily, 
-                       _GKMetricsEventHardwareModel, _GKMetricsEventImpressions, 
-                       _GKMetricsEventIsSignedIn, _GKMetricsEventOS, _GKMetricsEventOsBuildNumber, 
-                       _GKMetricsEventOsVersion, _GKMetricsEventPage, _GKMetricsEventPageContext, 
-                       _GKMetricsEventPageDetails, _GKMetricsEventPageId, _GKMetricsEventPageType, 
+                       _GKMetricsEventChat, _GKMetricsEventClick, _GKMetricsEventClientBuildType, 
+                       _GKMetricsEventClientEventId, _GKMetricsEventConnection, _GKMetricsEventContact, 
+                       _GKMetricsEventDSID, _GKMetricsEventDialog, _GKMetricsEventEnter, 
+                       _GKMetricsEventExit, _GKMetricsEventGameCenterFriend, _GKMetricsEventHardwareFamily, 
+                       _GKMetricsEventHardwareModel, _GKMetricsEventHosted, _GKMetricsEventImpressions, 
+                       _GKMetricsEventInvite, _GKMetricsEventIsSignedIn, _GKMetricsEventMatchFailed, 
+                       _GKMetricsEventMatchResult, _GKMetricsEventMatchServer, _GKMetricsEventMatchSucceeded, 
+                       _GKMetricsEventMatchType, _GKMetricsEventMedium, _GKMetricsEventNearBy, 
+                       _GKMetricsEventOS, _GKMetricsEventOsBuildNumber, _GKMetricsEventOsVersion, 
+                       _GKMetricsEventPage, _GKMetricsEventPageContext, _GKMetricsEventPageDetails, 
+                       _GKMetricsEventPageId, _GKMetricsEventPageType, _GKMetricsEventRecentlyPlayedWith, 
                        _GKMetricsEventRefApp, _GKMetricsEventResourceRevNum, _GKMetricsEventSchemaVersion, 
                        _GKMetricsEventSchemaVersionNumber, _GKMetricsEventSearch, 
-                       _GKMetricsEventStoreFrontHeader, _GKMetricsEventTime, _GKMetricsEventTimezoneOffset, 
-                       _GKMetricsEventType, _GKMetricsEventVersion, _GKMetricsEventXpPostFrequency, 
-                       _GKMetricsEventXpSendMethod, _GKMetricsThrottlePercent, _GKMultiplayerAllowedTypeReceivedNotification, 
-                       _GKMultiplayerCancelTimeDelayInSeconds, _GKMultiplayerContext, 
-                       _GKMultiplayerFriendSelectionImpression, _GKMultiplayerLobbyImpression, 
-                       _GKMultiplayerMainLandingImpression, _GKNATTimeoutKey, _GKNATTypeKey, 
-                       _GKNearbyDataReceivedNotification, _GKNearbyEnabledKey, _GKNearbyInviteInitiate, 
-                       _GKNearbyPlayerFoundNotification, _GKNearbyPlayerLostNotification, 
-                       _GKNetworkRequestCount, _GKNetworkRequestFailure, _GKNumberOfAchievementPointsKey, 
-                       _GKNumberOfAchievementsKey, _GKNumberOfFriendsInCommonKey, 
-                       _GKNumberOfFriendsKey, _GKNumberOfGamesInCommonKey, _GKNumberOfGamesPlayedKey, 
-                       _GKOSLogInit, _GKParticipantIndexKey, _GKParticipantStatusAllTrace, 
-                       _GKParticipantStatusFailureTrace, _GKParticipantStatusKey, 
-                       _GKPhotoPendingKey, _GKPhotoURLsKey, _GKPhotosChangedKey, 
-                       _GKPickerAddCustomMessage, _GKPickerExpandPlayerGroup, _GKPickerGameCenterGroupSelected, 
-                       _GKPickerMessageGroupSelected, _GKPickerNearbyPlayerSelected, 
-                       _GKPickerSearchBarClicked, _GKPickerSearchForPlayers, _GKPickerSelectPlayersFromSearchResults, 
+                       _GKMetricsEventServerFirstParty, _GKMetricsEventServerThirdParty, 
+                       _GKMetricsEventStoreFrontHeader, _GKMetricsEventTargetId, 
+                       _GKMetricsEventTargetType, _GKMetricsEventTime, _GKMetricsEventTimezoneOffset, 
+                       _GKMetricsEventType, _GKMetricsEventVersion, _GKMetricsEventVoice, 
+                       _GKMetricsEventXpPostFrequency, _GKMetricsEventXpSendMethod, 
+                       _GKMetricsThrottlePercent, _GKMetticsEventMatchInitiated, 
+                       _GKMultiplayerAllowedTypeReceivedNotification, _GKMultiplayerCancelTimeDelayInSeconds, 
+                       _GKMultiplayerContext, _GKMultiplayerFriendSelectionImpression, 
+                       _GKMultiplayerLobbyImpression, _GKMultiplayerMainLandingImpression, 
+                       _GKNATTimeoutKey, _GKNATTypeKey, _GKNearbyDataReceivedNotification, 
+                       _GKNearbyEnabledKey, _GKNearbyInviteInitiate, _GKNearbyPlayerFoundNotification, 
+                       _GKNearbyPlayerLostNotification, _GKNetworkRequestCount, _GKNetworkRequestFailure, 
+                       _GKNumberOfAchievementPointsKey, _GKNumberOfAchievementsKey, 
+                       _GKNumberOfFriendsInCommonKey, _GKNumberOfFriendsKey, _GKNumberOfGamesInCommonKey, 
+                       _GKNumberOfGamesPlayedKey, _GKOSLogInit, _GKParticipantIndexKey, 
+                       _GKParticipantStatusAllTrace, _GKParticipantStatusFailureTrace, 
+                       _GKParticipantStatusKey, _GKPhotoPendingKey, _GKPhotoURLsKey, 
+                       _GKPhotosChangedKey, _GKPickerAddCustomMessage, _GKPickerExpandPlayerGroup, 
+                       _GKPickerGameCenterGroupSelected, _GKPickerMessageGroupSelected, 
+                       _GKPickerNearbyPlayerSelected, _GKPickerSearchBarClicked, 
+                       _GKPickerSearchForPlayers, _GKPickerSelectPlayersFromSearchResults, 
                        _GKPineboardIdentifier, _GKPlayerAuthenticationDidChangeNotificationName, 
                        _GKPlayerDescriptorKey, _GKPlayerDidAuthenticateNewPlayerIDKey, 
                        _GKPlayerDidAuthenticateNotificationKeyPlayersSignedIn, _GKPlayerDidAuthenticateNotificationKeyPlayersSignedOut, 
@@ -389,10 +398,11 @@ exports:
                        _GKReporterInviteDeclineNoAnswer, _GKReporterInviteDeclineUser, 
                        _GKReporterInviteFail, _GKReporterInviteInitiate, _GKReporterInviteInitiateNearby, 
                        _GKReporterInviteUninvite, _GKReporterKeyAdamID, _GKReporterKeyBundleID, 
-                       _GKReporterKeyCount, _GKReporterKeyEventType, _GKReporterKeyFriendCount, 
-                       _GKReporterKeyFriendsPlayedThisGame, _GKReporterKeyInboxFriendRequestCount, 
-                       _GKReporterKeyInviteeCount, _GKReporterKeyReplayCount, _GKReporterKeyScoreRank, 
-                       _GKReporterKeyTimeSpan, _GKReporterKeyTournamentID, _GKReporterKeyTournamentType, 
+                       _GKReporterKeyButton, _GKReporterKeyChiclet, _GKReporterKeyCount, 
+                       _GKReporterKeyEventType, _GKReporterKeyFriendCount, _GKReporterKeyFriendsPlayedThisGame, 
+                       _GKReporterKeyInboxFriendRequestCount, _GKReporterKeyInviteeCount, 
+                       _GKReporterKeyReplayCount, _GKReporterKeyScoreRank, _GKReporterKeyTimeSpan, 
+                       _GKReporterKeyTournamentID, _GKReporterKeyTournamentType, 
                        _GKReporterMatchAdd, _GKReporterMatchAddHosted, _GKReporterMatchCancel, 
                        _GKReporterMatchConnect, _GKReporterMatchConnectionFail, _GKReporterMatchDisconnect, 
                        _GKReporterMatchFail, _GKReporterMatchFind, _GKReporterMatchFindHosted, 
@@ -583,9 +593,9 @@ uuids:
   - target:          armv7s-ios
     value:           D9F6942F-E541-344F-B2B9-B8035DFE7952
   - target:          arm64-ios
-    value:           937BB471-3185-3F01-91F5-14B752B30C87
+    value:           42179DF3-635A-3EFD-BFC4-F673ADF43E97
   - target:          arm64e-ios
-    value:           6CF91DA8-8AA7-3E4A-9D8A-473CB507026E
+    value:           1D48431C-88D6-34E9-9FDE-BBEBA6127785
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI'
 swift-abi-version: 7
 exports:
@@ -2806,9 +2816,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           5781FDCF-B9EF-3867-B59D-58127495A439
+    value:           FD9BB1C8-7CD5-36A6-BC8E-0750C6BBE0B2
   - target:          arm64e-ios
-    value:           48984272-D34C-39D2-BAB1-E94ADDFA73B3
+    value:           960233AB-5837-33C5-AD97-EEF7B83EDAD5
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/GameCenterUICore'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -2842,9 +2852,9 @@ uuids:
   - target:          armv7s-ios
     value:           C22B6792-9881-3ADD-B405-C3578A2D5BD2
   - target:          arm64-ios
-    value:           2452C30F-5EA8-33ED-8BAC-49659726AF09
+    value:           8A369038-E5F2-3255-AD4F-592B7AD0240F
   - target:          arm64e-ios
-    value:           455F9653-D071-3D10-B882-662C61EE8422
+    value:           CF9635BD-1645-34DA-B98D-08F746CF11D3
 install-name:    '/System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]

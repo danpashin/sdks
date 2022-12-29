@@ -45,13 +45,7 @@ typedef NS_ENUM(NSUInteger, NSPredicateOperatorType) {
 // Comparison predicates are predicates which do some form of comparison between the results of two expressions and return a BOOL. They take an operator, a left expression, and a right expression, and return the result of invoking the operator with the results of evaluating the expressions.
 
 API_AVAILABLE(macos(10.4), ios(3.0), watchos(2.0), tvos(9.0))
-@interface NSComparisonPredicate : NSPredicate {
-    @private
-    void *_reserved2;
-    NSPredicateOperator *_predicateOperator;
-    NSExpression *_lhs;
-    NSExpression *_rhs;
-}
+@interface NSComparisonPredicate : NSPredicate
 
 + (NSComparisonPredicate *)predicateWithLeftExpression:(NSExpression *)lhs rightExpression:(NSExpression *)rhs modifier:(NSComparisonPredicateModifier)modifier type:(NSPredicateOperatorType)type options:(NSComparisonPredicateOptions)options;
 + (NSComparisonPredicate *)predicateWithLeftExpression:(NSExpression *)lhs rightExpression:(NSExpression *)rhs customSelector:(SEL)selector;

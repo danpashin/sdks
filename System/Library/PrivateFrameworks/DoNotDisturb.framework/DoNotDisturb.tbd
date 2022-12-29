@@ -8,7 +8,9 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _DNDDayForWeekdays, _DNDDefaultModeIdentifier,
+    symbols:              [ _DNDCompatibilityVersionStringify,
+                            _DNDCompatibilityVersionToString, _DNDDayForWeekdays,
+                            _DNDDefaultModeIdentifier,
                             _DNDDefaultScheduleIdentifier,
                             _DNDDeviceClassFromMGDeviceClass,
                             _DNDEnabledSettingToString,
@@ -155,6 +157,7 @@ exports:
                             DNDClientEventDetails._type,
                             DNDClientEventDetails._urgency,
                             DNDConfiguration._allowedApplicationIdentifiers,
+                            DNDConfiguration._compatibilityVersion,
                             DNDConfiguration._deniedApplicationIdentifiers,
                             DNDConfiguration._hideApplicationBadges,
                             DNDConfiguration._minimumBreakthroughUrgency,
@@ -178,6 +181,7 @@ exports:
                             DNDModeAssertionDetails._userVisibleEndDate,
                             DNDModeAssertionInvalidationDetails._identifier,
                             DNDModeConfiguration._automaticallyGenerated,
+                            DNDModeConfiguration._compatibilityVersion,
                             DNDModeConfiguration._configuration,
                             DNDModeConfiguration._created,
                             DNDModeConfiguration._dimsLockScreen,

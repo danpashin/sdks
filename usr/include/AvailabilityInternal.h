@@ -55,7 +55,7 @@
     #ifdef __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
         /* compiler sets __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ when -mtvos-version-min is used */
         #define __TV_OS_VERSION_MIN_REQUIRED __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        #define __TV_OS_VERSION_MAX_ALLOWED __TVOS_15_4
+        #define __TV_OS_VERSION_MAX_ALLOWED __TVOS_15_5
         /* for compatibility with existing code.  New code should use platform specific checks */
         #define __IPHONE_OS_VERSION_MIN_REQUIRED 90000
     #endif
@@ -65,7 +65,7 @@
     #ifdef __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
         /* compiler sets __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ when -mwatchos-version-min is used */
         #define __WATCH_OS_VERSION_MIN_REQUIRED __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        #define __WATCH_OS_VERSION_MAX_ALLOWED __WATCHOS_8_5
+        #define __WATCH_OS_VERSION_MAX_ALLOWED __WATCHOS_8_6
         /* for compatibility with existing code.  New code should use platform specific checks */
         #define __IPHONE_OS_VERSION_MIN_REQUIRED 90000
     #endif
@@ -75,7 +75,7 @@
     #ifdef __ENVIRONMENT_BRIDGE_OS_VERSION_MIN_REQUIRED__
         
         #define __BRIDGE_OS_VERSION_MIN_REQUIRED __ENVIRONMENT_BRIDGE_OS_VERSION_MIN_REQUIRED__
-        #define __BRIDGE_OS_VERSION_MAX_ALLOWED 60400
+        #define __BRIDGE_OS_VERSION_MAX_ALLOWED 60500
         /* for compatibility with existing code.  New code should use platform specific checks */
         #define __IPHONE_OS_VERSION_MIN_REQUIRED 110000
     #endif
@@ -97,7 +97,7 @@
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
     /* make sure a default max version is set */
     #ifndef __IPHONE_OS_VERSION_MAX_ALLOWED
-        #define __IPHONE_OS_VERSION_MAX_ALLOWED     __IPHONE_15_4
+        #define __IPHONE_OS_VERSION_MAX_ALLOWED     __IPHONE_15_5
     #endif
     /* make sure a valid min is set */
     #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_2_0

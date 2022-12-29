@@ -2,7 +2,6 @@
 //  PKVehicleConnectionSession.h
 //  PKVehicleConnectionSession
 //
-//  Created by Russell Fenenga on 9/13/21.
 //  Copyright © 2021 Apple, Inc. All rights reserved.
 //
 
@@ -12,12 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+API_AVAILABLE(ios(15.4))
 typedef NS_ENUM(NSInteger, PKVehicleConnectionErrorCode) {
     PKVehicleConnectionErrorCodeUnknown = 0,
     PKVehicleConnectionErrorCodeSessionUnableToStart,
     PKVehicleConnectionErrorCodeSessionNotActive
 };
 
+API_AVAILABLE(ios(15.4))
 typedef NS_ENUM(NSInteger, PKVehicleConnectionSessionConnectionState) {
     PKVehicleConnectionSessionConnectionStateDisconnected = 0,
     PKVehicleConnectionSessionConnectionStateConnected,
@@ -25,6 +26,7 @@ typedef NS_ENUM(NSInteger, PKVehicleConnectionSessionConnectionState) {
     PKVehicleConnectionSessionConnectionStateFailedToConnect
 };
 
+API_AVAILABLE(ios(15.4))
 @protocol PKVehicleConnectionDelegate <NSObject>
 
 - (void)sessionDidChangeConnectionState:(PKVehicleConnectionSessionConnectionState)newState;
@@ -34,7 +36,7 @@ typedef NS_ENUM(NSInteger, PKVehicleConnectionSessionConnectionState) {
 
 @end
 
-
+API_AVAILABLE(ios(15.4))
 @interface PKVehicleConnectionSession : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

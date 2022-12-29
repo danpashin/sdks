@@ -128,4 +128,7 @@
 #if __has_include(<PassKit/PKDateComponentsRange.h>)
 #import <PassKit/PKDateComponentsRange.h>
 #endif
+#if __has_include(<PassKit/PKVehicleConnectionSession.h>)
+#import <PassKit/PKVehicleConnectionSession.h>
+#endif
 #endif // TARGET_OS_IPHONE || TARGET_OS_OSX

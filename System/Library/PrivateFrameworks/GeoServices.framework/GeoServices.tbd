@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-current-version:       1830.34.11
+current-version:       1830.35.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -3519,8 +3519,11 @@ exports:
                             _GEOVLBuildReadAllFrom, _GEOVLBuildReadFrom,
                             _GEOVLDataTileIsDirty, _GEOVLDataTileIsValid,
                             _GEOVLDataTileReadAllFrom, _GEOVLDataTileReadFrom,
-                            _GEOVLFARStateIsValid, _GEOVLFARStateReadAllFrom,
-                            _GEOVLFARStateReadFrom, _GEOVLFCorrectionIsValid,
+                            _GEOVLFARFailureTypesIsValid,
+                            _GEOVLFARFailureTypesReadAllFrom,
+                            _GEOVLFARFailureTypesReadFrom, _GEOVLFARStateIsValid,
+                            _GEOVLFARStateReadAllFrom, _GEOVLFARStateReadFrom,
+                            _GEOVLFCorrectionIsValid,
                             _GEOVLFCorrectionReadAllFrom,
                             _GEOVLFCorrectionReadFrom,
                             _GEOVLFDeviceOrientationIsValid,
@@ -5888,9 +5891,10 @@ exports:
                             GEOUserSessionEntity, GEOUtilityService,
                             GEOUtilityServiceLocalProxy,
                             GEOUtilityServiceRemoteProxy, GEOVLBuild,
-                            GEOVLDataTile, GEOVLFARState, GEOVLFCorrection,
-                            GEOVLFDeviceOrientation, GEOVLFEntryPoint,
-                            GEOVLFFailureDetails, GEOVLFGravityVector,
+                            GEOVLDataTile, GEOVLFARFailureTypes, GEOVLFARState,
+                            GEOVLFCorrection, GEOVLFDeviceOrientation,
+                            GEOVLFEntryPoint, GEOVLFFailureDetails,
+                            GEOVLFGravityVector,
                             GEOVLFInitializationFailureDetails,
                             GEOVLFLocalizationAlgorithmDetails,
                             GEOVLFLocalizationDetails, GEOVLFLocalizationResults,

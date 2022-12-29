@@ -41,9 +41,6 @@ extern PKPaymentNetwork const PKPaymentNetworkBarcode API_AVAILABLE(macos(11.0),
 extern PKPaymentNetwork const PKPaymentNetworkGirocard API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0));
 extern PKPaymentNetwork const PKPaymentNetworkWaon API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0));
 extern PKPaymentNetwork const PKPaymentNetworkNanaco API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0));
-#if APPLE_FEATURE_LYNX
-extern PKPaymentNetwork const PKPaymentNetworkAppleStoredValue API_AVAILABLE(macos(12.4), ios(15.4), watchos(8.4));
-#endif // APPLE_FEATURE_LYNX
 typedef NSString * PKContactField NS_STRING_ENUM;
 extern PKContactField const PKContactFieldPostalAddress API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0));
 extern PKContactField const PKContactFieldEmailAddress  API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0));

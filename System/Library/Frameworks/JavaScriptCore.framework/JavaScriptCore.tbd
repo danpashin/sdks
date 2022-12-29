@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           A57CBABB-0D67-3B02-BC7D-060685B78E7C
   - target:          arm64-ios
-    value:           4966E1E4-8B80-30AF-B7A3-91C7AFB8E6E3
+    value:           D66EBC36-E266-35DC-8538-D07F4AC2507B
   - target:          arm64e-ios
-    value:           E0C1E224-44E1-38BF-BCF5-6A999FD29C2E
+    value:           690D1065-5626-35B4-9C39-06107613CF75
 install-name:    '/System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore'
-current-version: 613.1.17
+current-version: 613.2.6
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os4.3$/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore', 
@@ -1124,8 +1124,8 @@ exports:
                        __ZN3JSC11CompilationC2EOS0_, __ZN3JSC11CompilationD1Ev, __ZN3JSC11CompilationD2Ev, 
                        __ZN3JSC11FuzzerAgent13getPredictionEPNS_9CodeBlockERKNS_10CodeOriginEy, 
                        __ZN3JSC11FuzzerAgentD0Ev, __ZN3JSC11FuzzerAgentD1Ev, __ZN3JSC11FuzzerAgentD2Ev, 
-                       __ZN3JSC11IsoSubspaceC1EN3WTF7CStringERNS_4HeapERKNS_12HeapCellTypeEmh, 
-                       __ZN3JSC11IsoSubspaceC2EN3WTF7CStringERNS_4HeapERKNS_12HeapCellTypeEmh, 
+                       __ZN3JSC11IsoSubspaceC1EN3WTF7CStringERNS_4HeapERKNS_12HeapCellTypeEmhONSt3__110unique_ptrINS_22IsoMemoryAllocatorBaseENS8_14default_deleteISA_EEEE, 
+                       __ZN3JSC11IsoSubspaceC2EN3WTF7CStringERNS_4HeapERKNS_12HeapCellTypeEmhONSt3__110unique_ptrINS_22IsoMemoryAllocatorBaseENS8_14default_deleteISA_EEEE, 
                        __ZN3JSC11IsoSubspaceD0Ev, __ZN3JSC11IsoSubspaceD1Ev, __ZN3JSC11IsoSubspaceD2Ev, 
                        __ZN3JSC11JSGenerator6s_infoE, __ZN3JSC11JSWithScope6createERNS_2VMEPNS_14JSGlobalObjectEPNS_7JSScopeEPNS_8JSObjectE, 
                        __ZN3JSC11MarkedBlock15aboutToMarkSlowEj, __ZN3JSC11ProxyObject14finishCreationERNS_2VMEPNS_14JSGlobalObjectENS_7JSValueES5_, 
@@ -2067,6 +2067,9 @@ exports:
                        __ZN3WTF11LogChannels32initializeLogChannelsIfNecessaryENSt3__18optionalINS_6StringEEE, 
                        __ZN3WTF11OSAllocator16reserveAndCommitEmNS0_5UsageEbbbb, 
                        __ZN3WTF11OSAllocator18reserveUncommittedEmNS0_5UsageEbbbb, 
+                       __ZN3WTF11OSAllocator19tryReserveAndCommitEmNS0_5UsageEbbbb, 
+                       __ZN3WTF11OSAllocator21tryReserveUncommittedEmNS0_5UsageEbbbb, 
+                       __ZN3WTF11OSAllocator28tryReserveUncommittedAlignedEmmNS0_5UsageEbbbb, 
                        __ZN3WTF11Persistence5CoderINS_10AtomStringEE6decodeERNS0_7DecoderE, 
                        __ZN3WTF11Persistence5CoderINS_10AtomStringEE6encodeERNS0_7EncoderERKS2_, 
                        __ZN3WTF11Persistence5CoderINS_6StringEE6decodeERNS0_7DecoderE, 

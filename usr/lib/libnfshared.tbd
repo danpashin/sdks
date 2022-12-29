@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           37B6538C-104B-3E82-AB44-4FFF9759A104
   - target:          arm64-ios
-    value:           70D10DA3-8549-3594-8564-A524D619E078
+    value:           5C604E1F-9ABF-3CEF-98DB-E765AFA7A535
   - target:          arm64e-ios
-    value:           87EA6213-977E-38F6-8D46-B7E04DA575BB
+    value:           FC7F9F1F-11A9-3B71-985A-E607E42B338F
 install-name:    '/usr/lib/libnfshared.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -50,10 +50,10 @@ exports:
                        _AWDNFCTransactionEndOfOperationEventReadFrom, _AWDNFCTransactionLastAPDUSentEventReadFrom, 
                        _AWDNFCVASTransactionExceptionEventReadFrom, _AWDNFCVersionsReadFrom, 
                        _GetElapsedTimeInMillisecondsFromMachTime, _NFAccessoryTagI2CBridgeErrorDomain, 
-                       _NFBuildVersion, _NFDataAppend, _NFDataAppendBytes, _NFDataAsHexString, 
-                       _NFDataCreateWithBytes, _NFDataCreateWithBytesNoCopy, _NFDataCreateWithFile, 
-                       _NFDataCreateWithHexString, _NFDataCreateWithLength, _NFDataPrintAsHexString, 
-                       _NFDataRelease, _NFDataRetain, _NFDataScannerCreateWithData, 
+                       _NFBootUUID, _NFBuildVersion, _NFDataAppend, _NFDataAppendBytes, 
+                       _NFDataAsHexString, _NFDataCreateWithBytes, _NFDataCreateWithBytesNoCopy, 
+                       _NFDataCreateWithFile, _NFDataCreateWithHexString, _NFDataCreateWithLength, 
+                       _NFDataPrintAsHexString, _NFDataRelease, _NFDataRetain, _NFDataScannerCreateWithData, 
                        _NFDataScannerEOF, _NFDataScannerRead, _NFDataScannerRead16, 
                        _NFDataScannerRead32, _NFDataScannerRead8, _NFDataScannerReadData, 
                        _NFDataScannerRelease, _NFDataScannerRetain, _NFGetOrCreateRootQueue, 
@@ -70,9 +70,9 @@ exports:
                        _NFThermalMonitorProvidedBySMC, _NF_isFeatureSupported, _TLVCreateWithData, 
                        _TLVCreateWithDataMixed, _TLVCreateWithFirstChild, _TLVCreateWithValue, 
                        _TLVRelease, _TLVRetain, __NFSharedLogClose, __NFSharedLogOpen, 
-                       ___NFSharedLogv, _gRootQueueMutex, _postAWDHardwareExceptionEvent, 
-                       _postAWDLPCDStatistic, _postAWDMainSERemovedEvent, _postAWDMiddlewareExceptionEvent, 
-                       _resetAWDLoadStackExceptionCount ]
+                       ___NFSharedLogv, _gRootQueueMutex, _postAWDDynamicRFChangedEvent, 
+                       _postAWDHardwareExceptionEvent, _postAWDLPCDStatistic, _postAWDMainSERemovedEvent, 
+                       _postAWDMiddlewareExceptionEvent, _resetAWDLoadStackExceptionCount ]
     objc-classes:    [ AWDExpressTransactionType, AWDNFCCRSAuthExceptionEvent, AWDNFCCRSAuthInitExceptionEvent, 
                        AWDNFCCardIngestionReaderStateChangeEvent, AWDNFCCardIngestionSessionStateChangeEvent, 
                        AWDNFCDeviceExceptionStatistic, AWDNFCExpressFelicaEndedEvent, 

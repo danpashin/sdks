@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.32 clang-1316.0.20.8)
-// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ProximityReader
-// swift-module-flags-ignorable: -user-module-version 105.18
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.35 clang-1316.0.20.9)
+// swift-module-flags: -target arm64-apple-ios15.5 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ProximityReader
+// swift-module-flags-ignorable: -user-module-version 105.58
 import AVFoundation
 import CryptoKit
 import Foundation
@@ -27,7 +27,6 @@ public struct PaymentCardVerificationRequest {
     case saveCard
     case openTab
     case other
-    case noVerification
     public static func == (a: ProximityReader.PaymentCardVerificationRequest.Reason, b: ProximityReader.PaymentCardVerificationRequest.Reason) -> Swift.Bool
     public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
@@ -73,6 +72,7 @@ public enum PaymentCardReaderError : Swift.Error {
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public class PaymentCardReader {
   public static let isSupported: Swift.Bool
   final public let id: Swift.String
@@ -173,6 +173,7 @@ public struct VASReadResult : Swift.Identifiable {
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public class PaymentCardReaderSession {
   final public let id: Swift.String
   public enum Event {
@@ -260,9 +261,11 @@ extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.RawRepresentabl
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardReaderSession.Event : Swift.Equatable {}
 @available(iOS 15.4, *)
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardReaderSession.Event : Swift.Hashable {}

@@ -8,12 +8,13 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SKAChannelManagerErrorDomain,
+    symbols:              [ _SKAAccountProviderErrorDomain,
+                            _SKAChannelManagerErrorDomain,
                             _SKAChannelManagerErrorRetryIntervalKey,
                             _SKPushManagerErrorDomain ]
-    objc-classes:         [ SKAChannelManager, SKADatabaseChannel,
-                            SKADatabaseInvitedUser, SKADatabaseManager,
-                            SKADatabasePendingPublishRequest,
+    objc-classes:         [ SKAAccountProvider, SKAChannelManager,
+                            SKADatabaseChannel, SKADatabaseInvitedUser,
+                            SKADatabaseManager, SKADatabasePendingPublishRequest,
                             SKADatabaseProvider, SKADatabaseReceivedInvitation,
                             SKADatabaseRemovedUser, SKADatabaseStatus,
                             SKADatabaseSubscriptionAssertion,

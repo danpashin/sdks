@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           F4340891-A940-3928-8B30-415623ADA8BE
   - target:          arm64-ios
-    value:           D95BC62C-9639-327C-8139-FB58E55DB3E9
+    value:           0A69C050-1F28-35E0-9ECC-360451F92BE5
   - target:          arm64e-ios
-    value:           833091CE-8761-3562-922D-AF37BE7316EC
+    value:           EBDCCA54-0ACF-35C2-A2FA-2D45B2270EDC
 install-name:    '/usr/lib/PN548_API.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -53,11 +53,12 @@ exports:
                        _NFDriverDisableBoost, _NFDriverDisableHeadlessModeMiniNV, 
                        _NFDriverDumpLPMDebugLog, _NFDriverDumpUART, _NFDriverEnableAutomaticRFOverride, 
                        _NFDriverEnableFelicaTxEndPatternV2, _NFDriverEnableGreenCarThreshold, 
-                       _NFDriverEnableHeadlessTestMode, _NFDriverGPIOSetPMUStandbyPowerEnabled, 
-                       _NFDriverGetControllerInfo, _NFDriverGetFlashWriteCounter, 
-                       _NFDriverGetHeadlessModeFlags, _NFDriverGetMultiTagState, 
-                       _NFDriverGetOSUpdateLog, _NFDriverGetPowerCounter, _NFDriverGetSWIOTemperature, 
-                       _NFDriverGetSecureElementInfo, _NFDriverGetStackBreadcrumb, 
+                       _NFDriverEnableHeadlessModeMiniNV, _NFDriverEnableHeadlessTestMode, 
+                       _NFDriverGPIOSetPMUStandbyPowerEnabled, _NFDriverGetControllerInfo, 
+                       _NFDriverGetFlashWriteCounter, _NFDriverGetHeadlessModeFlags, 
+                       _NFDriverGetMultiTagState, _NFDriverGetOSUpdateLog, _NFDriverGetPowerCounter, 
+                       _NFDriverGetSWIOTemperature, _NFDriverGetSecureElementInfo, 
+                       _NFDriverGetStackBreadcrumb, _NFDriverGetTemporaryPollingPeriod, 
                        _NFDriverGetUniqueFDRKey, _NFDriverGetUnlockRequestInfo, _NFDriverHCISoftReset, 
                        _NFDriverISO15693SetDataRate, _NFDriverIsHostWakeCapable, 
                        _NFDriverIsSecureElementEnumerated, _NFDriverIsSecureElementPresent, 
@@ -83,8 +84,8 @@ exports:
                        _NFDriverSetHeadlessMode, _NFDriverSetIcefallSecureElementPower, 
                        _NFDriverSetMaxWTX, _NFDriverSetPollingConfig, _NFDriverSetPollingProfile, 
                        _NFDriverSetReaderModeRFGain, _NFDriverSetSecureElementAlwaysOn, 
-                       _NFDriverSetSecureElementPower, _NFDriverSetTypeATagDataRate, 
-                       _NFDriverSimulateCrash, _NFDriverToggleDownloadRequest, _NFDriverToggleGPIO, 
-                       _NFDriverTriggerDelayedWake, _NFDriverUnloadStackAndLeaveHWEnabled, 
+                       _NFDriverSetSecureElementPower, _NFDriverSetTemporaryPollingPeriod, 
+                       _NFDriverSetTypeATagDataRate, _NFDriverSimulateCrash, _NFDriverToggleDownloadRequest, 
+                       _NFDriverToggleGPIO, _NFDriverTriggerDelayedWake, _NFDriverUnloadStackAndLeaveHWEnabled, 
                        _NFDriverUpdateFirmware, _nfc_err ]
 ...

@@ -621,6 +621,25 @@ The uniform type identifier kUTTypeWebArchive can be used get the related pasteb
  */
 @property (nonatomic, readonly) WKFullscreenState fullscreenState API_AVAILABLE(macos(12.0), ios(15.0));
 
+/*! @abstract Insets from the @link frame @/link that represent the smallest and largest possible size of the
+ visual area of the @link WKWebView @/link based on the state of the surrounding UI.
+ @discussion For apps with size-changing UI around the @link WKWebView @/link, specify minimumViewportInset and
+ maximumViewportInset to supply webpages with the appropriate value for CSS "large viewport" `lv*`
+ units and CSS "small viewport" `sv*` units respectively @link https://www.w3.org/TR/css-values-4/#viewport-variants @/link.
+ Set minimumViewportInset to the smallest inset a webpage may experience in your app's maximally
+ collapsed UI configuration. Set maximumViewportInset to the largest inset a webpage may experience
+ in your app's maximally expanded UI configuration. For apps where the maximally collapsed UI
+ configuration is such that the @link WKWebView @/link is not surrounded by anything, there is no need to specify
+ minimumViewportInset. For apps with fixed-sized UI surrounding the @link WKWebView @/link, there is no need to
+ specify either value. Both values must be either zero or positive, and maximumViewportInset must be
+ larger than minimumViewportInset.
+ */
+#if TARGET_OS_IPHONE
+@property (nonatomic, readonly) UIEdgeInsets minimumViewportInset API_AVAILABLE(ios(15.0));
+@property (nonatomic, readonly) UIEdgeInsets maximumViewportInset API_AVAILABLE(ios(15.0));
+- (void)setMinimumViewportInset:(UIEdgeInsets)minimumViewportInset maximumViewportInset:(UIEdgeInsets)maximumViewportInset API_AVAILABLE(ios(15.0));
+#endif
+
 @end
 
 #if !TARGET_OS_IPHONE

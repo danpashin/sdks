@@ -35,7 +35,10 @@ API_AVAILABLE(macos(10.4), ios(3.0), watchos(2.0), tvos(9.0))
     @package
     struct _expressionFlags {
         unsigned int _evaluationBlocked:1;
-        unsigned int _reservedExpressionFlags:31;
+        unsigned int _usesKVC:1;
+        unsigned int _validatedExpression:1;
+        unsigned int _validatedKeys:1;
+        unsigned int _reservedExpressionFlags:28;
     } _expressionFlags;
 #ifdef __LP64__
     uint32_t reserved;

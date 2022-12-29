@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           CD8B460A-0F51-38B5-9DFB-DED80B238703
   - target:          arm64-ios
-    value:           871FF26B-B02D-3A03-8819-51E1D020E6BB
+    value:           84F2E7FA-3B4E-3242-AB1E-CC0F2AEB17A0
   - target:          arm64e-ios
-    value:           5452C019-B75C-3513-9D51-C269210F16CE
+    value:           BD0A477C-39B5-33BC-8903-B72D540A5CA8
 install-name:    '/usr/lib/libSystem.B.dylib'
-current-version: 1311.100.3
+current-version: 1311.120.1
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/usr/lib/system/libkeymgr.dylib', '/usr/lib/system/liblaunch.dylib', 
@@ -51,9 +51,9 @@ uuids:
   - target:          armv7s-ios
     value:           7E1F8D6D-A166-37E6-8E52-FAE288FFE811
   - target:          arm64-ios
-    value:           36720796-D55D-3EB3-AC96-8C701BF70F68
+    value:           6216DBE6-4B2F-3BFF-824A-A2538F159CFC
   - target:          arm64e-ios
-    value:           7089E0B6-8BEB-398E-8B83-FE0686F27A81
+    value:           3E8A856F-3F9A-34A0-8749-47A49FDE9A47
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 85
 parent-umbrella:
@@ -83,9 +83,9 @@ uuids:
   - target:          armv7s-ios
     value:           0055E658-E557-3C3E-B05C-661E1DEB2F44
   - target:          arm64-ios
-    value:           E40BA421-23F2-3651-A5C9-8B0248CB804D
+    value:           B2967315-FFFF-312A-A5DF-93187F943272
   - target:          arm64e-ios
-    value:           C4FC7AFB-C0EB-3BCC-A233-7B3B3B4E5C36
+    value:           6F836FBD-D8D6-3C6E-91F3-151876F1CC04
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
 current-version: 60191.100.1
 parent-umbrella:
@@ -179,9 +179,9 @@ uuids:
   - target:          armv7s-ios
     value:           182FACEE-469E-3B9E-ACFB-DCAD641E7FF0
   - target:          arm64-ios
-    value:           010BCB95-FB5D-3989-BDE2-106DA57D28A7
+    value:           9DA6A1C4-2F16-3FDF-B413-1F76B71C4937
   - target:          arm64e-ios
-    value:           B33807B0-F5AB-337A-97A0-36E35CDD8ADB
+    value:           99314816-5468-35E2-B22D-4503B2519099
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 103.1
 parent-umbrella:
@@ -733,9 +733,9 @@ uuids:
   - target:          armv7s-ios
     value:           24E8017B-F649-395F-9AFE-530BF82F1504
   - target:          arm64-ios
-    value:           DE2565CA-0B9D-3703-8B54-EB30C5EDD837
+    value:           DD6F6F40-8E0B-3007-8EFF-B6ADC3FBA26B
   - target:          arm64e-ios
-    value:           AC17A9FC-6BAC-35CE-8284-F531C59B4F6A
+    value:           2F0D4F68-A3C1-3504-A159-9A34DCC5A8A6
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -756,11 +756,11 @@ uuids:
   - target:          armv7s-ios
     value:           D998CF6C-EDE6-35A4-9CB0-FEC4DA22454D
   - target:          arm64-ios
-    value:           98DEAD00-8211-38AA-88E4-18A6E139EB25
+    value:           85CE5805-9D61-397E-9C70-132DAC062DDB
   - target:          arm64e-ios
-    value:           AB8B57FC-C74C-33D7-9E5C-3945C9948D33
+    value:           5B156A0A-7CAA-3843-A86C-1ECE1E65A36F
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 1218.100.47
+current-version: 1218.120.10
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -775,11 +775,11 @@ exports:
                        _ccaes_ios_hardware_cbc_encrypt_mode, _ccaes_ios_mux_cbc_decrypt_mode, 
                        _ccaes_ios_mux_cbc_encrypt_mode, _ccdh_init_gp, _ccdh_init_gp_with_order, 
                        _ccec_generate_key_internal_fips, _ccn_addmul1, _ccn_div_equal_size, 
-                       _ccn_div_euclid, _ccn_mul, _ccn_mul1, _ccprime_rabin_miller, 
-                       _ccrmd128_ltc_di, _ccrmd256_ltc_di, _ccrmd320_ltc_di, _ccrsa_crt_makekey, 
-                       _ccrsa_decrypt_eme_pkcs1v15_blinded, _ccrsa_decrypt_oaep_blinded, 
-                       _ccrsa_generate_fips186_key_trace, _ccrsa_make_fips186_key, 
-                       _ccrsa_make_fips186_key_trace, _ccrsa_priv_crypt_blinded, 
+                       _ccn_div_euclid, _ccn_mul, _ccn_mul1, _ccn_n, _ccn_random_bits, 
+                       _ccn_sub1, _ccn_zero_multi, _ccprime_rabin_miller, _ccrmd128_ltc_di, 
+                       _ccrmd256_ltc_di, _ccrmd320_ltc_di, _ccrsa_crt_makekey, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
+                       _ccrsa_decrypt_oaep_blinded, _ccrsa_generate_fips186_key_trace, 
+                       _ccrsa_make_fips186_key, _ccrsa_make_fips186_key_trace, _ccrsa_priv_crypt_blinded, 
                        _ccrsa_sign_pkcs1v15_blinded, _ccrsa_sign_pss_blinded, _ccrsa_verify_pss, 
                        _ccsha1_vng_armv7neon_di, _ccsha224_vng_armv7neon_di, _ccsha256_vng_armv7neon_di, 
                        _ccsrp_test_calculations, _ccz_gcd, _ccz_invmod, _ccz_lcm, 
@@ -815,24 +815,31 @@ exports:
                        _cccast_cbc_decrypt_mode, _cccast_cbc_encrypt_mode, _cccast_cfb8_decrypt_mode, 
                        _cccast_cfb8_encrypt_mode, _cccast_cfb_decrypt_mode, _cccast_cfb_encrypt_mode, 
                        _cccast_ctr_crypt_mode, _cccast_ecb_decrypt_mode, _cccast_ecb_encrypt_mode, 
-                       _cccast_ofb_crypt_mode, _cccbc_one_shot, _ccccm_decrypt, _ccccm_encrypt, 
-                       _ccccm_finalize_and_generate_tag, _ccccm_finalize_and_verify_tag, 
-                       _ccccm_one_shot_decrypt, _ccccm_one_shot_encrypt, _ccchacha20, 
-                       _ccchacha20_final, _ccchacha20_init, _ccchacha20_reset, _ccchacha20_setcounter, 
-                       _ccchacha20_setnonce, _ccchacha20_update, _ccchacha20poly1305_aad, 
-                       _ccchacha20poly1305_decrypt, _ccchacha20poly1305_decrypt_oneshot, 
-                       _ccchacha20poly1305_encrypt, _ccchacha20poly1305_encrypt_oneshot, 
-                       _ccchacha20poly1305_finalize, _ccchacha20poly1305_incnonce, 
-                       _ccchacha20poly1305_info, _ccchacha20poly1305_init, _ccchacha20poly1305_reset, 
-                       _ccchacha20poly1305_setnonce, _ccchacha20poly1305_verify, 
+                       _cccast_ofb_crypt_mode, _cccbc_block_size, _cccbc_clear_iv, 
+                       _cccbc_context_size, _cccbc_copy_iv, _cccbc_init, _cccbc_one_shot, 
+                       _cccbc_set_iv, _cccbc_update, _ccccm_aad, _ccccm_block_size, 
+                       _ccccm_cbcmac, _ccccm_context_size, _ccccm_decrypt, _ccccm_encrypt, 
+                       _ccccm_finalize, _ccccm_finalize_and_generate_tag, _ccccm_finalize_and_verify_tag, 
+                       _ccccm_init, _ccccm_one_shot, _ccccm_one_shot_decrypt, _ccccm_one_shot_encrypt, 
+                       _ccccm_reset, _ccccm_set_iv, _ccccm_update, _cccfb8_block_size, 
+                       _cccfb8_context_size, _cccfb8_init, _cccfb8_one_shot, _cccfb8_update, 
+                       _cccfb_block_size, _cccfb_context_size, _cccfb_init, _cccfb_one_shot, 
+                       _cccfb_update, _ccchacha20, _ccchacha20_final, _ccchacha20_init, 
+                       _ccchacha20_reset, _ccchacha20_setcounter, _ccchacha20_setnonce, 
+                       _ccchacha20_update, _ccchacha20poly1305_aad, _ccchacha20poly1305_decrypt, 
+                       _ccchacha20poly1305_decrypt_oneshot, _ccchacha20poly1305_encrypt, 
+                       _ccchacha20poly1305_encrypt_oneshot, _ccchacha20poly1305_finalize, 
+                       _ccchacha20poly1305_incnonce, _ccchacha20poly1305_info, _ccchacha20poly1305_init, 
+                       _ccchacha20poly1305_reset, _ccchacha20poly1305_setnonce, _ccchacha20poly1305_verify, 
                        _ccckg_contributor_commit, _ccckg_contributor_finish, _ccckg_init, 
                        _ccckg_owner_finish, _ccckg_owner_generate_share, _ccckg_sizeof_commitment, 
                        _ccckg_sizeof_ctx, _ccckg_sizeof_opening, _ccckg_sizeof_share, 
                        _cccmac_final_generate, _cccmac_final_verify, _cccmac_init, 
                        _cccmac_one_shot_generate, _cccmac_one_shot_verify, _cccmac_update, 
-                       _cccurve25519, _ccder_blob_decode_bitstring, _ccder_blob_decode_eckey, 
-                       _ccder_blob_decode_len, _ccder_blob_decode_len_strict, _ccder_blob_decode_oid, 
-                       _ccder_blob_decode_range, _ccder_blob_decode_range_strict, 
+                       _ccctr_block_size, _ccctr_context_size, _ccctr_init, _ccctr_one_shot, 
+                       _ccctr_update, _cccurve25519, _ccder_blob_decode_bitstring, 
+                       _ccder_blob_decode_eckey, _ccder_blob_decode_len, _ccder_blob_decode_len_strict, 
+                       _ccder_blob_decode_oid, _ccder_blob_decode_range, _ccder_blob_decode_range_strict, 
                        _ccder_blob_decode_seqii, _ccder_blob_decode_seqii_strict, 
                        _ccder_blob_decode_sequence_tl, _ccder_blob_decode_sequence_tl_strict, 
                        _ccder_blob_decode_tag, _ccder_blob_decode_tl, _ccder_blob_decode_tl_strict, 
@@ -912,16 +919,19 @@ exports:
                        _ccec_verify, _ccec_verify_composite, _ccec_verify_composite_digest, 
                        _ccec_verify_composite_msg, _ccec_verify_digest, _ccec_verify_msg, 
                        _ccec_x963_export, _ccec_x963_import_priv, _ccec_x963_import_priv_size, 
-                       _ccec_x963_import_pub, _ccec_x963_import_pub_size, _ccecdh_compute_shared_secret, 
-                       _ccecdh_generate_key, _ccecies_decrypt_gcm, _ccecies_decrypt_gcm_composite, 
-                       _ccecies_decrypt_gcm_from_shared_secret, _ccecies_decrypt_gcm_plaintext_size, 
-                       _ccecies_decrypt_gcm_plaintext_size_cp, _ccecies_decrypt_gcm_setup, 
-                       _ccecies_encrypt_gcm, _ccecies_encrypt_gcm_ciphertext_size, 
+                       _ccec_x963_import_pub, _ccec_x963_import_pub_size, _ccecb_block_size, 
+                       _ccecb_context_size, _ccecb_init, _ccecb_one_shot, _ccecb_update, 
+                       _ccecdh_compute_shared_secret, _ccecdh_generate_key, _ccecies_decrypt_gcm, 
+                       _ccecies_decrypt_gcm_composite, _ccecies_decrypt_gcm_from_shared_secret, 
+                       _ccecies_decrypt_gcm_plaintext_size, _ccecies_decrypt_gcm_plaintext_size_cp, 
+                       _ccecies_decrypt_gcm_setup, _ccecies_encrypt_gcm, _ccecies_encrypt_gcm_ciphertext_size, 
                        _ccecies_encrypt_gcm_composite, _ccecies_encrypt_gcm_from_shared_secret, 
                        _ccecies_encrypt_gcm_setup, _ccecies_import_eph_pub, _ccecies_pub_key_size, 
                        _ccecies_pub_key_size_cp, _cced25519_make_key_pair, _cced25519_make_pub, 
-                       _cced25519_sign, _cced25519_verify, _ccgcm_inc_iv, _ccgcm_init_with_iv, 
-                       _ccgcm_one_shot, _ccgcm_one_shot_legacy, _ccgcm_set_iv_legacy, 
+                       _cced25519_sign, _cced25519_verify, _ccgcm_aad, _ccgcm_block_size, 
+                       _ccgcm_context_size, _ccgcm_finalize, _ccgcm_gmac, _ccgcm_inc_iv, 
+                       _ccgcm_init, _ccgcm_init_with_iv, _ccgcm_one_shot, _ccgcm_one_shot_legacy, 
+                       _ccgcm_reset, _ccgcm_set_iv, _ccgcm_set_iv_legacy, _ccgcm_update, 
                        _cch2c, _cch2c_name, _cch2c_p256_sha256_sae_compat_info, _cch2c_p256_sha256_sswu_ro_info, 
                        _cch2c_p384_sha384_sae_compat_info, _cch2c_p384_sha512_sswu_ro_info, 
                        _cch2c_p521_sha512_sswu_ro_info, _cchkdf, _cchkdf_expand, 
@@ -944,64 +954,68 @@ exports:
                        _ccmode_factory_siv_decrypt, _ccmode_factory_siv_encrypt, 
                        _ccmode_factory_xts_decrypt, _ccmode_factory_xts_encrypt, 
                        _ccn_add, _ccn_add1, _ccn_bitlen, _ccn_cmp, _ccn_cmpn, _ccn_lprint, 
-                       _ccn_n, _ccn_print, _ccn_random_bits, _ccn_read_uint, _ccn_set, 
-                       _ccn_shift_right, _ccn_sub, _ccn_sub1, _ccn_write_int, _ccn_write_int_size, 
-                       _ccn_write_uint, _ccn_write_uint_padded_ct, _ccn_write_uint_size, 
-                       _ccn_zero_multi, _ccnistkdf_ctr_cmac, _ccnistkdf_ctr_cmac_fixed, 
+                       _ccn_print, _ccn_read_uint, _ccn_set, _ccn_shift_right, _ccn_sub, 
+                       _ccn_write_int, _ccn_write_int_size, _ccn_write_uint, _ccn_write_uint_padded_ct, 
+                       _ccn_write_uint_size, _ccnistkdf_ctr_cmac, _ccnistkdf_ctr_cmac_fixed, 
                        _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, _ccnistkdf_fb_hmac, 
-                       _ccnistkdf_fb_hmac_fixed, _ccoid_equal, _ccpad_cts1_decrypt, 
-                       _ccpad_cts1_encrypt, _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, 
-                       _ccpad_cts3_decrypt, _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, 
-                       _ccpad_pkcs7_decrypt, _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, 
-                       _ccpad_pkcs7_encrypt, _ccpad_xts_decrypt, _ccpad_xts_encrypt, 
-                       _ccpbkdf2_hmac, _ccpoly1305, _ccpoly1305_final, _ccpoly1305_init, 
-                       _ccpoly1305_update, _ccrc2_cbc_decrypt_mode, _ccrc2_cbc_encrypt_mode, 
-                       _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, _ccrc2_cfb_decrypt_mode, 
-                       _ccrc2_cfb_encrypt_mode, _ccrc2_ctr_crypt_mode, _ccrc2_ecb_decrypt_mode, 
-                       _ccrc2_ecb_encrypt_mode, _ccrc2_ofb_crypt_mode, _ccrc4, _ccrc4_eay, 
-                       _ccrmd160_ltc_di, _ccrng, _ccrng_drbg_done, _ccrng_drbg_init, 
-                       _ccrng_drbg_init_withdrbg, _ccrng_drbg_reseed, _ccrng_ecfips_test_init, 
-                       _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, _ccrng_rsafips_test_set_next, 
-                       _ccrng_sequence_init, _ccrng_system_done, _ccrng_system_init, 
-                       _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, _ccrsa_decrypt_eme_pkcs1v15, 
-                       _ccrsa_decrypt_oaep, _ccrsa_dump_full_key, _ccrsa_dump_public_key, 
-                       _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_encode, 
-                       _ccrsa_emsa_pkcs1v15_verify, _ccrsa_emsa_pss_decode, _ccrsa_emsa_pss_encode, 
-                       _ccrsa_encrypt_eme_pkcs1v15, _ccrsa_encrypt_oaep, _ccrsa_export_pub, 
-                       _ccrsa_generate_fips186_key, _ccrsa_generate_key, _ccrsa_generate_key_deterministic, 
-                       _ccrsa_get_fullkey_components, _ccrsa_get_pubkey_components, 
-                       _ccrsa_import_pub, _ccrsa_init_pub, _ccrsa_make_priv, _ccrsa_make_pub, 
-                       _ccrsa_oaep_decode_parameter, _ccrsa_oaep_encode_parameter, 
-                       _ccrsa_priv_crypt, _ccrsa_pub_crypt, _ccrsa_pubkeylength, 
-                       _ccrsa_recover_priv, _ccrsa_sign_pkcs1v15, _ccrsa_sign_pkcs1v15_msg, 
-                       _ccrsa_sign_pss, _ccrsa_sign_pss_msg, _ccrsa_verify_pkcs1v15, 
-                       _ccrsa_verify_pkcs1v15_allowshortsigs, _ccrsa_verify_pkcs1v15_digest, 
-                       _ccrsa_verify_pkcs1v15_msg, _ccrsa_verify_pss_digest, _ccrsa_verify_pss_msg, 
-                       _ccrsabssa_blind_message, _ccrsabssa_ciphersuite_rsa2048_sha384, 
-                       _ccrsabssa_ciphersuite_rsa3072_sha384, _ccrsabssa_ciphersuite_rsa4096_sha384, 
-                       _ccrsabssa_sign_blinded_message, _ccrsabssa_unblind_signature, 
-                       _ccsae_gen_kck_and_pmk, _ccsae_gen_password_value, _ccsae_generate_commitment, 
-                       _ccsae_generate_commitment_finalize, _ccsae_generate_commitment_init, 
-                       _ccsae_generate_commitment_partial, _ccsae_generate_confirmation, 
-                       _ccsae_generate_h2c_commit, _ccsae_generate_h2c_pt, _ccsae_get_keys, 
-                       _ccsae_init, _ccsae_init_p256_sha256, _ccsae_lexographic_order_key, 
-                       _ccsae_sizeof_commitment, _ccsae_sizeof_confirmation, _ccsae_sizeof_ctx, 
-                       _ccsae_sizeof_pt, _ccsae_verify_commitment, _ccsae_verify_confirmation, 
-                       _ccscrypt, _ccscrypt_storage_size, _ccsha1_di, _ccsha1_eay_di, 
-                       _ccsha1_ltc_di, _ccsha1_vng_arm_di, _ccsha224_di, _ccsha224_ltc_di, 
-                       _ccsha224_vng_arm_di, _ccsha256_di, _ccsha256_ltc_di, _ccsha256_vng_arm64neon_di, 
-                       _ccsha256_vng_arm_di, _ccsha384_di, _ccsha384_ltc_di, _ccsha384_vng_arm_di, 
-                       _ccsha512_256_di, _ccsha512_256_ltc_di, _ccsha512_256_vng_arm_di, 
-                       _ccsha512_di, _ccsha512_ltc_di, _ccsha512_vng_arm_di, _ccsigma_clear, 
-                       _ccsigma_clear_key, _ccsigma_compute_mac, _ccsigma_derive_session_keys, 
-                       _ccsigma_export_key_share, _ccsigma_import_peer_key_share, 
-                       _ccsigma_import_peer_verification_key, _ccsigma_import_signing_key, 
-                       _ccsigma_init, _ccsigma_kex_init_ctx, _ccsigma_kex_resp_ctx, 
-                       _ccsigma_mfi_info, _ccsigma_open, _ccsigma_peer_role, _ccsigma_seal, 
-                       _ccsigma_set_signing_function, _ccsigma_sign, _ccsigma_verify, 
-                       _ccsiv_hmac_aad, _ccsiv_hmac_ciphertext_size, _ccsiv_hmac_crypt, 
+                       _ccnistkdf_fb_hmac_fixed, _ccofb_block_size, _ccofb_context_size, 
+                       _ccofb_init, _ccofb_one_shot, _ccofb_update, _ccoid_equal, 
+                       _ccomac_block_size, _ccomac_context_size, _ccomac_init, _ccomac_one_shot, 
+                       _ccomac_update, _ccpad_cts1_decrypt, _ccpad_cts1_encrypt, 
+                       _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, _ccpad_cts3_decrypt, 
+                       _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, _ccpad_pkcs7_decrypt, 
+                       _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, _ccpad_pkcs7_encrypt, 
+                       _ccpad_xts_decrypt, _ccpad_xts_encrypt, _ccpbkdf2_hmac, _ccpoly1305, 
+                       _ccpoly1305_final, _ccpoly1305_init, _ccpoly1305_update, _ccrc2_cbc_decrypt_mode, 
+                       _ccrc2_cbc_encrypt_mode, _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, 
+                       _ccrc2_cfb_decrypt_mode, _ccrc2_cfb_encrypt_mode, _ccrc2_ctr_crypt_mode, 
+                       _ccrc2_ecb_decrypt_mode, _ccrc2_ecb_encrypt_mode, _ccrc2_ofb_crypt_mode, 
+                       _ccrc4, _ccrc4_eay, _ccrmd160_ltc_di, _ccrng, _ccrng_drbg_done, 
+                       _ccrng_drbg_init, _ccrng_drbg_init_withdrbg, _ccrng_drbg_reseed, 
+                       _ccrng_ecfips_test_init, _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, 
+                       _ccrng_rsafips_test_set_next, _ccrng_sequence_init, _ccrng_system_done, 
+                       _ccrng_system_init, _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, 
+                       _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_oaep, _ccrsa_dump_full_key, 
+                       _ccrsa_dump_public_key, _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, 
+                       _ccrsa_emsa_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_verify, 
+                       _ccrsa_emsa_pss_decode, _ccrsa_emsa_pss_encode, _ccrsa_encrypt_eme_pkcs1v15, 
+                       _ccrsa_encrypt_oaep, _ccrsa_export_pub, _ccrsa_generate_fips186_key, 
+                       _ccrsa_generate_key, _ccrsa_generate_key_deterministic, _ccrsa_get_fullkey_components, 
+                       _ccrsa_get_pubkey_components, _ccrsa_import_pub, _ccrsa_init_pub, 
+                       _ccrsa_make_priv, _ccrsa_make_pub, _ccrsa_oaep_decode_parameter, 
+                       _ccrsa_oaep_encode_parameter, _ccrsa_priv_crypt, _ccrsa_pub_crypt, 
+                       _ccrsa_pubkeylength, _ccrsa_recover_priv, _ccrsa_sign_pkcs1v15, 
+                       _ccrsa_sign_pkcs1v15_msg, _ccrsa_sign_pss, _ccrsa_sign_pss_msg, 
+                       _ccrsa_verify_pkcs1v15, _ccrsa_verify_pkcs1v15_allowshortsigs, 
+                       _ccrsa_verify_pkcs1v15_digest, _ccrsa_verify_pkcs1v15_msg, 
+                       _ccrsa_verify_pss_digest, _ccrsa_verify_pss_msg, _ccrsabssa_blind_message, 
+                       _ccrsabssa_ciphersuite_rsa2048_sha384, _ccrsabssa_ciphersuite_rsa3072_sha384, 
+                       _ccrsabssa_ciphersuite_rsa4096_sha384, _ccrsabssa_sign_blinded_message, 
+                       _ccrsabssa_unblind_signature, _ccsae_gen_kck_and_pmk, _ccsae_gen_password_value, 
+                       _ccsae_generate_commitment, _ccsae_generate_commitment_finalize, 
+                       _ccsae_generate_commitment_init, _ccsae_generate_commitment_partial, 
+                       _ccsae_generate_confirmation, _ccsae_generate_h2c_commit, 
+                       _ccsae_generate_h2c_pt, _ccsae_get_keys, _ccsae_init, _ccsae_init_p256_sha256, 
+                       _ccsae_lexographic_order_key, _ccsae_sizeof_commitment, _ccsae_sizeof_confirmation, 
+                       _ccsae_sizeof_ctx, _ccsae_sizeof_pt, _ccsae_verify_commitment, 
+                       _ccsae_verify_confirmation, _ccscrypt, _ccscrypt_storage_size, 
+                       _ccsha1_di, _ccsha1_eay_di, _ccsha1_ltc_di, _ccsha1_vng_arm_di, 
+                       _ccsha224_di, _ccsha224_ltc_di, _ccsha224_vng_arm_di, _ccsha256_di, 
+                       _ccsha256_ltc_di, _ccsha256_vng_arm64neon_di, _ccsha256_vng_arm_di, 
+                       _ccsha384_di, _ccsha384_ltc_di, _ccsha384_vng_arm_di, _ccsha512_256_di, 
+                       _ccsha512_256_ltc_di, _ccsha512_256_vng_arm_di, _ccsha512_di, 
+                       _ccsha512_ltc_di, _ccsha512_vng_arm_di, _ccsigma_clear, _ccsigma_clear_key, 
+                       _ccsigma_compute_mac, _ccsigma_derive_session_keys, _ccsigma_export_key_share, 
+                       _ccsigma_import_peer_key_share, _ccsigma_import_peer_verification_key, 
+                       _ccsigma_import_signing_key, _ccsigma_init, _ccsigma_kex_init_ctx, 
+                       _ccsigma_kex_resp_ctx, _ccsigma_mfi_info, _ccsigma_open, _ccsigma_peer_role, 
+                       _ccsigma_seal, _ccsigma_set_signing_function, _ccsigma_sign, 
+                       _ccsigma_verify, _ccsiv_aad, _ccsiv_block_size, _ccsiv_ciphertext_size, 
+                       _ccsiv_context_size, _ccsiv_crypt, _ccsiv_hmac_aad, _ccsiv_hmac_block_size, 
+                       _ccsiv_hmac_ciphertext_size, _ccsiv_hmac_context_size, _ccsiv_hmac_crypt, 
                        _ccsiv_hmac_init, _ccsiv_hmac_one_shot, _ccsiv_hmac_plaintext_size, 
-                       _ccsiv_hmac_reset, _ccsiv_hmac_set_nonce, _ccspake_cp_256, 
+                       _ccsiv_hmac_reset, _ccsiv_hmac_set_nonce, _ccsiv_init, _ccsiv_one_shot, 
+                       _ccsiv_plaintext_size, _ccsiv_reset, _ccsiv_set_nonce, _ccspake_cp_256, 
                        _ccspake_cp_384, _ccspake_cp_521, _ccspake_generate_L, _ccspake_kex_generate, 
                        _ccspake_kex_process, _ccspake_mac_compute, _ccspake_mac_hkdf_cmac_aes128_sha256, 
                        _ccspake_mac_hkdf_hmac_sha256, _ccspake_mac_hkdf_hmac_sha512, 
@@ -1027,16 +1041,17 @@ exports:
                        _ccvrf_sizeof_public_key, _ccvrf_sizeof_secret_key, _ccvrf_verify, 
                        _ccwrap_auth_decrypt, _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, 
                        _ccwrap_auth_encrypt_withiv, _ccwrap_unwrapped_size, _ccwrap_wrapped_size, 
-                       _ccxts_one_shot, _ccz_add, _ccz_addi, _ccz_bit, _ccz_bitlen, 
-                       _ccz_cmp, _ccz_cmpi, _ccz_divmod, _ccz_expmod, _ccz_free, 
-                       _ccz_init, _ccz_is_negative, _ccz_is_one, _ccz_is_prime, _ccz_is_zero, 
-                       _ccz_lsl, _ccz_lsr, _ccz_mod, _ccz_mul, _ccz_muli, _ccz_mulmod, 
-                       _ccz_neg, _ccz_random_bits, _ccz_read_radix, _ccz_read_uint, 
-                       _ccz_set, _ccz_set_bit, _ccz_seti, _ccz_size, _ccz_sub, _ccz_subi, 
-                       _ccz_trailing_zeros, _ccz_write_int, _ccz_write_int_size, 
-                       _ccz_write_radix, _ccz_write_radix_size, _ccz_write_uint, 
-                       _ccz_write_uint_size, _ccz_zero, _cczp_add, _cczp_inv, _cczp_mod, 
-                       _cczp_mul, _cczp_sub, _csss_shamir_share_bag_can_recover_secret, 
+                       _ccxts_block_size, _ccxts_context_size, _ccxts_init, _ccxts_one_shot, 
+                       _ccxts_set_tweak, _ccxts_update, _ccz_add, _ccz_addi, _ccz_bit, 
+                       _ccz_bitlen, _ccz_cmp, _ccz_cmpi, _ccz_divmod, _ccz_expmod, 
+                       _ccz_free, _ccz_init, _ccz_is_negative, _ccz_is_one, _ccz_is_prime, 
+                       _ccz_is_zero, _ccz_lsl, _ccz_lsr, _ccz_mod, _ccz_mul, _ccz_muli, 
+                       _ccz_mulmod, _ccz_neg, _ccz_random_bits, _ccz_read_radix, 
+                       _ccz_read_uint, _ccz_set, _ccz_set_bit, _ccz_seti, _ccz_size, 
+                       _ccz_sub, _ccz_subi, _ccz_trailing_zeros, _ccz_write_int, 
+                       _ccz_write_int_size, _ccz_write_radix, _ccz_write_radix_size, 
+                       _ccz_write_uint, _ccz_write_uint_size, _ccz_zero, _cczp_add, 
+                       _cczp_inv, _cczp_mod, _cczp_mul, _cczp_sub, _csss_shamir_share_bag_can_recover_secret, 
                        _fipspost_post, _fipspost_trace_vtable, _map_to_curve_sswu ]
 --- !tapi-tbd
 tbd-version:     4
@@ -1047,11 +1062,11 @@ uuids:
   - target:          armv7s-ios
     value:           5F9FCD5D-9EF7-3609-A4D2-C3B31982E7A3
   - target:          arm64-ios
-    value:           F14F0161-E0DE-3D9C-851E-AD12F95A3073
+    value:           F87EFEAD-673B-3A09-B7AB-9C69B55A18A8
   - target:          arm64e-ios
-    value:           69DAC9C7-DDAF-318E-B068-BE596D142A2F
+    value:           355ACCF4-3917-3730-BC55-EF7003887ABE
 install-name:    '/usr/lib/system/libdispatch.dylib'
-current-version: 1325.100.36
+current-version: 1325.120.2
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1251,9 +1266,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD69BD0A-55C7-3DDF-B179-CA8A6109B4B8
   - target:          arm64-ios
-    value:           B02A3573-9CB6-3547-965F-9537D8A44B7B
+    value:           0F0CECBB-FFAC-32F6-8955-48839A3A1361
   - target:          arm64e-ios
-    value:           A7A6A7A9-36D8-3C89-934F-19C0F44AD18C
+    value:           44168147-389A-36DF-BA6E-F4000B3BEB9E
 install-name:    '/usr/lib/system/libdyld.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -1325,9 +1340,9 @@ uuids:
   - target:          armv7s-ios
     value:           01731FC8-474E-3997-8C53-D2A503B5F2B8
   - target:          arm64-ios
-    value:           6E6AFB86-36B8-35C2-889D-AE010C6D2E31
+    value:           4E9C4B25-1C83-3CC6-A18B-205BE99D1231
   - target:          arm64e-ios
-    value:           2042916C-6807-32EA-909A-5A9DBB1EF889
+    value:           DFF0B63E-5403-3385-8A02-5237C77D1B5E
 install-name:    '/usr/lib/system/libmacho.dylib'
 current-version: 994
 parent-umbrella:
@@ -1382,9 +1397,9 @@ uuids:
   - target:          armv7s-ios
     value:           3015797A-CD33-3DFE-A768-30AD28634889
   - target:          arm64-ios
-    value:           09092411-863A-3922-8B18-60EBF57F56D4
+    value:           D47BFE00-9F56-3E23-A230-4E6F4F75A749
   - target:          arm64e-ios
-    value:           44F1A218-DF03-3C0C-BBAD-D5F5C8207205
+    value:           C741EA0B-44AD-32DD-BABC-2955D9B316DD
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 60
 parent-umbrella:
@@ -1408,9 +1423,9 @@ uuids:
   - target:          armv7s-ios
     value:           14D03741-B281-3689-9A5E-4B657E825EFE
   - target:          arm64-ios
-    value:           236CD827-0463-3BB0-9090-C8AA05A1C821
+    value:           9D80F472-2A96-3183-B6EE-306D2B67B767
   - target:          arm64e-ios
-    value:           E6D51D42-9306-3EBA-A408-2F4E11A1C32C
+    value:           61FBF27A-647E-3D82-B385-B196EF332370
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 392.100.2
 parent-umbrella:
@@ -1497,9 +1512,9 @@ uuids:
   - target:          armv7s-ios
     value:           B6B9673C-843E-3D2D-8EAD-DA86DE4A3E5C
   - target:          arm64-ios
-    value:           70089B1C-E6D2-34A5-B3A7-909A6BD1B274
+    value:           7162A3BE-E9B6-3765-8668-8AB195CB9470
   - target:          arm64e-ios
-    value:           27390A60-41E6-3C20-9C23-CEE812F4C8BF
+    value:           6E77B112-4CE7-3CF3-AA02-40826400792C
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 79.1
 parent-umbrella:
@@ -1524,9 +1539,9 @@ uuids:
   - target:          armv7s-ios
     value:           E55FF556-683B-3CE5-BE62-D25F242213BB
   - target:          arm64-ios
-    value:           0C058D0B-E8F0-36AA-9766-FA72EE100D98
+    value:           929B8C7C-B952-3971-A688-C9C4AAF0F2B6
   - target:          arm64e-ios
-    value:           B0793D31-ED1B-3549-B861-92A10841BF68
+    value:           9BD1E199-40A3-3E4A-8A78-271281C0CF0D
 install-name:    '/usr/lib/system/libsystem_c.dylib'
 current-version: 1507.100.9
 parent-umbrella:
@@ -1820,9 +1835,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           28F6289B-ED7C-3987-BBAF-5B005EA3B58B
+    value:           0B0F69A6-5078-3273-A3C7-59D7CB0D6021
   - target:          arm64e-ios
-    value:           385FD29E-6848-3513-B38A-18DB4A37678A
+    value:           017F1A48-8E6B-3DA7-9FCA-831DE943B41C
 install-name:    '/usr/lib/system/libsystem_collections.dylib'
 current-version: 1507.100.9
 parent-umbrella:
@@ -1856,11 +1871,11 @@ uuids:
   - target:          armv7s-ios
     value:           7D81C3C1-C07E-3B9D-8475-88832EC110A9
   - target:          arm64-ios
-    value:           E6D0BD24-96FA-3756-ABD6-35F9EB3DA6D2
+    value:           0CF9CF93-AC11-3400-B4D5-0AF1C16C0A8B
   - target:          arm64e-ios
-    value:           CF80FC3D-7F8C-36E5-AFDF-286799781F7D
+    value:           74D35837-95D6-3DF5-8B55-CFFE4A8B5F76
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1163.100.19
+current-version: 1163.120.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1891,9 +1906,9 @@ uuids:
   - target:          armv7s-ios
     value:           737BDF97-AD23-38E4-8447-7BFEDDFBC8DD
   - target:          arm64-ios
-    value:           C6AE2AD7-5D24-33C2-9025-4FF7457D2B65
+    value:           800EE642-6C4C-3535-9A4F-9DB02DFE8BD7
   - target:          arm64e-ios
-    value:           3D6C507A-877A-392C-BFCB-56D2BBDE7B5B
+    value:           D5674101-F3AF-3709-8BA2-D06DAB9AED95
 install-name:    '/usr/lib/system/libsystem_containermanager.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -1982,9 +1997,9 @@ uuids:
   - target:          armv7s-ios
     value:           C173D0E3-586D-31D8-9832-6828B5188A39
   - target:          arm64-ios
-    value:           A439D991-630D-30D6-B524-AB4C5589D3C6
+    value:           1846310D-7DF4-3799-9A43-D2ABEFD41149
   - target:          arm64e-ios
-    value:           8985757D-C52B-3DA8-B6D3-D4F3586D6DAD
+    value:           174A948C-D934-3BC3-AC25-B9465EAF834F
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 133
 parent-umbrella:
@@ -2008,9 +2023,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           AFD12DC2-D6A2-3330-B0D5-5E7A5E8B7B7C
+    value:           04311527-9B06-3C8E-840F-F6E7CB48F8C5
   - target:          arm64e-ios
-    value:           22287D73-3665-3041-9F0C-76D6D689FFA3
+    value:           62E80527-73AF-3935-B3C8-AE96D8F6725E
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -2052,11 +2067,11 @@ uuids:
   - target:          armv7s-ios
     value:           09688D44-95A5-36A2-A5AC-C291B9D546AD
   - target:          arm64-ios
-    value:           C1E77B8F-64B5-301D-99F6-FFC75198E2BF
+    value:           82B9FA28-8D7E-3238-AA5A-9C87AD5E8AE4
   - target:          arm64e-ios
-    value:           65ED0A31-F58C-3010-9474-845E5DCD31B7
+    value:           3AA5C021-3145-37C2-8AEE-9C758F2A830F
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
-current-version: 1557.102.1
+current-version: 1557.120.6
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2094,9 +2109,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C58A7B14-3DD0-3076-8EEB-2D3D8AA7FCAE
+    value:           E54AA649-EDA6-3A57-AB2D-EE1F31BFAF06
   - target:          arm64e-ios
-    value:           343D1D6A-8140-3530-A547-DB1950AEF3EC
+    value:           72163273-57AE-3CDB-86ED-B8C1FCF2E707
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 56
 parent-umbrella:
@@ -2114,9 +2129,9 @@ uuids:
   - target:          armv7s-ios
     value:           1AB16714-C54D-3A29-8D84-B8E786898BA6
   - target:          arm64-ios
-    value:           8105D9E1-E12F-334C-95E1-22A6645869AD
+    value:           56D55307-D782-349D-B3D3-5AFB2A37F529
   - target:          arm64e-ios
-    value:           ECC6076F-97E6-3C4F-8507-F1AC256BB0BE
+    value:           3A59A635-CF67-37A1-BF08-76A99BD4C83C
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2277,11 +2292,11 @@ uuids:
   - target:          armv7s-ios
     value:           68FA1096-7323-3338-81A3-0CA2EB1240AA
   - target:          arm64-ios
-    value:           3D363709-8D2D-3D1E-8CAB-11D232E5D508
+    value:           CC39DF89-26F9-3C8A-993B-AB2841A1DDBB
   - target:          arm64e-ios
-    value:           C2FCC058-7480-3C14-B479-0064A3F843E3
+    value:           BCF2A59D-203E-36EE-9BB5-571D2B7C71CA
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
-current-version: 8020.102.3
+current-version: 8020.120.68
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2751,9 +2766,9 @@ uuids:
   - target:          armv7s-ios
     value:           93E03298-413E-3EBF-9A20-76DDBD3A9E4C
   - target:          arm64-ios
-    value:           45FFF500-B28C-3CF7-8B57-19E5D103D9BA
+    value:           E7C306CC-5E52-364F-8868-1A263451C033
   - target:          arm64e-ios
-    value:           F19338F0-A323-3E0E-8066-B013EE03C3D0
+    value:           6173986F-4F28-3A0B-8A51-7FB0DD6D9758
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3204.80.2
 parent-umbrella:
@@ -2849,9 +2864,9 @@ uuids:
   - target:          armv7s-ios
     value:           B732D518-10FE-38C1-8874-BA49BA81DB70
   - target:          arm64-ios
-    value:           2B66A7AE-1DBA-3EC0-821E-3D101311FAD3
+    value:           A2FC5AAE-5D99-30BA-8A44-6363B4D78BEC
   - target:          arm64e-ios
-    value:           8D3A22BF-4E71-3B9E-B689-F09A4A3AA8A1
+    value:           5E98A634-CD43-372E-AB18-EDDC461E43EE
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
 current-version: 374.100.5
 parent-umbrella:
@@ -2916,9 +2931,9 @@ uuids:
   - target:          armv7s-ios
     value:           20DA5438-E7CF-34E3-B964-17CC383FE077
   - target:          arm64-ios
-    value:           7616A24D-DA6B-3D83-8806-0F16E9C0F794
+    value:           D96A723C-B3F1-370A-BE86-7C03C207FF3E
   - target:          arm64e-ios
-    value:           35E338CC-5D22-3166-B8CD-AA5CBFAA13A0
+    value:           6C41F75C-072A-3741-A659-F78BEC67EABF
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2943,13 +2958,13 @@ exports:
                        _NEHelperGetPFKeySocket, _NEHelperHandleConfigurationsChangedBySC, 
                        _NEHelperInit, _NEHelperInterfaceRemoveAddress, _NEHelperInterfaceSetAddress, 
                        _NEHelperInterfaceSetAddressWithLifetime, _NEHelperInterfaceSetMTU, 
-                       _NEHelperInterfaceSetOption, _NEHelperSendRequest, _NEHelperSettingsSetArray, 
-                       _NEHelperSettingsSetBool, _NEHelperSettingsSetNumber, _NEHelperVPNConfigurationExists, 
-                       _NEHelperVPNSetEnabled, _g_ne_read_uuid_cache, _g_ne_uuid_cache_hit, 
-                       _ne_copy_cached_bundle_identifier_for_uuid, _ne_copy_cached_preferred_bundle_for_bundle_identifier, 
-                       _ne_copy_cached_uuids_for_bundle_identifier, _ne_copy_signature_info_for_pid, 
-                       _ne_copy_signing_identifier_for_pid, _ne_copy_uuid_cache, 
-                       _ne_force_reset_uuid_cache, _ne_get_configuration_generation, 
+                       _NEHelperInterfaceSetOption, _NEHelperSendRequest, _NEHelperSettingsRemove, 
+                       _NEHelperSettingsSetArray, _NEHelperSettingsSetBool, _NEHelperSettingsSetNumber, 
+                       _NEHelperVPNConfigurationExists, _NEHelperVPNSetEnabled, _g_ne_read_uuid_cache, 
+                       _g_ne_uuid_cache_hit, _ne_copy_cached_bundle_identifier_for_uuid, 
+                       _ne_copy_cached_preferred_bundle_for_bundle_identifier, _ne_copy_cached_uuids_for_bundle_identifier, 
+                       _ne_copy_signature_info_for_pid, _ne_copy_signing_identifier_for_pid, 
+                       _ne_copy_uuid_cache, _ne_force_reset_uuid_cache, _ne_get_configuration_generation, 
                        _ne_is_sockaddr_valid, _ne_log_large_obj, _ne_log_obj, _ne_print_backtrace, 
                        _ne_privacy_dns_netagent_id, _ne_privacy_proxy_netagent_id, 
                        _ne_session_add_necp_drop_dest_from_dest_list, _ne_session_add_necp_drop_dest_from_path, 
@@ -3008,9 +3023,9 @@ uuids:
   - target:          armv7s-ios
     value:           120E1144-53F4-3E0F-95D9-6586A061F349
   - target:          arm64-ios
-    value:           E6B18F3D-78B9-35F3-B3A0-33EBBB030032
+    value:           75B2DCD1-1F4F-3BEB-8CA9-BFB6910A883B
   - target:          arm64e-ios
-    value:           BA1329E4-D990-3375-92CF-73B9A48307E0
+    value:           DA7AD699-EFC3-3AAA-A7A6-727A74F62408
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 301
 parent-umbrella:
@@ -3069,9 +3084,9 @@ uuids:
   - target:          armv7s-ios
     value:           D0FF48E9-F969-3DED-8D50-C193173C82BC
   - target:          arm64-ios
-    value:           F26B24BD-CA8F-353C-B031-C5DB16FC6715
+    value:           3BE625ED-55C6-33B9-8872-E85856EE4FA3
   - target:          arm64e-ios
-    value:           3B2D31B3-4991-36CC-8D6A-08A26CC1CA59
+    value:           68A13C2E-80DD-3754-B166-C0A5992A7417
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 273.100.5
 parent-umbrella:
@@ -3152,9 +3167,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A73510FA-6D70-365C-9697-55A90B10650D
+    value:           CBB300FD-4644-3C20-8930-AFAE9B1A1014
   - target:          arm64e-ios
-    value:           7D1AA683-8737-3A2F-B732-0C56F3AE0A48
+    value:           245A55AD-52A0-3071-B792-2E6573A1BEC6
 install-name:    '/usr/lib/system/libsystem_product_info_filter.dylib'
 current-version: 10
 parent-umbrella:
@@ -3169,9 +3184,9 @@ uuids:
   - target:          armv7s-ios
     value:           1F8C60A5-799C-3721-AE24-B52CDB5F0801
   - target:          arm64-ios
-    value:           7E417A07-6533-3EE7-B0DE-623B5FB464FD
+    value:           20632463-192A-3F27-B302-902EA515B5F2
   - target:          arm64e-ios
-    value:           B48EFCBE-D4F7-308B-A3FA-172E0EA78E33
+    value:           2CCED63C-5220-3714-86BD-202019769EC8
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
 current-version: 486.100.11
 parent-umbrella:
@@ -3268,11 +3283,11 @@ uuids:
   - target:          armv7s-ios
     value:           2D5C9579-46AF-3FD3-9626-443FF1532869
   - target:          arm64-ios
-    value:           BFF49711-0E98-31DA-B6CC-3594B5FDA89D
+    value:           AD7055F9-8A11-3281-9913-B0D3E94996A9
   - target:          arm64e-ios
-    value:           2AD26BC3-850B-3282-96DF-03342BD20E2A
+    value:           86A1BE1E-B455-33C9-B752-6A59D9329D75
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
-current-version: 1657.102.1
+current-version: 1657.120.6
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3345,9 +3360,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD7353A8-1C7E-373B-863B-E661CB0CD846
   - target:          arm64-ios
-    value:           4220100A-297D-3118-979A-DB55BA681D1F
+    value:           34797311-9736-3C65-A31C-C4115A3E94CB
   - target:          arm64e-ios
-    value:           018992FA-7F21-3B2B-8F28-76B90B510A42
+    value:           60BF471F-0DB4-38BB-82F8-69A968DAF960
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -3368,9 +3383,9 @@ uuids:
   - target:          armv7s-ios
     value:           D7C9FB6B-CA5D-330F-9FDB-4140848515D6
   - target:          arm64-ios
-    value:           17E9F378-A8B8-32DE-AC42-DB9869F0D24C
+    value:           AB1C0B79-2825-35F6-A992-4DDBF5086D94
   - target:          arm64e-ios
-    value:           DD7DE675-1DCB-3BB7-A7D9-20CAE6BFEFDC
+    value:           FCA1B0C0-BE3A-3F73-99F2-A0CDE8295081
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
 current-version: 1375.100.9
 parent-umbrella:
@@ -3444,9 +3459,9 @@ uuids:
   - target:          armv7s-ios
     value:           1AF55CB8-D4FE-3D46-8290-5B05F4F72F8D
   - target:          arm64-ios
-    value:           BA5E6955-C460-33F0-BE88-595C6827AAEA
+    value:           D10B52AC-0F6E-3AF9-8522-6FDF5B4BFCCA
   - target:          arm64e-ios
-    value:           F89DD5D7-E826-3049-84DC-A400B7817582
+    value:           37D2E27F-4D89-3095-9EFD-9090A4EC74FA
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 202.2
 parent-umbrella:
@@ -3527,11 +3542,11 @@ uuids:
   - target:          armv7s-ios
     value:           603F52D6-E25F-3349-AC6A-F76685E2DC82
   - target:          arm64-ios
-    value:           5148C0B9-5920-3361-9AB6-83448AA80146
+    value:           E1133A67-38E2-38F2-B5CF-B3A4EDA03A83
   - target:          arm64e-ios
-    value:           B56312CE-5ADE-34E5-ABB4-AFCBE0512205
+    value:           4A924210-7135-34DE-B07A-65FA9F7790BA
 install-name:    '/usr/lib/system/libxpc.dylib'
-current-version: 2236.100.61
+current-version: 2236.120.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3889,11 +3904,11 @@ uuids:
   - target:          armv7s-ios
     value:           AFEF8B9F-347B-3B89-B1D3-0EDD209301FE
   - target:          arm64-ios
-    value:           1E92D776-0FF3-357E-AF20-D5253B527DE7
+    value:           1A46633C-286F-3B3F-BBB2-1ECF7B3B0876
   - target:          arm64e-ios
-    value:           4FECF94C-EE7B-3227-9085-95124F886DE2
+    value:           A1F9C6F7-E58F-3591-A8B2-D146B60ED76A
 install-name:    '/usr/lib/system/liblaunch.dylib'
-current-version: 2236.100.61
+current-version: 2236.120.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System

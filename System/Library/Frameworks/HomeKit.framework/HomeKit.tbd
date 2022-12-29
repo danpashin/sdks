@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           2E8FB457-3B06-3639-86BF-448AAEF1FC4F
   - target:          arm64-ios
-    value:           2639D4B8-2982-37C7-BF81-A42DB60597E3
+    value:           58F16A37-F3BF-3DB0-8250-6735B69C8408
   - target:          arm64e-ios
-    value:           E1CBC1FE-BDC4-36A5-B1ED-577085195951
+    value:           0824948D-D06D-3906-9F9A-5C1FC340D69B
 install-name:    '/System/Library/Frameworks/HomeKit.framework/HomeKit'
-current-version: 850.5.5
+current-version: 850.6.23
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _HMBridgePutAccessoryInAssociateMode, _HMBridgePutAccessoryInDisassociateMode, 
@@ -251,7 +251,7 @@ exports:
                        _HMBulletinContextServiceIDKey, _HMBulletinContextTriggerIDKey, 
                        _HMBulletinContextTriggerNameKey, _HMBulletinDateKey, _HMBulletinReasonDoorbellPressed, 
                        _HMBulletinReasonKey, _HMBulletinReasonMotionDetected, _HMBulletinReasonSignificantEvent, 
-                       _HMCHIPAppleEcosystemIdentifier, _HMCHIPEcosystemMessageDataKey, 
+                       _HMCHIPAppleVendorIdentifier, _HMCHIPEcosystemMessageDataKey, 
                        _HMCHIPEcosystemMessageTypeConfigureAccessory, _HMCHIPEcosystemMessageTypeFetchRooms, 
                        _HMCHIPEcosystemMessageTypeKey, _HMCHIPEcosystemMessageTypePairAccessory, 
                        _HMCHIPEcosystemUUIDKey, _HMCameraAccessModeAsString, _HMCameraAudioStreamSettingAsString, 
@@ -480,8 +480,8 @@ exports:
                        _HMHomeManagerShouldSkipKeyRollForROARMessageKey, _HMHomeManagerSmallHomePodsConfiguredChangedNotification, 
                        _HMHomeManagerSpeakersConfiguredChangedNotification, _HMHomeManagerStatusMessageKey, 
                        _HMHomeManagerStatusToString, _HMHomeManagerStatusUpdatedMessage, 
-                       _HMHomeManagerTelevisionAccessoryAddedNotification, _HMHomeManagerUpdateAccessoryToROARPairingMessage, 
-                       _HMHomeManagerUpgradeToROARFrameworkMessage, _HMHomeManagerUserOptedToHH2, 
+                       _HMHomeManagerTelevisionAccessoryAddedNotification, _HMHomeManagerUpdateAccessoryToHH2PairingMessage, 
+                       _HMHomeManagerUpgradeToHH2FrameworkMessage, _HMHomeManagerUserOptedToHH2, 
                        _HMHomeMaxMediaPasswordLength, _HMHomeMediaMinimumUserPrivilegeCodingKey, 
                        _HMHomeMediaPasswordCodingKey, _HMHomeMediaPasswordMessageKey, 
                        _HMHomeMediaPeerToPeerEnabledCodingKey, _HMHomeMessageKeyLightProfileUUIDs, 
@@ -880,13 +880,14 @@ exports:
                        HMCHIPEcosystemFetchRoomsResponse, HMCHIPEcosystemMessage, 
                        HMCHIPEcosystemPairAccessoryRequest, HMCHIPEcosystemPairAccessoryResponse, 
                        HMCHIPEcosystemRequest, HMCHIPEcosystemResponse, HMCHIPHome, 
-                       HMCache, HMCacheEntry, HMCacheManager, HMCalendarEvent, HMCameraActivityZone, 
-                       HMCameraAudioCodec, HMCameraAudioControl, HMCameraBulletinBoardNotificationCondition, 
-                       HMCameraBulletinBoardSmartNotification, HMCameraClip, HMCameraClipAssetContext, 
-                       HMCameraClipDecryptionManager, HMCameraClipDownloadAssetDataTask, 
-                       HMCameraClipEncryptedDataContext, HMCameraClipEncryptionContext, 
-                       HMCameraClipEncryptionManager, HMCameraClipFetchVideoAssetContextOperation, 
-                       HMCameraClipManager, HMCameraClipSignificantEvent, HMCameraClipVideoAssetContext, 
+                       HMCHIPVendor, HMCache, HMCacheEntry, HMCacheManager, HMCalendarEvent, 
+                       HMCameraActivityZone, HMCameraAudioCodec, HMCameraAudioControl, 
+                       HMCameraBulletinBoardNotificationCondition, HMCameraBulletinBoardSmartNotification, 
+                       HMCameraClip, HMCameraClipAssetContext, HMCameraClipDecryptionManager, 
+                       HMCameraClipDownloadAssetDataTask, HMCameraClipEncryptedDataContext, 
+                       HMCameraClipEncryptionContext, HMCameraClipEncryptionManager, 
+                       HMCameraClipFetchVideoAssetContextOperation, HMCameraClipManager, 
+                       HMCameraClipSignificantEvent, HMCameraClipVideoAssetContext, 
                        HMCameraClipVideoDataSegment, HMCameraClipVideoFileCombiner, 
                        HMCameraClipVideoHLSPlaylistGenerator, HMCameraClipVideoInitSegment, 
                        HMCameraClipVideoSegment, HMCameraControl, HMCameraObjectFetchClient, 
@@ -941,10 +942,10 @@ exports:
                        HMMutableAccessorySettingsPartialFetchFailureInformation, 
                        HMMutableArray, HMMutableAssistantAccessControl, HMMutableCHIPAccessoryPairing, 
                        HMMutableCHIPAccessorySetupPayload, HMMutableCHIPEcosystem, 
-                       HMMutableCHIPHome, HMMutableCalendarEvent, HMMutableCameraBulletinBoardNotificationCondition, 
-                       HMMutableCameraUserNotificationSettings, HMMutableCharacteristicEvent, 
-                       HMMutableCharacteristicThresholdRangeEvent, HMMutableClientContext, 
-                       HMMutableDurationEvent, HMMutableHomeManagerConfiguration, 
+                       HMMutableCHIPHome, HMMutableCHIPVendor, HMMutableCalendarEvent, 
+                       HMMutableCameraBulletinBoardNotificationCondition, HMMutableCameraUserNotificationSettings, 
+                       HMMutableCharacteristicEvent, HMMutableCharacteristicThresholdRangeEvent, 
+                       HMMutableClientContext, HMMutableDurationEvent, HMMutableHomeManagerConfiguration, 
                        HMMutableHomePersonManagerSettings, HMMutableHomeWalletKeyDeviceState, 
                        HMMutableLocationEvent, HMMutableMediaContentProfileAccessControl, 
                        HMMutableMediaDestination, HMMutableMediaDestinationControllerData, 

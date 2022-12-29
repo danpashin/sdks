@@ -17,12 +17,7 @@ typedef NS_ENUM(NSUInteger, NSCompoundPredicateType) {
 };
 
 API_AVAILABLE(macos(10.4), ios(3.0), watchos(2.0), tvos(9.0))
-@interface NSCompoundPredicate : NSPredicate {
-    @private
-    void *_reserved2;
-    NSUInteger _type;
-    NSArray *_subpredicates;
-}
+@interface NSCompoundPredicate : NSPredicate
 
 - (instancetype)initWithType:(NSCompoundPredicateType)type subpredicates:(NSArray<NSPredicate *> *)subpredicates NS_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;

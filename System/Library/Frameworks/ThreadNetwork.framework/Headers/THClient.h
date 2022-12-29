@@ -24,7 +24,7 @@ API_AVAILABLE(ios(15.0))
  * no parameters
  */
 
-- (instancetype)init;
+- (instancetype)init API_AVAILABLE(ios(15.0));
 
 /*
  * @function retrieveAllCredentials
@@ -107,6 +107,20 @@ API_AVAILABLE(ios(15.0))
  *
  */
 - (void)retrieveCredentialsForExtendedPANID:(NSData *)extendedPANID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(credentials(forExtendedPANID:));
+/*
+ * @function checkPreferredNetworkForActiveOperationalDataset
+ *
+ * @discussion
+ * Returns true if the dataset matches to the preferred network
+ *
+ * @parameters
+ * activeOperationalDataSet : byte array of active operational dataset
+ * completion               : Callback function gives true if dataset matches to preferred network, else false
+ *
+ */
+
+- (void)checkPreferredNetworkForActiveOperationalDataset:(NSData *)activeOperationalDataSet
+                                           completion:(void (^)(BOOL isPreferred))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(isPreferred(forActiveOperationalDataset:));
 @end
 
 NS_ASSUME_NONNULL_END

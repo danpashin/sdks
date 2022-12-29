@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
-current-version:       613.1.17
+current-version:       613.2.7
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -711,6 +711,10 @@ exports:
                             __ZN12SafariShared21URLCompletionEntryMap6insertEONS_18URLCompletionEntryEONSt3__110unique_ptrINS_24URLCompletionEntryExtrasENS3_14default_deleteIS5_EEEE,
                             __ZN12SafariShared21URLCompletionEntryMap6insertERNS_25URLCompletionEntryBuilderEb,
                             __ZN12SafariShared21URLCompletionEntryMap6removeEP5NSSetIP8NSStringE,
+                            __ZN12SafariShared22ExtensionURLTranslator12addExtensionEP5NSURLS2_P8NSStringPU39objcproto28WBSExtensionResourceVerifier11objc_object,
+                            __ZN12SafariShared22ExtensionURLTranslator15removeExtensionEP5NSURL,
+                            __ZN12SafariShared22ExtensionURLTranslator26displayNameForExtensionURLEP5NSURL,
+                            __ZN12SafariShared22ExtensionURLTranslator6sharedEv,
                             __ZN12SafariShared22weightForMatchLocationE29WBSURLCompletionMatchLocation,
                             __ZN12SafariShared23computeURLMatchLocationEP8NSStringP31WBSURLCompletionUserTypedString,
                             __ZN12SafariShared24FieldLabelPatternMatcher15isWordCharacterEt,
@@ -857,6 +861,8 @@ exports:
                             __ZNK12SafariShared21URLCompletionEntryMap29nextItemInRedirectChainOfItemEP8NSString,
                             __ZNK12SafariShared21URLCompletionEntryMap33addURLCompletionMatchEntryToArrayEP39WBSHistoryServiceURLCompletionMatchDataP14NSMutableArrayIP40WBSHistoryServiceURLCompletionMatchEntryEP8NSStringd,
                             __ZNK12SafariShared21URLCompletionEntryMap9enumerateEiiU13block_pointerFvRKNS_18URLCompletionEntryEE,
+                            __ZNK12SafariShared22ExtensionURLTranslator22fileURLForExtensionURLEP5NSURLNS0_23VerifyExtensionResourceE,
+                            __ZNK12SafariShared22ExtensionURLTranslator23decodeAndResolveFileURLEP5NSURL,
                             __ZNK12SafariShared24FieldLabelPatternMatcher10isEndStateERKNS0_3DFA5StateEPKt,
                             __ZNK12SafariShared24FieldLabelPatternMatcher12longestMatchEv,
                             __ZNK12SafariShared24FieldLabelPatternMatcher13checkForMatchEPKtS2_,

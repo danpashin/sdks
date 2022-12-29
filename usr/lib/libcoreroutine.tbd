@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E74E95C1-B163-3535-82FC-E4418485B194
   - target:          arm64-ios
-    value:           251116EB-818D-360C-991A-A50378A7178A
+    value:           87C1E9AC-BA65-35AA-8C89-0880E70505C1
   - target:          arm64e-ios
-    value:           2E7D161C-D53D-32D0-8D17-13A09FE5F450
+    value:           56388ABB-3050-3B60-B9A2-BC1BD2FD27DA
 install-name:    '/usr/lib/libcoreroutine.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -233,7 +233,9 @@ exports:
                        _kRTInferredMapItemFuserAOIUseThreshold, _kRTInferredMapItemFuserConfidenceEqualityEpsilon, 
                        _kRTInferredMapItemFuserDistanceThreshold, _kRTInferredMapItemFuserHomeWorkConfidence, 
                        _kRTInferredMapItemFuserPlaceholderMultiplier, _kRTKeychainManagerSymmetricKeySize, 
-                       _kRTLearnedLocationStoreElapsedLifetimeDurationThreshold, 
+                       _kRTLearnedLocationEngineErrorCode, _kRTLearnedLocationEngineErrorDomain, 
+                       _kRTLearnedLocationEngineErrorHTTPStatus, _kRTLearnedLocationEngineVisitLabelingRetried, 
+                       _kRTLearnedLocationEngineVisitLabelingSucceeded, _kRTLearnedLocationStoreElapsedLifetimeDurationThreshold, 
                        _kRTLearnedLocationStoreRecentVisitsInterval, _kRTLearnedPlaceTypeInferenceGenerator_sHomeMaxDaysNonZeroDwellTimePlaceCandidates, 
                        _kRTLearnedPlaceTypeInferenceGenerator_sHomeMinDaysNonZeroDwellTimePlaceCandidates, 
                        _kRTLearnedPlaceTypeInferenceGenerator_sHomeMinTopMedianDwellTimePlaceCandidates, 
@@ -377,7 +379,7 @@ exports:
                        RTFingerprintManager, RTFingerprintManagerNotificationAvailabilityDidChange, 
                        RTFingerprintManagerNotificationMonitorFingerprints, RTFingerprintStore, 
                        RTFusedInferredMapItem, RTFusionMetrics, RTGEOMapItemTransformer, 
-                       RTHealthKitManager, RTHintMO, RTHintManager, RTHintManagerNotificationDidUpdate, 
+                       RTHintMO, RTHintManager, RTHintManagerNotificationDidUpdate, 
                        RTHintStore, RTHistoryEntryPlaceDisplay, RTHistoryEntryRoute, 
                        RTInferredMapItemDeduper, RTInferredMapItemDeduperState, RTInferredMapItemFuser, 
                        RTInferredMapItemFuserParameters, RTInvocationDispatcher, 

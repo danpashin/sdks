@@ -259,6 +259,7 @@ uint32_t  axr_get_version(void)  AXR_AVAILABILITY_v1;
  *  @constant   axr_error_encoding_insufficient_data Your application's axr_data_provider_read_t returned -1.
  *  @constant   axr_error_encoding_read_error           Your application's axr_data_provider_read_t returned -2.
  *  @constant   axr_error_encoding_write_error          The internal compressor failed.  Pass axr_flags_print_debug_info to see more.  This shouldn't happen. File a Radar.
+ *  @constant   axr_error_image_too_large                 The image has tile sizes larger than 4 GB. Possibly, the tiles attribute is corrupted in the file, if decode.
  *
  *  @memberof   axr_data_t
  */
@@ -283,6 +284,7 @@ typedef enum axr_error_t
     axr_error_encoding_insufficient_data    AXR_ENUM_AVAILABILITY_v1  =   -11,
     axr_error_encoding_read_error           AXR_ENUM_AVAILABILITY_v1  =   -12,
     axr_error_encoding_write_error          AXR_ENUM_AVAILABILITY_v1  =   -13,
+    axr_error_image_too_large               AXR_ENUM_AVAILABILITY_v2  =   -14,
 
     /* other error codes are reserved */
 };
@@ -306,6 +308,7 @@ OS_ENUM( axr_error, long,
     axr_error_encoding_insufficient_data    AXR_ENUM_AVAILABILITY_v1  =   -11,
     axr_error_encoding_read_error           AXR_ENUM_AVAILABILITY_v1  =   -12,
     axr_error_encoding_write_error          AXR_ENUM_AVAILABILITY_v1  =   -13,
+    axr_error_image_too_large               AXR_ENUM_AVAILABILITY_v2  =   -14,
 
     /* other error codes are reserved */
 );
