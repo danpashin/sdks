@@ -422,14 +422,14 @@ struct sockaddr {
 	char            sa_data[14];    /* [XSI] addr value (actually smaller or larger) */
 #endif
 };
-DECLARE_CONSTRAINED_PTR_TYPES(struct sockaddr, sockaddr);
+__CCT_DECLARE_CONSTRAINED_PTR_TYPES(struct sockaddr, sockaddr);
 
 /*
  * Least amount of information that a sockaddr requires.
  * Sockaddr_header is a compatible prefix structure of
  * all sockaddr objects.
  */
-struct sockaddr_header {
+struct __sockaddr_header {
 	__uint8_t           sa_len;
 	sa_family_t         sa_family;
 };
@@ -468,7 +468,7 @@ struct sockaddr_storage {
 	__int64_t       __ss_align;     /* force structure storage alignment */
 	char                    __ss_pad2[_SS_PAD2SIZE];
 };
-DECLARE_CONSTRAINED_PTR_TYPES(struct sockaddr_storage, sockaddr_storage);
+__CCT_DECLARE_CONSTRAINED_PTR_TYPES(struct sockaddr_storage, sockaddr_storage);
 
 /*
  * Protocol families, same as address families for now.

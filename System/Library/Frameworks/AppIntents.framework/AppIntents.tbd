@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           1479924A-BB67-3D80-AB78-8E0BBC44E97C
+    value:           6951623D-6780-34B6-9375-0B10549FA02B
   - target:          arm64e-ios
-    value:           D6AFB4C7-1ACE-3CA1-9412-3356EBAAA9BF
+    value:           B6117B34-B23A-389C-8D1D-45E1B044D641
 install-name:    '/System/Library/Frameworks/AppIntents.framework/AppIntents'
-current-version: 123.6
+current-version: 130.5
 compatibility-version: 0
 swift-abi-version: 7
 exports:
@@ -84,6 +84,9 @@ exports:
                        '_$s10AppIntents0A10ViewBridgeP7intentsSayAA0C16IntentIdentifierVGvgTj', 
                        '_$s10AppIntents0A10ViewBridgeP7intentsSayAA0C16IntentIdentifierVGvgTjTu', 
                        '_$s10AppIntents0A10ViewBridgeP7intentsSayAA0C16IntentIdentifierVGvgTq', 
+                       '_$s10AppIntents0A10ViewBridgeP8entities3forSayAA0C16EntityIdentifierVGShys6UInt32VG_tYaKFTj', 
+                       '_$s10AppIntents0A10ViewBridgeP8entities3forSayAA0C16EntityIdentifierVGShys6UInt32VG_tYaKFTjTu', 
+                       '_$s10AppIntents0A10ViewBridgeP8entities3forSayAA0C16EntityIdentifierVGShys6UInt32VG_tYaKFTq', 
                        '_$s10AppIntents0A10ViewBridgeP8entitiesSayAA0C16EntityIdentifierVGvgTj', 
                        '_$s10AppIntents0A10ViewBridgeP8entitiesSayAA0C16EntityIdentifierVGvgTjTu', 
                        '_$s10AppIntents0A10ViewBridgeP8entitiesSayAA0C16EntityIdentifierVGvgTq', 
@@ -296,6 +299,7 @@ exports:
                        '_$s10AppIntents0A7ContextCMa', '_$s10AppIntents0A7ContextCMn', 
                        '_$s10AppIntents0A7ContextCMo', '_$s10AppIntents0A7ContextCN', 
                        '_$s10AppIntents0A7ContextCfD', '_$s10AppIntents0A7ManagerC03getA14ShortcutPhrase3for8providerSSSgx_AA0A17ShortcutsProvider_pXpSgtAA0A6IntentRzlF', 
+                       '_$s10AppIntents0A7ManagerC04_getA14ShortcutPhrase3for8providerSSSgx_AA0A17ShortcutsProvider_pXpSgtAA0A6IntentRzlF', 
                        '_$s10AppIntents0A7ManagerC16siriLanguageCodeSSSgvM', '_$s10AppIntents0A7ManagerC16siriLanguageCodeSSSgvg', 
                        '_$s10AppIntents0A7ManagerC16siriLanguageCodeSSSgvpMV', '_$s10AppIntents0A7ManagerC16siriLanguageCodeSSSgvs', 
                        '_$s10AppIntents0A7ManagerC16viewIntentExistsySbAA0aE0_pXpF', 
@@ -2399,9 +2403,7 @@ exports:
                        '_$s10AppIntents21RangeCheckingResolverTL', '_$s10AppIntents21ResolverSpecificationMp', 
                        '_$s10AppIntents21ResolverSpecificationP6OutputAC_AA12_IntentValueTn', 
                        '_$s10AppIntents21ResolverSpecificationPSHTb', '_$s10AppIntents21ResolverSpecificationPSTTb', 
-                       '_$s10AppIntents21ResolverSpecificationTL', '_$s10AppIntents21SessionStartingIntentMp', 
-                       '_$s10AppIntents21SessionStartingIntentPAA06SystemE0Tb', '_$s10AppIntents21SessionStartingIntentTL', 
-                       '_$s10AppIntents21StringFromIntResolverV2eeoiySbACyxq_G_AEtFZ', 
+                       '_$s10AppIntents21ResolverSpecificationTL', '_$s10AppIntents21StringFromIntResolverV2eeoiySbACyxq_G_AEtFZ', 
                        '_$s10AppIntents21StringFromIntResolverV4hash4intoys6HasherVz_tF', 
                        '_$s10AppIntents21StringFromIntResolverV7resolve4from7contextq_Sgx_AA22IntentParameterContextVyq_GtYaKF', 
                        '_$s10AppIntents21StringFromIntResolverV7resolve4from7contextq_Sgx_AA22IntentParameterContextVyq_GtYaKFTu', 
@@ -2953,7 +2955,9 @@ exports:
                        '_$s10AppIntents26IntentAuthenticationPolicyO9hashValueSivpMV', 
                        '_$s10AppIntents26IntentAuthenticationPolicyOMa', '_$s10AppIntents26IntentAuthenticationPolicyOMn', 
                        '_$s10AppIntents26IntentAuthenticationPolicyON', '_$s10AppIntents26IntentAuthenticationPolicyOSHAAMc', 
-                       '_$s10AppIntents26IntentAuthenticationPolicyOSQAAMc', '_$s10AppIntents26NavigateSequentiallyIntentMp', 
+                       '_$s10AppIntents26IntentAuthenticationPolicyOSQAAMc', '_$s10AppIntents26LiveActivityStartingIntentMp', 
+                       '_$s10AppIntents26LiveActivityStartingIntentPAA06SystemF0Tb', 
+                       '_$s10AppIntents26LiveActivityStartingIntentTL', '_$s10AppIntents26NavigateSequentiallyIntentMp', 
                        '_$s10AppIntents26NavigateSequentiallyIntentP9directionAA0cD9DirectionOvMTj', 
                        '_$s10AppIntents26NavigateSequentiallyIntentP9directionAA0cD9DirectionOvMTq', 
                        '_$s10AppIntents26NavigateSequentiallyIntentP9directionAA0cD9DirectionOvgTj', 
@@ -3207,8 +3211,10 @@ exports:
                        '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyqd__qd_0_G_AA28ComparableComparisonOperatorOSiq_yXEq0_yXEtcAA0A6IntentRd__AA03AnyN5ValueRd_0_AA0A6Entity0P0_0P4TypeRPd_0_SiAO_AP2IDRTd_0_r0_lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA23OneOfComparisonOperatorOSaySSGq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0Q0_0Q4TypeRPd__lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA23OneOfComparisonOperatorOSaySiGq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0Q0_0Q4TypeRPd__SiAO_AP2IDRTd__lufC', 
+                       '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA24StringComparisonOperatorOSSq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0P0_0P4TypeRPd__lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA27EquatableComparisonOperatorOSSq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0P0_0P4TypeRPd__lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA27EquatableComparisonOperatorOSiq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0P0_0P4TypeRPd__SiAN_AO2IDRTd__lufC', 
+                       '_$s10AppIntents29ParameterSummaryWhenConditionV_10identifier__9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA28ComparableComparisonOperatorOSiq_yXEq0_yXEtcAA14AnyIntentValueRd__AA0A6Entity0P0_0P4TypeRPd__SiAN_AO2IDRTd__lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV___9otherwiseACyxq_q0_Gs7KeyPathCyxqd__G_AA26HasValueComparisonOperatorOq_yXEq0_yXEtcAA09AnyIntentK0Rd__lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV____9otherwiseACyxq_q0_Gs7KeyPathCyxqd_0_G_AA23OneOfComparisonOperatorOSay9ValueTypeQyd__Gq_yXEq0_yXEtc0N0Qyd_0_Rsd__AA09AnyIntentN0Rd_0_SQALRQr0_lufC', 
                        '_$s10AppIntents29ParameterSummaryWhenConditionV____9otherwiseACyxq_q0_Gs7KeyPathCyxqd_0_G_AA27EquatableComparisonOperatorO9ValueTypeAA07_IntentM0PQyd__q_yXEq0_yXEtcs23ExpressibleByNilLiteralRd__0M0Qyd_0_Rsd__AA03AnyoM0Rd_0_SQANRQr0_lufC', 
@@ -3382,6 +3388,7 @@ exports:
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO2eeoiySbAE_AEtFZ', 
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO3URLyA2EmFWC', 
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO4hash4intoys6HasherVz_tF', 
+                       '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO7defaultyA2EmFWC', 
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO9hashValueSivg', 
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO9hashValueSivpMV', 
                        '_$sSS10AppIntentsE18IntentInputOptionsV12KeyboardTypeO9numberPadyA2EmFWC', 

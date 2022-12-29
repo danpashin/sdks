@@ -93,7 +93,7 @@ NI_EXPORT
  @discussion If the ARConfiguration used to run the session is not compatible with the NISession, the NISession will invalidate with error
  @discussion If the platform does not support camera assistance or an ARSession is provided without enabling cameraAssistanceEnabled property in the NIConfiguration, the NISession will invalidate with error (see NIError.h)
  */
-- (void)setARSession:(ARSession*)session NS_SWIFT_NAME(setARSession(_:)) API_AVAILABLE(ios(16.0));
+- (void)setARSession:(ARSession*)session NS_SWIFT_NAME(setARSession(_:)) API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos);
 
 /**
  Compute a transform in ARKit's world coordinate system for a given nearby object.
@@ -101,7 +101,7 @@ NI_EXPORT
  @return The transformation matrix in ARKit world coordinates.
  @discussion When not available returns NINearbyObjectWorldTransformNotAvailable.
  */
-- (simd_float4x4)worldTransformForObject:(NINearbyObject *)object API_AVAILABLE(ios(16.0)) NS_REFINED_FOR_SWIFT;
+- (simd_float4x4)worldTransformForObject:(NINearbyObject *)object API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos) NS_REFINED_FOR_SWIFT;
 @end
 
 /**

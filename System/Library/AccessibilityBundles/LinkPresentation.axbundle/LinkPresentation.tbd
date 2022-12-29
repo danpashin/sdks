@@ -9,9 +9,14 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ __Failover, _accessibilityLocalizedString ]
-    objc-classes:         [ AXLinkPresentationGlue, LPLinkViewAccessibility,
+    objc-classes:         [ AXLinkPresentationGlue,
+                            LPCaptionBarButtonViewAccessibility,
+                            LPCollaborationFooterViewAccessibility,
+                            LPLinkViewAccessibility,
                             LPPlayButtonControlAccessibility,
                             LPTextViewAccessibility,
+                            __LPCaptionBarButtonViewAccessibility_super,
+                            __LPCollaborationFooterViewAccessibility_super,
                             __LPLinkViewAccessibility_super,
                             __LPPlayButtonControlAccessibility_super,
                             __LPTextViewAccessibility_super ]

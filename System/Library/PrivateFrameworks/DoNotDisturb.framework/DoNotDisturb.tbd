@@ -56,6 +56,7 @@ exports:
                             _DNDResolvedRepeatEventSourceBehaviorEnabledSettingForDevice,
                             _DNDResolvedScheduleEnabledSetting,
                             _DNDSettingsBedtimeModeIdentifier,
+                            _DNDStateUpdateOptionsToString,
                             _DNDStateUpdateReasonToString,
                             _DNDStateUpdateSourceToString,
                             _DNDStringFromBreakthroughUrgency,
@@ -147,7 +148,9 @@ exports:
                             DNDSettingsService, DNDState,
                             DNDStateModeAssertionMetadata, DNDStateService,
                             DNDStateUpdate, DNDSystemAction, DNDXPCEventObserver ]
-    objc-ivars:           [ DNDAppAction._action, DNDAppAction._enabled,
+    objc-ivars:           [ DNDAppAction._bundleIdentifier,
+                            DNDAppAction._enabled, DNDAppAction._encodedAction,
+                            DNDAppAction._identifier, DNDAppAction._rawAction,
                             DNDAppInfo._applicationIdentifier,
                             DNDAppInfo._cachedIconURL, DNDAppInfo._displayName,
                             DNDAppInfo._source, DNDAppInfo._storeIconURL,

@@ -29,6 +29,7 @@ typedef enum : uint32_t
     MPSDeviceSupportsNorm16BicubicFiltering     = 1 << 8,
     MPSDeviceSupportsFloat16BicubicFiltering    = 1 << 9,
     MPSDeviceIsAppleDevice                      = 1 << 10,
+    MPSDeviceSupportsSimdShuffleAndFill         = 1 << 11,
     
 } MPSDeviceCapsValues;
 
@@ -43,6 +44,7 @@ constant bool kMPSDeviceSupportsReadWriteTextures = (kMPSDeviceCaps & MPSDeviceS
 constant bool kMPSDeviceSupportsSimdgroupBarrier = (kMPSDeviceCaps & MPSDeviceSupportsSimdgroupBarrier) != 0;
 constant bool kMPSDeviceSupportsQuadShuffle = (kMPSDeviceCaps & MPSDeviceSupportsQuadShuffle) != 0;
 constant bool kMPSDeviceSupportsSimdShuffle = (kMPSDeviceCaps & MPSDeviceSupportsSimdShuffle) != 0;
+constant bool kMPSDeviceSupportsSimdShuffleAndFill = (kMPSDeviceCaps & MPSDeviceSupportsSimdShuffleAndFill) != 0;
 constant bool kMPSDeviceSupportsSimdReduction = (kMPSDeviceCaps & MPSDeviceSupportsSimdReduction) != 0;
 constant bool kMPSDeviceSupportsFloat32Filtering = (kMPSDeviceCaps & MPSDeviceSupportsFloat32Filtering) != 0;
 constant bool kMPSDeviceIsAppleDevice  = (kMPSDeviceCaps & MPSDeviceIsAppleDevice)  != 0;

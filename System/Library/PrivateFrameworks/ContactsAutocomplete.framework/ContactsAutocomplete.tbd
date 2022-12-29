@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsAutocomplete.framework/ContactsAutocomplete
-current-version:       1191
+current-version:       1192.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -28,6 +28,7 @@ exports:
                             _CNAutocompleteDefaultsProbesLogEnabled,
                             _CNAutocompleteDefaultsRecentContactsEnabled,
                             _CNAutocompleteDefaultsSortingLogEnabled,
+                            _CNAutocompleteDefaultsStewieEnabled,
                             _CNAutocompleteDefaultsSuggestionsCharactersThreshold,
                             _CNAutocompleteDefaultsSuggestionsEnabled,
                             _CNAutocompleteDefaultsSupplementalContactsEnabled,
@@ -71,6 +72,7 @@ exports:
                             _CNAutocompleteProbeSourceTypeKeyPromoted,
                             _CNAutocompleteProbeSourceTypeKeyPureSuggestion,
                             _CNAutocompleteProbeSourceTypeKeyRecent,
+                            _CNAutocompleteProbeSourceTypeKeyStewie,
                             _CNAutocompleteProbeSourceTypeKeySuggestion,
                             _CNAutocompleteProbeSourceTypeKeySupplemental,
                             _CNAutocompleteProbeSourceTypeKeyUnknown,
@@ -93,7 +95,8 @@ exports:
                             _sSortResultsByAddress, _sSortResultsByCategory,
                             _sSortResultsByDisplayName,
                             _sSortResultsByPreferredDomain ]
-    objc-classes:         [ CNACDPeopleSuggesterProxy,
+    objc-classes:         [ CNACDPeopleSuggesterProxy, CNACTStewieFacade,
+                            CNACTStewieFacadeTestDouble,
                             CNAClassKitResultTransformVisitor,
                             CNADASearchResultConverter,
                             CNADirectoryServerSearchTask,
@@ -150,7 +153,9 @@ exports:
                             CNAutocompleteSearchObservableProvider,
                             CNAutocompleteSearchProviderFactory,
                             CNAutocompleteSourceInclusionPolicy,
-                            CNAutocompleteStore, CNAutocompleteStoreQueryContext,
+                            CNAutocompleteStewieResult,
+                            CNAutocompleteStewieSearch, CNAutocompleteStore,
+                            CNAutocompleteStoreQueryContext,
                             CNAutocompleteStoreQueryHelper,
                             CNAutocompleteStoreReproStringRecorder,
                             CNAutocompleteSuggestedContactResult,

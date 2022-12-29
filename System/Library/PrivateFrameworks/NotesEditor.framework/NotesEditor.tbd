@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesEditor.framework/NotesEditor
-current-version:       2162
+current-version:       2187
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -358,6 +358,7 @@ exports:
                             _$s11NotesEditor27ICSystemPaperDocumentHelperC15paperAttachment8textViewACSo12ICAttachmentC_So06UITextJ0Ctcfc,
                             _$s11NotesEditor27ICSystemPaperDocumentHelperC3add13itemProviders11itemsAnchorySaySo14NSItemProviderCG_So17UIViewContentModeVtF,
                             _$s11NotesEditor27ICSystemPaperDocumentHelperC3add13itemProviders13itemsLocationySaySo14NSItemProviderCG_So7CGPointVtF,
+                            _$s11NotesEditor27ICSystemPaperDocumentHelperC7drawing3for9PencilKit9PKDrawingVSgSo12ICAttachmentC_tFZ,
                             _$s11NotesEditor27ICSystemPaperDocumentHelperC8document33_4B4FA101382B7DFB57F91BDBB68C1D47LL0A6Shared0cdE0CSgvpfi,
                             _$s11NotesEditor27ICSystemPaperDocumentHelperC8textViewSo06UITextH0CSgvpfi,
                             _$s11NotesEditor27ICSystemPaperDocumentHelperCACycfC,
@@ -404,6 +405,17 @@ exports:
                             _$s11NotesEditor28ICInlineDrawingUpgradeHelperCMn,
                             _$s11NotesEditor28ICInlineDrawingUpgradeHelperCN,
                             _$s11NotesEditor28ICInlineDrawingUpgradeHelperCfD,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC10presenters33_65E80A0BC5223499D82B80975D232305LLSayAC7WeakRefAELLCy_So06ICNoteb4ViewF0CGGvpfi,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC3addyySo06ICNoteb4ViewF0CF,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC6removeyySo06ICNoteb4ViewF0CF,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC6sharedACvau,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC6sharedACvgZ,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC6sharedACvpZ,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerC9presenter3forSo06ICNoteb4ViewF0CSgSS_tF,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerCMa,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerCMn,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerCN,
+                            _$s11NotesEditor31ICSystemPaperDocumentControllerCfD,
                             _$s11NotesEditor32SystemPaperLinkBarViewControllerC03addE6ButtonSo8UIButtonCSgvpfi,
                             _$s11NotesEditor32SystemPaperLinkBarViewControllerC04blurG0So6UIViewCSgvpfi,
                             _$s11NotesEditor32SystemPaperLinkBarViewControllerC04linkH8DelegateAA0cdgheJ0CSgvpfi,
@@ -617,7 +629,9 @@ exports:
                             ICSharedWithYouControllerInternal,
                             ICSidecarInsertMenu, ICSidecarInsertMenuItem,
                             ICStyleSelectorView, ICStyleSelectorViewController,
-                            ICSystemPaperConstants, ICSystemPaperDocumentHelper,
+                            ICSystemPaperConstants,
+                            ICSystemPaperDocumentController,
+                            ICSystemPaperDocumentHelper,
                             ICSystemPaperIndexableTextContentHelper,
                             ICSystemPaperLinkBarViewController,
                             ICTableAccessibilityController,

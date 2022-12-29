@@ -117,7 +117,7 @@ CG_EXTERN CGFloat CGRectGetMidX(CGRect rect)
 CG_EXTERN CGFloat CGRectGetMaxX(CGRect rect)
     CG_AVAILABLE_STARTING(10.0, 2.0);
 
-/* Return the bottommost y-value of `rect'. */
+/* Return the smallest y-value of `rect'. */
 
 CG_EXTERN CGFloat CGRectGetMinY(CGRect rect)
     CG_AVAILABLE_STARTING(10.0, 2.0);
@@ -127,7 +127,7 @@ CG_EXTERN CGFloat CGRectGetMinY(CGRect rect)
 CG_EXTERN CGFloat CGRectGetMidY(CGRect rect)
     CG_AVAILABLE_STARTING(10.0, 2.0);
 
-/* Return the topmost y-value of `rect'. */
+/* Return the largest y-value of `rect'. */
 
 CG_EXTERN CGFloat CGRectGetMaxY(CGRect rect)
     CG_AVAILABLE_STARTING(10.0, 2.0);

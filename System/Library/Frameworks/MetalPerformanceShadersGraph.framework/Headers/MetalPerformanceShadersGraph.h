@@ -20,8 +20,8 @@
 #import <MetalPerformanceShadersGraph/MPSGraphGatherOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphLinearAlgebraOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphLossOps.h>
+#import <MetalPerformanceShadersGraph/MPSGraphMatrixInverseOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphMatrixMultiplicationOps.h>
-#import <MetalPerformanceShadersGraph/MPSGraphSparseOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphMemoryOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphNormalizationOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphOneHotOps.h>
@@ -33,6 +33,7 @@
 #import <MetalPerformanceShadersGraph/MPSGraphRNNOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphScatterNDOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphSortOps.h>
+#import <MetalPerformanceShadersGraph/MPSGraphSparseOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphStencilOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphTensorShapeOps.h>
 #import <MetalPerformanceShadersGraph/MPSGraphTopKOps.h>

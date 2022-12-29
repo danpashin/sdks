@@ -50,7 +50,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
 /*!
  *  @abstract   The primary home for this collection.
  */
-@property (readonly, strong, nonatomic, nullable) HMHome *primaryHome;
+@property (readonly, strong, nonatomic, nullable) HMHome *primaryHome API_DEPRECATED("No longer supported.", ios(8.0, 16.1), macos(10.14, 13.0), tvos(10.0, 16.1), watchos(2.0, 9.1));
 
 /*!
  *  @abstract   Array of HMHome objects that represents the homes associated with the home manager.
@@ -70,7 +70,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
  *                          The NSError provides more information on the status of the request, error
  *                          will be nil on success.
  */
-- (void)updatePrimaryHome:(HMHome *)home completionHandler:(void (^)(NSError *__nullable error))completion API_UNAVAILABLE(watchos, tvos);
+- (void)updatePrimaryHome:(HMHome *)home completionHandler:(void (^)(NSError *__nullable error))completion API_DEPRECATED("No longer supported.", ios(8.0, 16.1), macos(10.14, 13.0), tvos(10.0, 16.1), watchos(2.0, 9.1));
 
 /*!
  *  @abstract   Adds a new home to the collection.

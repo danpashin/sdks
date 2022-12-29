@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/GridDataServices.framework/GridDataServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _GridDataServicesVersionNumber,
+                            _GridDataServicesVersionString, _kAverageKey,
+                            _kGDSFakeDataDomain, _kGDSFakeForecastKey,
+                            _kHMAC_DEV_SECRET, _kHMAC_PROD_SECRET, _kHMAC_SECRET,
+                            _kHMAC_SECRET_VERSION, _kHMAC_TEST_SECRET,
+                            _kMarginalKey ]
+    objc-classes:         [ _GDSBalancingAuthority, _GDSBalancingAuthorityOutput,
+                            _GDSEmissionForecast, _GDSEmissionHistory,
+                            _GDSHMACGenerator, _GDSManager, _GDSServerConnection ]
+...

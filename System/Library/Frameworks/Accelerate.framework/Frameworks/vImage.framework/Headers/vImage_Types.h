@@ -213,6 +213,40 @@ typedef struct vImage_AffineTransform
 #endif
 
 /*!
+ @typedef  vImage_PerpsectiveTransform
+ @abstract Coefficients defining the 3x3 perspective (projective) transform matrix
+ @field  a        top left cell in 3x3 transform matrix
+ @field  b        top middle cell in 3x3 transform matrix
+ @field  c        middle left cell in 3x3 transform matrix
+ @field  d        middle right cell in 3x3 transform matrix
+ @field  tx       The x-coordinate translation
+ @field  ty       The y-coordinate translation
+ @field  vx      The x-component of the projective vector
+ @field  vy      The y-component of the projective vector
+ @field  v        The homogeneous scale factor
+ */
+typedef struct vImage_PerpsectiveTransform
+{
+    float         a, b, c, d;
+    float         tx, ty;
+    float         vx, vy, v;
+} vImage_PerpsectiveTransform;
+
+/*!
+ @enum       vImage_WarpInterpolation
+ @abstract   Constants for selecting the interpolation mode
+ @discussion These constants selects the interpolation mode for certain geometry functions like perspective warp
+ @constant   kvImageInterpolationNearest      Nearest neigborhood
+ @constant   kvImageInterpolationLinear         Linear interpoation
+ */
+typedef VIMAGE_CHOICE_ENUM(vImage_WarpInterpolation, int32_t)
+{
+    kvImageInterpolationNearest      __API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0))  =    0,
+    kvImageInterpolationLinear       __API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0))  =    1,
+};
+
+
+/*!
  @typedef   Pixel_8
  @abstract   An 8-bit per component unsigned planar pixel value.
 */
@@ -624,7 +658,7 @@ typedef VIMAGE_OPTIONS_ENUM(vImage_Flags, uint32_t)
     
     /* Use a lower precision, faster floating-point arithmetic for all internal computations when available.
        This applies to all functions operating on 16-bit half-precision floating-point pixels, Pixel_16F. */
-    kvImageUseFP16Accumulator     /*VIMAGE_ENUM_AVAILABLE_STARTING( __MAC_13_0, __IPHONE_16_0 )*/   =  4096,
+    kvImageUseFP16Accumulator     __API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0))   =  4096,
 };
 
 

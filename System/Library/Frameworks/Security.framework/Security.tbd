@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           01C74100-672A-3A67-9102-3DDFCE3ECBD4
   - target:          arm64-ios
-    value:           1986FA6D-4A56-3D8B-AB15-76831330450F
+    value:           82135322-CBA4-34F5-98B7-A237BCE8A734
   - target:          arm64e-ios
-    value:           7F11A2FE-6E4F-3D2A-9A40-97A3C7347428
+    value:           D0585F53-3F5C-349F-A16B-A9710274E733
 install-name:    '/System/Library/Frameworks/Security.framework/Security'
-current-version: 60420.2.2
+current-version: 60420.40.34
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _DERDecodeItem, _DEROidCompare, _SOSAccountPeerGotInSync, 
@@ -975,9 +975,9 @@ exports:
                        _kSecCodeDirectoryFlagTable, _kSecCodeInfoCMS, _kSecCodeInfoCMSDigest, 
                        _kSecCodeInfoCMSDigestHashType, _kSecCodeInfoCdHashes, _kSecCodeInfoCdHashesFull, 
                        _kSecCodeInfoCertificates, _kSecCodeInfoChangedFiles, _kSecCodeInfoCodeDirectory, 
-                       _kSecCodeInfoCodeOffset, _kSecCodeInfoDesignatedRequirement, 
-                       _kSecCodeInfoDigestAlgorithm, _kSecCodeInfoDigestAlgorithms, 
-                       _kSecCodeInfoDiskRepInfo, _kSecCodeInfoDiskRepNoLibraryValidation, 
+                       _kSecCodeInfoCodeOffset, _kSecCodeInfoDefaultDesignatedLightweightCodeRequirement, 
+                       _kSecCodeInfoDesignatedRequirement, _kSecCodeInfoDigestAlgorithm, 
+                       _kSecCodeInfoDigestAlgorithms, _kSecCodeInfoDiskRepInfo, _kSecCodeInfoDiskRepNoLibraryValidation, 
                        _kSecCodeInfoDiskRepVersionMin, _kSecCodeInfoDiskRepVersionPlatform, 
                        _kSecCodeInfoDiskRepVersionSDK, _kSecCodeInfoEntitlements, 
                        _kSecCodeInfoEntitlementsDER, _kSecCodeInfoEntitlementsDict, 
@@ -1172,27 +1172,28 @@ exports:
                        _kSecPolicyNameAppleFMiPService, _kSecPolicyNameAppleGSService, 
                        _kSecPolicyNameAppleHealthProviderService, _kSecPolicyNameAppleHomeAppClipUploadService, 
                        _kSecPolicyNameAppleHomeKitService, _kSecPolicyNameAppleIDSService, 
-                       _kSecPolicyNameAppleMMCSService, _kSecPolicyNameAppleMapsService, 
-                       _kSecPolicyNameApplePPQService, _kSecPolicyNameAppleParsecService, 
-                       _kSecPolicyNameApplePotluckService, _kSecPolicyNameApplePushCertPortal, 
-                       _kSecPolicyNameApplePushService, _kSecPolicyNameAppleSiriService, 
-                       _kSecPolicyNameAppleUpdatesService, _kSecPolicyNameAppleiCloudSetupService, 
-                       _kSecPolicyNameCodeSigning, _kSecPolicyNameEAPClient, _kSecPolicyNameEAPServer, 
-                       _kSecPolicyNameIPSecClient, _kSecPolicyNameIPSecServer, _kSecPolicyNameOCSPSigner, 
-                       _kSecPolicyNameSMIME, _kSecPolicyNameSSLClient, _kSecPolicyNameSSLServer, 
-                       _kSecPolicyNameTimeStamping, _kSecPolicyNameX509Basic, _kSecPolicyOid, 
-                       _kSecPolicyPolicyName, _kSecPolicyRevocationFlags, _kSecPolicyRootDigest, 
-                       _kSecPolicyTeamIdentifier, _kSecPrivateKeyAttrs, _kSecPropertyKeyLabel, 
-                       _kSecPropertyKeyLocalizedLabel, _kSecPropertyKeyType, _kSecPropertyKeyValue, 
-                       _kSecPropertyTypeArray, _kSecPropertyTypeData, _kSecPropertyTypeDate, 
-                       _kSecPropertyTypeError, _kSecPropertyTypeNumber, _kSecPropertyTypeSection, 
-                       _kSecPropertyTypeString, _kSecPropertyTypeSuccess, _kSecPropertyTypeTitle, 
-                       _kSecPropertyTypeURL, _kSecPropertyTypeWarning, _kSecPublicKeyAttrs, 
-                       _kSecRVIterations, _kSecRVMasterID, _kSecRVProtocol, _kSecRVSalt, 
-                       _kSecRVVerifier, _kSecRandomDefault, _kSecReturnAttributes, 
-                       _kSecReturnData, _kSecReturnPersistentRef, _kSecReturnRef, 
-                       _kSecSharedPassword, _kSecSignatureDigestAlgorithmUnknown, 
-                       _kSecSubjectAltName, _kSecSubjectAltNameDNSName, _kSecSubjectAltNameEmailAddress, 
+                       _kSecPolicyNameAppleMMCSService, _kSecPolicyNameAppleMacOSSoftwareUpdate, 
+                       _kSecPolicyNameAppleMapsService, _kSecPolicyNameApplePPQService, 
+                       _kSecPolicyNameAppleParsecService, _kSecPolicyNameApplePotluckService, 
+                       _kSecPolicyNameApplePushCertPortal, _kSecPolicyNameApplePushService, 
+                       _kSecPolicyNameAppleSiriService, _kSecPolicyNameAppleUpdatesService, 
+                       _kSecPolicyNameAppleiCloudSetupService, _kSecPolicyNameCodeSigning, 
+                       _kSecPolicyNameEAPClient, _kSecPolicyNameEAPServer, _kSecPolicyNameIPSecClient, 
+                       _kSecPolicyNameIPSecServer, _kSecPolicyNameOCSPSigner, _kSecPolicyNameSMIME, 
+                       _kSecPolicyNameSSLClient, _kSecPolicyNameSSLServer, _kSecPolicyNameTimeStamping, 
+                       _kSecPolicyNameX509Basic, _kSecPolicyOid, _kSecPolicyPolicyName, 
+                       _kSecPolicyRevocationFlags, _kSecPolicyRootDigest, _kSecPolicyTeamIdentifier, 
+                       _kSecPrivateKeyAttrs, _kSecPropertyKeyLabel, _kSecPropertyKeyLocalizedLabel, 
+                       _kSecPropertyKeyType, _kSecPropertyKeyValue, _kSecPropertyTypeArray, 
+                       _kSecPropertyTypeData, _kSecPropertyTypeDate, _kSecPropertyTypeError, 
+                       _kSecPropertyTypeNumber, _kSecPropertyTypeSection, _kSecPropertyTypeString, 
+                       _kSecPropertyTypeSuccess, _kSecPropertyTypeTitle, _kSecPropertyTypeURL, 
+                       _kSecPropertyTypeWarning, _kSecPublicKeyAttrs, _kSecRVIterations, 
+                       _kSecRVMasterID, _kSecRVProtocol, _kSecRVSalt, _kSecRVVerifier, 
+                       _kSecRandomDefault, _kSecReturnAttributes, _kSecReturnData, 
+                       _kSecReturnPersistentRef, _kSecReturnRef, _kSecSharedPassword, 
+                       _kSecSignatureDigestAlgorithmUnknown, _kSecSubjectAltName, 
+                       _kSecSubjectAltNameDNSName, _kSecSubjectAltNameEmailAddress, 
                        _kSecSubjectAltNameNTPrincipalName, _kSecSubjectAltNameURI, 
                        _kSecTrustCertificateTransparency, _kSecTrustCertificateTransparencyWhiteList, 
                        _kSecTrustEvaluationDate, _kSecTrustExtendedValidation, _kSecTrustInfoCertificateTransparencyKey, 

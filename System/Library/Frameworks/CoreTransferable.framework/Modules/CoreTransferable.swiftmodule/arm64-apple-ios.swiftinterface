@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -library-level api -library-level api -module-name CoreTransferable
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.0.6.1
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -library-level api -library-level api -module-name CoreTransferable
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.0.7
 import Combine
 @_exported import CoreTransferable
 import Swift
@@ -10,6 +10,14 @@ import _Concurrency
 import _StringProcessing
 import os.log
 import os
+@available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+extension Foundation.AttributedString : CoreTransferable.Transferable {
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public static var transferRepresentation: some CoreTransferable.TransferRepresentation {
+    get
+  }
+  public typealias Representation = @_opaqueReturnTypeOf("$s10Foundation16AttributedStringV16CoreTransferableE22transferRepresentationQrvpZ", 0) __
+}
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension CoreTransferable.TransferRepresentation {
   public func visibility(_ visibility: CoreTransferable.TransferRepresentationVisibility) -> some CoreTransferable.TransferRepresentation
@@ -36,12 +44,21 @@ extension Foundation.URL : CoreTransferable.Transferable, @unchecked Swift.Senda
   }
   public typealias Representation = @_opaqueReturnTypeOf("$s10Foundation3URLV16CoreTransferableE22transferRepresentationQrvpZ", 0) __
 }
+#if compiler(>=5.3) && $PrimaryAssociatedTypes2
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+public protocol TransferRepresentation<Item> : Swift.Sendable {
+  associatedtype Item : CoreTransferable.Transferable
+  associatedtype Body : CoreTransferable.TransferRepresentation
+  @CoreTransferable.TransferRepresentationBuilder<Self.Item> var body: Self.Body { get }
+}
+#else
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 public protocol TransferRepresentation : Swift.Sendable {
   associatedtype Item : CoreTransferable.Transferable
   associatedtype Body : CoreTransferable.TransferRepresentation
   @CoreTransferable.TransferRepresentationBuilder<Self.Item> var body: Self.Body { get }
 }
+#endif
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 @_functionBuilder public struct TransferRepresentationBuilder<Item> where Item : CoreTransferable.Transferable {
   public static func buildExpression<Encoder, Decoder>(_ content: CoreTransferable.CodableRepresentation<Item, Encoder, Decoder>) -> CoreTransferable.CodableRepresentation<Item, Encoder, Decoder> where Item : Swift.Decodable, Item : Swift.Encodable, Encoder : Combine.TopLevelEncoder, Decoder : Combine.TopLevelDecoder, Encoder.Output == Foundation.Data, Decoder.Input == Foundation.Data
@@ -127,11 +144,23 @@ public struct ProxyRepresentation<Item, ProxyRepresentation> : CoreTransferable.
   #if compiler(>=5.3) && $Sendable
   public init(importing: @escaping @Sendable (ProxyRepresentation) throws -> Item)
   #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public init(importing: @escaping @Sendable (ProxyRepresentation) async throws -> Item)
+  #endif
   #if compiler(>=5.3) && $Sendable
   public init(exporting: @escaping @Sendable (Item) throws -> ProxyRepresentation)
   #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public init(exporting: @escaping @Sendable (Item) async throws -> ProxyRepresentation)
+  #endif
   #if compiler(>=5.3) && $Sendable
   public init(exporting: @escaping @Sendable (Item) throws -> ProxyRepresentation, importing: @escaping @Sendable (ProxyRepresentation) throws -> Item)
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait && $Sendable
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public init(exporting: @escaping @Sendable (Item) async throws -> ProxyRepresentation, importing: @escaping @Sendable (ProxyRepresentation) async throws -> Item)
   #endif
   public typealias Body = Swift.Never
 }

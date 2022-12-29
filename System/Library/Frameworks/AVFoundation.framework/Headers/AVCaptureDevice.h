@@ -2313,8 +2313,8 @@ typedef NS_ENUM(NSInteger, AVCaptureSystemUserInterface) {
  @abstract
     Displays the system's user interface for video effects or microphone modes.
  
-  @param systemUserInterface
-     The system UI to show.
+ @param systemUserInterface
+    The system UI to show.
  
  @discussion
     This method allows the calling application to prompt the user to make changes to Video Effects (such as Center Stage or the Portrait Effect) or Microphone Modes. It brings up the system user interface and deep links to the appropriate module. This method is non-blocking. After presenting the desired system user interface, control returns immediately to the application.

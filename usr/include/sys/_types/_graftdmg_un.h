@@ -41,6 +41,7 @@
 #define SBC_SYSTEM_CONTENT              0x0004  /* Cryptex contains system content */
 #define SBC_PANIC_ON_AUTHFAIL           0x0008  /* On failure to authenticate, panic */
 #define SBC_STRICT_AUTH                 0x0010  /* Strict authentication mode */
+#define SBC_PRESERVE_GRAFT              0x0020  /* Preserve graft itself until unmount */
 
 typedef struct secure_boot_cryptex_args {
 	u_int32_t sbc_version;

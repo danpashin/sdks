@@ -8,14 +8,14 @@
 NS_ASSUME_NONNULL_BEGIN
 /*!
      @class SWCollaborationOption
-     @abstract Represents a collaboration option which determines how the document should be shared
-     @discussion SWCollaborationOptions represents the different permissions the document can be shared with in the CSCollaborationOptionsView
+     @abstract A user-facing option for configuring a shareable collaborative item
+     @discussion SWCollaborationOptions represent the available settings (such as permissions) a user can configure on a collaborative item
  */
 API_AVAILABLE(ios(16.0), macos(13.0))
 SW_EXTERN @interface SWCollaborationOption : NSObject <NSCopying, NSSecureCoding>
 
 /*!
-    @abstract Localized string displayed as text to represent the option in the CSCollaborationOptionsView
+    @abstract A localized title string to be used when displaying the option
  */
 @property (nonatomic, copy) NSString *title;
 
@@ -25,34 +25,35 @@ SW_EXTERN @interface SWCollaborationOption : NSObject <NSCopying, NSSecureCoding
 @property (nonatomic, copy, readonly) NSString *identifier;
 
 /*!
-    @abstract Localized string that describes the option in the CSCollaborationOptionsView
+    @abstract A localized subtitle string to be used when displaying the option
  */
 @property (nonatomic, copy) NSString *subtitle;
 
 /*!
-    @abstract A bool representing the currently selected/switched on option item. This property should only be manually set on the option for switches.
+    @abstract A flag that indicates whether the option is selected.
+    @discussion This property should only be set directly when the option represents an individual switch. Defaults to NO
  */
-@property (nonatomic, assign, getter=isSelected) BOOL selected; // defaults to NO
+@property (nonatomic, assign, getter=isSelected) BOOL selected;
 
 /*!
-    @abstract Array of option identifiers that must already be selected in order for the option to be interactable
+    @abstract An array of option identifiers that must already be selected in order to be interacted with
  */
 @property (nonatomic, copy) NSArray<NSString *> *requiredOptionsIdentifiers;
 
 /*!
-     @abstract Designated initializer to initialize a new collaboration option with the given title string and unique identifier
-     @param title localized string displayed as text to represent the option in the CSCollaborationOptionsView
+     @abstract Initializes a collaboration option object with a title and unique identifier
+     @param title A localized title string to be used when displaying the option
      @param identifier The unique identifier for the option
 */
 - (instancetype)initWithTitle:(NSString *)title identifier:(NSString *)identifier NS_DESIGNATED_INITIALIZER NS_SWIFT_UNAVAILABLE("Use SWCollaborationOption.init(title:identifier:subtitle:selected:requiredOptionsIdentifiers:) instead");
 
-- (nullable instancetype)initWithCoder:(NSCoder *)coder;
 - (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 /*!
-     @abstract Creates a new collaboration option with the given title string and unique identifier
-     @param title localized string displayed as text to represent the option in the CSCollaborationOptionsView
-     @param identifier the unique identifier for the option
+     @abstract Initializes a collaboration option with a title and unique identifier
+     @param title A localized title string to be used when displaying the option
+     @param identifier The unique identifier for the option
 */
 + (SWCollaborationOption *)optionWithTitle:(NSString *)title identifier:(NSString *)identifier;
 

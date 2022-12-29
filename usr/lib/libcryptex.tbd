@@ -7,15 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B728A415-AEDE-3E79-91BE-6ED03BCF8998
+    value:           DDBAD7D5-C058-38C6-AFEB-ACD6B20341B5
   - target:          arm64e-ios
-    value:           E25E650E-A2D1-359B-B85E-AA3312EBFB15
+    value:           B57040E9-B4B2-3F40-8B44-260861F0F465
 install-name:    '/usr/lib/libcryptex.dylib'
-current-version: 206.2.1
+current-version: 206.40.13
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ __cryptex_copy_list, __cryptex_create, __cryptex_identity_equal, 
-                       __cryptex_install_core, __cryptex_set_actor, __cryptex_signing_service_image_spec_certificate, 
+                       __cryptex_identity_init_from_dict, __cryptex_install_core, 
+                       __cryptex_set_actor, __cryptex_signing_service_image_spec_certificate, 
                        __cryptex_signing_service_image_spec_url, __cryptex_uninstall_by_name, 
                        __cryptex_version, _collation_create, _collation_create_for_user, 
                        _collation_element_scope_get_description, _collation_foreach, 
@@ -26,14 +27,17 @@ exports:
                        _cryptex_bundle_copy_build_manifest, _cryptex_bundle_copy_cryptex, 
                        _cryptex_bundle_create, _cryptex_bundle_create_with_directory, 
                        _cryptex_bundle_set_cryptex, _cryptex_bundle_update_build_manifest, 
-                       _cryptex_bundle_write, _cryptex_copy_list_4MSM, _cryptex_get_identity, 
-                       _cryptex_get_variant, _cryptex_identity_set_host_identity, 
+                       _cryptex_bundle_write, _cryptex_copy_installed_cryptex, _cryptex_copy_list_4MSM, 
+                       _cryptex_get_identity, _cryptex_get_variant, _cryptex_identity_set_host_identity, 
                        _cryptex_install, _cryptex_install_4MSM, _cryptex_lockdown, 
                        _cryptex_msm_array_destroy, _cryptex_msm_destroy, _cryptex_msm_get_int, 
                        _cryptex_msm_get_string, _cryptex_personalize, _cryptex_signing_service_create, 
                        _cryptex_signing_service_set_image, _cryptex_signing_service_set_image_bytes, 
                        _cryptex_signing_service_set_sso_ticket, _cryptex_signing_service_set_tss_url, 
-                       _cryptex_signing_service_trust, _cryptex_uninstall, _cryptex_uninstall_4MSM, 
+                       _cryptex_signing_service_trust, _cryptex_su_preboot_bundle_copy_cryptex, 
+                       _cryptex_su_preboot_bundle_create, _cryptex_su_preboot_bundle_create_with_directory_and_manifest, 
+                       _cryptex_system_cx_copy_name, _cryptex_uninstall, _cryptex_uninstall_4MSM, 
+                       _cryptex_upgrade_abort, _cryptex_upgrade_commit, _cryptex_upgrade_stage, 
                        _session_activate, _session_add_cryptex, _session_add_job_override, 
                        _session_add_session_environment, _session_create, _session_create_from_core, 
                        _session_get_cryptex_array, _session_get_homedir, _session_get_name, 
@@ -41,5 +45,6 @@ exports:
                        _session_iter_list, _session_set_event_handler, _session_set_homedir_size, 
                        _session_set_job_environment_override, _session_start, _session_stop ]
     objc-classes:    [ Collation, OS_cryptex, OS_cryptex_attr, OS_cryptex_bundle, 
-                       OS_cryptex_signing_service, OS_session ]
+                       OS_cryptex_signing_service, OS_cryptex_su_preboot_bundle, 
+                       OS_session ]
 ...

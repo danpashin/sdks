@@ -131,6 +131,7 @@ __API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
 extern
 const mach_port_t kIOMasterPortDefault
+__API_AVAILABLE(macCatalyst(1.0))
 __API_DEPRECATED_WITH_REPLACEMENT("kIOMainPortDefault", macos(10.0, 12.0)) __API_UNAVAILABLE(ios, watchos, tvos);
 
 
@@ -141,6 +142,7 @@ __API_DEPRECATED_WITH_REPLACEMENT("kIOMainPortDefault", macos(10.0, 12.0)) __API
 kern_return_t
 IOMasterPort( mach_port_t	bootstrapPort,
 	      mach_port_t *	mainPort )
+__API_AVAILABLE(macCatalyst(1.0))
 __API_DEPRECATED_WITH_REPLACEMENT("kIOMainPortDefault", macos(10.0, 12.0)) __API_UNAVAILABLE(ios, watchos, tvos);
 
 

@@ -8,11 +8,13 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _GKCurrentMedusaMode, _GKIsAvatarEditingSupported,
+    symbols:              [ _GKCurrentMedusaMode, _GKHostUsesXRUIIdiom,
+                            _GKIsAvatarEditingSupported, _GKIsXRUIIdiom,
                             _GKRectDivideYIntoThreeConsumingMiddle,
                             _GKRectEnforceMinimumHeight, _GKRectsCenterXInRect,
-                            _GKRectsCenterYInRect, _GKShouldLayoutRTL,
-                            __GKIsClientAppUsingRTL, __GKIsRemoteUIUsingPadIdiom ]
+                            _GKRectsCenterYInRect, _GKSetHostUserInterfaceIdiom,
+                            _GKShouldLayoutRTL, __GKIsClientAppUsingRTL,
+                            __GKIsRemoteUIUsingPadIdiom ]
     objc-classes:         [ GKAvatarImage, GKAvatarImageBrush,
                             GKBackgroundTileImageView, GKBrush, GKBrushList,
                             GKCircleImageBrush, GKColorPalette,

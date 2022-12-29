@@ -44,6 +44,8 @@ CSEXTERN CFStringRef kColorSyncITUR2020Profile CS_AVAILABLE_STARTING(10.4, 16.0)
 
 CSEXTERN CFStringRef kColorSyncROMMRGBProfile CS_AVAILABLE_STARTING(10.4, 16.0);              /* com.apple.ColorSync.ROMMRGB */
 
+CSEXTERN CFStringRef kColorSyncWebSafeColorsProfile CS_AVAILABLE_STARTING(13.0, 16.1);        /* com.apple.ColorSync.WebSafeColors */
+
 CSEXTERN CFStringRef kColorSyncProfileHeader CS_AVAILABLE_STARTING(10.4, 16.0);      /* com.apple.ColorSync.ProfileHeader */
 CSEXTERN CFStringRef kColorSyncProfileClass CS_AVAILABLE_STARTING(10.4, 16.0);       /* com.apple.ColorSync.ProfileClass */
 CSEXTERN CFStringRef kColorSyncProfileColorSpace CS_AVAILABLE_STARTING(10.4, 16.0);  /* com.apple.ColorSync.ProfileColorSpace */

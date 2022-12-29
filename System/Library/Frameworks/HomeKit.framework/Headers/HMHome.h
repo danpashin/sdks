@@ -419,7 +419,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
 
 /*!
  * @brief Adds a trigger to the home. Unless the trigger object is added to the home, it cannot be 
- *        activated.
+ *        activated. Throws error and will not be added to home if there is no Home Hub associated with the home
  *
  * @discussion  Triggers are specific to an iOS device and are not synced across multiple devices to
  *              ensure that the action sets are executed only once.
@@ -430,6 +430,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
  * 	                 The HMTrigger parameter is the new trigger added to the home.
  *                   The NSError provides more information on the status of the request, error
  *                   will be nil on success.
+ *                   Errors when no Home Hub is associated with the home
  */
 - (void)addTrigger:(HMTrigger *)trigger completionHandler:(void (^)(NSError *__nullable error))completion API_UNAVAILABLE(watchos, tvos);
 
@@ -443,6 +444,24 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
  *                   will be nil on success.
  */
 - (void)removeTrigger:(HMTrigger *)trigger completionHandler:(void (^)(NSError *__nullable error))completion API_UNAVAILABLE(watchos, tvos);
+
+@end
+
+@interface HMHome (Matter)
+
+/*!
+ * @brief Identifier of the Matter controller associated with this home.
+ *        This property can be passed as the first argument to +[MTRDeviceController sharedControllerWithId:xpcConnectBlock:] method
+ *        to get a MTRDeviceController object.
+ */
+@property (readonly, copy, nonatomic) NSString *matterControllerID API_AVAILABLE(ios(16.1));
+
+/*!
+ * @brief Block generating XPC connection on demand through which to access the Matter controller associated with this home.
+ *        This property can be passed as the second argument to +[MTRDeviceController sharedControllerWithId:xpcConnectBlock:] method
+ *        to get a MTRDeviceController object.
+ */
+@property (readonly, strong, nonatomic) NSXPCConnection * (^matterControllerXPCConnectBlock)(void)API_AVAILABLE(ios(16.1));
 
 @end
 

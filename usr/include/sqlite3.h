@@ -159,9 +159,9 @@ extern "C" {
 ** [sqlite3_libversion_number()], [sqlite3_sourceid()],
 ** [sqlite_version()] and [sqlite_source_id()].
 */
-#define SQLITE_VERSION        "3.39.0"
-#define SQLITE_VERSION_NUMBER 3039000
-#define SQLITE_SOURCE_ID      "2022-06-30 02:14:17 bc8a7f24e4b04e69cde9148ea5bb5a0e7567ecb00eb9cf4031592cdf9761aapl"
+#define SQLITE_VERSION        "3.39.4"
+#define SQLITE_VERSION_NUMBER 3039004
+#define SQLITE_SOURCE_ID      "2022-09-07 20:51:41 6bf7a2712125fdc4d559618e3fa3b4944f5a0d8f8a4ae21165610e153f77aapl"
 
 /*
 ** CAPI3REF: Run-Time Library Version Numbers
@@ -3434,10 +3434,6 @@ SQLITE_API void sqlite3_progress_handler(sqlite3*, int, int(*)(void*), void*);
 ** (Mutexes will block any actual concurrency, but in this mode
 ** there is no harm in trying.)
 **
-** [[OPEN_NOFOLLOW]] ^(<dt>[SQLITE_OPEN_NOFOLLOW]</dt>
-** <dd>The database filename is not allowed to contain any symbolic links</dd>
-** </dl>)^
-**
 ** ^(<dt>[SQLITE_OPEN_SHAREDCACHE]</dt>
 ** <dd>The database is opened [shared cache] enabled, overriding
 ** the default shared cache setting provided by
@@ -3455,6 +3451,9 @@ SQLITE_API void sqlite3_progress_handler(sqlite3*, int, int(*)(void*), void*);
 ** connection as soon as the connection is created. In addition to setting
 ** the extended result code mode, this flag also causes [sqlite3_open_v2()]
 ** to return an extended result code.</dd>
+**
+** [[OPEN_NOFOLLOW]] ^(<dt>[SQLITE_OPEN_NOFOLLOW]</dt>
+** <dd>The database filename is not allowed to contain any symbolic links</dd>
 ** </dl>)^
 **
 ** If the 3rd parameter to sqlite3_open_v2() is not one of the
@@ -6314,7 +6313,7 @@ SQLITE_API sqlite3 *sqlite3_db_handle(sqlite3_stmt*);
 **
 ** ^The sqlite3_db_name(D,N) interface returns a pointer to the schema name
 ** for the N-th database on database connection D, or a NULL pointer of N is
-** out of range.  An N alue of 0 means the main database file.  An N of 1 is
+** out of range.  An N value of 0 means the main database file.  An N of 1 is
 ** the "temp" schema.  Larger values of N correspond to various ATTACH-ed
 ** databases.
 **
@@ -6704,14 +6703,7 @@ SQLITE_API int sqlite3_db_release_memory(sqlite3*);
 ** an [SQLITE_NOMEM] error.  In other words, the soft heap limit
 ** is advisory only.
 **
-** ^The sqlite3_hard_heap_limit64(N) interface sets a hard upper bound of
-** N bytes on the amount of memory that will be allocated.  ^The
-** sqlite3_hard_heap_limit64(N) interface is similar to
-** sqlite3_soft_heap_limit64(N) except that memory allocations will fail
-** when the hard heap limit is reached.
-**
-** ^The return value from both sqlite3_soft_heap_limit64() and
-** sqlite3_hard_heap_limit64() is the size of
+** ^The return value from sqlite3_soft_heap_limit64() is the size of
 ** the heap limit prior to the call, or negative in the case of an
 ** error.  ^If the argument N is negative
 ** then no change is made to the heap limit.  Hence, the current

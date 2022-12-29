@@ -7,39 +7,17 @@ uuids:
   - target:          armv7s-ios
     value:           530F3993-7F96-30B5-81A3-E5EFAAEE6BE6
   - target:          arm64-ios
-    value:           A6E1357D-1F2C-3740-8180-BD088D059E5A
+    value:           FE6B904E-2990-3EA6-B3B4-3BD4E194BFEA
   - target:          arm64e-ios
-    value:           40010C06-D7EB-3BB1-92CB-30BF4A05D79F
+    value:           45C31BA2-A434-3B53-8ABF-EE5B24627A43
 install-name:    '/usr/lib/swift/libswiftFoundation.dylib'
-current-version: 118
+current-version: 120.100
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/Frameworks/Foundation.framework/Foundation' ]
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
-    symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os10.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os10.2$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os10.3$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os11.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os11.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os11.2$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os11.3$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os11.4$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os12.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os12.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os7.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os7.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os8.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os8.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os8.2$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os8.3$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os8.4$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os9.0$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os9.1$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os9.2$@rpath/libswiftFoundation.dylib', 
-                       '$ld$install_name$os9.3$@rpath/libswiftFoundation.dylib', 
-                       '_$s10Foundation10CocoaErrorV010formattingC0AC4CodeVvgZ', 
+    symbols:         [ '_$s10Foundation10CocoaErrorV010formattingC0AC4CodeVvgZ', 
                        '_$s10Foundation10CocoaErrorV011fileLockingC0AC4CodeVvgZ', 
                        '_$s10Foundation10CocoaErrorV012isExecutableC0Sbvg', '_$s10Foundation10CocoaErrorV012isExecutableC0SbvpMV', 
                        '_$s10Foundation10CocoaErrorV012isFormattingC0Sbvg', '_$s10Foundation10CocoaErrorV012isFormattingC0SbvpMV', 
@@ -3058,4 +3036,27 @@ exports:
                        '_$ss8RepeatedVyxG10Foundation12DataProtocolADs5UInt8VRszlMc', 
                        '__swift_FORCE_LOAD_$_swiftFoundation', _swift_errorBridgingInfo_ ]
     objc-classes:    [ _NSKeyValueObservation ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.2$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os10.3$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os11.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os11.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os11.2$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os11.3$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os11.4$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os12.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os12.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os7.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os7.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os8.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os8.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os8.2$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os8.3$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os8.4$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os9.0$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os9.1$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os9.2$@rpath/libswiftFoundation.dylib', 
+                       '$ld$install_name$os9.3$@rpath/libswiftFoundation.dylib' ]
 ...

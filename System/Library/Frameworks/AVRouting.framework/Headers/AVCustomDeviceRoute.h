@@ -24,8 +24,8 @@ API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos)
 
 /*!
 	@property 	networkEndpoint
-	@abstract	An nw_endpoint_t to which clients can establish a connection.
-	@discussion Use Network.opaque() to convert an nw_endpoint_t to an NWEndpoint in Swift.
+	@abstract	An `nw_endpoint_t` to which clients can establish a connection.
+	@discussion Use Network.opaque() to convert an `nw_endpoint_t` to an NWEndpoint in Swift.
  */
 @property (nonatomic, nullable, readonly) nw_endpoint_t networkEndpoint API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 

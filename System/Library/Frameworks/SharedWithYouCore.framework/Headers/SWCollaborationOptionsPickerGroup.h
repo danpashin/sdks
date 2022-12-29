@@ -8,14 +8,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*!
      @class SWCollaborationOptionsPickerGroup
-     @abstract represents a group of SWCollaborationOptions that should be grouped together as a picker list from which one option in the list can be selected at a time
-     @discussion SWCollaborationOptionsPickerGroup is used as a picker view which allows the user to select only one of the SWCollaborationOptions at a time from each group.
+     @abstract Represents a group of SWCollaborationOptions that should be grouped together in a picker list, with mutually exclusive options.
+     @discussion SWCollaborationOptionsPickerGroup is displayed as a picker view. Only one option in the group can be selected by the user.
  */
 API_AVAILABLE(ios(16.0), macos(13.0))
 SW_EXTERN @interface SWCollaborationOptionsPickerGroup : SWCollaborationOptionsGroup
 
 /*!
-    @abstract The identifier of the selected option in the option group. Defaults to the first SWCollaboration option identifier.
+    @abstract The identifier of the selected option in the group. Defaults to the first SWCollaborationOption's identifier.
  */
 @property (nonatomic, strong, readwrite) NSString *selectedOptionIdentifier;
 

@@ -66,7 +66,7 @@ SW_EXTERN @interface SWHighlightCenter : NSObject
 - (void)getHighlightForURL:(NSURL *)URL completionHandler:(void (^)(SWHighlight * _Nullable highlight, NSError * _Nullable fetchError))completionHandler;
 
 /*!
-    @abstract A convience method to get a SWCollaborationHighlight for a given collaboration Identifier
+    @abstract A convenience method to get a SWCollaborationHighlight for a given collaboration Identifier
     @param collaborationIdentifier The unique identifier used to find the SWCollaborationHighlight
     @param error The error describing the failure.
 */
@@ -74,7 +74,7 @@ SW_EXTERN @interface SWHighlightCenter : NSObject
 - (SWCollaborationHighlight * __nullable)collaborationHighlightForIdentifier:(SWCollaborationIdentifier)collaborationIdentifier error:(NSError **)error;
 
 /*!
- @abstract A convience method to get an SWCollaborationHighlight for a given URL
+ @abstract A convenience method to get an SWCollaborationHighlight for a given URL
  @param URL The URL used to find the SWCollaborationHighlight
  @param completionHandler  an SWCollaborationHighlight if it was fetched. The completion handler will always be invoked on the main queue
  */
@@ -85,6 +85,12 @@ SW_EXTERN @interface SWHighlightCenter : NSObject
     @param event The event to add for a specific highlight
  */
 - (void)postNoticeForHighlightEvent:(id<SWHighlightEvent>)event API_AVAILABLE(ios(16.0), macos(13.0));
+
+/*!
+    @abstract Clear notices for a given collaboration highlight in Messages.
+    @param highlight The highlight to clear notices from.
+ */
+- (void)clearNoticesForHighlight:(SWCollaborationHighlight *)highlight API_AVAILABLE(ios(16.1), macos(13.0)); 
 
 /*!
     @abstract Method to sign passed in data with local device's private key

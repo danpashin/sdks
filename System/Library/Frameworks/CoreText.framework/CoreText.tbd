@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           AED4992A-4A7D-379D-A480-E3302D4C64CF
   - target:          arm64-ios
-    value:           CF2EC6C7-6F54-3F4E-9FEF-34893F0157E3
+    value:           1CE7EA9D-B111-399A-8662-59D38D47D170
   - target:          arm64e-ios
-    value:           047DF2D4-1D52-3C90-924C-896F280D60D0
+    value:           433544A5-975A-399E-B8FB-F35B6BA83E24
 install-name:    '/System/Library/Frameworks/CoreText.framework/CoreText'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -85,10 +85,11 @@ exports:
                        _kCTUIFontTextStyleTallTitle3, _kFOComponentLeadingOverride, 
                        _kFOOpticalSize ]
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _CTCopyDescriptionDictionary, _CTFontCollectionCopyFontAttribute, 
-                       _CTFontCollectionCopyFontAttributes, _CTFontCollectionCreateCopyWithFontDescriptors, 
-                       _CTFontCollectionCreateForLocale, _CTFontCollectionCreateFromAvailableFonts, 
-                       _CTFontCollectionCreateMatchingFontDescriptors, _CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback, 
+    symbols:         [ _CTCopyDescriptionDictionary, _CTCopySampleStringForLanguage, 
+                       _CTFontCollectionCopyFontAttribute, _CTFontCollectionCopyFontAttributes, 
+                       _CTFontCollectionCreateCopyWithFontDescriptors, _CTFontCollectionCreateForLocale, 
+                       _CTFontCollectionCreateFromAvailableFonts, _CTFontCollectionCreateMatchingFontDescriptors, 
+                       _CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback, 
                        _CTFontCollectionCreateMatchingFontDescriptorsWithOptions, 
                        _CTFontCollectionCreateWithFontDescriptors, _CTFontCollectionGetTypeID, 
                        _CTFontCopyAttribute, _CTFontCopyAvailableTables, _CTFontCopyCharacterSet, 
@@ -102,7 +103,8 @@ exports:
                        _CTFontCopyLocalizedNameWithLanguages, _CTFontCopyLogicalCharacterSet, 
                        _CTFontCopyName, _CTFontCopyNameForGlyph, _CTFontCopyOTFontFeatureTable, 
                        _CTFontCopyOTName, _CTFontCopyPhysicalFont, _CTFontCopyPostScriptName, 
-                       _CTFontCopyQuickdrawInstances, _CTFontCopySampleString, _CTFontCopySampleStringForLanguage, 
+                       _CTFontCopyQuickdrawInstances, _CTFontCopySampleLettersWithLanguages, 
+                       _CTFontCopySampleString, _CTFontCopySampleStringForLanguage, 
                        _CTFontCopySampleStringWithLanguages, _CTFontCopyShapingLanguages, 
                        _CTFontCopyStringForGlyph, _CTFontCopySupportedLanguages, 
                        _CTFontCopySystemUIFontExcessiveLineHeightCharacterSet, _CTFontCopyTable, 

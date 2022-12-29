@@ -31,9 +31,6 @@
 
 #include <sys/cdefs.h>
 
-/* Constrained types. */
-#if defined(__clang__)
-
 /* This file introduces macros for constraining pointer
  * types to specific contracts:
  *
@@ -178,7 +175,7 @@
  *
  * 2.1. Declaring multiple constrained types simultaneously.
  *
- *      `DECLARE_CONSTRAINED_PTR_TYPES(basetype, basetag)`
+ *      `__CCT_DECLARE_CONSTRAINED_PTR_TYPES(basetype, basetag)`
  *      is the suggested way to declare constrained pointer types.
  *
  *      Parameters:
@@ -193,7 +190,7 @@
  *      Examples:
  *
  *      (1) When used from the user space,
- *          `DECLARE_CONSTRAINED_PTR_TYPES(struct socket, socket);'
+ *          `__CCT_DECLARE_CONSTRAINED_PTR_TYPES(struct socket, socket);'
  *           will declare types:
  *
  *          (a) `socket_ref_t': the `reference' to `struct socket'
@@ -201,7 +198,7 @@
  *              to `struct socket'.
  *
  *      (2) When used from the kernel space,
- *          `DECLARE_CONSTRAINED_PTR_TYPES(struct socket, socket);'
+ *          `__CCT_DECLARE_CONSTRAINED_PTR_TYPES(struct socket, socket);'
  *           will declare the above types, plus:
  *
  *          (c) `socket_ptr_t': `checked' pointer to `struct socket'.
@@ -501,16 +498,37 @@
  *
  */
 
-/* Contract constants */
+/*
+ * Constraint contract constants.
+ *
+ * At the moment only clang (when compiled with `ptrcheck' feature) supports
+ * pointer tagging via `__single', `__indexable' and `__bidi_indexable' attributes.
+ *
+ * During the transitional period, the `__indexable__' and `__bidi_indexable'
+ * constraints will decay to raw pointers if the `ptrcheck' feature is not enabled.
+ * Once the transitional period is over, the `__CCT_CONTRACT_ATTR_{B}PTR' constraints
+ * will stop decaying to raw pointers when built by sufficiently recent version
+ * of clang.
+ *
+ * Support for other compilers will be added after the introduction of support
+ * for pointer tagging on those compilers.
+ */
+#if defined(__clang__)
 #define __CCT_CONTRACT_ATTR_REF         __single
 #define __CCT_CONTRACT_ATTR_CREF        const __single
 #if  __has_ptrcheck
 #define __CCT_CONTRACT_ATTR_BPTR        __bidi_indexable
 #define __CCT_CONTRACT_ATTR_PTR         __indexable
-#else /* __has_ptrcheck */
+#else /* __clang__ + __has_ptrcheck */
 #define __CCT_CONTRACT_ATTR_BPTR
 #define __CCT_CONTRACT_ATTR_PTR
-#endif /* __has_ptrcheck */
+#endif /* __clang__ + !__has_ptrcheck */
+#else /* !__clang__ */
+#define __CCT_CONTRACT_ATTR_REF
+#define __CCT_CONTRACT_ATTR_CREF        const
+#define __CCT_CONTRACT_ATTR_BPTR
+#define __CCT_CONTRACT_ATTR_PTR
+#endif /* __clang__ */
 
 #define __CCT_CONTRACT_TAG_REF          _ref
 #define __CCT_CONTRACT_TAG_CREF         _cref
@@ -530,43 +548,44 @@
 	__CCT_DISPATCH1(base, __CCT_COUNT_ARGS(__VA_ARGS__), __VA_ARGS__)
 
 /* Covert a contract list to a type suffix */
-#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_1(kind)                                            \
+#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_1(kind)                                                \
 	__CCT_DEFER(__CONCAT, __CCT_CONTRACT_TO_TAG(kind), _t)
-#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_2(kind1, kind2)                                    \
-	__CCT_DEFER(__CONCAT, __CCT_CONTRACT_TO_TAG(kind1),                                     \
+#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_2(kind1, kind2)                                        \
+	__CCT_DEFER(__CONCAT, __CCT_CONTRACT_TO_TAG(kind1),                                             \
 	         __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_1(kind2))
-#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_3(kind1, kind2, kind3)                             \
-	__CCT_DEFER(__CONCAT, __CCT_CONTRACT_TO_TAG(kind1),                                     \
+#define __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_3(kind1, kind2, kind3)                                 \
+	__CCT_DEFER(__CONCAT, __CCT_CONTRACT_TO_TAG(kind1),                                             \
 	         __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_2(kind2, kind3))
 
 /* Create typedefs for the constrained pointer type */
-#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_3(basetype, basetag, kind)                           \
-typedef basetype * __CCT_CONTRACT_TO_ATTR(kind)                                                 \
+#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_3(basetype, basetag, kind)                               \
+typedef basetype * __CCT_CONTRACT_TO_ATTR(kind)                                                     \
 	__CCT_DEFER(__CONCAT, basetag,  __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_1(kind))
 
-#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_4(basetype, basetag, kind1, kind2)                   \
-typedef basetype * __CCT_CONTRACT_TO_ATTR(kind1)                                                \
-	         * __CCT_CONTRACT_TO_ATTR(kind2)                                                \
+#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_4(basetype, basetag, kind1, kind2)                       \
+typedef basetype * __CCT_CONTRACT_TO_ATTR(kind1)                                                    \
+	         * __CCT_CONTRACT_TO_ATTR(kind2)                                                        \
 	__CCT_DEFER(__CONCAT, basetag,  __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_2(kind1, kind2))
 
-#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_5(basetype, basetag, kind1, kind2, kind3)            \
-typedef basetype * __CCT_CONTRACT_TO_ATTR(kind1)                                                \
-	         * __CCT_CONTRACT_TO_ATTR(kind2)                                                \
-	         * __CCT_CONTRACT_TO_ATTR(kind3)                                                \
+#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE_5(basetype, basetag, kind1, kind2, kind3)                \
+typedef basetype * __CCT_CONTRACT_TO_ATTR(kind1)                                                    \
+	         * __CCT_CONTRACT_TO_ATTR(kind2)                                                        \
+	         * __CCT_CONTRACT_TO_ATTR(kind3)                                                        \
 	__CCT_DEFER(__CONCAT, basetag,  __CCT_CONTRACT_LIST_TO_TAGGED_SUFFIX_3(kind1, kind2, kind3))
 
 /*
- * Lower level type constructor
+ * Lower level type constructor.
  */
-#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE(basetype, basetag, ...)                              \
+#define __CCT_DECLARE_CONSTRAINED_PTR_TYPE(basetype, basetag, ...)                                  \
 	__CCT_DISPATCH(__CCT_DECLARE_CONSTRAINED_PTR_TYPE, basetype, basetag, __VA_ARGS__)
 
 /*
- * Higher level type constructor.
+ * Higher level type constructors.
+ * The constrained types that can potentially break the ABI are not exposed
+ * into the user-space.
  */
-#define DECLARE_CONSTRAINED_PTR_TYPES(basetype, basetag)                                        \
-__CCT_DECLARE_CONSTRAINED_PTR_TYPE(basetype, basetag, REF);                                     \
+#define __CCT_DECLARE_CONSTRAINED_PTR_TYPES(basetype, basetag)                                      \
+__CCT_DECLARE_CONSTRAINED_PTR_TYPE(basetype, basetag, REF);                                         \
 __CCT_DECLARE_CONSTRAINED_PTR_TYPE(basetype, basetag, REF, REF)
 
-#endif /* __clang__ */
 #endif /* __CONSTRAINED_CTYPES__ */

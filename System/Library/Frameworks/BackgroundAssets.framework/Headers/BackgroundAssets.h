@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef __BA_FRAMEWORK_INDIRECT__
-#define __BA_FRAMEWORK_INDIRECT__
-#endif
-
-
-
-#undef __BA_FRAMEWORK_INDIRECT__
+#import <BackgroundAssets/BABase.h>
+#import <BackgroundAssets/BATypes.h>
+#import <BackgroundAssets/BADownload.h>
+#import <BackgroundAssets/BAAppExtensionInfo.h>
+#import <BackgroundAssets/BADownloaderExtension.h>
+#import <BackgroundAssets/BADownloadManager.h>
+#import <BackgroundAssets/BAURLDownload.h>

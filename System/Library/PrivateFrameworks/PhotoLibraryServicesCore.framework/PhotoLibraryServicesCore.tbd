@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServicesCore.framework/PhotoLibraryServicesCore
-current-version:       502.13.160
+current-version:       512.0.170
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -338,6 +338,14 @@ exports:
                             _PLCoreAnalyticsMomentYearsEventEndKey,
                             _PLCoreAnalyticsMomentYearsEventNumberOfYearsWithAssetsKey,
                             _PLCoreAnalyticsMomentYearsEventStartKey,
+                            _PLCoreAnalyticsOverrideBudgetEvent,
+                            _PLCoreAnalyticsOverrideBudgetEventNumberOfAssetsToShareToSharedLibraryKey,
+                            _PLCoreAnalyticsOverrideBudgetEventNumberOfAssetsToUnshareToPrimaryLibraryKey,
+                            _PLCoreAnalyticsOverrideBudgetEventNumberOfAssetsToUploadKey,
+                            _PLCoreAnalyticsOverrideBudgetEventNumberOfImagesToUploadKey,
+                            _PLCoreAnalyticsOverrideBudgetEventNumberOfVideosToUploadKey,
+                            _PLCoreAnalyticsOverrideBudgetEventOverridePauseReasonKey,
+                            _PLCoreAnalyticsOverrideBudgetEventResultKey,
                             _PLCoreAnalyticsPTPConnectionEvent,
                             _PLCoreAnalyticsPTPConnectionEventCPLStateKey,
                             _PLCoreAnalyticsPTPConnectionEventConnectionIDKey,
@@ -468,6 +476,7 @@ exports:
                             _PLFileSystemPersistenceInProgressFilteredPreviewImagePathKey,
                             _PLFileSystemPersistenceInProgressPublishableKey,
                             _PLFileSystemPersistenceInProgressSemanticDevelopmentKey,
+                            _PLFileSystemPersistenceLibraryScopeLibraryScopeAssetContributorsToUpdateKey,
                             _PLFileSystemPersistenceLibraryScopeShareStateKey,
                             _PLFileSystemPersistenceMediaGroupUUIDKey,
                             _PLFileSystemPersistenceNamespace,
@@ -797,8 +806,8 @@ exports:
                             _PLSmartSharingDirectoryName,
                             _PLSpatialOverCaptureFileSuffix,
                             _PLSplitToCGRectFromInt64, _PLSplitToDoubleFromInt64,
-                            _PLSquareCropRectForSize, _PLStoryGetLog,
-                            _PLStringFromLibraryServicesState,
+                            _PLSquareCropRectForSize, _PLStoreDemoModeGetLog,
+                            _PLStoryGetLog, _PLStringFromLibraryServicesState,
                             _PLStringFromPLPhotoLibraryCacheSubPathType,
                             _PLStringFromPLPhotoLibraryExternalPathType,
                             _PLStringFromPLPhotoLibraryInternalPathType,
@@ -1220,12 +1229,12 @@ exports:
                             PLPositionalBGRAImageTable, PLPositionalImageTable,
                             PLPositionalImageTableEntries, PLPositionalTable,
                             PLPositionalTableEntries, PLPowerAssertion, PLPrivacy,
-                            PLQuery, PLQueryBuilder, PLQueryCircularRegion, PLResult,
-                            PLResultFailure, PLResultSuccess, PLSQLiteDatabase,
-                            PLSandboxHelper, PLSandboxedURL, PLSecurity,
-                            PLSimpleDCIMDirectory, PLSingleQuery, PLTaggedPointer,
-                            PLThumbFileManagerCore, PLThumbnailManagerCore,
-                            PLTimedPerfCheck, PLUUIDString,
+                            PLQuery, PLQueryBuilder, PLQueryCircularRegion,
+                            PLQueryStats, PLResult, PLResultFailure, PLResultSuccess,
+                            PLSQLiteDatabase, PLSandboxHelper, PLSandboxedURL,
+                            PLSecurity, PLSimpleDCIMDirectory, PLSingleQuery,
+                            PLTaggedPointer, PLThumbFileManagerCore,
+                            PLThumbnailManagerCore, PLTimedPerfCheck, PLUUIDString,
                             PLValidatedSavedAssetType, PLVolumeInfo,
                             PLXPCDictionary, PLXPCFileDescriptor,
                             PLXPCGenericObject, PLXPCMessageLogger, PLXPCObject,

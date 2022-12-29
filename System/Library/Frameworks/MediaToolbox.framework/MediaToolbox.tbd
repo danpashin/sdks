@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E4A6EA72-93BB-3DFA-84F2-84B2D3694570
   - target:          arm64-ios
-    value:           48590D53-AEE1-32C2-9C7C-7F40516E6DCA
+    value:           3F1D8495-460A-3FE6-8AC2-7788546526A2
   - target:          arm64e-ios
-    value:           E485C598-F919-3AFE-B49E-C929CCA1EBE9
+    value:           F244533C-602B-32BC-B599-6ECCF834B05C
 install-name:    '/System/Library/Frameworks/MediaToolbox.framework/MediaToolbox'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -880,10 +880,10 @@ exports:
                        _FigAlternateGetZeroIndexedAlternateIndex, _FigAlternateHDCPLazyEPMFilterCreate, 
                        _FigAlternateHasAudio, _FigAlternateHasAudioDeclared, _FigAlternateHasAudioFormat, 
                        _FigAlternateHasAudioFormatID, _FigAlternateHasBinauralAudio, 
-                       _FigAlternateHasLosslessAudio, _FigAlternateHasRankingScore, 
-                       _FigAlternateHasSupplementalVideoFormat, _FigAlternateHasUndeclaredVideo, 
-                       _FigAlternateHasUnknownCodecs, _FigAlternateHasValidCodecs, 
-                       _FigAlternateHasVideo, _FigAlternateHasVideoCodecRequiringSoftwareDecode, 
+                       _FigAlternateHasHDVideoResolution, _FigAlternateHasLosslessAudio, 
+                       _FigAlternateHasRankingScore, _FigAlternateHasSupplementalVideoFormat, 
+                       _FigAlternateHasUndeclaredVideo, _FigAlternateHasUnknownCodecs, 
+                       _FigAlternateHasValidCodecs, _FigAlternateHasVideo, _FigAlternateHasVideoCodecRequiringSoftwareDecode, 
                        _FigAlternateHasVideoCodecType, _FigAlternateHasVideoDeclared, 
                        _FigAlternateHasVideoFormat, _FigAlternateHighestAtmosBitrateFilterCreate, 
                        _FigAlternateHighestPeakBitRateFilterCreate, _FigAlternateHighestRankingScoreFilterCreate, 
@@ -1008,8 +1008,9 @@ exports:
                        _FigAudioQueueRenderPipelineCreate, _FigAudioQueueRequestTransitionCallback, 
                        _FigAudioQueueResetOffline, _FigAudioQueueRestoreParameters, 
                        _FigAudioQueueSetParameter, _FigAudioQueueSetProperty, _FigAudioQueueStart, 
-                       _FigAudioQueueStartOffline, _FigAudioQueueStop, _FigAudioQueueStopOffline, 
-                       _FigAudioUnitRenderPipelineCreate, _FigAutomaticMediaSelectionCreateSelectedMediaArrayForCriteria, 
+                       _FigAudioQueueStart2, _FigAudioQueueStartOffline, _FigAudioQueueStop, 
+                       _FigAudioQueueStopOffline, _FigAudioUnitRenderPipelineCreate, 
+                       _FigAutomaticMediaSelectionCreateSelectedMediaArrayForCriteria, 
                        _FigAutomaticMediaSelectionCreateSelectedMediaArrayForCriteriaWithLegibleFallbackCriteria, 
                        _FigBufferedAirPlayAudioRenderPipelineCreate, _FigBufferedAirPlayOutputCreate, 
                        _FigBufferedAirPlayOutputGetCMBaseObject, _FigBufferedAirPlayOutputGetClassID, 
@@ -1530,6 +1531,8 @@ exports:
                        _FigSampleGeneratorGetTypeID, _FigSampleGeneratorRemoteCreateForFormatReader, 
                        _FigSecureStopManagerCopyDefaultRuntimeInstance, _FigSecureStopManagerCreate, 
                        _FigSecureStopManagerRemoteCopyDefaultRuntimeInstance, _FigSecureStopManagerRemoteCreate, 
+                       _FigShareAndAirPlayHelperGetCMBaseObject, _FigShareAndAirPlayHelperGetClassID, 
+                       _FigShareAndAirPlayHelperGetShared, _FigShareAndAirPlayHelperGetTypeID, 
                        _FigSharedPlayerCreate, _FigSharedPlayerCreateWithOptions, 
                        _FigSharedPlayerGetDefaultEngineTopology, _FigSharedRemote_BeginUpdatingIncrementalCodeCoverageData, 
                        _FigSharedRemote_CopyVideoCompressorSupportedPropertyDictionary, 
@@ -2078,7 +2081,8 @@ exports:
                        _kFigAssetOptionKey_ClientAuditToken, _kFigAssetOptionKey_ClientBundleIdentifier, 
                        _kFigAssetOptionKey_ClientHandlesURLRequest, _kFigAssetOptionKey_ClientPersonaIdentifier, 
                        _kFigAssetOptionKey_CompanionProxyPreference, _kFigAssetOptionKey_ContentProtectionOptions, 
-                       _kFigAssetOptionKey_DeclaredAssetType, _kFigAssetOptionKey_DelayByteStreamReadAheadUntilExplicitlyHinted, 
+                       _kFigAssetOptionKey_CustomURLLoader, _kFigAssetOptionKey_DeclaredAssetType, 
+                       _kFigAssetOptionKey_DelayByteStreamReadAheadUntilExplicitlyHinted, 
                        _kFigAssetOptionKey_DisableNetworkLargeDownload, _kFigAssetOptionKey_DisableNetworkProbeRequest, 
                        _kFigAssetOptionKey_DisallowsConstrainedNetworkAccess, _kFigAssetOptionKey_DisallowsExpensiveNetworkAccess, 
                        _kFigAssetOptionKey_DownloadDestinationURL, _kFigAssetOptionKey_DownloadIsLowPriority, 
@@ -2103,7 +2107,8 @@ exports:
                        _kFigAssetOptionKey_PrepareForIncrementalFragments, _kFigAssetOptionKey_PrepareFormatReaderForCopying, 
                        _kFigAssetOptionKey_PrimaryPlaybackSessionID, _kFigAssetOptionKey_ReadEntireMoovAtom, 
                        _kFigAssetOptionKey_RequiresCustomURLLoading, _kFigAssetOptionKey_RequiresInProcessOperation, 
-                       _kFigAssetOptionKey_SSLProperties, _kFigAssetOptionKey_SkipReadingMP3MetadataDuringFormatReaderCreation, 
+                       _kFigAssetOptionKey_SSLProperties, _kFigAssetOptionKey_ShouldEnableLegacyWebKitCompatibilityModeForContentKeyRequests, 
+                       _kFigAssetOptionKey_SkipReadingMP3MetadataDuringFormatReaderCreation, 
                        _kFigAssetOptionKey_SupportAliasDataReferences, _kFigAssetOptionKey_URLRequestAttribution, 
                        _kFigAssetOptionKey_UnitTestOptions, _kFigAssetOptionKey_UseAWDL, 
                        _kFigAssetOptionKey_VideoNotEligibleForAppRecording, _kFigAssetOptionKey_WhitelistQUIC, 
@@ -2445,6 +2450,7 @@ exports:
                        _kFigClosedCaptionRenderPipelineProperty_ClosedCaptionType, 
                        _kFigClosedCaptionRenderPipelineProperty_TextHighlightArray, 
                        _kFigContentKeyBossCreationOption_ClientAuditToken, _kFigContentKeyBossProperty_CanRetryRequests, 
+                       _kFigContentKeyBossProperty_ShouldTryCustomURLLoaderWhenClientManagedKeyBossExists, 
                        _kFigContentKeyBossProperty_SupportsReencryption, _kFigCoreAnimationRendererOption_DestinationColorAttachments, 
                        _kFigCoreAnimationRendererProperty_PerformanceDictionary, 
                        _kFigCoreAnimationRendererProperty_ThrottleForBackground, 
@@ -2491,6 +2497,7 @@ exports:
                        _kFigEndpointStreamAudioEngineSampleBufferAttachmentKey_IsOriginalContent, 
                        _kFigEndpointStreamAudioEngineSampleBufferAttachmentKey_MediaPresentationTimeStamp, 
                        _kFigEndpointStreamAudioEngineSampleBufferAttachmentKey_SourceHash, 
+                       _kFigEndpointStreamAudioEngineSampleBufferAttachmentKey_TransitionIDOutputPresentationTimeStamp, 
                        _kFigEnvironmentalCondition_DefaultKey, _kFigEnvironmentalCondition_OnExpensiveNetworkKey, 
                        _kFigErrorLogKey_ConnectionType, _kFigErrorLogKey_Date, _kFigErrorLogKey_ErrorComment, 
                        _kFigErrorLogKey_ErrorDomain, _kFigErrorLogKey_ErrorStatusCode, 

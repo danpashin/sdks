@@ -24,13 +24,6 @@ HM_EXTERN API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABL
 @property (nullable, copy) HMAccessorySetupPayload *payload;
 
 /*!
- *  @abstract   The payload to use for Matter accessory setup
- *  @note       When this is non-nil, the following entitlement is required:
- *                  com.apple.developer.matter.allow-setup-payload
- */
-@property (nullable, strong) MTRSetupPayload *matterPayload;
-
-/*!
  *  @abstract   The -[HMHome uniqueIdentifier] that corresponds to the HMHome that the accessory should be
  *              added to when being set up. If nil, then the user will be prompted to choose a home
  */
@@ -51,6 +44,13 @@ HM_EXTERN API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABL
  *              and not any accessories behind the bridge
  */
 @property (nullable, copy) NSString *suggestedAccessoryName;
+
+/*!
+ *  @abstract   The payload to use for Matter accessory setup
+ *  @note       When this is non-nil, the following entitlement is required:
+ *                  com.apple.developer.matter.allow-setup-payload
+ */
+@property (nullable, strong) MTRSetupPayload *matterPayload;
 
 @end
 

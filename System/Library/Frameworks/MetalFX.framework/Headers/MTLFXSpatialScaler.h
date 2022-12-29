@@ -56,6 +56,7 @@ API_AVAILABLE(macos(13.0), ios(16.0))
 // frame basis.   We don't care about the textures assigned except that they must
 // match the required MTLTextureUsage flags.
 @property (nonatomic, retain, nullable) id<MTLTexture> colorTexture;
+// outputTexture is required to have MTLStorageModePrivate for storageMode
 @property (nonatomic, retain, nullable) id<MTLTexture> outputTexture;
 
 // Read-only immutable properties of effect

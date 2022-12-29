@@ -189,7 +189,7 @@ PDFKIT_CLASS_AVAILABLE(10_4, 11_0)
 PDFKIT_EXTERN PDFPageImageInitializationOption const PDFPageImageInitializationOptionMediaBox NS_SWIFT_NAME(mediaBox)
     API_AVAILABLE(macos(13.0), ios(16.0));
 
-// Value: int as NSNumber. If present, the image will be drawn on the page with the given rotation (in degrees counterclockwise), ignoring the value that would be returned by CGImageGetOrientation(). The value must be a multiple of 90 or an exception will be thrown.
+// Value: int as NSNumber. If present, the image will be drawn on the page with the given rotation (in degrees counterclockwise). The value must be a multiple of 90 or an exception will be thrown.
 PDFKIT_EXTERN PDFPageImageInitializationOption const PDFPageImageInitializationOptionRotation NS_SWIFT_NAME(rotation)
     API_AVAILABLE(macos(13.0), ios(16.0));
 

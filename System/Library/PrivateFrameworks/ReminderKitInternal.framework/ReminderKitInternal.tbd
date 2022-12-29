@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ReminderKitInternal.framework/ReminderKitInternal
-current-version:       780
+current-version:       815
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -537,6 +537,10 @@ exports:
                             _$s19ReminderKitInternal15REMFeatureFlagsOSQAAMc,
                             _$s19ReminderKitInternal15REMFeatureFlagsOSYAAMc,
                             _$s19ReminderKitInternal15REMFeatureFlagsOs12CaseIterableAAMc,
+                            _$s19ReminderKitInternal15REMFileDigesterO9sha512Sum3urlSSSg10Foundation3URLV_tFZ,
+                            _$s19ReminderKitInternal15REMFileDigesterOMa,
+                            _$s19ReminderKitInternal15REMFileDigesterOMn,
+                            _$s19ReminderKitInternal15REMFileDigesterON,
                             _$s19ReminderKitInternal15REMList_CodableC4fromACs7Decoder_p_tKcfC,
                             _$s19ReminderKitInternal15REMList_CodableC4fromACs7Decoder_p_tKcfCTq,
                             _$s19ReminderKitInternal15REMList_CodableC5store7account7storageACSo8REMStoreC_So10REMAccountCSo0D7StorageCtcfC,
@@ -927,10 +931,10 @@ exports:
                             _$s19ReminderKitInternal19ConfigurationIntentCN,
                             _$s19ReminderKitInternal19ConfigurationIntentCfD,
                             _$s19ReminderKitInternal19REMContactsProviderC11syncContact8matching4keyss6ResultOySo9CNContactCs5Error_pGSo24REMContactRepresentationC_SaySo15CNKeyDescriptor_pGtF,
-                            _$s19ReminderKitInternal19REMContactsProviderC12contactStore5queue15backgroundQueueACSo09CNContactG0C_So012OS_dispatch_H0CAJtcfC,
-                            _$s19ReminderKitInternal19REMContactsProviderC12contactStore5queue15backgroundQueueACSo09CNContactG0C_So012OS_dispatch_H0CAJtcfCTq,
-                            _$s19ReminderKitInternal19REMContactsProviderC12contactStore5queue15backgroundQueueACSo09CNContactG0C_So012OS_dispatch_H0CAJtcfc,
                             _$s19ReminderKitInternal19REMContactsProviderC14contactAndName8matching4keysAA010REMContactgH11FetchResultOSo0K14RepresentationC_SaySo15CNKeyDescriptor_pGtF,
+                            _$s19ReminderKitInternal19REMContactsProviderC19contactStoreCreator5queue15backgroundQueueACSo09CNContactG0Cyc_So012OS_dispatch_I0CAJtcfC,
+                            _$s19ReminderKitInternal19REMContactsProviderC19contactStoreCreator5queue15backgroundQueueACSo09CNContactG0Cyc_So012OS_dispatch_I0CAJtcfCTq,
+                            _$s19ReminderKitInternal19REMContactsProviderC19contactStoreCreator5queue15backgroundQueueACSo09CNContactG0Cyc_So012OS_dispatch_I0CAJtcfc,
                             _$s19ReminderKitInternal19REMContactsProviderC19defaultContactsKeysSaySo15CNKeyDescriptor_pGvau,
                             _$s19ReminderKitInternal19REMContactsProviderC19defaultContactsKeysSaySo15CNKeyDescriptor_pGvgZ,
                             _$s19ReminderKitInternal19REMContactsProviderC19defaultContactsKeysSaySo15CNKeyDescriptor_pGvpZ,
@@ -938,6 +942,7 @@ exports:
                             _$s19ReminderKitInternal19REMContactsProviderC27contactKeysForDisplayStringSaySo15CNKeyDescriptor_pGvgZ,
                             _$s19ReminderKitInternal19REMContactsProviderC27contactKeysForDisplayStringSaySo15CNKeyDescriptor_pGvpZ,
                             _$s19ReminderKitInternal19REMContactsProviderC28contactFetchOperationManager33_53CF0AA69FD5B65691641FABF3AA8B1ELLAA08REMAsynchI0CyAC0H6ParamsAELLOSo9CNContactCGSgvpfi,
+                            _$s19ReminderKitInternal19REMContactsProviderC30$__lazy_storage_$_contactStore33_53CF0AA69FD5B65691641FABF3AA8B1ELLSo09CNContactI0CSgvpfi,
                             _$s19ReminderKitInternal19REMContactsProviderC4name3forAA7PromiseCySSGSo24REMContactRepresentationC_tF,
                             _$s19ReminderKitInternal19REMContactsProviderC6meCard4keysAA7PromiseCySo9CNContactCGSaySo15CNKeyDescriptor_pG_tF,
                             _$s19ReminderKitInternal19REMContactsProviderC7contact8matching4keysAA22REMAsyncOperationStateOySo9CNContactCGSo24REMContactRepresentationC_SaySo15CNKeyDescriptor_pGtF,
@@ -1454,6 +1459,8 @@ exports:
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V15recurrenceRules33_5F7D22EC3CAFE1E43A670F609018406BLLSayAE14RecurrenceRuleAGLLVGvpfi,
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V16imageAttachments33_5F7D22EC3CAFE1E43A670F609018406BLLSayAE15ImageAttachmentAGLLVGvpfi,
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V17dueDateComponents33_5F7D22EC3CAFE1E43A670F609018406BLL10Foundation0iJ0VSgvpfi,
+                            _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V24unDedupedImageAttachmentyAE10Foundation3URLVF,
+                            _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V25unDedupedImageAttachments33_5F7D22EC3CAFE1E43A670F609018406BLLSayAE02UniJ10AttachmentAGLLVGvpfi,
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V5notes33_5F7D22EC3CAFE1E43A670F609018406BLLSSSgvpfi,
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V5notesyAESSSgF,
                             _$s19ReminderKitInternal21REMTestStorePopulatorC04TestA0V7dueDateyAESSF,

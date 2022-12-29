@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name Charts
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.0.44.2
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name Charts
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.1.14
 import Darwin.C
 import Darwin
 import Foundation
@@ -743,7 +743,7 @@ extension Charts.ChartContent {
 extension Charts.ChartContent {
   public func offset(x: CoreFoundation.CGFloat = 0, y: CoreFoundation.CGFloat = 0) -> some Charts.ChartContent
   
-  public func offset(_ offset: CoreFoundation.CGSize) -> some Charts.ChartContent
+  public func offset(_ value: CoreFoundation.CGSize) -> some Charts.ChartContent
   
   public func offset(x: CoreFoundation.CGFloat = 0, yStart: CoreFoundation.CGFloat = 0, yEnd: CoreFoundation.CGFloat = 0) -> some Charts.ChartContent
   
@@ -1260,21 +1260,21 @@ extension Swift.Never : Charts.PrimitivePlottableProtocol {
   public typealias PrimitivePlottable = Swift.Never
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Swift.Double : Charts.Plottable {
+extension Swift.Double : Charts.Plottable, Charts.PrimitivePlottableProtocol {
   public static var _primitivePlottableKind: Charts._PrimitivePlottableKind<Swift.Double> {
     get
   }
   public typealias PrimitivePlottable = Swift.Double
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Swift.String : Charts.Plottable {
+extension Swift.String : Charts.Plottable, Charts.PrimitivePlottableProtocol {
   public static var _primitivePlottableKind: Charts._PrimitivePlottableKind<Swift.String> {
     get
   }
   public typealias PrimitivePlottable = Swift.String
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Foundation.Date : Charts.Plottable {
+extension Foundation.Date : Charts.Plottable, Charts.PrimitivePlottableProtocol {
   public static var _primitivePlottableKind: Charts._PrimitivePlottableKind<Foundation.Date> {
     get
   }
@@ -1485,11 +1485,5 @@ extension Charts.RectangleMark : Charts.ChartContent {}
 extension Charts.PointMark : Charts.ChartContent {}
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension Charts.Plot : Charts.ChartContent {}
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Swift.Double : Charts.PrimitivePlottableProtocol {}
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Swift.String : Charts.PrimitivePlottableProtocol {}
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-extension Foundation.Date : Charts.PrimitivePlottableProtocol {}
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension Charts.RuleMark : Charts.ChartContent {}

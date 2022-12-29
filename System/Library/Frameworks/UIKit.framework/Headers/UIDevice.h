@@ -96,7 +96,7 @@ NS_SWIFT_UI_ACTOR
 
 /* The UI_USER_INTERFACE_IDIOM() function is provided for use when deploying to a version of the iOS less than 3.2. If the earliest version of iPhone/iOS that you will be deploying for is 3.2 or greater, you may use -[UIDevice userInterfaceIdiom] directly.
  */
-static inline UIUserInterfaceIdiom UI_USER_INTERFACE_IDIOM() API_DEPRECATED("Use -[UIDevice userInterfaceIdiom] directly.", ios(2.0, 13.0), tvos(9.0, 11.0)) {
+static inline UIUserInterfaceIdiom UI_USER_INTERFACE_IDIOM(void) API_DEPRECATED("Use -[UIDevice userInterfaceIdiom] directly.", ios(2.0, 13.0), tvos(9.0, 11.0)) {
     return ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)] ?
             [[UIDevice currentDevice] userInterfaceIdiom] :
             UIUserInterfaceIdiomPhone);

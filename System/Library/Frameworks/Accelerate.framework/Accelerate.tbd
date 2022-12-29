@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           09D82A97-22F6-3DFE-89DC-7AC7D959B945
   - target:          arm64-ios
-    value:           0E1A53E8-A70C-304F-AF94-0C834FDD8198
+    value:           9F6AE8CD-DC7C-3496-B3E7-0CECF3F1F3DE
   - target:          arm64e-ios
-    value:           A7E1973B-6564-3C45-AEA1-84632E1FA082
+    value:           401C13A1-867C-34C4-80A8-D8AA7B6657FD
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Accelerate'
 current-version: 4
 reexported-libraries:
@@ -27,11 +27,11 @@ uuids:
   - target:          armv7s-ios
     value:           E52F9EE0-9F1F-3610-AE6D-A2CCA23F2567
   - target:          arm64-ios
-    value:           7C76BE62-1321-3A4C-9A39-AFA1284A1ABC
+    value:           063900F0-BAAE-36D1-9B80-55E48771384C
   - target:          arm64e-ios
-    value:           FC963D23-0C74-320A-AA7F-64D0A326FE93
+    value:           6D97BBED-F66F-3AF1-B8B6-2785A6E9EB75
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/vImage'
-current-version: 571
+current-version: 575
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _Init_vImage, _SetvImageThreadCount, _SetvImageThreadState, 
@@ -239,8 +239,10 @@ exports:
                        _vImageFlatten_BGRAFFFFToRGBFFF, _vImageFlatten_RGBA16Q12, 
                        _vImageFlatten_RGBA16U, _vImageFlatten_RGBA8888, _vImageFlatten_RGBA8888ToRGB888, 
                        _vImageFlatten_RGBAFFFF, _vImageFlatten_RGBAFFFFToRGBFFF, 
-                       _vImageGamma_Planar8toPlanarF, _vImageGamma_PlanarF, _vImageGamma_PlanarFtoPlanar8, 
-                       _vImageGaussianBoxDiffConvolve_Planar8, _vImageGaussianConvolve_Planar8, 
+                       _vImageFloodFill_ARGB16U, _vImageFloodFill_ARGB8888, _vImageFloodFill_Planar16U, 
+                       _vImageFloodFill_Planar8, _vImageGamma_Planar8toPlanarF, _vImageGamma_PlanarF, 
+                       _vImageGamma_PlanarFtoPlanar8, _vImageGaussianBoxDiffConvolve_Planar8, 
+                       _vImageGaussianConvolve_Planar8, _vImageGetPerspectiveWarp, 
                        _vImageGetResamplingFilterExtent, _vImageGetResamplingFilterSize, 
                        _vImageGradientSobel_Planar8to16S, _vImageHistogramCalculation_ARGB8888, 
                        _vImageHistogramCalculation_ARGBFFFF, _vImageHistogramCalculation_Planar8, 
@@ -297,6 +299,9 @@ exports:
                        _vImagePermuteChannelsWithMaskedInsert_ARGBFFFF, _vImagePermuteChannels_ARGB16F, 
                        _vImagePermuteChannels_ARGB16U, _vImagePermuteChannels_ARGB8888, 
                        _vImagePermuteChannels_ARGBFFFF, _vImagePermuteChannels_RGB888, 
+                       _vImagePerspectiveWarp_ARGB16F, _vImagePerspectiveWarp_ARGB16U, 
+                       _vImagePerspectiveWarp_ARGB8888, _vImagePerspectiveWarp_Planar16F, 
+                       _vImagePerspectiveWarp_Planar16U, _vImagePerspectiveWarp_Planar8, 
                        _vImagePiecewiseGamma_Planar16Q12, _vImagePiecewiseGamma_Planar16Q12toPlanar8, 
                        _vImagePiecewiseGamma_Planar8, _vImagePiecewiseGamma_Planar8toPlanar16Q12, 
                        _vImagePiecewiseGamma_Planar8toPlanarF, _vImagePiecewiseGamma_PlanarF, 
@@ -381,9 +386,9 @@ uuids:
   - target:          armv7s-ios
     value:           911B0F98-5B70-3B6E-975B-120EB723AEA1
   - target:          arm64-ios
-    value:           EA6A8B4B-B525-3E5B-8FA6-0560D19D9150
+    value:           BA07DC1D-3903-3EE1-A20C-31701F945E6A
   - target:          arm64e-ios
-    value:           5FF60692-AF22-3DA8-8C78-DA232B4A18B4
+    value:           A235D468-A4C8-3C02-9978-5B84B4493A31
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBLAS.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -471,9 +476,9 @@ uuids:
   - target:          armv7s-ios
     value:           80FCE4BA-B304-30E3-9E15-6A487E04BCD9
   - target:          arm64-ios
-    value:           C0C07817-8FA1-3403-A114-06CB1DC7B4C6
+    value:           2133812D-1E68-397B-BB10-94F6685C9DDF
   - target:          arm64e-ios
-    value:           9558B5F4-A37D-3C2A-9826-1BA622369611
+    value:           35DAE9C7-3669-3A0B-9B93-56642E4877FF
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib'
 parent-umbrella:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -551,9 +556,9 @@ uuids:
   - target:          armv7s-ios
     value:           9687D6B9-70BD-312C-8268-51E0902EF970
   - target:          arm64-ios
-    value:           BCD0B3FE-6207-3E64-B27E-72F5F6D64C2C
+    value:           12CEF5D8-4355-3A6C-AD66-1A2998A54EA5
   - target:          arm64e-ios
-    value:           F6552C4C-A0C7-3685-8107-8B7C268D3F6F
+    value:           2CF338EE-A39B-3E7A-B39C-A291633583FD
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLAPACK.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -810,9 +815,9 @@ uuids:
   - target:          armv7s-ios
     value:           46B54709-3B32-3F7C-B07B-27FFC66BCF68
   - target:          arm64-ios
-    value:           14132324-1465-3A8C-8E38-E939AAFE3420
+    value:           3CCDE9E9-28D0-3844-9F83-6ECD092B942D
   - target:          arm64e-ios
-    value:           8A61E8AC-8C92-3025-94E9-A91915614C61
+    value:           7A6D9DBE-0AD7-328C-BABA-CCB709DB975A
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLinearAlgebra.dylib'
 parent-umbrella:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -845,9 +850,9 @@ uuids:
   - target:          armv7s-ios
     value:           C3AB7182-3F92-3EFA-A036-61C8F1118CA9
   - target:          arm64-ios
-    value:           13E463E6-65D2-3DDA-A5BB-2C5D41ACE3EE
+    value:           D94D1099-DA01-3E50-911E-1270100C935E
   - target:          arm64e-ios
-    value:           D3A03A00-F7D4-3223-A7A9-4054E93F16D8
+    value:           30469516-9979-3469-8CD6-5743766DD9DE
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libQuadrature.dylib'
 parent-umbrella:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -867,9 +872,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           8BA5E734-A815-38DD-AD92-3A7FE4123809
+    value:           9E8E13E0-101B-3BCD-ACB9-833C375A728D
   - target:          arm64e-ios
-    value:           4EE843D7-53CD-378A-A39D-51DACB37846A
+    value:           FDEF9E93-B93A-33E8-AFC9-14C6412EF303
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparse.dylib'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -1044,9 +1049,9 @@ uuids:
   - target:          armv7s-ios
     value:           A7604610-0226-3F57-88BB-1CC4AC96E5C2
   - target:          arm64-ios
-    value:           5261F17F-8804-399A-B49D-658A0735653A
+    value:           FF2260C1-7D37-35C5-B689-8ED9AEBB7C07
   - target:          arm64e-ios
-    value:           55C8EF6B-1F01-39DB-939C-B75BDE4413CE
+    value:           E8BA4C1E-E942-34AC-AA5E-374CF62A58B9
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libSparseBLAS.dylib'
 parent-umbrella:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1096,9 +1101,9 @@ uuids:
   - target:          armv7s-ios
     value:           26856A4A-1AE5-3340-9076-DCCBE1873D32
   - target:          arm64-ios
-    value:           6843ADA7-8C53-3BFC-86E2-C024B5277DEF
+    value:           11A90CDA-8ABD-303B-81B1-0004CEAD8CA4
   - target:          arm64e-ios
-    value:           0D1375CF-5213-39FF-B13A-4BF839691B42
+    value:           196079E6-45A3-3D7C-BFF3-5815A10B0E51
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvDSP.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -1224,11 +1229,11 @@ uuids:
   - target:          armv7s-ios
     value:           244481C7-6A07-33AD-BDAF-10B41FEBFFAD
   - target:          arm64-ios
-    value:           BA47D643-F955-317F-9D60-73628BDBD868
+    value:           87ED907B-7D57-3DB1-B06A-667AD36A8AF6
   - target:          arm64e-ios
-    value:           DEBA1C39-F457-322D-929A-BF75CFF54B1F
+    value:           985E64EE-AFC0-37A3-9500-F8CD40937D04
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvMisc.dylib'
-current-version: 818.0.1
+current-version: 818.40.3
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _VVACOS, _VVACOSF, _VVACOSF_, _VVACOSH, _VVACOSHF, _VVACOSHF_, 
@@ -1304,11 +1309,11 @@ uuids:
   - target:          armv7s-ios
     value:           3625B8BC-1CB9-3828-8B97-94BC6CE4C424
   - target:          arm64-ios
-    value:           424D5E19-CC77-3FBF-A06D-DB01A297F512
+    value:           7D4068B8-1773-39CE-885E-F93CE0CB1755
   - target:          arm64e-ios
-    value:           B0A8415B-27B8-32B4-9731-2052AAF70CA2
+    value:           D88289D0-7F5B-3B00-969B-C903A649F733
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib'
-current-version: 818.0.1
+current-version: 818.40.3
 allowable-clients:
   - targets:         [ arm64-ios, arm64e-ios ]
     clients:         [ Accelerate ]

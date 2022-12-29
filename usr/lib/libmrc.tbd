@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           0632D2BA-A742-363D-B48C-AAE89CDCF8C6
+    value:           94E1FC9C-248C-3F74-AC46-04C42B074547
   - target:          arm64e-ios
-    value:           8BF1CA1D-D5F2-3ED4-B6CD-9948FBFFFC93
+    value:           72760A69-9F46-3B2D-8C26-3CB895D832DA
 install-name:    '/usr/lib/libmrc.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -19,5 +19,7 @@ exports:
                        _mrc_dns_proxy_parameters_get_output_interface, _mrc_dns_proxy_parameters_set_force_aaaa_synthesis, 
                        _mrc_dns_proxy_parameters_set_nat64_prefix, _mrc_dns_proxy_parameters_set_output_interface, 
                        _mrc_dns_proxy_set_event_handler, _mrc_dns_proxy_set_queue, 
-                       _mrc_release, _mrc_retain ]
+                       _mrc_dns_proxy_state_inquiry_activate, _mrc_dns_proxy_state_inquiry_create, 
+                       _mrc_dns_proxy_state_inquiry_invalidate, _mrc_dns_proxy_state_inquiry_set_handler, 
+                       _mrc_dns_proxy_state_inquiry_set_queue, _mrc_release, _mrc_retain ]
 ...

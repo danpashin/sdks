@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64e-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -library-level api -module-name SwiftUI
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 4.0.90.1.107
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -library-level api -module-name SwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 4.1.17.100
 import Accessibility
 import Combine
 import CoreData
@@ -138,6 +138,7 @@ extension SwiftUI.View {
     get
   }
 }
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 @usableFromInline
 internal struct IsDisabledPickerOptionTraitKey : SwiftUI._ViewTraitKey {
   @inlinable internal static var defaultValue: Swift.Bool {
@@ -503,7 +504,10 @@ extension SwiftUI.CustomizableToolbarContent {
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func defaultCustomization(_ defaultVisibility: SwiftUI.Visibility = .automatic, options: SwiftUI.ToolbarCustomizationOptions = []) -> some SwiftUI.CustomizableToolbarContent
   
-  @available(*, deprecated, message: "Please provide either a visibility or customization options")
+  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Please provide either a visibility or customization options")
+  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Please provide either a visibility or customization options")
+  @available(tvOS, introduced: 16.0, deprecated: 16.0, message: "Please provide either a visibility or customization options")
+  @available(watchOS, introduced: 9.0, deprecated: 9.0, message: "Please provide either a visibility or customization options")
   public func defaultCustomization() -> some SwiftUI.CustomizableToolbarContent
   
 }
@@ -2097,8 +2101,7 @@ internal class AnyShapeBox {
   @objc @usableFromInline
   deinit
 }
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(macOS, unavailable)
+@available(iOS 13.0, macOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.View {
   @available(iOS, introduced: 13.0, deprecated: 100000.0, message: "Use toolbar(.hidden)")
   @available(macOS, unavailable)
@@ -2142,7 +2145,6 @@ extension SwiftUI.View {
   @available(watchOS, unavailable)
   @_disfavoredOverload public func navigationBarTitle<S>(_ title: S, displayMode: SwiftUI.NavigationBarItem.TitleDisplayMode) -> some SwiftUI.View where S : Swift.StringProtocol
   
-  @available(macOS, unavailable)
   public func navigationBarBackButtonHidden(_ hidesBackButton: Swift.Bool = true) -> some SwiftUI.View
   
 }
@@ -3106,6 +3108,20 @@ extension SwiftUI.View {
   @available(watchOS, unavailable)
   public func pageCommand<V>(value: SwiftUI.Binding<V>, in bounds: Swift.ClosedRange<V>, step: V = 1) -> some SwiftUI.View where V : Swift.BinaryInteger
   
+}
+@available(iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+extension SwiftUI.PickerStyle where Self == SwiftUI.NavigationLinkPickerStyle {
+  @_alwaysEmitIntoClient public static var navigationLink: SwiftUI.NavigationLinkPickerStyle {
+    get { .init() }
+  }
+}
+@available(iOS 16.0, tvOS 16.0, watchOS 9.0, *)
+@available(macOS, unavailable)
+public struct NavigationLinkPickerStyle : SwiftUI.PickerStyle {
+  public init()
+  public static func _makeView<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<SwiftUI.NavigationLinkPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs where SelectionValue : Swift.Hashable
+  public static func _makeViewList<SelectionValue>(value: SwiftUI._GraphValue<SwiftUI._PickerValue<SwiftUI.NavigationLinkPickerStyle, SelectionValue>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs where SelectionValue : Swift.Hashable
 }
 @available(macOS 10.15, *)
 @available(iOS, unavailable)
@@ -5412,7 +5428,10 @@ public struct CircularProgressViewStyle : SwiftUI.ProgressViewStyle {
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 public struct _AccessibilityQuickActionStyle {
 }
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+@available(watchOS 9.0, *)
+@available(iOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
 public protocol AccessibilityQuickActionStyle {
   static var _style: SwiftUI._AccessibilityQuickActionStyle { get }
 }
@@ -5456,7 +5475,10 @@ extension SwiftUI.AccessibilityQuickActionStyle where Self == SwiftUI.Accessibil
     get { .init() }
   }
 }
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+@available(watchOS 9.0, *)
+@available(iOS, unavailable)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
 extension SwiftUI.View {
   public func accessibilityQuickAction<Style, Content>(style: Style, @SwiftUI.ViewBuilder content: () -> Content) -> some SwiftUI.View where Style : SwiftUI.AccessibilityQuickActionStyle, Content : SwiftUI.View
   
@@ -6937,6 +6959,37 @@ extension SwiftUI.Image {
   
   public static func buildBlock<Content>(_ content: Content) -> some SwiftUI.Widget where Content : SwiftUI.Widget
   
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+extension SwiftUI.WidgetBundleBuilder {
+  @_alwaysEmitIntoClient public static func buildOptional(_ widget: (SwiftUI.Widget & SwiftUI._LimitedAvailabilityWidgetMarker)?) -> some SwiftUI.Widget {
+        if #available(iOS 16.1, macOS 13.0, watchOS 9.1, *) {
+            return widget as! LimitedAvailabilityWidget
+        } else {
+            // If running on pre-Sydro, return `EmptyWidget` because
+            // `LimitedAvailabilityWidget` was not in the ABI pre-Sydro.
+            //
+            // Furthermore, `EmptyWidget` is internal (i.e. not the ABI), so
+            // call `buildBlock` directly to create an empty widget via a
+            // function that is available in the Azul ABI.
+            return buildBlock()
+        }
+    }
+  
+  @available(*, unavailable, message: "if statements in a WidgetBundleBuilder can only be used with #available clauses")
+  public static func buildOptional<W>(_ widget: W?) where W : SwiftUI.Widget
+  @_alwaysEmitIntoClient public static func buildLimitedAvailability(_ widget: some Widget) -> SwiftUI.Widget & SwiftUI._LimitedAvailabilityWidgetMarker {
+        if #available(iOS 16.1, macOS 13.0, watchOS 9.1, *) {
+            return LimitedAvailabilityWidget(widget)
+        } else {
+            fatalError("Unavailable")
+        }
+    }
+}
+@available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
+@available(tvOS, unavailable)
+@_marker public protocol _LimitedAvailabilityWidgetMarker {
 }
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct ScrollView<Content> : SwiftUI.View where Content : SwiftUI.View {
@@ -8423,6 +8476,14 @@ extension SwiftUI.View {
     }
   
 }
+@available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+public struct _PlatformViewRepresentableLayoutOptions : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public typealias ArrayLiteralElement = SwiftUI._PlatformViewRepresentableLayoutOptions
+  public typealias Element = SwiftUI._PlatformViewRepresentableLayoutOptions
+  public typealias RawValue = Swift.Int
+}
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 @frozen public struct AnyLayout : SwiftUI.Layout {
   internal var storage: SwiftUI.AnyLayoutBox
@@ -8885,10 +8946,16 @@ extension SwiftUI.View {
   public func fontWeight(_ weight: SwiftUI.Font.Weight?) -> some SwiftUI.View
   
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  public func fontWidth(_ width: SwiftUI.Font.Width?) -> some SwiftUI.View
+  
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func bold(_ isActive: Swift.Bool = true) -> some SwiftUI.View
   
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func italic(_ isActive: Swift.Bool = true) -> some SwiftUI.View
+  
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public func fontDesign(_ design: SwiftUI.Font.Design?) -> some SwiftUI.View
   
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func kerning(_ kerning: CoreFoundation.CGFloat) -> some SwiftUI.View
@@ -14095,6 +14162,12 @@ internal class AnyTransitionBox {
   @objc @usableFromInline
   deinit
 }
+@_hasMissingDesignatedInitializers @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+@usableFromInline
+internal class LimitedAvailabilitySceneStorageBase {
+  @objc @usableFromInline
+  deinit
+}
 @available(iOS 15.0, macOS 10.15, watchOS 9.0, *)
 @available(tvOS, unavailable)
 public enum ControlSize : Swift.CaseIterable {
@@ -14321,6 +14394,8 @@ extension SwiftUI.Font {
   public func uppercaseSmallCaps() -> SwiftUI.Font
   public func monospacedDigit() -> SwiftUI.Font
   public func weight(_ weight: SwiftUI.Font.Weight) -> SwiftUI.Font
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  public func width(_ width: SwiftUI.Font.Width) -> SwiftUI.Font
   public func bold() -> SwiftUI.Font
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   public func monospaced() -> SwiftUI.Font
@@ -14345,6 +14420,20 @@ extension SwiftUI.Font {
     public static let black: SwiftUI.Font.Weight
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: SwiftUI.Font.Weight, b: SwiftUI.Font.Weight) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  public struct Width : Swift.Hashable {
+    public var value: CoreFoundation.CGFloat
+    public static let compressed: SwiftUI.Font.Width
+    public static let condensed: SwiftUI.Font.Width
+    public static let standard: SwiftUI.Font.Width
+    public static let expanded: SwiftUI.Font.Width
+    public init(_ value: CoreFoundation.CGFloat)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftUI.Font.Width, b: SwiftUI.Font.Width) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
@@ -14408,6 +14497,7 @@ public struct __DesignTimeSelectionIdentifier : Swift.Hashable {
     get
   }
 }
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 public struct ContentTransition : Swift.Equatable {
   public static let identity: SwiftUI.ContentTransition
   public static let opacity: SwiftUI.ContentTransition
@@ -14496,24 +14586,27 @@ extension SwiftUI.View {
   
 }
 extension SwiftUI.View {
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> S) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, S : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> S) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, S : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> S) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, S : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> S) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, S : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  @_disfavoredOverload public func searchable<C, T, V, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, V : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
-  
+  @_disfavoredOverload internal func searchable<C, T, V, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder suggestions: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, V : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
+
 }
 extension SwiftUI.View {
   @available(iOS 16.0, macOS 13.0, *)
@@ -14533,44 +14626,50 @@ extension SwiftUI.View {
   
 }
 extension SwiftUI.View {
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, D, V>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, D, V>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, D, V>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, D, V>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  @_disfavoredOverload public func searchable<C, T, D, V, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
-  
+  @_disfavoredOverload internal func searchable<C, T, D, V, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
+
 }
 extension SwiftUI.View {
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, D, V1, V2>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, D, V1, V2>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.Text? = nil, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  public func searchable<C, T, D, V1, V2>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, C.Element : Swift.Identifiable
-  
-  @available(iOS, introduced: 16.0, deprecated: 16.0, message: "Use View.searchScopes(_:scopes:)")
-  @available(macOS, introduced: 13.0, deprecated: 13.0, message: "Use View.searchScopes(_:scopes:)")
+  internal func searchable<C, T, D, V1, V2>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: SwiftUI.LocalizedStringKey, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, C.Element : Swift.Identifiable
+
+  @usableFromInline
+  @available(iOS, unavailable, introduced: 16.0, message: "ABI Only")
+  @available(macOS, unavailable, introduced: 13.0, message: "ABI Only")
   @available(tvOS, unavailable)
   @available(watchOS, unavailable)
-  @_disfavoredOverload public func searchable<C, T, D, V1, V2, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
-  
+  @_disfavoredOverload internal func searchable<C, T, D, V1, V2, S>(text: SwiftUI.Binding<Swift.String>, tokens: SwiftUI.Binding<C>, scope: SwiftUI.Binding<D>, placement: SwiftUI.SearchFieldPlacement = .automatic, prompt: S, @SwiftUI.ViewBuilder token: @escaping (C.Element) -> T, @SwiftUI.ViewBuilder scopes: () -> V1, @SwiftUI.ViewBuilder suggestions: () -> V2) -> some SwiftUI.View where C : Swift.RandomAccessCollection, C : Swift.RangeReplaceableCollection, T : SwiftUI.View, D : Swift.Hashable, V1 : SwiftUI.View, V2 : SwiftUI.View, S : Swift.StringProtocol, C.Element : Swift.Identifiable
+
 }
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension SwiftUI.View {
@@ -15215,12 +15314,16 @@ extension SwiftUI.Text {
   public func foregroundColor(_ color: SwiftUI.Color?) -> SwiftUI.Text
   public func font(_ font: SwiftUI.Font?) -> SwiftUI.Text
   public func fontWeight(_ weight: SwiftUI.Font.Weight?) -> SwiftUI.Text
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  public func fontWidth(_ width: SwiftUI.Font.Width?) -> SwiftUI.Text
   public func bold() -> SwiftUI.Text
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func bold(_ isActive: Swift.Bool) -> SwiftUI.Text
   public func italic() -> SwiftUI.Text
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public func italic(_ isActive: Swift.Bool) -> SwiftUI.Text
+  @available(iOS 16.1, macOS 13.0, tvOS 16.1, watchOS 9.1, *)
+  public func fontDesign(_ design: SwiftUI.Font.Design?) -> SwiftUI.Text
   @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
   public func monospacedDigit() -> SwiftUI.Text
   public func strikethrough(_ isActive: Swift.Bool = true, color: SwiftUI.Color? = nil) -> SwiftUI.Text
@@ -16647,6 +16750,38 @@ extension SwiftUI.TextField where Label == SwiftUI.Text {
             onEditingChanged: { _ in }, onCommit: onCommit)
     }
 }
+@available(iOS 16.1, macOS 13.0, watchOS 9.1, *)
+@available(tvOS, unavailable)
+@usableFromInline
+@frozen internal struct LimitedAvailabilityWidget : SwiftUI.Widget, SwiftUI._LimitedAvailabilityWidgetMarker {
+  @usableFromInline
+  internal var configuration: SwiftUI.LimitedAvailabilityConfiguration
+  public init()
+  @usableFromInline
+  internal init<W>(_ widget: W) where W : SwiftUI.Widget
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  @usableFromInline
+  internal typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI25LimitedAvailabilityWidgetV4bodyQrvp", 0) __
+}
+@available(iOS 16.1, macOS 13.0, watchOS 9.1, *)
+@available(tvOS, unavailable)
+@frozen public struct LimitedAvailabilityConfiguration : SwiftUI.WidgetConfiguration {
+  @usableFromInline
+  internal var storage: SwiftUI.LimitedAvailabilityConfigurationBase
+  @usableFromInline
+  internal init<W>(_ configuration: W) where W : SwiftUI.WidgetConfiguration
+  public static func _makeWidgetConfiguration(widget: SwiftUI._GraphValue<SwiftUI.LimitedAvailabilityConfiguration>, inputs: SwiftUI._WidgetInputs) -> SwiftUI._WidgetOutputs
+  public typealias Body = Swift.Never
+}
+@_hasMissingDesignatedInitializers @available(iOS 16.1, macOS 13.0, watchOS 9.1, *)
+@available(tvOS, unavailable)
+@usableFromInline
+internal class LimitedAvailabilityConfigurationBase {
+  @objc @usableFromInline
+  deinit
+}
 @available(iOS, introduced: 13.0, deprecated: 100000.0, message: "Use EnvironmentValues.isPresented or EnvironmentValues.dismiss")
 @available(macOS, introduced: 10.15, deprecated: 100000.0, message: "Use EnvironmentValues.isPresented or EnvironmentValues.dismiss")
 @available(tvOS, introduced: 13.0, deprecated: 100000.0, message: "Use EnvironmentValues.isPresented or EnvironmentValues.dismiss")
@@ -16903,6 +17038,7 @@ public struct ToolbarItem<ID, Content> : SwiftUI.ToolbarContent where Content : 
 extension SwiftUI.ToolbarItem where ID == () {
   public init(placement: SwiftUI.ToolbarItemPlacement = .automatic, @SwiftUI.ViewBuilder content: () -> Content)
 }
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension SwiftUI.ToolbarItem : SwiftUI.CustomizableToolbarContent where ID == Swift.String {
   @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
   @_alwaysEmitIntoClient public init(id: Swift.String, placement: SwiftUI.ToolbarItemPlacement = .automatic, @SwiftUI.ViewBuilder content: () -> Content) {
@@ -17487,6 +17623,21 @@ extension SwiftUI.View {
         case let .value(value):
             return value
         case let .keyPath(keyPath):
+            if #available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *) {
+                os_log(.fault, log: Log.runtimeIssuesLog, """
+                    Accessing Environment<\(Value.self)>'s value outside of \
+                    being installed on a View. \
+                    This will always read the default value \
+                    and will not update.
+                    """)
+            } else {
+                os_log(.fault, log: Log.runtimeIssuesLog, """
+                    Accessing Environment's value outside of being \
+                    installed on a View. \
+                    This will always read the default value \
+                    and will not update.
+                    """)
+            }
             // not bound to a view, return the default value.
             return EnvironmentValues()[keyPath: keyPath]
         }
@@ -18759,6 +18910,7 @@ extension SwiftUI.Anchor.Source {
 extension SwiftUI.Anchor.Source {
   public init<T>(_ anchor: SwiftUI.Anchor<T>.Source?) where Value == T?
 }
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension SwiftUI.Color : CoreTransferable.Transferable {
   @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
   public static var transferRepresentation: some CoreTransferable.TransferRepresentation {
@@ -18981,6 +19133,9 @@ public struct ImportFromDevicesCommands : SwiftUI.Commands {
 internal enum Log {
   @usableFromInline
   internal static var runtimeIssuesLog: os.OSLog
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  @usableFromInline
+  internal static var internalErrorsLog: os.OSLog
 }
 @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
 @available(tvOS, unavailable)
@@ -19079,6 +19234,7 @@ extension SwiftUI.EnvironmentValues {
     set
   }
 }
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 public struct _NavigationDestinationCollection {
 }
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -20107,6 +20263,14 @@ extension SwiftUI.SceneBuilder {
     @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var transform3D: QuartzCore.CATransform3D {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var transform: CoreFoundation.CGAffineTransform {
     @objc get
     @objc set
   }

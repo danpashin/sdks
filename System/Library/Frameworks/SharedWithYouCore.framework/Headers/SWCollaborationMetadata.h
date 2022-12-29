@@ -65,6 +65,7 @@ SW_EXTERN @interface SWCollaborationMetadata : NSObject <NSSecureCoding, NSCopyi
 @property (strong, readwrite, nonatomic, nullable) NSPersonNameComponents *initiatorNameComponents;
 
 - (instancetype)initWithLocalIdentifier:(SWLocalCollaborationIdentifier)localIdentifier;
+- (instancetype)initWithCollaborationIdentifier:(SWCollaborationIdentifier)collaborationIdentifier;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

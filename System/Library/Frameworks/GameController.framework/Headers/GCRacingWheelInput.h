@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macos(13.0))
+API_AVAILABLE(macos(13.0), macCatalyst(16.0)) API_UNAVAILABLE(ios, tvos)
 @interface GCRacingWheelInputState : NSObject <GCDevicePhysicalInputState>
 
 /** The steering wheel element. */
@@ -40,7 +40,7 @@ API_AVAILABLE(macos(13.0))
 
 
 
-API_AVAILABLE(macos(13.0))
+API_AVAILABLE(macos(13.0), macCatalyst(16.0)) API_UNAVAILABLE(ios, tvos)
 @interface GCRacingWheelInput : GCRacingWheelInputState <GCDevicePhysicalInput>
 
 /**

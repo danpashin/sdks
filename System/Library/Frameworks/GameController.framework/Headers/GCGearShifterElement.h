@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  A \c GCGearShifterElement object represents an attached gear shifter.  Both
  pattern and sequential gear shifters are supported.
  */
-API_AVAILABLE(macos(13.0))
+API_AVAILABLE(macos(13.0), macCatalyst(16.0)) API_UNAVAILABLE(ios, tvos)
 @interface GCGearShifterElement : NSObject <GCPhysicalInputElement>
 
 /**

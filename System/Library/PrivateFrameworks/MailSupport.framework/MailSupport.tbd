@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MailSupport.framework/MailSupport
-current-version:       3731.0.7
+current-version:       3731.200.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -173,6 +173,7 @@ exports:
                             _MSSharedContactStore,
                             _MSUserNotificationCenterTopicFavoriteMailboxes,
                             _MSUserNotificationCenterTopicNotifiedThreads,
+                            _MSUserNotificationCenterTopicRemindMe,
                             _MSUserNotificationCenterTopicVIP,
                             _MSUserNotificationContentKeyAccountReference,
                             _MSUserNotificationContentKeyMessageReference,
@@ -181,7 +182,9 @@ exports:
                             _MSUserNotificationContentKeyNanoMessageId,
                             _MSUserNotificationContentKeySenderAddress,
                             _MSUserNotificationContentKeySuppressionContext,
-                            _MSUserNotificationsLog, _kMessageListResultBundleID,
+                            _MSUserNotificationsLog,
+                            _kMSParsecSearchSessionMaximumRankedSectionResultsCount,
+                            _kMessageListResultBundleID,
                             _kMessageListSectionBundleID,
                             _kStructuredQueryComponent,
                             _kStructuredQueryMailboxFilter,

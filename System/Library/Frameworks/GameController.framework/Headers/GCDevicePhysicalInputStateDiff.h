@@ -12,10 +12,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, GCDevicePhysicalInputElementChange) {
-    /** Diff could not be determined - typically because the input state queue
-     *  filled up and older input state snapshots were dropped. */
+    /** Indicates that a change could not be determined.  This is typically
+     *  because the input state queue filled up and older input state snapshots
+     *  were dropped. */
     GCDevicePhysicalInputElementUnknownChange = -1,
+    /** Indicates that no value of the element changed. */
     GCDevicePhysicalInputElementNoChange = 0,
+    /** Indicates that a value of the element changed. */
     GCDevicePhysicalInputElementChanged = 1,
 };
 

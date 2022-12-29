@@ -91,8 +91,9 @@ typedef NSDictionary<MPSGraphTensor*, MPSGraphShapedType *> MPSGraphTensorShaped
 typedef void (^MPSGraphCompletionHandler)(MPSGraphTensorDataDictionary * resultsDictionary,
                                           NSError * _Nullable error);
 
-/*! @abstract   A notification when graph execution: has finished
+/*! @abstract   A notification when graph execution: has been scheduled
  *  @param      resultsDictionary  If no error, the results dictionary produced by the graph operation.
+ *                                If Graph has not yet allocated the results will be NSNull
  *  @param      error   If an error occurs, more information might be found here.
  */
 typedef void (^MPSGraphScheduledHandler)(MPSGraphTensorDataDictionary * resultsDictionary,

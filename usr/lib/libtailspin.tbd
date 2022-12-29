@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           D04F1464-1480-3363-AE5B-1D1E69F3D1FA
   - target:          arm64-ios
-    value:           BBC79E11-81D8-3641-872E-EAAC2F2A80FF
+    value:           FAE354D0-FC63-39E8-89C2-A4A3D09490CB
   - target:          arm64e-ios
-    value:           5D1BA3E5-1DAA-389B-B91B-733014741C1B
+    value:           7EE360E9-26E9-3A45-A4A2-7E8BCE5A8079
 install-name:    '/usr/lib/libtailspin.dylib'
-current-version: 139
+current-version: 139.3
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _TSPConfiguration_EnforcedByDefaultsKey, __Z29tailspin_symbol_factory_printP23tailspin_symbol_factory, 
@@ -50,16 +50,19 @@ exports:
                        _TSPMetadata_IsRootInstalledKey, _TSPMetadata_KeyboardLanguagesKey, 
                        _TSPMetadata_LowPowerModeKey, _TSPMetadata_MostRecentLowPowerModeTransitionKey, 
                        _TSPMetadata_NCpusKey, _TSPMetadata_NonDefaultFeatureFlagsKey, 
-                       _TSPMetadata_OSCryptexFileExtents_Key, _TSPMetadata_OSProductNameKey, 
+                       _TSPMetadata_NumVnodesAllocatedKey, _TSPMetadata_NumVnodesFreeKey, 
+                       _TSPMetadata_NumVnodesMaxKey, _TSPMetadata_OSCryptexFileExtents_Key, 
+                       _TSPMetadata_OSProductNameKey, _TSPMetadata_OSProductVersionExtraKey, 
                        _TSPMetadata_OSProductVersionKey, _TSPMetadata_OSVersionKey, 
                        _TSPMetadata_PowerModeTransitionTimestampKey, _TSPMetadata_PreferredLanguagesKey, 
                        _TSPMetadata_SystemAdvisoryLevelsBatteryLevelKey, _TSPMetadata_SystemAdvisoryLevelsCombinedLevelKey, 
                        _TSPMetadata_SystemAdvisoryLevelsKey, _TSPMetadata_SystemAdvisoryLevelsThermalPressureKey, 
                        _TSPMetadata_SystemAdvisoryLevelsUserLevelKey, _TSPMetadata_TailspinConfigurationKey, 
                        _TSPMetadata_TailspinDumpReasonKey, _TSPMetadata_TargetPID, 
-                       _TSPMetadata_VMPageSizeKey, _TSPProcessInfo_LoadInfosKey, 
-                       _TSPProcessInfo_PidKey, _TSPSymbols_BinaryContainsTextExecKey, 
-                       _TSPSymbols_BinaryNameKey, _TSPSymbols_BinaryPathKey, _TSPSymbols_BinaryTextSizeKey, 
+                       _TSPMetadata_VMPageSizeKey, _TSPMetadata_VnodeDeallocLevelKey, 
+                       _TSPMetadata_VnodeInfoKey, _TSPProcessInfo_LoadInfosKey, _TSPProcessInfo_PidKey, 
+                       _TSPSymbols_BinaryContainsTextExecKey, _TSPSymbols_BinaryNameKey, 
+                       _TSPSymbols_BinaryPathKey, _TSPSymbols_BinaryTextSizeKey, 
                        _TSPSymbols_BinaryVersionKey, _TSPSymbols_BundleIdentifierKey, 
                        _TSPSymbols_BundleShortVersionKey, _TSPSymbols_BundleVersionKey, 
                        _TSPSymbols_InlineSymbolsKey, _TSPSymbols_SymbolLengthKey, 

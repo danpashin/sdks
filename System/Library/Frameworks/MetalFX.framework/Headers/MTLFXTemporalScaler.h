@@ -67,6 +67,7 @@ API_AVAILABLE(macos(13.0), ios(16.0))
 @property (nonatomic, retain, nullable) id<MTLTexture> colorTexture;
 @property (nonatomic, retain, nullable) id<MTLTexture> depthTexture;
 @property (nonatomic, retain, nullable) id<MTLTexture> motionTexture;
+// outputTexture is required to have MTLStorageModePrivate for storageMode
 @property (nonatomic, retain, nullable) id<MTLTexture> outputTexture;
 
 // Exposure properties

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3731.0.7
+current-version:       3731.200.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -51,8 +51,10 @@ exports:
                             _EMInteractionLoggerShouldLog,
                             _EMInternalErrorReasonKey, _EMInvalidCount,
                             _EMListUnsubscribeSuggestionTrailingComparator,
-                            _EMLogCategoryMessageLoading, _EMLogMailDrop,
-                            _EMLogSearch, _EMMailDropAttachmentMarkupFormat,
+                            _EMLogCategoryMessageLoading, _EMLogCompose,
+                            _EMLogMailDrop, _EMLogSearch,
+                            _EMLogSearchableIndexStatus,
+                            _EMMailDropAttachmentMarkupFormat,
                             _EMMailDropBannerClass, _EMMailDropImageArchiveName,
                             _EMMailDropItemClass, _EMMailDropMetadataClass,
                             _EMMailDropMetadataExpiration,
@@ -106,9 +108,14 @@ exports:
                             _EMMessageListItemKeyPathToList,
                             _EMMessageListItemKeyPathUnsubscribeType,
                             _EMMessageListItemQueryOptionUpdateDisplayDate,
+                            _EMMessageSnippetHintZoneAttachmentNames,
+                            _EMMessageSnippetHintZoneAttachmentTypes,
                             _EMMessageSnippetHintZoneAuthor,
                             _EMMessageSnippetHintZoneAuthorEmailAddresses,
+                            _EMMessageSnippetHintZoneEmailAddresses,
                             _EMMessageSnippetHintZoneOther,
+                            _EMMessageSnippetHintZoneRecipientEmailAddresses,
+                            _EMMessageSnippetHintZoneRecipients,
                             _EMMessageSnippetHintZoneSubject,
                             _EMMessageSnippetHintZoneTextContent,
                             _EMPersistenceStatisticsKeyAttachmentsIndexed,
@@ -147,6 +154,7 @@ exports:
                             _EMUbiquitouslyPersistedDictionaryKeyVersion,
                             _EMUserDefaultAddFollowUpMailboxOnEnablement,
                             _EMUserDefaultAdditionalPointerInteractions,
+                            _EMUserDefaultAlertOnBlankCell,
                             _EMUserDefaultAlwaysBCCSelf,
                             _EMUserDefaultAlwaysVerifyServerProvidedRemoteContentLinks,
                             _EMUserDefaultBlockedSenderAction,
@@ -269,6 +277,7 @@ exports:
                             EMMailboxObjectID, EMMailboxRepository, EMMailboxScope,
                             EMMessage, EMMessageChangeAction,
                             EMMessageCollectionItemID,
+                            EMMessageContentCachedMetadata,
                             EMMessageConversationFlagChangeAction,
                             EMMessageDeleteAction, EMMessageDeleteAllAction,
                             EMMessageDeliveryResult, EMMessageFlagChangeAction,
@@ -299,6 +308,7 @@ exports:
                             EMSearchableIndexTopHitsQuery,
                             EMSearchableIndexTopHitsQueryResult,
                             EMSearchableIndexUserQuery,
+                            EMSearchableItemSearchResult,
                             EMSearchableItemSnippetData, EMSecurityInformation,
                             EMSender, EMSenderBlockingAction, EMSenderRepository,
                             EMServerConfiguration, EMSmartMailbox,

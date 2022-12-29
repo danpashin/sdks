@@ -121,7 +121,7 @@ API_AVAILABLE(ios(15.0))
  */
 
 - (void)checkPreferredNetworkForActiveOperationalDataset:(NSData *)activeOperationalDataSet
-                                           completion:(void (^)(BOOL isPreferred))completion API_AVAILABLE(ios(15.0))  NS_SWIFT_ASYNC_NAME(isPreferred(forActiveOperationalDataset:));
+                                           completion:(void (^)(BOOL isPreferred))completion API_AVAILABLE(ios(15.0))   NS_SWIFT_ASYNC_NAME(isPreferred(forActiveOperationalDataset:));
 @end
 
 NS_ASSUME_NONNULL_END

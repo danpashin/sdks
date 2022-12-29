@@ -177,10 +177,6 @@ API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0)) API_UNAVAILABLE(watchos)
 		determines how the file's contents are mapped to tracks inside the sequence
 	@param outError
         on exit, if an error occurs, a description of the error
-	@discussion
-		Loading a MIDI file that was previously saved via this system will restore the complete state
-		of the sequence, including muting, loop points and enablement, etc. of all tracks.  It will also
-		restore all non-MIDI AVMusicEvent types which had been added to the sequence's tracks.
 */
 - (BOOL)loadFromURL:(NSURL *)fileURL options:(AVMusicSequenceLoadOptions)options error:(NSError **)outError;
 
@@ -192,10 +188,6 @@ API_AVAILABLE(macos(10.11), ios(9.0), tvos(9.0)) API_UNAVAILABLE(watchos)
 		determines how the contents are mapped to tracks inside the sequence
 	@param outError
         on exit, if an error occurs, a description of the error
-	@discussion
-		Loading a MIDI file that was previously saved via this system will restore the complete state
-		of the sequence, including muting, loop points and enablement, etc. of all tracks.  It will also
-		restore all non-MIDI AVMusicEvent types which had been added to the sequence's tracks.
 */
 - (BOOL)loadFromData:(NSData *)data options:(AVMusicSequenceLoadOptions)options error:(NSError **)outError;
 

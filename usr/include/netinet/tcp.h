@@ -151,6 +151,11 @@ struct tcphdr {
 #define TCPOPT_FASTOPEN                 34
 #define TCPOLEN_FASTOPEN_REQ            2
 
+#define TCPOPT_ACCECN0                  0xAC /* AccECN Order 0 */
+#define TCPOPT_ACCECN1                  0XAE /* AccECN Order 1 */
+#define TCPOLEN_ACCECN_EMPTY            2    /* Empty option contains kind and length */
+#define TCPOLEN_ACCECN_COUNTER          3    /* Length of each AccECN counter */
+
 /* Option definitions */
 #define TCPOPT_SACK_PERMIT_HDR  \
 (TCPOPT_NOP<<24|TCPOPT_NOP<<16|TCPOPT_SACK_PERMITTED<<8|TCPOLEN_SACK_PERMITTED)

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64e-apple-ios16.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -module-name Foundation
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1946.102
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFoundation -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -module-name Foundation
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1953.1
 import Combine
 import CoreFoundation
 import Darwin
@@ -8711,11 +8711,6 @@ public struct URLRequest : Foundation.ReferenceConvertible, Swift.Equatable, Swi
     get
     set
   }
-  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  public var requiresDNSSECValidation: Swift.Bool {
-    get
-    set
-  }
   @available(macOS 11.3, iOS 14.5, watchOS 7.4, tvOS 14.5, *)
   public var assumesHTTP3Capable: Swift.Bool {
     get
@@ -8723,6 +8718,11 @@ public struct URLRequest : Foundation.ReferenceConvertible, Swift.Equatable, Swi
   }
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   public var attribution: Foundation.URLRequest.Attribution {
+    get
+    set
+  }
+  @available(macOS 13.0, iOS 16.1, watchOS 9.1, tvOS 16.1, *)
+  public var requiresDNSSECValidation: Swift.Bool {
     get
     set
   }

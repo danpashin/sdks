@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/vImage
-current-version:       571
+current-version:       575
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -410,10 +410,13 @@ exports:
                             _vImageFlatten_RGBA8888ToRGB888,
                             _vImageFlatten_RGBAFFFF,
                             _vImageFlatten_RGBAFFFFToRGBFFF,
+                            _vImageFloodFill_ARGB16U, _vImageFloodFill_ARGB8888,
+                            _vImageFloodFill_Planar16U, _vImageFloodFill_Planar8,
                             _vImageGamma_Planar8toPlanarF, _vImageGamma_PlanarF,
                             _vImageGamma_PlanarFtoPlanar8,
                             _vImageGaussianBoxDiffConvolve_Planar8,
                             _vImageGaussianConvolve_Planar8,
+                            _vImageGetPerspectiveWarp,
                             _vImageGetResamplingFilterExtent,
                             _vImageGetResamplingFilterSize,
                             _vImageGradientSobel_Planar8to16S,
@@ -526,6 +529,12 @@ exports:
                             _vImagePermuteChannels_ARGB8888,
                             _vImagePermuteChannels_ARGBFFFF,
                             _vImagePermuteChannels_RGB888,
+                            _vImagePerspectiveWarp_ARGB16F,
+                            _vImagePerspectiveWarp_ARGB16U,
+                            _vImagePerspectiveWarp_ARGB8888,
+                            _vImagePerspectiveWarp_Planar16F,
+                            _vImagePerspectiveWarp_Planar16U,
+                            _vImagePerspectiveWarp_Planar8,
                             _vImagePiecewiseGamma_Planar16Q12,
                             _vImagePiecewiseGamma_Planar16Q12toPlanar8,
                             _vImagePiecewiseGamma_Planar8,

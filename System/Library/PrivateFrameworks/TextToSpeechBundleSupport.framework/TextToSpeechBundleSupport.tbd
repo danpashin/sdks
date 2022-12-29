@@ -68,8 +68,9 @@ exports:
                             _TextToSpeechBundleSupportVersionNumber,
                             _TextToSpeechBundleSupportVersionString,
                             __EmbeddedMarkupStringLengthForClientRequest,
-                            __PostNotificationAfterDelay,
-                            __SpeechMarkIsNotifyable, __TTSIsInternalInstall,
+                            __HandleGenericMarker, __HandlePhonemeMarker,
+                            __HandleWordMarker, __PostNotificationAfterDelay,
+                            __TTSIsInternalInstall,
                             __TTSLoadIPAToNashvilleMapForLanguage,
                             __TTSSortedAssetsFromAssets, __TTSStoreUserRules,
                             __TTSThreadRegistryCreateRunLoopSource,
@@ -81,11 +82,12 @@ exports:
                             __TTSVocalizerClampPitch, __TTSVocalizerClampRate,
                             __TTSVocalizerClampVolume,
                             __TTSVocalizerResourceFileNameForResource,
-                            __Z25AXProcessIsVoiceOverTouchv ]
+                            __Z25AXProcessIsVoiceOverTouchv,
+                            __axIsGreekCharacter ]
     objc-classes:         [ ServerSpeechContext, ServerSpeechDataProviderContext,
                             ServerSpeechRequest, TTSBoostRuleMatch,
                             TTSNashvilleSpeechVoice, TTSPhonemeSupport, TTSRange,
-                            TTSRegexHelper, TTSSpeechServer,
+                            TTSRegexHelper, TTSReplacement, TTSSpeechServer,
                             TTSSpeechServerInstance, TTSTimer, TTSTimerObject,
                             TTSUTF8Offset, TTSVocalizer, TTSVoiceAssetManager ]
     weak-def-symbols:     [ __ZN5boost16re_detail_10650012perl_matcherINSt3__111__wrap_iterIPKcEENS2_9allocatorINS_9sub_matchIS6_EEEENS_12regex_traitsIcNS_16cpp_regex_traitsIcEEEEE10match_failEv,

@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           8BFB768C-5149-36FA-BD9E-E46B507F4DE7
   - target:          arm64-ios
-    value:           1F17F253-537B-32FE-BB3C-ACC5DB0579FE
+    value:           30C93636-C306-3571-AD02-98E8A8F60BBB
   - target:          arm64e-ios
-    value:           9E0C2146-09FB-3651-AE2B-DE83E7010F52
+    value:           DE6DA26E-B954-344C-AA89-BCDD5640AEFE
 install-name:    '/System/Library/Frameworks/CoreMotion.framework/CoreMotion'
-current-version: 2775.0.6
+current-version: 2780.0.17
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CLSF_biermanUpdate_6x3, _CLSF_thorntonUpdate_6x6, _CMCaptureModeData, 
@@ -37,9 +37,10 @@ exports:
                        _CLDeleteCurrentEmergencyLocationAsset, _CLGetAccessoryMotionSensorLogs, 
                        _CLGetAccessoryPASCDTransmissionState, _CLGetAccessoryTypeBitSet, 
                        _CLGetArchivedAuthorizationDecisions, _CLGetClientTransientAuthorizationInfo, 
-                       _CLGetControlPlaneStatusReport, _CLGetEmergencyLocationSettingsVersionInfo, 
-                       _CLGetLocationDefault, _CLGetMotionSensorLogs, _CLGetOdometryBatchedLocations, 
-                       _CLGetPipelinedCache, _CLGetStatusBarIconState, _CLGnssBandsChangedNotification, 
+                       _CLGetControlPlaneStatusReport, _CLGetEEDCloakingKey, _CLGetEEDEmergencyContactNames, 
+                       _CLGetEmergencyLocationSettingsVersionInfo, _CLGetLocationDefault, 
+                       _CLGetMotionSensorLogs, _CLGetOdometryBatchedLocations, _CLGetPipelinedCache, 
+                       _CLGetStatusBarIconState, _CLGnssBandsChangedNotification, 
                        _CLInternalPerformMigration, _CLMotionSyncStoreLastUpdate, 
                        _CLPassKitNotifyPayment, _CLPingDaemon, _CLSetClientTransientAuthorizationInfo, 
                        _CLSetLocationDefault, _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 
@@ -135,11 +136,11 @@ exports:
                        _CMPedometerEntryCount, _CMPedometerEventKey, _CMPedometerFetchRemoteCalibrations, 
                        _CMPedometerSpeedSum, _CMPedometerStartTime, _CMPedometerStopTime, 
                        _CMPersistOrientationCallbackModeKey, _CMPredictedWalkDistanceResetDateKey, 
-                       _CMReturnCode, _CMSedentaryTimerAlarmDataKey, _CMSedentaryTimerAutoRescheduleKey, 
-                       _CMSedentaryTimerErrorMessageKey, _CMSedentaryTimerIsArmedKey, 
-                       _CMSedentaryTimerPeriodIntervalKey, _CMSedentaryTimerReminderIntervalKey, 
-                       _CMSedentaryTimerStartTimeKey, _CMSendWakeGestureNotification, 
-                       _CMSendWakeGestureState, _CMSetDeviceOrientationNotification, 
+                       _CMProxPDPObject, _CMReturnCode, _CMSedentaryTimerAlarmDataKey, 
+                       _CMSedentaryTimerAutoRescheduleKey, _CMSedentaryTimerErrorMessageKey, 
+                       _CMSedentaryTimerIsArmedKey, _CMSedentaryTimerPeriodIntervalKey, 
+                       _CMSedentaryTimerReminderIntervalKey, _CMSedentaryTimerStartTimeKey, 
+                       _CMSendWakeGestureNotification, _CMSendWakeGestureState, _CMSetDeviceOrientationNotification, 
                        _CMSetDeviceOrientationTypeKey, _CMSetPocketStateNotification, 
                        _CMSetPocketStateTypeKey, _CMSidebandSensorFusionEnable, _CMSidebandSensorFusionLatency, 
                        _CMSidebandSensorFusionSnoop, _CMSidebandSensorFusionSuccess, 
@@ -222,9 +223,10 @@ exports:
                        CMOdometerSuitabilityManager, CMOnBodyStatus, CMOnBodyStatusManager, 
                        CMPedometer, CMPedometerBin, CMPedometerData, CMPedometerEvent, 
                        CMPickupManager, CMPocketStateManager, CMPose, CMPredictedWalkDistance, 
-                       CMRecordedAccelerometerData, CMRecordedGyroData, CMRecordedPressureData, 
-                       CMRecordedRotationRateData, CMRotationRateData, CMRunningMetricsManager, 
-                       CMSWOLFSummary, CMSedentaryTimer, CMSedentaryTimerData, CMSensorDataList, 
+                       CMProxPDP, CMProxPDPManager, CMRecordedAccelerometerData, 
+                       CMRecordedGyroData, CMRecordedPressureData, CMRecordedRotationRateData, 
+                       CMRotationRateData, CMRunningMetricsManager, CMSWOLFSummary, 
+                       CMSedentaryTimer, CMSedentaryTimerData, CMSensorDataList, 
                        CMSensorRecorder, CMSignificantElevationSample, CMSkiData, 
                        CMSkiTracker, CMSleepData, CMSleepTracker, CMStepCounter, 
                        CMStrideCalibrationData, CMStrideCalibrationEntry, CMStrideCalibrationEntryArray, 
@@ -241,7 +243,8 @@ exports:
     objc-ivars:      [ CMActivityManager._internal, CMAnomalyManager.fAppQueue, CMAnomalyManager.fPrivateQueue, 
                        CMDistributedSensingManagerInternal._clientQueue, CMDistributedSensingManagerInternal._delegate, 
                        CMDistributedSensingManagerInternal._internalQueue, CMDistributedSensingManagerInternal._locationdConnection, 
-                       CMDistributedSensingManagerInternal._manager, CMGestureManager._internal ]
+                       CMDistributedSensingManagerInternal._manager, CMGestureManager._internal, 
+                       CMProxPDPManager._internal ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN16CLMotionActivity12isTypeTaiChiENS_4TypeE, __ZN16CLMotionActivity13isTypeDancingENS_4TypeE, 
                        __ZN16CLMotionActivity13isTypePilatesENS_4TypeE, __ZN16CLMotionActivity14isTypeCoolDownENS_4TypeE, 

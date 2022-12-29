@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
 // swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64e-apple-ios15.4 -enable-objc-interop -enable-library-evolution -module-link-name swift_Concurrency -parse-stdlib -swift-version 5 -O -enforce-exclusivity=unchecked -enable-experimental-concurrency -module-name _Concurrency -disable-availability-checking
-// swift-module-flags-ignorable: -user-module-version 5.7.0.124.26 -enable-lexical-lifetimes=false -target-min-inlining-version min
+// swift-module-flags-ignorable: -user-module-version 5.7.1.134.3 -enable-lexical-lifetimes=false -target-min-inlining-version min
 import Swift
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 @_marker public protocol AnyActor : AnyObject, Swift.Sendable {
@@ -54,13 +54,10 @@ public func _asyncLet_get_throwing(_ asyncLet: Builtin.RawPointer, _ resultBuffe
 public func _asyncLet_finish(_ asyncLet: Builtin.RawPointer, _ resultBuffer: Builtin.RawPointer) async
 #endif
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
-public struct CheckedContinuation<T, E> where E : Swift.Error {
+public struct CheckedContinuation<T, E> : Swift.Sendable where E : Swift.Error {
   public init(continuation: _Concurrency.UnsafeContinuation<T, E>, function: Swift.String = #function)
   public func resume(returning value: __owned T)
   public func resume(throwing error: __owned E)
-}
-@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
-extension _Concurrency.CheckedContinuation : Swift.Sendable where T : Swift.Sendable {
 }
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension _Concurrency.CheckedContinuation {
@@ -1423,7 +1420,7 @@ internal func _swiftJobRun(_ job: _Concurrency.UnownedJob, _ executor: _Concurre
   }
 }
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
-@frozen public struct UnsafeContinuation<T, E> where E : Swift.Error {
+@frozen public struct UnsafeContinuation<T, E> : Swift.Sendable where E : Swift.Error {
   @usableFromInline
   internal var context: Builtin.RawUnsafeContinuation
   @_alwaysEmitIntoClient internal init(_ context: Builtin.RawUnsafeContinuation) {
@@ -1450,9 +1447,6 @@ internal func _swiftJobRun(_ job: _Concurrency.UnownedJob, _ executor: _Concurre
     fatalError("Swift compiler is incompatible with this SDK version")
 #endif
   }
-}
-@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
-extension _Concurrency.UnsafeContinuation : Swift.Sendable where T : Swift.Sendable {
 }
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension _Concurrency.UnsafeContinuation {
@@ -1560,6 +1554,7 @@ extension _Concurrency.TaskPriority {
 }
 #if compiler(>=5.3) && $AsyncAwait && $Sendable
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+@available(*, deprecated, renamed: "withTaskCancellationHandler(operation:onCancel:)")
 @_alwaysEmitIntoClient public func withTaskCancellationHandler<T>(handler: @Sendable () -> Swift.Void, operation: () async throws -> T) async rethrows -> T {
   try await withTaskCancellationHandler(operation: operation, onCancel: handler)
 }
@@ -2072,6 +2067,28 @@ public struct CancellationError : Swift.Error {
   public init()
 }
 #if compiler(>=5.3) && $AsyncAwait
+#if $UnsafeInheritExecutor
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+@_silgen_name("$ss13withTaskGroup2of9returning4bodyq_xm_q_mq_ScGyxGzYaXEtYar0_lF")
+@_unsafeInheritExecutor @inlinable public func withTaskGroup<ChildTaskResult, GroupResult>(of childTaskResultType: ChildTaskResult.Type, returning returnType: GroupResult.Type = GroupResult.self, body: (inout _Concurrency.TaskGroup<ChildTaskResult>) async -> GroupResult) async -> GroupResult where ChildTaskResult : Swift.Sendable {
+  #if compiler(>=5.5) && $BuiltinTaskGroupWithArgument
+
+  let _group = Builtin.createTaskGroup(ChildTaskResult.self)
+  var group = TaskGroup<ChildTaskResult>(group: _group)
+
+  // Run the withTaskGroup body.
+  let result = await body(&group)
+
+  await group.awaitAllRemainingTasks()
+
+  Builtin.destroyTaskGroup(_group)
+  return result
+
+  #else
+  fatalError("Swift compiler is incompatible with this SDK version")
+  #endif
+}
+#else
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 @_silgen_name("$ss13withTaskGroup2of9returning4bodyq_xm_q_mq_ScGyxGzYaXEtYar0_lF")
 @inlinable public func withTaskGroup<ChildTaskResult, GroupResult>(of childTaskResultType: ChildTaskResult.Type, returning returnType: GroupResult.Type = GroupResult.self, body: (inout _Concurrency.TaskGroup<ChildTaskResult>) async -> GroupResult) async -> GroupResult where ChildTaskResult : Swift.Sendable {
@@ -2093,7 +2110,39 @@ public struct CancellationError : Swift.Error {
   #endif
 }
 #endif
+#endif
 #if compiler(>=5.3) && $AsyncAwait
+#if $UnsafeInheritExecutor
+@available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+@_silgen_name("$ss21withThrowingTaskGroup2of9returning4bodyq_xm_q_mq_Scgyxs5Error_pGzYaKXEtYaKr0_lF")
+@_unsafeInheritExecutor @inlinable public func withThrowingTaskGroup<ChildTaskResult, GroupResult>(of childTaskResultType: ChildTaskResult.Type, returning returnType: GroupResult.Type = GroupResult.self, body: (inout _Concurrency.ThrowingTaskGroup<ChildTaskResult, Swift.Error>) async throws -> GroupResult) async rethrows -> GroupResult where ChildTaskResult : Swift.Sendable {
+  #if compiler(>=5.5) && $BuiltinTaskGroupWithArgument
+
+  let _group = Builtin.createTaskGroup(ChildTaskResult.self)
+  var group = ThrowingTaskGroup<ChildTaskResult, Error>(group: _group)
+
+  do {
+    // Run the withTaskGroup body.
+    let result = try await body(&group)
+
+    await group.awaitAllRemainingTasks()
+    Builtin.destroyTaskGroup(_group)
+
+    return result
+  } catch {
+    group.cancelAll()
+
+    await group.awaitAllRemainingTasks()
+    Builtin.destroyTaskGroup(_group)
+
+    throw error
+  }
+
+  #else
+  fatalError("Swift compiler is incompatible with this SDK version")
+  #endif
+}
+#else
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 @_silgen_name("$ss21withThrowingTaskGroup2of9returning4bodyq_xm_q_mq_Scgyxs5Error_pGzYaKXEtYaKr0_lF")
 @inlinable public func withThrowingTaskGroup<ChildTaskResult, GroupResult>(of childTaskResultType: ChildTaskResult.Type, returning returnType: GroupResult.Type = GroupResult.self, body: (inout _Concurrency.ThrowingTaskGroup<ChildTaskResult, Swift.Error>) async throws -> GroupResult) async rethrows -> GroupResult where ChildTaskResult : Swift.Sendable {
@@ -2123,6 +2172,7 @@ public struct CancellationError : Swift.Error {
   fatalError("Swift compiler is incompatible with this SDK version")
   #endif
 }
+#endif
 #endif
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 @frozen public struct TaskGroup<ChildTaskResult> where ChildTaskResult : Swift.Sendable {
@@ -2649,6 +2699,12 @@ extension _Concurrency.Task where Success == Swift.Never, Failure == Swift.Never
   #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
   public static func sleep<C>(until deadline: C.Instant, tolerance: C.Instant.Duration? = nil, clock: C) async throws where C : _Concurrency.Clock
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+  @_alwaysEmitIntoClient public static func sleep(for duration: Swift.Duration) async throws {
+    try await sleep(until: .now + duration, clock: .continuous)
+  }
   #endif
 }
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)

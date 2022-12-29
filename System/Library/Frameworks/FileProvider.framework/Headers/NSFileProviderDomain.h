@@ -157,7 +157,7 @@ FILEPROVIDER_API_AVAILABILITY_V2_V3
  */
 @property (readonly, getter=isDisconnected) BOOL disconnected FILEPROVIDER_API_AVAILABILITY_V3;
 
-/** If user has disabled this domain from Files.app on iOS or System Preferences on macOS, this will bet set
+/** If user has disabled this domain from Files.app on iOS or System Settings on macOS, this will be set
  to NO.
 */
 @property (readonly) BOOL userEnabled FILEPROVIDER_API_AVAILABILITY_V3_IOS;

@@ -21,10 +21,10 @@
  *  simpler to use. This low level API is provided for those applications that
  *  need more direct access to the unique feature set of the OpenEXR file format
  *  that might otherwise be obscured by more general APIs that must service
- *  numerous other compressed image formats. If there is sufficient in interest,
+ *  numerous other compressed image formats. If there is sufficient interest,
  *  the feature set may be expanded in the future.
  *
- *  While this library attempts to be file format compatible with the ILM / Academy
+ *  While this library is intended to be file format compatible with the ILM / Academy
  *  Software Foundation OpenEXR implementation (www.openexr.com), it is not API
  *  compatible with that work. Software written to use those interfaces will need to
  *  be modified in order to use these interfaces instead. No effort has been made to
@@ -32,11 +32,11 @@
  *
  *  Except for the _rgba interfaces, AppleEXR does not provide pixel type conversion services.
  *  Image data is provided as stored (after decompression) at the same precision found in the
- *  file. Most OpenEXR content is HDR linear gamma and care must be exercised when converting
- *  to other formats, especially traditional unorm based formats. Please see
- *  vImageConvert_AnyToAny() or MPSImageConversion.
+ *  file. Most OpenEXR content is extended range linear gamma and care must be exercised when
+ *  converting to other formats, especially traditional unorm based formats to avoid losing
+ *  highlights. Please see vImageConvert_AnyToAny() or MPSImageConversion.
  *
- *  Feature requests and bug reports may be made through to the ImageIO Radar component.
+ *  Feature requests and bug reports may be made through to the AppleEXR Radar component.
  *  See https://feedbackassistant.apple.com.
  *
  *  Overview of interfaces:
@@ -101,8 +101,9 @@
  *
  *  Conceptual organization of files:
  *      The hierarchy of subdivision of a EXR file, is as follows:  EXR file > part > layer > channel > level
- *      At each level, there is a many to one relationship with the level before it. Each file may have many parts. Each
- *      part may have many layers. Each layer may have many channels, etc. A rough description of what each is follows:
+ *      At each subdivision, there is a many to one relationship with the subdivision above it. Each file may
+ *      have many parts. Each part may have many layers. Each layer may have many channels, etc. A rough
+ *      description of what each is follows:
  *
  *          EXR file:   A serialized file container that starts with little endian int32_t 20000630
  *          part:       A set of layers with shared metadata like a unified set of coordinates, color space,
@@ -175,6 +176,7 @@
 #define AppleEXR_h  1
 
 #include <os/object.h>
+#include <math.h>
 #include <stdint.h>
 #include <unistd.h>
 #include <stdbool.h>
@@ -225,11 +227,15 @@
 #   define AXR_ENUM_AVAILABILITY_v1
 #   define AXR_AVAILABILITY_v2
 #   define AXR_ENUM_AVAILABILITY_v2
+#   define AXR_AVAILABILITY_v3
+#   define AXR_ENUM_AVAILABILITY_v3
 #else
 #   define AXR_AVAILABILITY_v1          __API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), watchos(7.0))
 #   define AXR_ENUM_AVAILABILITY_v1     __API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), watchos(7.0))
 #   define AXR_AVAILABILITY_v2          __API_AVAILABLE(macos(12.3),  ios(15.3), tvos(15.3), watchos(8.3))
 #   define AXR_ENUM_AVAILABILITY_v2     __API_AVAILABLE(macos(12.3),  ios(15.3), tvos(15.3), watchos(8.3))
+#   define AXR_AVAILABILITY_v3          __API_AVAILABLE(macos(13.0),  ios(16.1), tvos(16.1), watchos(9.1))
+#   define AXR_ENUM_AVAILABILITY_v3     __API_AVAILABLE(macos(13.0),  ios(16.1), tvos(16.1), watchos(9.1))
 #endif
 
     
@@ -248,7 +254,7 @@ uint32_t  axr_get_version(void)  AXR_AVAILABILITY_v1;
  *  @constant   axr_error_invalid_parameter              One of the parameters was incorrect.
  *                                             Try axr_flags_print_debug_info for more information
  *  @constant   axr_error_unknown_file_type             This is not a recognized OpenEXR file variant
- *  @constant   axr_error_unsupported_EXR_type     This OpenEXR file variant is not supported
+ *  @constant   axr_error_unsupported_EXR_type     This OpenEXR file variant is not supported, or for serialized data, file too new
  *  @constant   axr_error_data_truncated                   The file is smaller than it should be.
  *  @constant   axr_error_insufficient_memory           Malloc failure
  *  @constant   axr_error_data_corrupted                   Data within the file is internally inconsistent, or illegal values found
@@ -562,6 +568,9 @@ OS_ENUM( axr_channel_type, uint32_t,
     axr_channel_type_distance               AXR_ENUM_AVAILABILITY_v1,      /// Distance of the front of a sample from the viewer.
     axr_channel_type_distance_back          AXR_ENUM_AVAILABILITY_v1,      /// Distance of the back of a sample from the viewer.
     axr_channel_type_id                     AXR_ENUM_AVAILABILITY_v1,      /// a numerical identifier for an object
+
+    axr_channel_type_u                      AXR_ENUM_AVAILABILITY_v1,      /// U channel, from channel pair
+    axr_channel_type_v                      AXR_ENUM_AVAILABILITY_v1,      /// V channel, from channel pair
 
     /* other values are reserved */
 );
@@ -1241,7 +1250,17 @@ typedef enum  { axr_decoder_info_current = 1 } axr_decoder_info_struct_version_t
 axr_decoder_info_t axr_decoder_get_info( __nonnull axr_decoder_t decoder,
                                          axr_decoder_info_struct_version_t version _AXR_DEFAULT(axr_decoder_info_current))
                                          AXR_AVAILABILITY_v1;
-    
+
+typedef struct
+{
+    axr_size_t          size;                       /// the size of the image
+    size_t              minimumRowBytes;            /// The minimum byte stride from a pixel to a pixel at the same position, one row below.
+    uint32_t            bitsPerChannel;             /// The number of bits per channel. (16 or 32)
+    uint32_t            bitsPerPixel;               /// The number of bits per encoded pixel. If a plane, then equal to bitsPerChannel
+    axr_type_t          type;                       /// The encoding type of the data. Half, float, uint32_t
+}axr_decoder_read_info_t;
+typedef enum  { axr_decoder_read_info_current = 1 } axr_decoder_read_info_struct_version_t;
+
 /*! @function axr_decoder_get_data
  *  @abstract Get the axr_data_t used to create the decoder
  *  @memberof axr_decoder_t */
@@ -1324,6 +1343,15 @@ axr_error_t axr_decoder_read_pixels( __nonnull axr_decoder_t decoder,
                                      unsigned long destinationRowBytes,
                                      axr_flags_t flags _AXR_DEFAULT_FLAGS ) AXR_AVAILABILITY_v1;
     
+/*! @abstract returns the expected size of the data written by axr_decoder_read_pixels
+ *  @discussion This is intended to simplify allocation and handling of the result buffer
+ *  @param          decoder     The decoder your application intends to use with axr_decoder_read_pixels
+ *  @param          flags           The flags your application intends to use with axr_decoder_read_pixels
+ *  @result         The size, shape and encoding of the content written by axr_decoder_read_pixels */
+axr_decoder_read_info_t axr_decoder_get_read_pixels_info( __nonnull axr_decoder_t decoder,
+                                                          axr_flags_t flags _AXR_DEFAULT_FLAGS,
+                                                          axr_decoder_read_info_struct_version_t version _AXR_DEFAULT(axr_decoder_read_info_current))    AXR_AVAILABILITY_v3;
+    
 
 /*! @abstract  Read the channels described by the decoder as RGBA content
  *  @discussion  Behavior varies according to available channels:
@@ -1355,9 +1383,21 @@ axr_error_t axr_decoder_read_pixels( __nonnull axr_decoder_t decoder,
 axr_error_t axr_decoder_read_rgba_pixels(__nonnull axr_decoder_t decoder,
                                          void * __nonnull destination,
                                          unsigned long destinationRowBytes,
-                                         double alphaVal,
+                                         double alphaVal _AXR_DEFAULT(1.0),
                                          axr_flags_t flags _AXR_DEFAULT_FLAGS ) AXR_AVAILABILITY_v1;
 
+/*! @abstract returns the expected size of the data written by axr_decoder_read_rgba_pixels
+ *  @discussion This is intended to simplify allocation and handling of the result buffer
+ *  @param          decoder     The decoder your application intends to use with axr_decoder_read_rgba_pixels
+ *  @param          alphaVal     The alpha value to be passed into axr_decoder_read_rgba_pixels
+ *  @param          flags           The flags your application intends to use with axr_decoder_read_rgba_pixels
+ *  @result         The size, shape and encoding of the content written by axr_decoder_read_rgba_pixels */
+axr_decoder_read_info_t axr_decoder_get_read_rgba_pixels_info( __nonnull axr_decoder_t decoder,
+                                                               double alphaVal _AXR_DEFAULT(1.0),
+                                                               axr_flags_t flags _AXR_DEFAULT_FLAGS,
+                                                               axr_decoder_read_info_struct_version_t version _AXR_DEFAULT(axr_decoder_read_info_current)) AXR_AVAILABILITY_v3;
+
+    
 /*! @struct axr_pixel_data_t
  *  @abstract A structure that describes each plane written to by axr_decoder_read_planes */
 typedef struct axr_pixel_data_t
@@ -1435,6 +1475,18 @@ axr_error_t axr_decoder_read_planes( __nonnull axr_decoder_t decoder,
                                      axr_flags_t flags _AXR_DEFAULT_FLAGS,
                                      axr_pixel_data_struct_version_t structVersion _AXR_DEFAULT(axr_pixel_data_current) ) AXR_AVAILABILITY_v1;
 
+/*! @abstract returns the expected size of the data written by axr_decoder_read_planes
+ *  @discussion This is intended to simplify allocation and handling of the result buffer
+ *  @param          decoder     The decoder your application intends to use with axr_decoder_read_planes
+ *  @param          planeIndex     The alpha value to be passed into axr_decoder_read_planes
+ *  @param          flags           The flags your application intends to use with axr_decoder_read_planes
+ *  @result         The size, shape and encoding of the content written by axr_decoder_read_planes */
+axr_decoder_read_info_t axr_decoder_get_read_planes_info( __nonnull axr_decoder_t decoder,
+                                                          unsigned long planeIndex,
+                                                          axr_flags_t flags _AXR_DEFAULT_FLAGS,
+                                                          axr_decoder_read_info_struct_version_t version _AXR_DEFAULT(axr_decoder_read_info_current))    AXR_AVAILABILITY_v3;
+
+    
 /*! @function axr_decoder_create_colorspace
  *  @abstract Create a CGColorSpaceRef to represent the EXR image
  *  @discussion Use this to create a CGColorSpaceRef suitable for use to represent the data with CoreGraphics
@@ -1814,6 +1866,200 @@ axr_error_t axr_encoder_compress( __nonnull axr_encoder_t encoder,
                                   __nullable axr_encoder_seek_proc_t seekProc,
                                   __nullable axr_encoder_storage_destroy_proc_t destroyProc,
                                   axr_flags_t flags ) AXR_AVAILABILITY_v1;
+    
+#pragma mark -
+    
+    /*!
+     *  @class      axr_logical_image_list_t
+     *  A representation of channel groupings into images in a axr_data_t
+     *  The axr_logical_images_t defines an interface for an opaque object that can
+     *  automatically associate EXR channels together into logical images, according
+     *  to known EXR naming conventions.  Note: this method preferentially attempts to
+     *  decode images belonging to tristimulus colorspaces such as RGB, XYZ, YCbCr
+     *  and as a fallback grayscale.  There are other methods of associating channels
+     *  such as that described in Fichet, Pacanowski, Wilkie, J. Computer Graphics
+     *  Techniques 10(3), 2021, for spectral images which are not intended to be supported
+     *  by this convenience method. Channels that do not conform to a CGColorSpaceModel
+     *  will be reported as false color monochrome images, tagged as kCGColorSpaceModelUnknown.
+     *  The kCGColorSpaceExtendedLinearGray colorspace is appropriate for these, though
+     *  in some cases the content may well exceed the gamut that typically appears on screan,
+     *  leading to oversaturated or very dark false color images.
+     *
+     *  This is a subclass of os_object_t and supports Automatic Reference Counting (ARC).
+     *  If this feature is not enabled in your build, you must use os_retain() and os_release()
+     *  explicitly to avoid leaking memory.
+     *
+     *  Note: The naming attached to logical images is intended to be human readable.
+     *  A variety of fallback mechanisms are at play to try to make sure images have
+     *  names, even when the name is missing or the EXR channel naming conventions
+     *  (where the names come from) specifically prescribe the omission of image names
+     *  for default images.  Because of the heterogeneity of methods used, it may be difficult
+     *  to reliably interpret the names presented in a way that makes sense to straight-forward
+     *  code in a programming language.  For machine use, the names attached to axr_channel_info_t,
+     *  may be somewhat more regular.  There will also remain cases in which the logical image
+     *  has no name. In such cases, the name might be inferred fro the view name (if only
+     *  image in the view) , the colorspace or the file name. EXR docs specifically disrecommend
+     *  trying to infer the name from the file name, but there are times when provenance is
+     *  paramount..
+     *
+     *  Conforms to NSSecureCoding, -isEqual, -debugDescription -description.
+     *  The object is immutable once created and is thread safe. */
+    #if OS_OBJECT_USE_OBJC && ! defined(DOXYGEN)
+        OS_OBJECT_DECL(axr_logical_image_list);
+    #else
+        typedef struct axr_logical_image_list *  axr_logical_image_list_t;
+    #endif
+    
+    /*! @abstract Create a logical image list from a axr_data container */
+    __nonnull axr_logical_image_list_t axr_data_create_logical_image_list( __nonnull axr_data_t data) AXR_AVAILABILITY_v3;
+    
+    /*! @abstract Get the number of images in a logical image list */
+    unsigned long axr_logical_image_list_get_view_count( __nullable axr_logical_image_list_t list ) AXR_AVAILABILITY_v3;
+
+    /*! @abstract Get the index of the default view
+     *  @return  The index of the default view, or -1 if there are no images */
+    long axr_logical_image_list_get_default_view_index( __nullable axr_logical_image_list_t list ) AXR_AVAILABILITY_v3;
+
+    /*! @abstract Get the name of the view
+     *  @return   A NUL terminated C string. The default view is likely to be called "".  "left" and "right" are common.
+     *            The storage for the string is owned by the logical image list and will be destroyed when it is freed. */
+    const char * __nonnull axr_logical_image_list_get_view_name( __nullable axr_logical_image_list_t list,
+                                                                 unsigned long viewIndex ) AXR_RETURNS_INNER_POINTER AXR_AVAILABILITY_v3;
+    
+    
+    /*! @abstract Get the number of images in a logical image view
+     *  @param list                 The logical image list to use
+     *  @param viewIndex       The index of the view. See axr_logical_image_list_get_view_count/name, axr_logical_image_list_get_default_view_index
+     *  @return  The number of images in the view */
+    unsigned long axr_logical_image_list_get_image_count( __nullable axr_logical_image_list_t list,
+                                                          unsigned long viewIndex ) AXR_AVAILABILITY_v3;
+
+    /*! @abstract Get the index of the default image
+     *  @param list                  The logical image list to use
+     *  @param viewIndex       The index of the view. See axr_logical_image_list_get_view_count/name, axr_logical_image_list_get_default_view_index
+     *  @return  The index of the default image in the view */
+    unsigned long axr_logical_image_list_get_default_image_index( __nullable axr_logical_image_list_t list,
+                                                                  unsigned long viewIndex ) AXR_AVAILABILITY_v3;
+
+    /*! @abstract Get the human readable name of the logical image (not localized)
+     *  @discussion  The name of an image may commonly be "" for the default image. In such cases,
+     *               the layer, channel, part name or view attribute may be substituted if appropriate,
+     *               though "" is still a possible result. For deeply hierarchical files, there may be multiple
+     *               names as name1.name2.name3...  that may imply some higher level of organization
+     *               between images. (OpenEXR allows unlimited freedom here making this task challenging.
+     *               The raw name for each channel is given by the axr channel info as amended by part attributes.
+     *  @param list                  The logical image list to use
+     *  @param viewIndex       The index of the view. See axr_logical_image_list_get_view_count/name, axr_logical_image_list_get_default_view_index
+     *  @param imageIndex     The index of the image within the view to use
+     *  @return   A NUL terminated C string. The default image is likely to be called "".
+     *            The storage for the string is owned by the logical image list and will be destroyed when it is freed. */
+    const char * __nonnull axr_logical_image_list_get_image_name( __nullable axr_logical_image_list_t list,
+                                                                  unsigned long viewIndex,
+                                                                  unsigned long imageIndex ) AXR_RETURNS_INNER_POINTER AXR_AVAILABILITY_v3;
+
+    /*! @abstract Commonly used information about logical images
+     *  @discussion The lion's share of the metadata for a image may be
+     *              contained in the attributes for the part that contains the image.
+     *              There may for example be a rgba image preview, timestamp information,
+     *              geolocation data, etc.
+     *  @seealso  axr_data_get_part_info and axr_data_get_property */
+    typedef struct axr_logical_image_info_t
+    {
+        uint64_t               channelMask;             /// A mask of channel types present:  (1ULL << axr_channel_type_t)
+        axr_size_t             size;                    /// The size of the image data window. Note: actual size of some channels may be smaller due to chroma subsampling. 
+        axr_type_t             type;                    /// The data type for the image
+        uint32_t               partIndex;               /// The index of the EXR part that the image belongs to. See also axr_data_get_part_info
+        uint32_t               layerIndex;              /// The index of the layer in the part.
+        int32_t                cgColorSpaceModel;       /// The CGColorSpaceModel
+        uint32_t               xChromaSampling;         /// The sampling rate in horizontal dimension for CbCr channels. 0 if no CbCr. Subsampled width is (size.width + xChromaSampling - 1) / xChromaSampling
+        uint32_t               yChromaSampling;         /// The sampling rate in vertical dimension for CbCr channels.  0 if no CbCr. Subsampled height is (size.height + yChromaSampling - 1) / yChromaSampling
+        uint32_t               channelCount;            /// number of channels encoded in the file for image
+        uint32_t               channels[4];             /// Channel indices. Channels are in color model order (or YCbCr) or alphabetical if no color model. Alpha, if any, is last.
+    }axr_logical_image_info_t;
+    typedef enum  { axr_logical_image_info_current = 1 } axr_logical_image_info_struct_version_t;
+
+    /*! @abstract Get information about a logical image
+     *  @param list               The logical image list from which to get info
+     *  @param viewIndex    The index of the view containing the logical image.
+     *  @param imageIndex  The index of the image within the view.
+     *  @param version         Pass  axr_logical_image_info_current here if required.
+     *  @return A axr_logical_image_info_t for the image. */
+    axr_logical_image_info_t axr_logical_image_list_get_image_info( __nullable axr_logical_image_list_t list,
+                                                                    unsigned long viewIndex,
+                                                                    unsigned long imageIndex,
+                                                                    axr_logical_image_info_struct_version_t version _AXR_DEFAULT(axr_logical_image_info_current) ) AXR_AVAILABILITY_v3;
+
+
+    /*! @abstract Convenience method to make a decoder for a  logical image
+     *  @seealso  To make one by hand see axr logical image list get image info
+     *  @discussion  This is a convenience function intended to produce interleaved
+     *               data for use with common image formats and color spaces.
+     *               Behavior is as follows:
+     *
+     *               image channelCount           alpha         Behavior
+     *               ===================================
+     *                      0                           any            There should be no axr_logical_image_list_t image like this. File a bug.
+     *                      1                           NaN          1 channel decoder
+     *                      1                         numeric       2 channel decoder with constant alpha, first or last
+     *                      2                           NaN           2 channel decoder
+     *                      2                          numeric      4 channel decoder, a false color rgba image as either Arg0 or rg0A with constant alpha and constant blue channel with value 0
+     *                      3                           NaN           3 channel decoder      (CAUTION: not supported by axr_decoder_read_pixels)
+     *                      3                           numeric     4 channel decoder, with constant alpha, first or last
+     *                      4                            NaN          4 channel decoder
+     *                      4                           numeric     4 channel decoder, attempt to append constant alpha ignored
+     *                      >4                          any          There should be no axr_logical_image_list_t image like this. File a bug.
+     *
+     *                This function does not well support some downsampled output cases like 422 or 420 split biplanar YCbCr.
+     *                In such cases, your application should make its own decoders using the channel indices in the
+     *                 axr_logical_image_info_t.channels_ field.
+     *
+     *  @param  list    The image list to draw from
+     *  @param  viewIndex The index of the view
+     *  @param  imageIndex The index of the image in the view
+     *  @param  flags            AXR flags to use when creating the decoder
+     *  @param  alpha           The value [0,1] to use for any extra constant value alpha channels. Pass NAN for no additional alpha channel.
+     *  @param  isAlphaFirst     if a  constant value alpha channel is added and this is true, it will appear before the color channels
+     *                        If it is false, the constant value alpha channel (if any) is added after the color channels
+     *  @return A valid axr_decoder_t if the call succeeded. NULL otherwise. */
+    __nullable axr_decoder_t axr_logical_image_list_create_decoder( __nullable axr_logical_image_list_t list,
+                                                                   __nonnull axr_data_t data,
+                                                                   unsigned long viewIndex,
+                                                                   unsigned long imageIndex,
+                                                                   double alpha _AXR_DEFAULT(NAN),
+                                                                   bool isAlphaFirst _AXR_DEFAULT(false),
+                                                                   unsigned long levelIndex _AXR_DEFAULT(0),
+                                                                   axr_flags_t   flags _AXR_DEFAULT_FLAGS) AXR_AVAILABILITY_v3;
+    
+    
+    /*! @abstract return true if two logical image lists are equal
+     *  @discuassion if one or both are NULL, the result is false
+     *  @param list     The first logical image list
+     *  @param list2    The second logical image list
+     *  @return true if the logical images are equal and neither is NULL */
+    bool axr_logical_image_list_is_equal( __nullable axr_logical_image_list_t list,
+                                     __nullable axr_logical_image_list_t list2) AXR_AVAILABILITY_v3;
+    
+    /*! @abstract return the size of a serialized image list in bytes */
+    size_t axr_logical_image_list_get_serialized_size( __nullable axr_logical_image_list_t list ) AXR_AVAILABILITY_v3;
+     
+    /*! @abstract Serialize a logical image list
+     *  @param list     The axr_logical_image_list_t
+     *  @param where    A buffer to write to of at least the size returned by axr_logical_image_get_serialized_size */
+    size_t axr_logical_image_list_serialize( __nullable axr_logical_image_list_t list,
+                                             void * __nonnull where,
+                                             size_t size) AXR_AVAILABILITY_v3;
+    
+    /*! @abstract Deserialize a logical image size
+     *  @param where    A pointer to a pointer to  bytes to read to deserialize the object. On return points to the first byte unread.
+     *  @param size      A pointer to the size of the maximum bytes to read (can be file size). On return points to the size remaining.
+     *  @param flags   flags for controlling output when deserializing
+     *  @outErr             If not NULL, a error code will be written here to indicate success or failure
+     *  @return         A valid axr_logical_image_list on success, otherwise NULL */
+    __nullable axr_logical_image_list_t axr_logical_image_list_deserialize( const void * __nonnull * __nonnull where,
+                                                                       size_t * __nonnull size,
+                                                                       axr_error_t * __nullable outErr,
+                                                                       axr_flags_t flags _AXR_DEFAULT_FLAGS ) AXR_AVAILABILITY_v3;
+    
     
 #if defined __cplusplus
     }

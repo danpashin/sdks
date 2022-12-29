@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
-current-version:       502.13.160
+current-version:       512.0.170
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -48,6 +48,7 @@ exports:
                             _PHACurareShadowEvaluationModelPathKey,
                             _PHACurareShadowEvaluationRecipeDecoderDomain,
                             _PHACurareShadowEvaluationRunnerDomain,
+                            _PHACurareShadowEvaluationSimulateExternalDeviceKey,
                             _PHADatasetBuilderAssetInternalPropertiesFilterKeyword,
                             _PHADatasetBuilderAssetPropertiesFilterKeyword,
                             _PHADatasetBuilderDefaultOversamplingRate,
@@ -256,6 +257,8 @@ exports:
                             _PHASuggestionControllerDefaultNumberOfSingleAssetSuggestionsPerRequest,
                             _PHASuggestionControllerDefaultNumberOfSuggestionsForWidgetPerRequest,
                             _PHATaskDailyPeriodValue, _PHATaskIgnorePeriodValue,
+                            _PHAWallpaperSuggestionShuffleMaxPerson,
+                            _PHAWallpaperSuggestionShuffleMinimumSuggestionRequired,
                             _PHAWorkerNameFromType,
                             _PhotoAnalysisDailyFeatureKey,
                             _PhotoAnalysisEnabledKey,
@@ -433,6 +436,7 @@ exports:
                             PHATaskConverter, PHATaskHealthRecorder,
                             PHATaskWorkerJob, PHAUserBehaviorEnrichmentTask,
                             PHAUserFeedbackUpdater,
+                            PHAWallpaperShuffleDescriptorGenerator,
                             PHAWallpaperSuggestionAnalyticsSender,
                             PHAWallpaperSuggestionGenerationNightlyTask,
                             PHAWallpaperSuggestionGenerationWeeklyTask,
@@ -441,7 +445,8 @@ exports:
                             PHAWorkerHealthMonitor, PHAWorkerHealthScoreEntry,
                             PHAWorkerJob, PHAWorkerWarmer, PVExportHelper,
                             PVLibraryGraph, PVLibraryGraphEdge, PVLibraryGraphNode,
-                            PVLibraryGraphSpecification ]
+                            PVLibraryGraphSpecification,
+                            _PHAWallpaperSuggestionCount ]
     objc-ivars:           [ PHAMediaAnalysisdTurboJob._complete,
                             PHAMediaAnalysisdTurboJob._library,
                             PHAMediaAnalysisdTurboJob._lock,

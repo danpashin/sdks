@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64e-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name AppIntents
-// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 123.6
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name AppIntents
+// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 130.5
 @_exported import AppIntents
 import CoreGraphics
 import CoreLocation
@@ -386,6 +386,12 @@ public protocol DeleteIntent : AppIntents.SystemIntent {
   associatedtype Entity : AppIntents.AppEntity
   var entities: [Self.Entity] { get }
 }
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
+public protocol LiveActivityStartingIntent : AppIntents.SystemIntent {
+}
 @_hasMissingDesignatedInitializers @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 @propertyWrapper final public class IntentParameter<Value> : @unchecked Swift.Sendable where Value : AppIntents._IntentValue, Value : Swift.Sendable {
   final public let defaultValue: Value.UnwrappedType?
@@ -612,6 +618,10 @@ public struct ParameterSummaryWhenCondition<Intent, WhenCondition, Otherwise> : 
   public init<Parameter>(_ keyPath: Swift.KeyPath<Intent, Parameter>, identifier comparisonOperator: AppIntents.EquatableComparisonOperator, _ value: Parameter.Value.ValueType.ID, @AppIntents.ParameterSummaryBuilder<Intent> _ when: () -> WhenCondition, @AppIntents.ParameterSummaryBuilder<Intent> otherwise: () -> Otherwise) where Parameter : AppIntents.AnyIntentValue, Parameter.Value.ValueType : AppIntents.AppEntity, Parameter.Value.ValueType.ID == Swift.Int
   public init<IntentType, Parameter>(_ keyPath: Swift.KeyPath<IntentType, Parameter>, identifier comparisonOperator: AppIntents.StringComparisonOperator, _ value: Swift.String, @AppIntents.ParameterSummaryBuilder<Intent> _ when: () -> WhenCondition, @AppIntents.ParameterSummaryBuilder<Intent> otherwise: () -> Otherwise) where IntentType : AppIntents.AppIntent, Parameter : AppIntents.AnyIntentValue, Parameter.Value.ValueType : AppIntents.AppEntity
   public init<IntentType, Parameter>(_ keyPath: Swift.KeyPath<IntentType, Parameter>, identifier comparisonOperator: AppIntents.ComparableComparisonOperator, _ value: Parameter.Value.ValueType.ID, @AppIntents.ParameterSummaryBuilder<Intent> _ when: () -> WhenCondition, @AppIntents.ParameterSummaryBuilder<Intent> otherwise: () -> Otherwise) where IntentType : AppIntents.AppIntent, Parameter : AppIntents.AnyIntentValue, Parameter.Value.ValueType : AppIntents.AppEntity, Parameter.Value.ValueType.ID == Swift.Int
+  @available(macOS 13.0, iOS 16.1, watchOS 9.1, tvOS 16.1, *)
+  public init<Parameter>(_ keyPath: Swift.KeyPath<Intent, Parameter>, identifier comparisonOperator: AppIntents.StringComparisonOperator, _ value: Swift.String, @AppIntents.ParameterSummaryBuilder<Intent> _ when: () -> WhenCondition, @AppIntents.ParameterSummaryBuilder<Intent> otherwise: () -> Otherwise) where Parameter : AppIntents.AnyIntentValue, Parameter.Value.ValueType : AppIntents.AppEntity
+  @available(macOS 13.0, iOS 16.1, watchOS 9.1, tvOS 16.1, *)
+  public init<Parameter>(_ keyPath: Swift.KeyPath<Intent, Parameter>, identifier comparisonOperator: AppIntents.ComparableComparisonOperator, _ value: Parameter.Value.ValueType.ID, @AppIntents.ParameterSummaryBuilder<Intent> _ when: () -> WhenCondition, @AppIntents.ParameterSummaryBuilder<Intent> otherwise: () -> Otherwise) where Parameter : AppIntents.AnyIntentValue, Parameter.Value.ValueType : AppIntents.AppEntity, Parameter.Value.ValueType.ID == Swift.Int
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 public enum HasValueComparisonOperator {
@@ -1612,6 +1622,18 @@ public struct FocusFilterAppContext {
 public struct FocusFilterSuggestionContext {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+public struct IntentSystemContext {
+  public var preciseTimestamp: Foundation.Date? {
+    get
+  }
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension AppIntents.AppIntent {
+  public var systemContext: AppIntents.IntentSystemContext {
+    get
+  }
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 public protocol StartWorkoutIntent : AppIntents.InstanceDisplayRepresentable, AppIntents.SystemIntent {
   associatedtype WorkoutStyle : AppIntents.AppValue
   var workoutStyle: Self.WorkoutStyle { get set }
@@ -1964,6 +1986,8 @@ public struct StringFromDoubleResolver : AppIntents.Resolver {
 extension Swift.String {
   public struct IntentInputOptions {
     public enum KeyboardType {
+      @available(macOS 13.0, iOS 16.1, watchOS 9.1, tvOS 16.1, *)
+      case `default`
       case asciiCapable
       case numbersAndPunctuation
       case URL

@@ -350,6 +350,13 @@ API_AVAILABLE(macos(10.2), ios(2.0), watchos(2.0), tvos(9.0))
  */
 @property (readonly) NSURLRequestAttribution attribution API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
 
+/*!
+ @abstract sets whether a request is required to do DNSSEC validation during DNS lookup.
+ @discussion YES, if the DNS lookup for this request should require DNSSEC validation,
+ No otherwise. Defaults to NO.
+ */
+@property (readonly) BOOL requiresDNSSECValidation API_AVAILABLE(macos(13.0), ios(16.1), watchos(9.1), tvos(16.1));
+
 @end
 
 
@@ -463,18 +470,18 @@ API_AVAILABLE(macos(10.2), ios(2.0), watchos(2.0), tvos(9.0))
 @property BOOL assumesHTTP3Capable API_AVAILABLE(macos(11.3), ios(14.5), watchos(7.4), tvos(14.5));
 
 /*!
- @abstract sets whether a request is required to do DNSSEC validation during DNS lookup.
- @discussion YES, if the DNS lookup for this request should require DNSSEC validation,
- No otherwise. Defaults to NO.
- */
-@property BOOL requiresDNSSECValidation API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
-
-/*!
  @abstract Sets the NSURLRequestAttribution to associate with this request.
  @discussion Set to NSURLRequestAttributionUser if the URL was specified by the
  user. Defaults to NSURLRequestAttributionDeveloper.
  */
 @property NSURLRequestAttribution attribution API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0));
+
+/*!
+ @abstract sets whether a request is required to do DNSSEC validation during DNS lookup.
+ @discussion YES, if the DNS lookup for this request should require DNSSEC validation,
+ No otherwise. Defaults to NO.
+ */
+@property BOOL requiresDNSSECValidation API_AVAILABLE(macos(13.0), ios(16.1), watchos(9.1), tvos(16.1));
 
 @end
 

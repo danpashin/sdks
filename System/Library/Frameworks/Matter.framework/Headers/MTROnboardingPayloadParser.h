@@ -24,14 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, MTROnboardingPayloadType) {
     MTROnboardingPayloadTypeQRCode = 0,
     MTROnboardingPayloadTypeManualCode,
-    MTROnboardingPayloadTypeNFC,
-    MTROnboardingPayloadTypeAdmin,
+    MTROnboardingPayloadTypeNFC
 };
 
 @interface MTROnboardingPayloadParser : NSObject
 
 + (nullable MTRSetupPayload *)setupPayloadForOnboardingPayload:(NSString *)onboardingPayload
-                                                        ofType:(MTROnboardingPayloadType)type
                                                          error:(NSError * __autoreleasing *)error;
 
 @end

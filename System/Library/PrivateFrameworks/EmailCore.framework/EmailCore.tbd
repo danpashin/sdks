@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailCore.framework/EmailCore
-current-version:       3731.0.7
+current-version:       3731.200.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -31,6 +31,7 @@ exports:
                             _ECDKIMMessageHeaderParseErrorDomain,
                             _ECDefaultNumberOfDaysToKeepJunk,
                             _ECDefaultNumberOfDaysToKeepTrash,
+                            _ECEmailAddressAttributedStringKey,
                             _ECEncodingIsASCIISuperset,
                             _ECEndDisallowingNetworkActivity,
                             _ECGetNextHeaderFromData,
@@ -184,11 +185,13 @@ exports:
                             _ECMessagePropertyNumberOfAttachments,
                             _ECMessagePropertySummary,
                             _ECNSStringFromMailboxMailboxType,
-                            _ECNetworkAllowedLog, _ECSASLMechanismAppleToken,
-                            _ECSASLMechanismCramMD5, _ECSASLMechanismDigestMD5,
-                            _ECSASLMechanismExternal, _ECSASLMechanismGSSAPI,
-                            _ECSASLMechanismLogin, _ECSASLMechanismNTLM,
-                            _ECSASLMechanismOAuth2, _ECSASLMechanismPlain,
+                            _ECNetworkAllowedLog,
+                            _ECPrettyDescriptionFromMailboxType,
+                            _ECSASLMechanismAppleToken, _ECSASLMechanismCramMD5,
+                            _ECSASLMechanismDigestMD5, _ECSASLMechanismExternal,
+                            _ECSASLMechanismGSSAPI, _ECSASLMechanismLogin,
+                            _ECSASLMechanismNTLM, _ECSASLMechanismOAuth2,
+                            _ECSASLMechanismPlain,
                             _ECSASLMechanismPlainClientToken,
                             _ECTaggedHeaderParserTagHMEAddress,
                             _ECTaggedHeaderParserTagHMEForwardingAddress,

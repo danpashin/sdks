@@ -7,13 +7,22 @@ uuids:
   - target:          armv7s-ios
     value:           4249F7CC-12B9-3B39-AD74-BB96779CCBEC
   - target:          arm64-ios
-    value:           41D76CB8-E9A5-36C1-800E-6615D1518036
+    value:           2347A9AE-BB46-3CA0-9233-6DBF63218A83
   - target:          arm64e-ios
-    value:           AF979E5A-5349-3250-8AFC-55CACFD772E0
+    value:           8A69AD12-DAE7-389E-9AB5-171A8F31DF26
 install-name:    '/usr/lib/swift/libswiftContacts.dylib'
-current-version: 2
+current-version: 3
 swift-abi-version: 7
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/Contacts.framework/Contacts' ]
 exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ '_$sSC11CNErrorCodeLeV8ContactsE15affectedRecordsSayyXlGSgvg', 
+                       '_$sSC11CNErrorCodeLeV8ContactsE15affectedRecordsSayyXlGSgvpMV', 
+                       '_$sSC11CNErrorCodeLeV8ContactsE25affectedRecordIdentifiersSaySSGSgvg', 
+                       '_$sSC11CNErrorCodeLeV8ContactsE25affectedRecordIdentifiersSaySSGSgvpMV', 
+                       '_$sSC11CNErrorCodeLeV8ContactsE8keyPathsSaySSGSgvg', '_$sSC11CNErrorCodeLeV8ContactsE8keyPathsSaySSGSgvpMV' ]
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftContacts.dylib', '$ld$install_name$os10.1$@rpath/libswiftContacts.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftContacts.dylib', '$ld$install_name$os10.3$@rpath/libswiftContacts.dylib', 
@@ -26,10 +35,5 @@ exports:
                        '$ld$install_name$os8.3$@rpath/libswiftContacts.dylib', '$ld$install_name$os8.4$@rpath/libswiftContacts.dylib', 
                        '$ld$install_name$os9.0$@rpath/libswiftContacts.dylib', '$ld$install_name$os9.1$@rpath/libswiftContacts.dylib', 
                        '$ld$install_name$os9.2$@rpath/libswiftContacts.dylib', '$ld$install_name$os9.3$@rpath/libswiftContacts.dylib', 
-                       '_$sSC11CNErrorCodeLeV8ContactsE15affectedRecordsSayyXlGSgvg', 
-                       '_$sSC11CNErrorCodeLeV8ContactsE15affectedRecordsSayyXlGSgvpMV', 
-                       '_$sSC11CNErrorCodeLeV8ContactsE25affectedRecordIdentifiersSaySSGSgvg', 
-                       '_$sSC11CNErrorCodeLeV8ContactsE25affectedRecordIdentifiersSaySSGSgvpMV', 
-                       '_$sSC11CNErrorCodeLeV8ContactsE8keyPathsSaySSGSgvg', '_$sSC11CNErrorCodeLeV8ContactsE8keyPathsSaySSGSgvpMV', 
                        '__swift_FORCE_LOAD_$_swiftContacts' ]
 ...

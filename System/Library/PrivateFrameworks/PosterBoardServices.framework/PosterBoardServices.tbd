@@ -15,6 +15,14 @@ exports:
                             _PRSLogDataStorePrewarm, _PRSLogDataStoreProactive,
                             _PRSLogObserver, _PRSLogPosterContents,
                             _PRSPosterPathFileAttributes,
+                            _PRSPosterSnapshotRequestOptionFocusUUID,
+                            _PRSPosterSnapshotRequestOptionLegacyConfigurationType,
+                            _PRSPosterSnapshotRequestOptionLegacyImageScaleRelativeToScreen,
+                            _PRSPosterSnapshotRequestOptionLegacyIsFocusModeSnapshotRequest,
+                            _PRSPosterSnapshotRequestOptionLegacyMaxCount,
+                            _PRSPosterSnapshotRequestOptionLegacyVariant,
+                            _PRSPosterSnapshotRequestOptionOptionsEnum,
+                            _PRSPosterSnapshotRequestOptionSnapshotDefinitionIdentifier,
                             _PRSPosterTypeFromDirectoryName,
                             _PRSPosterTypeIsValid, _PRSServerAccessEntitlement,
                             _PRSServerAccessSwitcherConfigurationEntitlement,
@@ -53,10 +61,13 @@ exports:
                             ___allIdentitiesLock, ___allPathsLock,
                             ___cachedServerPathsByIdentityByURLLock,
                             _configurationsForPath, _descriptorsForPath,
+                            _kPRSPosterSnapshotRequestDefaultImageScaleRelativeToScreen,
                             _kPRSWallpaperConnectionContext_explanation,
                             _kPRSWallpaperConnectionContext_needsSandboxExtensions,
-                            _kPRSWallpaperConnectionContext_observedLocations ]
+                            _kPRSWallpaperConnectionContext_observedLocations,
+                            _kPRSWallpaperConnectionContext_snapshotObservation ]
     objc-classes:         [ PRSActivePosterConfiguration,
+                            PRSFocusPosterSnapshotRequest,
                             PRSMutablePosterConfiguration,
                             PRSMutablePosterDescriptor, PRSPosterConfiguration,
                             PRSPosterDescriptor, PRSPosterGalleryLayoutDataStore,
@@ -65,12 +76,16 @@ exports:
                             PRSPosterSnapshotRequest, PRSPosterSnapshotResponse,
                             PRSPosterUpdateSessionInfo, PRSServer,
                             PRSServerPosterIdentity, PRSServerPosterPath,
-                            PRSService, PRSWallpaperClient, PRSWallpaperObserver,
+                            PRSService, PRSWallpaperClient,
+                            PRSWallpaperLocationStateObserver,
+                            PRSWallpaperObserver,
                             PRSWallpaperObserverConfiguration,
                             PRSWallpaperObserverPathUpdate,
+                            PRSWallpaperObserverSnapshotUpdate,
                             PRSWallpaperObserverState,
                             PRSWallpaperObserverTransition,
-                            PRSWallpaperPublisher, PRSWidget ]
+                            PRSWallpaperPublisher, PRSWallpaperSnapshotObserver,
+                            PRSWidget ]
     objc-ivars:           [ PRSPosterPath._contentsURL,
                             PRSPosterPath._serverIdentity ]
 ...

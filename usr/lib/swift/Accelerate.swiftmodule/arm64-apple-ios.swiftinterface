@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAccelerate -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name Accelerate
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 39
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAccelerate -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name Accelerate
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 41
 @_exported import Accelerate
 @_exported import Accelerate.vecLib.BNNS
 import Swift
@@ -5042,8 +5042,8 @@ extension Accelerate.vImage.PixelBuffer where Format : Accelerate.StaticPixelFor
 }
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension Accelerate.vDSP {
-  @inlinable public static func dot<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Float where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float {
-        
+  @_silgen_name("_swift_vDSP_dotpr")
+  @_alwaysEmitIntoClient public static func dot<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Float where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float {
         precondition(vectorA.count == vectorB.count)
         
         let n = vDSP_Length(vectorA.count)
@@ -5061,8 +5061,8 @@ extension Accelerate.vDSP {
         
         return result
     }
-  @inlinable public static func dot<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Double where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double {
-        
+  @_silgen_name("_swift_vDSP_dotprD")
+  @_alwaysEmitIntoClient public static func dot<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Double where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double {
         precondition(vectorA.count == vectorB.count)
         
         let n = vDSP_Length(vectorA.count)
@@ -5080,6 +5080,16 @@ extension Accelerate.vDSP {
         
         return result
     }
+  @available(*, unavailable)
+  public static func dot<T>(_ vectorA: T, _ vectorB: T) -> Swift.Float where T : Accelerate.AccelerateBuffer, T.Element == Swift.Float
+  @available(*, unavailable)
+  public static func dot<T>(_ vectorA: T, _ vectorB: T) -> Swift.Double where T : Accelerate.AccelerateBuffer, T.Element == Swift.Double
+  @available(*, unavailable)
+  @_silgen_name("$s10Accelerate4vDSPO3dotySfx_q_tAA0A6BufferRzAaER_Sf7ElementRtzSfAFRt_r0_lFZ")
+  public static func dot_legacySupport<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Float where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(*, unavailable)
+  @_silgen_name("$s10Accelerate4vDSPO3dotySdx_q_tAA0A6BufferRzAaER_Sd7ElementRtzSdAFRt_r0_lFZ")
+  public static func dot_legacySupport<T, U>(_ vectorA: T, _ vectorB: U) -> Swift.Double where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
   @inlinable public static func hypot<U, V>(_ x: U, _ y: V) -> [Swift.Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateBuffer, U.Element == Swift.Float, V.Element == Swift.Float {
             
             precondition(x.count == y.count)

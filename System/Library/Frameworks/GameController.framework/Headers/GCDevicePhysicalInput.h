@@ -45,7 +45,7 @@ API_AVAILABLE(macos(13.0), ios(16.0), tvos(16.0))
  @param element
  The element that has been modified.
  */
-@property (copy, nullable) void (^elementValueDidChangeHandler)(__kindof id<GCPhysicalInputElement> element);
+@property (copy, nullable) void (^elementValueDidChangeHandler)(__kindof id<GCDevicePhysicalInput> physicalInput, __kindof id<GCPhysicalInputElement> element);
 
 /**
  Polls the current state vector of the physical input and saves it to a new
@@ -67,7 +67,7 @@ API_AVAILABLE(macos(13.0), ios(16.0), tvos(16.0))
  drain the pending input states from the queue.
  
     physicalInput.inputStateQueueDepth = 20;
-    physicalInput.inputStateAvailableHandler = ^{
+    physicalInput.inputStateAvailableHandler = ^(__kindof id<GCDevicePhysicalInput> physicalInput) {
         id<GCDevicePhysicalInputState, GCDevicePhysicalInputStateDiff> nextInputState;
         while ((nextInputState = [physicalInput nextInputState])) {
  
@@ -94,7 +94,7 @@ API_AVAILABLE(macos(13.0), ios(16.0), tvos(16.0))
         }
     };
  */
-@property (copy, nullable) void (^inputStateAvailableHandler)(void);
+@property (copy, nullable) void (^inputStateAvailableHandler)(__kindof id<GCDevicePhysicalInput> physicalInput);
 
 /**
  The maximum number of input states to buffer.  If your application does not

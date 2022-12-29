@@ -55,10 +55,6 @@ API_UNAVAILABLE(ios, watchos, tvos)
 /// Called when the view controller will stop hosting the remote user interface. This can occur when the extension exits or when the view controller's `configuration` property is changed.
 -(void)hostViewControllerWillDeactivate:(EXHostViewController*)viewController error:(nullable NSError *)error;
 
-
-/// Called when the extension attempts to establish and XPC connection back to the host
--(BOOL)shouldAcceptXPCConnection:(NSXPCConnection*)connection;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,20 +1,16 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64e-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WidgetKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 281.1.9
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WidgetKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 281.30
+import ActivityKit
 import Combine
-import CoreGraphics
 import Foundation
 import Intents
 import Swift
 import SwiftUI
-import UIKit
-import UniformTypeIdentifiers
 @_exported import WidgetKit
 import _Concurrency
 import _StringProcessing
-import os.log
-import os
 @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
 @available(tvOS, unavailable)
 public struct TimelineEntryRelevance : Swift.Codable, Swift.Hashable {
@@ -89,6 +85,93 @@ extension SwiftUI.EnvironmentValues {
     get
   }
 }
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityViewContext<Attributes> where Attributes : ActivityKit.ActivityAttributes {
+  public let activityID: Swift.String
+  public let attributes: Attributes
+  public let state: Attributes.ContentState
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandMode : Swift.Equatable {
+  public static let expanded: WidgetKit.DynamicIslandMode
+  public static let compactLeading: WidgetKit.DynamicIslandMode
+  public static let compactTrailing: WidgetKit.DynamicIslandMode
+  public static let minimal: WidgetKit.DynamicIslandMode
+  public static func == (a: WidgetKit.DynamicIslandMode, b: WidgetKit.DynamicIslandMode) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIsland {
+  public init<Expanded, CompactLeading, CompactTrailing, Minimal>(@WidgetKit.DynamicIslandExpandedContentBuilder expanded: @escaping () -> WidgetKit.DynamicIslandExpandedContent<Expanded>, @SwiftUI.ViewBuilder compactLeading: @escaping () -> CompactLeading, @SwiftUI.ViewBuilder compactTrailing: @escaping () -> CompactTrailing, @SwiftUI.ViewBuilder minimal: @escaping () -> Minimal) where Expanded : SwiftUI.View, CompactLeading : SwiftUI.View, CompactTrailing : SwiftUI.View, Minimal : SwiftUI.View
+  public func widgetURL(_ url: Foundation.URL?) -> WidgetKit.DynamicIsland
+  public func keylineTint(_ color: SwiftUI.Color?) -> WidgetKit.DynamicIsland
+}
+extension WidgetKit.DynamicIsland {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func contentMargins(_ edges: SwiftUI.Edge.Set = .all, _ length: Swift.Double, for mode: WidgetKit.DynamicIslandMode) -> WidgetKit.DynamicIsland
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct ActivityConfiguration<Attributes> : SwiftUI.WidgetConfiguration where Attributes : ActivityKit.ActivityAttributes {
+  public init<Content>(for attributesType: Attributes.Type, @SwiftUI.ViewBuilder content: @escaping (WidgetKit.ActivityViewContext<Attributes>) -> Content, dynamicIsland: @escaping (WidgetKit.ActivityViewContext<Attributes>) -> WidgetKit.DynamicIsland) where Content : SwiftUI.View
+  public var body: some SwiftUI.WidgetConfiguration {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit21ActivityConfigurationV4bodyQrvp", 0) __<Attributes>
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedContent<Content> where Content : SwiftUI.View {
+  @usableFromInline
+  internal var content: Content
+  @usableFromInline
+  internal init(@SwiftUI.ViewBuilder content: () -> Content)
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@_functionBuilder public struct DynamicIslandExpandedContentBuilder {
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C>(first: WidgetKit.DynamicIslandExpandedRegion<C>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            first._viewRepresentation
+        }
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C>(first: WidgetKit.DynamicIslandExpandedContent<C>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C : SwiftUI.View {
+        first
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C0, C1>(accumulated: WidgetKit.DynamicIslandExpandedContent<C0>, next: WidgetKit.DynamicIslandExpandedRegion<C1>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C0 : SwiftUI.View, C1 : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            accumulated.content
+            next._viewRepresentation
+        }
+    }
+  
+  @_alwaysEmitIntoClient public static func buildPartialBlock<C0, C1>(accumulated: WidgetKit.DynamicIslandExpandedContent<C0>, next: WidgetKit.DynamicIslandExpandedContent<C1>) -> WidgetKit.DynamicIslandExpandedContent<some SwiftUI.View> where C0 : SwiftUI.View, C1 : SwiftUI.View {
+        DynamicIslandExpandedContent {
+            accumulated.content
+            next.content
+        }
+    }
+  
+}
 @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
 @available(tvOS, unavailable)
 public struct WidgetPreviewContext : SwiftUI.PreviewContext {
@@ -113,6 +196,7 @@ public class WidgetCenter {
   public struct UserInfoKey {
     public static let kind: Swift.String
     public static let family: Swift.String
+    public static let activityID: Swift.String
   }
   @available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
   @available(tvOS, unavailable)
@@ -136,6 +220,68 @@ public struct AccessoryWidgetBackground : SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s9WidgetKit09AccessoryA10BackgroundV4bodyQrvp", 0) __
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegionVerticalPlacement : Swift.Equatable {
+  public static let `default`: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement
+  public static let belowIfTooWide: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement
+  public static func == (a: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement, b: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement) -> Swift.Bool
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegionPosition {
+}
+extension WidgetKit.DynamicIslandExpandedRegionPosition {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let leading: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let trailing: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let center: WidgetKit.DynamicIslandExpandedRegionPosition
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public static let bottom: WidgetKit.DynamicIslandExpandedRegionPosition
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct DynamicIslandExpandedRegion<Content> where Content : SwiftUI.View {
+  public init(_ position: WidgetKit.DynamicIslandExpandedRegionPosition, priority: Swift.Double = 0, @SwiftUI.ViewBuilder content: () -> Content)
+  public var _viewRepresentation: some SwiftUI.View {
+    get
+  }
+}
+extension WidgetKit.DynamicIslandExpandedRegion {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func contentMargins(_ edges: SwiftUI.Edge.Set = .all, _ length: Swift.Double) -> WidgetKit.DynamicIslandExpandedRegion<Content>
+}
+extension SwiftUI.View {
+  @available(iOS 16.1, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public func dynamicIsland(verticalPlacement: WidgetKit.DynamicIslandExpandedRegionVerticalPlacement) -> some SwiftUI.View
+  
 }
 extension SwiftUI.Widget {
   @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
@@ -279,12 +425,28 @@ public struct IntentRecommendation<T> where T : Intents.INIntent {
 extension WidgetKit.IntentConfiguration {
   public init<Provider>(kind: Swift.String, intent: Intent.Type, provider: Provider, content: @escaping (Provider.Entry) -> Content) where Intent == Provider.Intent, Provider : WidgetKit.IntentTimelineProvider
 }
+@available(iOS 16.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func activityBackgroundTint(_ color: SwiftUI.Color?) -> some SwiftUI.View
+  
+}
 @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
 @available(tvOS, unavailable)
 public struct Timeline<EntryType> where EntryType : WidgetKit.TimelineEntry {
   public let entries: [EntryType]
   public let policy: WidgetKit.TimelineReloadPolicy
   public init(entries: [EntryType], policy: WidgetKit.TimelineReloadPolicy)
+}
+@available(iOS 16.1, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func activitySystemActionForegroundColor(_ color: SwiftUI.Color?) -> some SwiftUI.View
+  
 }
 @available(iOS 14.0, macOS 11.0, watchOS 9.0, *)
 @available(tvOS, unavailable)

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           0DC88380-6968-362B-8B97-7059CE27B9A4
   - target:          arm64-ios
-    value:           91BF95BB-5641-36F0-96D3-84F4CB6B3E1E
+    value:           9FD3B6D8-1F69-3A53-9CDB-4F4DFF7EDA2E
   - target:          arm64e-ios
-    value:           D98C7F75-298C-3D09-81BE-A7A32189FC4F
+    value:           87AE25CE-3BEF-39D9-BAA9-0D8CC15A34A0
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275
 exports:
@@ -856,20 +856,21 @@ exports:
                        __isArray, __isDictionary, __isString, __pm_connect, __pm_disconnect, 
                        __releaseAsycnAssertion, __servicePropertyCacheKeys, __servicePropertyCacheKeysCount, 
                        __systemPowerCallback, _activateAsyncAssertion, _activeAssertions, 
-                       _checkFeatureEnabled, _comparePrefsToDefaults, _copyPreferencesForSrc, 
-                       _createAsyncAssertion, _createCFStringForData, _createCFStringForPlist_new, 
-                       _createUTF8CStringForCFString, _decodeIOPMUserIsActive, _defaultPropertyKeyValue, 
-                       _defaultSettings, _ev_try_lock, _ev_unlock, _fat_iterator_close, 
-                       _fat_iterator_file_end, _fat_iterator_file_start, _fat_iterator_find_arch, 
-                       _fat_iterator_find_fat_arch, _fat_iterator_find_host_arch, 
-                       _fat_iterator_for_data, _fat_iterator_is_iterable, _fat_iterator_next_arch, 
-                       _fat_iterator_num_arches, _fat_iterator_open, _fat_iterator_reset, 
-                       _gAsyncMode, _gAsyncModeDisableOverride, _gAsyncModeSetupDone, 
-                       _gCurrentRemoteAssertionIsCoalesced, _gIOCFPlugInInterfaceID, 
-                       _gIOHIDDebugConfig, _gIOKitLibSerializeOptions, _gIOKitLibServerVersion, 
-                       _gIOPMUserIsActive, _getEffectivePageSize, _getGenericPrefsPath, 
-                       _getHostPrefsPath, _getMonotonicTime, _getPMQueue, _getUserActiveValidDict, 
-                       _handleAssertionLevel, _handleAssertionTimeout, _handleAsyncAssertionDisableOverride, 
+                       _checkFeatureEnabled, _clearAssertionLogBuffer, _comparePrefsToDefaults, 
+                       _copyPreferencesForSrc, _createAsyncAssertion, _createCFStringForData, 
+                       _createCFStringForPlist_new, _createUTF8CStringForCFString, 
+                       _decodeIOPMUserIsActive, _defaultPropertyKeyValue, _defaultSettings, 
+                       _ev_try_lock, _ev_unlock, _fat_iterator_close, _fat_iterator_file_end, 
+                       _fat_iterator_file_start, _fat_iterator_find_arch, _fat_iterator_find_fat_arch, 
+                       _fat_iterator_find_host_arch, _fat_iterator_for_data, _fat_iterator_is_iterable, 
+                       _fat_iterator_next_arch, _fat_iterator_num_arches, _fat_iterator_open, 
+                       _fat_iterator_reset, _gAsyncMode, _gAsyncModeDisableOverride, 
+                       _gAsyncModeSetupDone, _gCurrentRemoteAssertionIsCoalesced, 
+                       _gIOCFPlugInInterfaceID, _gIOHIDDebugConfig, _gIOKitLibSerializeOptions, 
+                       _gIOKitLibServerVersion, _gIOPMUserIsActive, _getEffectivePageSize, 
+                       _getGenericPrefsPath, _getHostPrefsPath, _getMonotonicTime, 
+                       _getPMQueue, _getUserActiveValidDict, _handleAssertionLevel, 
+                       _handleAssertionTimeout, _handleAsyncAssertionDisableOverride, 
                        _hid_dispatch_pthread_root_queue_create, _hid_dispatch_queue_create, 
                        _hid_dispatch_queue_create_with_context_destructor, _hid_dispatch_queue_release, 
                        _hid_pthread_attr_init, _hid_workloop_create, _initialSetup, 
@@ -962,8 +963,8 @@ exports:
                        _kOSKextDiagnosticsBootLevelKey, _kOSKextDiagnosticsDependenciesKey, 
                        _kOSKextDiagnosticsDependencyNotOSBundleRequired, _kOSKextDiagnosticsInterfaceDependencyCount, 
                        _kOSKextDiagnosticsValidationKey, _kOSKextDiagnosticsWarningsKey, 
-                       _kOSKextLoadNotification, _kOSKextUnloadNotification, _macho_find_dysymtab, 
-                       _macho_find_section_numbered, _macho_find_source_version, 
+                       _kOSKextLoadNotification, _kOSKextUnloadNotification, _logAsyncAssertionActivity, 
+                       _macho_find_dysymtab, _macho_find_section_numbered, _macho_find_source_version, 
                        _macho_find_symbol, _macho_find_symtab, _macho_find_uuid, 
                        _macho_get_section_by_name, _macho_get_section_by_name_64, 
                        _macho_get_segment_by_name, _macho_get_segment_by_name_64, 

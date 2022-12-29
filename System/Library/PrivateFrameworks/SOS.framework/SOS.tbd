@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SOSAutomaticCallCountdownEnabledKey,
+                            _SOSButtonPressStateChangedNotification,
                             _SOSCallWithSideButtonPressesKey,
                             _SOSCallWithVolumeLockHoldKey, _SOSClientInterface,
                             _SOSContactsChangedNotification,
@@ -29,6 +30,7 @@ exports:
                             _SOSNewtonStateChangedNotification,
                             _SOSPlayAudioDuringCountdownKey,
                             _SOSRemoteAlertActivationContextUserInfoRequestURLStringKey,
+                            _SOSRemoteAlertActivationReasonActivatingForSOSAlertRestingScreen,
                             _SOSRemoteAlertActivationReasonActivatingForSOSWithClicks,
                             _SOSRemoteAlertActivationReasonActivatingForSOSWithKappa,
                             _SOSRemoteAlertActivationReasonActivatingForSOSWithVolumeLockHold,
@@ -51,7 +53,7 @@ exports:
                             _SOSTriggerMechanismChangedNotification,
                             _SOSTriggerMechanismKey, _sosFlowEventDescription,
                             _sosFlowStateDescription, _sosFlowTypeDescription ]
-    objc-classes:         [ SOSContact, SOSContactsManager,
+    objc-classes:         [ SOSButtonPressState, SOSContact, SOSContactsManager,
                             SOSCoreAnalyticsReporter,
                             SOSEmergencyCallVoiceLoopManager, SOSEngine, SOSFlow,
                             SOSFlowManager, SOSInCallUILauncher, SOSKappaManager,

@@ -306,7 +306,7 @@ VT_EXPORT const CFStringRef kVTCompressionPropertyKey_PrioritizeEncodingSpeedOve
 
 		The encoder will pad the frame if they are smaller than they need to be based on the Constant BitRate. This
 		property is not recommended for general streaming or export scenarios. It is intended for interoperability with
-		stremaing CDNs which specifically require that data rates not drop even during low motion and activity scenes.
+		certain streaming CDNs which specifically require that data rates not drop even during low motion and activity scenes.
 
 		This is not supported in all encoders or in all encoder operating modes. kVTPropertyNotSupportedErr will be
 		returned when this option is not supported.

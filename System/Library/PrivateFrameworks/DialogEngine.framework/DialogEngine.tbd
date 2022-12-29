@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DialogEngine.framework/DialogEngine
-current-version:       3200.77.1
+current-version:       3201.6.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -906,6 +906,7 @@ exports:
                             __ZN4siri12dialogengine13CloseDatabaseEP7sqlite3,
                             __ZN4siri12dialogengine13DateIsHolidayERKNS0_9TimeStampERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
                             __ZN4siri12dialogengine13DeleteDirTreeERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
+                            __ZN4siri12dialogengine13DeviceIsWatchEPNS0_14VariableObjectES2_,
                             __ZN4siri12dialogengine13DialogDensity11approximateEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine13DialogDensity18compactDecimalLongEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine13DialogDensity19compactDecimalShortEPNS0_7ContextEPKNS0_14VariableObjectE,
@@ -1402,6 +1403,8 @@ exports:
                             __ZN4siri12dialogengine14WriteCatBinaryEPNS0_4FileERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEb,
                             __ZN4siri12dialogengine14WriteLocaleXmlEPNS0_4FileERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE,
                             __ZN4siri12dialogengine15CatFamilyFromIdERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
+                            __ZN4siri12dialogengine15DeviceIsHomePodEPNS0_14VariableObjectES2_,
+                            __ZN4siri12dialogengine15DeviceIsHomePodERKNS0_7ContextE,
                             __ZN4siri12dialogengine15DialogStateBase11UpdateStatsEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEERKNS4_3setISA_NS4_4lessISA_EENS8_ISA_EEEEPNS0_18DialogStateUseCaseEPNS0_17DialogStateFamilyEPNS0_18DialogStatePatternEd,
                             __ZN4siri12dialogengine15DialogStateBase17SetServerBehaviorEb,
                             __ZN4siri12dialogengine15DialogStateBase3GetEv,
@@ -1561,6 +1564,7 @@ exports:
                             __ZN4siri12dialogengine17DialogStateClient10GetPatternEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateClient10GetUseCaseEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateClient13PatternUpdateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEEPNS0_18DialogStatePatternEd,
+                            __ZN4siri12dialogengine17DialogStateClient17ClearPatternStateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateClient5ClearEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateClient6UpdateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEERKNS4_3setISA_NS4_4lessISA_EENS8_ISA_EEEEPN9rapidjson12PrettyWriterINSK_19GenericStringBufferINSK_4UTF8IcEENSK_12CrtAllocatorEEESO_SO_SP_Lj0EEEPNS0_18DialogStateUseCaseEPNS0_17DialogStateFamilyEd,
                             __ZN4siri12dialogengine17DialogStateClient9GetFamilyEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
@@ -1578,6 +1582,7 @@ exports:
                             __ZN4siri12dialogengine17DialogStateServer10GetPatternEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateServer10GetUseCaseEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateServer13PatternUpdateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEEPNS0_18DialogStatePatternEd,
+                            __ZN4siri12dialogengine17DialogStateServer17ClearPatternStateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateServer5ClearEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
                             __ZN4siri12dialogengine17DialogStateServer6UpdateEPNS0_7ContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEERKNS4_3setISA_NS4_4lessISA_EENS8_ISA_EEEEPN9rapidjson12PrettyWriterINSK_19GenericStringBufferINSK_4UTF8IcEENSK_12CrtAllocatorEEESO_SO_SP_Lj0EEEPNS0_18DialogStateUseCaseEPNS0_17DialogStateFamilyEd,
                             __ZN4siri12dialogengine17DialogStateServer9GetFamilyEPKNS0_7ContextERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,

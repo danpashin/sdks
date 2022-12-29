@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightUIInternal.framework/SpotlightUIInternal
-current-version:       34.0.2
+current-version:       41
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SPUIExtendedLaunchConstant,
                             _SPUIPlatterViewCornerRadius, _SPUIPreferencesDomain,
+                            _SPUISuiteName, _SPUIZKWExpandedPreference,
                             _SpotlightScrollSearchResults,
                             _SpotlightShowAndScrollCards,
                             _SpotlightUIInternalVersionNumber,
@@ -35,8 +36,8 @@ exports:
                             ___PPTSpotlightScrollCardsFPS,
                             ___PPTSpotlightScrollResultsFPS,
                             _averageTimePerCharacter,
-                            _spacingBetweenPlaceholderAndLeftView, _suiteName,
-                            _timeToWindowExpansion, _zkwExpandedPreference ]
+                            _spacingBetweenPlaceholderAndLeftView,
+                            _timeToWindowExpansion ]
     objc-classes:         [ SPUIAppCompletion, SPUIBorderedVisualEffectView,
                             SPUIBoxView, SPUICalculatorCompletion, SPUICompletion,
                             SPUICompletionStringModel, SPUICompletionStringView,

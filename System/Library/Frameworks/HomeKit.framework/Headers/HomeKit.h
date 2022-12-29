@@ -64,8 +64,3 @@
 #import <HomeKit/HMAccessorySetupPayload.h>
 #import <HomeKit/HMAccessorySetupRequest.h>
 #import <HomeKit/HMAccessorySetupResult.h>
-
-#import <HomeKit/HMMatterHome.h>
-#import <HomeKit/HMMatterRequestHandler.h>
-#import <HomeKit/HMMatterRoom.h>
-#import <HomeKit/HMMatterTopology.h>

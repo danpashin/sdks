@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -module-link-name swiftDistributed -parse-stdlib -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Distributed
-// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.7.0.124.26
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64-apple-ios16.1 -enable-objc-interop -enable-library-evolution -module-link-name swiftDistributed -parse-stdlib -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Distributed
+// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.7.1.134.3
 import Darwin
 import Swift
 import _Concurrency
@@ -115,7 +115,23 @@ public protocol DistributedActorSystemError : Swift.Error {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 public struct ExecuteDistributedTargetError : Distributed.DistributedActorSystemError {
+  public let errorCode: Distributed.ExecuteDistributedTargetError.ErrorCode
+  public let message: Swift.String
+  public enum ErrorCode {
+    case targetAccessorNotFound
+    case invalidParameterCount
+    case missingGenericSubstitutions
+    case invalidGenericSubstitutions
+    case typeDeserializationFailure
+    case other
+    public static func == (a: Distributed.ExecuteDistributedTargetError.ErrorCode, b: Distributed.ExecuteDistributedTargetError.ErrorCode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
   public init(message: Swift.String)
+  public init(message: Swift.String, errorCode: Distributed.ExecuteDistributedTargetError.ErrorCode)
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 public struct DistributedActorCodingError : Distributed.DistributedActorSystemError {
@@ -225,3 +241,7 @@ public struct LocalTestingDistributedActorSystemError : Distributed.DistributedA
   public let message: Swift.String
   public init(message: Swift.String)
 }
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension Distributed.ExecuteDistributedTargetError.ErrorCode : Swift.Equatable {}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+extension Distributed.ExecuteDistributedTargetError.ErrorCode : Swift.Hashable {}

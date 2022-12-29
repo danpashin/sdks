@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5FF90157-BE8B-36C6-969E-DCE875302D62
   - target:          arm64-ios
-    value:           F5649628-99B5-3B37-9C70-E23BAF9BE827
+    value:           B8D95B95-A20A-3AE1-A44C-6CFA96B5258F
   - target:          arm64e-ios
-    value:           095E2B27-E4BC-35B3-83AE-F814304B8020
+    value:           73A045DE-A640-38D0-89DD-6C82F6068CF0
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/CoreMedia'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1433,7 +1433,7 @@ exports:
                        _CelestialShouldSupportHDRCodecs, _CelestialShouldUseCompressLuminanceBehindCaptions, 
                        _FigAV1BridgeParsingStateGetTypeID, _FigAV1Bridge_CopyCLLIDataFromAV1ConfigurationRecordConfigOBU, 
                        _FigAV1Bridge_CopyITU_T_T35MetadataDolbyVisionRPURawByteSequence, 
-                       _FigAV1Bridge_CopyMDCVDataFromAV1ConfigurationRecordConfigOBU, 
+                       _FigAV1Bridge_CopyITU_T_T35MetadataHDR10PlusMetadata, _FigAV1Bridge_CopyMDCVDataFromAV1ConfigurationRecordConfigOBU, 
                        _FigAV1Bridge_CreateParsingStateFromAV1CodecConfigurationRecord, 
                        _FigAV1Bridge_CreateParsingStateFromAV1FormatDescription, 
                        _FigAV1Bridge_GetChromaFormatAndBitDepthsFromAV1CodecConfigurationRecord, 
@@ -1542,12 +1542,13 @@ exports:
                        _FigCFArrayAppendInt32, _FigCFArrayAppendInt64, _FigCFArrayApplyFunction, 
                        _FigCFArrayContainsInt, _FigCFArrayContainsInt16, _FigCFArrayContainsInt32, 
                        _FigCFArrayContainsInt64, _FigCFArrayContainsValue, _FigCFArrayCreateConcatenationOfTwoArrays, 
-                       _FigCFArrayCreateMutableCopy, _FigCFArrayForEach2, _FigCFArrayGetCFIndexAtIndex, 
-                       _FigCFArrayGetCGFloatAtIndex, _FigCFArrayGetCGRectAtIndex, 
-                       _FigCFArrayGetCGSizeAtIndex, _FigCFArrayGetCMTimeAtIndex, 
-                       _FigCFArrayGetDoubleAtIndex, _FigCFArrayGetFloat32AtIndex, 
-                       _FigCFArrayGetFloatAtIndex, _FigCFArrayGetInt16AtIndex, _FigCFArrayGetInt32AtIndex, 
-                       _FigCFArrayGetInt64AtIndex, _FigCFArrayGetIntAtIndex, _FigCFAttributedStringSetDouble, 
+                       _FigCFArrayCreateCopy, _FigCFArrayCreateMutableCopy, _FigCFArrayForEach2, 
+                       _FigCFArrayGetCFIndexAtIndex, _FigCFArrayGetCGFloatAtIndex, 
+                       _FigCFArrayGetCGRectAtIndex, _FigCFArrayGetCGSizeAtIndex, 
+                       _FigCFArrayGetCMTimeAtIndex, _FigCFArrayGetDoubleAtIndex, 
+                       _FigCFArrayGetFloat32AtIndex, _FigCFArrayGetFloatAtIndex, 
+                       _FigCFArrayGetInt16AtIndex, _FigCFArrayGetInt32AtIndex, _FigCFArrayGetInt64AtIndex, 
+                       _FigCFArrayGetIntAtIndex, _FigCFAttributedStringSetDouble, 
                        _FigCFBundleIDResourceSubdirExists, _FigCFCopyCFErrorAsPropertyList, 
                        _FigCFCopyCompactDescription, _FigCFCopyPropertyAsTime, _FigCFCreateCombinedDictionary, 
                        _FigCFCreateExtendedDictionary, _FigCFCreatePropertyListFromBundleIdentifier, 
@@ -1679,7 +1680,8 @@ exports:
                        _FigCustomURLHandlerServerEnsure, _FigCustomURLLoaderCreate, 
                        _FigCustomURLLoaderGetCFTypeID, _FigCustomURLLoaderGetCMBaseObject, 
                        _FigCustomURLLoaderGetClassID, _FigCustomURLLoaderRemoteCreateWithObjectID, 
-                       _FigCustomURLLoaderServerAssociateNeighbor, _FigCustomURLLoaderServerStart, 
+                       _FigCustomURLLoaderRemoteGetObjectID, _FigCustomURLLoaderServerAssociateNeighbor, 
+                       _FigCustomURLLoaderServerCopyLoaderForID, _FigCustomURLLoaderServerStart, 
                        _FigCustomURLRequestInfoCopyAcceptEncoding, _FigCustomURLRequestInfoCopyAllowedUniversalTypeIdentifiers, 
                        _FigCustomURLRequestInfoCopyCryptKeyAttributes, _FigCustomURLRequestInfoCopyCryptor, 
                        _FigCustomURLRequestInfoCopyHTTPHeaders, _FigCustomURLRequestInfoCopyNSURLAuthenticationChallenge, 
@@ -2360,7 +2362,8 @@ exports:
                        _kCMSampleAttachmentKey_BytesOfClearDataCount, _kCMSampleAttachmentKey_CryptorInitializationVector, 
                        _kCMSampleAttachmentKey_CryptorSubsampleAuxiliaryData, _kCMSampleAttachmentKey_DependsOnOthers, 
                        _kCMSampleAttachmentKey_DisplayImmediately, _kCMSampleAttachmentKey_DoNotDisplay, 
-                       _kCMSampleAttachmentKey_EarlierDisplayTimesAllowed, _kCMSampleAttachmentKey_HEVCStepwiseTemporalSubLayerAccess, 
+                       _kCMSampleAttachmentKey_EarlierDisplayTimesAllowed, _kCMSampleAttachmentKey_HDR10PlusPerFrameData, 
+                       _kCMSampleAttachmentKey_HEVCStepwiseTemporalSubLayerAccess, 
                        _kCMSampleAttachmentKey_HEVCSyncSampleNALUnitType, _kCMSampleAttachmentKey_HEVCTemporalLevelInfo, 
                        _kCMSampleAttachmentKey_HEVCTemporalSubLayerAccess, _kCMSampleAttachmentKey_HasRedundantCoding, 
                        _kCMSampleAttachmentKey_IsDependedOnByOthers, _kCMSampleAttachmentKey_NotSync, 
@@ -2693,6 +2696,8 @@ exports:
                        _kFigEndpointCentralNotification_iOSEntityHasMainAudio, _kFigEndpointCentralNotification_iOSEntityIsDoingTurnByTurnChanged, 
                        _kFigEndpointClusterCompositionDeviceDescriptionKey_IsClusterLeader, 
                        _kFigEndpointClusterCompositionDeviceDescriptionKey_Model, 
+                       _kFigEndpointClusterCompositionDeviceDescriptionKey_RoomName, 
+                       _kFigEndpointClusterCompositionDeviceDescriptionKey_RoomUID, 
                        _kFigEndpointClusterCompositionDeviceDescriptionKey_RouteName, 
                        _kFigEndpointClusterCompositionDeviceDescriptionKey_RouteUID, 
                        _kFigEndpointClusterCompositionDeviceDescriptionKey_SubType, 

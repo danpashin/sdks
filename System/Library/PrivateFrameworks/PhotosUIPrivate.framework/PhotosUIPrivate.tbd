@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosUIPrivate.framework/PhotosUIPrivate
-current-version:       502.13.160
+current-version:       512.0.170
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -116,6 +116,7 @@ exports:
                             _PULineDistanceToPoint, _PULineIntersection,
                             _PULocalizationKeyForMediaType, _PULocalizedString,
                             _PULocalizedStringWithValidatedFormat,
+                            _PULocalizedWallpaperShuffleConfigurationPeopleCount,
                             _PUMainScreenScale, _PUMediaDestinationErrorDomain,
                             _PUMediaProviderErrorDomain,
                             _PUMediaProviderResultIsFullSizeFormat,
@@ -142,9 +143,8 @@ exports:
                             _PUPointIsApproximatelyEqualToPoint,
                             _PUPointIsEqualToPointWithTolerance,
                             _PUPointIsOnLineSegmentBetweenPoints, _PUPointScale,
-                            _PUPointSubtract, _PUPosterBoardService,
-                            _PUPosterColorFromUIColor, _PUPosterColorToUIColor,
-                            _PUPosterDefaultShuffleFrequency,
+                            _PUPointSubtract, _PUPosterColorFromUIColor,
+                            _PUPosterColorToUIColor,
                             _PUPosterExtensionBundleIdentifier,
                             _PUPosterFontIdentifierNewYork,
                             _PUPosterFontIdentifierRail,
@@ -153,6 +153,7 @@ exports:
                             _PUPosterFontIdentifierSoft,
                             _PUPosterFontIdentifierStencil,
                             _PUPosterLookLocalizedDisplayNameForLayerStyleKind,
+                            _PUPosterShuffleNextSignificantEventDateForDate,
                             _PUPosterSimulatedTimeFontForIdentifier,
                             _PUPreviewActionShareIdentifier,
                             _PUProgressValueWithEaseInOut,
@@ -176,8 +177,10 @@ exports:
                             _PURectWithSizeThatFitsInRect,
                             _PUReviewScreenFrameForGeometry,
                             _PUReviewScreenGeometryMake,
-                            _PUReviewScreenGeometryZero, _PURoundRectToPixel,
-                            _PURoundToPixel, _PUSharingErrorTypeDescription,
+                            _PUReviewScreenGeometryZero,
+                            _PUReviewScreenUsePadLayoutForReferenceSize,
+                            _PURoundRectToPixel, _PURoundToPixel,
+                            _PUSharingErrorTypeDescription,
                             _PUShouldAutoHideChrome,
                             _PUShouldReloadAssetMediaNotification, _PUSizeAdd,
                             _PUSizeByLinearlyInterpolatingSizes,
@@ -374,8 +377,8 @@ exports:
                             PUSearchHomeThumbnailManager,
                             PUSearchHomeViewController,
                             PUSearchZeroKeywordGadget, PUSectionedGridLayout,
-                            PUSectionedTilingLayout, PUSegmentationItemLoader,
-                            PUSessionInfo, PUSharingErrorPresentationController,
+                            PUSectionedTilingLayout, PUSessionInfo,
+                            PUSharingErrorPresentationController,
                             PUSidebarViewController,
                             PUSingleHeightHorizontalAlbumListGadgetLayout,
                             PUSoftClampValueFilter, PUStackView,

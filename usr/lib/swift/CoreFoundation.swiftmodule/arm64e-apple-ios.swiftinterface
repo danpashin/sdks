@@ -1,17 +1,17 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.124.26 clang-1400.0.29.50)
-// swift-module-flags: -target arm64e-apple-ios16.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreFoundation -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -enable-experimental-concurrency -module-name CoreFoundation
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 17
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreFoundation -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -enable-experimental-concurrency -module-name CoreFoundation
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 18
 @_exported import CoreFoundation
 import Swift
 import _Concurrency
 import _StringProcessing
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 @frozen public struct CGFloat {
   public typealias NativeType = Swift.Double
   @_transparent public init() {
@@ -29,11 +29,11 @@ import _StringProcessing
   public var native: CoreFoundation.CGFloat.NativeType
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.SignedNumeric {
   @_alwaysEmitIntoClient public init<T>(_ source: T) where T : Swift.BinaryInteger {
     self.native = NativeType(source)
@@ -51,11 +51,11 @@ extension CoreFoundation.CGFloat : Swift.SignedNumeric {
   public typealias Magnitude = CoreFoundation.CGFloat
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.BinaryFloatingPoint {
   public typealias RawSignificand = Swift.UInt
   public typealias Exponent = Swift.Int
@@ -272,22 +272,22 @@ extension CoreFoundation.CGFloat : Swift.BinaryFloatingPoint {
   public typealias RawExponent = Swift.UInt
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.CustomReflectable {
   public var customMirror: Swift.Mirror {
     get
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.CustomStringConvertible {
   @_transparent public var description: Swift.String {
     @_transparent get {
@@ -296,11 +296,11 @@ extension CoreFoundation.CGFloat : Swift.CustomStringConvertible {
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.Hashable {
   @_transparent public var hashValue: Swift.Int {
     @_transparent get {
@@ -315,143 +315,143 @@ extension CoreFoundation.CGFloat : Swift.Hashable {
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.UInt8 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = UInt8(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Int8 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Int8(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.UInt16 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = UInt16(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Int16 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Int16(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.UInt32 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = UInt32(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Int32 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Int32(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.UInt64 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = UInt64(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Int64 {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Int64(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.UInt {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = UInt(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Int {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Int(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Double {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Double(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension Swift.Float {
   @_transparent public init(_ value: CoreFoundation.CGFloat) {
     self = Float(value.native)
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat {
   @_transparent public static func + (lhs: CoreFoundation.CGFloat, rhs: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat {
     var lhs = lhs
@@ -475,11 +475,11 @@ extension CoreFoundation.CGFloat {
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.Strideable {
   @_transparent public func distance(to other: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat {
     return CGFloat(other.native - self.native)
@@ -490,11 +490,11 @@ extension CoreFoundation.CGFloat : Swift.Strideable {
   public typealias Stride = CoreFoundation.CGFloat
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift._CVarArgPassedAsDouble, Swift._CVarArgAligned {
   @_transparent public var _cVarArgEncoding: [Swift.Int] {
     @_transparent get {
@@ -508,11 +508,11 @@ extension CoreFoundation.CGFloat : Swift._CVarArgPassedAsDouble, Swift._CVarArgA
   }
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.Codable {
   @_transparent public init(from decoder: Swift.Decoder) throws {
     let container = try decoder.singleValueContainer()
@@ -551,9 +551,9 @@ extension CoreFoundation._CFObject {
   public static func == (left: Self, right: Self) -> Swift.Bool
 }
 @available(macOS 10.0, macCatalyst 13.0, iOS 2.0, watchOS 1.0, tvOS 9.0, *)
-@_originallyDefinedIn(module: "CoreGraphics", macOS 13.0)
-@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", iOS 16.0)
-@_originallyDefinedIn(module: "CoreGraphics", watchOS 9.0)
-@_originallyDefinedIn(module: "CoreGraphics", tvOS 16.0)
+@_originallyDefinedIn(module: "CoreGraphics", macOS 10.0)
+@_originallyDefinedIn(module: "CoreGraphics", macCatalyst 13.0)
+@_originallyDefinedIn(module: "CoreGraphics", iOS 2.0)
+@_originallyDefinedIn(module: "CoreGraphics", watchOS 1.0)
+@_originallyDefinedIn(module: "CoreGraphics", tvOS 9.0)
 extension CoreFoundation.CGFloat : Swift.Sendable {}

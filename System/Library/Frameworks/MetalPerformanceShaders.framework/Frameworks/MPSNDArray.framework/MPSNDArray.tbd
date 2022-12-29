@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       126.0.16
+current-version:       126.0.21
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -24,7 +24,8 @@ exports:
                             MPSNDArrayAbsoluteGradient, MPSNDArrayAddition,
                             MPSNDArrayAdditionPrimaryGradient,
                             MPSNDArrayAdditionSecondaryGradient,
-                            MPSNDArrayBandPart, MPSNDArrayBinaryKernel,
+                            MPSNDArrayArgSort, MPSNDArrayBandPart,
+                            MPSNDArrayBinaryKernel,
                             MPSNDArrayBinaryPrimaryGradientKernel,
                             MPSNDArrayBinarySecondaryGradientKernel,
                             MPSNDArrayCeil, MPSNDArrayCeilGradient,
@@ -37,6 +38,7 @@ exports:
                             MPSNDArrayConvolution2DGradientWithWeights,
                             MPSNDArrayCos, MPSNDArrayCosGradient, MPSNDArrayCosh,
                             MPSNDArrayCoshGradient, MPSNDArrayCropResize,
+                            MPSNDArrayDecompositionLU, MPSNDArrayDecompositionQR,
                             MPSNDArrayDepthwiseConvolution2DDescriptor,
                             MPSNDArrayDepthwiseConvolutionKernel,
                             MPSNDArrayDivision,
@@ -129,8 +131,8 @@ exports:
                             MPSNDArrayPoolingMultiDestinationKernel,
                             MPSNDArrayPower, MPSNDArrayPowerPrimaryGradient,
                             MPSNDArrayPowerSecondaryGradient, MPSNDArrayPrune,
-                            MPSNDArrayQRDecomposition, MPSNDArrayRandom,
-                            MPSNDArrayRandomNormal, MPSNDArrayRandomState,
+                            MPSNDArrayRandom, MPSNDArrayRandomNormal,
+                            MPSNDArrayRandomState,
                             MPSNDArrayRandomStateDescriptor,
                             MPSNDArrayRandomTruncatedNormal,
                             MPSNDArrayRandomUniform, MPSNDArrayReciprocal,
@@ -151,9 +153,10 @@ exports:
                             MPSNDArraySignbitGradient, MPSNDArraySin,
                             MPSNDArraySinGradient, MPSNDArraySinh,
                             MPSNDArraySinhGradient, MPSNDArraySoftMax,
-                            MPSNDArraySoftMaxGradient, MPSNDArraySort,
-                            MPSNDArraySquare, MPSNDArraySquareGradient,
-                            MPSNDArraySquareRoot, MPSNDArraySquareRootGradient,
+                            MPSNDArraySoftMaxGradient, MPSNDArraySolverLU,
+                            MPSNDArraySort, MPSNDArraySquare,
+                            MPSNDArraySquareGradient, MPSNDArraySquareRoot,
+                            MPSNDArraySquareRootGradient,
                             MPSNDArrayStencilKernel, MPSNDArrayStridedSlice,
                             MPSNDArrayStridedSliceGradient,
                             MPSNDArraySubtraction,

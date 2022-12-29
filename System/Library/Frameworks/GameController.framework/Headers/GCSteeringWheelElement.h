@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macos(13.0))
+API_AVAILABLE(macos(13.0), macCatalyst(16.0)) API_UNAVAILABLE(ios, tvos)
 @interface GCSteeringWheelElement : NSObject <GCAxisElement>
 
 - (instancetype)init NS_UNAVAILABLE;

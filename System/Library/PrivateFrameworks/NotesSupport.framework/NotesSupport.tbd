@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesSupport.framework/NotesSupport
-current-version:       2162
+current-version:       2187
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -48,7 +48,6 @@ exports:
                             _ICInternalSettingsDefaultToPaperKitAttachments,
                             _ICInternalSettingsDomain,
                             _ICInternalSettingsGetBundleBoolSettingValue,
-                            _ICInternalSettingsIsAberdeenSyncEngineEnabled,
                             _ICInternalSettingsIsAlexandriaDemoModeEnabled,
                             _ICInternalSettingsIsAlexandriaEnabled,
                             _ICInternalSettingsIsAutomaticallyShowLatestUpdatesEnabled,
@@ -68,7 +67,6 @@ exports:
                             _ICMigrationStateChangeUserInitiated,
                             _ICMigrationStateDidChangeNotification,
                             _ICMigrationStateWillChangeNotification,
-                            _ICNoteListSortTypeDidChangeNotification,
                             _ICNoteModelName, _ICNotePersistentStoreExtension,
                             _ICNotePersistentStoreName,
                             _ICNotesAppBundleIdentifier, _ICOldNoteModelName,
@@ -225,9 +223,10 @@ exports:
                             _kICDefaultsKeyDidChooseToMigrateLocalAccount,
                             _kICDefaultsKeyDidMigrateLocalAccount,
                             _kICDidAlertAboutUnsupportedPencilMode,
-                            _kICDidAlertAboutUpdatingDrawings,
+                            _kICDidAlertAboutUpdatingDrawingsCurrentRelease,
+                            _kICDidAlertAboutUpdatingDrawingsFall2021,
+                            _kICDidAlertAboutUpdatingDrawingsFall2022,
                             _kICDisablePageViewControllerCrashWorkaroundDefaultsKey,
-                            _kICEnableAbderdeenSyncEngine,
                             _kICEnableAutomaticallyShowLatestUpdatesKey,
                             _kICEnableDocCamArchiveExportDefaultsKey,
                             _kICEnableDuplicateNoteDefaultsKey,
@@ -289,6 +288,7 @@ exports:
                             ICDateHeadersUtilities, ICDebugTimer, ICDeviceSupport,
                             ICDispatchAfterHandler, ICErrors, ICExclusiveLock,
                             ICFolderCustomNoteSortType,
+                            ICImageAnalysisController,
                             ICIndexItemsByIdentifiersOperation,
                             ICIndexItemsOperation, ICLRUCache,
                             ICLaunchConfiguration, ICLocalization,

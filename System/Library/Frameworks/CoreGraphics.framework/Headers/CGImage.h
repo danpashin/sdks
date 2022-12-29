@@ -25,7 +25,7 @@ typedef CF_ENUM(uint32_t, CGImageAlphaInfo) {
     kCGImageAlphaPremultipliedFirst, /* For example, premultiplied ARGB */
     kCGImageAlphaLast,               /* For example, non-premultiplied RGBA */
     kCGImageAlphaFirst,              /* For example, non-premultiplied ARGB */
-    kCGImageAlphaNoneSkipLast,       /* For example, RBGX. */
+    kCGImageAlphaNoneSkipLast,       /* For example, RGBX. */
     kCGImageAlphaNoneSkipFirst,      /* For example, XRGB. */
     kCGImageAlphaOnly                /* No color data, alpha data only */
 };

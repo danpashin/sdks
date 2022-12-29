@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
-current-version:       502.13.160
+current-version:       512.0.170
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,6 +20,7 @@ exports:
                             _CPLDontWarnAboutUnsupportedScopes,
                             _CPLDropDerivativesTestRulesKey,
                             _CPLEnableUnsupportedScopesAlert,
+                            _CPLEngineElementClientPullsBatch,
                             _CPLEngineElementDownloadResource,
                             _CPLEngineElementDownloadResourcesInBackground,
                             _CPLEngineElementEndOfUpload,
@@ -163,9 +164,11 @@ exports:
                             CPLEngineBlocker, CPLEngineChangePipe,
                             CPLEngineCloudCache, CPLEngineComponentEnumerator,
                             CPLEngineDerivativesCache, CPLEngineFeedbackManager,
-                            CPLEngineFileStorage, CPLEngineForceSyncTask,
-                            CPLEngineIDMapping, CPLEngineIgnoredRecords,
-                            CPLEngineLibrary, CPLEngineMultiscopeSyncTask,
+                            CPLEngineFileStorage,
+                            CPLEngineForceProcessingStagedScopesTask,
+                            CPLEngineForceSyncTask, CPLEngineIDMapping,
+                            CPLEngineIgnoredRecords, CPLEngineLibrary,
+                            CPLEngineMultiscopeSyncTask,
                             CPLEngineOutgoingResources,
                             CPLEnginePendingRecordChecks,
                             CPLEnginePushRepository, CPLEngineQuarantinedRecords,

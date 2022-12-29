@@ -31,7 +31,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) A
  *
  * @return Instance object representing the characteristic write action.
  */
-- (instancetype)initWithCharacteristic:(HMCharacteristic *)characteristic targetValue:(TargetValueType)targetValue NS_DESIGNATED_INITIALIZER API_UNAVAILABLE(watchos, tvos);
+- (instancetype)initWithCharacteristic:(HMCharacteristic *)characteristic targetValue:(TargetValueType)targetValue API_UNAVAILABLE(watchos, tvos);
 
 /*!
  * @brief The characteristic associated with the action.

@@ -2,7 +2,7 @@
 *  Geometry.h
 *  vImage_Framework
 *
-*  Copyright (c) 2002-2016 by Apple Inc. All rights reserved.
+*  Copyright (c) 2002-2022 by Apple Inc. All rights reserved.
 *
 */
 
@@ -62,8 +62,9 @@ enum
  *    Rotate -- rotate the input image around a center point by any amount and write to a destination buffer.
  *    Scale  -- resize the input image to the size of the destination buffer
  *    Affine Transform -- Apply an affine transform to an image
+ *    Perspective Transform -- Apply a perspective (projective) transform to an image
  *
- * When calling the Rotate and Affine Transform functions, it is possible that some part of the output
+ * When calling the Rotate, Affine, and Perspective Transform functions, it is possible that some part of the output
  * image may come from regions of the input image that are outside the original input image. In these cases,
  * the "revealed" pixels will be of the color provided in the backgroundColor parameter passed to the function,
  * unless kvImageEdgeExtend is passed, in which case it will be taken from the nearest edge pixel.
@@ -256,6 +257,15 @@ API_AVAILABLE(macos(10.12), ios(10.0), watchos(3.0), tvos(10.0));
  * For the Affine Transform function, the coordinate space places the origin at the bottom left corner of the image. Positive movement in the X and Y direction moves you
  * right and up. Both source and destination images are assumed to place their bottom left hand corner at the origin.
  *
+ * The elements in the vImage_AffineTransform struct specifies the source to destination coordinate mapping:
+ *
+ *                      |  a   b  |
+ *    (x', y') = (x, y) |         | + (tx, ty)
+ *                      |  c   d  |
+ *
+ * where (x, y) are the source and (x', y') the destination pixel coordinates, respectively.
+ * The left multiplication of the vector (x, y) with the 2x2 matrix is consistent with CoreGraphics.
+ *
  * vImageAffineWarp_<fmt>() does not work in place
  * The ARGB8888, ARGB16U, ARGB16S and ARGBFFFF functions work equally well on other channel orderings of 4-channel images, such as RGBA or BGRA.
  *
@@ -298,6 +308,53 @@ VIMAGE_PF vImage_Error    vImageAffineWarpCG_ARGB16U( const vImage_Buffer *src, 
 VIMAGE_PF vImage_Error    vImageAffineWarpCG_ARGB16S( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_CGAffineTransform *transform, const Pixel_ARGB_16S backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.9), ios(7.0), watchos(1.0), tvos(7.0));
 VIMAGE_PF vImage_Error    vImageAffineWarpCG_ARGBFFFF( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_CGAffineTransform *transform, const Pixel_FFFF backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(10.8), ios(6.0), watchos(1.0), tvos(6.0));
 #endif
+
+/*
+ * vImagePerspectiveWarp_<fmt>
+ * ===========================
+ * vImagePerspectiveWarp_<fmt> is a convenience function to provide perpsective (projective) transformation of images.
+ * The perspective warp cannot be decomposed int lower-level shear functions as for the affine warp.
+ *
+ * For the Perspective Transform function, the coordinate space places the origin at the bottom left corner of the image.
+ * Positive movement in the X and Y direction moves you right and up. Both source and destination images are assumed to
+ * place their bottom left hand corner at the origin.
+ *
+ * The elements in the vImage_PerspectiveTransform struct specify the source to destination coordinate mapping:
+ *
+ *                             |  a   b   vx |
+ *    (x', y', w') = (x, y, w) |  c   d   vy |
+ *                             |  tx  ty  v  |
+ *
+ * where (x, y, w) are the source and (x', y', w') the destination pixel homogeneous coordinates, respectively.
+ * The Affine Transform is a special case of the Perspective Transform and can also be expressed in homogeneous coordinates
+ * where vx = vy = 0 and v = w = w' = 1.
+ *
+ * Note: in computer vision the normal (planar projective) homogeneous 3x3 matrix is often defined as the transpose of
+ * the 3x3 matrix above and the homogeneous coordinate vector is right multiplied with it:
+ *
+ *    | x' |   |  a    c   tx |   | x |
+ *    | y' | = |  b    d   ty | * | y |
+ *    | w' |   |  vx   vy  v  |   | w |
+ *
+ * The utility function vImageGetPerspectiveWarp is used to compute the elements of vImage_PerpsectiveTransform given
+ * a correspondance map of 4 pairs of source and destination points defining how a source quadrilateral is mapped to a
+ * destination quadrilateral.
+ *
+ * vImagePerspectiveWarp_<fmt>() does not work in place
+ * The ARGB8888, ARGB16U, and ARGB16F functions work equally well on other channel orderings of 4-channel images, such as RGBA or BGRA.
+ *
+ * Acceptable flags are kvImageBackgroundColorFill, kvImageEdgeExtend, kvImageDoNotTile, kvImageNoFlags.
+ * One and only one of the edging modes kvImageBackgroundColorFill or kvImageEdgeExtend must be passed where
+ * kvImageBackgroundColorFill is most commonly used.
+ *
+ */
+VIMAGE_PF vImage_Error    vImageGetPerspectiveWarp( const float srcPoints[4][2], const float destPoints[4][2], vImage_PerpsectiveTransform *transform, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,3) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_Planar8( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_8 backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_ARGB8888( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_8888 backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_Planar16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_ARGB16U( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_ARGB_16U backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_Planar16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
+VIMAGE_PF vImage_Error    vImagePerspectiveWarp_ARGB16F( const vImage_Buffer *src, const vImage_Buffer *dest, void *tempBuffer, const vImage_PerpsectiveTransform *transform, vImage_WarpInterpolation interpolation, Pixel_ARGB_16F backColor, vImage_Flags flags ) VIMAGE_NON_NULL(1,2,4) API_AVAILABLE(macos(13.0), ios(16.0), watchos(9.0), tvos(16.0));
 
 
 

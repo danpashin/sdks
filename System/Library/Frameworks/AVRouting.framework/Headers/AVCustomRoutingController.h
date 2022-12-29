@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class AVCustomDeviceRoute;
 @class AVCustomRoutingEvent;
 @class AVCustomRoutingActionItem;
+@class AVCustomRoutingPartialIP;
 @protocol AVCustomRoutingControllerDelegate;
 
 /*!
@@ -44,6 +45,12 @@ API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos)
 				The app may reactivate any one of these routes if they deem it appropriate, but must inform the system by calling -setActive:forRoute:.
  */
 @property (nonatomic, readonly) NSArray<AVCustomDeviceRoute *> *authorizedRoutes API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
+
+/*!
+    @property   knownRouteIPs
+    @abstract   An array of route IPs known to be on the local network.
+ */
+@property (nonatomic, strong) NSArray<AVCustomRoutingPartialIP *> *knownRouteIPs API_AVAILABLE(ios(16.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 
 /*!
     @property   customActionItems
@@ -117,6 +124,50 @@ API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos)
     @abstract   Informs the delegate that the user selected a custom item in the route picker.
  */
 - (void)customRoutingController:(AVCustomRoutingController *)controller didSelectItem:(AVCustomRoutingActionItem *)customActionItem;
+
+@end
+
+
+/*!
+    @class      AVCustomRoutingPartialIP
+    @abstract   Represents a full or partial IP address. To be used in conjunction with AVCustomRoutingController.knownRouteIPs
+ */
+API_AVAILABLE(ios(16.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos)
+@interface AVCustomRoutingPartialIP : NSObject
+
+/*!
+    @property   address
+    @abstract   Bytes of the IP address. A full or partial IP address for a device known to be on the network.
+    @discussion To create full known IP, the app would do the following:
+                    var anIPAddressInBytes:[Byte] = [192, 168, 10, 5]
+                    var address = Data(bytes: anAddressInBytes, length: anAddressInBytes.count)
+                    var aMaskInBytes:[Byte] = [255, 255, 255, 255]
+                    var mask = Data(bytes: aMaskInBytes, length: aMaskInBytes.count)
+                    var partialIP = AVCustomRoutingPartialIP(address: address, mask: mask)
+ */
+@property (readonly, copy, nonatomic) NSData *address API_AVAILABLE(ios(16.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
+
+/*!
+    @property   mask
+    @abstract   A mask representing how many octets of the ip address to respect.
+    @discussion An app can use this mask to only pass e.g. the last two bytes of the IP address. So instead of passing the full IP address, the app can pass just the last two bytes by masking the first two.
+                    var anIPAddressInBytes:[Byte] = [0, 0, 10, 5]
+                    var address = Data(bytes: anAddressInBytes, length: anAddressInBytes.count)
+                    var aMaskInBytes:[Byte] = [0, 0, 255, 255]
+                    var mask = Data(bytes: aMaskInBytes, length: aMaskInBytes.count)
+                    var partialIP =AVCustomRoutingPartialIP(address: address, mask: mask)
+ */
+@property (readonly, copy, nonatomic) NSData *mask API_AVAILABLE(ios(16.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
+
+/*!
+    @method     initWithAddress:mask:
+    @abstract   Initializes an IP fragment.
+ */
+- (instancetype)initWithAddress:(NSData *)address mask:(NSData *)mask API_AVAILABLE(ios(16.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
+
+- (instancetype)init NS_UNAVAILABLE;
+
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
 

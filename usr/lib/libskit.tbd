@@ -7,17 +7,20 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           D8D9046D-4693-3F72-9BF8-FCA66BEE1E53
+    value:           05633584-D6D4-3E34-95DD-22803D508B49
   - target:          arm64e-ios
-    value:           F70D00CB-FBDD-3688-8DAB-5DD41CB75110
+    value:           49E294CC-44B4-32D9-90C3-2B154CF9B219
 install-name:    '/usr/lib/libskit.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _crc32 ]
+    symbols:         [ _crc32, _skitRemoveBidiCharacters ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN4skit10MultiIndex13merge_indexesEv, __ZN4skit10MultiIndex4openEv, 
                        __ZN4skit10MultiIndex5clearEv, __ZN4skit10MultiIndex5closeEv, 
                        __ZN4skit10MultiIndex5flushEv, __ZN4skit10MultiIndex6appendERKNS_11TokenStreamEf, 
+                       __ZN4skit10strip_bidiENSt3__117basic_string_viewIDsNS0_11char_traitsIDsEEEE, 
+                       __ZN4skit10strip_bidiEPDsPKDsmb, __ZN4skit10strip_bidiEPDsmb, 
+                       __ZN4skit10strip_bidiERNSt3__112basic_stringIDsNS0_11char_traitsIDsEENS0_9allocatorIDsEEEE, 
                        __ZN4skit11FieldBundle3addEtNS_9BufferRefIKSt4byteEEb, __ZN4skit11FieldBundle3addEtRKNS_11TokenStreamE, 
                        __ZN4skit11FieldBundle5clearEv, __ZN4skit11IndexReader4openEv, 
                        __ZN4skit11IndexReader5closeEv, __ZN4skit11IndexReaderC1ENSt3__14__fs10filesystem4pathE, 

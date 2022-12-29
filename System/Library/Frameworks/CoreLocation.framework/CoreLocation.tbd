@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           12DCCB52-E6EB-3F76-9D84-01A50EAE830A
   - target:          arm64-ios
-    value:           C6B6C764-D647-3F79-9F20-841237865983
+    value:           70688B77-C0A5-3D4F-9574-8C658263A6D7
   - target:          arm64e-ios
-    value:           D5309BDE-E848-32A4-955D-B2B3C6594540
+    value:           F191C93F-1FD0-3390-AEBA-8699214E4729
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2775.0.6
+current-version: 2780.0.17
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -74,12 +74,12 @@ exports:
                        _CLGetAccessoryMotionSensorLogs, _CLGetAccessoryPASCDTransmissionState, 
                        _CLGetAccessoryTypeBitSet, _CLGetArchivedAuthorizationDecisions, 
                        _CLGetClientTransientAuthorizationInfo, _CLGetControlPlaneStatusReport, 
-                       _CLGetEmergencyLocationSettingsVersionInfo, _CLGetLocationDefault, 
-                       _CLGetMotionSensorLogs, _CLGetOdometryBatchedLocations, _CLGetPipelinedCache, 
-                       _CLGetStatusBarIconState, _CLGetUncertaintyScaleFactors, _CLGnssBandsChangedNotification, 
-                       _CLInternalPerformMigration, _CLLocationCoordinate2DGetDistanceFrom, 
-                       _CLLocationCoordinate2DIsValid, _CLLocationCoordinate2DMake, 
-                       _CLLocationDistanceMax, _CLLocationPushServiceErrorDomain, 
+                       _CLGetEEDCloakingKey, _CLGetEEDEmergencyContactNames, _CLGetEmergencyLocationSettingsVersionInfo, 
+                       _CLGetLocationDefault, _CLGetMotionSensorLogs, _CLGetOdometryBatchedLocations, 
+                       _CLGetPipelinedCache, _CLGetStatusBarIconState, _CLGetUncertaintyScaleFactors, 
+                       _CLGnssBandsChangedNotification, _CLInternalPerformMigration, 
+                       _CLLocationCoordinate2DGetDistanceFrom, _CLLocationCoordinate2DIsValid, 
+                       _CLLocationCoordinate2DMake, _CLLocationDistanceMax, _CLLocationPushServiceErrorDomain, 
                        _CLPassKitNotifyPayment, _CLPingDaemon, _CLSetClientTransientAuthorizationInfo, 
                        _CLSetLocationDefault, _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 
                        _CLShouldDisplayEEDUI, _CLShouldDisplayStatusBarIconChangedNotification, 
@@ -111,7 +111,8 @@ exports:
                        _kCLPolygonalRegionMinVertices, _kInvalidMacAddress ]
     objc-classes:    [ CLAssertion, CLBBTimeFreqTransferCallbackAssertion, CLBeacon, 
                        CLBeaconIdentityConstraint, CLBeaconRegion, CLCircularRegion, 
-                       CLClientTypesPrivate, CLEmergencyEnablementAssertion, CLEmergencyLocationSelector, 
+                       CLClientTypesPrivate, CLEmergencyClientEnablementAssertion, 
+                       CLEmergencyEnablementAssertion, CLEmergencyLocationSelector, 
                        CLEmergencyLocationSelectorConfig, CLFindMyAccessoryAbsoluteWildConfiguration, 
                        CLFindMyAccessoryAccelerometerOrientationModeConfiguration, 
                        CLFindMyAccessoryAccelerometerSlopeModeConfiguration, CLFindMyAccessoryConnectionMaterial, 
