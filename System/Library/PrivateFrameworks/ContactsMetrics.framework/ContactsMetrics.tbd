@@ -75,6 +75,9 @@ exports:
                             _CNMetricsKeyNestedGroupsMaxDepth,
                             _CNMetricsKeyNonemptyAccountsCount,
                             _CNMetricsKeyOldestContactAge,
+                            _CNMetricsKeyPersistenceHasNoStores,
+                            _CNMetricsKeyPersistenceRepairsAddedStores,
+                            _CNMetricsKeyPersistenceRepairsRemovedStores,
                             _CNMetricsKeyPhoneAverageCount,
                             _CNMetricsKeyPhoneDefaultLabelFraction,
                             _CNMetricsKeyPhoneFraction,
@@ -103,5 +106,7 @@ exports:
                             _CNMetricsKeyUISearchAction,
                             _CNMetricsKeyUISearchPerformed,
                             _CNMetricsKeyUIShareType ]
-    objc-classes:         [ CNMetricsReporter, CNMetricsUIReporter ]
+    objc-classes:         [ CNMetricsReporter, CNMetricsReporterSpiedEntry,
+                            CNMetricsReporterSpy, CNMetricsReporterStub,
+                            CNMetricsUIReporter ]
 ...

@@ -7,26 +7,34 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           72DEEAB7-CF3A-308D-B39A-99BA8E83FF2E
+    value:           A411998E-5D49-352B-B76A-6EF6563B87D3
   - target:          arm64e-ios
-    value:           3D283909-54F8-3CB0-A6C5-FB694D2F2FCB
+    value:           85A57BDA-8DE8-39CB-B19C-51673016D783
 install-name:    '/System/Library/Frameworks/CHIP.framework/CHIP'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _CHIPErrorDomain, _CHIPVersionNumber, _CHIPVersionString ]
-    objc-classes:    [ CHIPAccountLogin, CHIPApplicationBasic, CHIPApplicationLauncher, 
-                       CHIPAudioOutput, CHIPBarrierControl, CHIPBasic, CHIPBinaryInputBasic, 
-                       CHIPBinding, CHIPBridgedDeviceBasic, CHIPCluster, CHIPColorControl, 
-                       CHIPContentLaunch, CHIPDescriptor, CHIPDevice, CHIPDeviceController, 
-                       CHIPDoorLock, CHIPError, CHIPEthernetNetworkDiagnostics, CHIPFixedLabel, 
-                       CHIPGeneralCommissioning, CHIPGeneralDiagnostics, CHIPGroupKeyManagement, 
-                       CHIPGroups, CHIPIdentify, CHIPKeypadInput, CHIPLevelControl, 
-                       CHIPLowPower, CHIPManualSetupPayloadParser, CHIPMediaInput, 
-                       CHIPMediaPlayback, CHIPNetworkCommissioning, CHIPOnOff, CHIPOnboardingPayloadParser, 
-                       CHIPOperationalCredentials, CHIPOptionalQRCodeInfo, CHIPPumpConfigurationAndControl, 
+    symbols:         [ _CHIPErrorDomain, _CHIPSizeThreadExtendedPanId, _CHIPSizeThreadMasterKey, 
+                       _CHIPSizeThreadNetworkName, _CHIPSizeThreadPSKc, _CHIPVersionNumber, 
+                       _CHIPVersionString ]
+    objc-classes:    [ CHIPAccountLogin, CHIPAdministratorCommissioning, CHIPApplicationBasic, 
+                       CHIPApplicationLauncher, CHIPAudioOutput, CHIPBarrierControl, 
+                       CHIPBasic, CHIPBinaryInputBasic, CHIPBinding, CHIPBridgedDeviceBasic, 
+                       CHIPCluster, CHIPColorControl, CHIPContentLauncher, CHIPDescriptor, 
+                       CHIPDevice, CHIPDeviceController, CHIPDiagnosticLogs, CHIPDoorLock, 
+                       CHIPElectricalMeasurement, CHIPEthernetNetworkDiagnostics, 
+                       CHIPFixedLabel, CHIPFlowMeasurement, CHIPGeneralCommissioning, 
+                       CHIPGeneralDiagnostics, CHIPGroupKeyManagement, CHIPGroups, 
+                       CHIPIdentify, CHIPKeypadInput, CHIPLevelControl, CHIPLowPower, 
+                       CHIPManualSetupPayloadParser, CHIPMediaInput, CHIPMediaPlayback, 
+                       CHIPNetworkCommissioning, CHIPOccupancySensing, CHIPOnOff, 
+                       CHIPOnOffSwitchConfiguration, CHIPOnboardingPayloadParser, 
+                       CHIPOperationalCredentials, CHIPOptionalQRCodeInfo, CHIPOtaSoftwareUpdateProvider, 
+                       CHIPPressureMeasurement, CHIPPumpConfigurationAndControl, 
                        CHIPQRCodeSetupPayloadParser, CHIPRelativeHumidityMeasurement, 
                        CHIPScenes, CHIPSetupPayload, CHIPSoftwareDiagnostics, CHIPSwitch, 
                        CHIPTargetNavigator, CHIPTemperatureMeasurement, CHIPTestCluster, 
-                       CHIPThermostat, CHIPTrustedRootCertificates, CHIPTvChannel, 
-                       CHIPWakeOnLan, CHIPWindowCovering ]
+                       CHIPThermostat, CHIPThermostatUserInterfaceConfiguration, 
+                       CHIPThreadNetworkDiagnostics, CHIPThreadOperationalDataset, 
+                       CHIPTvChannel, CHIPWakeOnLan, CHIPWiFiNetworkDiagnostics, 
+                       CHIPWindowCovering ]
 ...

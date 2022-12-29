@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           89520873-AAC0-33FD-B5C7-FBA79C6CD30E
   - target:          arm64-ios
-    value:           2E1F8DAF-7511-3D97-A1D1-FBD8773993FD
+    value:           1534F5FE-2527-331C-A4DB-02ED840CE1A2
   - target:          arm64e-ios
-    value:           C250509F-5DFA-3961-A5B0-79AF86531C92
+    value:           99DA9188-AB71-351C-AB7F-619DF6AA36C7
 install-name:    '/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration'
-current-version: 1163.10.2
+current-version: 1163.60.3
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _IPMonitorControlGetInterfacePrimaryRank, _SCDynamicStoreCopyLocation, 
@@ -218,10 +218,11 @@ exports:
                        __SCNetworkInterfaceIsApplePreconfigured, __SCNetworkInterfaceIsBluetoothP2P, 
                        __SCNetworkInterfaceIsBluetoothPAN, __SCNetworkInterfaceIsBluetoothPAN_NAP, 
                        __SCNetworkInterfaceIsBuiltin, __SCNetworkInterfaceIsCarPlay, 
-                       __SCNetworkInterfaceIsHiddenConfiguration, __SCNetworkInterfaceIsHiddenInterface, 
-                       __SCNetworkInterfaceIsPhysicalEthernet, __SCNetworkInterfaceIsQoSMarkingProfileInstalled, 
-                       __SCNetworkInterfaceIsTethered, __SCNetworkInterfaceIsThunderbolt, 
-                       __SCNetworkInterfaceIsTrustRequired, __SCNetworkMigrationAreConfigurationsIdentical, 
+                       __SCNetworkInterfaceIsEphemeral, __SCNetworkInterfaceIsHiddenConfiguration, 
+                       __SCNetworkInterfaceIsHiddenInterface, __SCNetworkInterfaceIsPhysicalEthernet, 
+                       __SCNetworkInterfaceIsQoSMarkingProfileInstalled, __SCNetworkInterfaceIsTethered, 
+                       __SCNetworkInterfaceIsThunderbolt, __SCNetworkInterfaceIsTrustRequired, 
+                       __SCNetworkInterfaceIsVMNET, __SCNetworkMigrationAreConfigurationsIdentical, 
                        __SCNetworkProtocolCompare, __SCNetworkServiceCompare, __SCNetworkServiceCopyActive, 
                        __SCNetworkServiceCreatePreconfigured, __SCNetworkServiceIsVPN, 
                        __SCNetworkServiceSetServiceID, __SCNetworkSetCompare, __SCNetworkSetCreateDefault, 
@@ -247,6 +248,7 @@ exports:
                        ___SCNetworkConfigurationReport, ___SCNetworkConfigurationSaveModel, 
                        ___SCNetworkConfigurationUpgrade, ___SCNetworkConnectionCopyOnDemandInfoWithName, 
                        ___SCNetworkInterfaceCreateCapabilities, ___SCNetworkInterfaceCreateMediaOptions, 
+                       ___SCNetworkInterfaceGetDisablePrivateRelayValue, ___SCNetworkInterfaceGetDisableUntilNeededValue, 
                        ___SCNetworkInterfaceSetDisablePrivateRelayValue, ___SCNetworkInterfaceSetDisableUntilNeededValue, 
                        ___SC_Log, ___SC_log_enabled, ___SC_log_send, __sc_debug, 
                        __sc_log, __sc_verbose, __scprefs_observer_cancel, __scprefs_observer_watch, 

@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           0B1330B3-B153-3FFB-9914-AEF8AC13C2B4
   - target:          arm64-ios
-    value:           2A8452D5-8218-3B84-95C1-EB135BFBC1E9
+    value:           5B0C62A3-A229-3936-BB82-1A53A75C6FC2
   - target:          arm64e-ios
-    value:           92A72B52-B598-35B7-B464-2C6545CB2EAD
+    value:           A52CE51E-9C2E-3BF8-9C51-26254CC4B58A
 install-name:    '/System/Library/Frameworks/Contacts.framework/Contacts'
-current-version: 3529
+current-version: 3535.5
 compatibility-version: 0
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -282,9 +282,9 @@ exports:
                        CNContactTypeDescription, CNContactVCardSerialization, CNContactVCardSummary, 
                        CNContactsEnvironment, CNContactsUserDefaults, CNContainer, 
                        CNContainerPermissions, CNCountryInformation, CNCreationDateDescription, 
-                       CNCropRectDescription, CNCroppedImageDataHelper, CNDataMapperContactStore, 
-                       CNDatesDescription, CNDeduplication, CNDepartmentDescription, 
-                       CNDowntimeWhitelist, CNDowntimeWhitelistContainerFetcher, 
+                       CNCropRectDescription, CNCroppedImageDataHelper, CNDataMapperConfiguration, 
+                       CNDataMapperContactStore, CNDatesDescription, CNDeduplication, 
+                       CNDepartmentDescription, CNDowntimeWhitelist, CNDowntimeWhitelistContainerFetcher, 
                        CNDowntimeWhitelistDescription, CNDraggingContact, CNEmailAddressesDescription, 
                        CNErrorFactory, CNExplicitDisplayNameDescription, CNExternalIdentifierDescription, 
                        CNExternalImageURIDescription, CNExternalModificationTagDescription, 
@@ -322,8 +322,9 @@ exports:
                        CNSocialProfile, CNSocialProfilesDescription, CNSuggestedSaveRequest, 
                        CNSyncImageDataDescription, CNTCC, CNTestSmartFetcher, CNTextAlertDescription, 
                        CNThumbnailImageDataDescription, CNUrlAddressesDescription, 
-                       CNValueOrigin, CNXPCDataMapper, CNXPCDataMapperProgressiveHandler, 
-                       CNiOSAddressBook, CNiOSAddressBookDataMapper, _CNRegulatoryLogger ]
+                       CNUserSetupPictureData, CNUserSetupPictureManager, CNValueOrigin, 
+                       CNXPCDataMapper, CNXPCDataMapperProgressiveHandler, CNiOSAddressBook, 
+                       CNiOSAddressBookDataMapper ]
     objc-ivars:      [ CNContainerPermissions._canCreateContacts, CNContainerPermissions._canCreateGroups, 
                        CNContainerPermissions._canDeleteContacts, CNDataMapperContactStore._logger, 
                        CNDataMapperContactStore._mapper, CNXPCDataMapperProgressiveHandler._completionBlock, 

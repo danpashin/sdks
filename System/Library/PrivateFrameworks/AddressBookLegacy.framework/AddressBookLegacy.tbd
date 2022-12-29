@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AddressBookLegacy.framework/AddressBookLegacy
-current-version:       12645
+current-version:       12646.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -162,6 +162,7 @@ exports:
                             _ABAddressBookIsAvailable,
                             _ABAddressBookIsCallbackRegistered,
                             _ABAddressBookIsNeverAvailable,
+                            _ABAddressBookIsUsedByContacts,
                             _ABAddressBookMapPeopleMatchingString,
                             _ABAddressBookMeCardChangeDistributedNotificationName,
                             _ABAddressBookMergeRecordsInSourceIntoSource,
@@ -193,6 +194,7 @@ exports:
                             _ABAddressBookSetSaveTransactionIdentifier,
                             _ABAddressBookSetSectionDictionary,
                             _ABAddressBookSetUniqueIdentifierToNULL,
+                            _ABAddressBookSetUsedByContacts,
                             _ABAddressBookSetValue,
                             _ABAddressBookSetValueForProperty,
                             _ABAddressBookShouldUseExtraTokenizations,
@@ -527,10 +529,6 @@ exports:
                             _ABGetPreferredKeyboardSettingsForCountryCodeAndAddressPartKey,
                             _ABGetProcessDistributedNotificationIdentifier,
                             _ABGetSharedAddressFormatsDictionary,
-                            _ABGreenTeaLogDeleteContactsData,
-                            _ABGreenTeaLogModifyContactsData,
-                            _ABGreenTeaLogReadContactsData,
-                            _ABGreenTeaLogReadTransmitContactsData,
                             _ABGroupAddMember, _ABGroupAddSubgroup,
                             _ABGroupCopyArrayOfAllMembers,
                             _ABGroupCopyArrayOfAllMembersAndSubgroups,
@@ -696,9 +694,15 @@ exports:
                             _ABPolicyCreateFromDictionaryAtPath,
                             _ABPolicyCreatePermissive, _ABPolicyCreateReadOnly,
                             _ABPolicyCreateWithCallbacks,
+                            _ABPolicyCreateWithCoder,
+                            _ABPolicyCreateWithDictionary,
+                            _ABPolicyCreateWithDictionaryAtURL,
+                            _ABPolicyEncodeWithCoder, _ABPolicyGetContextType,
+                            _ABPolicyIsEqualToPolicy,
                             _ABPolicyIsPropertyGuardianRestricted,
                             _ABPolicyMaximumNumberOfValuesForProperty,
                             _ABPolicyPopulateRecordReadOnlyError,
+                            _ABPolicyPrefixedSecureCodingKey,
                             _ABPolicyRecordIsWriteable,
                             _ABPolicySetShouldIgnoreCapabilitiesRestrictions,
                             _ABPolicyShouldAddMember, _ABPolicyShouldAddRecord,
@@ -723,6 +727,10 @@ exports:
                             _ABRecordSetValue, _ABRecordShow,
                             _ABRecordTypeOfProperty,
                             _ABRegisterSQLiteICUTokenizer,
+                            _ABRegulatoryLogDeleteContactsData,
+                            _ABRegulatoryLogModifyContactsData,
+                            _ABRegulatoryLogReadContactsData,
+                            _ABRegulatoryLogReadTransmitContactsData,
                             _ABSourceAreFoldersReadonly,
                             _ABSourceAreFoldersReadonlyInCapabilityRestrictions,
                             _ABSourceCopyCompositeName, _ABSourceCreate,

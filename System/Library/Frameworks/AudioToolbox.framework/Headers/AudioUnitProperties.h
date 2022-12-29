@@ -792,7 +792,7 @@ CF_ENUM(AudioUnitScope) {
 
     @constant        kAudioUnitProperty_MIDIOutputEventListCallback
 						Scope:                Global
-						Value Type:         block: void (^)(AUEventSampleTime, const struct MIDIEventList *)
+						Value Type:         AUMIDIEventListBlock
 						Access:               write
 
 						The host sets this property on the Audio Unit with the callback set appropriately.
@@ -805,6 +805,7 @@ CF_ENUM(AudioUnitScope) {
 						The Audio Unit in the callback provides:
 						    - the AUEventSampleTime that was provided to the audio unit for this particular call of
 						    AudioUnitRender
+						    - the output number to associate this MIDI data with
 						    - a MIDIEventList containing MIDI data. The time stamp values contained within the
 						    MIDIEventPacket in this list are **sample offsets*** from the AudioTimeStamp provided.
 						    This allows MIDI data to be time-stamped with a sample offset that is directly associated
@@ -815,8 +816,10 @@ CF_ENUM(AudioUnitScope) {
 						- Set kAudioUnitProperty_MIDIOutputEventListCallback
 						- Initialize the Audio Unit
  
-						Note: kAudioUnitProperty_HostMIDIProtocol can not be changed while the Audio Unit is initialized.
- 
+						Notes:
+							- kAudioUnitProperty_HostMIDIProtocol can not be changed while the Audio Unit is initialized.
+							- The Audio Unit takes ownership of the provided block.
+
 						There is no implied or expected association between the number (or position) of an audio unit's
 						audio or MIDI outputs.
  

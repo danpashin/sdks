@@ -3,14 +3,16 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Translation.framework/Translation
-current-version:       173.8
+current-version:       173.11.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ __LTBuildVersion, __LTDeviceName,
-                            __LTLanguageCodeToSupportedLocale, __LTProductName,
-                            __LTProductType, __LTProductVersion,
+                            __LTIsInternalInstall, __LTIsSeedInstall,
+                            __LTLanguageCodeToSupportedLocale,
+                            __LTLocaleMappedForTTS, __LTObjectMappedForKey,
+                            __LTProductName, __LTProductType, __LTProductVersion,
                             __LTTranslationErrorDomain,
                             __LTTranslationModelTaskString,
                             __LTTranslationServiceDelegateXPCInterface,

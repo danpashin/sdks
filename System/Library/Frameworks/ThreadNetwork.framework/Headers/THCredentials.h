@@ -15,7 +15,7 @@ API_AVAILABLE(ios(15.0)) @interface THCredentials : NSObject<NSSecureCoding>
 /*
  * @description:
  *
- * All the fileds represents Credentials field.
+ * All the fields represents Credentials field.
  *
  * Note :
  * If activeOperationalDataSet is nil after retrieving the credentials,
@@ -24,7 +24,7 @@ API_AVAILABLE(ios(15.0)) @interface THCredentials : NSObject<NSSecureCoding>
 
 /// networkName : Thread Network name
 @property (nonatomic, nullable, readonly) NSString *networkName;
-/// extendedPANID : Thread Network extendended PAN ID
+/// extendedPANID : Thread Network extended PAN ID
 @property (nonatomic, nullable, readonly) NSData *extendedPANID;
 /// extendedPANID : Active Thread Network Border Agent Identifier
 @property (nonatomic, nullable, readonly) NSData *borderAgentID;

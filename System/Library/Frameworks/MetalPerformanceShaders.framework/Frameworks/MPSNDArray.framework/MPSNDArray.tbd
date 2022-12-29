@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       125.0.31
+current-version:       125.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -123,8 +123,12 @@ exports:
                             MPSNDArrayPadGradientKernel, MPSNDArrayPadKernel,
                             MPSNDArrayPoolingKernel, MPSNDArrayPower,
                             MPSNDArrayPowerPrimaryGradient,
-                            MPSNDArrayPowerSecondaryGradient,
-                            MPSNDArrayQRDecomposition, MPSNDArrayReciprocal,
+                            MPSNDArrayPowerSecondaryGradient, MPSNDArrayPrune,
+                            MPSNDArrayQRDecomposition, MPSNDArrayRandom,
+                            MPSNDArrayRandomNormal, MPSNDArrayRandomState,
+                            MPSNDArrayRandomStateDescriptor,
+                            MPSNDArrayRandomTruncatedNormal,
+                            MPSNDArrayRandomUniform, MPSNDArrayReciprocal,
                             MPSNDArrayReciprocalGradient, MPSNDArrayReduction,
                             MPSNDArrayReductionGradient, MPSNDArrayReductionSum,
                             MPSNDArrayReductionSumGradient, MPSNDArrayResample,
@@ -161,6 +165,8 @@ exports:
                             MPSPluginNDArrayConvolutionDescriptor ]
     objc-ivars:           [ MPSNDArrayConvolution2D._autoTuningParams,
                             MPSNDArrayConvolution2D._autoTuningTarget,
+                            MPSNDArrayConvolution2DGradientWithInput._autoTuningParams,
+                            MPSNDArrayConvolution2DGradientWithInput._autoTuningTarget,
                             MPSNDArrayConvolution2DGradientWithWeights._autoTuning,
                             MPSNDArrayConvolution2DGradientWithWeights._autoTuningParams,
                             MPSNDArrayGatherGradientState._axis,

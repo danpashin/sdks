@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           A4228D4C-11F0-3ADF-8209-8DBFFCB9263B
   - target:          arm64-ios
-    value:           ECB3EDC4-73C2-355C-8DAE-DE4B7BE78026
+    value:           BB46616A-3D1F-3994-A55E-848785C59BBF
   - target:          arm64e-ios
-    value:           7541BDAF-B4E8-360C-8A1A-65EAAE329FE0
+    value:           0C5F6E2B-088F-3DBA-A069-C2346237872D
 install-name:    '/usr/lib/libBasebandManager.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -279,6 +279,7 @@ exports:
                        __ZN10CPMSModuleC2ENSt3__18weak_ptrI14ServiceManagerEE, __ZN10CPMSModuleD0Ev, 
                        __ZN10CPMSModuleD1Ev, __ZN10CPMSModuleD2Ev, __ZN10DataModule10initializeEN8dispatch13group_sessionE, 
                        __ZN10DataModule20getDataProperty_syncEN3xpc4dictEN8dispatch5blockIU13block_pointerFviS1_EEE, 
+                       __ZN10DataModule20setDataProperty_syncEN3xpc4dictEN8dispatch5blockIU13block_pointerFviS1_EEE, 
                        __ZN10DataModule24configureDataFormat_syncEv, __ZN10DataModule25finishInitialization_syncEv, 
                        __ZN10DataModule26configureCapabilities_syncEv, __ZN10DataModule26configureQMAPSettings_syncEv, 
                        __ZN10DataModule27configureDataPowerSave_syncEv, __ZN10DataModule4initEv, 
@@ -325,7 +326,7 @@ exports:
                        __ZN11PowerBudgetC2Ev, __ZN11PowerBudgetD1Ev, __ZN11PowerBudgetD2Ev, 
                        __ZN11PowerBudgetaSERKS_, __ZN11RadioModule10initializeEN8dispatch13group_sessionE, 
                        __ZN11RadioModule14setRegion_syncEv, __ZN11RadioModule15getVersion_syncEN8dispatch5blockIU13block_pointerFvNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEE, 
-                       __ZN11RadioModule21getOperatingMode_syncEN8dispatch5blockIU13block_pointerFviEEE, 
+                       __ZN11RadioModule20handleResetSPMI_syncEj, __ZN11RadioModule21getOperatingMode_syncEN8dispatch5blockIU13block_pointerFviEEE, 
                        __ZN11RadioModule21setOperatingMode_syncEjN5radio13OperatingModeEbN8dispatch5blockIU13block_pointerFvbEEE, 
                        __ZN11RadioModule23getResetProperties_syncEv, __ZN11RadioModule23monitorBatteryInfo_syncEv, 
                        __ZN11RadioModule23startHealthService_syncEv, __ZN11RadioModule25finishInitialization_syncEv, 
@@ -418,7 +419,7 @@ exports:
                        __ZN13DriverFactory17createRadioDriverEN8dispatch8workloopE, 
                        __ZN13DriverFactory18createHealthDriverENSt3__16vectorIjNS0_9allocatorIjEEEE, 
                        __ZN13DriverFactory19createAntennaDriverEN8dispatch8workloopE, 
-                       __ZN13DriverFactory22createLogCommandDriverEN8dispatch8callbackIU13block_pointerFvN4logs15CollectionStateEEEENS1_IU13block_pointerFvNSt3__110shared_ptrINS7_6vectorIhNS7_9allocatorIhEEEEEEbEEEN3ctu2cf11CFSharedRefIK14__CFDictionaryEENS7_12basic_stringIcNS7_11char_traitsIcEENSA_IcEEEE, 
+                       __ZN13DriverFactory19createDesenseDriverEv, __ZN13DriverFactory22createLogCommandDriverEN8dispatch8callbackIU13block_pointerFvN4logs15CollectionStateEEEENS1_IU13block_pointerFvNSt3__110shared_ptrINS7_6vectorIhNS7_9allocatorIhEEEEEEbEEEN3ctu2cf11CFSharedRefIK14__CFDictionaryEENS7_12basic_stringIcNS7_11char_traitsIcEENSA_IcEEEE, 
                        __ZN13DriverFactory23createDataCommandDriverEv, __ZN13DriverFactory5startEN8dispatch13group_sessionE, 
                        __ZN13DriverFactory6createENSt3__18weak_ptrI14ServiceManagerEE, 
                        __ZN13DriverFactory8shutdownE13ShutdownStageN8dispatch13group_sessionE, 
@@ -923,10 +924,13 @@ exports:
                        __ZN4coex6Module5State32handleGetScanFreqBandFilter_syncENS_5SubIdE, 
                        __ZN4coex6Module5State32handleSetScanFreqBandFilter_syncEN3xpc5arrayENS_5SubIdE, 
                        __ZN4coex6Module5State32handleSetTimeShareConfigReq_syncEN3xpc4dictENS_5SubIdE, 
+                       __ZN4coex6Module5State33evaluateCurrentCoexBootState_syncEv, 
+                       __ZN4coex6Module5State33handleDesenseFrequencyReport_syncENSt3__13mapIPKcNS2_4listINS2_4pairIyjEENS2_9allocatorIS8_EEEENS2_4lessIS5_EENS9_INS7_IKS5_SB_EEEEEENS_5SubIdE, 
                        __ZN4coex6Module5State33handleSetWCI2CalibrationInfo_syncEN3xpc4dictENS_5SubIdE, 
                        __ZN4coex6Module5State33handleTriggerAntennaBlocking_syncEN3xpc4dictENS_5SubIdE, 
                        __ZN4coex6Module5State35handleCommandDriverStateUpdate_syncEN3ctu2cf11CFSharedRefIK14__CFDictionaryEENS_5SubIdE, 
                        __ZN4coex6Module5State37handleSetNetworkConfigOfInterest_syncEN3xpc5arrayENS_5SubIdE, 
+                       __ZN4coex6Module5State38handleDesenseCommandDriverStarted_syncEv, 
                        __ZN4coex6Module5State6createENSt3__110shared_ptrIN3ctu9LogServerEEENS2_8weak_ptrI14ServiceManagerEE, 
                        __ZN4coex6Module5State8shutdownE13ShutdownStageN8dispatch13group_sessionE, 
                        __ZN4coex6Module5StateC1ENSt3__110shared_ptrIN3ctu9LogServerEEENS3_INS_13CommandDriverEEENS2_8weak_ptrI14ServiceManagerEE, 
@@ -1215,12 +1219,13 @@ exports:
                        __ZNK11RadioModule7getNameEv, __ZNK11StatsModule17getShutdownStagesEv, 
                        __ZNK11StatsModule7getNameEv, __ZNK12Capabilities14isCarrierBuildEv, 
                        __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isInternalBuildEv, 
-                       __ZNK12Capabilities18getDataFlowControlEv, __ZNK12Capabilities18isMagSafeSupportedEv, 
-                       __ZNK12Capabilities19getCoredumpAttemptsEv, __ZNK12Capabilities20isCoexEur5GSupportedEv, 
-                       __ZNK12Capabilities20isETSBypassSupportedEv, __ZNK12Capabilities21isRFSelfTestSupportedEv, 
-                       __ZNK12Capabilities22getDataPowerSaveConfigEv, __ZNK12Capabilities23isRFFEScanDataSupportedEv, 
-                       __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, __ZNK12Capabilities24isWakeReasonDebugEnabledEv, 
-                       __ZNK12Capabilities25getDataAggregationMaxSizeEv, __ZNK12Capabilities26getDataAggregationProtocolEv, 
+                       __ZNK12Capabilities18getDataFlowControlEv, __ZNK12Capabilities18isDesenseSupportedEv, 
+                       __ZNK12Capabilities18isMagSafeSupportedEv, __ZNK12Capabilities19getCoredumpAttemptsEv, 
+                       __ZNK12Capabilities20isCoexEur5GSupportedEv, __ZNK12Capabilities20isETSBypassSupportedEv, 
+                       __ZNK12Capabilities21isRFSelfTestSupportedEv, __ZNK12Capabilities22getDataPowerSaveConfigEv, 
+                       __ZNK12Capabilities23isRFFEScanDataSupportedEv, __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, 
+                       __ZNK12Capabilities24isWakeReasonDebugEnabledEv, __ZNK12Capabilities25getDataAggregationMaxSizeEv, 
+                       __ZNK12Capabilities25isResetSPMIEventSupportedEv, __ZNK12Capabilities26getDataAggregationProtocolEv, 
                        __ZNK12Capabilities26isAccessoryModuleSupportedEv, __ZNK12Capabilities26isCMHandDetectionSupportedEv, 
                        __ZNK12Capabilities26isCellularLoggingSupportedEv, __ZNK12Capabilities27isCoexGPSReportingSupportedEv, 
                        __ZNK12Capabilities27isSMCThermalReportSupportedEv, __ZNK12Capabilities28getMaxNumberOfThermalSensorsEv, 

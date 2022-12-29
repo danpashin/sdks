@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
-current-version:       1784.30.7
+current-version:       1785.32.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -70,7 +70,9 @@ exports:
                             _VectorKitConfig_AllowPedestrianMnMetadata,
                             _VectorKitConfig_BaseSSLPMEnabled,
                             _VectorKitConfig_CleanupDestroysAllocators,
+                            _VectorKitConfig_CommandQueueResetMaxAttempts,
                             _VectorKitConfig_DistanceToCurrentManeuverSimilarityThresholdInMeters,
+                            _VectorKitConfig_EnableCommandQueueResetOnErrors,
                             _VectorKitConfig_GetConfigStoreStringKeysForWatchSync,
                             _VectorKitConfig_GetUserDefaultStringKeysForWatchSync,
                             _VectorKitConfig_MRLMaxEntityUpdatesPerFrame,
@@ -101,12 +103,15 @@ exports:
                             _VectorKitConfig_MnTargetPointHiddenLod,
                             _VectorKitConfig_MnTargetPointOmniLod,
                             _VectorKitConfig_NavCameraBaseDisplayRate,
+                            _VectorKitConfig_NavCameraDefaultFarClipPlaneFactor,
                             _VectorKitConfig_NavCameraDefaultMaxDisplayRate,
                             _VectorKitConfig_NavCameraDynamicFramerateThresholds,
                             _VectorKitConfig_NavCameraEnableDynamicFramerate,
+                            _VectorKitConfig_NavCameraMaxFarClipPlaneFactor,
                             _VectorKitConfig_NavCameraShouldUseStartLocationForPounce,
                             _VectorKitConfig_NavigationOffRouteTrafficDisplayEnabled,
                             _VectorKitConfig_RouteLineMaskingAllowed,
+                            _VectorKitConfig_SmallCacheSizeFactor,
                             _VectorKitConfig_SpatialFlexingAllowed,
                             _VectorKitDebugConfig_ARDebugMinimapShowBuildings,
                             _VectorKitDebugConfig_ARDebugMinimapShowTileSelection,
@@ -117,6 +122,7 @@ exports:
                             _VectorKitDebugConfig_DisableShadows,
                             _VectorKitDebugConfig_DisabledAssetList,
                             _VectorKitDebugConfig_DisplayAllLabelsInARDebugString,
+                            _VectorKitDebugConfig_EnableEnhancedCommandBufferErrors,
                             _VectorKitDebugConfig_EnableVerboseEntityLogging,
                             _dynamicValueAnimation,
                             _dynamicValueAnimationDuration,

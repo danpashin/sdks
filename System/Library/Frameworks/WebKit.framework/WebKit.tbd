@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           0B794B66-542E-347E-A1D3-C42B017DCD9F
   - target:          arm64-ios
-    value:           7B3B4741-C9BF-3F64-AEB4-506E8C14AF85
+    value:           EE78CF76-3830-3DD3-9F29-B040D1C759BD
   - target:          arm64e-ios
-    value:           7FBAA03C-4260-3786-A07D-86950E3D1458
+    value:           85BED8A3-D91D-305E-8CC6-1B4DE967D427
 install-name:    '/System/Library/Frameworks/WebKit.framework/WebKit'
-current-version: 612.1.27
+current-version: 612.3.6
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy' ]
@@ -320,11 +320,12 @@ exports:
                        _WKContextSetUsesNetworkProcess, _WKContextSetUsesSingleWebProcess, 
                        _WKContextShouldBlockWebGL, _WKContextShouldSuggestBlockWebGL, 
                        _WKContextStartMemorySampler, _WKContextStopMemorySampler, 
-                       _WKContextTerminateServiceWorkers, _WKContextUnregisterSchemeForCustomProtocol, 
-                       _WKContextWarmInitialProcess, _WKCookieManagerDeleteAllCookies, 
-                       _WKCookieManagerDeleteAllCookiesModifiedAfterDate, _WKCookieManagerDeleteCookiesForHostname, 
-                       _WKCookieManagerGetHTTPCookieAcceptPolicy, _WKCookieManagerGetHostnamesWithCookies, 
-                       _WKCookieManagerGetTypeID, _WKCookieManagerSetClient, _WKCookieManagerSetHTTPCookieAcceptPolicy, 
+                       _WKContextTerminateGPUProcess, _WKContextTerminateServiceWorkers, 
+                       _WKContextUnregisterSchemeForCustomProtocol, _WKContextWarmInitialProcess, 
+                       _WKCookieManagerDeleteAllCookies, _WKCookieManagerDeleteAllCookiesModifiedAfterDate, 
+                       _WKCookieManagerDeleteCookiesForHostname, _WKCookieManagerGetHTTPCookieAcceptPolicy, 
+                       _WKCookieManagerGetHostnamesWithCookies, _WKCookieManagerGetTypeID, 
+                       _WKCookieManagerSetClient, _WKCookieManagerSetHTTPCookieAcceptPolicy, 
                        _WKCookieManagerStartObservingCookieChanges, _WKCookieManagerStopObservingCookieChanges, 
                        _WKCredentialCopyUser, _WKCredentialCreate, _WKCredentialCreateWithCertificateInfo, 
                        _WKCredentialGetTypeID, _WKDataCreate, _WKDataGetBytes, _WKDataGetSize, 
@@ -370,25 +371,26 @@ exports:
                        _WKIconDatabaseRetainIconForURL, _WKIconDatabaseSetIconDataForIconURL, 
                        _WKIconDatabaseSetIconDatabaseClient, _WKIconDatabaseSetIconURLForPageURL, 
                        _WKIconDatabaseTryCopyCGImageArrayForURL, _WKIconDatabaseTryGetCGImageForURL, 
-                       _WKImageCreate, _WKImageCreateCGImage, _WKImageCreateFromCGImage, 
-                       _WKImageGetSize, _WKImageGetTypeID, _WKKeyValueStorageManagerDeleteAllEntries, 
-                       _WKKeyValueStorageManagerDeleteEntriesForOrigin, _WKKeyValueStorageManagerGetCreationTimeKey, 
-                       _WKKeyValueStorageManagerGetKeyValueStorageOrigins, _WKKeyValueStorageManagerGetModificationTimeKey, 
-                       _WKKeyValueStorageManagerGetOriginKey, _WKKeyValueStorageManagerGetStorageDetailsByOrigin, 
-                       _WKKeyValueStorageManagerGetTypeID, _WKMediaFormatReaderCreate, 
-                       _WKMediaFormatReaderStartOnMainThread, _WKMediaKeySystemPermissionCallbackComplete, 
-                       _WKMediaKeySystemPermissionCallbackGetTypeID, _WKMessageListenerGetTypeID, 
-                       _WKMessageListenerSendReply, _WKMutableArrayCreate, _WKMutableDictionaryCreate, 
-                       _WKNavigationActionGetTypeID, _WKNavigationActionShouldPerformDownload, 
-                       _WKNavigationDataCopyNavigationDestinationURL, _WKNavigationDataCopyOriginalRequest, 
-                       _WKNavigationDataCopyTitle, _WKNavigationDataCopyURL, _WKNavigationDataGetTypeID, 
-                       _WKNavigationGetTypeID, _WKNavigationResponseCanShowMIMEType, 
-                       _WKNavigationResponseGetTypeID, _WKNotificationCopyBody, _WKNotificationCopyDir, 
-                       _WKNotificationCopyIconURL, _WKNotificationCopyLang, _WKNotificationCopyTag, 
-                       _WKNotificationCopyTitle, _WKNotificationGetID, _WKNotificationGetSecurityOrigin, 
-                       _WKNotificationGetTypeID, _WKNotificationManagerGetLocalIDForTesting, 
-                       _WKNotificationManagerGetTypeID, _WKNotificationManagerProviderDidClickNotification, 
-                       _WKNotificationManagerProviderDidCloseNotifications, _WKNotificationManagerProviderDidRemoveNotificationPolicies, 
+                       _WKImageCreate, _WKImageCreateCGImage, _WKImageCreateDataURLFromImage, 
+                       _WKImageCreateFromCGImage, _WKImageGetSize, _WKImageGetTypeID, 
+                       _WKKeyValueStorageManagerDeleteAllEntries, _WKKeyValueStorageManagerDeleteEntriesForOrigin, 
+                       _WKKeyValueStorageManagerGetCreationTimeKey, _WKKeyValueStorageManagerGetKeyValueStorageOrigins, 
+                       _WKKeyValueStorageManagerGetModificationTimeKey, _WKKeyValueStorageManagerGetOriginKey, 
+                       _WKKeyValueStorageManagerGetStorageDetailsByOrigin, _WKKeyValueStorageManagerGetTypeID, 
+                       _WKMediaFormatReaderCreate, _WKMediaFormatReaderStartOnMainThread, 
+                       _WKMediaKeySystemPermissionCallbackComplete, _WKMediaKeySystemPermissionCallbackGetTypeID, 
+                       _WKMessageListenerGetTypeID, _WKMessageListenerSendReply, 
+                       _WKMutableArrayCreate, _WKMutableDictionaryCreate, _WKNavigationActionGetTypeID, 
+                       _WKNavigationActionShouldPerformDownload, _WKNavigationDataCopyNavigationDestinationURL, 
+                       _WKNavigationDataCopyOriginalRequest, _WKNavigationDataCopyTitle, 
+                       _WKNavigationDataCopyURL, _WKNavigationDataGetTypeID, _WKNavigationGetTypeID, 
+                       _WKNavigationResponseCanShowMIMEType, _WKNavigationResponseGetTypeID, 
+                       _WKNotificationCopyBody, _WKNotificationCopyDir, _WKNotificationCopyIconURL, 
+                       _WKNotificationCopyLang, _WKNotificationCopyTag, _WKNotificationCopyTitle, 
+                       _WKNotificationGetID, _WKNotificationGetSecurityOrigin, _WKNotificationGetTypeID, 
+                       _WKNotificationManagerGetLocalIDForTesting, _WKNotificationManagerGetTypeID, 
+                       _WKNotificationManagerProviderDidClickNotification, _WKNotificationManagerProviderDidCloseNotifications, 
+                       _WKNotificationManagerProviderDidRemoveNotificationPolicies, 
                        _WKNotificationManagerProviderDidShowNotification, _WKNotificationManagerProviderDidUpdateNotificationPolicy, 
                        _WKNotificationManagerSetProvider, _WKNotificationPermissionRequestAllow, 
                        _WKNotificationPermissionRequestDeny, _WKNotificationPermissionRequestGetTypeID, 
@@ -429,18 +431,18 @@ exports:
                        _WKPageGetBackingScaleFactor, _WKPageGetBytecodeProfile, _WKPageGetContentsAsMHTMLData, 
                        _WKPageGetContentsAsString, _WKPageGetContext, _WKPageGetEstimatedProgress, 
                        _WKPageGetFocusedFrame, _WKPageGetFrameSetLargestFrame, _WKPageGetFullscreenDelegate, 
-                       _WKPageGetGapBetweenPages, _WKPageGetImageForFindMatch, _WKPageGetInspector, 
-                       _WKPageGetIsControlledByAutomation, _WKPageGetMainFrame, _WKPageGetMediaCaptureEnabled, 
-                       _WKPageGetMediaState, _WKPageGetObjectRegistry, _WKPageGetPageCount, 
-                       _WKPageGetPageGroup, _WKPageGetPageLength, _WKPageGetPageZoomFactor, 
-                       _WKPageGetPaginationBehavesLikeColumns, _WKPageGetPaginationLineGridEnabled, 
-                       _WKPageGetPaginationMode, _WKPageGetProcessIdentifier, _WKPageGetRenderTreeSize, 
-                       _WKPageGetSamplingProfilerOutput, _WKPageGetScaleFactor, _WKPageGetScrollPinningBehavior, 
-                       _WKPageGetSelectionAsWebArchiveData, _WKPageGetSessionBackForwardListItemValueType, 
-                       _WKPageGetSessionHistoryURLValueType, _WKPageGetSourceForFrame, 
-                       _WKPageGetTextZoomFactor, _WKPageGetTypeID, _WKPageGetWebView, 
-                       _WKPageGetWebsiteDataStore, _WKPageGoBack, _WKPageGoForward, 
-                       _WKPageGoToBackForwardListItem, _WKPageGroupAddUserScript, 
+                       _WKPageGetGPUProcessIdentifier, _WKPageGetGapBetweenPages, 
+                       _WKPageGetImageForFindMatch, _WKPageGetInspector, _WKPageGetIsControlledByAutomation, 
+                       _WKPageGetMainFrame, _WKPageGetMediaCaptureEnabled, _WKPageGetMediaState, 
+                       _WKPageGetObjectRegistry, _WKPageGetPageCount, _WKPageGetPageGroup, 
+                       _WKPageGetPageLength, _WKPageGetPageZoomFactor, _WKPageGetPaginationBehavesLikeColumns, 
+                       _WKPageGetPaginationLineGridEnabled, _WKPageGetPaginationMode, 
+                       _WKPageGetProcessIdentifier, _WKPageGetRenderTreeSize, _WKPageGetSamplingProfilerOutput, 
+                       _WKPageGetScaleFactor, _WKPageGetScrollPinningBehavior, _WKPageGetSelectionAsWebArchiveData, 
+                       _WKPageGetSessionBackForwardListItemValueType, _WKPageGetSessionHistoryURLValueType, 
+                       _WKPageGetSourceForFrame, _WKPageGetTextZoomFactor, _WKPageGetTypeID, 
+                       _WKPageGetWebView, _WKPageGetWebsiteDataStore, _WKPageGoBack, 
+                       _WKPageGoForward, _WKPageGoToBackForwardListItem, _WKPageGroupAddUserScript, 
                        _WKPageGroupAddUserStyleSheet, _WKPageGroupCreateWithIdentifier, 
                        _WKPageGroupGetPreferences, _WKPageGroupGetTypeID, _WKPageGroupGetUserContentController, 
                        _WKPageGroupRemoveAllUserScripts, _WKPageGroupRemoveAllUserStyleSheets, 
@@ -481,16 +483,18 @@ exports:
                        _WKPageSetFullscreenDelegate, _WKPageSetGapBetweenPages, _WKPageSetIgnoresViewportScaleLimits, 
                        _WKPageSetMaintainsInactiveSelection, _WKPageSetMayStartMediaWhenInWindow, 
                        _WKPageSetMediaCaptureEnabled, _WKPageSetMediaCaptureReportingDelayForTesting, 
-                       _WKPageSetMediaVolume, _WKPageSetMockCameraOrientation, _WKPageSetMuted, 
-                       _WKPageSetPCMFraudPreventionValuesForTesting, _WKPageSetPageAndTextZoomFactors, 
-                       _WKPageSetPageContextMenuClient, _WKPageSetPageDiagnosticLoggingClient, 
-                       _WKPageSetPageFindClient, _WKPageSetPageFindMatchesClient, 
-                       _WKPageSetPageFormClient, _WKPageSetPageInjectedBundleClient, 
-                       _WKPageSetPageLength, _WKPageSetPageLoaderClient, _WKPageSetPageNavigationClient, 
+                       _WKPageSetMediaVolume, _WKPageSetMockCameraIsInterrupted, 
+                       _WKPageSetMockCameraOrientation, _WKPageSetMuted, _WKPageSetPCMFraudPreventionValuesForTesting, 
+                       _WKPageSetPageAndTextZoomFactors, _WKPageSetPageContextMenuClient, 
+                       _WKPageSetPageDiagnosticLoggingClient, _WKPageSetPageFindClient, 
+                       _WKPageSetPageFindMatchesClient, _WKPageSetPageFormClient, 
+                       _WKPageSetPageInjectedBundleClient, _WKPageSetPageLength, 
+                       _WKPageSetPageLoaderClient, _WKPageSetPageNavigationClient, 
                        _WKPageSetPagePolicyClient, _WKPageSetPageStateClient, _WKPageSetPageUIClient, 
                        _WKPageSetPageZoomFactor, _WKPageSetPaginationBehavesLikeColumns, 
                        _WKPageSetPaginationLineGridEnabled, _WKPageSetPaginationMode, 
-                       _WKPageSetPrivateClickMeasurementAttributionReportURLsForTesting, 
+                       _WKPageSetPrivateClickMeasurementAppBundleIDForTesting, _WKPageSetPrivateClickMeasurementAttributionReportURLsForTesting, 
+                       _WKPageSetPrivateClickMeasurementEphemeralMeasurementForTesting, 
                        _WKPageSetPrivateClickMeasurementOverrideTimerForTesting, 
                        _WKPageSetPrivateClickMeasurementTokenPublicKeyURLForTesting, 
                        _WKPageSetPrivateClickMeasurementTokenSignatureURLForTesting, 
@@ -816,8 +820,9 @@ exports:
                        _WKWebArchiveResourceGetTypeID, _WKWebProcessMain, _WKWebsiteDataStoreClearAllDeviceOrientationPermissions, 
                        _WKWebsiteDataStoreClearAppBoundSession, _WKWebsiteDataStoreClearBundleIdentifierInNetworkProcess, 
                        _WKWebsiteDataStoreClearCachedCredentials, _WKWebsiteDataStoreClearPrivateClickMeasurementsThroughWebsiteDataRemoval, 
-                       _WKWebsiteDataStoreConfigurationCopyApplicationCacheDirectory, 
+                       _WKWebsiteDataStoreClearStorage, _WKWebsiteDataStoreConfigurationCopyApplicationCacheDirectory, 
                        _WKWebsiteDataStoreConfigurationCopyCacheStorageDirectory, 
+                       _WKWebsiteDataStoreConfigurationCopyGeneralStorageDirectory, 
                        _WKWebsiteDataStoreConfigurationCopyIndexedDBDatabaseDirectory, 
                        _WKWebsiteDataStoreConfigurationCopyLocalStorageDirectory, 
                        _WKWebsiteDataStoreConfigurationCopyMediaKeysStorageDirectory, 
@@ -831,6 +836,7 @@ exports:
                        _WKWebsiteDataStoreConfigurationGetTestingSessionEnabled, 
                        _WKWebsiteDataStoreConfigurationGetTypeID, _WKWebsiteDataStoreConfigurationSetApplicationCacheDirectory, 
                        _WKWebsiteDataStoreConfigurationSetCacheStorageDirectory, 
+                       _WKWebsiteDataStoreConfigurationSetGeneralStorageDirectory, 
                        _WKWebsiteDataStoreConfigurationSetIndexedDBDatabaseDirectory, 
                        _WKWebsiteDataStoreConfigurationSetLocalStorageDirectory, 
                        _WKWebsiteDataStoreConfigurationSetMediaKeysStorageDirectory, 
@@ -982,11 +988,11 @@ uuids:
   - target:          armv7s-ios
     value:           31CCA0A0-4D88-3D50-9744-786A1C52AC38
   - target:          arm64-ios
-    value:           45E3D1E3-CA53-303F-A8BF-EB1D70248DC8
+    value:           C02746E2-B120-33F1-9621-96B5C02C550E
   - target:          arm64e-ios
-    value:           2CD8B525-5D30-314D-881D-11670BD0E7E8
+    value:           D0922434-8DF4-3515-B67D-A0B3182AB409
 install-name:    '/System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy'
-current-version: 612.1.27
+current-version: 612.3.6
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN6WebKit13MemoryMeasure10taskMemoryEv, __ZN6WebKit13MemoryMeasure13enableLoggingEb, 

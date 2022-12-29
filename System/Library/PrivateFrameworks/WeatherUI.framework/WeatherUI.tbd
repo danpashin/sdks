@@ -3,14 +3,12 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WeatherUI.framework/WeatherUI
-current-version:       108
+current-version:       163
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s10Foundation11MeasurementV9WeatherUISo11NSDimensionCRbzrlE10unitStringSSvg,
-                            _$s10Foundation11MeasurementV9WeatherUISo11NSDimensionCRbzrlE10unitStringSSvpMV,
-                            _$s10Foundation11MeasurementV9WeatherUISo11NSUnitSpeedCRszrlE013formattedWindF06localeSSAA6LocaleV_tF,
+    symbols:              [ _$s10Foundation11MeasurementV9WeatherUISo11NSUnitSpeedCRszrlE013formattedWindF06localeSSAA6LocaleV_tF,
                             _$s10Foundation11MeasurementV9WeatherUISo11NSUnitSpeedCRszrlE04windF5ValueSSyF,
                             _$s10Foundation11MeasurementV9WeatherUISo11NSUnitSpeedCRszrlE19formattedUnitStringSSvg,
                             _$s10Foundation11MeasurementV9WeatherUISo11NSUnitSpeedCRszrlE19formattedUnitStringSSvpMV,
@@ -26,6 +24,7 @@ exports:
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE10fahrenheityACyAFGSdFZ,
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE13canonicalizedACyAFGvg,
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE13canonicalizedACyAFGvpMV,
+                            _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE15formattedString11showDegreesSSSb_tF,
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE15formattedStringSSyF,
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE25formattedDigitsOnlyStringSSyF,
                             _$s10Foundation11MeasurementV9WeatherUISo17NSUnitTemperatureCRszrlE7celsiusyACyAFGSdFZ,
@@ -41,7 +40,7 @@ exports:
                             _$s10Foundation3URLV9WeatherUIE0C9SourceParOSHADMc,
                             _$s10Foundation3URLV9WeatherUIE0C9SourceParOSQADMc,
                             _$s10Foundation3URLV9WeatherUIE0C9SourceParOSYADMc,
-                            _$s10Foundation4DateV9WeatherUIE10addMinutesyACSiF,
+                            _$s10Foundation4DateV9WeatherUIE10addMinutes_8calendarACSi_AA8CalendarVtF,
                             _$s10Foundation4DateV9WeatherUIE10startOfDayACvg,
                             _$s10Foundation4DateV9WeatherUIE10startOfDayACvpMV,
                             _$s10Foundation4DateV9WeatherUIE11zeroMinutes8timeZoneAcA04TimeH0V_tF,
@@ -61,9 +60,9 @@ exports:
                             _$s10Foundation4DateV9WeatherUIE23shortDayOfWeekFormatterSo06NSDateI0CvgZ,
                             _$s10Foundation4DateV9WeatherUIE25dayAndShortMonthFormatterSo06NSDateI0CvgZ,
                             _$s10Foundation4DateV9WeatherUIE4noon8timeZoneAcA04TimeG0V_tF,
-                            _$s10Foundation4DateV9WeatherUIE7addDaysyACSiF,
+                            _$s10Foundation4DateV9WeatherUIE7addDays_8calendarACSi_AA8CalendarVtF,
                             _$s10Foundation4DateV9WeatherUIE7weekday2inSiSgAA8TimeZoneV_tF,
-                            _$s10Foundation4DateV9WeatherUIE8addHoursyACSiF,
+                            _$s10Foundation4DateV9WeatherUIE8addHours_8calendarACSi_AA8CalendarVtF,
                             _$s10Foundation4DateV9WeatherUIE8midnight8timeZoneAcA04TimeG0V_tF,
                             _$s10Foundation4DateV9WeatherUIE9dayOfWeek8timeZoneSSAA04TimeI0V_tF,
                             _$s10Foundation4DateV9WeatherUIE9isDaytime7sunrise6sunsetSbACSg_AHtF,
@@ -627,6 +626,13 @@ exports:
                             _$s9WeatherUI19SkyGradientKeyframeVSHAAMc,
                             _$s9WeatherUI19SkyGradientKeyframeVSQAAMc,
                             _$s9WeatherUI19SkyGradientKeyframeVSeAAMc,
+                            _$s9WeatherUI19StatusBarPreservingV14appColorScheme7contentACyxG05SwiftB00gH0O_xyctcfC,
+                            _$s9WeatherUI19StatusBarPreservingV4bodyQrvg,
+                            _$s9WeatherUI19StatusBarPreservingV4bodyQrvpMV,
+                            _$s9WeatherUI19StatusBarPreservingV4bodyQrvpQOMQ,
+                            _$s9WeatherUI19StatusBarPreservingVMa,
+                            _$s9WeatherUI19StatusBarPreservingVMn,
+                            _$s9WeatherUI19StatusBarPreservingVyxG05SwiftB04ViewAAMc,
                             _$s9WeatherUI19VisibilityFormatterC16visibilityString4fromSS10Foundation11MeasurementVySo12NSUnitLengthCG_tF,
                             _$s9WeatherUI19VisibilityFormatterC6locale10Foundation6LocaleVSgvM,
                             _$s9WeatherUI19VisibilityFormatterC6locale10Foundation6LocaleVSgvg,
@@ -749,6 +755,7 @@ exports:
                             _$s9WeatherUI30NextHourPrecipitationChartViewVMa,
                             _$s9WeatherUI30NextHourPrecipitationChartViewVMn,
                             _$s9WeatherUI30NextHourPrecipitationChartViewVN,
+                            _$s9WeatherUI34NextHourPrecipitationStringBuilderC010buildShortF04from13referenceDateSSSg0A3Kit0cdE0V_10Foundation0L0VtF,
                             _$s9WeatherUI34NextHourPrecipitationStringBuilderC010buildShortF04fromSSSg0A3Kit0cD4DataO_tF,
                             _$s9WeatherUI34NextHourPrecipitationStringBuilderC09buildLongF04from8timeZone13referenceDateSSSg0A3Kit0cD4DataO_10Foundation04TimeL0VAL0N0VtF,
                             _$s9WeatherUI34NextHourPrecipitationStringBuilderC09buildLongF04from8timeZone13referenceDateSSSg0A3Kit0cdE0V_10Foundation04TimeL0VAL0N0VtF,

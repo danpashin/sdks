@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3693.0.2
+current-version:       3693.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -102,6 +102,7 @@ exports:
                             _fuzzedIntervalForInterval,
                             _kEDSearchableIndexMaximumBodySizeForBodyIndexing,
                             _kEDSearchableIndexOutboxIdentifier,
+                            _kEDSearchableIndexTransactionAttributeKey,
                             _kEDSearchableIndexTransportIdentifier,
                             _kFailingVerificationFullReindexThreshold,
                             _kMaximumNumberOfMessageIdsToSync,
@@ -149,6 +150,7 @@ exports:
                             EDMessageCountQueryHandler,
                             EDMessageDataLayoutManager,
                             EDMessageListItemPredicates, EDMessagePersistence,
+                            EDMessagePersistenceStatistics,
                             EDMessagePredicateParser, EDMessageQueryEvaluator,
                             EDMessageQueryHandler, EDMessageQueryHelper,
                             EDMessageQueryParser, EDMessageQueryParserObject,

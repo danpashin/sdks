@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           D8CF27BD-3A19-349D-9E05-D784B92C851B
   - target:          arm64-ios
-    value:           982C24BF-A5E6-31BB-A741-6A1A9DBF9E0B
+    value:           6B1BECBF-D485-3819-A703-42ED845A69C5
   - target:          arm64e-ios
-    value:           3AB433B9-1AB8-3E40-A5C5-37C2CE374505
+    value:           DBE17B5E-EF9D-3C7B-AB3E-03F0A28B21D8
 install-name:    '/System/Library/Frameworks/GameKit.framework/GameKit'
-current-version: 810.63.3
+current-version: 815.2.8
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/System/Library/Frameworks/Metal.framework/Metal', '/System/Library/Frameworks/MetalKit.framework/MetalKit', 
@@ -39,9 +39,9 @@ uuids:
   - target:          armv7s-ios
     value:           351D0BD4-D5B6-3333-B2FB-6FAE4D13A976
   - target:          arm64-ios
-    value:           FD3DC5C0-4A0F-35FE-8B14-690D6B09DB9A
+    value:           D31ACA03-4D39-32CC-95A2-092FF86A6F4D
   - target:          arm64e-ios
-    value:           3E416B81-A39C-390A-8991-B38E36372428
+    value:           E37BA7D5-B63B-3049-9E3F-AE2827494CF2
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -470,17 +470,17 @@ exports:
                        GKActivity, GKAnalyticsServiceInterface, GKAnalyticsServicePrivateInterface, 
                        GKAnonymousGuestPlayerInternal, GKAnonymousPlayerInternal, 
                        GKApplicationProxy, GKApplicationStateMonitor, GKApplicationWorkspace, 
-                       GKAuthenticateResponse, GKAuthenticationMachine, GKAutomatchPlayerInternal, 
-                       GKBasePlayer, GKBulletinServiceInterface, GKBulletinServicePrivateInterface, 
-                       GKCDFriendCodeDetail, GKCDGameAccessList, GKCDGameFriend, 
-                       GKCDGameFriendList, GKCDGameSettings, GKCache, GKCachePair, 
-                       GKChallenge, GKChallengeEventHandler, GKChallengeInternal, 
+                       GKAuthenticateCredential, GKAuthenticateResponse, GKAuthenticationMachine, 
+                       GKAutomatchPlayerInternal, GKBasePlayer, GKBulletinServiceInterface, 
+                       GKBulletinServicePrivateInterface, GKCDFriendCodeDetail, GKCDGameAccessList, 
+                       GKCDGameFriend, GKCDGameFriendList, GKCDGameSettings, GKCache, 
+                       GKCachePair, GKChallenge, GKChallengeEventHandler, GKChallengeInternal, 
                        GKChallengeServiceInterface, GKChallengeServicePrivateInterface, 
                        GKClientInterface, GKCloudPlayer, GKCompatibilityEntryInternal, 
                        GKConcernInternal, GKContentPropertyList, GKCustomTournamentManager, 
                        GKCustomTournamentRequest, GKCustomTournamentRequestInternal, 
-                       GKDaemonInterface, GKDaemonProxy, GKDevice, GKDigestVerification, 
-                       GKDispatchGroup, GKEventEmitter, GKFamiliarPlayerInternal, 
+                       GKDaemonInterface, GKDaemonProxy, GKDelayOperation, GKDevice, 
+                       GKDigestVerification, GKDispatchGroup, GKEventEmitter, GKFamiliarPlayerInternal, 
                        GKFriendCodeDetailInternal, GKFriendPlayerInternal, GKFriendRecommendationInternal, 
                        GKFriendRequestInternal, GKFriendRequestURLModel, GKFriendServiceInterface, 
                        GKFriendServicePrivateInterface, GKGame, GKGameDescriptor, 
@@ -502,7 +502,7 @@ exports:
                        GKMatchRequestInternal, GKMatchResponse, GKMatchmaker, GKMessageInboxEntryInternal, 
                        GKMultiplayerGroupInternal, GKMultiplayerServiceInterface, 
                        GKMultiplayerServicePrivateInterface, GKNearbyDevice, GKObserverTrampoline, 
-                       GKPlayer, GKPlayerCredential, GKPlayerCredentialController, 
+                       GKOperationQueue, GKPlayer, GKPlayerCredential, GKPlayerCredentialController, 
                        GKPlayerEmailInternal, GKPlayerInternal, GKPreferences, GKProfileServiceInterface, 
                        GKProfileServicePrivateInterface, GKReachability, GKRecentMatchInternal, 
                        GKRecoveryAttempter, GKRecurrenceRule, GKReporter, GKRequestIdentifier, 
@@ -561,9 +561,9 @@ uuids:
   - target:          armv7s-ios
     value:           D9F6942F-E541-344F-B2B9-B8035DFE7952
   - target:          arm64-ios
-    value:           E1C17FDC-5891-3D3E-B62A-905AA2659C95
+    value:           6B7779B4-99DD-39D9-AD81-7DDDEAEDA319
   - target:          arm64e-ios
-    value:           972F470B-6DF2-34BF-9234-4FD70645B505
+    value:           8FBB3616-F73C-33F6-AC0A-E79B54BF7FC9
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI'
 swift-abi-version: 7
 exports:
@@ -1670,7 +1670,6 @@ exports:
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV03JetC010MeasurableAAMc', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV12measurements7fitting2inSo14JUMeasurementsVSo6CGSizeV_So18UITraitEnvironment_ptF', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV13placeChildren10relativeTo2in03JetC00G4RectVSo6CGRectV_So18UITraitEnvironment_ptF', 
-                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV10avatarSize14titleTextSpace08subtitlelM0012friendStatuslM00oP19ImageTrailingMargin09buttonTopS007infoBaruS013layoutMarginsAESo6CGSizeV_03JetC012AnyDimension_pApQ_pApQ_pApQ_pApQ_pApQ_pSo12UIEdgeInsetsVtcfC', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV10avatarSizeSo6CGSizeVvM', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV10avatarSizeSo6CGSizeVvg', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV10avatarSizeSo6CGSizeVvpMV', 
@@ -1679,6 +1678,11 @@ exports:
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV13layoutMarginsSo12UIEdgeInsetsVvg', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV13layoutMarginsSo12UIEdgeInsetsVvpMV', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV13layoutMarginsSo12UIEdgeInsetsVvs', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14avatarTopSpace0I4Size09titleTextK0012friendsTitlenK008subtitlenK00o8SubtitlenK0012friendStatusnK00sT19ImageTrailingMargin06buttonjW007infoBarjW013layoutMarginsAE12CoreGraphics7CGFloatV_So6CGSizeV03JetC012AnyDimension_pAvW_pAvW_pAvW_pAvW_pAvW_pAvW_pAvW_pSo12UIEdgeInsetsVtcfC', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14avatarTopSpace12CoreGraphics7CGFloatVvM', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14avatarTopSpace12CoreGraphics7CGFloatVvg', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14avatarTopSpace12CoreGraphics7CGFloatVvpMV', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14avatarTopSpace12CoreGraphics7CGFloatVvs', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14titleTextSpace03JetC012AnyDimension_pvM', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14titleTextSpace03JetC012AnyDimension_pvg', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV14titleTextSpace03JetC012AnyDimension_pvpMV', 
@@ -1699,6 +1703,14 @@ exports:
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendStatusTextSpace03JetC012AnyDimension_pvg', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendStatusTextSpace03JetC012AnyDimension_pvpMV', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendStatusTextSpace03JetC012AnyDimension_pvs', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendsTitleTextSpace03JetC012AnyDimension_pvM', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendsTitleTextSpace03JetC012AnyDimension_pvg', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendsTitleTextSpace03JetC012AnyDimension_pvpMV', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV21friendsTitleTextSpace03JetC012AnyDimension_pvs', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV24friendsSubtitleTextSpace03JetC012AnyDimension_pvM', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV24friendsSubtitleTextSpace03JetC012AnyDimension_pvg', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV24friendsSubtitleTextSpace03JetC012AnyDimension_pvpMV', 
+                       '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV24friendsSubtitleTextSpace03JetC012AnyDimension_pvs', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV31friendStatusImageTrailingMargin03JetC012AnyDimension_pvM', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV31friendStatusImageTrailingMargin03JetC012AnyDimension_pvg', 
                        '_$s12GameCenterUI25PlayerProfileHeaderLayoutV7MetricsV31friendStatusImageTrailingMargin03JetC012AnyDimension_pvpMV', 
@@ -2772,9 +2784,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           DCA1F57C-6BD5-3939-84D4-6C57693C68C4
+    value:           0384B53A-C6E2-3550-91BE-5A5F5ADCF981
   - target:          arm64e-ios
-    value:           995C5188-972D-35F8-ABA3-3EBD9850C4B6
+    value:           78BA3214-D56B-3AD0-A44C-CF2D94AD818F
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/GameCenterUICore'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -2784,14 +2796,14 @@ exports:
     objc-classes:    [ GKAvatarImage, GKAvatarImageBrush, GKBackgroundTileImageView, 
                        GKBrush, GKBrushList, GKCircleImageBrush, GKColorPalette, 
                        GKComposedImageBrush, GKConditionBrush, GKDebugHighlightView, 
-                       GKDynamicLabel, GKFocusableDarkColorPalette, GKGameMessagesBrush, 
-                       GKGradient, GKImageBrush, GKImageColorPalette, GKImageContext, 
-                       GKImageKey, GKImageSource, GKInGameColorPalette, GKLocalImageSource, 
-                       GKLocalPlayerAuthenticator, GKLoginAlertView, GKMacGameIconBrush, 
-                       GKMultiCircleImageBrush, GKNetworkImageSource, GKScreenConfigurationController, 
-                       GKTextStyle, GKTextStyleFocus, GKTextStylePad, GKTextStylePhone, 
-                       GKThemeBrush, GKThreadsafeImageCache, GKUITheme, GKiOSAppIconBrush, 
-                       GKiOSAppIconBrushShare, SortHueEntry ]
+                       GKFocusableDarkColorPalette, GKGameMessagesBrush, GKGradient, 
+                       GKImageBrush, GKImageColorPalette, GKImageContext, GKImageKey, 
+                       GKImageSource, GKInGameColorPalette, GKLocalImageSource, GKLocalPlayerAuthenticator, 
+                       GKLoginAlertView, GKMacGameIconBrush, GKMultiCircleImageBrush, 
+                       GKNetworkImageSource, GKScreenConfigurationController, GKTextStyle, 
+                       GKTextStyleFocus, GKTextStylePad, GKTextStylePhone, GKThemeBrush, 
+                       GKThreadsafeImageCache, GKUITheme, GKiOSAppIconBrush, GKiOSAppIconBrushShare, 
+                       SortHueEntry ]
     objc-ivars:      [ GKLocalPlayerAuthenticator._alertMessage, GKLocalPlayerAuthenticator._alertTitle, 
                        GKLocalPlayerAuthenticator._authenticated, GKLocalPlayerAuthenticator._authenticating, 
                        GKLocalPlayerAuthenticator._forceAuthentication, GKLocalPlayerAuthenticator._inputLocalPlayer, 
@@ -2808,9 +2820,9 @@ uuids:
   - target:          armv7s-ios
     value:           C22B6792-9881-3ADD-B405-C3578A2D5BD2
   - target:          arm64-ios
-    value:           3491BFDB-619A-34CE-B543-B89BC6A04E60
+    value:           0177CE5A-FCC4-333E-9F4F-86E1F4E08E18
   - target:          arm64e-ios
-    value:           AB5F3B7A-8286-3483-8371-E6637A6EE1DD
+    value:           D9C84D71-3A48-3A9F-A628-5CCB3D7821C4
 install-name:    '/System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]

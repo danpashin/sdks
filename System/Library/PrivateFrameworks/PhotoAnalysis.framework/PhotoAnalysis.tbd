@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
-current-version:       402.5.140
+current-version:       422.0.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -26,6 +26,7 @@ exports:
                             _MusicForMomentCacheJobTimeInterval,
                             _MusicForTimeBackfillCacheJobTimeInterval,
                             _MusicForTimeFrontfillCacheJobTimeInterval,
+                            _MusicForTopicPrefetchJobTimeInterval,
                             _MusicForYouCacheJobTimeInterval,
                             _NSStringFromPHAStorytellingWorkerCurrentState,
                             _NSStringFromPHAWorkerAdditionalJobRequestReason,
@@ -215,6 +216,7 @@ exports:
                             _PHAPrivateFederatedLearningAugmentersDecoderDomain,
                             _PHAPrivateFederatedLearningCoreMLModelNameSuffix,
                             _PHAPrivateFederatedLearningCrossEntropyLossName,
+                            _PHAPrivateFederatedLearningEspressoModelExtension,
                             _PHAPrivateFederatedLearningEspressoModelName,
                             _PHAPrivateFederatedLearningEspressoModelShapeName,
                             _PHAPrivateFederatedLearningFiltersDecoderDatasetNameAll,
@@ -260,6 +262,7 @@ exports:
                             _PhotoAnalysisLastMusicForMomentCacheJobDate,
                             _PhotoAnalysisLastMusicForTimeBackfillCacheJobDate,
                             _PhotoAnalysisLastMusicForTimeFrontfillCacheJobDate,
+                            _PhotoAnalysisLastMusicForTopicPrefetchJobDate,
                             _PhotoAnalysisLastMusicForYouCacheJobDate,
                             _PhotoAnalysisLastMusicPruneCacheSourcesJobDate,
                             _PhotoAnalysisLibraryMusicPreferencesFilename,
@@ -383,7 +386,7 @@ exports:
                             PHAMusicForArtistCacheJob, PHAMusicForMomentCacheJob,
                             PHAMusicForTimeBackfillCacheJob,
                             PHAMusicForTimeFrontfillCacheJob,
-                            PHAMusicForYouCacheJob,
+                            PHAMusicForTopicPrefetchJob, PHAMusicForYouCacheJob,
                             PHAMusicJobReadWriteApplicationPreferences,
                             PHAMusicPruneCacheSourcesJob,
                             PHANotificationController,

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           FFCD4816-0C63-3C9D-95D2-66E2030F85B1
   - target:          arm64-ios
-    value:           EA250453-DC7B-30C5-AD0B-B50074FD542E
+    value:           EB1BD6CD-2179-39F3-8ADA-89B098FC2432
   - target:          arm64e-ios
-    value:           880E4D45-AA5C-3155-814D-57DDE2455470
+    value:           BE385B9E-674A-365A-BAA8-B8DCE868CE19
 install-name:    '/usr/lib/libABMCommandDriversICE.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -310,7 +310,7 @@ exports:
                        __ZN5radio16ARICommandDriver18getRFSelfTestNonceEN8dispatch8callbackIU13block_pointerFvN3xpc6objectES4_EEE, 
                        __ZN5radio16ARICommandDriver18getResetPropertiesEN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENS5_IK14__CFDictionaryEEEEE, 
                        __ZN5radio16ARICommandDriver19setRFSelfTestTicketEN3ctu2cf11CFSharedRefIK14__CFDictionaryEEN8dispatch8callbackIU13block_pointerFvNS3_I9__CFErrorEEEEE, 
-                       __ZN5radio16ARICommandDriver21getAntennaTxPort_syncEN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENS5_IK14__CFDictionaryEEEEESA_, 
+                       __ZN5radio16ARICommandDriver20enableResetSPMIEventEv, __ZN5radio16ARICommandDriver21getAntennaTxPort_syncEN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENS5_IK14__CFDictionaryEEEEESA_, 
                        __ZN5radio16ARICommandDriver21sendBatteryInfoUpdateEhbN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEEEEE, 
                        __ZN5radio16ARICommandDriver6setMCCEN3ctu2cf11CFSharedRefIK14__CFDictionaryEEN8dispatch8callbackIU13block_pointerFvNS3_I9__CFErrorEEEEE, 
                        __ZN5radio16ARICommandDriverC1ENSt3__110shared_ptrIN3ctu9LogServerEEEN8dispatch8workloopE, 
@@ -366,8 +366,22 @@ exports:
                        __ZN7antenna32kCommandTransmitIndicationConfigE, __ZN7antenna37AntennaCommandDriverDelegateInterfaceD0Ev, 
                        __ZN7antenna37AntennaCommandDriverDelegateInterfaceD1Ev, __ZN7antenna37AntennaCommandDriverDelegateInterfaceD2Ev, 
                        __ZN7antenna41kKeyTxPowerConfigurationCLTMRadioMaxPowerE, 
-                       __ZN7antenna9kKeyStateE, __ZN9Timestamp3nowER7timeval, __ZN9Timestamp3setERK7timevalNS_10TimeDomainE, 
-                       __ZN9TimestampC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_6FormatENS_10TimeDomainE, 
+                       __ZN7antenna9kKeyStateE, __ZN7desense13CommandDriver11getBasenameEv, 
+                       __ZN7desense13CommandDriverC2ENSt3__110shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN7desense16ARICommandDriver24sendFrequencyReport_syncENSt3__13mapIPKcNS1_4listINS1_4pairIyjEENS1_9allocatorIS7_EEEENS1_4lessIS4_EENS8_INS6_IKS4_SA_EEEEEEN4coex5SubIdE, 
+                       __ZN7desense16ARICommandDriver25setFrequencyReportingModeEN4coex5SubIdENS_22FrequencyReportingModeE, 
+                       __ZN7desense16ARICommandDriver26registerFrequencyReportingEN4coex5SubIdE, 
+                       __ZN7desense16ARICommandDriver41handleCurrentFrequencyInfoIndication_syncEPKhj, 
+                       __ZN7desense16ARICommandDriver44handleSetFrequencyReportingModeResponse_syncEPKhj, 
+                       __ZN7desense16ARICommandDriver4initEv, __ZN7desense16ARICommandDriverC1ENSt3__110shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN7desense16ARICommandDriverC2ENSt3__110shared_ptrIN3ctu9LogServerEEE, 
+                       __ZN7desense16ARICommandDriverD0Ev, __ZN7desense16ARICommandDriverD1Ev, 
+                       __ZN7desense16ARICommandDriverD2Ev, __ZN7desense28kKeyFreqReportRplmnFrequencyE, 
+                       __ZN7desense29kKeyFreqReportSearchFrequencyE, __ZN7desense29kKeyFreqReportUplinkFrequencyE, 
+                       __ZN7desense30kKeyFreqReportHoppingFrequencyE, __ZN7desense31kKeyFreqReportDownlinkFrequencyE, 
+                       __ZN7desense31kKeyFreqReportNeighborFrequencyE, __ZN7desense38maxBandwidthForNonPrimaryDLServingCellEv, 
+                       __ZN7desense8asStringENS_22FrequencyReportingModeE, __ZN9Timestamp3nowER7timeval, 
+                       __ZN9Timestamp3setERK7timevalNS_10TimeDomainE, __ZN9TimestampC1ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_6FormatENS_10TimeDomainE, 
                        __ZN9TimestampC1ERK7timevalNS_10TimeDomainE, __ZN9TimestampC1ERKS_, 
                        __ZN9TimestampC1ElNS_10TimeDomainE, __ZN9TimestampC1Ev, __ZN9TimestampC2ENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_6FormatENS_10TimeDomainE, 
                        __ZN9TimestampC2ERK7timevalNS_10TimeDomainE, __ZN9TimestampC2ERKS_, 
@@ -381,12 +395,14 @@ exports:
                        __ZNK5radio6OpMode14configToStringEt, __ZNK5radio6OpMode14getConfigValueEv, 
                        __ZNK5radio6OpMode15allowModeChangeEv, __ZNK5radio6OpMode15getConfigStringEv, 
                        __ZNK5radio6OpMode9getConfigEv, __ZNK5trace16ARICommandDriver9isStartedEv, 
-                       __ZNK7antenna13CommandDriver11getBasenameEv, __ZNK9Timestamp3getER7timevalNS_10TimeDomainE, 
-                       __ZNK9Timestamp8asStringENS_10TimeDomainENS_6FormatE, __ZTIN4cpms16ARICommandDriverE, 
-                       __ZTIN4data13CommandDriverE, __ZTIN7antenna37AntennaCommandDriverDelegateInterfaceE, 
+                       __ZNK7antenna13CommandDriver11getBasenameEv, __ZNK7desense13CommandDriver7getNameEv, 
+                       __ZNK9Timestamp3getER7timevalNS_10TimeDomainE, __ZNK9Timestamp8asStringENS_10TimeDomainENS_6FormatE, 
+                       __ZTIN4cpms16ARICommandDriverE, __ZTIN4data13CommandDriverE, 
+                       __ZTIN7antenna37AntennaCommandDriverDelegateInterfaceE, __ZTIN7desense16ARICommandDriverE, 
                        __ZTSN4cpms16ARICommandDriverE, __ZTSN4data13CommandDriverE, 
-                       __ZTSN7antenna37AntennaCommandDriverDelegateInterfaceE, __ZTVN4cpms16ARICommandDriverE, 
-                       __ZTVN4data13CommandDriverE, __ZTVN7antenna37AntennaCommandDriverDelegateInterfaceE ]
+                       __ZTSN7antenna37AntennaCommandDriverDelegateInterfaceE, __ZTSN7desense16ARICommandDriverE, 
+                       __ZTVN4cpms16ARICommandDriverE, __ZTVN4data13CommandDriverE, 
+                       __ZTVN7antenna37AntennaCommandDriverDelegateInterfaceE, __ZTVN7desense16ARICommandDriverE ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3abm18kBasebandVendorIceE, __ZN3abm18kKeyBasebandVendorE, 
                        __ZN3abm20kKeyBasebandWakeDataE, __ZN3abm20kKeyBasebandWakeTypeE, 

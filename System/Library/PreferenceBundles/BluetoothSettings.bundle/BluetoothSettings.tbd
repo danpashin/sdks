@@ -14,7 +14,8 @@ exports:
                             _isPreferredLanguageEnglish,
                             _sharedBluetoothSettingsLogComponent ]
     objc-classes:         [ AccessoryControlListItemsController,
-                            AccessoryControlTableCell,
+                            AccessoryControlTableCell, AccessorySubController,
+                            AccessoryVoiceControlController,
                             BTAccessoryListeningModeControl, BTAlert,
                             BTDeviceNameEditingController,
                             BTDeviceSmartRouteController, BTSDevice,
@@ -25,7 +26,8 @@ exports:
                             BTSPairSetup, BTSSPPairingRequest,
                             BTSpatialTutorialViewController, BTTableCell,
                             BTTableSharingCell, BTWarningCell, DevicesHeaderView ]
-    objc-ivars:           [ BTAlert._alert, BTAlert._delegate, BTAlert._device,
+    objc-ivars:           [ AccessoryVoiceControlController._volumeControlSpecifiers,
+                            BTAlert._alert, BTAlert._delegate, BTAlert._device,
                             BTSDeviceConfigController._aacpControlSpecifiers,
                             BTSDeviceConfigController._accessoryInfoSpecifiers,
                             BTSDeviceConfigController._ancAssetVersion,

@@ -724,7 +724,7 @@ API_AVAILABLE(macos(10.7), ios(4.0), macCatalyst(14.0)) API_UNAVAILABLE(tvos) __
     For virtual devices, this property indicates which constituent device is currently the primary constituent device. The primary constituent device may change when zoom, exposure, or focus changes.
  
  @discussion
-    This property returns nil for non-virtual devices. This property is key-value observable.
+    This property returns nil for non-virtual devices. On virtual devices this property returns nil until the device is used in a running AVCaptureSession. This property is key-value observable.
  */
 @property(nonatomic, readonly, nullable) AVCaptureDevice *activePrimaryConstituentDevice API_AVAILABLE(macos(12.0), ios(15.0), macCatalyst(15.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos);
 

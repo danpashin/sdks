@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/Message
-current-version:       3693.0.2
+current-version:       3693.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -99,7 +99,8 @@ exports:
                             _MFImageGlyphInboxMailbox, _MFImageGlyphJunkMailbox,
                             _MFImageGlyphOutboxMailbox, _MFImageGlyphSentMailbox,
                             _MFImageGlyphTrashMailbox, _MFLogSQLiteError,
-                            _MFLookupLocalizedString, _MFMailAccountArchive,
+                            _MFLookupLocalizedString, _MFMailAccountAltDSID,
+                            _MFMailAccountArchive,
                             _MFMailAccountAuthenticationScheme,
                             _MFMailAccountClass, _MFMailAccountDeliveryHostname,
                             _MFMailAccountDeliveryPortNumber,
@@ -384,6 +385,7 @@ exports:
                             MFMessageKeychainManager, MFMessageLoadingContext,
                             MFMessageLoadingContextEvent,
                             MFMessageLoadingContextToEMSecurityInformationTransformer,
+                            MFMessagePersistenceStatistics_iOS,
                             MFMessagePersistence_iOS, MFMessageReferenceContext,
                             MFMessageSigner,
                             MFMessageSignerEMMessageSignerTransformer,
@@ -440,7 +442,6 @@ exports:
                             _MFDataCollector, _MFDigestMD5Authenticator,
                             _MFEmailAddress, _MFFormatFlowedWriter,
                             _MFLoadingContextEventResult, _MFLoginAuthenticator,
-                            _MFMailMessageLibraryStatistics,
                             _MFMailboxUidChildrenEnumerator,
                             _MFMailboxUidEnumerator, _MFMessageCollector,
                             _MFMessageContentRequestScheduler, _MFMessageFlags,

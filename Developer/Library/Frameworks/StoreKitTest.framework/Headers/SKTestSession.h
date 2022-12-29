@@ -11,12 +11,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, SKTestTimeRate) {
     SKTestTimeRateRealTime,
-    SKTestTimeRateOneHourIsOneDay,
-    SKTestTimeRateThirtyMinutesIsOneDay,
-    SKTestTimeRateFiveMinutesIsOneDay,
-    SKTestTimeRateOneMinuteIsOneDay,
-    SKTestTimeRateThirtySecondsIsOneDay,
-    SKTestTimeRateOneSecondIsOneDay,
+    
+    SKTestTimeRateOneHourIsOneDay API_DEPRECATED("Use real time or a time rate in terms of monthly renewals", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    SKTestTimeRateThirtyMinutesIsOneDay API_DEPRECATED("Use real time or a time rate in terms of monthly renewals", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    SKTestTimeRateFiveMinutesIsOneDay API_DEPRECATED("Use real time or a time rate in terms of monthly renewals", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    SKTestTimeRateOneMinuteIsOneDay API_DEPRECATED_WITH_REPLACEMENT("SKTestTimeRateMonthlyRenewalEveryThirtyMinutes", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    SKTestTimeRateThirtySecondsIsOneDay API_DEPRECATED_WITH_REPLACEMENT("SKTestTimeRateMonthlyRenewalEveryFifteenMinutes", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    SKTestTimeRateOneSecondIsOneDay API_DEPRECATED_WITH_REPLACEMENT("SKTestTimeRateMonthlyRenewalEveryThirtySeconds", ios(14.0, 15.2), macos(11.0, 12.1), tvos(14.0, 15.2), watchos(7.0, 8.3)),
+    
+    SKTestTimeRateMonthlyRenewalEveryHour API_AVAILABLE(ios(15.2), macos(12.1), tvos(15.2), watchos(8.3)) = 10,
+    SKTestTimeRateMonthlyRenewalEveryThirtyMinutes API_AVAILABLE(ios(15.2), macos(12.1), tvos(15.2), watchos(8.3)),
+    SKTestTimeRateMonthlyRenewalEveryFifteenMinutes API_AVAILABLE(ios(15.2), macos(12.1), tvos(15.2), watchos(8.3)),
+    SKTestTimeRateMonthlyRenewalEveryFiveMinutes API_AVAILABLE(ios(15.2), macos(12.1), tvos(15.2), watchos(8.3)),
+    SKTestTimeRateMonthlyRenewalEveryThirtySeconds API_AVAILABLE(ios(15.2), macos(12.1), tvos(15.2), watchos(8.3)) = 15,
 } NS_SWIFT_NAME(SKTestSession.TimeRate) API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0));
 
 @class SKTestTransaction;

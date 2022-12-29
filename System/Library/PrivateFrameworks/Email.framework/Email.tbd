@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3693.0.2
+current-version:       3693.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -49,6 +49,7 @@ exports:
                             _EMFetchTypeStandardAccountList,
                             _EMFetchTypeStandardMailbox, _EMFetchTypeUnlock,
                             _EMFetchTypeUserInitiatedMailbox,
+                            _EMHideMyEmailErrorDomain,
                             _EMInteractionLoggerShouldLog,
                             _EMInternalErrorReasonKey, _EMInvalidCount,
                             _EMListUnsubscribeSuggestionTrailingComparator,
@@ -94,6 +95,21 @@ exports:
                             _EMMessageListItemKeyPathToAddress,
                             _EMMessageListItemKeyPathToDisplayName,
                             _EMMessageListItemKeyPathToList,
+                            _EMPersistenceStatisticsKeyAttachmentsIndexed,
+                            _EMPersistenceStatisticsKeyAttachmentsToIndex,
+                            _EMPersistenceStatisticsKeyIndexableAttachments,
+                            _EMPersistenceStatisticsKeyIndexableMessages,
+                            _EMPersistenceStatisticsKeyMailboxesNeedingReconcilication,
+                            _EMPersistenceStatisticsKeyMessageData,
+                            _EMPersistenceStatisticsKeyMessageDataDeleted,
+                            _EMPersistenceStatisticsKeyMessages,
+                            _EMPersistenceStatisticsKeyMessagesDeleted,
+                            _EMPersistenceStatisticsKeyMessagesIndexed,
+                            _EMPersistenceStatisticsKeyMessagesMarkedAsJournaled,
+                            _EMPersistenceStatisticsKeyMessagesToIndex,
+                            _EMPersistenceStatisticsKeyProtectedDataAvailable,
+                            _EMPersistenceStatisticsKeyProtectedMessageData,
+                            _EMPersistenceStatisticsKeyProtectedMessages,
                             _EMPredicateAccountKeyPathName,
                             _EMPredicateMailboxKeyPathAccount,
                             _EMPredicateMailboxKeyPathIsSmartMailbox,
@@ -105,6 +121,7 @@ exports:
                             _EMPredicateMessageKeyPathInternalID,
                             _EMPredicateMessageKeyPathObjectID,
                             _EMPredicateMessageKeyPathSubject,
+                            _EMPrivacyProxyIsDisabledForNetwork,
                             _EMPromptUserForBlockedSenderKey,
                             _EMTopHitsQueryDefaultLimit,
                             _EMUserDefaultAdditionalCursorInteractions,
@@ -137,6 +154,7 @@ exports:
                             _EMUserDefaultQueryResultComparison,
                             _EMUserDefaultRemoteContentAlertDate,
                             _EMUserDefaultRemoteContentRequestShortInterval,
+                            _EMUserDefaultRemoteContentVPNBannerHasBeenDismissed,
                             _EMUserDefaultSearchFlagColors,
                             _EMUserDefaultSharingFromSafariUI,
                             _EMUserDefaultShowDebugInfo,
@@ -190,10 +208,13 @@ exports:
                             EMClientState, EMCollection,
                             EMCollectionItemIDStateCapturer,
                             EMContentRepresentation, EMContentRequestOptions,
+                            EMCoreAnalyticsCollector, EMCoreAnalyticsEvent,
                             EMCreateMailboxChangeAction, EMDaemonBooster,
                             EMDaemonInterface, EMDaemonInterfaceRequest,
                             EMDeleteMailboxChangeAction, EMDeliveryAccount,
                             EMDiagnosticInfoGatherer, EMFetchController,
+                            EMHMERecipientCreationRequest,
+                            EMHMERecipientCreationResponse, EMHideMyEmail,
                             EMInteractionLogger, EMInternalMessageID,
                             EMInternalPreferences, EMListUnsubscribeCommand,
                             EMListUnsubscribeCommandMessageHeaders,

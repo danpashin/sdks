@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           7001DFC7-93F3-3A6A-BCAE-BAC71FCDC69A
   - target:          arm64-ios
-    value:           89163513-D55F-37C7-9326-E3AD71A0D4E0
+    value:           D5B2BB7E-76EB-390C-A5BE-168569E36A8E
   - target:          arm64e-ios
-    value:           EE316212-5E9B-362C-B19D-63CE126ED53A
+    value:           94B90ABF-8757-3618-B846-DDE3DE5D8C38
 install-name:    '/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics'
-current-version: 1548.1.3
+current-version: 1557.3.2
 compatibility-version: 64
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -364,18 +364,18 @@ exports:
                        _CGDataProviderCopyData, _CGDataProviderCreateDirect, _CGDataProviderCreateMultiRangeDirectAccess, 
                        _CGDataProviderCreateSequential, _CGDataProviderCreateWithCFData, 
                        _CGDataProviderCreateWithCopyOfData, _CGDataProviderCreateWithData, 
-                       _CGDataProviderCreateWithFilename, _CGDataProviderCreateWithSwappedProvider, 
-                       _CGDataProviderCreateWithURL, _CGDataProviderGetBytePtr, _CGDataProviderGetBytes, 
-                       _CGDataProviderGetBytesAtPosition, _CGDataProviderGetBytesInRanges, 
-                       _CGDataProviderGetInfo, _CGDataProviderGetProperty, _CGDataProviderGetSize, 
-                       _CGDataProviderGetSize2, _CGDataProviderGetSizeOfData, _CGDataProviderGetTypeID, 
-                       _CGDataProviderHasDataPtr, _CGDataProviderLock, _CGDataProviderRelease, 
-                       _CGDataProviderReleaseBytePtr, _CGDataProviderRetain, _CGDataProviderRetainBytePtr, 
-                       _CGDataProviderRewind, _CGDataProviderSetProperty, _CGDataProviderSkipForward, 
-                       _CGDataProviderUngetBytePtr, _CGDataProviderUnlock, _CGDefaultsCopyString, 
-                       _CGDefaultsGetBoolean, _CGDefaultsGetInteger, _CGDigesterAddBytes, 
-                       _CGDigesterCreateMD5, _CGDigesterGetDigest, _CGDigesterRelease, 
-                       _CGDisplayColorSpaceConversionCreateInvertedLinearizationCurve, 
+                       _CGDataProviderCreateWithDataNoCopy, _CGDataProviderCreateWithFilename, 
+                       _CGDataProviderCreateWithSwappedProvider, _CGDataProviderCreateWithURL, 
+                       _CGDataProviderGetBytePtr, _CGDataProviderGetBytes, _CGDataProviderGetBytesAtPosition, 
+                       _CGDataProviderGetBytesInRanges, _CGDataProviderGetInfo, _CGDataProviderGetProperty, 
+                       _CGDataProviderGetSize, _CGDataProviderGetSize2, _CGDataProviderGetSizeOfData, 
+                       _CGDataProviderGetTypeID, _CGDataProviderHasDataPtr, _CGDataProviderLock, 
+                       _CGDataProviderRelease, _CGDataProviderReleaseBytePtr, _CGDataProviderRetain, 
+                       _CGDataProviderRetainBytePtr, _CGDataProviderRewind, _CGDataProviderSetProperty, 
+                       _CGDataProviderSkipForward, _CGDataProviderUngetBytePtr, _CGDataProviderUnlock, 
+                       _CGDefaultsCopyString, _CGDefaultsGetBoolean, _CGDefaultsGetInteger, 
+                       _CGDigesterAddBytes, _CGDigesterCreateMD5, _CGDigesterGetDigest, 
+                       _CGDigesterRelease, _CGDisplayColorSpaceConversionCreateInvertedLinearizationCurve, 
                        _CGDisplayColorSpaceConversionCreateLinearizationCurve, _CGDisplayColorSpaceConversionCreatePostMatrixToneMapping, 
                        _CGDisplayColorSpaceConversionCreatePreMatrixToneMapping, 
                        _CGDisplayColorSpaceConversionGetConversionMatrix, _CGDisplayListContainsTransparentContent, 
@@ -574,7 +574,7 @@ exports:
                        _CGPDFCMapGetCIDsForText, _CGPDFCMapGetMaxUnicodes, _CGPDFCMapGetName, 
                        _CGPDFCMapGetROS, _CGPDFCMapGetUnicodeCMap, _CGPDFCMapGetUnicodesForIndex, 
                        _CGPDFCMapGetZapfTable, _CGPDFCMapIsHorizontal, _CGPDFCMapRelease, 
-                       _CGPDFContentStreamCreateWithPage, _CGPDFContentStreamCreateWithStream, 
+                       _CGPDFCMapRetain, _CGPDFContentStreamCreateWithPage, _CGPDFContentStreamCreateWithStream, 
                        _CGPDFContentStreamGetResource, _CGPDFContentStreamGetStreams, 
                        _CGPDFContentStreamRelease, _CGPDFContentStreamRetain, _CGPDFContextAddAnnotation, 
                        _CGPDFContextAddCatalogEntry, _CGPDFContextAddDestinationAtPoint, 
@@ -801,7 +801,8 @@ exports:
                        _kCGColorSpaceGenericRGB, _kCGColorSpaceGenericRGBLinear, 
                        _kCGColorSpaceGenericXYZ, _kCGColorSpaceITUR_2020, _kCGColorSpaceITUR_2020_HLG, 
                        _kCGColorSpaceITUR_2020_PQ, _kCGColorSpaceITUR_2020_PQ_EOTF, 
-                       _kCGColorSpaceITUR_2100_HLG, _kCGColorSpaceITUR_2100_PQ, _kCGColorSpaceITUR_709, 
+                       _kCGColorSpaceITUR_2020_sRGBGamma, _kCGColorSpaceITUR_2100_HLG, 
+                       _kCGColorSpaceITUR_2100_PQ, _kCGColorSpaceITUR_709, _kCGColorSpaceITUR_709_PQ, 
                        _kCGColorSpaceLinearDisplayP3, _kCGColorSpaceLinearGray, _kCGColorSpaceLinearITUR_2020, 
                        _kCGColorSpaceLinearSRGB, _kCGColorSpacePerceptualStandardRGB, 
                        _kCGColorSpaceROMMRGB, _kCGColorSpaceSRGB, _kCGColorSpaceUncalibratedCMYK, 

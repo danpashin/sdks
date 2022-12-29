@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           45DE6FC8-C20F-3136-8AAD-324DCD38E65F
   - target:          arm64-ios
-    value:           1A7316E3-BC26-3129-AD39-7ECD5406FABC
+    value:           95B3EB5D-F72F-3634-9BD4-37BEBC20476E
   - target:          arm64e-ios
-    value:           7DA6CFE2-6679-3E96-BC72-5BC493F2C2DE
+    value:           71FF7642-E18A-33AB-A1A4-5B30475124AD
 install-name:    '/System/Library/Frameworks/GameController.framework/GameController'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -19,11 +19,11 @@ exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ControllerClassForService, _GCAppClientInterface, _GCAppServerInterface, 
                        _GCApplicationIsAlmond, _GCApplicationIsMacCatalyst, _GCBundleWithPID, 
-                       _GCControllerButtonInputPressedThreshold, _GCControllerComponent_Classes, 
-                       _GCControllerDidBecomeCurrentNotification, _GCControllerDidConnectNotification, 
-                       _GCControllerDidDisconnectNotification, _GCControllerDidStopBeingCurrentNotification, 
-                       _GCControllerManagerEnsureXPCRemote, _GCControllerManagerInit, 
-                       _GCControllerManagerInitXPC, _GCCurrentExtendedGamepadSnapshotDataVersion, 
+                       _GCBypassMFiAuthentication, _GCControllerButtonInputPressedThreshold, 
+                       _GCControllerComponent_Classes, _GCControllerDidBecomeCurrentNotification, 
+                       _GCControllerDidConnectNotification, _GCControllerDidDisconnectNotification, 
+                       _GCControllerDidStopBeingCurrentNotification, _GCControllerManagerEnsureXPCRemote, 
+                       _GCControllerManagerInit, _GCControllerManagerInitXPC, _GCCurrentExtendedGamepadSnapshotDataVersion, 
                        _GCCurrentMicroGamepadSnapshotDataVersion, _GCCurrentProcessLinkedOnAfter, 
                        _GCExecutablePathWithPID, _GCExtendedGamepadDidBecomeCurrentNotification, 
                        _GCExtendedGamepadDidStopBeingCurrentNotification, _GCExtendedGamepadInitInfoMake, 
@@ -157,15 +157,16 @@ exports:
                        _isDeviceAppleTouchpad, _isDeviceDualSense, _isDeviceDualShock4, 
                        _isDeviceKeyboard, _isDeviceLuna, _isDeviceMFiAuthenticated, 
                        _isDeviceMFiGamepadCompliantForDeviceRef, _isDeviceMFiGamepadCompliantForServiceClientRef, 
-                       _isDeviceMotionLite, _isDeviceMouse, _isDeviceXbox, _isPartnerSupportEnabled, 
-                       _kGCControllerSettingsMetaSettingsExistKey, _kGCSettingsCustomizedElementsKey, 
-                       _kGCSettingsDefaultBundleIdentifier, _kGCSettingsElementInvertHorizontallyKey, 
-                       _kGCSettingsElementInvertSwapAxesKey, _kGCSettingsElementInvertVerticallyKey, 
-                       _kGCSettingsElementMappingKeyKey, _kGCSettingsMetaSettingsExistKey, 
-                       _kGCSettingsMetaSuiteSuffix, _loadNSDictionaryFromJSON, _mapToAnalytics, 
-                       _nameForKeyCode, _numberFromInt, _s_cbDelegate, _s_cbDelegateQueue, 
-                       _s_mbDelegate, _s_sfDelegate, _serviceMatchesUsageAndUsagePage, 
-                       _setGCHIDLoggerCategory, _stringFromState, _threadRunLoopSourceCallback ]
+                       _isDeviceMotionLite, _isDeviceMouse, _isDeviceParentAuthenticated, 
+                       _isDeviceXbox, _isPartnerSupportEnabled, _kGCControllerSettingsMetaSettingsExistKey, 
+                       _kGCSettingsCustomizedElementsKey, _kGCSettingsDefaultBundleIdentifier, 
+                       _kGCSettingsElementInvertHorizontallyKey, _kGCSettingsElementInvertSwapAxesKey, 
+                       _kGCSettingsElementInvertVerticallyKey, _kGCSettingsElementMappingKeyKey, 
+                       _kGCSettingsMetaSettingsExistKey, _kGCSettingsMetaSuiteSuffix, 
+                       _loadNSDictionaryFromJSON, _mapToAnalytics, _nameForKeyCode, 
+                       _numberFromInt, _s_cbDelegate, _s_cbDelegateQueue, _s_mbDelegate, 
+                       _s_sfDelegate, _serviceMatchesUsageAndUsagePage, _setGCHIDLoggerCategory, 
+                       _stringFromState, _threadRunLoopSourceCallback ]
     objc-classes:    [ GCAnalytics, GCApplicationStateMonitor, GCColor, GCController, 
                        GCControllerAxisInput, GCControllerButtonInput, GCControllerCBDelegate, 
                        GCControllerDirectionPad, GCControllerElement, GCControllerElementSettings, 

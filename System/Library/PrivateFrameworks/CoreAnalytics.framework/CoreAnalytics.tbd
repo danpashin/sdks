@@ -9,7 +9,8 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AnalyticsIsEventUsed, _AnalyticsRolloverEvents,
-                            _AnalyticsSendEvent, _AnalyticsSendEventLazy,
+                            _AnalyticsRolloverWithOptions, _AnalyticsSendEvent,
+                            _AnalyticsSendEventLazy,
                             _AnalyticsSendEventLazyHighPriority,
                             _AnalyticsSetCallbackForQueriedEvent,
                             _AnalyticsSetCallbackForQueriedEventWithQueue,
@@ -86,6 +87,7 @@ exports:
                             _analytics_is_event_used,
                             _analytics_mark_awd_queriable,
                             _analytics_rollover_events,
+                            _analytics_rollover_with_options,
                             _analytics_send_awd_metric,
                             _analytics_send_awd_trigger, _analytics_send_event,
                             _analytics_send_event_lazy,

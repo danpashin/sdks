@@ -1,8 +1,7 @@
 //
 //  THClient.h
-//  CoreThreadRadio
+//  ThreadNetwork
 //
-//  Created by Venkat Manepalli on 10/26/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -34,10 +33,10 @@ API_AVAILABLE(ios(15.0))
  * Retrieve All Credentials, stored by the client
  *
  * @parameter
- * completion : Callback function to recieve all credentials
+ * completion : Callback function to receive all credentials
  *
  */
-- (void)retrieveAllCredentials:(void (^)(NSSet<THCredentials*>* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(allCredentials());
+- (void)retrieveAllCredentials:(void (^)(NSSet<THCredentials*>* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(allCredentials());
 
 /*
  * @function deleteActiveDataSetRecordForBorderAgent
@@ -51,7 +50,7 @@ API_AVAILABLE(ios(15.0))
  * completion : Callback function to return the status of the delete operation
  *
  */
-- (void)deleteCredentialsForBorderAgent:(NSData *)borderAgentID completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0));
+- (void)deleteCredentialsForBorderAgent:(NSData *)borderAgentID completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst);
 
 /*
  * @function retrieveCredentialsForBorderAgent
@@ -60,10 +59,10 @@ API_AVAILABLE(ios(15.0))
  * Retrieve Credentials For The given Thread Border Agent identifier, stored by the client
  *
  * @parameter
- * completion : Callback function to recieve the matching active dataset record
+ * completion : Callback function to receive the matching active dataset record
  *
  */
-- (void)retrieveCredentialsForBorderAgent:(NSData *)borderAgentID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(credentials(forBorderAgentID:));
+- (void)retrieveCredentialsForBorderAgent:(NSData *)borderAgentID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(credentials(forBorderAgentID:));
 
 /*
  * @function storeCredentialsForBorderAgent
@@ -80,7 +79,7 @@ API_AVAILABLE(ios(15.0))
 
 - (void)storeCredentialsForBorderAgent:(NSData *)borderAgentID
               activeOperationalDataSet:(NSData *)activeOperationalDataSet
-                            completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0));
+                            completion:(void (^)(NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst);
 
 /*
  * @function retrievePreferredCredentials
@@ -90,24 +89,24 @@ API_AVAILABLE(ios(15.0))
  * Invoking this API will result into UI Alert prompt seeking user's permission to access the credentials
  *
  * @parameter
- * completion : Callback function to recieve preferred network active dataset record
+ * completion : Callback function to receive preferred network active dataset record
  *
  */
-- (void)retrievePreferredCredentials:(void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(preferredCredentials());
+- (void)retrievePreferredCredentials:(void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(preferredCredentials());
 
 /*
  * @function retrieveActiveDataSetRecordForExtendedPANID
  *
  * @discussion
- * Retrieve Credentials For The given Extedend-PAN Id
+ * Retrieve Credentials For The given Extended-PAN Id
  * Invoking this API will result into UI Alert prompt seeking user's permission to access the credentials
  *
  * @parameter
  * extendedPANID    : Extended PAN Id identifying the thread network
- * completion       : Callback function to recieve the matching active dataset record
+ * completion       : Callback function to receive the matching active dataset record
  *
  */
-- (void)retrieveCredentialsForExtendedPANID:(NSData *)extendedPANID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) NS_SWIFT_ASYNC_NAME(credentials(forExtendedPANID:));
+- (void)retrieveCredentialsForExtendedPANID:(NSData *)extendedPANID completion:( void (^)(THCredentials* _Nullable credentials, NSError* _Nullable error))completion API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(macos, macCatalyst) NS_SWIFT_ASYNC_NAME(credentials(forExtendedPANID:));
 @end
 
 NS_ASSUME_NONNULL_END

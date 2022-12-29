@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AddressForBTDevice,
+                            _BluetoothAccessibilityHeadTrackChanged,
                             _BluetoothAccessoryInEarStatusNotification,
                             _BluetoothAccessorySealValueStatusNotification,
                             _BluetoothAccessorySettingsChanged,
@@ -49,6 +50,7 @@ exports:
                             _BluetoothPowerChangedNotification,
                             _BluetoothStateChangedNotification,
                             _getFloatFromLittleEndianByteStream,
+                            _isDebugModeEnabled,
                             _sharedBluetoothManagerLogComponent ]
     objc-classes:         [ BluetoothDevice, BluetoothManager, RemoteDeviceManager ]
     objc-ivars:           [ BluetoothDevice._address,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariSharedUI.framework/SafariSharedUI
-current-version:       612.1.27
+current-version:       612.3.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -101,7 +101,7 @@ exports:
                             _WBSPredefinedMessageValueTextEdgeLeft,
                             _WBSPredefinedMessageValueTextEdgeRight,
                             _WBSPrivacyProxyChangeNotification,
-                            _WBSPrivacyProxyiCloudSettingsLearnMoreURLString,
+                            _WBSPrivacyProxyICloudSettingsLearnMoreURLString,
                             _WBSRectCenteredWithinRect,
                             _WBSRemoteObjectInterfaceConformingToWBSBundleWebExtensionsControllerMessageReceiver,
                             _WBSRemoteObjectInterfaceConformingToWBSSafariWebExtensionsControllerMessageReceiver,
@@ -776,6 +776,9 @@ exports:
                             _allocMAAssetInstance, _allocMAAssetQueryInstance,
                             _allocMLModelInstance, _allocPKGlyphViewInstance,
                             _allocPrivacyProxyClientInstance,
+                            _allocSYFeatureEligibilityInstance,
+                            _allocSYLinkContextClientInstance,
+                            _allocSYNotesActivationObserverInstance,
                             _allocUsageFeedInstance,
                             _allocVNClassificationObservationInstance,
                             _allocVNCoreMLModelInstance,
@@ -797,11 +800,11 @@ exports:
                             _canLoadPassKitUIFoundation,
                             _canLoadSymptomAnalytics,
                             _canLoadSymptomPresentationFeed,
-                            _canLoadSymptomPresentationLite, _canLoadTranslation,
-                            _canLoadVision, _clipboardWritePermissionKey,
-                            _commandDescriptionKey, _commandNameKey,
-                            _commandShortcutKey, _contextMenusPermissionKey,
-                            _cookiesPermissionKey,
+                            _canLoadSymptomPresentationLite, _canLoadSynapse,
+                            _canLoadTranslation, _canLoadVision,
+                            _clipboardWritePermissionKey, _commandDescriptionKey,
+                            _commandNameKey, _commandShortcutKey,
+                            _contextMenusPermissionKey, _cookiesPermissionKey,
                             _coreSpotlightHistoryContentType,
                             _coreSpotlightPageVisitCountKey,
                             _currentDeclarativeNetRequestHashVersion,
@@ -815,6 +818,9 @@ exports:
                             _getMLModelVersionStringKey, _getPKGlyphViewClass,
                             _getPrivacyProxyClientClass,
                             _getPrivacyProxyConfigurationChangedNotification,
+                            _getSYFeatureEligibilityClass,
+                            _getSYLinkContextClientClass,
+                            _getSYNotesActivationObserverClass,
                             _getUsageFeedClass,
                             _getVNClassificationObservationClass,
                             _getVNCoreMLModelClass, _getVNCoreMLRequestClass,
@@ -860,6 +866,7 @@ exports:
                             WBSCompletionListRankingObserver,
                             WBSContextResultGrouper,
                             WBSExtensionMessageReplySender,
+                            WBSExtensionsAnalyticsEventCoalescer,
                             WBSExtensionsController, WBSFaviconProvider,
                             WBSFaviconProviderDatabaseController,
                             WBSFaviconProviderIconInfo,

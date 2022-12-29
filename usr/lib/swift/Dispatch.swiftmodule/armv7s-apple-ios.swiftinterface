@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.29.207 clang-1300.0.28.1)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.46.202 clang-1300.0.29.30)
 // swift-module-flags: -target armv7s-apple-ios10.3 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftDispatch -swift-version 5 -enforce-exclusivity=checked -O -module-name Dispatch
+import Combine
 @_exported import Dispatch
 import Swift
 import _Concurrency
@@ -381,6 +382,79 @@ public func + (time: Dispatch.DispatchWallTime, interval: Dispatch.DispatchTimeI
 public func - (time: Dispatch.DispatchWallTime, interval: Dispatch.DispatchTimeInterval) -> Dispatch.DispatchWallTime
 public func + (time: Dispatch.DispatchWallTime, seconds: Swift.Double) -> Dispatch.DispatchWallTime
 public func - (time: Dispatch.DispatchWallTime, seconds: Swift.Double) -> Dispatch.DispatchWallTime
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Dispatch.DispatchTime {
+  public func distance(to other: Dispatch.DispatchTime) -> Dispatch.DispatchTimeInterval
+  public func advanced(by n: Dispatch.DispatchTimeInterval) -> Dispatch.DispatchTime
+}
+@available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Dispatch.DispatchQueue : Combine.Scheduler {
+  public struct SchedulerTimeType : Swift.Strideable, Swift.Codable, Swift.Hashable {
+    public var dispatchTime: Dispatch.DispatchTime
+    public init(_ time: Dispatch.DispatchTime)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+    public func distance(to other: Dispatch.DispatchQueue.SchedulerTimeType) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+    public func advanced(by n: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Dispatch.DispatchQueue.SchedulerTimeType
+    public func hash(into hasher: inout Swift.Hasher)
+    @_alwaysEmitIntoClient public static func < (lhs: Dispatch.DispatchQueue.SchedulerTimeType, rhs: Dispatch.DispatchQueue.SchedulerTimeType) -> Swift.Bool {
+            return lhs.dispatchTime < rhs.dispatchTime
+        }
+    public struct Stride : Combine.SchedulerTimeIntervalConvertible, Swift.Comparable, Swift.SignedNumeric, Swift.ExpressibleByFloatLiteral, Swift.Hashable, Swift.Codable {
+      public typealias FloatLiteralType = Swift.Double
+      public typealias IntegerLiteralType = Swift.Int
+      public typealias Magnitude = Swift.Int
+      public var magnitude: Swift.Int {
+        get
+        set
+      }
+      public var timeInterval: Dispatch.DispatchTimeInterval {
+        get
+      }
+      public init(_ timeInterval: Dispatch.DispatchTimeInterval)
+      public init(floatLiteral value: Swift.Double)
+      public init(integerLiteral value: Swift.Int)
+      public init?<T>(exactly source: T) where T : Swift.BinaryInteger
+      public static func < (lhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Swift.Bool
+      public static func * (lhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func + (lhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func - (lhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func -= (lhs: inout Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride)
+      public static func *= (lhs: inout Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride)
+      public static func += (lhs: inout Dispatch.DispatchQueue.SchedulerTimeType.Stride, rhs: Dispatch.DispatchQueue.SchedulerTimeType.Stride)
+      public static func seconds(_ s: Swift.Double) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func seconds(_ s: Swift.Int) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func milliseconds(_ ms: Swift.Int) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func microseconds(_ us: Swift.Int) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public static func nanoseconds(_ ns: Swift.Int) -> Dispatch.DispatchQueue.SchedulerTimeType.Stride
+      public func hash(into hasher: inout Swift.Hasher)
+      public static func == (a: Dispatch.DispatchQueue.SchedulerTimeType.Stride, b: Dispatch.DispatchQueue.SchedulerTimeType.Stride) -> Swift.Bool
+      public func encode(to encoder: Swift.Encoder) throws
+      public var hashValue: Swift.Int {
+        get
+      }
+      public init(from decoder: Swift.Decoder) throws
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct SchedulerOptions {
+    public var qos: Dispatch.DispatchQoS
+    public var flags: Dispatch.DispatchWorkItemFlags
+    public var group: Dispatch.DispatchGroup?
+    public init(qos: Dispatch.DispatchQoS = .unspecified, flags: Dispatch.DispatchWorkItemFlags = [], group: Dispatch.DispatchGroup? = nil)
+  }
+  public var minimumTolerance: Dispatch.DispatchQueue.SchedulerTimeType.Stride {
+    get
+  }
+  public var now: Dispatch.DispatchQueue.SchedulerTimeType {
+    get
+  }
+  public func schedule(options: Dispatch.DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Swift.Void)
+  public func schedule(after date: Dispatch.DispatchQueue.SchedulerTimeType, tolerance: Dispatch.DispatchQueue.SchedulerTimeType.Stride, options: Dispatch.DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Swift.Void)
+  public func schedule(after date: Dispatch.DispatchQueue.SchedulerTimeType, interval: Dispatch.DispatchQueue.SchedulerTimeType.Stride, tolerance: Dispatch.DispatchQueue.SchedulerTimeType.Stride, options: Dispatch.DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Swift.Void) -> Combine.Cancellable
+}
 public struct DispatchWorkItemFlags : Swift.OptionSet, Swift.RawRepresentable {
   public let rawValue: Swift.UInt
   public init(rawValue: Swift.UInt)

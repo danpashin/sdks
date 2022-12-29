@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           0DC88380-6968-362B-8B97-7059CE27B9A4
   - target:          arm64-ios
-    value:           3FDF2839-CDD3-315B-BDBE-065AF2ED7460
+    value:           FA09CFE5-FDE0-3937-B430-812329002AF5
   - target:          arm64e-ios
-    value:           08DAE3E2-08C1-3CF6-B8D1-3854B3EE0D77
+    value:           B25EE3E7-26FD-35FB-84BB-AF8B0F03E754
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275
 exports:
@@ -387,8 +387,12 @@ exports:
                        _IOHIDNotificationGetOwnerTarget, _IOHIDNotificationGetTypeID, 
                        _IOHIDNotificationInvalidate, _IOHIDNotificationSignalWithBlock, 
                        _IOHIDPostEvent, _IOHIDPreferencesCopy, _IOHIDPreferencesCopyDomain, 
-                       _IOHIDPreferencesCopyMultiple, _IOHIDPreferencesSet, _IOHIDPreferencesSetDomain, 
-                       _IOHIDPreferencesSetMultiple, _IOHIDPreferencesSynchronize, 
+                       _IOHIDPreferencesCopyDomainForInstance, _IOHIDPreferencesCopyForInstance, 
+                       _IOHIDPreferencesCopyMultiple, _IOHIDPreferencesCopyMultipleForInstance, 
+                       _IOHIDPreferencesCreateInstance, _IOHIDPreferencesSet, _IOHIDPreferencesSetDomain, 
+                       _IOHIDPreferencesSetDomainForInstance, _IOHIDPreferencesSetForInstance, 
+                       _IOHIDPreferencesSetMultiple, _IOHIDPreferencesSetMultipleForInstance, 
+                       _IOHIDPreferencesSynchronize, _IOHIDPreferencesSynchronizeForInstance, 
                        _IOHIDQueueActivate, _IOHIDQueueAddElement, _IOHIDQueueCancel, 
                        _IOHIDQueueContainsElement, _IOHIDQueueCopyNextValue, _IOHIDQueueCopyNextValueWithTimeout, 
                        _IOHIDQueueCreate, _IOHIDQueueGetDepth, _IOHIDQueueGetDevice, 
@@ -912,19 +916,20 @@ exports:
                        _kIOHIDFilterPluginArrayCallBacks, _kIOHIDServerConnectionRootQueue, 
                        _kIOHIDServiceCapsLockLEDKey, _kIOHIDServiceCapsLockLEDKey_Auto, 
                        _kIOHIDServiceCapsLockLEDKey_Inhibit, _kIOHIDServiceCapsLockLEDKey_Off, 
-                       _kIOHIDServiceCapsLockLEDKey_On, _kIOHIDServiceEnumerationWorkloop, 
-                       _kIOHIDServiceHiddenKey, _kIOHIDServiceInterruptWorkloop, 
-                       _kIOMainPortDefault, _kIOMasterPortDefault, _kIOUserEthernetInterfaceMergeProperties, 
-                       _kIOUserEthernetInterfaceRole, _kOSKextDependencyCircularReference, 
-                       _kOSKextDependencyCompatibleVersionUndeclared, _kOSKextDependencyInauthentic, 
-                       _kOSKextDependencyIndirectDependencyUnresolvable, _kOSKextDependencyIneligibleInSafeBoot, 
-                       _kOSKextDependencyInvalid, _kOSKextDependencyLoadedCompatibleVersionUndeclared, 
-                       _kOSKextDependencyLoadedIsIncompatible, _kOSKextDependencyMultipleVersionsDetected, 
-                       _kOSKextDependencyNoCompatibleVersion, _kOSKextDependencyRawAndComponentKernel, 
-                       _kOSKextDependencyUnavailable, _kOSKextDiagnosticBadPropertyListXMLKey, 
-                       _kOSKextDiagnosticBadSystemPropertyKey, _kOSKextDiagnosticBundleIdentifierMismatchKey, 
-                       _kOSKextDiagnosticBundleVersionMismatchKey, _kOSKextDiagnosticCodelessWithLibrariesKey, 
-                       _kOSKextDiagnosticCompatibleVersionLaterThanVersionKey, _kOSKextDiagnosticDeclaresBothKernelAndKPIDependenciesKey, 
+                       _kIOHIDServiceCapsLockLEDKey_On, _kIOHIDServiceCapsLockLEDOnKey, 
+                       _kIOHIDServiceEnumerationWorkloop, _kIOHIDServiceHiddenKey, 
+                       _kIOHIDServiceInterruptWorkloop, _kIOMainPortDefault, _kIOMasterPortDefault, 
+                       _kIOUserEthernetInterfaceMergeProperties, _kIOUserEthernetInterfaceRole, 
+                       _kOSKextDependencyCircularReference, _kOSKextDependencyCompatibleVersionUndeclared, 
+                       _kOSKextDependencyInauthentic, _kOSKextDependencyIndirectDependencyUnresolvable, 
+                       _kOSKextDependencyIneligibleInSafeBoot, _kOSKextDependencyInvalid, 
+                       _kOSKextDependencyLoadedCompatibleVersionUndeclared, _kOSKextDependencyLoadedIsIncompatible, 
+                       _kOSKextDependencyMultipleVersionsDetected, _kOSKextDependencyNoCompatibleVersion, 
+                       _kOSKextDependencyRawAndComponentKernel, _kOSKextDependencyUnavailable, 
+                       _kOSKextDiagnosticBadPropertyListXMLKey, _kOSKextDiagnosticBadSystemPropertyKey, 
+                       _kOSKextDiagnosticBundleIdentifierMismatchKey, _kOSKextDiagnosticBundleVersionMismatchKey, 
+                       _kOSKextDiagnosticCodelessWithLibrariesKey, _kOSKextDiagnosticCompatibleVersionLaterThanVersionKey, 
+                       _kOSKextDiagnosticDeclaresBothKernelAndKPIDependenciesKey, 
                        _kOSKextDiagnosticDeclaresNoKPIsWarningKey, _kOSKextDiagnosticDeclaresNonKPIDependenciesKey, 
                        _kOSKextDiagnosticDeprecatedPropertyKey, _kOSKextDiagnosticExecutableArchNotFoundKey, 
                        _kOSKextDiagnosticExecutableBadKey, _kOSKextDiagnosticExecutableMissingKey, 

@@ -8,8 +8,10 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _DRConfigStringForState, _DRShouldEnableLogGathering,
-                            _DRShouldGatherLog, _DRSubmitLog, _DRTailspinRequest,
+    symbols:              [ _DRConfigStringForState, _DRGetAllLogFileURLs,
+                            _DRShouldEnableLogGathering, _DRShouldGatherLog,
+                            _DRSubmitLog, _DRSubmitLogToCKContainer,
+                            _DRTailspinRequest,
                             __DPCEnableLogGatheringQueryMessage,
                             __DPCGetCloudChannelConfig,
                             __DPCGetConfigStateForUUID,
@@ -21,6 +23,7 @@ exports:
                             __DPCSendTaskingSystemJSONDataMessage,
                             __DPCSetCloudChannelConfig,
                             __DPCSubmitLogRequestMessage,
+                            __DPCSubmitLogToCKContainerRequestMessage,
                             __DPCTailspinRequestMessage,
                             __DPCTriggerRequestClean, __DPClientXPCSendMessage,
                             __DPClientXPCSendMessageWithReplySync,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
-current-version:       2916
+current-version:       2985
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -32,28 +32,8 @@ exports:
                             _NUViewControllerContainsViewControllerOfClass,
                             _NUViewControllerHierarchy, _NUViewHierarchy,
                             _NewsUIVersionNumber, _NewsUIVersionString,
-                            __NUCrawlView, __NUCrawlViewController, _isMegaPad,
-                            _isPad,
-                            _kNUNowPlayingBottomControlsButtonDefaultPointSize,
-                            _kNUNowPlayingBottomControlsButtonMaxPointSize,
-                            _kNUNowPlayingBottomControlsplaybackSpeedButtonSideMargin,
-                            _kNUNowPlayingGrabberViewTopMargin,
-                            _kNUNowPlayingTimeFontDefaultSize,
-                            _kNUNowPlayingTimeFontMaxSize,
-                            _kNUNowPlayingTimeTopMargin,
-                            _kNUNowPlayingTitleFontDefaultSize,
-                            _kNUNowPlayingTitleFontMaxSize,
-                            _kNUNowPlayingTitleViewPublisherImageViewBottomMargin,
-                            _kNUNowPlayingViewControllerBottomControlsTopMargin,
-                            _kNUNowPlayingViewControllerBottomMargin,
-                            _kNUNowPlayingViewControllerOuterHorizontalMargin,
-                            _kNUNowPlayingViewControllerPlaybackControlsTopMargin,
-                            _kNUNowPlayingViewControllerTopControlsSpacing,
-                            _kNUNowPlayingViewControllerTopMargin,
-                            _kNUNowPlayingVolumeControlSliderInset,
-                            _kPlaybackSpeedButtonMinWidth ]
-    objc-classes:         [ AEScrubberSlider, IMCustomSlider,
-                            NUANFArticleDataProvider,
+                            __NUCrawlView, __NUCrawlViewController ]
+    objc-classes:         [ NUANFArticleDataProvider,
                             NUANFArticleDataProviderFactory, NUANFArticleFactory,
                             NUANFAssetLoader, NUANFContextLoader,
                             NUANFDebugSettingsProvider,
@@ -118,29 +98,15 @@ exports:
                             NUMailPresenter, NUManagerAssembly,
                             NUMediaSharingPolicyProvider, NUMessagePresenter,
                             NUNewsFeedTitleViewStyler, NUNoopChromeControl,
-                            NUNowPlayingArtworkView, NUNowPlayingBackgroundView,
-                            NUNowPlayingBottomControls, NUNowPlayingColors,
-                            NUNowPlayingDockedView, NUNowPlayingLayoutSpec,
-                            NUNowPlayingPlaybackControls,
-                            NUNowPlayingPlaybackScrubber, NUNowPlayingTitleView,
-                            NUNowPlayingViewController,
-                            NUNowPlayingVolumeControl, NUPageStyle,
-                            NUPageViewController, NUPageViewControllerScrollView,
-                            NUPagingBlueprint, NUPagingBlueprintItem,
-                            NUPagingEngine, NUReachabilityProvider, NURouter,
-                            NUSettings, NUSlideViewAnimator, NUStoreFrontProvider,
+                            NUPageStyle, NUPageViewController,
+                            NUPageViewControllerScrollView, NUPagingBlueprint,
+                            NUPagingBlueprintItem, NUPagingEngine,
+                            NUReachabilityProvider, NURouter, NUSettings,
+                            NUSlideViewAnimator, NUStoreFrontProvider,
                             NUSwiftApplicationFrameworkAssembly, NUTextAndGlyph,
                             NUTextAndGlyphView, NUTitleView, NUTitleViewStyler,
-                            NUTitleViewUpdate, NUTouchInsetsButton, NUTrait,
-                            NUTransition, NUURLHandler,
+                            NUTitleViewUpdate, NUTrait, NUTransition, NUURLHandler,
                             NUWebContentComponentDeveloperSettingsProvider,
                             NUWebContentContentRuleProvider,
                             NUWebContentLoadingPolicyProvider, NUWidgetDevice ]
-    objc-ivars:           [ IMCustomSlider._beginLocation,
-                            IMCustomSlider._factor,
-                            IMCustomSlider._fineScrubbing,
-                            IMCustomSlider._highlightedThumb,
-                            IMCustomSlider._offset,
-                            IMCustomSlider._previousLocation,
-                            IMCustomSlider._speed, IMCustomSlider._thumb ]
 ...

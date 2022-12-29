@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileMailUI.framework/MobileMailUI
-current-version:       3693.0.2
+current-version:       3693.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -44,9 +44,6 @@ exports:
                             _MailApplicationAutoFetchStart,
                             _MailApplicationAutoFetchStop,
                             _MailApplicationDidChangeAccountDisplayName,
-                            _MailApplicationDidChangeAccounts,
-                            _MailApplicationDidChangeAccountsKeyAccountIdentifiers,
-                            _MailApplicationDidChangeAccountsKeyPreviousAccountIdentifiers,
                             _MailApplicationDidChangeConversationOrder,
                             _MailApplicationDidChangeConversationViewCollapseReadMessagesNotification,
                             _MailApplicationDidChangeConversationViewIncludesRelatedMessages,
@@ -99,7 +96,8 @@ exports:
                             MFFailedProxyContentSuggestion,
                             MFFlagColorCardAction, MFGradientView,
                             MFHasMoreContentBannerView,
-                            MFHasMoreContentSuggestion, MFInternalSettingsCache,
+                            MFHasMoreContentSuggestion, MFHideMyEmailBannerView,
+                            MFHideMyEmailSuggestion, MFInternalSettingsCache,
                             MFLoadBlockedContentBannerView,
                             MFLoadBlockedContentSuggestion,
                             MFLoadFailedProxyContentBannerView,

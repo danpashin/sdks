@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/MigrationKit.framework/MigrationKit
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _MKCryptoErrorDomain, _MKIdentifier,
+                            _MKLocalizedString, _MKSecurityErrorDomain,
+                            _MigrationKitVersionNumber,
+                            _MigrationKitVersionString ]
+    objc-classes:         [ MKAPIServer, MKAccessibility,
+                            MKAccessibilitySettingMigrator, MKAccount,
+                            MKAccountMigrator, MKAnalytics, MKApp,
+                            MKAppSearchRequest, MKApplicationAnalytics,
+                            MKApplicationMigrator, MKBookmark, MKBookmarkMigrator,
+                            MKCalendarMigrator, MKCertificate, MKClient,
+                            MKConnection, MKContactMigrator, MKContainerMigrator,
+                            MKCrypto, MKDisplay, MKDisplaySettingMigrator, MKError,
+                            MKFeaturePayload, MKFileMigrator, MKFileProvider,
+                            MKGETCertificateRouter, MKGETPlaceholderRouter,
+                            MKGETSRPRouter, MKGETSecuredStatusRouter,
+                            MKHTTPContentDisposition, MKHTTPContentPayload,
+                            MKHTTPContentRange, MKHTTPHeaders, MKHTTPParameters,
+                            MKHTTPParser, MKHTTPProxyAuthorization, MKHTTPRequest,
+                            MKHTTPResponse, MKHTTPServer, MKHTTPStatusText, MKHex,
+                            MKListener, MKLog, MKMessage, MKMessageAttachment,
+                            MKMessageGroup, MKMessageMigrator,
+                            MKPOSTCertificateRouter, MKPOSTClientRouter,
+                            MKPOSTProgressRouter, MKPOSTSRPRouter, MKPUTRouter,
+                            MKPayload, MKPhotoLibrary, MKPhotoLibraryMigrator,
+                            MKPlaceholder, MKPlaceholderMigrator, MKSRPServer,
+                            MKUnsupportedMediaFormatAnalytics, MKUtility ]
+...

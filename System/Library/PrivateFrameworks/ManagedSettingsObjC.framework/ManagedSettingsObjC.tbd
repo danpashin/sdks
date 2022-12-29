@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ManagedSettingsObjC.framework/ManagedSettingsObjC
-current-version:       24
+current-version:       26
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -29,7 +29,11 @@ exports:
                             _MOEffectiveSettingsGroupSiri,
                             _MOEffectiveSettingsGroupWebContent,
                             _MOManagedSettingsObjCVersionNumber,
-                            _MOManagedSettingsObjCVersionString ]
+                            _MOManagedSettingsObjCVersionString,
+                            _MOSafariCookiePolicyAlways,
+                            _MOSafariCookiePolicyCurrentWebsite,
+                            _MOSafariCookiePolicyNever,
+                            _MOSafariCookiePolicyVisitedWebsites ]
     objc-classes:         [ MOApplication, MOCategory, MOCategoryShieldPolicy,
                             MOEffectiveAccountSettings,
                             MOEffectiveAllowedClientSettings,
@@ -45,8 +49,11 @@ exports:
                             MOEffectiveSafariSettings, MOEffectiveSettings,
                             MOEffectiveShieldSettings, MOEffectiveSiriSettings,
                             MOEffectiveString, MOEffectiveWebContentFilterPolicy,
-                            MOEffectiveWebContentSettings,
-                            MOManagedSettingsAgentConnection,
+                            MOEffectiveWebContentSettings, MOLocalSettingsStore,
+                            MOLocations, MOLogger,
+                            MOManagedSettingsAgentConnection, MOSettingMetadata,
+                            MOSettingsGroup, MOSettingsStore,
                             MOShieldConfiguration, MOShieldLabel,
-                            MOWebContentFilterPolicy, MOWebDomain ]
+                            MOStringSettingMetadata, MOWebContentFilterPolicy,
+                            MOWebDomain ]
 ...

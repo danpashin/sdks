@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           6B5B65A5-2EBF-3E7E-804E-CDF5EE6E54C6
+    value:           4FBF00CD-76B5-34D4-BE75-4038078799DC
   - target:          arm64e-ios
-    value:           08C9EAE3-A247-3017-9C6A-F1F2FFB65FC1
+    value:           670E8C2B-1AAF-3475-A3DC-3F64A81C41D0
 install-name:    '/usr/lib/libAudioToolboxUtility.dylib'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -26,8 +26,8 @@ exports:
                        __Z20CAIsDebuggerAttachedv, __Z20MIDIPacketList_SplitP14MIDIPacketListm, 
                        __Z21CAShowAudioBufferListRK15AudioBufferListiRK27AudioStreamBasicDescriptionPKc, 
                        __Z21CAShowAudioBufferListRK15AudioBufferListiiPKc, __Z21DFT_split_180_executeP20vDSP_DFT_SetupStructPKfS2_PfS3_18vDSP_DFT_Direction, 
-                       __Z27CACFPreferencesCopyAppValuePK10__CFStringS1_, __Z31CACFPreferencesGetAppFloatValuePK10__CFStringS1_Pb, 
-                       __Z32CACFPreferencesGetAppFourCCValuePK10__CFStringS1_Pb, 
+                       __Z23OpaqueObjectMgrInstancev, __Z27CACFPreferencesCopyAppValuePK10__CFStringS1_, 
+                       __Z31CACFPreferencesGetAppFloatValuePK10__CFStringS1_Pb, __Z32CACFPreferencesGetAppFourCCValuePK10__CFStringS1_Pb, 
                        __Z33CACFPreferencesGetAppBooleanValuePK10__CFStringS1_Pb, 
                        __Z33CACFPreferencesGetAppIntegerValuePK10__CFStringS1_Pb, 
                        __Z4ReadR14CADeserializerRP18AudioChannelLayoutRm, __Z9GetKaiserjd, 
@@ -187,15 +187,17 @@ exports:
                        __ZN15CASharedLibrary31LoadLibraryAndGetRoutineAddressEPKcS1_S1_, 
                        __ZN15CASharedLibrary32GetRoutineAddressIfLibraryLoadedEPKcS1_S1_, 
                        __ZN15CATimeUtilities23GetCurrentGregorianDateEv, __ZN15CATimeUtilities29GregorianDateFromAbsoluteTimeEd, 
-                       __ZN15OpaqueObjectMgr3addEP16BaseOpaqueObject, __ZN15OpaqueObjectMgr6lookupEj, 
-                       __ZN15OpaqueObjectMgr6removeEj, __ZN15OpaqueObjectMgr9sInstanceE, 
-                       __ZN15OpaqueObjectMgrC1Ev, __ZN15OpaqueObjectMgrC2Ev, __ZN16BaseOpaqueObject16ResolveOpaqueRefERKNS_4RTTIENS_3RefE, 
+                       __ZN15OpaqueObjectMgr3addEP16BaseOpaqueObject, __ZN15OpaqueObjectMgr3addEjP16BaseOpaqueObject, 
+                       __ZN15OpaqueObjectMgr6lookupEj, __ZN15OpaqueObjectMgr6removeEj, 
+                       __ZN15OpaqueObjectMgr9sInstanceE, __ZN15OpaqueObjectMgrC1Ev, 
+                       __ZN15OpaqueObjectMgrC2Ev, __ZN16BaseOpaqueObject16ResolveOpaqueRefERKNS_4RTTIENS_3RefE, 
                        __ZN16BaseOpaqueObject16destroyOpaqueRefEv, __ZN16BaseOpaqueObject9checkRTTIERKNS_4RTTIE, 
-                       __ZN16BaseOpaqueObject9sBaseRTTIE, __ZN16BaseOpaqueObjectC2Ev, 
-                       __ZN16BaseOpaqueObjectD0Ev, __ZN16BaseOpaqueObjectD1Ev, __ZN16BaseOpaqueObjectD2Ev, 
-                       __ZN17PlatformUtilities11ProcessNameEi, __ZN17PlatformUtilities11processNameEi, 
-                       __ZN17PlatformUtilities18CopyAcousticIDNameEv, __ZN17PlatformUtilities25CopyHardwareModelFullNameEv, 
-                       __ZN17PlatformUtilities26CopyHardwareModelShortNameEv, __ZN17SincKernelFactory17ReleaseSincKernelEP10SincKernel, 
+                       __ZN16BaseOpaqueObject9sBaseRTTIE, __ZN16BaseOpaqueObjectC2Ej, 
+                       __ZN16BaseOpaqueObjectC2Ev, __ZN16BaseOpaqueObjectD0Ev, __ZN16BaseOpaqueObjectD1Ev, 
+                       __ZN16BaseOpaqueObjectD2Ev, __ZN17PlatformUtilities11ProcessNameEi, 
+                       __ZN17PlatformUtilities11processNameEi, __ZN17PlatformUtilities18CopyAcousticIDNameEv, 
+                       __ZN17PlatformUtilities25CopyHardwareModelFullNameEv, __ZN17PlatformUtilities26CopyHardwareModelShortNameEv, 
+                       __ZN17SincKernelFactory17ReleaseSincKernelEP10SincKernel, 
                        __ZN17SincKernelFactory19ReferenceSincKernelEiidd, __ZN18CASmartPreferences11RereadPrefsEv, 
                        __ZN18CASmartPreferences14InterpretFloatEPKvRb, __ZN18CASmartPreferences16InterpretBooleanEPKvRb, 
                        __ZN18CASmartPreferences16InterpretIntegerEPKvRb, __ZN18CASmartPreferences21_RegisterFirstHandlerEPK10__CFStringS2_NSt3__18functionIFbPKvEEE, 

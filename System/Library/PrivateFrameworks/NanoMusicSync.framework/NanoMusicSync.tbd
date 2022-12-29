@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NMSActiveAccountDidChangeNotification,
+    symbols:              [ _NMSAccountInfoActiveAccountDidChangeNotification,
+                            _NMSActiveAccountDidChangeNotification,
                             _NMSFeedURLKey,
                             _NMSMediaPinningAudiobooksContentsInvalidatedNotification,
                             _NMSMediaPinningManagerAudiobooksIdentifiersDidChangeNotification,
@@ -28,7 +29,6 @@ exports:
                             _NMSRecommendationRecentMusicIdentifier,
                             _NMSStoreIDKey,
                             _NMSSubscriptionStatusDidChangeNotification,
-                            _NMSSubscriptionSupportDidChangeNotification,
                             _NMSSyncManagerSyncStateDidChangeNotification,
                             _NMSyncDefaultsAudiobooksPinningSelectionsDidChangeNotification,
                             _NMSyncDefaultsAudiobooksRecommendationsDidChangeNotification,
@@ -47,7 +47,7 @@ exports:
                             _NMSyncPreferencesDidChangeRemotelyNotification,
                             _kNMSMediaSyncInfoSavedEpisodesIdentifier,
                             _kNMSMediaSyncInfoUpNextIdentifier ]
-    objc-classes:         [ NMSAlternatingMediaItemGroupIterator,
+    objc-classes:         [ NMSAccountInfo, NMSAlternatingMediaItemGroupIterator,
                             NMSAppActivityStatus, NMSEpisodeSizeInfo,
                             NMSGreenTeaStreamingDefaults,
                             NMSKeepLocalRequestManager,

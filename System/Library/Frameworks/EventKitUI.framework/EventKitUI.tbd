@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           843F33DE-02E7-3756-A650-62BF6771F971
   - target:          arm64-ios
-    value:           384C39C6-C59E-3BD2-85E0-379C476CAAF3
+    value:           486B168F-53D6-3433-A51E-97D379B0EAA2
   - target:          arm64e-ios
-    value:           01FAF2DB-BF5F-3E5A-ADBE-CD38DD52D756
+    value:           C28402CD-8FDD-32EE-B138-ED8090290858
 install-name:    '/System/Library/Frameworks/EventKitUI.framework/EventKitUI'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -310,14 +310,16 @@ exports:
                        _UncheckCircleImage, _WalkmanImage, _WalkmanImage_Occurrences, 
                        _WeekendTextColor, __EKUIActiveWidthSizeClass, __EventKitUI_EventEditorDidBeginAutocompleteSearchNotification, 
                        __EventKitUI_EventEditorDidShowAutocompleteResultsNotification, 
-                       _captureImageFromView, _createCrossFadeViewsFromViews, _createImageViewFromImage, 
-                       _createImageViewFromView, _createSnapshotFromView, _declinedEventBackgroundColor, 
+                       _animateNavigationPreferringFRR, _captureImageFromView, _createCrossFadeViewsFromViews, 
+                       _createImageViewFromImage, _createImageViewFromView, _createSnapshotFromView, 
+                       _dayViewScrollAnimationsPreferringFRR, _declinedEventBackgroundColor, 
                        _defaultDarkLineColor, _defaultLineColorWithOpaque, _kDraggedEventShadowOpacity, 
                        _kDraggedEventShadowRadius, _kEKUILogEventEditorHandle, _kEKUILogEventLoaderHandle, 
                        _kEKUILogHandle, _kEKUILogInviteesHandle, _kEKUILogLocationSearchHandle, 
                        _kLongPressPageChangeDelay, _kLongPressPageChangeDelayLong, 
                        _kLongPressPageChangeDelayMargin, _kLongPressPageChangeMinHorizontalMovement, 
-                       _kMinuteTouchSnap, _kScrollTimerInterval, _phoneActionButton, 
+                       _kMinuteTouchSnap, _kScrollTimerInterval, _navigationAnimationsPreferringFRR, 
+                       _phoneActionButton, _preferredNavigationAnimationFrameRateRange, 
                        _recursiveAnimationRemove, _scaleViewToFrame, _springAnimateViewAlpha, 
                        _springAnimateViewBounds, _springAnimateViewFrame, _springAnimateViewPosition, 
                        _springAnimationDuration, _synchronizationOffsetForLabels ]
@@ -344,24 +346,24 @@ exports:
                        EKUIAlarm, EKUIBlurryView, EKUICenteredTextTableViewCell, 
                        EKUIConstrainedFontUtilities, EKUIConstrainedFontsTableViewCell, 
                        EKUICustomRecurrenceViewController, EKUIDebugPreferences, 
-                       EKUIDeclineCommentController, EKUIEmailCompositionManager, 
-                       EKUIEventDescriptionGenerator, EKUIEventNotificationRepresentation, 
-                       EKUIEventStatusButtonsView, EKUIIOSMacUtils, EKUIInviteesViewAlternativeTimeSection, 
-                       EKUIInviteesViewOriginalConflictCell, EKUIInviteesViewSectionCommon, 
-                       EKUIInviteesViewTimeSlotCell, EKUILabeledAvatarView, EKUILargeTextUtilities, 
-                       EKUILocationSearchResultCell, EKUIManagedNavigationController, 
-                       EKUIMiniMonthView, EKUIOccurrenceCarplayFontProvider, EKUIOccurrenceCarplayTableViewCell, 
-                       EKUIOccurrenceMeasurementUtilities, EKUIOccurrenceTableViewCell, 
-                       EKUIOverlayCalendarSignificantDatesProvider, EKUIPreviewViewController, 
-                       EKUIProposedTimeEventViewController, EKUIReadonlyEventViewController, 
-                       EKUIRecurrenceAlertController, EKUIRecurrenceRuleBuilder, 
-                       EKUISemiConstantCache, EKUITableViewCell, EKUITableViewCellWithPrimaryAndSecondaryFonts, 
-                       EKUITestCase, EKUITextAndHeaderItem, EKUITodayCirclePulseView, 
-                       EKUIVisualEffectView, EKUIYearMonthView, LocalEditViewControllerTestCase, 
-                       LocalEventViewControllerTestCase, OccurrenceCacheDataSource, 
-                       OccurrenceCacheSearchDataSource, PreferencesDeleteButtonView, 
-                       PreferencesDoubleTwoPartValueCell, PreferencesMultiLineCell, 
-                       PreferencesTableControlCell, PreferencesTwoPartValueCell, 
+                       EKUIDeclineCommentController, EKUIDiscoverabilityUtilities, 
+                       EKUIEmailCompositionManager, EKUIEventDescriptionGenerator, 
+                       EKUIEventNotificationRepresentation, EKUIEventStatusButtonsView, 
+                       EKUIIOSMacUtils, EKUIInviteesViewAlternativeTimeSection, EKUIInviteesViewOriginalConflictCell, 
+                       EKUIInviteesViewSectionCommon, EKUIInviteesViewTimeSlotCell, 
+                       EKUILabeledAvatarView, EKUILargeTextUtilities, EKUILocationSearchResultCell, 
+                       EKUIManagedNavigationController, EKUIMiniMonthView, EKUIOccurrenceCarplayFontProvider, 
+                       EKUIOccurrenceCarplayTableViewCell, EKUIOccurrenceMeasurementUtilities, 
+                       EKUIOccurrenceTableViewCell, EKUIOverlayCalendarSignificantDatesProvider, 
+                       EKUIPreviewViewController, EKUIProposedTimeEventViewController, 
+                       EKUIReadonlyEventViewController, EKUIRecurrenceAlertController, 
+                       EKUIRecurrenceRuleBuilder, EKUISemiConstantCache, EKUITableViewCell, 
+                       EKUITableViewCellWithPrimaryAndSecondaryFonts, EKUITestCase, 
+                       EKUITextAndHeaderItem, EKUITodayCirclePulseView, EKUIVisualEffectView, 
+                       EKUIYearMonthView, LocalEditViewControllerTestCase, LocalEventViewControllerTestCase, 
+                       OccurrenceCacheDataSource, OccurrenceCacheSearchDataSource, 
+                       PreferencesDeleteButtonView, PreferencesDoubleTwoPartValueCell, 
+                       PreferencesMultiLineCell, PreferencesTableControlCell, PreferencesTwoPartValueCell, 
                        PreferencesValueCell, ScrollSpringFactory, SingleToolbarItemContainerView, 
                        SpringFactory, SubtitleCellWithAdditionalDetail, TwoPartTextLabel ]
     objc-ivars:      [ CalendarAccountsController._accountStore, CalendarAccountsController._lastStoreListingRefreshDates, 

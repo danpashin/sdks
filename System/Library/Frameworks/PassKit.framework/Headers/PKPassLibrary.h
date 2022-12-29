@@ -123,5 +123,6 @@ extern PKPassLibraryNotificationKey const PKPassLibraryRemovedPassInfosUserInfoK
 
 extern PKPassLibraryNotificationKey const PKPassLibraryPassTypeIdentifierUserInfoKey API_AVAILABLE(ios(6.0), watchos(3.0));
 extern PKPassLibraryNotificationKey const PKPassLibrarySerialNumberUserInfoKey API_AVAILABLE(ios(6.0), watchos(3.0));
+extern PKPassLibraryNotificationKey const PKPassLibraryRecoveredPassesUserInfoKey API_AVAILABLE(ios(15.0), watchos(8.0));
 
 NS_ASSUME_NONNULL_END

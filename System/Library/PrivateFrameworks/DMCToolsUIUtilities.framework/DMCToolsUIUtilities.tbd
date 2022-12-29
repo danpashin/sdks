@@ -9,14 +9,17 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _DMCToolsUIUtilitiesVersionNumber,
-                            _DMCToolsUIUtilitiesVersionString ]
+                            _DMCToolsUIUtilitiesVersionString,
+                            _kDMCTopMarginForViewController ]
     objc-classes:         [ DMCActivityViewController, DMCDevicePINPane,
                             DMCDismissalAwareNavigationController,
                             DMCEnrollmentAboutRemoteManagementViewController,
                             DMCEnrollmentAuthenticationViewController,
                             DMCEnrollmentConfirmationView,
                             DMCEnrollmentConsentViewController,
+                            DMCEnrollmentFlowRestoreViewController,
                             DMCEnrollmentLinkLabelView,
+                            DMCEnrollmentNameItemCell, DMCEnrollmentNameListCell,
                             DMCEnrollmentTableViewIconCell,
                             DMCEnrollmentTableViewPromotionCell,
                             DMCEnrollmentTableViewTextCell,

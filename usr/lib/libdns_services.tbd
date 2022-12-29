@@ -7,21 +7,21 @@ uuids:
   - target:          armv7s-ios
     value:           277AE303-8E16-3F7F-A82C-9145A2FB601E
   - target:          arm64-ios
-    value:           8384989E-E1B5-35A7-9501-D7C856FCE4D7
+    value:           707D64B5-B1FF-3E43-A16E-38D4DED72133
   - target:          arm64e-ios
-    value:           4B9BAAD7-0661-3E6D-B782-441531DDA8B5
+    value:           D7F32523-5B82-3F7D-BB08-566A278D9DB0
 install-name:    '/usr/lib/libdns_services.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _DNSXEnableProxy, _DNSXEnableProxy64, _DNSXRefDeAlloc, _advertising_proxy_advertise_prefix, 
                        _advertising_proxy_block_service, _advertising_proxy_enable, 
                        _advertising_proxy_flush_entries, _advertising_proxy_get_service_list, 
-                       _advertising_proxy_ref_dealloc, _advertising_proxy_regenerate_ula, 
-                       _advertising_proxy_unblock_service, _dnssd_cname_array_get_cname, 
-                       _dnssd_cname_array_get_count, _dnssd_copy_description, _dnssd_getaddrinfo_activate, 
-                       _dnssd_getaddrinfo_add_resolver_uuid, _dnssd_getaddrinfo_create, 
-                       _dnssd_getaddrinfo_invalidate, _dnssd_getaddrinfo_result_enumerate_alpn_values, 
-                       _dnssd_getaddrinfo_result_enumerate_service_address_hints, 
+                       _advertising_proxy_get_ula, _advertising_proxy_ref_dealloc, 
+                       _advertising_proxy_regenerate_ula, _advertising_proxy_unblock_service, 
+                       _dnssd_cname_array_get_cname, _dnssd_cname_array_get_count, 
+                       _dnssd_copy_description, _dnssd_getaddrinfo_activate, _dnssd_getaddrinfo_add_resolver_uuid, 
+                       _dnssd_getaddrinfo_create, _dnssd_getaddrinfo_invalidate, 
+                       _dnssd_getaddrinfo_result_enumerate_alpn_values, _dnssd_getaddrinfo_result_enumerate_service_address_hints, 
                        _dnssd_getaddrinfo_result_get_actual_hostname, _dnssd_getaddrinfo_result_get_address, 
                        _dnssd_getaddrinfo_result_get_authentication_tag, _dnssd_getaddrinfo_result_get_cnames, 
                        _dnssd_getaddrinfo_result_get_doh_uri, _dnssd_getaddrinfo_result_get_ech_config, 

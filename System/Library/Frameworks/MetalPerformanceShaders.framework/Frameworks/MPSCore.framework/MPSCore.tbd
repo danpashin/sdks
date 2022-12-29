@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore
-current-version:       125.0.31
+current-version:       125.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -49,6 +49,7 @@ exports:
                             __Z21MPSDecrementReadCountP8MPSState,
                             __Z25MPSGetEffectiveClipRegion7MTLSize9MPSRegion,
                             __Z25MPSGetEffectiveClipRegion7MTLSize9MTLRegion,
+                            __Z26_MPSNewSpecializedFunctionPU21objcproto10MTLLibrary11objc_objectP8NSStringS2_P25MTLFunctionConstantValuesPP7NSError,
                             __ZN10BaseTensor14GetNumElementsEv,
                             __ZN10BaseTensor16GetAccessPatternEP7NSArrayIP10MPSNDArrayES4_,
                             __ZN10BaseTensorC1ERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
@@ -60,7 +61,7 @@ exports:
                             __ZN10MPSLibrary14MPSKey_CompileEP11MPSKey_data,
                             __ZN10MPSLibrary15GetComputeStateEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP8NSStringm,
                             __ZN10MPSLibrary17GetCacheKeyAtomicEPK17PrivateKernelInfoRK23MPSFunctionConstantListbPNSt3__16atomicIP11MPSKey_dataEE30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP8NSStringm,
-                            __ZN10MPSLibrary19CreateUberShaderKeyEP8NSStringRK23MPSFunctionConstantListyPFPU22objcproto11MTLFunction11objc_objectPU21objcproto10MTLLibrary11objc_objectPK13MPSKernelInfoS4_PP7NSErrorEy30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP18MPSKernelDAGObjectS1_m,
+                            __ZN10MPSLibrary19CreateUberShaderKeyEP8NSStringRK23MPSFunctionConstantListyPFPU22objcproto11MTLFunction11objc_objectPU21objcproto10MTLLibrary11objc_objectPK13MPSKernelInfoS4_S1_PP7NSErrorEy30MPSThreadGroupSizeMultipleType24MPSDriverCompilerOptionsP18MPSKernelDAGObjectS1_m,
                             __ZN10MPSLibrary19ReleaseComputeStateEPU34objcproto23MTLComputePipelineState11objc_object,
                             __ZN10MPSLibrary19getKernelDAGLibraryEv,
                             __ZN10MPSLibrary20GetComputeStateAsyncEjRK23MPSFunctionConstantList30MPSThreadGroupSizeMultipleTypeP8NSStringm,
@@ -69,6 +70,7 @@ exports:
                             __ZN10MPSLibrary23NewComputePipelineStateEP8NSStringP25MTLFunctionConstantValues30MPSThreadGroupSizeMultipleType,
                             __ZN10MPSLibrary25GetPipelineStateForMPSKeyEP11MPSKey_dataPU27objcproto16MTLCommandBuffer11objc_object,
                             __ZN10MPSLibrary25LoadMPSDeviceSpecificInfoERK21MPSDeviceSpecificInfo,
+                            __ZN10MPSLibrary27getComputePipelineStateInfoEPU34objcproto23MTLComputePipelineState11objc_object,
                             __ZN10MPSLibraryC1EPU21objcproto10MTLLibrary11objc_objectPK14MPSLibraryInfoP9MPSDevice,
                             __ZN10MPSLibraryC2EPU21objcproto10MTLLibrary11objc_objectPK14MPSLibraryInfoP9MPSDevice,
                             __ZN10MPSLibraryD1Ev, __ZN10MPSLibraryD2Ev,

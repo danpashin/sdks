@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
-current-version:       1769
+current-version:       1777
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -22,7 +22,7 @@ exports:
                             _MBDeviceSpecificLocalizedStringFromTable,
                             _MBDeviceUDID_Legacy, _MBDeviceUDID_Legacy_client,
                             _MBDeviceUUID, _MBEmptyArray, _MBEmptyDictionary,
-                            _MBExit, _MBFreeDiskSpace, _MBFreeDiskSpaceForVolume,
+                            _MBFreeDiskSpace, _MBFreeDiskSpaceForVolume,
                             _MBGetBackupDir, _MBGetCacheDir, _MBGetCleanupDir,
                             _MBGetDefaultLog, _MBGetFileIDBytes,
                             _MBGetGestaltValueForKey, _MBGetHomeDir,
@@ -46,8 +46,7 @@ exports:
                             _MBPrebuddyFollowUpIsManualSignalKey, _MBProductType,
                             _MBProductVersion, _MBPurgeDiskSpace,
                             _MBRandomDataWithLength, _MBRandomUUID,
-                            _MBReleaseRestoreLock,
-                            _MBRemoveTemporaryPathDirectory,
+                            _MBReleaseRestoreLock, _MBRemoveTemporaryDirectory,
                             _MBRunLoopPerformBlockAndWait,
                             _MBSQLiteJournalSuffixes, _MBSQLitePathExtensions,
                             _MBSemaphoreWaitForever, _MBSerialNumber,
@@ -84,14 +83,15 @@ exports:
                             MBDeviceTransferKeychain, MBDeviceTransferPreflight,
                             MBDeviceTransferProgress, MBDeviceTransferSession,
                             MBDeviceTransferTask, MBDigest, MBDigestSHA1, MBDomain,
-                            MBDomainInfo, MBError, MBException, MBFileInfo,
-                            MBFileManager, MBFileManagerDelegate,
+                            MBDomainInfo, MBDomainManager, MBError, MBException,
+                            MBFileInfo, MBFileManager, MBFileManagerDelegate,
                             MBFileSystemManager, MBManager, MBMessage,
                             MBNetworkPathMonitor, MBPrebuddyManager, MBProperties,
                             MBRestoreFailure, MBRestoreInfo, MBSizeInfo, MBSnapshot,
                             MBSnapshotIdentifier, MBSourceDeviceTransferTask,
                             MBStartBackupOptions, MBStartRestoreOptions,
-                            MBStateInfo, MBTargetDeviceTransferTask ]
+                            MBStateInfo, MBSystemDomainsVersions,
+                            MBTargetDeviceTransferTask ]
     objc-eh-types:        [ MBException ]
     objc-ivars:           [ MBAppManager._containersByID,
                             MBAppManager._settingsContext,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesSupport.framework/NotesSupport
-current-version:       1957
+current-version:       1984
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -22,10 +22,11 @@ exports:
                             _ICAssertBreakpoint, _ICAttachmentNameMaxLength,
                             _ICCFTypeCast, _ICCGColorCopyInverse,
                             _ICCGColorCreateWithString,
-                            _ICCGColorEquivalentToColor, _ICCheckedDynamicCast,
-                            _ICCheckedProtocolCast, _ICClassAndProtocolCast,
-                            _ICCryptoIterationCount, _ICCryptorErrorDomain,
-                            _ICDataFromCGImage,
+                            _ICCGColorEquivalentToColor,
+                            _ICCachedClearedOnChangedNotification,
+                            _ICCheckedDynamicCast, _ICCheckedProtocolCast,
+                            _ICClassAndProtocolCast, _ICCryptoIterationCount,
+                            _ICCryptorErrorDomain, _ICDataFromCGImage,
                             _ICDataStoreServiceBundleIdentifier,
                             _ICDebugModeEnabled, _ICDynamicCast,
                             _ICEnableSandboxMode, _ICErrorAttachmentCountKey,
@@ -269,6 +270,7 @@ exports:
                             ICArchiveWriter, ICAssert, ICAtomicLRUCache,
                             ICBackoffTimer, ICBaseSearchIndexerDataSource,
                             ICCDCSIReindexer, ICCFTypeWrapper, ICCache,
+                            ICClearOnNotificationLRUCache,
                             ICCoreDataCoreSpotlightDelegate, ICDebugTimer,
                             ICDispatchAfterHandler, ICErrors, ICExclusiveLock,
                             ICFolderCustomNoteSortType,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-current-version:       5067.3.107
+current-version:       5205.0.101
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -1818,6 +1818,7 @@ exports:
                             _UITextSelectionWillZoom,
                             _UITextStorageDirectionFromNSTextSelectionAffinity,
                             _UITextStorageDirectionToNSTextSelectionAffinity,
+                            _UITextStorageDirectionToString,
                             _UITextViewTextDidBeginEditingNotification,
                             _UITextViewTextDidChangeNotification,
                             _UITextViewTextDidEndEditingNotification,
@@ -2027,9 +2028,7 @@ exports:
                             __UIBaselineLayoutBoundsConsultingContentSizeConstraints,
                             __UIBuiltinTraitStorageUnspecified,
                             __UIBundleIDFromAuditToken,
-                            __UIBundleIDIsAccountBased,
-                            __UIButtonBarButtonWindowHiearchyLoggingIsEnabled,
-                            __UIButtonBarStopImage,
+                            __UIBundleIDIsAccountBased, __UIButtonBarStopImage,
                             __UICHWindowSceneSessionRoleAvocado,
                             __UICanvasConnectionOptionsAppLinkOpenStrategyChangedKey,
                             __UICanvasConnectionOptionsBluetoothCentralsKey,
@@ -2100,7 +2099,10 @@ exports:
                             __UICreateScreenUIImageWithRotation,
                             __UICursorStyleMaximumBeamLength,
                             __UICursorStyleMinimumBeamLength,
-                            __UIDataOwnerDescription, __UIDebugShowLayoutItem,
+                            __UIDataOwnerDescription,
+                            __UIDebugFocusRelationshipBetween,
+                            __UIDebugShowLayoutItem,
+                            __UIDebugViewAndViewControllerRelationshipBetween,
                             __UIDirectionalMultiplierForSwipeDirection,
                             __UIDocumentPickerDefaultIdentifier,
                             __UIDragInteractionDefaultCancellationDelay,
@@ -2438,6 +2440,7 @@ exports:
                             __UISharedItemPreviewIntentThumbnail,
                             __UISharedItemsMetadataKeyMessageBody,
                             __UISharedItemsMetadataKeyTitle, __UISheetAnimate,
+                            __UISheetAnimateWithCompletion,
                             __UISheetCornerRadius, __UISheetDetentInactive,
                             __UISheetDidDisappearNotification, __UISheetFormSize,
                             __UISheetGrabberTopSpacing,
@@ -3834,6 +3837,7 @@ exports:
                             UITextEffectsWindow._defaultWindowLevel,
                             UITextEffectsWindow._hostedWindowOffset,
                             UITextEffectsWindow._inDealloc,
+                            UITextEffectsWindow._isForViewService,
                             UITextEffectsWindow._isFullscreen,
                             UITextEffectsWindow._perCanvasOptions,
                             UITextInputTraits.acceptsDictationSearchResults,

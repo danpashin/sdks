@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BookLibraryCore.framework/BookLibraryCore
-current-version:       605
+current-version:       618
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -150,6 +150,8 @@ exports:
                             _BLDownloadQueuePropertyTitle,
                             _BLDownloadQueuePurchaseFailedNotification,
                             _BLDownloadQueuePurchaseSucceededNotification,
+                            _BLDownloadQueueServerStarted,
+                            _BLDownloadQueueServiceProgressMonitorLog,
                             _BLDownloadSupportedDownloadKinds, _BLError,
                             _BLErrorDomain, _BLErrorIsEqual,
                             _BLErrorUserInfoKeyHTTPResponseCode,
@@ -235,22 +237,25 @@ exports:
                             BLDAAPURLRequest, BLDAAPUpdateRequest, BLDownload,
                             BLDownloadManifestRequest,
                             BLDownloadManifestResponse, BLDownloadMetadata,
-                            BLDownloadQueueNonUI, BLDownloadStatus,
-                            BLEduCloudContainer, BLFamilyCircleController,
-                            BLHLSAudiobookFetcher, BLHLSGroup, BLHLSKey, BLHLSMap,
-                            BLHLSMedia, BLHLSPlaylist, BLHLSPlaylistState,
-                            BLHLSSegment, BLHLSStreamInf, BLItemArtworkImage,
-                            BLItemContentRating, BLItemImageCollection,
-                            BLJaliscoDAAPClient, BLJaliscoItem,
-                            BLJaliscoReadOnlyDAAPClient, BLJaliscoServerDatabase,
-                            BLJaliscoServerInfo, BLJaliscoServerItem,
-                            BLJaliscoServerSource, BLJaliscoVersion, BLLibrary,
-                            BLLibraryUtility, BLM3U8Parser, BLMetrics,
-                            BLPurchaseDAAPItem, BLPurchaseDAAPParser,
-                            BLPurchaseDAAPServer, BLPurchaseRequest,
-                            BLPurchaseResponse, BLPurchaseResponseItem, BLRequest,
+                            BLDownloadQueueNonUI,
+                            BLDownloadQueueServerProgressObserver,
+                            BLDownloadStatus, BLEduCloudContainer,
+                            BLFamilyCircleController, BLHLSAudiobookFetcher,
+                            BLHLSGroup, BLHLSKey, BLHLSMap, BLHLSMedia, BLHLSPlaylist,
+                            BLHLSPlaylistState, BLHLSSegment, BLHLSStreamInf,
+                            BLItemArtworkImage, BLItemContentRating,
+                            BLItemImageCollection, BLJaliscoDAAPClient,
+                            BLJaliscoItem, BLJaliscoReadOnlyDAAPClient,
+                            BLJaliscoServerDatabase, BLJaliscoServerInfo,
+                            BLJaliscoServerItem, BLJaliscoServerSource,
+                            BLJaliscoVersion, BLLibrary, BLLibraryUtility,
+                            BLM3U8Parser, BLMetrics, BLPurchaseDAAPItem,
+                            BLPurchaseDAAPParser, BLPurchaseDAAPServer,
+                            BLPurchaseRequest, BLPurchaseResponse,
+                            BLPurchaseResponseItem, BLRequest,
                             BLRestoreRequestItem, BLRestoreResponseItem,
                             BLServiceInterface, BLServiceProxy,
+                            BLServiceProxyConnectionFactory,
                             BLUIHostServiceNonUI, BLURLRequestEncoder, BLUtilities,
                             IMLibraryPlist, IMLockFile ]
     objc-ivars:           [ BLDAAPBuffer._data,

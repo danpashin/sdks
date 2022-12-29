@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.29.207 clang-1300.0.28.1)
-// swift-module-flags: -target arm64e-apple-ios15.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMetal -swift-version 5 -enforce-exclusivity=checked -O -module-name Metal
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.46.202 clang-1300.0.29.30)
+// swift-module-flags: -target arm64e-apple-ios15.2 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMetal -swift-version 5 -enforce-exclusivity=checked -O -module-name Metal
 @_exported import Metal
 import Swift
 import _Concurrency
@@ -121,9 +121,7 @@ extension Metal.MTLArgumentEncoder {
   public func setTextures(_ textures: [Metal.MTLTexture?], range: Swift.Range<Swift.Int>)
   public func setSamplerStates(_ samplers: [Metal.MTLSamplerState?], range: Swift.Range<Swift.Int>)
   @available(macOS 10.14, iOS 13.0, tvOS 13.0, *)
-  @_alwaysEmitIntoClient public func setRenderPipelineStates(_ pipelines: [Metal.MTLRenderPipelineState?], range: Swift.Range<Swift.Int>) {
-        __setRenderPipelineStates(pipelines, with: NSRange(location: range.lowerBound, length: range.count))
-    }
+  public func setRenderPipelineStates(_ pipelines: [Metal.MTLRenderPipelineState?], range: Swift.Range<Swift.Int>)
   @available(iOS, introduced: 13.0, deprecated: 14.0, renamed: "setComputePipelineState")
   @available(tvOS, introduced: 13.0, deprecated: 14.0, renamed: "setComputePipelineState")
   @_alwaysEmitIntoClient public func setComputePipelineState(_ pipeline: Metal.MTLComputePipelineState?, at index: Swift.Int) {
@@ -154,13 +152,9 @@ extension Metal.MTLRenderCommandEncoder {
   @available(macOS 10.13, iOS 11.0, tvOS 11.0, *)
   public func useHeaps(_ heaps: [Metal.MTLHeap])
   @available(macOS 10.13, iOS 12.0, tvOS 14.5, *)
-  @_alwaysEmitIntoClient public func setViewports(_ viewports: [Metal.MTLViewport]) {
-        __setViewports(viewports, count: viewports.count)
-    }
+  public func setViewports(_ viewports: [Metal.MTLViewport])
   @available(macOS 10.13, iOS 12.0, tvOS 14.5, *)
-  @_alwaysEmitIntoClient public func setScissorRects(_ scissorRects: [Metal.MTLScissorRect]) {
-        __setScissorRects(scissorRects, count: scissorRects.count)
-    }
+  public func setScissorRects(_ scissorRects: [Metal.MTLScissorRect])
   public func setVertexBuffers(_ buffers: [Metal.MTLBuffer?], offsets: [Swift.Int], range: Swift.Range<Swift.Int>)
   public func setVertexTextures(_ textures: [Metal.MTLTexture?], range: Swift.Range<Swift.Int>)
   public func setVertexSamplerStates(_ samplers: [Metal.MTLSamplerState?], range: Swift.Range<Swift.Int>)
@@ -170,21 +164,13 @@ extension Metal.MTLRenderCommandEncoder {
   public func setFragmentSamplerStates(_ samplers: [Metal.MTLSamplerState?], range: Swift.Range<Swift.Int>)
   public func setFragmentSamplerStates(_ samplers: [Metal.MTLSamplerState?], lodMinClamps: [Swift.Float], lodMaxClamps: [Swift.Float], range: Swift.Range<Swift.Int>)
   @available(iOS 11.0, macOS 11.0, tvOS 14.5, macCatalyst 14.0, *)
-  @_alwaysEmitIntoClient public func setTileBuffers(_ buffers: [Metal.MTLBuffer?], offsets: [Swift.Int], range: Swift.Range<Swift.Int>) {
-        __setTileBuffers(buffers, offsets: offsets, with: NSRange(location: range.lowerBound, length: range.count))
-    }
+  public func setTileBuffers(_ buffers: [Metal.MTLBuffer?], offsets: [Swift.Int], range: Swift.Range<Swift.Int>)
   @available(iOS 11.0, macOS 11.0, tvOS 14.5, macCatalyst 14.0, *)
-  @_alwaysEmitIntoClient public func setTileTextures(_ textures: [Metal.MTLTexture?], range: Swift.Range<Swift.Int>) {
-        __setTileTextures(textures, with: NSRange(location: range.lowerBound, length: range.count))
-    }
+  public func setTileTextures(_ textures: [Metal.MTLTexture?], range: Swift.Range<Swift.Int>)
   @available(iOS 11.0, macOS 11.0, tvOS 14.5, macCatalyst 14.0, *)
-  @_alwaysEmitIntoClient public func setTileSamplerStates(_ samplers: [Metal.MTLSamplerState?], range: Swift.Range<Swift.Int>) {
-        __setTileSamplerStates(samplers, with: NSRange(location: range.lowerBound, length: range.count))
-    }
+  public func setTileSamplerStates(_ samplers: [Metal.MTLSamplerState?], range: Swift.Range<Swift.Int>)
   @available(iOS 11.0, macOS 11.0, tvOS 14.5, macCatalyst 14.0, *)
-  @_alwaysEmitIntoClient public func setTileSamplerStates(_ samplers: [Metal.MTLSamplerState?], lodMinClamps: [Swift.Float], lodMaxClamps: [Swift.Float], range: Swift.Range<Swift.Int>) {
-        __setTileSamplerStates(samplers, lodMinClamps: lodMinClamps, lodMaxClamps: lodMaxClamps, with: NSRange(location: range.lowerBound, length: range.count))
-    }
+  public func setTileSamplerStates(_ samplers: [Metal.MTLSamplerState?], lodMinClamps: [Swift.Float], lodMaxClamps: [Swift.Float], range: Swift.Range<Swift.Int>)
   @available(macOS 10.14, macCatalyst 14.0, *)
   @available(iOS, unavailable)
   @available(tvOS, unavailable)

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoImaging.framework/PhotoImaging
-current-version:       402.5.140
+current-version:       422.0.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -128,6 +128,7 @@ exports:
                             _XXH32_digest, _XXH32_freeState, _XXH32_reset,
                             _XXH32_update, _XXH64, _XXH64_createState, _XXH64_digest,
                             _XXH64_freeState, _XXH64_reset, _XXH64_update,
+                            _YIQFromRGB,
                             __Z24isLivePhotoMetadataTrackP12AVAssetTrack,
                             _apertureValue, _arealight_coeffs_from_stats,
                             _average_light_coeffs_from_stats, _fixRedeye,
@@ -187,7 +188,7 @@ exports:
                             PIDisparitySampleJob, PIDisparitySampleRequest,
                             PIEffectAdjustmentController,
                             PIFaceBalanceAutoCalculator, PIFaceObservationCache,
-                            PIFalseColorHDRDebug, PIForwardFakeBoost,
+                            PIFakeBoost, PIFalseColorHDRDebug, PIForwardFakeBoost,
                             PIGlobalSettings, PIHighKey, PIHighKeyHDR,
                             PIHighResFusionAdjustmentController, PIImageIO,
                             PIInverseFakeBoost, PIJSRenderPipeline,
@@ -229,8 +230,8 @@ exports:
                             PIPortraitVideoDebugDetectionsRenderNode,
                             PIPortraitVideoFilter, PIPortraitVideoMetadataSample,
                             PIPortraitVideoProcessor, PIPortraitVideoRenderNode,
-                            PIRAWFaceBalance, PIRAWTempTintSampler,
-                            PIRawAdjustmentController,
+                            PIPortraitVideoRenderer, PIRAWFaceBalance,
+                            PIRAWTempTintSampler, PIRawAdjustmentController,
                             PIRawNoiseReductionAdjustmentController, PIRedEye,
                             PIRedEyeAdjustmentController, PIRedEyeAutoCalculator,
                             PIReframeKeyframe, PIReframeKeyframeSequence,

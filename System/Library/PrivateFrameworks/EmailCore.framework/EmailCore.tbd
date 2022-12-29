@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailCore.framework/EmailCore
-current-version:       3693.0.2
+current-version:       3693.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -42,6 +42,8 @@ exports:
                             _ECLocalActionReplayErrorDomain,
                             _ECMailAccountsDidChangeNotification,
                             _ECMailAccountsDidChangeNotificationAccountsNeedInitializationKey,
+                            _ECMailAccountsDidChangeNotificationKeyAccountIdentifiers,
+                            _ECMailAccountsDidChangeNotificationKeyPreviousAccountIdentifiers,
                             _ECMailDataclassPropertyAccountDirectoryTildeAbbreviatedPath,
                             _ECMailDataclassPropertyArchiveMailboxName,
                             _ECMailDataclassPropertyBigMessageWarningSize,
@@ -90,10 +92,13 @@ exports:
                             _ECMessageHeaderKeyContentType,
                             _ECMessageHeaderKeyDKIMSignature,
                             _ECMessageHeaderKeyDate, _ECMessageHeaderKeyFrom,
+                            _ECMessageHeaderKeyHMEAddress,
+                            _ECMessageHeaderKeyHMEDraft,
                             _ECMessageHeaderKeyImageArchiveURL,
                             _ECMessageHeaderKeyInReplyTo,
                             _ECMessageHeaderKeyListID,
                             _ECMessageHeaderKeyListUnsubscribe,
+                            _ECMessageHeaderKeyListUnsubscribePost,
                             _ECMessageHeaderKeyMIMEVersion,
                             _ECMessageHeaderKeyMessageID,
                             _ECMessageHeaderKeyReceived,
@@ -123,13 +128,17 @@ exports:
                             _ECSASLMechanismLogin, _ECSASLMechanismNTLM,
                             _ECSASLMechanismOAuth2, _ECSASLMechanismPlain,
                             _ECSASLMechanismPlainClientToken,
+                            _ECTaggedHeaderParserTagHMEAddress,
+                            _ECTaggedHeaderParserTagHMEForwardingAddress,
+                            _ECTaggedHeaderParserTagIsHMEReply,
                             _ECWhiteMailboxNameGmail,
                             _ECWhiteMailboxNameGoogleMail,
                             _ECWhiteMailboxNameGoogleSpaceMail,
                             __ECBeginAllowingMainThreadNetworking,
                             __ECEndAllowingMainThreadNetworking,
                             __ECIsNetworkActivityAllowed,
-                            __ef_log_ECDKIMCryptoUtil, __ef_log_ECDKIMVerifier ]
+                            __ef_log_ECDKIMCryptoUtil, __ef_log_ECDKIMVerifier,
+                            __ef_log_ECTaggedHeaderParser ]
     objc-classes:         [ ECAPOPAuthScheme, ECAccount, ECAccountFactory,
                             ECAccountsObserver, ECAngleBracketIDHash,
                             ECAppleTokenAuthScheme, ECAuthScheme,
@@ -161,7 +170,7 @@ exports:
                             ECSASLClient, ECSMTPAccount,
                             ECSecureMIMETrustEvaluation, ECServerMessage,
                             ECSubject, ECSubjectFormatter, ECSubjectParser,
-                            ECTransferActionIMAPReplayer,
+                            ECTaggedHeaderParser, ECTransferActionIMAPReplayer,
                             ECTransferActionReplayer, ECTransferMessageAction,
                             ECTransferMessageActionItem,
                             ECTransferMessageActionResults,

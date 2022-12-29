@@ -8,15 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CHSAppearanceColorSchemeFromUserInterfaceStyle,
-                            _CHUISAvocadoWorkspaceIdentifier,
+    symbols:              [ _CHSColorSchemeFromUserInterfaceStyle,
+                            _CHUISAvocadoWorkspaceIdentifier, _CHUISLogKeybag,
                             _CHUISLogViewController,
                             _CHUISLogViewControllerTouch, _CHUISSceneWorkspace,
                             _CHUISURLOpeningEntitlement,
                             _CHWindowSceneSessionRoleAvocado,
                             _ChronoLoggingSubsystem,
                             _ChronoUIServicesVersionNumber,
-                            _ChronoUIServicesVersionString ]
+                            _ChronoUIServicesVersionString,
+                            _NSStringFromCHUISAvocadoPresentationMode,
+                            _NSStringFromCHUISAvocadoPresentationStyle ]
     objc-classes:         [ CHUISAvocadoHostCancelTouchesAssertion,
                             CHUISAvocadoHostViewController,
                             CHUISAvocadoRequestLaunchAction,
@@ -24,7 +26,7 @@ exports:
                             CHUISAvocadoSceneSettings,
                             CHUISAvocadoSceneSettingsDiffInspector,
                             CHUISAvocadoSceneSpecification,
-                            CHUISAvocadoWindowScene,
+                            CHUISAvocadoWindowScene, CHUISKeybag,
                             CHUISMutableAvocadoSceneClientSettings,
                             CHUISMutableAvocadoSceneSettings,
                             CHUISMutableWidgetVisibilitySettings,

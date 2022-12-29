@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           383EF69C-7227-3492-A8F7-A7DAD4FC2D79
   - target:          arm64-ios
-    value:           7431CD37-5B4F-3EF3-A6F4-10AF1B2660D5
+    value:           02588DCD-DB86-3668-9208-59C3B3D6DEDF
   - target:          arm64e-ios
-    value:           1746260F-B8F7-3B46-96D1-0421A11F64A0
+    value:           BA30FDE4-0214-392A-8F09-880C2C550397
 install-name:    '/System/Library/Frameworks/MessageUI.framework/MessageUI'
-current-version: 3693.0.2
+current-version: 3693.40
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MFABPropertyForRecentsKind, _MFAccessibilityLargeTextEnabled, 
@@ -182,17 +182,18 @@ exports:
                        _MFImageGlyphMoreActionsFill, _MFImageGlyphMove, _MFImageGlyphMute, 
                        _MFImageGlyphNotify, _MFImageGlyphOpenEnvelope, _MFImageGlyphOpenInNewWindow, 
                        _MFImageGlyphPhotos, _MFImageGlyphPrimary, _MFImageGlyphPrint, 
-                       _MFImageGlyphPromotion, _MFImageGlyphProtectedEnvelope, _MFImageGlyphQuicklook, 
-                       _MFImageGlyphRead, _MFImageGlyphReadLater, _MFImageGlyphReply, 
-                       _MFImageGlyphReplyAll, _MFImageGlyphReplyAllFill, _MFImageGlyphReplyFill, 
-                       _MFImageGlyphRevealAction, _MFImageGlyphSave, _MFImageGlyphSaveAll, 
-                       _MFImageGlyphSaveFile, _MFImageGlyphScanDocument, _MFImageGlyphSearchAttachment, 
-                       _MFImageGlyphSearchDate, _MFImageGlyphSearchFlagColor, _MFImageGlyphSearchFlagged, 
-                       _MFImageGlyphSearchFlaggedNoColors, _MFImageGlyphSearchMagnifyingGlass, 
-                       _MFImageGlyphSearchMailbox, _MFImageGlyphSearchPeople, _MFImageGlyphSearchSubject, 
-                       _MFImageGlyphSearchUnread, _MFImageGlyphSearchVIP, _MFImageGlyphSend, 
-                       _MFImageGlyphSendAgain, _MFImageGlyphShare, _MFImageGlyphShelf, 
-                       _MFImageGlyphSigned, _MFImageGlyphSocial, _MFImageGlyphStatusIndicatorAttachment, 
+                       _MFImageGlyphPromotion, _MFImageGlyphProtectedEnvelope, _MFImageGlyphQuestion, 
+                       _MFImageGlyphQuicklook, _MFImageGlyphRead, _MFImageGlyphReadLater, 
+                       _MFImageGlyphReply, _MFImageGlyphReplyAll, _MFImageGlyphReplyAllFill, 
+                       _MFImageGlyphReplyFill, _MFImageGlyphRevealAction, _MFImageGlyphSave, 
+                       _MFImageGlyphSaveAll, _MFImageGlyphSaveFile, _MFImageGlyphScanDocument, 
+                       _MFImageGlyphSearchAttachment, _MFImageGlyphSearchDate, _MFImageGlyphSearchFlagColor, 
+                       _MFImageGlyphSearchFlagged, _MFImageGlyphSearchFlaggedNoColors, 
+                       _MFImageGlyphSearchMagnifyingGlass, _MFImageGlyphSearchMailbox, 
+                       _MFImageGlyphSearchPeople, _MFImageGlyphSearchSubject, _MFImageGlyphSearchUnread, 
+                       _MFImageGlyphSearchVIP, _MFImageGlyphSend, _MFImageGlyphSendAgain, 
+                       _MFImageGlyphShare, _MFImageGlyphShelf, _MFImageGlyphSigned, 
+                       _MFImageGlyphSocial, _MFImageGlyphStatusIndicatorAttachment, 
                        _MFImageGlyphStatusIndicatorBlockSender, _MFImageGlyphStatusIndicatorFlagged, 
                        _MFImageGlyphStatusIndicatorForwarded, _MFImageGlyphStatusIndicatorMute, 
                        _MFImageGlyphStatusIndicatorNotify, _MFImageGlyphStatusIndicatorReplied, 
@@ -226,9 +227,9 @@ exports:
                        _MFUIContentSizeCategoryMin, _MFUTTypeInternalMessageTransfer, 
                        _MFUserStyleSheetCSS, _MFUserStyleSheetDictionary, __ArrayContainsKindOfObjects, 
                        __MFShowAttachmentMarkup, _kMFMessageProgressLayerFadeDuration ]
-    objc-classes:    [ MFAddressBookManager, MFAddressConcatenator, MFAddressPickerReformatter, 
-                       MFAlertOverlayController, MFAtomTextView, MFAttachmentDragPreviewInfo, 
-                       MFAttachmentImageGenerator, MFAttachmentPasteboardRepresentation, 
+    objc-classes:    [ MFActivityIndicatorLabel, MFAddressBookManager, MFAddressConcatenator, 
+                       MFAddressPickerReformatter, MFAlertOverlayController, MFAtomTextView, 
+                       MFAttachmentDragPreviewInfo, MFAttachmentImageGenerator, MFAttachmentPasteboardRepresentation, 
                        MFAutocompleteResultsTableViewController, MFCalendarComposeRecipient, 
                        MFCaptionLabel, MFComposeActivityHandoffOperation, MFComposeAttachmentInfo, 
                        MFComposeDisplayMetrics, MFComposeFromView, MFComposeHeaderView, 
@@ -239,10 +240,11 @@ exports:
                        MFComposeTypeFactory, MFComposeWebContentVariationView, MFComposeWebView, 
                        MFContactsSearchManager, MFContactsSearchResultsModel, MFDragSource, 
                        MFDropTarget, MFEMMessageStore, MFFileAttachment, MFFontMetricCache, 
-                       MFGroupDetailViewController, MFHeaderLabelView, MFLANHandoffAgent, 
-                       MFLANHandoffContext, MFMailAccountProxy, MFMailAccountProxyGenerator, 
-                       MFMailComposeAttachmentWrapper, MFMailComposeContactsSearchController, 
-                       MFMailComposeController, MFMailComposeHeaderView, MFMailComposeNavigationBarTitleView, 
+                       MFGroupDetailViewController, MFHeaderLabelView, MFHideMyEmailHeaderView, 
+                       MFLANHandoffAgent, MFLANHandoffContext, MFMailAccountProxy, 
+                       MFMailAccountProxyGenerator, MFMailComposeAttachmentWrapper, 
+                       MFMailComposeContactsSearchController, MFMailComposeController, 
+                       MFMailComposeHeaderView, MFMailComposeNavigationBarTitleView, 
                        MFMailComposeRecipientTextView, MFMailComposeToField, MFMailComposeView, 
                        MFMailComposeViewController, MFMailCompositionValues, MFMailDropMailDeliveryUI, 
                        MFMailIntentTransformer, MFMailMenuCommand, MFMailPopoverManager, 
