@@ -3,11 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShazamInsights.framework/ShazamInsights
-current-version:       162.1
+current-version:       163.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SHInsightsErrorDomain ]
-    objc-classes:         [ SHAffinityGroup, SHAffinityGroupQuery, SHRegion ]
+    objc-classes:         [ SHAffinityGroup, SHAffinityGroupQuery, SHClusterQuery,
+                            SHClusterStatus, SHMediaItemPropertyCollection,
+                            SHRegion ]
 ...

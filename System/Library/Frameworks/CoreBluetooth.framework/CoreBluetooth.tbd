@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           99601387-DBED-3A3A-B1A8-6F69E2F2A805
   - target:          arm64-ios
-    value:           0F85FF82-39E0-30D2-ADDF-8691AB3EC9AA
+    value:           3FC63E90-AA1D-3FA4-BCC3-836916804B37
   - target:          arm64e-ios
-    value:           6073DEB6-9809-361B-8EA0-2B9133ED8158
+    value:           0D0A2A08-FD56-37C7-BDC1-6D1F1CC491F3
 install-name:    '/System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -159,16 +159,18 @@ exports:
                        _CBUUIDStartStreamingCharacteristicString, _CBUUIDStopStreamingCharacteristicString, 
                        _CBUUIDSupportedCodecsCharacteristicString, _CBUUIDSystemIDCharacteristicString, 
                        _CBUUIDUARPDataControlPointCharacteristicString, _CBUUIDUnifiedAccessoryRestoreProtocolServiceString, 
-                       _CBUnpairOptionForceDisconnect, _CBXPCGetNextClientID, _gCBDaemonServer ]
+                       _CBUnpairOptionForceDisconnect, _CBUseCaseFromString, _CBXPCGetNextClientID, 
+                       _gCBDaemonServer ]
     objc-classes:    [ CBATTRequest, CBAccessoryLogging, CBAdvertiser, CBAttribute, 
-                       CBAudioLinkQualityInfo, CBCentral, CBCentralManager, CBCharacteristic, 
-                       CBConnection, CBController, CBControllerInfo, CBControllerSettings, 
-                       CBDescriptor, CBDevice, CBDeviceRequest, CBDeviceResponse, 
-                       CBDeviceSettings, CBDiscovery, CBHIDPerformanceMonitor, CBHIDPerformanceSummary, 
-                       CBIdentity, CBL2CAPChannel, CBManager, CBMutableCharacteristic, 
-                       CBMutableDescriptor, CBMutableService, CBPacketLoggerClient, 
-                       CBPairingAgent, CBPeer, CBPeripheral, CBPeripheralManager, 
+                       CBAudioLinkQualityInfo, CBBLEServiceDataInfo, CBCentral, CBCentralManager, 
+                       CBCharacteristic, CBConnection, CBController, CBControllerInfo, 
+                       CBControllerSettings, CBDescriptor, CBDevice, CBDeviceRequest, 
+                       CBDeviceResponse, CBDeviceSettings, CBDiscovery, CBDiscoverySummary, 
+                       CBHIDPerformanceMonitor, CBHIDPerformanceSummary, CBIdentity, 
+                       CBL2CAPChannel, CBManager, CBMutableCharacteristic, CBMutableDescriptor, 
+                       CBMutableService, CBPacketLoggerClient, CBPairingAgent, CBPairingInfo, 
+                       CBPeer, CBPeripheral, CBPeripheralManager, CBProductInfo, 
                        CBReadRequest, CBScalablePipe, CBScalablePipeManager, CBServer, 
                        CBService, CBSpatialInteractionSession, CBSpatialMeasurement, 
-                       CBSystemHealthBluetooth, CBUUID, CBWriteRequest ]
+                       CBSystemHealthBluetooth, CBUUID, CBUtil, CBWriteRequest ]
 ...

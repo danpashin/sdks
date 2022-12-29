@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           F4340891-A940-3928-8B30-415623ADA8BE
   - target:          arm64-ios
-    value:           1DFF1287-126E-387E-9FC8-4F466546986C
+    value:           D95BC62C-9639-327C-8139-FB58E55DB3E9
   - target:          arm64e-ios
-    value:           21B5FAB9-9A42-3513-AAA3-08E5BAB373F0
+    value:           833091CE-8761-3562-922D-AF37BE7316EC
 install-name:    '/usr/lib/PN548_API.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -24,12 +24,13 @@ exports:
                        _NFDriverSecureElementGetCometOSInfo, _NFDriverSecureElementGetCometOSMode, 
                        _NFDriverSecureElementGetData, _NFDriverSecureElementGetIcfOSInfo, 
                        _NFDriverSecureElementGetIcfOSMode, _NFDriverSendBoosterCommand, 
-                       _NFDriverUARTDebugLastMessage, _NFDriverUnloadStack, _NFDriverUpdateBooster, 
-                       _RFSettingsLen, __Async_NFDriverIoCtl, __NFDriverEnableWatchDog, 
-                       __NFDriverIsRestoreOS, __NFDriverSetExpressModeNumWaitFrames, 
-                       __NFDriverSetExpressModeRfOffWaitTime, __NFDriverSetFieldCoalescingInterval, 
-                       __NFDriverSetRFSettings, __NFDriverSetStandbyMode, _gPN548_API_logv, 
-                       _phLibNfc_AntnRfSettings, _phLibNfc_RfSettings, _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_34, 
+                       _NFDriverSetSecureElementAvailable, _NFDriverUARTDebugLastMessage, 
+                       _NFDriverUnloadStack, _NFDriverUpdateBooster, _RFSettingsLen, 
+                       __Async_NFDriverIoCtl, __NFDriverEnableWatchDog, __NFDriverIsRestoreOS, 
+                       __NFDriverSetExpressModeNumWaitFrames, __NFDriverSetExpressModeRfOffWaitTime, 
+                       __NFDriverSetFieldCoalescingInterval, __NFDriverSetRFSettings, 
+                       __NFDriverSetStandbyMode, _gPN548_API_logv, _phLibNfc_AntnRfSettings, 
+                       _phLibNfc_RfSettings, _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_34, 
                        _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_34_NbParams, _phLibNfc_RfSettings_Bermuda_PN66V_01_01_10, 
                        _phLibNfc_RfSettings_Bermuda_PN66V_01_01_10_NbParams, _phLibNfc_RfSettings_Bermuda_PN66V_02_01_32, 
                        _phLibNfc_RfSettings_Bermuda_PN66V_02_01_32_NbParams, _phLibNfc_RfSettings_Bermuda_PN67V_02_01_89, 
@@ -44,15 +45,16 @@ exports:
                        _phLibNfc_RfSettings_RTM_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_RTM_PN67V_03_01_34, 
                        _phLibNfc_RfSettings_RTM_PN67V_03_01_34_NbParams ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _NFDriverChangeDynamicTransitRFSettings, _NFDriverChangeReaderModeDynamicRFSetting, 
-                       _NFDriverClearAutomaticMultiTagPollingState, _NFDriverClose, 
-                       _NFDriverConfigureAutomaticMultiTagPolling, _NFDriverConfigureExpressFelicaEntry, 
-                       _NFDriverConfigureReaderModeRFForTransitPartner, _NFDriverConfigureVASPolling, 
-                       _NFDriverCreateErrorCode, _NFDriverDebugDumpMemory, _NFDriverDisableBoost, 
-                       _NFDriverDisableHeadlessModeMiniNV, _NFDriverDumpLPMDebugLog, 
-                       _NFDriverDumpUART, _NFDriverEnableFelicaTxEndPatternV2, _NFDriverEnableGreenCarThreshold, 
-                       _NFDriverEnableHeadlessTestMode, _NFDriverEnableSecondaryReaderModePower, 
-                       _NFDriverGPIOSetPMUStandbyPowerEnabled, _NFDriverGetControllerInfo, 
+    symbols:         [ _NFDriverAntennaSelfTest, _NFDriverChangeDynamicTransitRFSettings, 
+                       _NFDriverChangeReaderModeDynamicRFSetting, _NFDriverClearAutomaticMultiTagPollingState, 
+                       _NFDriverClose, _NFDriverConfigureAutomaticMultiTagPolling, 
+                       _NFDriverConfigureExpressFelicaEntry, _NFDriverConfigureReaderModeRFForTransitPartner, 
+                       _NFDriverConfigureVASPolling, _NFDriverCreateErrorCode, _NFDriverDebugDumpMemory, 
+                       _NFDriverDisableBoost, _NFDriverDisableHeadlessModeMiniNV, 
+                       _NFDriverDumpLPMDebugLog, _NFDriverDumpUART, _NFDriverEnableAutomaticRFOverride, 
+                       _NFDriverEnableFelicaTxEndPatternV2, _NFDriverEnableGreenCarThreshold, 
+                       _NFDriverEnableHeadlessTestMode, _NFDriverGPIOSetPMUStandbyPowerEnabled, 
+                       _NFDriverGetControllerInfo, _NFDriverGetFlashWriteCounter, 
                        _NFDriverGetHeadlessModeFlags, _NFDriverGetMultiTagState, 
                        _NFDriverGetOSUpdateLog, _NFDriverGetPowerCounter, _NFDriverGetSWIOTemperature, 
                        _NFDriverGetSecureElementInfo, _NFDriverGetStackBreadcrumb, 
@@ -79,9 +81,10 @@ exports:
                        _NFDriverSetCallback, _NFDriverSetChipscope, _NFDriverSetConfiguration, 
                        _NFDriverSetEmbeddedSecureElementPower, _NFDriverSetExpressConfig, 
                        _NFDriverSetHeadlessMode, _NFDriverSetIcefallSecureElementPower, 
-                       _NFDriverSetPollingConfig, _NFDriverSetReaderModeRFGain, _NFDriverSetSecureElementAlwaysOn, 
-                       _NFDriverSetSecureElementAvailable, _NFDriverSetSecureElementPower, 
-                       _NFDriverSetTypeATagDataRate, _NFDriverSimulateCrash, _NFDriverToggleDownloadRequest, 
-                       _NFDriverToggleGPIO, _NFDriverTriggerDelayedWake, _NFDriverUnloadStackAndLeaveHWEnabled, 
+                       _NFDriverSetMaxWTX, _NFDriverSetPollingConfig, _NFDriverSetPollingProfile, 
+                       _NFDriverSetReaderModeRFGain, _NFDriverSetSecureElementAlwaysOn, 
+                       _NFDriverSetSecureElementPower, _NFDriverSetTypeATagDataRate, 
+                       _NFDriverSimulateCrash, _NFDriverToggleDownloadRequest, _NFDriverToggleGPIO, 
+                       _NFDriverTriggerDelayedWake, _NFDriverUnloadStackAndLeaveHWEnabled, 
                        _NFDriverUpdateFirmware, _nfc_err ]
 ...

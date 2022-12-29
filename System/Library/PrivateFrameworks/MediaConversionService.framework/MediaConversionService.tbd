@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaConversionService.framework/MediaConversionService
-current-version:       422.0.110
+current-version:       442.0.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _MediaConversionServiceVersionNumber,
                             _MediaConversionServiceVersionString,
+                            _PAMediaConversionJobPriorityIsBackground,
                             _PAMediaConversionJobPriorityIsOptional,
                             _PAMediaConversionNameForErrorCode,
                             _PAMediaConversionNameForJobPriority,
@@ -101,14 +102,20 @@ exports:
                             _PAMediaConversionServiceOrientedPixelWidthKey,
                             _PAMediaConversionServicePixelHeightKey,
                             _PAMediaConversionServicePixelWidthKey,
+                            _PAMediaConversionServiceProcessIdentifierKey,
                             _PAMediaConversionServiceProgressKey,
                             _PAMediaConversionServiceRequiresModernizationKey,
                             _PAMediaConversionServiceResultDataKey,
                             _PAMediaConversionServiceSourceBookmarkCollectionKey,
                             _PAMediaConversionServiceUnitTestSupportCoreImageGraphDumpPathsKey,
+                            _PAMediaConversionTypeImage,
+                            _PAMediaConversionTypeVideo,
+                            _PAMediaConversionTypeVideoStillExtraction,
                             _PHMediaFormatConversionErrorDomain,
                             _PHMediaFormatConversionUnknownFutureIdentifierPlaceholder ]
-    objc-classes:         [ PAImageConversionServiceClient,
+    objc-classes:         [ ConversionOptionSet,
+                            MediaConversionServiceCommandLineDriver,
+                            PAImageConversionServiceClient,
                             PAMediaConversionServiceAddPFMediaMetadataPolicy,
                             PAMediaConversionServiceCompositeImageMetadataPolicy,
                             PAMediaConversionServiceDefaultImageMetadataPolicy,

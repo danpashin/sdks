@@ -345,6 +345,7 @@ exports:
                             _CPSqliteDatabaseSetSetupHandler,
                             _CPSqliteDatabaseSetShouldMigrateInProcess,
                             _CPSqliteDatabaseSetShouldRequestUnlock,
+                            _CPSqliteDatabaseSetShouldUseInhibitorForConnections,
                             _CPSqliteDatabaseSetShouldYieldWhenRequested,
                             _CPSqliteDatabaseSetStatementCacheLimit,
                             _CPSqliteDatabaseSetSupportsReadOnlyConnections,
@@ -375,6 +376,7 @@ exports:
                             _CPSqliteStatementSendResults,
                             _CPSqliteUtilitiesGetIntegerQueryResultAtPath,
                             _CPSqliteUtilitiesGetSchemaVersionAtPath,
+                            _CPStartAnInhibitor, _CPStopInhibitorWithIdentifier,
                             _CPStringMethods, _CPSystemRootDirectory,
                             _CPTemporaryFileWithUniqueName, _CPTemporaryPath,
                             _CPTimeBlock, _CPWeekdayAbbreviatedDateFormat,
@@ -477,8 +479,9 @@ exports:
                             OperationQueueInvocationTrampoline,
                             PEPServiceConfiguration, RadiosPreferences,
                             ThreadedInvocationTrampoline,
-                            _CPBundleIdentifierString, _CPPowerAssertion,
-                            _CPPowerAssertionThread, _ReachabilityRequest ]
+                            _CPBundleIdentifierString, _CPInhibitorManager,
+                            _CPPowerAssertion, _CPPowerAssertionThread,
+                            _ReachabilityRequest ]
     objc-ivars:           [ ALCity._countryName, ALCity._countryOverride,
                             ALCity._identifier, ALCity._identifierForCPCity,
                             ALCity._latitude, ALCity._localeCode,

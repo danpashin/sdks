@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           D77DC39F-3722-3D53-9836-8DE9A7D3A474
+    value:           F9B16381-7C23-304A-B8A4-3FB22904E25A
   - target:          arm64e-ios
-    value:           9F934434-22B2-324B-B51C-4603B7607F18
+    value:           E6A77886-3D24-3A76-BAEA-04433AE834E1
 install-name:    '/System/Library/Frameworks/SensorKit.framework/SensorKit'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -83,29 +83,31 @@ exports:
                        _SRKeyboardMetricScalarTotalSpaceCorrectionsKey, _SRKeyboardMetricScalarTotalSubstitutionCorrectionsKey, 
                        _SRKeyboardMetricScalarTotalTapsKey, _SRKeyboardMetricScalarTotalTranspositionCorrectionsKey, 
                        _SRKeyboardMetricScalarTotalWordsKey, _SRKeyboardMetricScalarTypingPausesKey, 
-                       _SRKeyboardMetricScalarTypingSpeedKey, _SRKeyboardMetricScalarlWordBucketAbsolutistKey, 
-                       _SRKeyboardMetricScalarlWordBucketAngerKey, _SRKeyboardMetricScalarlWordBucketAnxietyKey, 
-                       _SRKeyboardMetricScalarlWordBucketDeathKey, _SRKeyboardMetricScalarlWordBucketDownKey, 
-                       _SRKeyboardMetricScalarlWordBucketFeelKey, _SRNotificationPreqUpdated, 
-                       _SRNotificationResetDatastore, _SRNotificationSignificantTimeChange, 
-                       _SRRemoveBundleFromPendingAuthorizations, _SRRequestAuthorizationForServices, 
-                       _SRRequestAuthorizationForServicesWithBundle, _SRRequestAuthorizationWithBundleForServices, 
+                       _SRKeyboardMetricScalarTypingSpeedKey, _SRKeyboardMetricScalarWordBucketPositiveKey, 
+                       _SRKeyboardMetricScalarlWordBucketAbsolutistKey, _SRKeyboardMetricScalarlWordBucketAngerKey, 
+                       _SRKeyboardMetricScalarlWordBucketAnxietyKey, _SRKeyboardMetricScalarlWordBucketDeathKey, 
+                       _SRKeyboardMetricScalarlWordBucketDownKey, _SRKeyboardMetricScalarlWordBucketFeelKey, 
+                       _SRNotificationPreqUpdated, _SRNotificationResetDatastore, 
+                       _SRNotificationSignificantTimeChange, _SRRemoveBundleFromPendingAuthorizations, 
+                       _SRRequestAuthorizationForServices, _SRRequestAuthorizationForServicesWithBundle, 
+                       _SRRequestAuthorizationMigrationForServices, _SRRequestAuthorizationWithBundleForServices, 
                        _SRRequestFirstRunOnBoarding, _SRRequiredAppIdentifier, _SRResetAllAuthorizations, 
                        _SRResetAuthorizationsForBundleWithCompletionHandler, _SRSensorAccelerometer, 
-                       _SRSensorAmbientLightSensor, _SRSensorBeddit, _SRSensorDeletionRecordsSuffix, 
-                       _SRSensorDeviceUsageReport, _SRSensorECG, _SRSensorElevation, 
-                       _SRSensorElevationPressure, _SRSensorFacialMetrics, _SRSensorFallStatistics, 
-                       _SRSensorGyroscope, _SRSensorHeartRate, _SRSensorKeyboardMetrics, 
-                       _SRSensorMessagesUsageReport, _SRSensorOdometer, _SRSensorOdometerSuitability, 
-                       _SRSensorOnWristDetailedState, _SRSensorOnWristState, _SRSensorPPG, 
-                       _SRSensorPedometerData, _SRSensorPhoneUsageReport, _SRSensorRotationRate, 
-                       _SRSensorSiriAudio, _SRSensorSiriSoundDetection, _SRSensorSiriSpeechEmotion, 
-                       _SRSensorSiriSpeechMetrics, _SRSensorSpeechMetrics, _SRSensorStrideCalibration, 
-                       _SRSensorTelephonyAudio, _SRSensorTelephonySoundDetection, 
-                       _SRSensorTelephonySpeechEmotion, _SRSensorTelephonySpeechMetrics, 
-                       _SRSensorVisits, _SRSetDataCollectionEnabled, _SRSetRequiredOnboardingCompleted, 
-                       _SRShowAppsAndStudiesUsingSensorKit, _SRShowResearchData, 
-                       _SRShowStudyAuthorization, _SRStudyBundleIdPrefix, _kTCCOverrideDummyBundleId ]
+                       _SRSensorAmbientLightSensor, _SRSensorAmbientPressure, _SRSensorBeddit, 
+                       _SRSensorDeletionRecordsSuffix, _SRSensorDeviceUsageReport, 
+                       _SRSensorECG, _SRSensorElevation, _SRSensorElevationPressure, 
+                       _SRSensorFacialMetrics, _SRSensorFallStatistics, _SRSensorGyroscope, 
+                       _SRSensorHeartRate, _SRSensorKeyboardMetrics, _SRSensorMessagesUsageReport, 
+                       _SRSensorOdometer, _SRSensorOdometerSuitability, _SRSensorOnWristDetailedState, 
+                       _SRSensorOnWristState, _SRSensorPPG, _SRSensorPedometerData, 
+                       _SRSensorPhoneUsageReport, _SRSensorRotationRate, _SRSensorSiriAudio, 
+                       _SRSensorSiriSoundDetection, _SRSensorSiriSpeechEmotion, _SRSensorSiriSpeechMetrics, 
+                       _SRSensorSpeechMetrics, _SRSensorStrideCalibration, _SRSensorTelephonyAudio, 
+                       _SRSensorTelephonySoundDetection, _SRSensorTelephonySpeechEmotion, 
+                       _SRSensorTelephonySpeechMetrics, _SRSensorVisits, _SRSetDataCollectionEnabled, 
+                       _SRSetRequiredOnboardingCompleted, _SRShowAppsAndStudiesUsingSensorKit, 
+                       _SRShowResearchData, _SRShowStudyAuthorization, _SRStudyBundleIdPrefix, 
+                       _kTCCOverrideDummyBundleId ]
     objc-classes:    [ SRAmbientLightSample, SRApplicationUsage, SRAuthExtensionContext, 
                        SRAuthHostExtensionContext, SRAuthorizationClient, SRAuthorizationStore, 
                        SRDebugInfoClient, SRDeletionRecord, SRDevice, SRDeviceUsageReport, 

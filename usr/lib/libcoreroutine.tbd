@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E74E95C1-B163-3535-82FC-E4418485B194
   - target:          arm64-ios
-    value:           DAFBFA4F-61C2-3C18-AD1E-91FF00653656
+    value:           251116EB-818D-360C-991A-A50378A7178A
   - target:          arm64e-ios
-    value:           07C2AC4E-E2A2-3742-A1B9-1F5B614FA2E9
+    value:           2E7D161C-D53D-32D0-8D17-13A09FE5F450
 install-name:    '/usr/lib/libcoreroutine.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -246,7 +246,8 @@ exports:
                        _kRTLearnedPlaceTypeInferenceGenerator_sWorkMinTopMedianDwellTimePlaceCandidates, 
                        _kRTLearnedPlaceTypeInferenceGenerator_sWorkMinWeeklyAggregateDwellTimeBetweenDateRangeAveragePlaceCandidates, 
                        _kRTLearnedPlaceTypeInferenceGenerator_sWorkTotalWeeklyVisitCountPlaceCandidates, 
-                       _kRTLocationOfInterestMetricMaximumNumberOfVisitsPerLoiMetric, 
+                       _kRTLocationOfInterestMetricBinEndDistance, _kRTLocationOfInterestMetricBinGap, 
+                       _kRTLocationOfInterestMetricBinStartDistance, _kRTLocationOfInterestMetricMaximumNumberOfVisitsPerLoiMetric, 
                        _kRTLocationSmootherAverageMovingSpeed, _kRTLocationSmootherDeltaQk, 
                        _kRTLocationSmootherDynamicQk, _kRTLocationSmootherEnableFallbackModel, 
                        _kRTLocationSmootherInterpolateTime, _kRTLocationSmootherPk_pre, 
@@ -318,8 +319,8 @@ exports:
                        _kRTPlaceDataMetrics_SDDailyTotalStaticMotionDuration, _kRTPlaceDataMetrics_SDDailyTotalStaticMotionDuration_Bucketed, 
                        _kRTPlaceDataMetrics_SDDailyTotalUninterruptedWiFiConnectionDuration, 
                        _kRTPlaceDataMetrics_SDDailyTotalUninterruptedWiFiConnectionDuration_Bucketed, 
-                       _kRTPlaceInferenceManagerMaxLocationUncertainty, _kRTPlaceInferenceManagerPlaceInferencesLimit, 
-                       _kRTRelabelerBaseCount, _kRTRelabelerClippingRadius, _kRTRelabelerConfidenceEqualityEpsilon, 
+                       _kRTPlaceInferenceManagerPlaceInferencesLimit, _kRTRelabelerBaseCount, 
+                       _kRTRelabelerClippingRadius, _kRTRelabelerConfidenceEqualityEpsilon, 
                        _kRTRelabelerConfidenceThreshold, _kRTRelabelerContextCandidateAmountThreshold, 
                        _kRTRelabelerContextDistanceThreshold, _kRTRelabelerMinimumConfidenceRatio, 
                        _kRTRelabelerMinimumNumberPOIs, _kRTRelabelerPassthroughThreshold, 
@@ -395,8 +396,8 @@ exports:
                        RTLearnedPlaceTypeInferenceWeeklyStats, RTLearnedPlaceVersions, 
                        RTLearnedTransition, RTLearnedTransitionMO, RTLearnedVisit, 
                        RTLearnedVisitMO, RTLifeCycleManager, RTLocationAwarenessManager, 
-                       RTLocationAwarenessManagerConfig, RTLocationAwarenessMetrics, 
-                       RTLocationManager, RTLocationManagerNotificationLocationsAccuracyBest, 
+                       RTLocationAwarenessManagerConfig, RTLocationAwarenessMetricManager, 
+                       RTLocationAwarenessMetrics, RTLocationManager, RTLocationManagerNotificationLocationsAccuracyBest, 
                        RTLocationManagerNotificationLocationsAccuracyHundredMeters, 
                        RTLocationManagerNotificationLocationsLeeched, RTLocationOfInterestMetrics, 
                        RTLocationShifter, RTLocationSmoother, RTLocationStore, RTLocationStoreMetricOptions, 

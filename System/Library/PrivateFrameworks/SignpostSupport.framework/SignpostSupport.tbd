@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
-current-version:       69
+current-version:       76
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -18,6 +18,7 @@ exports:
                             _SignpostReporterCrossPlatformAppleAccountAllowlist,
                             _SignpostReporterCrossPlatformAppleIDAuthenticationAllowlist,
                             _SignpostReporterCrossPlatformAuthKitAllowlist,
+                            _SignpostReporterCrossPlatformSharedAllowlist,
                             _SignpostReporterCrossPlatformSiriAudioStringPasslist,
                             _SignpostReporterCrossPlatformSiriHomeAutomationStringPasslist,
                             _SignpostReporterCrossPlatformSiriPersonalUpdateStringPasslist,
@@ -38,6 +39,7 @@ exports:
                             _SignpostSupportStdDevMachContinuousTimeForIntervals,
                             _SignpostSupportStdDevNsForIntervals,
                             _SignpostSupportTotalDurationMachContinuousTimeForIntervals,
+                            _SignpostSupportTotalDurationMachContinuousTimeForIntervalsWithAdjustments,
                             _SignpostSupportTotalDurationNsForIntervals,
                             _SignpostSystemTimebaseRatio,
                             _StringForSignpostPlatform,
@@ -55,8 +57,9 @@ exports:
                             SignpostCAProcessStallAggregation,
                             SignpostCAStallAggregation,
                             SignpostCAStallAggregationBuilder,
-                            SignpostCommitInterval, SignpostContextInfo,
-                            SignpostEvent, SignpostFrameAccumulatedState,
+                            SignpostCommitInterval, SignpostContextFrameLifetime,
+                            SignpostContextInfo, SignpostEvent,
+                            SignpostFrameAccumulatedState,
                             SignpostFrameLatencyInterval,
                             SignpostFrameLifetimeInterval,
                             SignpostHIDLatencyInterval, SignpostInterval,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
-current-version:       422.0.110
+current-version:       442.0.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -395,6 +395,7 @@ exports:
                             _PLModelMigrationActionRegistration_Background,
                             _PLModelMigrationActionRegistration_Repairs,
                             _PLModelMigrationActionRegistration_Staged,
+                            _PLModelMigrationActionUtilityConvertObjectIDResumeMarkerString,
                             _PLModelMigrationActionUtilityIncrementalUpdateLog,
                             _PLModelMigrationActionUtilityIncrementalUpdateSize,
                             _PLModelMigrationStagedVersions,
@@ -1217,6 +1218,7 @@ exports:
                             _PLSearchedCategoriesSpecificToUserCategory,
                             _PLSendCTMFinishProcessingEvent,
                             _PLSendCTMScheduleAnalytics,
+                            _PLSendDeferredProcessingAnalytics,
                             _PLSendFRCBailOutAnalytics,
                             _PLSendFRCCompletedAnalytics,
                             _PLSetMaximumPixelDimensionForDisplayedImage,
@@ -1780,6 +1782,7 @@ exports:
                             PLModelMigrationAction_CreateManualIndexes,
                             PLModelMigrationAction_FixBackgroundResourceWorkerModifyingIncorrectResources,
                             PLModelMigrationAction_FixBadExtendedAttribute,
+                            PLModelMigrationAction_FixPackedBadgeAttributesForRAWPlusJPEG,
                             PLModelMigrationAction_FixResourcesIncorrectlyAssignedToSyndicationDataStore,
                             PLModelMigrationAction_FixupTombstonedPeople,
                             PLModelMigrationAction_GreenTeaSetDefaultContactsAuthorizationState,
@@ -1796,6 +1799,7 @@ exports:
                             PLModelMigrationAction_RepushAssetsWithImportedByBundleIdentifier,
                             PLModelMigrationAction_ResetBackgroundJobServicePersistedBundleRecords,
                             PLModelMigrationAction_ResetCurationScoreSyndicatedAsset,
+                            PLModelMigrationAction_ResetSceneAnalysisTimestampForProblematicAssets,
                             PLModelMigrationAction_ResetSyndication,
                             PLModelMigrationAction_RevalidateFaceAreaPoints,
                             PLModelMigrationAction_SetDefaultFaceAnalysisVersion,
@@ -1936,6 +1940,7 @@ exports:
                             PLSqliteQueryPlanNode, PLStreamShareSource,
                             PLSubstandardPhotoEditSource, PLSuggestion,
                             PLSyncSaveJob, PLSyndicationDeleteManager,
+                            PLSyndicationIngestMutex,
                             PLSyndicationResourceDataStore,
                             PLSyndicationResourcePrefetchManager,
                             PLSyndicationSanitizedResourceGenerator,

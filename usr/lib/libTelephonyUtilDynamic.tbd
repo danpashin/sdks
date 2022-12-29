@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E84E0346-EAA1-3332-886F-6F8ED4906473
   - target:          arm64-ios
-    value:           234FBB78-565A-3720-8B8D-822C0D31A9EF
+    value:           DE288FA5-9342-3EB3-A4DE-9F14BB78B0D8
   - target:          arm64e-ios
-    value:           D6FE82AC-5BFE-3F88-B3C2-8FBA5EB5C8D3
+    value:           0A4D31AF-BCE6-387B-B189-DB62B96506B9
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -168,6 +168,8 @@ exports:
                        __ZN3ctu15RestModuleState7connectEONSt3__110shared_ptrINS_4rest21RestDispatchConnectorEEE, 
                        __ZN3ctu15RestModuleStateC1EONSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEON8dispatch5queueEONS9_8workloopE, 
                        __ZN3ctu15RestModuleStateC2EONSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEON8dispatch5queueEONS9_8workloopE, 
+                       __ZN3ctu15RestXpcListener13ConfigurationC1ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       __ZN3ctu15RestXpcListener13ConfigurationC2ERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN3ctu15RestXpcListener14startListeningEv, __ZN3ctu15RestXpcListener14weak_from_thisEv, 
                        __ZN3ctu15RestXpcListener15handleNewClientEN3xpc10connectionE, 
                        __ZN3ctu15RestXpcListener17handleClientErrorEN3xpc10connectionENS1_6objectE, 
@@ -175,9 +177,9 @@ exports:
                        __ZN3ctu15RestXpcListener19handleListenerErrorEN3xpc6objectE, 
                        __ZN3ctu15RestXpcListener26getResourceConnection_syncERKN3xpc10connectionE, 
                        __ZN3ctu15RestXpcListener34getOrCreateResourceConnection_syncERKN3xpc10connectionENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE, 
-                       __ZN3ctu15RestXpcListener6createEN3xpc10connectionEN8dispatch5queueE, 
-                       __ZN3ctu15RestXpcListenerC1EN3xpc10connectionEN8dispatch5queueE, 
-                       __ZN3ctu15RestXpcListenerC2EN3xpc10connectionEN8dispatch5queueE, 
+                       __ZN3ctu15RestXpcListener6createEN3xpc10connectionEN8dispatch5queueENS0_13ConfigurationE, 
+                       __ZN3ctu15RestXpcListenerC1EN3xpc10connectionEN8dispatch5queueENS0_13ConfigurationE, 
+                       __ZN3ctu15RestXpcListenerC2EN3xpc10connectionEN8dispatch5queueENS0_13ConfigurationE, 
                        __ZN3ctu16LogMessageBuffer17vCreateWithFormatEPKcPc, __ZN3ctu16LogMessageBuffer19vCreateWithNSFormatEP8NSStringPc, 
                        __ZN3ctu16LogMessageBuffer7vprintfEPKcPc, __ZN3ctu16ScopedLogFlusherC1ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILl1ELl1000EEEEE, 
                        __ZN3ctu16ScopedLogFlusherC2ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILl1ELl1000EEEEE, 
@@ -279,9 +281,9 @@ exports:
                        __ZNK3ctu10MallocZoneeqERKS0_, __ZNK3ctu10RestModule7connectENSt3__110shared_ptrINS_4rest16RestXpcConnectorEEE, 
                        __ZNK3ctu10RestModule7connectENSt3__110shared_ptrINS_4rest21RestDispatchConnectorEEE, 
                        __ZNK3ctu10RestModule8getQueueEv, __ZNK3ctu12TimerService19throwIfPeriodIsZeroERKNSt3__15tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE, 
-                       __ZNK3ctu15RestModuleState7getNameEv, __ZNK3ctu15RestXpcListener14getXpcEndpointEv, 
-                       __ZNK3ctu15RestXpcListener15createConnectorEv, __ZNK3ctu15RestXpcListener20createPeerConnectionEv, 
-                       __ZNK3ctu20DispatchTimerService15dispatchClockIDERKNSt3__15tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE, 
+                       __ZNK3ctu15RestModuleState7getNameEv, __ZNK3ctu15RestXpcListener13Configuration10isEntitledEN3xpc10connectionE, 
+                       __ZNK3ctu15RestXpcListener14getXpcEndpointEv, __ZNK3ctu15RestXpcListener15createConnectorEv, 
+                       __ZNK3ctu15RestXpcListener20createPeerConnectionEv, __ZNK3ctu20DispatchTimerService15dispatchClockIDERKNSt3__15tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE, 
                        __ZNK3ctu20DispatchTimerService16makeDispatchTimeERKNSt3__15tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE, 
                        __ZNK3ctu20DispatchTimerService19createDispatchTimerEP16dispatch_queue_sRKNSt3__15tupleIJNS_8TimeTypeENS3_6chrono8durationIxNS3_5ratioILl1ELl1000000EEEEEEEEy11qos_class_tU13block_pointerFvvE, 
                        __ZNK3ctu30DispatchRestResourceConnection13sendWithReplyEN3xpc4dictEP16dispatch_queue_sU13block_pointerFvPvE, 
@@ -399,9 +401,10 @@ exports:
                        _TelephonyCapabilitiesRadioIPCSupportsUnifiedQmuxV2, _TelephonyCapabilitiesRadioLTECounterIndicationSupported, 
                        _TelephonyCapabilitiesRadioLTESupported, _TelephonyCapabilitiesRadioMESASupported, 
                        _TelephonyCapabilitiesRadioPCIGetNumControlChannels, _TelephonyCapabilitiesRadioPCISupported, 
-                       _TelephonyCapabilitiesRadioProgrammerCommandTimeout, _TelephonyCapabilitiesRadioProgrammerConnectTimeout, 
-                       _TelephonyCapabilitiesRadioProgrammerConnectTries, _TelephonyCapabilitiesRadioProgrammerProductID, 
-                       _TelephonyCapabilitiesRadioRemoteFilesystemSupported, _TelephonyCapabilitiesRadioSupportsBasebandStateController, 
+                       _TelephonyCapabilitiesRadioPCISupportsPCIAudio, _TelephonyCapabilitiesRadioProgrammerCommandTimeout, 
+                       _TelephonyCapabilitiesRadioProgrammerConnectTimeout, _TelephonyCapabilitiesRadioProgrammerConnectTries, 
+                       _TelephonyCapabilitiesRadioProgrammerProductID, _TelephonyCapabilitiesRadioRemoteFilesystemSupported, 
+                       _TelephonyCapabilitiesRadioSupportsBasebandStateController, 
                        _TelephonyCapabilitiesRadioSupportsDataService, _TelephonyCapabilitiesRadioSupportsFlashless, 
                        _TelephonyCapabilitiesRadioSupportsGetWakeReasonV2, _TelephonyCapabilitiesRadioSupportsMultiClientAWD, 
                        _TelephonyCapabilitiesRadioSupportsQMuxSendWindow, _TelephonyCapabilitiesRadioSupportsSDIReset, 

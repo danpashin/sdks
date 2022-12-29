@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           080A95C3-B0D6-33F7-9B67-8A06EA3FAE69
+    value:           3782F474-9AA0-3C92-9C57-40F14416427A
   - target:          arm64e-ios
-    value:           96F4E4BC-B0C1-3BBA-96FB-1D7BA10AA861
+    value:           AD5588DC-EB93-353C-A031-BDD7924A4C50
 install-name:    '/usr/lib/libBKDM2.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -184,20 +184,21 @@ exports:
                        _oidSha512, _oidSha512Ecdsa, _oidSha512Rsa, _oidStateOrProvinceName, 
                        _oidStreetAddress, _oidSubjectAltName, _oidSubjectInfoAccess, 
                        _oidSubjectKeyIdentifier, _oidUserId, _pearlCAAttentionCheckEventName, 
-                       _pearlCABioLockoutEventName, _pearlCADailyUpdateEventName, 
-                       _pearlCAEnrollEventName, _pearlCAFaceDetectEventName, _pearlCALogPath, 
-                       _pearlCALogPrefix, _pearlCAMatchEventName, _pearlCAPassChallengeEventName, 
-                       _pearlCAToAWDNames, _registerForDiagsProfileRemoval, _removeDiagsProfile, 
-                       _scale_rect_from_center_and_pin, _sha1_digest, _sha1_digest_info, 
-                       _sha256_digest_info, _sha384_digest_info, _sha512_digest_info, 
-                       _size_of_minimum_cropped_packed_raw10, _stride_of_packed_raw10_for_alignment, 
-                       _stride_of_packed_raw10_minimum, _verify_chain_img4_ddi, _verify_chain_img4_ec_v1, 
-                       _verify_chain_img4_ecdsa256, _verify_chain_img4_ecdsa384, 
-                       _verify_chain_img4_ecdsa384_hacktivate, _verify_chain_img4_ecdsa384_local_policy, 
-                       _verify_chain_img4_tatsu_local_policy, _verify_chain_img4_tatsu_local_policy_hacktivate, 
-                       _verify_chain_img4_v1, _verify_chain_img4_v2, _verify_chain_img4_v2_AWG1, 
-                       _verify_chain_img4_v2_rsa3k, _verify_chain_img4_x86, _verify_signature_ecdsa, 
-                       _verify_signature_rsa, _verify_signature_rsa3k ]
+                       _pearlCABioLockoutEventName, _pearlCADailyTemplateMatchCountsEventName, 
+                       _pearlCADailyUpdateEventName, _pearlCAEnrollEventName, _pearlCAFaceDetectEventName, 
+                       _pearlCAGlassesUpsellEventName, _pearlCALogPath, _pearlCALogPrefix, 
+                       _pearlCAMatchEventName, _pearlCAPassChallengeEventName, _pearlCAToAWDNames, 
+                       _registerForDiagsProfileRemoval, _removeDiagsProfile, _scale_rect_from_center_and_pin, 
+                       _sha1_digest, _sha1_digest_info, _sha256_digest_info, _sha384_digest_info, 
+                       _sha512_digest_info, _size_of_minimum_cropped_packed_raw10, 
+                       _stride_of_packed_raw10_for_alignment, _stride_of_packed_raw10_minimum, 
+                       _verify_chain_img4_ddi, _verify_chain_img4_ec_v1, _verify_chain_img4_ecdsa256, 
+                       _verify_chain_img4_ecdsa384, _verify_chain_img4_ecdsa384_hacktivate, 
+                       _verify_chain_img4_ecdsa384_local_policy, _verify_chain_img4_tatsu_local_policy, 
+                       _verify_chain_img4_tatsu_local_policy_hacktivate, _verify_chain_img4_v1, 
+                       _verify_chain_img4_v2, _verify_chain_img4_v2_AWG1, _verify_chain_img4_v2_rsa3k, 
+                       _verify_chain_img4_x86, _verify_signature_ecdsa, _verify_signature_rsa, 
+                       _verify_signature_rsa3k ]
     objc-classes:    [ AWDBiometricKitAttentionCheck, AWDBiometricKitBioLockoutEvent, 
                        AWDBiometricKitDailyUpdate, AWDBiometricKitEnrollAttempt, 
                        AWDBiometricKitFaceDetectAttempt, AWDBiometricKitMatchAttempt, 
@@ -205,8 +206,9 @@ exports:
                        BLScoreData, BioLog, BiometricEnrollOperationPearl, BiometricKitXPCServerPearl, 
                        BiometricMatchOperationPearl, BiometricPresenceDetectOperationPearl, 
                        DiagsProfileListener, PearlAutoBugCapture, PearlCoreAnalytics, 
-                       PearlCoreAnalyticsDailyUpdateEvent, PearlCoreAnalyticsEnrollEvent, 
-                       PearlCoreAnalyticsEvent, PearlCoreAnalyticsMatchEvent, PearlCoreAnalyticsPasscodeChallengeEvent ]
+                       PearlCoreAnalyticsDailyTemplateMatchCountsEvent, PearlCoreAnalyticsDailyUpdateEvent, 
+                       PearlCoreAnalyticsEnrollEvent, PearlCoreAnalyticsEvent, PearlCoreAnalyticsGlassesUpsellEvent, 
+                       PearlCoreAnalyticsMatchEvent, PearlCoreAnalyticsPasscodeChallengeEvent ]
     objc-ivars:      [ AWDBiometricKitAttentionCheck._ambientLux, AWDBiometricKitAttentionCheck._attentionDetectFailed, 
                        AWDBiometricKitAttentionCheck._camRectH, AWDBiometricKitAttentionCheck._camRectW, 
                        AWDBiometricKitAttentionCheck._camRectX, AWDBiometricKitAttentionCheck._camRectY, 

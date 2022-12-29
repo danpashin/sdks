@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-current-version:       902.60.2
+current-version:       946.102.1
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -79,8 +79,9 @@ exports:
                             _kBRRecordIDPrefixDocumentStructure,
                             _kBRRecordIDPrefixFinderBookmark,
                             _kBRRecordIDPrefixShareAlias,
-                            _kBRRecordIDPrefixSymlink, _kBRRecordKeyBirthtime,
-                            _kBRRecordKeyCountMetrics,
+                            _kBRRecordIDPrefixSymlink,
+                            _kBRRecordIDPrefixZoneMovedDocumentStructure,
+                            _kBRRecordKeyBirthtime, _kBRRecordKeyCountMetrics,
                             _kBRRecordKeyDontLearnPkgExtension,
                             _kBRRecordKeyFavoriteRank, _kBRRecordKeyFileContent,
                             _kBRRecordKeyFilenameBaseHash,
@@ -98,6 +99,7 @@ exports:
                             _kBRRecordKeyPackageManifest,
                             _kBRRecordKeyPackageSignature,
                             _kBRRecordKeyPackageXattrs, _kBRRecordKeyParentRef,
+                            _kBRRecordKeyParticipantDocumentToken,
                             _kBRRecordKeyQuarantineInfo,
                             _kBRRecordKeyShareReference, _kBRRecordKeySize,
                             _kBRRecordKeySymlinkTarget, _kBRRecordKeyTargetRef,
@@ -211,6 +213,7 @@ exports:
                             AppTelemetryTimeSeriesEvent._magnitudeInt,
                             AppTelemetryTimeSeriesEvent._timestamp,
                             BRCAccountSession._accountHandler,
+                            BRCAccountSession._backgroundListOperations,
                             BRCAccountSession._clientTruthWorkloop,
                             BRCAccountSession._cloudDocsFD,
                             BRCAccountSession._databaseID,
@@ -264,6 +267,7 @@ exports:
                             BRCServerZone._zoneName,
                             BRCSyncDownOperation._serverZone,
                             BRCZonePurgeOperation._serverZone,
+                            BRFieldCKInfo._deletionChangeToken,
                             BRFieldCKInfo._etag,
                             BRFieldCKInfo._etagBeforeCrossZoneMove,
                             BRFieldCKInfo._has, BRFieldCKInfo._knownToServer,

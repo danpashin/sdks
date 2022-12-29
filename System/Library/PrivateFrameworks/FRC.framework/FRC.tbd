@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FRC.framework/FRC
-current-version:       102
+current-version:       126
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -13,6 +13,7 @@ exports:
                             _FRCGatingCauseKey, _FRCGatingStatusKey,
                             _FRCGetAlignedInputFrameSizeForUsage,
                             _FRCGetInputFrameSizeForUsage,
+                            _FRCGetNumberOfPixelsForUsage,
                             _FRCGetReverseRotation, _FRCGetUsageFromSize,
                             _FRCLivePhotoBurstDropDurationKey,
                             _FRCLivePhotoNumberOfGapsKey,
@@ -21,28 +22,33 @@ exports:
                             _FRCTotalInterpolatedFramesKey, _FRCUsageKey,
                             _FRCVersionNumber, _FRCVersionString, _TileInfoMake,
                             _calcNormalizationParams, _checkMemoryFootPrint,
-                            _checkMemoryLeaks, _compareBuffers,
-                            _compareBuffersFP16, _compareCVPixelBuffers,
-                            _copyTextureToBuffer, _createPixelBuffer,
+                            _checkMemoryLeaks, _compareBGRAPixelBuffers,
+                            _compareBuffers, _compareBuffersFP16,
+                            _compareCVPixelBuffers, _compareYUV420PixelBuffers,
+                            _copyTextureToBuffer, _copyTextureToBufferWithBlit,
+                            _create420vBufferFromFile,
+                            _createOpticalFlowFromFile, _createPixelBuffer,
                             _createPixelBufferPool,
                             _createPixelBufferPoolWithExtendedPixels,
-                            _createRGBA8TextureFromCVPixelBuffer,
-                            _createTextures, _createTexturesFromCVPixelBuffer,
+                            _createRGBATextureFromCVPixelBuffer, _createTextures,
+                            _createTexturesFromCVPixelBuffer,
+                            _createTexturesFromCVPixelBufferWithCommandBuffer,
                             _deinterleave2, _deinterleave3, _deinterleave4,
                             _deserializeLivePhotoMetadata, _findIRAPs,
                             _get4xDownSizeUsage, _getFigLivePhotoMetadataV3,
                             _getOpticalFlowTensorSize, _getQuarterSizeUsage,
                             _getSynthesisTensorSize, _interleave2, _interleave4,
                             _isBufferCopyNecessaryForCVtoTextureConversion,
-                            _loadTexture, _loadTextureArray,
-                            _loadTextureInterleaved, _readBGRA, _readBuffer,
-                            _readBufferInterlaeved, _readData, _readData32, _readPNG,
-                            _readYUVPlanar, _saveTensorBuffer,
+                            _isBufferYUV, _isPackedRGBA, _loadTexture,
+                            _loadTextureArray, _loadTextureInterleaved, _readBGRA,
+                            _readBuffer, _readBufferInterlaeved, _readData,
+                            _readData32, _readPNG, _readYUVPlanar, _saveTensorBuffer,
                             _saveTensorBufferWithChannelOffset,
                             _saveTextureArray, _saveTextureBufferFlt32,
                             _saveTextureInterleaved, _swapWidthAndHeight,
-                            _write64RGBAHalf, _writeBGRA, _writeBuffer,
-                            _writeBufferFlt32, _writeBufferInterlaeved,
+                            _uniformTimeScales, _write64RGBAHalf, _writeBGRA,
+                            _writeBuffer, _writeBufferFlt32,
+                            _writeBufferInterlaeved,
                             _writeBufferWithVerticalOffset, _writeData,
                             _writeData32, _writePNG, _writeYUVPlanar ]
     objc-classes:         [ Backwarp, BodyPoint, Correlation, EspressoModel,
@@ -51,13 +57,15 @@ exports:
                             FRCFrameBurstyDropInfo, FRCFrameDropDetector,
                             FRCFrameInsertionPoint, FRCFrameInternalTimingInfo,
                             FRCFrameInterpolator, FRCFrameMetadata,
-                            FRCFrameTimingInfo, FRCLivePhotoMetadataReader,
-                            FRCMetalBase, FRCScaler, FeatureExtractor, FlowEstimate,
-                            Forwarp, GPUSynthesis, LiteSynthesis, Normalization,
-                            OpticalFlow, OpticalFlowAnalyzer, Pyramid, Synthesis,
+                            FRCFrameSynthesizer, FRCFrameTimingInfo,
+                            FRCImageProcessor, FRCLivePhotoMetadataReader,
+                            FRCMetalBase, FRCOpticalFlowEstimator, FRCScaler,
+                            FeatureExtractor, FlowEstimate, Forwarp, GPUSynthesis,
+                            LiteSynthesis, Normalization, OpticalFlow,
+                            OpticalFlowAnalyzer, Pyramid, Synthesis,
                             SynthesisGridNet, Tiling ]
     objc-ivars:           [ EspressoModel._callbackQueue, EspressoModel._context,
-                            EspressoModel._net, EspressoModel._plan,
-                            FRCMetalBase._commandQueue, FRCMetalBase._device,
-                            FRCMetalBase._mtlLibrary ]
+                            EspressoModel._engine, EspressoModel._net,
+                            EspressoModel._plan, FRCMetalBase._commandQueue,
+                            FRCMetalBase._device, FRCMetalBase._mtlLibrary ]
 ...

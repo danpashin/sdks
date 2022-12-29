@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       612.3.6
+current-version:       613.1.17
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -127,6 +127,8 @@ exports:
                             _WBSSafariBookmarksSyncAgentServiceName,
                             _WBSSafariBookmarksSyncAgentSyncResultKey,
                             _WBSSafariTechnologyPreviewSyncServiceName,
+                            _WBSSavedAccountMaxNotesCharacterCount,
+                            _WBSSavedAccountStoreDidChangeNotification,
                             _WBSSavedPasswordStoreDidChangeNotification,
                             _WBSStatusCodeGroupFromStatusCode,
                             _WBSSuppressCloudKitBookmarkMigrationForCyclerTestPreferenceKey,
@@ -195,8 +197,8 @@ exports:
                             WBSConfigurationDataTransformer,
                             WBSConfigurationDownloader,
                             WBSCoreAnalyticsExtensionsStatistics, WBSCoreClass,
-                            WBSDontSaveMarker, WBSExtensionTelemetryData,
-                            WBSFeatureAvailability,
+                            WBSDiagnosticStateCollector, WBSDontSaveMarker,
+                            WBSExtensionTelemetryData, WBSFeatureAvailability,
                             WBSFetchedCloudTabDeviceOrCloseRequest,
                             WBSFileLogger,
                             WBSKeychainCredentialNotificationMonitor,
@@ -207,22 +209,24 @@ exports:
                             WBSMinLengthPasswordRule,
                             WBSMutableOrderedDictionary, WBSMutableOrderedSet,
                             WBSPair, WBSPasswordAuditingEligibleDomainsManager,
-                            WBSPasswordCharacterClass,
+                            WBSPasswordAuditor, WBSPasswordCharacterClass,
                             WBSPasswordGenerationManager, WBSPasswordManagerURL,
                             WBSPasswordRule, WBSPasswordRuleParser,
-                            WBSPasswordRuleSet, WBSRemotePlistController,
-                            WBSRequiredPasswordRule, WBSSQLiteDatabase,
-                            WBSSQLiteRow, WBSSQLiteRowEnumerator,
-                            WBSSQLiteStatement, WBSSQLiteStatementCache,
-                            WBSSQLiteStore, WBSSafariBookmarksSyncAgentProxy,
-                            WBSSavedPassword, WBSSavedPasswordAuditor,
-                            WBSSavedPasswordChangeRequest,
-                            WBSSavedPasswordSidecar, WBSSavedPasswordStore,
+                            WBSPasswordRuleSet, WBSPasswordWarningHideMarker,
+                            WBSRemotePlistController, WBSRequiredPasswordRule,
+                            WBSSQLiteDatabase, WBSSQLiteRow,
+                            WBSSQLiteRowEnumerator, WBSSQLiteStatement,
+                            WBSSQLiteStatementCache, WBSSQLiteStore,
+                            WBSSafariBookmarksSyncAgentProxy, WBSSavedAccount,
+                            WBSSavedAccountChangeRequest, WBSSavedAccountSidecar,
+                            WBSSavedAccountStore, WBSSavedPassword,
+                            WBSSavedPasswordAuditor,
+                            WBSSavedPasswordChangeRequest, WBSSavedPasswordStore,
                             WBSScopeExitHandler, WBSTOTPGenerator,
                             WBSURLCredentialCache,
                             WBSUnifiedBarAnalyticsRecorder,
                             WBSUserDefaultObservation,
-                            _WBSSavedPasswordPartialCredential ]
+                            _WBSSavedAccountPartialCredential ]
     objc-ivars:           [ WBSAnalyticsLogger._analyticsSynchronizationQueue,
                             WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._has,
                             WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._quickAction,

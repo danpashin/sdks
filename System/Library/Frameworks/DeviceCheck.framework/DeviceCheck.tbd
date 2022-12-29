@@ -7,13 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C85F08A2-785A-3AD4-B7EF-DE86E1573290
+    value:           4FF306A5-E71D-3E6B-B18A-A6F8068D7B42
   - target:          arm64e-ios
-    value:           879895CE-D943-357E-8612-2F55D6F45F24
+    value:           CEC24B3C-5955-3F4E-A06E-7DB8FF0E2586
 install-name:    '/System/Library/Frameworks/DeviceCheck.framework/DeviceCheck'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _DCErrorDomain ]
+    symbols:         [ _DCBAASignerErrorDomain, _DCErrorDomain ]
     objc-classes:    [ DCAppAttestService, DCContext, DCDevice, DCDeviceMetadataDaemonConnection, 
                        DCDeviceMetadataInterface ]
 ...

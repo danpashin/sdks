@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CreateMutableDictionaryFromSpokenCommandString,
+    symbols:              [ _AllValidCommandParameterIdentifiers,
+                            _CreateMutableDictionaryFromSpokenCommandString,
                             _IsValidCommandParameterIdentifier, _SRCSLogGeneral,
                             _SpeechRecognitionCommandServicesVersionNumber,
                             _SpeechRecognitionCommandServicesVersionString,
@@ -56,8 +57,18 @@ exports:
                             _kSRCSCommandTargetTypeiOS,
                             _kSRCSCommandTargetTypeiPad,
                             _kSRCSCommandTargetTypeiPhone,
-                            _kSRCSCommandTargetTypewatchOS, _yychar, _yyerror,
-                            _yylex, _yylval, _yynerrs, _yyparse ]
+                            _kSRCSCommandTargetTypewatchOS,
+                            _kSRCSEmbeddedCommandsKeyCommandStrings,
+                            _kSRCSEmbeddedCommandsKeyComment,
+                            _kSRCSEmbeddedCommandsKeyItems,
+                            _kSRCSEmbeddedCommandsKeyMode,
+                            _kSRCSEmbeddedCommandsKeyResult,
+                            _kSRCSEmbeddedCommandsKeySections,
+                            _kSRCSEmbeddedCommandsKeyTitle,
+                            _kSRCSEmbeddedCommandsModeAll,
+                            _kSRCSEmbeddedCommandsModeDictationOnly,
+                            _kSRCSEmbeddedCommandsModeSpellingOnly, _yychar,
+                            _yyerror, _yylex, _yylval, _yynerrs, _yyparse ]
     objc-classes:         [ CMDPGrammar, CMDPGrammarData, CMDPResult,
                             SRCSCommandRecognitionSystem, SRCSCommandRecognizer,
                             SRCSCommandSegmentInfo, SRCSCommandStringsTable,

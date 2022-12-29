@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           B2665E0D-A773-3E22-8043-9899917C8C5F
+  - target:          arm64e-ios
+    value:           8DD99A8A-C09D-3C48-8FC6-CA1ECF9B7C4D
+install-name:    '/System/Library/Frameworks/CellularDataDiagnosticsSuite.framework/CellularDataDiagnosticsSuite'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _CellularDataDiagnosticsSuiteVersionNumber, _CellularDataDiagnosticsSuiteVersionString ]
+    objc-classes:    [ CellularDataDiagnosticsSuiteController, SpeedTestConfig ]
+...

@@ -8,7 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AUSandboxPlatformInit ]
+    symbols:              [ _AUSandboxPlatformInit,
+                            _appendFirstUarpFilenameToFilepath,
+                            _currentTrainName,
+                            _generateSHA256HashForDataAtLocation,
+                            _generateSHA256HashForDataAtLocationAsData,
+                            _isDynamicAssetAnalytics, _isDynamicAssetHeySiri,
+                            _isDynamicAssetLogs, _isDynamicAssetPersonalization,
+                            _isDynamicAssetVoiceAssist, _kCustomerURLString,
+                            _nullableObjectsEqual, _uarpDynamicAssetComponentURL,
+                            _uarpDynamicAssetURL, _uarpUtilsConcatenateURLs,
+                            _uarpVersionCompareStrings ]
     objc-classes:         [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:           [ EAFirmwareUpdater._accessory,
                             EAFirmwareUpdater._appProtocol,

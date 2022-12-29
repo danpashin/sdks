@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
-current-version:       1479.2.3
+current-version:       1479.4.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -159,10 +159,11 @@ exports:
                             _CalLogFileWriter_Param_Filename, _CalLogFlush,
                             _CalLogInitialize, _CalLogLevelGenerateLevelVersion,
                             _CalLogLevelGenerateStringVersion,
-                            _CalLogPermittedList, _CalMeCardChangedNotification,
-                            _CalMonotonicTime, _CalMonotonicTimeSetOverride,
-                            _CalOAuth2Type, _CalOAuthType, _CalPerfLog,
-                            _CalRedactURLString,
+                            _CalLogPermittedListContainsName,
+                            _CalLogPermittedListUnionWithSet,
+                            _CalMeCardChangedNotification, _CalMonotonicTime,
+                            _CalMonotonicTimeSetOverride, _CalOAuth2Type,
+                            _CalOAuthType, _CalPerfLog, _CalRedactURLString,
                             _CalRoundDoubleToNearestMultiple,
                             _CalRoundToNearestMultiple, _CalRoundWithSigFigs,
                             _CalRouteType_Driving, _CalRouteType_Transit,
@@ -333,8 +334,8 @@ exports:
                             CalMockCalendarDataContainerProvider,
                             CalNSDateProvider, CalNWideQueue, CalOSLogWriter,
                             CalPerformSelectorAsyncBlockPerformer,
-                            CalPreferences, CalRecurrenceDayOfWeek,
-                            CalRecurrenceGenerator,
+                            CalPreferenceStore, CalPreferences,
+                            CalRecurrenceDayOfWeek, CalRecurrenceGenerator,
                             CalRecurrenceRuleDescriptionGenerator, CalRoute,
                             CalSignalSensor, CalSpotlightPendingSearch,
                             CalSpotlightQueryController, CalSpotlightQueryResult,

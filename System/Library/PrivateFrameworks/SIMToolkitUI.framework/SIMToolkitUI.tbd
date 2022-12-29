@@ -10,6 +10,7 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _NSStringFromSTKSIMToolkitEvent,
                             _NSStringFromSTKSessionResponseType,
+                            _STKAlertSessionManagerSetDeviceLanguage,
                             _STKAlertSessionManagerStart, _STKClass0SMSLog,
                             _STKCommonLog, _STKSIMToolkitLog,
                             _STKUSSDHostCommunicationInterface, _STKUSSDLog,
@@ -24,8 +25,9 @@ exports:
                             STKClass0SMSAlertSession,
                             STKClass0SMSAlertSessionManager,
                             STKClass0SMSSessionAction, STKClass0SMSSessionData,
-                            STKIncomingCallUIStateMonitor, STKListItem,
-                            STKListItemsSessionAction, STKListItemsSessionData,
+                            STKDeviceLockMonitor, STKIncomingCallUIStateMonitor,
+                            STKListItem, STKListItemsSessionAction,
+                            STKListItemsSessionData,
                             STKMutableCallSetupSessionData,
                             STKMutableSessionBehavior,
                             STKMutableTextInputSessionData,
@@ -38,7 +40,7 @@ exports:
                             STKTextSessionData, STKUSSDAlertSession,
                             STKUSSDAlertSessionManager, STKUSSDFilter,
                             STKUSSDSessionAction, STKUSSDSessionData,
-                            STKUserEventMonitor, STKYesNoSessionAction,
+                            STKUserEventMonitor, STKUtil, STKYesNoSessionAction,
                             _STKRemoteAlertDescriptor,
                             _STKSIMToolkitResponseProvider,
                             _STKUSSDResponseProvider ]

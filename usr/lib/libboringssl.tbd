@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E156C4DF-6C95-37EE-8CC0-86E389E339F8
+    value:           FFFBC5AE-3834-320C-8C69-70AE26360868
   - target:          arm64e-ios
-    value:           CA46135E-4CCD-3E89-AF57-2A1573E3C1A1
+    value:           7311FE06-1D00-3F49-9C92-475AEA4A5E79
 install-name:    '/usr/lib/libboringssl.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -171,12 +171,11 @@ exports:
                        _boringssl_session_set_trust_reference, _boringssl_session_was_resumed, 
                        _boringssl_session_write, _d2i_ECPrivateKey, _d2i_PrivateKey, 
                        _datapath_logging_enabled, _i2d_ECPrivateKey, _i2o_ECPublicKey, 
-                       _lh_delete, _lh_doall_arg, _lh_free, _lh_insert, _lh_new, 
-                       _lh_num_items, _lh_retrieve, _nw_protocol_boringssl_copy_definition, 
-                       _nw_protocol_boringssl_disconnect, _nw_protocol_boringssl_identifier, 
-                       _rsa_default_decrypt, _rsa_default_sign_raw, _rsa_default_size, 
-                       _sk_deep_copy, _sk_free, _sk_new_null, _sk_num, _sk_pop, _sk_pop_free, 
-                       _sk_pop_free_ex, _sk_push, _sk_set, _sk_shift, _sk_value ]
+                       _nw_protocol_boringssl_copy_definition, _nw_protocol_boringssl_disconnect, 
+                       _nw_protocol_boringssl_identifier, _rsa_default_decrypt, _rsa_default_sign_raw, 
+                       _rsa_default_size, _sk_deep_copy, _sk_free, _sk_new_null, 
+                       _sk_num, _sk_pop, _sk_pop_free, _sk_pop_free_ex, _sk_push, 
+                       _sk_set, _sk_shift, _sk_value ]
     objc-classes:    [ boringssl_concrete_nw_protocol_boringssl ]
     objc-ivars:      [ boringssl_concrete_boringssl_ctx.boringssl_handle, boringssl_concrete_boringssl_ctx.handshake_timer_fires, 
                        boringssl_concrete_boringssl_ctx.max_allowed_dtls_version, 

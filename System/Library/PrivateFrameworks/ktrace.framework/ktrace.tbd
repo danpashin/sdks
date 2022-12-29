@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ktrace.framework/ktrace
-current-version:       453
+current-version:       453.100.11
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -29,7 +29,7 @@ exports:
                             _aasprintf, _cfaasprintf, _clear_events,
                             _config_init_v1_0, _config_init_v1_1,
                             _config_init_v1_2, _config_init_v1_3,
-                            _context_kind_name, _create_dict,
+                            _config_init_v1_4, _context_kind_name, _create_dict,
                             _current_system_is_64_bit, _decompress_32,
                             _decompress_64, _deserializeSignpostSpecs, _dict_bool,
                             _dict_data, _dict_int, _dict_int_arr, _dict_set_bool,
@@ -101,6 +101,7 @@ exports:
                             _ktrace_config_kdebug_get_buffer_size,
                             _ktrace_config_kdebug_get_coprocessor_tracing,
                             _ktrace_config_kdebug_get_debugid_enabled,
+                            _ktrace_config_kdebug_get_disabling_event_matching,
                             _ktrace_config_kdebug_get_filtering_events,
                             _ktrace_config_kdebug_get_procfilt,
                             _ktrace_config_kdebug_get_procfilt_mode,
@@ -165,10 +166,10 @@ exports:
                             _ktrace_dumpbuffer_address_space,
                             _ktrace_dumpbuffer_address_space_pid,
                             _ktrace_enable_symbolication, _ktrace_end,
-                            _ktrace_eventid_for_name, _ktrace_events_all,
-                            _ktrace_events_all_paired, _ktrace_events_any,
-                            _ktrace_events_any_paired, _ktrace_events_filter,
-                            _ktrace_events_filter_bitmap,
+                            _ktrace_end_on_event_match, _ktrace_eventid_for_name,
+                            _ktrace_events_all, _ktrace_events_all_paired,
+                            _ktrace_events_any, _ktrace_events_any_paired,
+                            _ktrace_events_filter, _ktrace_events_filter_bitmap,
                             _ktrace_events_filter_bitmap_paired,
                             _ktrace_events_filter_paired, _ktrace_events_range,
                             _ktrace_events_range_paired, _ktrace_events_single,
@@ -272,7 +273,7 @@ exports:
                             _ktrace_machine_boot_args, _ktrace_machine_boot_uuid,
                             _ktrace_machine_cluster_flags,
                             _ktrace_machine_copy_description,
-                            _ktrace_machine_cpu_cluster,
+                            _ktrace_machine_cpu_cluster, _ktrace_machine_cpu_die,
                             _ktrace_machine_cpu_family,
                             _ktrace_machine_cpu_subtype,
                             _ktrace_machine_cpu_type, _ktrace_machine_create,
@@ -285,7 +286,7 @@ exports:
                             _ktrace_machine_hw_page_size,
                             _ktrace_machine_kernel_version,
                             _ktrace_machine_max_clusters,
-                            _ktrace_machine_max_cpus,
+                            _ktrace_machine_max_cpus, _ktrace_machine_max_dies,
                             _ktrace_machine_max_kernel_vaddr,
                             _ktrace_machine_memory_size,
                             _ktrace_machine_min_kernel_vaddr,
@@ -315,7 +316,9 @@ exports:
                             _ktrace_session_getting_event_names_from_system,
                             _ktrace_session_set_default_event_names_enabled,
                             _ktrace_session_set_event_names_enabled,
-                            _ktrace_set_buffer_size, _ktrace_set_cleanup_handler,
+                            _ktrace_set_buffer_size,
+                            _ktrace_set_callbacks_after_elapsed,
+                            _ktrace_set_cleanup_handler,
                             _ktrace_set_collection_interval,
                             _ktrace_set_collection_qos, _ktrace_set_command_argv,
                             _ktrace_set_completion_handler,
@@ -420,6 +423,7 @@ exports:
                             _kttimesync_frequency, _kttimesync_init,
                             _kttimesync_ns_from_mach,
                             _kttimesync_ns_from_timestamp,
+                            _kttimesync_timestamp_from_ns,
                             _kttimesync_update_kdebug,
                             _kttimesync_update_kdebug_prepass,
                             _kttimesync_wall_from_timestamp, _long_key_callbacks,
@@ -462,7 +466,8 @@ exports:
                             _trace_set_completion_handler,
                             _trace_set_default_code_map_enabled,
                             _trace_set_dropped_events_handler, _trace_set_enable,
-                            _trace_set_filter, _trace_set_flags, _trace_set_mode,
+                            _trace_set_event_match_disable, _trace_set_filter,
+                            _trace_set_flags, _trace_set_mode,
                             _trace_set_pid_filter, _trace_set_raw_file,
                             _trace_set_signal_handler,
                             _trace_set_thread_exit_handler,

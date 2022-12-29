@@ -1,0 +1,73 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ConditionInducer.framework/ConditionInducer
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CODefaultSettingsPath,
+                            _ConditionInducerVersionNumber,
+                            _ConditionInducerVersionString,
+                            __copySignpostLowSeverityLogHandle,
+                            __dummyGPUPerfStateCondition, __dummySlowNetwork,
+                            __dummyThermalCondition, __nlc_connect,
+                            __nlc_disconnect, __nlc_get_status,
+                            __nlc_start_simulation, __nlc_stop_simulation,
+                            _copyPOSIXSpawnAttributes,
+                            _copy_calling_process_name,
+                            _createConditionInducerError,
+                            _gClientMethodSelectors, _hasEntitlementValue,
+                            _isNSArray, _isNSData, _isNSDictionary, _isNSNumber,
+                            _isNSString, _kAGXDeviceConsistentPerfStateControl,
+                            _kCOConditionBundleArray, _kCOConditionBundleDict,
+                            _kCOConditionBundlePath, _kCOConditionBundleProfile,
+                            _kCOConditionCacheClassArguments,
+                            _kCOConditionCacheClassBootUUID,
+                            _kCOConditionCacheClassName,
+                            _kCOConditionDescription,
+                            _kCOConditionIdentifierName,
+                            _kCOConditionIsDestructive, _kCOConditionIsInternal,
+                            _kCOConditionPersistsAfterReboot,
+                            _kCOConditionUserFriendlyName, _kCOErrorDomain,
+                            _kCOProhibitOnCarryDeviceKey,
+                            _kCORequiresEntitlementsKey,
+                            _kCORequiresRootPrivilegesKey, _kDNSDelayValueKey,
+                            _kDownlinkBandwidthKey, _kDownlinkBandwidthUnitKey,
+                            _kDownlinkDelayKey, _kDownlinkDestinationIPKey,
+                            _kDownlinkDestinationPortKey,
+                            _kDownlinkPacketLossRatioKey, _kDownlinkProtocolKey,
+                            _kDownlinkQSizeKey, _kDownlinkQSizeUnitKey,
+                            _kDownlinkSourceIPKey, _kDownlinkSourcePortKey,
+                            _kExcludeLoopbackKey, _kInterfaceProfileKey,
+                            _kPresetKey, _kProtocolFamilyKey,
+                            _kRunOnEveryInterfaceString, _kSelectedProfileKey,
+                            _kSimulatedProfileKey, _kSimulatorIsRunning, _kTimeKey,
+                            _kUplinkBandwidthKey, _kUplinkBandwidthUnitKey,
+                            _kUplinkDelayKey, _kUplinkDestinationIPKey,
+                            _kUplinkDestinationPortKey,
+                            _kUplinkPacketLossRatioKey, _kUplinkProtocolKey,
+                            _kUplinkQSizeKey, _kUplinkQSizeUnitKey,
+                            _kUplinkSourceIPKey, _kUplinkSourcePortKey,
+                            _nlc_connect, _nlc_disconnect, _nlc_get_status,
+                            _nlc_simulate, _nlc_stop_simulation,
+                            _safeRemoveItemAtPath,
+                            _safeRemoveItemAtPathWithRegex ]
+    objc-classes:         [ ApplePMPPerfStateControl, COCondition,
+                            COConditionBundle, COConditionSession, COConditionTask,
+                            COSettings, COStatusBar, GPUPerformanceStateDefault,
+                            GPUPerformanceStateMax, GPUPerformanceStateMid,
+                            GPUPerformanceStateMin, SlowNetwork100PctLoss,
+                            SlowNetwork2GRural, SlowNetwork2GUrban, SlowNetwork3G,
+                            SlowNetwork3GAverage, SlowNetwork3GGood,
+                            SlowNetworkCondition, SlowNetworkCustom,
+                            SlowNetworkDSL, SlowNetworkEdge,
+                            SlowNetworkEdgeAverage, SlowNetworkEdgeBad,
+                            SlowNetworkEdgeGood, SlowNetworkHighLatencyDNS,
+                            SlowNetworkLTE, SlowNetworkUtil,
+                            SlowNetworkVeryBadNetwork, SlowNetworkWiFi,
+                            SlowNetworkWiFi80211AC, ThermalCritical, ThermalFair,
+                            ThermalNominal, ThermalSerious ]
+...

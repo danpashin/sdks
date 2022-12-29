@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           898D8E5F-98D1-3990-923D-BE8277CF4330
+    value:           7152FF10-7421-336B-A2CC-47CCE50FA75D
   - target:          arm64e-ios
-    value:           2F8CD4B7-D9C5-35B9-B96B-6BC34382ABA6
+    value:           5621BCD1-821A-3957-B596-1962934F75B1
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices'
-current-version: 612.3.6
+current-version: 613.1.17
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ASAuthorizationAllSupportedPublicKeyCredentialDescriptorTransports, 
@@ -34,7 +34,7 @@ exports:
                        _ASAuthorizationSecurityKeyPublicKeyCredentialDescriptorTransportUSB, 
                        _ASCredentialIdentityStoreErrorDomain, _ASExtensionErrorDomain, 
                        _ASExtensionLocalizedFailureReasonErrorKey, _ASWebAuthenticationSessionErrorDomain, 
-                       _AuthenticationServicesAgentMain ]
+                       _AuthenticationServicesAgentMain, _asTransportToWKTransport ]
     objc-classes:    [ ASAccountAuthenticationModificationController, ASAccountAuthenticationModificationExtensionContext, 
                        ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest, 
                        ASAccountAuthenticationModificationRequest, ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordRequest, 
@@ -58,8 +58,7 @@ exports:
                        ASCredentialProviderExtensionContext, ASCredentialProviderViewController, 
                        ASCredentialServiceIdentifier, ASPasswordCredential, ASPasswordCredentialIdentity, 
                        ASWebAuthenticationSession, _ASAccountAuthenticationModificationExtensionManager, 
-                       _ASAccountAuthenticationModificationHostViewController, _ASAccountAuthenticationModificationRemoteViewController, 
-                       _ASCredentialListViewController, _ASCredentialProviderExtensionConfigurationViewController, 
-                       _ASDevice, _ASExtensionViewController, _ASIncomingCallObserver, 
-                       _ASPasswordCredentialAuthenticationViewController ]
+                       _ASAccountAuthenticationModificationHostViewController, _ASCredentialListViewController, 
+                       _ASCredentialProviderExtensionConfigurationViewController, 
+                       _ASExtensionViewController, _ASIncomingCallObserver, _ASPasswordCredentialAuthenticationViewController ]
 ...

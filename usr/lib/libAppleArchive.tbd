@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C1CE0A7C-56BA-3537-9F63-328A9405693B
+    value:           E9227A9C-2EE6-337C-A3BB-C02026BE0475
   - target:          arm64e-ios
-    value:           9EDD1EF2-437B-3E45-8D29-EF56AA06CA56
+    value:           9F79F4D4-1FEC-3A19-9AA1-3879471734D7
 install-name:    '/usr/lib/libAppleArchive.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -63,11 +63,13 @@ exports:
                        _AAHeaderGetKeyIndex, _AAHeaderGetPayloadSize, _AAHeaderRemoveField, 
                        _AAHeaderSetFieldBlob, _AAHeaderSetFieldFlag, _AAHeaderSetFieldHash, 
                        _AAHeaderSetFieldString, _AAHeaderSetFieldTimespec, _AAHeaderSetFieldUInt, 
-                       _AAMagicInputStreamOpen, _AAMemoryInputStreamOpen, _AAPathListCreate, 
-                       _AAPathListCreateWithDirectoryContents, _AAPathListCreateWithPath, 
-                       _AAPathListDestroy, _AAPathListGetNode, _AAPathListMerge, 
-                       _AAPathListNodeFirst, _AAPathListNodeGetPath, _AAPathListNodeNext, 
-                       _AARandomAccessByteStreamProcess, _AARangeInputStreamOpen, 
+                       _AAMagicInputStreamOpen, _AAMemoryInputStreamOpen, _AAPathFilterAddRule, 
+                       _AAPathFilterApply, _AAPathFilterCreate, _AAPathFilterDestroy, 
+                       _AAPathListCreate, _AAPathListCreateWithDirectoryContents, 
+                       _AAPathListCreateWithPath, _AAPathListDestroy, _AAPathListGetNode, 
+                       _AAPathListMerge, _AAPathListNodeFirst, _AAPathListNodeGetPath, 
+                       _AAPathListNodeNext, _AARandomAccessByteStreamProcess, _AARandomAccessDecodeAndExtract, 
+                       _AARangeInputStreamOpen, _AARemoveArchiveOutputStreamOpen, 
                        _AASharedBufferPipeOpen, _AATeeOutputStreamOpen, _AATempFileStreamOpen, 
                        _AAThreadErrorContextEnter, _AAThreadErrorContextLeave, _AAVerifyDirectoryArchiveOutputStreamOpen, 
                        _AEAAuthDataAppendEntry, _AEAAuthDataClear, _AEAAuthDataCreate, 

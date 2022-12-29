@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TipsCore.framework/TipsCore
-current-version:       613.8
+current-version:       618.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -288,6 +288,7 @@ exports:
                             _kTipsAnalyticsExperimentCampUnspecifiedString,
                             _kTipsAnalyticsExperimentIDKey,
                             _kTipsAnalyticsExperimentKey,
+                            _kTipsAnalyticsIsNotificationModelControl,
                             _kTipsAnalyticsOverrideHoldoutKey,
                             _kTipsAnalyticsReasonKey, _kTipsAnalyticsRuleIDKey,
                             _kTipsAnalyticsServiceErrorKey,
@@ -327,7 +328,8 @@ exports:
                             _kTipsLinkUsedDisplayTypeKey, _kTipsLinkUsedURLKey,
                             _kTipsMiniTipTappedKey, _kTipsNotificationCount,
                             _kTipsNotificationEventName,
-                            _kTipsNotificationsCount,
+                            _kTipsNotificationsCount, _kTipsNotificationsModel,
+                            _kTipsNotificationsModelPopulation,
                             _kTipsNotificationsPostedPersistenceKey,
                             _kTipsPostedCollectionKey,
                             _kTipsPostedTimeSinceOSInstallKey, _kTipsReferrerKey,
@@ -373,6 +375,7 @@ exports:
                             TPSAnalyticsEventTipTapped,
                             TPSAnalyticsEventTipTimeSpent,
                             TPSAnalyticsEventUsageObservations,
+                            TPSAnalyticsNotificationsModelPopulation,
                             TPSAnalyticsPersistenceController,
                             TPSAnalyticsSessionController, TPSAppController,
                             TPSAssetCacheController, TPSAssetSizes, TPSAssets,

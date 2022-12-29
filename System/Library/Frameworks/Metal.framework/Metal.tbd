@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           D2497235-9991-3537-9433-B8CBB3CC4430
   - target:          arm64-ios
-    value:           A27F4173-9E39-3E4D-A105-6453BD7AAB60
+    value:           6B33C3DB-EE72-3A2F-ADD5-0688AC16F744
   - target:          arm64e-ios
-    value:           3D945FEE-6A23-33AB-83C4-659BB149C8D0
+    value:           0DD464CF-7FDE-39AB-8A77-A14EEDDC6905
 install-name:    '/System/Library/Frameworks/Metal.framework/Metal'
-current-version: 258.14
+current-version: 261.13
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MTLCopyAllDevices, _MTLUseInterpose, __MTLTextureValidateGetBytes, 
@@ -71,11 +71,11 @@ exports:
                        _MTLCounterErrorDomain, _MTLCounterSetDescriptionStageUtilization, 
                        _MTLCounterSetDescriptionStatistics, _MTLCounterSetDescriptionTimestamp, 
                        _MTLCountersLayerEnabled, _MTLCreateCompilerConnectionManager, 
-                       _MTLCreateStructTypeFromArgumentDescriptors, _MTLCreateSystemDefaultDevice, 
-                       _MTLDataTypeGetAlignment, _MTLDataTypeGetComponentCount, _MTLDataTypeGetComponentType, 
-                       _MTLDataTypeGetShaderTypeName, _MTLDataTypeGetSignedType, 
-                       _MTLDataTypeGetSize, _MTLDataTypeGetVectorDataType, _MTLDataTypeString, 
-                       _MTLDebugValidateMTLPixelFormat, _MTLDispatchListAppendBlock, 
+                       _MTLCreateSimulatorDevice, _MTLCreateStructTypeFromArgumentDescriptors, 
+                       _MTLCreateSystemDefaultDevice, _MTLDataTypeGetAlignment, _MTLDataTypeGetComponentCount, 
+                       _MTLDataTypeGetComponentType, _MTLDataTypeGetShaderTypeName, 
+                       _MTLDataTypeGetSignedType, _MTLDataTypeGetSize, _MTLDataTypeGetVectorDataType, 
+                       _MTLDataTypeString, _MTLDebugValidateMTLPixelFormat, _MTLDispatchListAppendBlock, 
                        _MTLDispatchListApply, _MTLDynamicLibraryDomain, _MTLDynamicLibraryLoadOptionsFromPipelineOptions, 
                        _MTLDynamicLibraryPerformanceKeyInstallName, _MTLEnumerateIndirectResources, 
                        _MTLFailureTypeGetEnabled, _MTLFailureTypeGetErrorModeType, 
@@ -185,7 +185,8 @@ exports:
                        MTLFunctionStitchingInputBufferAddress, MTLFunctionStitchingInputImageblock, 
                        MTLFunctionStitchingInputNode, MTLFunctionStitchingInputSampler, 
                        MTLFunctionStitchingInputTexture, MTLFunctionStitchingInputThreadgroup, 
-                       MTLFunctionVariant, MTLGPUBVHBuilder, MTLHeapDescriptor, MTLIOAccelAccelerationStructure, 
+                       MTLFunctionVariant, MTLGPUBVHBuilder, MTLGenericBVHBufferSizesSPI, 
+                       MTLGenericBVHBuffersSPI, MTLHeapDescriptor, MTLIOAccelAccelerationStructure, 
                        MTLIOAccelBlitCommandEncoder, MTLIOAccelBuffer, MTLIOAccelCommandBuffer, 
                        MTLIOAccelCommandEncoder, MTLIOAccelCommandQueue, MTLIOAccelComputeCommandEncoder, 
                        MTLIOAccelDebugCommandEncoder, MTLIOAccelDevice, MTLIOAccelDeviceShmem, 

@@ -10,9 +10,9 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _FrontBoardOpenURLOptions, _HDSDeviceLocked,
                             _HDSDispatchTimerSet, _HDSIsDevicePhone,
-                            _HDSLocalizedStringForKey, _HDSMetricsLog,
-                            _HomeDeviceSetupVersionNumber,
-                            _HomeDeviceSetupVersionString, _SFIsGreenTeaDevice,
+                            _HDSIsGreenTeaDevice, _HDSLocalizedStringForKey,
+                            _HDSMetricsLog, _HomeDeviceSetupVersionNumber,
+                            _HomeDeviceSetupVersionString,
                             _SFTestFlagsFromString,
                             _SVSAddSuffixForCurrentDeviceClass,
                             _SVSAddSuffixForDeviceClass,
@@ -21,6 +21,7 @@ exports:
                             _SVSLocalizedStringEx2, _SVSLocalizedStringExF,
                             _SVSLocalizedStringExV, _SVSLocalizedStringF,
                             _SVSLocalizedStringV,
+                            _gLogCategory_HDSCaptiveNetworkController,
                             _gLogCategory_HDSDeviceActivation,
                             _gLogCategory_HDSSetupService,
                             _gLogCategory_HDSSetupSession, _gLogCategory_Metrics,
@@ -30,6 +31,7 @@ exports:
                             _kActivationRequestKeyStep,
                             _kActivationRequestKeyURLRequest,
                             _kDeviceActivationErrorDomain ]
-    objc-classes:         [ HDSDeviceActivation, HDSDeviceActivationOperation,
-                            HDSSetupService, HDSSetupSession ]
+    objc-classes:         [ HDSCaptiveNetworkController, HDSDeviceActivation,
+                            HDSDeviceActivationOperation, HDSSetupService,
+                            HDSSetupSession ]
 ...

@@ -46,6 +46,17 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0))
 // Default to NO
 @property (nonatomic, assign) BOOL interruptedPurchasesEnabled;
 
+/// While this property is enabled, subscription renewals will fail due to billing issues, and enter a simulated
+/// billing retry state.
+///
+/// Default to NO.
+@property (nonatomic, assign) BOOL billingRetryOnRenewalEnabled API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(shouldEnterBillingRetryOnRenewal);
+
+/// Enable this property to test allowing a grace period when subscriptions enter a billing retry state.
+///
+/// Default to NO. The value of this property has no effect while billingRetryOnRenewalEnabled is NO.
+@property (nonatomic, assign) BOOL billingGracePeriodEnabled API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(billingGracePeriodIsEnabled);
+
 /*
  Requires shouldFailTransactions to be set to YES
  Valid values are:
@@ -77,6 +88,8 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0))
 
 - (instancetype)init NS_UNAVAILABLE;
 
++ (instancetype)new NS_UNAVAILABLE;
+
 - (NSArray<SKTestTransaction *> *)allTransactions;
 
 - (void)clearTransactions;
@@ -89,6 +102,11 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0))
 
 - (BOOL)refundTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error NS_SWIFT_NAME(refundTransaction(identifier:));
 
+/// Use this method to resolve a transaction that has a purchase issue.
+///
+/// Transactions will have issues if a purchase is made when interruptedPurchasesEnabled is YES, or if a
+/// subscription renews when billingRetryOnRenewalEnabled is YES. The billing retry state is temporary, if a
+/// transaction has exited the billing retry state then this method will have no effect.
 - (BOOL)resolveIssueForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error NS_SWIFT_NAME(resolveIssueForTransaction(identifier:));
 
 // Removes all property overrides and resets everything back to the default state
@@ -101,13 +119,24 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0))
 
 - (BOOL)declineAskToBuyTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error NS_SWIFT_NAME(declineAskToBuyTransaction(identifier:));
 
-
 #pragma mark - Auto-Renew
 
 - (BOOL)disableAutoRenewForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error NS_SWIFT_NAME(disableAutoRenewForTransaction(identifier:));
 
 - (BOOL)enableAutoRenewForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error NS_SWIFT_NAME(enableAutoRenewForTransaction(identifier:));
 
+#pragma mark - Price Increase
+
+/// Use this method to test a price increase for a transaction, requiring subscriber consent to continue renewing.
+- (BOOL)requestPriceIncreaseConsentForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error  API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(requestPriceIncreaseConsentForTransaction(identifier:));
+
+/// Use this method on transactions that require price increase consent to consent to the price increase and
+/// continue renewing.
+- (BOOL)consentToPriceIncreaseForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(consentToPriceIncreaseForTransaction(identifier:));
+
+/// Use this method on transactions that require price increase consent to disable autorenewing due to a
+/// declined price increase.
+- (BOOL)declinePriceIncreaseForTransactionWithIdentifier:(NSUInteger)identifier error:(NSError **)error API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(declinePriceIncreaseForTransaction(identifier:));
 
 #pragma mark - External Transactions
 

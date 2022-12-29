@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           07F0CEA0-C277-3456-9227-9D4533384793
+    value:           8B2E1895-3042-3E77-BE1B-4D8676E669BE
   - target:          arm64e-ios
-    value:           A128CC2A-AB28-3785-8FAC-BF0510589E0F
+    value:           47DBDA8F-1DB8-3F70-8932-FA74D23549E8
 install-name:    '/usr/lib/libIOReport.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -30,8 +30,9 @@ exports:
                        _IOReportHistogramGetBucketCount, _IOReportHistogramGetBucketHits, 
                        _IOReportHistogramGetBucketMaxValue, _IOReportHistogramGetBucketMinValue, 
                        _IOReportHistogramGetBucketSum, _IOReportHistogramGetMaxValue, 
-                       _IOReportHistogramGetMinValue, _IOReportIterate, _IOReportMergeChannels, 
-                       _IOReportPrune, _IOReportSampleCopyDescription, _IOReportSampleCreateDelta, 
+                       _IOReportHistogramGetMinValue, _IOReportIterate, _IOReportIterateNewSamples, 
+                       _IOReportIterateSamplesRaw, _IOReportMergeChannels, _IOReportPrune, 
+                       _IOReportSampleCopyDescription, _IOReportSampleCreateDelta, 
                        _IOReportScaleValue, _IOReportSelectChannelsInGroup, _IOReportSimpleGetIntegerValue, 
                        _IOReportStateGetCount, _IOReportStateGetCurrent, _IOReportStateGetDutyCycle, 
                        _IOReportStateGetIDForIndex, _IOReportStateGetInTransitions, 

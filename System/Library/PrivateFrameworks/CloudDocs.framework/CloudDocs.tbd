@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-current-version:       902.60.2
+current-version:       946.102.1
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -163,9 +163,8 @@ exports:
                             _BRPerAccountSessionRemoteDocumentVersionFolderName,
                             _BRPerformWithAccountDescriptor,
                             _BRPerformWithAccountDescriptorAndError,
-                            _BRPerformWithPersona, _BRPerformWithPersonaAndError,
+                            _BRPerformWithPersonaAndError,
                             _BRPerformWithPersonaAndErrorForURLIfAble,
-                            _BRPerformWithPersonaForURLIfAble,
                             _BRPersonaSpecificName, _BRPlatform,
                             _BRPostAccountTokenChangedNotification,
                             _BRPrepareDocumentForForcedConflict,
@@ -266,7 +265,8 @@ exports:
                             __BRNSMetadataUbiquitousSharedItemLastEditorNameKey,
                             __BRRestorePersona, __BRSetResourcePropertyForKey,
                             ___brc_create_section, ___brc_leave_section,
-                            __brc_assert_failure, __brc_log_is_internal_install,
+                            __br_parseUUIDString, __brc_assert_failure,
+                            __brc_log_is_internal_install,
                             _abc_report_assert_with_signature,
                             _abc_report_panic_with_signature, _br_pacer_cancel,
                             _br_pacer_create,
@@ -275,6 +275,7 @@ exports:
                             _br_pacer_signal,
                             _br_pacer_signal_at_most_after_min_interval,
                             _br_pacer_suspend, _br_pacer_test_cancel,
+                            _brc_activity_block_remember_persona,
                             _brc_append_system_info_to_message, _brc_backtrace,
                             _brc_backtrace_detailed_snprint,
                             _brc_backtrace_exception_snprint,
@@ -303,6 +304,7 @@ exports:
                             _kBRQueryItemNeedsFaultingCount,
                             _kBRQueryItemNeedsSyncUpCount,
                             _kBRQueryItemNeedsUploadSize,
+                            _kBRQueryItemNumberOfDirFaults,
                             _kBRQueryItemNumberOfFaults,
                             _kBRQueryItemOwnerNameComponentsKey,
                             _kBRQueryItemQuotaAvailableKey,
@@ -312,7 +314,7 @@ exports:
                             _kBRSyncedLocationsChangedNotification ]
     objc-classes:         [ BRAccount, BRAccountDescriptor, BRContainer,
                             BRContainerCache, BRContainersMonitor, BRDSIDString,
-                            BRDaemonConnection, BRDocObjectID,
+                            BRDaemonConnection, BRDbRowObjectID, BRDocObjectID,
                             BRDownloadAllFilesForLogOutOperation,
                             BRDownloadAndUploadAllFilesForLogOutOperation,
                             BRFetchQuotaOperation, BRFileObjectID,
@@ -344,7 +346,8 @@ exports:
                             BRContainersMonitor._observersByContainerID,
                             BRContainersMonitor._queue,
                             BRDaemonConnection._isUsingTokenService,
-                            BRDaemonConnection._uuid, BRDocObjectID._docID,
+                            BRDaemonConnection._uuid, BRDbRowObjectID._rowId,
+                            BRDbRowObjectID._type, BRDocObjectID._docID,
                             BRFetchQuotaOperation._fetchQuotaCompletionBlock,
                             BRGetPausedFileListUpdater._callback,
                             BRInodeObjectID._ino, BRNotificationQueue._array,
@@ -437,5 +440,6 @@ exports:
                             BRiWorkWebShareMigrateOperation._url,
                             _BRContainerItem._containerClientIDs,
                             _BRContainerItem._containerID,
+                            _BRContainerItem._isPristine,
                             _BRContainerItem._localizedName ]
 ...

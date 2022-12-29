@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.46.202 clang-1300.0.29.30)
-// swift-module-flags: -target arm64-apple-ios15.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ManagedSettings
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.32 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios15.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ManagedSettings
+// swift-module-flags-ignorable: -user-module-version 27
 import Combine
 import Foundation
 import Swift
@@ -14,9 +15,9 @@ import os
 public struct AccountSettings : ManagedSettings.ManagedSettingsGroup {
   public var lockAccounts: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var lockAccounts: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let lockAccounts: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -52,19 +53,19 @@ public typealias ApplicationToken = ManagedSettings.Token<ManagedSettings.Applic
 public struct ApplicationSettings : ManagedSettings.ManagedSettingsGroup {
   public var blockedApplications: Swift.Set<ManagedSettings.Application>? {
     get
-    set(newValue)
+    set
   }
-  public static var blockedApplications: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.Application>>
+  public static let blockedApplications: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.Application>>
   public var denyAppInstallation: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyAppInstallation: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyAppInstallation: ManagedSettings.SettingMetadata<Swift.Bool>
   public var denyAppRemoval: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyAppRemoval: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyAppRemoval: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -86,19 +87,19 @@ public struct Token<T> : Swift.Codable, Swift.Equatable, Swift.Hashable {
 public struct AppStoreSettings : ManagedSettings.ManagedSettingsGroup {
   public var denyInAppPurchases: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyInAppPurchases: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyInAppPurchases: ManagedSettings.SettingMetadata<Swift.Bool>
   public var maximumRating: Swift.Int? {
     get
-    set(newValue)
+    set
   }
-  public static var maximumRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
+  public static let maximumRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
   public var requirePasswordForPurchases: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var requirePasswordForPurchases: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let requirePasswordForPurchases: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -107,19 +108,19 @@ public struct AppStoreSettings : ManagedSettings.ManagedSettingsGroup {
 public struct CellularSettings : ManagedSettings.ManagedSettingsGroup {
   public var lockAppCellularData: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var lockAppCellularData: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let lockAppCellularData: ManagedSettings.SettingMetadata<Swift.Bool>
   public var lockCellularPlan: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var lockCellularPlan: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let lockCellularPlan: ManagedSettings.SettingMetadata<Swift.Bool>
   public var lockESIM: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var lockESIM: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let lockESIM: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -197,14 +198,14 @@ extension ManagedSettings.ShieldSettings {
 public struct GameCenterSettings : ManagedSettings.ManagedSettingsGroup {
   public var denyAddingFriends: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyAddingFriends: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyAddingFriends: ManagedSettings.SettingMetadata<Swift.Bool>
   public var denyMultiplayerGaming: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyMultiplayerGaming: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyMultiplayerGaming: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -213,29 +214,29 @@ public struct GameCenterSettings : ManagedSettings.ManagedSettingsGroup {
 public struct MediaSettings : ManagedSettings.ManagedSettingsGroup {
   public var denyBookstoreErotica: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyBookstoreErotica: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyBookstoreErotica: ManagedSettings.SettingMetadata<Swift.Bool>
   public var denyExplicitContent: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyExplicitContent: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyExplicitContent: ManagedSettings.SettingMetadata<Swift.Bool>
   public var denyMusicService: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyMusicService: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyMusicService: ManagedSettings.SettingMetadata<Swift.Bool>
   public var maximumMovieRating: Swift.Int? {
     get
-    set(newValue)
+    set
   }
-  public static var maximumMovieRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
+  public static let maximumMovieRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
   public var maximumTVShowRating: Swift.Int? {
     get
-    set(newValue)
+    set
   }
-  public static var maximumTVShowRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
+  public static let maximumTVShowRating: ManagedSettings.BoundedSettingMetadata<Swift.Int>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -244,9 +245,9 @@ public struct MediaSettings : ManagedSettings.ManagedSettingsGroup {
 public struct PasscodeSettings : ManagedSettings.ManagedSettingsGroup {
   public var lockPasscode: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var lockPasscode: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let lockPasscode: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -255,9 +256,9 @@ public struct PasscodeSettings : ManagedSettings.ManagedSettingsGroup {
 public struct DateAndTimeSettings : ManagedSettings.ManagedSettingsGroup {
   public var requireAutomaticDateAndTime: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var requireAutomaticDateAndTime: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let requireAutomaticDateAndTime: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -266,24 +267,24 @@ public struct DateAndTimeSettings : ManagedSettings.ManagedSettingsGroup {
 public struct ShieldSettings : ManagedSettings.ManagedSettingsGroup {
   public var applications: Swift.Set<ManagedSettings.ApplicationToken>? {
     get
-    set(newValue)
+    set
   }
-  public static var applications: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.ApplicationToken>>
+  public static let applications: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.ApplicationToken>>
   public var applicationCategories: ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.Application>? {
     get
-    set(newValue)
+    set
   }
-  public static var applicationCategories: ManagedSettings.SettingMetadata<ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.Application>>
+  public static let applicationCategories: ManagedSettings.SettingMetadata<ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.Application>>
   public var webDomains: Swift.Set<ManagedSettings.WebDomainToken>? {
     get
-    set(newValue)
+    set
   }
-  public static var webDomains: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.WebDomainToken>>
+  public static let webDomains: ManagedSettings.SettingMetadata<Swift.Set<ManagedSettings.WebDomainToken>>
   public var webDomainCategories: ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.WebDomain>? {
     get
-    set(newValue)
+    set
   }
-  public static var webDomainCategories: ManagedSettings.SettingMetadata<ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.WebDomain>>
+  public static let webDomainCategories: ManagedSettings.SettingMetadata<ManagedSettings.ShieldSettings.ActivityCategoryPolicy<ManagedSettings.WebDomain>>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -340,9 +341,9 @@ public class ManagedSettingsStore : Combine.ObservableObject {
 public struct SafariSettings : ManagedSettings.ManagedSettingsGroup {
   public var denyAutoFill: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denyAutoFill: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denyAutoFill: ManagedSettings.SettingMetadata<Swift.Bool>
   public enum CookiePolicy : Swift.String, Swift.Comparable {
     case never
     case currentWebsite
@@ -357,9 +358,9 @@ public struct SafariSettings : ManagedSettings.ManagedSettingsGroup {
   }
   public var cookiePolicy: ManagedSettings.SafariSettings.CookiePolicy? {
     get
-    set(newValue)
+    set
   }
-  public static var cookiePolicy: ManagedSettings.SettingMetadata<ManagedSettings.SafariSettings.CookiePolicy>
+  public static let cookiePolicy: ManagedSettings.SettingMetadata<ManagedSettings.SafariSettings.CookiePolicy>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -368,9 +369,9 @@ public struct SafariSettings : ManagedSettings.ManagedSettingsGroup {
 public struct SiriSettings : ManagedSettings.ManagedSettingsGroup {
   public var denySiri: Swift.Bool? {
     get
-    set(newValue)
+    set
   }
-  public static var denySiri: ManagedSettings.SettingMetadata<Swift.Bool>
+  public static let denySiri: ManagedSettings.SettingMetadata<Swift.Bool>
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)
@@ -406,7 +407,47 @@ public struct WebContentSettings : ManagedSettings.ManagedSettingsGroup {
   }
   public var blockedByFilter: ManagedSettings.WebContentSettings.FilterPolicy? {
     get
-    set(newValue)
+    set
   }
-  public static var blockedByFilter: ManagedSettings.SettingMetadata<ManagedSettings.WebContentSettings.FilterPolicy>
+  public static let blockedByFilter: ManagedSettings.SettingMetadata<ManagedSettings.WebContentSettings.FilterPolicy>
 }
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldAction : Swift.Equatable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldAction : Swift.Hashable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldAction : Swift.RawRepresentable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldActionResponse : Swift.Equatable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldActionResponse : Swift.Hashable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.ShieldActionResponse : Swift.RawRepresentable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.SafariSettings.CookiePolicy : Swift.Hashable {}
+@available(iOS 15.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension ManagedSettings.SafariSettings.CookiePolicy : Swift.RawRepresentable {}

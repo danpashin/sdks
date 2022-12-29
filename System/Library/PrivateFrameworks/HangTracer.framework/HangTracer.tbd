@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HangTracer.framework/HangTracer
-current-version:       184
+current-version:       184.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,6 +20,7 @@ exports:
                             _HTAppActivationEvent,
                             _HTAppActivationGenerateAppIdentifier,
                             _HTBeginNonResponsiveTaskWithNameAndExpiration,
+                            _HTCollectHangLogsBundle,
                             _HTDaemonStateChangedNotification,
                             _HTEnabledStateChangedNotification,
                             _HTEnabledUserInfoKey, _HTEndNonResponsiveTask,
@@ -30,6 +31,7 @@ exports:
                             _HTSE_SELF_ENABLE_STATE_CHANGED_NOTIFICATION,
                             _HTStartHangTracing, _HTSuspendHangTracing,
                             _HTUpdateHangTracing,
+                            _HT_MOBILE_CRASH_REPORTER_DIRECTORY,
                             _HT_MOBILE_DIAGNOSTIC_LOGS_DIRECTORY,
                             _HT_MOBILE_FORCE_QUIT_DIAGNOSTIC_LOGS_DIRECTORY,
                             _HT_ROOT_DIAGNOSTIC_LOGS_DIRECTORY,

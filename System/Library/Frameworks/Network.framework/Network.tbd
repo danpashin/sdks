@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           6C806F20-BB87-3EB8-9352-FB1D3AA2E012
   - target:          arm64-ios
-    value:           78ADA8B2-8D7D-3769-B899-17744B854CA7
+    value:           EC32F8EC-053B-33AB-9D5A-6AAA502031F4
   - target:          arm64e-ios
-    value:           DE9918F8-7680-3E59-B986-2B1DA0D09BB7
+    value:           6416662E-726C-3C98-807D-2C377539BB0F
 install-name:    '/System/Library/Frameworks/Network.framework/Network'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -20,21 +20,7 @@ exports:
                        ___nwlog_debug_objc, ___nwlog_default_objc, ___nwlog_err_objc, 
                        ___nwlog_info_objc, ___nwlog_objc_attribute_check ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ '$ld$install_name$os10.0$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os10.1$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os10.2$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os10.3$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.0$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.1$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.2$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.3$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.4$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os11.5$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os9.0$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os9.1$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os9.2$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       '$ld$install_name$os9.3$/System/Library/PrivateFrameworks/Network.framework/Network', 
-                       _NWCreateDispatchDataFromNSData, _NWCreateNSDataFromDispatchData, 
+    symbols:         [ _NWCreateDispatchDataFromNSData, _NWCreateNSDataFromDispatchData, 
                        _NWMonitorStatusToString, _NWNetworkAgentStartOptionClientUUID, 
                        _NWNetworkAgentStartOptionFromKernel, _NWNetworkAgentStartOptionFromUser, 
                        _NWNetworkAgentStartOptionPID, _NWNetworkAgentStartOptionProcessUUID, 

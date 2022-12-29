@@ -7,12 +7,14 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B7DC2C37-F313-30A6-A09E-63808582A6A2
+    value:           9557CB8D-0D4D-37AC-A786-066FCCE77FE0
   - target:          arm64e-ios
-    value:           C78F793D-76F0-3625-AE01-4D90B4AD29F1
+    value:           6A2A246C-00E7-3E75-9D35-19CCF4D37FC5
 install-name:    '/Developer/Library/Frameworks/StoreKitTest.framework/StoreKitTest'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _SKTestErrorDomain ]
-    objc-classes:    [ SKTestEventObservation, SKTestSession, SKTestTransaction ]
+    symbols:         [ _SKAdTestErrorDomain, _SKAdTestPostbackVersion2_1, _SKAdTestPostbackVersion2_2, 
+                       _SKAdTestPostbackVersion3_0, _SKTestErrorDomain ]
+    objc-classes:    [ SKAdTestPostback, SKAdTestPostbackResponse, SKAdTestSession, 
+                       SKTestEventObservation, SKTestSession, SKTestTransaction ]
 ...

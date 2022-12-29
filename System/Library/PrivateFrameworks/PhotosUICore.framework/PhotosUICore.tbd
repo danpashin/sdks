@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
-current-version:       422.0.110
+current-version:       442.0.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -397,6 +397,7 @@ exports:
                             _PXCNComposeRecipientWithContact,
                             _PXCNComposeRecipientWithRecipient,
                             _PXCPLActionTypeLearnMoreClientVersionTooOld,
+                            _PXCPLActionTypeLearnMoreUpgradeSuggested,
                             _PXCPLActionTypeManageAirplaneMode,
                             _PXCPLActionTypeManageCellularDataDisabled,
                             _PXCPLActionTypeManageCloudStorage,
@@ -1883,7 +1884,10 @@ exports:
                             _kDefaultMaxNumberOfTopAssetRows,
                             _kDefaultNumberOfTopAssetRows, _kHardRejectCost,
                             _kLandscapePanoramaThreshold, _kMaxTextureHeight,
-                            _kMaxTextureWidth, _kNewLandscapePanoramaThreshold,
+                            _kMaxTextureWidth,
+                            _kMinimumInitialChangeProcessingInterval,
+                            _kMinimumSubsequentChangeProcessingInterval,
+                            _kNewLandscapePanoramaThreshold,
                             _kNewPortraitPanoramaThreshold,
                             _kNewQualifiedCroppingThreshold,
                             _kPXContextualMemoriesSettingsDatePickerTableViewCellReuseId,
@@ -2184,6 +2188,7 @@ exports:
                             PXCNRecipientSearchResult, PXCPLActionManager,
                             PXCPLActionPerformer,
                             PXCPLLearnMoreClientVersionTooOldInformationActionPerformer,
+                            PXCPLLearnMoreUpgradeSuggestedActionPerformer,
                             PXCPLManageAirplaneModeActionPerformer,
                             PXCPLManageCellularDataDisabledActionPerformer,
                             PXCPLManageCloudExitModeActionPerformer,
@@ -3502,6 +3507,7 @@ exports:
                             PXStoryResourcesPreloadingController,
                             PXStoryResourcesPreloadingCoordinator,
                             PXStoryResourcesPreloadingRequest,
+                            PXStoryResourcesPreloadingStatsStore,
                             PXStoryReusableDisplayAsset,
                             PXStoryScrollContentLayout, PXStoryScrollLayout,
                             PXStoryScrubberContentLayout, PXStoryScrubberLayout,
@@ -3550,7 +3556,9 @@ exports:
                             PXStoryUIFactory, PXStoryValidationController,
                             PXStoryValueAnimation,
                             PXStoryVideoAssetResourcePreloadingOperation,
-                            PXStoryView, PXStoryViewBufferingController,
+                            PXStoryView,
+                            PXStoryViewAccessibilityHUDContentProvider,
+                            PXStoryViewBufferingController,
                             PXStoryViewConfiguration,
                             PXStoryViewControllerItemPlacementInterpolator,
                             PXStoryViewControllerTransition,

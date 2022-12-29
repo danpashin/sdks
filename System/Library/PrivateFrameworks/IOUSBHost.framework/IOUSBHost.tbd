@@ -8,7 +8,7 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _IOUSBGetBillboardDescriptor,
+    symbols:              [ _IOFindNameForValue, _IOUSBGetBillboardDescriptor,
                             _IOUSBGetConfigurationMaxPowerMilliAmps,
                             _IOUSBGetContainerIDDescriptor,
                             _IOUSBGetEndpointAddress, _IOUSBGetEndpointBurstSize,
@@ -34,7 +34,10 @@ exports:
                             _IOUSBGetSuperSpeedDeviceCapabilityDescriptor,
                             _IOUSBGetSuperSpeedPlusDeviceCapabilityDescriptor,
                             _IOUSBGetUSB20ExtensionDeviceCapabilityDescriptor,
+                            _IOUSBHostCIControllerStateToString,
                             _IOUSBHostCIDeviceSpeedToString,
+                            _IOUSBHostCIDeviceStateToString,
+                            _IOUSBHostCIEndpointStateToString,
                             _IOUSBHostCIExceptionTypeToString,
                             _IOUSBHostCILinkStateEnabled,
                             _IOUSBHostCILinkStateToString,
@@ -42,6 +45,7 @@ exports:
                             _IOUSBHostCIMessageStatusToIOReturn,
                             _IOUSBHostCIMessageStatusToString,
                             _IOUSBHostCIMessageTypeToString,
+                            _IOUSBHostCIPortStateToString,
                             _IOUSBHostDefaultControlCompletionTimeout,
                             _IOUSBHostDevicePropertyKeyContainerID,
                             _IOUSBHostDevicePropertyKeyCurrentConfiguration,

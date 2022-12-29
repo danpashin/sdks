@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           243105D9-A6F1-3373-A5D5-8263F506499E
   - target:          arm64-ios
-    value:           F9F10F4F-CC99-3184-8E95-4F2A17AF5503
+    value:           45E0599D-CD0F-3CF8-9868-54F9073C5F12
   - target:          arm64e-ios
-    value:           BAC83FDD-799A-3932-A98C-16E9898F84FC
+    value:           BF04E425-2122-34B2-9EE1-4D1F9C501B5F
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/AVFoundation'
 current-version: 2
 reexported-libraries:
@@ -1403,9 +1403,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           AB322348-CEAE-3409-86CF-AFFFB4B8E4C7
+    value:           5F399FC0-2741-3A28-A910-74AA1C7E1CB6
   - target:          arm64e-ios
-    value:           2B0D03C3-A03C-371E-946D-C36EF8318451
+    value:           537426F9-A18C-3101-8B07-0978317CC9AD
 install-name:    '/System/Library/PrivateFrameworks/AVFCapture.framework/AVFCapture'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -1414,10 +1414,10 @@ exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _AVAUVoiceIOGetPreferredChatFlavorForBundleID, _AVAUVoiceIOInitializeListenersForBundleID, 
                        _AVAUVoiceIONotificationBundleIdentifierKey, _AVAUVoiceIOPreferredChatFlavorDidChangeNotification, 
-                       _AVAUVoiceIOSetActiveChatFlavorForBundleID, _AVAUVoiceIOSetSupportedChatFlavorsForBundleID, 
-                       _AVAUVoiceIOSetVoiceProcessingBypassedForBundleID, _AVAppleMakerNote_ARKitPhoto, 
-                       _AVAppleMakerNote_AssetIdentifier, _AVAppleMakerNote_BurstUUID, 
-                       _AVAppleMakerNote_Camera, _AVAppleMakerNote_ImageCaptureRequestIdentifier, 
+                       _AVAUVoiceIORemoveActiveChatFlavorForBundleID, _AVAUVoiceIOSetActiveChatFlavorForBundleID, 
+                       _AVAUVoiceIOSetSupportedChatFlavorsForBundleID, _AVAUVoiceIOSetVoiceProcessingBypassedForBundleID, 
+                       _AVAppleMakerNote_ARKitPhoto, _AVAppleMakerNote_AssetIdentifier, 
+                       _AVAppleMakerNote_BurstUUID, _AVAppleMakerNote_Camera, _AVAppleMakerNote_ImageCaptureRequestIdentifier, 
                        _AVAppleMakerNote_ImageGroupIdentifier, _AVAppleMakerNote_LuminanceNoiseAmplitude, 
                        _AVAppleMakerNote_MeteorHeadroom, _AVAppleMakerNote_MeteorPlusGainMap, 
                        _AVAppleMakerNote_OriginatingAppID, _AVAppleMakerNote_PhotoIdentifier, 
@@ -1442,10 +1442,11 @@ exports:
                        _AVCaptureDeviceShallowDepthOfFieldStatusChangedNotification, 
                        _AVCaptureDeviceSubjectAreaDidChangeNotification, _AVCaptureDeviceTypeBuiltInDualCamera, 
                        _AVCaptureDeviceTypeBuiltInDualWideCamera, _AVCaptureDeviceTypeBuiltInDuoCamera, 
-                       _AVCaptureDeviceTypeBuiltInMicrophone, _AVCaptureDeviceTypeBuiltInTelephotoCamera, 
-                       _AVCaptureDeviceTypeBuiltInTimeOfFlightCamera, _AVCaptureDeviceTypeBuiltInTripleCamera, 
-                       _AVCaptureDeviceTypeBuiltInTrueDepthCamera, _AVCaptureDeviceTypeBuiltInUltraWideCamera, 
-                       _AVCaptureDeviceTypeBuiltInWideAngleCamera, _AVCaptureDeviceUserDefaultsKey_BackgroundBlurControlMode, 
+                       _AVCaptureDeviceTypeBuiltInLiDARDepthCamera, _AVCaptureDeviceTypeBuiltInMicrophone, 
+                       _AVCaptureDeviceTypeBuiltInTelephotoCamera, _AVCaptureDeviceTypeBuiltInTimeOfFlightCamera, 
+                       _AVCaptureDeviceTypeBuiltInTripleCamera, _AVCaptureDeviceTypeBuiltInTrueDepthCamera, 
+                       _AVCaptureDeviceTypeBuiltInUltraWideCamera, _AVCaptureDeviceTypeBuiltInWideAngleCamera, 
+                       _AVCaptureDeviceUserDefaultsKey_BackgroundBlurControlMode, 
                        _AVCaptureDeviceUserDefaultsKey_BackgroundBlurEnabled, _AVCaptureDeviceUserDefaultsKey_CenterStageControlMode, 
                        _AVCaptureDeviceUserDefaultsKey_CenterStageEnabled, _AVCaptureDeviceUserDefaultsKey_CinematicFramingControlMode, 
                        _AVCaptureDeviceUserDefaultsKey_CinematicFramingEnabled, _AVCaptureDeviceWasConnectedNotification, 
@@ -1540,9 +1541,9 @@ exports:
                        _AVGQCaptureConnectionAlwaysSelectsStandardVISFor720p30, _AVGQCaptureConnectionCinematicVISAwareAPIsAreAvailable, 
                        _AVGQCaptureConnectionFrameRatePropertiesAreDeprecated, _AVGQCaptureDefaultDevicePrefersUnsuspendedAndAllowsAnyPosition, 
                        _AVGQCaptureDeviceSupportsCinematicVideoFocusAtPoint, _AVGQCaptureDevicesShouldBeSortedByDeviceType, 
-                       _AVGQCaptureExtendedCinematicVISSupported, _AVGQCaptureHighPhotoQualityFrameDropAllowed, 
-                       _AVGQCaptureMFOStabilizationIsAlwaysOn, _AVGQCaptureMFOSupportsPhotoFormats, 
-                       _AVGQCaptureMFOVideoSettingsSupportCompressionProperties, 
+                       _AVGQCaptureExtendedCinematicVISSupported, _AVGQCaptureFaceDrivenAEAFOnByDefault, 
+                       _AVGQCaptureHighPhotoQualityFrameDropAllowed, _AVGQCaptureMFOStabilizationIsAlwaysOn, 
+                       _AVGQCaptureMFOSupportsPhotoFormats, _AVGQCaptureMFOVideoSettingsSupportCompressionProperties, 
                        _AVGQCaptureMetadataOutputCapturesFacesByDefault, _AVGQCaptureMicrophoneUsesDecoupledIO, 
                        _AVGQCapturePhotoSettingsSupportRawEmbeddedThumbnailFormat, 
                        _AVGQCaptureSessionMaxMultiCamRGBStreamsSupported, _AVGQCaptureSessionSupportsMultiCamCapture, 
@@ -1586,13 +1587,16 @@ exports:
                        _AVMetadataMakeMetadataObjectFromBoxedMetadata, _AVMetadataObjectCreateBoxedMetadataFromObjectAndFormatDescription, 
                        _AVMetadataObjectTypeAppClipCode, _AVMetadataObjectTypeAztecCode, 
                        _AVMetadataObjectTypeCatBody, _AVMetadataObjectTypeCatHead, 
-                       _AVMetadataObjectTypeCode128Code, _AVMetadataObjectTypeCode39Code, 
-                       _AVMetadataObjectTypeCode39Mod43Code, _AVMetadataObjectTypeCode93Code, 
-                       _AVMetadataObjectTypeDataMatrixCode, _AVMetadataObjectTypeDogBody, 
-                       _AVMetadataObjectTypeDogHead, _AVMetadataObjectTypeEAN13Code, 
-                       _AVMetadataObjectTypeEAN8Code, _AVMetadataObjectTypeFace, 
+                       _AVMetadataObjectTypeCodabarCode, _AVMetadataObjectTypeCode128Code, 
+                       _AVMetadataObjectTypeCode39Code, _AVMetadataObjectTypeCode39Mod43Code, 
+                       _AVMetadataObjectTypeCode93Code, _AVMetadataObjectTypeDataMatrixCode, 
+                       _AVMetadataObjectTypeDogBody, _AVMetadataObjectTypeDogHead, 
+                       _AVMetadataObjectTypeEAN13Code, _AVMetadataObjectTypeEAN8Code, 
+                       _AVMetadataObjectTypeFace, _AVMetadataObjectTypeGS1DataBarCode, 
+                       _AVMetadataObjectTypeGS1DataBarExpandedCode, _AVMetadataObjectTypeGS1DataBarLimitedCode, 
                        _AVMetadataObjectTypeHumanBody, _AVMetadataObjectTypeHumanHead, 
                        _AVMetadataObjectTypeITF14Code, _AVMetadataObjectTypeInterleaved2of5Code, 
+                       _AVMetadataObjectTypeMicroPDF417Code, _AVMetadataObjectTypeMicroQRCode, 
                        _AVMetadataObjectTypeOfflineVideoStabilizationMotion, _AVMetadataObjectTypePDF417Code, 
                        _AVMetadataObjectTypeQRCode, _AVMetadataObjectTypeSaliencyHeatMap, 
                        _AVMetadataObjectTypeSalientObject, _AVMetadataObjectTypeTextRegion, 
@@ -1638,6 +1642,10 @@ uuids:
     value:           00000000-0000-0000-0000-000000000000
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           1A1ED148-B51D-387C-BF4B-264993661DA7
+  - target:          arm64e-ios
+    value:           F2019A5A-0A46-36E2-B1E0-E181D042A9E1
 install-name:    '/System/Library/PrivateFrameworks/AVFCore.framework/AVFCore'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -2134,6 +2142,8 @@ exports:
                        _AVOutputContextDeviceConnectionFailureReasonDeviceNotMFiCertified, 
                        _AVOutputContextDeviceConnectionFailureReasonDeviceOutOfRange, 
                        _AVOutputContextDeviceConnectionFailureReasonIPAliasingNotSupported, 
+                       _AVOutputContextDeviceConnectionFailureReasonInfraRelayFailed2GHzNetwork, 
+                       _AVOutputContextDeviceConnectionFailureReasonInfraRelayFailedMultiDFSNetwork, 
                        _AVOutputContextDeviceConnectionFailureReasonNotAPeerInHomeGroup, 
                        _AVOutputContextDeviceGroupControlOptionCancelAddDeviceIfAuthRequired, 
                        _AVOutputContextGlobalOutputDeviceConfigurationDidChangeNotification, 
@@ -2463,9 +2473,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           31A32351-9C89-3F1F-9B88-1733A63EA7FF
+    value:           8205BA0A-459B-3F76-B962-BE10E62CC8E9
   - target:          arm64e-ios
-    value:           4315F1F5-AC02-3365-AB94-F0EAFCDE3AF4
+    value:           E0F6B023-2B0A-3997-9ABF-1C27EC4035F0
 install-name:    '/System/Library/Frameworks/AVFAudio.framework/AVFAudio'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -2554,7 +2564,8 @@ exports:
                        _AVVoiceControllerMetricAudioSessionSetActiveTime, _AVVoiceControllerMetricAudioSessionSetInactiveTime, 
                        _AVVoiceControllerMetricDataBeginHostTime, _AVVoiceControllerMetricDataDurationMilliSeconds, 
                        _AVVoiceControllerMetricDataEndHostTime, _AVVoiceControllerNoRecordRoute, 
-                       _AVVoiceControllerRemoteInputJarvisRoute, _AVVoiceControllerStartTimeKey ]
+                       _AVVoiceControllerRemoteInputDarwinRoute, _AVVoiceControllerRemoteInputJarvisRoute, 
+                       _AVVoiceControllerStartTimeKey ]
     objc-classes:    [ AVAudioBuffer, AVAudioChannelLayout, AVAudioCompressedBuffer, 
                        AVAudioConnectionPoint, AVAudioConverter, AVAudioDeviceTest, 
                        AVAudioDeviceTestProcessingChain, AVAudioDeviceTestResult, 

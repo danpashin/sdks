@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MailKit.framework/MailKit
-current-version:       3693.40
+current-version:       3696.80.82
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -25,13 +25,19 @@ exports:
                             _MEMailExtensionDataAccessHeadersKey,
                             _MEMailExtensionDataAccessReasonKey,
                             _MEMailExtensionDataAccessRequirementsKey,
-                            _MEMailExtensionErrorDomain, _MEMailExtensionsLog ]
+                            _MEMailExtensionErrorDomain,
+                            _MEMailExtensionErrorExtensionIdentifierKey,
+                            _MEMailExtensionMessageSecurityConfigKey,
+                            _MEMailExtensionMessageSecurityIconeNameKey,
+                            _MEMailExtensionsLog, _MEMessageSecurityErrorDomain,
+                            _MEVisibleMessagesReload ]
     objc-classes:         [ MEAddressAnnotation, MEAppExtensionsController,
-                            MEComposeExtensionValidationError,
+                            MEComposeContext, MEComposeExtensionValidationError,
                             MEComposeExtensionsHelper, MEComposeSession,
-                            MEDecodedMessage, MEEmailAddress,
-                            MEEncodedOutgoingMessage, MEExtensionHostContext,
-                            MEExtensionManager, MEExtensionUserPreferences,
+                            MEDecodedMessage, MEDecodedMessageBanner,
+                            MEEmailAddress, MEEncodedOutgoingMessage,
+                            MEExtensionHostContext, MEExtensionManager,
+                            MEExtensionUserPreferences,
                             MEExtensionViewController,
                             MEMailAppExtensionObserverCriteria,
                             MEMailComposeToolbarItemInfo, MEMessage,

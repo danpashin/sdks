@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Sharing.framework/Sharing
-current-version:       1759.2
+current-version:       1779.1.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -45,6 +45,7 @@ exports:
                             _SDAutoUnlockManagerMetricLastSleepTypeKey,
                             _SDAutoUnlockManagerMetricManualRelockKey,
                             _SDAutoUnlockManagerMetricMaskKey,
+                            _SDAutoUnlockManagerMetricPeriocularStatus,
                             _SDAutoUnlockManagerMetricPrewarmKey,
                             _SDAutoUnlockManagerMetricPrewarmTimeKey,
                             _SDAutoUnlockManagerMetricProxyDeviceModelKey,
@@ -197,6 +198,7 @@ exports:
                             _SFDeviceSupportsForceTouch,
                             _SFDeviceSupportsLegacyAirDrop,
                             _SFDeviceSupportsRanging,
+                            _SFDeviceSupportsRapportOnlyAirDropDiscovery,
                             _SFDeviceSupportsRemoteDisc,
                             _SFDeviceSupportsTVAudio,
                             _SFDeviceToRPCompanionLinkDevice,
@@ -420,6 +422,7 @@ exports:
                             _kSFBrowserKindAirDrop, _kSFBrowserKindNetwork,
                             _kSFBrowserKindPrinter, _kSFBrowserKindRemoteDisc,
                             _kSFBrowserOptionsBundleIDKey,
+                            _kSFBrowserOptionsDelayBonjourUntilTransferKey,
                             _kSFBrowserOptionsPhotosAssetIDsKey,
                             _kSFBrowserOptionsShouldDisableDiscoveryMetricsKey,
                             _kSFBrowserOptionsURLsBeingSharedKey,
@@ -553,9 +556,10 @@ exports:
                             _kSFPowerSourceStatusFeatureKey,
                             _kSFPowerSourceStatusNotificationFromWatch,
                             _log_submit_log, _magic_head_log, _paired_unlock_log,
-                            _remote_log, _share_sheet_log, _sharingHUDLog,
-                            _sharingXPCHelperLog, _sharing_persistent_log,
-                            _streams_log, _tethering_log, _utilities_log ]
+                            _people_ui_log, _remote_log, _share_sheet_log,
+                            _sharingHUDLog, _sharingXPCHelperLog,
+                            _sharing_persistent_log, _streams_log, _tethering_log,
+                            _utilities_log ]
     objc-classes:         [ SFAccessibilityClient, SFAccountManager,
                             SFActivityAdvertisement, SFActivityAdvertiser,
                             SFActivityScanner, SFAirDropAction, SFAirDropBrowser,
@@ -588,8 +592,9 @@ exports:
                             SFDefaults, SFDevice, SFDeviceAssetManager,
                             SFDeviceAssetQuery,
                             SFDeviceAssetRequestConfiguration, SFDeviceDiscovery,
-                            SFDeviceOperationCDPSetup,
+                            SFDeviceOperationCDPSetup, SFDeviceOperationCNJSetup,
                             SFDeviceOperationHandlerCDPSetup,
+                            SFDeviceOperationHandlerCNJSetup,
                             SFDeviceOperationHandlerWiFiSetup,
                             SFDeviceOperationHomeKitSetup,
                             SFDeviceOperationWiFiSetup, SFDeviceRepairService,
@@ -611,12 +616,13 @@ exports:
                             SFPairedUnlockWatchEvent, SFPasswordSharingInfo,
                             SFPasswordSharingService, SFPasswordSharingSession,
                             SFPeerDevice, SFPeopleSuggesterParams,
-                            SFPeopleSuggesterResult, SFPowerSource,
-                            SFPowerSourceLEDInfo, SFPowerSourceMonitor,
-                            SFProxCardSessionClient, SFProxCardSessionServer,
-                            SFProxHandoffService, SFProximityClient,
-                            SFProximityEstimator, SFRemoteAutoFillScanAction,
-                            SFRemoteAutoFillService, SFRemoteAutoFillSession,
+                            SFPeopleSuggesterResult, SFPeopleSuggestion,
+                            SFPowerSource, SFPowerSourceLEDInfo,
+                            SFPowerSourceMonitor, SFProxCardSessionClient,
+                            SFProxCardSessionServer, SFProxHandoffService,
+                            SFProximityClient, SFProximityEstimator,
+                            SFRemoteAutoFillScanAction, SFRemoteAutoFillService,
+                            SFRemoteAutoFillSession,
                             SFRemoteAutoFillSessionHelper,
                             SFRemoteHotspotCellularBearerParams,
                             SFRemoteHotspotDevice, SFRemoteHotspotInfo,

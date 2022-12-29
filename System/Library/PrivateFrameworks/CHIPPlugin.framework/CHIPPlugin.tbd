@@ -8,13 +8,16 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CHIPPluginProtocolOperationErrorDomain ]
+    symbols:              [ _CHIPPluginProtocolOperationErrorDomain,
+                            _CHIPPluginVendorMetadataFileName ]
     objc-classes:         [ CHIPAccessoryServer, CHIPAccessoryServerBrowser,
                             CHIPAccessoryServerBuilder,
                             CHIPAccessoryServerFactory,
                             CHIPPluginAccessoryReachabilityManager,
                             CHIPPluginAccessorySetupPayload,
-                            CHIPPluginClusterDescription, CHIPPluginFileManager,
+                            CHIPPluginClusterDescription,
+                            CHIPPluginDescriptorClusterManager,
+                            CHIPPluginFileManager,
                             CHIPPluginHAPServiceDescription,
                             CHIPPluginMutableAccessorySetupPayload,
                             CHIPPluginMutableVendorMetadata,

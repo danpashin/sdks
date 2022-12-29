@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Translation.framework/Translation
-current-version:       173.11.6
+current-version:       173.23
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -18,10 +18,11 @@ exports:
                             __LTTranslationServiceDelegateXPCInterface,
                             __LTTranslationServiceXPCInterface,
                             _kLTUnknownLanguageCode ]
-    objc-classes:         [ _LTAlignment, _LTBatchTextTranslationRequest,
-                            _LTCombinedEngine,
+    objc-classes:         [ _LTASRStateEventLog, _LTAlignment, _LTBatchEventLog,
+                            _LTBatchTextTranslationRequest, _LTCombinedEngine,
                             _LTCombinedRouteParagraphTranslationRequest,
                             _LTDaemon, _LTInstallRequest,
+                            _LTInvocationEventContext, _LTInvocationEventLog,
                             _LTLanguageDetectionResult, _LTLanguageDetector,
                             _LTLanguageDetectorFeatureCombinationModel,
                             _LTLanguageInstallationStatus, _LTLanguageManager,
@@ -45,5 +46,5 @@ exports:
                             _LTTranslationSensesLoggingRequest,
                             _LTTranslationSession, _LTTranslationSpan,
                             _LTTranslationStatistics, _LTTranslationToken,
-                            _LTTranslator ]
+                            _LTTranslator, _LTWordTimingInfo ]
 ...

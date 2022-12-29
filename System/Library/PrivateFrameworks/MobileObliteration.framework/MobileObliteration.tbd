@@ -9,11 +9,18 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _Mobile_Obliterate, _Mobile_Obliterate_IsSupported,
-                            _kDisplayProgressBarKey, _kMobileObliterationError,
+                            _kCommandResultsKey, _kDisplayProgressBarKey,
+                            _kIPCStatusComplete, _kIPCStatusError, _kIPCStatusKey,
+                            _kIgnoreInternalKey,
+                            _kMobileObliterationDeviceLockedError,
+                            _kMobileObliterationError,
                             _kMobileObliterationInternalError,
+                            _kMobileObliterationInvalidSecretError,
+                            _kMobileObliterationRebootError,
                             _kMobileObliterationSuccess,
-                            _kObliterateDataPartition,
+                            _kObliterateDataPartition, _kObliterateMarkAndReboot,
                             _kObliterationBrickIncludesFirmwareKey,
+                            _kObliterationCallingProcessName,
                             _kObliterationCompletedOK,
                             _kObliterationCompletedWithWarning,
                             _kObliterationDelayAfterReplyKey,
@@ -31,6 +38,8 @@ exports:
                             _kObliterationReturnDictKey,
                             _kObliterationTypeBrickOnly, _kObliterationTypeKey,
                             _kObliterationTypeMarkStart,
+                            _kObliterationTypeMarkerCreate,
+                            _kObliterationTypeSafeWipe,
                             _kObliterationTypeWipeAndBrick,
                             _kSkipDataObliteration ]
 ...

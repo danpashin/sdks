@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64550.83.1
+current-version:       64552.29.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -40,7 +40,7 @@ exports:
                             _VMUunusedSharedLibDataLabel,
                             _VMUunusedSharedLibLabelPrefix,
                             _VMUunusedSharedLibTextLabel,
-                            __VMUEnumerateMarkedObjects,
+                            __VMUEnumerateMarkedObjects, _dispositionDescription,
                             _kVMUAutoreleasePoolBoundaryClassName,
                             _kVMUAutoreleasePoolThreadSpecificDataKeyString,
                             _kVMUPrintArchivingTiming, _kVMURootRetainCycle,
@@ -81,7 +81,7 @@ exports:
                             VMUStackLogReaderBase, VMUSwiftRuntimeInfo,
                             VMUSymbolStore, VMUTaskMemoryCache,
                             VMUTaskMemoryScanner, VMUTaskStackLogReader,
-                            VMUTaskThreadStates, VMUVMRegion,
+                            VMUTaskThreadStates, VMUTerminalColorizer, VMUVMRegion,
                             VMUVMRegionIdentifier, VMUVMRegionRangeInfo,
                             VMUVMRegionTracker ]
     objc-ivars:           [ VMUBacktrace._callstack, VMUBacktrace._flavor,
