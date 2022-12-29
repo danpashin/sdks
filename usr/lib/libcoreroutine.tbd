@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E74E95C1-B163-3535-82FC-E4418485B194
   - target:          arm64-ios
-    value:           F03BE475-9785-3E43-8397-09D551726EED
+    value:           4E8FA7E6-E7B7-35D1-89DB-518C4506EF98
   - target:          arm64e-ios
-    value:           98879E7E-5D0E-3A51-BB21-0DB21B94E407
+    value:           B364C0B7-D05A-345A-8BB2-D9C6799D9265
 install-name:    '/usr/lib/libcoreroutine.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -257,6 +257,9 @@ exports:
                        _kRTDecimationMinimumLevel1Duration, _kRTDecimationMinimumLevel1SkipAheadFactor, 
                        _kRTDecimationMinimumLevel2Duration, _kRTDecimationMinimumLevel2SkipAheadFactor, 
                        _kRTDecimationMinimumLevel3SkipAheadFactor, _kRTDefaultWorkoutRouteLabel, 
+                       _kRTDeviceMetricCharging, _kRTDeviceMetricDataConnectivityCell, 
+                       _kRTDeviceMetricDataConnectivityNone, _kRTDeviceMetricDataConnectivityWiFi, 
+                       _kRTDeviceMetricScreenLock, _kRTDeviceMetricStationaryMotion, 
                        _kRTDeviceString, _kRTDistanceMatrixInvalidValue, _kRTDistanceStoreBatchReadSizeMax, 
                        _kRTDistanceStoreBatchWriteSizeMax, _kRTDuetKnowledgeStreamDefaultFetchBatchSize, 
                        _kRTEndDateString, _kRTEventModelMetricKeyCorrects, _kRTEventModelMetricKeyIncorrects, 
@@ -632,8 +635,8 @@ exports:
                        RTBluetoothManager_BluetoothManager, RTBuildingPolygonManager, 
                        RTCLLocationMO, RTCalendarEvent, RTCameraManager, RTCameraManagerNotificationCameraPowerChanged, 
                        RTCameraManager_Embedded, RTCellIndex, RTClientListener, RTClientListenerInternal, 
-                       RTCloudManagedObject, RTConnectionsLocation, RTContact, RTContactPostalAddress, 
-                       RTContactsManager, RTContactsManagerContactStoreDidChangeNotification, 
+                       RTCloudManagedObject, RTClusterizeResults, RTConnectionsLocation, 
+                       RTContact, RTContactPostalAddress, RTContactsManager, RTContactsManagerContactStoreDidChangeNotification, 
                        RTContactsManagerContactStoreMeContactDidChangeNotification, 
                        RTCostMatrixCell, RTCurrentMapItemProvider, RTDTWResult, RTDaemonClient, 
                        RTDaemonClientInternal, RTDaemonClientRegistrar, RTDaemonClientRegistrarScenarioTrigger, 
@@ -642,12 +645,12 @@ exports:
                        RTDataProtectionManagerNotificationUnlockedSinceBoot, RTDefaultsManager, 
                        RTDefaultsManagerNotificationDefaultsChanged, RTDelayedLocationRequester, 
                        RTDeletionRequestRecordIDTransformer, RTDevice, RTDeviceLocationPredictor, 
-                       RTDeviceMO, RTDiagnostics, RTDistanceCalculator, RTDuetKnowledgeStore, 
-                       RTDuetKnowledgeStream, RTEntitlementProvider, RTEntityDeletionRequestMO, 
-                       RTEventAgentManager, RTEventLocationIdentifier, RTEventLocationIdentifierMO, 
-                       RTEventManager, RTEventModelProvider, RTEventModelUserInteractionMO, 
-                       RTException, RTFMCScoreBoard, RTFavoritePlace, RTFingerprintMO, 
-                       RTFingerprintManager, RTFingerprintManagerNotificationAvailabilityDidChange, 
+                       RTDeviceMO, RTDeviceMetricManager, RTDiagnostics, RTDistanceCalculator, 
+                       RTDuetKnowledgeStore, RTDuetKnowledgeStream, RTEntitlementProvider, 
+                       RTEntityDeletionRequestMO, RTEventAgentManager, RTEventLocationIdentifier, 
+                       RTEventLocationIdentifierMO, RTEventManager, RTEventModelProvider, 
+                       RTEventModelUserInteractionMO, RTException, RTFMCScoreBoard, 
+                       RTFavoritePlace, RTFingerprintMO, RTFingerprintManager, RTFingerprintManagerNotificationAvailabilityDidChange, 
                        RTFingerprintManagerNotificationMonitorFingerprints, RTFingerprintStore, 
                        RTFixedSizeQueue, RTFusedInferredMapItem, RTFusionMetrics, 
                        RTGEOMapItemTransformer, RTHealthKitManager, RTHealthKitManagerNewWorkoutNotification, 

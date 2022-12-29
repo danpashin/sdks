@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iCloudDriveCore.framework/iCloudDriveCore
-current-version:       1177.42.1
+current-version:       1177.60.73
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AppTelemetryCiconiaBouncesInvestigationReadFrom,
                             _AppTelemetryCiconiaInvestigationReadFrom,
+                            _AppTelemetryFPFSMigrationInvestigationReadFrom,
                             _AppTelemetryInvestigationReadFrom,
                             _AppTelemetryQBSInvestigationReadFrom,
                             _AppTelemetryQBSPerformanceReadFrom,
@@ -120,6 +121,7 @@ exports:
                             _kBRRecordTypeStructure, _sync_state_pretty_entries ]
     objc-classes:         [ AppTelemetryCiconiaBouncesInvestigation,
                             AppTelemetryCiconiaInvestigation,
+                            AppTelemetryFPFSMigrationInvestigation,
                             AppTelemetryInvestigation,
                             AppTelemetryQBSInvestigation,
                             AppTelemetryQBSPerformance,
@@ -232,6 +234,7 @@ exports:
                             AppTelemetryCiconiaInvestigation._ignoredContentProtectedItems,
                             AppTelemetryCiconiaInvestigation._importTime,
                             AppTelemetryCiconiaInvestigation._isAccountDataSeparated,
+                            AppTelemetryCiconiaInvestigation._isDesktopEnabled,
                             AppTelemetryCiconiaInvestigation._itemsChangedDuringCloning,
                             AppTelemetryCiconiaInvestigation._itemsNotFoundInDB,
                             AppTelemetryCiconiaInvestigation._itemsNotMigratedCount,
@@ -248,12 +251,28 @@ exports:
                             AppTelemetryCiconiaInvestigation._typesOfMigratedItemsMask,
                             AppTelemetryCiconiaInvestigation._typesOfNonMigratedItemsMask,
                             AppTelemetryCiconiaInvestigation._unexpectedCreations,
+                            AppTelemetryFPFSMigrationInvestigation._accountQuotaUsage,
+                            AppTelemetryFPFSMigrationInvestigation._bouncedItemsCount,
+                            AppTelemetryFPFSMigrationInvestigation._bouncedItemsMatrix,
+                            AppTelemetryFPFSMigrationInvestigation._experimentId,
+                            AppTelemetryFPFSMigrationInvestigation._has,
+                            AppTelemetryFPFSMigrationInvestigation._importTime,
+                            AppTelemetryFPFSMigrationInvestigation._isAccountDataSeparated,
+                            AppTelemetryFPFSMigrationInvestigation._isSuccessful,
+                            AppTelemetryFPFSMigrationInvestigation._itemsNotFoundInDB,
+                            AppTelemetryFPFSMigrationInvestigation._itemsNotMigratedCount,
+                            AppTelemetryFPFSMigrationInvestigation._rampId,
+                            AppTelemetryFPFSMigrationInvestigation._totalItemCount,
+                            AppTelemetryFPFSMigrationInvestigation._treatmentId,
+                            AppTelemetryFPFSMigrationInvestigation._typesOfMigratedItemsMask,
+                            AppTelemetryFPFSMigrationInvestigation._typesOfNonMigratedItemsMask,
                             AppTelemetryInvestigation._bouncesInvestigation,
                             AppTelemetryInvestigation._ciconiaInvestigation,
                             AppTelemetryInvestigation._errorCode,
                             AppTelemetryInvestigation._errorDescription,
                             AppTelemetryInvestigation._errorDomain,
                             AppTelemetryInvestigation._eventGroupUUID,
+                            AppTelemetryInvestigation._fpfsMigrationInvestigation,
                             AppTelemetryInvestigation._has,
                             AppTelemetryInvestigation._hasForegroundClients,
                             AppTelemetryInvestigation._isPCSChained,

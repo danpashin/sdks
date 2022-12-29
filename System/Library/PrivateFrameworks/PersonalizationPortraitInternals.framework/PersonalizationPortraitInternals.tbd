@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalizationPortraitInternals.framework/PersonalizationPortraitInternals
-current-version:       1193.8
+current-version:       1193.8.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -298,7 +298,7 @@ exports:
     objc-classes:         [ PPAllowancePolicyGuardedData, PPAppLaunchMonitor,
                             PPAppLaunchMonitorGuardedData,
                             PPAppLaunchMonitorRegistrationContext,
-                            PPAugmentedGazetteer,
+                            PPAppLinkCacheGuardedData, PPAugmentedGazetteer,
                             PPAugmentedGazetteerGuardedData,
                             PPAugmentedGazetteerMetadata, PPBaseScoreInputSet,
                             PPBundleAlgorithmCount, PPBundleIdAllowancePolicy,
@@ -501,6 +501,9 @@ exports:
                             PPAppLaunchMonitorGuardedData.handlers,
                             PPAppLaunchMonitorGuardedData.isRegistered,
                             PPAppLaunchMonitorGuardedData.nextToken,
+                            PPAppLinkCacheGuardedData._enabledAppIDs,
+                            PPAppLinkCacheGuardedData._mutableURLToAppID,
+                            PPAppLinkCacheGuardedData._urlToAppID,
                             PPAugmentedGazetteerGuardedData.sentenceTokenizer,
                             PPAugmentedGazetteerGuardedData.tagger,
                             PPConfigurationGuardedData.analyticsMaximumNumberOfRecords,

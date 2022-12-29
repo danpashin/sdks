@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
-current-version:       512.0.170
+current-version:       522.0.100
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -250,12 +250,9 @@ exports:
                             _PFPosterShuffleTypeStringWithType,
                             _PFPosterWantsLowLuminanceContent,
                             _PFReadImageDisplayTimeFromVideoFileAtPath,
-                            _PFReadMetadataFromVideoAVAsset,
-                            _PFReadMetadataFromVideoAtPath,
                             _PFReadPairingIdentifierFromCGImageProperties,
                             _PFReadPairingIdentifierFromImageAtPath,
                             _PFReadPairingIdentifierFromVideoAtPath,
-                            _PFReadVideoDurationFromVideoFileAtPath,
                             _PFRectByFlippingHorizontallyInRect,
                             _PFRectCompareForHorizontalMovementInVerticalLayout,
                             _PFRectCompareForVerticalMovementInVerticalLayoutWithSourceRect,
@@ -365,6 +362,8 @@ exports:
                             _PFUniformTypeUtilitiesDynamicUTIPrefix,
                             _PFVideoComplementFileExtension,
                             _PFVideoComplementImagePathKey,
+                            _PFVideoComplementMetadataForVideoAVAsset,
+                            _PFVideoComplementMetadataForVideoAtPath,
                             _PFVideoComplementMetadataKey,
                             _PFVideoComplementMetadataPairingIdentifierKey,
                             _PFVideoComplementMetadataTimingInfoKey,
@@ -376,6 +375,7 @@ exports:
                             _PFZlibErrorDomain,
                             _StolenFigCaptureMetadataUtilitiesCreateQuickTimeMovieStillImageTimeSampleBuffer,
                             _UTTypeForBundlePathKey, __PFDiffRanges,
+                            __PFReadMetadataFromVideoAVAsset,
                             __PFStoryRecipeAssetEnumerationIsConsistentForAssetKind,
                             __PFStoryRecipeAssetIdentifiersAreUnique,
                             __PFStoryRecipeCurrentStyleRefersToExistingSongAsset,
@@ -543,7 +543,8 @@ exports:
                             PFStoryRecipeStyleFactory, PFStoryRecipeUnarchiver,
                             PFTimeZoneLookup, PFUniformTypeUtilities,
                             PFVideoAVObjectBuilder, PFVideoAdjustments,
-                            PFVideoComplement, PFVideoEncoding, PFVideoExport,
+                            PFVideoComplement, PFVideoComplementMetadataRecord,
+                            PFVideoEncoding, PFVideoExport,
                             PFVideoExportRangeCoordinator,
                             PFVideoExportRangeWaitingCaller, PFVideoMetadata,
                             PFVideoMetadataAudioTrackFormatInfo,

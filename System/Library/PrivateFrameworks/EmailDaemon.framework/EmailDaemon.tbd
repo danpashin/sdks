@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3731.200.110
+current-version:       3731.255.101
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -196,6 +196,7 @@ exports:
                             EDInteractionEventLogSaltProvider,
                             EDInteractionLogger, EDListUnsubscribeHandler,
                             EDLocalActionPersistence, EDLocalizableStrings,
+                            EDMailAnalyticsCollector,
                             EDMailDropMetadataGenerator,
                             EDMailDropWebViewScriptHandler,
                             EDMailDynamicDataAsset, EDMailboxAction,
@@ -269,8 +270,8 @@ exports:
                             EDRemoteContentManager, EDRemoteContentPersistence,
                             EDRemoveUnusedSchemaTableUpgradeStep,
                             EDRenameThreadsTableUpgradeStep, EDRichLinkData,
-                            EDRichLinkPersistence, EDSearchableIndex,
-                            EDSearchableIndexAttachmentItem,
+                            EDRichLinkPersistence, EDSMIMEAnalyticsCollector,
+                            EDSearchableIndex, EDSearchableIndexAttachmentItem,
                             EDSearchableIndexAttachmentItemMetadatum,
                             EDSearchableIndexBudgetConfiguration,
                             EDSearchableIndexClientState, EDSearchableIndexItem,

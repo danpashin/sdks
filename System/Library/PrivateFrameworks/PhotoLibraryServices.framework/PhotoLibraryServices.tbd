@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
-current-version:       512.0.170
+current-version:       522.0.100
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -263,6 +263,7 @@ exports:
                             _PLExifColorSpaceFromImageProperties,
                             _PLExifPixelXDimensionFromImageProperties,
                             _PLExifPixelYDimensionFromImageProperties,
+                            _PLExtrinsicPhotosPathsOnThisDeviceForDemoBundle,
                             _PLFaceCropStateDescription,
                             _PLFaceCropTypeDescription, _PLFaceMetadataExtension,
                             _PLFaceRegionRequireFixup,
@@ -270,8 +271,9 @@ exports:
                             _PLFavoriteScoreWeight, _PLFilePathCPLMasterThumb,
                             _PLFilePathCPLMed, _PLFilePathCPLOrig,
                             _PLFilePathDCIMPath, _PLFilePathMasterThumb,
-                            _PLFilePathPhotoDataPath, _PLFileTypeFromUTType,
-                            _PLFilesPlaceholderBundleID,
+                            _PLFilePathPhotoDataPath,
+                            _PLFileProviderLocalStorageBundleID,
+                            _PLFileTypeFromUTType, _PLFilesPlaceholderBundleID,
                             _PLFindPhoneInvitationFailureNotification,
                             _PLFinderSyncSizeKey, _PLFinishReportiCPLState,
                             _PLFolderMetadataExtension,
@@ -457,6 +459,7 @@ exports:
                             _PLMigrationContextWellKnownPhotoLibraryIdentifier,
                             _PLMigrationLibraryBundleKey,
                             _PLMigrationPathManagerKey,
+                            _PLMobileDocumentsFileProviderBundleID,
                             _PLMobileSlideshowBundleId,
                             _PLModelMigrationActionRegistration_15000,
                             _PLModelMigrationActionRegistration_16000,
@@ -2010,6 +2013,7 @@ exports:
                             PLModelMigrationAction_RevalidateFaceAreaPoints,
                             PLModelMigrationAction_SetDefaultFaceAnalysisVersion,
                             PLModelMigrationAction_SetPrivacyStateOnSmartAlbums,
+                            PLModelMigrationAction_UnTrashSharedDuplicates,
                             PLModelMigrationAction_UpdateDuplicateAssetVisibilityStateMostRelevant,
                             PLModelMigrationAction_WriteLibraryScopeIsActiveDefaults,
                             PLModelMigrationAction_updateACVideos,
@@ -2250,6 +2254,7 @@ exports:
                             PLAnalyticsLibraryCounters.duplicateSharedLibraryAssetCount,
                             PLAnalyticsLibraryCounters.faceCount,
                             PLAnalyticsLibraryCounters.favoriteCount,
+                            PLAnalyticsLibraryCounters.finderSyncedAssetCount,
                             PLAnalyticsLibraryCounters.gpsLocationCount,
                             PLAnalyticsLibraryCounters.heifCount,
                             PLAnalyticsLibraryCounters.importedByAssetCount,

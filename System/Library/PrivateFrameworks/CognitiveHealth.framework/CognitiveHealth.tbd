@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CognitiveHealth.framework/CognitiveHealth
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CognitiveHealthVersionNumber,
+                            _CognitiveHealthVersionString,
+                            _ch_sensor_data_handle, _ch_test_handle,
+                            _ch_xpc_handle ]
+    objc-classes:         [ CHAppLaunchSensorData, CHCoreDataController,
+                            CHCustomCategories, CHCustomCategory,
+                            CHIntegrationTest, CHIntegrationTestClient,
+                            CHSensorData, CHSensorDataClient, CHVersion,
+                            CHXPCClientHelper, CustomCategory ]
+...

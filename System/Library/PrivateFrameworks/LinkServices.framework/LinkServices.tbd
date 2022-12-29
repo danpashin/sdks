@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LinkServices.framework/LinkServices
-current-version:       130.5
+current-version:       130.100.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -34,10 +34,10 @@ exports:
                             _$s10Foundation4UUIDV6SQLiteE16declaredDatatypeSSvgZ,
                             _$s10Foundation4UUIDV6SQLiteE17fromDatatypeValueyACSSFZ,
                             _$s11WrappedType6SQLite09_OptionalB0PTl,
-                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterfaceACSo016LNDaemonRegistryG0_p_tKcfC,
-                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterfaceACSo016LNDaemonRegistryG0_p_tKcfCTj,
-                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterfaceACSo016LNDaemonRegistryG0_p_tKcfCTq,
-                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterfaceACSo016LNDaemonRegistryG0_p_tKcfc,
+                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterface7optionsACSo016LNDaemonRegistryG0_p_So0cD7OptionsVtKcfC,
+                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterface7optionsACSo016LNDaemonRegistryG0_p_So0cD7OptionsVtKcfCTj,
+                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterface7optionsACSo016LNDaemonRegistryG0_p_So0cD7OptionsVtKcfCTq,
+                            _$s12LinkServices25_LNMetadataProviderDirectC12xpcInterface7optionsACSo016LNDaemonRegistryG0_p_So0cD7OptionsVtKcfc,
                             _$s12LinkServices25_LNMetadataProviderDirectC13autoShortcuts19forBundleIdentifier06localeJ010completionySS_SSySaySo14LNAutoShortcutCGSg_s5Error_pSgtctF,
                             _$s12LinkServices25_LNMetadataProviderDirectC13autoShortcuts19forLocaleIdentifier10completionySS_ySDySSSaySo14LNAutoShortcutCGGSg_s5Error_pSgtctF,
                             _$s12LinkServices25_LNMetadataProviderDirectC13autoShortcuts19forLocaleIdentifierSDySSSaySo14LNAutoShortcutCGGSS_tKF,
@@ -991,6 +991,7 @@ exports:
                             _LNAvailabilityResultDeprecated,
                             _LNAvailabilityResultUnavailable,
                             _LNConnectionClientXPCInterface,
+                            _LNConnectionErrorDescriptionWithCode,
                             _LNConnectionErrorDomain, _LNConnectionErrorWithCode,
                             _LNConnectionHostXPCInterface,
                             _LNConnectionIdleTimeout,
@@ -1000,6 +1001,8 @@ exports:
                             _LNDaemonAutoShortcutMachServiceName,
                             _LNDaemonAutoShortcutXPCInterface,
                             _LNDaemonBundleIdentifier,
+                            _LNDaemonExtensionMachServiceName,
+                            _LNDaemonExtensionXPCInterface,
                             _LNDaemonMediatorMachServiceName,
                             _LNDaemonMediatorXPCInterface,
                             _LNDaemonRegistryService,
@@ -1012,6 +1015,8 @@ exports:
                             _LNEqualAuditTokens, _LNFetchMetadataErrorDomain,
                             _LNInteractionModeAsString, _LNIsLinkEnabled,
                             _LNMetadataChangedNotification,
+                            _LNMetadataChangedNotificationBundlesKey,
+                            _LNMetadataChangedNotificationEventKey,
                             _LNMetadataProviderErrorDomain, _LNPIDForAuditToken,
                             _LNPerformActionErrorCodeAsString,
                             _LNPerformActionErrorDialogDataKey,
@@ -1032,6 +1037,8 @@ exports:
                             _LNSystemStreamIdentifier,
                             _LNTranscriptActionSourceAsString,
                             _LNTranscriptChangedNotification,
+                            _LNTranscriptChangedNotificationEventKey,
+                            _LNTranscriptChangedNotificationStreamsKey,
                             _LNTranscriptErrorDomain,
                             _LNTranscriptMatchingPredicateTypeAsString,
                             _LNTranscriptServiceName, _LNTranscriptXPCInterface,
@@ -1065,6 +1072,7 @@ exports:
                             LNDynamicOptionsResult, LNDynamicOptionsSection,
                             LNDynamicTerm, LNEntitlementsValidator,
                             LNEntityQueryConnectionPolicy, LNEnvironment,
+                            LNExtensionHostConfigurator, LNExtensionMediator,
                             LNFeatureFlags, LNFocusConfigurationAppContext,
                             LNFocusConfigurationSuggestionContext, LNKoaClient,
                             LNMessageConversation, LNMetadataProvider,
@@ -1079,7 +1087,7 @@ exports:
                             LNTranscriptMatchingPredicate,
                             LNTranscriptPrivilegedProvider, LNTranscriptProvider,
                             LNViewAction, LNViewEntity, LNViewSnippet, LNVocabulary,
-                            LNVocabularyStrictPicker, LNWatchdogTimer,
+                            LNVocabularyStrictPicker, LNWatchdogTimer, LNWeakProxy,
                             _LNAutoShortcutsProviderXPC, _LNMetadataProviderXPC,
                             _TtC12LinkServices25_LNMetadataProviderDirect ]
 ...

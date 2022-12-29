@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           12DCCB52-E6EB-3F76-9D84-01A50EAE830A
   - target:          arm64-ios
-    value:           70688B77-C0A5-3D4F-9574-8C658263A6D7
+    value:           878775B4-A5BD-3048-A065-92354BE8F007
   - target:          arm64e-ios
-    value:           F191C93F-1FD0-3390-AEBA-8699214E4729
+    value:           8AC4D68D-05AC-3F43-8809-B5C9D6D85C7E
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2780.0.17
+current-version: 2780.0.27
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -82,7 +82,7 @@ exports:
                        _CLLocationCoordinate2DMake, _CLLocationDistanceMax, _CLLocationPushServiceErrorDomain, 
                        _CLPassKitNotifyPayment, _CLPingDaemon, _CLSetClientTransientAuthorizationInfo, 
                        _CLSetLocationDefault, _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 
-                       _CLShouldDisplayEEDUI, _CLShouldDisplayStatusBarIconChangedNotification, 
+                       _CLSetTrackRunHint, _CLShouldDisplayEEDUI, _CLShouldDisplayStatusBarIconChangedNotification, 
                        _CLStartStopAdvertisingBeacon, _CLTechStatusChangedNotification, 
                        _CLTimeIntervalMax, _CLWeatherNotifyForecast, _UTDegradationReasonSignificantLocationsOffKey, 
                        _UTDegradationReasonWifiOffKey, _UTDisableReasonAirplaneModeOnKey, 
@@ -90,8 +90,9 @@ exports:
                        _UTDisableReasonLocationServicesOffKey, _UTDisableReasonTrackingNotificationsDisallowedKey, 
                        _UTEnablementStatusKey, __CLLinkedOnOrAfter, _kCLClientDistanceFilterNone, 
                        _kCLClientHeadingFilterNone, _kCLCommonLocationAlwaysAndWhenInUseUsageDescriptionKey, 
-                       _kCLCommonLocationAlwaysUsageDescriptionKey, _kCLCommonLocationDefaultAccuracyReducedKey, 
-                       _kCLCommonLocationInterestZonesKey, _kCLCommonLocationTemporaryUsageDescriptionDictionaryKey, 
+                       _kCLCommonLocationAlwaysUsageDescriptionKey, _kCLCommonLocationAuthorizationPurposeDescriptionDictionaryKey, 
+                       _kCLCommonLocationDefaultAccuracyReducedKey, _kCLCommonLocationInterestZonesKey, 
+                       _kCLCommonLocationTemporaryUsageDescriptionDictionaryKey, 
                        _kCLCommonLocationUsageDescriptionKey, _kCLCommonLocationWhenInUseUsageDescriptionKey, 
                        _kCLCommonLocationWildernessSafetyUsageDescriptionDictionaryKey, 
                        _kCLCommonNSWidgetWantsLocationKey, _kCLCommonWKRunsIndependentlyOfCompanionAppKey, 
@@ -123,8 +124,8 @@ exports:
                        CLHeading, CLInUseAssertion, CLLocation, CLLocationGnssOdometerInfo, 
                        CLLocationIndependenceAssertion, CLLocationManager, CLLocationManagerRoutine, 
                        CLLocationMatchInfo, CLLocationSmoother, CLLocationSourceInformation, 
-                       CLPair, CLPlacemark, CLPlatformInfoPrivate, CLRacingRouteManager, 
-                       CLRacingRouteParameters, CLRacingRoutePerformanceResults, 
+                       CLLocationTrackRunInfo, CLPair, CLPlacemark, CLPlatformInfoPrivate, 
+                       CLRacingRouteManager, CLRacingRouteParameters, CLRacingRoutePerformanceResults, 
                        CLRacingRouteState, CLRacingRouteVariables, CLReductiveFilterOptions, 
                        CLReductiveFilterSuite, CLRegion, CLRegulatoryConfig, CLRouteBoundingBox, 
                        CLRoutePoint, CLSimulationManager, CLStateTracker, CLVehicleHeading, 

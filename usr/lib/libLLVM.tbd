@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           11643C1F-6642-33A2-8310-C5E671C84F79
   - target:          arm64-ios
-    value:           5438597E-6CA5-37F8-B9E9-37AD0837E971
+    value:           9AA055F4-D25C-3F14-B7FD-C2580B05BFE6
   - target:          arm64e-ios
-    value:           E7D201F0-F2CE-3481-9C07-E888CC8D6A0E
+    value:           DD5D9CBD-F83B-36DB-B188-FAE9CA4A6C39
 install-name:    '/usr/lib/libLLVM.dylib'
-current-version: 31001.255.6
+current-version: 31001.255.2
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ConvertUTF16toUTF32, _ConvertUTF16toUTF8, _ConvertUTF32toUTF16, 
@@ -8158,6 +8158,7 @@ exports:
                        __ZN4llvm3AGX14CompileRequest11addSegmentsENS_8ArrayRefINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEE, 
                        __ZN4llvm3AGX14CompileRequestC1ERNS_6ModuleENS0_14CodeGenOptionsENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEiPNS0_18TelemetryCollectorE, 
                        __ZN4llvm3AGX14CompileRequestC2ERNS_6ModuleENS0_14CodeGenOptionsENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEiPNS0_18TelemetryCollectorE, 
+                       __ZN4llvm3AGX14TargetResolver14supportsTargetERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN4llvm3AGX15AGXAssemblePlan22initializeAsmInjectionERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN4llvm3AGX15AGXAssemblePlan7executeERNS0_14CompileRequestERNS0_12CompileReplyE, 
                        __ZN4llvm3AGX16AGCStatusPrinter5flushEv, __ZN4llvm3AGX16AssemblePipeline13AssemblerImpl3runERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERNS_11raw_ostreamEb, 
@@ -10030,6 +10031,7 @@ exports:
                        __ZNK4llvm6object17ImportedSymbolRefeqERKS1_, __ZNK4llvm6object18GenericBinaryError3logERNS_11raw_ostreamE, 
                        __ZNK4llvm6object18MetalLibObjectFile10symbol_endEv, __ZNK4llvm6object18MetalLibObjectFile11getFeaturesEv, 
                        __ZNK4llvm6object18MetalLibObjectFile11reflectionsEv, __ZNK4llvm6object18MetalLibObjectFile11section_endEv, 
+                       __ZNK4llvm6object18MetalLibObjectFile12hashOfModuleENSt3__111__wrap_iterIPKNS2_10unique_ptrINS_8metallib14MetalLibModuleENS2_14default_deleteIS6_EEEEEE, 
                        __ZNK4llvm6object18MetalLibObjectFile12isSectionBSSENS0_11DataRefImplE, 
                        __ZNK4llvm6object18MetalLibObjectFile12symbol_beginEv, __ZNK4llvm6object18MetalLibObjectFile13getArchTripleEv, 
                        __ZNK4llvm6object18MetalLibObjectFile13getSymbolHashENS0_11DataRefImplE, 

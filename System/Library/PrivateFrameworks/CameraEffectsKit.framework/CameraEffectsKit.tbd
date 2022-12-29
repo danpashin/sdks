@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
-current-version:       5204
+current-version:       5206
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -525,14 +525,14 @@ exports:
                             _transformInfoWithWorldToViewTransform,
                             _transformedPoint,
                             _useMirroredFrontCameraInStreamMode ]
-    objc-classes:         [ CFXActionLogging, CFXAnalyticsKeys,
-                            CFXAnalyticsManager, CFXAnimationDelegate,
-                            CFXAnimationHelper, CFXApplicationState,
-                            CFXAvailability, CFXBundleUtils,
+    objc-classes:         [ BufferWithTimestamp, CFXActionLogging,
+                            CFXAnalyticsKeys, CFXAnalyticsManager,
+                            CFXAnimationDelegate, CFXAnimationHelper,
+                            CFXApplicationState, CFXAvailability, CFXBundleUtils,
                             CFXCameraControlsViewController,
-                            CFXCameraStreamAdapter, CFXCameraViewController,
-                            CFXCaptureViewController, CFXClip,
-                            CFXClipCompositionDataSource,
+                            CFXCameraStreamAdapter, CFXCameraStreamBufferQueue,
+                            CFXCameraViewController, CFXCaptureViewController,
+                            CFXClip, CFXClipCompositionDataSource,
                             CFXClipPlayerViewController,
                             CFXControlsViewController, CFXCounterRotationLayer,
                             CFXCounterRotationView, CFXDefaultThermalPolicy,

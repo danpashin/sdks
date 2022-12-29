@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore
-current-version:       126.0.21
+current-version:       126.1.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -98,11 +98,15 @@ exports:
                             __ZN12MPSKernelDAG10constantOpExRKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG10divisionOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG10exponentOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG10imagPartOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG10isFiniteOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG10lessThanOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG10negativeOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG10realPartOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG11absSquareOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG11bitwiseOROpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG11broadcastOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG11conjugateOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG11flipCoordOpEP10BaseTensoriRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG11logarithmOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG11shiftDataOpEP10BaseTensoriiRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
@@ -128,7 +132,9 @@ exports:
                             __ZN12MPSKernelDAG13placeholderOpERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypejPKc,
                             __ZN12MPSKernelDAG13subtractionOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG13ternaryCoreOpEP10BaseTensorS1_S1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG14complexScaleOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG14quartaryCoreOpEP10BaseTensorS1_S1_S1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG15complexCreateOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG15exponentBase2OpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG15getCoordValueOpEmRKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG16exponentBase10OpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,

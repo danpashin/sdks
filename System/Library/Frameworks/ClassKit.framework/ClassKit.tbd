@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           964E3A6C-6B7C-3F4E-810C-0402A46068A2
+    value:           864E1733-C2E2-324E-8323-F15F753B2396
   - target:          arm64e-ios
-    value:           CA526B47-06F7-3BD2-A0C2-E3D0A2C604F8
+    value:           EDAE56EE-AE41-3F04-BDAD-EAFECA8001BB
 install-name:    '/System/Library/Frameworks/ClassKit.framework/ClassKit'
-current-version: 148.1.10
+current-version: 148.2.6
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CLSAdminRequestNewAccountPlaceholderAppleID, _CLSAdoptPersona, 
@@ -53,10 +53,11 @@ exports:
                        _CLSExecutableLinkedOnOrAfter_iOS13_2, _CLSExecutableLinkedOnOrAfter_iOS13_2_macOS_10_15_1, 
                        _CLSExecutableLinkedOnOrAfter_iOS14_0, _CLSExecutableLinkedOnOrAfter_iOS14_0_macOS_10_16, 
                        _CLSExecutableLinkedOnOrAfter_iOS14_2, _CLSExecutableLinkedOnOrAfter_iOS14_2_macOS_10_16, 
-                       _CLSExecutableLinkedOnOrAfter_iOS15_1_macOS_12_0, _CLSExpectedPersonaKey, 
-                       _CLSExtensionPropertiesForConnection, _CLSExtensionPropertiesForCurrentTask, 
-                       _CLSFavoriteTypeFromString, _CLSHandoutAttachmentCompletionStatusFromString, 
-                       _CLSHandoutAttachmentTypeFromString, _CLSHandoutClasses, _CLSHandoutPublishingStateFromString, 
+                       _CLSExecutableLinkedOnOrAfter_iOS15_1_macOS_12_0, _CLSExecutableLinkedOnOrAfter_iOS16_2_macOS_13_1, 
+                       _CLSExpectedPersonaKey, _CLSExtensionPropertiesForConnection, 
+                       _CLSExtensionPropertiesForCurrentTask, _CLSFavoriteTypeFromString, 
+                       _CLSHandoutAttachmentCompletionStatusFromString, _CLSHandoutAttachmentTypeFromString, 
+                       _CLSHandoutClasses, _CLSHandoutPublishingStateFromString, 
                        _CLSHandoutStateFromString, _CLSHandoutSubstateFromString, 
                        _CLSInitLog, _CLSInitialServerSyncCompleteNotificationName, 
                        _CLSInitialSyncCompleteDarwinNotificationName, _CLSInitialiCloudDriveSyncCompleteNotificationName, 
@@ -156,9 +157,10 @@ exports:
                        CLSCollaborationStateChange, CLSCollection, CLSCollectionItem, 
                        CLSContext, CLSContextNavigationNode, CLSContextProviderExtensionContext, 
                        CLSContextProviderExtensionHostContext, CLSContextProviderService, 
-                       CLSContextProviderServiceFinder, CLSCurrentUser, CLSDataObserver, 
-                       CLSDataStore, CLSEndpointConnection, CLSEntitlements, CLSFavorite, 
-                       CLSGraph, CLSHandout, CLSHandoutAssignedItem, CLSHandoutAttachment, 
+                       CLSContextProviderServiceFinder, CLSCurrentUser, CLSDarwinNotification, 
+                       CLSDarwinNotificationCenter, CLSDataObserver, CLSDataStore, 
+                       CLSEndpointConnection, CLSEntitlements, CLSFavorite, CLSGraph, 
+                       CLSHandout, CLSHandoutAssignedItem, CLSHandoutAttachment, 
                        CLSHandoutEvent, CLSHandoutEventAttachmentDetail, CLSHandoutRecipient, 
                        CLSHandoutReportItem, CLSImageUtils, CLSInsightEvent, CLSLocation, 
                        CLSMultipleChoiceAnswerFormat, CLSMultipleChoiceAnswerItem, 

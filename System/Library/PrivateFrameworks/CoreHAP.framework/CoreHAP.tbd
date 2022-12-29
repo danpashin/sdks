@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
-current-version:       931.2.3
+current-version:       946.3.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -275,7 +275,8 @@ exports:
                             _HAPGetPreferredAuthMethod,
                             _HAPHTTPClientErrorDomain,
                             _HAPHTTPSerializationTypeDescription,
-                            _HAPIsInternalBuild, _HAPLinkTypeDescription,
+                            _HAPIsHH2Enabled, _HAPIsInternalBuild,
+                            _HAPLinkTypeDescription,
                             _HAPMetadataFirmwareUpdateAutoApplyPolicyKey,
                             _HAPMetadataFirmwareUpdatePoliciesKey,
                             _HAPMetadataFirmwareUpdatePolicyAnyUserAtHomeKey,
@@ -706,6 +707,7 @@ exports:
                             HAPAccessoryServerBrowserBTLE,
                             HAPAccessoryServerBrowserHAP2Adapter,
                             HAPAccessoryServerBrowserIP,
+                            HAPAccessoryServerBrowserInvalidateServerOperation,
                             HAPAccessoryServerBrowserWiProxBTLE,
                             HAPAccessoryServerHAP2Adapter, HAPAccessoryServerIP,
                             HAPAccessoryWakeTuple, HAPAddRemovePairingOperation,

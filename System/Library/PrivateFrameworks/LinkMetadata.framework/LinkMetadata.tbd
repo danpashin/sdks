@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LinkMetadata.framework/LinkMetadata
-current-version:       130.5
+current-version:       130.100.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -95,14 +95,16 @@ exports:
                             _LNAvailabilityAnnotationWildcardVersion,
                             _LNBundleMetadataVersionAsString,
                             _LNEntityIdentifierMaximumValueLength,
+                            _LNEnumIdentifierIsSystem,
                             _LNIdentifierScopeAsString,
                             _LNIntentsValueTypeIdentifierAsString,
-                            _LNLogCategoryExecution, _LNLogCategoryGeneral,
-                            _LNLogCategoryMetadata, _LNLogCategoryPolicy,
-                            _LNLogCategoryQuery, _LNLogCategorySandbox,
-                            _LNLogCategorySecurity, _LNLogCategoryView,
-                            _LNLogCategoryVocabulary, _LNLogSubsystem,
-                            _LNMeasurementUnitTypeOfUnit,
+                            _LNLogCategoryExecution,
+                            _LNLogCategoryExtensionMediator,
+                            _LNLogCategoryGeneral, _LNLogCategoryMetadata,
+                            _LNLogCategoryPolicy, _LNLogCategoryQuery,
+                            _LNLogCategorySandbox, _LNLogCategorySecurity,
+                            _LNLogCategoryView, _LNLogCategoryVocabulary,
+                            _LNLogSubsystem, _LNMeasurementUnitTypeOfUnit,
                             _LNMeasurementUnitTypeToUnit, _LNPlatformNameIOS,
                             _LNPlatformNameMACOS, _LNPlatformNameTVOS,
                             _LNPlatformNameWATCHOS, _LNPlatformNameWildcard,
@@ -170,11 +172,12 @@ exports:
                             _LNValueTypeSpecificMetadataKeyStringMultiline,
                             _LNValueTypeSpecificMetadataKeyStringSmartDashes,
                             _LNValueTypeSpecificMetadataKeyStringSmartQuotes,
-                            _getLNLogCategoryExecution, _getLNLogCategoryGeneral,
-                            _getLNLogCategoryMetadata, _getLNLogCategoryPolicy,
-                            _getLNLogCategoryQuery, _getLNLogCategorySandbox,
-                            _getLNLogCategorySecurity, _getLNLogCategoryView,
-                            _getLNLogCategoryVocabulary ]
+                            _getLNLogCategoryExecution,
+                            _getLNLogCategoryExtensionMediator,
+                            _getLNLogCategoryGeneral, _getLNLogCategoryMetadata,
+                            _getLNLogCategoryPolicy, _getLNLogCategoryQuery,
+                            _getLNLogCategorySandbox, _getLNLogCategorySecurity,
+                            _getLNLogCategoryView, _getLNLogCategoryVocabulary ]
     objc-classes:         [ LNAction, LNActionConfiguration,
                             LNActionConfigurationCondition,
                             LNActionConfigurationSwitch,

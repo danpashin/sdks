@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           01C74100-672A-3A67-9102-3DDFCE3ECBD4
   - target:          arm64-ios
-    value:           82135322-CBA4-34F5-98B7-A237BCE8A734
+    value:           0693F67D-8706-3A1B-854E-6D65D65423E0
   - target:          arm64e-ios
-    value:           D0585F53-3F5C-349F-A16B-A9710274E733
+    value:           A11DDE1E-DEB6-3A5C-B35F-7A64B490C8A9
 install-name:    '/System/Library/Frameworks/Security.framework/Security'
-current-version: 60420.40.34
+current-version: 60420.60.20
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _DERDecodeItem, _DEROidCompare, _SOSAccountPeerGotInSync, 
@@ -407,14 +407,14 @@ exports:
                        _SSLSetPeerDomainName, _SSLSetPeerID, _SSLSetProtocolVersionMax, 
                        _SSLSetProtocolVersionMin, _SSLSetRecordContext, _SSLSetSessionCacheTimeout, 
                        _SSLSetSessionConfig, _SSLSetSessionOption, _SSLSetSessionTicketsEnabled, 
-                       _SSLWrite, _SecASN1PrintableString, _SecASN1UTF8String, _SecAbsoluteTimeFromDateContent, 
-                       _SecAbsoluteTimeFromDateContentWithError, _SecAccessConstraintCreateBiometryAny, 
-                       _SecAccessConstraintCreateBiometryCurrentSet, _SecAccessConstraintCreateKofN, 
-                       _SecAccessConstraintCreatePasscode, _SecAccessConstraintCreatePolicy, 
-                       _SecAccessConstraintCreateTouchIDAny, _SecAccessConstraintCreateTouchIDCurrentSet, 
-                       _SecAccessConstraintCreateWatch, _SecAccessControlAddConstraintForOperation, 
-                       _SecAccessControlCopyConstraintData, _SecAccessControlCopyData, 
-                       _SecAccessControlCreate, _SecAccessControlCreateFromData, 
+                       _SSLWrite, _SecABCTrigger, _SecASN1PrintableString, _SecASN1UTF8String, 
+                       _SecAbsoluteTimeFromDateContent, _SecAbsoluteTimeFromDateContentWithError, 
+                       _SecAccessConstraintCreateBiometryAny, _SecAccessConstraintCreateBiometryCurrentSet, 
+                       _SecAccessConstraintCreateKofN, _SecAccessConstraintCreatePasscode, 
+                       _SecAccessConstraintCreatePolicy, _SecAccessConstraintCreateTouchIDAny, 
+                       _SecAccessConstraintCreateTouchIDCurrentSet, _SecAccessConstraintCreateWatch, 
+                       _SecAccessControlAddConstraintForOperation, _SecAccessControlCopyConstraintData, 
+                       _SecAccessControlCopyData, _SecAccessControlCreate, _SecAccessControlCreateFromData, 
                        _SecAccessControlCreateWithFlags, _SecAccessControlGetConstraint, 
                        _SecAccessControlGetConstraints, _SecAccessControlGetProtection, 
                        _SecAccessControlGetRequirePassword, _SecAccessControlGetTypeID, 
@@ -677,10 +677,11 @@ exports:
                        _SecPolicyCreateMobileStoreSigner, _SecPolicyCreateOCSPSigner, 
                        _SecPolicyCreateOSXProvisioningProfileSigning, _SecPolicyCreateOTATasking, 
                        _SecPolicyCreateOrderBundleSigner, _SecPolicyCreatePCSEscrowServiceIdKeySigning, 
-                       _SecPolicyCreatePCSEscrowServiceSigner, _SecPolicyCreatePassbookCardSigner, 
-                       _SecPolicyCreatePrivacyConfigurationProfileSigner, _SecPolicyCreateQAConfigurationProfileSigner, 
-                       _SecPolicyCreateQiSigning, _SecPolicyCreateRevocation, _SecPolicyCreateSMIME, 
-                       _SecPolicyCreateSSL, _SecPolicyCreateSSLWithATSPinning, _SecPolicyCreateSSLWithKeyUsage, 
+                       _SecPolicyCreatePCSEscrowServiceSigner, _SecPolicyCreatePPMAggregatorConfigSigning, 
+                       _SecPolicyCreatePassbookCardSigner, _SecPolicyCreatePrivacyConfigurationProfileSigner, 
+                       _SecPolicyCreateQAConfigurationProfileSigner, _SecPolicyCreateQiSigning, 
+                       _SecPolicyCreateRevocation, _SecPolicyCreateSMIME, _SecPolicyCreateSSL, 
+                       _SecPolicyCreateSSLWithATSPinning, _SecPolicyCreateSSLWithKeyUsage, 
                        _SecPolicyCreateTestApplePPQSigning, _SecPolicyCreateTestAppleSMPEncryption, 
                        _SecPolicyCreateTestMobileStoreSigner, _SecPolicyCreateURLBag, 
                        _SecPolicyCreateWithProperties, _SecPolicyCreateiAP, _SecPolicyCreateiAPSWAuth, 
@@ -1110,7 +1111,8 @@ exports:
                        _kSecPolicyAppleOCSPSigner, _kSecPolicyAppleOSXProvisioningProfileSigning, 
                        _kSecPolicyAppleOTATasking, _kSecPolicyAppleOrderBundleSigner, 
                        _kSecPolicyApplePCSEscrowService, _kSecPolicyApplePCSEscrowServiceIdKeySigning, 
-                       _kSecPolicyApplePPQService, _kSecPolicyApplePPQSigning, _kSecPolicyApplePackageSigning, 
+                       _kSecPolicyApplePPMAggregatorConfigSigning, _kSecPolicyApplePPQService, 
+                       _kSecPolicyApplePPQSigning, _kSecPolicyApplePackageSigning, 
                        _kSecPolicyApplePassbookSigning, _kSecPolicyApplePayIssuerEncryption, 
                        _kSecPolicyApplePayModelSigning, _kSecPolicyApplePayQRCodeEncryption, 
                        _kSecPolicyApplePayQRCodeSigning, _kSecPolicyAppleProfileSigner, 
@@ -1333,6 +1335,6 @@ exports:
                        OTControlArguments, OTJoiningConfiguration, OTOperationConfiguration, 
                        SFAnalytics, SFAnalyticsActivityTracker, SFAnalyticsMultiSampler, 
                        SFAnalyticsSQLiteStore, SFAnalyticsSampler, SFSQLite, SOSAnalytics, 
-                       SOSCachedNotification, SecCoreAnalytics, SecEscrowRequest, 
-                       SecKeyProxy, SecXPCHelper, SecuritydXPCClient ]
+                       SOSCachedNotification, SecABC, SecCoreAnalytics, SecEscrowRequest, 
+                       SecKeyProxy, SecTapToRadar, SecXPCHelper, SecuritydXPCClient ]
 ...

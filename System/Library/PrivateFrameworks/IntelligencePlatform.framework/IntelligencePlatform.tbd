@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IntelligencePlatform.framework/IntelligencePlatform
-current-version:       28.6
+current-version:       28.13
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -57,6 +57,7 @@ exports:
                             _$s20IntelligencePlatform11EntityClassV11descriptionSSvpMV,
                             _$s20IntelligencePlatform11EntityClassV12organizationACvgZ,
                             _$s20IntelligencePlatform11EntityClassV20dateRelationshipTypeACvgZ,
+                            _$s20IntelligencePlatform11EntityClassV20visualIdentifierTypeACvgZ,
                             _$s20IntelligencePlatform11EntityClassV21topicRelationshipTypeACvgZ,
                             _$s20IntelligencePlatform11EntityClassV22handleRelationshipTypeACvgZ,
                             _$s20IntelligencePlatform11EntityClassV22memberRelationshipTypeACvgZ,
@@ -142,6 +143,9 @@ exports:
                             _$s20IntelligencePlatform11UserDefaultV3key12defaultValue9containerACyxGSS_xSo14NSUserDefaultsCtcfC,
                             _$s20IntelligencePlatform11UserDefaultVMa,
                             _$s20IntelligencePlatform11UserDefaultVMn,
+                            _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvgTj,
+                            _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvgTq,
+                            _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvpMV,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvgTj,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvgTq,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvpMV,
@@ -197,6 +201,10 @@ exports:
                             _$s20IntelligencePlatform12LanguageViewVMa,
                             _$s20IntelligencePlatform12LanguageViewVMn,
                             _$s20IntelligencePlatform12LanguageViewVN,
+                            _$s20IntelligencePlatform15PeopleAliasViewV28fetchFirstNamesWithCollisionSaySSGyF,
+                            _$s20IntelligencePlatform15PeopleAliasViewVMa,
+                            _$s20IntelligencePlatform15PeopleAliasViewVMn,
+                            _$s20IntelligencePlatform15PeopleAliasViewVN,
                             _$s20IntelligencePlatform15SubFeatureIndexV07featureE0AA0dE0Vvg,
                             _$s20IntelligencePlatform15SubFeatureIndexV07featureE0AA0dE0VvpMV,
                             _$s20IntelligencePlatform15SubFeatureIndexV11descriptionSSvg,
@@ -276,6 +284,8 @@ exports:
                             _$s20IntelligencePlatform16EntityIdentifierVs23CustomStringConvertibleAAMc,
                             _$s20IntelligencePlatform16EntityIdentifierVyACSgSScfC,
                             _$s20IntelligencePlatform16EntityIdentifierVyACs6UInt64VcfC,
+                            _$s20IntelligencePlatform5GDLogO10defaultLog2os6LoggerVvgZ,
+                            _$s20IntelligencePlatform5GDLogO12construction2os6LoggerVvgZ,
                             _$s20IntelligencePlatform5GDLogO8signpost2os6LoggerVvgZ,
                             _$s20IntelligencePlatform5GDLogOMa,
                             _$s20IntelligencePlatform5GDLogOMn,
@@ -328,6 +338,8 @@ exports:
                             _kGDXPCLighthouseServiceName, _kGDXPCViewEntitlement,
                             _kGDXPCViewFeatureViewName, _kGDXPCViewServiceName ]
     objc-classes:         [ GDAnalytics, GDEntityIdentifier,
+                            GDEntityResolutionCollectionCandidate,
+                            GDEntityResolutionCollectionResult,
                             GDEntityResolutionRequest, GDEntityResolutionResult,
                             GDFeatureKey, GDKnosisAlias, GDKnosisAnswer,
                             GDKnosisArgInfo, GDKnosisFact, GDKnosisIntentArgInfo,

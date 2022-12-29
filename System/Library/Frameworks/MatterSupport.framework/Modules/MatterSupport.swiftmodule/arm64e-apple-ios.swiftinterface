@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64e-apple-ios16.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MatterSupport
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 931.2.3.1.5
+// swift-module-flags: -target arm64e-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MatterSupport
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 946.3.9.1.3
 import Darwin
 import Foundation
 import Matter
@@ -40,6 +40,9 @@ public struct MatterAddDeviceRequest {
   public var showDeviceCriteria: MatterSupport.MatterAddDeviceRequest.DeviceCriteria
   public init(topology: MatterSupport.MatterAddDeviceRequest.Topology, setupPayload: Matter.MTRSetupPayload? = nil, showing deviceCriteria: MatterSupport.MatterAddDeviceRequest.DeviceCriteria = .allDevices)
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   public func perform() async throws
   #endif
 }
@@ -219,21 +222,39 @@ extension MatterSupport.MatterAddDeviceRequest.Home : Swift.Sendable {
 @objc @_inheritsConvenienceInitializers @available(iOS 16.1, *)
 open class MatterAddDeviceExtensionRequestHandler : ObjectiveC.NSObject {
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func validateDeviceCredential(_ deviceCredential: MatterSupport.MatterAddDeviceExtensionRequestHandler.DeviceCredential) async throws
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func selectWiFiNetwork(from wifiScanResults: [MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiScanResult]) async throws -> MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiNetworkAssociation
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func selectThreadNetwork(from threadScanResults: [MatterSupport.MatterAddDeviceExtensionRequestHandler.ThreadScanResult]) async throws -> MatterSupport.MatterAddDeviceExtensionRequestHandler.ThreadNetworkAssociation
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func commissionDevice(in home: MatterSupport.MatterAddDeviceRequest.Home?, onboardingPayload: Swift.String, commissioningID: Foundation.UUID) async throws
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func rooms(in home: MatterSupport.MatterAddDeviceRequest.Home?) async -> [MatterSupport.MatterAddDeviceRequest.Room]
   #endif
   #if compiler(>=5.3) && $AsyncAwait
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   open func configureDevice(named name: Swift.String, in room: MatterSupport.MatterAddDeviceRequest.Room?) async
   #endif
   @objc override dynamic public init()

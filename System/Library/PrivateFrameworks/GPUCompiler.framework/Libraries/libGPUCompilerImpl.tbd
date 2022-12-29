@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUCompiler.framework/Libraries/libGPUCompilerImpl.dylib
-current-version:       31001.255.6
+current-version:       31001.255.2
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -379,7 +379,8 @@ exports:
                             __ZN4llvm3air15MetalLibBuilder6finishENS_9StringRefE,
                             __ZN4llvm3air15MetalLibBuilder6finishERNS_17raw_pwrite_streamE,
                             __ZN4llvm3air15MetalLibBuilder7addFileENS_9StringRefE,
-                            __ZN4llvm3air15MetalLibBuilder9addSymbolENSt3__110shared_ptrINS_6ModuleEEERKNS_6object14BasicSymbolRefE,
+                            __ZN4llvm3air15MetalLibBuilder9addSymbolENSt3__110shared_ptrINS_6ModuleEEEPKNS_12GlobalObjectE,
+                            __ZN4llvm3air15MetalLibBuilder9addSymbolENSt3__110shared_ptrINS_6ModuleEEEPKNS_8FunctionE,
                             __ZN4llvm3air15MetalLibBuilder9addSymbolENSt3__110shared_ptrINS_6ModuleEEERKNS_8metallib16MetalLibFunctionE,
                             __ZN4llvm3air15MetalLibBuilder9addSymbolENSt3__110shared_ptrINS_6ModuleEEERKNS_8metallib16MetalLibVariableE,
                             __ZN4llvm3air15ResourceTracker3getEm,
@@ -418,6 +419,7 @@ exports:
                             __ZN4llvm3air17ArchiveWriterBase11writeHeaderEv,
                             __ZN4llvm3air17ArchiveWriterBase15writeLinkerInfoEv,
                             __ZN4llvm3air17ArchiveWriterBase17writeLinkerMemberENS_9StringRefES2_,
+                            __ZN4llvm3air17air_dylib_symbolsERKNS_6ModuleE,
                             __ZN4llvm3air17dropAIRDyldTablesERNS_6ModuleE,
                             __ZN4llvm3air17getAIMeshFunctionEPKNS_8FunctionE,
                             __ZN4llvm3air17getArchsForFamilyENS0_9GPUFamilyE,
@@ -514,6 +516,7 @@ exports:
                             __ZN4llvm3air20MetalLibObjectWriterC1ERKNS0_8MetalLibERNS_17raw_pwrite_streamE,
                             __ZN4llvm3air20MetalLibObjectWriterC2ERKNS0_8MetalLibERNS_14raw_fd_ostreamE,
                             __ZN4llvm3air20MetalLibObjectWriterC2ERKNS0_8MetalLibERNS_17raw_pwrite_streamE,
+                            __ZN4llvm3air20air_dylib_symbol_endERKNS_6ModuleE,
                             __ZN4llvm3air20airdyld_symbol_beginERKNS_6ModuleE,
                             __ZN4llvm3air20getAILanguageVersionEPKNS_6ModuleE,
                             __ZN4llvm3air20getAIVisibleFunctionEPKNS_8FunctionE,
@@ -540,6 +543,7 @@ exports:
                             __ZN4llvm3air22WriteBitcode3702ToFileEPKNS_6ModuleERNS_11raw_ostreamEb,
                             __ZN4llvm3air22WriteBitcode3802ToFileEPKNS_6ModuleERNS_11raw_ostreamEb,
                             __ZN4llvm3air22WriteBitcode3902ToFileEPKNS_6ModuleERNS_11raw_ostreamEb,
+                            __ZN4llvm3air22air_dylib_symbol_beginERKNS_6ModuleE,
                             __ZN4llvm3air22createNativeTargetInfoERKNS_6TripleE,
                             __ZN4llvm3air22getAIQualifiedFunctionEPKNS_8FunctionE,
                             __ZN4llvm3air22getAIRTargetDataLayoutERKNS_6TripleE,
@@ -560,6 +564,7 @@ exports:
                             __ZN4llvm3air25UniversalBinaryWriterBaseC1ERNS_17raw_pwrite_streamENS1_8AddrSizeE,
                             __ZN4llvm3air25UniversalBinaryWriterBaseC2ERNS_14raw_fd_ostreamENS1_8AddrSizeE,
                             __ZN4llvm3air25UniversalBinaryWriterBaseC2ERNS_17raw_pwrite_streamENS1_8AddrSizeE,
+                            __ZN4llvm3air25air_dylib_symbol_iteratorppEv,
                             __ZN4llvm3air25createAIRTLSEmulationPassEv,
                             __ZN4llvm3air25getAIIntersectionFunctionEPKNS_8FunctionE,
                             __ZN4llvm3air26AIVisibleFunctionReference7classofEPKNS_8MetadataE,
@@ -667,6 +672,7 @@ exports:
                             __ZN4llvm3air52AIRDiagnosticInfoInputImageblockOverlapRenderTargets2DKE,
                             __ZN4llvm3air52AIRDiagnosticInfoRequiredModuleFlagMetadataIsMissing2DKE,
                             __ZN4llvm3air52AIRDiagnosticInfoUnresolvedFunctionConstantPredicate2DKE,
+                            __ZN4llvm3air52createAIRMeshEmulationValidateQualifiedFunctionsPassEv,
                             __ZN4llvm3air52updateQualifiedFunctionReferencesInEmulationMetadataEPNS_8FunctionES2_,
                             __ZN4llvm3air53AIRDiagnosticInfoDuplicatedFragmentInputAttributeName2DKE,
                             __ZN4llvm3air54AIRDiagnosticInfoDuplicatedRenderTargetAttachmentIndex2DKE,
@@ -728,6 +734,7 @@ exports:
                             __ZN4llvm52initializeAIRExternallyInitializedInitializationPassERNS_12PassRegistryE,
                             __ZN4llvm53initializeAIRMeshEmulationLowerQualifiedFunctionsPassERNS_12PassRegistryE,
                             __ZN4llvm55initializeAIRDegenerateVertexAmplificationEmulationPassERNS_12PassRegistryE,
+                            __ZN4llvm56initializeAIRMeshEmulationValidateQualifiedFunctionsPassERNS_12PassRegistryE,
                             __ZN4llvm5airnt10PackingURI9createURIENS_9StringRefE,
                             __ZN4llvm5airnt10ScriptInfo2IDE,
                             __ZN4llvm5airnt10ScriptInfoC1EPKNS_3air12NativeScriptE,
@@ -1184,6 +1191,7 @@ exports:
                             __ZN4llvm3air22StreamingArchiveWriterIyvE20backpatchSymbolTableEv,
                             __ZTVN4llvm2cl12basic_parserINSt3__14pairINS_9StringRefES4_EEEE,
                             __ZZN11flatbuffers4dataIN13AirReflection6NodeIdENSt3__19allocatorIS2_EEEEPKT_RKNS3_6vectorIS6_T0_EEE1t,
+                            __ZZN11flatbuffers4dataINS_6OffsetIN3Air13FunctionGroupEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN3Air19AttributeDescriptorEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN3Air21FunctionConstantValueEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN3Air22BufferLayoutDescriptorEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,

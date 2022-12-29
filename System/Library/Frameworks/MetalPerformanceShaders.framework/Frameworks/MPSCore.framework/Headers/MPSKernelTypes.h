@@ -30,6 +30,7 @@ typedef enum : uint32_t
     MPSDeviceSupportsFloat16BicubicFiltering    = 1 << 9,
     MPSDeviceIsAppleDevice                      = 1 << 10,
     MPSDeviceSupportsSimdShuffleAndFill         = 1 << 11,
+    MPSDeviceCapsLast                           = 1 << 12,
     
 } MPSDeviceCapsValues;
 

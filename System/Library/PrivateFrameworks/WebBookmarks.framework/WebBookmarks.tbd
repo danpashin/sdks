@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
-current-version:       614.2.9
+current-version:       614.3.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -133,10 +133,14 @@ exports:
                             WebBookmarkTabCollection,
                             WebBookmarksSettingsGateway,
                             WebBookmarksXPCConnection, WebBookmarksXPCListener ]
-    objc-ivars:           [ WBTab._added, WBTab._bookmark, WBTab._modified,
-                            WBTab._moved, WBTab._tabGroup, WBTabGroup._bookmark,
+    objc-ivars:           [ WBTab._added, WBTab._bookmark, WBTab._local,
+                            WBTab._modified, WBTab._moved, WBTab._privateBrowsing,
+                            WBTab._shared, WBTab._tabGroupUUID,
+                            WBTabGroup._bookmark,
+                            WBTabGroup._cachedImmutableTabs,
                             WBTabGroup._deletedTabs,
                             WBTabGroup._displayTitleProvider, WBTabGroup._kind,
                             WBTabGroup._lastSelectedTabUUID,
-                            WBTabGroup._overflowRemoteTabs, WBTabGroup._tabs ]
+                            WBTabGroup._overflowRemoteTabs, WBTabGroup._tabs,
+                            WBTabGroup._tabsByUUID ]
 ...

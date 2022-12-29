@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-current-version:       1889.31.7
+current-version:       1889.32.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -2818,9 +2818,12 @@ exports:
                             _GEORPRatingValueReadAllFrom,
                             _GEORPRatingValueReadFrom, _GEORPResolutionIsDirty,
                             _GEORPResolutionIsValid, _GEORPResolutionReadAllFrom,
-                            _GEORPResolutionReadFrom, _GEORPScorecardIsDirty,
-                            _GEORPScorecardIsValid, _GEORPScorecardReadAllFrom,
-                            _GEORPScorecardReadFrom,
+                            _GEORPResolutionReadFrom,
+                            _GEORPRunningTrackFeedbackIsValid,
+                            _GEORPRunningTrackFeedbackReadAllFrom,
+                            _GEORPRunningTrackFeedbackReadFrom,
+                            _GEORPScorecardIsDirty, _GEORPScorecardIsValid,
+                            _GEORPScorecardReadAllFrom, _GEORPScorecardReadFrom,
                             _GEORPScorecardUpdateIsValid,
                             _GEORPScorecardUpdateReadAllFrom,
                             _GEORPScorecardUpdateReadFrom,
@@ -3238,6 +3241,7 @@ exports:
                             _GEOSpatialPlaceLookupCategoryActivity,
                             _GEOSpatialPlaceLookupCategoryAirport,
                             _GEOSpatialPlaceLookupCategoryAmusementPark,
+                            _GEOSpatialPlaceLookupCategoryAmusementParkRide,
                             _GEOSpatialPlaceLookupCategoryAquarium,
                             _GEOSpatialPlaceLookupCategoryBeach,
                             _GEOSpatialPlaceLookupCategoryCulture,
@@ -3975,9 +3979,14 @@ exports:
                             _GeoAnalyticsConfig_AnalyticsPipelineStorageBatchTimeInSeconds,
                             _GeoAnalyticsConfig_AnalyticsPipelineUploadHolddownTimeInSeconds,
                             _GeoAnalyticsConfig_AnalyticsShortSessionMaxSeqNo,
+                            _GeoAnalyticsConfig_AppIdsForFindMyPunchIn,
                             _GeoAnalyticsConfig_AppIdsForFunctionAppGroupSafari,
                             _GeoAnalyticsConfig_AppIdsForFunctionAppGroupSiri,
                             _GeoAnalyticsConfig_AppIdsForFunctionAppGroupSpotlight,
+                            _GeoAnalyticsConfig_AppIdsForSMSPunchIn,
+                            _GeoAnalyticsConfig_AppIdsForSafariPunchIn,
+                            _GeoAnalyticsConfig_AppIdsForSiriPunchIn,
+                            _GeoAnalyticsConfig_AppIdsForSpotlightPunchIn,
                             _GeoAnalyticsConfig_ChildSuppressionEnabled,
                             _GeoAnalyticsConfig_CompressionOutputBufferSize,
                             _GeoAnalyticsConfig_CountsAggregationDaemonIds,
@@ -5670,6 +5679,8 @@ exports:
                             GEOMapFeatureBuilding, GEOMapFeatureBuildingSection,
                             GEOMapFeatureJunction, GEOMapFeatureLine,
                             GEOMapFeatureMultiSegmentRoad, GEOMapFeatureRoad,
+                            GEOMapFeatureRunningTrack,
+                            GEOMapFeatureRunningTrackLane,
                             GEOMapFeatureTransitAccessPoint,
                             GEOMapFeatureTransitHall, GEOMapFeatureTransitLink,
                             GEOMapFeatureTransitPoint,
@@ -6010,7 +6021,8 @@ exports:
                             GEORPProblemStatus, GEORPProblemStatusRequest,
                             GEORPProblemStatusResponse, GEORPRapInfo,
                             GEORPRapProfileInfo, GEORPRapQueryParameters,
-                            GEORPRatingValue, GEORPResolution, GEORPScorecard,
+                            GEORPRatingValue, GEORPResolution,
+                            GEORPRunningTrackFeedback, GEORPScorecard,
                             GEORPScorecardUpdate, GEORPSearchCommonContext,
                             GEORPSearchFeedback, GEORPSearchFeedbackContext,
                             GEORPSearchFeedbackCorrections, GEORPSiriContext,
@@ -6075,7 +6087,8 @@ exports:
                             GEOResultRefinementSortElement,
                             GEOResultRefinementToggle, GEOResultRefinementView,
                             GEOResultTypeAutocompleteFilter,
-                            GEOResultTypeSearchFilter, GEORetainedSearchMetadata,
+                            GEOResultTypeSearchFilter, GEOResumeRouteHandle,
+                            GEORetainedSearchMetadata,
                             GEORevealedPlaceCardModule,
                             GEORevealedPlaceCardModuleButton,
                             GEORevealedPlaceCardModuleTypeHours,

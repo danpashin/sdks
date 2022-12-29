@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
-current-version:       512.0.170
+current-version:       522.0.100
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -176,9 +176,9 @@ exports:
                             CPLEngineResourceDownloadQueue,
                             CPLEngineResourceDownloadTask,
                             CPLEngineResourceStorage,
-                            CPLEngineResourceUploadTask, CPLEngineScheduler,
-                            CPLEngineSchedulerBlocker, CPLEngineScope,
-                            CPLEngineScopeCleanupTasks,
+                            CPLEngineResourceUploadTask, CPLEngineRevertRecords,
+                            CPLEngineScheduler, CPLEngineSchedulerBlocker,
+                            CPLEngineScope, CPLEngineScopeCleanupTasks,
                             CPLEngineScopeFlagsUpdate, CPLEngineScopeStorage,
                             CPLEngineScopedTask, CPLEngineStatusCenter,
                             CPLEngineStorage, CPLEngineStore,
@@ -208,18 +208,21 @@ exports:
                             CPLNewAssetExtractionStep, CPLPersonChange,
                             CPLPersonReference, CPLPlaceAnnotation,
                             CPLPlaceholderRecord, CPLPlatform, CPLPlatformObject,
-                            CPLPowerAssertion, CPLProcessStagedScopesScopeTask,
+                            CPLPowerAssertion,
+                            CPLPreventAssetTrashAndDeleteGatekeeper,
+                            CPLProcessStagedScopesScopeTask,
                             CPLProcessStagedScopesTask, CPLProxyForceSyncTask,
                             CPLProxyLibraryManager, CPLProxyPullSession,
                             CPLProxyPushSession, CPLProxyResourceTransferTask,
                             CPLProxySession, CPLPullChangeSession,
                             CPLPullFromTransportScopeTask,
                             CPLPullFromTransportTask, CPLPullScopesTask,
+                            CPLPullSessionRevertRecords,
                             CPLPullSessionScopesAcknowledgement,
                             CPLPullSessionUpdate, CPLPushChangeSession,
-                            CPLPushChangeTasks, CPLPushRepositoryStorage,
-                            CPLPushSessionTracker, CPLPushSessionUpdate,
-                            CPLPushToTransportScopeTask,
+                            CPLPushChangeTasks, CPLPushPullGatekeeper,
+                            CPLPushRepositoryStorage, CPLPushSessionTracker,
+                            CPLPushSessionUpdate, CPLPushToTransportScopeTask,
                             CPLPushToTransportSyncStep, CPLPushToTransportTask,
                             CPLQuarantineFeedbackMessage, CPLRampingRequest,
                             CPLRampingRequestResource, CPLRampingResponse,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3731.200.110
+current-version:       3731.255.101
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -99,7 +99,9 @@ exports:
                             _EMMessageListItemKeyPathReadLaterDate,
                             _EMMessageListItemKeyPathReadLaterIsActive,
                             _EMMessageListItemKeyPathSendLaterDate,
+                            _EMMessageListItemKeyPathSenderAddress,
                             _EMMessageListItemKeyPathSenderBucket,
+                            _EMMessageListItemKeyPathSenderDisplayName,
                             _EMMessageListItemKeyPathSenderList,
                             _EMMessageListItemKeyPathSubject,
                             _EMMessageListItemKeyPathSummary,
@@ -157,6 +159,9 @@ exports:
                             _EMUserDefaultAlertOnBlankCell,
                             _EMUserDefaultAlwaysBCCSelf,
                             _EMUserDefaultAlwaysVerifyServerProvidedRemoteContentLinks,
+                            _EMUserDefaultBlankCellBlockRate,
+                            _EMUserDefaultBlankCellMaximumBlockDuration,
+                            _EMUserDefaultBlankCellMinimumBlockDuration,
                             _EMUserDefaultBlockedSenderAction,
                             _EMUserDefaultBlockedSenderEnabled,
                             _EMUserDefaultDisableFollowUp,
@@ -175,6 +180,7 @@ exports:
                             _EMUserDefaultIndexStatusMaxIndexedToTotalRatio,
                             _EMUserDefaultIndexStatusMinMessageToIndex,
                             _EMUserDefaultInteractionEventLogDebug,
+                            _EMUserDefaultLastMailAppLaunchTime,
                             _EMUserDefaultLoadRemoteContentKey,
                             _EMUserDefaultLogRemoteContentLinksUnredacted,
                             _EMUserDefaultMessageSecurityExtension,
@@ -194,6 +200,8 @@ exports:
                             _EMUserDefaultRemoteContentVPNBannerHasBeenDismissed,
                             _EMUserDefaultSearchFlagColors,
                             _EMUserDefaultSharingFromSafariUI,
+                            _EMUserDefaultShouldBlockSQLQueries,
+                            _EMUserDefaultShouldBlockXPCQueue,
                             _EMUserDefaultShowDebugInfo,
                             _EMUserDefaultShownSendLaterDisclaimer,
                             _EMUserDefaultShownSendLaterOnboarding,
@@ -260,7 +268,8 @@ exports:
                             EMDaemonInterface, EMDaemonInterfaceRequest,
                             EMDeleteMailboxChangeAction, EMDeliveryAccount,
                             EMDiagnosticInfoGatherer, EMFetchController, EMFocus,
-                            EMFocusController, EMFollowUp, EMGroupedSender,
+                            EMFocusController, EMFollowUp,
+                            EMForceBlankCellsController, EMGroupedSender,
                             EMGroupedSenderCollectionItemID,
                             EMGroupedSenderObjectID,
                             EMHMERecipientCreationRequest,

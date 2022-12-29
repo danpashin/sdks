@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HangTracer.framework/HangTracer
-current-version:       229
+current-version:       230
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -65,7 +65,8 @@ exports:
                             _kHTAppActivationKeyEventToken,
                             _kHTAppActivationKeyFailureReason,
                             _kHTAppActivationKeyPID, _kHTAppActivationKeyState,
-                            _kHTAppExitHang, _kHTAssertionOverlapHang,
+                            _kHTAppExitHang, _kHTAppLaunchUUIDKey,
+                            _kHTAssertionOverlapHang,
                             _kHTBadDayEnablementDurationDaysKey,
                             _kHTBadDayEnablementForHangDurationMSecKey,
                             _kHTBadDayEnablementForLogCountKey,

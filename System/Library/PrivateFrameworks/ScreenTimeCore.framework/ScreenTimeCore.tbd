@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenTimeCore.framework/ScreenTimeCore
-current-version:       502.1.9
+current-version:       502.2.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -136,7 +136,10 @@ exports:
                             _STUserNotificationWeeklyReportCategoryIdentifier,
                             _STUserNotificationWeeklyReportPrimaryActionIdentifier,
                             _STXPCSafeErrorFromCoreDataError ]
-    objc-classes:         [ STAdminPersistenceController, STAppInfo,
+    objc-classes:         [ STAdminPersistenceController,
+                            STAgePresetsResetCoreAnalyticsEvent,
+                            STAgePresetsSkippedCoreAnalyticsEvent,
+                            STAgePresetsViewedCoreAnalyticsEvent, STAppInfo,
                             STAppInfoCache,
                             STAppLimitWarningUserNotificationContext,
                             STAskClient, STAskForTimeApplicationResource,
@@ -189,8 +192,11 @@ exports:
                             STLog, STManagementState, STManagementStateObserver,
                             STOpaquePasscode, STPINController,
                             STPersistenceConfiguration, STPersistenceController,
-                            STPresetsClient, STPresetsConfiguration, STReconciler,
-                            STRestrictionsCoreAnalyticsEvent,
+                            STPresetsAgeSelectedCoreAnalyticsEvent,
+                            STPresetsChooseAgeTappedCoreAnalyticsEvent,
+                            STPresetsClient, STPresetsConfiguration,
+                            STPresetsEnableRestrictionsCoreAnalyticsEvent,
+                            STReconciler, STRestrictionsCoreAnalyticsEvent,
                             STScreenTimeAgentPrivateConnection,
                             STScreenTimeCoreBundle,
                             STScreenTimeEnabledUserNotificationContext,
@@ -205,6 +211,7 @@ exports:
                             STUsageTrustIdentifier, STUserData, STUserDescription,
                             STUserDeviceState, STUserID, STVersionVector,
                             STViewAllActivityCoreAnalyticsEvent,
+                            STWebContentFilterCoreAnalyticsEvent,
                             STWebUsageController,
                             STWeeklyReportUserNotificationContext,
                             STXPCRemoteObjectProxy, STiCloudOrganization ]

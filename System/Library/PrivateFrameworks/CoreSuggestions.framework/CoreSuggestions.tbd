@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
-current-version:       1193.8
+current-version:       1193.8.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -394,9 +394,11 @@ exports:
                             SGSimpleTimeRange, SGSocialProfile,
                             SGSuggestedActionMetrics, SGSuggestedEventLaunchInfo,
                             SGSuggestions, SGSuggestionsICSMetrics,
-                            SGSuggestionsService, SGTimeZone, SGTimeZoneDetector,
-                            SGURL, SGXPCResponse, SGXPCResponse1, SGXPCResponse2,
-                            SGXPCResponse3, _SGNSStringEncodingEnumerator ]
+                            SGSuggestionsService, SGSuggestionsWorkGroupManager,
+                            SGSuggestionsWorkGroupManagerGuardedData, SGTimeZone,
+                            SGTimeZoneDetector, SGURL, SGXPCResponse, SGXPCResponse1,
+                            SGXPCResponse2, SGXPCResponse3,
+                            _SGNSStringEncodingEnumerator ]
     objc-ivars:           [ SGDetailCacheSnapshot._emailCache,
                             SGDetailCacheSnapshot._maybeFormat,
                             SGDetailCacheSnapshot._phoneCache,
@@ -524,5 +526,7 @@ exports:
                             SGOrigin._toPeople, SGOrigin._type,
                             SGPersistentSaltProviderGuardedData._salt,
                             SGPreferenceManager._suggestionsDefaults,
-                            SGSuggestionsService._daemonConnectionFuture ]
+                            SGSuggestionsService._daemonConnectionFuture,
+                            SGSuggestionsWorkGroupManagerGuardedData._groupLookup,
+                            SGSuggestionsWorkGroupManagerGuardedData._uniqueIds ]
 ...

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Sharing.framework/Sharing
-current-version:       1847.2.10
+current-version:       1853
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -195,8 +195,10 @@ exports:
                             _SFDeviceSetupAppleTVLocationAuthorizationInfo,
                             _SFDeviceSetupDeviceInfo,
                             _SFDeviceSetupHomeKitCurrentUserIdentifiers,
-                            _SFDeviceSetupHomeKitInfo, _SFDeviceSetupSiriInfo,
-                            _SFDeviceSupportsAWDL, _SFDeviceSupportsAirDrop,
+                            _SFDeviceSetupHomeKitInfo,
+                            _SFDeviceSetupHomeKitRMVEnabledForAllHomes,
+                            _SFDeviceSetupSiriInfo, _SFDeviceSupportsAWDL,
+                            _SFDeviceSupportsAirDrop,
                             _SFDeviceSupportsAutoUnlock,
                             _SFDeviceSupportsContinuity,
                             _SFDeviceSupportsForceTouch,
@@ -233,7 +235,7 @@ exports:
                             _SFIsPasskeyCredentialLink, _SFIsPhoneLink,
                             _SFIsPhotosApp, _SFIsPhotosAssetBundle, _SFIsPlainText,
                             _SFIsPlaygroundItem, _SFIsPodcastsLink,
-                            _SFIsRangingSupported,
+                            _SFIsPureGreenTeaDevice, _SFIsRangingSupported,
                             _SFIsSharediCloudDocumentsLink, _SFIsVideo,
                             _SFIsVoiceMemo, _SFIsWebLink, _SFIsWiFiEnabled,
                             _SFIsePub, _SFIsiBooksLink, _SFIsiCloudDriveEnabled,
@@ -374,6 +376,7 @@ exports:
                             _SFSharablePasswordAirDropURLEncryptedString,
                             _SFSharablePasswordForEncryptedAirDropURL,
                             _SFSharablePasswordForURL,
+                            _SFShareSheetActivityTypeFaceTimeCollaboration,
                             _SFShareSheetActivityTypeLegacyMessage,
                             _SFShareSheetActivityTypeMail,
                             _SFShareSheetActivityTypeMessage,

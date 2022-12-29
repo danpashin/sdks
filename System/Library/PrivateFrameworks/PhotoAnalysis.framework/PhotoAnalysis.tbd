@@ -3,12 +3,31 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
-current-version:       512.0.170
+current-version:       522.0.100
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CPAnalyticsUserAgeRange18_25,
+    symbols:              [ _$s13PhotoAnalysis14BiomeUtilitiesC05pruneC10EventsWith5uuidsySo12NSMutableSetC_tFZ,
+                            _$s13PhotoAnalysis14BiomeUtilitiesC9readUUIDs16progressReporterSo12NSMutableSetCSo010MAProgressH0C_tKFZ,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCACycfC,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCACycfc,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCMa,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCMn,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCN,
+                            _$s13PhotoAnalysis14BiomeUtilitiesCfD,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesC06updatecD6Stream20withProgressReporterySo010MAProgressJ0C_tKF,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesC06updatecD6Stream20withProgressReporterySo010MAProgressJ0C_tKFTq,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesC12photoLibraryACSo07PHPhotoG0C_tcfC,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesC12photoLibraryACSo07PHPhotoG0C_tcfCTq,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesC12photoLibraryACSo07PHPhotoG0C_tcfc,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCACycfC,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCACycfc,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCMa,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCMn,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCN,
+                            _$s13PhotoAnalysis22UserAnalyticsUtilitiesCfD,
+                            _CPAnalyticsUserAgeRange18_25,
                             _CPAnalyticsUserAgeRange26_35,
                             _CPAnalyticsUserAgeRange36_45,
                             _CPAnalyticsUserAgeRange46_55,
@@ -362,12 +381,12 @@ exports:
                             _setLibraryScopedMusicWorkerPreferencesValue ]
     objc-classes:         [ PHAActivityGovernor, PHAActivityLog,
                             PHAAnalysisWorkerJob,
-                            PHAAssetRevGeocodeEnrichmentTask,
+                            PHAAssetRevGeocodeEnrichmentTask, PHABiomeUtilities,
                             PHACachingCPAnalyticsPropertiesTask,
                             PHACameraSmartSharingTask,
                             PHAContactClassificationTask,
                             PHACoreDuetDatasetSample, PHACoreDuetDatasetStorage,
-                            PHACurareShadowEvaluationDataset,
+                            PHACoreDuetHelper, PHACurareShadowEvaluationDataset,
                             PHACurareShadowEvaluationEvaluationResult,
                             PHACurareShadowEvaluationEvaluator,
                             PHACurareShadowEvaluationRecipeDecoder,
@@ -434,7 +453,9 @@ exports:
                             PHAStorytellingWorker, PHASuggestionController,
                             PHASuggestionGenerationTask, PHASyndicationTask,
                             PHATaskConverter, PHATaskHealthRecorder,
-                            PHATaskWorkerJob, PHAUserBehaviorEnrichmentTask,
+                            PHATaskWorkerJob, PHAUserAnalyticsBiomeTask,
+                            PHAUserAnalyticsUtilities,
+                            PHAUserBehaviorEnrichmentTask,
                             PHAUserFeedbackUpdater,
                             PHAWallpaperShuffleDescriptorGenerator,
                             PHAWallpaperSuggestionAnalyticsSender,

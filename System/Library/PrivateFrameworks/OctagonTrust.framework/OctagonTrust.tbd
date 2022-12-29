@@ -8,7 +8,7 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _OTAccountSettingsXReadFrom,
+    symbols:              [ _OTAccountSettingsReadFrom,
                             _OTCDPRecoveryInformationReadFrom, _OTCliqueChanged,
                             _OTCurrentSecureElementIdentitiesReadFrom,
                             _OTEscrowAuthenticationInformationReadFrom,
@@ -20,11 +20,11 @@ exports:
                             _OTICDPRecordSilentContextReadFrom,
                             _OTInheritanceKeyErrorDomain, _OTJoinedViaBottle,
                             _OTSecureElementPeerIdentityReadFrom,
-                            _OTTag1ReadFrom,
                             _OTUserControllableViewStatusChanged,
+                            _OTWalrusReadFrom, _OTWebAccessReadFrom,
                             _OctagonTrustVersionNumber,
                             _OctagonTrustVersionString ]
-    objc-classes:         [ OTAccountSettingsX, OTCDPRecoveryInformation,
+    objc-classes:         [ OTAccountSettings, OTCDPRecoveryInformation,
                             OTCurrentSecureElementIdentities,
                             OTCustodianRecoveryKey,
                             OTEscrowAuthenticationInformation,
@@ -33,8 +33,9 @@ exports:
                             OTEscrowRecordMetadataClientMetadata,
                             OTEscrowTranslation, OTICDPRecordContext,
                             OTICDPRecordSilentContext, OTInheritanceKey,
-                            OTSecureElementPeerIdentity, OTTag1 ]
-    objc-ivars:           [ OTAccountSettingsX._tag1,
+                            OTSecureElementPeerIdentity, OTWalrus, OTWebAccess ]
+    objc-ivars:           [ OTAccountSettings._walrus,
+                            OTAccountSettings._webAccess,
                             OTCDPRecoveryInformation._containsIcdpData,
                             OTCDPRecoveryInformation._has,
                             OTCDPRecoveryInformation._recoveryKey,
@@ -101,5 +102,6 @@ exports:
                             OTICDPRecordSilentContext._cdpInfo,
                             OTSecureElementPeerIdentity._peerData,
                             OTSecureElementPeerIdentity._peerIdentifier,
-                            OTTag1._enabled, OTTag1._has ]
+                            OTWalrus._enabled, OTWalrus._has, OTWebAccess._enabled,
+                            OTWebAccess._has ]
 ...

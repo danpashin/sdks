@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RunningBoardServices.framework/RunningBoardServices
-current-version:       800.42.1
+current-version:       800.62.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -87,13 +87,15 @@ exports:
                             _rbs_assertion_log, _rbs_best_effort_networking_log,
                             _rbs_coder_log, _rbs_connection_log, _rbs_general_log,
                             _rbs_invalidate_domain_assertion, _rbs_jetsam_log,
-                            _rbs_job_log, _rbs_job_oversize_log, _rbs_monitor_log,
-                            _rbs_power_log, _rbs_process_log, _rbs_resource_log,
+                            _rbs_job_log, _rbs_job_oversize_log, _rbs_message_log,
+                            _rbs_monitor_log, _rbs_power_log, _rbs_process_log,
+                            _rbs_resource_log,
                             _rbs_set_assertion_adapter_allow_on_self,
                             _rbs_set_assertion_adapter_service, _rbs_shim_log,
                             _rbs_sp_assertion_log, _rbs_sp_state_log,
                             _rbs_sp_telemetry_log, _rbs_sp_therm_log,
-                            _rbs_state_log, _rbs_system_log, _rbs_test_log ]
+                            _rbs_state_log, _rbs_system_log, _rbs_test_log,
+                            _rbs_ttl_log ]
     objc-classes:         [ RBSAcquisitionCompletionAttribute,
                             RBSAppNapEnableGrant, RBSAppNapGrant,
                             RBSAppNapInactiveGrant,

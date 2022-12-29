@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmojiFoundation.framework/EmojiFoundation
-current-version:       119
+current-version:       117
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -99,7 +99,8 @@ exports:
                             _tamil_UTF_8_create_env, _tamil_UTF_8_stem,
                             _turkish_UTF_8_close_env, _turkish_UTF_8_create_env,
                             _turkish_UTF_8_stem ]
-    objc-classes:         [ EMFAbstractIndexStrategy,
+    objc-classes:         [ EMFAbstractIndexStrategy, EMFDPEmojiUsageRecorder,
+                            EMFDPEventDispatcher, EMFDPRecorder, EMFDPReporterMock,
                             EMFDefaultAutocompleteCandidateProvider,
                             EMFEmojiCategory, EMFEmojiLocaleData,
                             EMFEmojiPreferences, EMFEmojiPreferencesClient,

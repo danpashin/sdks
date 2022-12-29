@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5FF90157-BE8B-36C6-969E-DCE875302D62
   - target:          arm64-ios
-    value:           B8D95B95-A20A-3AE1-A44C-6CFA96B5258F
+    value:           F3DE5867-D28B-3807-B8CA-4D43326BFDF0
   - target:          arm64e-ios
-    value:           73A045DE-A640-38D0-89DD-6C82F6068CF0
+    value:           D92FB9B3-72B4-31C3-8385-E6B9AFB5509B
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/CoreMedia'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1556,18 +1556,19 @@ exports:
                        _FigCFDateCreateFromString, _FigCFDictionaryAddEntriesToDictionaryWithRecursion, 
                        _FigCFDictionaryCopyArrayOfKeys, _FigCFDictionaryCopyArrayOfValues, 
                        _FigCFDictionaryCreateMappedArray, _FigCFDictionaryCreateMutableCopy, 
-                       _FigCFDictionaryFindAnyKeyForValue, _FigCFDictionaryGetBooleanIfPresent, 
-                       _FigCFDictionaryGetCFIndexIfPresent, _FigCFDictionaryGetCGFloatIfPresent, 
-                       _FigCFDictionaryGetCGRectIfPresent, _FigCFDictionaryGetCGSizeIfPresent, 
-                       _FigCFDictionaryGetCMTimeIfPresent, _FigCFDictionaryGetCount, 
-                       _FigCFDictionaryGetDoubleIfPresent, _FigCFDictionaryGetFloat32IfPresent, 
-                       _FigCFDictionaryGetFloatIfPresent, _FigCFDictionaryGetInt16IfPresent, 
-                       _FigCFDictionaryGetInt32IfPresent, _FigCFDictionaryGetInt64IfPresent, 
-                       _FigCFDictionaryGetIntIfPresent, _FigCFDictionaryGetValue, 
-                       _FigCFDictionaryGetValueForCaseInsensitiveKeyIfPresent, _FigCFDictionaryGetValueIfPresent, 
-                       _FigCFDictionarySetAllValuesFromDictionary, _FigCFDictionarySetBase64Data, 
-                       _FigCFDictionarySetCFIndex, _FigCFDictionarySetCGFloat, _FigCFDictionarySetCGRect, 
-                       _FigCFDictionarySetCGSize, _FigCFDictionarySetCMTime, _FigCFDictionarySetCMTimeRange, 
+                       _FigCFDictionaryCreateMutableCopyWithCFTypeCallbacks, _FigCFDictionaryFindAnyKeyForValue, 
+                       _FigCFDictionaryGetBooleanIfPresent, _FigCFDictionaryGetCFIndexIfPresent, 
+                       _FigCFDictionaryGetCGFloatIfPresent, _FigCFDictionaryGetCGRectIfPresent, 
+                       _FigCFDictionaryGetCGSizeIfPresent, _FigCFDictionaryGetCMTimeIfPresent, 
+                       _FigCFDictionaryGetCount, _FigCFDictionaryGetDoubleIfPresent, 
+                       _FigCFDictionaryGetFloat32IfPresent, _FigCFDictionaryGetFloatIfPresent, 
+                       _FigCFDictionaryGetInt16IfPresent, _FigCFDictionaryGetInt32IfPresent, 
+                       _FigCFDictionaryGetInt64IfPresent, _FigCFDictionaryGetIntIfPresent, 
+                       _FigCFDictionaryGetValue, _FigCFDictionaryGetValueForCaseInsensitiveKeyIfPresent, 
+                       _FigCFDictionaryGetValueIfPresent, _FigCFDictionarySetAllValuesFromDictionary, 
+                       _FigCFDictionarySetBase64Data, _FigCFDictionarySetCFIndex, 
+                       _FigCFDictionarySetCGFloat, _FigCFDictionarySetCGRect, _FigCFDictionarySetCGSize, 
+                       _FigCFDictionarySetCMTime, _FigCFDictionarySetCMTimeRange, 
                        _FigCFDictionarySetDouble, _FigCFDictionarySetFloat, _FigCFDictionarySetFloat32, 
                        _FigCFDictionarySetInt, _FigCFDictionarySetInt16, _FigCFDictionarySetInt32, 
                        _FigCFDictionarySetInt64, _FigCFDictionarySetValue, _FigCFDictionarySetValueFromKeyInDict, 
@@ -2811,18 +2812,19 @@ exports:
                        _kFigEndpointPlaybackSessionKey_MovPkgPath, _kFigEndpointPlaybackSessionKey_Options, 
                        _kFigEndpointPlaybackSessionKey_OutOfBandAlternateTracks, 
                        _kFigEndpointPlaybackSessionKey_Path, _kFigEndpointPlaybackSessionKey_PlaybackRestrictions, 
-                       _kFigEndpointPlaybackSessionKey_PurchasedMediaKind, _kFigEndpointPlaybackSessionKey_Rate, 
-                       _kFigEndpointPlaybackSessionKey_ReferenceRestrictions, _kFigEndpointPlaybackSessionKey_RequestContext, 
-                       _kFigEndpointPlaybackSessionKey_SnapTimeToPausePlayback, _kFigEndpointPlaybackSessionKey_StartDate, 
-                       _kFigEndpointPlaybackSessionKey_StartEstimatedDate, _kFigEndpointPlaybackSessionKey_StartPosition, 
-                       _kFigEndpointPlaybackSessionKey_StartPositionInLegacyTime, 
+                       _kFigEndpointPlaybackSessionKey_PreviouslySetTime, _kFigEndpointPlaybackSessionKey_PurchasedMediaKind, 
+                       _kFigEndpointPlaybackSessionKey_Rate, _kFigEndpointPlaybackSessionKey_ReferenceRestrictions, 
+                       _kFigEndpointPlaybackSessionKey_RequestContext, _kFigEndpointPlaybackSessionKey_SnapTimeToPausePlayback, 
+                       _kFigEndpointPlaybackSessionKey_StartDate, _kFigEndpointPlaybackSessionKey_StartEstimatedDate, 
+                       _kFigEndpointPlaybackSessionKey_StartPosition, _kFigEndpointPlaybackSessionKey_StartPositionInLegacyTime, 
                        _kFigEndpointPlaybackSessionKey_TextMarkupArray, _kFigEndpointPlaybackSessionKey_TimeToPauseBuffering, 
                        _kFigEndpointPlaybackSessionKey_TimeToPausePlayback, _kFigEndpointPlaybackSessionKey_TimeToSwapPlayback, 
-                       _kFigEndpointPlaybackSessionKey_UUID, _kFigEndpointPlaybackSessionKey_UserAgent, 
-                       _kFigEndpointPlaybackSessionKey_Value, _kFigEndpointPlaybackSessionKey_VideoID, 
-                       _kFigEndpointPlaybackSessionMediaType_File, _kFigEndpointPlaybackSessionMediaType_FormatReader, 
-                       _kFigEndpointPlaybackSessionMediaType_Streaming, _kFigEndpointPlaybackSessionMediaType_Unknown, 
-                       _kFigEndpointPlaybackSessionNotification_Invalidated, _kFigEndpointPlaybackSessionPlaybackInfoKey_AbsoluteTime, 
+                       _kFigEndpointPlaybackSessionKey_TrackID, _kFigEndpointPlaybackSessionKey_UUID, 
+                       _kFigEndpointPlaybackSessionKey_UserAgent, _kFigEndpointPlaybackSessionKey_Value, 
+                       _kFigEndpointPlaybackSessionKey_VideoID, _kFigEndpointPlaybackSessionMediaType_File, 
+                       _kFigEndpointPlaybackSessionMediaType_FormatReader, _kFigEndpointPlaybackSessionMediaType_Streaming, 
+                       _kFigEndpointPlaybackSessionMediaType_Unknown, _kFigEndpointPlaybackSessionNotification_Invalidated, 
+                       _kFigEndpointPlaybackSessionPlaybackInfoKey_AbsoluteTime, 
                        _kFigEndpointPlaybackSessionPlaybackInfoKey_Date, _kFigEndpointPlaybackSessionPlaybackInfoKey_Duration, 
                        _kFigEndpointPlaybackSessionPlaybackInfoKey_EstimatedDate, 
                        _kFigEndpointPlaybackSessionPlaybackInfoKey_InterstitialInfo, 
