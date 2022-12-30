@@ -2,7 +2,7 @@
 //  CLSDefines.h
 //  ClassKit
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2019 Apple Inc. All rights reserved.
 //
 
 #ifndef CLSDEFINES_H
@@ -23,7 +23,7 @@
 #endif
 
 
-CLS_EXTERN NSString * const CLSErrorCodeDomain API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN NSString * const CLSErrorCodeDomain API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @enum      CLSErrorCode
@@ -50,27 +50,27 @@ typedef NS_ERROR_ENUM(CLSErrorCodeDomain, CLSErrorCode) {
     CLSErrorCodeInvalidCreate,
     CLSErrorCodeInvalidUpdate,
     CLSErrorCodePartialFailure
-} API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+} API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
-typedef NSString * CLSErrorUserInfoKey NS_EXTENSIBLE_STRING_ENUM API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+typedef NSString * CLSErrorUserInfoKey NS_EXTENSIBLE_STRING_ENUM API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @abstract   Any object that caused a failure will be available in - [NSError userInfo]; under this key.
  */
-CLS_EXTERN CLSErrorUserInfoKey const CLSErrorObjectKey API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSErrorUserInfoKey const CLSErrorObjectKey API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @abstract   If multiple objects cause errors we return an error with code `CLSErrorCodePartialFailure` which will contain an array of errors in - [NSError userInfo]; under this key.
  */
-CLS_EXTERN CLSErrorUserInfoKey const CLSErrorUnderlyingErrorsKey API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSErrorUserInfoKey const CLSErrorUnderlyingErrorsKey API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
-typedef NSString * CLSPredicateKeyPath NS_EXTENSIBLE_STRING_ENUM API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+typedef NSString * CLSPredicateKeyPath NS_EXTENSIBLE_STRING_ENUM API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathDateCreated API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathIdentifier API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathTitle API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathUniversalLinkURL API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathTopic API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
-CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathParent API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathDateCreated API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathIdentifier API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathTitle API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathUniversalLinkURL API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathTopic API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
+CLS_EXTERN CLSPredicateKeyPath const CLSPredicateKeyPathParent API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 #endif // CLSDEFINES_H

@@ -14,7 +14,7 @@
 /**
  Option set of hit-test result types.
  */
-API_AVAILABLE(ios(11.0))
+API_DEPRECATED("Use raycasting", ios(11.0, 14.0))
 typedef NS_OPTIONS(NSUInteger, ARHitTestResultType) {
     /** Result type from intersecting the nearest feature point. */
     ARHitTestResultTypeFeaturePoint                                        = (1 << 0),
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  A result of an intersection found during a hit-test.
  */
-API_AVAILABLE(ios(11.0))
+API_DEPRECATED("Use raycasting", ios(11.0, 14.0))
 @interface ARHitTestResult : NSObject
 
 /**

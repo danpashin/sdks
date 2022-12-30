@@ -6,7 +6,6 @@
 //  Copyright © 2020 Apple Inc. All rights reserved.
 //
 
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 #import <CoreGraphics/CGGeometry.h>
@@ -31,7 +30,6 @@ UIKIT_EXTERN API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) @interface 
 @end
 
 NS_ASSUME_NONNULL_END
-
 
 #else
 #import <UIKitCore/UIPointerRegion.h>

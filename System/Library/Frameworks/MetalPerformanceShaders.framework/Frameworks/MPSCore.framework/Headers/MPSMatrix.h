@@ -2,7 +2,7 @@
 //  MPSMatrix.h
 //  MPS
 //
-//  Created by Ian Ollmann on 9/4/18.
+//  Created on 9/4/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

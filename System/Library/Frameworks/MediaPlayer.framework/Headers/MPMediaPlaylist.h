@@ -19,12 +19,12 @@ typedef NS_OPTIONS(NSUInteger, MPMediaPlaylistAttribute) {
     MPMediaPlaylistAttributeOnTheGo = (1 << 0), // if set, the playlist was created on a device rather than synced from iTunes
     MPMediaPlaylistAttributeSmart   = (1 << 1),
     MPMediaPlaylistAttributeGenius  = (1 << 2)
-} MP_API(ios(3.0)) MP_PROHIBITED(tvos, macos, watchos);
+} MP_API(ios(3.0)) API_UNAVAILABLE(tvos, watchos, macos);
 
 // An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
 // Playlists have a unique identifier which persists across application launches.
 MP_API(ios(3.0))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaPlaylist : MPMediaItemCollection
 
 #pragma mark - Properties
@@ -33,6 +33,9 @@ MP_PROHIBITED(tvos, macos, watchos)
 
 MP_EXTERN NSString * const MPMediaPlaylistPropertyPersistentID;                             // filterable
 @property (nonatomic, readonly) MPMediaEntityPersistentID persistentID MP_API(ios(7.0));
+
+MP_EXTERN NSString * const MPMediaPlaylistPropertyCloudGlobalID MP_API(ios(9.0));           // filterable
+@property (nonatomic, readonly, nullable) NSString *cloudGlobalID MP_API(ios(14.0));
 
 MP_EXTERN NSString * const MPMediaPlaylistPropertyName;                                     // filterable
 @property (nonatomic, readonly, nullable) NSString *name MP_API(ios(7.0));
@@ -51,16 +54,21 @@ MP_EXTERN NSString * const MPMediaPlaylistPropertyDescriptionText MP_API(ios(9.3
 MP_EXTERN NSString * const MPMediaPlaylistPropertyAuthorDisplayName MP_API(ios(9.3));
 @property (nonatomic, readonly, nullable) NSString *authorDisplayName MP_API(ios(9.3));
 
-- (void)addItemWithProductID:(NSString *)productID completionHandler:(nullable void (^)(NSError * __nullable error))completionHandler MP_API(ios(9.3));
-- (void)addMediaItems:(NSArray<MPMediaItem *> *)mediaItems completionHandler:(nullable void (^)(NSError * __nullable error))completionHandler MP_API(ios(9.3));
+- (void)addItemWithProductID:(NSString *)productID completionHandler:(nullable void (^)(NSError * __nullable error))completionHandler
+    MP_API(ios(9.3))
+    MP_UNAVAILABLE(macos);
+- (void)addMediaItems:(NSArray<MPMediaItem *> *)mediaItems completionHandler:(nullable void (^)(NSError * __nullable error))completionHandler
+    MP_API(ios(9.3))
+    MP_UNAVAILABLE(macos);
 
 @end
 
 MP_API(ios(9.3))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaPlaylistCreationMetadata : NSObject
 
-- (id)init NS_UNAVAILABLE;
+MP_INIT_UNAVAILABLE
+
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 /// The display name of the playlist.

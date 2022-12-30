@@ -1,19 +1,21 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/AACCore.framework/AACCore
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           F7B0036D-3C2C-3995-A04B-1D9079527196
+  - target:          arm64e-ios
+    value:           518C03A3-01C8-350A-BC2B-B210812D2E94
+install-name:    '/System/Library/PrivateFrameworks/AACCore.framework/AACCore'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo,
-                            _AELocalizedStringFromTableInBundle,
-                            _AEPolicySessionFailedToActivateSubsystemsKey,
-                            _AEPolicySessionFailedToDeactivateSubsystemsKey ]
-    objc-classes:         [ AEActivePolicySession, AELocalizedErrorDescriptions,
-                            AEOSGestalt, AEPerformancePrimitivesProvider,
-                            AEPolicyBundle, AEPreferencesProvider,
-                            AERSingleAppModePrimitivesProvider ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo, _AELocalizedStringFromTableInBundle, 
+                       _AEPolicySessionFailedToActivateSubsystemsKey, _AEPolicySessionFailedToDeactivateSubsystemsKey ]
+    objc-classes:    [ AEActivePolicySession, AELocalizedErrorDescriptions, AEOSGestalt, 
+                       AEOptionMirror, AEPerformancePrimitivesProvider, AEPolicyBundle, 
+                       AEPreferencesProvider, AERSingleAppModeConfiguration, AERSingleAppModePrimitivesProvider ]
 ...

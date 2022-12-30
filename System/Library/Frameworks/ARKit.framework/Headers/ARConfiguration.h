@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,12 +23,12 @@ API_AVAILABLE(ios(13.0))
 typedef NS_OPTIONS(NSUInteger, ARFrameSemantics) {
     /** No semantic operation is run. */
     ARFrameSemanticNone                                = 0,
-    
+
     /**
-    Person segmentation.
-    @discussion A pixel in the image frame that gets classified as person will have an intensity value equal to 'ARSegmentationClassPerson'.
-    @see -[ARFrame segmentationBuffer]
-    @see ARSegmentationClass
+     Person segmentation.
+     @discussion A pixel in the image frame that gets classified as person will have an intensity value equal to 'ARSegmentationClassPerson'.
+     @see -[ARFrame segmentationBuffer]
+     @see ARSegmentationClass
     */
     ARFrameSemanticPersonSegmentation                  = (1 << 0),
     
@@ -38,16 +39,29 @@ typedef NS_OPTIONS(NSUInteger, ARFrameSemantics) {
      @see -[ARFrame estimatedDepthData]
      @see -[ARFrame segmentationBuffer]
      */
-    ARFrameSemanticPersonSegmentationWithDepth       = (1 << 1) | (1 << 0),
+    ARFrameSemanticPersonSegmentationWithDepth         = (1 << 1) | (1 << 0),
     
     /**
      Body detection.
-
      @discussion Once activated an ARFrame will contain information about a detected body.
      @see -[ARFrame detectedBody]
      @see ARBody2D
      */
-    ARFrameSemanticBodyDetection                     = (1 << 2)
+    ARFrameSemanticBodyDetection                       = (1 << 2),
+    
+    /**
+     Scene Depth.
+     @discussion Each capturedImage will have an associated scene depth data.
+     @see - [ARFrame sceneDepth]
+    */
+    ARFrameSemanticSceneDepth API_AVAILABLE(ios(14.0)) = (1 << 3),
+    
+    /**
+     Smoothed Scene Depth.
+     @discussion Each capturedImage will have an associated scene depth data that is temporally smoothed.
+     @see - [ARFrame smoothedSceneDepth]
+    */
+    ARFrameSemanticSmoothedSceneDepth API_AVAILABLE(ios(14.0)) = (1 << 4),
     
 } NS_SWIFT_NAME(ARConfiguration.FrameSemantics);
 
@@ -83,6 +97,7 @@ typedef NS_ENUM(NSInteger, AREnvironmentTexturing) {
     /** Texture information is gathered for the environment and probes automatically placed in the scene. */
     AREnvironmentTexturingAutomatic
 } NS_SWIFT_NAME(ARWorldTrackingConfiguration.EnvironmentTexturing);
+
 
 
 /**
@@ -214,6 +229,7 @@ API_AVAILABLE(ios(11.0))
  */
 @property (nonatomic, assign) BOOL wantsHDREnvironmentTextures API_AVAILABLE(ios(13.0));
 
+
 /**
  Type of planes to detect in the scene.
  @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
@@ -281,6 +297,8 @@ API_AVAILABLE(ios(11.0))
  @see ARFaceAnchor
  */
 @property (nonatomic, assign, getter=userFaceTrackingEnabled) BOOL userFaceTrackingEnabled API_AVAILABLE(ios(13.0));
+
+
 /**
  Indicates whether the scene reconstruction type is supported for the configuration on this device.
  */
@@ -293,6 +311,7 @@ API_AVAILABLE(ios(11.0))
  ARMeshAnchor objects.
  */
 @property (nonatomic, assign) ARSceneReconstruction sceneReconstruction API_AVAILABLE(ios(13.4));
+
 - (instancetype)init;
 + (instancetype)new NS_SWIFT_UNAVAILABLE("Use init() instead");
 
@@ -496,6 +515,7 @@ Images to detect in the scene.
  */
 @property (nonatomic, assign) NSInteger maximumNumberOfTrackedImages;
 
+
 - (instancetype)init;
 + (instancetype)new NS_SWIFT_UNAVAILABLE("Use init() instead");
 
@@ -524,6 +544,94 @@ API_AVAILABLE(ios(13.0))
  and can again be saved using the `getCurrentWorldMap` method on the session.
  */
 @property (nonatomic, strong, nullable) ARWorldMap *initialWorldMap;
+
+- (instancetype)init;
++ (instancetype)new NS_SWIFT_UNAVAILABLE("Use init() instead");
+
+@end
+
+
+
+/**
+ A configuration for running geographical world tracking.
+
+ @discussion It allows placing geo-referenced anchors (ARGeoAnchor) in the scene by running world tracking with location and compass.
+ */
+API_AVAILABLE(ios(14.0))
+@interface ARGeoTrackingConfiguration : ARConfiguration
+
+/** Unavailable */
+@property(nonatomic, assign) ARWorldAlignment worldAlignment NS_UNAVAILABLE;
+
+/**
+ The mode of environment texturing to run.
+ @discussion If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
+ will get the current environment texture available from that probe's perspective which can be used for lighting
+ virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
+ */
+@property (nonatomic, assign) AREnvironmentTexturing environmentTexturing;
+
+/**
+ Determines whether environment textures will be provided with high dynamic range. Enabled by default.
+ */
+@property (nonatomic, assign) BOOL wantsHDREnvironmentTextures;
+
+/**
+ Type of planes to detect in the scene.
+ @discussion If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
+ ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+ */
+@property (nonatomic, assign) ARPlaneDetection planeDetection;
+
+/**
+ Images to detect in the scene.
+ @discussion If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will be added to the session.
+ */
+@property (nonatomic, copy, null_resettable) NSSet<ARReferenceImage *> *detectionImages;
+
+/**
+ Enables the estimation of a scale factor which may be used to correct the physical size of an image.
+ @discussion If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
+ differs from the estimated one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARImageAnchor.
+ @note When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+  */
+@property (nonatomic, assign) BOOL automaticImageScaleEstimationEnabled;
+
+/**
+ Maximum number of images to track simultaneously.
+ @discussion Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
+ If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+ Images will continue to be detected regardless of images tracked. Default value is zero.
+ */
+@property (nonatomic, assign) NSInteger maximumNumberOfTrackedImages;
+
+/**
+ Objects to detect in the scene.
+ @discussion If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor will be added to the session.
+ */
+@property (nonatomic, copy) NSSet<ARReferenceObject *> *detectionObjects;
+
+
+/**
+ Determines the availability of geo tracking at the current location.
+
+ @discussion This method will attempt to acquire a location fix on a background thread, then check availability.
+
+ @param completionHandler Completion handler that is called when availability has been determined. This handler is executed on an arbitrary serial queue. It takes the following parameters:
+        isAvailable - True if geo tracking is available at the current location, otherwise false.
+        error - An error that indicates why geo tracking is not available at the current location.
+ */
++ (void)checkAvailabilityWithCompletionHandler:(void (^)(BOOL isAvailable, NSError * _Nullable error))completionHandler;
+
+/**
+Determines the availability of geo tracking at the given location.
+
+@param coordinate Location at which to check.
+@param completionHandler Completion handler that is called when availability has been determined. This handler is executed on an arbitrary serial queue. It takes the following parameters:
+       isAvailable - True if geo tracking is available at the given location, otherwise false.
+       error - An error that indicates why geo tracking is not available at the given location.
+*/
++ (void)checkAvailabilityAtCoordinate:(CLLocationCoordinate2D)coordinate completionHandler:(void (^)(BOOL isAvailable, NSError * _Nullable error))completionHandler;
 
 - (instancetype)init;
 + (instancetype)new NS_SWIFT_UNAVAILABLE("Use init() instead");

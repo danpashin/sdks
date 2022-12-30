@@ -66,17 +66,6 @@ FILEPROVIDER_API_AVAILABILITY_V2
  */
 @property (readonly, copy) NSString *pathRelativeToDocumentStorage;
 
-
-/* If set, the domain is present, but disconnected from its extension.
- In this state, the user continues to be able to browse the domain's contents,
- but the extension doesn't receive updates on modifications to the files, nor is
- it consulted to update folder's contents.
-
- The disconnected state can be modified on an existing domain by recreating a domain
- with the same identifier, then passing it to addDomain.
- */
-@property (readwrite, getter=isDisconnected) BOOL disconnected FILEPROVIDER_API_AVAILABILITY_V3;
-
 @end
 
 FILEPROVIDER_API_AVAILABILITY_V2

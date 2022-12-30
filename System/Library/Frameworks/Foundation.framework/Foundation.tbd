@@ -1,13 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: DEA2F438-8531-392F-85B1-73240DD2A2EC', 'armv7s: A50A77BF-6473-3BBB-B0D1-92E3240D79DC', 
-                   'arm64: 47832016-018C-3023-A105-BF52E8AD6323', 'arm64e: 2F43F187-0E88-35B3-82EE-D53E3FCEF0D2' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           432625FB-022C-3B0A-8956-B6DEFF455C44
+  - target:          armv7s-ios
+    value:           EAA2F1C7-B8C9-30A6-8027-4ABA1191E216
+  - target:          arm64-ios
+    value:           4B7B9C0A-BAD3-348D-95A3-94784BFED02E
+  - target:          arm64e-ios
+    value:           095C09DD-6436-3270-B062-A150203FDEED
 install-name:    '/System/Library/Frameworks/Foundation.framework/Foundation'
-current-version: 1677.104
+current-version: 1751.108
 compatibility-version: 300
-exports:         
-  - archs:           [ armv7, armv7s ]
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation', 
+                       '/usr/lib/libobjc.A.dylib' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$add$os2.0$_OBJC_CLASS_$_NSURL', '$ld$add$os2.0$_OBJC_METACLASS_$_NSURL', 
                        '$ld$add$os2.1$_OBJC_CLASS_$_NSURL', '$ld$add$os2.1$_OBJC_METACLASS_$_NSURL', 
                        '$ld$add$os2.2$_OBJC_CLASS_$_NSURL', '$ld$add$os2.2$_OBJC_METACLASS_$_NSURL', 
@@ -435,11 +446,9 @@ exports:
                        NSISVariable._refCount, NSLeafProxy.dir, NSLeafProxy.docInfo, 
                        NSLeafProxy.file, NSLeafProxy.isa, NSLeafProxy.realObject, 
                        NSLeafProxy.refCount, _NSConcreteDateInterval._duration, _NSConcreteDateInterval._startDate ]
-  - archs:           [ arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     objc-ivars:      [ NSPredicate.reserved ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    re-exports:      [ '/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation', 
-                       '/usr/lib/libobjc.A.dylib' ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$hide$os10.0$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os10.0$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
                        '$ld$hide$os10.0$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
                        '$ld$hide$os10.0$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
@@ -490,41 +499,6 @@ exports:
                        '$ld$hide$os12.4$_OBJC_CLASS_$_NSURLSessionTaskMetrics', '$ld$hide$os12.4$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
                        '$ld$hide$os12.4$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
                        '$ld$hide$os12.4$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os4.3$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os4.3$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os4.3$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os4.3$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os4.3$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os4.3$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os5.0$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os5.0$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os5.0$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os5.0$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os5.0$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os5.0$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os5.1$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os5.1$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os5.1$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os5.1$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os5.1$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os5.1$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os6.0$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os6.0$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os6.0$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os6.0$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os6.0$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os6.0$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os6.1$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os6.1$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os6.1$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os6.1$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os6.1$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os6.1$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os7.0$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os7.0$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os7.0$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os7.0$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os7.0$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os7.0$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os7.1$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os7.1$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os7.1$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
-                       '$ld$hide$os7.1$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
-                       '$ld$hide$os7.1$_OBJC_METACLASS_$_NSURLSessionTaskMetrics', 
-                       '$ld$hide$os7.1$_OBJC_METACLASS_$_NSURLSessionTaskTransactionMetrics', 
                        '$ld$hide$os8.0$_OBJC_CLASS_$_NSURLSessionStreamTask', '$ld$hide$os8.0$_OBJC_CLASS_$_NSURLSessionTaskMetrics', 
                        '$ld$hide$os8.0$_OBJC_CLASS_$_NSURLSessionTaskTransactionMetrics', 
                        '$ld$hide$os8.0$_OBJC_METACLASS_$_NSURLSessionStreamTask', 
@@ -606,22 +580,22 @@ exports:
                        _NSFileSystemNumber, _NSFileSystemSize, _NSFileType, _NSFileTypeBlockSpecial, 
                        _NSFileTypeCharacterSpecial, _NSFileTypeDirectory, _NSFileTypeRegular, 
                        _NSFileTypeSocket, _NSFileTypeSymbolicLink, _NSFileTypeUnknown, 
-                       _NSFoundationVersionNumber, _NSFoundationVersionString, _NSFrameAddress, 
-                       _NSFreeHashTable, _NSFreeMapTable, _NSFreeObjectArray, _NSFullUserName, 
-                       _NSGetUncaughtExceptionHandler, _NSGlobalDomain, _NSGrammarRange, 
-                       _NSHTTPCookieComment, _NSHTTPCookieCommentURL, _NSHTTPCookieDiscard, 
-                       _NSHTTPCookieDomain, _NSHTTPCookieExpires, _NSHTTPCookieManagerAcceptPolicyChangedNotification, 
-                       _NSHTTPCookieManagerCookiesChangedNotification, _NSHTTPCookieMaximumAge, 
-                       _NSHTTPCookieName, _NSHTTPCookieOriginURL, _NSHTTPCookiePath, 
-                       _NSHTTPCookiePort, _NSHTTPCookieSameSiteLax, _NSHTTPCookieSameSitePolicy, 
-                       _NSHTTPCookieSameSiteStrict, _NSHTTPCookieSecure, _NSHTTPCookieValue, 
-                       _NSHTTPCookieVersion, _NSHangOnUncaughtException, _NSHashCString, 
-                       _NSHashCStringAsIs, _NSHashCharacters, _NSHashGet, _NSHashInsert, 
-                       _NSHashInsertIfAbsent, _NSHashInsertKnownAbsent, _NSHashRemove, 
-                       _NSHashString, _NSHelpAnchorErrorKey, _NSHomeDirectory, _NSHomeDirectoryForUser, 
-                       _NSHourNameDesignations, _NSISEpsilon, _NSISLinExpAddVar, 
-                       _NSISLinExpDescription, _NSISLinExpDescriptionInEngine, _NSISMaxUlps, 
-                       _NSInconsistentArchiveException, _NSIncrementExtraRefCount, 
+                       _NSFontSymbolicTraitsAttributeName, _NSFoundationVersionNumber, 
+                       _NSFoundationVersionString, _NSFrameAddress, _NSFreeHashTable, 
+                       _NSFreeMapTable, _NSFreeObjectArray, _NSFullUserName, _NSGetUncaughtExceptionHandler, 
+                       _NSGlobalDomain, _NSGrammarRange, _NSHTTPCookieComment, _NSHTTPCookieCommentURL, 
+                       _NSHTTPCookieDiscard, _NSHTTPCookieDomain, _NSHTTPCookieExpires, 
+                       _NSHTTPCookieManagerAcceptPolicyChangedNotification, _NSHTTPCookieManagerCookiesChangedNotification, 
+                       _NSHTTPCookieMaximumAge, _NSHTTPCookieName, _NSHTTPCookieOriginURL, 
+                       _NSHTTPCookiePath, _NSHTTPCookiePort, _NSHTTPCookieSameSiteLax, 
+                       _NSHTTPCookieSameSitePolicy, _NSHTTPCookieSameSiteStrict, 
+                       _NSHTTPCookieSecure, _NSHTTPCookieValue, _NSHTTPCookieVersion, 
+                       _NSHangOnUncaughtException, _NSHashCString, _NSHashCStringAsIs, 
+                       _NSHashCharacters, _NSHashGet, _NSHashInsert, _NSHashInsertIfAbsent, 
+                       _NSHashInsertKnownAbsent, _NSHashRemove, _NSHashString, _NSHelpAnchorErrorKey, 
+                       _NSHomeDirectory, _NSHomeDirectoryForUser, _NSHourNameDesignations, 
+                       _NSISEpsilon, _NSISLinExpAddVar, _NSISLinExpDescription, _NSISLinExpDescriptionInEngine, 
+                       _NSISMaxUlps, _NSInconsistentArchiveException, _NSIncrementExtraRefCount, 
                        _NSInsetRect, _NSIntHashCallBacks, _NSIntMapKeyCallBacks, 
                        _NSIntMapValueCallBacks, _NSIntegerHashCallBacks, _NSIntegerMapKeyCallBacks, 
                        _NSIntegerMapValueCallBacks, _NSIntegralRect, _NSIntegralRectFlipOptions, 
@@ -840,37 +814,39 @@ exports:
                        __NSFCProviderLog, __NSFCShouldLog, __NSFCShouldLogForNewClaim, 
                        __NSFaultInObject, __NSFaultInObjectWithCleanup, __NSFileHandleCanPerformWritingInSwiftOverlay, 
                        __NSFoundationBundle, __NSFoundationResourceDirectory, __NSFullMethodName, 
-                       __NSGetUsingKeyValueGetter, __NSGetVoidValueWithMethod, __NSIPCloneToTemporaryDir, 
-                       __NSIPItemQueue, __NSIndentSpace, __NSIsLocalizedString, __NSKeyValueCreateImplicitObservationInfo, 
+                       __NSGetUsingKeyValueGetter, __NSGetVoidValueWithMethod, __NSGrammarAttributeName, 
+                       __NSIPCloneToTemporaryDir, __NSIPItemQueue, __NSIndentSpace, 
+                       __NSInflectableAttributeName, __NSIsLocalizedString, __NSKeyValueCreateImplicitObservationInfo, 
                        __NSKeyValueCreatePendingChangeNotificationArray, __NSKeyValueGetterForClassAndKey, 
                        __NSKeyValueInvalidateAllCachesForContainerAndKey, __NSKeyValueMutableSetGetterForClassAndKey, 
                        __NSKeyValueObserverRegistrationEnableLockingAssertions, __NSKeyValuePrimitiveGetterForClassAndKey, 
                        __NSKeyValuePrimitiveSetterForClassAndKey, __NSKeyValueRemoveObservationInfoForObject, 
-                       __NSKeyValueSetterForClassAndKey, __NSLayoutConstraintApplyDiffWithCounterparts, 
-                       __NSLayoutConstraintApplyDiffWithCounterpartsNSArrays, __NSLayoutConstraintComparableHash, 
-                       __NSLayoutConstraintDiffConstraints, __NSLayoutConstraintDiffConstraintsReturnNSArrays, 
-                       __NSLayoutRuleDiffAndUpdateInParent, __NSLayoutRuleRemoveNodeHierarchyFromParent, 
-                       __NSLinguisticTagSchemeInternalClass, __NSLinguisticTagSchemePossibleClasses, 
-                       __NSLocalizedFileSizeDescription, __NSLogCStringFunction, 
-                       __NSMethodExceptionProem, __NSNewInlineCString, __NSNewStringByAppendingStrings, 
-                       __NSNewStringFromCString, __NSODRSandboxExtensionKey, __NSODRSandboxRootPathKey, 
-                       __NSODRURLKey, __NSPNCSettings, __NSPersonNameComponentPhoneticFamilyNameKeyPath, 
+                       __NSKeyValueSetterForClassAndKey, __NSLanguageAttributeName, 
+                       __NSLayoutConstraintApplyDiffWithCounterparts, __NSLayoutConstraintApplyDiffWithCounterpartsNSArrays, 
+                       __NSLayoutConstraintComparableHash, __NSLayoutConstraintDiffConstraints, 
+                       __NSLayoutConstraintDiffConstraintsReturnNSArrays, __NSLayoutRuleDiffAndUpdateInParent, 
+                       __NSLayoutRuleRemoveNodeHierarchyFromParent, __NSLinguisticTagSchemeInternalClass, 
+                       __NSLinguisticTagSchemePossibleClasses, __NSLocalizedFileSizeDescription, 
+                       __NSLogCStringFunction, __NSMethodExceptionProem, __NSNewInlineCString, 
+                       __NSNewStringByAppendingStrings, __NSNewStringFromCString, 
+                       __NSODRSandboxExtensionKey, __NSODRSandboxRootPathKey, __NSODRURLKey, 
+                       __NSPNCSettings, __NSPersonNameComponentPhoneticFamilyNameKeyPath, 
                        __NSPersonNameComponentPhoneticGivenNameKeyPath, __NSPersonNameComponentPhoneticMiddleNameKeyPath, 
                        __NSPersonNameComponentPhoneticNicknameKeyPath, __NSPersonNameComponentPhoneticPrefixKeyPath, 
                        __NSPersonNameComponentPhoneticSuffixKeyPath, __NSPrintForDebugger, 
                        __NSProgressRemoteLocalizedAdditionalDescriptionKey, __NSProgressRemoteLocalizedDescriptionKey, 
                        __NSRaiseError, __NSReadExtendedAttributesFromFileDescriptor, 
-                       __NSRequestConcreteObject, __NSRuleNodeAppendDebugDescription, 
-                       __NSSetExceptionRaiser, __NSSetLogCStringFunction, __NSSetUsingKeyValueSetter, 
-                       __NSSetupLibXML, __NSUserDefaults_Log_Nonsensical_Suites, 
-                       __NSWriteExtendedAttributesToFileDescriptor, __NSXPCConnectionInvocationReplyToSelectorKey, 
-                       __NSXPCConnectionInvocationReplyUserInfoKey, __NS_os_log_callback, 
-                       __NXAccessFile, __NXCurrentWorkingDir, __NXMakeDirs, __NXRenameFile, 
-                       __NXStatFile, ___NSCoderInvalidState, ___NSDefaultStringEncodingFullyInited, 
-                       ___NSDescribeDelayedPerformCallout, ___NSDescribeNSMachPortCallout, 
-                       ___NSDescribeTimerCallout, ___NSFireDelayedPerform, ___NSFireMachPort, 
-                       ___NSFireTimer, ___NSPropertyListClasses_ForArchival_ErrorAndException, 
-                       _getStackObservedValueClassAndBoxSize ]
+                       __NSReplacementIndexAttributeName, __NSRequestConcreteObject, 
+                       __NSRuleNodeAppendDebugDescription, __NSSetExceptionRaiser, 
+                       __NSSetLogCStringFunction, __NSSetUsingKeyValueSetter, __NSSetupLibXML, 
+                       __NSUserDefaults_Log_Nonsensical_Suites, __NSWriteExtendedAttributesToFileDescriptor, 
+                       __NSXPCConnectionInvocationReplyToSelectorKey, __NSXPCConnectionInvocationReplyUserInfoKey, 
+                       __NS_os_log_callback, __NXAccessFile, __NXCurrentWorkingDir, 
+                       __NXMakeDirs, __NXRenameFile, __NXStatFile, ___NSCoderInvalidState, 
+                       ___NSDefaultStringEncodingFullyInited, ___NSDescribeDelayedPerformCallout, 
+                       ___NSDescribeNSMachPortCallout, ___NSDescribeTimerCallout, 
+                       ___NSFireDelayedPerform, ___NSFireMachPort, ___NSFireTimer, 
+                       ___NSPropertyListClasses_ForArchival_ErrorAndException, _getStackObservedValueClassAndBoxSize ]
     objc-classes:    [ NSAddressCheckingResult, NSAffineTransform, NSAlignmentLayoutRule, 
                        NSArchiver, NSArrayChange, NSArrayChanges, NSAssertionHandler, 
                        NSAttributedString, NSAutoreleasePool, NSAutoresizingMaskLayoutConstraint, 
@@ -959,12 +935,14 @@ exports:
                        NSUserActivity, NSValue, NSValueTransformer, NSVariableExpression, 
                        NSVisualFormatLayoutRule, NSXMLParser, NSXPCCoder, NSXPCConnection, 
                        NSXPCInterface, NSXPCListener, NSXPCListenerEndpoint, _NSArithmeticLayoutDimension, 
+                       _NSAttributedStringGrammar, _NSAttributedStringGrammarInflection, 
                        _NSAutoresizingMaskXAxisAnchor, _NSAutoresizingMaskYAxisAnchor, 
                        _NSBundleODRTag, _NSCloudSharingDescriptor, _NSCompositeLayoutDimension, 
                        _NSCompositeLayoutRuleNode, _NSCompositeLayoutXAxisAnchor, 
                        _NSCompositeLayoutYAxisAnchor, _NSConstraintDescriptionLayoutRuleNode, 
                        _NSDistanceLayoutDimension, _NSExtensionContextVendor, _NSKVOCompatibility, 
-                       _NSLayoutRuleNode, _NSSharedValueTransformer ]
+                       _NSLayoutRuleNode, _NSLexicon, _NSLexiconLemma, _NSLexiconWord, 
+                       _NSSharedValueTransformer ]
     objc-ivars:      [ NSBlockPredicate._block, NSComplexOrthography._dominantScript, 
                        NSComplexOrthography._languageMap, NSComplexOrthography._orthographyFlags, 
                        NSConcreteValue._specialFlags, NSConcreteValue.typeInfo, NSConstantDoubleNumber._value, 

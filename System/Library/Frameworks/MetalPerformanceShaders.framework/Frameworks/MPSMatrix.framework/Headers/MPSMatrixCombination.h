@@ -2,7 +2,7 @@
 //  MPSMatrixCombination.h
 //  MPSMatrix
 //
-//  Created by Ian Ollmann on 6/5/17.
+//  Created on 6/5/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

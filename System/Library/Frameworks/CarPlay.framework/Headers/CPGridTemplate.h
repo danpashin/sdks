@@ -19,7 +19,8 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
  @note A grid template will only display the first 8 buttons in the provided gridButtons array.
  A grid template presenting more than 4 buttons will balance the buttons between 2 rows.
  */
-- (instancetype)initWithTitle:(nullable NSString *)title gridButtons:(NSArray <CPGridButton *> *)gridButtons;
+- (instancetype)initWithTitle:(nullable NSString *)title
+                  gridButtons:(NSArray <CPGridButton *> *)gridButtons;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

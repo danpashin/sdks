@@ -18,8 +18,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INUpdateMediaAffinityIntent : INIntent
 
 - (instancetype)initWithMediaItems:(nullable NSArray<INMediaItem *> *)mediaItems
@@ -41,8 +41,8 @@ API_UNAVAILABLE(macos, tvos)
  @discussion The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
  */
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @protocol INUpdateMediaAffinityIntentHandling <NSObject>
 
 @required

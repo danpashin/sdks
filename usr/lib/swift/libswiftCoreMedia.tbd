@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 14FAEF13-EBF2-3039-9A89-30FDA4EF57C6', 'armv7s: EF98589E-DDD8-310E-B500-D3EAC99ED53E', 
-                   'arm64: 7B7E1E05-4D29-3471-82E8-B5DF30C68C16', 'arm64e: EF0D2106-D8F0-3779-A54B-A38C4007180A' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           14FAEF13-EBF2-3039-9A89-30FDA4EF57C6
+  - target:          armv7s-ios
+    value:           EF98589E-DDD8-310E-B500-D3EAC99ED53E
+  - target:          arm64-ios
+    value:           2F9B2F3A-0840-38DE-9E09-2B1C5F45950E
+  - target:          arm64e-ios
+    value:           29CA6152-BB9A-349D-A7F6-62AF092E0763
 install-name:    '/usr/lib/swift/libswiftCoreMedia.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftCoreMedia.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftCoreMedia.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftCoreMedia.dylib', 

@@ -2,7 +2,7 @@
 //  MPSNDArrayGather.h
 //  MPSNDArray
 //
-//  Created by Justin Voo on 1/22/19.
+//  Created on 1/22/19.
 //  Copyright © 2019 Apple. All rights reserved.
 //
 

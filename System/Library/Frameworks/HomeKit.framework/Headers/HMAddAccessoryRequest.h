@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class HMAccessorySetupPayload;
 @class HMHome;
 
-HM_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos)
+HM_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos, macCatalyst)
 @interface HMAddAccessoryRequest : NSObject
 
 /*!

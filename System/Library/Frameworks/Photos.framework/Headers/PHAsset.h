@@ -71,7 +71,7 @@ OS_EXPORT
 + (PHFetchResult<PHAsset *> *)fetchAssetsWithMediaType:(PHAssetMediaType)mediaType options:(nullable PHFetchOptions *)options API_AVAILABLE(macos(10.15));
 
 // assetURLs are URLs retrieved from ALAsset's ALAssetPropertyAssetURL
-+ (PHFetchResult<PHAsset *> *)fetchAssetsWithALAssetURLs:(NSArray<NSURL *> *)assetURLs options:(nullable PHFetchOptions *)options API_DEPRECATED("Will be removed in a future release", ios(8, 11), tvos(8, 11)) API_UNAVAILABLE(macCatalyst, macos);
++ (PHFetchResult<PHAsset *> *)fetchAssetsWithALAssetURLs:(NSArray<NSURL *> *)assetURLs options:(nullable PHFetchOptions *)options API_DEPRECATED("Will be removed in a future release", ios(8, 11), tvos(8, 11)) API_UNAVAILABLE(macos);
 
 @end
 

@@ -7,6 +7,8 @@
 
 #import <ARKit/ARSkeletonDefinition.h>
 #import <simd/simd.h>
+#import <Foundation/Foundation.h>
+#import <Vision/Vision.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -109,5 +111,15 @@ API_AVAILABLE(ios(13.0))
 + (instancetype)new NS_UNAVAILABLE;
 
 @end
+
+/**
+ Returns the landmark joint name that corresponds to a key point defined in Vision framework.
+ @see VNRecognizedPointKey, VNDetectHumanBodyPoseRequest
+ @discussion If an invalid key point is passed the returned point will be nil.
+ 
+ @param recognizedPointKey Recognized key point.
+ @return Joint name that could be mapped to a ARSkeleton2D. Nil if no mapping exists.
+ */
+FOUNDATION_EXTERN __nullable ARSkeletonJointName ARSkeletonJointNameForRecognizedPointKey(VNRecognizedPointKey recognizedPointKey) NS_SWIFT_NAME(ARSkeletonJointName.init(_:)) API_AVAILABLE(ios(14.0));
 
 NS_ASSUME_NONNULL_END

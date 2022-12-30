@@ -11,6 +11,7 @@
 #import <Metal/MTLCommandEncoder.h>
 #import <Metal/MTLTexture.h>
 #import <Metal/MTLCommandBuffer.h>
+#import <Metal/MTLComputePass.h>
 #import <Metal/MTLFence.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MTLTexture;
 @protocol MTLComputePipelineState;
 @protocol MTLResource;
+@protocol MTLVisibleFunctionTable;
+@protocol MTLAccelerationStructure;
+
 typedef struct {
     uint32_t threadgroupsPerGrid[3];
 } MTLDispatchThreadgroupsIndirectArguments;
@@ -73,6 +77,39 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  */
 - (void)setBuffers:(const id <MTLBuffer> __nullable [__nonnull])buffers offsets:(const NSUInteger [__nonnull])offsets withRange:(NSRange)range;
 
+
+
+/*!
+ * @method setVisibleFunctionTable:atBufferIndex:
+ * @brief Set a visible function table at the given buffer index
+ */
+- (void)setVisibleFunctionTable:(nullable id <MTLVisibleFunctionTable>)visibleFunctionTable atBufferIndex:(NSUInteger)bufferIndex API_AVAILABLE(macos(11.0), ios(14.0));
+
+/*!
+ * @method setVisibleFunctionTables:withBufferRange:
+ * @brief Set visible function tables at the given buffer index range
+ */
+- (void)setVisibleFunctionTables:(const id <MTLVisibleFunctionTable> __nullable [__nonnull])visibleFunctionTables withBufferRange:(NSRange)range API_AVAILABLE(macos(11.0), ios(14.0));
+
+/*!
+ * @method setIntersectionFunctionTable:atBufferIndex:
+ * @brief Set a visible function table at the given buffer index
+ */
+- (void)setIntersectionFunctionTable:(nullable id <MTLIntersectionFunctionTable>)intersectionFunctionTable atBufferIndex:(NSUInteger)bufferIndex API_AVAILABLE(macos(11.0), ios(14.0));
+
+/*!
+ * @method setIntersectionFunctionTables:withBufferRange:
+ * @brief Set visible function tables at the given buffer index range
+ */
+- (void)setIntersectionFunctionTables:(const id <MTLIntersectionFunctionTable> __nullable [__nonnull])intersectionFunctionTables withBufferRange:(NSRange)range API_AVAILABLE(macos(11.0), ios(14.0));
+
+
+/*!
+ @method setAccelerationStructure:atBufferIndex:
+ @brief Set a global raytracing acceleration structure for all compute kernels at the given buffer bind point index.
+ */
+- (void)setAccelerationStructure:(nullable id <MTLAccelerationStructure>)accelerationStructure atBufferIndex:(NSUInteger)bufferIndex API_AVAILABLE(macos(11.0), ios(14.0));
+
 /*!
  @method setTexture:atIndex:
  @brief Set a global texture for all compute kernels at the given bind point index.
@@ -122,7 +159,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @method setImageblockWidth:height:
  @brief Set imageblock sizes.
  */
-- (void)setImageblockWidth:(NSUInteger)width height:(NSUInteger)height API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setImageblockWidth:(NSUInteger)width height:(NSUInteger)height API_AVAILABLE(ios(11.0), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(tvos);
 
 /*
  @method setStageInRegion:region:
@@ -215,7 +252,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  * @abstract Execute commands in the buffer within the range specified.
  * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
  */
-- (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandBuffer withRange:(NSRange)executionRange API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
+- (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandBuffer withRange:(NSRange)executionRange API_AVAILABLE(ios(13.0),macos(11.0));
 
 /*!
  * @method executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:
@@ -224,7 +261,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located. Must be a multiple of 4 bytes.
  * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
  */
-- (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandbuffer indirectBuffer:(id<MTLBuffer>)indirectRangeBuffer indirectBufferOffset:(NSUInteger)indirectBufferOffset API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
+- (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandbuffer indirectBuffer:(id<MTLBuffer>)indirectRangeBuffer indirectBufferOffset:(NSUInteger)indirectBufferOffset API_AVAILABLE(ios(13.0),macos(11.0));
 
 
 
@@ -242,6 +279,26 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  */
 - (void)memoryBarrierWithResources:(const id<MTLResource> __nonnull [__nonnull])resources count:(NSUInteger)count API_AVAILABLE(macos(10.14), ios(12.0));
 
+/*!
+ @method sampleCountersInBuffer:atSampleIndex:withBarrier:
+ @abstract Sample hardware counters at this point in the compute encoder and
+ store the counter sample into the sample buffer at the specified index.
+ @param sampleBuffer The sample buffer to sample into
+ @param sampleIndex The index into the counter buffer to write the sample
+ @param barrier Insert a barrier before taking the sample.  Passing
+ YES will ensure that all work encoded before this operation in the encoder is
+ complete but does not isolate the work with respect to other encoders.  Passing
+ NO will allow the sample to be taken concurrently with other operations in this
+ encoder.
+ In general, passing YES will lead to more repeatable counter results but
+ may negatively impact performance.  Passing NO will generally be higher performance
+ but counter results may not be repeatable.
+ @discussion On devices where MTLCounterSamplingPointAtDispatchBoundary is unsupported,
+ this method is not available and will generate an error if called.
+ */
+-(void)sampleCountersInBuffer:(id<MTLCounterSampleBuffer>)sampleBuffer
+                atSampleIndex:(NSUInteger)sampleIndex
+                  withBarrier:(BOOL)barrier API_AVAILABLE(macos(10.15), ios(14.0));
 
 @end
 NS_ASSUME_NONNULL_END

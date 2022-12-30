@@ -8,13 +8,14 @@
 
 @class PKPaymentMethod;
 
-// Contains the user's payment credentials, encrypted to the merchant.
 NS_ASSUME_NONNULL_BEGIN
-API_AVAILABLE(ios(8.0), watchos(3.0))
+
+// Contains the user's payment credentials, encrypted to the merchant.
+API_AVAILABLE(macos(11.0), ios(8.0), watchos(3.0))
 @interface PKPaymentToken : NSObject
 
 // Describes the properties of the underlying payment instrument selected to fund the payment
-@property (nonatomic, strong, readonly) PKPaymentMethod *paymentMethod API_AVAILABLE(ios(9.0), watchos(3.0));
+@property (nonatomic, strong, readonly) PKPaymentMethod *paymentMethod API_AVAILABLE(macos(11.0), ios(9.0), watchos(3.0));
 
 // A string that describes the payment instrument the user has selected to fund the payment.
 // Suitable for display, e.g. "Amex 1234".

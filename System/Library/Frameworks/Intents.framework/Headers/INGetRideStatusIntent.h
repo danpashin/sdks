@@ -69,7 +69,7 @@ API_UNAVAILABLE(macos, tvos)
 @end
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx)
+API_UNAVAILABLE(macos, tvos)
 @protocol INGetRideStatusIntentResponseObserver <NSObject>
 
 - (void)getRideStatusResponseDidUpdate:(INGetRideStatusIntentResponse *)response NS_SWIFT_NAME(didUpdate(getRideStatus:));

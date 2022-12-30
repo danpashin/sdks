@@ -2,7 +2,7 @@
 //  MPSNNReduce.h
 //  MPSNeuralNetwork
 //
-//  Created by Dhruv Saksena on 10/31/17.
+//  Created on 10/31/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

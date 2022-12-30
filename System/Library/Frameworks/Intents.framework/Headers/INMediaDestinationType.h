@@ -15,6 +15,6 @@ typedef NS_ENUM(NSInteger, INMediaDestinationType) {
     INMediaDestinationTypeUnknown = 0,
     INMediaDestinationTypeLibrary,
     INMediaDestinationTypePlaylist,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 #endif // INMediaDestinationType_h

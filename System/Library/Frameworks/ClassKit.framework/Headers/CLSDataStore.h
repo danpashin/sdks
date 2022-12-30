@@ -2,7 +2,7 @@
 //  CLSDataStore.h
 //  ClassKit
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2019 Apple Inc. All rights reserved.
 //
 
 #import <ClassKit/CLSDefines.h>
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @protocol CLSDataStoreDelegate <NSObject>
 
 @required
@@ -38,7 +38,7 @@ API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
 /*!
  @abstract      The data store maintains and syncs your app's contexts.
  */
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @interface CLSDataStore : NSObject
 
 /*!
@@ -68,6 +68,7 @@ API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
  */
 @property (nullable, nonatomic, weak) id<CLSDataStoreDelegate> delegate;
 
++ (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -81,11 +82,11 @@ API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
  @abstract      Complete all assigned actvities.
  @discussion    Marks all of the currently active assigned activities for this contextPath as complete.
  */
-- (void)completeAllAssignedActivitiesMatching:(NSArray<NSString *> *)contextPath API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+- (void)completeAllAssignedActivitiesMatching:(NSArray<NSString *> *)contextPath API_AVAILABLE(ios(12.2), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 @end
 
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @interface CLSDataStore (Contexts)
 
 

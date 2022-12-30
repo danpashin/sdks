@@ -25,6 +25,8 @@ API_UNAVAILABLE(macos, tvos)
 
 @class INGetCarPowerLevelStatusIntentResponse;
 
+@protocol INGetCarPowerLevelStatusIntentResponseObserver;
+
 /*!
  @abstract Protocol to declare support for handling an INGetCarPowerLevelStatusIntent. By implementing this protocol, a class can provide logic for resolving, confirming and handling the intent.
  @discussion The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
@@ -51,6 +53,11 @@ API_UNAVAILABLE(macos, tvos)
 
 @optional
 
+- (void)startSendingUpdatesForGetCarPowerLevelStatus:(INGetCarPowerLevelStatusIntent *)intent
+                                          toObserver:(id<INGetCarPowerLevelStatusIntentResponseObserver>)observer NS_SWIFT_NAME(startSendingUpdates(for:to:)) API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, macos, tvos);
+
+- (void)stopSendingUpdatesForGetCarPowerLevelStatus:(INGetCarPowerLevelStatusIntent *)intent NS_SWIFT_NAME(stopSendingUpdates(for:)) API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, macos, tvos);
+
 /*!
  @abstract Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
  @discussion Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
@@ -76,6 +83,14 @@ API_UNAVAILABLE(macos, tvos)
 
 - (void)resolveCarNameForGetCarPowerLevelStatus:(INGetCarPowerLevelStatusIntent *)intent
                     withCompletion:(void (^)(INSpeakableStringResolutionResult *resolutionResult))completion NS_SWIFT_NAME(resolveCarName(for:with:));
+
+@end
+
+API_AVAILABLE(ios(14.0))
+API_UNAVAILABLE(watchos, macos, tvos)
+@protocol INGetCarPowerLevelStatusIntentResponseObserver <NSObject>
+
+- (void)getCarPowerLevelStatusResponseDidUpdate:(INGetCarPowerLevelStatusIntentResponse *)response NS_SWIFT_NAME(didUpdate(getCarPowerLevelStatus:));
 
 @end
 

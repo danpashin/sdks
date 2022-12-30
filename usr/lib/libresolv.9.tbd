@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 8EB3567E-9C7D-3C5D-B7E5-D97A7487C6FC', 'armv7s: 6DBB8B5F-D0DF-3254-8BE2-E7C80010C57A', 
-                   'arm64: E545F1E8-28B7-3580-9770-97D87896929B', 'arm64e: 7C07626E-B83E-3C45-913A-B501306DE852' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           5ABA8E9B-5228-3324-A19E-A1F69C04469E
+  - target:          armv7s-ios
+    value:           468F1912-3BB2-31A9-9923-9567DD154493
+  - target:          arm64-ios
+    value:           C2903025-C58A-3C7C-A5A2-FB41CA23DCC4
+  - target:          arm64e-ios
+    value:           7DB9E99C-A409-335E-90F7-AF85B71E1414
 install-name:    '/usr/lib/libresolv.9.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___libresolv_9VersionNumber, ___libresolv_9VersionString, 
                        ___res_nsearch_list_2, ___res_opcodes, ___res_p_cert_syms, 
                        ___res_p_class_syms, ___res_p_key_syms, ___res_p_rcode_syms, 
@@ -24,7 +31,7 @@ exports:
                        _res_interrupt_request, _res_interrupt_requests_disable, _res_interrupt_requests_enable, 
                        _res_next_word, _res_nquery_2, _res_nquerydomain_2, _res_nsearch_2, 
                        _res_query_mDNSResponder, _res_state_new, _res_vinit_from_file ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ ___res_9_p_type_syms, __res_9_h_errno_set, __res_9_ns_flagdata, 
                        _dns_all_server_addrs, _dns_async_cancel, _dns_async_handle_reply, 
                        _dns_async_receive, _dns_async_send, _dns_async_start, _dns_class_number, 

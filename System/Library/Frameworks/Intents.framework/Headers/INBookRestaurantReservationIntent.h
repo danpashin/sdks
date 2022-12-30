@@ -22,7 +22,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @interface INBookRestaurantReservationIntent : INIntent <NSCopying>
 
 - (instancetype)initWithRestaurant:(INRestaurant *)restaurant
@@ -46,7 +46,7 @@ API_UNAVAILABLE(macosx, watchos)
 @class INBookRestaurantReservationIntentResponse;
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @protocol INBookRestaurantReservationIntentHandling <NSObject>
 
 /*!

@@ -2,7 +2,7 @@
 //  MPSMatrixFindTopK.h
 //  MPSMatrix
 //
-//  Created by Teemu Rantalaiho on 8/11/17.
+//  Created on 8/11/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

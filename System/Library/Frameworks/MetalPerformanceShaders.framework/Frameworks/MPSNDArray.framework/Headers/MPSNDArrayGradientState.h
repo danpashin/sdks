@@ -2,7 +2,7 @@
 //  MPSNDArrayGradientState.h
 //  MPS
 //
-//  Created by Dhruv Saksena on 1/3/19.
+//  Created on 1/3/19.
 //  Copyright © 2019 Apple. All rights reserved.
 //
 

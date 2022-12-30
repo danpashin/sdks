@@ -2,7 +2,7 @@
 //  MPSMatrixFullyConnected.h
 //  MPS
 //
-//  Created by Justin Voo on 8/30/17.
+//  Created on 8/30/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

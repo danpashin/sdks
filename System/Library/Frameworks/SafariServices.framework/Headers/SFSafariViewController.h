@@ -115,6 +115,10 @@ API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(watchos)
  */
 - (void)safariViewController:(SFSafariViewController *)controller initialLoadDidRedirectToURL:(NSURL *)URL API_AVAILABLE(ios(11.0));
 
+/*! @abstract Called when the user opens the current page in the default browser by tapping the toolbar button.
+ */
+- (void)safariViewControllerWillOpenInBrowser:(SFSafariViewController *)controller NS_SWIFT_NAME(safariViewControllerWillOpenInBrowser(_:)) API_AVAILABLE(ios(14.0));
+
 @end
 
 NS_ASSUME_NONNULL_END

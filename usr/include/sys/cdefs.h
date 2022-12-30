@@ -174,6 +174,15 @@
 #define __cold
 #endif
 
+/* __exported denotes symbols that should be exported even when symbols
+ * are hidden by default.
+ * __exported_push/_exported_pop are pragmas used to delimit a range of
+ *  symbols that should be exported even when symbols are hidden by default.
+ */
+#define __exported                      __attribute__((__visibility__("default")))
+#define __exported_push         _Pragma("GCC visibility push(default)")
+#define __exported_pop          _Pragma("GCC visibility pop")
+
 /* __deprecated causes the compiler to produce a warning when encountering
  * code using the deprecated functionality.
  * __deprecated_msg() does the same, and compilers that support it will print
@@ -202,9 +211,15 @@
 #define __kpi_deprecated(_msg)
 
 /* __unavailable causes the compiler to error out when encountering
- * code using the tagged function of variable.
+ * code using the tagged function
  */
-#define __unavailable   __attribute__((__unavailable__))
+#if __has_attribute(unavailable)
+#define __unavailable __attribute__((__unavailable__))
+#else
+#define __unavailable
+#endif
+
+#define __kpi_unavailable
 
 /* Delete pseudo-keywords wherever they are not available or needed. */
 #ifndef __dead
@@ -493,14 +508,6 @@
  * pre-10.5, and it is the default compilation environment, revert the
  * compilation environment to pre-__DARWIN_UNIX03.
  */
-#if !defined(__DARWIN_ONLY_UNIX_CONFORMANCE)
-#  if defined(__LP64__)
-#    define __DARWIN_ONLY_UNIX_CONFORMANCE 1
-#  else /* !__LP64__ */
-#    define __DARWIN_ONLY_UNIX_CONFORMANCE 0
-#  endif /* __LP64__ */
-#endif /* !__DARWIN_ONLY_UNIX_CONFORMANCE */
-
 #if !defined(__DARWIN_UNIX03)
 #  if   __DARWIN_ONLY_UNIX_CONFORMANCE
 #    if defined(_NONSTD_SOURCE)

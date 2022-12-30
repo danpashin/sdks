@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: D9C0E2AA-A355-3469-84B3-F46A157AD4C8', 'armv7s: 364700DD-E95E-3DFE-9F78-7FDB52CDA315', 
-                   'arm64: A675D015-D71E-3EFE-B404-C0F69A71E6C0', 'arm64e: D34F6BC6-71CF-3135-9A8E-DA216F66C346' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           38B041A5-F2C3-3036-BA42-B67D0F1635DD
+  - target:          armv7s-ios
+    value:           DE6D2070-F744-36E7-BBAF-341F9EB8744B
+  - target:          arm64-ios
+    value:           42DD9AB7-3EE1-392E-A72D-CFF794ADAEB6
+  - target:          arm64e-ios
+    value:           D80BD354-414C-3853-A4FF-B41FC3C84566
 install-name:    '/System/Library/Frameworks/GameplayKit.framework/GameplayKit'
-current-version: 89
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 95
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _GameplayKitVersionNumber, _GameplayKitVersionString, __Z11orientationDv2_fS_S_, 
                        __Z11pointOnLineDv2_fS_S_, __Z14__voronoiNoiseDv3_fffa, __Z16MakeVectorFloat2ff, 
                        __Z16MakeVectorFloat3fff, __Z16getCoherentNoiseDv3_dDv3_ii, 
@@ -269,24 +276,24 @@ exports:
                        GKScaleNoiseModifier, GKTerraceNoiseModifier, GKTurbulenceNoiseModifier, 
                        _GKBlockRule, _GKNSPredicateRule ]
     objc-ivars:      [ GKNoiseModifier._inputModules ]
-    weak-def-symbols: [ __ZTI11GKCQuadTreeI8NSObjectE, __ZTI13GKCOctreeNodeI8NSObjectE, 
-                        __ZTI15GKCQuadTreeNodeI8NSObjectE, __ZTI15GKSimpleVehicle, 
-                        __ZTI9GKCOctreeI8NSObjectE, __ZTIN10ClipperLib16clipperExceptionE, 
-                        __ZTIN10ClipperLib8PolyNodeE, __ZTIN9OpenSteer14AbstractPlugInE, 
-                        __ZTIN9OpenSteer15AbstractVehicleE, __ZTIN9OpenSteer15LocalSpaceMixinINS_15AbstractVehicleEEE, 
-                        __ZTIN9OpenSteer15LocalSpaceMixinINS_18AbstractLocalSpaceEEE, 
-                        __ZTIN9OpenSteer17SphericalObstacleE, __ZTIN9OpenSteer17SteerLibraryMixinINS_15LocalSpaceMixinINS_15AbstractVehicleEEEEE, 
-                        __ZTIN9OpenSteer18AbstractLocalSpaceE, __ZTIN9OpenSteer7PathwayE, 
-                        __ZTIN9OpenSteer8ObstacleE, __ZTS11GKCQuadTreeI8NSObjectE, 
-                        __ZTS13GKCOctreeNodeI8NSObjectE, __ZTS15GKCQuadTreeNodeI8NSObjectE, 
-                        __ZTS15GKSimpleVehicle, __ZTS9GKCOctreeI8NSObjectE, __ZTSN10ClipperLib16clipperExceptionE, 
-                        __ZTSN10ClipperLib8PolyNodeE, __ZTSN9OpenSteer14AbstractPlugInE, 
-                        __ZTSN9OpenSteer15AbstractVehicleE, __ZTSN9OpenSteer15LocalSpaceMixinINS_15AbstractVehicleEEE, 
-                        __ZTSN9OpenSteer15LocalSpaceMixinINS_18AbstractLocalSpaceEEE, 
-                        __ZTSN9OpenSteer17SphericalObstacleE, __ZTSN9OpenSteer17SteerLibraryMixinINS_15LocalSpaceMixinINS_15AbstractVehicleEEEEE, 
-                        __ZTSN9OpenSteer18AbstractLocalSpaceE, __ZTSN9OpenSteer7PathwayE, 
-                        __ZTSN9OpenSteer8ObstacleE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZTI11GKCQuadTreeI8NSObjectE, __ZTI13GKCOctreeNodeI8NSObjectE, 
+                       __ZTI15GKCQuadTreeNodeI8NSObjectE, __ZTI15GKSimpleVehicle, 
+                       __ZTI9GKCOctreeI8NSObjectE, __ZTIN10ClipperLib16clipperExceptionE, 
+                       __ZTIN10ClipperLib8PolyNodeE, __ZTIN9OpenSteer14AbstractPlugInE, 
+                       __ZTIN9OpenSteer15AbstractVehicleE, __ZTIN9OpenSteer15LocalSpaceMixinINS_15AbstractVehicleEEE, 
+                       __ZTIN9OpenSteer15LocalSpaceMixinINS_18AbstractLocalSpaceEEE, 
+                       __ZTIN9OpenSteer17SphericalObstacleE, __ZTIN9OpenSteer17SteerLibraryMixinINS_15LocalSpaceMixinINS_15AbstractVehicleEEEEE, 
+                       __ZTIN9OpenSteer18AbstractLocalSpaceE, __ZTIN9OpenSteer7PathwayE, 
+                       __ZTIN9OpenSteer8ObstacleE, __ZTS11GKCQuadTreeI8NSObjectE, 
+                       __ZTS13GKCOctreeNodeI8NSObjectE, __ZTS15GKCQuadTreeNodeI8NSObjectE, 
+                       __ZTS15GKSimpleVehicle, __ZTS9GKCOctreeI8NSObjectE, __ZTSN10ClipperLib16clipperExceptionE, 
+                       __ZTSN10ClipperLib8PolyNodeE, __ZTSN9OpenSteer14AbstractPlugInE, 
+                       __ZTSN9OpenSteer15AbstractVehicleE, __ZTSN9OpenSteer15LocalSpaceMixinINS_15AbstractVehicleEEE, 
+                       __ZTSN9OpenSteer15LocalSpaceMixinINS_18AbstractLocalSpaceEEE, 
+                       __ZTSN9OpenSteer17SphericalObstacleE, __ZTSN9OpenSteer17SteerLibraryMixinINS_15LocalSpaceMixinINS_15AbstractVehicleEEEEE, 
+                       __ZTSN9OpenSteer18AbstractLocalSpaceE, __ZTSN9OpenSteer7PathwayE, 
+                       __ZTSN9OpenSteer8ObstacleE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _GKClosestPointsBetweenLineSegments, _GKDoesCircleIntersectLine, 
                        _GKDoesCircleIntersectLineSegment, _GKDoesCircleIntersectPolygon, 
                        _GKGetCircleToLineIntersectionPoints, _GKGetCircleToLineSegmentIntersectionPoints, 

@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 8823BF6F-ECFB-3793-A584-C110CAA5CFF0', 'armv7s: 96343EC6-14DB-3D8B-BA7B-909F30D0491D', 
-                   'arm64: C6CFDA84-0163-3A40-A228-7B8A8E199C8A', 'arm64e: D5612CD2-B746-3AFE-8D34-77100FB8B5DD' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           282290B5-DF4C-3E92-92CD-5C0CB7F64583
+  - target:          armv7s-ios
+    value:           FC612FE2-0C71-3328-A752-B34807583A03
+  - target:          arm64-ios
+    value:           A33DAC19-A2A5-3605-9E3B-FE8F92B3A8C1
+  - target:          arm64e-ios
+    value:           C5C0B931-E651-3170-8141-9D819DA8503B
 install-name:    '/System/Library/Frameworks/OpenAL.framework/OpenAL'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _alBuffer3f, _alBuffer3i, _alBufferData, _alBufferf, _alBufferfv, 
                        _alBufferi, _alBufferiv, _alDeleteBuffers, _alDeleteSources, 
                        _alDisable, _alDistanceModel, _alDopplerFactor, _alDopplerVelocity, 

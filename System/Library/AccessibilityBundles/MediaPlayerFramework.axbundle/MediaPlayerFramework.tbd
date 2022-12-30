@@ -8,9 +8,11 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __Failover, _accessibilityLocalizedString,
+    symbols:              [ _AXLabelForMediaRoute, __Failover,
+                            _accessibilityLocalizedString,
                             _accessibilityMPLocalizedString ]
     objc-classes:         [ AXMediaPlayerFrameworkGlue, MPAVItemAccessibility,
+                            MPAVRoutingControllerAccessibility,
                             MPAVRoutingSheetAccessibility,
                             MPAVRoutingTableViewCellAccessibility,
                             MPAVRoutingViewControllerAccessibility,
@@ -35,6 +37,7 @@ exports:
                             UINavigationButtonAccessibility__MediaPlayer__UIKit,
                             UITableViewCellAccessibility__MediaPlayer__UIKit,
                             __MPAVItemAccessibility_super,
+                            __MPAVRoutingControllerAccessibility_super,
                             __MPAVRoutingSheetAccessibility_super,
                             __MPAVRoutingTableViewCellAccessibility_super,
                             __MPAVRoutingViewControllerAccessibility_super,

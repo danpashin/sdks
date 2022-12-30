@@ -1,37 +1,66 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 095D412E-B290-3B93-9423-6246D71EAEA1', 'armv7s: D595B74D-9D6A-3F47-892C-2C8BA16BD154', 
-                   'arm64: 7E6A1487-FF35-3856-A026-902959FFD3EE', 'arm64e: A98A9087-E96A-3B8B-B7C9-D14AFEA990C5' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E812DCCF-00A8-3F46-A972-D78A09E58CA4
+  - target:          armv7s-ios
+    value:           CE0C34CE-C9DE-3EEE-944E-8D1D390C7B73
+  - target:          arm64-ios
+    value:           8ADD23F6-9D41-3D88-BDAA-4CA674EC15E1
+  - target:          arm64e-ios
+    value:           21983779-A1EB-35F1-9148-1A5AA44D2BD1
 install-name:    '/usr/lib/CarrierBundleUtilities.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __Z23VerifyPriSignatureOnSHARKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP8__SecKey12DigestPrefix, 
                        __Z25VerifyCarrierBundleForSHARKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEb12DigestPrefix, 
                        __Z25VerifySignatureDictionaryRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_3mapIS5_N3ctu2cf11CFSharedRefIK8__CFDataEENS_4lessIS5_EENS3_INS_4pairIS6_SE_EEEEEES7_P8__SecKey12DigestPrefix, 
                        __Z28VerifyCarrierBundleSignatureRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP8__SecKey, 
                        __Z29VerifyFileSignatureDictionaryRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS_13unordered_mapIS5_NS_6vectorINS_4pairIS5_N3ctu2cf11CFSharedRefIK8__CFDataEEEENS3_ISH_EEEENS_4hashIS5_EENS_8equal_toIS5_EENS3_INSA_IS6_SJ_EEEEEEP8__SecKey12DigestPrefix, 
                        __Z33VerifyCarrierBundleSignatureOnSHARKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEP8__SecKey12DigestPrefix, 
+                       __ZN16LegacyPublicKeys27get_sha1_production_keysizeEv, __ZN16LegacyPublicKeys27get_sha2_production_keysizeEv, 
+                       __ZN16LegacyPublicKeys28get_sha1_development_keysizeEv, __ZN16LegacyPublicKeys28get_sha2_development_keysizeEv, 
+                       __ZN16LegacyPublicKeys29get_sha1_production_publickeyEv, __ZN16LegacyPublicKeys29get_sha2_production_publickeyEv, 
+                       __ZN16LegacyPublicKeys30get_sha1_development_publickeyEv, 
+                       __ZN16LegacyPublicKeys30get_sha2_development_publickeyEv, 
+                       __ZN16LegacyPublicKeys31pkcs1_sha1_production_publickeyE, 
+                       __ZN16LegacyPublicKeys31pkcs1_sha2_production_publickeyE, 
+                       __ZN16LegacyPublicKeys32pkcs1_sha1_development_publickeyE, 
+                       __ZN16LegacyPublicKeysC1Ev, __ZN16LegacyPublicKeysC2Ev, __ZN17CurrentPublicKeys27get_sha1_production_keysizeEv, 
+                       __ZN17CurrentPublicKeys27get_sha2_production_keysizeEv, __ZN17CurrentPublicKeys28get_sha1_development_keysizeEv, 
+                       __ZN17CurrentPublicKeys28get_sha2_development_keysizeEv, __ZN17CurrentPublicKeys29get_sha1_production_publickeyEv, 
+                       __ZN17CurrentPublicKeys29get_sha2_production_publickeyEv, 
+                       __ZN17CurrentPublicKeys30get_sha1_development_publickeyEv, 
+                       __ZN17CurrentPublicKeys30get_sha2_development_publickeyEv, 
+                       __ZN17CurrentPublicKeys31pkcs1_sha1_production_publickeyE, 
+                       __ZN17CurrentPublicKeys31pkcs1_sha2_production_publickeyE, 
+                       __ZN17CurrentPublicKeys32pkcs1_sha1_development_publickeyE, 
+                       __ZN17CurrentPublicKeys32pkcs1_sha2_development_publickeyE, 
+                       __ZN17CurrentPublicKeysC1Ev, __ZN17CurrentPublicKeysC2Ev, 
                        __ZN27ComputeHashForCarrierBundle21computeDigestForFilesERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_13unordered_mapIS6_NS0_6vectorINS0_4pairIS6_N3ctu2cf11CFSharedRefIK8__CFDataEEEENS4_ISI_EEEENS0_4hashIS6_EENS0_8equal_toIS6_EENS4_INSB_IS7_SK_EEEEEES8_R11ComputeHash, 
                        __ZN27ComputeHashForCarrierBundle28printDeviceModelFilesMappingERKNSt3__13mapINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_4listIS7_NS5_IS7_EEEENS0_4lessIS7_EENS5_INS0_4pairIKS7_SA_EEEEEE, 
                        __ZN27ComputeHashForCarrierBundle32computeCBDigestForAllDeviceModelERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_3mapIS6_N3ctu2cf11CFSharedRefIK8__CFDataEENS0_4lessIS6_EENS4_INS0_4pairIS7_SF_EEEEEER11ComputeHash, 
                        __ZN27ComputeHashForCarrierBundle37prepareAndClassifyFileInCarrierBundleERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_3mapIS6_NS0_4listIS6_NS4_IS6_EEEENS0_4lessIS6_EENS4_INS0_4pairIS7_SC_EEEEEE, 
-                       _development_pubkeysize, _pkcs1_development_pubkey, _pkcs1_production_pubkey, 
-                       _pkcs1_production_pubkey2, _production_pubkeysize, _production_pubkeysize2 ]
-    weak-def-symbols: [ __ZTI15DigestGenerator, __ZTINSt3__120__shared_ptr_emplaceI18DigestGenerator160NS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_emplaceI18DigestGenerator256NS_9allocatorIS1_EEEE, 
-                        __ZTS15DigestGenerator, __ZTSNSt3__120__shared_ptr_emplaceI18DigestGenerator160NS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_emplaceI18DigestGenerator256NS_9allocatorIS1_EEEE ]
-  - archs:           [ arm64, arm64e ]
+                       __ZTI16LegacyPublicKeys, __ZTI17CurrentPublicKeys, __ZTS16LegacyPublicKeys, 
+                       __ZTS17CurrentPublicKeys, __ZTV16LegacyPublicKeys, __ZTV17CurrentPublicKeys ]
+    weak-symbols:    [ __ZTI10PublicKeys, __ZTI15DigestGenerator, __ZTINSt3__120__shared_ptr_emplaceI17CurrentPublicKeysNS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_emplaceI18DigestGenerator160NS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_emplaceI18DigestGenerator256NS_9allocatorIS1_EEEE, 
+                       __ZTS10PublicKeys, __ZTS15DigestGenerator, __ZTSNSt3__120__shared_ptr_emplaceI17CurrentPublicKeysNS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_emplaceI18DigestGenerator160NS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_emplaceI18DigestGenerator256NS_9allocatorIS1_EEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z12getSecKeyRefPKhi15CBSignatureType, __Z16getDigestForIpccRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE12DigestPrefix, 
                        __Z20createECDSASecKeyRefPKhi, __Z22VerifyXMLDigestForTypeN3ctu2cf11CFSharedRefIK14__CFDictionaryEENS1_IK8__CFDataEE12DigestPrefix16CBVersionsFormat16SignatureKeyType, 
                        __Z27getDigestForCBSignatureType15CBSignatureType, __Z28VerifyCarrierBundleSignatureRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE15CBSignatureType16SignatureKeyType, 
                        __Z29SecKeyVerifySignature_OSX_iOSP8__SecKeyN3ctu2cf11CFSharedRefIK8__CFDataEES6_, 
                        __Z32VerifyCarrierBundleSignature_OSXRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE16SignatureKeyTypeNS_6vectorI15CBSignatureTypeNS3_ISA_EEEE, 
                        __Z35VerifyCarrierBundleSignatureForTypeRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE15CBSignatureType, 
-                       __Z37VerifyCarrierBundleVersionsXMLFormat1PK14__CFDictionary15CBSignatureType, 
-                       __Z37VerifyCarrierBundleVersionsXMLFormat2PK14__CFDictionary15CBSignatureType, 
+                       __Z37VerifyCarrierBundleVersionsXMLFormat1PK14__CFDictionary15CBSignatureType16SignatureKeyType, 
+                       __Z37VerifyCarrierBundleVersionsXMLFormat2PK14__CFDictionary15CBSignatureType16SignatureKeyType, 
                        __Z39VerifyCarrierBundleVersionsXMLSignaturePK14__CFDictionary16CBVersionsFormat15CBSignatureType, 
+                       __Z50VerifyCarrierBundleVersionsXMLSignatureWithKeyTypePK14__CFDictionary16CBVersionsFormat15CBSignatureType16SignatureKeyType, 
                        __Z7add_keyPKvS0_Pv, __Z8asString15CBSignatureType, __Z8asString16CBVersionsFormat, 
                        __Z8asString16SignatureKeyType, __ZN10PublicKeys14get_public_keyE15CBSignatureType16SignatureKeyType, 
                        __ZN10PublicKeys19get_public_key_sizeE15CBSignatureType16SignatureKeyType, 
@@ -79,7 +108,7 @@ exports:
                        __ZN27ComputeHashForCarrierBundle29computeVersionXmlDigestLegacyERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEER11ComputeHashRN3ctu2cf11CFSharedRefIK8__CFDataEE, 
                        __ZTI18DigestGenerator384, __ZTI18DigestGenerator512, __ZTS18DigestGenerator384, 
                        __ZTS18DigestGenerator512, __ZTV18DigestGenerator384, __ZTV18DigestGenerator512 ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __Z12VerifyDigestN3ctu2cf11CFSharedRefIK8__CFDataEES4_P8__SecKey12DigestPrefix, 
                        __Z15createSecKeyRefPKhi, __Z15doSecVerify_iOSN3ctu2cf11CFSharedRefIK8__CFDataEES4_P8__SecKey12DigestPrefix, 
                        __Z16findMatchingFileRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEES7_S7_, 

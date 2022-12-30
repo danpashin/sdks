@@ -117,6 +117,19 @@ CL_EXTERN const CLLocationAccuracy kCLLocationAccuracyKilometer;
 CL_EXTERN const CLLocationAccuracy kCLLocationAccuracyThreeKilometers;
 
 /*
+ *  kCLLocationAccuracyReduced
+ *
+ *  Discussion:
+ *    If you set your CLLocationManager's desiredAccuracy property to
+ *    this value, locations delivered to your delegate in response to
+ *    startUpdatingLocation or requestLocation will have their
+ *    accuracy reduced.  The locations you receive will match the
+ *    locations your app would have received if the user had decided
+ *    not to grant your app authorization for precise location.
+ */
+CL_EXTERN const CLLocationAccuracy kCLLocationAccuracyReduced API_AVAILABLE(ios(14.0), macos(11.0), watchos(7.0), tvos(14.0));
+
+/*
  *  CLLocationDistanceMax
  *
  *  Discussion:
@@ -347,7 +360,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *    Deprecated. Use -distanceFromLocation: instead.
  */
-- (CLLocationDistance)getDistanceFrom:(const CLLocation *)location API_DEPRECATED_WITH_REPLACEMENT("-distanceFromLocation:", ios(2.0, 3.2)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
+- (CLLocationDistance)getDistanceFrom:(const CLLocation *)location API_DEPRECATED_WITH_REPLACEMENT("-distanceFromLocation:", ios(2.0, 3.2), macos(10.15, 10.15)) API_UNAVAILABLE(watchos, tvos);
 
 /*
  *  distanceFromLocation:

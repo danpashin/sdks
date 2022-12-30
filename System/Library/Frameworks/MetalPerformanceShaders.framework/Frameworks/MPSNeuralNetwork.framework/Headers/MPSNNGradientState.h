@@ -2,7 +2,7 @@
 //  MPSNNGradientState.h
 //  MPSNeuralNetwork
 //
-//  Created by Ian Ollmann on 11/9/17.
+//  Created on 11/9/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

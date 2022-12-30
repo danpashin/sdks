@@ -1,15 +1,22 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 633D911D-2BD0-3999-9D96-5D9898C50736', 'armv7s: C0422947-A44D-3525-B92F-B12DAA7F9D40', 
-                   'arm64: FE64011E-B8F4-3D99-A95B-3A20D1066CCD', 'arm64e: AEB06F27-903D-352B-B6FB-CCE73B07CA11' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           FB6AB608-CD9F-3A6B-B14C-1079E398812F
+  - target:          armv7s-ios
+    value:           11013E6D-9722-3B81-8363-66F264EEA048
+  - target:          arm64-ios
+    value:           E2E408A6-A568-35A1-B319-272BEA112487
+  - target:          arm64e-ios
+    value:           62281FAB-1D5A-3905-B51A-03D9DBB481F7
 install-name:    '/usr/lib/libipconfig.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ipconfigVersionNumber, _ipconfigVersionString, _my_CFStringAppendBytesAsHex, 
                        _my_CFStringCreateWithIPAddress, _my_CFStringCreateWithIPv6Address, 
                        _my_CFStringToCString ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _IPConfigurationForgetNetwork, _IPConfigurationServiceCopyInformation, 
                        _IPConfigurationServiceCreate, _IPConfigurationServiceGetNotificationKey, 
                        _IPConfigurationServiceGetTypeID, _IPConfigurationServiceRefreshConfiguration, 

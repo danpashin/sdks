@@ -133,7 +133,9 @@
     #if __has_builtin(__is_target_environment)
 
     /* “-target=x86_64-apple-ios12-macabi” */
-    #if __is_target_arch(x86_64) && __is_target_vendor(apple) && __is_target_os(ios) && __is_target_environment(macabi)
+    /* “-target=arm64-apple-ios12-macabi” */
+    /* “-target=arm64e-apple-ios12-macabi” */
+    #if (__is_target_arch(x86_64) || __is_target_arch(arm64) || __is_target_arch(arm64e)) && __is_target_vendor(apple) && __is_target_os(ios) && __is_target_environment(macabi)
         #define TARGET_OS_OSX               0
         #define TARGET_OS_IPHONE            1
         #define TARGET_OS_IOS               1
@@ -173,7 +175,9 @@
     #endif 
 
     /* -target=x86_64-apple-driverkit19.0 */
-    #if __is_target_arch(x86_64) && __is_target_vendor(apple) && __is_target_os(driverkit)
+    /* -target=arm64-apple-driverkit19.0 */
+    /* -target=arm64e-apple-driverkit19.0 */
+    #if (__is_target_arch(x86_64) || __is_target_arch(arm64) || __is_target_arch(arm64e)) && __is_target_vendor(apple) && __is_target_os(driverkit)
         #define TARGET_OS_OSX               0
         #define TARGET_OS_IPHONE            0
         #define TARGET_OS_IOS               0
@@ -231,7 +235,8 @@
     
     #define TARGET_IPHONE_SIMULATOR     TARGET_OS_SIMULATOR /* deprecated */
     #define TARGET_OS_NANO              TARGET_OS_WATCH /* deprecated */ 
-    #define TARGET_ABI_USES_IOS_VALUES  (TARGET_OS_IPHONE && !TARGET_OS_MACCATALYST)
+
+    #define TARGET_ABI_USES_IOS_VALUES  (!TARGET_CPU_X86_64 || (TARGET_OS_IPHONE && !TARGET_OS_MACCATALYST))
     #if defined(__ppc__)
         #define TARGET_CPU_PPC          1
         #define TARGET_CPU_PPC64        0

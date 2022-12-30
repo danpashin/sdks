@@ -5,7 +5,13 @@
 //  Copyright © 2015 Apple. All rights reserved.
 //
 
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IOS
 #import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#endif
 
 @class UNNotification;
 @class UNNotificationAction;
@@ -15,17 +21,17 @@ typedef NS_ENUM(NSUInteger, UNNotificationContentExtensionMediaPlayPauseButtonTy
     UNNotificationContentExtensionMediaPlayPauseButtonTypeNone,
     UNNotificationContentExtensionMediaPlayPauseButtonTypeDefault,
     UNNotificationContentExtensionMediaPlayPauseButtonTypeOverlay,
-} __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+} __API_AVAILABLE(ios(10.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
 typedef NS_ENUM(NSUInteger, UNNotificationContentExtensionResponseOption) {
     UNNotificationContentExtensionResponseOptionDoNotDismiss,
     UNNotificationContentExtensionResponseOptionDismiss,
     UNNotificationContentExtensionResponseOptionDismissAndForwardAction,
-} __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+} __API_AVAILABLE(ios(10.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-__IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE
+__API_AVAILABLE(ios(10.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos)
 @protocol UNNotificationContentExtension <NSObject>
 
 // This will be called to send the notification to be displayed by
@@ -53,7 +59,11 @@ __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE
 @property (nonatomic, readonly, assign) CGRect mediaPlayPauseButtonFrame;
 
 // The tint color to use for the button.
+#if TARGET_OS_IOS
 @property (nonatomic, readonly, copy) UIColor *mediaPlayPauseButtonTintColor;
+#else
+@property (nonatomic, readonly, copy) NSColor *mediaPlayPauseButtonTintColor;
+#endif
 
 // Called when the user taps the play or pause button.
 - (void)mediaPlay;
@@ -64,17 +74,17 @@ __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE
 
 @interface NSExtensionContext (UNNotificationContentExtension)
 
-@property (nonatomic, copy) NSArray <UNNotificationAction *> *notificationActions __IOS_AVAILABLE(12_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+@property (nonatomic, copy) NSArray <UNNotificationAction *> *notificationActions __API_AVAILABLE(ios(12.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
 // Opens the corresponding applicaton and delivers it the default notification action response
-- (void)performNotificationDefaultAction __IOS_AVAILABLE(12_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+- (void)performNotificationDefaultAction __API_AVAILABLE(ios(12.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
-- (void)dismissNotificationContentExtension __IOS_AVAILABLE(12_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+- (void)dismissNotificationContentExtension __API_AVAILABLE(ios(12.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
 // Call these methods when the playback state changes in the content
 // extension to update the state of the media control button.
-- (void)mediaPlayingStarted __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
-- (void)mediaPlayingPaused __IOS_AVAILABLE(10_0) __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE __OSX_UNAVAILABLE;
+- (void)mediaPlayingStarted __API_AVAILABLE(ios(10.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
+- (void)mediaPlayingPaused __API_AVAILABLE(ios(10.0), macCatalyst(14.0), macos(11.0)) __API_UNAVAILABLE(tvos, watchos);
 
 @end
 

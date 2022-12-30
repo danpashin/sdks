@@ -1,17 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: D1166C69-DEB5-3CC4-900B-81DA10713DF0', 'armv7s: D4A65312-8A89-3B65-9C22-3330A61699C7', 
-                   'arm64: FBC0F7FF-6C44-3EFA-8C77-67C228259608', 'arm64e: 1BF938BE-F280-3308-B8E9-ADC9BCB33536' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C51F53C0-1112-37B8-BE32-F0532630CD34
+  - target:          armv7s-ios
+    value:           2F8C498F-AA39-31AC-A724-CDCA21C1D4F4
+  - target:          arm64-ios
+    value:           8BAB9482-D831-3735-BB8C-84EC211C6CCB
+  - target:          arm64e-ios
+    value:           6B28C810-F99D-379B-8E6A-463B5E426C1F
 install-name:    '/System/Library/Frameworks/HealthKitUI.framework/HealthKitUI'
-exports:         
-  - archs:           [ armv7, armv7s ]
-    symbols:         [ _HKRingPercentageValueNoRing ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _HKRingPercentageValueNoRing, _HKScrollPerformanceOptionCategoryKey ]
     objc-classes:    [ HKAnimatableObject, HKAnimatableObjectPropertyAnimation, HKCGPointPropertyAnimation, 
                        HKFloatPropertyAnimation, HKMetricColors, HKRingGroupController, 
                        HKRingsView, _HKAnimatableProperty, _HKIcon, _HKRing ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _HKGLViewSnapshottingDidEndNotification, _HKGLViewSnapshottingWillBeginNotification, 
-                       _HKHealthKitUIFrameworkBundle, _HKScrollPerformanceOptionCategoryKey ]
+                       _HKHealthKitUIFrameworkBundle ]
     objc-classes:    [ HKActivityRingView, HKGLView ]
 ...

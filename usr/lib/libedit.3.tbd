@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C2E2BCAA-5756-3D0A-A1FB-0E55F41A55D3', 'armv7s: 3E91F229-8ADB-3900-A08E-B8C915D47CC4', 
-                   'arm64: 5809B148-A952-34B4-B40C-1FE1DC9ED992', 'arm64e: 868B8D34-862B-3E40-A133-9556E0230D34' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           32469E4B-2039-323D-8FC7-FF22AF8AE16F
+  - target:          armv7s-ios
+    value:           48866ECE-855F-33AD-9821-DE65749A5511
+  - target:          arm64-ios
+    value:           816A7377-1018-3B56-B430-F6F012547F19
+  - target:          arm64e-ios
+    value:           53FEB927-AE20-3E6D-94C5-58B65BE676C5
 install-name:    '/usr/lib/libedit.3.dylib'
 current-version: 3
 compatibility-version: 2
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___ct_decode_string, ___ct_encode_string, ___edit_3VersionNumber, 
                        ___edit_3VersionString, _c__next_word, _c__prev_word, _c_delafter, 
                        _c_delafter1, _c_delbefore, _c_delbefore1, _c_gets, _c_hmatch, 
@@ -72,7 +79,7 @@ exports:
                        _vi_to_column, _vi_to_history_line, _vi_to_next_char, _vi_to_prev_char, 
                        _vi_undo, _vi_undo_line, _vi_yank, _vi_yank_end, _vi_zero, 
                        _wcsdup ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __el_fn_complete, __el_fn_sh_complete, __rl_abort_internal, 
                        __rl_print_completions_horizontally, __rl_qsort_string_compare, 
                        _add_history, _clear_history, _completion_matches, _current_history, 

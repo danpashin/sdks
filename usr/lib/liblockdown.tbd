@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: F5CBE04F-E589-3DA5-8B01-B881B69E6026', 'armv7s: BF8DCABD-C42E-3396-B79E-FCAD1EF22D74', 
-                   'arm64: 2F19B240-65A0-3A7B-884C-A320AC532F31', 'arm64e: B1D0F150-E946-3C5B-B8B2-FACB7F4165BD' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           CE87D543-8965-302C-BF44-0AB64231E13E
+  - target:          armv7s-ios
+    value:           EE6B3626-98AA-3DB4-A39E-314143C74E98
+  - target:          arm64-ios
+    value:           7C529507-9D7E-3D42-BC17-EFC5E7F43FBC
+  - target:          arm64e-ios
+    value:           CB60668C-90DD-313B-9E4A-2DF5BCED0203
 install-name:    '/usr/lib/liblockdown.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _HBDumpState, _HBKillConnections, _SafeCFRelease, __disable_sigpipe, 
                        __disable_wake_from_sleep, __select_socket, _accept_with_timeout, 
                        _checkin_with_launchd, _copy_dict_from_xpc_data, _createIPString, 
@@ -133,10 +140,10 @@ exports:
                        _kLockdownNotificationDeveloperImageMounted, _kLockdownNotificationDiskUsageChanged, 
                        _kLockdownNotificationIQAgentAllowedChanged, _kLockdownNotificationMigratorFinished, 
                        _kLockdownNotificationNewServiceAvailable, _kLockdownNotificationPhoneNumberChanged, 
-                       _kLockdownNotificationiTunesAccountChanged, _kLockdownPairRequestFromHost, 
-                       _kLockdownPairTimeKey, _kLockdownPairingDomainKey, _kLockdownPartitionTypeKey, 
-                       _kLockdownPhoneNumberKey, _kLockdownPhoneNumberURLKey, _kLockdownPhotoUsageKey, 
-                       _kLockdownPrefApplicationID, _kLockdownPreviousSIMStatusKey, 
+                       _kLockdownNotificationiTunesAccountChanged, _kLockdownPCLoadLetter, 
+                       _kLockdownPairRequestFromHost, _kLockdownPairTimeKey, _kLockdownPairingDomainKey, 
+                       _kLockdownPartitionTypeKey, _kLockdownPhoneNumberKey, _kLockdownPhoneNumberURLKey, 
+                       _kLockdownPhotoUsageKey, _kLockdownPrefApplicationID, _kLockdownPreviousSIMStatusKey, 
                        _kLockdownProposedTicketKey, _kLockdownProtocolVersion, _kLockdownProtocolVersionKey, 
                        _kLockdownProximitySensorCalibrationDictionaryKey, _kLockdownProximitySensorCalibrationKey, 
                        _kLockdownPurpleBuddySetupStateChanged, _kLockdownPurpleBuddySetupStateKey, 
@@ -180,7 +187,7 @@ exports:
                        _lockdown_activate, _lockdown_copy_activityURL, _lockdown_copy_chaperoneIsChaperoned, 
                        _lockdown_copy_regulatoryimages, _lockdown_recert, _locklog, 
                        _post_notification, _sha1_string, _unlock_with_escrow ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _kLockdownActivationInfoKey, _kLockdownActivationStateKey, 
                        _kLockdownAmountDataAvailableKey, _kLockdownAmountDataReservedKey, 
                        _kLockdownAmountRestoreAvailableKey, _kLockdownBasebandVersionKey, 

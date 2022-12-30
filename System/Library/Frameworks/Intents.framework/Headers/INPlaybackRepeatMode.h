@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, INPlaybackRepeatMode) {
     INPlaybackRepeatModeNone,
     INPlaybackRepeatModeAll,
     INPlaybackRepeatModeOne,
-} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(12.0), watchos(5.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 #endif // INPlaybackRepeatMode_h

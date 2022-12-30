@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-HM_EXTERN NSString * const HMErrorDomain API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos);
+HM_EXTERN NSString * const HMErrorDomain API_AVAILABLE(ios(8.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 /*!
  * @brief This enumeration describes the possible error constants that can be
@@ -111,11 +111,15 @@ typedef NS_ENUM(NSInteger, HMErrorCode) {
     HMErrorCodeNoHomeHub                               API_AVAILABLE(ios(11.0)) = 91,
     HMErrorCodeNoCompatibleHomeHub                     API_AVAILABLE(ios(11.0)) = 92,
     HMErrorCodeIncompatibleAccessory                   API_AVAILABLE(ios(11.3)) = 93,
-    HMErrorCodeIncompatibleHomeHub                     API_DEPRECATED_WITH_REPLACEMENT("HMErrorCodeNoCompatibleHomeHub", ios(11.0, 11.0), watchos(4.0, 4.0), tvos(11.0, 11.0)) API_UNAVAILABLE(macos) = HMErrorCodeNoCompatibleHomeHub,
+    HMErrorCodeIncompatibleHomeHub                     API_DEPRECATED_WITH_REPLACEMENT("HMErrorCodeNoCompatibleHomeHub", ios(11.0, 11.0), watchos(4.0, 4.0), tvos(11.0, 11.0)) API_UNAVAILABLE(macos, macCatalyst) = HMErrorCodeNoCompatibleHomeHub,
     HMErrorCodeObjectWithSimilarNameExists             API_AVAILABLE(ios(12.0)) = 95,
     HMErrorCodeOwnershipFailure                        API_AVAILABLE(ios(13.0)) = 96,
     HMErrorCodeMaximumAccessoriesOfTypeInHome          API_AVAILABLE(ios(13.0)) = 97,
     HMErrorCodeWiFiCredentialGenerationFailed          API_AVAILABLE(ios(13.0)) = 98,
-} API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos);
+    HMErrorCodeEnterpriseNetworkNotSupported           API_AVAILABLE(ios(14.0)) = 99,
+    HMErrorCodeTimedOutWaitingForAccessory             API_AVAILABLE(ios(14.0)) = 100,
+    HMErrorCodeAccessoryCommunicationFailure           API_AVAILABLE(ios(14.0)) = 101,
+    HMErrorCodeFailedToJoinNetwork                     API_AVAILABLE(ios(14.0)) = 102,
+} API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 NS_ASSUME_NONNULL_END

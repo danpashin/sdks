@@ -1,26 +1,33 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: F5651A85-EC21-3698-AEF4-E081B4D51491', 'armv7s: 2F042367-7472-387D-A05F-4C9EBD7DA5BC', 
-                   'arm64: DAE8F0BF-C0E2-30B0-B459-3817DBE160C4', 'arm64e: A3FE5B4D-8D52-3D2F-9A41-B98772C74352' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           B623F708-32AC-3626-98C4-605F12413B6E
+  - target:          armv7s-ios
+    value:           33F0C699-0257-30D4-B0AD-607272FE7DDB
+  - target:          arm64-ios
+    value:           9BDC8FB7-F27B-3758-8232-411F2A070984
+  - target:          arm64e-ios
+    value:           E10CBCEC-D4C1-316F-9F12-2231153C67B6
 install-name:    '/usr/lib/libc++abi.dylib'
-current-version: 902
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 904.4
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZNKSt16bad_array_length4whatEv, __ZNSt16bad_array_lengthC1Ev, 
                        __ZNSt16bad_array_lengthC2Ev, __ZNSt16bad_array_lengthD0Ev, 
                        __ZNSt16bad_array_lengthD1Ev, __ZNSt16bad_array_lengthD2Ev, 
                        __ZTISt16bad_array_length, __ZTSSt16bad_array_length, __ZTVSt16bad_array_length, 
                        ___gxx_personality_sj0 ]
-  - archs:           [ arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZTIDu, __ZTIPDu, __ZTIPKDu, __ZTSDu, __ZTSPDu, __ZTSPKDu, 
                        ___gxx_personality_v0 ]
-    weak-def-symbols: [ __ZdaPvSt11align_val_t, __ZdaPvSt11align_val_tRKSt9nothrow_t, 
-                        __ZdaPvm, __ZdaPvmSt11align_val_t, __ZdlPvSt11align_val_t, 
-                        __ZdlPvSt11align_val_tRKSt9nothrow_t, __ZdlPvm, __ZdlPvmSt11align_val_t, 
-                        __ZnamSt11align_val_t, __ZnamSt11align_val_tRKSt9nothrow_t, 
-                        __ZnwmSt11align_val_t, __ZnwmSt11align_val_tRKSt9nothrow_t ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZdaPvSt11align_val_t, __ZdaPvSt11align_val_tRKSt9nothrow_t, 
+                       __ZdaPvm, __ZdaPvmSt11align_val_t, __ZdlPvSt11align_val_t, 
+                       __ZdlPvSt11align_val_tRKSt9nothrow_t, __ZdlPvm, __ZdlPvmSt11align_val_t, 
+                       __ZnamSt11align_val_t, __ZnamSt11align_val_tRKSt9nothrow_t, 
+                       __ZnwmSt11align_val_t, __ZnwmSt11align_val_tRKSt9nothrow_t ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt13bad_exception4whatEv, 
                        __ZNKSt13runtime_error4whatEv, __ZNKSt20bad_array_new_length4whatEv, 
                        __ZNKSt8bad_cast4whatEv, __ZNKSt9bad_alloc4whatEv, __ZNKSt9exception4whatEv, 
@@ -112,9 +119,9 @@ exports:
                        ___cxa_vec_cctor, ___cxa_vec_cleanup, ___cxa_vec_ctor, ___cxa_vec_delete, 
                        ___cxa_vec_delete2, ___cxa_vec_delete3, ___cxa_vec_dtor, ___cxa_vec_new, 
                        ___cxa_vec_new2, ___cxa_vec_new3, ___dynamic_cast ]
-    weak-def-symbols: [ __ZTISt11range_error, __ZTISt12domain_error, __ZTISt12length_error, 
-                        __ZTISt12out_of_range, __ZTISt14overflow_error, __ZTISt15underflow_error, 
-                        __ZTISt16invalid_argument, __ZdaPv, __ZdaPvRKSt9nothrow_t, 
-                        __ZdlPv, __ZdlPvRKSt9nothrow_t, __Znam, __ZnamRKSt9nothrow_t, 
-                        __Znwm, __ZnwmRKSt9nothrow_t ]
+    weak-symbols:    [ __ZTISt11range_error, __ZTISt12domain_error, __ZTISt12length_error, 
+                       __ZTISt12out_of_range, __ZTISt14overflow_error, __ZTISt15underflow_error, 
+                       __ZTISt16invalid_argument, __ZdaPv, __ZdaPvRKSt9nothrow_t, 
+                       __ZdlPv, __ZdlPvRKSt9nothrow_t, __Znam, __ZnamRKSt9nothrow_t, 
+                       __Znwm, __ZnwmRKSt9nothrow_t ]
 ...

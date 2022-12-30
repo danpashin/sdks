@@ -2,7 +2,7 @@
 //  MPSNNGridSample.h
 //  MPSNeuralNetwork
 //
-//  Created by Aaftab Munshi on 12/03/18.
+//  Created on 12/03/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

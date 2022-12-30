@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0))
-API_UNAVAILABLE(watchos, macos)
+API_UNAVAILABLE(watchos, macos, tvos)
 @interface INSendRideFeedbackIntent : INIntent
 
 - (id)init NS_UNAVAILABLE;
@@ -31,7 +31,7 @@ API_UNAVAILABLE(watchos, macos)
  */
 
 API_AVAILABLE(ios(11.0))
-API_UNAVAILABLE(watchos, macos)
+API_UNAVAILABLE(watchos, macos, tvos)
 @protocol INSendRideFeedbackIntentHandling <NSObject>
 
 @required

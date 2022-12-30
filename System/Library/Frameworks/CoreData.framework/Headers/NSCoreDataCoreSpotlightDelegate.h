@@ -1,7 +1,7 @@
 /*
     NSCoreDataCoreSpotlightDelegate.h
     Core Data
-    Copyright (c) 2017-2019, Apple Inc.
+    Copyright (c) 2017-2020, Apple Inc.
     All rights reserved.
 */
 
@@ -30,7 +30,15 @@ API_AVAILABLE(macosx(10.13),ios(11.0)) API_UNAVAILABLE(tvos,watchos)
 /* CoreSpotlight index name; default nil */
 - (nullable NSString *)indexName;
 
-- (instancetype)initForStoreWithDescription:(NSPersistentStoreDescription *)description  model:(NSManagedObjectModel *)model NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
+
+/*
+ * NSCoreDataSpotlightDelegate requires that
+ *  - the store type is NSSQLiteStoreType.
+ *  - the store has persistent history tracking enabled.
+ */
+- (instancetype)initForStoreWithDescription:(NSPersistentStoreDescription *)description
+                                      model:(NSManagedObjectModel *)model NS_DESIGNATED_INITIALIZER;
 
 /* Create the searchable attributes for the managed object. Override to return nil if you do not want the object included in the index.
  */

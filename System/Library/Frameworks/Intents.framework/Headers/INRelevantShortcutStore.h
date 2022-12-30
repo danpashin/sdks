@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract Where relevant shortcuts are provided to Siri.
  @seealso INRelevantShortcut
  */
-API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macosx)
+API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos)
 @interface INRelevantShortcutStore : NSObject
 
 @property (class, readonly, strong) INRelevantShortcutStore *defaultStore;

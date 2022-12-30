@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 85E826D0-82D1-33AD-B0A8-2F0EC9752F7D', 'armv7s: 8D4F85EC-84B9-3A14-9071-37E5BC3D2614', 
-                   'arm64: 73EBBAE1-70E5-3BF8-97F7-ED83102AFBB9', 'arm64e: ADA263DA-ED0C-3F91-A5A1-D45AB05EF410' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           35E7AD3C-39EC-396B-9960-D9F422930E67
+  - target:          armv7s-ios
+    value:           DC60A7D6-9135-3916-897F-D2EB63F3424E
+  - target:          arm64-ios
+    value:           3F31FB62-AB17-3300-9A9B-FE21C1507898
+  - target:          arm64e-ios
+    value:           6F9A3CFA-3D75-3A9B-B106-5625C68EF776
 install-name:    '/System/Library/Frameworks/OpenGLES.framework/OpenGLES'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _EAGLGetCurrentMacroContextPrivate, _EAGLGetVersion, _EAGLMemoryNotificationRecycling, 
                        _GLCBackDispatch, _GLCFrontDispatch, _GLCGetProfilerStorage, 
                        _GLCRestoreDispatch, _GLCRestoreDispatchFunction, _GLCSelectDispatchBounded, 

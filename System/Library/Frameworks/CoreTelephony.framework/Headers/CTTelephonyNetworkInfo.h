@@ -107,8 +107,7 @@ CORETELEPHONY_CLASS_AVAILABLE(4_0)
  *   A CTCarrier object that contains information about the subscriber's
  *   home cellular service provider for the service.
  */
-@property(readonly, retain, nullable) CTCarrier *subscriberCellularProvider __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_NA, __MAC_NA, __IPHONE_4_0, __IPHONE_12_0,
-    "Replaced by serviceSubscriberCellularProviders");
+@property(readonly, retain, nullable) CTCarrier *subscriberCellularProvider API_DEPRECATED_WITH_REPLACEMENT("serviceSubscriberCellularProviders", ios(4.0, 12.0)) API_UNAVAILABLE(macos);
 
 /*
  * serviceSubscriberCellularProvidersDidUpdateNotifier

@@ -13,8 +13,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-AS_EXTERN API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macCatalyst, macos, tvos, watchos)
-@interface ASCredentialProviderViewController : UIViewController
+AS_EXTERN API_AVAILABLE(ios(12.0), macCatalyst(14.0), macos(11.0)) API_UNAVAILABLE(tvos, watchos)
+@interface ASCredentialProviderViewController : ASViewController
 
 @property (nonatomic, readonly, strong) ASCredentialProviderExtensionContext *extensionContext;
 

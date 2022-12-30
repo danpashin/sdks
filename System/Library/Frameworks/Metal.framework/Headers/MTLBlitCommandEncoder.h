@@ -14,6 +14,7 @@
 #import <Metal/MTLTexture.h>
 #import <Metal/MTLFence.h>
 #import <Metal/MTLRenderPass.h>
+#import <Metal/MTLBlitPass.h>
 
 NS_ASSUME_NONNULL_BEGIN
 /*!
@@ -30,7 +31,7 @@ typedef NS_OPTIONS(NSUInteger, MTLBlitOption)
     MTLBlitOptionNone                       = 0,
     MTLBlitOptionDepthFromDepthStencil      = 1 << 0,
     MTLBlitOptionStencilFromDepthStencil    = 1 << 1,
-    MTLBlitOptionRowLinearPVRTC API_AVAILABLE(ios(9.0)) API_UNAVAILABLE(macos, macCatalyst) = 1 << 2,
+    MTLBlitOptionRowLinearPVRTC API_AVAILABLE(ios(9.0), macos(11.0), macCatalyst(14.0)) = 1 << 2,
 } API_AVAILABLE(macos(10.11), ios(9.0));
 
 
@@ -169,7 +170,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
                            slice:(NSUInteger)slice
                    resetCounters:(BOOL)resetCounters
                   countersBuffer:(id<MTLBuffer>)countersBuffer
-            countersBufferOffset:(NSUInteger)countersBufferOffset API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, macCatalyst);
+            countersBufferOffset:(NSUInteger)countersBufferOffset API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(13.0));
 
 /*!
  @method resetTextureAccessCounters:region:mipLevel:slice:type:
@@ -178,7 +179,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 -(void) resetTextureAccessCounters:(id<MTLTexture>)texture
                             region:(MTLRegion)region
                           mipLevel:(NSUInteger)mipLevel
-                             slice:(NSUInteger)slice API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, macCatalyst);
+                             slice:(NSUInteger)slice API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(13.0));
 
 
 
@@ -227,5 +228,41 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 - (void)optimizeIndirectCommandBuffer:(id <MTLIndirectCommandBuffer>)indirectCommandBuffer withRange:(NSRange)range API_AVAILABLE(macos(10.14), ios(12.0));
 
 
+/*!
+ @method sampleCountersInBuffer:atSampleIndex:withBarrier:
+ @abstract Sample hardware counters at this point in the blit encoder and
+ store the counter sample into the sample buffer at the specified index.
+ @param sampleBuffer The sample buffer to sample into
+ @param sampleIndex The index into the counter buffer to write the sample.
+ @param barrier Insert a barrier before taking the sample.  Passing
+ YES will ensure that all work encoded before this operation in the encoder is
+ complete but does not isolate the work with respect to other encoders.  Passing
+ NO will allow the sample to be taken concurrently with other operations in this
+ encoder.
+ In general, passing YES will lead to more repeatable counter results but
+ may negatively impact performance.  Passing NO will generally be higher performance
+ but counter results may not be repeatable.
+ @discussion On devices where MTLCounterSamplingPointAtBlitBoundary is unsupported,
+ this method is not available and will generate an error if called.
+ */
+-(void)sampleCountersInBuffer:(id<MTLCounterSampleBuffer>)sampleBuffer
+                atSampleIndex:(NSUInteger)sampleIndex
+                  withBarrier:(BOOL)barrier API_AVAILABLE(macos(10.15), ios(14.0));
+
+/*!
+ @method resolveCounters:inRange:destinationBuffer:destinationOffset:
+ @param sampleBuffer The sample buffer to resolve.
+ @param range The range of indices to resolve.
+ @param destinationBuffer The buffer to resolve values into.
+ @param destinationOffset The offset to begin writing values out to.  This must be a multiple of
+ the minimum constant buffer alignment.
+ @abstract Resolve the counters from the raw buffer to a processed buffer.
+ @discussion Samples that encountered an error during resolve will be set to
+ MTLCounterErrorValue.
+ */
+-(void)resolveCounters:(id<MTLCounterSampleBuffer>)sampleBuffer
+               inRange:(NSRange)range
+     destinationBuffer:(id<MTLBuffer>)destinationBuffer
+     destinationOffset:(NSUInteger)destinationOffset API_AVAILABLE(macos(10.15), ios(14.0));
 @end
 NS_ASSUME_NONNULL_END

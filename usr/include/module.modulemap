@@ -470,9 +470,13 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
     export Darwin.POSIX.sys.select
    }
 
+   module _select {
+    header "sys/_select.h"
+    export *
+   }
+
    module select {
     header "sys/select.h"
-    textual header "sys/_select.h"
     export *
    }
 
@@ -506,7 +510,6 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 
    module time {
     header "sys/time.h"
-    textual header "sys/_select.h"
     export *
    }
 
@@ -685,6 +688,7 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
  }
 
  module Availability {
+        header "AvailabilityVersions.h"
   header "Availability.h"
   header "os/availability.h"
   header "AvailabilityMacros.h"
@@ -800,6 +804,13 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
    header "mach/host_special_ports.h"
    export *
   }
+
+
+  module hv {
+   header "arm64/hv/hv_kern_types.h"
+   export *
+  }
+
 
   module kern_return {
    header "mach/kern_return.h"
@@ -1151,12 +1162,6 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
    header "libkern/OSByteOrder.h"
    header "libkern/_OSByteOrder.h"
    export *
-
-
-   header "libkern/arm/OSByteOrder.h"
-
-
-
   }
  }
 
@@ -1495,6 +1500,14 @@ module os [system] [extern_c] {
  module object {
   export os_object
  }
+ module overflow {
+  header "os/overflow.h"
+  export *
+ }
+ module workgroup {
+  header "os/_workgroup.h"
+  export *
+ }
  module trace_base {
   header "os/trace_base.h"
   export *
@@ -1517,6 +1530,17 @@ module os [system] [extern_c] {
 module os_object [system] [extern_c] {
  header "os/object.h"
  export *
+}
+
+module os_workgroup [system] [extern_c] {
+ module workgroup {
+  header "os/workgroup.h"
+  header "os/workgroup_base.h"
+  header "os/workgroup_interval.h"
+  header "os/workgroup_object.h"
+  header "os/workgroup_parallel.h"
+  export *
+ }
 }
 
 module libkern [system] [extern_c] {

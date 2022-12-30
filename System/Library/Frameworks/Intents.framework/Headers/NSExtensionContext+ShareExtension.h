@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSExtensionContext (ShareExtension)
 
-@property (readonly, strong, nullable, NS_NONATOMIC_IOSONLY) INIntent *intent API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
+@property (readonly, strong, nullable, NS_NONATOMIC_IOSONLY) INIntent *intent API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
 
 @end
 

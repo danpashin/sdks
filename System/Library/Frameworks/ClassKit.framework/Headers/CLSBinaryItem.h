@@ -2,7 +2,7 @@
 //  CLSBinaryItem.h
 //  ClassKit
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2019 Apple Inc. All rights reserved.
 //
 
 #import <ClassKit/CLSActivityItem.h>
@@ -14,13 +14,13 @@ typedef NS_ENUM(NSInteger, CLSBinaryValueType) {
     CLSBinaryValueTypeTrueFalse = 0,
     CLSBinaryValueTypePassFail,
     CLSBinaryValueTypeYesNo,
-    CLSBinaryValueTypeCorrectIncorrect API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos),
-} API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+    CLSBinaryValueTypeCorrectIncorrect API_AVAILABLE(ios(12.2), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos),
+} API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @abstract      CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
  */
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @interface CLSBinaryItem : CLSActivityItem
 
 /*!

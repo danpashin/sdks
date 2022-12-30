@@ -2,7 +2,7 @@
 //  MPSCNNConvolution.h
 //  MPS
 //
-//  Created by Ian Ollmann on 8/21/16.
+//  Created on 8/21/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 
@@ -832,6 +832,21 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(
     -(MPSCNNConvolutionWeightsLayout) weightsLayout
                                   MPS_AVAILABLE_STARTING(macos(10.15), ios(13.0), macCatalyst(13.0), tvos(13.0));
 
+    /*! @abstract   Alerts MPS what weight precision to use in the CNNConvolution kernel
+     *  @discussion If precision of weights returned by dataType does not match precision returned by
+     *              kernelWeightsDataType, weights are converted to precision specified by kernelWeightsDataType
+     *              before being passed to kernel.
+     *              For MPSCNNConvolution, dataType precisions of MPSDataTypeUInt8 or MPSDataTypeFloat16
+     *              must return a kernelWeightsDataType of MPSDataTypeFloat16. dataType precisions of
+     *              MPSDataTypeFloat32 may return kernelWeightsDataType of MPSDataTypeFloat16 or
+     *              MPSDataTypeFloat32. When kernelWeightsDataType returns MPSDataTypeFloat32 the
+     *              accumulatorPrecisionOption on the CNNConvolution object must be set to
+     *              MPSNNConvolutionAccumulatorPrecisionOptionFloat.
+     *              When kernelWeightsDataType is unimplemented the kernel will use float16 precision.
+     *              MPSCNNBinaryConvolution assumes weights to be of type MPSDataTypeUInt32 always,
+     *              and the kernelWeightsDataType is unused.
+     */
+    -(MPSDataType)  kernelWeightsDataType MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 @end
     
 #pragma mark -

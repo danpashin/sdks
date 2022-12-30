@@ -14,12 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
  * the created surface. */
 
 #ifndef GLES_SILENCE_DEPRECATION
-API_DEPRECATED("OpenGLES is deprecated",
-               ios(2.0, 12.0), watchos(2.0, 5.0), tvos(9.0, 12.0))
+API_DEPRECATED("OpenGLES is deprecated", ios(2.0, 12.0), watchos(2.0, 5.0), tvos(9.0, 12.0)) API_UNAVAILABLE(macos)
 #else
-API_AVAILABLE(ios(2.0), watchos(2.0), tvos(9.0))
+API_AVAILABLE(ios(2.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos)
 #endif
-API_UNAVAILABLE(macos)
 @interface CAEAGLLayer : CALayer <EAGLDrawable>
 {
 @private
@@ -31,7 +29,7 @@ API_UNAVAILABLE(macos)
  * changes to the GLES content are sent to the screen via the standard
  * CATransaction mechanisms. */
 
-@property BOOL presentsWithTransaction API_AVAILABLE(ios(9.0), watchos(2.0), tvos(9.0));
+@property BOOL presentsWithTransaction API_AVAILABLE(macos(11.0), ios(9.0), watchos(2.0), tvos(9.0));
 
 /* Note: the default value of the `opaque' property in this class is true,
  * not false as in CALayer. */

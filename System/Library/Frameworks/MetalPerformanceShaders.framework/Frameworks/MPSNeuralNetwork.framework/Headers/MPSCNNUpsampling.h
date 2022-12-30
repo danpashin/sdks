@@ -2,7 +2,7 @@
 //  MPSCNNUpsampling.h
 //  MPS
 //
-//  Created by Anna Tikhonova on 9/1/16.
+//  Created on 9/1/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 

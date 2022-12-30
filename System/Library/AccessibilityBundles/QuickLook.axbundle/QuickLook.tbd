@@ -8,7 +8,10 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    symbols:              [ _QLMediaItemViewControllerBarRotateRightButtonAccessibilityIdentifier,
+                            _QLMediaItemViewControllerBarTrimButtonAccessibilityIdentifier,
+                            _QLOverlayMarkupButtonAccessibilityIdentifier,
+                            __Failover, _accessibilityLocalizedString ]
     objc-classes:         [ AXMobileQuickLookGlue,
                             QLAudioViewControllerAccessibility,
                             QLDetailItemViewControllerAccessibility,
@@ -24,7 +27,6 @@ exports:
                             QLPreviewCollectionAccessibility,
                             QLPreviewControllerAccessibility,
                             QLToolbarButtonAccessibility,
-                            QLToolbarUnderlyingButtonAccessibility,
                             QLVideoScrubberViewAccessibility,
                             __QLAudioViewControllerAccessibility_super,
                             __QLDetailItemViewControllerAccessibility_super,
@@ -40,6 +42,5 @@ exports:
                             __QLPreviewCollectionAccessibility_super,
                             __QLPreviewControllerAccessibility_super,
                             __QLToolbarButtonAccessibility_super,
-                            __QLToolbarUnderlyingButtonAccessibility_super,
                             __QLVideoScrubberViewAccessibility_super ]
 ...

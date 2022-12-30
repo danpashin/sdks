@@ -5,15 +5,27 @@
 //  Copyright © 2017 Apple, Inc. All rights reserved.
 //
 
-#import <UIKit/UIView.h>
+#import <MapKit/MKFoundation.h>
 #import <MapKit/MKTypes.h>
+
+#if MK_SUPPORTS_VIEW_CLASSES
+
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#endif
 
 @class MKMapView;
 
 NS_ASSUME_NONNULL_BEGIN
 
-NS_CLASS_AVAILABLE_IOS(11_0) __TVOS_UNAVAILABLE
+API_AVAILABLE(ios(11), macos(11.0), macCatalyst(13.0)) API_UNAVAILABLE(watchos, tvos)
+#if TARGET_OS_IPHONE
 @interface MKCompassButton : UIView
+#else
+@interface MKCompassButton : NSView
+#endif
 
 + (instancetype)compassButtonWithMapView:(nullable MKMapView *)mapView;
 @property (nonatomic, nullable, weak) MKMapView *mapView;
@@ -22,3 +34,5 @@ NS_CLASS_AVAILABLE_IOS(11_0) __TVOS_UNAVAILABLE
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

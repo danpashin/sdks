@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C37DD09C-2E1A-3314-ACCC-42B23F221718', 'armv7s: 6C74925D-2B4F-3045-8482-C9283BABAEF6', 
-                   'arm64: 28CCEC79-4693-378B-9363-F9011A86632E', 'arm64e: DF5807C0-B02A-36AC-9911-548C31750241' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           9C9532EF-9135-36C4-9D45-A0217D24CEED
+  - target:          armv7s-ios
+    value:           99601387-DBED-3A3A-B1A8-6F69E2F2A805
+  - target:          arm64-ios
+    value:           59237F45-5CDC-3EB7-931F-2C451A80006C
+  - target:          arm64e-ios
+    value:           A651E569-0EFD-3ECD-9761-2FD8B510A736
 install-name:    '/System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CBATTErrorDomain, _CBAdvOptionInstanceAddress, _CBAdvOptionInstanceRandomAddressBytes, 
                        _CBAdvOptionObjectLocatorOnThisInstance, _CBAdvOptionStopOnAdvertisingAddressChange, 
                        _CBAdvertisementAppleMfgTypeKey, _CBAdvertisementDataAppleBeaconKey, 
@@ -41,7 +48,8 @@ exports:
                        _CBCentralManagerScanOptionMatchingRuleMaskKey, _CBCentralManagerScanOptionMatchingRulePayloadKey, 
                        _CBCentralManagerScanOptionMatchingRuleRSSIKey, _CBCentralManagerScanOptionMatchingRuleRSSIThresholdOrder, 
                        _CBCentralManagerScanOptionMatchingRuleTargetCore, _CBCentralManagerScanOptionMatchingRuleTypeKey, 
-                       _CBCentralManagerScanOptionPeersKey, _CBCentralManagerScanOptionProximityThresholdKey, 
+                       _CBCentralManagerScanOptionPeersKey, _CBCentralManagerScanOptionPriorityCritical, 
+                       _CBCentralManagerScanOptionProximityThresholdKey, _CBCentralManagerScanOptionRange, 
                        _CBCentralManagerScanOptionReloadMigratableItems, _CBCentralManagerScanOptionRequiresActive, 
                        _CBCentralManagerScanOptionRetainDuplicates, _CBCentralManagerScanOptionScanInterval, 
                        _CBCentralManagerScanOptionScanWindow, _CBCentralManagerScanOptionScanningPhys, 
@@ -55,51 +63,56 @@ exports:
                        _CBCentralManagerScanParametersOptionScanTypePHY0, _CBCentralManagerScanParametersOptionScanTypePHY1, 
                        _CBCentralManagerScanParametersOptionScanTypePHY2, _CBCentralManagerScanParametersOptionScanWindowPHY0, 
                        _CBCentralManagerScanParametersOptionScanWindowPHY1, _CBCentralManagerScanParametersOptionScanWindowPHY2, 
+                       _CBCentralManagerScanParametersOptionScanWithPowerAssertion, 
                        _CBCentralManagerScanParametersOptionScanningFilterPolicy, 
                        _CBCentralManagerSetDataLengthMaxTxOctets, _CBCentralManagerSetDataLengthMaxTxTime, 
-                       _CBCentralManagerTrackingOptionType, _CBConnectPeripheralOptionDisableLeGATT, 
-                       _CBConnectPeripheralOptionDoNotDisconnectOnEncryptionFailure, 
+                       _CBCentralManagerTrackingOptionType, _CBConnectPeripheralOptionClientBundleID, 
+                       _CBConnectPeripheralOptionClientProcessID, _CBConnectPeripheralOptionConnectionCompleteAfterPoll, 
+                       _CBConnectPeripheralOptionConnectionUseCase, _CBConnectPeripheralOptionCtkdTransport, 
+                       _CBConnectPeripheralOptionDisableLeGATT, _CBConnectPeripheralOptionDoNotDisconnectOnEncryptionFailure, 
                        _CBConnectPeripheralOptionEnableControllerBTClockUpdates, 
-                       _CBConnectPeripheralOptionEnableTransportBridgingKey, _CBConnectPeripheralOptionFirstApproachEnable, 
-                       _CBConnectPeripheralOptionFixedChannels, _CBConnectPeripheralOptionHideFromBTSettings, 
-                       _CBConnectPeripheralOptionInitPHYs, _CBConnectPeripheralOptionLatencyCritical, 
-                       _CBConnectPeripheralOptionNotifyOnConnectionKey, _CBConnectPeripheralOptionNotifyOnDisconnectionKey, 
-                       _CBConnectPeripheralOptionNotifyOnNotificationKey, _CBConnectPeripheralOptionPHYOptions, 
-                       _CBConnectPeripheralOptionRequiresANCS, _CBConnectPeripheralOptionSetConnectScanDutyCycle, 
-                       _CBConnectPeripheralOptionStartDelayKey, _CBConnectPeripheralOptionUseTempLTK, 
-                       _CBConnectionEventMatchingOptionAllPeripherals, _CBConnectionEventMatchingOptionPeripheralUUIDs, 
-                       _CBConnectionEventMatchingOptionServiceUUIDs, _CBErrorDomain, 
-                       _CBInternalErrorDomain, _CBLESetPhyAllPhys, _CBLESetPhyPhyOptions, 
-                       _CBLESetPhyRxPhys, _CBLESetPhyTxPhys, _CBManagerAppSDKVersion, 
-                       _CBManagerIsPrivilegedDaemonKey, _CBManagerL2CAPChannelCreditsAckDelta, 
-                       _CBManagerL2CAPChannelInMPS, _CBManagerL2CAPChannelInMTU, 
-                       _CBManagerL2CAPChannelInitialCredits, _CBManagerNeedsRestrictedStateOperation, 
+                       _CBConnectPeripheralOptionEnableScanCore, _CBConnectPeripheralOptionEnableTransportBridgingKey, 
+                       _CBConnectPeripheralOptionFirstApproachEnable, _CBConnectPeripheralOptionFixedChannels, 
+                       _CBConnectPeripheralOptionHideFromBTSettings, _CBConnectPeripheralOptionInitPHYs, 
+                       _CBConnectPeripheralOptionLatencyCritical, _CBConnectPeripheralOptionMaxAllowedConnectionDelay, 
+                       _CBConnectPeripheralOptionMinRSSIForConnection, _CBConnectPeripheralOptionNotifyOnConnectionKey, 
+                       _CBConnectPeripheralOptionNotifyOnDisconnectionKey, _CBConnectPeripheralOptionNotifyOnNotificationKey, 
+                       _CBConnectPeripheralOptionPHYOptions, _CBConnectPeripheralOptionRequiresANCS, 
+                       _CBConnectPeripheralOptionSetConnectScanDutyCycle, _CBConnectPeripheralOptionStartDelayKey, 
+                       _CBConnectPeripheralOptionUseTempLTK, _CBConnectionEventMatchingOptionAllPeripherals, 
+                       _CBConnectionEventMatchingOptionPeripheralUUIDs, _CBConnectionEventMatchingOptionServiceUUIDs, 
+                       _CBConnectionUseCase, _CBErrorDomain, _CBInternalErrorDomain, 
+                       _CBLESetPhyAllPhys, _CBLESetPhyPhyOptions, _CBLESetPhyRxPhys, 
+                       _CBLESetPhyTxPhys, _CBManagerAppSDKVersion, _CBManagerIsPrivilegedDaemonKey, 
+                       _CBManagerL2CAPChannelCreditsAckDelta, _CBManagerL2CAPChannelInMPS, 
+                       _CBManagerL2CAPChannelInMTU, _CBManagerL2CAPChannelInitialCredits, 
+                       _CBManagerNeedsRestrictedStateOperation, _CBNumberOfConnectionsForUseCase, 
                        _CBOriginalPeerIdentifierErrorKey, _CBPairingAgentPairingDataOOBTKKey, 
                        _CBPairingAgentPairingDataPasskeyKey, _CBPairingOptionsDistributeIRK, 
                        _CBPairingOptionsUseMITMAuthentication, _CBPeripheralManagerAdvertisingInterval, 
-                       _CBPeripheralManagerOptionRestoreIdentifierKey, _CBPeripheralManagerOptionShowPowerAlertKey, 
-                       _CBPeripheralManagerRestoredStateAdvertisementDataKey, _CBPeripheralManagerRestoredStateServicesKey, 
-                       _CBScalablePipeOptionDisableBluetoothReliability, _CBScalablePipeOptionRequiresEncryption, 
-                       _CBScalablePipeOptionStayConnectedWhenIdle, _CBScalablePipeOptionTrace, 
-                       _CBScalablePipeOptionTransport, _CBSetConnectionEventOptionMatchAllPeripherals, 
-                       _CBSetConnectionEventOptionMatchPeripheralsUUIDs, _CBSetConnectionEventOptionMatchServicesUUIDs, 
-                       _CBUUIDAMSEntityAttributeCharacteristicString, _CBUUIDAMSEntityUpdateCharacteristicString, 
-                       _CBUUIDAMSRemoteCommandCharacteristicString, _CBUUIDANCSControlPointCharacteristicString, 
-                       _CBUUIDANCSDataSourceCharacteristicString, _CBUUIDANCSNotificationSourceCharacteristicString, 
-                       _CBUUIDAppearanceString, _CBUUIDAppleAccessoryReconnectServiceString, 
-                       _CBUUIDAppleHeadsetPropertyServiceString, _CBUUIDAppleMediaServiceString, 
-                       _CBUUIDAppleNotificationCenterServiceString, _CBUUIDBatteryLevelCharacteristicString, 
-                       _CBUUIDBatteryPowerStateCharacteristicString, _CBUUIDBatteryServiceString, 
-                       _CBUUIDBloodPressureServiceString, _CBUUIDBondManagementServiceString, 
-                       _CBUUIDBootKeyboardInputReportCharacteristicString, _CBUUIDBootKeyboardOutputReportCharacteristicString, 
-                       _CBUUIDBootMouseInputReportCharacteristicString, _CBUUIDCharacteristicAggregateFormatString, 
-                       _CBUUIDCharacteristicExtendedPropertiesString, _CBUUIDCharacteristicFormatString, 
-                       _CBUUIDCharacteristicUserDescriptionString, _CBUUIDCharacteristicValidRangeString, 
-                       _CBUUIDClientCharacteristicConfigurationString, _CBUUIDContinuityCharacteristicString, 
-                       _CBUUIDContinuityServiceString, _CBUUIDCurrentTimeCharacteristicString, 
-                       _CBUUIDCurrentTimeServiceString, _CBUUIDCyclingSpeedAndCadenceServiceString, 
-                       _CBUUIDDeviceInformationServiceString, _CBUUIDDeviceNameString, 
-                       _CBUUIDDoAPServiceString, _CBUUIDDosimetrySensitivityCharacteristicString, 
+                       _CBPeripheralManagerAdvertisingWithPowerAssertion, _CBPeripheralManagerOptionRestoreIdentifierKey, 
+                       _CBPeripheralManagerOptionShowPowerAlertKey, _CBPeripheralManagerRestoredStateAdvertisementDataKey, 
+                       _CBPeripheralManagerRestoredStateServicesKey, _CBScalablePipeOptionDisableBluetoothReliability, 
+                       _CBScalablePipeOptionRequiresEncryption, _CBScalablePipeOptionStayConnectedWhenIdle, 
+                       _CBScalablePipeOptionTrace, _CBScalablePipeOptionTransport, 
+                       _CBSetConnectionEventOptionMatchAllPeripherals, _CBSetConnectionEventOptionMatchPeripheralsUUIDs, 
+                       _CBSetConnectionEventOptionMatchServicesUUIDs, _CBUUIDAMSEntityAttributeCharacteristicString, 
+                       _CBUUIDAMSEntityUpdateCharacteristicString, _CBUUIDAMSRemoteCommandCharacteristicString, 
+                       _CBUUIDANCSControlPointCharacteristicString, _CBUUIDANCSDataSourceCharacteristicString, 
+                       _CBUUIDANCSNotificationSourceCharacteristicString, _CBUUIDAppearanceString, 
+                       _CBUUIDAppleAccessoryReconnectServiceString, _CBUUIDAppleHeadsetPropertyServiceString, 
+                       _CBUUIDAppleMediaServiceString, _CBUUIDAppleNotificationCenterServiceString, 
+                       _CBUUIDBatteryLevelCharacteristicString, _CBUUIDBatteryPowerStateCharacteristicString, 
+                       _CBUUIDBatteryServiceString, _CBUUIDBloodPressureServiceString, 
+                       _CBUUIDBondManagementServiceString, _CBUUIDBootKeyboardInputReportCharacteristicString, 
+                       _CBUUIDBootKeyboardOutputReportCharacteristicString, _CBUUIDBootMouseInputReportCharacteristicString, 
+                       _CBUUIDCharacteristicAggregateFormatString, _CBUUIDCharacteristicExtendedPropertiesString, 
+                       _CBUUIDCharacteristicFormatString, _CBUUIDCharacteristicUserDescriptionString, 
+                       _CBUUIDCharacteristicValidRangeString, _CBUUIDClientCharacteristicConfigurationString, 
+                       _CBUUIDContinuityCharacteristicString, _CBUUIDContinuityServiceString, 
+                       _CBUUIDCurrentTimeCharacteristicString, _CBUUIDCurrentTimeServiceString, 
+                       _CBUUIDCyclingSpeedAndCadenceServiceString, _CBUUIDDeviceInformationServiceString, 
+                       _CBUUIDDeviceNameString, _CBUUIDDoAPServiceString, _CBUUIDDosimetrySensitivityCharacteristicString, 
                        _CBUUIDDosimetryVolumeCurveCharacteristicString, _CBUUIDEventIndicatorCharacteristicString, 
                        _CBUUIDFirmwareRevisionStringCharacteristicString, _CBUUIDGenericAccessProfileString, 
                        _CBUUIDGenericAttributeProfileString, _CBUUIDGlucoseServiceString, 
@@ -117,10 +130,14 @@ exports:
                        _CBUUIDSerialNumberStringCharacteristicString, _CBUUIDServerCharacteristicConfigurationString, 
                        _CBUUIDServiceChangedString, _CBUUIDSoftwareRevisionStringCharacteristicString, 
                        _CBUUIDStartStreamingCharacteristicString, _CBUUIDStopStreamingCharacteristicString, 
-                       _CBUUIDSupportedCodecsCharacteristicString, _CBUUIDSystemIDCharacteristicString ]
+                       _CBUUIDSupportedCodecsCharacteristicString, _CBUUIDSystemIDCharacteristicString, 
+                       _CBXPCDecodeNSArrayOfNSData, _CBXPCEncodeNSArrayOfNSData, 
+                       _CBXPCGetNextClientID, _gCBDaemon ]
     objc-classes:    [ BTDevicePicker, CBATTRequest, CBAttribute, CBCentral, CBCentralManager, 
-                       CBCharacteristic, CBDescriptor, CBL2CAPChannel, CBManager, 
+                       CBCharacteristic, CBConnection, CBController, CBDescriptor, 
+                       CBDevice, CBDiscovery, CBIdentity, CBL2CAPChannel, CBManager, 
                        CBMutableCharacteristic, CBMutableDescriptor, CBMutableService, 
                        CBPairingAgent, CBPeer, CBPeripheral, CBPeripheralManager, 
-                       CBScalablePipe, CBScalablePipeManager, CBService, CBUUID ]
+                       CBReadRequest, CBScalablePipe, CBScalablePipeManager, CBServer, 
+                       CBService, CBSpatialInteractionSession, CBUUID, CBWriteRequest ]
 ...

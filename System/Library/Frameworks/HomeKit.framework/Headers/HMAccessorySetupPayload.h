@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-HM_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos)
+HM_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos, macCatalyst)
 @interface HMAccessoryOwnershipToken : NSObject
 
-- (nullable instancetype)init NS_UNAVAILABLE;
-+ (nullable instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 /*!
  * @brief Creates a new accessory ownership token to add an accessory to the home.
@@ -30,11 +30,11 @@ HM_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos)
 
 @end
 
-HM_EXTERN API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos, watchos, tvos)
+HM_EXTERN API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos, watchos, tvos, macCatalyst)
 @interface HMAccessorySetupPayload : NSObject
 
-- (nullable instancetype)init NS_UNAVAILABLE;
-+ (nullable instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 /*!
  * @brief Creates a new accessory setup payload to add an accessory to the home.

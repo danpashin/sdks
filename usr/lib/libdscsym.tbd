@@ -1,17 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: BF99A13A-2F3B-324C-AE50-A5D20716940F', 'armv7s: 7E47FA0F-1951-3646-81C8-56612A989CFF', 
-                   'arm64: 5B746922-8B1C-3E3C-9907-C27FA477781E', 'arm64e: D4842F69-9B79-3CA4-A284-B5A7622FCFB4' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2ACCAE94-0475-3D4A-AF57-73FB4ABDE68F
+  - target:          armv7s-ios
+    value:           0464FBD2-BD56-31E7-9007-9BD8E7F0FA72
+  - target:          arm64-ios
+    value:           4EB292DF-D438-34D4-A7B2-19841E8326C5
+  - target:          arm64e-ios
+    value:           D0E954E1-5943-3080-892C-F30A242E81F4
 install-name:    '/usr/lib/libdscsym.dylib'
-current-version: 243.2
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 271
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _dscsymVersionNumber, _dscsymVersionString, _kSPSharedCacheInfo_BinariesKey, 
                        _kSPSharedCacheInfo_BinaryLoadAddressKey, _kSPSharedCacheInfo_BinaryPathKey, 
                        _kSPSharedCacheInfo_BinaryTextSizeKey, _kSPSharedCacheInfo_BinaryUUIDKey, 
                        _kSPSharedCacheInfo_CacheUUIDKey ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _dscsym_buffer_iterate, _dscsym_buffer_iterate_binaries, _dscsym_copy_dscsym_files, 
                        _dscsym_generate_dscsym_file, _dscsym_iterate, _dscsym_iterate_binaries, 
                        _dscsym_iterate_buffer, _dscsym_mmap_dscsym_for_uuid, _dscsym_save_dscsyms_for_current_caches, 

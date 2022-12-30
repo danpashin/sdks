@@ -1,28 +1,36 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: E2473B4C-5531-3080-8850-D2626484013C', 'armv7s: 5001DB23-F62C-3B93-AEFD-B6C2B74E8998', 
-                   'arm64: E3ED6725-0117-3364-9F16-A0C890064280', 'arm64e: 211C34D9-8538-363B-9B61-67A77B4778E8' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C4D8ED27-1A3C-3F66-9B0C-336925C1DEBC
+  - target:          armv7s-ios
+    value:           0B1330B3-B153-3FFB-9914-AEF8AC13C2B4
+  - target:          arm64-ios
+    value:           B92AC3DF-43B9-3676-ABBC-D44967415CD3
+  - target:          arm64e-ios
+    value:           67CC4CBB-4D7C-3CA5-9A85-123D2988FC02
 install-name:    '/System/Library/Frameworks/Contacts.framework/Contacts'
 current-version: 0
 compatibility-version: 0
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CNBundleIdentifier, _CNContactsXPCServiceName, _CNContentType, 
                        _CNCoreSpotlightIsFullIndexingKey, _CNFavoritesEntryChangedNotification, 
                        _CNFavoritesEntryOldIdentityKey ]
     objc-classes:    [ CNChangeHistory, CNChangeHistoryItem, CNDate, CNiOSAddressBook ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CNAccountExternalIdentifierStringKey, _CNAccountIOSLegacyIdentifierKey, 
                        _CNAccountIdentifierKey, _CNActionBundleIdentifierCalendar, 
                        _CNActionBundleIdentifierContacts, _CNActionBundleIdentifierFaceTime, 
                        _CNActionBundleIdentifierFindMyFriends, _CNActionBundleIdentifierMail, 
                        _CNActionBundleIdentifierMaps, _CNActionBundleIdentifierMessages, 
-                       _CNActionBundleIdentifierPhone, _CNActionBundleIdentifierWallet, 
-                       _CNActionTypeAudioCall, _CNActionTypeDirections, _CNActionTypeMail, 
-                       _CNActionTypeMessage, _CNActionTypePay, _CNActionTypeTTYCall, 
-                       _CNActionTypeTTYRelayCall, _CNActionTypeVideoCall, _CNActivityAlertCallActivityKey, 
-                       _CNActivityAlertIgnoreMuteKey, _CNActivityAlertSoundKey, _CNActivityAlertTextActivityKey, 
+                       _CNActionBundleIdentifierMessagesCatalyst, _CNActionBundleIdentifierPhone, 
+                       _CNActionBundleIdentifierWallet, _CNActionTypeAudioCall, _CNActionTypeDirections, 
+                       _CNActionTypeMail, _CNActionTypeMessage, _CNActionTypePay, 
+                       _CNActionTypeTTYCall, _CNActionTypeTTYRelayCall, _CNActionTypeVideoCall, 
+                       _CNActivityAlertCallActivityKey, _CNActivityAlertIgnoreMuteKey, 
+                       _CNActivityAlertSoundKey, _CNActivityAlertTextActivityKey, 
                        _CNActivityAlertVibrationKey, _CNAnyLabel, _CNApplicationProxyServiceName, 
                        _CNContactBirthdayKey, _CNContactBirthdaysKey, _CNContactCalendarURIsKey, 
                        _CNContactCallAlertKey, _CNContactCreationDateKey, _CNContactCropRectKey, 
@@ -35,7 +43,7 @@ exports:
                        _CNContactIOSLegacyIdentifierKey, _CNContactIdentifierKey, 
                        _CNContactIdentifiersPboardType, _CNContactImageDataAvailableKey, 
                        _CNContactImageDataKey, _CNContactImageHashKey, _CNContactImageTypeAvatarValue, 
-                       _CNContactImageTypeKey, _CNContactImageTypeMonogramValue, 
+                       _CNContactImageTypeEmojiValue, _CNContactImageTypeKey, _CNContactImageTypeMonogramValue, 
                        _CNContactImageTypePhotoValue, _CNContactInstantMessageAddressesKey, 
                        _CNContactInternalPersistedUTI, _CNContactInternalUTI, _CNContactJobTitleKey, 
                        _CNContactLikenessSourceApplePersona, _CNContactLikenessSourceImage, 
@@ -55,6 +63,7 @@ exports:
                        _CNContactPropertyNotFetchedExceptionName, _CNContactRelatedNamesKey, 
                        _CNContactRelationsKey, _CNContactSearchIndexKey, _CNContactSectionForSortingByFamilyNameKey, 
                        _CNContactSectionForSortingByGivenNameKey, _CNContactSocialProfilesKey, 
+                       _CNContactSortingFamilyNameKey, _CNContactSortingGivenNameKey, 
                        _CNContactStoreDidChangeNotification, _CNContactStoreMeContactDidChangeNotification, 
                        _CNContactSyncImageDataKey, _CNContactTextAlertKey, _CNContactThumbnailImageDataKey, 
                        _CNContactTypeKey, _CNContactUrlAddressesKey, _CNContactsUserDefaultsDidChangeNotification, 
@@ -66,13 +75,14 @@ exports:
                        _CNContainerIdentifierKey, _CNContainerLastSyncDateKey, _CNContainerMeIdentifierKey, 
                        _CNContainerNameKey, _CNContainerPermissionsKey, _CNContainerRestrictionsKey, 
                        _CNContainerSnapshotKey, _CNContainerTypeKey, _CNDataMapperServiceName, 
-                       _CNDowntimeWhitelistAllowed, _CNDowntimeWhitelistDidChangeNotification, 
-                       _CNDowntimeWhitelistDisallowed, _CNErrorDomain, _CNErrorUserInfoAffectedRecordIdentifiersKey, 
-                       _CNErrorUserInfoAffectedRecordsKey, _CNErrorUserInfoKeyPathsKey, 
-                       _CNErrorUserInfoValidationErrorsKey, _CNFavoritesChangedExternallyNotification, 
-                       _CNFavoritesChangedNotification, _CNFavoritesEntryIdentityChangedNotification, 
-                       _CNGroupCreationDateKey, _CNGroupExternalIdentifierKey, _CNGroupExternalModificationTagKey, 
-                       _CNGroupExternalRepresentationKey, _CNGroupExternalUUIDKey, 
+                       _CNDowntimeWhitelistDidChangeNotification, _CNErrorDomain, 
+                       _CNErrorUserInfoAffectedRecordIdentifiersKey, _CNErrorUserInfoAffectedRecordsKey, 
+                       _CNErrorUserInfoKeyPathsKey, _CNErrorUserInfoValidationErrorsKey, 
+                       _CNFavoritesChangedExternallyNotification, _CNFavoritesChangedNotification, 
+                       _CNFavoritesEntryIdentityChangedNotification, _CNGroupCreationDateKey, 
+                       _CNGroupExternalIdentifierKey, _CNGroupExternalModificationTagKey, 
+                       _CNGroupExternalRepresentationKey, _CNGroupExternalURIKey, 
+                       _CNGroupExternalUUIDKey, _CNGroupIOSLegacyIdentifierInvalid, 
                        _CNGroupIOSLegacyIdentifierKey, _CNGroupIdentifierKey, _CNGroupModificationDateKey, 
                        _CNGroupNameKey, _CNGroupSnapshotKey, _CNHomeLabel, _CNHomePageLabel, 
                        _CNInstantMessageAddressBundleIdentifiersKey, _CNInstantMessageAddressServiceKey, 
@@ -130,15 +140,16 @@ exports:
                        _CNLabelContactRelationGirlfriend, _CNLabelContactRelationGirlfriendOrBoyfriend, 
                        _CNLabelContactRelationGrandaunt, _CNLabelContactRelationGrandchild, 
                        _CNLabelContactRelationGrandchildOrSiblingsChild, _CNLabelContactRelationGranddaughter, 
-                       _CNLabelContactRelationGranddaughterDaughtersDaughter, _CNLabelContactRelationGranddaughterSonsDaughter, 
-                       _CNLabelContactRelationGrandfather, _CNLabelContactRelationGrandfatherFathersFather, 
-                       _CNLabelContactRelationGrandfatherMothersFather, _CNLabelContactRelationGrandmother, 
-                       _CNLabelContactRelationGrandmotherFathersMother, _CNLabelContactRelationGrandmotherMothersMother, 
-                       _CNLabelContactRelationGrandnephew, _CNLabelContactRelationGrandnephewBrothersGrandson, 
-                       _CNLabelContactRelationGrandnephewSistersGrandson, _CNLabelContactRelationGrandniece, 
-                       _CNLabelContactRelationGrandnieceBrothersGranddaughter, _CNLabelContactRelationGrandnieceSistersGranddaughter, 
-                       _CNLabelContactRelationGrandparent, _CNLabelContactRelationGrandson, 
-                       _CNLabelContactRelationGrandsonDaughtersSon, _CNLabelContactRelationGrandsonSonsSon, 
+                       _CNLabelContactRelationGranddaughterDaughtersDaughter, _CNLabelContactRelationGranddaughterOrNiece, 
+                       _CNLabelContactRelationGranddaughterSonsDaughter, _CNLabelContactRelationGrandfather, 
+                       _CNLabelContactRelationGrandfatherFathersFather, _CNLabelContactRelationGrandfatherMothersFather, 
+                       _CNLabelContactRelationGrandmother, _CNLabelContactRelationGrandmotherFathersMother, 
+                       _CNLabelContactRelationGrandmotherMothersMother, _CNLabelContactRelationGrandnephew, 
+                       _CNLabelContactRelationGrandnephewBrothersGrandson, _CNLabelContactRelationGrandnephewSistersGrandson, 
+                       _CNLabelContactRelationGrandniece, _CNLabelContactRelationGrandnieceBrothersGranddaughter, 
+                       _CNLabelContactRelationGrandnieceSistersGranddaughter, _CNLabelContactRelationGrandparent, 
+                       _CNLabelContactRelationGrandson, _CNLabelContactRelationGrandsonDaughtersSon, 
+                       _CNLabelContactRelationGrandsonOrNephew, _CNLabelContactRelationGrandsonSonsSon, 
                        _CNLabelContactRelationGranduncle, _CNLabelContactRelationGreatGrandchild, 
                        _CNLabelContactRelationGreatGrandchildOrSiblingsGrandchild, 
                        _CNLabelContactRelationGreatGranddaughter, _CNLabelContactRelationGreatGrandfather, 
@@ -233,7 +244,8 @@ exports:
                        CNChangeHistoryAnchor, CNChangeHistoryClearRequest, CNChangeHistoryContactChange, 
                        CNChangeHistoryDeleteContactEvent, CNChangeHistoryDeleteGroupEvent, 
                        CNChangeHistoryDropEverythingEvent, CNChangeHistoryEvent, 
-                       CNChangeHistoryFetchRequest, CNChangeHistoryGroupChange, CNChangeHistoryLabeledValueChange, 
+                       CNChangeHistoryEventFactory, CNChangeHistoryFetchRequest, 
+                       CNChangeHistoryGroupChange, CNChangeHistoryLabeledValueChange, 
                        CNChangeHistoryRemoveMemberFromGroupEvent, CNChangeHistoryRemoveSubgroupFromGroupEvent, 
                        CNChangeHistoryUpdateContactEvent, CNChangeHistoryUpdateGroupEvent, 
                        CNChangesNotifier, CNCompoundMultiValuePropertyDescription, 
@@ -247,9 +259,9 @@ exports:
                        CNContactsUserDefaults, CNContainer, CNContainerPermissions, 
                        CNCoreSpotlightSearch, CNCreationDateDescription, CNCropRectDescription, 
                        CNDataMapperContactStore, CNDatesDescription, CNDeduplication, 
-                       CNDepartmentDescription, CNDowntimeWhitelist, CNDowntimeWhitelistDescription, 
-                       CNDraggingContact, CNEmailAddressesDescription, CNErrorFactory, 
-                       CNExternalIdentifierDescription, CNExternalImageURIDescription, 
+                       CNDepartmentDescription, CNDowntimeWhitelist, CNDowntimeWhitelistContainerFetcher, 
+                       CNDowntimeWhitelistDescription, CNDraggingContact, CNEmailAddressesDescription, 
+                       CNErrorFactory, CNExternalIdentifierDescription, CNExternalImageURIDescription, 
                        CNExternalModificationTagDescription, CNExternalRepresentationDescription, 
                        CNExternalUUIDDescription, CNFamilyNameDescription, CNFavorites, 
                        CNFavoritesEntry, CNFavoritesLookupChangeRecord, CNFetchRequest, 
@@ -260,14 +272,15 @@ exports:
                        CNIndexRequestHandler, CNInstantMessageAddress, CNInstantMessageAddressesDescription, 
                        CNInternalIdentifierDescription, CNJobTitleDescription, CNLabeledValue, 
                        CNLaunchServicesRemoteAdapter, CNLinkIdentifierDescription, 
-                       CNMapsDataDescription, CNMiddleNameDescription, CNModificationDateDescription, 
-                       CNMultiValuePropertyDescription, CNMutableActivityAlert, CNMutableContact, 
-                       CNMutableContactKeyVector, CNMutableContainer, CNMutableGroup, 
-                       CNMutableInstantMessageAddress, CNMutablePostalAddress, CNMutableSocialProfile, 
-                       CNNamePrefixDescription, CNNameSuffixDescription, CNNicknameNameDescription, 
-                       CNNonGregorianBirthdayDescription, CNNoteDescription, CNOrganizationNameDescription, 
-                       CNPerContactPropertyKeyDescriptor, CNPermissivePolicy, CNPhoneNumber, 
-                       CNPhoneNumbersDescription, CNPhonemeDataDescription, CNPhoneticFamilyNameDescription, 
+                       CNMailToGroup, CNMapsDataDescription, CNMiddleNameDescription, 
+                       CNModificationDateDescription, CNMultiValuePropertyDescription, 
+                       CNMutableActivityAlert, CNMutableContact, CNMutableContactKeyVector, 
+                       CNMutableContainer, CNMutableGroup, CNMutableInstantMessageAddress, 
+                       CNMutablePostalAddress, CNMutableSocialProfile, CNNamePrefixDescription, 
+                       CNNameSuffixDescription, CNNicknameNameDescription, CNNonGregorianBirthdayDescription, 
+                       CNNoteDescription, CNOrganizationNameDescription, CNPerContactPropertyKeyDescriptor, 
+                       CNPermissivePolicy, CNPhoneNumber, CNPhoneNumbersDescription, 
+                       CNPhonemeDataDescription, CNPhoneticFamilyNameDescription, 
                        CNPhoneticGivenNameDescription, CNPhoneticMiddleNameDescription, 
                        CNPhoneticOrganizationNameDescription, CNPolicy, CNPostalAddress, 
                        CNPostalAddressFormatter, CNPostalAddressesDescription, CNPredicate, 
@@ -279,12 +292,11 @@ exports:
                        CNReputationHandle, CNReputationStore, CNSaveRequest, CNSectionForSortingByFamilyNameDescription, 
                        CNSectionForSortingByGivenNameDescription, CNSocialProfile, 
                        CNSocialProfilesDescription, CNSuggestedContactIdentifierPredicate, 
-                       CNSuggestedContactStore, CNSuggestedSaveRequest, CNTCC, CNTCCServices, 
-                       CNTestSmartFetcher, CNTextAlertDescription, CNThumbnailImageDataDescription, 
-                       CNUrlAddressesDescription, CNValueOrigin, CNXPCDataMapper, 
-                       CNiOSAddressBookDataMapper, CNiOSEncodedPeopleFetcher, _CNContactsLogger, 
-                       _CNFavoritesLogger, _CNGeminiLogger, _CNRegulatoryLogger, 
-                       _CNSpotlightIndexingLogger ]
+                       CNSuggestedContactStore, CNSuggestedSaveRequest, CNTCC, CNTestSmartFetcher, 
+                       CNTextAlertDescription, CNThumbnailImageDataDescription, CNUrlAddressesDescription, 
+                       CNValueOrigin, CNXPCDataMapper, CNiOSAddressBookDataMapper, 
+                       CNiOSEncodedPeopleFetcher, _CNContactsLogger, _CNFavoritesLogger, 
+                       _CNGeminiLogger, _CNRegulatoryLogger, _CNSpotlightIndexingLogger ]
     objc-ivars:      [ CNContactKeyVector._bitBuckets, CNContainer._accountIdentifier, 
                        CNContainer._constraintsPath, CNContainer._enabled, CNContainer._externalIdentifier, 
                        CNContainer._externalModificationTag, CNContainer._externalSyncData, 

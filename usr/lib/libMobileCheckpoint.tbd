@@ -1,10 +1,17 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 4E115111-9F32-3C57-8FD3-7975740D9C2B', 'armv7s: 72F4C969-2D9D-3C91-A33F-9EEBE1992116', 
-                   'arm64: DA08E57C-1756-37A8-9617-A094229CE26E', 'arm64e: 3C2B3B67-68B0-35DE-92A4-32AAD68E8554' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2E0A84C6-E134-3A41-A8B5-0A43E1EFA8CD
+  - target:          armv7s-ios
+    value:           8587CC28-E435-3AB5-A321-FF78C9190623
+  - target:          arm64-ios
+    value:           865F1592-2D60-373A-9BCF-7F2A272CD8C0
+  - target:          arm64e-ios
+    value:           E3FA3566-8258-3788-A7C7-994E5E69C59E
 install-name:    '/usr/lib/libMobileCheckpoint.dylib'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _MCCopyCheckpoint, _MCCopyCheckpointData, _MCCopyCheckpointValue ]
 ...

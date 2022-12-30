@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 Apple. All rights reserved.
 //
 
+#import <NotificationCenter/NotificationCenterDefines.h>
 #import <Foundation/Foundation.h>
 
 // 'NCWidgetController' provides an interface available to both the widget and the widget-providing app through which clients can specify whether the widget has content to display.
@@ -12,7 +13,8 @@
 // Later, should the providing app determine that the widget should have content, it can update this state via a widget controller as well, even if the widget is no longer running.
 // This class is NOT intended to be subclassed.
 NS_ASSUME_NONNULL_BEGIN
-NS_CLASS_AVAILABLE_IOS(8_0) @interface NCWidgetController : NSObject
+NOTIFICATION_CENTER_EXTERN API_DEPRECATED("Use WidgetKit instead. Today View extensions have been deprecated.", ios(8.0, 14.0))
+@interface NCWidgetController : NSObject
 
 + (instancetype)widgetController;
 

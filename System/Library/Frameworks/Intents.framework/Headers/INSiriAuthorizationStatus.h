@@ -32,6 +32,6 @@ typedef NS_ENUM(NSInteger, INSiriAuthorizationStatus) {
     
     // User has authorized this application to use Siri services.
     INSiriAuthorizationStatusAuthorized
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(10.0), watchos(3.2), tvos(14.0)) API_UNAVAILABLE(macos);
 
 #endif /* INSiriAuthorizationStatus_h */

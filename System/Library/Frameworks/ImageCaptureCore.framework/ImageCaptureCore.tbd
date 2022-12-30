@@ -1,12 +1,21 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 9E672E8F-68FF-3A8F-A3F4-3162AE0B9C83', 'arm64e: D98897A6-66BD-3CB3-888E-2FA0908B1DA0' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           1A0585D9-1F98-3E01-A8BC-876B7CEB1EC3
+  - target:          arm64e-ios
+    value:           C1CBDEDF-AF32-30DB-B9A0-459851657149
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/ImageCaptureCore'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    symbols:         [ _ICCameraDeviceCanAcceptPTPCommands, _ICCameraDeviceCanDeleteAllFiles, 
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ICAuthorizationStatusAuthorized, _ICAuthorizationStatusDenied, 
+                       _ICAuthorizationStatusNotDetermined, _ICAuthorizationStatusRestricted, 
+                       _ICCameraDeviceCanAcceptPTPCommands, _ICCameraDeviceCanDeleteAllFiles, 
                        _ICCameraDeviceCanDeleteOneFile, _ICCameraDeviceCanReceiveFile, 
                        _ICCameraDeviceCanSyncClock, _ICCameraDeviceCanTakePicture, 
                        _ICCameraDeviceCanTakePictureUsingShutterReleaseOnCamera, 
@@ -22,7 +31,8 @@ exports:
                        _ICPreferencesDomain, _ICSaveAsFilename, _ICSavedAncillaryFiles, 
                        _ICSavedFilename, _ICStatusNotificationKey, _ICTransportTypeExFAT, 
                        _ICTransportTypeMassStorage, _ICTransportTypeTCPIP, _ICTransportTypeUSB, 
-                       ___ICAddDecodedErrorToDict, ___ICLogDateString, ___ICLogTypeEnabled, 
+                       _ICTruncateAfterSuccessfulDownload, ___ICAddDecodedErrorToDict, 
+                       ___ICErrorValueDict, ___ICLogDateString, ___ICLogTypeEnabled, 
                        ___ICLongValueToErrorString, ___ICOSLogCreate, ___ICReadPrefs, 
                        ___ICValueToErrorString, __gICOSLog ]
     objc-classes:    [ ICAccessManager, ICCameraDevice, ICCameraFile, ICCameraFolder, 

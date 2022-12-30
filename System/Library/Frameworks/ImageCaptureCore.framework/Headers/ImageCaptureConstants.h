@@ -12,9 +12,9 @@
 #pragma once
 
 #import <Foundation/Foundation.h>
+#import <ImageCaptureCore/ImageCapturePlatform.h>
 
-
-#define   ICRunLoopMode   @"com.apple.ImageCaptureCore"
+IMAGECAPTURE_EXTERN NSString* const ICRunLoopMode IC_DEPRECATED("ICRunLoopMode has been deprecated and may break in future releases.", macos(10.4, 10.15)) IC_UNAVAILABLE(ios);
 
 //------------------------------------------------------------------------------------------------------------------------------
 /*!
@@ -93,6 +93,7 @@ typedef NS_ERROR_ENUM (ICErrorDomain, ICReturnConnectionErrorCode)
     ICReturnConnectionEjectFailed = -21346,                     // Device reports eject has failed.
     ICReturnConnectionFailedToOpen = -21345,                    // Failed to open a connection to the device.
     ICReturnConnectionFailedToOpenDevice = -21344,              // Failed to open the device.
+    ICReturnConnectionNotAuthorizedToOpenDevice = -21343,       // Not authorized to open device.
 };
 
 typedef NS_ERROR_ENUM (ICErrorDomain, ICReturnPTPDeviceErrorCode)

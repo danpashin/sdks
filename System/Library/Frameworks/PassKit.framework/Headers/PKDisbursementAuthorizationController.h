@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
                                             delegate:(id<PKDisbursementAuthorizationControllerDelegate>)delegate API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(tvos, watchos, macos);
 
 // The controller's delegate.
-@property (nonatomic, assign, readonly) id<PKDisbursementAuthorizationControllerDelegate> delegate API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(tvos, watchos, macos);
+@property (nonatomic, weak, readonly) id<PKDisbursementAuthorizationControllerDelegate> delegate API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(tvos, watchos, macos);
 
 // This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error will be returned.
 - (void)authorizeDisbursementWithCompletion:(void(^)(BOOL success, NSError * _Nullable error))completion API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(tvos, watchos, macos);

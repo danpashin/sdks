@@ -2,7 +2,7 @@
 //  MPSRNNLayer.h
 //  MPS
 //
-//  Created by Teemu Rantalaiho on 12/13/16.
+//  Created on 12/13/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 
@@ -975,7 +975,6 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), macCatalyst(13.0), tvos(11.0));
                    recurrentOutputStates:(NSMutableArray<MPSRNNRecurrentMatrixState*>  * __nullable)recurrentOutputStates
 MPS_SWIFT_NAME( encodeSequence(commandBuffer:sourceMatrices:sourceOffsets:destinationMatrices:destinationOffsets:recurrentInputState:recurrentOutputStates:))
 MPS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12.0));
-
 
 -( void )  encodeSequenceToCommandBuffer:(nonnull id<MTLCommandBuffer>)commandBuffer
                           sourceMatrices:(NSArray<MPSMatrix*> * __nonnull)sourceMatrices

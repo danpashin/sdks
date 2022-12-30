@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: CE34BD6B-045A-3C63-9F3B-DA5C0379CF96', 'arm64e: A7607BE2-F9C8-3284-8C49-8DDDEC95F316' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           1F0570B0-65EA-375C-AD58-48589903B547
+  - target:          arm64e-ios
+    value:           58A085F1-2E38-3775-BB6E-ECE3E46446A3
 install-name:    '/usr/lib/libPPMDataModel.dylib'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _OTABMUResistanceReadFrom, _OTAParamRCReadFrom, _OTAResistanceDataReadFrom ]
     objc-classes:    [ OTABMUResistance, OTAParamRC, OTAResistanceData ]
     objc-ivars:      [ OTABMUResistance._downstreamCommonResistance, OTABMUResistance._downstreamNorthResistance, 

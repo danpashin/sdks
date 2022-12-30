@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 208334D6-2F8B-3002-AEAC-D21C16C8D9D1', 'armv7s: A7658DAC-74C0-3E09-AE1D-3138DC2C6140', 
-                   'arm64: C19042DD-A746-3923-B766-988C0F46F5FF', 'arm64e: 21265ABB-98BB-3EA0-88AC-2A885A2E0D1C' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           A90CC344-32E2-37D3-B8FB-334B2003F32E
+  - target:          armv7s-ios
+    value:           DFEBCE83-51DD-34BD-A756-C80D9387FC3F
+  - target:          arm64-ios
+    value:           C6CA5C1E-F5DF-3142-B250-42CD78314A7A
+  - target:          arm64e-ios
+    value:           361143D0-8560-3EF8-9710-1EF78D40A9F4
 install-name:    '/usr/lib/libmav_ipc_router_dynamic.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _APPLIB_API_MAV_DeAssertResetDetect, _APPLIB_API_MAV_ParseAPWakeResponse, 
                        _APPLIB_API_MAV_ParseFuseResponse, _APPLIB_API_MAV_PowerDown, 
                        _APPLIB_API_MAV_SendAPWakeCommand, _APPLIB_API_MAV_SendFuseCommand, 
@@ -97,20 +104,21 @@ exports:
                        _HDLCFrameEncodeAndCache, _HDLCFrameFree, _HDLCFrameGetFreeSpace, 
                        _HDLCFrameGetMaxEncodedLength, _HDLCFrameInject, _HDLCFrameInjectUnsignedChar, 
                        _HDLCFrameInjectUnsignedInt, _HDLCFrameInjectUnsignedShort, 
-                       __ETLDebugPrint, __ETLDebugPrintBinary, _crc16_table, _crc30_table, 
-                       _crc32_table, _crc_16_calc, _crc_16_l_calc, _crc_16_l_step, 
-                       _crc_16_l_table, _crc_16_step, _crc_30_calc, _crc_30_step, 
-                       _crc_32_calc ]
-    weak-def-symbols: [ __ZGVN3ctu9SingletonIN3usb3log4file6writerES4_NS_23PthreadMutexGuardPolicyIS4_EEE9sInstanceE, 
-                        __ZGVN3ctu9SingletonIN3usb3log6serverES3_NS_23PthreadMutexGuardPolicyIS3_EEE9sInstanceE, 
-                        __ZN3ctu9SingletonIN3usb3log4file6writerES4_NS_23PthreadMutexGuardPolicyIS4_EEE9sInstanceE, 
-                        __ZN3ctu9SingletonIN3usb3log6serverES3_NS_23PthreadMutexGuardPolicyIS3_EEE9sInstanceE, 
-                        __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__114default_deleteI12mav_router_tEE, __ZTSNSt3__114default_deleteIN3usb3log4file6writerEEE, 
-                        __ZTSNSt3__114default_deleteIN3usb3log6serverEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
-  - archs:           [ arm64, arm64e ]
+                       __ETLDebugPrint, __ETLDebugPrintBinary, __ZN10mav_router6device10controller16configureLogSizeEj, 
+                       __ZN10mav_router6device10controller8snapshotENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       _crc16_table, _crc30_table, _crc32_table, _crc_16_calc, _crc_16_l_calc, 
+                       _crc_16_l_step, _crc_16_l_table, _crc_16_step, _crc_30_calc, 
+                       _crc_30_step, _crc_32_calc ]
+    weak-symbols:    [ __ZGVN3ctu9SingletonIN3usb3log4file6writerES4_NS_23PthreadMutexGuardPolicyIS4_EEE9sInstanceE, 
+                       __ZGVN3ctu9SingletonIN3usb3log6serverES3_NS_23PthreadMutexGuardPolicyIS3_EEE9sInstanceE, 
+                       __ZN3ctu9SingletonIN3usb3log4file6writerES4_NS_23PthreadMutexGuardPolicyIS4_EEE9sInstanceE, 
+                       __ZN3ctu9SingletonIN3usb3log6serverES3_NS_23PthreadMutexGuardPolicyIS3_EEE9sInstanceE, 
+                       __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__114default_deleteI12mav_router_tEE, __ZTSNSt3__114default_deleteIN3usb3log4file6writerEEE, 
+                       __ZTSNSt3__114default_deleteIN3usb3log6serverEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN10mav_router6device14controller_ios11init_routesEv, __ZN10mav_router6device14controller_ios18determine_mappingsEv, 
                        __ZN10mav_router6device14controller_iosC1ENSt3__18weak_ptrI12mav_router_tEE, 
                        __ZN10mav_router6device14controller_iosC2ENSt3__18weak_ptrI12mav_router_tEE, 
@@ -124,8 +132,7 @@ exports:
                        __ZN10mav_router6device7h5_shim13getMaxPayloadERm, __ZN10mav_router6device7h5_shim13handle_statusEP21h5_system_context_tag18h5_system_status_t, 
                        __ZN10mav_router6device7h5_shim14setErrorReasonERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device7h5_shim15handle_transmitEPv, __ZN10mav_router6device7h5_shim16capture_uart_logERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
-                       __ZN10mav_router6device7h5_shim16clearErrorReasonEv, __ZN10mav_router6device7h5_shim16configureLogSizeEj, 
-                       __ZN10mav_router6device7h5_shim16handle_read_dataEP21h5_system_context_tagPv, 
+                       __ZN10mav_router6device7h5_shim16clearErrorReasonEv, __ZN10mav_router6device7h5_shim16handle_read_dataEP21h5_system_context_tagPv, 
                        __ZN10mav_router6device7h5_shim17reset_system_modeEv, __ZN10mav_router6device7h5_shim18increase_baud_rateEP26TelephonyUtilTransport_tag, 
                        __ZN10mav_router6device7h5_shim19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device7h5_shim19setEngageFatalErrorERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
@@ -142,8 +149,8 @@ exports:
                        __ZN10mav_router6device7h5_shimD2Ev, __ZN10mav_router6device8pci_shim10handleReadEPKvj, 
                        __ZN10mav_router6device8pci_shim11handleErrorEi, __ZN10mav_router6device8pci_shim12exitLowPowerEv, 
                        __ZN10mav_router6device8pci_shim13enterLowPowerEv, __ZN10mav_router6device8pci_shim13getMaxPayloadERm, 
-                       __ZN10mav_router6device8pci_shim15handle_transmitEPv, __ZN10mav_router6device8pci_shim16configureLogSizeEj, 
-                       __ZN10mav_router6device8pci_shim16getDataBufferMapEv, __ZN10mav_router6device8pci_shim19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       __ZN10mav_router6device8pci_shim15handle_transmitEPv, __ZN10mav_router6device8pci_shim16getDataBufferMapEv, 
+                       __ZN10mav_router6device8pci_shim19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device8pci_shim19setErrorReason_syncERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device8pci_shim21clearErrorReason_syncEv, 
                        __ZN10mav_router6device8pci_shim21hasFatalErrorOccurredEPb, 
@@ -159,7 +166,7 @@ exports:
                        __ZN10mav_router6device8usb_shim11handleErrorENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device8usb_shim12exitLowPowerEv, __ZN10mav_router6device8usb_shim13enterLowPowerEv, 
                        __ZN10mav_router6device8usb_shim13getMaxPayloadERm, __ZN10mav_router6device8usb_shim15handle_transmitEPv, 
-                       __ZN10mav_router6device8usb_shim16configureLogSizeEj, __ZN10mav_router6device8usb_shim19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       __ZN10mav_router6device8usb_shim19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device8usb_shim19setErrorReason_syncERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device8usb_shim21clearErrorReason_syncEv, 
                        __ZN10mav_router6device8usb_shim21hasFatalErrorOccurredEPb, 
@@ -171,13 +178,12 @@ exports:
                        __ZN10mav_router6device8usb_shimC2ENSt3__18weak_ptrI12mav_router_tEE19mav_router_device_tRKNS1_10parametersE, 
                        __ZN10mav_router6device8usb_shimD0Ev, __ZN10mav_router6device8usb_shimD1Ev, 
                        __ZN10mav_router6device8usb_shimD2Ev, __ZN10mav_router6device9null_shim15handle_transmitEPv, 
-                       __ZN12mav_router_t6createE23mav_router_parameters_t, __ZN16mav_logging_sink13sInstanceLockE, 
-                       __ZN16mav_logging_sink3getEv, __ZN16mav_logging_sink3setERKNSt3__110shared_ptrIS_EE, 
-                       __ZN16mav_logging_sink8instanceEv, __ZN26mav_router_ios_preferencesC1Ev, 
+                       __ZN12mav_router_t6createE23mav_router_parameters_t, __ZN26mav_router_ios_preferencesC1Ev, 
                        __ZN26mav_router_ios_preferencesC2Ev, __ZNK10mav_router6device14controller_ios23get_channel_for_serviceERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZNK10mav_router6device14controller_mac23get_channel_for_serviceERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZNK10mav_router6device8pci_shim12isError_syncEv, __ZNK10mav_router6device8pci_shim19getErrorReason_syncEv, 
                        __ZNK10mav_router6device8usb_shim12isError_syncEv, __ZNK10mav_router6device8usb_shim19getErrorReason_syncEv, 
+                       __ZNK26mav_router_ios_preferences23get_max_pci_read_paramsERjS0_, 
                        __ZNK26mav_router_ios_preferences23should_use_h5_transportE20mav_router_profile_t, 
                        __ZNK26mav_router_ios_preferences23should_use_qmi_over_pciE20mav_router_profile_t, 
                        __ZNK26mav_router_ios_preferences24should_use_qmi_over_hsicE20mav_router_profile_t, 
@@ -193,16 +199,14 @@ exports:
                        __ZTVN10mav_router6device14controller_iosE, __ZTVN10mav_router6device14controller_macE, 
                        __ZTVN10mav_router6device7h5_shimE, __ZTVN10mav_router6device8pci_shimE, 
                        __ZTVN10mav_router6device8usb_shimE, __ZTVN10mav_router6device9null_shimE ]
-    weak-def-symbols: [ __ZN3ctu11concurrency9SingletonI26mav_router_ios_preferencesNS0_16__DefaultFactoryIS2_EEE10fsInstanceE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZN3ctu11concurrency9SingletonI26mav_router_ios_preferencesNS0_16__DefaultFactoryIS2_EEE10fsInstanceE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN10mav_router6device10controller12exitLowPowerEv, __ZN10mav_router6device10controller13enterLowPowerEv, 
-                       __ZN10mav_router6device10controller13getMaxPayloadERm, __ZN10mav_router6device10controller16configureLogSizeEj, 
-                       __ZN10mav_router6device10controller19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
+                       __ZN10mav_router6device10controller13getMaxPayloadERm, __ZN10mav_router6device10controller19getFatalErrorReasonERNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device10controller21hasFatalErrorOccurredEPb, 
                        __ZN10mav_router6device10controller6createENSt3__18weak_ptrI12mav_router_tEE, 
                        __ZN10mav_router6device10controller6engageEU13block_pointerFv19mav_router_result_tE, 
                        __ZN10mav_router6device10controller6engageEv, __ZN10mav_router6device10controller7recoverEv, 
-                       __ZN10mav_router6device10controller8snapshotENSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
                        __ZN10mav_router6device10controller8tearDownEv, __ZN10mav_router6device10controllerC2ENSt3__18weak_ptrI12mav_router_tEE, 
                        __ZN10mav_router6device10controllerD0Ev, __ZN10mav_router6device10controllerD1Ev, 
                        __ZN10mav_router6device10controllerD2Ev, __ZN10mav_router6device4shim21register_for_transmitEv, 
@@ -220,11 +224,10 @@ exports:
                        __ZTIN10mav_router7service14transport_shimE, __ZTSN10mav_router6device10controllerE, 
                        __ZTSN10mav_router6device4shimE, __ZTSN10mav_router7service14transport_shimE, 
                        __ZTVN10mav_router6device10controllerE, __ZTVN10mav_router6device4shimE, 
-                       __ZTVN10mav_router7service14transport_shimE, ___mav_log, ___mav_log_binary, 
-                       ___mav_log_enabled, ___mav_log_flush, ___mav_log_platform_os_log_handle, 
-                       _mav_log_platform_configure, _mav_log_platform_snapshot, _mav_mux_decode, 
-                       _mav_mux_encode, _mav_mux_init_paramameters, _mav_router_channel_get_name_as_cstr, 
-                       _mav_router_channel_is_valid, _mav_router_device_error, _mav_router_device_get_name_as_cstr, 
+                       __ZTVN10mav_router7service14transport_shimE, ___mav_log_platform_os_log_handle, 
+                       _mav_mux_decode, _mav_mux_encode, _mav_mux_init_paramameters, 
+                       _mav_router_channel_get_name_as_cstr, _mav_router_channel_is_valid, 
+                       _mav_router_device_error, _mav_router_device_get_name_as_cstr, 
                        _mav_router_device_is_valid, _mav_router_device_receive, _mav_router_device_register_transmit, 
                        _mav_router_get_device_muxed, _mav_router_get_hsic_control_device, 
                        _mav_router_get_pci_control_device, _mav_router_get_qmi_channel, 

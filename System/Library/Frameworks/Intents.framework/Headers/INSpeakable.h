@@ -7,8 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-API_AVAILABLE(ios(10.0), watchos(3.2))
-API_UNAVAILABLE(macosx, tvos)
+API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2), tvos(14.0))
 @protocol INSpeakable <NSObject>
 
 @property (readonly, strong, nonnull, NS_NONATOMIC_IOSONLY) NSString *spokenPhrase;

@@ -23,6 +23,9 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
  @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
 
  The image must be non-nil and the title must be a non-zero length string for the button to be displayed.
+ 
+ @discussion To properly size your images, your app should size them to the display scale of the car screen.
+ See -[CPInterfaceController carTraitCollection].
  */
 - (instancetype)initWithTitleVariants:(NSArray <NSString *> *)titleVariants image:(UIImage *)image handler:(void (^ _Nullable)(CPGridButton *barButton))handler NS_DESIGNATED_INITIALIZER;
 
@@ -37,6 +40,8 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
  The image displayed on the button.
 
  @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+ To properly size your list images, your app should size them to the display scale of the car screen.
+ See -[CPInterfaceController carTraitCollection].
  */
 @property (nonatomic, readonly) UIImage *image;
 

@@ -1,13 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: F2A9828E-D837-3DA7-A91C-D445B3850663', 'arm64e: 2A960B07-6E15-32F1-847D-6C87977CC26E' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           6EC90C11-A41F-30FC-BF20-EDC304E24C28
+  - target:          arm64e-ios
+    value:           549FDB86-5C27-32F7-8D02-DA062BED667A
 install-name:    '/usr/lib/libRoseBooter.dylib'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _RoseBooterAllocate, _RoseBooterBootChip, _RoseBooterDestroy, 
-                       _RoseBooterGetCal, _RoseBooterHasFailedForward, _RoseBooterHasFailedForwardWithHeal, 
-                       _RoseBooterPreflight, _RoseBooterSendCal, _RoseUpdaterCopyFirmware, 
-                       _RoseUpdaterCreateRequest, _RoseUpdaterGetSharedInfo, _RoseUpdaterGetTags ]
+                       _RoseBooterGetCal, _RoseBooterHasFailedForward, _RoseBooterPreflight, 
+                       _RoseBooterSendCal ]
 ...

@@ -4,6 +4,8 @@
 //  Copyright (c) 2014 Apple, Inc. All rights reserved.
 //
 
+#import <TargetConditionals.h>
+
 #if TARGET_OS_IOS && !TARGET_OS_MACCATALYST
 #import <AddressBook/ABRecord.h>
 #endif // TARGET_OS_IOS && !TARGET_OS_MACCATALYST
@@ -16,7 +18,7 @@
 // have a PKPaymentToken which contains a payment credential encrypted to the merchant
 // identifier specified in the request, and when requested, the user's shipping address
 // and chosen shipping method.
-API_AVAILABLE(ios(8.0), watchos(3.0))
+API_AVAILABLE(macos(11.0), ios(8.0), watchos(3.0))
 @interface PKPayment : NSObject
 
 // A PKPaymentToken which contains an encrypted payment credential.
@@ -26,7 +28,7 @@ API_AVAILABLE(ios(8.0), watchos(3.0))
 // constrained to those specified in the requiredBillingAddressFields property of the original
 // PKPaymentRequest object.  This property is only set when the application has set
 // the requiredBillingAddressFields property of the PKPaymentRequest.
-@property (nonatomic, strong, readonly, nullable) PKContact *billingContact API_AVAILABLE(ios(9.0), watchos(3.0));
+@property (nonatomic, strong, readonly, nullable) PKContact *billingContact API_AVAILABLE(macos(11.0), ios(9.0), watchos(3.0));
 
 #if TARGET_OS_IOS && !TARGET_OS_MACCATALYST
 @property (nonatomic, assign, readonly, nullable) ABRecordRef billingAddress API_DEPRECATED("Use billingContact instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED;
@@ -36,7 +38,7 @@ API_AVAILABLE(ios(8.0), watchos(3.0))
 // constrained to those specified in the requiredShippingAddressFields property of the original
 // PKPaymentRequest object.  This property is only set when the application has set
 // the requiredShippingAddressFields property of the PKPaymentRequest.
-@property (nonatomic, strong, readonly, nullable) PKContact *shippingContact API_AVAILABLE(ios(9.0), watchos(3.0));
+@property (nonatomic, strong, readonly, nullable) PKContact *shippingContact API_AVAILABLE(macos(11.0), ios(9.0), watchos(3.0));
 
 #if TARGET_OS_IOS && !TARGET_OS_MACCATALYST
 @property (nonatomic, assign, readonly, nullable) ABRecordRef shippingAddress API_DEPRECATED("Use shippingContact instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED;

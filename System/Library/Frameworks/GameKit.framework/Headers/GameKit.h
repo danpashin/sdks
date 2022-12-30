@@ -23,6 +23,7 @@
 #import <ReplayKit/ReplayKit.h>
 
 #import <GameKit/GKDefines.h>
+#import <GameKit/GKAccessPoint.h>
 #import <GameKit/GKAchievement.h>
 #import <GameKit/GKAchievementDescription.h>
 #import <GameKit/GKAchievementViewController.h>
@@ -39,6 +40,8 @@
 #import <GameKit/GKGameSessionEventListener.h>
 #import <GameKit/GKGameSessionSharingViewController.h>
 #import <GameKit/GKLeaderboard.h>
+#import <GameKit/GKLeaderboardEntry.h>
+#import <GameKit/GKLeaderboardScore.h>
 #import <GameKit/GKLeaderboardSet.h>
 #import <GameKit/GKLeaderboardViewController.h>
 #import <GameKit/GKLocalPlayer.h>

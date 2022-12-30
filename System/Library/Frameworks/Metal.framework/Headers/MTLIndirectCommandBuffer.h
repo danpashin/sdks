@@ -22,8 +22,9 @@ typedef NS_OPTIONS(NSUInteger, MTLIndirectCommandType) {
     MTLIndirectCommandTypeDrawPatches         API_UNAVAILABLE(tvos) = (1 << 2),
     MTLIndirectCommandTypeDrawIndexedPatches  API_UNAVAILABLE(tvos) = (1 << 3) ,
 
-    MTLIndirectCommandTypeConcurrentDispatch  API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos) = (1 << 5), /* Dispatch threadgroups with concurrent execution */
-     MTLIndirectCommandTypeConcurrentDispatchThreads  API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos) = (1 << 6), /* Dispatch threads with concurrent execution */
+    MTLIndirectCommandTypeConcurrentDispatch  API_AVAILABLE(ios(13.0),macos(11.0)) = (1 << 5), /* Dispatch threadgroups with concurrent execution */
+
+     MTLIndirectCommandTypeConcurrentDispatchThreads  API_AVAILABLE(ios(13.0),macos(11.0)) = (1 << 6), /* Dispatch threads with concurrent execution */
 } API_AVAILABLE(macos(10.14), ios(12.0));
 
 
@@ -47,7 +48,7 @@ MTL_INLINE MTLIndirectCommandBufferExecutionRange MTLIndirectCommandBufferExecut
  Describes the limits and features that can be used in an indirect command
  */
 MTL_EXPORT API_AVAILABLE(macos(10.14), ios(12.0))
-@interface MTLIndirectCommandBufferDescriptor : NSObject
+@interface MTLIndirectCommandBufferDescriptor : NSObject <NSCopying>
 
 /*!
  @abstract
@@ -85,7 +86,7 @@ MTL_EXPORT API_AVAILABLE(macos(10.14), ios(12.0))
  @absract
  The maximum bind index of kernel (or tile) argument buffers that can be set per command.
  */
-@property (readwrite, nonatomic) NSUInteger maxKernelBufferBindCount API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
+@property (readwrite, nonatomic) NSUInteger maxKernelBufferBindCount API_AVAILABLE(ios(13.0),macos(11.0));
 
 
 @end
@@ -99,7 +100,7 @@ API_AVAILABLE(macos(10.14), ios(12.0))
 -(void)resetWithRange:(NSRange)range;
 
 - (id <MTLIndirectRenderCommand>)indirectRenderCommandAtIndex:(NSUInteger)commandIndex;
-- (id <MTLIndirectComputeCommand>)indirectComputeCommandAtIndex:(NSUInteger)commandIndex API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
+- (id <MTLIndirectComputeCommand>)indirectComputeCommandAtIndex:(NSUInteger)commandIndex API_AVAILABLE(ios(13.0),macos(11.0));
 
 @end
 

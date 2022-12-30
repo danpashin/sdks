@@ -12,12 +12,15 @@
 #import <ARKit/ARHitTestResult.h>
 #import <ARKit/ARRaycastQuery.h>
 
+#import <ARKit/ARGeoTrackingTypes.h>
+
 @class ARAnchor;
 @class ARCamera;
 @class ARLightEstimate;
 @class ARPointCloud;
 @class AVDepthData;
 @class ARBody2D;
+@class ARDepthData;
 
 @protocol MTLTexture;
 
@@ -165,6 +168,27 @@ API_AVAILABLE(ios(11.0))
  */
 @property (nonatomic, nullable, readonly) ARBody2D *detectedBody API_AVAILABLE(ios(13.0));
 
+
+/**
+ The status of geo tracking.
+ */
+@property (nonatomic, strong, nullable, readonly) ARGeoTrackingStatus *geoTrackingStatus API_AVAILABLE(ios(14.0));
+
+
+/**
+ Scene depth data.
+ @see ARFrameSemanticSceneDepth.
+ @see -[ARConfiguration setFrameSemantics:]
+ */
+@property (nonatomic, strong, nullable, readonly) ARDepthData *sceneDepth API_AVAILABLE(ios(14.0));
+
+/**
+ Scene depth data, smoothed for temporal consistency.
+ @see ARFrameSemanticSmoothedSceneDepth.
+ @see -[ARConfiguration setFrameSemantics:]
+ */
+@property (nonatomic, strong, nullable, readonly) ARDepthData *smoothedSceneDepth API_AVAILABLE(ios(14.0));
+
 /**
  Searches the frame for objects corresponding to a point in the captured image.
  
@@ -175,7 +199,7 @@ API_AVAILABLE(ios(11.0))
  @param types The types of results to search for.
  @return An array of all hit-test results sorted from nearest to farthest.
  */
-- (NSArray<ARHitTestResult *> *)hitTest:(CGPoint)point types:(ARHitTestResultType)types;
+- (NSArray<ARHitTestResult *> *)hitTest:(CGPoint)point types:(ARHitTestResultType)types API_DEPRECATED("Use [ARSession raycast:]", ios(11.0, 14.0));
 
 /**
  Creates a raycast query originating from the point on the captured image, aligned along the center of the field of view of the camera.

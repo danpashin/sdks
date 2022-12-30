@@ -13,6 +13,7 @@
 #import <Intents/INActivateCarSignalIntent.h>
 #import <Intents/INGetCarLockStatusIntent.h>
 #import <Intents/INGetCarPowerLevelStatusIntent.h>
+#import <Intents/INListCarsIntent.h>
 #import <Intents/INSaveProfileInCarIntent.h>
 #import <Intents/INSetAudioSourceInCarIntent.h>
 #import <Intents/INSetCarLockStatusIntent.h>

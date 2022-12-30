@@ -1,20 +1,27 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: D723A03B-6FD7-36F7-8414-2F3CF100277C', 'armv7s: 1A0C4042-52AB-3895-864F-5D70C949FC92', 
-                   'arm64: 43705825-4EB8-3A95-B1DC-7965C9AFB258', 'arm64e: 5466E0FD-CE35-35EB-857B-18588926CFE9' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           09CE2DFF-9A8B-3DC1-99DE-3CC827B09283
+  - target:          armv7s-ios
+    value:           EFE9577B-ADF9-3374-A409-A6B298ACE3CF
+  - target:          arm64-ios
+    value:           7ED055D5-BDF8-364C-AB1A-FAAB9060F5F4
+  - target:          arm64e-ios
+    value:           DD0E98A0-87FF-336C-96EB-7E7C1EF65CDB
 install-name:    '/usr/lib/libFDRDecode.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _AMFDRDecodeEvaluateTrustCombinedWithVersion, _AMFDRDecodeEvaluateTrustWithVersion, 
                        _AMFDRDecodeVerifySealingManifestWithVersion, _AMFDRDecodeVerifySealingRequestWithVersion, 
                        _AMFDRTagsCreateStringFromTag, _AMFDRTagsStringToTag, _DERAccessDescriptionItemSpecs, 
                        _DERAlgorithmIdItemSpecs, _DERAttributeTypeAndValueItemSpecs, 
                        _DERAuthorityKeyIdentifierItemSpecs, _DERBasicConstraintsItemSpecs, 
-                       _DERDecodeItem, _DERDecodeItemPartialBuffer, _DERDecodeSeqContentInit, 
-                       _DERDecodeSeqInit, _DERDecodeSeqNext, _DERDistributionPointItemSpecs, 
-                       _DERExtensionItemSpecs, _DERFDRCombinedItemSpecs, _DERFDRItemSpecs, 
-                       _DERFDRTrustObjectItemSpecs, _DERImg4CompressionItemSpecs, 
+                       _DERDecodeItem, _DERDecodeItemPartialBuffer, _DERDecodeItemPartialBufferGetLength, 
+                       _DERDecodeSeqContentInit, _DERDecodeSeqInit, _DERDecodeSeqNext, 
+                       _DERDistributionPointItemSpecs, _DERExtensionItemSpecs, _DERFDRCombinedItemSpecs, 
+                       _DERFDRItemSpecs, _DERFDRTrustObjectItemSpecs, _DERImg4CompressionItemSpecs, 
                        _DERImg4Decode, _DERImg4DecodeContentFindItemWithTag, _DERImg4DecodeFindInSequence, 
                        _DERImg4DecodeFindProperty, _DERImg4DecodeManifest, _DERImg4DecodeParseManifestProperties, 
                        _DERImg4DecodePayload, _DERImg4DecodeProperty, _DERImg4DecodeRestoreInfo, 
@@ -132,7 +139,7 @@ exports:
                        _oidSha256Rsa, _oidSha384, _oidSha384Ecdsa, _oidSha384Rsa, 
                        _oidSha512, _oidSha512Ecdsa, _oidSha512Rsa, _oidStateOrProvinceName, 
                        _oidSubjectAltName, _oidSubjectInfoAccess, _oidSubjectKeyIdentifier ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _AMFDRDecodeCertificate, _AMFDRDecodeCheckCertRevocation, 
                        _AMFDRDecodeCheckProducerIDRevocation, _AMFDRDecodeCombined, 
                        _AMFDRDecodeEvaluateTrust, _AMFDRDecodeEvaluateTrustCombined, 
@@ -143,9 +150,10 @@ exports:
                        _AMFDRDecodeIterateProducerIDNext, _AMFDRDecodeIterateTrustObjectRevokedBegin, 
                        _AMFDRDecodeIterateTrustObjectRevokedNext, _AMFDRDecodeIterateTrustObjectSslRootBegin, 
                        _AMFDRDecodeIterateTrustObjectSslRootNext, _AMFDRDecodeIterateTrustObjectTrustedBegin, 
-                       _AMFDRDecodeIterateTrustObjectTrustedNext, _AMFDRDecodeManifestBody, 
-                       _AMFDRDecodeManifestBodyDestroy, _AMFDRDecodeManifestBodyNext, 
-                       _AMFDRDecodeMetadata, _AMFDRDecodeMultiResponse, _AMFDRDecodeOfflineBlob, 
+                       _AMFDRDecodeIterateTrustObjectTrustedNext, _AMFDRDecodeLogSetHandler, 
+                       _AMFDRDecodeManifestBody, _AMFDRDecodeManifestBodyDestroy, 
+                       _AMFDRDecodeManifestBodyNext, _AMFDRDecodeMetadata, _AMFDRDecodeMultiResponse, 
+                       _AMFDRDecodeMultiSealingResponse, _AMFDRDecodeOfflineBlob, 
                        _AMFDRDecodeParseDERLengthFromBuffer, _AMFDRDecodeSealingRequest, 
                        _AMFDRDecodeTrustEvaluation, _AMFDRDecodeTrustObject, _AMFDRDecodeVerifyCertIssuer, 
                        _AMFDRDecodeVerifySealingManifest, _AMFDRDecodeVerifySealingRequest ]

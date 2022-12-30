@@ -1,20 +1,22 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           A318ACF5-DC70-32A8-8107-81A152781CB1
+  - target:          armv7s-ios
+    value:           5B83CC09-A299-36F9-890D-C3E5BD24147A
+  - target:          arm64-ios
+    value:           B9616B37-F72D-36F2-870E-3BC10BE4C306
+  - target:          arm64e-ios
+    value:           9249265E-F128-301E-ADC9-EECF0F3E92B2
+install-name:    '/System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _propertyMonitor ]
-    objc-classes:         [ SBCClientConfiguration,
-                            SBCMusicLibraryPlaybackPositionDomain,
-                            SBCPlaybackPositionDomain, SBCPlaybackPositionEntity,
-                            SBCPlaybackPositionService,
-                            SBCPlaybackPositionServiceInterface,
-                            SBCPlaybackPositionSyncService,
-                            SBCPlaybackPositionValueService, SBCXPCService,
-                            SBCXPCServiceInterface ]
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _propertyMonitor ]
+    objc-classes:    [ SBCClientConfiguration, SBCMusicLibraryPlaybackPositionDomain ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    objc-classes:    [ SBCPlaybackPositionDomain, SBCPlaybackPositionEntity, SBCPlaybackPositionService, 
+                       SBCPlaybackPositionServiceInterface, SBCPlaybackPositionSyncService, 
+                       SBCPlaybackPositionValueService, SBCXPCService, SBCXPCServiceInterface ]
 ...

@@ -2,7 +2,7 @@
 //  MPSNNSlice.h
 //  MPSNeuralNetwork
 //
-//  Created by Aaftab Munshi on 11/27/17.
+//  Created on 11/27/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

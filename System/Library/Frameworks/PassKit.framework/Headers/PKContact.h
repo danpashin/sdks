@@ -10,7 +10,7 @@
 #import <Contacts/Contacts.h>
 #endif
 
-API_AVAILABLE(ios(9.0), watchos(3.0))
+API_AVAILABLE(macos(10.12), ios(9.0), watchos(3.0))
 @interface PKContact : NSObject
 
 @property (nonatomic, strong, nullable) NSPersonNameComponents *name;

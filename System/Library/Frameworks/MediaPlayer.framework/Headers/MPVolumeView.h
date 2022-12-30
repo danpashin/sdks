@@ -6,14 +6,17 @@
 //
 
 #import <MediaPlayer/MediaPlayerDefines.h>
-#if MP_HAS_UIVIEW
+
+#if MP_HAS_UIKIT
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+MP_UNAVAILABLE_BEGIN(watchos, macos)
+
 MP_API(ios(2.0))
-MP_PROHIBITED(tvos, macos, watchos)
 @interface MPVolumeView : UIView <NSCoding>
 
 @property (nonatomic) BOOL showsVolumeSlider MP_API(ios(4.2)); // Default is YES.
@@ -48,18 +51,26 @@ MP_PROHIBITED(tvos, macos, watchos)
 
 // Route button customization
 
-- (void)setRouteButtonImage:(nullable UIImage *)image forState:(UIControlState)state MP_DEPRECATED("Use AVRoutePickerView.routePickerButtonStyle instead.", ios(6.0, 13.0));
-- (nullable UIImage *)routeButtonImageForState:(UIControlState)state MP_DEPRECATED("See AVRoutePickerView for possible replacements.", ios(6.0, 13.0));
+- (void)setRouteButtonImage:(nullable UIImage *)image forState:(UIControlState)state
+    MP_DEPRECATED("Use AVRoutePickerView.routePickerButtonStyle instead.", ios(6.0, 13.0));
+- (nullable UIImage *)routeButtonImageForState:(UIControlState)state
+    MP_DEPRECATED("See AVRoutePickerView for possible replacements.", ios(6.0, 13.0));
 
-- (CGRect)routeButtonRectForBounds:(CGRect)bounds MP_DEPRECATED("See AVRoutePickerView for possible replacements.", ios(6.0, 13.0));
+- (CGRect)routeButtonRectForBounds:(CGRect)bounds
+    MP_DEPRECATED("See AVRoutePickerView for possible replacements.", ios(6.0, 13.0));
 
 @end
 
 // Posted when the wirelessRoutesAvailable property changes.
-MP_EXTERN NSString * const MPVolumeViewWirelessRoutesAvailableDidChangeNotification MP_DEPRECATED("Use AVRouteDetectorMultipleRoutesDetectedDidChangeNotification instead.", ios(7.0, 13.0)) MP_PROHIBITED(tvos, watchos);
+MP_EXTERN NSString * const MPVolumeViewWirelessRoutesAvailableDidChangeNotification
+    MP_DEPRECATED("Use AVRouteDetectorMultipleRoutesDetectedDidChangeNotification instead.", ios(7.0, 13.0));
 
 // Posted when the wirelessRouteActive property changes.
-MP_EXTERN NSString * const MPVolumeViewWirelessRouteActiveDidChangeNotification MP_DEPRECATED("Use AVPlayer.externalPlaybackActive KVO instead.", ios(7.0, 13.0)) MP_PROHIBITED(tvos, watchos);
+MP_EXTERN NSString * const MPVolumeViewWirelessRouteActiveDidChangeNotification
+    MP_DEPRECATED("Use AVPlayer.externalPlaybackActive KVO instead.", ios(7.0, 13.0));
+
+MP_UNAVAILABLE_END
 
 NS_ASSUME_NONNULL_END
+
 #endif

@@ -5,17 +5,20 @@
 //  Copyright © 2015 Apple, Inc. All rights reserved.
 //
 
+#import <TargetConditionals.h>
+
 #if TARGET_OS_IPHONE
 
 #import <UIKit/UIKit.h>
-#import <PassKit/PKAddPaymentPassRequest.h>
-#import <PassKit/PKConstants.h>
-#import <PassKit/PKError.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PKAddPaymentPassViewController, PKPaymentPass;
+@class PKAddPaymentPassRequest;
+@class PKAddPaymentPassRequestConfiguration;
+@class PKAddPaymentPassViewController;
+@class PKPaymentPass;
 
+API_AVAILABLE(ios(9.0))
 @protocol PKAddPaymentPassViewControllerDelegate<NSObject>
 
 /* Certificates is an array of NSData, each a DER encoded X.509 certificate, with the leaf first and root last.
@@ -50,4 +53,4 @@ API_AVAILABLE(ios(9.0))
 
 NS_ASSUME_NONNULL_END
 
-#endif
+#endif // TARGET_OS_IPHONE

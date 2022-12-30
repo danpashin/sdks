@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(11.0), watchos(4.0))
-API_UNAVAILABLE(macosx, tvos)
+API_UNAVAILABLE(macos, tvos)
 @interface INNoteContent : NSObject <NSSecureCoding, NSCopying>
 
 @end

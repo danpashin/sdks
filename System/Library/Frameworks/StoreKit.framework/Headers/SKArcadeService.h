@@ -2,7 +2,6 @@
 //  SKArcadeService.h
 //  StoreKit
 //
-//  Created by Ross LeBeau on 4/2/19.
 //  Copyright © 2019 Apple Inc. All rights reserved.
 //
 

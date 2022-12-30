@@ -1,4 +1,4 @@
-/*  vfp.h (from vecLib-735.140)
+/*  vfp.h (from vecLib-760.0)
  *  Copyright (c) 1999-2020 by Apple Inc. All rights reserved.
  *
  *  Overview:
@@ -62,7 +62,9 @@ extern vFloat vfloorf(vFloat) API_AVAILABLE(macos(10.5), ios(6.0));
 extern vFloat vtruncf(vFloat) API_AVAILABLE(macos(10.9), ios(6.0));
 extern vFloat  vnintf(vFloat) API_AVAILABLE(macos(10.5), ios(6.0));
 /*  The legacy name vintf is not available on iOS, and is deprecated on macOS.  Use vtruncf instead.      */
+#if __x86_64__ || __i386__
 extern vFloat   vintf(vFloat) API_DEPRECATED_WITH_REPLACEMENT("vtruncf", macos(10.5, 10.14)) API_UNAVAILABLE(ios, tvos, watchos);
+#endif
 #endif
 
 
@@ -249,7 +251,9 @@ extern vUInt32   vsignbitf(vFloat)         API_AVAILABLE(macos(10.0), ios(6.0));
 extern vFloat  vnextafterf(vFloat, vFloat) API_AVAILABLE(macos(10.0), ios(6.0));
 extern vUInt32  vclassifyf(vFloat)         API_AVAILABLE(macos(10.0), ios(6.0));
 /*  The legacy name vfabf is not available on iOS.  Use vfabsf instead.       */
+#if __x86_64__ || __i386__
 extern vFloat        vfabf(vFloat)         API_AVAILABLE(macos(10.0)) API_UNAVAILABLE(ios, watchos, tvos);
+#endif
 
 /*  Generalized Table Lookup
  *

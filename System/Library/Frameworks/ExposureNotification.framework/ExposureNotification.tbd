@@ -1,22 +1,29 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 9EE71F7E-6B3A-36F5-973E-91CE0258B592', 'arm64e: C9A61528-B78D-35D5-9D90-73092DC9D637' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           2DE5E6F5-DFE5-3254-A632-F69DF54B7330
+  - target:          arm64e-ios
+    value:           D07E065F-BA0D-31EB-8053-CCBB7197AD61
 install-name:    '/System/Library/Frameworks/ExposureNotification.framework/ExposureNotification'
 current-version: 0
 compatibility-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ENAEMCrypt, _ENAEMKDerive, _ENCompareDiagnosisReportTypes, 
                        _ENDaemonBundle, _ENDataVaultPath, _ENDataVaultURL, _ENDefaultExpirationDate, 
                        _ENDiagnosisMetadataKeyDiagnosisReportType, _ENDiagnosisMetadataKeyHasSymptoms, 
                        _ENDiagnosisMetadataKeyIncludeTravelerStatus, _ENDiagnosisMetadataKeySymptomOnsetDate, 
                        _ENDiagnosisMetadataKeyUserDidTravel, _ENErrorDomain, _ENErrorF, 
-                       _ENErrorUserInfoKeyAppBundleIdentifier, _ENLocalizedString, 
-                       _ENNestedErrorF, _ENRPIDerive, _ENRPIDeriveBatch, _ENRPIKDerive, 
-                       _ENRPIMetadataDeserialize, _ENRPIMetadataSerialize, _ENTEKGenerate, 
-                       _ENTestResultErrorDomain, _ENUICreateRemotePresentationController, 
+                       _ENErrorMetricTypeToString, _ENErrorUserInfoKeyAppBundleIdentifier, 
+                       _ENLocalizedString, _ENNestedErrorF, _ENRPIDerive, _ENRPIDeriveBatch, 
+                       _ENRPIKDerive, _ENRPIMetadataDeserialize, _ENRPIMetadataSerialize, 
+                       _ENTEKGenerate, _ENTestResultErrorDomain, _ENUICreateRemotePresentationController, 
                        _ENUIHostViewControllerInterface, _ENUIRemoteViewControllerInterface, 
                        _ENWriteTemporaryExposureKeysCSV, _ENXPCDecodeSecureObject, 
                        _ENXPCDecodeSecureObjectIfPresent, _ENXPCEncodeSecureObject, 

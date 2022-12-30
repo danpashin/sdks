@@ -6,14 +6,16 @@
 //
 
 #import <MediaPlayer/MediaPlayerDefines.h>
-#if MP_HAS_UIVIEW
-#import <Foundation/Foundation.h>
+
+#if MP_HAS_UIKIT
+
 #import <UIKit/UIViewController.h>
 
 @class MPMoviePlayerController;
 
-MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0))
-MP_PROHIBITED(tvos, watchos)
+MP_DEPRECATED_BEGIN("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0))
+MP_UNAVAILABLE_BEGIN(tvos, watchos, macos)
+
 @interface MPMoviePlayerViewController : UIViewController
 
 - (instancetype)initWithContentURL:(NSURL *)contentURL NS_DESIGNATED_INITIALIZER;
@@ -28,8 +30,12 @@ MP_PROHIBITED(tvos, watchos)
 
 @interface UIViewController (MPMoviePlayerViewController)
 
-- (void)presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)moviePlayerViewController MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0)) MP_PROHIBITED(tvos, watchos);
-- (void)dismissMoviePlayerViewControllerAnimated MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0)) MP_PROHIBITED(tvos, watchos);
+- (void)presentMoviePlayerViewControllerAnimated:(MPMoviePlayerViewController *)moviePlayerViewController MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0));
+- (void)dismissMoviePlayerViewControllerAnimated MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0));
 
 @end
+
+MP_UNAVAILABLE_END
+MP_DEPRECATED_END
+
 #endif

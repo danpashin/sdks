@@ -8,6 +8,8 @@
 #import <FileProvider/NSFileProviderDefines.h>
 #import <Foundation/Foundation.h>
 
+@class UTType;
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NSString *NSFileProviderItemIdentifier NS_EXTENSIBLE_STRING_ENUM;
@@ -37,55 +39,8 @@ FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainer
  remote changes.  When an item in the working set is remotely modified, the
  extension calls -signalEnumeratorForContainerItemIdentifier: on the identifier
  of the working set; the system will then enumerate changes and update its caches.
-
- Starting in iOS 12 and macOS 10.15, the system maintains a cache on the local
- file system of files and directories previously enumerated.  The working set
- is the container used to update that set of files.  The extension may know
- whether an item is in that set by checking whether its parentItemIdentifier
- is listed in the materialized containers, see the documentation on
- -materializedItemsDidChangeWithCompletionHandler:.
  */
 FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.workingSet) FILEPROVIDER_API_AVAILABILITY_V2;
-
-
-/**
- A version blob, used for either structure or content.
-
- Version blobs are limited to 128 bytes in size.
- */
-typedef NSData *NSFileProviderVersionData NS_TYPED_EXTENSIBLE_ENUM;
-
-FILEPROVIDER_API_AVAILABILITY_V3
-@interface NSFileProviderItemVersion : NSObject
-
-/**
- Items versions have two distinct components, one for the file contents and one
- for metadata.  Bumping the right component on a change allows for important
- optimizations.
- */
-- (instancetype)initWithContentVersion:(NSFileProviderVersionData)contentVersion
-                       metadataVersion:(NSFileProviderVersionData)metadataVersion;
-
-/**
- Version data for the content of the file.  The system will typically ask for a
- new download of the file if this field changes and the file was already
- downloaded.
-
- This property is used to invalidate the thumbnail cache maintained by the system.
-
- Note that the resource fork of the file is considered content, so this version
- data should change when either the data fork or the resource fork changes.
- */
-@property (nonatomic, readonly) NSFileProviderVersionData contentVersion;
-
-/**
- Version data for the metadata of the item, i.e everything but the data fork and
- the resource fork.  The system will typically update a dataless representation
- of the file if this changes; but it will not ask for a new download.
- */
-@property (nonatomic, readonly) NSFileProviderVersionData metadataVersion;
-
-@end
 
 
 /**
@@ -140,16 +95,6 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
         | NSFileProviderItemCapabilitiesAllowsDeleting
 };
 
-@protocol NSFileProviderItemFlags <NSObject>
-
-@property (nonatomic, readonly, getter=isUserExecutable) BOOL userExecutable;
-@property (nonatomic, readonly, getter=isUserReadable) BOOL userReadable;
-@property (nonatomic, readonly, getter=isUserWritable) BOOL userWritable;
-
-@property (nonatomic, readonly, getter=isHidden) BOOL hidden;
-@property (nonatomic, readonly, getter=isPathExtensionHidden) BOOL pathExtensionHidden;
-@end
-
 @protocol NSFileProviderItem <NSObject>
 
 @property (nonatomic, readonly, copy) NSFileProviderItemIdentifier itemIdentifier;
@@ -175,12 +120,25 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  */
 @property (nonatomic, readonly, copy) NSString *filename;
 
-/**
- Uniform type identifier (UTI) for the item
- */
-@property (nonatomic, readonly, copy) NSString *typeIdentifier;
-
 @optional
+
+/**
+ ContentType (UTType) for the item.
+
+ An item should implement at least one of typeIdentifier and contentType. Note
+ that typeIdentifier is required on iOS 13 and earlier.
+ */
+@property (nonatomic, readonly, copy) UTType *contentType API_AVAILABLE(ios(14.0), macos(11.0));
+
+/**
+ Uniform type identifier (UTI) for the item.
+
+ An item should implement at least one of typeIdentifier and contentType. Note
+ that typeIdentifier is required on iOS 13 and earlier.
+ */
+@property (nonatomic, readonly, copy) NSString *typeIdentifier
+    API_DEPRECATED_WITH_REPLACEMENT("contentType", ios(11.0, API_TO_BE_DEPRECATED))
+    API_UNAVAILABLE(macos);
 
 /**
  The capabilities of the item.  This controls the list of actions that the UI
@@ -188,52 +146,10 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  */
 @property (nonatomic, readonly) NSFileProviderItemCapabilities capabilities;
 
-/**
- The flags of the item. Flags define on-disk properties of the item but are
- also taken into account by the UI to determine item actions.
- */
-@property (nonatomic, readonly, strong, nullable) id <NSFileProviderItemFlags> flags FILEPROVIDER_API_AVAILABILITY_V3;
-
 @property (nonatomic, readonly, copy, nullable) NSNumber *documentSize;
 @property (nonatomic, readonly, copy, nullable) NSNumber *childItemCount;
 @property (nonatomic, readonly, copy, nullable) NSDate *creationDate;
 @property (nonatomic, readonly, copy, nullable) NSDate *contentModificationDate;
-
-/**
- Syncable extended attributes on the file.
-
- The system decides which extended attributes should be synced from the device,
- based on a set of rules largely inferred from the name of the extended
- attribute.  Extended attributes named with xattr_name_with_flags(XATTR_FLAG_SYNCABLE)
- will be listed in this dictionary; some extended attributes introduced before
- this API are also whitelisted for sync.
-
- Syncable xattrs are capped in size to about 32KiB total for a given item.
- When the set of extended attributes on a file is larger than that, the system
- demotes some of the extended attributes to non-syncable.
-
- The system decides which non-syncable extended attributes should be preserved
- locally when the item is updated remotely, based on a set of rules again largely
- inferred from the name of the extended attribute.  Extended attributes named
- with xattr_name_with_flags(XATTR_FLAG_CONTENT_DEPENDENT) will be preserved only
- if itemVersion.contentVersion was not modified by the remote update.
-
- Some NSFileProviderItem properties (lastUsedDate, tagData...) happen to be
- stored on disk in extended attributes that won't be listed in this dictionary
- because that would be redundant.  The 32 bits of Finder info in the extended
- attribute named XATTR_FINDERINFO_NAME ("com.apple.FinderInfo") is not listed
- here for the same reason: the syncable Finder info bits are deserialized to
- other properties of NSFileProviderItem.
-
- The system will set extended attributes on dataless files, and will preserve
- them when a file is rendered dataless.  I.e extended attributes are considered
- metadata, not content.  The resource fork however is considered content and
- will not be included in this dictionary.  Local changes to the resource fork
- will be communicated under NSFileProviderItemFieldContents.  Remote changes to
- the resource fork should bump itemVersion.contentVersion.
- */
-@property (nonatomic, readonly, strong, nullable) NSDictionary <NSString *, NSData *> *extendedAttributes FILEPROVIDER_API_AVAILABILITY_V3;
-
 
 /*
  The three properties below (lastUsedDate, tagData and favoriteRank) are
@@ -313,16 +229,6 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
 @property (nonatomic, readonly, getter=isDownloading) BOOL downloading;
 @property (nonatomic, readonly, copy, nullable) NSError *downloadingError;
 
-/**
- Indicates that the file or directory is excluded from sync, i.e that
- local changes won't be communicated to the server.
-
- \note This is reflected in the UI, but the actual sync semantics are left to
- the discretion of the file provider extension.
- */
-@property (nonatomic, readonly, getter=isExcludedFromSync) BOOL excludedFromSync
-    FILEPROVIDER_API_AVAILABILITY_V3;
-
 @property (nonatomic, readonly, getter=isMostRecentVersionDownloaded) BOOL mostRecentVersionDownloaded;
 
 @property (nonatomic, readonly, getter=isShared) BOOL shared;
@@ -340,15 +246,8 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  A content hash would be a reasonable choice.
 
  Version identifiers are limited to 1000 bytes.
-
- This property is deprecated in favor of the "itemVersion" property.
  */
-@property (nonatomic, strong, readonly, nullable) NSData *versionIdentifier API_DEPRECATED("itemVersion", ios(11.0, 13.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
-
-/**
- The version is used to track which version of an item has been modified when informing a provider about changes. It is also used to invalidate the thumbnail cache.
- */
-@property (nonatomic, strong, readonly, nullable) NSFileProviderItemVersion *itemVersion FILEPROVIDER_API_AVAILABILITY_V3;
+@property (nonatomic, strong, readonly, nullable) NSData *versionIdentifier;
 
 /**
  Use this dictionary to add state information to the item. It is accessible to
@@ -389,8 +288,8 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
             - `Continue` *string*, the string for the continue button - default value if not specified
             - `Cancel` *string*, the string for the cancel button - default value if not specified
         - `RecoveryOptions` (optional)
-            - Can only remove continue button
             - `Continue` *bool*, the boolean for whether to have a continue button - default value is YES if not specified
+            - `Destructive` *bool*, the boolean for whether continuing is a destructive action - default value is NO if not specified
     - `SubInteractions `: *dictionary* (same as `NSFileProviderUserInteractions`)
 
  For each interaction, either Alert or SubInteractions must be specified. SubInteractions will be evaluated if the main ActivationRule evaluates to

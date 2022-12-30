@@ -1,16 +1,23 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 3736B652-9B8C-35DB-B431-416B84EF6FD9', 'armv7s: 18CC6365-C54D-36E5-89DD-0F6DC3521B05', 
-                   'arm64: ED7BAC6B-C930-366A-9384-3C1BC260EAE2', 'arm64e: BBF08DB6-F15B-34E3-AF25-3DA21D5F894F' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           18597EDE-F7F2-3187-9D3A-5D979AAF88E8
+  - target:          armv7s-ios
+    value:           0BA4E76E-6542-317A-B7B2-023B928B9D7A
+  - target:          arm64-ios
+    value:           534D915A-3921-3F77-A6F8-22A8892BE94A
+  - target:          arm64e-ios
+    value:           49A66A9D-7AFD-34C8-BC59-A2EDF024A33B
 install-name:    '/usr/lib/libncurses.5.4.dylib'
 current-version: 5.4
 compatibility-version: 5.4
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___ncurses_5_4VersionNumber, ___ncurses_5_4VersionString, 
                        __nc_hashed_db, __nc_memmove, __nc_varargs, __nc_vsscanf ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _BC, _COLORS, _COLOR_PAIR, _COLOR_PAIRS, _COLS, _ESCDELAY, 
                        _LINES, _PAIR_NUMBER, _PC, _SP, _TABSIZE, _UP, __nc_access, 
                        __nc_add_to_try, __nc_align_termtype, __nc_basename, __nc_baudrate, 

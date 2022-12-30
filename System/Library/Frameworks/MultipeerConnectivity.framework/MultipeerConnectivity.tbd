@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: B1D6DC57-7B16-338F-82E9-42FC04E8ABA2', 'armv7s: 19B9AF27-E186-38DA-BE31-8D03C232993C', 
-                   'arm64: 8BBFE712-7310-3292-B1A5-A671DA2F7188', 'arm64e: 1D05D7BD-EC4B-3FDE-B300-DF26B3BA9C18' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           86A773FF-290B-3279-AD8C-ADB4264D939D
+  - target:          armv7s-ios
+    value:           52693111-D97C-392C-A792-3D5740385180
+  - target:          arm64-ios
+    value:           F215755E-68DF-38FE-AB02-D919EC1E08F0
+  - target:          arm64e-ios
+    value:           A580AA5C-4865-3388-9455-0FA626940E32
 install-name:    '/System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity'
-current-version: 166
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 171
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _AGPSessionCopyDetailedDescription, _AGPSessionCreate, _AGPSessionEvent, 
                        _AGPSessionMaximumSegmentSize, _AGPSessionRelease, _AGPSessionSendTo, 
                        _AGPSessionStatistics, _AWDMultipeerSessionMaxPeersInfoReadFrom, 
@@ -58,10 +65,10 @@ exports:
                        AWDMultipeerSessionPeerConnectivityInfo._timeDTLS, AWDMultipeerSessionPeerConnectivityInfo._timeICE, 
                        AWDMultipeerSessionPeerConnectivityInfo._timeOSPF, AWDMultipeerSessionPeerConnectivityInfo._timestamp, 
                        MCNearbyPeerTableViewHeader._spinner, MCNearbyPeerTableViewHeader._text ]
-    weak-def-symbols: [ __ZTI13AGPSetElement, __ZTI20AGPReceiveSetElement, __ZTI20AGPSendingSetElement, 
-                        __ZTI24AGPAssociationSetElement, __ZTS13AGPSetElement, __ZTS20AGPReceiveSetElement, 
-                        __ZTS20AGPSendingSetElement, __ZTS24AGPAssociationSetElement ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZTI13AGPSetElement, __ZTI20AGPReceiveSetElement, __ZTI20AGPSendingSetElement, 
+                       __ZTI24AGPAssociationSetElement, __ZTS13AGPSetElement, __ZTS20AGPReceiveSetElement, 
+                       __ZTS20AGPSendingSetElement, __ZTS24AGPAssociationSetElement ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]
     objc-classes:    [ MCAdvertiserAssistant, MCBrowserViewController, MCNearbyServiceAdvertiser, 
                        MCNearbyServiceBrowser, MCPeerID, MCSession ]

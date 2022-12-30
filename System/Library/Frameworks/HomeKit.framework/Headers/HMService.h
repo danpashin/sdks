@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             A service is composed of one or more characteristics that can be 
  *             modified.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMService : NSObject
 
 /*!

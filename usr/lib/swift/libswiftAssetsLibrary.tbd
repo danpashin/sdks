@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 217BFE7F-1773-31BA-B900-83BD98961BFF', 'armv7s: 9C8F098B-B8FE-34A5-81E2-1D230785DF9D', 
-                   'arm64: 89A4BB71-A164-3F04-A87D-7668C9FED011', 'arm64e: D92932D8-50D2-30CA-AD52-51B6448293A5' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           217BFE7F-1773-31BA-B900-83BD98961BFF
+  - target:          armv7s-ios
+    value:           9C8F098B-B8FE-34A5-81E2-1D230785DF9D
+  - target:          arm64-ios
+    value:           7788ED59-A9E0-3190-B43C-B2AE038897AD
+  - target:          arm64e-ios
+    value:           1DD04AAE-F920-3C02-B82D-7FB3EB144DC5
 install-name:    '/usr/lib/swift/libswiftAssetsLibrary.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 302.0.220
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftAssetsLibrary.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftAssetsLibrary.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftAssetsLibrary.dylib', 

@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, INMessageType) {
     INMessageTypeActivitySnippet API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macosx),
     INMessageTypeFile API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macosx),
     INMessageTypeLink API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macosx),
-} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+} API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx, tvos);
 
 API_AVAILABLE(ios(10.0), watchos(3.2))
 API_UNAVAILABLE(macosx, tvos)

@@ -2,7 +2,7 @@
  *  @header MPSNNGraphNodes.h
  *  @framework MetalPerformanceShaders
  *
- *  Created by Ian Ollmann on 10/19/16.
+ *  Created on 10/19/16.
  *  @copyright Copyright © 2016 Apple. All rights reserved.
  *
  *  @discussion This header describes building blocks to prepare a graph
@@ -3016,6 +3016,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
 @property (readonly, nonatomic) MPSCNNLossType lossType;
 @property (readonly, nonatomic) MPSCNNReductionType reductionType;
 @property (readonly, nonatomic) NSUInteger numberOfClasses;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 
 @property (readonly, nonatomic) float weight;
 @property (readonly, nonatomic) float labelSmoothing;
@@ -3081,6 +3082,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15.0), ios(13.0), macCatalyst(13.0), tvos
 @property (readonly, nonatomic) MPSCNNLossType lossType;
 @property (readonly, nonatomic) MPSCNNReductionType reductionType;
 @property (readonly, nonatomic) NSUInteger numberOfClasses;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 
 @property (readonly, nonatomic) float weight;
 @property (readonly, nonatomic) float labelSmoothing;
@@ -3184,8 +3186,5 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15.0), ios(13.0), macCatalyst(13.0), tvos
 -(MPSNNGradientFilterNode*__nonnull) gradientFilterWithSources: (NSArray<MPSNNImageNode*> * __nonnull) gradientImages NS_UNAVAILABLE;
 
 @end
-
-
-
 
 #endif /* MPSNNGraphNodes_h */

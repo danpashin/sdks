@@ -3,12 +3,12 @@
  
  	Contains:   Umbrella header for the CoreMIDI framework.
  
- 	Copyright:  (c) 2000-2018 by Apple Inc., all rights reserved.
+ 	Copyright:  (c) 2000-2020 by Apple Inc., all rights reserved.
  
  	Bugs?:  	For bug reports, consult the following page on
  				the World Wide Web:
  
- 					http://developer.apple.com/bugreporter/
+ 					http://feedbackassistant.apple.com/
  
 */
 
@@ -19,6 +19,7 @@
 #include <CoreMIDI/MIDISetup.h>
 #include <CoreMIDI/MIDIThruConnection.h>
 #include <CoreMIDI/MIDIDriver.h>
+#include <CoreMIDI/MIDIMessages.h>
 
 #if TARGET_OS_IPHONE && __OBJC__
 #import <CoreMIDI/MIDINetworkSession.h>

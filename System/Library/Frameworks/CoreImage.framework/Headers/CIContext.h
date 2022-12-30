@@ -73,6 +73,10 @@ CORE_IMAGE_EXPORT CIContextOption const kCIContextPriorityRequestLow NS_AVAILABL
  * The default value is @NO which instructs the context to use the highest power/performance device. */
 CORE_IMAGE_EXPORT CIContextOption const kCIContextAllowLowPower NS_AVAILABLE(10_12, 13_0);
 
+/* An NSString specifying a client-provided name for a context.
+ * This name will be used in QuickLook graphs and the output of CI_PRINT_TREE. */
+CORE_IMAGE_EXPORT CIContextOption const kCIContextName NS_AVAILABLE(10_14,12_0);
+
 
 #pragma mark - contextWithCGLContext
 
@@ -395,6 +399,8 @@ CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemant
 
 // The value for kCIImageRepresentationSemanticSegmentationTeethMatteImage should be a monochome CIImage object. */
 CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemanticSegmentationTeethMatteImage NS_AVAILABLE(10_15, 13_0);
+
+
 
 
 /* Render a CIImage to TIFF data. Image must have a finite non-empty extent. */

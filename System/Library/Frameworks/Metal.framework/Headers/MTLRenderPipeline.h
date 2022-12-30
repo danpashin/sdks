@@ -130,7 +130,7 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 
 @property (nullable, readonly) NSArray <MTLArgument *> *vertexArguments;
 @property (nullable, readonly) NSArray <MTLArgument *> *fragmentArguments;
-@property (nullable, readonly) NSArray <MTLArgument *> *tileArguments API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (nullable, readonly) NSArray <MTLArgument *> *tileArguments API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 @end
 
 MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
@@ -174,6 +174,14 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 @property (readwrite, nonatomic) BOOL supportIndirectCommandBuffers API_AVAILABLE(macos(10.14), ios(12.0));
 
 /*!
+ @property binaryArchives
+ @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+ @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+ @see MTLBinaryArchive
+ */
+@property (readwrite, nullable, nonatomic, copy) NSArray<id<MTLBinaryArchive>> *binaryArchives API_AVAILABLE(macos(11.0), ios(14.0));
+
+/*!
  @method reset
  @abstract Restore all pipeline descriptor properties to their default values.
  */
@@ -197,13 +205,13 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @property maxTotalThreadsPerThreadgroup
  @abstract The maximum total number of threads that can be in a single threadgroup.
  */
-@property (readonly) NSUInteger maxTotalThreadsPerThreadgroup API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) NSUInteger maxTotalThreadsPerThreadgroup API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @property threadgroupSizeMatchesTileSize
  @abstract Returns true when the pipeline state requires a threadgroup size equal to the tile size
  */
-@property (readonly) BOOL threadgroupSizeMatchesTileSize API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) BOOL threadgroupSizeMatchesTileSize API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 
 
@@ -211,13 +219,13 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @property imageblockSampleLength
  @brief Returns imageblock memory length used by a single sample when rendered using this pipeline.
  */
-@property (readonly) NSUInteger imageblockSampleLength API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) NSUInteger imageblockSampleLength API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method imageblockMemoryLengthForDimensions:sampleCount:
  @brief Returns imageblock memory length for given image block dimensions. Dimensions must be valid tile dimensions.
  */
-- (NSUInteger)imageblockMemoryLengthForDimensions:(MTLSize)imageblockDimensions API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (NSUInteger)imageblockMemoryLengthForDimensions:(MTLSize)imageblockDimensions API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 
 @property (readonly) BOOL supportIndirectCommandBuffers API_AVAILABLE(macos(10.14), ios(12.0));
@@ -236,7 +244,7 @@ MTL_EXPORT API_AVAILABLE(macos(10.11), ios(8.0))
 @end
 
 
-MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst)
+MTL_EXPORT API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos)
 @interface MTLTileRenderPipelineColorAttachmentDescriptor : NSObject <NSCopying>
 
 /*! Pixel format.  Defaults to MTLPixelFormatInvalid */
@@ -244,7 +252,7 @@ MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos,
 
 @end
 
-MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst)
+MTL_EXPORT API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos)
 @interface MTLTileRenderPipelineColorAttachmentDescriptorArray : NSObject
 
 /* Individual tile attachment state access */
@@ -255,7 +263,7 @@ MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos,
 
 @end
 
-MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst)
+MTL_EXPORT API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos)
 @interface MTLTileRenderPipelineDescriptor : NSObject <NSCopying>
 
 /*!
@@ -284,13 +292,21 @@ MTL_EXPORT API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos,
  */
 @property (readwrite, nonatomic) BOOL threadgroupSizeMatchesTileSize;
 
-@property (readonly) MTLPipelineBufferDescriptorArray *tileBuffers API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) MTLPipelineBufferDescriptorArray *tileBuffers API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0));
 
 /*!
  @property maxTotalThreadsPerThreadgroup
  @abstract Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
  */
-@property (readwrite, nonatomic) NSUInteger maxTotalThreadsPerThreadgroup API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, macCatalyst);
+@property (readwrite, nonatomic) NSUInteger maxTotalThreadsPerThreadgroup API_AVAILABLE(macos(10.15), ios(12.0));
+
+/*!
+ @property binaryArchives
+ @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+ @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+ @see MTLBinaryArchive
+ */
+@property (readwrite, nullable, nonatomic, copy) NSArray<id<MTLBinaryArchive>> *binaryArchives API_AVAILABLE(macos(11.0), ios(14.0));
 
 - (void)reset;
 

@@ -1,90 +1,45 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/AppConduit.framework/AppConduit
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           D7876908-CEB1-3475-B99D-685544501DE7
+  - target:          armv7s-ios
+    value:           BEEA2695-27B5-3F54-9F93-FBF4F4E10C8C
+  - target:          arm64-ios
+    value:           C11B391A-6226-3245-B9C8-CEA122E9DD49
+  - target:          arm64e-ios
+    value:           C0BE735F-D7FA-3379-9CB9-AAC36E2B7208
+install-name:    '/System/Library/PrivateFrameworks/AppConduit.framework/AppConduit'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ACXAppShipsWithOS,
-                            _ACXApplicationBundleIdentiferKey,
-                            _ACXApplicationNameKey, _ACXApplicationTeamID,
-                            _ACXApplicationUniqueID,
-                            _ACXApplicationsUpdatedDarwinNotification,
-                            _ACXArchitectureCompatibilityKey,
-                            _ACXArrayContainsOnlyClass, _ACXArrayifyThing,
-                            _ACXAsyncTransaction, _ACXBetaAppKey, _ACXBooleanValue,
-                            _ACXClockfaceExtensionPaths,
-                            _ACXComplicationsPrincipalClass,
-                            _ACXConnectionCreationDateErrorKey,
-                            _ACXConnectionIdentifierErrorKey,
-                            _ACXConnectionWifiAssertedKey,
-                            _ACXContainerAppBundleIdKey, _ACXCopyDataDirectory,
-                            _ACXCopyLogDirectory,
-                            _ACXCopyPairingStoreSubdirectoryInBase,
-                            _ACXCopyStagingDirectory,
-                            _ACXCopyStagingDirectoryPath,
-                            _ACXDictionaryContainsOnlyClasses, _ACXErrorDomain,
-                            _ACXFunctionNameErrorKey, _ACXGetPOSIXError,
-                            _ACXIDSMessageIDKey, _ACXInitializeDiskLogging,
-                            _ACXIntentsRestrictedWhileLockedAggregateKey,
-                            _ACXIntentsSupportedAggregateKey,
-                            _ACXIsInternalBuild, _ACXLoadInfoPlist,
-                            _ACXObjectsAreDifferentOrDifferentNullness,
-                            _ACXObjectsAreTheSameOrSameNullness,
-                            _ACXPluginBundleIdKey, _ACXRandomDirWithTemplateURL,
-                            _ACXRemoteApplicationBundleIDsNotificationPayloadKey,
-                            _ACXRemoteApplicationDatabaseResyncedDistributedNotification,
-                            _ACXRemoteApplicationDevicePairingIDNotificationPayloadKey,
-                            _ACXRemoteApplicationsInstalledDistributedNotification,
-                            _ACXRemoteApplicationsUninstalledDistributedNotification,
-                            _ACXRemoteApplicationsUpdatedDistributedNotification,
-                            _ACXRemoveApplicationDataErrorDictionaryKey,
-                            _ACXServerStatusKey, _ACXShowAppBlacklistedNotice,
-                            _ACXShowAppOnWatchKey,
-                            _ACXShowArchitectureNotSupportedNotice,
-                            _ACXShowCapabilitiesMismatchNotice,
-                            _ACXShowInstallationUnavailableNotice,
-                            _ACXShowLowDiskSpaceNotice,
-                            _ACXShowRuntimeNotSupportedNotice,
-                            _ACXShowUntrustedAppNotice,
-                            _ACXShowUserNoticeWithTapToRadarButton,
-                            _ACXSourceFileLineErrorKey, _ACXStringifyObject,
-                            _ACXSupportedComplicationFamilies,
-                            _ACXUnlocalizedValueKey, _ACXUserActivityTypesKey,
-                            _ACXWatchAppBundleURLKey,
-                            _ACXWatchKitAppExecutableHash,
-                            _ACXWatchKitCompatibilityKey, _ACXWatchKitVersion,
-                            _ACXYOrN, _AppConduitVersionNumber,
-                            _AppConduitVersionString, __CreateAndLogError,
-                            __CreateAndLogErrorV, __CreateError, _gLogHandle,
-                            _kACXSourceAppWatchApplicationStore,
-                            _kAlwaysInstallKey, _kAppIsDeletable,
-                            _kApplicationIsLocallyAvailable, _kApplicationMode,
-                            _kApplicationStateVersion, _kApplicationStates,
-                            _kApplicationType, _kAutoInstallOverride,
-                            _kCompanionAppName, _kCompanionAppURL,
-                            _kCompletedInitialPairedSync,
-                            _kCounterpartIdentifiers, _kDBUUID,
-                            _kInitiallyInstallAllExistingApps,
-                            _kIsEmbeddedPlaceholder, _kIsPurchaseReDownload,
-                            _kIsTrustedApp, _kLastLSSequenceNumber,
-                            _kLocalizedInfoPlistStrings, _kMinimumOSVersion,
-                            _kNPSDomainName, _kNSUserActivityTypes,
-                            _kNeedsReunionSync, _kOldApplicationState,
-                            _kPairingDemoModeDomain, _kPairingDemoModeKey,
-                            _kPendingAppUpdateStates, _kSequenceNumber,
-                            _kSourceAppIdentifier, _kStoreMetadata,
-                            _kUIRequiredDeviceCapabilities, _kValidatedByProfile,
-                            _kWKCompanionAppBundleIdentifier,
-                            _kWKPluginBundleIdKey, _kWKRunsIndependently,
-                            _kWKWatchOnly, _kWatchAppURL,
-                            _kWatchKitAppExecutableHash, _kWatchKitAppSlices ]
-    objc-classes:         [ ACXApplication, ACXApplicationStatus,
-                            ACXDeviceConnection,
-                            ACXDeviceConnectionDelegateProtocolInterface,
-                            ACXDeviceConnectionProtocolInterface,
-                            ACXRemoteApplication ]
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _ACXArrayContainsOnlyClass, _ACXArrayifyThing, _ACXAsyncTransaction, 
+                       _ACXBooleanValue, _ACXCopyDataDirectory, _ACXCopyLogDirectory, 
+                       _ACXCopyStagingDirectory, _ACXCopyStagingDirectoryPath, _ACXDictionaryContainsOnlyClasses, 
+                       _ACXGetPOSIXError, _ACXInitializeDiskLogging, _ACXLoadInfoPlist, 
+                       _ACXRandomDirWithTemplateURL, _ACXShowAppBlacklistedNotice, 
+                       _ACXShowCapabilitiesMismatchNotice, _ACXShowInstallationUnavailableNotice, 
+                       _ACXShowLowDiskSpaceNotice, _ACXShowUntrustedAppNotice, _ACXShowUserNoticeWithTapToRadarButton, 
+                       _ACXStringifyObject, _ACXYOrN, _AppConduitVersionNumber, _AppConduitVersionString, 
+                       __CreateAndLogError, __CreateAndLogErrorV, __CreateError, 
+                       _gLogHandle, _kAlwaysInstallKey, _kApplicationStateVersion, 
+                       _kApplicationStates, _kInitiallyInstallAllExistingApps, _kNPSDomainName, 
+                       _kNeedsReunionSync, _kOldApplicationState ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ACXAppShipsWithOS, _ACXApplicationBundleIdentiferKey, _ACXApplicationNameKey, 
+                       _ACXApplicationTeamID, _ACXApplicationUniqueID, _ACXApplicationsUpdatedDarwinNotification, 
+                       _ACXArchitectureCompatibilityKey, _ACXBetaAppKey, _ACXClockfaceExtensionPaths, 
+                       _ACXComplicationsPrincipalClass, _ACXContainerAppBundleIdKey, 
+                       _ACXErrorDomain, _ACXFunctionNameErrorKey, _ACXIntentsRestrictedWhileLockedAggregateKey, 
+                       _ACXIntentsSupportedAggregateKey, _ACXPluginBundleIdKey, _ACXRemoteApplicationBundleIDsNotificationPayloadKey, 
+                       _ACXRemoteApplicationDatabaseResyncedDistributedNotification, 
+                       _ACXRemoteApplicationDevicePairingIDNotificationPayloadKey, 
+                       _ACXRemoteApplicationsInstalledDistributedNotification, _ACXRemoteApplicationsUninstalledDistributedNotification, 
+                       _ACXRemoteApplicationsUpdatedDistributedNotification, _ACXRemoveApplicationDataErrorDictionaryKey, 
+                       _ACXServerStatusKey, _ACXShowAppOnWatchKey, _ACXSourceFileLineErrorKey, 
+                       _ACXSupportedComplicationFamilies, _ACXUnlocalizedValueKey, 
+                       _ACXUserActivityTypesKey, _ACXWatchAppBundleURLKey, _ACXWatchKitCompatibilityKey, 
+                       _ACXWatchKitVersion, _kACXSourceAppWatchApplicationStore ]
+    objc-classes:    [ ACXApplication, ACXApplicationStatus, ACXDeviceConnection, 
+                       ACXRemoteApplication ]
 ...

@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C893A4B9-6027-3008-8099-7179A596FE5E', 'armv7s: 5D5A030C-0A00-3554-847C-7F32257C8331', 
-                   'arm64: 950B77C8-E995-3D4E-802F-B697C7A9D739', 'arm64e: 0A7C953B-B730-3FFE-9B33-60FDF3A8A443' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           29E0C96A-9928-34FC-919F-B1CF6740D670
+  - target:          armv7s-ios
+    value:           3EA144A3-1303-39C3-BEC2-CF2B7E4BEA93
+  - target:          arm64-ios
+    value:           385D1E1B-6593-3B8F-8BEE-F80A990918B9
+  - target:          arm64e-ios
+    value:           B9C05326-2BEF-308F-B074-8D7189EF847F
 install-name:    '/usr/lib/libnfrestore.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _NFHardwareGPIOClose, _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, 
                        _NFHardwareGPIOSetDownloadRequest, _NFHardwareGPIOSetIcefallDownloadRequest, 
                        _NFHardwareGPIOSetPMUStandbyPowerEnabled, _NFHardwareGPIOSetPower, 
@@ -25,7 +32,7 @@ exports:
                        __NfJcopUpdateFileCalcSHA, __NfJcopUpdateFileReadHeader, __NfJcopUpdateFileReadImage, 
                        __NfJcopUpdateFileReadPlan, __NfJcopUpdateFileReadSHA, __NfJcopUpdateFileReadScript, 
                        _gNFHardwareLogv, _gNfContext ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _NfJcopUpdateFileClose, _NfJcopUpdateFileGetPlan, _NfJcopUpdateFileGetRequiredMemoryForPlan, 
                        _NfJcopUpdateFileGetSequenceForPlan, _NfJcopUpdateFileLogDescription, 
                        _NfJcopUpdateFileOpenWithData, _NfJcopUpdateFileOpenWithFilePath, 

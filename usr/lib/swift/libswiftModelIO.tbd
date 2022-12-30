@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 98E21887-D83E-3D52-8C31-B5243CF49051', 'armv7s: 4763863C-5348-3215-8027-CD3AE83A8246', 
-                   'arm64: 33B37A96-1030-3D55-B385-C05137D172E9', 'arm64e: 5C391BEB-897D-311F-8210-5945A3D5ADBD' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           98E21887-D83E-3D52-8C31-B5243CF49051
+  - target:          armv7s-ios
+    value:           4763863C-5348-3215-8027-CD3AE83A8246
+  - target:          arm64-ios
+    value:           1D652DF5-5989-3FC5-9727-C893ADB3C92B
+  - target:          arm64e-ios
+    value:           AFD1BCD7-9DFF-3239-A616-4F3A785D656D
 install-name:    '/usr/lib/swift/libswiftModelIO.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftModelIO.dylib', '$ld$install_name$os10.1$@rpath/libswiftModelIO.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftModelIO.dylib', '$ld$install_name$os10.3$@rpath/libswiftModelIO.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftModelIO.dylib', '$ld$install_name$os11.1$@rpath/libswiftModelIO.dylib', 

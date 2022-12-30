@@ -28,10 +28,10 @@ typedef NS_ENUM(NSInteger, MPMediaLibraryAuthorizationStatus) {
     MPMediaLibraryAuthorizationStatusDenied,
     MPMediaLibraryAuthorizationStatusRestricted,
     MPMediaLibraryAuthorizationStatusAuthorized,
-} MP_API(ios(9.3)) MP_PROHIBITED(tvos, macos, watchos);
+} MP_API(ios(9.3)) API_UNAVAILABLE(tvos, watchos, macos);
 
 MP_API(ios(3.0))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaLibrary : NSObject <NSSecureCoding>
 
 + (MPMediaLibrary *)defaultMediaLibrary;
@@ -65,6 +65,6 @@ MP_PROHIBITED(tvos, macos, watchos)
 // Notifications
 
 // Any items or playlists which were previously cached should be re-evaluated from queries when MPMediaLibraryDidChangeNotification is posted.
-MP_EXTERN NSString * const MPMediaLibraryDidChangeNotification MP_PROHIBITED(tvos, watchos);
+MP_EXTERN NSString * const MPMediaLibraryDidChangeNotification API_UNAVAILABLE(tvos, watchos, macos);
 
 NS_ASSUME_NONNULL_END

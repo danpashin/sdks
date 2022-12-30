@@ -18,6 +18,7 @@ API_AVAILABLE_BEGIN(macos(10.13))
 API_UNAVAILABLE_BEGIN(ios, tvos, macCatalyst)
 
 
+// PHProjectChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
 OS_EXPORT
 @interface PHProjectChangeRequest : PHChangeRequest
 

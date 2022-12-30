@@ -50,13 +50,14 @@ EAGL_EXTERN void EAGLGetVersion(unsigned int* major, unsigned int* minor) OPENGL
 /************************************************************************/
 
 EAGL_EXTERN_CLASS
+OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0))
 @interface EAGLSharegroup : NSObject
 {
 @package
 	struct _EAGLSharegroupPrivate *_private;
 }
 
-@property (nullable, copy, nonatomic) NSString* debugLabel NS_AVAILABLE_IOS(6_0);
+@property (nullable, copy, nonatomic) NSString* debugLabel API_AVAILABLE(ios(6.0));
 
 @end
 
@@ -82,8 +83,8 @@ OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0))
 @property (readonly)          EAGLRenderingAPI   API;
 @property (nonnull, readonly) EAGLSharegroup*    sharegroup;
 
-@property (nullable, copy, nonatomic) NSString* debugLabel NS_AVAILABLE_IOS(6_0);
-@property (getter=isMultiThreaded, nonatomic) BOOL multiThreaded NS_AVAILABLE_IOS(7_1);
+@property (nullable, copy, nonatomic) NSString* debugLabel API_AVAILABLE(ios(6.0));
+@property (getter=isMultiThreaded, nonatomic) BOOL multiThreaded API_AVAILABLE(ios(7.1));
 @end
 
 NS_ASSUME_NONNULL_END

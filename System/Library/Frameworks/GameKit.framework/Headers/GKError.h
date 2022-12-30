@@ -41,5 +41,8 @@ typedef NS_ENUM(NSInteger, GKErrorCode) {
     GKErrorMatchNotConnected                    = 28,
     GKErrorGameSessionRequestInvalid            = 29,
     GKErrorRestrictedToAutomatch                = 30,
-    GKErrorAPINotAvailable                      = 31
+    GKErrorAPINotAvailable                      = 31,
+    GKErrorNotAuthorized                        = 32,
+    GKErrorConnectionTimeout                    = 33,
+    GKErrorAPIObsolete                          = 34,
 };

@@ -11,10 +11,9 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <AssetsLibrary/ALAssetsLibrary.h>
 
-#if __IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-
-NS_CLASS_DEPRECATED_IOS(4_0, 9_0, "Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the PHFetchOptions from the Photos framework instead")
+OS_EXPORT AL_DEPRECATED(4, "Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the PHFetchOptions from the Photos framework instead")
 @interface ALAssetsFilter : NSObject {
 @package
     id _internal;
@@ -28,5 +27,3 @@ NS_CLASS_DEPRECATED_IOS(4_0, 9_0, "Use fetchAssetsInAssetCollection:options: on 
 + (ALAssetsFilter *)allAssets;
 
 @end
-
-#endif

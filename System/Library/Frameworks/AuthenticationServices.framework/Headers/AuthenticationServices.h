@@ -36,10 +36,14 @@
 
 #import <AuthenticationServices/ASExtensionErrors.h>
 
-#if TARGET_OS_IOS && !(defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST)
-#import <AuthenticationServices/ASCredentialProviderViewController.h>
-#endif
-
 #if !TARGET_OS_WATCH
+#import <AuthenticationServices/ASCredentialProviderViewController.h>
+
+#import <AuthenticationServices/ASAccountAuthenticationModificationController.h>
+#import <AuthenticationServices/ASAccountAuthenticationModificationExtensionContext.h>
+#import <AuthenticationServices/ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest.h>
+#import <AuthenticationServices/ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordRequest.h>
+#import <AuthenticationServices/ASAccountAuthenticationModificationViewController.h>
+
 #import <AuthenticationServices/ASAuthorizationAppleIDButton.h>
-#endif
+#endif // !TARGET_OS_WATCH

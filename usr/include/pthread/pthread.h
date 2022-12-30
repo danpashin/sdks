@@ -53,9 +53,6 @@
 #define _PTHREAD_H
 
 #include <_types.h>
-#ifndef __POSIX_LIB__
-#include <pthread/pthread_impl.h>
-#endif
 #include <pthread/sched.h>
 #include <time.h>
 #include <sys/_pthread/_pthread_types.h>
@@ -558,6 +555,12 @@ int pthread_sigmask(int, const sigset_t * _Nullable, sigset_t * _Nullable)
 
 __API_AVAILABLE(macos(10.4), ios(2.0))
 void pthread_yield_np(void);
+
+__API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
+void pthread_jit_write_protect_np(int enabled);
+
+__API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
+int pthread_jit_write_protect_supported_np(void);
 
 #endif /* (!_POSIX_C_SOURCE && !_XOPEN_SOURCE) || _DARWIN_C_SOURCE || __cplusplus */
 __END_DECLS

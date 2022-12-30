@@ -13,6 +13,7 @@
 #import <UIKit/UIDataSourceTranslating.h>
 #import <UIKit/UIDropInteraction.h>
 #import <UIKit/UISpringLoadedInteractionSupporting.h>
+#import <UIKit/UIContextMenuInteraction.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,8 +42,7 @@ typedef NS_ENUM(NSInteger, UICollectionViewReorderingCadence) {
 @class UICollectionView, UICollectionReusableView, UICollectionViewCell, UICollectionViewLayout, UICollectionViewTransitionLayout, UICollectionViewLayoutAttributes, UITouch, UINib;
 @class UIDragItem, UIDragPreviewParameters, UIDragPreviewTarget;
 @class UICollectionViewDropProposal, UICollectionViewPlaceholder, UICollectionViewDropPlaceholder;
-@class UIContextMenuConfiguration, UITargetedPreview;
-@protocol UIContextMenuInteractionCommitAnimating;
+@class UICollectionViewCellRegistration, UICollectionViewSupplementaryRegistration;
 @protocol UIDataSourceTranslating, UISpringLoadedInteractionContext;
 @protocol UIDragSession, UIDropSession;
 @protocol UICollectionViewDragDelegate, UICollectionViewDropDelegate, UICollectionViewDropCoordinator, UICollectionViewDropItem, UICollectionViewDropPlaceholderContext;
@@ -142,6 +142,16 @@ UIKIT_EXTERN API_AVAILABLE(ios(9.0)) @interface UICollectionViewFocusUpdateConte
 
 - (CGPoint)collectionView:(UICollectionView *)collectionView targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset API_AVAILABLE(ios(9.0)); // customize the content offset to be applied during transition or update animations
 
+// Editing
+/* Asks the delegate to verify that the given item is editable.
+ *
+ * @param collectionView The collection view object requesting this information.
+ * @param indexPath An index path locating an item in `collectionView`.
+ *
+ * @return `YES` if the item is editable; otherwise, `NO`. Defaults to `YES`.
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView canEditItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0));
+
 // Spring Loading
 
 /* Allows opting-out of spring loading for an particular item.
@@ -224,6 +234,24 @@ UIKIT_EXTERN API_AVAILABLE(ios(9.0)) @interface UICollectionViewFocusUpdateConte
  */
 - (void)collectionView:(UICollectionView *)collectionView willPerformPreviewActionForMenuWithConfiguration:(UIContextMenuConfiguration *)configuration animator:(id<UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 
+/*!
+ * @abstract Called when the collection view is about to display a menu.
+ *
+ * @param collectionView  This UICollectionView.
+ * @param configuration   The configuration of the menu about to be displayed.
+ * @param animator        Appearance animator. Add animations to run them alongside the appearance transition.
+ */
+- (void)collectionView:(UICollectionView *)collectionView willDisplayContextMenuWithConfiguration:(UIContextMenuConfiguration *)configuration animator:(nullable id<UIContextMenuInteractionAnimating>)animator API_AVAILABLE(ios(13.2)) API_UNAVAILABLE(watchos, tvos);
+
+/*!
+ * @abstract Called when the collection view's context menu interaction is about to end.
+ *
+ * @param collectionView  This UICollectionView.
+ * @param configuration   Ending configuration.
+ * @param animator        Disappearance animator. Add animations to run them alongside the disappearance transition.
+ */
+- (void)collectionView:(UICollectionView *)collectionView willEndContextMenuInteractionWithConfiguration:(UIContextMenuConfiguration *)configuration animator:(nullable id<UIContextMenuInteractionAnimating>)animator API_AVAILABLE(ios(13.2)) API_UNAVAILABLE(watchos, tvos);
+
 @end
 
 UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView <UIDataSourceTranslating>
@@ -248,6 +276,8 @@ UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView 
  */
 @property (nonatomic) BOOL dragInteractionEnabled API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
 
+@property (nonatomic, readonly, nullable) UIContextMenuInteraction *contextMenuInteraction API_UNAVAILABLE(ios) API_UNAVAILABLE(watchos, tvos);
+
 /* Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
  * Default is UICollectionViewReorderingCadenceImmediate.
  */
@@ -266,6 +296,9 @@ UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView 
 
 - (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
 - (__kindof UICollectionReusableView *)dequeueReusableSupplementaryViewOfKind:(NSString *)elementKind withReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
+
+- (__kindof UICollectionViewCell *)dequeueConfiguredReusableCellWithRegistration:(UICollectionViewCellRegistration*)registration forIndexPath:(NSIndexPath*)indexPath item:(id)item API_AVAILABLE(ios(14.0),tvos(14.0));
+- (__kindof UICollectionReusableView *)dequeueConfiguredReusableSupplementaryViewWithRegistration:(UICollectionViewSupplementaryRegistration*)registration forIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(14.0),tvos(14.0));
 
 // These properties control whether items can be selected, and if so, whether multiple items can be simultaneously selected.
 @property (nonatomic) BOOL allowsSelection; // default is YES
@@ -333,6 +366,9 @@ UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView 
 // Support for Focus
 @property (nonatomic) BOOL remembersLastFocusedIndexPath API_AVAILABLE(ios(9.0)); // defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
 
+// When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
+@property (nonatomic) BOOL selectionFollowsFocus API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos);
+
 // Drag & Drop
 
 /* YES if a drag session is currently active. A drag session begins after items are "lifted" from the collection view.
@@ -342,6 +378,23 @@ UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView 
 /* YES if collection view is currently tracking a drop session.
  */
 @property (nonatomic, readonly) BOOL hasActiveDrop API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos, watchos);
+
+// Editing
+
+/* Controls the editing state for the receiver.
+ */
+@property (nonatomic, getter=isEditing) BOOL editing API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0));
+
+/* Controls whether an item can be selected when the receiver is editing.
+ * Defaults to NO.
+ */
+@property (nonatomic) BOOL allowsSelectionDuringEditing API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0));
+
+
+/* Controls whether multiple item selection can occur when the receiver is editing.
+ * Defaults to NO.
+ */
+@property (nonatomic) BOOL allowsMultipleSelectionDuringEditing API_AVAILABLE(ios(14.0), tvos(14.0), watchos(7.0));
 
 @end
 

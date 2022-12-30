@@ -12,15 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class MPMediaItem, MPMediaItemCollection, MPMediaQuery;
 
-MP_API(ios(10.1))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(10.1), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerQueueDescriptor : NSObject
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
+MP_INIT_UNAVAILABLE
 @end
 
 MP_API(ios(10.1))
-MP_PROHIBITED(tvos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMusicPlayerMediaItemQueueDescriptor : MPMusicPlayerQueueDescriptor
 
 - (instancetype)initWithQuery:(MPMediaQuery *)query;
@@ -35,8 +34,8 @@ MP_PROHIBITED(tvos, watchos)
 
 @end
 
-MP_API(ios(10.1))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(10.1), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerStoreQueueDescriptor : MPMusicPlayerQueueDescriptor
 
 - (instancetype)initWithStoreIDs:(NSArray<NSString *> *)storeIDs;
@@ -49,8 +48,8 @@ MP_PROHIBITED(tvos, watchos)
 
 @end
 
-MP_API(ios(11.0))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(11.0), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerPlayParameters : NSObject
 
 - (nullable instancetype)initWithDictionary:(NSDictionary<NSString *, id> *)dictionary;
@@ -59,8 +58,8 @@ MP_PROHIBITED(tvos, watchos)
 
 @end
 
-MP_API(ios(11.0))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(11.0), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerPlayParametersQueueDescriptor : MPMusicPlayerQueueDescriptor
 
 - (instancetype)initWithPlayParametersQueue:(NSArray<MPMusicPlayerPlayParameters *> *)playParametersQueue;

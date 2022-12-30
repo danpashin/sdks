@@ -22,10 +22,12 @@ typedef NS_ENUM(NSInteger, UIDatePickerMode) {
 typedef NS_ENUM(NSInteger, UIDatePickerStyle) {
     /// Automatically pick the best style available for the current platform & mode.
     UIDatePickerStyleAutomatic,
-    /// Use the wheels (UIPickerView) style.
+    /// Use the wheels (UIPickerView) style. Editing occurs inline.
     UIDatePickerStyleWheels,
     /// Use a compact style for the date picker. Editing occurs in an overlay.
     UIDatePickerStyleCompact,
+    /// Use a style for the date picker that allows editing in place.
+    UIDatePickerStyleInline API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos, watchos),
 } API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, watchos);
 
 UIKIT_EXTERN API_AVAILABLE(ios(2.0)) API_UNAVAILABLE(tvos) @interface UIDatePicker : UIControl <NSCoding>

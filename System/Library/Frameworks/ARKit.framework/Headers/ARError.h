@@ -29,9 +29,19 @@ typedef NS_ERROR_ENUM(ARErrorDomain, ARErrorCode) {
     /** App does not have permission to use the microphone. The user may change this in settings. */
     ARErrorCodeMicrophoneUnauthorized                                 = 104,
     
+    /** App does not have permission to use the location data of the device. The user may change this in settings. */
+    ARErrorCodeLocationUnauthorized          API_AVAILABLE(ios(14.0)) = 105,
+    
     /** World tracking has encountered a fatal error. */
     ARErrorCodeWorldTrackingFailed                                    = 200,
-    
+
+    /** Geo tracking is not available at this location. */
+    ARErrorCodeGeoTrackingNotAvailableAtLocation  API_AVAILABLE(ios(14.0)) = 201,
+
+    /** Geo tracking has encountered a runtime error. */
+    ARErrorCodeGeoTrackingFailed             API_AVAILABLE(ios(14.0)) = 202,
+
+
     /** Invalid reference image */
     ARErrorCodeInvalidReferenceImage         API_AVAILABLE(ios(11.3)) = 300,
 
@@ -58,6 +68,9 @@ typedef NS_ERROR_ENUM(ARErrorDomain, ARErrorCode) {
     
     /** Unable to read or write to file. */
     ARErrorCodeFileIOFailed                  API_AVAILABLE(ios(12.0)) = 500,
+
+    /** Generic request failure. */
+    ARErrorCodeRequestFailed                 API_AVAILABLE(ios(14.0)) = 501,
 };
 
 NS_ASSUME_NONNULL_END

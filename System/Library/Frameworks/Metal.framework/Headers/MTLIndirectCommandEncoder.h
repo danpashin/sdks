@@ -43,9 +43,9 @@ tessellationFactorBufferOffset:(NSUInteger)offset tessellationFactorBufferInstan
 
 @end
 
-API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos)
+API_AVAILABLE(ios(13.0),macos(11.0))
 @protocol MTLIndirectComputeCommand <NSObject>
-- (void)setComputePipelineState:(id <MTLComputePipelineState>)pipelineState API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
+- (void)setComputePipelineState:(id <MTLComputePipelineState>)pipelineState API_AVAILABLE(ios(13.0),macos(11.0));
 
 - (void)setKernelBuffer:(id <MTLBuffer>)buffer offset:(NSUInteger)offset atIndex:(NSUInteger)index;
 
@@ -59,6 +59,7 @@ API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos)
 
 - (void)clearBarrier;
 
+- (void)setImageblockWidth:(NSUInteger)width height:(NSUInteger)height API_AVAILABLE(ios(14.0), macos(11.0));
 
 - (void)reset;
 

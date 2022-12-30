@@ -2,7 +2,7 @@
 //  MPSCNNPooling.h
 //  MPS
 //
-//  Created by Ian Ollmann on 8/21/16.
+//  Created on 8/21/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 
@@ -236,7 +236,7 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), macCatalyst(13.0), tvos(11.0));
  *  @discussion Specifies the average pooling filter.  For each pixel, returns the mean value of pixels
  *              in the kernelWidth x kernelHeight filter region.
  *              When @ref edgeMode is @ref MPSImageEdgeModeClamp the filtering window is shrunk to remain
- #              within the source image borders. What this means is that close to image borders the filtering window
+ *              within the source image borders. What this means is that close to image borders the filtering window
  *              will be smaller in order to fit inside the source image and less values will be used to compute the
  *              average. In case the filtering window is entirely outside the source image border the
  *              outputted value will be zero.

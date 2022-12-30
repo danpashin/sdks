@@ -2,7 +2,7 @@
 //  MPSNNReshape.h
 //  MPSNeuralNetwork
 //
-//  Created by Aaftab Munshi on 12/11/17.
+//  Created on 12/11/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
@@ -36,6 +36,79 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(
 
 -(nullable instancetype) initWithCoder:(NSCoder * __nonnull)aDecoder
                                 device:(__nonnull id<MTLDevice>)device    NS_DESIGNATED_INITIALIZER;
+
+/*!
+ *  @abstract   Encode a reshape to a command buffer for a given shape.
+ *  @param  commandBuffer                       The command buffer on which to encode the reshape operation.
+ *  @param  sourceImage                             The input image to be reshaped.
+ *  @param  reshapedWidth                           The width of the resulting reshaped image.
+ *  @param  reshapedHeight                          The height of the resulting reshaped image.
+ *  @param  reshapedFeatureChannels     The number of feature channels in the resulting reshaped image.
+ */
+-(MPSImage * __nonnull) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                  sourceImage: (MPSImage *  __nonnull) sourceImage
+                                reshapedWidth: (NSUInteger) reshapedWidth
+                               reshapedHeight: (NSUInteger) reshapedHeight
+                      reshapedFeatureChannels: (NSUInteger) reshapedFeatureChannels
+                                MPS_AVAILABLE_STARTING( macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0))
+                                MPS_SWIFT_NAME( encode(commandBuffer:sourceImage:reshapedWidth:reshapedHeight:reshapedFeatureChannels:));
+
+/*!
+ *  @abstract   Encode a reshape to a command buffer for a given shape.
+ *  @param  commandBuffer                       The command buffer on which to encode the reshape operation.
+ *  @param  outState                                A state to be created and autoreleased which will hold information about this execution
+ *                                  to be provided to a subsequent gradient pass.
+ *  @param  isTemporary                      YES if the state is to be created as a temporary state, NO otherwise.
+ *  @param  sourceImage                             The input image to be reshaped.
+ *  @param  reshapedWidth                           The width of the resulting reshaped image.
+ *  @param  reshapedHeight                          The height of the resulting reshaped image.
+ *  @param  reshapedFeatureChannels     The number of feature channels in the resulting reshaped image.
+ */
+-(MPSImage * __nonnull) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                  sourceImage: (MPSImage *  __nonnull) sourceImage
+                             destinationState: (__autoreleasing MPSState * __nullable * __nonnull) outState
+                  destinationStateIsTemporary: (BOOL) isTemporary
+                                reshapedWidth: (NSUInteger) reshapedWidth
+                               reshapedHeight: (NSUInteger) reshapedHeight
+                      reshapedFeatureChannels: (NSUInteger) reshapedFeatureChannels
+                  MPS_AVAILABLE_STARTING( macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0))
+                  MPS_SWIFT_NAME( encode(commandBuffer:sourceImage:destinationState:destinationStateIsTemporary:reshapedWidth:reshapedHeight:reshapedFeatureChannels:));
+
+/*!
+ *  @abstract   Encode a reshape to a command buffer for a given shape.
+ *  @param  commandBuffer                       The command buffer on which to encode the reshape operation.
+ *  @param  sourceImages                             The image batch containing images to be reshaped.
+ *  @param  reshapedWidth                           The width of the resulting reshaped images.
+ *  @param  reshapedHeight                          The height of the resulting reshaped images.
+ *  @param  reshapedFeatureChannels     The number of feature channels in each of the resulting reshaped images.
+ */
+-(MPSImageBatch * __nonnull) encodeBatchToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                           sourceImages: (MPSImageBatch *  __nonnull) sourceImages
+                                          reshapedWidth: (NSUInteger) reshapedWidth
+                                         reshapedHeight: (NSUInteger) reshapedHeight
+                                reshapedFeatureChannels: (NSUInteger) reshapedFeatureChannels
+                                           MPS_AVAILABLE_STARTING( macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0))
+                                           MPS_SWIFT_NAME( encodeBatch(commandBuffer:sourceImages:reshapedWidth:reshapedHeight:reshapedFeatureChannels:));
+/*!
+ *  @abstract   Encode a reshape to a command buffer for a given shape.
+ *  @param  commandBuffer                       The command buffer on which to encode the reshape operation.
+ *  @param  outStates                               A batch of states to be created and autoreleased which will hold information about this execution
+ *                                  to be provided to a subsequent gradient pass.
+ *  @param  isTemporary                      YES if the states are to be created as temporary states, NO otherwise.
+ *  @param  sourceImages                             The batch of input images to be reshaped.
+ *  @param  reshapedWidth                           The width of the resulting reshaped images.
+ *  @param  reshapedHeight                          The height of the resulting reshaped images.
+ *  @param  reshapedFeatureChannels     The number of feature channels in each of the resulting reshaped images.
+ */
+-(MPSImageBatch * __nonnull) encodeBatchToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                           sourceImages: (MPSImageBatch *  __nonnull) sourceImages
+                                      destinationStates: (__autoreleasing MPSStateBatch * __nullable * __nonnull) outStates
+                            destinationStateIsTemporary: (BOOL) isTemporary
+                                          reshapedWidth: (NSUInteger) reshapedWidth
+                                         reshapedHeight: (NSUInteger) reshapedHeight
+                                reshapedFeatureChannels: (NSUInteger) reshapedFeatureChannels
+                            MPS_AVAILABLE_STARTING( macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0))
+                            MPS_SWIFT_NAME( encodeBatch(commandBuffer:sourceImages:destinationStates:destinationStateIsTemporary:reshapedWidth:reshapedHeight:reshapedFeatureChannels:));
 
 @end  /* MPSNNReshape_h */
 

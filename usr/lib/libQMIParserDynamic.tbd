@@ -1,24 +1,31 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: F8A35868-FB70-33FF-9E70-A6C72901BA28', 'armv7s: E1A8139B-3DC7-3A83-8272-F2D434529E3D', 
-                   'arm64: 515809D9-B33B-33C3-A53E-70B17440031F', 'arm64e: 9D908B42-E994-3A23-A35F-7BFE243565B3' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           DC32F1E5-1413-3996-BE7A-8FEA072DBA8B
+  - target:          armv7s-ios
+    value:           653258B0-E00F-3069-B144-3C26BB68E7E8
+  - target:          arm64-ios
+    value:           9E1619CE-E9AD-3BF1-818B-E2B68D375A26
+  - target:          arm64e-ios
+    value:           97ABA818-66BF-3B9E-BB2F-FA585F3F7182
 install-name:    '/usr/lib/libQMIParserDynamic.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3qmi18MutableMessageBase20setWriteErrorHandlerEPFvtRNSt3__16vectorIhNS1_9allocatorIhEEEEiE ]
-    weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
-  - archs:           [ arm64, arm64e ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN3qmi11fixupHeaderERKNSt3__110shared_ptrINS_17SerializedMessageEEEhh, 
                        __ZN3qmi13createRequestEhNS_11buffer_viewE, __ZN3qmi18MutableMessageBase20setWriteErrorHandlerEPFvtRNSt3__16vectorIhNS1_9allocatorIhEEEElE, 
                        __ZN3qmi18MutableMessageBaseC1EOS0_, __ZN3qmi18MutableMessageBaseC2EOS0_, 
                        __ZN3qmi18MutableMessageBaseaSEOS0_, __ZN3qmi18stripRequestHeaderEhRKNSt3__110shared_ptrIKNS_17SerializedMessageEEE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3qmi11MessageBase13validateMsgIdEt, __ZN3qmi11MessageBase14validateBufferEv, 
                        __ZN3qmi11MessageBase20sParsingErrorHandlerE, __ZN3qmi11MessageBase22setParsingErrorHandlerEPFbttPKhmE, 
                        __ZN3qmi11MessageBase4swapERS0_, __ZN3qmi11MessageBase8setErrorENS_5ErrorEb, 

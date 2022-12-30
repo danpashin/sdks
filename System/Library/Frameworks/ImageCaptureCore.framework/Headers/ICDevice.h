@@ -226,9 +226,15 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 
 /*!
  @property icon
- @abstract ￼Icon image for the device.
+ @abstract ￼Icon image for the device class.  If there is no custom icon present from a device manufacturer, this will be a rendered version of the system symbol for the device class.  Using a rendered system symbol instead of the systemSymbolName is discouraged.
  */
 @property (nonatomic, readonly, nullable) CGImageRef icon IC_AVAILABLE(macos(10.4), ios(13.0));
+
+/*!
+@property systemSymbolName
+@abstract ￼Standard system symbol used to represent the device class.  Using the symbol to render an appropriate device icon will ensure proper scaling for high resolution devices.
+*/
+@property (nonatomic, readonly, copy, nullable) NSString* systemSymbolName IC_AVAILABLE(macos(11.0)) IC_UNAVAILABLE(ios);
 
 /*!
  @property transportType

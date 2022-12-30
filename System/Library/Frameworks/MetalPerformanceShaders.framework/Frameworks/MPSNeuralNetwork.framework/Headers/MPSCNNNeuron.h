@@ -2,7 +2,7 @@
 //  MPSCNNNeuron.h
 //  MPS
 //
-//  Created by Anna Tikhonova on 10/27/17.
+//  Created on 10/27/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  MPSCNNBatchNormalization.h
 //  MPS
 //
-//  Created by Justin Voo on 10/23/17.
+//  Created on 10/23/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

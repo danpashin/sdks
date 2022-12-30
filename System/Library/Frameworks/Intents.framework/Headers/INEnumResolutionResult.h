@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macosx)
+API_AVAILABLE(ios(13.0), macos(11.0), watchos(6.0))
+API_UNAVAILABLE(tvos)
 @interface INEnumResolutionResult : INIntentResolutionResult
 
 + (instancetype)successWithResolvedValue:(NSInteger)resolvedValue NS_REFINED_FOR_SWIFT;

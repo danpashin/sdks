@@ -26,17 +26,17 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @brief Specifies the key path for a characteristic in a NSPredicate
  */
-HM_EXTERN NSString * const HMCharacteristicKeyPath API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos);
+HM_EXTERN NSString * const HMCharacteristicKeyPath API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 /*!
  * @brief Specifies the key path for a characteristic value in a NSPredicate
  */
-HM_EXTERN NSString * const HMCharacteristicValueKeyPath API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos);
+HM_EXTERN NSString * const HMCharacteristicValueKeyPath API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 /*!
  * @brief Specifies the key path for a presence event in a NSPredicate
  */
-HM_EXTERN NSString * const HMPresenceKeyPath API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0)) API_UNAVAILABLE(macos);
+HM_EXTERN NSString * const HMPresenceKeyPath API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 
 /*!
@@ -44,7 +44,7 @@ HM_EXTERN NSString * const HMPresenceKeyPath API_AVAILABLE(ios(11.0), watchos(4.
  *
  * @discussion This class represents a trigger that is based on events.
  */
-HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMEventTrigger : HMTrigger
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -226,7 +226,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  *
  * @return Predicate object representing a condition to evaluate before executing the action set.
  */
-+ (NSPredicate *)predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:(HMSignificantTimeEvent *)significantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0));
++ (NSPredicate *)predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:(HMSignificantTimeEvent *)significantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0));
 
 /*!
  * @brief Creates a predicate that will evaluate whether the event occurred after a significant event.
@@ -250,7 +250,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  *
  * @return Predicate object representing a condition to evaluate before executing the action set.
  */
-+ (NSPredicate *)predicateForEvaluatingTriggerOccurringAfterSignificantEvent:(HMSignificantTimeEvent *)significantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0));
++ (NSPredicate *)predicateForEvaluatingTriggerOccurringAfterSignificantEvent:(HMSignificantTimeEvent *)significantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0));
 
 /*!
  * @brief Creates a predicate that will evaluate whether the event occurred between two significant events.
@@ -262,7 +262,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  * @return Predicate object representing a condition to evaluate before executing the action set.
  */
 + (NSPredicate *)predicateForEvaluatingTriggerOccurringBetweenSignificantEvent:(HMSignificantTimeEvent *)firstSignificantEvent
-                                                        secondSignificantEvent:(HMSignificantTimeEvent *)secondSignificantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0));
+                                                        secondSignificantEvent:(HMSignificantTimeEvent *)secondSignificantEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0));
 
 /*!
  * @brief Creates a predicate that will evaluate whether the event occurred before the time specified.
@@ -301,7 +301,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  * @return Predicate object representing a condition to evaluate before executing the action set.
  */
 + (NSPredicate *)predicateForEvaluatingTriggerOccurringBetweenDateWithComponents:(NSDateComponents *)firstDateComponents
-                                                        secondDateWithComponents:(NSDateComponents *)secondDateWithComponents API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0));
+                                                        secondDateWithComponents:(NSDateComponents *)secondDateWithComponents API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0));
 
 /*!
  * @brief Creates a predicate that will evaluate whether a characteristic value is related to the specified value.
@@ -327,7 +327,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  *
  * @return Predicate object representing a condition to evaluate before executing the action set.
  */
-+ (NSPredicate *)predicateForEvaluatingTriggerWithPresence:(HMPresenceEvent *)presenceEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0));
++ (NSPredicate *)predicateForEvaluatingTriggerWithPresence:(HMPresenceEvent *)presenceEvent API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0));
 
 @end
 

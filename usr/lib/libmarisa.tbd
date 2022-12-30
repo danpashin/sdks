@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: D8AB3C04-8C6E-3801-9595-4D0610FDA74E', 'armv7s: F0F91E1A-F089-39FC-B89C-8B3F82F332FD', 
-                   'arm64: 3CE0E1A7-2A19-37F7-A3F6-DFD5F4A962BC', 'arm64e: 8D3A5FE2-9D65-3A8D-A4DE-07FA74A5D52B' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2C072D37-E22E-3EC5-AAFE-9576E9F16945
+  - target:          armv7s-ios
+    value:           EFC9EE84-8603-3767-A66A-23219B2AD723
+  - target:          arm64-ios
+    value:           A4064534-3237-3D18-8524-5613576E10D7
+  - target:          arm64e-ios
+    value:           40FE0BFE-7B0A-327B-9CC9-9475814C7343
 install-name:    '/usr/lib/libmarisa.dylib'
-current-version: 16
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 19
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN6marisa8grimoire2io6Mapper4openEPKc, __ZN6marisa8grimoire2io6Mapper4openEPKvm, 
                        __ZN6marisa8grimoire2io6Mapper4seekEm, __ZN6marisa8grimoire2io6Mapper4swapERS2_, 
                        __ZN6marisa8grimoire2io6Mapper5clearEv, __ZN6marisa8grimoire2io6Mapper5open_EPKc, 
@@ -64,8 +71,8 @@ exports:
                        __ZNK6marisa8grimoire4trie9LoudsTrie7io_sizeEv, __ZNK6marisa8grimoire4trie9LoudsTrie8restore_ERNS_5AgentEm, 
                        __ZNK6marisa8grimoire6vector9BitVector5rank1Em, __ZNK6marisa8grimoire6vector9BitVector7select0Em, 
                        __ZNK6marisa8grimoire6vector9BitVector7select1Em ]
-    weak-def-symbols: [ __ZTIN6marisa9ExceptionE, __ZTSN6marisa9ExceptionE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZTIN6marisa9ExceptionE, __ZTSN6marisa9ExceptionE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN6marisa4Trie3mapEPKvm, __ZN6marisa4Trie4loadEPKc, __ZN6marisa4Trie4mmapEPKc, 
                        __ZN6marisa4Trie4readEi, __ZN6marisa4Trie4swapERS0_, __ZN6marisa4Trie5buildERNS_6KeysetEi, 
                        __ZN6marisa4Trie5clearEv, __ZN6marisa4TrieC1Ev, __ZN6marisa4TrieC2Ev, 

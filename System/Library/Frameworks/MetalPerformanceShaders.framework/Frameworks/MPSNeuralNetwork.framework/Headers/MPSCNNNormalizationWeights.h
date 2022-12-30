@@ -2,7 +2,7 @@
 //  MPSCNNNormalizationWeights.h
 //  MPSNeuralNetwork
 //
-//  Created by Justin Voo on 2/4/18.
+//  Created on 2/4/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

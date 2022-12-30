@@ -50,12 +50,12 @@ typedef void *CVEAGLContext;
 // texture age of zero will disable the age-out mechanism completely.
 // CVOpenGLESTextureCacheFlush() can be used to force eviction in either case.
 	
-CV_EXPORT const CFStringRef CV_NONNULL kCVOpenGLESTextureCacheMaximumTextureAgeKey COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) __WATCHOS_PROHIBITED;
+CV_EXPORT const CFStringRef CV_NONNULL kCVOpenGLESTextureCacheMaximumTextureAgeKey COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED;
 
 //
 // textureAttributes - reserved for future use
 	
-CV_EXPORT CFTypeID CVOpenGLESTextureCacheGetTypeID(void) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) __WATCHOS_PROHIBITED;
+CV_EXPORT CFTypeID CVOpenGLESTextureCacheGetTypeID(void) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED;
 
 /*!
     @function   CVOpenGLESTextureCacheCreate

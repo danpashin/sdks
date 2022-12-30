@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 FOUNDATION_EXPORT NSErrorDomain const NSFileProviderErrorDomain FILEPROVIDER_API_AVAILABILITY_V2;
 
 FOUNDATION_EXPORT NSString * const NSFileProviderErrorCollidingItemKey API_DEPRECATED("NSFileProviderErrorItemKey", ios(8.0, 13.0)) API_UNAVAILABLE(macos, tvos, watchos);
-FOUNDATION_EXPORT NSString * const NSFileProviderErrorItemKey FILEPROVIDER_API_AVAILABILITY_V3;
 FOUNDATION_EXPORT NSString * const NSFileProviderErrorNonExistentItemIdentifierKey FILEPROVIDER_API_AVAILABILITY_V2;
 
 typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
@@ -47,23 +46,11 @@ typedef NS_ERROR_ENUM(NSFileProviderErrorDomain, NSFileProviderErrorCode) {
      */
     NSFileProviderErrorNoSuchItem        = -1005,
 
-    /** The requested version is not the latest version of the file.
-
-     \note Please use -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:] to build an error with this code.
-     \see -[NSError (NSFileProviderError) fileProviderErrorForOutOfDateItem:]
-     */
-    NSFileProviderErrorVersionOutOfDate FILEPROVIDER_API_AVAILABILITY_V3 = -1006,
-
-    /** We're trying to non-recursively delete a non-empty directory
-     */
-    NSFileProviderErrorDirectoryNotEmpty FILEPROVIDER_API_AVAILABILITY_V3 = -1007,
-
 } FILEPROVIDER_API_AVAILABILITY_V2;
 
 @interface NSError (NSFileProviderError)
 + (instancetype)fileProviderErrorForCollisionWithItem:(NSFileProviderItem)existingItem FILEPROVIDER_API_AVAILABILITY_V2;
 + (instancetype)fileProviderErrorForNonExistentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier FILEPROVIDER_API_AVAILABILITY_V2;
-+ (instancetype)fileProviderErrorForOutOfDateItem:(NSFileProviderItem)updatedVersion NS_SWIFT_NAME(fileProviderErrorForOutOfDateItem(_:)) FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 

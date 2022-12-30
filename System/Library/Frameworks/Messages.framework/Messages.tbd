@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: F3DFADF4-6102-3017-91DE-B00098B24B1E', 'armv7s: 4BA3CC04-F27B-3ECD-AC2C-DFEF76BC9909', 
-                   'arm64: 5105DF9F-CCC7-3948-AE77-8C95C473B10F', 'arm64e: 611A79A0-B7CF-3431-89CE-8C42231FA7BC' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E54C76B3-3C44-32D4-A3BC-32E1B3537F68
+  - target:          armv7s-ios
+    value:           65AB4119-CBED-3744-83EF-7F17284B5865
+  - target:          arm64-ios
+    value:           B7B4A123-4423-32D8-A97F-5A65F0C1E0A8
+  - target:          arm64e-ios
+    value:           4AFB2E6D-09D4-3CAF-AA58-B8474008011B
 install-name:    '/System/Library/Frameworks/Messages.framework/Messages'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MSCachedStickerThumbnailURLForStickerAtURL, _MSStickerBrowserStateRestorationInfo, 
                        _MSStickerBrowserStateRestorationInfoPath, _MSStickerImageSizeMaximum, 
                        _MSStickerImageSizeMinimum, _MSStickerLocalizedDecriptionsLengthMaximum, 
@@ -18,7 +25,7 @@ exports:
                        MSStickerBrowserViewLayoutSpeciPhone, MSStickerBrowserViewLayoutSpeciPhoneMini, 
                        MSStickerBrowserViewLayoutSpeciPhonePlus, _MSExtensionGlobalState, 
                        _MSSticker, _MSStickerCollectionViewCell ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _MSMessagesErrorDomain, _MSStickersErrorDomain, _MSStickersErrorStickerInfoKey, 
                        __MSExtensionContextIsPrimary, __MSExtensionItemConversationStateKey, 
                        __MSExtensionItemHostViewBoundsKey, __MSExtensionItemWantsLiveViewKey, 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief This class is used to discover new accessories in the home
  *        that have never been paired with and therefore not part of the home.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos)
+HM_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos, macCatalyst)
 @interface HMAccessoryBrowser : NSObject
 
 /*!
@@ -66,7 +66,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /*!
  * @brief This delegate receives updates about new accessories in the home.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos) 
+HM_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos, macCatalyst) 
 @protocol HMAccessoryBrowserDelegate <NSObject>
 
 @optional

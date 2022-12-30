@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <SceneKit/SCNGeometry.h>
 #import <ARKit/ARFaceAnchor.h>
+#import <ARKit/ARSCNFaceGeometry.h>
 
 @protocol MTLBuffer;
 @protocol MTLDevice;
@@ -61,52 +62,6 @@ The number of mesh vertices of the geometry.
  @return Face geometry after applying the blend shapes.
  */
 - (nullable instancetype)initWithBlendShapes:(NSDictionary<ARBlendShapeLocation, NSNumber*> *)blendShapes;
-
-/** Unavailable */
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new NS_UNAVAILABLE;
-
-@end
-
-
-/**
- A SceneKit geometry representing a face.
- */
-API_AVAILABLE(ios(11.0))
-@interface ARSCNFaceGeometry : SCNGeometry
-
-/**
- Creates a new face geometry using a Metal device.
- 
- @param device A Metal device.
- @return A new face geometry.
- */
-+ (nullable instancetype)faceGeometryWithDevice:(id<MTLDevice>)device;
-
-
-/**
- Creates a new face geometry using a Metal device.
- 
- @discussion By default the regions between the eye lids as well as the region
- between the lips are not covered by geometry. For using the face geometry as an
- occlusion geometry set \p fillMesh to YES. This will fill
- in additional geometry into the gaps between the eye lids as well as into the
- gap between the lips.
- @param fillMesh Whether to fill in additional geometry into the
- gaps between the eye lids as well as into the gap between the lips.
- 
- @return A new face geometry.
- */
-+ (nullable instancetype)faceGeometryWithDevice:(id<MTLDevice>)device
-                              fillMesh:(BOOL)fillMesh;
-
-
-/**
- Updates the geometry with the vertices of a face geometry.
- 
- @param faceGeometry A face geometry.
- */
-- (void)updateFromFaceGeometry:(ARFaceGeometry *)faceGeometry;
 
 /** Unavailable */
 - (instancetype)init NS_UNAVAILABLE;

@@ -1,17 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 76133168-E374-3400-AB96-704A9692EECB', 'arm64e: AC44BC77-734C-34FD-9FC2-CCE4EB612C74' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           313AABD9-CC37-360E-8662-BB3DC0CBD673
+  - target:          arm64e-ios
+    value:           A1F625B8-0B2C-3F8B-95D5-A75F93AE708D
 install-name:    '/usr/lib/libIOACIPC.dylib'
-exports:         
-  - archs:           [ arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z23getACIPCDirectionString14acipcDirection, __Z23getACIPCErrorTypeStringj, 
                        __Z23getACIPCLinkStateStringj, __Z26getACIPCAERErrorTypeStringj, 
                        __ZN12IOACIPCClass10apiAdapterEj, __ZN12IOACIPCClass11unmapMemoryEt, 
                        __ZN12IOACIPCClass12notifyMemoryEtPKvj, __ZN12IOACIPCClass12readRegisterEjPvPj, 
-                       __ZN12IOACIPCClass12updateMemoryEtjh, __ZN12IOACIPCClass14clearIteratorsEv, 
-                       __ZN12IOACIPCClass14mapMemoryAsyncEtPKvjjhS1_jPFvPviES2_, 
+                       __ZN12IOACIPCClass12updateMemoryEtjh, __ZN12IOACIPCClass13generateNonceEv, 
+                       __ZN12IOACIPCClass14clearIteratorsEv, __ZN12IOACIPCClass14mapMemoryAsyncEtPKvjjhS1_jPFvPviES2_, 
                        __ZN12IOACIPCClass14sendImageAsyncEPKvjPFvPviS2_S2_ES2_j, 
                        __ZN12IOACIPCClass16getIOMMUPageSizeEPj, __ZN12IOACIPCClass16interfaceMatchedEPvj, 
                        __ZN12IOACIPCClass16unmapMemoryAsyncEtPFvPviES0_, __ZN12IOACIPCClass17abortTransferRingEj, 

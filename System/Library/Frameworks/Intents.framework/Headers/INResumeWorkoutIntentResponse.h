@@ -10,7 +10,7 @@
 typedef NS_ENUM(NSInteger, INResumeWorkoutIntentResponseCode) {
     INResumeWorkoutIntentResponseCodeUnspecified = 0,
     INResumeWorkoutIntentResponseCodeReady,
-    INResumeWorkoutIntentResponseCodeContinueInApp API_AVAILABLE(watchos(3.2)) API_DEPRECATED("INResumeWorkoutIntentResponseCodeContinueInApp is deprecated on iOS. Please use INResumeWorkoutIntentResponseCodeHandleInApp instead", ios(10.0, 11.0)),
+    INResumeWorkoutIntentResponseCodeContinueInApp,
     INResumeWorkoutIntentResponseCodeFailure,
     INResumeWorkoutIntentResponseCodeFailureRequiringAppLaunch,
     INResumeWorkoutIntentResponseCodeFailureNoMatchingWorkout,

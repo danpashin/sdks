@@ -7,7 +7,6 @@
 
 #import <FileProvider/NSFileProviderExtension.h>
 #import <FileProvider/NSFileProviderItem.h>
-#import <FileProvider/NSFileProviderSearchQuery.h>
 #if TARGET_OS_OSX
 #import <CoreGraphics/CoreGraphics.h>
 #endif
@@ -204,26 +203,6 @@ NSFileProviderPage const NSFileProviderInitialPageSortedByName;
  */
 - (nullable id<NSFileProviderEnumerator>)enumeratorForContainerItemIdentifier:(NSFileProviderItemIdentifier)containerItemIdentifier
                                                                         error:(NSError **)error NS_SWIFT_NAME(enumerator(for:));
-
-/**
- Create an enumerator for all items matching a given search query.
-
- In order to be invoked to perform a remote search a provider needs to specify
- in its plist an array of supported search filters under the property name
- NSExtensionFileProviderSupportedSearchCapabilities. The allowed values are:
-   - NSExtensionFileProviderSearchByFilename
-   - NSExtensionFileProviderSearchByContentType
-   - NSExtensionFileProviderSearchScopedToDirectory
-
- NSExtensionFileProviderSearchByFilename is always assumed to be available.
-
- The enumerator returned will be invalidated when the search results are
- discarded.
-
- If returning nil, you must set the error out parameter.
- */
-- (nullable id<NSFileProviderEnumerator>)enumeratorForSearchQuery:(NSFileProviderSearchQuery *)searchQuery
-                                                            error:(NSError **)error FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 

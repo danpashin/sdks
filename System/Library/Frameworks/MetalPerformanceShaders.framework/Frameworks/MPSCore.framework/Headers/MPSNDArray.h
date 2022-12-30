@@ -2,7 +2,7 @@
 //  MPSNDArray.h
 //  MPSCore
 //
-//  Created by Ian Ollmann on 11/16/18.
+//  Created on 11/16/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -55,7 +55,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *
  *                 Default:  NSRange(0, lengthOfDimension(i))
  *
- *  @param         subRange                 The region of the slice
+ *  @param         subRange                 The region of the slice, start value is wrt dimensionLength of the NDArray.
  *  @param         dimensionIndex           The index of the dimension. Must be < numberOfDimensions */
 -(void)      sliceDimension: (NSUInteger) dimensionIndex
                withSubrange: (MPSDimensionSlice) subRange;
@@ -330,7 +330,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *  @param      cmdBuf      The command buffer on which to encode the operation
  *  @param      buffer      The destination to read from
  *  @param      sourceDataType  The source data type.
- *  @param      offset      The byte offset to where the {0,0,0...}th element will be written
+ *  @param      offset      The byte offset in the buffer from where the {0,0,0...}th element is to be read.
  *  @param      rowStrides  An optional array of (numberOfDimensions-1) byte counts which describe
  *                          the byte offset from position 0 of the respective dimension to position 1.  */
 -(void) importDataWithCommandBuffer: (__nonnull id <MTLCommandBuffer>) cmdBuf

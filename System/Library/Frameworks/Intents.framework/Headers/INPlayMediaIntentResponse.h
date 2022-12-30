@@ -19,12 +19,12 @@ typedef NS_ENUM(NSInteger, INPlayMediaIntentResponseCode) {
     INPlayMediaIntentResponseCodeFailureUnknownMediaType,
     INPlayMediaIntentResponseCodeFailureNoUnplayedContent,
     INPlayMediaIntentResponseCodeFailureRestrictedContent,
-} API_AVAILABLE(ios(12.0), watchos(5.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(12.0), watchos(5.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(12.0), watchos(5.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(12.0), watchos(5.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INPlayMediaIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

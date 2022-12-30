@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 1D74EB25-816F-36F7-BF10-C93217FAC55C', 'arm64e: 374B89ED-4B01-339E-A9CC-7FBE9B43BAF3' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           4F9B18D8-0C9E-3E60-A76F-CC4D84EB2DC0
+  - target:          arm64e-ios
+    value:           E795B420-F8EA-31E4-B414-9EFB3D579DDD
 install-name:    '/usr/lib/libWirelessAudioIPC.dylib'
-exports:         
-  - archs:           [ arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z33BasebandVoice_getTimesyncOverridev, __Z33BasebandVoice_setTimesyncOverrideRKNSt3__110shared_ptrIN5waipc8timesync15BasebandServiceEEE, 
                        __Z38NetworkUplinkClock_getTimesyncOverridev, __Z38NetworkUplinkClock_setTimesyncOverrideRKNSt3__110shared_ptrIN5waipc8timesync15BasebandServiceEEE, 
                        __ZN5waipc13PCIeAudioLink16getZeroTimestampEy, __ZN5waipc13PCIeAudioLink19computeBufferLengthERKNS0_6configEPNS0_20bufferProtectionInfoE, 

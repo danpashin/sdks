@@ -19,6 +19,20 @@
 MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(11.3))
 @interface  MPSImageEuclideanDistanceTransform : MPSUnaryImageKernel
 
+/*! @property   searchLimitRadius
+ *  @abstract   Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
+ *  @discussion When the non-zeroes in the input image are on average very far away from each other (ie. the distances are large),
+ *              the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting exact
+ *              results beyond a certain distance you can use this property to limit the search space and speed up the kernels.
+ *              In case there are no non-zero pixels within this search scope around the output pixel, then the output value will
+ *              be some number that is larger than this search limit. Normally you should be fine with the default value of FLT_MAX,
+ *              which results in the exact EDT, so use this only if you need additional performance.
+ *              Typical good values are: 32, 64, 96, 128.
+ *              Default: FLT_MAX
+ */
+@property (readwrite, nonatomic) float searchLimitRadius MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
+
 /*!
  *  @abstract Specifies information to apply the statistics min-max operation on an image.
  *  @param    device            The device the filter will run on

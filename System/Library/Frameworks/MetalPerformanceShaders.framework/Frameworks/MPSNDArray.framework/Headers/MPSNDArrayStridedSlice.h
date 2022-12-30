@@ -2,7 +2,7 @@
 //  MPSNDArrayStridedSlice.h
 //  MPS
 //
-//  Created by Justin Voo on 1/10/19.
+//  Created on 1/10/19.
 //  Copyright © 2019 Apple. All rights reserved.
 //
 

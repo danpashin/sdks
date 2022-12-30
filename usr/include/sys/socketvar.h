@@ -125,7 +125,7 @@ struct  xsocket {
 	uid_t                   so_uid;         /* XXX */
 };
 
-#if !CONFIG_EMBEDDED
+#if XNU_TARGET_OS_OSX || !(TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR)
 struct  xsocket64 {
 	u_int32_t               xso_len;        /* length of this structure */
 	u_int64_t               xso_so;         /* makes a convenient handle */
@@ -147,7 +147,7 @@ struct  xsocket64 {
 	struct xsockbuf         so_snd;
 	uid_t                   so_uid;         /* XXX */
 };
-#endif /* !CONFIG_EMBEDDED */
+#endif /* XNU_TARGET_OS_OSX || !(TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR) */
 
 
 #pragma pack()

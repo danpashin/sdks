@@ -10,14 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0)) typedef NS_ENUM(NSInteger, PKEraserType) {
+API_AVAILABLE(ios(13.0), macos(10.15)) typedef NS_ENUM(NSInteger, PKEraserType) {
     PKEraserTypeVector,
     PKEraserTypeBitmap
 } NS_REFINED_FOR_SWIFT;
 
 /// An eraser tool for erasing parts of a drawing.
 NS_REFINED_FOR_SWIFT
-API_AVAILABLE(ios(13.0))
+API_AVAILABLE(ios(13.0), macos(10.15))
 @interface PKEraserTool : PKTool
 
 /// The eraser type.

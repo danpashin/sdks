@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief This class describes a range of numbers: [min, max]
  *
  */
-HM_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMNumberRange : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

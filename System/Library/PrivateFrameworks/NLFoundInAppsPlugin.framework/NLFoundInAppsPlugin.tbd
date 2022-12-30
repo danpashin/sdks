@@ -1,12 +1,18 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/NLFoundInAppsPlugin.framework/NLFoundInAppsPlugin
-current-version:       202
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           DF6D547D-5D92-3514-904A-A46465838930
+  - target:          arm64e-ios
+    value:           91C210C1-1493-32B7-A12E-8E8D5EB88947
+install-name:    '/System/Library/PrivateFrameworks/NLFoundInAppsPlugin.framework/NLFoundInAppsPlugin'
+current-version: 210
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ NLFoundInAppsPlugin ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    objc-classes:    [ NLFoundInAppsPlugin ]
 ...

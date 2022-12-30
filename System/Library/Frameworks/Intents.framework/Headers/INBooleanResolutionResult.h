@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx)
+API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2), tvos(14.0))
 @interface INBooleanResolutionResult : INIntentResolutionResult
 
 // This resolution result is for when the app extension wants to tell Siri to proceed with a given value. The resolvedValue need not be identical to the input value. If the app extension wants to continue with a 'nil' value, it must use +notRequired.

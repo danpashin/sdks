@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCore/AVPlayer.h>)
 /*
     File:  AVPlayer.h
 
@@ -617,7 +618,7 @@ typedef NS_ENUM(NSInteger, AVPlayerActionAtItemEnd)
 @property BOOL usesExternalPlaybackWhileExternalScreenIsActive API_AVAILABLE(ios(6.0), tvos(9.0)) API_UNAVAILABLE(macos, watchos);
 
 /* Video gravity strictly for "external playback" mode, one of AVLayerVideoGravity* defined in AVAnimation.h */
-@property (nonatomic, copy) AVLayerVideoGravity externalPlaybackVideoGravity API_AVAILABLE(ios(6.0), tvos(9.0)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(macos);
+@property (nonatomic, copy) AVLayerVideoGravity externalPlaybackVideoGravity API_AVAILABLE(ios(6.0), tvos(9.0)) API_UNAVAILABLE(macos, watchos);
 
 @end
 
@@ -882,3 +883,7 @@ API_AVAILABLE(macos(10.7), ios(4.1), tvos(9.0), watchos(1.0))
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCore/AVPlayer.h>
+#endif

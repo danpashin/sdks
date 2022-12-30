@@ -2,7 +2,7 @@
 //  MPSCNNLoss.h
 //  MPS
 //
-//  Created by Anna Tikhonova on 10/6/17.
+//  Created on 10/6/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
@@ -232,6 +232,22 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(
  *              performed in the loss filter.
  */
 @property (readwrite, nonatomic) MPSCNNReductionType reductionType;
+
+/*! @property   reduceAcrossBatch
+ *  @abstract   If set to YES then the reduction operation is applied also across the batch-index dimension,
+ *              ie. the loss value is summed over images in the batch and the result of the reduction is written
+ *              on the first loss image in the batch while the other loss images will be set to zero.
+ *              If set to NO, then no reductions are performed across the batch dimension and each image in the batch
+ *              will contain the loss value associated with that one particular image.
+ *              NOTE: If reductionType == MPSCNNReductionTypeNone, then this flag has no effect on results,
+ *              that is no reductions are done in this case.
+ *              NOTE: If reduceAcrossBatch is set to YES and reductionType == MPSCNNReductionTypeMean then
+ *              the final forward loss value is computed by first summing over the components and then by
+ *              dividing the result with: number of feature channels * width * height * number of images in the batch.
+ *              The default value is NO.
+ */
+@property (readwrite, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
 
 /*! @property   weight
  *  @abstract   The scale factor to apply to each element of a result.
@@ -513,6 +529,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), macCatalyst(13.0), tvos(
 @property (readonly, nonatomic) NSUInteger numberOfClasses;
 @property (readonly, nonatomic) float epsilon;
 @property (readonly, nonatomic) float delta;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 
 /*
  * You must use initWithDevice:lossDescriptor instead.
@@ -650,6 +667,22 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12), macCatalyst(13.0), tvos(12))
  */
 @property (readwrite, nonatomic) MPSCNNReductionType reductionType;
 
+/*! @property   reduceAcrossBatch
+ *  @abstract   If set to YES then the reduction operation is applied also across the batch-index dimension,
+ *              ie. the loss value is summed over images in the batch and the result of the reduction is written
+ *              on the first loss image in the batch while the other loss images will be set to zero.
+ *              If set to NO, then no reductions are performed across the batch dimension and each image in the batch
+ *              will contain the loss value associated with that one particular image.
+ *              NOTE: If reductionType == MPSCNNReductionTypeNone, then this flag has no effect on results,
+ *              that is no reductions are done in this case.
+ *              NOTE: If reduceAcrossBatch is set to YES and reductionType == MPSCNNReductionTypeMean then
+ *              the final forward loss value is computed by first summing over the components and then by
+ *              dividing the result with: number of feature channels * width * height * number of images in the batch.
+ *              The default value is NO.
+ */
+@property (readwrite, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
+
 /*! @property   rescore
  *  @abstract   Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
  *              of predicted bounding box and the groundTruth boundingBox. Default is YES
@@ -782,6 +815,8 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12
 @property (readonly, nonatomic) MPSCNNReductionType reductionType;
 @property (readonly, nonatomic) NSUInteger numberOfAnchorBoxes;
 @property (readonly, nonatomic, nonnull, retain) NSData *anchorBoxes;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
 
 /*
  * You must use initWithDevice:lossDescriptor instead.
@@ -869,6 +904,8 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.15.0), ios(13.0), macCatalyst(13.0), tvos(
  */
 @property (readonly, nonatomic) MPSCNNLossType lossType;
 @property (readonly, nonatomic) MPSCNNReductionType reductionType;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
 @property (readonly, nonatomic) NSUInteger numberOfClasses;
 
 // Dynamically adjustable parameters
@@ -958,6 +995,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.15.0), ios(13.0), macCatalyst(13.0), tvos(
  */
 @property (readonly, nonatomic) MPSCNNLossType lossType;
 @property (readonly, nonatomic) MPSCNNReductionType reductionType;
+@property (readonly, nonatomic) BOOL reduceAcrossBatch MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 @property (readonly, nonatomic) NSUInteger numberOfClasses;
 
 @property (readwrite, nonatomic) float weight;

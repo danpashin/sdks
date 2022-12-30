@@ -79,6 +79,8 @@ CT_EXPORT const CFStringRef kCTFontManagerErrorFontAssetNameKey CT_AVAILABLE(ios
                 The file is not in an allowed location. It must be either in the application's bundle or an on-demand resource.
     @constant   kCTFontManagerErrorExceededResourceLimit
                 The operation failed due to a system limitation.
+    @constant   kCTFontManagerErrorUnsupportedScope
+                The specified scope is not supported.
 
 */
 typedef CF_ENUM(CFIndex, CTFontManagerError) {
@@ -98,6 +100,7 @@ typedef CF_ENUM(CFIndex, CTFontManagerError) {
     kCTFontManagerErrorCancelledByUser          = 304,
     kCTFontManagerErrorDuplicatedName           = 305,
     kCTFontManagerErrorInvalidFilePath          = 306,
+    kCTFontManagerErrorUnsupportedScope         = 307,
 };
 
 CF_ASSUME_NONNULL_END

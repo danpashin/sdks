@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 3690DAF7-75BA-3A78-8B79-05A537CE2451', 'armv7s: 6F0010BC-E8F4-3840-B192-C287519BB7C6', 
-                   'arm64: 83D8587E-20A0-35E0-AA80-3F8FD2F20709', 'arm64e: 3C60A72E-71FF-3850-AEA0-F10FFAF0110D' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           3690DAF7-75BA-3A78-8B79-05A537CE2451
+  - target:          armv7s-ios
+    value:           6F0010BC-E8F4-3840-B192-C287519BB7C6
+  - target:          arm64-ios
+    value:           14D68D97-847C-30EC-9396-7F57ACECF269
+  - target:          arm64e-ios
+    value:           48E3248D-1BC2-393E-AC71-121609B8EE75
 install-name:    '/usr/lib/swift/libswiftMetalKit.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 1.2
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftMetalKit.dylib', '$ld$install_name$os10.1$@rpath/libswiftMetalKit.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftMetalKit.dylib', '$ld$install_name$os10.3$@rpath/libswiftMetalKit.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftMetalKit.dylib', '$ld$install_name$os11.1$@rpath/libswiftMetalKit.dylib', 

@@ -1,17 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 02FE4EE0-2AD8-392A-82C0-2B2968496356', 'armv7s: B7C116E6-BE1E-3571-8B56-0690CC899C67', 
-                   'arm64: C5EF1226-77D2-323A-ABCA-96CFEFA0648F', 'arm64e: F2D5B582-FC87-30C4-B986-F866A54E7A60' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2C1AA0FE-FDBC-3685-A25B-88C661130B0D
+  - target:          armv7s-ios
+    value:           9D8BF7E1-64E9-36A6-86AA-03A597B8B333
+  - target:          arm64-ios
+    value:           EF0F2A7B-A6E9-36AF-8936-E0DB17E323AC
+  - target:          arm64e-ios
+    value:           18A72FF0-8FD1-3E63-AB82-EBA5DCB4F1BE
 install-name:    '/usr/lib/libcupolicy.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN30cellular_usage_policy_client_sC1Ev, __ZN30cellular_usage_policy_client_sC2Ev, 
                        _cellular_usage_policy_copy_datausage_blacklist, _cellular_usage_policy_copy_for_bundle, 
                        _cellular_usage_policy_create_client, _cellular_usage_policy_destroy_client, 
                        _cellular_usage_policy_get_bundle_from_policy, _cellular_usage_policy_get_data_allowed_from_policy, 
                        _cellular_usage_policy_is_data_allowed_for_bundle, _cellular_usage_policy_set_changed_handler ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _network_usage_policy_create_client, _network_usage_policy_destroy_client, 
                        _network_usage_policy_get_WiFi_data_allowed_from_policy, _network_usage_policy_get_bundle_from_policy, 
                        _network_usage_policy_get_cell_data_allowed_from_policy, _network_usage_policy_get_datausage_policies, 

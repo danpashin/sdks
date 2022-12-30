@@ -8,6 +8,8 @@
 #import <MediaPlayer/MediaPlayerDefines.h>
 #import <Foundation/Foundation.h>
 
+MP_API(ios(3.0), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @protocol MPMediaPlayback
 
 // Prepares the current queue for playback, interrupting any active (non-mixible) audio sessions.
@@ -42,4 +44,4 @@
 
 // Posted when the prepared state changes of an object conforming to the MPMediaPlayback protocol changes.
 // This supersedes MPMoviePlayerContentPreloadDidFinishNotification.
-MP_EXTERN NSString * const MPMediaPlaybackIsPreparedToPlayDidChangeNotification MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0)) MP_PROHIBITED(tvos);
+MP_EXTERN NSString * const MPMediaPlaybackIsPreparedToPlayDidChangeNotification MP_DEPRECATED("Use AVPlayerViewController in AVKit.", ios(3.2, 9.0));

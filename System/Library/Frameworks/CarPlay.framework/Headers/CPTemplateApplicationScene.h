@@ -25,13 +25,38 @@ API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos, watchos, tvos)
  of this window.
  
  @note The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+ 
+ @note This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
  */
-- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene didConnectInterfaceController:(CPInterfaceController *)interfaceController toWindow:(CPWindow *)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene
+   didConnectInterfaceController:(CPInterfaceController *)interfaceController
+                        toWindow:(CPWindow *)window;
+
+/**
+ The CarPlay screen has connected and is ready to present content.
+ 
+ Your app should create its view controller and assign it to the @c rootViewController property
+ of this window.
+ 
+ @note The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+  */
+- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene
+   didConnectInterfaceController:(CPInterfaceController *)interfaceController API_AVAILABLE(ios(14.0));
+
+/**
+ The CarPlay screen has disconnected.
+ 
+ @note This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
+ */
+- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene
+didDisconnectInterfaceController:(CPInterfaceController *)interfaceController
+                      fromWindow:(CPWindow *)window;
 
 /**
  The CarPlay screen has disconnected.
  */
-- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene didDisconnectInterfaceController:(CPInterfaceController *)interfaceController fromWindow:(CPWindow *)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene *)templateApplicationScene
+didDisconnectInterfaceController:(CPInterfaceController *)interfaceController API_AVAILABLE(ios(14.0));
 
 /**
  If your application posts a @c CPNavigationAlert while backgrounded, a notification banner may be presented to the user.

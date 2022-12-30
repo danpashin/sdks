@@ -54,14 +54,20 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SK
 - (void)cancelDownloads:(NSArray<SKDownload *> *)downloads API_AVAILABLE(ios(6.0), macos(10.8), watchos(6.2));
 
 // Observers are not retained.  The transactions array will only be synchronized with the server while the queue has observers.  This may require that the user authenticate.
-- (void)addTransactionObserver:(id <SKPaymentTransactionObserver>)observer API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
-- (void)removeTransactionObserver:(id <SKPaymentTransactionObserver>)observer API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
+- (void)addTransactionObserver:(id <SKPaymentTransactionObserver>)observer API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) NS_SWIFT_NAME(add(_:));
+- (void)removeTransactionObserver:(id <SKPaymentTransactionObserver>)observer API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) NS_SWIFT_NAME(remove(_:));
+
+// Array of transactionObservers that are available. Transaction observers are not retained.
+@property(nonatomic, readonly) NSArray <id <SKPaymentTransactionObserver>> *transactionObservers API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0));
 
 // Array of unfinished SKPaymentTransactions.  Only valid while the queue has observers.  Updated asynchronously.
 @property(nonatomic, readonly) NSArray<SKPaymentTransaction *> *transactions API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 // If StoreKit has called your SKPaymentQueueDelegate's "paymentQueueShouldShowPriceConsent:" method and you returned NO, you can use this method to show the price consent UI at a later time that is more appropriate for your app. If there is no pending price consent, this method will do nothing.
 - (void)showPriceConsentIfNeeded API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(tvos, macos, watchos);
+
+// Call this method to have StoreKit present a sheet enabling the user to redeem codes provided by your app.
+- (void)presentCodeRedemptionSheet API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos, macos, watchos);
 
 @end
 
@@ -96,9 +102,12 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SK
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedDownloads:(NSArray<SKDownload *> *)downloads API_AVAILABLE(ios(6.0), macos(10.8), watchos(6.2));
 
 // Sent when a user initiates an IAP buy from the App Store
-- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product NS_SWIFT_NAME(paymentQueue(_:shouldAddStorePayment:for:)) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst, watchos);
+- (BOOL)paymentQueue:(SKPaymentQueue *)queue shouldAddStorePayment:(SKPayment *)payment forProduct:(SKProduct *)product NS_SWIFT_NAME(paymentQueue(_:shouldAddStorePayment:for:)) API_AVAILABLE(ios(11.0), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos);
 
 - (void)paymentQueueDidChangeStorefront:(SKPaymentQueue *)queue API_AVAILABLE(ios(13.0), macos(10.15), watchos(6.2));
+
+// Sent when entitlements for a user have changed and access to the specified IAPs has been revoked.
+- (void)paymentQueue:(SKPaymentQueue *)queue didRevokeEntitlementsForProductIdentifiers:(NSArray<NSString *> *)productIdentifiers NS_SWIFT_NAME(paymentQueue(_:didRevokeEntitlementsForProductIdentifiers:)) API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0));
 
 @end
 

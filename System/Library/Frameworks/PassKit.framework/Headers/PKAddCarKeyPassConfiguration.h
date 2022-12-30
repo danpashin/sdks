@@ -7,11 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PKAddSecureElementPassConfiguration.h"
+#import <PassKit/PKAddSecureElementPassConfiguration.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos)
+API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos)
 @interface PKAddCarKeyPassConfiguration : PKAddSecureElementPassConfiguration
 
 - (instancetype)init;

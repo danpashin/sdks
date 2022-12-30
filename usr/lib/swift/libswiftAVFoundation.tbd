@@ -1,12 +1,35 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 9CB02590-A89F-32F3-9429-D6A9950E0780', 'armv7s: 97C513C9-24E7-3D99-88CD-6DA14DF95CE5', 
-                   'arm64: BA6F95C1-8444-3645-8C09-AC54E8D9F444', 'arm64e: 26882837-2437-31A1-AC87-957212D49C58' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           9CB02590-A89F-32F3-9429-D6A9950E0780
+  - target:          armv7s-ios
+    value:           97C513C9-24E7-3D99-88CD-6DA14DF95CE5
+  - target:          arm64-ios
+    value:           092E199E-70CD-3161-86CD-F50C12ABDCDD
+  - target:          arm64e-ios
+    value:           29FC5382-F4BC-3C84-99EB-83389A104841
 install-name:    '/usr/lib/swift/libswiftAVFoundation.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 1991.1.1
+swift-abi-version: 7
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSaySo8NSNumberCGvg', 
+                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
+                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSaySo8NSNumberCGvg', 
+                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
+                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo8NSNumberCGvg', 
+                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo8NSNumberCGvpMV', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo8NSNumberCGSgvg', 
+                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo8NSNumberCGSgvpMV', 
+                       '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSaySo8NSNumberCGvg', 
+                       '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
+                       '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB18CVPixelFormatTypesSayypGSgvg', 
+                       '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB18CVPixelFormatTypesSayypGSgvpMV', 
+                       '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvg', 
+                       '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvpMV' ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftAVFoundation.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftAVFoundation.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftAVFoundation.dylib', 
@@ -58,30 +81,18 @@ exports:
                        '_$sSo13CMTimeMappinga12AVFoundationE34_conditionallyBridgeFromObjectiveC_6resultSbSo7NSValueC_ABSgztFZ', 
                        '_$sSo13CMTimeMappinga12AVFoundationE36_unconditionallyBridgeFromObjectiveCyABSo7NSValueCSgFZ', 
                        '_$sSo13CMTimeMappingas21_ObjectiveCBridgeable12AVFoundationMc', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSaySo8NSNumberCGvg', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSays6UInt32VGvg', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE012availableRawB16PixelFormatTypesSays6UInt32VGvpMV', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSaySo8NSNumberCGvg', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSays6UInt32VGvg', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE09availableB16PixelFormatTypesSays6UInt32VGvpMV', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo0aF4ModeVGvg', 
                        '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo0aF4ModeVGvpMV', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo8NSNumberCGvg', 
-                       '_$sSo20AVCapturePhotoOutputC12AVFoundationE19supportedFlashModesSaySo8NSNumberCGvpMV', 
                        '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo0aF5SpaceVGvg', 
                        '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo0aF5SpaceVGvpMV', 
-                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo8NSNumberCGSgvg', 
-                       '_$sSo21AVCaptureDeviceFormatC12AVFoundationE20supportedColorSpacesSaySo8NSNumberCGSgvpMV', 
-                       '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSaySo8NSNumberCGvg', 
-                       '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSaySo8NSNumberCGvpMV', 
                        '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSays6UInt32VGvg', 
                        '_$sSo22AVCapturePhotoSettingsC12AVFoundationE016availablePreviewB16PixelFormatTypesSays6UInt32VGvpMV', 
                        '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB16PixelFormatTypesSays6UInt32VGvg', 
                        '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB16PixelFormatTypesSays6UInt32VGvpMV', 
-                       '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB18CVPixelFormatTypesSayypGSgvg', 
-                       '_$sSo24AVCaptureVideoDataOutputC12AVFoundationE09availableB18CVPixelFormatTypesSayypGSgvpMV', 
                        '_$sSo35AVCaptureSynchronizedDataCollectionC12AVFoundationE12makeIteratorAbCE0G0VyF', 
                        '_$sSo35AVCaptureSynchronizedDataCollectionC12AVFoundationE8IteratorV4nextSo0abC0CSgyF', 
                        '_$sSo35AVCaptureSynchronizedDataCollectionC12AVFoundationE8IteratorVMa', 
@@ -91,8 +102,6 @@ exports:
                        '_$sSo35AVCaptureSynchronizedDataCollectionCST12AVFoundationMc', 
                        '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSaySo7CGPointVGvg', 
                        '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSaySo7CGPointVGvpMV', 
-                       '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvg', 
-                       '_$sSo35AVMetadataMachineReadableCodeObjectC12AVFoundationE7cornersSayypGSgvpMV', 
                        '_$sSo6CMTimea12AVFoundationE19_bridgeToObjectiveCSo7NSValueCyF', 
                        '_$sSo6CMTimea12AVFoundationE26_forceBridgeFromObjectiveC_6resultySo7NSValueC_ABSgztFZ', 
                        '_$sSo6CMTimea12AVFoundationE34_conditionallyBridgeFromObjectiveC_6resultSbSo7NSValueC_ABSgztFZ', 

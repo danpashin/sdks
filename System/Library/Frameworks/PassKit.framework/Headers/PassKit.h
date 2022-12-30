@@ -53,6 +53,9 @@
 #if __has_include(<PassKit/PKAddPassesViewController.h>)
 #import <PassKit/PKAddPassesViewController.h>
 #endif
+#if __has_include(<PassKit/PKAddPaymentPassRequest.h>)
+#import <PassKit/PKAddPaymentPassRequest.h>
+#endif
 #if __has_include(<PassKit/PKAddPaymentPassViewController.h>)
 #import <PassKit/PKAddPaymentPassViewController.h>
 #endif
@@ -64,5 +67,41 @@
 #endif
 #if __has_include(<PassKit/PKDisbursementAuthorizationController.h>)
 #import <PassKit/PKDisbursementAuthorizationController.h>
+#endif
+#if __has_include(<PassKit/PKPaymentInformationEventExtension.h>)
+#import <PassKit/PKPaymentInformationEventExtension.h>
+#endif
+#if __has_include(<PassKit/PKBarcodeEventMetadataRequest.h>)
+#import <PassKit/PKBarcodeEventMetadataRequest.h>
+#endif
+#if __has_include(<PassKit/PKAddSecureElementPassViewController.h>)
+#import <PassKit/PKAddSecureElementPassViewController.h>
+#endif
+#if __has_include(<PassKit/PKAddSecureElementPassConfiguration.h>)
+#import <PassKit/PKAddSecureElementPassConfiguration.h>
+#endif
+#if __has_include(<PassKit/PKAddCarKeyPassConfiguration.h>)
+#import <PassKit/PKAddCarKeyPassConfiguration.h>
+#endif
+#if __has_include(<PassKit/PKPaymentMerchantSession.h>)
+#import <PassKit/PKPaymentMerchantSession.h>
+#endif
+#if __has_include(<PassKit/PKAddShareablePassConfiguration.h>)
+#import <PassKit/PKAddShareablePassConfiguration.h>
+#endif
+#if __has_include(<PassKit/PKIssuerProvisioningExtensionAuthorizationProviding.h>)
+#import <PassKit/PKIssuerProvisioningExtensionAuthorizationProviding.h>
+#endif
+#if __has_include(<PassKit/PKIssuerProvisioningExtensionHandler.h>)
+#import <PassKit/PKIssuerProvisioningExtensionHandler.h>
+#endif
+#if __has_include(<PassKit/PKIssuerProvisioningExtensionStatus.h>)
+#import <PassKit/PKIssuerProvisioningExtensionStatus.h>
+#endif
+#if __has_include(<PassKit/PKIssuerProvisioningExtensionPassEntry.h>)
+#import <PassKit/PKIssuerProvisioningExtensionPassEntry.h>
+#endif
+#if __has_include(<PassKit/PKIssuerProvisioningExtensionPaymentPassEntry.h>)
+#import <PassKit/PKIssuerProvisioningExtensionPaymentPassEntry.h>
 #endif
 #endif // TARGET_OS_IPHONE || TARGET_OS_OSX

@@ -2,7 +2,7 @@
 //  MPSMatrixRandom.h
 //  MPS
 //
-//  Created by Justin Voo on 5/1/19.
+//  Created on 5/1/19.
 //  Copyright © 2019 Apple. All rights reserved.
 //
 
@@ -25,7 +25,10 @@
     MPSMatrixRandomDistributionDefault    MPS_ENUM_AVAILABLE_STARTING( macos(10.15), ios(13), macCatalyst(13), tvos(13)) MPS_SWIFT_NAME(default) = 1U,
     
     // Generate uniformly distributed random floating point values in the interval [0, 1).
-    MPSMatrixRandomDistributionUniform    MPS_ENUM_AVAILABLE_STARTING( macos(10.15), ios(13), macCatalyst(13), tvos(13)) MPS_SWIFT_NAME(uniform) = 2U
+    MPSMatrixRandomDistributionUniform    MPS_ENUM_AVAILABLE_STARTING( macos(10.15), ios(13), macCatalyst(13), tvos(13)) MPS_SWIFT_NAME(uniform) = 2U,
+    
+    // Generate normally distributed random floating point values.
+    MPSMatrixRandomDistributionNormal       MPS_ENUM_AVAILABLE_STARTING(macos(11.0), ios(14), macCatalyst(14), tvos(14)) MPS_SWIFT_NAME(normal) = 3U
 };
 
 /*!
@@ -70,6 +73,32 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13), macCatalyst(13), tvos(13))
  */
 +(nonnull MPSMatrixRandomDistributionDescriptor*) uniformDistributionDescriptorWithMinimum: (float) minimum
                                                                                    maximum: (float) maximum;
+
+/*!
+ *@abstract Make a descriptor for a normal distribution of floating point values.
+ *@param    mean    The mean of the distribution
+ *@param    standardDeviation   The standard deviation of the distribution.
+ *
+ *@return   A valid MPSMatrixRandomDistribution object or nil if failure.
+ */
+ +(nonnull MPSMatrixRandomDistributionDescriptor*) normalDistributionDescriptorWithMean: (float) mean
+                                                                      standardDeviation: (float) standardDeviation
+MPS_AVAILABLE_STARTING(macos(11.0), ios(14), macCatalyst(14), tvos(14));
+
+/*!
+ *@abstract Make a descriptor for a truncated normal distribution of floating point values.
+ *@param    mean    The mean of the distribution
+ *@param    standardDeviation   The standard deviation of the distribution.
+ *@param    minimum The lower bound of the distribution
+ *@param    maximum The upper bound of the distribution
+ *
+ *@return   A valid MPSMatrixRandomDistribution object or nil if failure.
+ */
+ +(nonnull MPSMatrixRandomDistributionDescriptor*) normalDistributionDescriptorWithMean: (float) mean
+                                                                      standardDeviation: (float) standardDeviation
+                                                                                minimum: (float) minimum
+                                                                                maximum: (float) maximum
+MPS_AVAILABLE_STARTING(macos(11.0), ios(14), macCatalyst(14), tvos(14));
 
 /*!
  *  @abstract  Make a descriptor for a default distribution.

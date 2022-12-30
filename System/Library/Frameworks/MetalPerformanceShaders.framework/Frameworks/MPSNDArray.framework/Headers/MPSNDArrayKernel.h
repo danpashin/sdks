@@ -2,7 +2,7 @@
 //  MPSNDArrayMultiaryKernel.h
 //  MPSNDArray
 //
-//  Created by Ian Ollmann on 12/20/18.
+//  Created on 12/20/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -25,17 +25,20 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *              a convolution kernel) then this is the center of that region, rounded down, for
  *              each dimension.
  *  @param      sourceIndex   The index of the source MPSNDArray to which the list of offsets is applied */
--(MPSNDArrayOffsets) offsetsAtSourceIndex: (NSUInteger) sourceIndex;
+-(MPSNDArrayOffsets) offsetsAtSourceIndex: (NSUInteger) sourceIndex
+           MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @abstract   The edge mode used for each source NDArray
  *  @param      sourceIndex   The index of the source image
  *  @return     The MPSImageEdgeMode for that image */
--(MPSImageEdgeMode) edgeModeAtSourceIndex: (NSUInteger) sourceIndex;
+-(MPSImageEdgeMode) edgeModeAtSourceIndex: (NSUInteger) sourceIndex
+          MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @abstract   Get the diameters of the point spread function (PSF) in each dimension
  *  @param      sourceIndex     The MPSNDArrayMultiaryKernel source NDArray to which the kernel will be applied
  *  @return     A list of kernel diameters in each dimension */
--(MPSNDArraySizes) kernelSizesForSourceIndex: (NSUInteger) sourceIndex;
+-(MPSNDArraySizes) kernelSizesForSourceIndex: (NSUInteger) sourceIndex
+          MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @abstract   Return the downsampling ratio for the kernel in each dimension
  *  @discussion If the filter is a "backwards" filter such as a gradient filter
@@ -44,12 +47,14 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *  @param      sourceIndex The index of the source for which the strides apply
  *  @return     The strides from one destination sample to the next in each
  *              dimension of the corresponding source NDArray   */
--(MPSNDArrayOffsets) stridesForSourceIndex: (NSUInteger) sourceIndex;
+-(MPSNDArrayOffsets) stridesForSourceIndex: (NSUInteger) sourceIndex
+         MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @abstract   Get the kernel dilation rate for each dimension
  *  @param      sourceIndex The index of the source image for which this applies
  *  @return     The kernel dilation rate for each dimension. */
--(MPSNDArraySizes) dilationRatesForSourceIndex: (NSUInteger) sourceIndex;
+-(MPSNDArraySizes) dilationRatesForSourceIndex: (NSUInteger) sourceIndex
+        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @abstract   Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
  *  @discussion Default: MPSTemporaryImage.defaultAllocator  */
@@ -215,19 +220,22 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             each dimension.
  *             Default: 0,0,0...
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets offsets;
+@property (readonly, nonatomic)  MPSNDArrayOffsets offsets
+              MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  edgeMode
  *  @abstract  The edge mode used for a source NDArray
  *             Default: MPSImageEdgeModeZero
  */
-@property (readonly, nonatomic)  MPSImageEdgeMode edgeMode;
+@property (readonly, nonatomic)  MPSImageEdgeMode edgeMode
+              MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  kernelSizes
  *  @abstract  The diameters of the point spread function in each dimension for a source NDArray
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes kernelSizes;
+@property (readonly, nonatomic)  MPSNDArraySizes kernelSizes
+             MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  kernelStrides
  *  @abstract  If the filter is a "backwards" filter such as a gradient filter
@@ -235,13 +243,15 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             zeros are inserted in the result.
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets strides;
+@property (readonly, nonatomic)  MPSNDArrayOffsets strides
+            MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  dilationRate
  *  @abstract  The stride in each dimension from one PSF tap to an adjacent
  *             PSF tap. Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes dilationRates;
+@property (readonly, nonatomic)  MPSNDArraySizes dilationRates
+            MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 -(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device NS_DESIGNATED_INITIALIZER;
 
@@ -349,19 +359,22 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             each dimension.
  *             Default: 0,0,0...
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets primaryOffsets;
+@property (readonly, nonatomic)  MPSNDArrayOffsets primaryOffsets
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  primaryEdgeMode
  *  @abstract  The edge mode used for a source NDArray
  *             Default: MPSImageEdgeModeZero
  */
-@property (readonly, nonatomic)  MPSImageEdgeMode primaryEdgeMode;
+@property (readonly, nonatomic)  MPSImageEdgeMode primaryEdgeMode
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  primaryKernelSizes
  *  @abstract  The diameters of the point spread function in each dimension for a source NDArray
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes primaryKernelSizes;
+@property (readonly, nonatomic)  MPSNDArraySizes primaryKernelSizes
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  primaryStrides
  *  @abstract  If the filter is a "backwards" filter such as a gradient filter
@@ -369,13 +382,15 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             zeros are inserted in the result.
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets primaryStrides;
+@property (readonly, nonatomic)  MPSNDArrayOffsets primaryStrides
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  primaryDilationRate
  *  @abstract  The stride in each dimension from one PSF tap to an adjacent
  *             PSF tap. Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes primaryDilationRates;
+@property (readonly, nonatomic)  MPSNDArraySizes primaryDilationRates
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 
 /*! @property  secondaryOffsets
@@ -386,19 +401,22 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             each dimension.
  *             Default: 0,0,0...
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets secondaryOffsets;
+@property (readonly, nonatomic)  MPSNDArrayOffsets secondaryOffsets
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  secondaryEdgeMode
  *  @abstract  The edge mode used for a source NDArray
  *             Default: MPSImageEdgeModeZero
  */
-@property (readonly, nonatomic)  MPSImageEdgeMode secondaryEdgeMode;
+@property (readonly, nonatomic)  MPSImageEdgeMode secondaryEdgeMode
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  secondaryKernelSizes
  *  @abstract  The diameters of the point spread function in each dimension for a source NDArray
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes secondaryKernelSizes;
+@property (readonly, nonatomic)  MPSNDArraySizes secondaryKernelSizes
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  secondaryStrides
  *  @abstract  If the filter is a "backwards" filter such as a gradient filter
@@ -406,13 +424,15 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.15), ios(13.0), macCatalyst(13.0), tvos(1
  *             zeros are inserted in the result.
  *             Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArrayOffsets secondaryStrides;
+@property (readonly, nonatomic)  MPSNDArrayOffsets secondaryStrides
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 /*! @property  secondaryDilationRate
  *  @abstract  The stride in each dimension from one PSF tap to an adjacent
  *             PSF tap. Default: 1
  */
-@property (readonly, nonatomic)  MPSNDArraySizes secondaryDilationRates;
+@property (readonly, nonatomic)  MPSNDArraySizes secondaryDilationRates
+                        MPS_AVAILABLE_STARTING_BUT_DEPRECATED(  "Use derived filter properties", macos(10.15, 11.0), ios(13.0, 14.0), tvos(13.0, 14.0));
 
 -(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device NS_DESIGNATED_INITIALIZER;
 

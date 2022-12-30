@@ -9,12 +9,13 @@
 
 typedef NS_ENUM(NSInteger, INAddMediaMediaDestinationUnsupportedReason) {
     INAddMediaMediaDestinationUnsupportedReasonPlaylistNameNotFound = 1,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
+    INAddMediaMediaDestinationUnsupportedReasonPlaylistNotEditable API_AVAILABLE(ios(14.0), watchos(7.0)) API_UNAVAILABLE(macos),
+} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INAddMediaMediaDestinationResolutionResult : INMediaDestinationResolutionResult
 
 + (instancetype)unsupportedForReason:(INAddMediaMediaDestinationUnsupportedReason)reason NS_SWIFT_NAME(unsupported(forReason:));

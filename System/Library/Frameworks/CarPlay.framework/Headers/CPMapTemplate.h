@@ -78,6 +78,13 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 - (void)showTripPreviews:(NSArray<CPTrip *> *)tripPreviews textConfiguration:(nullable CPTripPreviewTextConfiguration *)textConfiguration;
 
 /**
+* Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip options,
+* such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
+* limited to 12. Optionally provide a CPTrip object from the list of trips to be selected when initially presented.
+*/
+- (void)showTripPreviews:(NSArray<CPTrip *> *)tripPreviews selectedTrip:(nullable CPTrip *)selectedTrip textConfiguration:(nullable CPTripPreviewTextConfiguration *)textConfiguration API_AVAILABLE(ios(14.0));
+
+/**
  * Display the route choices for a single trip. Trip previews can appear over an active navigation session.
  */
 - (void)showRouteChoicesPreviewForTrip:(CPTrip *)tripPreview textConfiguration:(nullable CPTripPreviewTextConfiguration *)textConfiguration;

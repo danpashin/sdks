@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: FAA31BF0-1FE1-32CE-A10B-D8559996EDD5', 'arm64e: 45FEAF38-2593-35BD-A396-D688423F6899' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           4BED7C06-A10C-3A75-90B6-166E97E8035A
+  - target:          arm64e-ios
+    value:           722E9752-25F2-3E74-9A39-407011251D96
 install-name:    '/System/Library/Frameworks/CoreHaptics.framework/CoreHaptics'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CHHapticDynamicParameterIDAudioAttackTimeControl, _CHHapticDynamicParameterIDAudioBrightnessControl, 
                        _CHHapticDynamicParameterIDAudioDecayTimeControl, _CHHapticDynamicParameterIDAudioPanControl, 
                        _CHHapticDynamicParameterIDAudioPitchControl, _CHHapticDynamicParameterIDAudioReleaseTimeControl, 

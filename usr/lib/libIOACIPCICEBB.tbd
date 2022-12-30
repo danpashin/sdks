@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: C3EA82CC-5EDA-39E8-9F36-39125401A6DC', 'arm64e: 9A951650-E990-34A3-B64C-BBB69987A2E2' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           97A7EC75-D1BB-351E-B20D-3D5BD9B6E030
+  - target:          arm64e-ios
+    value:           1D5D6207-ADB5-3EC6-8BFC-2F6EC16DC6FA
 install-name:    '/usr/lib/libIOACIPCICEBB.dylib'
-exports:         
-  - archs:           [ arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN17IOACIPCICEBBClass13timesyncAsyncEjjPvjPFvS0_iS0_ES0_, 
                        __ZN17IOACIPCICEBBClass17registerTimeEventEjPFvPviPS0_jES0_, 
                        __ZN17IOACIPCICEBBClass19deregisterTimeEventEjPFvPviES0_ ]

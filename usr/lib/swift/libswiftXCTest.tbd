@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C3DA1CDC-0B51-3BF3-8710-4BE5E435EFE7', 'armv7s: 003F8A5F-7CE3-33D3-A7EF-5A48392AEE3F', 
-                   'arm64: 3C4A9020-DF9F-3D34-A710-EB09F558861C', 'arm64e: 923469A4-36EF-379D-B2D5-48D94F3D1091' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C3DA1CDC-0B51-3BF3-8710-4BE5E435EFE7
+  - target:          armv7s-ios
+    value:           003F8A5F-7CE3-33D3-A7EF-5A48392AEE3F
+  - target:          arm64-ios
+    value:           265B5947-C2F1-3EF4-8851-B85D77BEFA38
+  - target:          arm64e-ios
+    value:           C32B330B-3A0C-3D7D-B933-3BCDA7BEBD1A
 install-name:    '/usr/lib/swift/libswiftXCTest.dylib'
 current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '_$s6XCTest12XCTAssertNil__4file4lineyypSgyKXK_SSyXKs12StaticStringVSutF', 
                        '_$s6XCTest13XCTAssertTrue__4file4lineySbyKXK_SSyXKs12StaticStringVSutF', 
                        '_$s6XCTest14XCTAssertEqual__8accuracy_4file4lineyxyKXK_xyKXKxSSyXKs12StaticStringVSutSFRzlF', 

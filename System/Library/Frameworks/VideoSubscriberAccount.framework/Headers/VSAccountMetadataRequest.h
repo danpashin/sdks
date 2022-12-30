@@ -21,6 +21,7 @@ VS_EXPORT API_AVAILABLE(ios(10.0), tvos(10.0)) API_UNAVAILABLE(macCatalyst)
 @interface VSAccountMetadataRequest : NSObject
 
 /// Identifies who is making the request.
+/// For use by applications using the SAML authentication scheme only.
 @property (nonatomic, copy, nullable) NSString *channelIdentifier;
 
 /// If non-empty, limits which account providers can respond to the request.

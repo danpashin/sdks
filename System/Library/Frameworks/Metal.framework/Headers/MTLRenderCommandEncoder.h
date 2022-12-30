@@ -529,13 +529,14 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @property tileWidth:
  @abstract The width of the tile for this render pass.
  */
-@property (readonly) NSUInteger tileWidth API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) NSUInteger tileWidth API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
+
 
 /*!
  @property tileHeight:
  @abstract The height of the tile for this render pass.
  */
-@property (readonly) NSUInteger tileHeight API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+@property (readonly) NSUInteger tileHeight API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /* Tile Resources */
 
@@ -543,73 +544,74 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @method setTileBytes:length:atIndex:
  @brief Set the data (by copy) for a given tile buffer binding point.  This will remove any existing MTLBuffer from the binding point.
  */
-- (void)setTileBytes:(const void *)bytes length:(NSUInteger)length atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileBytes:(const void *)bytes length:(NSUInteger)length atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileBuffer:offset:atIndex:
  @brief Set a global buffer for all tile shaders at the given bind point index.
  */
-- (void)setTileBuffer:(nullable id <MTLBuffer>)buffer offset:(NSUInteger)offset atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileBuffer:(nullable id <MTLBuffer>)buffer offset:(NSUInteger)offset atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileBufferOffset:atIndex:
  @brief Set the offset within the current global buffer for all tile shaders at the given bind point index.
  */
-- (void)setTileBufferOffset:(NSUInteger)offset atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileBufferOffset:(NSUInteger)offset atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileBuffers:offsets:withRange:
  @brief Set an array of global buffers for all tile shaders with the given bind point range.
  */
-- (void)setTileBuffers:(const id <MTLBuffer> __nullable [__nonnull])buffers offsets:(const NSUInteger [__nonnull])offsets withRange:(NSRange)range API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileBuffers:(const id <MTLBuffer> __nullable [__nonnull])buffers offsets:(const NSUInteger [__nonnull])offsets withRange:(NSRange)range API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileTexture:atIndex:
  @brief Set a global texture for all tile shaders at the given bind point index.
  */
-- (void)setTileTexture:(nullable id <MTLTexture>)texture atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileTexture:(nullable id <MTLTexture>)texture atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileTextures:withRange:
  @brief Set an array of global textures for all tile shaders with the given bind point range.
  */
-- (void)setTileTextures:(const id <MTLTexture> __nullable [__nonnull])textures withRange:(NSRange)range API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileTextures:(const id <MTLTexture> __nullable [__nonnull])textures withRange:(NSRange)range API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileSamplerState:atIndex:
  @brief Set a global sampler for all tile shaders at the given bind point index.
  */
-- (void)setTileSamplerState:(nullable id <MTLSamplerState>)sampler atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileSamplerState:(nullable id <MTLSamplerState>)sampler atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileSamplerStates:withRange:
  @brief Set an array of global samplers for all fragment shaders with the given bind point range.
  */
-- (void)setTileSamplerStates:(const id <MTLSamplerState> __nullable [__nonnull])samplers withRange:(NSRange)range API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileSamplerStates:(const id <MTLSamplerState> __nullable [__nonnull])samplers withRange:(NSRange)range API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setTileSamplerState:lodMinClamp:lodMaxClamp:atIndex:
  @brief Set a global sampler for all tile shaders at the given bind point index.
  */
-- (void)setTileSamplerState:(nullable id <MTLSamplerState>)sampler lodMinClamp:(float)lodMinClamp lodMaxClamp:(float)lodMaxClamp atIndex:(NSUInteger)index API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileSamplerState:(nullable id <MTLSamplerState>)sampler lodMinClamp:(float)lodMinClamp lodMaxClamp:(float)lodMaxClamp atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0), ios(11.0)) API_UNAVAILABLE(tvos);
+
 
 /*!
  @method setTileSamplerStates:lodMinClamps:lodMaxClamps:withRange:
  @brief Set an array of global samplers for all tile shaders with the given bind point range.
  */
-- (void)setTileSamplerStates:(const id <MTLSamplerState> __nullable [__nonnull])samplers lodMinClamps:(const float [__nonnull])lodMinClamps lodMaxClamps:(const float [__nonnull])lodMaxClamps withRange:(NSRange)range API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(macos, macCatalyst);
+- (void)setTileSamplerStates:(const id <MTLSamplerState> __nullable [__nonnull])samplers lodMinClamps:(const float [__nonnull])lodMinClamps lodMaxClamps:(const float [__nonnull])lodMaxClamps withRange:(NSRange)range API_AVAILABLE(ios(11.0), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method dispatchThreadsPerTile:
  @brief dispatch threads to perform a mid-render compute operation.
  */
-- (void)dispatchThreadsPerTile:(MTLSize)threadsPerTile API_UNAVAILABLE(tvos);
+- (void)dispatchThreadsPerTile:(MTLSize)threadsPerTile API_AVAILABLE(macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(tvos);
 
 /*!
  @method setThreadgroupMemoryLength:offset:atIndex:
  @brief Set the size of the threadgroup memory argument at the given bind point index and offset.
  */
-- (void)setThreadgroupMemoryLength:(NSUInteger)length offset:(NSUInteger)offset atIndex:(NSUInteger)index API_UNAVAILABLE(tvos);
+- (void)setThreadgroupMemoryLength:(NSUInteger)length offset:(NSUInteger)offset atIndex:(NSUInteger)index API_AVAILABLE(macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(tvos);
 
 
 /*!
@@ -714,5 +716,23 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 
 
 
+/*!
+ @method sampleCountersInBuffer:atSampleIndex:withBarrier:
+ @abstract Sample hardware counters at this point in the render encoder and
+ store the counter sample into the sample buffer at the specified index.
+ @param sampleBuffer The sample buffer to sample into
+ @param sampleIndex The index into the counter buffer to write the sample.
+ @param barrier Insert a barrier before taking the sample.  Passing
+ YES will ensure that all work encoded before this operation in the encoder is
+ complete but does not isolate the work with respect to other encoders.  Passing
+ NO will allow the sample to be taken concurrently with other operations in this
+ encoder.
+ In general, passing YES will lead to more repeatable counter results but
+ may negatively impact performance.  Passing NO will generally be higher performance
+ but counter results may not be repeatable.
+ */
+-(void)sampleCountersInBuffer:(id<MTLCounterSampleBuffer>)sampleBuffer
+                atSampleIndex:(NSUInteger)sampleIndex
+                  withBarrier:(BOOL)barrier API_AVAILABLE(macos(10.15), ios(14.0));
 @end
 NS_ASSUME_NONNULL_END

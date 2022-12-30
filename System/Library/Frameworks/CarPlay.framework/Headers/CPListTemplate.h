@@ -6,7 +6,7 @@
 //
 
 #import <CarPlay/CPBarButtonProviding.h>
-#import <CarPlay/CPListItem.h>
+#import <CarPlay/CPListItemTypes.h>
 #import <CarPlay/CPListSection.h>
 #import <CarPlay/CPTemplate.h>
 #import <Foundation/Foundation.h>
@@ -14,6 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol CPListTemplateDelegate;
+@class CPListItem;
 
 API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 @interface CPListTemplate : CPTemplate <CPBarButtonProviding>
@@ -30,7 +31,23 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /**
  The list template's delegate is informed of list selection events.
  */
-@property (nullable, nonatomic, weak) id<CPListTemplateDelegate> delegate;
+@property (nullable, nonatomic, weak) id<CPListTemplateDelegate> delegate API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem listItemHandler]", ios(12.0, 14.0));
+
+/**
+ The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
+ 
+ @note Your list template will display the first @c maximumItemCount items, across all sections.
+ Any items or sections beyond that limit will be trimmed.
+ */
+@property (nonatomic, class, readonly) NSUInteger maximumItemCount API_AVAILABLE(ios(14.0));
+
+/**
+ The maximum number of sections that may appear in a @c CPListTemplate.
+ 
+ @note Your list template will display the first @c maximumSectionCount sections.
+ Any sections beyond that limit will be trimmed.
+ */
+@property (nonatomic, class, readonly) NSUInteger maximumSectionCount API_AVAILABLE(ios(14.0));
 
 /**
  The sections displayed in this list.
@@ -48,9 +65,58 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
  */
 - (void)updateSections:(NSArray <CPListSection *> *)sections;
 
+/**
+ The number of sections currently displayed in this list template.
+ */
+@property (nonatomic, readonly) NSUInteger sectionCount API_AVAILABLE(ios(14.0));
+
+/**
+ The number of items currently displayed in this list template, across all sections.
+ */
+@property (nonatomic, readonly) NSUInteger itemCount API_AVAILABLE(ios(14.0));
+
+#pragma mark - Item Access
+
+/**
+ Return an @c NSIndexPath for the specified item, if it exists in any section
+ in this list template, or nil if not found.
+ */
+- (nullable NSIndexPath *)indexPathForItem:(id <CPListTemplateItem>)item API_AVAILABLE(ios(14.0));
+
+#pragma mark - Empty View
+
+/**
+ An optional array of strings, ordered from most to least preferred.
+ The variant strings should be provided as localized, displayable content.
+ The system will select the first variant that fits the available space.
+ 
+ If the list template does not contain any items (itemCount == 0), then
+ the template will display an empty view with a title and subtitle to indicate
+ that the template has no list items.
+ 
+ If the list template is updated to contain items, the empty view will be automatically
+ removed.
+ */
+@property (nonatomic, copy) NSArray<NSString *> *emptyViewTitleVariants API_AVAILABLE(ios(14.0));
+
+/**
+ An optional array of strings, ordered from most to least preferred.
+ The variant strings should be provided as localized, displayable content.
+ The system will select the first variant that fits the available space.
+ 
+ If the list template does not contain any items (itemCount == 0), then
+ the template will display an empty view with a title and subtitle to indicate
+ that the template has no list items.
+
+ If the list template is updated to contain items, the empty view will be automatically
+ removed.
+ */
+@property (nonatomic, copy) NSArray<NSString *> *emptyViewSubtitleVariants API_AVAILABLE(ios(14.0));
+
 @end
 
 API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
+API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem listItemHandler]", ios(12.0, 14.0))
 @protocol CPListTemplateDelegate <NSObject>
 
 /**

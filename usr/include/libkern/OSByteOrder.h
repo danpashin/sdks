@@ -37,6 +37,16 @@
 #define OSSwapConstInt32(x)     __DARWIN_OSSwapConstInt32(x)
 #define OSSwapConstInt64(x)     __DARWIN_OSSwapConstInt64(x)
 
+#if !defined(__DARWIN_OS_INLINE)
+# if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
+#        define __DARWIN_OS_INLINE static inline
+# elif defined(__MWERKS__) || defined(__cplusplus)
+#        define __DARWIN_OS_INLINE static inline
+# else
+#        define __DARWIN_OS_INLINE static __inline__
+# endif
+#endif
+
 #if defined(__GNUC__)
 
 #if   defined (__arm__) || defined(__arm64__)
@@ -61,7 +71,7 @@ enum {
 	OSBigEndian
 };
 
-OS_INLINE
+__DARWIN_OS_INLINE
 int32_t
 OSHostByteOrder(void)
 {
@@ -85,7 +95,7 @@ OSHostByteOrder(void)
 
 /* Functions for loading native endian values. */
 
-OS_INLINE
+__DARWIN_OS_INLINE
 uint16_t
 _OSReadInt16(
 	const volatile void               * base,
@@ -95,7 +105,7 @@ _OSReadInt16(
 	return *(volatile uint16_t *)((uintptr_t)base + byteOffset);
 }
 
-OS_INLINE
+__DARWIN_OS_INLINE
 uint32_t
 _OSReadInt32(
 	const volatile void               * base,
@@ -105,7 +115,7 @@ _OSReadInt32(
 	return *(volatile uint32_t *)((uintptr_t)base + byteOffset);
 }
 
-OS_INLINE
+__DARWIN_OS_INLINE
 uint64_t
 _OSReadInt64(
 	const volatile void               * base,
@@ -117,7 +127,7 @@ _OSReadInt64(
 
 /* Functions for storing native endian values. */
 
-OS_INLINE
+__DARWIN_OS_INLINE
 void
 _OSWriteInt16(
 	volatile void               * base,
@@ -128,7 +138,7 @@ _OSWriteInt16(
 	*(volatile uint16_t *)((uintptr_t)base + byteOffset) = data;
 }
 
-OS_INLINE
+__DARWIN_OS_INLINE
 void
 _OSWriteInt32(
 	volatile void               * base,
@@ -139,7 +149,7 @@ _OSWriteInt32(
 	*(volatile uint32_t *)((uintptr_t)base + byteOffset) = data;
 }
 
-OS_INLINE
+__DARWIN_OS_INLINE
 void
 _OSWriteInt64(
 	volatile void               * base,

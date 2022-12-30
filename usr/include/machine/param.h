@@ -32,7 +32,7 @@
 #define _BSD_MACHINE_PARAM_H_
 
 #if   defined (__arm__) || defined (__arm64__)
-#include "arm/param.h"
+#include <arm/param.h>
 #else
 #error architecture not supported
 #endif

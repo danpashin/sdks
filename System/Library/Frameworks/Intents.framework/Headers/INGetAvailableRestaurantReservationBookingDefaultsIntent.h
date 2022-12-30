@@ -16,7 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @interface INGetAvailableRestaurantReservationBookingDefaultsIntent : INIntent
 
 - (instancetype)initWithRestaurant:(nullable INRestaurant *)restaurant API_AVAILABLE(ios(11.0));
@@ -28,7 +28,7 @@ API_UNAVAILABLE(macosx, watchos)
 @class INGetAvailableRestaurantReservationBookingDefaultsIntentResponse;
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @protocol INGetAvailableRestaurantReservationBookingDefaultsIntentHandling <NSObject>
 
 /*!

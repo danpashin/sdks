@@ -2,7 +2,7 @@
 //  MPSCNNNormalization.h
 //  MPS
 //
-//  Created by Ian Ollmann on 8/21/16.
+//  Created on 8/21/16.
 //  Copyright © 2016 Apple. All rights reserved.
 //
 

@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: D5DC6E1C-A1D3-3532-9BB6-166691CF79C0', 'armv7s: 3B416DFC-5A88-333E-B7F4-271ACC895740', 
-                   'arm64: F9D1D113-34CF-3042-BC94-B52374812E76', 'arm64e: 36583A15-EFF3-38B3-8B15-12A338CE2797' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           8C7A3EC3-9B15-3484-B10A-5D9C14B7DFBB
+  - target:          armv7s-ios
+    value:           3E6A5869-36E8-3113-9589-163F9E791D78
+  - target:          arm64-ios
+    value:           957916B8-1973-33C0-95F7-B195BADCF739
+  - target:          arm64e-ios
+    value:           ED843CC3-86A3-3058-89AD-EF51643A5FC4
 install-name:    '/usr/lib/libcmph.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___cmph_dump, ___cmph_load, ___config_destroy, ___config_new, 
                        _bdz_config_destroy, _bdz_config_new, _bdz_config_set_b, _bdz_config_set_hashfuncs, 
                        _bdz_destroy, _bdz_dump, _bdz_load, _bdz_lookup_table, _bdz_new, 
@@ -71,7 +78,7 @@ exports:
                        _vqueue_print, _vqueue_remove, _vstack_destroy, _vstack_empty, 
                        _vstack_new, _vstack_pop, _vstack_push, _vstack_reserve, _vstack_size, 
                        _vstack_top ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _cmph_config_destroy, _cmph_config_new, _cmph_config_set_algo, 
                        _cmph_config_set_b, _cmph_config_set_graphsize, _cmph_config_set_hashfuncs, 
                        _cmph_config_set_keys_per_bin, _cmph_config_set_memory_availability, 

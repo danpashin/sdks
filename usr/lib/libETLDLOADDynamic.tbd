@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: E0C545EB-F18F-3D72-A7F4-3F2CFF014AD5', 'armv7s: 274D75DF-FFCB-3D12-8710-A86634D98E45', 
-                   'arm64: ADFB7F34-CBD1-30EB-BF8E-717205C05FDA', 'arm64e: 7BE496E7-C982-383C-976C-4B1114F78D53' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C3BAE804-87D6-3168-8EAA-87298CEB5FCA
+  - target:          armv7s-ios
+    value:           59563F15-B546-332F-A672-B8DB90C1A2B4
+  - target:          arm64-ios
+    value:           64897C27-ACA9-36AF-8C66-020C80BD27CC
+  - target:          arm64e-ios
+    value:           9E871131-125A-3266-AB6E-6ABBF03B4775
 install-name:    '/usr/lib/libETLDLOADDynamic.dylib'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ETLDLOADCommandCopyDebugDataField, _ETLDLOADCommandCreateChipIDRequest, 
                        _ETLDLOADCommandCreateGoRequest, _ETLDLOADCommandCreateMemoryDebugFastReadRequest, 
                        _ETLDLOADCommandCreateMemoryDebugInfoRequest, _ETLDLOADCommandCreateMemoryDebugReadRequest, 

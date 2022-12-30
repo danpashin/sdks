@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 2163CD8A-87D5-38C6-99A7-6674A75EAABC', 'armv7s: D9D29749-9FD0-38ED-A0A2-9D152FE74FD8', 
-                   'arm64: 7A72913A-A3FB-30B0-8E76-F17B60E21AB6', 'arm64e: 9064BFBC-1FCE-37D3-88F3-718CDAC3DD43' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E485AAE3-0146-383C-A9B8-F787F45A5DF4
+  - target:          armv7s-ios
+    value:           0B832430-3764-321F-BC6C-88138F58167E
+  - target:          arm64-ios
+    value:           3C34AB76-8CDB-312A-BA64-CB27EF9EC744
+  - target:          arm64e-ios
+    value:           43065732-FADA-371B-992A-B2B2C4624EBA
 install-name:    '/usr/lib/liblzma.5.dylib'
 current-version: 6.3
 compatibility-version: 6
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _lzma_5VersionNumber, _lzma_5VersionString, _lzma_alloc, _lzma_alone_decoder_init, 
                        _lzma_block_decoder_init, _lzma_block_encoder_init, _lzma_bufcpy, 
                        _lzma_check_finish, _lzma_check_init, _lzma_check_update, 
@@ -40,7 +47,7 @@ exports:
                        _lzma_simple_x86_decoder_init, _lzma_simple_x86_encoder_init, 
                        _lzma_stream_decoder_init, _lzma_stream_encoder_init, _lzma_strm_init, 
                        _tuklib_physmem ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _lzma_alone_decoder, _lzma_alone_encoder, _lzma_auto_decoder, 
                        _lzma_block_buffer_bound, _lzma_block_buffer_decode, _lzma_block_buffer_encode, 
                        _lzma_block_compressed_size, _lzma_block_decoder, _lzma_block_encoder, 

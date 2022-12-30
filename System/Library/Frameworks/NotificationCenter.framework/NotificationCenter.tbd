@@ -1,15 +1,22 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 8C3765C7-CDC5-3E2D-BF88-FB262D4898B8', 'armv7s: A808CACB-C12E-3A1C-8FBC-4CFF510C979D', 
-                   'arm64: B012C9AB-E050-3FD8-BC50-CA93BBD6EA7B', 'arm64e: 71D979CD-0DFE-3089-AAB4-CCC498EDD496' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           A04B04A4-8C70-3F7C-BE7A-5BD18FBEDCDF
+  - target:          armv7s-ios
+    value:           D2ED7121-4108-3F86-9EEA-4E71906ADBCC
+  - target:          arm64-ios
+    value:           5A25CBFC-DDD0-3EE3-8E75-8E3520C7D19A
+  - target:          arm64e-ios
+    value:           74CB4409-253A-38EC-9EBE-EBF8FABC23CA
 install-name:    '/System/Library/Frameworks/NotificationCenter.framework/NotificationCenter'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _NCExtensionItemUserInfoInitialLargestAvailableDisplayModeKey, 
                        _NCWidgetRowHeightDidChangeNotification ]
     objc-classes:    [ NCDataSourceManager, NCWidgetDataSource, NCWidgetDatum ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _NCAppLaunchOriginWidget, _NCExtensionItemUserInfoContainerIdentifierKey, 
                        _NCExtensionItemUserInfoDefaultMarginsKey, _NCExtensionItemUserInfoInitialActiveDisplayModeKey, 
                        _NCExtensionItemUserInfoInitialBoundsKey, _NCExtensionItemUserInfoInitialLayoutMarginsKey, 

@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 93A7E7AA-BADF-31AE-9A2C-09BCC1091ADE', 'armv7s: CEC06EE0-0EE1-3999-844E-3C9416A66404', 
-                   'arm64: D2712F0F-464A-3F3E-99ED-CBF8BFE0C286', 'arm64e: 78DE4C68-E45A-35A0-AD10-1D03B4743DED' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           E8481058-CF6B-3512-B56B-83126EEBE910
+  - target:          armv7s-ios
+    value:           886FBDBB-89EE-30C9-81B1-59961118CA1E
+  - target:          arm64-ios
+    value:           38DD74DE-263E-32C4-AA9F-98A5C1DBDF33
+  - target:          arm64e-ios
+    value:           E5492BB3-738F-3ECE-B684-6FE64D83AFEF
 install-name:    '/usr/lib/libCRFSuite.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _crfsuite_dictionary_create_instance ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _crf_content_copy, _crf_content_init, _crf_content_set, _crf_create_instance, 
                        _crf_data_append, _crf_data_finish, _crf_data_init, _crf_data_maxlength, 
                        _crf_data_totalitems, _crf_evaluation_init, _crf_item_append_content, 

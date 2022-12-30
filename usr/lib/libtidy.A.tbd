@@ -1,13 +1,26 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: B9324E4F-1770-3C15-BD4D-554726D367D2', 'armv7s: 2589FB0B-A6CA-3247-A2F5-931EFD9120F1', 
-                   'arm64: 86110E63-7A8D-34C5-808C-2CB36FD8EFB8', 'arm64e: 970E21E1-202B-334A-BA3A-17FF79992F90' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           6A3C6AF2-7A32-3D68-83CE-472F92F479BE
+  - target:          armv7s-ios
+    value:           CEED15AD-B328-313D-B08D-E70900C8096D
+  - target:          arm64-ios
+    value:           8239D997-FB4A-3C15-9AFC-2E38C0F48236
+  - target:          arm64e-ios
+    value:           18F088DD-4081-30F5-A01C-BF1265CFBAD1
 install-name:    '/usr/lib/libtidy.A.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
-    symbols:         [ ___gesf2, ___lesf2, ___ltsf2, ___nesf2 ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ ___gesf2, ___lesf2, ___ltsf2, ___nesf2, _tidyDocCleanAndRepair, 
+                       _tidyDocCreate, _tidyDocParseBuffer, _tidyDocParseFile, _tidyDocParseSource, 
+                       _tidyDocParseStdin, _tidyDocParseStream, _tidyDocParseString, 
+                       _tidyDocRelease, _tidyDocRunDiagnostics, _tidyDocSaveBuffer, 
+                       _tidyDocSaveFile, _tidyDocSaveSink, _tidyDocSaveStdout, _tidyDocSaveStream, 
+                       _tidyDocSaveString, _tidyDocStatus, _tidyNodeCMIsBlock, _tidyNodeCMIsEmpty, 
+                       _tidyNodeCMIsInline, _tidy_out ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _tidyAccessWarningCount, _tidyAttrFirst, _tidyAttrGetABBR, 
                        _tidyAttrGetALINK, _tidyAttrGetALT, _tidyAttrGetBGCOLOR, _tidyAttrGetById, 
                        _tidyAttrGetCHECKED, _tidyAttrGetCOLSPAN, _tidyAttrGetCONTENT, 
@@ -41,19 +54,13 @@ exports:
                        _tidyBufEndOfInput, _tidyBufFree, _tidyBufGetByte, _tidyBufInit, 
                        _tidyBufPopByte, _tidyBufPutByte, _tidyBufUngetByte, _tidyCleanAndRepair, 
                        _tidyConfigErrorCount, _tidyCreate, _tidyDetectedGenericXml, 
-                       _tidyDetectedHtmlVersion, _tidyDetectedXhtml, _tidyDocCleanAndRepair, 
-                       _tidyDocCreate, _tidyDocParseBuffer, _tidyDocParseFile, _tidyDocParseSource, 
-                       _tidyDocParseStdin, _tidyDocParseStream, _tidyDocParseString, 
-                       _tidyDocRelease, _tidyDocRunDiagnostics, _tidyDocSaveBuffer, 
-                       _tidyDocSaveFile, _tidyDocSaveSink, _tidyDocSaveStdout, _tidyDocSaveStream, 
-                       _tidyDocSaveString, _tidyDocStatus, _tidyErrorCount, _tidyErrorSummary, 
-                       _tidyFileExists, _tidyGeneralInfo, _tidyGetAppData, _tidyGetBody, 
-                       _tidyGetByte, _tidyGetChild, _tidyGetHead, _tidyGetHtml, _tidyGetNext, 
-                       _tidyGetNextOption, _tidyGetOption, _tidyGetOptionByName, 
+                       _tidyDetectedHtmlVersion, _tidyDetectedXhtml, _tidyErrorCount, 
+                       _tidyErrorSummary, _tidyFileExists, _tidyGeneralInfo, _tidyGetAppData, 
+                       _tidyGetBody, _tidyGetByte, _tidyGetChild, _tidyGetHead, _tidyGetHtml, 
+                       _tidyGetNext, _tidyGetNextOption, _tidyGetOption, _tidyGetOptionByName, 
                        _tidyGetOptionList, _tidyGetParent, _tidyGetPrev, _tidyGetRoot, 
                        _tidyInitInputBuffer, _tidyInitOutputBuffer, _tidyInitSink, 
                        _tidyInitSource, _tidyIsEOF, _tidyLoadConfig, _tidyLoadConfigEnc, 
-                       _tidyNodeCMIsBlock, _tidyNodeCMIsEmpty, _tidyNodeCMIsInline, 
                        _tidyNodeColumn, _tidyNodeGetId, _tidyNodeGetName, _tidyNodeGetText, 
                        _tidyNodeGetType, _tidyNodeHasText, _tidyNodeIsA, _tidyNodeIsADDRESS, 
                        _tidyNodeIsAPPLET, _tidyNodeIsAREA, _tidyNodeIsB, _tidyNodeIsBASE, 
@@ -94,5 +101,5 @@ exports:
                        _tidySetErrorFile, _tidySetErrorSink, _tidySetFreeCall, _tidySetInCharEncoding, 
                        _tidySetMallocCall, _tidySetOptionCallback, _tidySetOutCharEncoding, 
                        _tidySetPanicCall, _tidySetReallocCall, _tidySetReportFilter, 
-                       _tidyStatus, _tidyUngetByte, _tidyWarningCount, _tidy_out ]
+                       _tidyStatus, _tidyUngetByte, _tidyWarningCount ]
 ...

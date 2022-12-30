@@ -1,19 +1,32 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: D01C8E52-913D-31AB-BC58-87C371530301', 'arm64e: 1259CCA0-8DC4-3097-AB9B-C12608ED4184' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           86C6E2B0-0006-3B59-B442-5ED529786E20
+  - target:          arm64e-ios
+    value:           9AB98098-5F9F-3D75-8CAA-5B8E89C4A64E
 install-name:    '/usr/lib/libcryptex_core.dylib'
-current-version: 9.100.8
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    allowable-clients: [ cryptex, cryptexctl, cryptexd, cryptexd.development ]
-    symbols:         [ __cryptex_resource_type_agent, __cryptex_resource_type_bin, 
-                       __cryptex_resource_type_daemon, __cryptex_resource_type_framework, 
-                       __cryptex_resource_type_lib, __cryptex_resource_type_libexec, 
-                       __cryptex_resource_type_local, __cryptex_resource_type_man, 
-                       __cryptex_resource_type_share, _cryptex_create, _cryptex_index, 
-                       _cryptex_lookup_resource, _cryptex_resource_type_get, _cryptex_view_create, 
-                       _cryptex_view_desc_get, _cryptex_view_iterate_resources, _cryptex_view_lookup_resource, 
-                       _cryptex_view_open ]
+current-version: 84.0.1
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __cryptex_asset_type_c411, __cryptex_asset_type_cpxd, __cryptex_asset_type_im4m, 
+                       __cryptex_asset_type_ltrs, __cryptex_asset_type_root, __cryptex_base_alloc, 
+                       __cryptex_base_dealloc, _cryptex_activate, _cryptex_asset_array_destroy, 
+                       _cryptex_asset_copy, _cryptex_asset_destroy, _cryptex_asset_new, 
+                       _cryptex_asset_new_borrowed, _cryptex_asset_types, _cryptex_async, 
+                       _cryptex_core_attach_host, _cryptex_core_attach_signature, 
+                       _cryptex_core_create, _cryptex_core_get_asset, _cryptex_core_parse_hdiid, 
+                       _cryptex_core_set_asset, _cryptex_core_set_assets_from_directory, 
+                       _cryptex_core_unparse_hdiid, _cryptex_get_error, _cryptex_host_create, 
+                       _cryptex_init, _cryptex_magister_authenticate, _cryptex_magister_create, 
+                       _cryptex_scrivener_create, _cryptex_scrivener_read_signature, 
+                       _cryptex_scrivener_set_nonce, _cryptex_scrivener_sign, _cryptex_set_error, 
+                       _cryptex_set_target_object, _cryptex_set_target_queue, _cryptex_signature_create, 
+                       _cryptex_signature_write, _cryptex_target_async, _cryptex_version_compare, 
+                       _cryptex_version_destroy, _cryptex_version_new ]
 ...

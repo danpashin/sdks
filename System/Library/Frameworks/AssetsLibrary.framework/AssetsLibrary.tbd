@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: A2112573-051A-32CB-93EA-7A29CA21DD22', 'armv7s: 9579696C-A985-33B1-AD9F-56C0CFD680B0', 
-                   'arm64: 66B720BB-E3A3-3963-AD58-BB4CE1037400', 'arm64e: CDA757AA-ED5B-38F8-8D1A-DFA6CE8F7DE8' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           08A87C62-A963-3731-BB78-DED64C2962DF
+  - target:          armv7s-ios
+    value:           33615491-C047-3440-8FBE-96D1EFE829D3
+  - target:          arm64-ios
+    value:           2918C34D-50E7-3BC2-8B42-31627CC6D7B9
+  - target:          arm64e-ios
+    value:           E27B46F8-114F-3352-A7AF-D271BF2D9775
 install-name:    '/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ALAssetPropertyExternalUsageIntent ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ALAssetLibraryDeletedAssetGroupsKey, _ALAssetLibraryInsertedAssetGroupsKey, 
                        _ALAssetLibraryUpdatedAssetGroupsKey, _ALAssetLibraryUpdatedAssetsKey, 
                        _ALAssetPropertyAssetURL, _ALAssetPropertyDate, _ALAssetPropertyDuration, 

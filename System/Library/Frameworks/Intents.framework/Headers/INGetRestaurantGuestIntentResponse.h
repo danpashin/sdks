@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, INGetRestaurantGuestIntentResponseCode) {
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @interface INGetRestaurantGuestIntentResponse : INIntentResponse
 
 - (instancetype)initWithCode:(INGetRestaurantGuestIntentResponseCode)code userActivity:(nullable NSUserActivity *)userActivity NS_DESIGNATED_INITIALIZER;

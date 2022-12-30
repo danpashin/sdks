@@ -2,7 +2,7 @@
 //  MPSNNOptimizers.h
 //  MPSNeuralNetwork
 //
-//  Created by Dhruv Saksena on 2/15/18.
+//  Created on 2/15/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 
@@ -264,11 +264,11 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12
  *  @discussion The MPSNNOptimizerStochasticGradientDescent performs a gradient descent with an optional momentum Update
  *              RMSProp is also known as root mean square propagation.
  *
- *              useNestrov == NO:
+ *              useNesterov == NO:
  *                  m[t]     = momentumScale * m[t-1] + learningRate * g
  *                  variable = variable - m[t]
  *
- *              useNestrov == YES:
+ *              useNesterov == YES:
  *                  m[t]     = momentumScale * m[t-1] + g
  *                  variable = variable - (learningRate * (g + m[t] * momentumScale))
  *
@@ -289,11 +289,13 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12
  */
 @property (readonly, nonatomic) float momentumScale;
 
-/*! @property   useNestrovMomentum
- *  @abstract   Nestrov momentum is considered an improvement on the usual momentum update
+/*! @property   useNesterovMomentum
+ *  @abstract   Nesterov momentum is considered an improvement on the usual momentum update
  *  @discussion Default value is NO
+ *  @note       Maps to old useNestrovMomentum property
  *
  */
+@property (readonly, nonatomic) BOOL useNesterovMomentum MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
 @property (readonly, nonatomic) BOOL useNestrovMomentum;
 
 /*
@@ -318,12 +320,18 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12
  *
  *  @param      device                     The device on which the kernel will execute.
  *  @param      momentumScale              The momentumScale to update momentum for values array
- *  @param      useNestrovMomentum         Use the Nestrov style momentum update
+ *  @param      useNesterovMomentum         Use the Nesterov style momentum update
  *  @param      optimizerDescriptor        The optimizerDescriptor which will have a bunch of properties to be applied
  *
  *
  *  @return     A valid MPSNNOptimizerMomentum object or nil, if failure.
  */
+-(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
+                         momentumScale: (float) momentumScale
+                    useNesterovMomentum: (BOOL) useNesterovMomentum
+                   optimizerDescriptor: (nonnull MPSNNOptimizerDescriptor *) optimizerDescriptor
+MPS_AVAILABLE_STARTING(macos(11.0), ios(14.0), macCatalyst(14.0), tvos(14.0));
+
 -(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
                          momentumScale: (float) momentumScale
                     useNestrovMomentum: (BOOL) useNestrovMomentum
@@ -344,11 +352,11 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.14), ios(12.0), macCatalyst(13.0), tvos(12
  *  @discussion The following operations would be applied
  *
  *
- *              useNestrov == NO:
+ *              useNesterov == NO:
  *                  m[t]     = momentumScale * m[t-1] + learningRate * g
  *                  variable = variable - m[t]
  *
- *              useNestrov == YES:
+ *              useNesterov == YES:
  *                  m[t]     = momentumScale * m[t-1] + g
  *                  variable = variable - (learningRate * (g + m[t] * momentumScale))
  *
@@ -393,11 +401,11 @@ MPS_SWIFT_NAME(encode(commandBuffer:inputGradientMatrix:inputValuesMatrix:inputM
  *  @discussion The following operations would be applied
  *
  *
- *              useNestrov == NO:
+ *              useNesterov == NO:
  *                  m[t]     = momentumScale * m[t-1] + learningRate * g
  *                  variable = variable - m[t]
  *
- *              useNestrov == YES:
+ *              useNesterov == YES:
  *                  m[t]     = momentumScale * m[t-1] + g
  *                  variable = variable - (learningRate * (g + m[t] * momentumScale))
  *
@@ -432,11 +440,11 @@ MPS_SWIFT_NAME(encode(commandBuffer:convolutionGradientState:convolutionSourceSt
  *  @discussion The following operations would be applied
  *
  *
- *              useNestrov == NO:
+ *              useNesterov == NO:
  *                  m[t]     = momentumScale * m[t-1] + learningRate * g
  *                  variable = variable - m[t]
  *
- *              useNestrov == YES:
+ *              useNesterov == YES:
  *                  m[t]     = momentumScale * m[t-1] + g
  *                  variable = variable - (learningRate * (g + m[t] * momentumScale))
  *
@@ -471,11 +479,11 @@ MPS_SWIFT_NAME(encode(commandBuffer:batchNormalizationState:inputMomentumVectors
  *  @discussion The following operations would be applied
  *
  *
- *              useNestrov == NO:
+ *              useNesterov == NO:
  *                  m[t]     = momentumScale * m[t-1] + learningRate * g
  *                  variable = variable - m[t]
  *
- *              useNestrov == YES:
+ *              useNesterov == YES:
  *                  m[t]     = momentumScale * m[t-1] + g
  *                  variable = variable - (learningRate * (g + m[t] * momentumScale))
  *

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ARKit/ARConfiguration.h>
+#import <ARKit/ARGeoTrackingTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,6 +39,7 @@ typedef NS_OPTIONS(NSUInteger, ARSessionRunOptions) {
     
     /** The session will stop currently active tracked raycasts. */
     ARSessionRunOptionStopTrackedRaycasts     = (1 << 2),
+
     /** The session will reset scene reconstruction. */
     ARSessionRunOptionResetSceneReconstruction     = (1 << 3)
 } NS_SWIFT_NAME(ARSession.RunOptions);
@@ -66,7 +68,6 @@ API_AVAILABLE(ios(11.0))
  */
 @property (nonatomic, strong, nullable) dispatch_queue_t delegateQueue;
 
-
 /**
  The current frame of the session.
  */
@@ -76,7 +77,6 @@ API_AVAILABLE(ios(11.0))
  The configuration currently being used by the session.
  */
 @property (nonatomic, copy, nullable, readonly) ARConfiguration *configuration;
-
 
 
 /**
@@ -193,7 +193,25 @@ NS_SWIFT_NAME(createReferenceObject(transform:center:extent:completionHandler:))
  */
 - (void)updateWithCollaborationData:(ARCollaborationData *)collaborationData API_AVAILABLE(ios(13.0));
 
+#pragma mark - Geo Tracking
+
+
+/**
+ Converts a position in world coordinate system into latitude, longitude and altitude.
+ 
+ @discussion This method requires the session to be running a geo tracking configuration which is in state ARGeoTrackingStateLocalized.
+ 
+ @param position Position in world coordinate system to be converted.
+ @param completionHandler Completion handler to be called with the result. This handler is executed on the session's delegate queue. It has the parameters:
+        coordinate - Location coordinates.
+        altitude - Altitude.
+        error - Error if conversion is not available.
+ */
+- (void)getGeoLocationForPoint:(simd_float3)position completionHandler:(void (^)(CLLocationCoordinate2D coordinate, CLLocationDistance altitude, NSError * _Nullable error))completionHandler API_AVAILABLE(ios(14.0));
+
+
 @end
+
 
 #pragma mark - ARSessionObserver
 
@@ -277,6 +295,16 @@ API_AVAILABLE(ios(11.0))
  */
 - (void)session:(ARSession *)session didOutputCollaborationData:(ARCollaborationData *)data API_AVAILABLE(ios(13.0));
 
+
+/**
+ This is called when geo tracking status changes.
+
+ @param session The session being run.
+ @param geoTrackingStatus Latest geo tracking status.
+ */
+- (void)session:(ARSession *)session didChangeGeoTrackingStatus:(ARGeoTrackingStatus*)geoTrackingStatus API_AVAILABLE(ios(14.0));
+
+
 @end
 
 #pragma mark - ARSessionDelegate
@@ -318,7 +346,6 @@ API_AVAILABLE(ios(11.0))
  @param anchors An array of removed anchors.
  */
 - (void)session:(ARSession *)session didRemoveAnchors:(NSArray<__kindof ARAnchor*>*)anchors;
-
 
 @end
 

@@ -1,26 +1,36 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 3BE2296A-DA2B-3B27-AEB4-2C8E083317C3', 'armv7s: 75650D02-16AD-3B38-86DA-E67D76709F54', 
-                   'arm64: 7602EB30-DE1D-3996-8D0E-024450B58325', 'arm64e: 5AE40E01-A719-353A-A413-24D8911CEE27' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           1DC7C312-18DB-30A3-B251-216EAE2D6069
+  - target:          armv7s-ios
+    value:           7FD67720-2276-35D0-8D51-5C45E3C956F0
+  - target:          arm64-ios
+    value:           3A31EC8E-1C44-3DDC-AC3E-318F59C1308E
+  - target:          arm64e-ios
+    value:           19F1562F-E1C9-396E-BFA0-2151E41F0A89
 install-name:    '/System/Library/Frameworks/AVKit.framework/AVKit'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _AVKitErrorDomain, _AVKitMetadataIdentifierBrandIdentifier, 
                        _AVKitMetadataIdentifierExternalContentIdentifier, _AVKitMetadataIdentifierExternalUserProfileIdentifier, 
                        _AVKitMetadataIdentifierPlaybackProgress, _AVKitMetadataIdentifierServiceIdentifier, 
                        _AVKitMetadataIdentifieriTunesStoreIdentifier, _AVPictureInPictureControllerContentSourceKey, 
                        _AVPictureInPictureControllerDidStartNotification, _AVPictureInPictureControllerDidStopNotification, 
-                       _AVPictureInPictureControllerWillStartNotification, _AVPictureInPictureControllerWillStopNotification, 
-                       _AVPlayerItemAVKitDataDidChangeNotification ]
+                       _AVPictureInPictureControllerPlaybackStateDidChangeNotification, 
+                       _AVPictureInPictureControllerPlaybackStateIsPlayingKey, _AVPictureInPictureControllerWillStartNotification, 
+                       _AVPictureInPictureControllerWillStopNotification, _AVPlayerItemAVKitDataDidChangeNotification ]
     objc-classes:    [ AVAppStorePlayerView, AVBackgroundView, AVChapter, AVControlItem, 
                        AVEditBehavior, AVEditBehaviorContext, AVExternalPlaybackController, 
                        AVHomeIPCameraBehavior, AVHomeIPCameraBehaviorContext, AVHomeLoadingButtonControlItem, 
                        AVKeyValueChange, AVMediaSelectionViewController, AVMusicAppBehavior, 
                        AVMusicAppBehaviorContext, AVMutableValueTiming, AVNewsWidgetPlayerBehavior, 
                        AVNewsWidgetPlayerBehaviorContext, AVObservationController, 
-                       AVPictureInPictureController, AVPictureInPicturePlayerLayerView, 
-                       AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, 
-                       AVPlayerViewControllerCustomControlsView, AVRoutePickerView, 
-                       AVTimer, AVValueTiming, __AVPlayerLayerView ]
+                       AVPictureInPictureController, AVPictureInPictureControllerContentSource, 
+                       AVPictureInPictureIndicatorView, AVPictureInPicturePlayerLayerView, 
+                       AVPictureInPicturePrerollAttributes, AVPlayerController, AVPlayerControllerTimeResolver, 
+                       AVPlayerViewController, AVPlayerViewControllerCustomControlsView, 
+                       AVRoutePickerView, AVTimecode, AVTimecodeController, AVTimer, 
+                       AVValueTiming, __AVPlayerLayerView ]
 ...

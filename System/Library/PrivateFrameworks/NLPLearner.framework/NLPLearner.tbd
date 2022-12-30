@@ -1,13 +1,19 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/NLPLearner.framework/NLPLearner
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           450CE444-1592-3F7F-AFE2-177B7698DE36
+  - target:          arm64e-ios
+    value:           BD0C20C3-BD5B-3F08-889A-6DC09F2739E3
+install-name:    '/System/Library/PrivateFrameworks/NLPLearner.framework/NLPLearner'
+current-version: 34
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _trainMLPModelForDES ]
-    objc-classes:         [ PFLBackgroundRunner ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _trainMLPModelForDES ]
+    objc-classes:    [ PFLBackgroundRunner ]
 ...

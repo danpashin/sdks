@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: ACC4E1D3-8E7D-3DA5-80E1-D0F8241D9E1E', 'armv7s: 3C3216AD-12AB-3043-9F0F-04921852A0F6', 
-                   'arm64: FC2F3ABE-E76F-3DA5-9AC5-9D9CE6B880C0', 'arm64e: CBD40943-7515-3C04-A547-8E842E90490C' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           ACC4E1D3-8E7D-3DA5-80E1-D0F8241D9E1E
+  - target:          armv7s-ios
+    value:           3C3216AD-12AB-3043-9F0F-04921852A0F6
+  - target:          arm64-ios
+    value:           8763DDF6-5FE4-3B30-AE98-8624E01B958B
+  - target:          arm64e-ios
+    value:           173E7DC4-756B-36A6-A419-FA4D8B68C5DE
 install-name:    '/usr/lib/swift/libswiftCoreData.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 3
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftCoreData.dylib', '$ld$install_name$os10.1$@rpath/libswiftCoreData.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftCoreData.dylib', '$ld$install_name$os10.3$@rpath/libswiftCoreData.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftCoreData.dylib', '$ld$install_name$os11.1$@rpath/libswiftCoreData.dylib', 
@@ -245,6 +253,32 @@ exports:
                        '_$sSo15NSManagedObjectC7Combine010ObservableB08CoreDataMc', 
                        '_$sSo15NSManagedObjectC8CoreDataE16objectWillChange7Combine010ObservableB9PublisherCvg', 
                        '_$sSo15NSManagedObjectC8CoreDataE16objectWillChange7Combine010ObservableB9PublisherCvpMV', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE015didMergeChangesB15IDsNotificationSo18NSNotificationNameavgZ', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE07didSaveB15IDsNotificationSo18NSNotificationNameavgZ', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO011invalidatedB3IDsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO07deletedB3IDsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO07updatedB3IDsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO08insertedB3IDsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO09refreshedB3IDsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO14deletedObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO14updatedObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO15insertedObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO15queryGenerationyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO16refreshedObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO18invalidatedObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO21invalidatedAllObjectsyA2EmFWC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO8rawValueAESgSS_tcfC', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO8rawValueSSvg', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyO8rawValueSSvpMV', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyOMa', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyOMn', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyON', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyOSHACMc', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyOSQACMc', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE15NotificationKeyOSYACMc', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE26didSaveObjectsNotificationSo18NSNotificationNameavgZ', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE27willSaveObjectsNotificationSo18NSNotificationNameavgZ', 
+                       '_$sSo22NSManagedObjectContextC8CoreDataE28didChangeObjectsNotificationSo18NSNotificationNameavgZ', 
                        '_$sSo22NSManagedObjectContextC8CoreDataE5count3forSiSo14NSFetchRequestCyxG_tKSo0hI6ResultRzlF', 
                        '_$sSo22NSManagedObjectContextC8CoreDataE5fetchySayxGSo14NSFetchRequestCyxGKSo0gH6ResultRzlF', 
                        '__swift_FORCE_LOAD_$_swiftCoreData' ]

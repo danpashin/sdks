@@ -26,7 +26,7 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #if   defined (__arm__) || defined (__arm64__)
-#include "arm/_param.h"
+#include <arm/_param.h>
 #else
 #error architecture not supported
 #endif

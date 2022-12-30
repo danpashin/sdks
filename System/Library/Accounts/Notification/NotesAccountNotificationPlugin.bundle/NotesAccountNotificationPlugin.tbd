@@ -8,5 +8,7 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ NotesAccountNotificationPlugin ]
+    symbols:              [ _ICWidgetExtensionBundleIdentifier,
+                            _ICWidgetKindNote, _ICWidgetKindNotesFolder ]
+    objc-classes:         [ ICWidget, NotesAccountNotificationPlugin ]
 ...

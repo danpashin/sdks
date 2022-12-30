@@ -21,6 +21,3 @@
 #import <FileProvider/NSFileProviderActions.h>
 #import <FileProvider/NSFileProviderService.h>
 #import <FileProvider/NSFileProviderThumbnailing.h>
-#import <FileProvider/NSFileProviderMaterializedSet.h>
-#import <FileProvider/NSFileProviderRequest.h>
-#import <FileProvider/NSFileProviderItemDecoration.h>

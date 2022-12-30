@@ -33,6 +33,8 @@ HK_EXTERN NSString * const HKErrorDomain API_AVAILABLE(ios(8.0), watchos(2.0));
  @constant  HKErrorUserExitedWorkoutSession     User exited the application while a workout session was running.
  @constant  HKErrorRequiredAuthorizationDenied  The user has not granted the application authorization to access
                                                 required data types.
+ @constant  HKErrorNoData                       No data is available for the requested query and predicate, and so the
+                                                query's result could not be meaningfully computed.
  */
 typedef NS_ENUM(NSInteger, HKErrorCode) {
     HKNoError = 0,
@@ -46,6 +48,7 @@ typedef NS_ENUM(NSInteger, HKErrorCode) {
     HKErrorAnotherWorkoutSessionStarted     API_AVAILABLE(ios(9.0), watchos(2.0)),
     HKErrorUserExitedWorkoutSession         API_AVAILABLE(ios(9.0), watchos(2.0)),
     HKErrorRequiredAuthorizationDenied      API_AVAILABLE(ios(12.0), watchos(5.0)),
+    HKErrorNoData                           API_AVAILABLE(ios(14.0), watchos(7.0)),
 } API_AVAILABLE(ios(8.0), watchos(2.0));
 
 /*!
@@ -235,8 +238,20 @@ typedef NS_ENUM(NSInteger, HKCategoryValue) {
  @abstract      Specifies the kind of audio exposure event associated with the sample.
  */
 typedef NS_ENUM(NSInteger, HKCategoryValueAudioExposureEvent) {
-    HKCategoryValueAudioExposureEventLoudEnvironment = 1,
-} API_AVAILABLE(ios(13.0), watchos(6.0));
+    HKCategoryValueAudioExposureEventLoudEnvironment API_DEPRECATED_WITH_REPLACEMENT("HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit", ios(13.0, 14.0), watchos(6.0, 7.0)) = 1,
+} API_DEPRECATED_WITH_REPLACEMENT("HKCategoryValueEnvironmentalAudioExposureEvent", ios(13.0, 14.0), watchos(6.0, 7.0));
+
+/*!
+ @enum          HKCategoryValueEnvironmentalAudioExposureEvent
+ @abstract      Specifies the kind of environmental audio exposure event associated with the sample.
+
+ @constant      HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit          This constant defines environmental events associated
+                with the user being exposed to a loud environment during a short timespan.
+ */
+typedef NS_ENUM(NSInteger, HKCategoryValueEnvironmentalAudioExposureEvent) {
+    HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit = 1,
+} API_AVAILABLE(ios(14.0), watchos(7.0));
+
 
 /*!
  @enum          HKCategoryValueSeverity
@@ -248,7 +263,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueSeverity) {
     HKCategoryValueSeverityMild,
     HKCategoryValueSeverityModerate,
     HKCategoryValueSeveritySevere,
-} API_AVAILABLE(ios(13.6));
+} API_AVAILABLE(ios(13.6), watchos(7.0));
 
 /*!
  @enum          HKCategoryValueAppetiteChanges
@@ -259,7 +274,7 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAppetiteChanges) {
     HKCategoryValueAppetiteChangesNoChange,
     HKCategoryValueAppetiteChangesDecreased,
     HKCategoryValueAppetiteChangesIncreased,
-} API_AVAILABLE(ios(13.6));
+} API_AVAILABLE(ios(13.6), watchos(7.0));
 
 /*!
  @enum          HKCategoryValuePresence
@@ -268,6 +283,17 @@ typedef NS_ENUM(NSInteger, HKCategoryValueAppetiteChanges) {
 typedef NS_ENUM(NSInteger, HKCategoryValuePresence) {
     HKCategoryValuePresencePresent = 0,
     HKCategoryValuePresenceNotPresent,
-} API_AVAILABLE(ios(13.6));
+} API_AVAILABLE(ios(13.6), watchos(7.0));
+
+/*!
+ @enum          HKActivityMoveMode
+ @abstract      This enumerated type is used to represent the activity mode for the user's move ring.
+ @constant      HKActivityMoveModeActiveEnergy     User's move ring is updated from Active Energy Burned
+ @constant      HKActivityMoveModeAppleMoveTime    User's move ring is updated from Apple Move Time
+ */
+typedef NS_ENUM(NSInteger, HKActivityMoveMode) {
+    HKActivityMoveModeActiveEnergy = 1,
+    HKActivityMoveModeAppleMoveTime = 2,
+} API_AVAILABLE(ios(14.0), watchos(7.0));
 
 NS_ASSUME_NONNULL_END

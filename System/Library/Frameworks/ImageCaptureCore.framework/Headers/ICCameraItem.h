@@ -106,6 +106,14 @@ IMAGECAPTURE_EXTERN ICDownloadOption const ICDeleteAfterSuccessfulDownload IC_AV
 */
 IMAGECAPTURE_EXTERN ICDownloadOption const ICDownloadSidecarFiles IC_AVAILABLE(macos(10.4), ios(13.0));
 
+/*!
+  @const      ICTruncateAfterSuccessfulDownload
+  @discussion The value for this key should be an NSNumber object representing a boolean value. If this value is YES, and the file is a JPG converted from HEIC on device,
+  the padding will be stripped from the end of the file.  Note that the file size property of the ICCameraItem object will not be updated to reflect the newly truncated image.  This
+  option has no effect for images coming from devices without the ability to convert from HEIC to JPG.
+*/
+IMAGECAPTURE_EXTERN ICDownloadOption const ICTruncateAfterSuccessfulDownload IC_AVAILABLE(macos(11.0), ios(14.0));
+
 //----------------------------------------------------------------------------------------------------------------- ICCameraItem
 /*!
  @class ICCameraItem
@@ -241,33 +249,21 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 
 /*!
  @property thumbnailIfAvailable
- @abstract ￼Thumbnail for the item if one is readily available. If one is not readily available, accessing this property will
- send a message to the device requesting a thumbnail for the file. The delegate of the device will be notified via method
- "cameraDevice:didReceiveThumbnailForItem:", if this method is implemented on by the delegate.
- @note Execution of the delegate callback will occur on the main thread.
 */
 @property (nullable, readonly) CGImageRef thumbnailIfAvailable IC_DEPRECATED_WITH_REPLACEMENT(
-    "Use requestThumbnail, or requestThumbnailWithOptions:completion", macos(10.4,10.15));
+    "Use requestThumbnail, or requestThumbnailDataWithOptions:completion", macos(10.4,10.15));
 
 /*!
  @property largeThumbnailIfAvailable
- @abstract Large thumbnail for the item if one is readily available. If one is not readily available, accessing this property
- will send a message to the device requesting a thumbnail for the file. The delegate of the device will be notified via method
- "cameraDevice:didReceiveThumbnailForItem:", if this method is implemented on by the delegate.
- @note Execution of the delegate callback will occur on the main thread.
  */
 @property (nullable, readonly) CGImageRef largeThumbnailIfAvailable IC_DEPRECATED_WITH_REPLACEMENT(
-    "Use requestThumbnail, or requestThumbnailWithOptions:completion", macos(10.4, 10.15));
+    "Use requestThumbnail, or requestThumbnailDataWithOptions:completion", macos(10.4, 10.15));
 
 /*!
  @property metadataIfAvailable
- @abstract ￼Metadata for the file if one is readily available. If one is not readily available, accessing this property will
- send a message to the device requesting metadata for the file. The delegate of the device will be notified via method
- "cameraDevice:didReceiveMetadataForItem:", if this method is implemented on by the delegate.
- @note Execution of the delegate callback will occur on the main thread.
 */
 @property (nullable, readonly) NSDictionary<NSString*, id>* metadataIfAvailable IC_DEPRECATED_WITH_REPLACEMENT(
-    "Use requestMetadata for the delegate based API, or requestMetadataDictionaryWithOptions:completion", macos(10.4, 10.15));
+    "Use requestMetadata, or requestMetadataDictionaryWithOptions:completion", macos(10.4, 10.15));
 
 @end
 

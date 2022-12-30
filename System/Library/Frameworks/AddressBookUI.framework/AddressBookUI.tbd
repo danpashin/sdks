@@ -1,13 +1,22 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 48A08B91-0708-3A8E-8343-BED960D7731D', 'armv7s: 1972EBF6-17F3-37AD-9067-8004D9FF136E', 
-                   'arm64: F71E2229-EFA7-3A18-BE12-7A76218BE104', 'arm64e: 0D34383D-4B48-3D37-A518-C771CF81460E' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C51F5998-EEF2-330F-BE9E-BB88CD592222
+  - target:          armv7s-ios
+    value:           47BFF623-FFE3-3008-865F-412085BD110C
+  - target:          arm64-ios
+    value:           4C78FA6D-A9D8-3C77-B628-DAA1F19F74C0
+  - target:          arm64e-ios
+    value:           B4D7B9CD-0827-341A-A891-ACF594CAC696
 install-name:    '/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI'
 current-version: 33
-exports:         
-  - archs:           [ armv7, armv7s ]
-    re-exports:      [ '/System/Library/Frameworks/Contacts.framework/Contacts' ]
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    libraries:       [ '/System/Library/Frameworks/Contacts.framework/Contacts' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ABAccountIdentifierGlobal, _ABAccountIdentifierLocal, _ABAccountIdentifierSearchPrefix, 
                        _ABAccountPrimarySourceNameForPerson, _ABAccountSourceIsICloud, 
                        _ABAddressBookBundle, _ABAddressBookGetDefaultRotationContentSettings, 
@@ -186,7 +195,7 @@ exports:
                        ABUITextView._informParentOfContentSizeChange, ABUITextView._isHighlighted, 
                        ABUITextView._lastContentHeight, ABUITextView._parent, ABUITextView._pinnedCursorPosition, 
                        ABUITextView._savedTextColor, ABUITextView._shadowColor, ABUITextView._shadowOffset ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ABCreateStringWithAddressDictionary, _ABPersonBirthdayProperty, 
                        _ABPersonDatesProperty, _ABPersonDepartmentNameProperty, _ABPersonEmailAddressesProperty, 
                        _ABPersonFamilyNameProperty, _ABPersonGivenNameProperty, _ABPersonInstantMessageAddressesProperty, 

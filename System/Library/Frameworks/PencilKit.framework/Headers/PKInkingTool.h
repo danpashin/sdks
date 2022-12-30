@@ -2,11 +2,11 @@
 //  PKInkingTool.h
 //  PencilKit
 //
-//  Copyright © 2019 Apple. All rights reserved.
+//  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import <PencilKit/PencilKit.h>
 #import <PencilKit/PKTool.h>
+#import <PencilKit/PKInkType.h>
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
@@ -16,18 +16,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString * PKInkType NS_TYPED_ENUM API_AVAILABLE(ios(13.0)) NS_REFINED_FOR_SWIFT;
-API_AVAILABLE(ios(13.0)) FOUNDATION_EXPORT PKInkType const PKInkTypePen;
-API_AVAILABLE(ios(13.0)) FOUNDATION_EXPORT PKInkType const PKInkTypePencil;
-API_AVAILABLE(ios(13.0)) FOUNDATION_EXPORT PKInkType const PKInkTypeMarker;
 
+@class PKInk;
 
 /// A tool for drawing on a PKCanvasView.
 NS_REFINED_FOR_SWIFT
-API_AVAILABLE(ios(13.0))
+API_AVAILABLE(ios(13.0), macos(10.15))
 @interface PKInkingTool : PKTool
 
-/// Create a new ink, specifying its type, color, and width.
+/// Create a new inking tool, specifying its type, color, and width.
 ///
 /// @param type The type of ink.
 /// @param color The color of the ink.
@@ -37,7 +34,8 @@ API_AVAILABLE(ios(13.0))
 #else
 - (instancetype)initWithInkType:(PKInkType)type color:(NSColor *)color width:(CGFloat)width NS_DESIGNATED_INITIALIZER;
 #endif
-/// Create a new ink, specifying its type and color, using a default width.
+
+/// Create a new inking tool, specifying its type and color, using a default width.
 ///
 /// @param type The type of ink.
 /// @param color The color of the ink.
@@ -46,6 +44,12 @@ API_AVAILABLE(ios(13.0))
 #else
 - (instancetype)initWithInkType:(PKInkType)type color:(NSColor *)color;
 #endif
+
+/// Create a new inking tool for the provided ink.
+///
+/// @param ink The ink to use.
+/// @param width The width of stroke to create.
+- (instancetype)initWithInk:(PKInk *)ink width:(CGFloat)width API_AVAILABLE(ios(14.0));
 
 /// The default width for an ink of a type.
 + (CGFloat)defaultWidthForInkType:(PKInkType)inkType;
@@ -79,6 +83,9 @@ API_AVAILABLE(ios(13.0))
 
 /// The base width of the ink.
 @property (nonatomic, readonly) CGFloat width;
+
+/// The ink that this tool will create strokes with.
+@property (nonatomic, readonly) PKInk *ink API_AVAILABLE(ios(14.0));
 
 @end
 NS_ASSUME_NONNULL_END

@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 221F905D-A13F-378B-91C4-1C100FCE6804', 'armv7s: 63893D47-39D7-338F-9158-88A2B232CA8C', 
-                   'arm64: 9A3D7028-6DC7-36BD-ABF6-7DC632F1553A', 'arm64e: 4883FABE-077D-3701-A5CA-486B51D9FDDD' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           221F905D-A13F-378B-91C4-1C100FCE6804
+  - target:          armv7s-ios
+    value:           63893D47-39D7-338F-9158-88A2B232CA8C
+  - target:          arm64-ios
+    value:           F6B7A414-2160-3AD1-B853-5472F7EB6EAE
+  - target:          arm64e-ios
+    value:           42C9DB0E-9145-3AD0-B418-564B67D0556C
 install-name:    '/usr/lib/swift/libswiftSwiftOnoneSupport.dylib'
-current-version: 1103.2.25
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 1200.2.26
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftSwiftOnoneSupport.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftSwiftOnoneSupport.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftSwiftOnoneSupport.dylib', 

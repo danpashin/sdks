@@ -112,7 +112,7 @@ API_AVAILABLE(ios(11.0))
  @param types The types of results to search for.
  @return An array of all hit-test results sorted from nearest to farthest.
  */
-- (NSArray<ARHitTestResult *> *)hitTest:(CGPoint)point types:(ARHitTestResultType)types;
+- (NSArray<ARHitTestResult *> *)hitTest:(CGPoint)point types:(ARHitTestResultType)types API_DEPRECATED("Use raycasting", ios(11.0, 14.0));
 
 @end
 

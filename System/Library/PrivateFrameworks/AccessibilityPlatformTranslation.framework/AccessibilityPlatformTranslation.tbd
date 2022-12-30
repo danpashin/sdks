@@ -1,26 +1,25 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/AccessibilityPlatformTranslation.framework/AccessibilityPlatformTranslation
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           04DDB1E8-293F-33EF-AD9A-62C8DC577633
+  - target:          arm64e-ios
+    value:           AC069465-BED8-3699-A589-14CB2EDC34F9
+install-name:    '/System/Library/PrivateFrameworks/AccessibilityPlatformTranslation.framework/AccessibilityPlatformTranslation'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AXPConvertValue, _AXPCustomActionIdentifier,
-                            _AXPCustomActionName, _AXPCustomRotorDirection,
-                            _AXPCustomRotorName, _AXPCustomRotorSystemType,
-                            _AXPCustomRotorTargetElement,
-                            _AXPCustomRotorTargetRange, _AXPCustomRotorUUID,
-                            _AXPIsCatalyst,
-                            _AccessibilityPlatformTranslationVersionNumber,
-                            _AccessibilityPlatformTranslationVersionString,
-                            __AXPActionToString, __AXPAttributeToString,
-                            __AXPNotificationToString,
-                            __AXPSetPlatformVariantForUnitTesting ]
-    objc-classes:         [ AXPIOSPlatformElement, AXPTranslationObject,
-                            AXPTranslator, AXPTranslatorRequest,
-                            AXPTranslatorResponse, AXPTranslator_iOS,
-                            AXPiOSElementData ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _AXPConvertValue, _AXPCustomActionIdentifier, _AXPCustomActionName, 
+                       _AXPCustomRotorDirection, _AXPCustomRotorName, _AXPCustomRotorSystemType, 
+                       _AXPCustomRotorTargetElement, _AXPCustomRotorTargetRange, 
+                       _AXPCustomRotorUUID, _AXPIsCatalyst, _AXPIsiOSOnMac, _AXPNilOrEmptyString, 
+                       _AccessibilityPlatformTranslationVersionNumber, _AccessibilityPlatformTranslationVersionString, 
+                       __AXPActionToString, __AXPAttributeToString, __AXPNotificationToString ]
+    objc-classes:    [ AXPIOSPlatformElement, AXPTranslationObject, AXPTranslator, 
+                       AXPTranslatorRequest, AXPTranslatorResponse, AXPTranslator_iOS, 
+                       AXPiOSElementData ]
 ...

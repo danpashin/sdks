@@ -24,11 +24,11 @@ typedef NS_ENUM(NSInteger, MPMediaGrouping) {
     MPMediaGroupingGenre,
     MPMediaGroupingPlaylist,
     MPMediaGroupingPodcastTitle
-} MP_API(ios(3.0)) MP_PROHIBITED(tvos, macos, watchos);
+} MP_API(ios(3.0)) API_UNAVAILABLE(tvos, watchos, macos);
 
 // MPMediaQuery represents a collection of items or playlists determined by a chain of MPMediaPredicate objects.
 MP_API(ios(3.0))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaQuery : NSObject <NSSecureCoding, NSCopying>
 
 - (instancetype)initWithFilterPredicates:(nullable NSSet<MPMediaPredicate *> *)filterPredicates NS_DESIGNATED_INITIALIZER;
@@ -71,7 +71,7 @@ MP_PROHIBITED(tvos, macos, watchos)
 // See the concrete subclass MPMediaPropertyPredicate for filtering options.
 
 MP_API(ios(3.0))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaPredicate : NSObject <NSSecureCoding> {}
 @end
 
@@ -82,10 +82,10 @@ MP_PROHIBITED(tvos, macos, watchos)
 typedef NS_ENUM(NSInteger, MPMediaPredicateComparison) {
     MPMediaPredicateComparisonEqualTo,
     MPMediaPredicateComparisonContains
-} MP_API(ios(3.0)) MP_PROHIBITED(tvos, macos, watchos);
+} MP_API(ios(3.0)) API_UNAVAILABLE(tvos, watchos, macos);
 
 MP_API(ios(3.0))
-MP_PROHIBITED(tvos, macos, watchos)
+API_UNAVAILABLE(tvos, watchos, macos)
 @interface MPMediaPropertyPredicate : MPMediaPredicate
 
 + (MPMediaPropertyPredicate *)predicateWithValue:(nullable id)value forProperty:(NSString *)property; // comparisonType is MPMediaPredicateComparisonEqualTo
@@ -104,12 +104,16 @@ MP_PROHIBITED(tvos, macos, watchos)
 
 // Returns the item property for a given grouping type.
 // For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumPersistentID.
-+ (NSString *)persistentIDPropertyForGroupingType:(MPMediaGrouping)groupingType MP_API(ios(4.2));
++ (NSString *)persistentIDPropertyForGroupingType:(MPMediaGrouping)groupingType
+    MP_API(ios(4.2))
+    API_UNAVAILABLE(tvos, watchos, macos);
 
 // Returns the item property to determine a title for a given grouping type.
 // For example, [MPMediaItem titlePropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumTitle.
 // Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title "Greatest Hits" for multiple artists.
-+ (NSString *)titlePropertyForGroupingType:(MPMediaGrouping)groupingType MP_API(ios(4.2));
++ (NSString *)titlePropertyForGroupingType:(MPMediaGrouping)groupingType
+    MP_API(ios(4.2))
+    API_UNAVAILABLE(tvos, watchos, macos);
 
 @end
 

@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
  An object that describes a piece of data and its associated name and uniform type identifier.
  This data can either be stored in a file on disk, or in memory.
  */
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macosx, tvos)
-@interface INFile : NSObject
+API_AVAILABLE(ios(13.0), macos(11.0), watchos(6.0))
+API_UNAVAILABLE(tvos)
+@interface INFile : NSObject <NSSecureCoding>
 
 + (INFile *)fileWithData:(NSData *)data filename:(NSString *)filename typeIdentifier:(nullable NSString *)typeIdentifier;
 + (INFile *)fileWithFileURL:(NSURL *)fileURL filename:(nullable NSString *)filename typeIdentifier:(nullable NSString *)typeIdentifier;

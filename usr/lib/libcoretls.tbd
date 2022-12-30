@@ -1,14 +1,21 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 5240441D-6CEF-3C07-8EA4-2660B5B7FF44', 'armv7s: 75F36B87-B15F-3D0A-862F-10E0D0B4155A', 
-                   'arm64: 5359F6C7-65D7-30B1-871F-BFA52B77FEDA', 'arm64e: F3C38428-0AE2-32C6-8E54-5FF07531A5FC' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           38B8EEC4-291E-32B9-8090-39855DF2766E
+  - target:          armv7s-ios
+    value:           4CA638DD-A942-3B07-894A-F9F9D0053F6D
+  - target:          arm64-ios
+    value:           10F0A671-8F0F-3A79-BB12-7189648CA0FD
+  - target:          arm64e-ios
+    value:           8F025F8D-28D1-33BF-B7BF-FCD76119362B
 install-name:    '/usr/lib/libcoretls.dylib'
-current-version: 167
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 169
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___ssl_debug, _coretlsVersionNumber, _coretlsVersionString ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CipherSuiteCount, _CurvesCount, _KnownCipherSuites, _KnownCurves, 
                        _KnownSigAlgs, _SigAlgsCount, _Ssl3Callouts, _Tls12Callouts, 
                        _Tls1Callouts, _sslCipherSuiteGetKeyExchangeMethod, _sslCipherSuiteGetKeydataSize, 

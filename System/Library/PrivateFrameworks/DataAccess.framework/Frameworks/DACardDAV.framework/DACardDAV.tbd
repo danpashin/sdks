@@ -1,20 +1,22 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DACardDAV
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           A5096D8C-3F60-369E-9A12-F750482A9216
+  - target:          armv7s-ios
+    value:           F1CC6D91-C940-32B9-A0B7-3C5E41A62FF2
+  - target:          arm64-ios
+    value:           9E0E1ADC-38AF-32DD-B97C-09FBC64529C5
+  - target:          arm64e-ios
+    value:           75B092B0-E701-36CA-BD8E-48BC66D18309
+install-name:    '/System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DACardDAV'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _kDACardDAVAccountAltDSID, _kDACardDAVAccountAppleID,
-                            _kDACardDAVAccountDSID ]
-    objc-classes:         [ CardDAVAccount, CardDAVDelegateInfo,
-                            CardDAVDelegateManager, CardDAVLocalDBHelper,
-                            CardDAVPropertiesHelper, CardDAVVCardItem,
-                            CardDAVVCardItemABImplementation,
-                            CardDAVVCardItemCNImplementation,
-                            CardDAViCloudDelegateInfoProvider, DAABLegacyContact,
-                            DAABLegacyGroup, DAContactsContact, DAContactsGroup ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _kDACardDAVAccountAltDSID, _kDACardDAVAccountAppleID ]
+    objc-classes:    [ CardDAVAccount, CardDAVDelegateInfo, CardDAVDelegateManager, 
+                       CardDAVLocalDBHelper, CardDAVPropertiesHelper, CardDAVVCardItem, 
+                       CardDAVVCardItemABImplementation, CardDAVVCardItemCNImplementation, 
+                       CardDAViCloudDelegateInfoProvider, DAABLegacyContact, DAABLegacyGroup, 
+                       DAContactsContact, DAContactsGroup ]
 ...

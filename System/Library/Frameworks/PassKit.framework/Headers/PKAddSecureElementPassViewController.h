@@ -4,7 +4,10 @@
 //
 //  Copyright © 2020 Apple, Inc. All rights reserved.
 //
-#if TARGET_OS_IPHONE
+
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IOS
 
 #import <UIKit/UIKit.h>
 
@@ -14,10 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 @class PKAddSecureElementPassConfiguration;
 @class PKAddSecureElementPassViewController;
 
+API_AVAILABLE(ios(13.4))
 @protocol PKAddSecureElementPassViewControllerDelegate <NSObject>
 
 - (void)addSecureElementPassViewController:(PKAddSecureElementPassViewController *)controller
           didFinishAddingSecureElementPass:(nullable PKSecureElementPass *)pass
+                                     error:(nullable NSError *)error API_DEPRECATED("Use addSecureElementPassViewController:didFinishAddingSecureElementPasses:error: instead", ios(13.4, 14.0));
+
+- (void)addSecureElementPassViewController:(PKAddSecureElementPassViewController *)controller
+        didFinishAddingSecureElementPasses:(nullable NSArray<PKSecureElementPass *> *)passes
                                      error:(nullable NSError *)error;
 @end
 
@@ -35,4 +43,4 @@ API_AVAILABLE(ios(13.4))
 
 NS_ASSUME_NONNULL_END
 
-#endif // TARGET_OS_IPHONE
+#endif // TARGET_OS_IOS

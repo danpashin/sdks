@@ -240,6 +240,14 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
  */
 - (nullable HKWheelchairUseObject *)wheelchairUseWithError:(NSError **)error API_AVAILABLE(ios(10.0), watchos(3.0));
 
+/*!
+ @method        activityMoveModeWithError:
+ @abstract      Returns an object encapsulating the user's activity move mode
+ @discussion    Before calling this method, the application should request authorization to access objects with the
+                HKCharacteristicType identified by HKCharacteristicTypeIdentifierActivityMoveMode.
+ */
+- (nullable HKActivityMoveModeObject *)activityMoveModeWithError:(NSError **)error API_AVAILABLE(ios(14.0), watchos(7.0));
+
 @end
 
 @interface HKHealthStore (HKWorkout)

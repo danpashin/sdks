@@ -2,7 +2,7 @@
 //  MPSNDArrayTypes.h
 //  MPS
 //
-//  Created by Ian Ollmann on 12/20/18.
+//  Created on 12/20/18.
 //  Copyright © 2018 Apple. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  MPSCNNDropout.h
 //  MPS
 //
-//  Created by Anna Tikhonova on 9/7/17.
+//  Created on 9/7/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

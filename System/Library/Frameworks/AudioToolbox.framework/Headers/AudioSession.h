@@ -219,23 +219,23 @@ extern "C"
 #define kAudioSession_AudioRouteChangeKey_Reason    "OutputDeviceDidChange_Reason"
     
 	// CFString version of kAudioSession_AudioRouteChangeKey_Reason.  This is more convenient to use than the raw string version.
-	// Available in iOS 5.0 or greater          
-	extern const CFStringRef kAudioSession_RouteChangeKey_Reason                API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	// Available in iOS 5.0 or greater
+	extern const CFStringRef kAudioSession_RouteChangeKey_Reason                API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	// CFDictionary keys for kAudioSessionProperty_AudioRouteChange
 	// Available in iOS 5.0 or greater      
-	extern const CFStringRef   kAudioSession_AudioRouteChangeKey_PreviousRouteDescription  API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSession_AudioRouteChangeKey_CurrentRouteDescription   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_AudioRouteChangeKey_PreviousRouteDescription  API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_AudioRouteChangeKey_CurrentRouteDescription   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	// CFDictionary keys for kAudioSessionProperty_AudioRouteDescription    
 	// Available in iOS 5.0 or greater    
-	extern const CFStringRef   kAudioSession_AudioRouteKey_Inputs   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSession_AudioRouteKey_Outputs  API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_AudioRouteKey_Inputs   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_AudioRouteKey_Outputs  API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	// key(s) for the CFDictionary associated with each entry of the CFArrays returned by kAudioSession_AudioRouteKey_Inputs
 	// and kAudioSession_AudioRouteKey_Outputs.  
-	// Available in iOS 5.0 or greater        
-	extern const CFStringRef   kAudioSession_AudioRouteKey_Type     API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	// Available in iOS 5.0 or greater
+	extern const CFStringRef   kAudioSession_AudioRouteKey_Type     API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
     
     
 	/*!
@@ -253,12 +253,13 @@ extern "C"
 	 A microphone that is part of a Bluetooth Hands-Free Profile device
 	 @constant       kAudioSessionInputRoute_USBAudio
 	 A Universal Serial Bus input
-	 */    
-	extern const CFStringRef   kAudioSessionInputRoute_LineIn       API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSessionInputRoute_BuiltInMic   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSessionInputRoute_HeadsetMic   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSessionInputRoute_BluetoothHFP API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSessionInputRoute_USBAudio     API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	 */
+	extern const CFStringRef   kAudioSessionInputRoute_LineIn       API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSessionInputRoute_BuiltInMic   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSessionInputRoute_HeadsetMic   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSessionInputRoute_BluetoothHFP API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSessionInputRoute_USBAudio     API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+
     
 	/*!
 	 @enum           AudioSession route output types
@@ -284,24 +285,24 @@ extern "C"
 	 @constant       kAudioSessionOutputRoute_AirPlay
 	 Output on a remote Air Play device
 	 */
-	extern const CFStringRef kAudioSessionOutputRoute_LineOut           API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_Headphones        API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_BluetoothHFP      API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_BluetoothA2DP     API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_BuiltInReceiver   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_BuiltInSpeaker    API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_USBAudio          API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_HDMI              API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef kAudioSessionOutputRoute_AirPlay           API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_LineOut           API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_Headphones        API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_BluetoothHFP      API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_BluetoothA2DP     API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_BuiltInReceiver   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_BuiltInSpeaker    API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_USBAudio          API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_HDMI              API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef kAudioSessionOutputRoute_AirPlay           API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
     
 	// CFDictionary keys for kAudioSessionProperty_InputSources
-	extern const CFStringRef   kAudioSession_InputSourceKey_ID            API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSession_InputSourceKey_Description   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_InputSourceKey_ID            API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_InputSourceKey_Description   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	// CFDictionary keys for kAudioSessionProperty_OutputDestinations
-	extern const CFStringRef   kAudioSession_OutputDestinationKey_ID            API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
-	extern const CFStringRef   kAudioSession_OutputDestinationKey_Description   API_DEPRECATED("no longer supported", ios(5.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_OutputDestinationKey_ID            API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	extern const CFStringRef   kAudioSession_OutputDestinationKey_Description   API_DEPRECATED("no longer supported", ios(5.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos)  __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
     
     
 	//==================================================================================================
@@ -650,7 +651,7 @@ extern "C"
 						   CFStringRef                         inRunLoopMode, 
 						   AudioSessionInterruptionListener    inInterruptionListener, 
 						   void                                *inClientData)              
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionSetActive
@@ -665,7 +666,7 @@ extern "C"
 	 */
 	extern OSStatus
 	AudioSessionSetActive(              Boolean                             active)                     
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	//==================================================================================================
 #pragma mark    AudioSessionActivationFlags for AudioSessionSetActiveWithFlags
@@ -701,7 +702,7 @@ extern "C"
 	extern OSStatus
 	AudioSessionSetActiveWithFlags(     Boolean                             active,
 								   UInt32                              inFlags)                    
-	API_DEPRECATED("no longer supported", ios(4.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(4.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionGetProperty
@@ -725,7 +726,7 @@ extern "C"
 	AudioSessionGetProperty(            AudioSessionPropertyID              inID,
 							UInt32                              *ioDataSize,
 							void                                *outData)                   
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionSetProperty
@@ -748,7 +749,7 @@ extern "C"
 	AudioSessionSetProperty(            AudioSessionPropertyID              inID,
 							UInt32                              inDataSize,
 							const void                          *inData)                    
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionGetPropertySize
@@ -763,7 +764,7 @@ extern "C"
 	extern OSStatus
 	AudioSessionGetPropertySize(        AudioSessionPropertyID              inID,
 								UInt32                              *outDataSize)               
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionAddPropertyListener
@@ -786,7 +787,7 @@ extern "C"
 	AudioSessionAddPropertyListener(    AudioSessionPropertyID              inID,
                                     AudioSessionPropertyListener        inProc,
                                     void                                *inClientData)              
-	API_DEPRECATED("no longer supported", ios(2.0, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionRemovePropertyListener
@@ -795,7 +796,7 @@ extern "C"
 	 */
 	extern OSStatus
 	AudioSessionRemovePropertyListener(	AudioSessionPropertyID          inID)                           
-	API_DEPRECATED("no longer supported", ios(2.0, 2.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.0, 2.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 	/*!
 	 @function       AudioSessionRemovePropertyListener
@@ -820,7 +821,7 @@ extern "C"
 	AudioSessionRemovePropertyListenerWithUserData(	AudioSessionPropertyID          inID,
 												   AudioSessionPropertyListener    inProc,
 												   void                            *inClientData)              
-	API_DEPRECATED("no longer supported", ios(2.1, 7.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+	API_DEPRECATED("no longer supported", ios(2.1, 7.0), macCatalyst(14.0, 14.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 	
 #pragma mark -
 #pragma mark Deprecated

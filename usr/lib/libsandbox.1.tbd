@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 0C3B04A0-1A55-30B0-AB91-3A0B9BEF56DD', 'armv7s: D4CAF16C-69D0-39B8-B429-9F601E12A448', 
-                   'arm64: 7AF7EC71-432B-36AD-985C-F2100420EFB7', 'arm64e: A8B56CF0-6EC8-3A14-8200-681D1D0B3E3A' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           9628591F-F60F-3DBD-A52D-2CA6B7EA653B
+  - target:          armv7s-ios
+    value:           3E5F186A-2024-3091-A71A-71E765FA1BAC
+  - target:          arm64-ios
+    value:           18A398F1-5ACF-3F22-A42E-79D5A18E8D3A
+  - target:          arm64e-ios
+    value:           D21B9614-2042-3CC9-AFF0-CF0B1C987A5A
 install-name:    '/usr/lib/libsandbox.1.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _sandbox_set_trace_path ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _SANDBOX_BUILD_ID, ___crashreporter_info__, _sandbox_apply, 
                        _sandbox_apply_container, _sandbox_compile_entitlements, _sandbox_compile_file, 
                        _sandbox_compile_named, _sandbox_compile_string, _sandbox_container_paths_iterate_items, 

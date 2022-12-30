@@ -1,26 +1,28 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/ActivityRingsUI.framework/ActivityRingsUI
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           494E9EB0-F6B5-348C-ACB5-BA019A39DCA4
+  - target:          arm64e-ios
+    value:           E2003811-D3C3-3410-AB5F-9705567F1AC0
+install-name:    '/System/Library/PrivateFrameworks/ActivityRingsUI.framework/ActivityRingsUI'
+swift-abi-version: 7
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ARUIRingPercentageValueNoRing,
-                            _ActivityRingsUIFrameworkBundle,
-                            _ActivityRingsUIVersionNumber,
-                            _ActivityRingsUIVersionString ]
-    objc-classes:         [ ARUIAnimatableObject,
-                            ARUIAnimatableObjectPropertyAnimation,
-                            ARUIAnimatableProperty, ARUICGPointPropertyAnimation,
-                            ARUICelebration, ARUICelebrationFactory,
-                            ARUICountdownAnimator, ARUICountdownController,
-                            ARUICountdownDefaultTimeline, ARUICountdownTimeline,
-                            ARUICountdownView, ARUICountdownViewRenderer,
-                            ARUIFloatPropertyAnimation, ARUIMetricColors,
-                            ARUIRingGroupController, ARUIRingsImageFactory,
-                            ARUIRingsView, ARUIRingsViewRenderer, ARUISpriteSheet,
-                            ARUISpriteSheetFactory ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _ARUIRingPercentageValueNoRing, _ActivityRingsUIFrameworkBundle, 
+                       _ActivityRingsUIVersionNumber, _ActivityRingsUIVersionString ]
+    objc-classes:    [ ARUIAnimatableObject, ARUIAnimatableObjectPropertyAnimation, 
+                       ARUIAnimatableProperty, ARUICGPointPropertyAnimation, ARUICountdownAnimator, 
+                       ARUICountdownDefaultTimeline, ARUICountdownTimeline, ARUICountdownView, 
+                       ARUIFloatPropertyAnimation, ARUIManualAnimationSequencer, 
+                       ARUIMetricColors, ARUIRenderContext, ARUIRenderer, ARUIRing, 
+                       ARUIRingGroup, ARUIRingGroupAnimationState, ARUIRingGroupController, 
+                       ARUIRingGroupGlobalAnimationSequencer, ARUIRingsImageFactory, 
+                       ARUIRingsView, ARUIRingsViewRenderer, ARUISprite, ARUISpriteSheet, 
+                       ARUISpriteSheetFactory, ARUISpriteTexture, ARUISpritesParticleRenderer ]
 ...

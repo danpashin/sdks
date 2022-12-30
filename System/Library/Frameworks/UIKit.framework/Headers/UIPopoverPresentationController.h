@@ -65,7 +65,7 @@ UIKIT_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos) @interface UIPopoverP
 @property (nullable, nonatomic, copy) UIColor *backgroundColor;
 
 // Clients may wish to change the available area for popover display. The default implementation of this method always
-// returns insets which define 10 points from the edges of the display, and presentation of popovers always accounts
+// returns a system defined inset from the edges of the display, and presentation of popovers always accounts
 // for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0)
 // is always in the upper-left of the device. This may require insets to change on device rotation.
 @property (nonatomic, readwrite) UIEdgeInsets popoverLayoutMargins;

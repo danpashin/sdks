@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2018 Apple Inc. All rights reserved.
+ * Copyright (c) 2008-2020 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  *
@@ -297,6 +297,16 @@ extern const struct in6_addr in6addr_linklocal_allv2routers;
  */
 #define IN6_IS_ADDR_MULTICAST(a)        ((a)->s6_addr[0] == 0xff)
 
+#define IPV6_ADDR_MC_FLAGS(a)           ((a)->s6_addr[1] & 0xf0)
+
+#define IPV6_ADDR_MC_FLAGS_TRANSIENT            0x10
+#define IPV6_ADDR_MC_FLAGS_PREFIX               0x20
+#define IPV6_ADDR_MC_FLAGS_UNICAST_BASED        (IPV6_ADDR_MC_FLAGS_TRANSIENT | IPV6_ADDR_MC_FLAGS_PREFIX)
+
+#define IN6_IS_ADDR_UNICAST_BASED_MULTICAST(a)  \
+	(IN6_IS_ADDR_MULTICAST(a) &&            \
+	(IPV6_ADDR_MC_FLAGS(a) == IPV6_ADDR_MC_FLAGS_UNICAST_BASED))
+
 /*
  * Unique Local IPv6 Unicast Addresses (per RFC 4193)
  */
@@ -311,8 +321,9 @@ extern const struct in6_addr in6addr_linklocal_allv2routers;
 #define IN6_IS_ADDR_MC_NODELOCAL(a)     \
 	(IN6_IS_ADDR_MULTICAST(a) &&    \
 	(__IPV6_ADDR_MC_SCOPE(a) == __IPV6_ADDR_SCOPE_NODELOCAL))
-#define IN6_IS_ADDR_MC_LINKLOCAL(a)     \
-	(IN6_IS_ADDR_MULTICAST(a) &&    \
+#define IN6_IS_ADDR_MC_LINKLOCAL(a)                                             \
+	(IN6_IS_ADDR_MULTICAST(a) &&                                            \
+	(IPV6_ADDR_MC_FLAGS(a) != IPV6_ADDR_MC_FLAGS_UNICAST_BASED) &&          \
 	(__IPV6_ADDR_MC_SCOPE(a) == __IPV6_ADDR_SCOPE_LINKLOCAL))
 #define IN6_IS_ADDR_MC_SITELOCAL(a)     \
 	(IN6_IS_ADDR_MULTICAST(a) &&    \
@@ -369,9 +380,9 @@ extern const struct in6_addr in6addr_linklocal_allv2routers;
 #define IPV6_SOCKOPT_RESERVED1  3  /* reserved for future use */
 #endif /* (_POSIX_C_SOURCE && !_DARWIN_C_SOURCE) */
 #define IPV6_UNICAST_HOPS       4  /* int; IP6 hops */
-#define IPV6_MULTICAST_IF       9  /* __uint8_t; set/get IP6 multicast i/f  */
-#define IPV6_MULTICAST_HOPS     10 /* __uint8_t; set/get IP6 multicast hops */
-#define IPV6_MULTICAST_LOOP     11 /* __uint8_t; set/get IP6 mcast loopback */
+#define IPV6_MULTICAST_IF       9  /* u_int; set/get IP6 multicast i/f  */
+#define IPV6_MULTICAST_HOPS     10 /* int; set/get IP6 multicast hops */
+#define IPV6_MULTICAST_LOOP     11 /* u_int; set/get IP6 mcast loopback */
 #define IPV6_JOIN_GROUP         12 /* ip6_mreq; join a group membership */
 #define IPV6_LEAVE_GROUP        13 /* ip6_mreq; leave a group membership */
 

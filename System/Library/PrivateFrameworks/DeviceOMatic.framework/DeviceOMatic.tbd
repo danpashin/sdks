@@ -1,13 +1,17 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/DeviceOMatic.framework/DeviceOMatic
-current-version:       1
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C7CD91C1-9C76-3C94-8423-5886938BAA64
+  - target:          armv7s-ios
+    value:           0844D60A-CC6C-39F0-952D-BE7EE20CC88E
+  - target:          arm64-ios
+    value:           4042294C-1809-382A-879F-DAA8F0EDBE5A
+  - target:          arm64e-ios
+    value:           9C97E247-A703-3856-9BAC-129218F7EE8F
+install-name:    '/System/Library/PrivateFrameworks/DeviceOMatic.framework/DeviceOMatic'
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _DOMRegisterForMatching,
-                            _DOMServiceIsAttachedToRemovableDevice ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _DOMRegisterForMatching, _DOMServiceIsAttachedToRemovableDevice ]
 ...

@@ -13,8 +13,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(12.0), watchos(5.0))
-API_UNAVAILABLE(macosx, tvos)
+API_AVAILABLE(ios(12.0), watchos(5.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INMediaItem : NSObject <NSCopying, NSSecureCoding>
 
 - (instancetype)init NS_UNAVAILABLE;

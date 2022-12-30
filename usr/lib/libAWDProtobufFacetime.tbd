@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 3933EA26-39AF-3256-9E07-12CF2A043B06', 'armv7s: 61EA7F20-D298-37AF-A504-4BCA9C5A414C', 
-                   'arm64: 135F9D2F-F35B-3401-A23A-E7E8F7C3A3FD', 'arm64e: 1899C941-88B0-3D58-81A3-F5D76F8BD9D3' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           68F73649-C3D8-3DB2-83E6-3982A04CC498
+  - target:          armv7s-ios
+    value:           CB595720-E2A2-3824-B3C4-08FECAD850F5
+  - target:          arm64-ios
+    value:           3C7F522D-A6D0-370D-943D-90D4DF9788BE
+  - target:          arm64e-ios
+    value:           C5AC2913-2EEB-3B98-8B0A-002895235313
 install-name:    '/usr/lib/libAWDProtobufFacetime.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3awd7metrics12PLRHistogram21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics12PLRHistogram27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE, 
                        __ZN3awd7metrics12RTTHistogram21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
@@ -78,7 +85,7 @@ exports:
                        __ZNK3awd7metrics40FaceTimeAudioTierReport_AudioTierCounter24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE, 
                        __ZNK3awd7metrics41FaceTimeCallAggregatedReport_SegmentStats24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE, 
                        __ZNK3awd7metrics7RTStats24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE ]
-  - archs:           [ arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN3awd7metrics12PLRHistogram21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics12PLRHistogram27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
                        __ZN3awd7metrics12RTTHistogram21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
@@ -201,7 +208,7 @@ exports:
                        __ZNK3awd7metrics7RTStats24SerializeWithCachedSizesEPN20wireless_diagnostics6google8protobuf2io17CodedOutputStreamE, 
                        __ZTIN3awd7metrics21AvcSidecarVideoStreamE, __ZTSN3awd7metrics21AvcSidecarVideoStreamE, 
                        __ZTVN3awd7metrics21AvcSidecarVideoStreamE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3awd7metrics12PLRHistogram10SharedCtorEv, __ZN3awd7metrics12PLRHistogram10SharedDtorEv, 
                        __ZN3awd7metrics12PLRHistogram16default_instanceEv, __ZN3awd7metrics12PLRHistogram17default_instance_E, 
                        __ZN3awd7metrics12PLRHistogram17kNonceFieldNumberE, __ZN3awd7metrics12PLRHistogram21InitAsDefaultInstanceEv, 

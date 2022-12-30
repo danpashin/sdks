@@ -81,9 +81,9 @@ typedef NS_ENUM(NSUInteger, UIBackgroundFetchResult) {
 } API_AVAILABLE(ios(7.0));
 
 typedef NS_ENUM(NSInteger, UIBackgroundRefreshStatus) {
-    UIBackgroundRefreshStatusRestricted, //< unavailable on this system due to device configuration; the user cannot enable the feature
-    UIBackgroundRefreshStatusDenied,     //< explicitly disabled by the user for this application
-    UIBackgroundRefreshStatusAvailable   //< enabled for this application
+    UIBackgroundRefreshStatusRestricted, // unavailable on this system due to device configuration; the user cannot enable the feature
+    UIBackgroundRefreshStatusDenied,     // explicitly disabled by the user for this application
+    UIBackgroundRefreshStatusAvailable   // enabled for this application
 } API_AVAILABLE(ios(7.0), tvos(11.0));
     
 typedef NS_ENUM(NSInteger, UIApplicationState) {
@@ -380,7 +380,9 @@ typedef NSString * UIApplicationOpenURLOptionsKey NS_TYPED_ENUM;
 
 - (void)applicationShouldRequestHealthAuthorization:(UIApplication *)application API_AVAILABLE(ios(9.0));
 
-- (void)application:(UIApplication *)application handleIntent:(INIntent *)intent completionHandler:(void(^)(INIntentResponse *intentResponse))completionHandler API_AVAILABLE(ios(11.0));
+- (nullable id)application:(UIApplication *)application handlerForIntent:(INIntent *)intent API_AVAILABLE(ios(14.0));
+
+- (void)application:(UIApplication *)application handleIntent:(INIntent *)intent completionHandler:(void(^)(INIntentResponse *intentResponse))completionHandler API_DEPRECATED("Use application:handlerForIntent: instead", ios(11.0, 14.0));
 
 - (void)applicationDidEnterBackground:(UIApplication *)application API_AVAILABLE(ios(4.0));
 - (void)applicationWillEnterForeground:(UIApplication *)application API_AVAILABLE(ios(4.0));

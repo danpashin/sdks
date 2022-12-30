@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: E011C850-E7AD-3718-AE62-5AE2195A2682', 'armv7s: F84CC2C0-2D0D-3627-B948-1D46F0B531C8', 
-                   'arm64: 926AC7EE-1D93-3469-AA38-EEEF6F37031D', 'arm64e: 5CF98087-DB8B-39CA-83D2-FBCF665506B8' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           024409D4-0E3D-33B8-B698-7D3349EE19E2
+  - target:          armv7s-ios
+    value:           D7696FAC-A589-3E90-9261-31F8283C72E6
+  - target:          arm64-ios
+    value:           D6B72F38-9137-3221-BF90-81069FF098CC
+  - target:          arm64e-ios
+    value:           D0D539A6-6829-3FB2-91E8-1CFFFB33F2EF
 install-name:    '/usr/lib/libBBUpdaterDynamic.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _AMFDRAppendPermissionsString, _AMFDRCopyClientId, _AMFDRCopyDeviceKeys, 
                        _AMFDRCopyDisposableKeys, _AMFDRCopyUnderlyingDictionary, 
                        _AMFDRCreateInstanceString, _AMFDRCreateLocalPending, _AMFDRCreatePermissionsString, 
@@ -384,38 +391,38 @@ exports:
                        _kFDRTagStr_rvok, _kFDRTagStr_scfg, _kFDRTagStr_scrt, _kFDRTagStr_seal, 
                        _kFDRTagStr_secb, _kFDRTagStr_sei2, _kFDRTagStr_seid, _kFDRTagStr_sreq, 
                        _kFDRTagStr_trst, _kFDRTagStr_tsid, _kFDRTagStr_tst1, _kFDRTagStr_tst2 ]
-    weak-def-symbols: [ __ZTI14BBUEURRPMImage, __ZTI14BBUEURSBLImage, __ZTI15BBUEUROSBLImage, 
-                        __ZTIN5boost16exception_detail10clone_baseE, __ZTIN5boost9exceptionE, 
-                        __ZTINSt3__113__assoc_stateIbEE, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIPN5eUICC13ValidatePerso8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIPN5eUICC16AuthPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIPN5eUICC16InitPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIPN5eUICC20FinalizePersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTS14BBUEURRPMImage, __ZTS14BBUEURSBLImage, __ZTS15BBUEUROSBLImage, 
-                        __ZTSN5boost16exception_detail10clone_baseE, __ZTSN5boost9exceptionE, 
-                        __ZTSNSt3__113__assoc_stateIbEE, __ZTSNSt3__114default_deleteIN5eUICC13ValidatePerso8ResponseEEE, 
-                        __ZTSNSt3__114default_deleteIN5eUICC16AuthPersoSession8ResponseEEE, 
-                        __ZTSNSt3__114default_deleteIN5eUICC16InitPersoSession8ResponseEEE, 
-                        __ZTSNSt3__114default_deleteIN5eUICC20FinalizePersoSession8ResponseEEE, 
-                        __ZTSNSt3__114default_deleteINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEEEE, 
-                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC13ValidatePerso8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16AuthPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16InitPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC20FinalizePersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZTI14BBUEURRPMImage, __ZTI14BBUEURSBLImage, __ZTI15BBUEUROSBLImage, 
+                       __ZTIN5boost16exception_detail10clone_baseE, __ZTIN5boost9exceptionE, 
+                       __ZTINSt3__113__assoc_stateIbEE, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIPN5eUICC13ValidatePerso8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIPN5eUICC16AuthPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIPN5eUICC16InitPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIPN5eUICC20FinalizePersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTS14BBUEURRPMImage, __ZTS14BBUEURSBLImage, __ZTS15BBUEUROSBLImage, 
+                       __ZTSN5boost16exception_detail10clone_baseE, __ZTSN5boost9exceptionE, 
+                       __ZTSNSt3__113__assoc_stateIbEE, __ZTSNSt3__114default_deleteIN5eUICC13ValidatePerso8ResponseEEE, 
+                       __ZTSNSt3__114default_deleteIN5eUICC16AuthPersoSession8ResponseEEE, 
+                       __ZTSNSt3__114default_deleteIN5eUICC16InitPersoSession8ResponseEEE, 
+                       __ZTSNSt3__114default_deleteIN5eUICC20FinalizePersoSession8ResponseEEE, 
+                       __ZTSNSt3__114default_deleteINS_18basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC13ValidatePerso8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16AuthPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC16InitPersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIPN5eUICC20FinalizePersoSession8ResponseENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _BBUBootModeAsString, _BBUFSServerCopyDefaultDestination, 
                        _BBUFSServerCreate, _BBUFSServerFlush, _BBUFSServerFlushInProgress, 
                        _BBUFSServerParametersInit, _BBUFSServerPrepare, _BBUFSServerRelease, 
                        _BBUFSServerSetConfig, _BBUFSServerStart, _BBUFSServerStop, 
                        _BBUpdaterExecCommand, _BBUpdaterExtremeCreate, _BBUpdaterExtremeCreateWithError, 
                        _BBUpdaterExtremeCreateWithParams, _BBUpdaterExtremeCreateWithParamsWithError, 
-                       _BBUpdaterGetCommands, _BBUpdaterParametersInit, _BBUpdaterRegisterLogSink, 
-                       _BBUpdaterSetOptions, __ZN14BBUEnvironment8validateERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE ]
+                       _BBUpdaterGetCommands, _BBUpdaterParametersInit, _BBUpdaterRegisterGlobalLogSink, 
+                       _BBUpdaterRegisterLogSink, _BBUpdaterSetOptions, __ZN14BBUEnvironment8validateERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE ]
 ...

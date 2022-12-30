@@ -17,12 +17,12 @@ typedef NS_ENUM(NSInteger, INSearchForMediaIntentResponseCode) {
     INSearchForMediaIntentResponseCodeSuccess,
     INSearchForMediaIntentResponseCodeFailure,
     INSearchForMediaIntentResponseCodeFailureRequiringAppLaunch,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INSearchForMediaIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

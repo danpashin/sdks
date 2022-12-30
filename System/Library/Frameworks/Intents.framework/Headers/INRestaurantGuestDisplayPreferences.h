@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 API_AVAILABLE(ios(10.0))
-API_UNAVAILABLE(macosx, watchos)
+API_UNAVAILABLE(macos, watchos, tvos)
 @interface INRestaurantGuestDisplayPreferences : NSObject <NSSecureCoding, NSCopying>
 
 @property (NS_NONATOMIC_IOSONLY) BOOL nameFieldFirstNameOptional; // indicates whether first name field is marked optional, defaults to NO

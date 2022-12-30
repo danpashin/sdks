@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 1ABA0806-20F4-3D22-BF04-FCB9001DC9F3', 'armv7s: DFE649ED-4041-33A2-9F37-76690FCEAD9D', 
-                   'arm64: 61F4734F-4B17-3E22-83C0-EB4787FDD70A', 'arm64e: 9D65588C-43B5-3C2D-9C21-0A3C1285088B' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           9CD16A75-6979-384A-99E2-B4517CE955AF
+  - target:          armv7s-ios
+    value:           49C00C6F-F7A7-3018-89F0-72B8675F6EFF
+  - target:          arm64-ios
+    value:           0CBFDE51-3F69-3645-9F4A-E3EC535C3B23
+  - target:          arm64e-ios
+    value:           0130DA52-CF86-39A8-8D08-AFF7FAFE9F89
 install-name:    '/System/Library/Frameworks/SceneKit.framework/SceneKit'
-current-version: 540.9
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 555
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _C3DAnimationManagerContainsSceneTimeBasedAnimation, _C3DAnimationManagerIsEmpty, 
                        _C3DCopyInstanceVariables, _C3DCreateDataWithContentOfURL, 
                        _C3DCreateImageSourceWithURL, _C3DEngineContextSetRenderingOptionForKey, 
@@ -59,7 +66,7 @@ exports:
                        SCNPhysicsCustomField, SCNPhysicsDragField, SCNPhysicsLinearGravityField, 
                        SCNPhysicsMagneticField, SCNPhysicsNoiseField, SCNPhysicsRadialGravityField, 
                        SCNPhysicsSpringField, SCNPhysicsTurbulenceField, SCNPhysicsVortexField ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _C3DGetFileDecryptionCallbacks, _C3DSetFileDecryptionCallbacks, 
                        _SCNAnimationCommitOnCompletion, _SCNBindingValueTransformerKey, 
                        _SCNCaptureDeviceOutputConsumerOptionContainsAlpha, _SCNConsistencyElementIDErrorKey, 

@@ -8,21 +8,25 @@
 #import <Foundation/Foundation.h>
 #import <CoreTelephony/CoreTelephonyDefines.h>
 
+API_AVAILABLE_BEGIN(ios(12.0), watchos(5.0))
+
 typedef NS_ENUM(NSUInteger, CTCellularPlanProvisioningAddPlanResult) {
 	CTCellularPlanProvisioningAddPlanResultUnknown,
 	CTCellularPlanProvisioningAddPlanResultFail,
 	CTCellularPlanProvisioningAddPlanResultSuccess
 };
 
-CORETELEPHONY_EXTERN_CLASS
+CORETELEPHONY_EXTERN_CLASS 
+API_UNAVAILABLE(macos, tvos)
 @interface CTCellularPlanProvisioningRequest : NSObject<NSSecureCoding>
 
-@property (nonatomic, strong, nonnull)  NSString *address;
-@property (nonatomic, strong, nullable) NSString *matchingID;
-@property (nonatomic, strong, nullable) NSString *OID;
-@property (nonatomic, strong, nullable) NSString *confirmationCode;
-@property (nonatomic, strong, nullable) NSString *ICCID;
-@property (nonatomic, strong, nullable) NSString *EID;
+@property (nonatomic, strong, nonnull)  NSString *address           API_UNAVAILABLE(tvos, macosx);	
+@property (nonatomic, strong, nullable) NSString *matchingID        API_UNAVAILABLE(tvos, macosx);
+@property (nonatomic, strong, nullable) NSString *OID               API_UNAVAILABLE(tvos, macosx);
+@property (nonatomic, strong, nullable) NSString *confirmationCode  API_UNAVAILABLE(tvos, macosx);
+@property (nonatomic, strong, nullable) NSString *ICCID             API_UNAVAILABLE(tvos, macosx);
+@property (nonatomic, strong, nullable) NSString *EID               API_UNAVAILABLE(tvos, macosx);
 
 @end
+API_AVAILABLE_END
 

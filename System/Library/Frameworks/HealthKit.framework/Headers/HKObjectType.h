@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class HKCharacteristicType;
 @class HKCorrelationType;
 @class HKDocumentType;
+@class HKElectrocardiogramType;
 @class HKQuantityType;
 @class HKSeriesType;
 @class HKUnit;
@@ -47,6 +48,7 @@ HK_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0))
 + (HKWorkoutType *)workoutType;
 + (HKActivitySummaryType *)activitySummaryType API_AVAILABLE(ios(9.3), watchos(2.2));
 + (HKAudiogramSampleType *)audiogramSampleType API_AVAILABLE(ios(13.0), watchos(6.0));
++ (HKElectrocardiogramType *)electrocardiogramType API_AVAILABLE(ios(14.0), watchos(7.0));
 
 @end
 
@@ -173,6 +175,12 @@ HK_EXTERN API_AVAILABLE(ios(13.0), watchos(6.0))
 @interface HKAudiogramSampleType : HKSampleType
 @end
 
-
+/*!
+ @class    HKElectrocardiogramType
+ @abstract Represents an electrocardiogram sample.
+ */
+HK_EXTERN API_AVAILABLE(ios(14.0), watchos(7.0))
+@interface HKElectrocardiogramType : HKSampleType
+@end
 
 NS_ASSUME_NONNULL_END

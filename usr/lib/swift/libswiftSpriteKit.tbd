@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 4AB8412A-7B6B-38E9-973D-5F677F0BC9F1', 'armv7s: 95BC32D8-BB61-3D79-8DA4-F7DA28A9DFEF', 
-                   'arm64: 11A21905-A2D8-3FE4-87BA-9BE32D009043', 'arm64e: 546FE06A-6CB1-3B6C-B3C2-D3007AEC313E' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           4AB8412A-7B6B-38E9-973D-5F677F0BC9F1
+  - target:          armv7s-ios
+    value:           95BC32D8-BB61-3D79-8DA4-F7DA28A9DFEF
+  - target:          arm64-ios
+    value:           0845E75F-A6CC-3318-98A0-E1ECDFF62DEB
+  - target:          arm64e-ios
+    value:           4CDF2F23-723A-38C2-90A4-8B6CF641F6C0
 install-name:    '/usr/lib/swift/libswiftSpriteKit.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 1.1
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftSpriteKit.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftSpriteKit.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftSpriteKit.dylib', 
@@ -35,6 +43,7 @@ exports:
                        '_$sSo18SKWarpGeometryGridC9SpriteKitE26replacingBySourcePositions9positionsABSays5SIMD2VySfGG_tF', 
                        '_$sSo18SKWarpGeometryGridC9SpriteKitE31replacingByDestinationPositions9positionsABSays5SIMD2VySfGG_tF', 
                        '_$sSo18SKWarpGeometryGridC9SpriteKitE7columns4rows15sourcePositions011destinationI0ABSi_SiSays5SIMD2VySfGGAKtcfC', 
+                       '_$sSo18SKWarpGeometryGridC9SpriteKitE7columns4rows15sourcePositions011destinationI0ABSi_SiSays5SIMD2VySfGGAKtcfc', 
                        '_$sSo9SKTextureC9SpriteKitE25customPlaygroundQuickLooks01_efG0Ovg', 
                        '_$sSo9SKTextureC9SpriteKitE25customPlaygroundQuickLooks01_efG0OvpMV', 
                        '_$sSo9SKTextureCs30_CustomPlaygroundQuickLookable9SpriteKitMc', 

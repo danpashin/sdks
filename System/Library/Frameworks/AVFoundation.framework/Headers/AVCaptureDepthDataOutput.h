@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCapture/AVCaptureDepthDataOutput.h>)
 /*
     File:  AVCaptureDepthDataOutput.h
  
@@ -6,7 +7,6 @@
     Copyright 2016-2018 Apple Inc. All rights reserved.
 */
 
-#import <AVFoundation/AVMediaFormat.h>
 #import <AVFoundation/AVCaptureOutputBase.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -158,3 +158,7 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROH
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCapture/AVCaptureDepthDataOutput.h>
+#endif

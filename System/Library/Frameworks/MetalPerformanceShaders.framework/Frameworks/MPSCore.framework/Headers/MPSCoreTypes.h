@@ -213,8 +213,8 @@ typedef NS_ENUM(NSUInteger, MPSImageFeatureChannelFormat)
  *                                          Normalized values have range [0, 1.0] if unsigned and [-1,1] if signed.
  *                                          SNORM_TYPE_MIN is interpreted as SNORM_TYPE_MIN+1 per standard Metal rules.
  *
- *  @constant   MSPDataTypeFloat32      32-bit floating point (single-precision).
- *  @constant   MSPDataTypeFloat16      16-bit floating point (half-precision).  (IEEE-754-2008 float16 exchange format)
+ *  @constant   MPSDataTypeFloat32      32-bit floating point (single-precision).
+ *  @constant   MPSDataTypeFloat16      16-bit floating point (half-precision).  (IEEE-754-2008 float16 exchange format)
  *  @constant   MPSDataTypeInt8         Signed 8-bit integer.
  *  @constant   MPSDataTypeInt16        Signed 16-bit integer.
  *  @constant   MPSDataTypeUInt8        Unsigned 8-bit integer. Not normalized
@@ -418,6 +418,16 @@ extern const MTLRegion  MPSRectNoClip
     /*! @abstract   Return the device to use when making MPSKernel subclasses from the NSCoder */
     -(id <MTLDevice>) mpsMTLDevice;
 @end
+
+/*! An array of NSNumbers where dimension lengths provided by the user goes from slowest moving to fastest moving dimension.
+ *  This is same order as MLMultiArray in coreML and most frameworks in Python.
+ *  @code
+ *  A shape @[5, 4, 2] would mean fastest moving 0th dimension is one with size 2,
+ *  1st dimension is size 4 finally slowest moving 2nd dimension is size 5.
+ *  @endcode
+ */
+typedef NSArray<NSNumber*> MPSShape;
+
 
 #ifdef __cplusplus
 }

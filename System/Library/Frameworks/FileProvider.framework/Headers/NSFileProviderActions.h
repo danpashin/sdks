@@ -11,8 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString *NSFileProviderExtensionActionIdentifier NS_EXTENSIBLE_STRING_ENUM;
-
 /**
  This category encapsulates common user-driven actions on FileProvider's items.
  */
@@ -251,15 +249,6 @@ typedef NSString *NSFileProviderExtensionActionIdentifier NS_EXTENSIBLE_STRING_E
 - (void)setFavoriteRank:(nullable NSNumber *)favoriteRank
       forItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
       completionHandler:(void (^)(NSFileProviderItem _Nullable favoriteItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
-
-
-/**
- Perform a custom action identified by `actionIdentifier`, on items identified by
- `itemIdentifiers`.
-
- Custom actions are defined in the File Provider Extension's Info.plist.
- */
-- (NSProgress *)performActionWithIdentifier:(NSFileProviderExtensionActionIdentifier)actionIdentifier onItemsWithIdentifiers:(NSArray <NSFileProviderItemIdentifier> *)itemIdentifiers completionHandler:(void (^)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(performAction(with:onItemsWithIdentifiers:completionHandler:)) FILEPROVIDER_API_AVAILABILITY_V3;
 
 @end
 

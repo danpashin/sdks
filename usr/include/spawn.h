@@ -135,11 +135,17 @@ __BEGIN_DECLS
 int     posix_spawnattr_getbinpref_np(const posix_spawnattr_t * __restrict,
     size_t, cpu_type_t *__restrict, size_t *__restrict) __API_AVAILABLE(macos(10.5), ios(2.0)) __API_UNAVAILABLE(watchos, tvos);
 
+int     posix_spawnattr_getarchpref_np(const posix_spawnattr_t * __restrict,
+    size_t, cpu_type_t *__restrict, cpu_subtype_t *__restrict, size_t *__restrict) __API_AVAILABLE(macos(11.0), ios(14.0)) __API_UNAVAILABLE(watchos, tvos);
+
 int     posix_spawnattr_setauditsessionport_np(posix_spawnattr_t * __restrict,
     mach_port_t) __API_AVAILABLE(macos(10.6), ios(3.2));
 
 int     posix_spawnattr_setbinpref_np(posix_spawnattr_t * __restrict,
     size_t, cpu_type_t *__restrict, size_t *__restrict) __API_AVAILABLE(macos(10.5), ios(2.0)) __API_UNAVAILABLE(watchos, tvos);
+
+int     posix_spawnattr_setarchpref_np(posix_spawnattr_t * __restrict,
+    size_t, cpu_type_t *__restrict, cpu_subtype_t *__restrict, size_t *__restrict) __API_AVAILABLE(macos(11.0), ios(14.0)) __API_UNAVAILABLE(watchos, tvos);
 
 int     posix_spawnattr_setexceptionports_np(posix_spawnattr_t * __restrict,
     exception_mask_t, mach_port_t,
@@ -149,6 +155,8 @@ int     posix_spawnattr_setspecialport_np(posix_spawnattr_t * __restrict,
     mach_port_t, int) __API_AVAILABLE(macos(10.5), ios(2.0)) __API_UNAVAILABLE(watchos, tvos);
 
 int     posix_spawnattr_setsuidcredport_np(posix_spawnattr_t * __restrict, mach_port_t) __API_UNAVAILABLE(ios, macos);
+
+int     posix_spawnattr_setnosmt_np(const posix_spawnattr_t * __restrict attr) __API_AVAILABLE(macos(11.0));
 
 int     posix_spawn_file_actions_addinherit_np(posix_spawn_file_actions_t *,
     int) __API_AVAILABLE(macos(10.7), ios(4.3)) __API_UNAVAILABLE(watchos, tvos);

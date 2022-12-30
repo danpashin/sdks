@@ -12,19 +12,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MP_API(ios(10.3))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(10.3), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerControllerQueue : NSObject
 
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
+MP_INIT_UNAVAILABLE
 
 @property (nonatomic, copy, readonly) NSArray<MPMediaItem *> *items;
 
 @end
 
-MP_API(ios(10.3))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(10.3), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerControllerMutableQueue : MPMusicPlayerControllerQueue
 
 - (void)insertQueueDescriptor:(MPMusicPlayerQueueDescriptor *)queueDescriptor afterItem:(nullable MPMediaItem *)afterItem;
@@ -32,8 +31,8 @@ MP_PROHIBITED(tvos, watchos)
 
 @end
 
-MP_API(ios(10.3))
-MP_PROHIBITED(tvos, watchos)
+MP_API(ios(10.3), tvos(14.0))
+API_UNAVAILABLE(watchos, macos)
 @interface MPMusicPlayerApplicationController : MPMusicPlayerController
 
 - (void)performQueueTransaction:(void (^)(MPMusicPlayerControllerMutableQueue *queue))queueTransaction completionHandler:(void (^)(MPMusicPlayerControllerQueue *queue, NSError *_Nullable error))completionHandler;
@@ -41,6 +40,8 @@ MP_PROHIBITED(tvos, watchos)
 @end
 
 // Posted when the queue changes
-MP_EXTERN NSString * const MPMusicPlayerControllerQueueDidChangeNotification MP_PROHIBITED(tvos, watchos);
+MP_EXTERN NSString * const MPMusicPlayerControllerQueueDidChangeNotification
+    MP_API(ios(10.3), tvos(14.0))
+    API_UNAVAILABLE(watchos, macos);
 
 NS_ASSUME_NONNULL_END

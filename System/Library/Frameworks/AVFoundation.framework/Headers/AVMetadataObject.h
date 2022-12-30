@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCapture/AVMetadataObject.h>)
 /*
     File:  AVMetadataObject.h
  
@@ -508,3 +509,7 @@ API_AVAILABLE(macos(10.15), ios(7.0)) API_UNAVAILABLE(tvos, watchos)
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCapture/AVMetadataObject.h>
+#endif

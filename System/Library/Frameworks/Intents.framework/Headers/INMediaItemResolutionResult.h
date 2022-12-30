@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(12.0), watchos(5.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(12.0), watchos(5.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INMediaItemResolutionResult : INIntentResolutionResult
 
 // This resolution result is for when the app extension wants to tell Siri to proceed, with a given INMediaItem. The resolvedMediaItem can be different than the original INMediaItem. This allows app extensions to apply business logic constraints.

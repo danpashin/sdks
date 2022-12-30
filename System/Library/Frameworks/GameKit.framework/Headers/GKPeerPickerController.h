@@ -11,7 +11,7 @@
 
 #import <GameKit/GKSession.h>
 
-// This a not a Game Center feature. To support Game Center and online play, see GKMatchMatchmakerViewController.
+/// This a not a Game Center feature. To support Game Center and online play, see GKMatchMatchmakerViewController.
 @class GKPeerPickerController;
 
 /* Connection types
@@ -76,7 +76,7 @@ NS_CLASS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController from the Multipee
 
 /* The delegate receives notifications when the user interacts with the picker interface. If this property is nil, the picker is dismissed immediately if you try to show it.
  */
-@property(nonatomic, nullable, assign) id<GKPeerPickerControllerDelegate> delegate NS_DEPRECATED_IOS(3_0, 7_0) ;
+@property(nonatomic, nullable, weak) id<GKPeerPickerControllerDelegate> delegate NS_DEPRECATED_IOS(3_0, 7_0) ;
 
 /* Show the picker.
  */

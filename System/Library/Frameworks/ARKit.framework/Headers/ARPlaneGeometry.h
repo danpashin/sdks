@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <SceneKit/SCNGeometry.h>
 #import <simd/simd.h>
+#import <ARKit/ARSCNPlaneGeometry.h>
 
 @protocol MTLDevice;
 
@@ -64,30 +65,6 @@ API_AVAILABLE(ios(11.3))
 /** Unavailable */
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
-
-@end
-
-
-/**
- A SceneKit geometry representing a plane.
- */
-API_AVAILABLE(ios(11.3))
-@interface ARSCNPlaneGeometry : SCNGeometry
-
-/**
- Creates a new plane geometry using a Metal device.
- 
- @param device A Metal device.
- @return A new plane geometry.
- */
-+ (nullable instancetype)planeGeometryWithDevice:(id<MTLDevice>)device;
-
-/**
- Updates the geometry with the vertices of a plane geometry.
- 
- @param planeGeometry A plane geometry.
- */
-- (void)updateFromPlaneGeometry:(ARPlaneGeometry *)planeGeometry;
 
 @end
 

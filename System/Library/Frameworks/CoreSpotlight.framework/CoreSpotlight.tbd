@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C649DB42-6CD5-34F5-97EC-F665FB8C664C', 'armv7s: A88E8C87-0EA7-3AB3-8C1B-6110229754CF', 
-                   'arm64: 88EEDB73-1448-3CCB-9BCC-D3BA210F3682', 'arm64e: C8C9912D-80A4-3201-BEE8-3CED523C02C5' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           B83DB1C5-619A-36B0-9BC1-AF03E612C756
+  - target:          armv7s-ios
+    value:           0EB374A4-1F3E-32D2-9CE0-D16F24A201E9
+  - target:          arm64-ios
+    value:           89247D50-7DA8-3C64-8E1A-29268E910585
+  - target:          arm64e-ios
+    value:           BFB1328D-98C9-31B1-BAF7-9F1A229EBEE2
 install-name:    '/System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CSGetProtectionClassFromConnection, _MDItem, _MDItemIncomingCount, 
                        _MDItemOutgoingCount, _MurmurHash3_128, __CSDecodeObject, 
                        _defaultIdleTime, _defaultIdleTimeLeeway, _defaultMaximumBatchSize, 
@@ -22,7 +29,7 @@ exports:
                        _MDHTMLParsing.sourceCFEncoding, _MDHTMLParsing.sourceEncoding, 
                        _MDHTMLParsing.titleLength, _MDHTMLParsing.titleStart, _MDHTMLParsing.uniCharLen, 
                        _MDHTMLParsing.uniCharSize, _MDHTMLParsing.uniChars ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CSAccountTypeExchangeActiveSync, _CSAccountTypeExchangeWebServices, 
                        _CSAccountTypeIMAP, _CSAccountTypeLocal, _CSAccountTypePOP, 
                        _CSAccountTypeUnknown, _CSCoderClassNameForObject, _CSDecodeObject, 
@@ -68,11 +75,12 @@ exports:
                        _MDItemAudioEncodingApplication, _MDItemAudioSampleRate, _MDItemAudioTrackNumber, 
                        _MDItemAuthorAddresses, _MDItemAuthorContactIdentifiers, _MDItemAuthorContactProperties, 
                        _MDItemAuthorEmailAddresses, _MDItemAuthorPersons, _MDItemAuthors, 
-                       _MDItemAuthorsDictionary, _MDItemBackgroundRunnable, _MDItemBitsPerSample, 
-                       _MDItemBundleID, _MDItemBundleIdentifier, _MDItemCFBundleIdentifier, 
-                       _MDItemCalendarDelegateIdentifier, _MDItemCalendarHolidayIdentifier, 
-                       _MDItemCameraOwner, _MDItemCity, _MDItemClientBundleID, _MDItemClientExternalID, 
-                       _MDItemCodecs, _MDItemColorSpace, _MDItemComment, _MDItemCompletionDate, 
+                       _MDItemAuthorsDictionary, _MDItemAutocompleteTriggers, _MDItemBackgroundRunnable, 
+                       _MDItemBitsPerSample, _MDItemBundleID, _MDItemBundleIdentifier, 
+                       _MDItemCFBundleIdentifier, _MDItemCalendarDelegateIdentifier, 
+                       _MDItemCalendarHolidayIdentifier, _MDItemCameraOwner, _MDItemCity, 
+                       _MDItemClientBundleID, _MDItemClientExternalID, _MDItemCodecs, 
+                       _MDItemColorSpace, _MDItemComment, _MDItemCompletionDate, 
                        _MDItemComposer, _MDItemContactKeywords, _MDItemContainerDisplayName, 
                        _MDItemContainerIdentifier, _MDItemContainerOrder, _MDItemContainerTitle, 
                        _MDItemContentCreationDate, _MDItemContentCreationDate_Ranking, 
@@ -98,7 +106,7 @@ exports:
                        _MDItemFileProviderIsPinned, _MDItemFileProviderUserInfoKeys, 
                        _MDItemFileProviderUserInfoValues, _MDItemFileSize, _MDItemFilename, 
                        _MDItemFinderComment, _MDItemFlashOnOff, _MDItemFocalLength, 
-                       _MDItemFocalLength35mm, _MDItemFonts, _MDItemFullyFormattedAddress, 
+                       _MDItemFocalLength35mm, _MDItemFonts, _MDItemFullDay, _MDItemFullyFormattedAddress, 
                        _MDItemGPSAreaInformation, _MDItemGPSDOP, _MDItemGPSDateStamp, 
                        _MDItemGPSDestBearing, _MDItemGPSDestDistance, _MDItemGPSDestLatitude, 
                        _MDItemGPSDestLongitude, _MDItemGPSDifferental, _MDItemGPSMapDatum, 
@@ -122,12 +130,12 @@ exports:
                        _MDItemLabelIcon, _MDItemLabelKind, _MDItemLabelUUID, _MDItemLanguages, 
                        _MDItemLastEditorIdentifier, _MDItemLastEditorName, _MDItemLastUsedDate, 
                        _MDItemLastUsedDate_Ranking, _MDItemLatitude, _MDItemLaunchString, 
-                       _MDItemLayerNames, _MDItemLensModel, _MDItemLongitude, _MDItemLyricist, 
-                       _MDItemMailDateReceived_Ranking, _MDItemMailboxArchive, _MDItemMailboxDrafts, 
-                       _MDItemMailboxInbox, _MDItemMailboxJunk, _MDItemMailboxSent, 
-                       _MDItemMailboxTrash, _MDItemMailboxes, _MDItemMaxAperture, 
-                       _MDItemMediaTypes, _MDItemMeteringMode, _MDItemMusicalGenre, 
-                       _MDItemMusicalInstrumentCategory, _MDItemMusicalInstrumentName, 
+                       _MDItemLayerNames, _MDItemLensModel, _MDItemLogicalSize, _MDItemLongitude, 
+                       _MDItemLyricist, _MDItemMailDateReceived_Ranking, _MDItemMailboxArchive, 
+                       _MDItemMailboxDrafts, _MDItemMailboxInbox, _MDItemMailboxJunk, 
+                       _MDItemMailboxSent, _MDItemMailboxTrash, _MDItemMailboxes, 
+                       _MDItemMaxAperture, _MDItemMediaTypes, _MDItemMeteringMode, 
+                       _MDItemMusicalGenre, _MDItemMusicalInstrumentCategory, _MDItemMusicalInstrumentName, 
                        _MDItemNamedLocation, _MDItemNumberOfPages, _MDItemOrganizations, 
                        _MDItemOrientation, _MDItemOriginalFormat, _MDItemOriginalSource, 
                        _MDItemOutgoingAudioCallDates, _MDItemOutgoingCounts, _MDItemOutgoingMailCounts, 
@@ -151,17 +159,17 @@ exports:
                        _MDItemRelatedActivityLaunchCount, _MDItemRelatedAppBundleIdentifier, 
                        _MDItemRelatedUniqueIdentifier, _MDItemRenderValues, _MDItemResolutionHeightDPI, 
                        _MDItemResolutionWidthDPI, _MDItemRights, _MDItemRole, _MDItemSecurityMethod, 
-                       _MDItemSharedItemCurrentUserRole, _MDItemShortcutLastUsedDate, 
-                       _MDItemSnippet, _MDItemSpeed, _MDItemStarRating, _MDItemStartDate, 
-                       _MDItemStateOrProvince, _MDItemStaticInterestScore, _MDItemStreamable, 
-                       _MDItemSubItemCount, _MDItemSubThoroughfare, _MDItemSubject, 
-                       _MDItemSubtitle, _MDItemSuggestedInvocationPhrase, _MDItemSupportFileType, 
-                       _MDItemSupportsNavigation, _MDItemSupportsPhoneCall, _MDItemTempo, 
-                       _MDItemTextContent, _MDItemTextContentDataSource, _MDItemTextSelected, 
-                       _MDItemTheme, _MDItemThoroughfare, _MDItemThumbnailData, _MDItemThumbnailDataPath, 
-                       _MDItemThumbnailURL, _MDItemTimeSignature, _MDItemTimestamp, 
-                       _MDItemTitle, _MDItemTopic, _MDItemTotalBitRate, _MDItemURL, 
-                       _MDItemUniqueIdentifier, _MDItemUploadError, _MDItemUseCount, 
+                       _MDItemSharedItemCurrentUserRole, _MDItemShortcutAvailability, 
+                       _MDItemShortcutLastUsedDate, _MDItemSnippet, _MDItemSpeed, 
+                       _MDItemStarRating, _MDItemStartDate, _MDItemStateOrProvince, 
+                       _MDItemStaticInterestScore, _MDItemStreamable, _MDItemSubItemCount, 
+                       _MDItemSubThoroughfare, _MDItemSubject, _MDItemSubtitle, _MDItemSuggestedInvocationPhrase, 
+                       _MDItemSupportFileType, _MDItemSupportsNavigation, _MDItemSupportsPhoneCall, 
+                       _MDItemTempo, _MDItemTextContent, _MDItemTextContentDataSource, 
+                       _MDItemTextSelected, _MDItemTheme, _MDItemThoroughfare, _MDItemThumbnailData, 
+                       _MDItemThumbnailDataPath, _MDItemThumbnailURL, _MDItemTimeSignature, 
+                       _MDItemTimestamp, _MDItemTitle, _MDItemTopic, _MDItemTotalBitRate, 
+                       _MDItemURL, _MDItemUniqueIdentifier, _MDItemUploadError, _MDItemUseCount, 
                        _MDItemUsedDates, _MDItemUserActivityEligibleForPublicIndexing, 
                        _MDItemUserActivityRequiredString, _MDItemUserActivityType, 
                        _MDItemUserCreated, _MDItemUserCreatedDate, _MDItemUserCreatedUserHandle, 
@@ -185,11 +193,13 @@ exports:
                        _MDMailMessageHasDistributionListInCC, _MDMailMessageHasDistributionListInTo, 
                        _MDMailMessageID, _MDMailPriority, _MDMailRead, _MDMailRepliedTo, 
                        _MDMailboxArchive, _MDMailboxDrafts, _MDMailboxInbox, _MDMailboxJunk, 
-                       _MDMailboxSent, _MDMailboxTrash, _MDMeteringModeAverage, _MDMeteringModeCenterWeightedAverage, 
-                       _MDMeteringModeMultiSpot, _MDMeteringModePartial, _MDMeteringModePattern, 
-                       _MDMeteringModeSpot, _MDMeteringModeUnknown, _MDQueryResultMatchedFields, 
-                       _MDQueryResultMenuRelevance, _MDQueryResultNewMatchedExtraQueriesField, 
-                       _MDQueryResultRelevance, _MDQueryResultTopMatchedField, _MDRelatedUniqueIdentifier, 
+                       _MDMailboxSent, _MDMailboxTrash, _MDMessageIndexType, _MDMessageIsBusinessChat, 
+                       _MDMessageIsFromMe, _MDMessageSuggestedContactName, _MDMeteringModeAverage, 
+                       _MDMeteringModeCenterWeightedAverage, _MDMeteringModeMultiSpot, 
+                       _MDMeteringModePartial, _MDMeteringModePattern, _MDMeteringModeSpot, 
+                       _MDMeteringModeUnknown, _MDQueryResultMatchedFields, _MDQueryResultMenuRelevance, 
+                       _MDQueryResultNewMatchedExtraQueriesField, _MDQueryResultRelevance, 
+                       _MDQueryResultTopMatchedField, _MDRelatedUniqueIdentifier, 
                        _MDSearchQueryErrorDomain, _MDSearchQueryOptionFetchAttributes, 
                        _MDSearchQueryOptionGrouped, _MDSearchQueryOptionMaxCount, 
                        _MDSearchQueryOptionRankingQueries, __MDIndexExtensionsLoadedNotification, 

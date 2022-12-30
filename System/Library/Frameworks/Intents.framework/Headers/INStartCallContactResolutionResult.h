@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, INStartCallContactUnsupportedReason) {
     INStartCallContactUnsupportedReasonNoHandleForLabel,
     INStartCallContactUnsupportedReasonInvalidHandle,
     INStartCallContactUnsupportedReasonUnsupportedMmiUssd,
-    INStartCallContactUnsupportedReasonNoCallHistoryForRedial,
+    INStartCallContactUnsupportedReasonNoCallHistoryForRedial API_DEPRECATED("", ios(13.0, 14.0), watchos(6.0, 7.0)) API_UNAVAILABLE(macos),
     INStartCallContactUnsupportedReasonNoUsableHandleForRedial,
 } API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
 

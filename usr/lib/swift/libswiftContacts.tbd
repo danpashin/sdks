@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 643B292F-8A31-3D37-9A13-43DEF65B2C39', 'armv7s: 4249F7CC-12B9-3B39-AD74-BB96779CCBEC', 
-                   'arm64: 0B9700A7-4034-351B-B572-FCFF384630D1', 'arm64e: 86BD02C6-B916-3394-B10C-22073B3814A4' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           643B292F-8A31-3D37-9A13-43DEF65B2C39
+  - target:          armv7s-ios
+    value:           4249F7CC-12B9-3B39-AD74-BB96779CCBEC
+  - target:          arm64-ios
+    value:           DEA7B88F-761B-3D27-82E7-DCA8D0334642
+  - target:          arm64e-ios
+    value:           A2F7DB83-C982-3F2B-8302-79B3FA9BC6F0
 install-name:    '/usr/lib/swift/libswiftContacts.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftContacts.dylib', '$ld$install_name$os10.1$@rpath/libswiftContacts.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftContacts.dylib', '$ld$install_name$os10.3$@rpath/libswiftContacts.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftContacts.dylib', '$ld$install_name$os11.1$@rpath/libswiftContacts.dylib', 

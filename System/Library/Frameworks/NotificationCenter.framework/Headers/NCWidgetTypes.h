@@ -10,4 +10,4 @@
 typedef NS_ENUM(NSInteger, NCWidgetDisplayMode) {
     NCWidgetDisplayModeCompact, // Fixed height
     NCWidgetDisplayModeExpanded, // Variable height
-} NS_ENUM_AVAILABLE_IOS(10_0);
+} API_DEPRECATED("Use WidgetKit instead. Today View extensions have been deprecated.", ios(10.0, 14.0));

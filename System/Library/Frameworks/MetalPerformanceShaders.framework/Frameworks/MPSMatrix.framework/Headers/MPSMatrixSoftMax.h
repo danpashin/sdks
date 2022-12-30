@@ -2,7 +2,7 @@
 //  MPSMatrixSoftmax.h
 //  MPSMatrix
 //
-//  Created by Teemu Rantalaiho on 7/23/17.
+//  Created on 7/23/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

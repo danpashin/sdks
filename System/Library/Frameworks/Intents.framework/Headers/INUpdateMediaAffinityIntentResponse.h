@@ -14,12 +14,12 @@ typedef NS_ENUM(NSInteger, INUpdateMediaAffinityIntentResponseCode) {
     INUpdateMediaAffinityIntentResponseCodeSuccess,
     INUpdateMediaAffinityIntentResponseCodeFailure,
     INUpdateMediaAffinityIntentResponseCodeFailureRequiringAppLaunch,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0)) API_UNAVAILABLE(macos);
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), watchos(6.0), tvos(14.0))
+API_UNAVAILABLE(macos)
 @interface INUpdateMediaAffinityIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;

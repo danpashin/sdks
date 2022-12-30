@@ -1,12 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 9A77BD72-58E7-3463-9D1B-6A8CCA77215D', 'armv7s: 5D95DC7F-0B21-3129-BC8D-4EACB5910469', 
-                   'arm64: B5A11BD7-265C-33AF-86DB-237DA30DD328', 'arm64e: EFC958F4-A1AA-3C2F-A842-AE8AA6D6CFC3' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           0F1FC129-840E-3A29-9F08-8C4EE3D0A6A6
+  - target:          armv7s-ios
+    value:           BA45F03D-ADB3-36B7-B2B0-4B6E5DC176B4
+  - target:          arm64-ios
+    value:           1EB4EB79-E3D6-3843-BDF6-51030946D702
+  - target:          arm64e-ios
+    value:           251BB167-5425-3A5F-81D1-0C6D99C8078E
 install-name:    '/System/Library/Frameworks/ImageIO.framework/ImageIO'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CGImageConvertExtendedSRGBToColorspace, _CGImagePluginSetBandProc, 
                        _CGImagePoisoningSetCallback, _CGImageReadSessionGetBytes, 
                        _CGImageReadSessionRewind, _CGImageReadSessionSeek, _CGImageReadSessionSkipBytes, 
@@ -16,7 +22,7 @@ exports:
                        __cg_jpeg_set_defaults, __cg_jpeg_set_quality, __cg_jpeg_start_compress, 
                        __cg_jpeg_std_error, __cg_jpeg_stdio_dest, __cg_jpeg_write_scanlines, 
                        _kCGImageSourceMatchToProfile ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CGAnimateImageAtURLWithBlock, _CGAnimateImageDataWithBlock, 
                        _CGCopyBasicPropertiesOfImageAtPath, _CGImageCopyFileWithGPSInformation, 
                        _CGImageCopyFileWithParameters, _CGImageCopyJPEGData, _CGImageCopyJPEGDataAndColorSpace, 
@@ -83,24 +89,23 @@ exports:
                        _CGImageSourceGetTypeWithData, _CGImageSourceGetTypeWithDataProvider, 
                        _CGImageSourceGetTypeWithExtension, _CGImageSourceGetTypeWithURL, 
                        _CGImageSourceIsCloudTranscodable, _CGImageSourceIsColorOptimizedForSharing, 
-                       _CGImageSourceRemoveCacheAtIndex, _CGImageSourceUpdateData, 
-                       _CGImageSourceUpdateDataProvider, _CGImageWriteEXIFJPEGToPath, 
-                       _CGImageWriteEXIFJPEGWithMetadata, _CopyMetadataFromFileAtPath, 
-                       _CopyMetadataFromSequentialDataProviderCallbacks, _GetMetadataPropertyMatchingSchemaAndPropertyName, 
-                       _ImageIODebug, _ImageIOSetLoggingProc, _gReadMakerNoteProps, 
-                       _kCFErrorDomainCGImageMetadata, _kCGImageAnimationDelayTime, 
-                       _kCGImageAnimationLoopCount, _kCGImageAnimationStartIndex, 
-                       _kCGImageAuxiliaryDataInfoData, _kCGImageAuxiliaryDataInfoDataDescription, 
-                       _kCGImageAuxiliaryDataInfoMetadata, _kCGImageAuxiliaryDataTypeAlpha, 
-                       _kCGImageAuxiliaryDataTypeDepth, _kCGImageAuxiliaryDataTypeDisparity, 
-                       _kCGImageAuxiliaryDataTypePortraitEffectsMatte, _kCGImageAuxiliaryDataTypeSemanticSegmentationHairMatte, 
-                       _kCGImageAuxiliaryDataTypeSemanticSegmentationSkinMatte, _kCGImageAuxiliaryDataTypeSemanticSegmentationTeethMatte, 
-                       _kCGImageAuxiliaryImageTypeAlpha, _kCGImageAuxiliaryImageTypeDepth, 
-                       _kCGImageAuxiliaryImageTypeDisparity, _kCGImageBlockIOSurfacePromoteToCIF10, 
-                       _kCGImageComponentTypeRequest, _kCGImageCopyFileSetDateTime, 
-                       _kCGImageCopyFileSetIPTC, _kCGImageCopyFileSetKeywords, _kCGImageCopyFileSetOrientation, 
-                       _kCGImageCopyFileSetProfile, _kCGImageCopyFileSetStarRating, 
-                       _kCGImageCopyFileSetXMP, _kCGImageDestinationBackgroundColor, 
+                       _CGImageSourceRemoveCacheAtIndex, _CGImageSourceSetAllowableTypes, 
+                       _CGImageSourceUpdateData, _CGImageSourceUpdateDataProvider, 
+                       _CGImageWriteEXIFJPEGToPath, _CGImageWriteEXIFJPEGWithMetadata, 
+                       _CopyMetadataFromFileAtPath, _CopyMetadataFromSequentialDataProviderCallbacks, 
+                       _GetMetadataPropertyMatchingSchemaAndPropertyName, _ImageIODebug, 
+                       _ImageIOSetLoggingProc, _gReadMakerNoteProps, _kCFErrorDomainCGImageMetadata, 
+                       _kCGImageAnimationDelayTime, _kCGImageAnimationLoopCount, 
+                       _kCGImageAnimationStartIndex, _kCGImageAuxiliaryDataInfoData, 
+                       _kCGImageAuxiliaryDataInfoDataDescription, _kCGImageAuxiliaryDataInfoMetadata, 
+                       _kCGImageAuxiliaryDataTypeAlpha, _kCGImageAuxiliaryDataTypeDepth, 
+                       _kCGImageAuxiliaryDataTypeDisparity, _kCGImageAuxiliaryDataTypePortraitEffectsMatte, 
+                       _kCGImageAuxiliaryDataTypeSemanticSegmentationHairMatte, _kCGImageAuxiliaryDataTypeSemanticSegmentationSkinMatte, 
+                       _kCGImageAuxiliaryDataTypeSemanticSegmentationTeethMatte, 
+                       _kCGImageBlockIOSurfacePromoteToCIF10, _kCGImageComponentTypeRequest, 
+                       _kCGImageCopyFileSetDateTime, _kCGImageCopyFileSetIPTC, _kCGImageCopyFileSetKeywords, 
+                       _kCGImageCopyFileSetOrientation, _kCGImageCopyFileSetProfile, 
+                       _kCGImageCopyFileSetStarRating, _kCGImageCopyFileSetXMP, _kCGImageDestinationBackgroundColor, 
                        _kCGImageDestinationDateTime, _kCGImageDestinationEmbedThumbnail, 
                        _kCGImageDestinationEnableRGBToYUVDithering, _kCGImageDestinationICCProfile, 
                        _kCGImageDestinationImageMaxPixelSize, _kCGImageDestinationLossyCompressionQuality, 
@@ -450,7 +455,11 @@ exports:
                        _kCGImagePropertyTIFFTransferFunction, _kCGImagePropertyTIFFWhitePoint, 
                        _kCGImagePropertyTIFFXResolution, _kCGImagePropertyTIFFYResolution, 
                        _kCGImagePropertyThreshold, _kCGImagePropertyThumbnailImages, 
-                       _kCGImagePropertyWidth, _kCGImageSkipCIF10SRGBCheck, _kCGImageSourceAddJPEGQualityInformation, 
+                       _kCGImagePropertyWebPCanvasPixelHeight, _kCGImagePropertyWebPCanvasPixelWidth, 
+                       _kCGImagePropertyWebPDelayTime, _kCGImagePropertyWebPDictionary, 
+                       _kCGImagePropertyWebPFrameInfoArray, _kCGImagePropertyWebPLoopCount, 
+                       _kCGImagePropertyWebPUnclampedDelayTime, _kCGImagePropertyWidth, 
+                       _kCGImageSkipCIF10SRGBCheck, _kCGImageSourceAddJPEGQualityInformation, 
                        _kCGImageSourceAddPencilKitPrivateData, _kCGImageSourceAddRenderingInformation, 
                        _kCGImageSourceAddThumbnailInformation, _kCGImageSourceBlackDespeckleEnabled, 
                        _kCGImageSourceBoostAmount, _kCGImageSourceCACorrectionBlueScale, 
@@ -484,17 +493,22 @@ exports:
                        _kCGImageSourceUseHardwareAcceleration, _kCGImageSourceUsePDFBackgroundBlack, 
                        _kCGImageSourceUsePDFBackgroundWhite, _kCGImageSourceXMPSidecar, 
                        _kCGImageSurfaceBytesPerRowAlignmentRequest, _kCGImageSurfaceFormatRequest, 
-                       _kCGImageWriteExtendedAPP0, _kImageIOInfoHeader_alphaInfo, 
-                       _kImageIOInfoHeader_bitsPerComponent, _kImageIOInfoHeader_bitsPerPixel, 
-                       _kImageIOInfoHeader_cacheImageBlocks, _kImageIOInfoHeader_colorTransformInfo, 
-                       _kImageIOInfoHeader_colorspaceModel, _kImageIOInfoHeader_createImage, 
-                       _kImageIOInfoHeader_createMask, _kImageIOInfoHeader_imageHeight, 
-                       _kImageIOInfoHeader_imageIndex, _kImageIOInfoHeader_imageWidth, 
-                       _kImageIOInfoHeader_isFloat, _kImageIOInfoHeader_isLittleEndian, 
-                       _kImageIOInfoHeader_originalIndexedColorMap, _kImageIOInfoHeader_originalIsIndexed, 
-                       _kImageIOInfoHeader_pixelFormat, _kImageIOInfoHeader_plugin, 
-                       _kImageIOInfoHeader_pluginHandlesReMapping, _kImageIOInfoHeader_rowBytes, 
-                       _kImageIOInfoHeader_session, _kImageIOInfoHeader_skipLabFixup, 
-                       _kImageIOInfoHeader_supportsMultipleResolutions, _kImageIOInfoHeader_usesImageAndMask, 
-                       _kIsAdobeRGB, _kIsNotICC, _kIsSRGB, _kIsUnknownICC ]
+                       _kCGImageWriteExtendedAPP0, _kIIOPluginAddSourcePropsProc, 
+                       _kIIOPluginCompareOptsProc, _kIIOPluginCopyAuxiliaryDataProc, 
+                       _kIIOPluginExtensions, _kIIOPluginImageCountProc, _kIIOPluginInitImageProc, 
+                       _kIIOPluginInitThumbnailProc, _kIIOPluginIsPreTiff, _kIIOPluginMinimumFileSize, 
+                       _kIIOPluginTestHeaderProc, _kIIOPluginTestHeaderSize, _kIIOPluginUTType, 
+                       _kImageIOInfoHeader_alphaInfo, _kImageIOInfoHeader_bitsPerComponent, 
+                       _kImageIOInfoHeader_bitsPerPixel, _kImageIOInfoHeader_cacheImageBlocks, 
+                       _kImageIOInfoHeader_colorTransformInfo, _kImageIOInfoHeader_colorspaceModel, 
+                       _kImageIOInfoHeader_createImage, _kImageIOInfoHeader_createMask, 
+                       _kImageIOInfoHeader_imageHeight, _kImageIOInfoHeader_imageIndex, 
+                       _kImageIOInfoHeader_imageWidth, _kImageIOInfoHeader_isFloat, 
+                       _kImageIOInfoHeader_isLittleEndian, _kImageIOInfoHeader_originalIndexedColorMap, 
+                       _kImageIOInfoHeader_originalIsIndexed, _kImageIOInfoHeader_pixelFormat, 
+                       _kImageIOInfoHeader_plugin, _kImageIOInfoHeader_pluginHandlesReMapping, 
+                       _kImageIOInfoHeader_rowBytes, _kImageIOInfoHeader_session, 
+                       _kImageIOInfoHeader_skipLabFixup, _kImageIOInfoHeader_supportsMultipleResolutions, 
+                       _kImageIOInfoHeader_usesImageAndMask, _kIsAdobeRGB, _kIsNotICC, 
+                       _kIsSRGB, _kIsUnknownICC ]
 ...

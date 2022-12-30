@@ -61,6 +61,8 @@
 #define PAGE_MIN_SIZE           (1 << PAGE_MIN_SHIFT)
 #define PAGE_MIN_MASK           (PAGE_MIN_SIZE-1)
 
+#define VM_MAX_PAGE_ADDRESS     MACH_VM_MAX_ADDRESS
+
 #ifndef __ASSEMBLER__
 
 
@@ -81,11 +83,12 @@
 /* system-wide values */
 #define MACH_VM_MIN_ADDRESS_RAW 0x0ULL
 #define MACH_VM_MAX_ADDRESS_RAW 0x0000000FC0000000ULL
+
 #define MACH_VM_MIN_ADDRESS     ((mach_vm_offset_t) MACH_VM_MIN_ADDRESS_RAW)
 #define MACH_VM_MAX_ADDRESS     ((mach_vm_offset_t) MACH_VM_MAX_ADDRESS_RAW)
 
 
-#else
+#else /* defined(__arm64__) */
 #error architecture not supported
 #endif
 

@@ -5,6 +5,8 @@
 //  Copyright (c) 2011 Apple, Inc. All rights reserved.
 //
 
+#import <TargetConditionals.h>
+
 #if TARGET_OS_IPHONE
 
 #import <UIKit/UIKit.h>
@@ -29,7 +31,7 @@ API_AVAILABLE(ios(6.0))
 - (nullable instancetype)initWithPasses:(NSArray<PKPass *> *)passes API_AVAILABLE(ios(7.0));
 + (BOOL)canAddPasses API_AVAILABLE(ios(8.0));
 
-@property(nonatomic,assign,nullable) id <PKAddPassesViewControllerDelegate> delegate;
+@property(nonatomic, weak, nullable) id <PKAddPassesViewControllerDelegate> delegate;
 
 @end
 

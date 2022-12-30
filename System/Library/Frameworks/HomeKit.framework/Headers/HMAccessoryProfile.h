@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @abstract Represents a profile implemented by an accessory.
  */
-HM_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMAccessoryProfile : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

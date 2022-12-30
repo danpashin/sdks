@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCore/AVDisplayCriteria.h>)
 /*
 	File:  AVDisplayCriteria.h
 
@@ -30,3 +31,7 @@ API_AVAILABLE(tvos(11.2)) API_UNAVAILABLE(ios) API_UNAVAILABLE(macos, watchos)
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCore/AVDisplayCriteria.h>
+#endif

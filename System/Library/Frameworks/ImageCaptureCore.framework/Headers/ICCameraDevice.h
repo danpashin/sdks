@@ -68,6 +68,12 @@ IMAGECAPTURE_EXTERN ICDeviceCapability const ICCameraDeviceCanReceiveFile IC_AVA
  */
 IMAGECAPTURE_EXTERN ICDeviceCapability const ICCameraDeviceCanAcceptPTPCommands IC_AVAILABLE(macos(10.4), ios(13.0));
 
+/*!
+ @const      ICCameraDeviceSupportsHEIF
+ @discussion Indicates that the camera supports HEIF transcoding, and can change the presentation of converted assets and original assets on the fly.
+ */
+IMAGECAPTURE_EXTERN ICDeviceCapability const ICCameraDeviceSupportsHEIF IC_AVAILABLE(macos(10.11), ios(14.0));
+
 typedef NSString* ICUploadOption NS_TYPED_ENUM IC_AVAILABLE (macos (10.4), ios (13.0));
 
 typedef NSString* ICDeleteResult NS_TYPED_ENUM IC_AVAILABLE (macos (10.15), ios (13.0));
@@ -115,6 +121,19 @@ IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorDeviceMissing IC_AVAILABLE(
   @discussion The value for this key should be an ICCameraItem*
  */
 IMAGECAPTURE_EXTERN ICDeleteError const ICDeleteErrorCanceled IC_AVAILABLE(macos(10.15), ios(13.0));
+
+//-------------------------------------------------------------------------------------------------------------------- Constants
+/*!
+  @ICMediaPresentation
+  @abstract
+  @constant ICMediaPresentationConvertedAssets presents the device media contents
+  @constant ICScannerTransferModeMemoryBased Transfer the scan as data.
+*/
+
+typedef NS_ENUM( NSUInteger, ICMediaPresentation ) {
+    ICMediaPresentationConvertedAssets   = 1,
+    ICMediaPresentationOriginalAssets    = 2,
+} IC_AVAILABLE(macos(10.11), ios(14.0));
 
 //--------------------------------------------------------------------------------------------------------- Forward Declarations
 
@@ -175,6 +194,18 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   @abstract Filesystem mount point for a device with transportType of ICTransportTypeMassStorage. This will be NULL for all other devices.
  */
 @property (nonatomic, readonly, nullable) NSString* mountPoint IC_AVAILABLE(macos(10.4)) IC_UNAVAILABLE(ios);
+
+/*!
+  @property mediaPresentation
+  @abstract The media presentation describes the visible assets from a device that may contain multiple formats of each media asset.  The asigngments are of the type ICMediaPresentation enumeration.  This property is available only if the capability ICCameraDeviceSupportsHEIF is  present.
+
+  @discussion A device supporting this capability can specify the
+  following presentations:
+
+  ICMediaPresentationConverted - The default behavior for applications retrieving images from a device supporting HEIF is to show only converted JPG from HEIF originals, and only H264 encoded video assets from HEVC.
+  ICMediaPresentationOriginal - This presentation will show only original images from a device supporting HEIF and HEVC.  Burned in renders are always exported in JPG, as are burned in effects for MOV clips.
+ */
+@property (nonatomic, readwrite) ICMediaPresentation mediaPresentation IC_AVAILABLE(macos(10.11), ios(14.0));
 
 /*!
   @method filesOfType:
@@ -452,23 +483,18 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 
 /*!
   @method cameraDevice:didAddItem:
-  @abstract This message is sent when an object is added to the device.
-  @discussion The object may be an instance of ICCameraFolder or ICCameraFile class.
  */
 - (void)cameraDevice:(ICCameraDevice*)camera
     didAddItem:(ICCameraItem*) item IC_DEPRECATED_WITH_REPLACEMENT("Implement cameraDevice:didAddItems:", macos(10.4, 10.15));
 
 /*!
   @method cameraDevice:didRemoveItem:
-  @abstract This message is sent when an object is removed from the device.
-  @discussion The object may be an instance of ICCameraFolder or ICCameraFile class.
  */
 - (void)cameraDevice:(ICCameraDevice*)camera
     didRemoveItem:(ICCameraItem*) item IC_DEPRECATED_WITH_REPLACEMENT("Implement cameraDevice:didRemoveItems:", macos(10.4, 10.15));
 
 /*!
   @method cameraDevice:didReceiveThumbnailForItem:
-  @abstract This message is sent when the thumbnail requested for an item on a device is available.
  */
 - (void)cameraDevice:(ICCameraDevice*)camera
     didReceiveThumbnailForItem:(ICCameraItem*) item
@@ -476,7 +502,6 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 
 /*!
   @method cameraDevice:didReceiveMetadataForItem:
-  @abstract This message is sent when the metadata requested for an item on a device is available.
  */
 - (void)cameraDevice:(ICCameraDevice*)camera
     didReceiveMetadataForItem:(ICCameraItem*) item

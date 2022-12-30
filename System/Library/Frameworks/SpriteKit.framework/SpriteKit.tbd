@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 4479A1DB-1663-35BA-B576-83B7ADB8DD51', 'armv7s: 25F60C7C-430A-38C5-8D24-62C745A4F3A2', 
-                   'arm64: B74E0D00-F9EA-3384-B2E3-A59FD3482BFB', 'arm64e: 70331A66-70D9-3927-9BA1-E27736408D60' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           6FB9D8DE-1177-3257-922E-13B1CB4B4F62
+  - target:          armv7s-ios
+    value:           BD7C5D21-D05A-3713-ADA2-D83D11123700
+  - target:          arm64-ios
+    value:           E84A67F3-F8DB-3681-93B4-F0FA068121D4
+  - target:          arm64e-ios
+    value:           001C24D0-E72F-3612-9980-27E7B9647942
 install-name:    '/System/Library/Frameworks/SpriteKit.framework/SpriteKit'
-current-version: 25.36
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 43
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _Color_fsh, _Color_vsh, _DiscardRect_fsh, _Discard_fsh, _Discard_vsh, 
                        _FastSingleRect_fsh, _FastSingleRect_vsh, _FastSingleWithVertexTransform_vsh, 
                        _FastSingle_fsh, _FastSingle_vsh, _Mask_Inverted_fsh, _Mask_fsh, 
@@ -320,58 +327,58 @@ exports:
                        SKTextureCache.filteringMode, SKTextureCache.hasAlpha, SKTextureCache.isPOT, 
                        SKTextureCache.lock, SKTextureCache.pixelData, SKTextureCache.pixelSize, 
                        SKTextureCache.size, SKTextureCache.state ]
-    weak-def-symbols: [ __ZTI13jet_render_op, __ZTI18SKCRenderSortGroup, __ZTI18jet_command_buffer, 
-                        __ZTI20MaxRectTexturePacker, __ZTINSt3__110__function6__baseIFvP11jet_contextEEE, 
-                        __ZTINSt3__110__function6__baseIFvP8PKCFieldEEE, __ZTINSt3__117bad_function_callE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP10jet_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP11jet_contextNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP11jet_programNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP11jet_samplerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP11jet_textureNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP12jet_constantNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP13SKCRenderPassNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP15MaxRectsBinPackNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP15jet_buffer_poolNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP15jet_framebufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP16jet_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP17jet_context_MetalNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP18SKCRenderSortGroupNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP18jet_command_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP18jet_context_OpenGLNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP20MaxRectTexturePackerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIP22jet_depth_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTINSt3__120__shared_ptr_pointerIPNS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEENS_14default_deleteIS6_EENS4_IS6_EEEE, 
-                        __ZTS13jet_render_op, __ZTS18SKCRenderSortGroup, __ZTS18jet_command_buffer, 
-                        __ZTS20MaxRectTexturePacker, __ZTSNSt3__110__function6__baseIFvP11jet_contextEEE, 
-                        __ZTSNSt3__110__function6__baseIFvP8PKCFieldEEE, __ZTSNSt3__114default_deleteI10jet_bufferEE, 
-                        __ZTSNSt3__114default_deleteI11jet_contextEE, __ZTSNSt3__114default_deleteI11jet_programEE, 
-                        __ZTSNSt3__114default_deleteI11jet_samplerEE, __ZTSNSt3__114default_deleteI11jet_textureEE, 
-                        __ZTSNSt3__114default_deleteI12jet_constantEE, __ZTSNSt3__114default_deleteI13SKCRenderPassEE, 
-                        __ZTSNSt3__114default_deleteI15MaxRectsBinPackEE, __ZTSNSt3__114default_deleteI15jet_buffer_poolEE, 
-                        __ZTSNSt3__114default_deleteI15jet_framebufferEE, __ZTSNSt3__114default_deleteI16jet_stencil_modeEE, 
-                        __ZTSNSt3__114default_deleteI17jet_context_MetalEE, __ZTSNSt3__114default_deleteI18SKCRenderSortGroupEE, 
-                        __ZTSNSt3__114default_deleteI18jet_command_bufferEE, __ZTSNSt3__114default_deleteI18jet_context_OpenGLEE, 
-                        __ZTSNSt3__114default_deleteI20MaxRectTexturePackerEE, __ZTSNSt3__114default_deleteI22jet_depth_stencil_modeEE, 
-                        __ZTSNSt3__114default_deleteINS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEEEE, 
-                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__120__shared_ptr_pointerIP10jet_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP11jet_contextNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP11jet_programNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP11jet_samplerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP11jet_textureNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP12jet_constantNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP13SKCRenderPassNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP15MaxRectsBinPackNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP15jet_buffer_poolNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP15jet_framebufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP16jet_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP17jet_context_MetalNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP18SKCRenderSortGroupNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP18jet_command_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP18jet_context_OpenGLNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP20MaxRectTexturePackerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIP22jet_depth_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
-                        __ZTSNSt3__120__shared_ptr_pointerIPNS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEENS_14default_deleteIS6_EENS4_IS6_EEEE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+    weak-symbols:    [ __ZTI13jet_render_op, __ZTI18SKCRenderSortGroup, __ZTI18jet_command_buffer, 
+                       __ZTI20MaxRectTexturePacker, __ZTINSt3__110__function6__baseIFvP11jet_contextEEE, 
+                       __ZTINSt3__110__function6__baseIFvP8PKCFieldEEE, __ZTINSt3__117bad_function_callE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP10jet_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP11jet_contextNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP11jet_programNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP11jet_samplerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP11jet_textureNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP12jet_constantNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP13SKCRenderPassNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP15MaxRectsBinPackNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP15jet_buffer_poolNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP15jet_framebufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP16jet_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP17jet_context_MetalNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP18SKCRenderSortGroupNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP18jet_command_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP18jet_context_OpenGLNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP20MaxRectTexturePackerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIP22jet_depth_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTINSt3__120__shared_ptr_pointerIPNS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEENS_14default_deleteIS6_EENS4_IS6_EEEE, 
+                       __ZTS13jet_render_op, __ZTS18SKCRenderSortGroup, __ZTS18jet_command_buffer, 
+                       __ZTS20MaxRectTexturePacker, __ZTSNSt3__110__function6__baseIFvP11jet_contextEEE, 
+                       __ZTSNSt3__110__function6__baseIFvP8PKCFieldEEE, __ZTSNSt3__114default_deleteI10jet_bufferEE, 
+                       __ZTSNSt3__114default_deleteI11jet_contextEE, __ZTSNSt3__114default_deleteI11jet_programEE, 
+                       __ZTSNSt3__114default_deleteI11jet_samplerEE, __ZTSNSt3__114default_deleteI11jet_textureEE, 
+                       __ZTSNSt3__114default_deleteI12jet_constantEE, __ZTSNSt3__114default_deleteI13SKCRenderPassEE, 
+                       __ZTSNSt3__114default_deleteI15MaxRectsBinPackEE, __ZTSNSt3__114default_deleteI15jet_buffer_poolEE, 
+                       __ZTSNSt3__114default_deleteI15jet_framebufferEE, __ZTSNSt3__114default_deleteI16jet_stencil_modeEE, 
+                       __ZTSNSt3__114default_deleteI17jet_context_MetalEE, __ZTSNSt3__114default_deleteI18SKCRenderSortGroupEE, 
+                       __ZTSNSt3__114default_deleteI18jet_command_bufferEE, __ZTSNSt3__114default_deleteI18jet_context_OpenGLEE, 
+                       __ZTSNSt3__114default_deleteI20MaxRectTexturePackerEE, __ZTSNSt3__114default_deleteI22jet_depth_stencil_modeEE, 
+                       __ZTSNSt3__114default_deleteINS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEEEE, 
+                       __ZTSNSt3__117bad_function_callE, __ZTSNSt3__120__shared_ptr_pointerIP10jet_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP11jet_contextNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP11jet_programNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP11jet_samplerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP11jet_textureNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP12jet_constantNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP13SKCRenderPassNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP15MaxRectsBinPackNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP15jet_buffer_poolNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP15jet_framebufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP16jet_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP17jet_context_MetalNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP18SKCRenderSortGroupNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP18jet_command_bufferNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP18jet_context_OpenGLNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP20MaxRectTexturePackerNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIP22jet_depth_stencil_modeNS_14default_deleteIS1_EENS_9allocatorIS1_EEEE, 
+                       __ZTSNSt3__120__shared_ptr_pointerIPNS_6vectorIP17SKCRenderSortInfoNS_9allocatorIS3_EEEENS_14default_deleteIS6_EENS4_IS6_EEEE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _SKComponentRGBABlack, _SKComponentRGBABlue, _SKComponentRGBAClear, 
                        _SKComponentRGBAGreen, _SKComponentRGBARed, _SKComponentRGBAWhite, 
                        _SKGLPrintError, _SKGLPrintFramebufferStatus, _SKGLPrintState, 

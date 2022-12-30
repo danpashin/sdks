@@ -46,7 +46,7 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 // If this pass library supports activating payment passes, this method will return YES. Otherwise, NO will be returned.
 - (BOOL)isPaymentPassActivationAvailable API_DEPRECATED("Use -[PKPassLibrary isSecureElementPassActivationAvailable] instead", ios(9.0, API_TO_BE_DEPRECATED));
 
-@property(nonatomic, assign, readonly, getter=isSecureElementPassActivationAvailable) BOOL secureElementPassActivationAvailable API_AVAILABLE(ios(13.4));
+@property (nonatomic, assign, readonly, getter=isSecureElementPassActivationAvailable) BOOL secureElementPassActivationAvailable API_AVAILABLE(ios(13.4));
 
 // These return only local passes the process is entitled to access.
 - (NSArray<PKPass *> *)passes;
@@ -56,7 +56,7 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 // This returns the remote payment passes from attached devices
 - (NSArray<PKPaymentPass *> *)remotePaymentPasses API_DEPRECATED("Use -[PKPassLibrary remoteSecureElementPasses] instead", ios(9.0, API_TO_BE_DEPRECATED));
 
-@property(nonatomic, copy, readonly) NSArray<PKSecureElementPass *> *remoteSecureElementPasses API_AVAILABLE(ios(13.4));
+@property (nonatomic, copy, readonly) NSArray<PKSecureElementPass *> *remoteSecureElementPasses API_AVAILABLE(ios(13.4));
 
 - (void)removePass:(PKPass *)pass;
 
@@ -79,7 +79,7 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 - (void)openPaymentSetup API_AVAILABLE(ios(8.3)) __WATCHOS_PROHIBITED;
 
 // Presents the pass for use above the current application. The pass must already be in the pass library for this to have effect.
-- (void)presentPaymentPass:(PKPaymentPass *)pass API_DEPRECATED("Use -[PKPassLibrary presentSecureElementPass] instead", ios(10.0, API_TO_BE_DEPRECATED)) __WATCHOS_PROHIBITED;
+- (void)presentPaymentPass:(PKPaymentPass *)pass API_DEPRECATED("Use -[PKPassLibrary presentSecureElementPass:] instead", ios(10.0, API_TO_BE_DEPRECATED)) __WATCHOS_PROHIBITED;
 - (void)presentSecureElementPass:(PKSecureElementPass *)pass API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos);
 
 

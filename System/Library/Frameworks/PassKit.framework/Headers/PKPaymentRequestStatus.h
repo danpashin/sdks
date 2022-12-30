@@ -11,8 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class PKShippingMethod;
 @class PKPaymentSummaryItem;
+@class PKPaymentMerchantSession;
 
-API_AVAILABLE(ios(11.0), watchos(4.0))
+API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0))
 @interface PKPaymentAuthorizationResult : NSObject
 
 - (instancetype)initWithStatus:(PKPaymentAuthorizationStatus)status
@@ -28,7 +29,7 @@ API_AVAILABLE(ios(11.0), watchos(4.0))
 
 @end
 
-API_AVAILABLE(ios(11.0), watchos(4.0))
+API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0))
 @interface PKPaymentRequestUpdate : NSObject
 
 - (instancetype)initWithPaymentSummaryItems:(NSArray<PKPaymentSummaryItem *> *)paymentSummaryItems NS_DESIGNATED_INITIALIZER;
@@ -43,7 +44,7 @@ API_AVAILABLE(ios(11.0), watchos(4.0))
 
 @end
 
-API_AVAILABLE(ios(11.0), watchos(4.0))
+API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0))
 @interface PKPaymentRequestShippingContactUpdate : PKPaymentRequestUpdate
 
 // You may optionally supply errors here. 
@@ -57,12 +58,12 @@ API_AVAILABLE(ios(11.0), watchos(4.0))
 
 @end
 
-API_AVAILABLE(ios(11.0), watchos(4.0))
+API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0))
 @interface PKPaymentRequestShippingMethodUpdate : PKPaymentRequestUpdate
 
 @end
 
-API_AVAILABLE(ios(11.0), watchos(4.0))
+API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0))
 @interface PKPaymentRequestPaymentMethodUpdate : PKPaymentRequestUpdate
 
 // You may optionally supply errors here.
@@ -71,6 +72,17 @@ API_AVAILABLE(ios(11.0), watchos(4.0))
            paymentSummaryItems:(NSArray<PKPaymentSummaryItem *> *)paymentSummaryItems NS_DESIGNATED_INITIALIZER;
 
 @property (null_resettable, nonatomic, copy) NSArray<NSError *> *errors;
+@end
+
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0))
+@interface PKPaymentRequestMerchantSessionUpdate : NSObject
+
+- (instancetype)initWithStatus:(PKPaymentAuthorizationStatus)status
+               merchantSession:(nullable PKPaymentMerchantSession *)session;
+
+@property (nonatomic, assign) PKPaymentAuthorizationStatus status;
+@property (nullable, nonatomic, strong) PKPaymentMerchantSession *session;
+
 @end
 
 NS_ASSUME_NONNULL_END

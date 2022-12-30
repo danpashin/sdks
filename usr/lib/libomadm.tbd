@@ -1,23 +1,30 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 0B93161C-375E-3F3E-854B-D9B6CB88C8B0', 'armv7s: E419BDC5-55EE-36EA-93DF-1053171E86A7', 
-                   'arm64: 89B1C9A5-9ED1-3895-8FDD-18B3004A375C', 'arm64e: EF6D096B-D483-398F-AEC9-396DA699AC8B' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           CA1B0CB5-5DC2-3905-AD87-5B784D290CC4
+  - target:          armv7s-ios
+    value:           0723DF1A-3EBF-37E9-8E0F-D674DA97D3CE
+  - target:          arm64-ios
+    value:           FD858ED8-34BD-393C-9660-391A529364B5
+  - target:          arm64e-ios
+    value:           5D8AF864-12BE-382C-9566-5C6A2155621F
 install-name:    '/usr/lib/libomadm.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN22CFHTTPServerConnection15_handleError_nlElRNSt3__111unique_lockINS0_5mutexEEE, 
                        __ZN22CFHTTPServerConnection4openEPlPKh, __ZN22CFHTTPServerConnection4sendElPhm16E_HTTP_command_tPKh, 
                        __ZN22CFHTTPServerConnection5closeEl, __ZN22CFHTTPServerConnection7receiveEPlPhmPmS2_PPv ]
-    weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
-  - archs:           [ arm64, arm64e ]
+    weak-symbols:    [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN22CFHTTPServerConnection15_handleError_nlEiRNSt3__111unique_lockINS0_5mutexEEE, 
                        __ZN22CFHTTPServerConnection4openEPiPKh, __ZN22CFHTTPServerConnection4sendEiPhj16E_HTTP_command_tPKh, 
                        __ZN22CFHTTPServerConnection5closeEi, __ZN22CFHTTPServerConnection7receiveEPiPhjPjS2_PPv ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CFHTTP_close, _CFHTTP_destroyContext, _CFHTTP_getResponseHeader, 
                        _CFHTTP_getStatusCode, _CFHTTP_init, _CFHTTP_open, _CFHTTP_receive, 
                        _CFHTTP_send, _CFHTTP_setRequestHeader, _CFHTTP_term, _COMMS_RDM_fetchValue, 

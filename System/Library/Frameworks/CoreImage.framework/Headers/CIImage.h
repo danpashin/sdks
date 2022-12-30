@@ -130,6 +130,7 @@ CORE_IMAGE_EXPORT CIImageOption const kCIImageAuxiliarySemanticSegmentationHairM
 CORE_IMAGE_EXPORT CIImageOption const kCIImageAuxiliarySemanticSegmentationTeethMatte NS_AVAILABLE(10_15, 13_0);
 
 
+
 /* Creates a new image from the contents of 'image'. */
 + (CIImage *)imageWithCGImage:(CGImageRef)image;
 + (CIImage *)imageWithCGImage:(CGImageRef)image

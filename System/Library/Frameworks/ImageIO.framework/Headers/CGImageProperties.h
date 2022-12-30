@@ -40,6 +40,7 @@ IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifAuxDictionary  IMAGEIO_AVAI
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyOpenEXRDictionary  IMAGEIO_AVAILABLE_STARTING(10.9, 11.3);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyMakerAppleDictionary  IMAGEIO_AVAILABLE_STARTING(10.10, 7.0);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyFileContentsDictionary IMAGEIO_AVAILABLE_STARTING(10.13, 11.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPDictionary  IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
 
 
 /** Properties which may be returned by "CGImageSourceCopyProperties".  The
@@ -293,6 +294,15 @@ IMAGEIO_EXTERN const CFStringRef kCGImagePropertyAPNGUnclampedDelayTime  IMAGEIO
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyAPNGFrameInfoArray IMAGEIO_AVAILABLE_STARTING(10.15, 13.0);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyAPNGCanvasPixelWidth IMAGEIO_AVAILABLE_STARTING(10.15, 13.0);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyAPNGCanvasPixelHeight IMAGEIO_AVAILABLE_STARTING(10.15, 13.0);
+
+/* Possible keys for kCGImagePropertyWebPDictionary */
+
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPLoopCount  IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPDelayTime  IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPUnclampedDelayTime  IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPFrameInfoArray IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPCanvasPixelWidth IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyWebPCanvasPixelHeight IMAGEIO_AVAILABLE_STARTING(11.0, 14.0);
 
 /* Possible keys for kCGImagePropertyGPSDictionary */
 

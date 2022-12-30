@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 75570633-A6F1-34E8-8B2F-460AAA018007', 'armv7s: 85AFE37B-A011-31F7-8DED-28DE8D2BF3B2', 
-                   'arm64: 6753967D-E293-3D17-803B-B48248BBE7E4', 'arm64e: CF769235-43A3-3F84-9205-743DBAEB7DA9' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           7C96BA7A-5D04-3154-A0B1-D3D50983BD5F
+  - target:          armv7s-ios
+    value:           98E8F9BE-B5F7-3387-B41E-DE5DE8497AC4
+  - target:          arm64-ios
+    value:           A632859E-0E83-3C3D-A4F7-CD2CDD0D4604
+  - target:          arm64e-ios
+    value:           3AEB3797-8435-3F94-B52D-306EFDE03844
 install-name:    '/System/Library/Frameworks/WatchConnectivity.framework/WatchConnectivity'
-current-version: 187.2
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 198
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _LZ4_compress, _LZ4_compressBound, _LZ4_compress_continue, 
                        _LZ4_compress_default, _LZ4_compress_destSize, _LZ4_compress_fast, 
                        _LZ4_compress_fast_continue, _LZ4_compress_fast_extState, 
@@ -27,7 +34,7 @@ exports:
                        _WatchConnectivityVersionNumber, _WatchConnectivityVersionString, 
                        _isAllowedFileForProcess ]
     objc-classes:    [ WCQueuedMessage ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _WCApplicationContextFileName, _WCApplicationSupportURLInContainer, 
                        _WCCheckFileAndConsumeSandboxTokenForProcessID, _WCCheckFileAndCreateExtensionForProcess, 
                        _WCCompactStringFromCollection, _WCComplicationUserInfoIDFileName, 

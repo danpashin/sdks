@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  * @abstract This class can be used to take an image snapshot from a camera.
  */
-HM_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMCameraSnapshotControl : HMCameraControl
 
 /*!
@@ -41,7 +41,7 @@ HM_EXTERN API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(mac
 /*!
  * @brief This delegate receives updates on the camera snapshot.
  */
-API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(macos)
+API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @protocol HMCameraSnapshotControlDelegate <NSObject>
 
 @optional

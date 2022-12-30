@@ -1026,8 +1026,8 @@ extern const CFStringRef kSecValuePersistentRef
 */
 extern const CFStringRef kSecUseItemList
     API_AVAILABLE(macos(10.6))
-    API_DEPRECATED("Not implemented on this platform", ios(2.0, 12.0), tvos(9.0, 12.0), watchos(1.0, 5.0))
-    API_UNAVAILABLE( macCatalyst);
+    API_DEPRECATED("Not implemented on this platform", ios(2.0, 12.0), tvos(9.0, 12.0), watchos(1.0, 5.0), macCatalyst(13.0, 13.0))
+    ;
 extern const CFStringRef kSecUseKeychain
     API_AVAILABLE(macos(10.7), ios(NA));
 extern const CFStringRef kSecUseOperationPrompt

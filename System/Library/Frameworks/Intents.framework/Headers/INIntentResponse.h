@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macosx)
+API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2), tvos(14.0))
 @interface INIntentResponse : NSObject <NSCopying, NSSecureCoding>
 
 // This user activity will be used to launch the containing application when host application finds appropriate or when users request so.

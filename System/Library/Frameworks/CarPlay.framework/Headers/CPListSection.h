@@ -5,8 +5,8 @@
 //  Copyright © 2018 Apple Inc. All rights reserved.
 //
 
-#import <CarPlay/CPListItem.h>
 #import <Foundation/Foundation.h>
+#import <CarPlay/CPListItemTypes.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,14 +19,14 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /**
  Create a section with a list of items and an optional header and identifier.
  */
-- (instancetype)initWithItems:(NSArray<CPListItem *> *)items
+- (instancetype)initWithItems:(NSArray <id <CPListTemplateItem>> *)items
                        header:(nullable NSString *)header
             sectionIndexTitle:(nullable NSString *)sectionIndexTitle;
 
 /**
  Create a section by specifying a list of items.
  */
-- (instancetype)initWithItems:(NSArray <CPListItem *> *)items;
+- (instancetype)initWithItems:(NSArray <id <CPListTemplateItem>> *)items;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
@@ -46,7 +46,18 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /**
  Items appearing in this section.
  */
-@property (nonatomic, readonly, copy) NSArray <CPListItem *> *items;
+@property (nonatomic, readonly, copy) NSArray <id <CPListTemplateItem>> *items;
+
+/**
+ Search for an item in this section, returning its index
+ or @c NSNotFound if not found.
+ */
+- (NSUInteger)indexOfItem:(id <CPListTemplateItem>)item;
+
+/**
+ Convenience access to the item in this section at the specified index.
+ */
+- (id <CPListTemplateItem>)itemAtIndex:(NSUInteger)index;
 
 @end
 

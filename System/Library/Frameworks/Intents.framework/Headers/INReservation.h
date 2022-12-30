@@ -14,8 +14,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(ios(13.0), watchos(6.0))
-API_UNAVAILABLE(macos, tvos)
+API_AVAILABLE(ios(13.0), macos(11.0), watchos(6.0))
+API_UNAVAILABLE(tvos)
 @interface INReservation : NSObject <NSCopying, NSSecureCoding>
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -26,6 +26,8 @@ API_UNAVAILABLE(macos, tvos)
 @property (readonly, assign, NS_NONATOMIC_IOSONLY) INReservationStatus reservationStatus;
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *reservationHolderName;
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSArray<INReservationAction *> *actions;
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSURL *url API_DEPRECATED("Use URL instead", ios(14.0, 14.0), macos(10.16, 11.0), watchos(7.0, 7.0));
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSURL *URL API_AVAILABLE(ios(14.0), watchos(7.0));
 
 @end
 

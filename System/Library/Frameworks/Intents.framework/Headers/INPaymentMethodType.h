@@ -21,6 +21,6 @@ typedef NS_ENUM(NSInteger, INPaymentMethodType) {
     INPaymentMethodTypePrepaid,
     INPaymentMethodTypeStore,
     INPaymentMethodTypeApplePay,
-} API_AVAILABLE(ios(10.0), watchos(3.2)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2)) API_UNAVAILABLE(tvos);
 
 #endif // INPaymentMethodType_h

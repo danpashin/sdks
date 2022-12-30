@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: F5B6B5E5-3BFE-3FFF-8E15-0C43B0D54A46', 'armv7s: AD407AD8-1336-3EAE-8328-6BA6999E0757', 
-                   'arm64: 8FF06F7F-5124-3397-BFB7-6D308E6F0453', 'arm64e: 1BD777D6-96BD-37B7-A7DC-267987950B3D' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           F5B6B5E5-3BFE-3FFF-8E15-0C43B0D54A46
+  - target:          armv7s-ios
+    value:           AD407AD8-1336-3EAE-8328-6BA6999E0757
+  - target:          arm64-ios
+    value:           8D49BDCC-92D4-3CD4-9F58-22D5390CCD39
+  - target:          arm64e-ios
+    value:           6DD681DE-67D3-33A2-8F99-BD30B271CD48
 install-name:    '/usr/lib/swift/libswiftVision.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 1.3
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftVision.dylib', '$ld$install_name$os10.1$@rpath/libswiftVision.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftVision.dylib', '$ld$install_name$os10.3$@rpath/libswiftVision.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftVision.dylib', '$ld$install_name$os11.1$@rpath/libswiftVision.dylib', 
@@ -26,5 +34,7 @@ exports:
                        '_$sSo22VNFaceLandmarkRegion2DC6VisionE16normalizedPointsSaySo7CGPointVGvpMV', 
                        '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvg', 
                        '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvpMV', 
+                       '_$sSo9VNContourC6VisionE16normalizedPointsSays5SIMD2VySfGGvg', 
+                       '_$sSo9VNContourC6VisionE16normalizedPointsSays5SIMD2VySfGGvpMV', 
                        '__swift_FORCE_LOAD_$_swiftVision' ]
 ...

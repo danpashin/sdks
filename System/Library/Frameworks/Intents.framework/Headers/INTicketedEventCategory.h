@@ -14,6 +14,6 @@
 typedef NS_ENUM(NSInteger, INTicketedEventCategory) {
     INTicketedEventCategoryUnknown = 0,
     INTicketedEventCategoryMovie,
-} API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macos, tvos);
+} API_AVAILABLE(ios(13.0), macos(11.0), watchos(6.0)) API_UNAVAILABLE(tvos);
 
 #endif // INTicketedEventCategory_h

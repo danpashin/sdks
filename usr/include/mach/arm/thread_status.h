@@ -137,6 +137,9 @@ typedef _STRUCT_ARM_THREAD_STATE64 arm_thread_state64_t;
 /* Set fp field of arm_thread_state64_t to a data pointer value */
 #define arm_thread_state64_set_fp(ts, ptr) \
 	        __darwin_arm_thread_state64_set_fp(ts, ptr)
+/* Strip ptr auth bits from pc, lr, sp and fp field of arm_thread_state64_t */
+#define arm_thread_state64_ptrauth_strip(ts) \
+	        __darwin_arm_thread_state64_ptrauth_strip(ts)
 
 #endif /* __DARWIN_C_LEVEL >= __DARWIN_C_FULL && defined(__arm64__) */
 

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief This class represents an event that is evaluated based on entry to and/or
  *        exit from a Region
  */
-HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMLocationEvent : HMEvent <NSCopying, NSMutableCopying>
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -55,7 +55,7 @@ HM_EXTERN API_AVAILABLE(ios(9.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
  * @brief This class represents an event that is evaluated based on entry to and/or
  *        exit from a Region
  */
-HM_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(11.0), watchos(4.0), tvos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMMutableLocationEvent : HMLocationEvent
 
 - (instancetype)init NS_UNAVAILABLE;

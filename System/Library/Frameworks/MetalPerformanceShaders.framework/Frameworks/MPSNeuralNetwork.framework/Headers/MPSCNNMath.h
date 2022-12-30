@@ -2,7 +2,7 @@
 //  MPSCNNMath.h
 //  MPS
 //
-//  Created by Anna Tikhonova on 11/17/17.
+//  Created on 11/17/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 

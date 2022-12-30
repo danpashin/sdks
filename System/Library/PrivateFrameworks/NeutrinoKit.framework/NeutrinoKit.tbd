@@ -1,25 +1,27 @@
---- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
-platform:              (null)
-flags:                 [ flat_namespace ]
-install-name:          /System/Library/PrivateFrameworks/NeutrinoKit.framework/NeutrinoKit
-current-version:       3662.0.110
-compatibility-version: 1
-objc-constraint:       retain_release
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           1C37521F-1DE7-3927-AB8B-B81B8D64BB5A
+  - target:          arm64e-ios
+    value:           9FF139EB-5026-378E-9806-EBE137C14C8D
+install-name:    '/System/Library/PrivateFrameworks/NeutrinoKit.framework/NeutrinoKit'
+current-version: 302.0.220
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NUBoundingRectForRotatedRect,
-                            _NUEdgeInsetsInsetRect,
-                            _NUFitScaleForImageRectInRect,
-                            _NUMaxRectInRotatedRect,
-                            _NUMediaTimingFunctionForUIAnimationCurve,
-                            _NURectCenterRectInRect, _NURectGetMidpoint,
-                            _NeutrinoKitVersionNumber, _NeutrinoKitVersionString,
-                            __NUViewCommonInit, __commonInit, _stringFromTransform ]
-    objc-classes:         [ NUAVPlayerController, NUAVPlayerView,
-                            NUDebugRenderView, NUGLLayer, NUImageLayer, NUMediaView,
-                            NUMediaViewRenderer, NURenderView, NUScrollView,
-                            NUViewGeometry, NUViewport, NUViewportRegionPolicy,
-                            _NUAVPlayerItemObservation, _NUBackfillLayer,
-                            _NUContainerLayer, _NUROILayer ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _NUBoundingRectForRotatedRect, _NUEdgeInsetsInsetRect, _NUFitScaleForImageRectInRect, 
+                       _NUMaxRectInRotatedRect, _NUMediaTimingFunctionForUIAnimationCurve, 
+                       _NURectCenterRectInRect, _NURectGetMidpoint, _NeutrinoKitVersionNumber, 
+                       _NeutrinoKitVersionString, __NUViewCommonInit, __commonInit, 
+                       _stringFromTransform ]
+    objc-classes:    [ NUAVPlayerController, NUAVPlayerView, NUDebugRenderView, NUGLLayer, 
+                       NUImageLayer, NUMediaView, NUMediaViewRenderer, NURenderView, 
+                       NUScrollView, NUTiledImageLayer, NUViewGeometry, NUViewport, 
+                       NUViewportRegionPolicy, _NUAVPlayerItemObservation, _NUBackfillLayer, 
+                       _NUContainerLayer, _NUROILayer, _NUTiledBackfillLayer, _NUTiledROILayer ]
 ...

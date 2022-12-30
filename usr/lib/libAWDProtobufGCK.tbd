@@ -1,19 +1,26 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 2525A841-1536-3068-932C-EE3C4FA154C0', 'armv7s: 1A8F8A6D-C24C-3EF6-B130-FB552836D989', 
-                   'arm64: 7272CF50-6732-3FBA-A085-B6814F2BFC74', 'arm64e: A210FD50-7DF3-3F1A-BDA7-F6EB1D31667F' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           AB0A1624-C905-3CDB-88FD-4DEE5108B944
+  - target:          armv7s-ios
+    value:           AAB95DD4-1C05-3484-95A3-B1E6DFAE3540
+  - target:          arm64-ios
+    value:           9EB11F5A-DB93-3CAD-8B28-AE23352AED95
+  - target:          arm64e-ios
+    value:           CC46B710-5981-3654-8B7E-F9A4ABE1A2B0
 install-name:    '/usr/lib/libAWDProtobufGCK.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics19GCKLinkStatusReport27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE, 
                        __ZNK3awd7metrics19GCKLinkStatusReport24SerializeWithCachedSizesEPN6google8protobuf2io17CodedOutputStreamE ]
-  - archs:           [ arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics19GCKLinkStatusReport27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 
                        __ZNK3awd7metrics19GCKLinkStatusReport24SerializeWithCachedSizesEPN20wireless_diagnostics6google8protobuf2io17CodedOutputStreamE ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ __ZN3awd7metrics19GCKLinkStatusReport10SharedCtorEv, __ZN3awd7metrics19GCKLinkStatusReport10SharedDtorEv, 
                        __ZN3awd7metrics19GCKLinkStatusReport15kPERFieldNumberE, __ZN3awd7metrics19GCKLinkStatusReport16default_instanceEv, 
                        __ZN3awd7metrics19GCKLinkStatusReport17default_instance_E, 

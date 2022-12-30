@@ -2,8 +2,7 @@
 //  CLSContextProvider.h
 //  ClassKit
 //
-//  Created by Baskaran Subramaniam on 10/02/18.
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2019 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      The CLSContext provider protocol.
  @discussion    The app extension that provides CLSContexts should adopt this protocol.
  */
-API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(12.2), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @protocol CLSContextProvider
 
 @required

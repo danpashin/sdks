@@ -2,30 +2,54 @@
 //  MPSKernelTypes.h
 //  MPSCore
 //
-//  Created by Ian Ollmann on 9/25/17.
+//  Created on 9/25/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
 #ifndef MPSKernelTypes_h
 #define MPSKernelTypes_h    1
 
-#define MPSFunctionConstantIndex                127
-#define MPSBatchSizeIndex                       126
-#define MPSUserConstantIndex                    125
-#define MPSNDArrayConstantIndex                 124
-
-// maxium number of bind points when array of texture can consume when reading from it.
-#if defined(__METAL_MACOS__) || MPS_TARGET_MAC || (defined (__i386__) || defined(__x86_64__))
-#    define MPSMaxTextures                      128
+#if defined(__METAL_VERSION__)
+  #include "MPSFunctionConstantIndices.h"
 #else
-#    define MPSMaxTextures                      32
+  #include <MPSCore/MPSFunctionConstantIndices.h>
 #endif
 
-// is array of texture writable.
-#if defined(__METAL_MACOS__) || MPS_TARGET_MAC
-#define MPSIsArrayOfTexturesWritable 1
-#else
-#define MPSIsArrayOfTexturesWritable 0
+typedef enum : uint32_t
+{
+    MPSDeviceCapsNull                           = 0,
+    MPSDeviceSupportsReadableArrayOfTextures    = 1 << 0,
+    MPSDeviceSupportsWritableArrayOfTextures    = 1 << 1,
+    MPSDeviceSupportsReadWriteTextures          = 1 << 2,
+    MPSDeviceSupportsSimdgroupBarrier           = 1 << 3,
+    MPSDeviceSupportsQuadShuffle                = 1 << 4,
+    MPSDeviceSupportsSimdShuffle                = 1 << 5,
+    MPSDeviceSupportsSimdReduction              = 1 << 6,
+    MPSDeviceSupportsFloat32Filtering           = 1 << 7,
+    MPSDeviceSupportsNorm16BicubicFiltering     = 1 << 8,
+    MPSDeviceSupportsFloat16BicubicFiltering    = 1 << 9,
+    MPSDeviceIsAppleDevice                      = 1 << 10,
+    
+} MPSDeviceCapsValues;
+
+typedef uint32_t MPSDeviceCaps;
+
+#if defined(__METAL_VERSION__)
+
+constant uint kMPSDeviceCaps [[function_constant(MPSDeviceCapsIndex)]];
+constant bool kMPSDeviceSupportsReadableArrayOfTextures = (kMPSDeviceCaps & MPSDeviceSupportsReadableArrayOfTextures) != 0;
+constant bool kMPSDeviceSupportsWritableArrayOfTextures = (kMPSDeviceCaps & MPSDeviceSupportsWritableArrayOfTextures) != 0;
+constant bool kMPSDeviceSupportsReadWriteTextures = (kMPSDeviceCaps & MPSDeviceSupportsReadWriteTextures) != 0;
+constant bool kMPSDeviceSupportsSimdgroupBarrier = (kMPSDeviceCaps & MPSDeviceSupportsSimdgroupBarrier) != 0;
+constant bool kMPSDeviceSupportsQuadShuffle = (kMPSDeviceCaps & MPSDeviceSupportsQuadShuffle) != 0;
+constant bool kMPSDeviceSupportsSimdShuffle = (kMPSDeviceCaps & MPSDeviceSupportsSimdShuffle) != 0;
+constant bool kMPSDeviceSupportsSimdReduction = (kMPSDeviceCaps & MPSDeviceSupportsSimdReduction) != 0;
+constant bool kMPSDeviceSupportsFloat32Filtering = (kMPSDeviceCaps & MPSDeviceSupportsFloat32Filtering) != 0;
+constant bool kMPSDeviceIsAppleDevice  = (kMPSDeviceCaps & MPSDeviceIsAppleDevice)  != 0;
+constant bool kMPSDeviceSupportsNorm16BicubicFiltering = (kMPSDeviceCaps & MPSDeviceSupportsNorm16BicubicFiltering) != 0;
+constant bool kMPSDeviceSupportsFloat16BicubicFiltering = (kMPSDeviceCaps & MPSDeviceSupportsFloat16BicubicFiltering) != 0;
+
+
 #endif
 
 typedef enum
@@ -161,7 +185,6 @@ constant MPSImageType  kMPSSrc2TextureType = MPSImageType((kMPSConstant >> 2*MPS
 constant MPSImageType  kMPSSrc3TextureType = MPSImageType((kMPSConstant >> 3*MPSImageType_bitCount) & MPSImageType_mask);
 constant MPSImageType  kMPSSrc4TextureType = MPSImageType((kMPSConstant >> 4*MPSImageType_bitCount) & MPSImageType_mask);
 
-
 // Decompose a ushort3 globalID on a grid {width, height, feature_channel_slice_count * batch_image_count}
 // into a ushort3 {x, y, feature_channel} and a uniform<ushort> batch_image_id.
 //
@@ -219,9 +242,6 @@ static inline ThreadgroupInfo MPSInitThreadgroupInfo( ushort3 globalID,
         .threadgroupStorageSize = make_uniform(info.threadgroupSize)
     };
 }
-
-
-
 
 // BFloat16 is typically not supported directly by hardware. Consequently,
 // it is aliased on top of some other type such as uint16, unorm16, or float16.
@@ -512,25 +532,19 @@ class _MPSDestImage
     private:
         thread texture2d<_type, access::write> &                            _img;
         thread texture2d_array<_type, access::write> &                      _imgA;
-#if (MPSIsArrayOfTexturesWritable)
-        array_ref<texture2d<_type, access::write>>                          _Aimg;
-        array_ref<texture2d_array<_type, access::write>>                    _AimgA;
-#endif
+        array_ref<texture2d<_type, access::write>>                          _Aimg [[function_constant(kMPSDeviceSupportsWritableArrayOfTextures)]];
+        array_ref<texture2d_array<_type, access::write>>                    _AimgA [[function_constant(kMPSDeviceSupportsWritableArrayOfTextures)]];
         const int                                                           _texType;
         constant MPSCustomKernelInfo &                                      _info;
     
     public:
         _MPSDestImage(thread texture2d<_type, access::write> & img,
                       thread texture2d_array<_type, access::write> & imgA,
-#if (MPSIsArrayOfTexturesWritable)
-                      array_ref<texture2d<_type, access::write>> Aimg,
-                      array_ref<texture2d_array<_type, access::write>> AimgA,
-#endif
+                      array_ref<texture2d<_type, access::write>> Aimg [[function_constant(kMPSDeviceSupportsWritableArrayOfTextures)]],
+                      array_ref<texture2d_array<_type, access::write>> AimgA [[function_constant(kMPSDeviceSupportsWritableArrayOfTextures)]],
                       const int texType,
                       constant MPSCustomKernelInfo &info ) : _img(img), _imgA(imgA),
-#if (MPSIsArrayOfTexturesWritable)
                                                              _Aimg(Aimg), _AimgA(AimgA),
-#endif
                                                              _texType(texType), _info(info) { }
     
     // image metadata
@@ -552,21 +566,22 @@ class _MPSDestImage
     __attribute__((__always_inline__)) void    write( _type4 v, uint2 where, uint slice, uniform<uint> image );
 };
 
-#if (MPSIsArrayOfTexturesWritable)
-#   define __MPS_DEST_TEX_TYPE_SELECT( _2d, _2da, _a2d, _a2da )     \
-            switch(_texType & MPSImageType_typeMask){               \
-                case MPSImageType2d: return (_2d);                  \
-                case MPSImageType2d_array: return (_2da);           \
-                case MPSImageTypeArray2d: return (_a2d);            \
-                case MPSImageTypeArray2d_array: return (_a2da);     \
-                default: return (_2d);                              \
-    }
-#else
-#   define __MPS_DEST_TEX_TYPE_SELECT( _2d, _2da, _a2d, _a2da )                         \
+#define __MPS_DEST_TEX_TYPE_SELECT( _2d, _2da, _a2d, _a2da )                            \
+    if( kMPSDeviceSupportsWritableArrayOfTextures )                                      \
+    {                                                                                   \
+        switch(_texType & MPSImageType_typeMask)                                        \
+        {                                                                               \
+            case MPSImageType2d: return (_2d);                                          \
+            case MPSImageType2d_array: return (_2da);                                   \
+            case MPSImageTypeArray2d: return (_a2d);                                    \
+            case MPSImageTypeArray2d_array: return (_a2da);                             \
+            default: return (_2d);                                                      \
+        }                                                                               \
+    }                                                                                   \
+    else                                                                                \
     {                                                                                   \
         return ((_texType & MPSImageType_typeMask) == MPSImageType2d) ? (_2d) : (_2da); \
     }
-#endif
 
 
 //ushort  get_width(uint imageIndex = 0) const;
@@ -638,7 +653,6 @@ template<class _type, class _type4> __attribute__((__always_inline__)) void _MPS
 
 #   define __MPS_SRC_IMAGE_PARAMS(_name, _index)     _name, _name##A, A##_name, A##_name##A, kMPSSrc##_index##TextureType, _name##Info
 
-#if (MPSIsArrayOfTexturesWritable)
 #   define __MPS_DEST_IMAGE_ARG( _name, _type  )                                                                                                                \
         texture2d<_type, access::write>  _name  [[texture(MPSCustomKernelIndexDestIndex * MPSMaxBatchSize), function_constant(kMPSDestIs2d)]],                                         \
         texture2d_array<_type, access::write>  _name ## A  [[texture(MPSCustomKernelIndexDestIndex * MPSMaxBatchSize), function_constant(kMPSDestIs2dArray)]],                         \
@@ -647,14 +661,6 @@ template<class _type, class _type4> __attribute__((__always_inline__)) void _MPS
         constant MPSCustomKernelInfo & _name ## Info [[buffer(MPSCustomKernelIndexDestIndex)]]
 
 #   define __MPS_DEST_IMAGE_PARAMS(_name)     _name, _name##A, A##_name, A##_name##A, kMPSDestTextureType, _name ## Info
-#else
-#   define __MPS_DEST_IMAGE_ARG( _name, _type  )                                                                                            \
-        texture2d<_type, access::write>  _name  [[texture(MPSCustomKernelIndexDestIndex * MPSMaxBatchSize), function_constant(kMPSDestIs2d)]],                     \
-        texture2d_array<_type, access::write>  _name ## A  [[texture(MPSCustomKernelIndexDestIndex * MPSMaxBatchSize), function_constant(kMPSDestIs2dArray)]],     \
-        constant MPSCustomKernelInfo & _name ## Info [[buffer(MPSCustomKernelIndexDestIndex)]]
-
-#   define __MPS_DEST_IMAGE_PARAMS(_name)     _name, _name##A, kMPSDestTextureType, _name ## Info
-#endif
 
 #define GET_GLOBALID_DIVISOR(_name)  ((_name ## Info).idiv)
 
@@ -805,23 +811,27 @@ typedef struct MPSCustomKernelArgumentCount
 }MPSCustomKernelArgumentCount;
 
 /*! @abstract  maximum allowed batch size   */
-static inline unsigned long MPSGetCustomKernelMaxBatchSize( MPSCustomKernelArgumentCount  c ){ return (MPSMaxTextures - c.broadcastTextureCount) / (1 + c.sourceTextureCount);}
+static inline unsigned long MPSGetCustomKernelMaxBatchSize( MPSCustomKernelArgumentCount  c,
+                                                            unsigned long MPSMaxTextures )
+        {
+            return (MPSMaxTextures - c.broadcastTextureCount) / (1 + c.sourceTextureCount);
+        }
 
 /*! @abstract  The index of the first destination texture argument   */
 static inline unsigned long MPSGetCustomKernelBatchedDestinationIndex( MPSCustomKernelArgumentCount c ){ return 0;}
 
 /*! @abstract  The index of the ith batched source texture argument  */
-static inline unsigned long MPSGetCustomKernelBatchedSourceIndex( MPSCustomKernelArgumentCount c, unsigned long sourceIndex )
+static inline unsigned long MPSGetCustomKernelBatchedSourceIndex( MPSCustomKernelArgumentCount c, unsigned long sourceIndex, unsigned long MPSMaxTextures )
 {
-    unsigned long maxBatchSize = MPSGetCustomKernelMaxBatchSize(c);
+    unsigned long maxBatchSize = MPSGetCustomKernelMaxBatchSize(c, MPSMaxTextures);
     return (sourceIndex+1) * maxBatchSize;
 }
 
 /*! @abstract The index of the ith non-batched source texture argument.
  *  @discussion  A non-batched source is one that is shared for all items in a batch   */
-static inline unsigned long MPSGetCustomKernelBroadcastSourceIndex( MPSCustomKernelArgumentCount c, unsigned long sourceIndex )
+static inline unsigned long MPSGetCustomKernelBroadcastSourceIndex( MPSCustomKernelArgumentCount c, unsigned long sourceIndex, unsigned long MPSMaxTextures )
 {
-    unsigned long maxBatchSize = MPSGetCustomKernelMaxBatchSize(c);
+    unsigned long maxBatchSize = MPSGetCustomKernelMaxBatchSize(c, MPSMaxTextures);
     return (c.sourceTextureCount+1) * maxBatchSize + sourceIndex;
 }
 

@@ -2,7 +2,7 @@
 //  CLSObject.h
 //  ClassKit
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2019 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion    See @c CLSContext for more details.
  */
 
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @interface CLSObject : NSObject <NSSecureCoding>
 
 /*!
@@ -27,9 +27,10 @@ API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
  */
 @property (nonatomic, strong, readonly) NSDate *dateLastModified;
 
++ (instancetype)new NS_UNAVAILABLE;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 @end
-
 
 NS_ASSUME_NONNULL_END

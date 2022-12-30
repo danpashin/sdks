@@ -1,16 +1,22 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: BF9E73D8-2AF9-34DD-84E0-48661B54A41A', 'arm64e: C75BBF56-7950-3549-9142-D2425AC14467' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           52215A22-5727-3247-A4F6-07AE90E82AB9
+  - target:          arm64e-ios
+    value:           A263F80A-A300-381E-97F0-F57BDE59D745
 install-name:    '/usr/lib/libMTLCapture.dylib'
-current-version: 198.30.10
+current-version: 201.8
 compatibility-version: 1.1
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    symbols:         [ _DYMTLWrapDeviceWithDebugLayer, _GTHarvesterAddTexturePlane, 
-                       _GTHarvesterGetData, _GTHarvesterGetDataSize, _GTHarvesterGetMetadata, 
-                       _GTHarvesterGetMetadataSize, _GTHarvesterGetTextureMetadataRequiredSize, 
-                       _GTHarvesterGetTexturePlane, _GTHarvesterGetTexturePlaneCount, 
-                       _GTHarvesterInitMetadata, _GTMTLGuestAppClient_initGlobalTransportWithHostURL ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _DYMTLWrapDeviceWithDebugLayer, _GTMTLGuestAppClient_GetMTLCaptureScopes, 
+                       _GTMTLGuestAppClient_GetMTLCommandQueues, _GTMTLGuestAppClient_getUnsupportedFenumAndCategory, 
+                       _GTMTLGuestAppClient_initGlobalTransportWithHostURL, _GTMTLGuestAppClient_notifyUnsupportedFenum, 
+                       _GTMTLGuestAppClient_unsupportedFenumDetected ]
 ...

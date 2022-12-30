@@ -1,38 +1,47 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: B6F4E522-7956-34D4-8047-067CE1E1BD49', 'armv7s: 109619F5-15BD-344E-A6F1-B94ECC8EA6A2', 
-                   'arm64: 9C36438B-5969-3E6F-B362-7324D55E1833', 'arm64e: 895DDBCB-6F1C-3AB5-B3ED-5F4158E4FD5D' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           25302423-BB52-332D-B89D-5407E0E01A18
+  - target:          armv7s-ios
+    value:           1DC879E3-0B74-3D0E-8D7B-2D8F48EB95FB
+  - target:          arm64-ios
+    value:           609D7B0E-E052-3347-A0F9-A80503675B1E
+  - target:          arm64e-ios
+    value:           3F4E5829-24C5-34C2-A3B4-31B6F1F04418
 install-name:    '/System/Library/Frameworks/UserNotifications.framework/UserNotifications'
-exports:         
-  - archs:           [ armv7, armv7s ]
-    objc-classes:    [ UNRemoteNotificationRegistrar ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    symbols:         [ _UNDoubleIsZero, _UNEqualBools, _UNEqualDoubles, _UNEqualFloats, 
-                       _UNEqualIntegers, _UNEqualObjects, _UNEqualStrings, _UNErrorDomain, 
-                       _UNFloatIsZero, _UNFormatLocalizedString, _UNFormatLocalizedStringInBundleWithDefaultValue, 
-                       _UNIsInternalInstall, _UNLegacyNotificationTriggerInfiniteRepeatCount, 
-                       _UNLogAppLaunching, _UNLogAttachmentsRepository, _UNLogAttachmentsService, 
-                       _UNLogConnections, _UNLogContentProtection, _UNLogDataProvider, 
-                       _UNLogDataProviderFactory, _UNLogDataStore, _UNLogLocalNotifications, 
-                       _UNLogMigration, _UNLogRemoteNotifications, _UNLogServiceExtension, 
-                       _UNLogSettings, _UNNotificationActionTextInputButtonTitleKey, 
-                       _UNNotificationActionTextInputPlaceholderKey, _UNNotificationAttachmentFamilyFromTypeIdentifier, 
-                       _UNNotificationAttachmentFamilyMaximumSize, _UNNotificationAttachmentFamilyToString, 
-                       _UNNotificationAttachmentOptionsHiddenFromDefaultExpandedViewKey, 
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    symbols:         [ _UNNotificationAttachmentOptionsUnitRect, _kUNBulletinContextArchivedUserNotificationKey ]
+    objc-classes:    [ UNAudioNotificationAttachmentOptions, UNImageNotificationAttachmentOptions, 
+                       UNMovieNotificationAttachmentOptions, UNRemoteNotificationRegistrar, 
+                       _UNNotificationServiceExtensionContext, _UNNotificationServiceExtensionHostContext ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _UNAuthorizationStatusString, _UNDoubleIsZero, _UNEqualBools, 
+                       _UNEqualDoubles, _UNEqualFloats, _UNEqualIntegers, _UNEqualObjects, 
+                       _UNEqualStrings, _UNErrorDomain, _UNFloatIsZero, _UNFormatLocalizedString, 
+                       _UNFormatLocalizedStringInBundleWithDefaultValue, _UNIsInternalInstall, 
+                       _UNLegacyNotificationTriggerInfiniteRepeatCount, _UNLogAppLaunching, 
+                       _UNLogAttachmentsRepository, _UNLogAttachmentsService, _UNLogConnections, 
+                       _UNLogContentProtection, _UNLogDataProvider, _UNLogDataProviderFactory, 
+                       _UNLogDataStore, _UNLogLocalNotifications, _UNLogMigration, 
+                       _UNLogRemoteNotifications, _UNLogServiceExtension, _UNLogSettings, 
+                       _UNNotificationActionTextInputButtonTitleKey, _UNNotificationActionTextInputPlaceholderKey, 
+                       _UNNotificationAttachmentFamilyFromTypeIdentifier, _UNNotificationAttachmentFamilyMaximumSize, 
+                       _UNNotificationAttachmentFamilyToString, _UNNotificationAttachmentOptionsHiddenFromDefaultExpandedViewKey, 
                        _UNNotificationAttachmentOptionsThumbnailClippingRectKey, 
                        _UNNotificationAttachmentOptionsThumbnailHiddenKey, _UNNotificationAttachmentOptionsThumbnailTimeKey, 
-                       _UNNotificationAttachmentOptionsTypeHintKey, _UNNotificationAttachmentOptionsUnitRect, 
-                       _UNNotificationDefaultActionIdentifier, _UNNotificationDismissActionIdentifier, 
+                       _UNNotificationAttachmentOptionsTypeHintKey, _UNNotificationDefaultActionIdentifier, 
+                       _UNNotificationDestinationStrings, _UNNotificationDismissActionIdentifier, 
                        _UNNotificationGroupingSettingString, _UNNotificationSettingString, 
                        _UNNotificationSilenceActionIdentifier, _UNRegisterUserNotificationsLogging, 
                        _UNSafeCast, _UNSafeCastAny, _UNSafeConforms, _UNShowPreviewsSettingString, 
-                       _UNSimilarSets, _UNSimilarStrings, _UNUserNotificationServiceName, 
-                       _kUNBulletinContextArchivedUserNotificationKey ]
-    objc-classes:    [ UNAudioNotificationAttachmentOptions, UNCalendarNotificationTrigger, 
-                       UNImageNotificationAttachmentOptions, UNLegacyNotificationTrigger, 
+                       _UNSimilarSets, _UNSimilarStrings, _UNStringFromNotificationAttachmentDisplayLocation, 
+                       _UNUserNotificationServiceName, _kUNResponseContextArchivedUserNotificationKey ]
+    objc-classes:    [ UNCalendarNotificationTrigger, UNLegacyNotificationTrigger, 
                        UNLocalizedString, UNLocalizedStringFactory, UNLocationNotificationTrigger, 
-                       UNMovieNotificationAttachmentOptions, UNMutableNotificationCategory, 
+                       UNMutableNotificationAttachmentOptions, UNMutableNotificationCategory, 
                        UNMutableNotificationContent, UNMutableNotificationSettings, 
                        UNMutableNotificationSound, UNNotification, UNNotificationAction, 
                        UNNotificationAttachment, UNNotificationAttachmentOptions, 
@@ -42,8 +51,6 @@ exports:
                        UNNotificationTopicRequest, UNNotificationTrigger, UNPushNotificationRequestBuilder, 
                        UNPushNotificationTrigger, UNSecurityScopedURL, UNTextInputNotificationAction, 
                        UNTextInputNotificationResponse, UNTimeIntervalNotificationTrigger, 
-                       UNUserNotificationCenter, UNUserNotificationCenterDelegateConnectionListener, 
-                       UNUserNotificationCenterDelegateService, UNUserNotificationService, 
-                       _UNNotificationServiceExtensionContext, _UNNotificationServiceExtensionHostContext, 
-                       _UNNotificationServiceExtensionRemoteContext ]
+                       UNUserNotificationCenter, UNUserNotificationCenterDelegateService, 
+                       UNUserNotificationService, _UNNotificationServiceExtensionRemoteContext ]
 ...

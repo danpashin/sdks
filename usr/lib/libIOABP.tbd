@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 313C600B-731D-3E11-8914-33A7284D25BE', 'arm64e: DCBB852F-01BC-38F2-889D-5E79325935ED' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           014A85E7-A869-3318-9F5E-D9C75EE3EDF7
+  - target:          arm64e-ios
+    value:           A489F330-DF4D-3939-9F08-DE56E7666445
 install-name:    '/usr/lib/libIOABP.dylib'
-exports:         
-  - archs:           [ arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z21getABPDirectionString12abpDirection, __Z21getABPErrorTypeString12abpErrorType, 
                        __Z21getABPLinkStateString12abpLinkState, __Z24getABPAERErrorTypeString15abpAERErrorType, 
                        __Z24getABPBHIRegistersString15abpBHIRegisters, __Z24getABPBTIRegistersString15abpBTIRegisters, 
@@ -24,7 +31,20 @@ exports:
                        __ZN10IOABPClass8start_nlEPKcP11__CFRunLoopP16dispatch_queue_sU13block_pointerFvjES7_U13block_pointerFv12abpErrorTypejiE, 
                        __ZN10IOABPClass9readAsyncEPvjPFvS0_iS0_ES0_, __ZN10IOABPClass9sendImageEPKvjPj, 
                        __ZN10IOABPClassC1Ev, __ZN10IOABPClassC2Ev, __ZN10IOABPClassD1Ev, 
-                       __ZN10IOABPClassD2Ev, __ZN17IOABPControlClass10loggerTuneEjjPvS0_, 
+                       __ZN10IOABPClassD2Ev, __ZN15IOABPTraceClass11openServiceEv, 
+                       __ZN15IOABPTraceClass12closeServiceEv, __ZN15IOABPTraceClass12dumpRegistryEv, 
+                       __ZN15IOABPTraceClass12getPipeCountEv, __ZN15IOABPTraceClass12getTraceCodeEjR18IOABPTraceCodeDict, 
+                       __ZN15IOABPTraceClass13readLogsAsyncEjPvjbPFvS0_iS0_ES0_, 
+                       __ZN15IOABPTraceClass15getRegistryInfoER20ABPTraceRegistryInfo, 
+                       __ZN15IOABPTraceClass17flushTraceBuffersEjbPFvPviS0_ES0_, 
+                       __ZN15IOABPTraceClass18getPipeCodeAndNameEjPjPcj, __ZN15IOABPTraceClass19setNotificationPortEv, 
+                       __ZN15IOABPTraceClass21clearNotificationPortEv, __ZN15IOABPTraceClass21getSnapshotBufferSizeEPj, 
+                       __ZN15IOABPTraceClass4demoEv, __ZN15IOABPTraceClass4stopEv, 
+                       __ZN15IOABPTraceClass5startEP11__CFRunLoop, __ZN15IOABPTraceClass5startEP16dispatch_queue_s, 
+                       __ZN15IOABPTraceClass7connectEP11__CFRunLoopP16dispatch_queue_s, 
+                       __ZN15IOABPTraceClass8openPipeEj, __ZN15IOABPTraceClass9closePipeEj, 
+                       __ZN15IOABPTraceClassC1Ev, __ZN15IOABPTraceClassC2Ev, __ZN15IOABPTraceClassD1Ev, 
+                       __ZN15IOABPTraceClassD2Ev, __ZN17IOABPControlClass10loggerTuneEjjPvS0_, 
                        __ZN17IOABPControlClass13readLogsAsyncEPvjbPFvS0_iS0_ES0_, 
                        __ZN17IOABPControlClass19setNotificationPortEv, __ZN17IOABPControlClass21clearNotificationPortEv, 
                        __ZN17IOABPControlClass21getLastKnownBootStageEPj, __ZN17IOABPControlClass23generalInterestCallbackEPvjjS0_, 

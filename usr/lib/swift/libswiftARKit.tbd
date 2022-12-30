@@ -1,12 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: EDCC7FF8-B2F4-3602-A16A-B2A37A6B9501', 'armv7s: 45A68AC0-5374-3D4B-B12D-18DF14C542DA', 
-                   'arm64: AE4A9D88-147E-3092-B0A4-ED39DD1FA274', 'arm64e: 0471CC9F-FA61-3F21-AA1A-2C7E483A85EB' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           EDCC7FF8-B2F4-3602-A16A-B2A37A6B9501
+  - target:          armv7s-ios
+    value:           45A68AC0-5374-3D4B-B12D-18DF14C542DA
+  - target:          arm64-ios
+    value:           FAD2118F-90EC-3302-AF85-24E6D1142EB5
+  - target:          arm64e-ios
+    value:           B24B8083-8871-319B-BA32-762874A552A2
 install-name:    '/usr/lib/swift/libswiftARKit.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 321.10
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftARKit.dylib', '$ld$install_name$os10.1$@rpath/libswiftARKit.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftARKit.dylib', '$ld$install_name$os10.3$@rpath/libswiftARKit.dylib', 
                        '$ld$install_name$os11.0$@rpath/libswiftARKit.dylib', '$ld$install_name$os11.1$@rpath/libswiftARKit.dylib', 
@@ -18,6 +26,11 @@ exports:
                        '$ld$install_name$os8.3$@rpath/libswiftARKit.dylib', '$ld$install_name$os8.4$@rpath/libswiftARKit.dylib', 
                        '$ld$install_name$os9.0$@rpath/libswiftARKit.dylib', '$ld$install_name$os9.1$@rpath/libswiftARKit.dylib', 
                        '$ld$install_name$os9.2$@rpath/libswiftARKit.dylib', '$ld$install_name$os9.3$@rpath/libswiftARKit.dylib', 
+                       '_$sSo11ARGeoAnchorC5ARKitE10coordinate8altitudeABSo22CLLocationCoordinate2DV_SdSgtcfC', 
+                       '_$sSo11ARGeoAnchorC5ARKitE10coordinate8altitudeABSo22CLLocationCoordinate2DV_SdSgtcfc', 
+                       '_$sSo11ARGeoAnchorC5ARKitE4name10coordinate8altitudeABSS_So22CLLocationCoordinate2DVSdSgtcfC', 
+                       '_$sSo11ARGeoAnchorC5ARKitE4name10coordinate8altitudeABSS_So22CLLocationCoordinate2DVSdSgtcfc', 
+                       '_$sSo11ARGeoAnchorC5ARKitE8altitudeSdSgvg', '_$sSo11ARGeoAnchorC5ARKitE8altitudeSdSgvpMV', 
                        '_$sSo12ARPointCloudC5ARKitE11identifiersSays6UInt64VGvg', 
                        '_$sSo12ARPointCloudC5ARKitE11identifiersSays6UInt64VGvpMV', 
                        '_$sSo12ARPointCloudC5ARKitE6pointsSays5SIMD3VySfGGvg', '_$sSo12ARPointCloudC5ARKitE6pointsSays5SIMD3VySfGGvpMV', 
@@ -67,6 +80,10 @@ exports:
                        '_$sSo15ARPlaneGeometryC5ARKitE18textureCoordinatesSays5SIMD2VySfGGvpMV', 
                        '_$sSo15ARPlaneGeometryC5ARKitE8verticesSays5SIMD3VySfGGvg', 
                        '_$sSo15ARPlaneGeometryC5ARKitE8verticesSays5SIMD3VySfGGvpMV', 
+                       '_$sSo16ARGeometrySourceC5ARKitEySf_S2fts5Int32Vcig', '_$sSo16ARGeometrySourceC5ARKitEySf_S2fts5Int32VcipMV', 
+                       '_$sSo16ARGeometrySourceC5ARKitEys5UInt8Vs5Int32Vcig', '_$sSo16ARGeometrySourceC5ARKitEys5UInt8Vs5Int32VcipMV', 
+                       '_$sSo17ARConfidenceLevelV5ARKitE1loiySbAB_ABtFZ', '_$sSo17ARConfidenceLevelVSL5ARKitMc', 
+                       '_$sSo17ARGeometryElementC5ARKitEySays5Int32VGSicig', '_$sSo17ARGeometryElementC5ARKitEySays5Int32VGSicipMV', 
                        '_$sSo20ARSkeletonDefinitionC5ARKitE13parentIndicesSaySiGvg', 
                        '_$sSo20ARSkeletonDefinitionC5ARKitE13parentIndicesSaySiGvpMV', 
                        '_$sSo20ARSkeletonDefinitionC5ARKitE5index3forSiSo0A9JointNamea_tF', 

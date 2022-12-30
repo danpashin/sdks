@@ -2,7 +2,7 @@
 //  CLSScoreItem.h
 //  ClassKit
 //
-//  Copyright © 2018 Apple Inc. All rights reserved.
+//  Copyright © 2018 - 2020 Apple Inc. All rights reserved.
 //
 
 #import <ClassKit/CLSActivityItem.h>
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract      CLSScoreItem represents user generated score information.
  */
 
-API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.3), macos(11.0), macCatalyst(14.0)) API_UNAVAILABLE(watchos, tvos)
 @interface CLSScoreItem : CLSActivityItem
 
 /*!
@@ -31,7 +31,7 @@ API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
 /*!
  @abstract      Create a score item with identifiers, title, score and maximum score.
  @param         identifier      An identifier that is unique within activity.
- @param         title           Title of score. Ex @em Biology- Cellular Division Quiz @em
+ @param         title           Title of score. Ex @em Biology- Cellular Division Quiz
  @param         score           The score the user received.
  @param         maxScore        The maximum score possible.
  */

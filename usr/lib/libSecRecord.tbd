@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 87F5A9C7-0A44-338F-8D91-0FAE5A03EFBD', 'arm64e: 9E4923F0-0C1E-3509-9665-752DD53E4C3C' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           05A31048-3606-3453-9AB4-8E1A090DBB39
+  - target:          arm64e-ios
+    value:           8543A774-2F89-3AA7-BF21-DA1DE8B6AD56
 install-name:    '/usr/lib/libSecRecord.dylib'
 current-version: 0
 compatibility-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _sec_record_advance_sequence_number, _sec_record_buffer_access_header, 
                        _sec_record_buffer_access_payload, _sec_record_buffer_finalize, 
                        _sec_record_buffer_read_header, _sec_record_buffer_read_payload, 

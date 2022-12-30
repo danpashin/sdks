@@ -1,12 +1,22 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 3EE52000-A32A-3066-B968-A2A16A053F00', 'armv7s: 6441EF00-D3E4-3073-B47C-F903D9F01852', 
-                   'arm64: 23880688-DFE2-32B7-8C53-AAF71A5D24DE', 'arm64e: C489387F-F5E8-34EE-AF66-D3A538D77C18' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           C148CA59-A0A9-32F1-AE00-DC18DA3DD05C
+  - target:          armv7s-ios
+    value:           7D154444-31B9-3511-80B3-3F3F47362F31
+  - target:          arm64-ios
+    value:           434BBF96-E27E-328C-BB52-B460C26486A2
+  - target:          arm64e-ios
+    value:           25D940E8-67E3-38D0-A93C-89A179651529
 install-name:    '/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices'
-current-version: 1069.25
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 1116.2
+reexported-libraries:
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+    libraries:       [ '/System/Library/Frameworks/CoreServices.framework/CoreServices' ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CSIdentityAuthorityCopyLocalizedName, _CSIdentityAuthorityGetTypeID, 
                        _CSIdentityCreateCopy, _CSIdentityCreatePersistentReference, 
                        _CSIdentityGetAuthority, _CSIdentityGetClass, _CSIdentityGetFullName, 
@@ -185,7 +195,6 @@ exports:
                        _LSAppLinkPlugIn, _LSApplicationState, _LSDefaults, _LSDiskUsage, 
                        _LSQuery, _LSQueryContext, _LSQueryResult, _LSStringLocalizer, 
                        _UTType, _UTTypeQuery ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
-    re-exports:      [ '/System/Library/Frameworks/CoreServices.framework/CoreServices' ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _MobileCoreServicesVersionNumber, _MobileCoreServicesVersionString ]
 ...

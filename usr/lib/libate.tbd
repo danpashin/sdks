@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 51273DDB-012A-3566-9D5C-A967C8A09E2E', 'armv7s: AFBC60D2-E181-31BE-BEC9-B066286698EC', 
-                   'arm64: C636919F-D6FE-3235-9A39-997EFAA5713E', 'arm64e: 9FDA08A4-98F4-3098-B44B-02D2D950A8B8' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           DFF0A7FE-DBB7-3DEE-AFF4-C2C2CBF8CE31
+  - target:          armv7s-ios
+    value:           C902E2B7-3950-3670-9B7F-8D2548590AD2
+  - target:          arm64-ios
+    value:           0C19F190-7ABC-3E0E-A071-89310A496EE2
+  - target:          arm64e-ios
+    value:           D9F241CC-FA7F-3DF5-8942-CD121238B15D
 install-name:    '/usr/lib/libate.dylib'
-current-version: 3.0.1
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+current-version: 3.0.4
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _at_block_format_convert_to_MTLPixelFormat, _at_block_format_to_MTLPixelFormat, 
                        _at_block_get_features, _at_encoder_compress_texels, _at_encoder_create, 
                        _at_encoder_decompress_texels, _at_encoder_get_block_address, 

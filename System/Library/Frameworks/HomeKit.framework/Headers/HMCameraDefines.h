@@ -11,7 +11,7 @@
 /*!
  * @abstract This enumeration describes the different states of a camera stream.
  */
-API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(macos)
+API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 typedef NS_ENUM(NSUInteger, HMCameraStreamState)
 {
     /*!
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, HMCameraStreamState)
 /*!
  * @abstract This enumeration describes the setting for audio on the recipient of the camera stream.
  */
-API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0)) API_UNAVAILABLE(macos)
+API_AVAILABLE(ios(10.0), watchos(3.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 typedef NS_ENUM(NSUInteger, HMCameraAudioStreamSetting)
 {
     /*!

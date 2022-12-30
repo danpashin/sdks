@@ -1,17 +1,24 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: EF039D34-68F0-34F8-918E-D1EE9A3300E5', 'armv7s: 7E17A1E2-DF00-346C-9700-36C35FB22283', 
-                   'arm64: 1168DC6B-0BB9-358C-B758-08CAB170C101', 'arm64e: 4E578183-3B2E-3C99-8136-17F50F056157' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           91405E9E-7BAB-3564-94AF-57F78298A9F9
+  - target:          armv7s-ios
+    value:           FB1DFB3C-D311-3013-89C2-AD5797990ACA
+  - target:          arm64-ios
+    value:           85D22440-2921-3E3E-9ED6-ABCA339BA22E
+  - target:          arm64e-ios
+    value:           A151A20E-7D3B-3A0A-8693-32F357F032DE
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount'
-current-version: 331.70.6
-exports:         
-  - archs:           [ armv7, armv7s ]
+current-version: 364.0.3
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _VSEntitlementNameBulletinService, _VSStoreProviderResponseKeyAppStoreIdentifier, 
                        _VSSubscriptionFetchOptionIncludeUninstalledApps ]
     objc-classes:    [ VSBundlePrivacyInfo, VSCookieServer, VSDemoProviderServer, 
                        VSDeveloperAttribute, VSStoreAuthenticationNotificationOperation ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _VSAccountProviderAuthenticationSchemeAPI, _VSAccountProviderAuthenticationSchemeSAML, 
                        _VSAccountStoreDidChangeNotification, _VSActiveSubscriptionsDidChangeNotification, 
                        _VSAllKnownTemplateElements, _VSBuddyBundleID, _VSBundleURLForProcessIdentifier, 
@@ -82,8 +89,8 @@ exports:
                        VSAccountManager, VSAccountManagerResult, VSAccountMetadata, 
                        VSAccountMetadataRequest, VSAccountProviderResponse, VSAccountSaveOperation, 
                        VSAccountSerializationCenter, VSAccountStore, VSAppChannelsFilter, 
-                       VSAppInstallationInfoCenter, VSAppInstallationOperation, VSAsyncOperation, 
-                       VSAuditToken, VSBackgroundTask, VSBlockBasedValueTransformer, 
+                       VSAppInstallationInfoCenter, VSAppInstallationOperation, VSApplicationBootURLOperation, 
+                       VSAsyncOperation, VSAuditToken, VSBackgroundTask, VSBlockBasedValueTransformer, 
                        VSCasePreservingString, VSCompoundValueTransformer, VSDelayOperation, 
                        VSDeveloperIdentityProviderChangeOperation, VSDeveloperIdentityProviderFetchAllOperation, 
                        VSDeveloperSettings, VSDeveloperSettingsFetchOperation, VSDeveloperSettingsUpdateOperation, 

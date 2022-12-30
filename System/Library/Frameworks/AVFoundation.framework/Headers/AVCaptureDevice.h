@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCapture/AVCaptureDevice.h>)
 /*
     File:  AVCaptureDevice.h
  
@@ -169,7 +170,7 @@ AV_INIT_UNAVAILABLE
  @discussion
     This property can be used to identify capture devices from a particular manufacturer. All Apple devices return "Apple Inc.". Devices from third party manufacturers may return an empty string.
  */
-@property(nonatomic, readonly) NSString *manufacturer API_AVAILABLE(macos(10.9)) API_UNAVAILABLE(ios, watchos, tvos);
+@property(nonatomic, readonly) NSString *manufacturer API_AVAILABLE(macos(10.9), ios(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @property transportType
@@ -254,7 +255,7 @@ AV_INIT_UNAVAILABLE
  @discussion
     The value of this property is a BOOL indicating whether the device represented by the receiver is in use by another application. Clients can key value observe the value of this property to be notified when another app starts or stops using this device.
  */
-@property(nonatomic, readonly, getter=isInUseByAnotherApplication) BOOL inUseByAnotherApplication __IOS_PROHIBITED __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+@property(nonatomic, readonly, getter=isInUseByAnotherApplication) BOOL inUseByAnotherApplication API_AVAILABLE(macCatalyst(14.0)) API_UNAVAILABLE(ios, watchos, tvos);
 
 /*!
  @property suspended
@@ -264,7 +265,7 @@ AV_INIT_UNAVAILABLE
  @discussion
     The value of this property is a BOOL indicating whether the device represented by the receiver is currently suspended. Some devices disallow data capture due to a feature on the device. For example, isSuspended returns YES for the external iSight when its privacy iris is closed, or for the internal iSight on a notebook when the notebook's display is closed. Clients can key value observe the value of this property to be notified when the device becomes suspended or unsuspended.
  */
-@property(nonatomic, readonly, getter=isSuspended) BOOL suspended API_UNAVAILABLE(ios, watchos, tvos);
+@property(nonatomic, readonly, getter=isSuspended) BOOL suspended API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos);
 
 /*!
  @property linkedDevices
@@ -522,7 +523,7 @@ AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInTrueDepthCamera A
  @constant AVCaptureDeviceTypeBuiltInDuoCamera
     A deprecated synonym for AVCaptureDeviceTypeBuiltInDualCamera. Please use AVCaptureDeviceTypeBuiltInDualCamera instead.
  */
-AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInDuoCamera API_DEPRECATED("Use AVCaptureDeviceTypeBuiltInDualCamera instead.", ios(10.0, 10.2)) API_UNAVAILABLE(macos, macCatalyst) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
+AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInDuoCamera API_DEPRECATED("Use AVCaptureDeviceTypeBuiltInDualCamera instead.", ios(10.0, 10.2)) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 
 
 @interface AVCaptureDevice (AVCaptureDeviceType)
@@ -660,7 +661,7 @@ typedef NS_ENUM(NSInteger, AVCaptureFlashMode) {
  @discussion
     The value of this property is a BOOL indicating whether the receiver's flash is currently active. When the flash is active, it will flash if a still image is captured. When a still image is captured with the flash active, exposure and white balance settings are overridden for the still. This is true even when using AVCaptureExposureModeCustom and/or AVCaptureWhiteBalanceModeLocked. This property is key-value observable.
  */
-@property(nonatomic, readonly, getter=isFlashActive) BOOL flashActive API_DEPRECATED("Use AVCapturePhotoOutput's -isFlashScene instead.", ios(5.0, 10.0)) API_UNAVAILABLE(macos, macCatalyst);
+@property(nonatomic, readonly, getter=isFlashActive) BOOL flashActive API_DEPRECATED("Use AVCapturePhotoOutput's -isFlashScene instead.", ios(5.0, 10.0)) API_UNAVAILABLE(macos);
 
 /*!
  @method isFlashModeSupported:
@@ -1547,7 +1548,7 @@ AVF_EXPORT const AVCaptureWhiteBalanceGains AVCaptureWhiteBalanceGainsCurrent AP
  @discussion
     This is the zoom factor at which the wide angle camera's field of view matches telephoto camera's full field of view. On non-DualCamera devices this will return 1.0. As of iOS 13.0, this API has been deprecated in favor of virtualDeviceSwitchOverVideoZoomFactors.
  */
-@property(atomic, readonly) CGFloat dualCameraSwitchOverVideoZoomFactor API_DEPRECATED_WITH_REPLACEMENT("virtualDeviceSwitchOverVideoZoomFactors", ios(11.0, 13.0)) API_UNAVAILABLE(macos, macCatalyst);
+@property(atomic, readonly) CGFloat dualCameraSwitchOverVideoZoomFactor API_DEPRECATED_WITH_REPLACEMENT("virtualDeviceSwitchOverVideoZoomFactors", ios(11.0, 13.0)) API_UNAVAILABLE(macos);
 
 @end
 
@@ -1711,7 +1712,7 @@ typedef NS_ENUM(NSInteger, AVCaptureDeviceTransportControlsPlaybackMode) {
 /*!
  @property videoHDREnabled
  @abstract
-    Indicates whether the receiver's streaming high dynamic range feature is enabled.
+    Indicates whether the receiver's streaming high dynamic range feature is enabled. See AVCaptureDeviceFormat.isVideoHDRSupported.
  
  @discussion
     The value of this property is a BOOL indicating whether the receiver is currently streaming high dynamic range video buffers. The property may only be set if you first set automaticallyAdjustsVideoHDREnabled to NO, otherwise an NSGenericException is thrown. videoHDREnabled may only be set to YES if the receiver's activeFormat.isVideoHDRSupported property returns YES, otherwise an NSGenericException is thrown. This property may be key-value observed.
@@ -1721,7 +1722,6 @@ typedef NS_ENUM(NSInteger, AVCaptureDeviceTransportControlsPlaybackMode) {
 @property(nonatomic, getter=isVideoHDREnabled) BOOL videoHDREnabled API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos);
 
 @end
-
 
 /*!
  @enum AVCaptureColorSpace
@@ -1793,7 +1793,7 @@ typedef NS_ENUM(NSInteger, AVCaptureColorSpace) {
     Indicates the minimum zoom factor available for the AVCaptureDevice's videoZoomFactor property.
  
  @discussion
-    On non-dual camera devices the minAvailableVideoZoomFactor is always 1.0. On a dual camera device the minAvailableVideoZoomFactor can change when the device is delivering depth data to one or more outputs (see -[AVCaptureDeviceFormat videoMinZoomFactorForDepthDataDelivery]). If the device's videoZoomFactor property is assigned a value smaller than 1.0, an NSRangeException is thrown. Setting the videoZoomFactor to a value greater than or equal to 1.0, but lower than minAvailableVideoZoomFactor results in the value being clamped to the minAvailableVideoZoomFactor. Clients can key value observe the value of this property.
+    On non-virtual devices the minAvailableVideoZoomFactor is always 1.0. On a virtual device the minAvailableVideoZoomFactor can change when the device is delivering depth data to one or more outputs (see -[AVCaptureDeviceFormat videoMinZoomFactorForDepthDataDelivery]). If the device's videoZoomFactor property is assigned a value smaller than 1.0, an NSRangeException is thrown. Setting the videoZoomFactor to a value greater than or equal to 1.0, but lower than minAvailableVideoZoomFactor results in the value being clamped to the minAvailableVideoZoomFactor. Clients can key value observe the value of this property.
  */
 @property(nonatomic, readonly) CGFloat minAvailableVideoZoomFactor API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -1803,7 +1803,7 @@ typedef NS_ENUM(NSInteger, AVCaptureColorSpace) {
     Indicates the maximum zoom factor available for the AVCaptureDevice's videoZoomFactor property.
  
  @discussion
-    On non-dual camera devices the maxAvailableVideoZoomFactor is always equal to the activeFormat.videoMaxZoomFactor. On a dual camera device the maxAvailableVideoZoomFactor can change when the device is delivering depth data to one or more outputs (see -[AVCaptureDeviceFormat videoMaxZoomFactorForDepthDataDelivery]). If the device's videoZoomFactor property is assigned a value greater than activeFormat.videoMaxZoomFactor, an NSRangeException is thrown. Setting the videoZoomFactor to a value less than or equal to activeFormat.videoMaxZoomFactor, but greater than maxAvailableVideoZoomFactor results in the value being clamped to the maxAvailableVideoZoomFactor. Clients can key value observe the value of this property.
+    On non-virtual devices the maxAvailableVideoZoomFactor is always equal to the activeFormat.videoMaxZoomFactor. On a virtual device the maxAvailableVideoZoomFactor can change when the device is delivering depth data to one or more outputs (see -[AVCaptureDeviceFormat videoMaxZoomFactorForDepthDataDelivery]). If the device's videoZoomFactor property is assigned a value greater than activeFormat.videoMaxZoomFactor, an NSRangeException is thrown. Setting the videoZoomFactor to a value less than or equal to activeFormat.videoMaxZoomFactor, but greater than maxAvailableVideoZoomFactor results in the value being clamped to the maxAvailableVideoZoomFactor. Clients can key value observe the value of this property.
  */
 @property(nonatomic, readonly) CGFloat maxAvailableVideoZoomFactor API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -1901,7 +1901,7 @@ AV_INIT_UNAVAILABLE
     The list of devices that comply to the search criteria specified on the discovery session.
  
  @discussion
-    The returned array contains only devices that are available at the time the method is called. Applications can key-value observe this property to be notified when the list of available devices has changed. For apps linked against iOS 10, the devices returned are unsorted. For apps linked against iOS 11 or later, the devices are sorted by AVCaptureDeviceType, matching the order specified in the deviceTypes parameter of +[AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:mediaType:position:]. If a position of AVCaptureDevicePositionUnspecified is specified, the results are further ordered by position in the AVCaptureDevicePosition enum.
+    The returned array contains only devices that are available at the time the method is called. Applications can key-value observe this property to be notified when the list of available devices has changed. For apps linked against iOS 10, the devices returned are unsorted. For apps linked against iOS 11 or later, the devices are sorted by AVCaptureDeviceType, matching the order specified in the deviceTypes parameter of +[AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:mediaType:position:]. If a position of AVCaptureDevicePositionUnspecified is specified, the results are further ordered by position in the AVCaptureDevicePosition enum. Starting in Mac Catalyst 14.0, clients can key value observe the value of this property to be notified when the devices change.
  */
 @property(nonatomic, readonly) NSArray<AVCaptureDevice *> *devices;
 
@@ -1911,7 +1911,7 @@ AV_INIT_UNAVAILABLE
     An array of sets of AVCaptureDevices that are allowed to be used simultaneously in an AVCaptureMultiCamSession.
  
  @discussion
-    When using an AVCaptureMultiCamSession, multiple cameras may be used as device inputs to the session, so long as they are included in one of the supportedMultiCamDeviceSets.
+    When using an AVCaptureMultiCamSession, multiple cameras may be used as device inputs to the session, so long as they are included in one of the supportedMultiCamDeviceSets. Starting in Mac Catalyst 14.0, clients can key value observe the value of this property to be notified when the device sets change.
  */
 @property(nonatomic, readonly) NSArray<NSSet<AVCaptureDevice *> *> *supportedMultiCamDeviceSets API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 
@@ -2119,7 +2119,7 @@ AV_INIT_UNAVAILABLE
  @discussion
     videoStabilizationSupported is a BOOL indicating whether the format can be stabilized using AVCaptureConnection -setEnablesVideoStabilizationWhenAvailable. This property is deprecated. Use isVideoStabilizationModeSupported: instead.
  */
-@property(nonatomic, readonly, getter=isVideoStabilizationSupported) BOOL videoStabilizationSupported API_DEPRECATED("Use isVideoStabilizationModeSupported: instead.", ios(7.0, 8.0)) API_UNAVAILABLE(macos, macCatalyst);
+@property(nonatomic, readonly, getter=isVideoStabilizationSupported) BOOL videoStabilizationSupported API_DEPRECATED("Use isVideoStabilizationModeSupported: instead.", ios(7.0, 8.0)) API_UNAVAILABLE(macos);
 
 /*!
  @property videoMaxZoomFactor
@@ -2251,7 +2251,7 @@ AV_INIT_UNAVAILABLE
     Indicates the minimum zoom factor available for the AVCaptureDevice's videoZoomFactor property when delivering depth data to one or more outputs.
  
  @discussion
-    Dual camera devices support a limited zoom range when delivering depth data to any output. If this device format has no -supportedDepthDataFormats, this property returns 1.0.
+    Virtual devices support a limited zoom range when delivering depth data to any output. If this device format has no -supportedDepthDataFormats, this property returns 1.0.
  */
 @property(nonatomic, readonly) CGFloat videoMinZoomFactorForDepthDataDelivery API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -2261,17 +2261,17 @@ AV_INIT_UNAVAILABLE
     Indicates the maximum zoom factor available for the AVCaptureDevice's videoZoomFactor property when delivering depth data to one or more outputs.
  
  @discussion
-    Dual camera devices support a limited zoom range when delivering depth data to any output. If this device format has no -supportedDepthDataFormats, this property returns videoMaxZoomFactor.
+    Virtual devices support a limited zoom range when delivering depth data to any output. If this device format has no -supportedDepthDataFormats, this property returns videoMaxZoomFactor.
  */
 @property(nonatomic, readonly) CGFloat videoMaxZoomFactorForDepthDataDelivery API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
-/*
+/*!
  @property supportedDepthDataFormats
  @abstract
     Indicates this format's companion depth data formats.
  
  @discussion
-    If no depth data formats are supported by the receiver, an empty array is returned. On dual camera devices, the supportedDepthDataFormats list items always match the aspect ratio of their paired video format. When the receiver is set as the device's activeFormat, you may set the device's activeDepthDataFormat to one of these supported depth data formats.
+    If no depth data formats are supported by the receiver, an empty array is returned. On virtual devices, the supportedDepthDataFormats list items always match the aspect ratio of their paired video format. When the receiver is set as the device's activeFormat, you may set the device's activeDepthDataFormat to one of these supported depth data formats.
  */
 @property(nonatomic, readonly) NSArray<AVCaptureDeviceFormat *> *supportedDepthDataFormats API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -2281,7 +2281,7 @@ AV_INIT_UNAVAILABLE
     A property indicating AVCaptureOutput subclasses the receiver does not support.
  
  @discussion
-    As a rule, AVCaptureDeviceFormats of a given mediaType are available for use with all AVCaptureOutputs that accept that media type, but there are exceptions. For instance, on apps linked against iOS versions earlier than 12.0, the photo resolution video formats may not be used as sources for AVCaptureMovieFileOutput due to bandwidth limitations. On DualCamera devices, AVCaptureDepthDataOutput is not supported by the 12 MP device formats when using the -[AVCaptureDevice setActiveFormat:] API due to bandwidth limitations, though their use with -[AVCaptureSession setSessionPreset:AVCaptureSessionPresetPhoto] is supported. When using the photo preset, video is streamed at preview resolution rather than full sensor resolution.  
+    As a rule, AVCaptureDeviceFormats of a given mediaType are available for use with all AVCaptureOutputs that accept that media type, but there are exceptions. For instance, on apps linked against iOS versions earlier than 12.0, the photo resolution video formats may not be used as sources for AVCaptureMovieFileOutput due to bandwidth limitations. On DualCamera devices, AVCaptureDepthDataOutput is not supported when outputting full resolution (i.e. 12 MP) video due to bandwidth limitations. In order to stream depth data plus video data from a photo format, ensure that your AVCaptureVideoDataOutput's deliversPreviewSizedOutputBuffers property is set to YES. Likewise, to stream depth data while capturing video to a movie file using AVCaptureMovieFileOutput, call -[AVCaptureSession setSessionPreset:AVCaptureSessionPresetPhoto]. When using the photo preset, video is captured at preview resolution rather than the full sensor resolution.
  */
 @property(nonatomic, readonly) NSArray<Class> *unsupportedCaptureOutputClasses API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -2377,3 +2377,7 @@ AV_INIT_UNAVAILABLE
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCapture/AVCaptureDevice.h>
+#endif

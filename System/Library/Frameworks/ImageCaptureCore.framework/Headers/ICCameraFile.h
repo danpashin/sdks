@@ -83,7 +83,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @property firstPicked
  @abstract True if file is a firstPicked nil otherwise.
  */
-@property (nonatomic, readonly) BOOL firstPicked IC_AVAILABLE(macos(10.4), ios(13.0));
+@property (nonatomic, readonly) BOOL firstPicked IC_AVAILABLE(macos(10.13), ios(13.0));
 
 /*!
  @property originatingAssetID
@@ -95,7 +95,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @property groupUUID
  @abstract groupUUID of file if present, nil if file has no groupUUID.
  */
-@property (nonatomic, readonly, nullable) NSString* groupUUID IC_AVAILABLE(macos(10.4), ios(13.0));
+@property (nonatomic, readonly, nullable) NSString* groupUUID IC_AVAILABLE(macos(10.13), ios(13.0));
 
 /*!
  @property gpsString
@@ -107,7 +107,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @property relatedUUID
  @abstract Internal related UUID for dbg/aae/etc.
  */
-@property (nonatomic, readonly, nullable) NSString* relatedUUID IC_AVAILABLE(macos(10.4), ios(13.0));
+@property (nonatomic, readonly, nullable) NSString* relatedUUID IC_AVAILABLE(macos(10.11), ios(13.0));
 
 /*!
  @property burstUUID
@@ -119,13 +119,13 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @property burstFavorite
  @abstract True if burst favorite, ignored if not in a burst or not a burst favorite.
  */
-@property (nonatomic, readonly) BOOL burstFavorite IC_AVAILABLE(macos(10.4), ios(13.0));
+@property (nonatomic, readonly) BOOL burstFavorite IC_AVAILABLE(macos(10.10), ios(13.0));
 
 /*!
  @property burstPicked
  @abstract True if burst user picked, ignored if not in a burst or not a burst user picked.
  */
-@property (nonatomic, readonly) BOOL burstPicked IC_AVAILABLE(macos(10.4), ios(13.0));
+@property (nonatomic, readonly) BOOL burstPicked IC_AVAILABLE(macos(10.10), ios(13.0));
 
 /*!
  @property sidecarFiles

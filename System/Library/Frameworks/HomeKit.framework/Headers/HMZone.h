@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *             Eg. "Living Room" and "Kitchen" rooms can be grouped together
  *             in the "Downstairs" zone.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMZone : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

@@ -14,6 +14,7 @@
 #import <MPSImage/MPSImageConvolution.h>
 #import <MPSImage/MPSImageCopy.h>
 #import <MPSImage/MPSImageDistanceTransform.h>
+#import <MPSImage/MPSImageEDLines.h>
 #import <MPSImage/MPSImageGuidedFilter.h>
 #import <MPSImage/MPSImageKeypoint.h>
 #import <MPSImage/MPSImageHistogram.h>

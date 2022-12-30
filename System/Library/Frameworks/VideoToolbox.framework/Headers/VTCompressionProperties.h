@@ -251,6 +251,19 @@ VT_EXPORT const CFStringRef kVTCompressionPropertyKey_MoreFramesBeforeStart API_
 */
 VT_EXPORT const CFStringRef kVTCompressionPropertyKey_MoreFramesAfterEnd API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // Read/write, CFBoolean, Optional
 
+/*!
+	@constant	kVTCompressionPropertyKey_PrioritizeEncodingSpeedOverQuality
+	@abstract
+		Hint for the video encoder that it should maximize its speed during encode, sacrificing quality if needed
+	@discussion
+		Clients may set this property to kCFBooleanTrue to indicate that
+		the encoder can take steps to maximize its speed by reducing quality.
+		Setting the property to NULL is equivalent to setting it to kCFBooleanFalse.
+		Not all video encoders support this property
+		By default, this property is NULL.
+*/
+VT_EXPORT const CFStringRef kVTCompressionPropertyKey_PrioritizeEncodingSpeedOverQuality API_AVAILABLE(macosx(11.0), ios(14.0), tvos(14.0)); // CFBoolean, Optional
+
 #pragma mark Bitstream configuration
 
 /*!
@@ -317,6 +330,21 @@ VT_EXPORT const CFStringRef kVTProfileLevel_H263_Profile0_Level10 API_AVAILABLE(
 VT_EXPORT const CFStringRef kVTProfileLevel_H263_Profile0_Level45 API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 VT_EXPORT const CFStringRef kVTProfileLevel_H263_Profile3_Level45 API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
+/*!
+    @constant    kVTCompressionPropertyKey_HDRMetadataInsertionMode
+    @abstract
+        The mode for HDR metadata in the output bitstream.
+    @discussion
+        If set to kVTHDRMetadataInsertionMode_None, no HDR metadata will
+        be present in the output bitstream.  For other modes,
+        VTCompressionSession will determine what type of HDR metadata
+        to insert based on the output color space.  e.g. DolbyVision, HDR10, etc.
+        This property has no effect if the output color space is not HDR, or if
+        there is currently no underlying support for the HDR format.
+*/
+VT_EXPORT const CFStringRef kVTCompressionPropertyKey_HDRMetadataInsertionMode API_AVAILABLE(macosx(11.0), ios(14.0), tvos(14.0), watchos(7.0)); // Read/write, CFString, Optional, default is kVTHDRMetadataInsertionMode_Auto
+    VT_EXPORT const CFStringRef kVTHDRMetadataInsertionMode_None API_AVAILABLE(macosx(11.0), ios(14.0), tvos(14.0), watchos(7.0));
+    VT_EXPORT const CFStringRef kVTHDRMetadataInsertionMode_Auto API_AVAILABLE(macosx(11.0), ios(14.0), tvos(14.0), watchos(7.0));
 
 /*!
 	 @constant	kVTCompressionPropertyKey_H264EntropyMode

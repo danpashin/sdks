@@ -18,9 +18,9 @@ typedef NS_ENUM(NSInteger, PKSecureElementPassActivationState) {
     PKSecureElementPassActivationStateActivating,
     PKSecureElementPassActivationStateSuspended,
     PKSecureElementPassActivationStateDeactivated,
-} NS_SWIFT_NAME(PKSecureElementPass.PassActivationState) API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2));
+} NS_SWIFT_NAME(PKSecureElementPass.PassActivationState) API_AVAILABLE(macos(11.0), ios(13.4), watchos(6.2));
 
-API_AVAILABLE(macos(10.15.4), ios(13.4), watchos(6.2))
+API_AVAILABLE(macos(11.0), ios(13.4), watchos(6.2))
 @interface PKSecureElementPass : PKPass
 
 @property (nonatomic, copy, readonly) NSString *primaryAccountIdentifier;

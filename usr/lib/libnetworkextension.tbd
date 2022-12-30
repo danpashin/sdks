@@ -1,11 +1,18 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: D1FBF220-836B-3968-A9C1-C44F3FF26328', 'arm64e: 33BC4E23-3CC7-3FA4-A3C1-88DFC2079465' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           74A1F61B-74A9-32EE-9B7D-C0755CC4BA39
+  - target:          arm64e-ios
+    value:           9C7E4D27-AE47-33FB-B423-150CB215B2DF
 install-name:    '/usr/lib/libnetworkextension.dylib'
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ne_filter_allocate_globals, _ne_filter_copy_connection, _ne_filter_crypto_generate_client_key, 
                        _ne_filter_crypto_init_client, _ne_filter_crypto_init_master, 
                        _ne_filter_crypto_sign_data, _ne_filter_crypto_validate_data, 

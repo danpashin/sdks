@@ -1,3 +1,4 @@
+#if !__has_include(<AVFCapture/AVSemanticSegmentationMatte.h>)
 /*
     File:  AVSemanticSegmentationMatte.h
  
@@ -152,3 +153,7 @@ AV_INIT_UNAVAILABLE
 @end
 
 NS_ASSUME_NONNULL_END
+
+#else
+#import <AVFCapture/AVSemanticSegmentationMatte.h>
+#endif

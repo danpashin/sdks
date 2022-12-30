@@ -27,14 +27,14 @@ typedef NS_OPTIONS( NSUInteger, HMHomeManagerAuthorizationStatus )
     HMHomeManagerAuthorizationStatusDetermined  = (1 << 0),
     HMHomeManagerAuthorizationStatusRestricted  = (1 << 1),
     HMHomeManagerAuthorizationStatusAuthorized  = (1 << 2),
-} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(13.0)) API_UNAVAILABLE(macos);
+} API_AVAILABLE(ios(13.0), watchos(6.0), tvos(13.0), macCatalyst(14.0)) API_UNAVAILABLE(macos);
 
 /*!
  *  @abstract   Manages collection of one or more homes.
  *
  *  @discussion This class is responsible for managing a collection of homes.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMHomeManager : NSObject
 
 /*!
@@ -101,7 +101,7 @@ HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(maco
 /*!
  *  @abstract   This delegate receives updates on homes being managed via the home manager.
  */
-API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @protocol HMHomeManagerDelegate <NSObject>
 
 @optional

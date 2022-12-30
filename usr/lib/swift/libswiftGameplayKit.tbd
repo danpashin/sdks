@@ -1,12 +1,19 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: 2376D7F9-AB03-3686-B63B-49EB1BF2D982', 'armv7s: 7BF68907-D121-3065-B36D-FF98D7E5C399', 
-                   'arm64: 19F4F02B-0061-3BC1-A96C-1B34CF8E407B', 'arm64e: E6C40FE7-8BA3-3D56-AD52-8D1AA7E3FFC5' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           2376D7F9-AB03-3686-B63B-49EB1BF2D982
+  - target:          armv7s-ios
+    value:           7BF68907-D121-3065-B36D-FF98D7E5C399
+  - target:          arm64-ios
+    value:           C53F963D-1FD6-3B47-AA79-5E358EE57D89
+  - target:          arm64e-ios
+    value:           83EFD06C-4620-36FF-BD0D-D53CF4B6FB3A
 install-name:    '/usr/lib/swift/libswiftGameplayKit.dylib'
-current-version: 0
-exports:         
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$@rpath/libswiftGameplayKit.dylib', 
                        '$ld$install_name$os10.1$@rpath/libswiftGameplayKit.dylib', 
                        '$ld$install_name$os10.2$@rpath/libswiftGameplayKit.dylib', 
@@ -31,8 +38,11 @@ exports:
                        '$ld$install_name$os9.3$@rpath/libswiftGameplayKit.dylib', 
                        '_$sSo14GKStateMachineC11GameplayKitE5state8forClassxSgxm_tSo0A0CRbzlF', 
                        '_$sSo17GKPolygonObstacleC11GameplayKitE6pointsABSays5SIMD2VySfGG_tcfC', 
+                       '_$sSo17GKPolygonObstacleC11GameplayKitE6pointsABSays5SIMD2VySfGG_tcfc', 
                        '_$sSo6GKPathC11GameplayKitE6points6radius8cyclicalABSays5SIMD2VySfGG_SfSbtcfC', 
+                       '_$sSo6GKPathC11GameplayKitE6points6radius8cyclicalABSays5SIMD2VySfGG_SfSbtcfc', 
                        '_$sSo6GKPathC11GameplayKitE6points6radius8cyclicalABSays5SIMD3VySfGG_SfSbtcfC', 
+                       '_$sSo6GKPathC11GameplayKitE6points6radius8cyclicalABSays5SIMD3VySfGG_SfSbtcfc', 
                        '_$sSo8GKEntityC11GameplayKitE15removeComponent6ofTypeyxm_tSo11GKComponentCRbzlF', 
                        '_$sSo8GKEntityC11GameplayKitE9component6ofTypexSgxm_tSo11GKComponentCRbzlF', 
                        '__swift_FORCE_LOAD_$_swiftGameplayKit' ]

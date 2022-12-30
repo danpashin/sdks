@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief This class is used to represent an entry in an action set that writes a specific
  *        value to a characteristic.
  */
-HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0)) API_UNAVAILABLE(macos)
+HM_EXTERN API_AVAILABLE(ios(8.0), watchos(2.0), tvos(10.0), macCatalyst(14.0)) API_UNAVAILABLE(macos)
 @interface HMCharacteristicWriteAction<TargetValueType : id<NSCopying>> : HMAction
 
 - (instancetype)init NS_UNAVAILABLE;

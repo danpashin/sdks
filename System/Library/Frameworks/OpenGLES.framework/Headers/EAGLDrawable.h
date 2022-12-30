@@ -26,20 +26,21 @@ NS_ASSUME_NONNULL_BEGIN
 /*  Default Value: kEAGLColorFormatRGBA8                                */
 /*  Description: Format of pixels in renderbuffer                       */
 /************************************************************************/
-EAGL_EXTERN NSString * const kEAGLDrawablePropertyRetainedBacking;
-EAGL_EXTERN NSString * const kEAGLDrawablePropertyColorFormat;
+EAGL_EXTERN NSString * const kEAGLDrawablePropertyRetainedBacking OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+EAGL_EXTERN NSString * const kEAGLDrawablePropertyColorFormat OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
 
 /************************************************************************/
 /* Values for kEAGLDrawablePropertyColorFormat key                      */
 /************************************************************************/
-EAGL_EXTERN NSString * const kEAGLColorFormatRGBA8;
-EAGL_EXTERN NSString * const kEAGLColorFormatRGB565;
-EAGL_EXTERN NSString * const kEAGLColorFormatSRGBA8 NS_AVAILABLE_IOS(7_0);
+EAGL_EXTERN NSString * const kEAGLColorFormatRGBA8 OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+EAGL_EXTERN NSString * const kEAGLColorFormatRGB565 OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0));
+EAGL_EXTERN NSString * const kEAGLColorFormatSRGBA8 OPENGLES_DEPRECATED(ios(7.0, 12.0), tvos(9.0, 12.0));
 
 /************************************************************************/
 /* EAGLDrawable Interface                                               */
 /************************************************************************/
 
+OPENGLES_DEPRECATED(ios(2.0, 12.0), tvos(9.0, 12.0))
 @protocol EAGLDrawable 
 
 /* Contains keys from kEAGLDrawableProperty* above */

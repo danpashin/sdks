@@ -1,19 +1,26 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: FE3B33E9-AAD5-3ECB-BAED-220E9B576482', 'armv7s: DA07BFB4-4D58-37E8-8A7B-D0974991540B', 
-                   'arm64: D3C614FC-F5B8-33D1-921C-8C3AA21DD84A', 'arm64e: D4EE71A1-E77A-3C4C-8B79-761CD5F0CF57' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           774F5CDC-BBFF-3959-95F0-FDD539F04D34
+  - target:          armv7s-ios
+    value:           AB40A532-1090-37E7-80CE-3D2D6F087DDB
+  - target:          arm64-ios
+    value:           DF12CDCD-738F-30F7-A90A-023CFCF72EDB
+  - target:          arm64e-ios
+    value:           F934DA6C-5C13-38D1-917F-83CEF90462B0
 install-name:    '/usr/lib/libKTLDynamic.dylib'
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _KTLBspStartSysmon, _KTLBspStopSysmon, _KTLCpsMsCallCsReleaseCall, 
                        _KTLCpsMsCallCsSetupVoiceCall, _KTLCpsMsNetAttach, _KTLCpsMsNetDetach, 
                        __KTLARILogDelegate, __KTLDebugPrint, __KTLDebugPrintBinary, 
                        __KTLErrorPrint, _kKTLCoreDumpVersion ]
-    weak-def-symbols: [ __ZTIN3ktl12KTLARIPacketE, __ZTIN3ktl16KTLReceivePacketE, 
-                        __ZTIN3ktl9KTLPacketE, __ZTSN3ktl12KTLARIPacketE, __ZTSN3ktl16KTLReceivePacketE, 
-                        __ZTSN3ktl9KTLPacketE ]
-  - archs:           [ arm64, arm64e ]
+    weak-symbols:    [ __ZTIN3ktl12KTLARIPacketE, __ZTIN3ktl16KTLReceivePacketE, 
+                       __ZTIN3ktl9KTLPacketE, __ZTSN3ktl12KTLARIPacketE, __ZTSN3ktl16KTLReceivePacketE, 
+                       __ZTSN3ktl9KTLPacketE ]
+  - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z13KTLGetKeywordPKc, __Z16KTLRFFilePushReqP10KTLOptionsjjPi, 
                        __Z16getRestoreOSModev, __Z17KTLGetETBFilenamePKc, __Z17KTLGetKDMFilenamePKc, 
                        __Z20KTLGetKDMProductNamev, __Z27KTLGetMaskFileExtensionName11KTLMaskType, 
@@ -33,7 +40,7 @@ exports:
                        __ZN5eUICC18VinylCommandDriver9InitPersoEPN6AriSdk26ARI_IBIVinylInitPsoReq_SDKEPPNS1_28ARI_IBIVinylInitPsoRspCb_SDKE, 
                        __ZN5eUICC18VinylCommandDriverC1EP10KTLOptions, __ZN5eUICC18VinylCommandDriverC2EP10KTLOptions, 
                        __ZN5eUICC18VinylCommandDriverD1Ev, __ZN5eUICC18VinylCommandDriverD2Ev ]
-  - archs:           [ armv7, armv7s, arm64, arm64e ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _KTLATCommandNewCRLFSupport, _KTLAudioDisableHWLoopback, _KTLAudioEnableHWLoopback, 
                        _KTLBmmProvideBootTimeInfo, _KTLBspDebugJtagMode, _KTLBspGetCalibrationStatus, 
                        _KTLBspIceAtString, _KTLBspIceAtStringWrite, _KTLBspSetApWakeInterval, 

@@ -8,15 +8,13 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MPAssistantAddToErrorCache,
-                            _MPAssistantCalendarFromDate,
+    symbols:              [ _MPAssistantCalendarFromDate,
                             _MPAssistantCreateMediaEntityForRadioStation,
                             _MPAssistantCreateMediaEntityForStationID,
                             _MPAssistantCreateMediaItemFromNowPlayingInfo,
                             _MPAssistantCreateSuccessfulDryRunResponse,
                             _MPAssistantFuseSubscriptionEligible,
                             _MPAssistantGetAceHash, _MPAssistantGetCommandGroup,
-                            _MPAssistantGetErrorCache,
                             _MPAssistantGetFirstNonLegacyStatus,
                             _MPAssistantGetOverrideLibrarySharedUserID,
                             _MPAssistantGetOverrideRequesterSharedUserID,
@@ -64,9 +62,7 @@ exports:
                             _MPAssistantiBooksApplicationIdentifier,
                             _MPSAMPUnknownErrorCode,
                             __MPAssistantGetLocalPlaylistQuery,
-                            __MPAssistantInitializeErrorCache,
-                            __MPAssistantUtilitiesGetUserStateForAccount,
-                            _errorCache, _errorCacheQueue ]
+                            __MPAssistantUtilitiesGetUserStateForAccount ]
     objc-classes:         [ MPAssistantAddMediaEntityToAcousticIDHistory,
                             MPAssistantAddMediaEntityToWishList,
                             MPAssistantAddMediaItemsToLibrary,

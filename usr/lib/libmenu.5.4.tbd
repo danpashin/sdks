@@ -1,13 +1,20 @@
---- !tapi-tbd-v3
-archs:           [ armv7, armv7s, arm64, arm64e ]
-uuids:           [ 'armv7: C42ED90C-BC59-3CD9-A79A-3735C1A2AAE5', 'armv7s: 0D37697D-04D0-3830-93B0-3D089B5BCF80', 
-                   'arm64: 335054CB-800E-3960-9693-8E321C62F42F', 'arm64e: D94AF2B5-DDCA-3610-9CD6-F1343FDAB6BC' ]
-platform:        ios
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           25ADD7C4-2875-3A30-9F39-B22765CF49A8
+  - target:          armv7s-ios
+    value:           6AD0DC6F-0F43-30E6-A54F-9D51A5283B95
+  - target:          arm64-ios
+    value:           BF8C5239-34E4-3CB0-98DF-D08B5E7ACF04
+  - target:          arm64e-ios
+    value:           D49A2877-6F41-3F4C-B291-D5979F6E7017
 install-name:    '/usr/lib/libmenu.5.4.dylib'
 current-version: 5.4
 compatibility-version: 5.4
-exports:         
-  - archs:           [ armv7, armv7s ]
+exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___menu_5_4VersionNumber, ___menu_5_4VersionString, __nc_Calculate_Item_Length_and_Width, 
                        __nc_Calculate_Text_Width, __nc_Connect_Items, __nc_Default_Item, 
                        __nc_Default_Menu, __nc_Disconnect_Items, __nc_Draw_Menu, 

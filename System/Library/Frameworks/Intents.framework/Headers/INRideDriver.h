@@ -23,7 +23,7 @@ API_UNAVAILABLE(macos, tvos)
                      nameComponents:(nullable NSPersonNameComponents *)nameComponents
                         displayName:(nullable NSString *)displayName
                               image:(nullable INImage *)image
-                             rating:(nullable NSString *)rating NS_DESIGNATED_INITIALIZER API_AVAILABLE(ios(10.2), watchos(3.2)) API_UNAVAILABLE(macosx);
+                             rating:(nullable NSString *)rating NS_DESIGNATED_INITIALIZER API_AVAILABLE(ios(10.2), watchos(3.2));
 
 @end
  

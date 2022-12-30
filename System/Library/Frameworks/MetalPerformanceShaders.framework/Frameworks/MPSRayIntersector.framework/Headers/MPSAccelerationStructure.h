@@ -177,7 +177,7 @@ typedef NS_ENUM(NSUInteger, MPSAccelerationStructureStatus) {
  *
  *     float3 *vertices = (float3 *)((uint8_t *)vertexBuffer.contents + accel.vertexBufferOffset);
  *     // Update vertices
- *     [vertexBuffer didModifyRange:NSMakeRange(accel.vertexBufferOffset, sizeof(float3) * vertexCount)];
+ *     MPSDidModifyRange(vertexBuffer, NSMakeRange(accel.vertexBufferOffset, sizeof(float3) * vertexCount));
  *
  *     // Rebuild the acceleration structure
  *     [accel rebuild];

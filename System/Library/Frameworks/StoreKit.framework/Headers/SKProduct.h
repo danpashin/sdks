@@ -49,6 +49,9 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SK
 @property(nonatomic, readonly) BOOL isDownloadable API_AVAILABLE(ios(6.0), macos(10.15), watchos(6.2));
 @property(nonatomic, readonly) BOOL downloadable API_DEPRECATED_WITH_REPLACEMENT("-[SKProduct isDownloadable]", macos(10.8, 10.15)) API_UNAVAILABLE(ios, watchos);
 
+// YES if this product allows for sharing among family members
+@property(nonatomic, readonly) BOOL isFamilyShareable API_AVAILABLE(ios(14.0), macos(11.0), watchos(7.0));
+
 // Sizes in bytes (NSNumber [long long]) of the downloads available for this product
 @property(nonatomic, readonly) NSArray<NSNumber *> *contentLengths API_DEPRECATED_WITH_REPLACEMENT("-[SKProduct downloadContentLengths]", macos(10.8, 10.14)) API_UNAVAILABLE(ios, tvos, watchos);
 @property(nonatomic, readonly) NSArray<NSNumber *> *downloadContentLengths API_AVAILABLE(ios(6.0), macos(10.14), watchos(6.2));

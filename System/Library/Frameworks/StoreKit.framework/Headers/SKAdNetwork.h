@@ -15,6 +15,8 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos, watchos) __TVOS_
 // Participating apps should call this on launch to complete the install+open action associated with a product view
 + (void)registerAppForAdNetworkAttribution API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED;
 
++ (void)updateConversionValue:(NSInteger)conversionValue API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED;
+
 @end
 
 // Constants for use with SKStoreProductViewController to associate a product view with an install+open
@@ -33,5 +35,10 @@ SK_EXTERN NSString * const SKStoreProductParameterAdNetworkNonce API_AVAILABLE(i
 
 // Timestamp for this ad impression (NSNumber)
 SK_EXTERN NSString * const SKStoreProductParameterAdNetworkTimestamp API_AVAILABLE(ios(11.3)) API_UNAVAILABLE(macos, watchos);
+
+// App Store item identifier of the source app (NSNumber)
+SK_EXTERN NSString * const SKStoreProductParameterAdNetworkSourceAppStoreIdentifier API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos);
+
+SK_EXTERN NSString * const SKStoreProductParameterAdNetworkVersion API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos);
 
 NS_ASSUME_NONNULL_END
