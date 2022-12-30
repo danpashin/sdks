@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalizationPortraitInternals.framework/PersonalizationPortraitInternals
-current-version:       1034.2
+current-version:       1052.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -349,8 +349,10 @@ exports:
                             PPTopicReadOnlyServerRequestHandler,
                             PPTopicReadWriteServerDelegate,
                             PPTopicReadWriteServerRequestHandler, PPTopicStorage,
-                            PPTopicTransform, PPTransaction, PPU16CountedSet,
-                            PPWriteTransaction, PPXPCServer, PPXPCServerHelper,
+                            PPTopicTransform, PPTopicWhitelist,
+                            PPTopicWhitelistGuardedData, PPTransaction,
+                            PPU16CountedSet, PPWriteTransaction, PPXPCServer,
+                            PPXPCServerHelper,
                             PPXPCServerPipelinedBatchQueryManager,
                             _PPNamedEntityNormalization ]
     objc-ivars:           [ PPAppLaunchMonitorGuardedData.clientContext,
@@ -371,6 +373,7 @@ exports:
                             PPConfigurationGuardedData.highLevelTopicScoreThreshold,
                             PPConfigurationGuardedData.locationDecayHalfLifeSeconds,
                             PPConfigurationGuardedData.musicDataCollectionAMPBundleIds,
+                            PPConfigurationGuardedData.musicDataCollectionCollectNonAMPNowPlaying,
                             PPConfigurationGuardedData.musicDataCollectionMaximumRecordsPerType,
                             PPConfigurationGuardedData.musicDataCollectionSamplingRateForAMP,
                             PPConfigurationGuardedData.musicDataCollectionSamplingRateForCTS,
@@ -600,6 +603,7 @@ exports:
                             PPTextToTopicTransformGuardedData._topicTransform,
                             PPTextToTopicTransformGuardedData._vocabularyTrie,
                             PPTopicBlacklistGuardedData._blacklistTrie,
+                            PPTopicWhitelistGuardedData._whitelistTrie,
                             _PPNamedEntityNormalization.aggregatedRecord,
                             _PPNamedEntityNormalization.countByCategory,
                             _PPNamedEntityNormalization.countByName,

@@ -337,7 +337,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @discussion This request will execute the completion handler provided upon return.
  @note Execution of the completion block will occur on the thread initially called from.
  */
-- (void)requestOpenSessionWithOptions:(NSDictionary<ICSessionOptions, id>*)options
+- (void)requestOpenSessionWithOptions:(NSDictionary<ICSessionOptions, id>* _Nullable)options
                            completion:(void (^)(NSError* _Nullable error))completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
@@ -346,7 +346,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @discussion This request will execute the completion handler provided upon return.
  @note Execution of the completion block will occur on the thread initially called from.
  */
-- (void)requestCloseSessionWithOptions:(NSDictionary<ICSessionOptions, id>*)options
+- (void)requestCloseSessionWithOptions:(NSDictionary<ICSessionOptions, id>* _Nullable)options
                             completion:(void (^)(NSError* _Nullable error))completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
@@ -411,7 +411,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 - (void)requestYield IC_DEPRECATED("Requesting a device yield is no longer avaialble", macos(10.4,10.15)) IC_UNAVAILABLE(ios);
 
 /*!
- @method moduleExecutableArchitecture
+ @property moduleExecutableArchitecture
  @abstract Reports the device module servicing the requests executable architecture.
  */
 @property (readonly) int moduleExecutableArchitecture IC_DEPRECATED("Module executable architecture is no longer available",macos(10.4,10.15)) IC_UNAVAILABLE(ios);

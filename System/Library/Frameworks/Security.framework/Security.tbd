@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: D54C70C3-E405-307F-A3DF-F77BCAD86DAF', 'armv7s: 84D01D33-899F-3E07-B29D-09C33C084D9F', 
-                   'arm64: C27869A0-7C61-37CD-AE2E-F041E9D27DB6', 'arm64e: 84B7B3A8-F71B-3ACB-96A2-09CCE928890C' ]
+                   'arm64: FBCDF3BB-7284-30BB-B880-64E9C87FAB41', 'arm64e: 6651220B-58EE-3FD9-9FCE-6E1934BE3E76' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/Security.framework/Security'
-current-version: 59306.0.3
+current-version: 59306.0.53
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _DERDecodeItem, _DEROidCompare, _SOSAccountPeerGotInSync, 
@@ -673,10 +673,11 @@ exports:
                        _SecTrustEvaluateAsync, _SecTrustEvaluateAsyncWithError, _SecTrustEvaluateFastAsync, 
                        _SecTrustEvaluateLeafOnly, _SecTrustEvaluateWithError, _SecTrustFlushResponseCache, 
                        _SecTrustGetAssetVersionNumber, _SecTrustGetCertificateAtIndex, 
-                       _SecTrustGetCertificateCount, _SecTrustGetDetails, _SecTrustGetKeychainsAllowed, 
-                       _SecTrustGetNetworkFetchAllowed, _SecTrustGetTrustExceptionsArray, 
-                       _SecTrustGetTrustResult, _SecTrustGetTrustStoreVersionNumber, 
-                       _SecTrustGetTypeID, _SecTrustGetVerifyTime, _SecTrustIsExpiredOnly, 
+                       _SecTrustGetCertificateCount, _SecTrustGetDetails, _SecTrustGetExceptionResetCount, 
+                       _SecTrustGetKeychainsAllowed, _SecTrustGetNetworkFetchAllowed, 
+                       _SecTrustGetTrustExceptionsArray, _SecTrustGetTrustResult, 
+                       _SecTrustGetTrustStoreVersionNumber, _SecTrustGetTypeID, _SecTrustGetVerifyTime, 
+                       _SecTrustIncrementExceptionResetCount, _SecTrustIsExpiredOnly, 
                        _SecTrustOTAPKIGetUpdatedAsset, _SecTrustOTASecExperimentCopyAsset, 
                        _SecTrustOTASecExperimentGetUpdatedAsset, _SecTrustReportNetworkingAnalytics, 
                        _SecTrustReportTLSAnalytics, _SecTrustSerialize, _SecTrustSetAnchorCertificates, 

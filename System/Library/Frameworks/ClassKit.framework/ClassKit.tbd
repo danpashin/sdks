@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: A4BD84AB-A856-3F3F-8397-BA939172843B', 'arm64e: 6219CF24-A945-300D-A9DA-8DF023ED3332' ]
+                   'arm64: B7D246E4-BEEA-30B8-8384-932F55DE5751', 'arm64e: DDC386E7-D536-3A20-83E2-BB7EF30E0D52' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/ClassKit.framework/ClassKit'
-current-version: 145.0.104
+current-version: 145.0.113
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     symbols:         [ _CLSAppleContactsPrivateEntitlement, _CLSAppleContactsPrivateUIEntitlement, 
@@ -44,10 +44,10 @@ exports:
                        _CLSPredicateKeyPathParentObjectID, _CLSPredicateKeyPathPathEnd, 
                        _CLSPredicateKeyPathPersonID, _CLSPredicateKeyPathPublishingState, 
                        _CLSPredicateKeyPathReviewed, _CLSPredicateKeyPathRoles, _CLSPredicateKeyPathScore, 
-                       _CLSPredicateKeyPathSearchText, _CLSPredicateKeyPathStart, 
-                       _CLSPredicateKeyPathStartTime, _CLSPredicateKeyPathState, 
-                       _CLSPredicateKeyPathTitle, _CLSPredicateKeyPathTopic, _CLSPredicateKeyPathType, 
-                       _CLSPredicateKeyPathURL, _CLSPredicateKeyPathUniversalLinkURL, 
+                       _CLSPredicateKeyPathSearchText, _CLSPredicateKeyPathStableObjectID, 
+                       _CLSPredicateKeyPathStart, _CLSPredicateKeyPathStartTime, 
+                       _CLSPredicateKeyPathState, _CLSPredicateKeyPathTitle, _CLSPredicateKeyPathTopic, 
+                       _CLSPredicateKeyPathType, _CLSPredicateKeyPathURL, _CLSPredicateKeyPathUniversalLinkURL, 
                        _CLSProgressClasses, _CLSProgressdBundleIdentifier, _CLSQueryInterface, 
                        _CLSReportClasses, _CLSRosterClasses, _CLSSaveResponseInterface, 
                        _CLSSearchClasses, _CLSSettingsVisibilityDidChangeNotification, 
@@ -55,16 +55,16 @@ exports:
                        _CLSSourceFromString, _CLSStudentClassMembershipChangedDarwinNotificationName, 
                        _CLSUbiquitousContainerID, _CLSUserActivityActionType, _CLSUserActivityItemIdentifier, 
                        _CLSUserDefaultAutomatchClientPersona, _CLSUserDefaultDisableASMRosters, 
-                       _CLSUserDefaultPersistProgressData, _CLSXPCDictionaryUpdateWithDictionary, 
-                       _NSStringFromAuthorizationStatus, _NSStringFromBinaryValueType, 
-                       _NSStringFromCLSASMPrivilegeType, _NSStringFromContextType, 
-                       _NSStringFromDevMode, _NSStringFromFavoriteType, _NSStringFromHandoutAttachmentCompletionStatus, 
-                       _NSStringFromHandoutAttachmentType, _NSStringFromHandoutPublishingState, 
-                       _NSStringFromHandoutState, _NSStringFromNSStringCompareOptions, 
-                       _NSStringFromOriginatingSource, _NSStringFromPermissionType, 
-                       _NSStringFromSearchBehaviors, _NSStringFromSearchOptions, 
-                       _NSStringFromShareType, _NSStringFromSource, _PDServerMachServiceName, 
-                       _clsNotificationQueue, _ic, _kUTTypeCLSContext ]
+                       _CLSUserDefaultEnableStableObjectID, _CLSUserDefaultPersistProgressData, 
+                       _CLSXPCDictionaryUpdateWithDictionary, _NSStringFromAuthorizationStatus, 
+                       _NSStringFromBinaryValueType, _NSStringFromCLSASMPrivilegeType, 
+                       _NSStringFromContextType, _NSStringFromDevMode, _NSStringFromFavoriteType, 
+                       _NSStringFromHandoutAttachmentCompletionStatus, _NSStringFromHandoutAttachmentType, 
+                       _NSStringFromHandoutPublishingState, _NSStringFromHandoutState, 
+                       _NSStringFromNSStringCompareOptions, _NSStringFromOriginatingSource, 
+                       _NSStringFromPermissionType, _NSStringFromSearchBehaviors, 
+                       _NSStringFromSearchOptions, _NSStringFromShareType, _NSStringFromSource, 
+                       _PDServerMachServiceName, _clsNotificationQueue, _ic, _kUTTypeCLSContext ]
     objc-classes:    [ CLSActivity, CLSActivityItem, CLSActivityReport, CLSActivityReportItem, 
                        CLSAggregatedValue, CLSAsset, CLSAssetUploadObserver, CLSAuthTree, 
                        CLSBinaryItem, CLSBinaryReportItem, CLSClass, CLSClassMember, 

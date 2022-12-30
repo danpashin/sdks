@@ -3,13 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet
-current-version:       1447.19
+current-version:       1470.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SFLocalizedString, _SUIActivityTypeShare,
-                            _ShareSheetVersionNumber, _ShareSheetVersionString,
+    symbols:              [ _SUIActivityTypeShare, _ShareSheetVersionNumber,
+                            _ShareSheetVersionString,
                             _UIActivityTypeAddToReadingList,
                             _UIActivityTypeAirDrop,
                             _UIActivityTypeAssignToContact,
@@ -40,7 +40,7 @@ exports:
                             __NSExtensionItemsFromActivityItemValuesForExtensionItemDataRequest,
                             __NSExtensionItemsFromActivityItemValuesForExtensionItemDataRequestWithProcessingBlock,
                             __NSExtensionItemsFromActivityItemValuesWithProcessingBlock,
-                            __SUIBundleIDFromAuditToken, __ShareSheetBundle,
+                            __ShareSheetBundle,
                             __ShareSheetBundleIDFromAuditToken,
                             __SharingUIAuditTokenForCurrentProcess,
                             __UIActivityActivitiesArrayUserDefaultsKey,
@@ -100,7 +100,8 @@ exports:
                             ___ItemsFromUIActivityItems,
                             ___NSExtensionItemsFromUIActivityItems,
                             ___UIEnumerateApplicationsInPreferredOrderForOpeningDocument,
-                            ___UIIsContentManagedReferenceKey, _share_sheet_log ]
+                            ___UIIsContentManagedReferenceKey, _magic_head_log,
+                            _share_sheet_log ]
     objc-classes:         [ ObjectManipulationViewController,
                             SFShareSheetSlotManager, SUIShareActivity, UIActivity,
                             UIActivityActionGroupCell,
@@ -141,6 +142,7 @@ exports:
                             _UIActivityCollectionViewCompositionalLayout,
                             _UIActivityContentCollectionView,
                             _UIActivityContentFooterView,
+                            _UIActivityContentNavigationBar,
                             _UIActivityContentTitleView,
                             _UIActivityDiscoveryContext,
                             _UIActivityDragGestureRecognizer,
@@ -154,6 +156,7 @@ exports:
                             _UIActivityItemCustomizationSwitch,
                             _UIActivityItemMapping, _UIActivityMatchingContext,
                             _UIActivityMatchingResults,
+                            _UIActivityNavigationController,
                             _UIActivityPlaceholderItemProxy,
                             _UIActivityRecipientManager,
                             _UIActivityResourceLoader, _UIActivitySortItem,
@@ -165,7 +168,8 @@ exports:
                             _UICloudSharingActivity, _UIDICActionActivity,
                             _UIDICActivityItemProvider,
                             _UIDICActivityViewController, _UIDICPreviewItem,
-                            _UIHostActivityProxy, _UIMatchingExtensionsResult,
+                            _UIHostActivityProxy, _UIMagicHeadCollectionViewCell,
+                            _UIMatchingExtensionsResult,
                             _UIOpenInAppActivityDataProvider,
                             _UIPlaceholderActivity,
                             _UISaveToCameraRollSaveItemsController,

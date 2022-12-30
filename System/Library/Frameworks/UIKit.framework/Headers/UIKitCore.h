@@ -26,6 +26,9 @@
 #import <UIKit/UIActivityViewController.h>
 #import <UIKit/UIDocumentInteractionController.h>
 #endif
+
+#import <UIKit/NSToolbar+UIKitAdditions.h>
+#import <UIKit/NSTouchBar+UIKitAdditions.h>
 #endif
 
 #if __has_include(<UIKit/UIActivityIndicatorView.h>)

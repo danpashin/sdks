@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
-current-version:       359.0.3
+current-version:       383.0.10
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -15,7 +15,7 @@ exports:
                             _VUIAccessOptionsSuppressWelcomeVideoAddOnOptIn,
                             _VUIAccessOptionsTitleKey,
                             _VUIAccessOptionsUpdateVPPAStateRequired,
-                            _VUIAttributeKeyChannelID,
+                            _VUIAcquireURLBagKey, _VUIAttributeKeyChannelID,
                             _VUIAttributeKeyDebugIdentifier,
                             _VUIAttributeKeyDocumentRef, _VUIAttributeKeyGroup,
                             _VUIAttributeKeyImg_CropCode,
@@ -63,10 +63,11 @@ exports:
                             _VUIContextDictionaryKeyEventTimeStamp,
                             _VUIContextDictionaryKeyIsHandled,
                             _VUIContextDictionaryKeyLoadDocumentImmediately,
-                            _VUIDataKeyDataSource, _VUIDataKeyImageColor,
-                            _VUIDataKeyImageTheme, _VUIDataKeyPadImage,
-                            _VUIDataKeyPhoneImage, _VUIDataKeyText,
-                            _VUIDataKeyThemeValueDark,
+                            _VUIDataKeyDataSource,
+                            _VUIDataKeyDisableInProductBrowser,
+                            _VUIDataKeyImageColor, _VUIDataKeyImageTheme,
+                            _VUIDataKeyPadImage, _VUIDataKeyPhoneImage,
+                            _VUIDataKeyText, _VUIDataKeyThemeValueDark,
                             _VUIDataKeyThemeValueLight, _VUIDataKeyTitle,
                             _VUIDefaultsEnableDebugUI,
                             _VUIDefaultsEnableDemoMode,
@@ -183,7 +184,7 @@ exports:
                             _VUIImageDataKeyUrl, _VUIImageFormatJPEG,
                             _VUIImageFormatLCR, _VUIImageTypeFromString,
                             _VUIImageTypeLogString, _VUIImageTypeString,
-                            _VUIJSMediaPlayerName,
+                            _VUIJSMediaPlayerName, _VUIJaliscoURLBagKey,
                             _VUIMediaCategoryTypeLogString,
                             _VUIMediaCategoryTypesLogString,
                             _VUIMediaCollectionTypeLogString,
@@ -219,6 +220,7 @@ exports:
                             _VUIMetricsActionContextKey,
                             _VUIMetricsActionDetailsButtonKey,
                             _VUIMetricsActionDetailsButtonMenu,
+                            _VUIMetricsActionDetailsBuyParams,
                             _VUIMetricsActionDetailsKey,
                             _VUIMetricsActionDetailsResultFail,
                             _VUIMetricsActionDetailsResultKey,
@@ -226,11 +228,16 @@ exports:
                             _VUIMetricsActionTypeAdd,
                             _VUIMetricsActionTypeCancel,
                             _VUIMetricsActionTypeContinue,
+                            _VUIMetricsActionTypeGdprConsent,
                             _VUIMetricsActionTypeKey,
+                            _VUIMetricsActionTypeNavigate,
+                            _VUIMetricsActionTypePlay,
                             _VUIMetricsActionTypeRemove,
-                            _VUIMetricsDialogKeyDetails,
+                            _VUIMetricsActionTypeSubscribe,
+                            _VUIMetricsActionUrlKey, _VUIMetricsDialogKeyDetails,
                             _VUIMetricsDialogKeyDialogId,
                             _VUIMetricsDialogKeyDialogType,
+                            _VUIMetricsDialogTypeGDPR, _VUIMetricsKeyOfferType,
                             _VUIMetricsLogBuyParamsKey, _VUIMetricsLogCodeKey,
                             _VUIMetricsLogMessageKey, _VUIMetricsLogUserInfoKey,
                             _VUIMetricsTabBarItemNotificationKey,
@@ -267,6 +274,9 @@ exports:
                             _VUIRentalExpirationMonitorRentalDidExpireNotification,
                             _VUIRestrictionsDidChangeNotification,
                             _VUISportBannerPostMode, _VUISportBannerPreMode,
+                            _VUIStoreAcquisitionCrossProcessNotification,
+                            _VUIStoreAcquisitionCrossProcessNotificationKeyBuyParams,
+                            _VUIStoreAcquisitionCrossProcessNotificationKeyError,
                             _VUIStoreAuxMediaItemRTCServiceIdentifierExternal,
                             _VUIStoreAuxMediaItemRTCServiceIdentifierExternalIndefinite,
                             _VUIStoreAuxMediaItemRTCServiceIdentifierInternal,
@@ -283,6 +293,10 @@ exports:
                             _VUITabBarItemIdentifierKeyWatchNow,
                             _VUITellAppRemovalServiceThatSecureInvalidationDidCompleteNotification,
                             _VUIUnicodeKeyDotSeparator,
+                            _VUIUpNextRequestActionKey,
+                            _VUIUpNextRequestDidFinishCrossProcessNotification,
+                            _VUIUpNextRequestDidFinishNotification,
+                            _VUIUpNextRequestErrorKey,
                             _VUIUpdateEventAccountChanged,
                             _VUIUpdateEventAppDidBecomeActive,
                             _VUIUpdateEventAppRefresh,
@@ -290,6 +304,7 @@ exports:
                             _VUIUpdateEventEntitlements,
                             _VUIUpdateEventFavorites,
                             _VUIUpdateEventLocationAuthorizationChanged,
+                            _VUIUpdateEventLocationRetrieved,
                             _VUIUpdateEventPlayActivity,
                             _VUIUpdateEventPlayHistoryUpdated,
                             _VUIUpdateEventPostPlay,
@@ -354,6 +369,7 @@ exports:
                             VUIPlistMediaDatabaseShow,
                             VUIRentalExpirationMonitor, VUIRentalManager,
                             VUIRoundButton, VUISettingsManager,
+                            VUIStoreAcquisition, VUIStoreAcquisitionProperties,
                             VUIStoreAuxMediaItem, VUIStoreFPSKeyLoader,
-                            VUITextLayout ]
+                            VUITextLayout, VUIUpNextRequestManager ]
 ...

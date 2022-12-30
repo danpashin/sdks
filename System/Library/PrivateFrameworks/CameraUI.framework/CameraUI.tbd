@@ -3,12 +3,15 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-current-version:       3502.10.120
+current-version:       3602.9.230
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CAMAggregateDictionaryAddValueForScalarKey,
+                            _CAMAggregateDictionaryAspectRatioCropNoneKey,
+                            _CAMAggregateDictionaryAspectRatioCropSixteenNineKey,
+                            _CAMAggregateDictionaryAspectRatioCropSquareKey,
                             _CAMAggregateDictionaryAvalancheLengthBackKey,
                             _CAMAggregateDictionaryBucketNumberForAvalancheLength,
                             _CAMAggregateDictionaryBurstBackKey,
@@ -41,6 +44,10 @@ exports:
                             _CAMAggregateDictionaryNameForDevicePosition,
                             _CAMAggregateDictionaryOverCaptureOffKey,
                             _CAMAggregateDictionaryOverCaptureOnKey,
+                            _CAMAggregateDictionaryOverCapturePhotoOffKey,
+                            _CAMAggregateDictionaryOverCapturePhotoOnKey,
+                            _CAMAggregateDictionaryOverCaptureVideoOffKey,
+                            _CAMAggregateDictionaryOverCaptureVideoOnKey,
                             _CAMAggregateDictionaryPanoBackKey,
                             _CAMAggregateDictionaryPhotoDragBurstKey,
                             _CAMAggregateDictionaryPhotoShortPressKey,
@@ -64,6 +71,7 @@ exports:
                             _CAMAggregateDictionaryTimelapseDurationKey,
                             _CAMAggregateDictionaryTimelapseFrontKey,
                             _CAMAggregateDictionaryTimelapseStopReasonsKey,
+                            _CAMAggregateDictionaryUpdateForAspectRatioCrop,
                             _CAMAggregateDictionaryUpdateForBurst,
                             _CAMAggregateDictionaryUpdateForCapture,
                             _CAMAggregateDictionaryUpdateForCaptureOrientation,
@@ -144,6 +152,8 @@ exports:
                             _CAMCaptureEngineErrorDomain,
                             _CAMCaptureEngineExecutedCommandWithContextNotification,
                             _CAMCaptureEngineMaxRecoveryAttempts,
+                            _CAMCaptureEngineNotificationUserInfoCaptureIDKey,
+                            _CAMCaptureEngineNotificationUserInfoErrorKey,
                             _CAMCaptureEngineTimeoutSessionDidNotStart,
                             _CAMCaptureEngineTimeoutValidateSessionRecovery,
                             _CAMCaptureMetadataAddDebugInfoToUserCommentsKey,
@@ -151,6 +161,7 @@ exports:
                             _CAMCaptureModeInvalid,
                             _CAMColorSpaceCommandColorSpace,
                             _CAMDebugResetTimeoutSeconds,
+                            _CAMDeferredProcessingEnabledKey,
                             _CAMDynamicShutterSettingsDefault,
                             _CAMExposureCommandExposureMode,
                             _CAMExposureCommandExposurePointOfInterest,
@@ -414,6 +425,7 @@ exports:
                             CAMControlDrawerMenuButton, CAMControlDrawerMenuItem,
                             CAMControlStatusBar, CAMControlStatusIndicator,
                             CAMCounterRotatingLayer, CAMCreativeCameraButton,
+                            CAMDeferredProcessingEnabledCommand,
                             CAMDescriptionOverlayView,
                             CAMDeviceSwitchAnimationTestHarness,
                             CAMDeviceSwitchTestHarness, CAMDialGradientView,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/Message
-current-version:       3580.24.4
+current-version:       3594.18
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -13,7 +13,9 @@ exports:
                             _AccountConfigurationServiceCopyAccountsForEmailAddressUsingAccountInfo,
                             _AccountInfoDidChange,
                             _AccountMailboxListingDidChange,
+                            _AccountMailboxListingDidFetch,
                             _AccountMailboxListingDidLoad,
+                            _AccountMailboxListingWillFetch,
                             _AccountMailboxListingWillLoad, _CcMeCriterionName,
                             _DeliveryAccountShouldUseAuthentication,
                             _DeliveryAccountsKey, _EASGeneratedICSAttachmentCID,
@@ -50,7 +52,7 @@ exports:
                             _MFAuthSchemeNTLM, _MFBatteryLevelUnknown,
                             _MFBatterySaverModeDidChange,
                             _MFCarrierBundleChangedNotification,
-                            _MFCertificateTrustInfoTrustDidChangeNotification,
+                            _MFCertificateTrustDidChangeNotification,
                             _MFComparatorFunctionForSortOrder,
                             _MFContentIDScheme, _MFCopyResponseDataForURLRequest,
                             _MFCreateExternalConversationID,
@@ -365,6 +367,7 @@ exports:
                             MFMailMessageLibraryMigrator,
                             MFMailMessageLibraryModifyColumnDefinitionsMigrationStep,
                             MFMailMessageLibraryQueryTransformer,
+                            MFMailMessageLibraryRemoveThreadsDeletedColumnUpgradeStep,
                             MFMailMessageLibraryResetSequenceNumberMigrationStep,
                             MFMailMessageLibrarySetThreadSendersRecipientsConflictResolutionUpgradeStep,
                             MFMailMessageLibraryThreadFlagColorsUpgradeStep,
@@ -381,7 +384,6 @@ exports:
                             MFMessageKeychainManager, MFMessageLibrary,
                             MFMessageLoadingContext,
                             MFMessageLoadingContextEvent,
-                            MFMessageLoadingContextSMIMEInfo,
                             MFMessageLoadingContextToEMSecurityInformationTransformer,
                             MFMessagePersistence_iOS, MFMessageSigner,
                             MFMessageSignerEMMessageSignerTransformer,

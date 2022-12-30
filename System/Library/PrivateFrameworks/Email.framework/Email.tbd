@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3580.24.4
+current-version:       3594.18
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -22,6 +22,8 @@ exports:
                             _EMBlockedSenderManagerBlockedListDidChangeNotification,
                             _EMBlockedSenderManagerBlockedSendersKey,
                             _EMBlockedSenderOptionsDidChangeNotification,
+                            _EMCollectionLoadBatchSize,
+                            _EMCollectionLoadFirstBatchSize,
                             _EMContactStoreErrorDomain,
                             _EMContactStoreErrorKeyAddress,
                             _EMContentRepresentationNetworkTransportKey,
@@ -32,6 +34,18 @@ exports:
                             _EMDaemonServiceAvailabilityNotification,
                             _EMDaemonServiceName, _EMDatabaseIDUndefined,
                             _EMDirectoryNameMail, _EMErrorDomain,
+                            _EMFetchTypeAlternateAccountSettings,
+                            _EMFetchTypeBackground, _EMFetchTypeCompacting,
+                            _EMFetchTypeForced, _EMFetchTypeForcedAll,
+                            _EMFetchTypeLaunch, _EMFetchTypeLaunchSuspended,
+                            _EMFetchTypeMallUpdate, _EMFetchTypePasswordEntered,
+                            _EMFetchTypePowernap, _EMFetchTypePush,
+                            _EMFetchTypeResume,
+                            _EMFetchTypeResumeWhileSuspendedEventsOnly,
+                            _EMFetchTypeScheduled,
+                            _EMFetchTypeStandardAccountList,
+                            _EMFetchTypeStandardMailbox, _EMFetchTypeUnlock,
+                            _EMFetchTypeUserInitiatedMailbox,
                             _EMInteractionLoggerShouldLog, _EMInvalidCount,
                             _EMListUnsubscribeSuggestionTrailingComparator,
                             _EMMailToURLScheme,
@@ -88,11 +102,16 @@ exports:
                             _EMUserDefaultForceInMemoryThreading,
                             _EMUserDefaultInteractionEventLogDebug,
                             _EMUserDefaultMailboxListInNewFilterCardEnabled,
+                            _EMUserDefaultMutedThreadActionDidChangeNotification,
+                            _EMUserDefaultMutedThreadActionKey,
+                            _EMUserDefaultMutedThreadActionMarkAsRead,
+                            _EMUserDefaultMutedThreadActionMoveToArchiveOrDelete,
                             _EMUserDefaultNewFilterCardEnabled,
                             _EMUserDefaultNewQueryResults,
                             _EMUserDefaultPrototypeUIEnabled,
                             _EMUserDefaultQueryResultComparison,
                             _EMUserDefaultSharingFromSafariUI,
+                            _EMUserDefaultShowDebugInfo,
                             _EMUserDefaultsDidChangeNotification,
                             _EMUserDefaultsMailAppGroup,
                             _EMVIPsDidChangeNotification, _EMVIPsRemovedKey,
@@ -135,7 +154,7 @@ exports:
                             EMMessageCollectionItemID,
                             EMMessageConversationFlagChangeAction,
                             EMMessageDeleteAction, EMMessageDeleteAllAction,
-                            EMMessageFlagChangeAction,
+                            EMMessageDeliveryResult, EMMessageFlagChangeAction,
                             EMMessageFlagChangeAllAction, EMMessageList,
                             EMMessageListItemChange, EMMessageListItemPredicates,
                             EMMessageObjectID, EMMessageRepository,

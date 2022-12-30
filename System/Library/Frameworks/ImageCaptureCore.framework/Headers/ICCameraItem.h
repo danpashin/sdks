@@ -22,13 +22,6 @@
 
 CF_ASSUME_NONNULL_BEGIN
 
-//----------------------------------------------------------------------------------------------------------------- ICCameraItem
-/*!
-  @class ICCameraItem
-  @abstract ICCameraItem is an abstract class that represents an item in an ICCameraDevice object. ICCameraDevice object creates
-  instances of two concrete subclasses of ICCameraItem: ICCameraFolder and ICCameraFile.
-*/
-
 @protocol ICCameraDeviceDownloadDelegate;
 
 typedef NSString* ICCameraItemMetadataOption NS_TYPED_ENUM IC_AVAILABLE(macos(10.15), ios(13.0));
@@ -91,6 +84,12 @@ IMAGECAPTURE_EXTERN ICDownloadOption const ICDeleteAfterSuccessfulDownload IC_AV
 */
 IMAGECAPTURE_EXTERN ICDownloadOption const ICDownloadSidecarFiles IC_AVAILABLE(macos(10.4), ios(13.0));
 
+//----------------------------------------------------------------------------------------------------------------- ICCameraItem
+/*!
+ @class ICCameraItem
+ @abstract ICCameraItem is an abstract class that represents an item in an ICCameraDevice object. ICCameraDevice object creates
+ instances of two concrete subclasses of ICCameraItem: ICCameraFolder and ICCameraFile.
+ */
 IC_AVAILABLE(macos(10.4), ios(13.0))
 @interface ICCameraItem : NSObject
 {

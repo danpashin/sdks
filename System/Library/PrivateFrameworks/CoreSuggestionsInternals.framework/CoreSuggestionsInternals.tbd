@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
-current-version:       1034.2
+current-version:       1052.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -561,6 +561,9 @@ exports:
                             _kSGReminderModelMappingTriggerLocationOther,
                             _kSGReminderModelNone, _kSGReminderModelPolarity,
                             _kSGReminderModelTitle, _kSGReminderModelTrigger,
+                            _kSGReminderOverridesBlacklist,
+                            _kSGReminderOverridesConfirmation,
+                            _kSGReminderOverridesTriggerOptional,
                             _kSGSpotlightToCanLearnMigrationKey,
                             _kSGStatsKeyDissectedItems,
                             _kSGStatsKeyEnqueuedItems,
@@ -799,6 +802,7 @@ exports:
                             SGM2AutocompleteUserSelectedContact._wasSuggestedContact,
                             SGM2BirthdayExtractionWithSupervision._dateIsCorrect,
                             SGM2BirthdayExtractionWithSupervision._has,
+                            SGM2BirthdayExtractionWithSupervision._isFromCongratulation,
                             SGM2BundleIdsTrackedAsOther._bundleId,
                             SGM2BundleIdsTrackedAsOther._key,
                             SGM2ContactCreated._app, SGM2ContactCreated._has,

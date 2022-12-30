@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Sharing.framework/Sharing
-current-version:       1447.19
+current-version:       1470.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -143,7 +143,7 @@ exports:
                             _SFDataFromCGImage, _SFDataFromHexString,
                             _SFDateToStringRFC3339, _SFDecryptData,
                             _SFDeviceAssetAttributeColorKey,
-                            _SFDeviceAssetAttributeLegacyFormatsKey,
+                            _SFDeviceAssetAttributeH264Key,
                             _SFDeviceAssetAttributeManagementKey,
                             _SFDeviceAssetAttributeProductTypeKey,
                             _SFDeviceAssetAttributeVariantNameKey,
@@ -255,8 +255,10 @@ exports:
                             _SFNodeSupportsCredentials, _SFNodeSupportsFMF,
                             _SFNodeSupportsFileSharing, _SFNodeSupportsIris,
                             _SFNodeSupportsMixedTypes, _SFNodeSupportsPasses,
-                            _SFNodeSupportsScreenSharing,
-                            _SFNormalizeEmailAddress, _SFNormalizePhoneNumber,
+                            _SFNodeSupportsScreenSharing, _SFNodeSupportsUWB,
+                            _SFNonBreakingStringFromDeviceName,
+                            _SFNonLocalizedString, _SFNormalizeEmailAddress,
+                            _SFNormalizePhoneNumber,
                             _SFNormalizedUserIdentifiersForContactIdentifier,
                             _SFNormalizedUserIdentifiersForContactIdentifierEx,
                             _SFNotificationKeyConnectionState,
@@ -308,6 +310,7 @@ exports:
                             _SFSharablePasswordAirDropURLEncryptedString,
                             _SFSharablePasswordForEncryptedAirDropURL,
                             _SFSharablePasswordForURL,
+                            _SFShareablePasswordForSSID,
                             _SFSharediCloudDocumentsLinkToAppName,
                             _SFSharediCloudDocumentsLinkToFileName,
                             _SFShouldShowRepairProxCard,
@@ -395,6 +398,7 @@ exports:
                             _kSFNodeProtocolWebDAV, _kSFNodeProtocolWebDAVS,
                             _kSFNodeProtocolWorkgroups,
                             _kSFOperationAirDropEnabledKey,
+                            _kSFOperationAirplaneModeEnabledKey,
                             _kSFOperationAutoAcceptKey,
                             _kSFOperationBlockerCompositeNameKey,
                             _kSFOperationBlockerComputerNameKey,
@@ -475,15 +479,17 @@ exports:
                             _kSFOperationSessionIDKey,
                             _kSFOperationSmallFileIconKey,
                             _kSFOperationTimeRemainingKey,
-                            _kSFOperationTotalBytesKey, _kSFOperationUsePKZip,
+                            _kSFOperationTotalBytesKey,
+                            _kSFOperationUltraWideBandEnabledKey,
+                            _kSFOperationUsePKZip,
                             _kSFOperationVerifiableIdentityKey,
                             _kSFOperationWirelessAccessPointKey,
                             _kSFOperationWirelessCarPlayKey,
                             _kSFOperationWirelessEnabledKey,
                             _kSFOperationtFileSubTypeKey, _leash_log_,
-                            _log_submit_log, _paired_unlock_log, _remote_log,
-                            _share_sheet_log, _sharingXPCHelperLog, _streams_log,
-                            _tethering_log, _utilities_log ]
+                            _log_submit_log, _magic_head_log, _paired_unlock_log,
+                            _remote_log, _share_sheet_log, _sharingXPCHelperLog,
+                            _streams_log, _tethering_log, _utilities_log ]
     objc-classes:         [ SFAccessibilityClient, SFAccountManager,
                             SFActivityAdvertisement, SFActivityAdvertiser,
                             SFActivityScanner, SFAirDropAction, SFAirDropBrowser,
@@ -518,8 +524,8 @@ exports:
                             SFDeviceSetupTVLatencyService,
                             SFDeviceSetupTVLatencySession,
                             SFDeviceSetupWHAService, SFDeviceSetupWHASession,
-                            SFDiagnostics, SFEventMessage, SFMessage,
-                            SFMessageSessionRequestEntry,
+                            SFDiagnostics, SFEventMessage, SFMagicHeadSettings,
+                            SFMessage, SFMessageSessionRequestEntry,
                             SFNFCTagReaderUIController, SFNotificationError,
                             SFNotificationInfo, SFPINPairSession,
                             SFPasswordSharingInfo, SFPasswordSharingService,

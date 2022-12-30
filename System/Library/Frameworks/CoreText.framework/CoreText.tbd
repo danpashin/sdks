@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 1A1F8A03-9E49-3CCD-A373-AD0E9E554E85', 'armv7s: FEEAE780-8331-353F-A4EA-31FDDE63D0F3', 
-                   'arm64: B9F5F2B9-040A-3137-849B-11BB57883CD4', 'arm64e: 8FE4BFCE-CDF1-3A37-BCE1-13BA8BCC243D' ]
+                   'arm64: A206AF51-8DC2-3734-AB59-07089A3DB798', 'arm64e: 37717129-1543-36B1-8F66-BF41ABDA01C1' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/CoreText.framework/CoreText'
 exports:         
@@ -101,13 +101,13 @@ exports:
                        _CTFontCreateCopyWithAttributes, _CTFontCreateCopyWithFamily, 
                        _CTFontCreateCopyWithSymbolicTraits, _CTFontCreateEmojiFontForFont, 
                        _CTFontCreateForCharacterRange, _CTFontCreateForCharacters, 
-                       _CTFontCreateForCharactersWithLanguage, _CTFontCreateForString, 
-                       _CTFontCreateForStringWithLanguage, _CTFontCreatePathForGlyph, 
-                       _CTFontCreateUIFontForLanguage, _CTFontCreateWithFontDescriptor, 
-                       _CTFontCreateWithFontDescriptorAndOptions, _CTFontCreateWithGraphicsFont, 
-                       _CTFontCreateWithName, _CTFontCreateWithNameAndOptions, _CTFontDescriptorCanCreateWithTextStyle, 
-                       _CTFontDescriptorCopyAttribute, _CTFontDescriptorCopyAttributes, 
-                       _CTFontDescriptorCopyDownloadableFontAttributesForRequests, 
+                       _CTFontCreateForCharactersWithLanguage, _CTFontCreateForCharactersWithLanguageAndOption, 
+                       _CTFontCreateForString, _CTFontCreateForStringWithLanguage, 
+                       _CTFontCreatePathForGlyph, _CTFontCreateUIFontForLanguage, 
+                       _CTFontCreateWithFontDescriptor, _CTFontCreateWithFontDescriptorAndOptions, 
+                       _CTFontCreateWithGraphicsFont, _CTFontCreateWithName, _CTFontCreateWithNameAndOptions, 
+                       _CTFontDescriptorCanCreateWithTextStyle, _CTFontDescriptorCopyAttribute, 
+                       _CTFontDescriptorCopyAttributes, _CTFontDescriptorCopyDownloadableFontAttributesForRequests, 
                        _CTFontDescriptorCopyLocalizedAttribute, _CTFontDescriptorCopyNameForSystemFontOfWeight, 
                        _CTFontDescriptorCreateCopyWithAttributes, _CTFontDescriptorCreateCopyWithFamily, 
                        _CTFontDescriptorCreateCopyWithFeature, _CTFontDescriptorCreateCopyWithSymbolicTraits, 
@@ -137,8 +137,8 @@ exports:
                        _CTFontGetSbixImageSizeForGlyph, _CTFontGetSize, _CTFontGetSlantAngle, 
                        _CTFontGetStringEncoding, _CTFontGetSymbolicTraits, _CTFontGetTrackingFloor, 
                        _CTFontGetTransformedAdvancesForGlyphsAndStyle, _CTFontGetTransformedBoundingRectsForGlyphsAndStyle, 
-                       _CTFontGetTypeID, _CTFontGetUnderlinePosition, _CTFontGetUnderlineThickness, 
-                       _CTFontGetUnitsPerEm, _CTFontGetUnsummedAdvancesForGlyphsAndStyle, 
+                       _CTFontGetTypeID, _CTFontGetUIFontType, _CTFontGetUnderlinePosition, 
+                       _CTFontGetUnderlineThickness, _CTFontGetUnitsPerEm, _CTFontGetUnsummedAdvancesForGlyphsAndStyle, 
                        _CTFontGetVerticalGlyphsForCharacters, _CTFontGetVerticalTranslationsForGlyphs, 
                        _CTFontGetXHeight, _CTFontHasExuberatedLineHeight, _CTFontHasTable, 
                        _CTFontIsAppleColorEmoji, _CTFontIsLastResort, _CTFontManagerCopyAvailableFontFamilyNames, 

@@ -175,30 +175,30 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 /*!
  @method requestThumbnailDataWithOptions:completion
  @abstract ￼Perform a thumbnail request and execute the block callback in place of the delegate.
- @param options: Options dictionary
+ @param options Options dictionary
  
  - 'kCGImageSourceThumbnailMaxPixelSize' - Request a width different from the embedded EXIF thumbnail
  
- @param completion: Completion block called with an NSData* object representing the JPG, and an NSError* for status.
+ @param completion Completion block called with an NSData* object representing the JPG, and an NSError* for status.
  @note Execution of the completion block will occur on the thread initially called from.
  */
-- (void)requestThumbnailDataWithOptions:(NSDictionary<ICCameraItemThumbnailOption, id>*)options
+- (void)requestThumbnailDataWithOptions:(NSDictionary<ICCameraItemThumbnailOption, id>* _Nullable)options
                              completion:(void (^)(NSData* _Nullable, NSError* _Nullable))completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
  @method requestMetadataDictionaryWithOptions:completion
  @abstract ￼Perform a metadata request and execute the block callback in place of the delegate.
- @param options: Options dictionary
- @param completion: Completion block called with an NSDictionary* object containing the metadata, and an NSError* for status.
+ @param options Options dictionary
+ @param completion Completion block called with an NSDictionary* object containing the metadata, and an NSError* for status.
  @note Execution of the completion block will occur on the thread initially called from.
  */
-- (void)requestMetadataDictionaryWithOptions:(NSDictionary<ICCameraItemMetadataOption, id>*)options
+- (void)requestMetadataDictionaryWithOptions:(NSDictionary<ICCameraItemMetadataOption, id>* _Nullable)options
                                   completion:(void (^)(NSDictionary* _Nullable, NSError* _Nullable))completion IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
  @method requestDownloadWithOptions:progressDelegate:completion
  @abstract ￼Perform a download request and execute the block callback in place of the delegate.
- @param options: Dictionary Keys:
+ @param options Dictionary Keys:
  
  - `ICDownloadsDirectoryURL`
  - `ICSaveAsFilename`
@@ -206,21 +206,19 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  - `ICDeleteAfterDownload`
  - `ICAdjustCreationDate`
  
- @param completion: Completion block to executed after request has returned,
- @param filename: The name of the file as written to disk.
- @param error:
+ @param completion Completion block to executed after request has returned,
  @note Execution of the completion block will occur on the thread initially called from.
  */
-- (NSProgress* _Nullable)requestDownloadWithOptions:(NSDictionary<ICDownloadOption, id>*)options
+- (NSProgress* _Nullable)requestDownloadWithOptions:(NSDictionary<ICDownloadOption, id>* _Nullable)options
                                          completion:(void (^)(NSString* _Nullable filename, NSError* _Nullable error))completion
     IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
  @method requestReadDataAtOffset:length:completion
  @abstract This method asynchronously reads data of a specified length from a specified offset.
- @param offset: The offset into the file to start reading from
- @param length: The length of data to be read.
- @param completion: Completion block called with an NSData* object representing the data, and an NSError* for status.
+ @param offset The offset into the file to start reading from
+ @param length The length of data to be read.
+ @param completion Completion block called with an NSData* object representing the data, and an NSError* for status.
  @note Execution of the completion block will occur on the thread initially called from.
  */
 - (void)requestReadDataAtOffset:(off_t)offset

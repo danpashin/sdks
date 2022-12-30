@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
-current-version:       288
+current-version:       294
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _IPAppleLanguagesSchemaVersionCurrent,
                             _IPAppleLanguagesSchemaVersionJazzkonA,
+                            _IPAppleLanguagesSchemaVersionJazzkonA_1,
                             _NSPersonNameDefaultDisplayNameOrderKey,
                             _NSPersonNameDefaultNamePreferencesDomain,
                             _NSPersonNameDefaultShortNameEnabledKey,
@@ -19,8 +20,8 @@ exports:
                             _kAppleLanguagesKey, _kAppleLocaleKey ]
     objc-classes:         [ IPLanguage, IPLanguageListGenerator,
                             IPWatchLocaleController, IP_HK_MO_yue_Hant_migrator,
-                            IP_pa_Arab_to_pa_Aran_migrator, ISMigrator,
-                            ISRootMigrator, IntlUtility,
+                            IP_Zawgyi_migrator, IP_pa_Arab_to_pa_Aran_migrator,
+                            ISMigrator, ISRootMigrator, IntlUtility,
                             NSPersonNameComponentsFormatterPreferences ]
     objc-ivars:           [ IntlUtility.mBidiLanguagesArray,
                             IntlUtility.mBidiTestedLanguagesArray ]

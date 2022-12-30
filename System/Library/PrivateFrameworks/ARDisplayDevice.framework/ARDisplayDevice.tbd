@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ARDisplayDevice.framework/ARDisplayDevice
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _ARDisplayDeviceHMEDetectionKey,
+                            _ARDisplayDeviceHMEEnrollmentKey,
+                            _ARDisplayDeviceHMEHeadlockedKey,
+                            _ARDisplayDeviceHMEOverdriveKey,
+                            _ARDisplayDeviceHMEStatusKey,
+                            _ARDisplayDeviceVersionNumber,
+                            _ARDisplayDeviceVersionString,
+                            _adc_packDistortVertexInput,
+                            _addc_MTLViewportToString, _addc_NSDataToString,
+                            _addc_matrixToString, _addc_matrix_make_translation,
+                            _addc_vector_float3ToString,
+                            _addc_vector_float4ToString, _toShort2N, _toUShort2N ]
+    objc-classes:         [ ARDDLog, ARDisplayConfiguration, ARDisplayDeviceConfig,
+                            ARDisplayDeviceConfigPOV,
+                            ARDisplayDeviceExtensionService,
+                            ARDisplayDeviceInterface, ARDisplayDevicePrincipal,
+                            ARDisplayDeviceRemoteExtensionContext,
+                            ARDisplayDeviceUserDefaults,
+                            ARDisplayExtensionPrincipal,
+                            ARDisplayExtensionService,
+                            ARDisplayHostExtensionContext, ARDisplayPointOfView,
+                            ARDisplayRemoteExtensionContext, ARDisplayService ]
+...

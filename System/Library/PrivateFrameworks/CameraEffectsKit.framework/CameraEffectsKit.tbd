@@ -3,12 +3,28 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
-current-version:       380.2.60
+current-version:       380.6.30
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AXDurationStringForDuration,
+    symbols:              [ _AXDurationStringForDuration, _CFXActionAddEffectKey,
+                            _CFXActionCancelCameraKey, _CFXActionExportStillKey,
+                            _CFXActionExportVideoKey, _CFXActionFlipCameraKey,
+                            _CFXActionLocationLive,
+                            _CFXActionLocationPostCapture,
+                            _CFXActionLogItemEffectIDKey,
+                            _CFXActionLogItemEffectNameKey,
+                            _CFXActionLogItemEffectTrackingTypeKey,
+                            _CFXActionLogItemEffectTypeKey,
+                            _CFXActionLogItemEffectsKey,
+                            _CFXActionLogItemRemainingMemoryKey,
+                            _CFXActionLogItemUserEventKey,
+                            _CFXActionLogItemViewLocationKey,
+                            _CFXActionRemoveEffectKey,
+                            _CFXActionRemoveEffectsKey,
+                            _CFXActionRotateDeviceKey, _CFXActionStartVideoKey,
+                            _CFXActionStopVideoKey, _CFXActionTakePhotoKey,
                             _CFXAddShapeNotification,
                             _CFXAddShapeNotificationGetEffectIdentifier,
                             _CFXAddShapeNotificationUserInfoForEffect,
@@ -152,7 +168,7 @@ exports:
                             _JTLog_DebugEffectEditingUI,
                             _JTLog_DebugEffectEditorRenderer,
                             _JTLog_DebugFaceAnchor, _JTLog_DebugPlayback,
-                            _JTLog_DebugReorder, _JTLog_DebugWriter,
+                            _JTLog_DebugReorder, _JTLog_DebugWriter, _JTLog_action,
                             _JTLog_automation, _JTLog_camera, _JTLog_capture,
                             _JTLog_core, _JTLog_device, _JTLog_effectEditingUI,
                             _JTLog_effectStickers, _JTLog_export,
@@ -169,6 +185,7 @@ exports:
                             _JTUncroppedFrameSizeForCameraModeAndOrientation,
                             _NSStringFromCFXAspectRatioCrop,
                             _NSStringFromJTCameraMode, _NSStringFromJTEffectType,
+                            _NSStringFromJTTrackingType,
                             _NSStringFromOSThermalPressureLevel,
                             _PVFrameSetMetadataARFrameKey,
                             _PVFrameSetMetadataDeviceOrientationKey,
@@ -327,12 +344,12 @@ exports:
                             _shutterSpeedForCMSampleBuffer,
                             _useMirroredFrontCameraInStreamMode,
                             _valueAtPctBetweenValues ]
-    objc-classes:         [ BEAlertAction, BEAlertController, CFXAnalyticsKeys,
-                            CFXAnalyticsManager, CFXAnimationDelegate,
-                            CFXAnimationHelper, CFXAnimojiEffectRenderer,
-                            CFXAnimojiPlaybackDelegate, CFXApplicationState,
-                            CFXAvailability, CFXBundle, CFXBundleUtils,
-                            CFXCameraControlsViewController,
+    objc-classes:         [ BEAlertAction, BEAlertController, CFXActionLogging,
+                            CFXAnalyticsKeys, CFXAnalyticsManager,
+                            CFXAnimationDelegate, CFXAnimationHelper,
+                            CFXAnimojiEffectRenderer, CFXAnimojiPlaybackDelegate,
+                            CFXApplicationState, CFXAvailability, CFXBundle,
+                            CFXBundleUtils, CFXCameraControlsViewController,
                             CFXCameraViewController, CFXCaptureViewController,
                             CFXClipPlayerViewController,
                             CFXControlsViewController, CFXCounterRotationLayer,

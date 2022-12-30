@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-current-version:       608.1.48
+current-version:       608.2.11
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -1040,6 +1040,8 @@ exports:
                             __ZN7WebCore12SharedBufferC2EPKhm,
                             __ZN7WebCore12SourceBuffer25bufferedSamplesForTrackIDERKN3WTF10AtomStringE,
                             __ZN7WebCore12SourceBuffer25enqueuedSamplesForTrackIDERKN3WTF10AtomStringE,
+                            __ZN7WebCore12SourceBuffer30setMaximumQueueDepthForTrackIDERKN3WTF10AtomStringEm,
+                            __ZN7WebCore12SourceBuffer41minimumUpcomingPresentationTimeForTrackIDERKN3WTF10AtomStringE,
                             __ZN7WebCore12TextEncodingC1EPKc,
                             __ZN7WebCore12TextEncodingC1ERKN3WTF6StringE,
                             __ZN7WebCore12TextEncodingC2EPKc,
@@ -1541,6 +1543,7 @@ exports:
                             __ZN7WebCore14areRangesEqualEPKNS_5RangeES2_,
                             __ZN7WebCore14copyTimingDataEP12NSDictionaryRNS_18NetworkLoadMetricsE,
                             __ZN7WebCore14endOfParagraphERKNS_15VisiblePositionENS_27EditingBoundaryCrossingRuleE,
+                            __ZN7WebCore14foldQuoteMarksERKN3WTF6StringE,
                             __ZN7WebCore14isPublicSuffixERKN3WTF6StringE,
                             __ZN7WebCore14keyForKeyEventEP8WebEvent,
                             __ZN7WebCore14lineBreakTableE,
@@ -3065,7 +3068,6 @@ exports:
                             __ZN7WebCore21CookieStorageObserver13stopObservingEv,
                             __ZN7WebCore21CookieStorageObserver14startObservingEON3WTF8FunctionIFvvEEE,
                             __ZN7WebCore21CookieStorageObserver16cookiesDidChangeEv,
-                            __ZN7WebCore21CookieStorageObserver6createEP19NSHTTPCookieStorage,
                             __ZN7WebCore21CookieStorageObserverC1EP19NSHTTPCookieStorage,
                             __ZN7WebCore21CookieStorageObserverC2EP19NSHTTPCookieStorage,
                             __ZN7WebCore21CookieStorageObserverD1Ev,
@@ -3465,6 +3467,7 @@ exports:
                             __ZN7WebCore23LogResourceLoadObserverE,
                             __ZN7WebCore23MediaQueryParserContextC1ERKNS_8DocumentE,
                             __ZN7WebCore23MediaQueryParserContextC2ERKNS_8DocumentE,
+                            __ZN7WebCore23MockRealtimeAudioSource15setChannelCountEj,
                             __ZN7WebCore23ScrollingStateFixedNode17updateConstraintsERKNS_32FixedPositionViewportConstraintsE,
                             __ZN7WebCore23ScrollingTreeStickyNode6createERNS_13ScrollingTreeEy,
                             __ZN7WebCore23SynchronousLoaderClient24platformBadResponseErrorEv,
@@ -4077,6 +4080,7 @@ exports:
                             __ZN7WebCore32ScrollingStateFrameScrollingNode24setCounterScrollingLayerERKNS_19LayerRepresentationE,
                             __ZN7WebCore32ScrollingStateFrameScrollingNode26setMaxLayoutViewportOriginERKNS_10FloatPointE,
                             __ZN7WebCore32ScrollingStateFrameScrollingNode26setMinLayoutViewportOriginERKNS_10FloatPointE,
+                            __ZN7WebCore32ScrollingStateFrameScrollingNode29setOverrideVisualViewportSizeEN3WTF8OptionalINS_9FloatSizeEEE,
                             __ZN7WebCore32ScrollingStateFrameScrollingNode30setSynchronousScrollingReasonsEj,
                             __ZN7WebCore32ScrollingStateFrameScrollingNode33setScrollBehaviorForFixedElementsENS_30ScrollBehaviorForFixedElementsE,
                             __ZN7WebCore32ScrollingStateFrameScrollingNode37setFixedElementsLayoutRelativeToFrameEb,
@@ -4300,6 +4304,7 @@ exports:
                             __ZN7WebCore4Page32setMemoryCacheClientCallsEnabledEb,
                             __ZN7WebCore4Page33removeActivityStateChangeObserverERNS_27ActivityStateChangeObserverE,
                             __ZN7WebCore4Page33synchronousScrollingReasonsAsTextEv,
+                            __ZN7WebCore4Page34recomputeTextAutoSizingInAllFramesEv,
                             __ZN7WebCore4Page35playbackTargetAvailabilityDidChangeEyb,
                             __ZN7WebCore4Page35resumeActiveDOMObjectsAndAnimationsEv,
                             __ZN7WebCore4Page36setAllowsMediaDocumentInlinePlaybackEb,
@@ -7388,6 +7393,7 @@ exports:
                             __ZNK7WebCore9FrameView26clientToLayoutViewportRectENS_9FloatRectE,
                             __ZNK7WebCore9FrameView27clientToLayoutViewportPointENS_10FloatPointE,
                             __ZNK7WebCore9FrameView27positionForRootContentLayerEv,
+                            __ZNK7WebCore9FrameView27qualifiesAsVisuallyNonEmptyEv,
                             __ZNK7WebCore9FrameView27windowClipRectForFrameOwnerEPKNS_21HTMLFrameOwnerElementEb,
                             __ZNK7WebCore9FrameView28absoluteToLayoutViewportRectENS_9FloatRectE,
                             __ZNK7WebCore9FrameView28isEnclosedInCompositingLayerEv,

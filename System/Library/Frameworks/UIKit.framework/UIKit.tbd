@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: BEBC4565-E9B4-393F-9F26-8F54D55F29D1', 'armv7s: D3F9ABEB-27BE-3945-8B7F-EF960AC09684', 
-                   'arm64: F128BA9C-F092-3093-8B8F-F3C6A47FD97A', 'arm64e: ACA70C90-AEB2-3237-9707-755C49A914A6' ]
+                   'arm64: 7F1A4E8B-7B8A-3612-B559-B827FC699FC9', 'arm64e: ADFF5B8F-2B46-3CC5-8C8A-2B9860FCD221' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/UIKit.framework/UIKit'
 current-version: 61000
@@ -1399,10 +1399,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 55F3067A-21C7-3B07-9FD3-B8A9B4910F48', 'arm64e: B192E7C0-AC6E-3524-BEB1-2B164910EC78' ]
+                   'arm64: D3173FC3-CA27-3B40-9896-1483CEAD09D8', 'arm64e: 2AFE6BA7-E8C3-3D33-806A-C719C28C8C1B' ]
 platform:        ios
 install-name:    '/System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager'
-current-version: 160.9
+current-version: 167
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     symbols:         [ _DOCAdaptSizeToRect, _DOCAlertItemIsNotReadable, _DOCAlertUserTheNetworkIsNotReachable, 
@@ -1424,14 +1424,15 @@ exports:
                        _DOCScreenSizeSEPhone, _DOCSizeIsFullScreenSize, _DOCTestUserDefaultsKeyBrowseTabSelected, 
                        _DOCTestUserDefaultsKeySelectedDisplayMode, _DOCUserDefaultsCachedDisplayNamesBySourceIdentifier, 
                        _DOCUserDefaultsKeyActivityDelay, _DOCUserDefaultsKeyCopyLinkUIEnabled, 
-                       _DOCUserDefaultsKeyForceRemovableFPSupport, _DOCUserDefaultsKeyIsListMode, 
-                       _DOCUserDefaultsKeyMetadataLevelOfDetail, _DOCUserDefaultsKeyMostRecentEffectiveRootLocation, 
-                       _DOCUserDefaultsKeyMostRecentlyVisitedLocation, _DOCUserDefaultsKeyReportAllFileProviderErrors, 
-                       _DOCUserDefaultsKeySortingMode, _DOCUserDefaultsLastNumberOfRecentsDocuments, 
-                       _DOCUserDefaultsMostRecentSceneState, _DOCUserDefaultsSceneState, 
-                       _DOCUserDefaultsSortingModeReversedKey, _DOCUserDefaultsSortingModeSortTypeKey, 
-                       _DocumentManagerVersionNumber, _DocumentManagerVersionString, 
-                       _UIDocumentBrowserActionAvailabilityPreviewPanel, _UIDocumentBrowserActionAvailabilityPreviewPanelActivitySheet, 
+                       _DOCUserDefaultsKeyEnableShareOnFolders, _DOCUserDefaultsKeyForceRemovableFPSupport, 
+                       _DOCUserDefaultsKeyIsListMode, _DOCUserDefaultsKeyMetadataLevelOfDetail, 
+                       _DOCUserDefaultsKeyMostRecentEffectiveRootLocation, _DOCUserDefaultsKeyMostRecentlyVisitedLocation, 
+                       _DOCUserDefaultsKeyReportAllFileProviderErrors, _DOCUserDefaultsKeySortingMode, 
+                       _DOCUserDefaultsLastNumberOfRecentsDocuments, _DOCUserDefaultsMostRecentSceneState, 
+                       _DOCUserDefaultsSceneState, _DOCUserDefaultsSortingModeReversedKey, 
+                       _DOCUserDefaultsSortingModeSortTypeKey, _DocumentManagerVersionNumber, 
+                       _DocumentManagerVersionString, _UIDocumentBrowserActionAvailabilityPreviewPanel, 
+                       _UIDocumentBrowserActionAvailabilityPreviewPanelActivitySheet, 
                        _UIDocumentBrowserActionAvailabilityPreviewQuickActions, _UIDocumentBrowserActionAvailabilityToolbar, 
                        _UIDocumentBrowserActionIdentifierArchive, _UIDocumentBrowserActionIdentifierCopy, 
                        _UIDocumentBrowserActionIdentifierCopySharedLink, _UIDocumentBrowserActionIdentifierCreatePDF, 
@@ -1482,10 +1483,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 3F70482E-2C09-3BA9-815D-C64759EE5759', 'arm64e: FF83BFB5-0DDB-3285-9068-2988C0318D51' ]
+                   'arm64: 5B339FBE-E62C-3B22-82C8-25368540BF66', 'arm64e: F45A0D91-A54E-3737-B6EC-EB1CF6990355' ]
 platform:        ios
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet'
-current-version: 1447.19
+current-version: 1468
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     symbols:         [ _SFLocalizedString, _SUIActivityTypeShare, _ShareSheetVersionNumber, 
@@ -1538,7 +1539,7 @@ exports:
                        __UIShouldExcludeExtensionWithActivityType, __UIStringByDeletingArchiveExtensions, 
                        ___ItemsFromUIActivityItems, ___NSExtensionItemsFromUIActivityItems, 
                        ___UIEnumerateApplicationsInPreferredOrderForOpeningDocument, 
-                       ___UIIsContentManagedReferenceKey, _share_sheet_log ]
+                       ___UIIsContentManagedReferenceKey, _magic_head_log, _share_sheet_log ]
     objc-classes:    [ ObjectManipulationViewController, SFShareSheetSlotManager, 
                        SUIShareActivity, UIActivity, UIActivityActionGroupCell, UIActivityContentViewController, 
                        UIActivityGroupViewController, UIActivityItemCustomization, 
@@ -1573,20 +1574,21 @@ exports:
                        _UIActivityUserDefaultsViewController, _UIAirDropProgressLayer, 
                        _UIAirDropProgressView, _UICloudSharingActivity, _UIDICActionActivity, 
                        _UIDICActivityItemProvider, _UIDICActivityViewController, 
-                       _UIDICPreviewItem, _UIHostActivityProxy, _UIMatchingExtensionsResult, 
-                       _UIOpenInAppActivityDataProvider, _UIPlaceholderActivity, 
-                       _UISaveToCameraRollSaveItemsController, _UIShareServiceActivityProxy, 
-                       _UIShareServiceActivityProxy_Action, _UIShareServiceActivityProxy_Share, 
-                       _UIUserDefaultsActivity, _UIUserDefaultsActivityNavigationController, 
-                       _UIUserDefaultsActivityPresentableViewController, _UIUserDefaultsActivityProxy ]
+                       _UIDICPreviewItem, _UIHostActivityProxy, _UIMagicHeadCollectionViewCell, 
+                       _UIMatchingExtensionsResult, _UIOpenInAppActivityDataProvider, 
+                       _UIPlaceholderActivity, _UISaveToCameraRollSaveItemsController, 
+                       _UIShareServiceActivityProxy, _UIShareServiceActivityProxy_Action, 
+                       _UIShareServiceActivityProxy_Share, _UIUserDefaultsActivity, 
+                       _UIUserDefaultsActivityNavigationController, _UIUserDefaultsActivityPresentableViewController, 
+                       _UIUserDefaultsActivityProxy ]
     objc-ivars:      [ UIPrintActivityWrapperNavigationController._completionHandler ]
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 99034643-B2C3-3076-93A4-5E618115063B', 'armv7s: 7C37597F-E806-3916-B9DE-CB2F8D041313', 
-                   'arm64: 46CB4AA3-750D-38D8-B42D-F3671BE0A6BA', 'arm64e: F3E5CD04-0EE4-391C-BCA6-5E0A948E2CB9' ]
+                   'arm64: 7AF21FD8-8F8E-377F-A512-4B50B5287D5A', 'arm64e: 9D13206A-E6F3-322D-B512-59183FEBE334' ]
 platform:        ios
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation'
-current-version: 636
+current-version: 653
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _NSFileExtendedAttributes, _UIFoundationErrorDomain, _UIGraphicsSetShadow, 
@@ -1854,7 +1856,7 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: F611930E-47D0-32B6-BF4B-3CFE2F1524BA', 'arm64e: 61C8B3F5-FECE-3D23-9DFA-0B3DB956F075' ]
+                   'arm64: C6DAE95F-B109-33FC-BEEF-8E32FA1FF7DF', 'arm64e: C2FC5A83-F943-32B4-A06A-C888CF404179' ]
 platform:        ios
 install-name:    '/System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore'
 current-version: 61000
@@ -2271,25 +2273,26 @@ exports:
                        _UIKBColorWhiteBackgroundGradientStart, _UIKBColorWhite_Alpha0, 
                        _UIKBColorWhite_Alpha10, _UIKBColorWhite_Alpha11, _UIKBColorWhite_Alpha12, 
                        _UIKBColorWhite_Alpha13, _UIKBColorWhite_Alpha15, _UIKBColorWhite_Alpha20, 
-                       _UIKBColorWhite_Alpha25, _UIKBColorWhite_Alpha26, _UIKBColorWhite_Alpha30, 
-                       _UIKBColorWhite_Alpha35, _UIKBColorWhite_Alpha4, _UIKBColorWhite_Alpha40, 
-                       _UIKBColorWhite_Alpha45, _UIKBColorWhite_Alpha5, _UIKBColorWhite_Alpha50, 
-                       _UIKBColorWhite_Alpha60, _UIKBColorWhite_Alpha65, _UIKBColorWhite_Alpha7, 
-                       _UIKBColorWhite_Alpha70, _UIKBColorWhite_Alpha73, _UIKBColorWhite_Alpha75, 
-                       _UIKBColorWhite_Alpha8, _UIKBColorWhite_Alpha80, _UIKBColorWhite_Alpha85, 
-                       _UIKBColorWhite_Alpha87, _UIKBColorWhite_Alpha87_50, _UIKBColorWhite_Alpha87_60, 
-                       _UIKBColorWhite_Alpha90, _UIKBColorWhite_Alpha96, _UIKBColorWhite_Alpha97, 
-                       _UIKBColorWildcatBarActiveGradient, _UIKBColorWildcatBarActiveGradientEnd, 
-                       _UIKBColorWildcatBarActiveGradientStart, _UIKBColorWildcatCandidateBarBlueText, 
-                       _UIKBColorWildcatKeyActiveBlueGradient, _UIKBColorWildcatKeyActiveBlueGradientEnd, 
-                       _UIKBColorWildcatKeyActiveBlueGradientStart, _UIKBColorWildcatKeyActiveGradient, 
-                       _UIKBColorWildcatKeyActiveGradientEnd, _UIKBColorWildcatKeyActiveGradientStart, 
-                       _UIKBColorWildcatKeyGradient, _UIKBColorWildcatKeyGradientEnd, 
-                       _UIKBColorWildcatKeyGradientStart, _UIKBColoriPhoneDictationBackboard, 
-                       _UIKBCornerRadius, _UIKBCreateCTFont, _UIKBCreateFadeClipImage, 
-                       _UIKBCreateFitCTLine, _UIKBCreateTwoColorLinearGradient, _UIKBCurrencySignGlyph, 
-                       _UIKBDarkCandidateBarCellHighlightedBackground, _UIKBDarkCandidateBarPocketGradientEnd, 
-                       _UIKBDarkCandidateBarPocketGradientStart, _UIKBDarkLowQualityHWRCandidateCellHighlightedBackgroundGradientEnd, 
+                       _UIKBColorWhite_Alpha24, _UIKBColorWhite_Alpha25, _UIKBColorWhite_Alpha26, 
+                       _UIKBColorWhite_Alpha30, _UIKBColorWhite_Alpha35, _UIKBColorWhite_Alpha4, 
+                       _UIKBColorWhite_Alpha40, _UIKBColorWhite_Alpha45, _UIKBColorWhite_Alpha5, 
+                       _UIKBColorWhite_Alpha50, _UIKBColorWhite_Alpha60, _UIKBColorWhite_Alpha65, 
+                       _UIKBColorWhite_Alpha7, _UIKBColorWhite_Alpha70, _UIKBColorWhite_Alpha73, 
+                       _UIKBColorWhite_Alpha75, _UIKBColorWhite_Alpha8, _UIKBColorWhite_Alpha80, 
+                       _UIKBColorWhite_Alpha85, _UIKBColorWhite_Alpha87, _UIKBColorWhite_Alpha87_50, 
+                       _UIKBColorWhite_Alpha87_60, _UIKBColorWhite_Alpha90, _UIKBColorWhite_Alpha96, 
+                       _UIKBColorWhite_Alpha97, _UIKBColorWildcatBarActiveGradient, 
+                       _UIKBColorWildcatBarActiveGradientEnd, _UIKBColorWildcatBarActiveGradientStart, 
+                       _UIKBColorWildcatCandidateBarBlueText, _UIKBColorWildcatKeyActiveBlueGradient, 
+                       _UIKBColorWildcatKeyActiveBlueGradientEnd, _UIKBColorWildcatKeyActiveBlueGradientStart, 
+                       _UIKBColorWildcatKeyActiveGradient, _UIKBColorWildcatKeyActiveGradientEnd, 
+                       _UIKBColorWildcatKeyActiveGradientStart, _UIKBColorWildcatKeyGradient, 
+                       _UIKBColorWildcatKeyGradientEnd, _UIKBColorWildcatKeyGradientStart, 
+                       _UIKBColoriPhoneDictationBackboard, _UIKBCornerRadius, _UIKBCreateCTFont, 
+                       _UIKBCreateFadeClipImage, _UIKBCreateFitCTLine, _UIKBCreateTwoColorLinearGradient, 
+                       _UIKBCurrencySignGlyph, _UIKBDarkCandidateBarCellHighlightedBackground, 
+                       _UIKBDarkCandidateBarPocketGradientEnd, _UIKBDarkCandidateBarPocketGradientStart, 
+                       _UIKBDarkLowQualityHWRCandidateCellHighlightedBackgroundGradientEnd, 
                        _UIKBDarkLowQualityHWRCandidateCellHighlightedBackgroundGradientStart, 
                        _UIKBDeleteLargeGlyph, _UIKBDeleteSmallGlyph, _UIKBDictationKeyGlyph, 
                        _UIKBDidShowGestureKeyboardIntroduction, _UIKBDismissKeyGlyph, 
@@ -2428,21 +2431,22 @@ exports:
                        _UIKBVisualStyleiPhoneStandardStr, _UIKBWhiteDownPointingTriangleGlyph, 
                        _UIKBYukonMagnifiersDisabled, _UIKBYukonSelectionEnabled, 
                        _UIKBYukonSelectionPainting, _UIKeyInputDownArrow, _UIKeyInputEmpty, 
-                       _UIKeyInputEscape, _UIKeyInputLeftArrow, _UIKeyInputPageDown, 
-                       _UIKeyInputPageUp, _UIKeyInputRightArrow, _UIKeyInputUpArrow, 
-                       _UIKeyboardAlwaysShowCandidateBarForCurrentInputMode, _UIKeyboardAnimationCurveUserInfoKey, 
-                       _UIKeyboardAnimationDurationUserInfoKey, _UIKeyboardAssistantOnScreenOnlyUserInfoKey, 
-                       _UIKeyboardAutocorrectSpellingEnabled, _UIKeyboardAutocorrectSpellingForInputMode, 
-                       _UIKeyboardAutocorrectionRequiredForInputMode, _UIKeyboardAutomaticFinishRotation, 
-                       _UIKeyboardAutomaticIsOffScreen, _UIKeyboardAutomaticIsOnScreen, 
-                       _UIKeyboardAutomaticPrepareForRotationToOrientation, _UIKeyboardAutomaticRotateToOrientation, 
-                       _UIKeyboardBoundsUserInfoKey, _UIKeyboardBundleForInputMode, 
-                       _UIKeyboardBundlePathForInputMode, _UIKeyboardCanUseFontFamilyForInputMode, 
-                       _UIKeyboardCandidateCorrectionDidChangeNotification, _UIKeyboardCanonicalInputModeName, 
-                       _UIKeyboardCenterBeginUserInfoKey, _UIKeyboardCenterEndUserInfoKey, 
-                       _UIKeyboardChangedAccessoryOnly, _UIKeyboardCheckSpellingEnabled, 
-                       _UIKeyboardCheckSpellingForInputMode, _UIKeyboardCheckSpellingPossibleForInputMode, 
-                       _UIKeyboardCurrencyVariants, _UIKeyboardCurrentInputModeAllowsChineseOrJapaneseReanalysisForText, 
+                       _UIKeyInputEnd, _UIKeyInputEscape, _UIKeyInputHome, _UIKeyInputLeftArrow, 
+                       _UIKeyInputPageDown, _UIKeyInputPageUp, _UIKeyInputRightArrow, 
+                       _UIKeyInputUpArrow, _UIKeyboardAlwaysShowCandidateBarForCurrentInputMode, 
+                       _UIKeyboardAnimationCurveUserInfoKey, _UIKeyboardAnimationDurationUserInfoKey, 
+                       _UIKeyboardAssistantOnScreenOnlyUserInfoKey, _UIKeyboardAutocorrectSpellingEnabled, 
+                       _UIKeyboardAutocorrectSpellingForInputMode, _UIKeyboardAutocorrectionRequiredForInputMode, 
+                       _UIKeyboardAutomaticFinishRotation, _UIKeyboardAutomaticIsOffScreen, 
+                       _UIKeyboardAutomaticIsOnScreen, _UIKeyboardAutomaticPrepareForRotationToOrientation, 
+                       _UIKeyboardAutomaticRotateToOrientation, _UIKeyboardBoundsUserInfoKey, 
+                       _UIKeyboardBundleForInputMode, _UIKeyboardBundlePathForInputMode, 
+                       _UIKeyboardCanUseFontFamilyForInputMode, _UIKeyboardCandidateCorrectionDidChangeNotification, 
+                       _UIKeyboardCanonicalInputModeName, _UIKeyboardCenterBeginUserInfoKey, 
+                       _UIKeyboardCenterEndUserInfoKey, _UIKeyboardChangedAccessoryOnly, 
+                       _UIKeyboardCheckSpellingEnabled, _UIKeyboardCheckSpellingForInputMode, 
+                       _UIKeyboardCheckSpellingPossibleForInputMode, _UIKeyboardCurrencyVariants, 
+                       _UIKeyboardCurrentInputModeAllowsChineseOrJapaneseReanalysisForText, 
                        _UIKeyboardDeviceSupportsSplit, _UIKeyboardDictationDockItemIdentifier, 
                        _UIKeyboardDictationIconImageName, _UIKeyboardDictationInfoOnScreenNotifyKey, 
                        _UIKeyboardDidChangeFrameNotification, _UIKeyboardDidHideNotification, 
@@ -2806,14 +2810,14 @@ exports:
                        __UIApplicationWillExitIdleModeNotification, __UIArrayControllerDeletedIndexPaths, 
                        __UIArrayControllerInsertedIndexPaths, __UIArrayControllerModifiedAttributesIndexPathsKey, 
                        __UIArrayControllerMovedIndexPaths, __UIAutologgingBackgroundFetchBlock, 
-                       __UIAutologgingVoidBlock, __UIBackdropViewSettingsColorAcceptGreen, 
-                       __UIBackdropViewSettingsColorCancelRed, __UIBackdropViewSettingsStackingLevelDefault, 
-                       __UIBackdropViewSettingsStackingLevelHigh, __UIBackdropViewSettingsStackingLevelLow, 
-                       __UIBackdropViewSettingsStackingLevelMedium, __UIBackgroundExtensionForBar, 
-                       __UIBackgroundExtensionForBarWithMaxY, __UIBarAppearanceAPIVersion, 
-                       __UIBarAppearanceStorageKeyForBarPositionAndMetrics, __UIBarBlurAcceptsBlendModeOnBackground, 
-                       __UIBarHairlineShadowColorForBarStyle, __UIBarSupportedStyle, 
-                       __UIBarsUseNewPadHeights, __UIBaselineLayoutBoundsConsultingContentSizeConstraints, 
+                       __UIAutologgingVoidBlock, __UIAutoresizingMaskConstraintsUseImplementationFromFoundation, 
+                       __UIBackdropViewSettingsColorAcceptGreen, __UIBackdropViewSettingsColorCancelRed, 
+                       __UIBackdropViewSettingsStackingLevelDefault, __UIBackdropViewSettingsStackingLevelHigh, 
+                       __UIBackdropViewSettingsStackingLevelLow, __UIBackdropViewSettingsStackingLevelMedium, 
+                       __UIBackgroundExtensionForBar, __UIBackgroundExtensionForBarWithMaxY, 
+                       __UIBarAppearanceAPIVersion, __UIBarAppearanceStorageKeyForBarPositionAndMetrics, 
+                       __UIBarBlurAcceptsBlendModeOnBackground, __UIBarHairlineShadowColorForBarStyle, 
+                       __UIBarSupportedStyle, __UIBarsUseNewPadHeights, __UIBaselineLayoutBoundsConsultingContentSizeConstraints, 
                        __UIBuiltinTraitStorageUnspecified, __UIBundleIDFromAuditToken, 
                        __UIBundleIDIsAccountBased, __UIButtonBarStopImage, __UICanvasConnectionOptionsAppLinkOpenStrategyChangedKey, 
                        __UICanvasConnectionOptionsBluetoothCentralsKey, __UICanvasConnectionOptionsBluetoothPeripheralsKey, 
@@ -2840,8 +2844,9 @@ exports:
                        __UICollectionViewListLayoutElementKindGlobalHeader, __UICollectionViewListLayoutElementKindSectionFooter, 
                        __UICollectionViewListLayoutElementKindSectionHeader, __UICollectionViewListLayoutSectionAutomaticDimension, 
                        __UIContainerDirectionalEdgeInsetsForSafeAreaReferenceWithLayoutAxisSafeAreaInsetsAndLayoutMargins, 
-                       __UIContentSizeCategoryCompareToContentSizeCategory, __UIContentSizeCategoryFromString, 
-                       __UIContentSizeCategoryGreaterThanOrEqualTo, __UIContentSizeCategoryIsAccessibilityContentSizeCategory, 
+                       __UIContentSizeCategoryClamp, __UIContentSizeCategoryCompareToContentSizeCategory, 
+                       __UIContentSizeCategoryFromString, __UIContentSizeCategoryGreaterThanOrEqualTo, 
+                       __UIContentSizeCategoryIsAccessibilityContentSizeCategory, 
                        __UIContentSizeCategoryMin, __UICreateCGImageFromIOSurfaceWithOptions, 
                        __UICreateScreenUIImage, __UICreateScreenUIImageFromRect, 
                        __UICreateScreenUIImageFromRectUnchecked, __UICreateScreenUIImageFromRectUncheckedWithRotation, 
@@ -2856,22 +2861,23 @@ exports:
                        __UIDynamicAnimationFrictionNormal, __UIDynamicAnimationUnitSizeRotationRadians, 
                        __UIDynamicAnimationUnitSizeScale, __UIDynamicAnimationUnitSizeTranslation, 
                        __UIDynamicUserInterfaceStyleEnabled, __UIEffectiveSourceDataOwnerForReportedDataOwner, 
-                       __UIExternalScreenSceneConnectionHandler, __UIFocusEngineGestureDidBeginNotification, 
-                       __UIFocusFastScrollingIndexBarPlaceholderTitle, __UIFocusSystemEnabledStateDidChangeNotification, 
-                       __UIFontWeightForImageSymbolWeight, __UIFromValueForAnimation, 
-                       __UIGestureRecognizerStateString, __UIGetAnimationCurveSpline, 
-                       __UIGetDefaultSpringParameters, __UIGetLookupBackgroundEffect, 
-                       __UIGetTintedBackButtonImage, __UIGetTintedCircularButtonDefaultBlueColor, 
-                       __UIGetTintedCircularButtonDefaultGreenColor, __UIGetTintedCircularButtonDefaultRedColor, 
-                       __UIGetTintedCircularButtonImage, __UIGetTintedCircularButtonImageOfType, 
-                       __UIGetTintedSegmentBarBackgroundImage, __UIGetTintedSegmentBarDividerImage, 
-                       __UIGetTintedSegmentBarFillSelectedImage, __UIGetTintedSegmentBarLeftCapSelectedImage, 
-                       __UIGetTintedSegmentBarRightCapSelectedImage, __UIGetTintedSegmentBarSelectedBackgroundImage, 
-                       __UIGraphicsBeginImageContextOpaque, __UIGraphicsBeginLetterpress, 
-                       __UIGraphicsBeginLetterpressContext, __UIGraphicsDrawIntoImageContextWithOptions, 
-                       __UIGraphicsEndLetterpressContext, __UIGraphicsEndLetterpressWithStyle, 
-                       __UIGraphicsLetterpressPadding, __UIHidesUpdatedVisualStyle, 
-                       __UIHorizontalIndexTitleBarHeight, __UIHostedWindowDidRegisterScrollToTopViewNotificationName, 
+                       __UIExternalScreenSceneConnectionHandler, __UIFirstTypeIdentifierEligibleForMassStorage, 
+                       __UIFocusEngineGestureDidBeginNotification, __UIFocusFastScrollingIndexBarPlaceholderTitle, 
+                       __UIFocusSystemEnabledStateDidChangeNotification, __UIFontWeightForImageSymbolWeight, 
+                       __UIFromValueForAnimation, __UIGestureRecognizerStateString, 
+                       __UIGetAnimationCurveSpline, __UIGetDefaultSpringParameters, 
+                       __UIGetLookupBackgroundEffect, __UIGetTintedBackButtonImage, 
+                       __UIGetTintedCircularButtonDefaultBlueColor, __UIGetTintedCircularButtonDefaultGreenColor, 
+                       __UIGetTintedCircularButtonDefaultRedColor, __UIGetTintedCircularButtonImage, 
+                       __UIGetTintedCircularButtonImageOfType, __UIGetTintedSegmentBarBackgroundImage, 
+                       __UIGetTintedSegmentBarDividerImage, __UIGetTintedSegmentBarFillSelectedImage, 
+                       __UIGetTintedSegmentBarLeftCapSelectedImage, __UIGetTintedSegmentBarRightCapSelectedImage, 
+                       __UIGetTintedSegmentBarSelectedBackgroundImage, __UIGraphicsBeginImageContextOpaque, 
+                       __UIGraphicsBeginLetterpress, __UIGraphicsBeginLetterpressContext, 
+                       __UIGraphicsDrawIntoImageContextWithOptions, __UIGraphicsEndLetterpressContext, 
+                       __UIGraphicsEndLetterpressWithStyle, __UIGraphicsLetterpressPadding, 
+                       __UIHidesUpdatedVisualStyle, __UIHorizontalIndexTitleBarHeight, 
+                       __UIHostedWindowDidRegisterScrollToTopViewNotificationName, 
                        __UIHostedWindowDidUnregisterScrollToTopViewNotificationName, 
                        __UIHostedWindowScrollToTopNotificationViewKey, __UIImageDummyImageContentRendering, 
                        __UIImageGetActivityBookmark, __UIImageGetCGImageRepresentation, 
