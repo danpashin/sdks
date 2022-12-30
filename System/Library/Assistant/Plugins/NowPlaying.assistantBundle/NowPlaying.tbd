@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Assistant/Plugins/NowPlaying.assistantBundle/NowPlaying
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _NPLanguageOptionCreate,
+                            _NPMediaRemoteDisableLanguageOption,
+                            _NPMediaRemoteSendCommandWithOptions,
+                            _NPMediaRemoteSetLanguageOption ]
+    objc-classes:         [ NPVGetAudioTracksAndSubtitleOptions,
+                            NPVSetAudioTrack, NPVSetAutoSubtitles,
+                            NPVSetDefaultAudioTrack, NPVTurnOffSubtitles,
+                            NPVTurnOnSubtitles ]
+...

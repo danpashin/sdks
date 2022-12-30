@@ -8,9 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _MRMediaControlsPlatterDeviceIdentifierAppleTV,
+                            _MRMediaControlsPlatterDeviceIdentifierGenericSpeaker,
+                            _MRMediaControlsPlatterDeviceIdentifierHomePod,
+                            _MRMediaControlsPlatterDeviceIdentifierHomePodStereoPair,
+                            _MRMediaControlsPlatterDeviceIdentifierSpeaker ]
     objc-classes:         [ MRPlatterViewController,
+                            MediaControlsBluetoothListeningModeButton,
                             MediaControlsCollectionViewController,
                             MediaControlsEndpointsViewController,
+                            MediaControlsExpandableButton,
+                            MediaControlsExpandableButtonOption,
                             MediaControlsLanguageOptionsViewController,
                             MediaControlsPanelViewController,
                             MediaControlsStyleCoordinator,

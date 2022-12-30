@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _kOverrideProtocol, _payload_length_for_command ]
+    symbols:              [ _isCloseEASession, _kOverrideProtocol,
+                            _payload_length_for_command ]
     objc-classes:         [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:           [ EAFirmwareUpdater._accessory,
                             EAFirmwareUpdater._appProtocol,
@@ -27,9 +28,11 @@ exports:
                             EAFirmwareUpdater._deviceClass,
                             EAFirmwareUpdater._deviceOptions,
                             EAFirmwareUpdater._eaNotificationDispatchQueue,
+                            EAFirmwareUpdater._excludeUniqueAccessoryCheck,
                             EAFirmwareUpdater._firmwareBundleFilename,
                             EAFirmwareUpdater._firmwareBundleURL,
                             EAFirmwareUpdater._firmwareUpdateComplete,
+                            EAFirmwareUpdater._firmwareUpdateIsUrgent,
                             EAFirmwareUpdater._firmwareVersionAvailable,
                             EAFirmwareUpdater._firmwareVersionMajor,
                             EAFirmwareUpdater._firmwareVersionMinor,

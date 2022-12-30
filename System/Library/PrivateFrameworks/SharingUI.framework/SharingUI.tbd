@@ -3,30 +3,33 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SharingUI.framework/SharingUI
-current-version:       1470.15
+current-version:       1496.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SFAirDropActivityMaxPreviewsKey,
+    symbols:              [ _SFAdjustmentFiltersForAssetTypeAndURL,
+                            _SFAirDropActivityMaxPreviewsKey,
                             _SFFontForTextStyleWithAdditionalSymbolicTraits,
                             _SFImageStackFromImages,
                             _SFMathAddToValueWithRubberbanding, _SFMathClamp,
                             _SFMathClampedMap, _SFMathClampedProgress, _SFMathMap,
                             _SFMathProgress, _SFMathRubberband, _SFMathTransition,
-                            _SFMathUnrubberband, _SFRoundToScreen,
-                            _SFScaleAndRotateImage,
+                            _SFMathUnrubberband,
+                            _SFPlaybackTimeRangesFromFeaturesTimeURL,
+                            _SFRoundToScreen, _SFScaleAndRotateImage,
                             _SFSpringConvertDampingRatioResponseToStiffnessDamping,
                             _SFSpringConvertMassStiffnessDampingToDampingRatioResponse,
                             _SFSpringConvertMassStiffnessDampingToStiffnessDamping,
                             _SFSpringConvertStiffnessDampingToDampingRatioResponse,
                             _SFVisualEffectViewWrapperForView,
                             _activityImageForCurrentTraitCollectionWithName ]
-    objc-classes:         [ SFAirDropActivityViewController,
+    objc-classes:         [ SFAdjustedImageView, SFAirDropActivityViewController,
                             SFAirDropDiscoveryController,
                             SFAirDropMagicHeadViewController, SFAirDropPayload,
                             SFAirDropViewController, SFB332SetupObserver,
-                            SFCircleProgressView, SFHighlightButton,
+                            SFCAPackageView, SFCircleProgressView,
+                            SFHighlightButton, SFMediaPlayerItem,
                             SFMediaPlayerView, SFPersonCollectionViewCell,
                             SFPersonImageView, SFShareAudioViewController,
                             SFSharedAudioDeviceInfo ]

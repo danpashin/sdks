@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-current-version:       3602.9.230
+current-version:       3612.11.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -16,6 +16,7 @@ exports:
                             _CAMAggregateDictionaryBucketNumberForAvalancheLength,
                             _CAMAggregateDictionaryBurstBackKey,
                             _CAMAggregateDictionaryBurstFrontKey,
+                            _CAMAggregateDictionaryCameraCaseCaptureKey,
                             _CAMAggregateDictionaryCameraOriginKey,
                             _CAMAggregateDictionaryDragLockVideoKey,
                             _CAMAggregateDictionaryDynamicShutterKeyStringForCaptureMode,
@@ -454,7 +455,6 @@ exports:
                             CAMFocusIndicatorView, CAMFocusLockBadge,
                             CAMFocusLockWithLensPositionCommand, CAMFocusResult,
                             CAMFormattingManager, CAMFramerateIndicatorView,
-                            CAMFramerateStatusIndicator,
                             CAMFullscreenModeSelector, CAMFullscreenViewfinder,
                             CAMFullscreenViewfinderLayout,
                             CAMGraphConfigurationInspectionCommand, CAMGridView,
@@ -472,9 +472,10 @@ exports:
                             CAMKeepAliveController, CAMKeyValueCoalescer,
                             CAMLedger, CAMLegibilityViewHelper, CAMLevelCrosshair,
                             CAMLevelIndicatorView, CAMLevelViewModel,
-                            CAMLiquidShutterRenderer, CAMLivePhotoBadge,
-                            CAMLivePhotoButton, CAMLivePhotoStatusIndicator,
-                            CAMLocationController, CAMLowLightBoostCommand,
+                            CAMLiquidShutterRenderer, CAMLivePhotoAnimationCache,
+                            CAMLivePhotoBadge, CAMLivePhotoButton,
+                            CAMLivePhotoStatusIndicator, CAMLocationController,
+                            CAMLowLightBoostCommand,
                             CAMLowLightConfigurationCommand,
                             CAMLowLightInstructionLabel, CAMLowLightModeCommand,
                             CAMLowLightSlider, CAMLowLightStatusIndicator,
@@ -596,9 +597,10 @@ exports:
                             CAMUserPreferenceOverrides, CAMUserPreferences,
                             CAMUserPreferencesMigrator, CAMUtilityBar,
                             CAMVideoCaptureRequest, CAMVideoCaptureResponse,
-                            CAMVideoCaptureResult, CAMVideoCorruptor,
-                            CAMVideoFramerateCommand, CAMVideoHDRCommand,
-                            CAMVideoHDRSuspensionCommand,
+                            CAMVideoCaptureResult,
+                            CAMVideoConfigurationStatusIndicator,
+                            CAMVideoCorruptor, CAMVideoFramerateCommand,
+                            CAMVideoHDRCommand, CAMVideoHDRSuspensionCommand,
                             CAMVideoLivePhotoMetadataWritingEnabledCommand,
                             CAMVideoLocalPersistenceResult,
                             CAMVideoPersistenceCoordinator,

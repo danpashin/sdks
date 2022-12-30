@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
-current-version:       1052.1
+current-version:       1052.14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -72,6 +72,9 @@ exports:
                             _SGMContactDetailExtractionOutcomeIgnoredQuotedRegion,
                             _SGMContactDetailExtractionOutcomeIgnoredSuspectedBulkMail,
                             _SGMContactDetailExtractionOutcomeNotExtracted,
+                            _SGMContactDetailExtractionSignatureSourceDataDetectors,
+                            _SGMContactDetailExtractionSignatureSourceHMM,
+                            _SGMContactDetailExtractionSignatureSourceNoSignatureSource,
                             _SGMContactDetailFoundInNotFound,
                             _SGMContactDetailFoundInOtherCNContact,
                             _SGMContactDetailFoundInSenderCNContact,
@@ -226,8 +229,10 @@ exports:
                             _kSGCloudKitPersistedState,
                             _kSGContactInteractionSamplingRateKey,
                             _kSGContactSharingNegativeSamplingRate,
-                            _kSGDetectContacts, _kSGDetectNLEvents,
-                            _kSGDetectReminders, _kSGDetectStructuredEvents,
+                            _kSGDPRecorderMaxMessageLen, _kSGDPRecorderToAlpha,
+                            _kSGDPRecorderToLowercase, _kSGDetectContacts,
+                            _kSGDetectNLEvents, _kSGDetectReminders,
+                            _kSGDetectStructuredEvents,
                             _kSGEmailSearchableItemSourceKey,
                             _kSGEventActivityEndDateKey,
                             _kSGEventActivityStartDateKey,
@@ -266,6 +271,7 @@ exports:
                             _kSGSuppressSyncHistoryToCloud,
                             _kSGTimeToLeaveAlertsEnabled,
                             _kSGTimeToLeaveLocationEnabled,
+                            _kSGTrustDataDetectorsKey, _kSGTrustHMMKey,
                             _kSGURLChangeNotification,
                             _kSGUseManateeSaltForHistory,
                             _kSuggestionsDaemonStringsFileExtension,
@@ -317,7 +323,10 @@ exports:
                             SGM2MaybeInformationShown, SGM2NLEventInBanner,
                             SGM2SelfIdPatternMatched,
                             SGMAutocompleteUserSelectedContact,
-                            SGMBadInteractionIgnored, SGMBundleIdsTrackedAsOther,
+                            SGMBadInteractionIgnored,
+                            SGMBundleIdsMissingEntitlement,
+                            SGMBundleIdsTrackedAsOther,
+                            SGMBundleIdsUsingOldEntitlement,
                             SGMCNtoSGContactsCacheHit, SGMContactConfirmed,
                             SGMContactCreated, SGMContactDetailConfirmed,
                             SGMContactDetailConversationTurn,

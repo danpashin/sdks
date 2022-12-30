@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils
-current-version:       693.0.12
+current-version:       693.40.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -77,6 +77,7 @@ exports:
                             _LibCall_ACMCredentialGetType,
                             _LibCall_ACMCredentialSetProperty,
                             _LibCall_ACMGetAclAuthMethod_Block,
+                            _LibCall_ACMGetEnvironmentVariable,
                             _LibCall_ACMGetEnvironmentVariable_Block,
                             _LibCall_ACMGlobalContextCredentialGetProperty_Block,
                             _LibCall_ACMKernDoubleClickNotify,
@@ -88,7 +89,9 @@ exports:
                             _LibCall_ACMRequirementGetState,
                             _LibCall_ACMRequirementGetType,
                             _LibCall_ACMSetEnvironmentVariable,
-                            _LibCall_BuildCommand,
+                            _LibCall_ACMTRMLoadState,
+                            _LibCall_ACMTRMLoadState_Block,
+                            _LibCall_ACMTRMSaveState, _LibCall_BuildCommand,
                             _LibSer_ContextCredentialGetProperty_Deserialize,
                             _LibSer_ContextCredentialGetProperty_GetSize,
                             _LibSer_ContextCredentialGetProperty_Serialize,

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: C60100E9-78EE-392E-87D0-BF8FF98C9EB3', 'armv7s: 994C3982-C291-3030-A476-8571D786EA50', 
-                   'arm64: AD2EF85B-3214-37CB-BA15-882EF8752524', 'arm64e: EFC28E38-D46E-3C32-B6B3-13F35D1AAA58' ]
+                   'arm64: 665A9943-4F38-36E3-84CB-9F3D00B6B583', 'arm64e: AB100849-B578-36E3-BDD3-AB35180037AE' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/PhotosUI.framework/PhotosUI'
-current-version: 3602.23.180
+current-version: 3612.27.190
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _PLActivityTypePublishToTudou, _PLActivityTypePublishToYouTube, 
@@ -74,11 +74,11 @@ exports:
                        _PUImportPPTDriverThumbnailToFirstKey, _PUInsetsOfRectInRect, 
                        _PUInvisibleSubtitlePlaceholder, _PUKDebugIsEnabled, _PUKDebugTrace, 
                        _PULineDistanceBetweenPoints, _PULineDistanceToPoint, _PULineIntersection, 
-                       _PULocalizedEditString, _PULocalizedString, _PUMainScreenScale, 
-                       _PUMediaDestinationErrorDomain, _PUMediaProviderErrorDomain, 
-                       _PUMediaProviderResultIsFullSizeFormat, _PUMediaProviderResultIsPlaceholder, 
-                       _PUMediaProviderStillDisplayTimeKey, _PUNormalizePoint, _PUPerformWithNavigationTransition, 
-                       _PUPhotoCellIdentifier, _PUPhotoEditHandleURLAction, _PUPhotoEditSessionEndString, 
+                       _PULocalizedString, _PUMainScreenScale, _PUMediaDestinationErrorDomain, 
+                       _PUMediaProviderErrorDomain, _PUMediaProviderResultIsFullSizeFormat, 
+                       _PUMediaProviderResultIsPlaceholder, _PUMediaProviderStillDisplayTimeKey, 
+                       _PUNormalizePoint, _PUPerformWithNavigationTransition, _PUPhotoCellIdentifier, 
+                       _PUPhotoEditHandleURLAction, _PUPhotoEditSessionEndString, 
                        _PUPhotoViewBannerHeight, _PUPhotosGridDownloadHelperCancelledCode, 
                        _PUPhotosSectionHeaderBottomBaselineOffset, _PUPhotosSectionHeaderDefaultTitleBaselineOffset, 
                        _PUPhotosSectionHeaderSubtitleBaselineOffset, _PUPhotosSectionHeaderYearsTitleBaselineOffset, 
@@ -152,7 +152,9 @@ exports:
                        PUContentTileProvider, PUCrossfadeAnimatedTransitioning, PUDeletePhotosActionController, 
                        PUDisplayLink, PUDisplayLocationProvider, PUDoubleHeightHorizontalAlbumListGadgetLayout, 
                        PUDynamicValueFilter, PUEditViewController, PUEditableMediaProvider, 
-                       PUEditingExtensionHostContext, PUEditingInitialPayload, PUEnterEditPerformanceEventBuilder, 
+                       PUEditingExtensionHostContext, PUEditingExtensionUndoAdapter, 
+                       PUEditingExtensionUndoProxyExtensionSide, PUEditingExtensionUndoProxyHostSide, 
+                       PUEditingInitialPayload, PUEnterEditPerformanceEventBuilder, 
                        PUExitEditPerformanceEventBuilder, PUFeedSettings, PUFeedViewController, 
                        PUFilmStripViewIndicatorInfo, PUFilmstripView, PUFlatWhiteInterfaceTheme, 
                        PUFunEffectsViewController, PUGridTilingLayout, PUGroupValueFilter, 

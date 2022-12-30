@@ -3,15 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraEditKit.framework/CameraEditKit
-current-version:       3602.9.230
+current-version:       3612.11.110
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CEKClamp, _CEKDiscreteSliderContentTopInset,
-                            _CEKFontOfSizeAndStyle, _CEKFrameworkBundle,
-                            _CEKHapticsAllowed, _CEKInterpolate,
-                            _CEKInterpolateClamped, _CEKIsPadLayout,
+                            _CEKFontOfSizeAndStyle, _CEKFontOfSizeWeightStyle,
+                            _CEKFrameworkBundle, _CEKHapticsAllowed,
+                            _CEKInterpolate, _CEKInterpolateClamped,
+                            _CEKIsCustomKerningSupportedForLocale,
+                            _CEKIsPadLayout, _CEKIsSFCameraSupportedForLocale,
                             _CEKIsSmallPhone, _CEKLocalizedFrameworkString,
                             _CEKMonospacedStylisticNumeralFontOfSizeAndStyle,
                             _CEKProgress, _CEKProgressClamped,
@@ -24,7 +26,9 @@ exports:
                             _CameraEditKitVersionString,
                             _CubeColorCreateInterpolated,
                             _CubeGradientCreateCopyWithAlpha,
-                            _CubeGradientCreateInterpolated ]
+                            _CubeGradientCreateInterpolated,
+                            __CEKSFCameraFontOfSizeAndWeight,
+                            __CEKSFCameraFontURLForWeight ]
     objc-classes:         [ CEKAnimationGenerator,
                             CEKAnimationGeneratorAnimation, CEKApertureButton,
                             CEKApertureSlider, CEKBadgeTextView, CEKBadgeView,

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: D5FED001-75DC-39D7-881E-D31C0E1AFCB4', 'armv7s: 40B5865E-BD06-31A9-A1C7-4D2121ACB847', 
-                   'arm64: B5CE11C7-FF65-3B8A-B53F-660C108D02D7', 'arm64e: 07694469-6752-3ACD-BB7E-8A2D70565998' ]
+                   'arm64: ACB7D60D-DA11-36F0-99D5-34E9093BF9FC', 'arm64e: AD815B00-058B-3F3E-84C8-1316822C98C6' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2387.0.5
+current-version: 2388.0.21
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -77,6 +77,7 @@ exports:
                        _kCLLocationAccuracyNearestTenMeters, _kCLLocationAccuracyThreeKilometers, 
                        _kCLLocationCoordinate2DInvalid, _kCLLocationIntegrityHigh, 
                        _kCLLocationIntegrityLow, _kCLLocationIntegrityMedium, _kCLLocationIntegrityNone, 
+                       _kCLPolygonalRegionMaxVertices, _kCLPolygonalRegionMinVertices, 
                        _kInvalidMacAddress ]
     objc-classes:    [ CLAssertion, CLBeacon, CLBeaconIdentityConstraint, CLBeaconRegion, 
                        CLCircularRegion, CLEmergencyEnablementAssertion, CLFloor, 
@@ -86,6 +87,7 @@ exports:
                        CLSimulationManager, CLStateTracker, CLVehicleHeading, CLVehicleSpeed, 
                        CLVisit, _CLLSLHeading, _CLLSLHeadingEstimation, _CLLSLHeadingSupplInfo, 
                        _CLLSLLocation, _CLLSLLocationCoordinate, _CLLSLMapRoadSegment, 
-                       _CLLocationGroundAltitude, _CLPlaceInference, _CLRangingPeer, 
-                       _CLRangingPeerDistance, _CLVIOEstimation ]
+                       _CLLocationGroundAltitude, _CLPlaceInference, _CLPolygonalRegion, 
+                       _CLRangingPeer, _CLRangingPeerDistance, _CLVIOEstimation, 
+                       _CLVertex ]
 ...

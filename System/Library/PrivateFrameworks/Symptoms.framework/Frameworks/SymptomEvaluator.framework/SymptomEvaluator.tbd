@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1238.0.2
+current-version:       1238.40.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -53,6 +53,7 @@ exports:
                             _kNotificationNewConnectivityEpochWired,
                             _kNotificationNewModelGenerated,
                             _kNotificationNewPrimaryInterface,
+                            _kNotificationNewTraffic,
                             _kNotificationOfFlowDisruptingEvent,
                             _kNotificationOfTetheringState,
                             _kNotificationRecommendationDetail,
@@ -80,7 +81,7 @@ exports:
                             CountDown, DailyMaintenanceActivity, DateRounder,
                             DecisionDetails, Evaluation, EventDescription,
                             ExpertSystemHandlerCore, ExpertSystemStateCore,
-                            ImpoExpoService, JournalTimeStamp,
+                            FlowAnalyticsEngine, ImpoExpoService, JournalTimeStamp,
                             LQMPredictionInternalRecord, ManagedEventHandler,
                             ManagedEventTransport, MathUtility, NWAppAdvice,
                             NWNetworkAdviceUpdate, NWNetworkOfInterest,

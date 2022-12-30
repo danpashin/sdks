@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: D52AEF14-E42E-3B77-8A09-4779A6902A4B', 'armv7s: C345C65B-7473-327D-8E30-739B61C15FB5', 
-                   'arm64: 2BB23D42-F129-3BF4-9FE9-EC03BA1ECB8D', 'arm64e: 1B121A6F-5B14-3681-AC36-5117991B7F86' ]
+                   'arm64: 4F56660A-61D8-385A-AB34-11905889A5BE', 'arm64e: D1D71AEF-1800-3E61-AA51-740792B544BB' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/AVFoundation'
 current-version: 2
@@ -898,14 +898,12 @@ exports:
                        _AVCaptureDeviceShallowDepthOfFieldStatusChangedNotification, 
                        _AVCaptureDeviceSubjectAreaDidChangeNotification, _AVCaptureDeviceTypeBuiltInDualCamera, 
                        _AVCaptureDeviceTypeBuiltInDualWideCamera, _AVCaptureDeviceTypeBuiltInDuoCamera, 
-                       _AVCaptureDeviceTypeBuiltInMicrophone, _AVCaptureDeviceTypeBuiltInSuperBravoCamera, 
-                       _AVCaptureDeviceTypeBuiltInSuperWideAngleCamera, _AVCaptureDeviceTypeBuiltInTelephotoCamera, 
+                       _AVCaptureDeviceTypeBuiltInMicrophone, _AVCaptureDeviceTypeBuiltInTelephotoCamera, 
                        _AVCaptureDeviceTypeBuiltInTripleCamera, _AVCaptureDeviceTypeBuiltInTrueDepthCamera, 
                        _AVCaptureDeviceTypeBuiltInUltraWideCamera, _AVCaptureDeviceTypeBuiltInWideAngleCamera, 
-                       _AVCaptureDeviceTypeBuiltInWideBravoCamera, _AVCaptureDeviceWasConnectedNotification, 
-                       _AVCaptureDeviceWasDisconnectedNotification, _AVCaptureExposureDurationCurrent, 
-                       _AVCaptureExposureTargetBiasCurrent, _AVCaptureISOCurrent, 
-                       _AVCaptureInputPortFormatDescriptionDidChangeNotification, 
+                       _AVCaptureDeviceWasConnectedNotification, _AVCaptureDeviceWasDisconnectedNotification, 
+                       _AVCaptureExposureDurationCurrent, _AVCaptureExposureTargetBiasCurrent, 
+                       _AVCaptureISOCurrent, _AVCaptureInputPortFormatDescriptionDidChangeNotification, 
                        _AVCaptureLensPositionCurrent, _AVCaptureMaxAvailableTorchLevel, 
                        _AVCaptureMovieFileOutputRecordingCompletedNotification, _AVCaptureOutputNotificationInfoVideoPreviewFrameSurface, 
                        _AVCaptureOutputNotificationInfoVideoPreviewFrameSurfaceSize, 
@@ -1433,8 +1431,9 @@ exports:
                        _AVURLAssetOutOfBandMIMETypeKey, _AVURLAssetPreferPreciseDurationAndTimingKey, 
                        _AVURLAssetPreloadDurationWhenNextItemKey, _AVURLAssetProtectedContentSupportStorageURLKey, 
                        _AVURLAssetPurchaseBundleKey, _AVURLAssetReadAheadOnByteStreamCreationEnabledKey, 
-                       _AVURLAssetReferenceRestrictionsKey, _AVURLAssetRequiresCustomURLLoadingKey, 
-                       _AVURLAssetSSLPropertiesKey, _AVURLAssetShouldMatchDataInCacheByURLPathComponentOnlyKey, 
+                       _AVURLAssetReferenceRestrictionsKey, _AVURLAssetRemoteCustomURLHandlerContextKey, 
+                       _AVURLAssetRequiresCustomURLLoadingKey, _AVURLAssetSSLPropertiesKey, 
+                       _AVURLAssetShouldMatchDataInCacheByURLPathComponentOnlyKey, 
                        _AVURLAssetShouldMatchDataInCacheByURLWithoutQueryComponentKey, 
                        _AVURLAssetTypeKey, _AVURLAssetUseAppleWirelessDirectLinkKey, 
                        _AVURLAssetUseClientURLLoadingExclusively, _AVURLAssetUsesNoPersistentCacheKey, 
@@ -1487,16 +1486,16 @@ exports:
                        AVAssetReader, AVAssetReaderAudioMixOutput, AVAssetReaderOutput, 
                        AVAssetReaderOutputMetadataAdaptor, AVAssetReaderSampleReferenceOutput, 
                        AVAssetReaderTrackOutput, AVAssetReaderVideoCompositionOutput, 
-                       AVAssetResourceLoader, AVAssetResourceLoadingContentInformationRequest, 
-                       AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequest, 
-                       AVAssetResourceLoadingRequestor, AVAssetResourceRenewalRequest, 
-                       AVAssetTrack, AVAssetTrackGroup, AVAssetTrackSegment, AVAssetWriter, 
-                       AVAssetWriterInput, AVAssetWriterInputGroup, AVAssetWriterInputMetadataAdaptor, 
-                       AVAssetWriterInputPassDescription, AVAssetWriterInputPixelBufferAdaptor, 
-                       AVAsynchronousCIImageFilteringRequest, AVAsynchronousVideoCompositionRequest, 
-                       AVAudioMix, AVAudioMixEffectParameters, AVAudioMixInputParameters, 
-                       AVAudioMixSweepFilterEffectParameters, AVAudioOutputSettings, 
-                       AVAudioSessionMediaPlayerOnly, AVCMNotificationDispatcher, 
+                       AVAssetResourceLoader, AVAssetResourceLoaderRemoteHandlerContext, 
+                       AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, 
+                       AVAssetResourceLoadingRequest, AVAssetResourceLoadingRequestor, 
+                       AVAssetResourceRenewalRequest, AVAssetTrack, AVAssetTrackGroup, 
+                       AVAssetTrackSegment, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputGroup, 
+                       AVAssetWriterInputMetadataAdaptor, AVAssetWriterInputPassDescription, 
+                       AVAssetWriterInputPixelBufferAdaptor, AVAsynchronousCIImageFilteringRequest, 
+                       AVAsynchronousVideoCompositionRequest, AVAudioMix, AVAudioMixEffectParameters, 
+                       AVAudioMixInputParameters, AVAudioMixSweepFilterEffectParameters, 
+                       AVAudioOutputSettings, AVAudioSessionMediaPlayerOnly, AVCMNotificationDispatcher, 
                        AVCallbackContextRegistry, AVCameraCalibrationData, AVCaptureAudioChannel, 
                        AVCaptureAudioDataOutput, AVCaptureAutoExposureBracketedStillImageSettings, 
                        AVCaptureBracketedStillImageSettings, AVCaptureConnection, 
@@ -1573,7 +1572,7 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: F2F00387-0CFA-37F4-A2E0-1FA51F821EE7', 'armv7s: 509B7A5B-E59A-32DB-BC9E-353B52472B12', 
-                   'arm64: DD1865F1-4AF6-3936-B48B-066FF53429EA', 'arm64e: 9CC0F32C-662E-30F8-9FDB-75520AE4416D' ]
+                   'arm64: BEC19C86-C9CD-3689-91B1-1DCE86BA27A0', 'arm64e: E642FF52-0392-306C-8467-DB75C8E0F90A' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Frameworks/AVFAudio.framework/AVFAudio'
 exports:         

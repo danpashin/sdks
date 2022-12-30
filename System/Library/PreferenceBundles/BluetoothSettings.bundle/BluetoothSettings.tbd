@@ -11,13 +11,17 @@ exports:
     symbols:              [ _BTSUnregisterHealthDeviceNotification,
                             _NotificationCallback, __currentDevice,
                             _createLowSecurityBody, _createLowSecurityTitle,
+                            _isPreferredLanguageEnglish,
                             _sharedBluetoothSettingsLogComponent ]
-    objc-classes:         [ AccessoryControlListItemsController, BTAlert,
+    objc-classes:         [ AccessoryControlListItemsController,
+                            AccessoryControlTableCell,
+                            BTAccessoryListeningModeControl, BTAlert,
                             BTDeviceNameEditingController, BTLowSecurity,
                             BTSDevice, BTSDeviceClassic, BTSDeviceConfigController,
-                            BTSDeviceLE, BTSDevicesController, BTSPairController,
-                            BTSPairSetup, BTSSPPairingRequest, BTTableCell,
-                            BTTableSharingCell, DevicesHeaderView ]
+                            BTSDeviceLE, BTSDevicesController,
+                            BTSFitTestController, BTSFitTestWelcomeController,
+                            BTSPairController, BTSPairSetup, BTSSPPairingRequest,
+                            BTTableCell, BTTableSharingCell, DevicesHeaderView ]
     objc-ivars:           [ BTAlert._alert, BTAlert._delegate, BTAlert._device,
                             BTSDeviceConfigController._aacpControlSpecifiers,
                             BTSDeviceConfigController._ancsControlSpecifiers,

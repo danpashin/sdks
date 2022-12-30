@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3594.18
+current-version:       3601.9.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -21,6 +21,7 @@ exports:
                             _EMAppleMailURLScheme, _EMAppleMailboxURLScheme,
                             _EMBlockedSenderManagerBlockedListDidChangeNotification,
                             _EMBlockedSenderManagerBlockedSendersKey,
+                            _EMBlockedSenderManagerIsBlockedSenderEnabledKey,
                             _EMBlockedSenderOptionsDidChangeNotification,
                             _EMCollectionLoadBatchSize,
                             _EMCollectionLoadFirstBatchSize,
@@ -48,7 +49,11 @@ exports:
                             _EMFetchTypeUserInitiatedMailbox,
                             _EMInteractionLoggerShouldLog, _EMInvalidCount,
                             _EMListUnsubscribeSuggestionTrailingComparator,
-                            _EMMailToURLScheme,
+                            _EMMailDropBannerClass, _EMMailDropDataExpiration,
+                            _EMMailDropDataFilename, _EMMailDropDataSize,
+                            _EMMailDropDataURL, _EMMailDropImageArchiveName,
+                            _EMMailDropItemClass, _EMMailDropMetadataClass,
+                            _EMMailDropThumbnailClass, _EMMailToURLScheme,
                             _EMMailboxObjectIDURLSchemeEphemeral,
                             _EMMessageIDURLScheme,
                             _EMMessageListAddedItemsExtraInfoKeyUnreadMessageIDs,
@@ -66,6 +71,7 @@ exports:
                             _EMMessageListItemKeyPathIsCCMe,
                             _EMMessageListItemKeyPathIsToMe,
                             _EMMessageListItemKeyPathIsVIP,
+                            _EMMessageListItemKeyPathMailboxAccountID,
                             _EMMessageListItemKeyPathMailboxObjectIDs,
                             _EMMessageListItemKeyPathMailboxObjectIDsURLAbsoluteString,
                             _EMMessageListItemKeyPathMailboxType,
@@ -88,6 +94,7 @@ exports:
                             _EMPredicateMailboxKeyPathMailboxChildren,
                             _EMPredicateMailboxKeyPathName,
                             _EMPredicateMailboxKeyPathType,
+                            _EMPredicateMessageKeyPathInternalID,
                             _EMPredicateMessageKeyPathMessageIDHeaderHash,
                             _EMPredicateMessageKeyPathObjectID,
                             _EMPredicateMessageKeyPathSubject,
@@ -147,8 +154,9 @@ exports:
                             EMListUnsubscribeCommandMessageHeaders,
                             EMListUnsubscribeDetector,
                             EMListUnsubscribeMessageGenerator,
-                            EMListUnsubscribeSuggestion, EMMailToURLComponents,
-                            EMMailbox, EMMailboxChangeAction, EMMailboxCollection,
+                            EMListUnsubscribeSuggestion, EMMailDropMetadata,
+                            EMMailToURLComponents, EMMailbox,
+                            EMMailboxChangeAction, EMMailboxCollection,
                             EMMailboxObjectID, EMMailboxRepository, EMMailboxScope,
                             EMMessage, EMMessageChangeAction,
                             EMMessageCollectionItemID,
@@ -156,6 +164,7 @@ exports:
                             EMMessageDeleteAction, EMMessageDeleteAllAction,
                             EMMessageDeliveryResult, EMMessageFlagChangeAction,
                             EMMessageFlagChangeAllAction, EMMessageList,
+                            EMMessageListChangeObserverHelper,
                             EMMessageListItemChange, EMMessageListItemPredicates,
                             EMMessageObjectID, EMMessageRepository,
                             EMMessageSigner, EMMessageTransferAction,
@@ -180,7 +189,8 @@ exports:
                             _EMComparisionQueryGenerator,
                             _EMCompoundQueryGenerator,
                             _EMMessageDatabaseIDCollectionItemID,
-                            _EMMessageIDCollectionItemID, _EMSpecialMailboxScope,
-                            _EMUserActionState ]
+                            _EMMessageIDCollectionItemID,
+                            _EMMessageRepositoryMailboxPredictionObserver,
+                            _EMSpecialMailboxScope, _EMUserActionState ]
     objc-ivars:           [ _EMMessageIDCollectionItemID._messageIDHeaderHashValue ]
 ...

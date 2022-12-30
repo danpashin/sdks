@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3594.18
+current-version:       3601.9.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -76,7 +76,9 @@ exports:
                             _kEDSearchableIndexMaximumBodySizeForBodyIndexing,
                             _kEDSearchableIndexOutboxIdentifier,
                             _kEDSearchableIndexTransportIdentifier,
-                            _kMaximumNumberOfMessageIdsToSync ]
+                            _kFailingVerificationFullReindexThreshold,
+                            _kMaximumNumberOfMessageIdsToSync,
+                            _kSpotlightVerificationSampleSize ]
     objc-classes:         [ EDAccountECAccountTransformer, EDAccountRepository,
                             EDActivityPersistence, EDActivityRegistry,
                             EDAddMessagesDeletedDateReceivedIndexUpgradeStep,
@@ -116,8 +118,8 @@ exports:
                             EDMessageRepositoryQueryHandler,
                             EDMigrateBlockedSenderEnabledToBlockedSenderActionEnumUpgradeStep,
                             EDMigrateUserDefaultsUpgradeStep,
-                            EDMigratingThreadQueryHandler, EDNonAcceptingServer,
-                            EDOutgoingMessageRepository, EDPBInteractionEvent,
+                            EDNonAcceptingServer, EDOutgoingMessageRepository,
+                            EDPBInteractionEvent,
                             EDPBInteractionEventAppBackground,
                             EDPBInteractionEventAppLaunch,
                             EDPBInteractionEventAppResume,
@@ -163,7 +165,6 @@ exports:
                             EDSearchableIndexPendingItem,
                             EDSearchableIndexPersistence,
                             EDSearchableIndexPersistenceAttachmentDatum,
-                            EDSearchableIndexRecipientTester,
                             EDSearchableIndexScheduler,
                             EDSearchableIndexSubjectTester,
                             EDSearchableIndexUpdates,
@@ -172,20 +173,22 @@ exports:
                             EDServerMessagePersistence,
                             EDServerMessagePersistenceFactory,
                             EDSubjectTokenizer, EDTableMetadataPersistence,
-                            EDTaskScheduler, EDThreadPersistence,
-                            EDThreadQueryHandler, EDThreadScopeManager,
-                            EDTransactionService,
+                            EDTaskScheduler, EDThreadMigrator, EDThreadPersistence,
+                            EDThreadQueryHandler, EDThreadReloadSummaryHelper,
+                            EDThreadScopeManager, EDTransactionService,
                             EDUbiquitousConversationManager, EDUpdateThrottler,
                             EDVIPManager, EDVIPManagerProxy,
                             _EDAssetDownloadSchedulerContinuation,
                             _EDLazyWrappedMessage, _EDMailboxServerCount,
                             _EDPersistenceDatabaseConnectionWrapper,
+                            _EDThreadMigrationState,
                             _EDThreadPersistence_PersistedThread,
                             _EDThreadPersistence_SQLHelper,
                             _EDThreadPersistence_StatementCache,
                             _EDThreadPersistence_ThreadMessages,
                             _EDThreadPersistence_ThreadScope,
-                            _EDThreadPositionChangeSet, _EDThreadScopeInfo,
+                            _EDThreadPositionChangeSet,
+                            _EDThreadQueryUnderlyingHandlers, _EDThreadScopeInfo,
                             _EDUserActionState, _EDWrappedMessage, _MSTTLReference ]
     objc-ivars:           [ EDPBInteractionEvent._appBackground,
                             EDPBInteractionEvent._appLaunch,

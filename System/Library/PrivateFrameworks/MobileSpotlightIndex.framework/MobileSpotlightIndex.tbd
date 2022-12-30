@@ -3,12 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileSpotlightIndex.framework/MobileSpotlightIndex
-current-version:       2061
+current-version:       2073
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MDPlistArrayGetCount,
+    symbols:              [ _MDChildPlistBytesContextCreate,
+                            _MDChildPlistBytesContextDestroy,
+                            _MDPlistArrayGetCount,
                             _MDPlistArrayGetPlistObjectAtIndex,
                             _MDPlistArrayIterate, _MDPlistBooleanGetValue,
                             _MDPlistBytesAddBoolean, _MDPlistBytesAddCString,
@@ -157,6 +159,7 @@ exports:
                             _SIPersistentIDStoreCheckAccessAndScopesForOIDs,
                             _SIPersistentIDStoreClose,
                             _SIPersistentIDStoreCreate,
+                            _SIPersistentIDStoreDelete,
                             _SIPersistentIDStoreGetFastPathForOid,
                             _SIPersistentIDStoreGetOIDForCPath,
                             _SIPersistentIDStoreGetOidPathForOid,
@@ -201,11 +204,12 @@ exports:
                             _SISyncIndexForLikelyShutdown,
                             _SISyncIndexVaccuumIfNeeded, _SISynchedOp,
                             _SISynchedOpPropagatingPriority,
-                            _SIUINT32SetAddValue, _SIUINT32SetContainsValue,
-                            _SIUINT32SetCreate, _SIUINT32SetGetTypeID,
-                            _SIUINT64SetAddValue, _SIUINT64SetContainsValue,
-                            _SIUINT64SetCreate, _SIUINT64SetGetTypeID,
-                            _SIUINT64SetIterate, _SIUINT64SetRemoveValue,
+                            _SITransferAttributes, _SIUINT32SetAddValue,
+                            _SIUINT32SetContainsValue, _SIUINT32SetCreate,
+                            _SIUINT32SetGetTypeID, _SIUINT64SetAddValue,
+                            _SIUINT64SetContainsValue, _SIUINT64SetCreate,
+                            _SIUINT64SetGetTypeID, _SIUINT64SetIterate,
+                            _SIUINT64SetRemoveValue,
                             _SIUserCtxCreateWithLanguages, _SIValidIndex,
                             _SIWaitResults, _SI_PersistentIDStoreGetTypeID,
                             __MDCreateSimpleQueryEvaluator,
@@ -230,7 +234,7 @@ exports:
                             __SIDirectoryStoreIterate, __SIFlushAndSyncIndex,
                             __SIGetAllOids, __SIGetErrorString,
                             __SIGetLastUsedDate, __SIGetRecoverTimeStamp,
-                            __SIIssueFlush, __SIIssueFullMerge,
+                            __SIIssueDefrag, __SIIssueFlush, __SIIssueFullMerge,
                             __SIIssueFullMergeWithGroup, __SIIssueMerge,
                             __SIIssueRecovery, __SIIssueSchedulerDump,
                             __SIIssueSizeRepair, __SIIssueSplit, __SIIssueVerify,

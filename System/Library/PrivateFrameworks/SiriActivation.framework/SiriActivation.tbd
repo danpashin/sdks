@@ -8,8 +8,9 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SASRequestSourceGetName, _SASRequestSourceIsHTT,
-                            _SiriActivationEntitlement,
+    symbols:              [ _CARAutomaticFeatureStateGetName,
+                            _SASRequestSourceGetName, _SASRequestSourceIsHTT,
+                            _SASRequestStateGetName, _SiriActivationEntitlement,
                             _SiriActivationVersionNumber,
                             _SiriActivationVersionString,
                             _SiriContextOverrideKey, _SiriInvokeOnMainQueue,
@@ -17,7 +18,7 @@ exports:
                             _SiriTestingContextAudioInputKey,
                             _SiriTestingContextPPTKey,
                             _SiriTestingContextRecognitionStringKey ]
-    objc-classes:         [ AFUISiriLockStateTransport, SASActivationDecision,
+    objc-classes:         [ SASActivationCondition, SASActivationDecision,
                             SASActivationRequest, SASAnalytics,
                             SASBoardServicesConfiguration, SASBulletinCache,
                             SASBulletinCacheNode, SASBulletinManager,
@@ -32,12 +33,11 @@ exports:
                             SASRequestOptionsBuilder,
                             SASSignalConnectionListener, SASSignalServer,
                             SASSiriPocketStateManager, SASSystemState,
-                            SASSystemStateOverride, SASTestingInput,
-                            SASTestingInputController, SASTimeIntervalTransport,
-                            SiriActivationService, SiriActivationSource,
-                            SiriActivityAssertion, SiriBluetoothContext,
-                            SiriBluetoothDeviceSource, SiriBreadcrumbSource,
-                            SiriContext, SiriContextOverride,
+                            SASTestingInput, SASTestingInputController,
+                            SASTimeIntervalTransport, SiriActivationService,
+                            SiriActivationSource, SiriActivityAssertion,
+                            SiriBluetoothContext, SiriBluetoothDeviceSource,
+                            SiriBreadcrumbSource, SiriContext, SiriContextOverride,
                             SiriContinuityContext, SiriContinuitySource,
                             SiriDirectActionContext, SiriDirectActionSource,
                             SiriDismissalOptions, SiriLongPressButtonContext,
@@ -47,7 +47,8 @@ exports:
                             SiriPresentationOptions, SiriPunchoutRequest,
                             SiriSimpleActivationSource, SiriSpotlightContext,
                             SiriSpotlightSource, SiriTestingContext,
-                            SiriTestingSource, SiriVoiceTriggerContext ]
+                            SiriTestingSource, SiriUILockStateTransport,
+                            SiriVoiceTriggerContext ]
     objc-ivars:           [ SiriActivationSource._connection,
                             SiriActivationSource._lock ]
 ...
