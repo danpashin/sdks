@@ -50,6 +50,29 @@ typedef NS_ENUM( NSInteger, ENStatus )
 }	EN_API_AVAILABLE;
 
 //===========================================================================================================================
+/*!	@brief	Activities that occurred while the app might not be running.
+*/
+typedef NS_OPTIONS( uint32_t, ENActivityFlags )
+{
+	/// Reserved field
+	ENActivityFlagsReserved1							     = ( 1U << 0 ),
+	
+	/// Reserved field
+	ENActivityFlagsReserved2							     = ( 1U << 1 ),
+	
+	/// The app launched in the background to perform periodic operations on iOS 12.5.
+	ENActivityFlagsPeriodicRun      						 = ( 1U << 2 ),
+	
+	/// The app launched in the foreground to display information about the pre-authorized key release
+	ENActivityFlagsPreAuthorizedKeyReleaseNotificationTapped = ( 1U << 3 )
+	
+}	EN_API_AVAILABLE_V2;
+
+//===========================================================================================================================
+
+/// Invoked after the app is launched to report activities that occurred while the app might not be running.
+EN_API_AVAILABLE_V2
+typedef void ( ^ENActivityHandler )( ENActivityFlags activityFlags );
 
 /// Invoked when getDiagnosisKeysWithCompletionHandler completes.
 /// If it completes successfully, keys will contain the Diagnosis Keys for this device and error will be nil.
@@ -62,6 +85,10 @@ typedef void ( ^ENGetDiagnosisKeysHandler )( NSArray <ENTemporaryExposureKey *> 
 /// If it fails, summary will be nil and error indicates the reason it failed.
 EN_API_AVAILABLE
 typedef void ( ^ENDetectExposuresHandler )( ENExposureDetectionSummary * _Nullable summary, NSError * _Nullable error );
+
+// Invoked after requestPreAuthorizedDiagnosisKeys if the user pre-authorized
+EN_API_AVAILABLE_V3
+typedef void ( ^ENDiagnosisKeysAvailableHandler )( NSArray <ENTemporaryExposureKey *> *keys );
 
 /// Invoked when getting exposures completes. It provides info about each exposure.
 /// If it completes successfully, exposures will contain info about each exposure and error will be nil.
@@ -106,6 +133,10 @@ EN_API_AVAILABLE_EXPORT
 	All strong references are cleared when invalidation completes to break potential retain cycles.
 	You don't need to use weak references within your handlers to avoid retain cycles when using this class.
 */
+
+/// Invoked when the app is launched for an activity while it might not be running.
+/// When the app is launched, it should create an ENManager instance, set this handler, and then activate the manager.
+@property (readwrite, copy, nullable, nonatomic) ENActivityHandler activityHandler EN_API_AVAILABLE_V2;
 
 /// Dispatch queue to invoke handlers on. Defaults to the main queue.
 #if defined( OS_OBJECT_USE_OBJC ) && OS_OBJECT_USE_OBJC
@@ -226,6 +257,22 @@ NS_SWIFT_NAME(getExposureWindows(summary:completionHandler:));
 /// WARNING: This API is only for use by developers. It requires a special entitlement that is not allowed in the app store.
 /// It's only intended to allow developers to test without needing to wait 24 hours for a key to be released.
 - (void) getTestDiagnosisKeysWithCompletionHandler:(ENGetDiagnosisKeysHandler) completionHandler;
+
+/// Invoked after requestPreAuthorizedDiagnosisKeys if user authorization is still valid.
+@property (readwrite, copy, nullable, nonatomic) ENDiagnosisKeysAvailableHandler diagnosisKeysAvailableHandler
+EN_API_AVAILABLE_V3;
+
+/// Authorizes a one-time, future release of diagnosis keys without a user prompt at the time of release.
+/// This allows the user to authorize ahead of time in case they are unable to approve at the time of positive diagnosis.
+/// WARNING: Application should be in foreground to request the authorization
+- (void) preAuthorizeDiagnosisKeysWithCompletionHandler:(ENErrorHandler) completionHandler
+EN_API_AVAILABLE_V3;
+
+/// Requests diagnosis keys after previously using preAuthorizeDiagnosisKeys successfully.
+/// This will display a notification to the user for the user to know the keys will be returned.
+/// Keys are returned by invoking diagnosisKeysAvailable, which must be set before calling this.
+- (void) requestPreAuthorizedDiagnosisKeysWithCompletionHandler:(ENErrorHandler) completionHandler
+EN_API_AVAILABLE_V3;
 
 @end
 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5FF90157-BE8B-36C6-969E-DCE875302D62
   - target:          arm64-ios
-    value:           48202B1D-BC86-3FF5-B58E-BB295683C72D
+    value:           47CDCA39-D452-3DCB-AEAA-74514EF76D32
   - target:          arm64e-ios
-    value:           8D4D792B-8560-33EE-A9B9-08F6E8B4FE86
+    value:           334D72C8-F351-3FFD-9263-11BD5B0D25B3
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/CoreMedia'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1671,21 +1671,23 @@ exports:
                        _FigCustomURLResponseInfoSetResourceSize, _FigCustomURLResponseInfoSetRoundTripTime, 
                        _FigCustomURLResponseInfoSetUniversalTypeIdentifier, _FigDebugAssert, 
                        _FigDebugAssert2, _FigDebugAssertSyslog, _FigDebugAssertSyslog2, 
-                       _FigDebugGetAdoptedVoucherProcessIDAndUUIDString, _FigDebugIsInternalBuild, 
-                       _FigDebugSettingGetKeyAsBoolean, _FigDebugSettingGetKeyAsInteger, 
-                       _FigDeferNotificationToDispatchQueue, _FigDeferNotificationToRunLoop, 
-                       _FigDerivedClockCreateWithGetTimeCallback, _FigDerivedClockDiscontinuityOccurred, 
-                       _FigDerivedClockGetDerivedStorage, _FigDerivedClockVerifyCallbacksMatch, 
-                       _FigDerivedFormatDescriptionCreate, _FigDerivedFormatDescriptionGetDerivedStorage, 
-                       _FigDerivedFormatDescriptionRegister, _FigDerivedObjectCreate, 
-                       _FigDigestMD5AppendData, _FigDigestMD5Create, _FigDigestMD5Destroy, 
-                       _FigDigestMD5GetDigest, _FigDigestMD5Reset, _FigDigestSHA1AppendData, 
-                       _FigDigestSHA1Create, _FigDigestSHA1Destroy, _FigDigestSHA1GetDigest, 
-                       _FigDigestSHA1Reset, _FigDispatchAsyncAndWait, _FigDispatchAsyncAndWaitWithTimeout_f, 
-                       _FigDispatchAsyncAndWait_f, _FigDispatchAsyncPostNotification, 
-                       _FigDispatchAsyncSetPropertyImplementation, _FigDispatchCreateDispatchSourceBlock, 
-                       _FigDispatchCreateWorkloopWithPriority, _FigDispatchOnceInitWithinObject, 
-                       _FigDispatchQueueCreateStandardDispatchQueue, _FigDispatchQueueCreateTargetingPThreadRootQueueWithPriority, 
+                       _FigDebugBlock_IsPrivilegedProcess, _FigDebugBlock_OneTimeInitializationForMTPluginFormatReaderServer, 
+                       _FigDebugBlock_OneTimeInitializationForMediaserverd, _FigDebugGetAdoptedVoucherProcessIDAndUUIDString, 
+                       _FigDebugInstallDebugBlock, _FigDebugIsInternalBuild, _FigDebugSettingGetKeyAsBoolean, 
+                       _FigDebugSettingGetKeyAsInteger, _FigDeferNotificationToDispatchQueue, 
+                       _FigDeferNotificationToRunLoop, _FigDerivedClockCreateWithGetTimeCallback, 
+                       _FigDerivedClockDiscontinuityOccurred, _FigDerivedClockGetDerivedStorage, 
+                       _FigDerivedClockVerifyCallbacksMatch, _FigDerivedFormatDescriptionCreate, 
+                       _FigDerivedFormatDescriptionGetDerivedStorage, _FigDerivedFormatDescriptionRegister, 
+                       _FigDerivedObjectCreate, _FigDigestMD5AppendData, _FigDigestMD5Create, 
+                       _FigDigestMD5Destroy, _FigDigestMD5GetDigest, _FigDigestMD5Reset, 
+                       _FigDigestSHA1AppendData, _FigDigestSHA1Create, _FigDigestSHA1Destroy, 
+                       _FigDigestSHA1GetDigest, _FigDigestSHA1Reset, _FigDispatchAsyncAndWait, 
+                       _FigDispatchAsyncAndWaitWithTimeout_f, _FigDispatchAsyncAndWait_f, 
+                       _FigDispatchAsyncPostNotification, _FigDispatchAsyncSetPropertyImplementation, 
+                       _FigDispatchCreateDispatchSourceBlock, _FigDispatchCreateWorkloopWithPriority, 
+                       _FigDispatchOnceInitWithinObject, _FigDispatchQueueCreateStandardDispatchQueue, 
+                       _FigDispatchQueueCreateTargetingPThreadRootQueueWithPriority, 
                        _FigDispatchQueueCreateTargetingWorkloopWithPriority, _FigDispatchQueueCreateWithPriority, 
                        _FigDispatchQueueCreateWithPriorityAndClientPID, _FigDispatchQueueSetPriorityAndClientPID, 
                        _FigDispatchSyncCopyPropertyImplementation, _FigDoesBigEndianSoundDescriptionRequireSampleTableLie, 
@@ -2779,8 +2781,8 @@ exports:
                        _kFigEndpointStreamAudioEngineFlushOption_TimelineReset, _kFigEndpointStreamAudioEngineNotificationKey_BufferingPriority, 
                        _kFigEndpointStreamAudioEngineNotification_BufferingPriorityChanged, 
                        _kFigEndpointStreamAudioEngineNotification_EndpointStreamEvicted, 
-                       _kFigEndpointStreamAudioEngineProperty_EndpointStream, _kFigEndpointStreamAudioEngineProperty_IsResumed, 
-                       _kFigEndpointStreamAudioEngineProperty_SupportedAudioFormats, 
+                       _kFigEndpointStreamAudioEngineProperty_ClientPID, _kFigEndpointStreamAudioEngineProperty_EndpointStream, 
+                       _kFigEndpointStreamAudioEngineProperty_IsResumed, _kFigEndpointStreamAudioEngineProperty_SupportedAudioFormats, 
                        _kFigEndpointStreamAudioEngineResumeOption_AudioSource, _kFigEndpointStreamAudioEngineResumeOption_SupportedAudioFormats, 
                        _kFigEndpointStreamAudioMode_Default, _kFigEndpointStreamAudioMode_MoviePlayback, 
                        _kFigEndpointStreamAudioMode_SpokenAudio, _kFigEndpointStreamFlushOption_AnchorTime, 

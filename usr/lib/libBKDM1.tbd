@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           BB48F2BC-AD10-3CBB-936C-DBDB967594C9
+    value:           37628D73-7448-3578-A5DD-15F9B3E33E86
   - target:          arm64e-ios
-    value:           0B041710-5CC8-34D1-9E29-36FC69AAD9B2
+    value:           0CF1E4CB-92A3-3557-B409-2AA1CB400E18
 install-name:    '/usr/lib/libBKDM1.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -45,12 +45,13 @@ exports:
                        _writeData ]
     objc-classes:    [ ADEvent, ADStorage, BLHelper, BLTemplateList, BLTimeBox, BioLog, 
                        BioLogBase, BiometricKitDStatistics, BiometricKitXPCServerMesa, 
-                       BiometricMatchOperationMesa, MesaAutoBugCapture, MesaCoreAnalytics, 
-                       MesaCoreAnalyticsDailyEvent, MesaCoreAnalyticsEnrollEvent, 
+                       BiometricMatchOperationMesa, MesaAutoBugCapture, MesaCAImageInfo, 
+                       MesaCoreAnalytics, MesaCoreAnalyticsDailyEvent, MesaCoreAnalyticsEnrollEvent, 
                        MesaCoreAnalyticsEvent, MesaCoreAnalyticsFingerLiftTimeEvent, 
-                       MesaCoreAnalyticsFingerTouchTimeEvent, MesaCoreAnalyticsMatchEvent, 
-                       MesaCoreAnalyticsTemplateMatchCountsEvent, MesaCoreAnalyticsUnlockEvent, 
-                       MesaCoreAnalyticsWeeklyEvent, TemplateInfo ]
+                       MesaCoreAnalyticsFingerTouchTimeEvent, MesaCoreAnalyticsHelper, 
+                       MesaCoreAnalyticsMatchEvent, MesaCoreAnalyticsTemplateMatchCountsEvent, 
+                       MesaCoreAnalyticsUnlockEvent, MesaCoreAnalyticsWeeklyEvent, 
+                       TemplateInfo ]
     objc-ivars:      [ BioLogBase._chargerConnected, BioLogBase._compact, BioLogBase._compactOSLogOnly, 
                        BioLogBase._fileAttributes, BioLogBase._fileAttributesProtected, 
                        BioLogBase._fileNameFormatter, BioLogBase._fingerStateCaptureCounter, 
@@ -65,5 +66,6 @@ exports:
                        BioLogBase._rootPath, BioLogBase._server, BioLogBase._templateList, 
                        BioLogBase._timeBox, BioLogBase._timeZoneFormatter, BioLogBase._timestampFormatter, 
                        MesaCoreAnalyticsEvent._bioLog, MesaCoreAnalyticsEvent._eventName, 
-                       MesaCoreAnalyticsEvent._fingerOn, MesaCoreAnalyticsEvent._privateProperties ]
+                       MesaCoreAnalyticsEvent._fingerOn, MesaCoreAnalyticsEvent._lastBioDevice, 
+                       MesaCoreAnalyticsEvent._previousDeviceType, MesaCoreAnalyticsEvent._privateProperties ]
 ...

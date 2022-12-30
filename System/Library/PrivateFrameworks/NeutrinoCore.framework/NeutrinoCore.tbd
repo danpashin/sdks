@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NeutrinoCore.framework/NeutrinoCore
-current-version:       322.0.100
+current-version:       330.0.150
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -273,7 +273,9 @@ exports:
                             NUAuxiliaryImageAVSemanticSegmentationMatte,
                             NUAuxiliaryImageFactory, NUAuxiliaryImageRawBuffer,
                             NUAuxiliaryImageRenderJob,
-                            NUAuxiliaryImageRenderRequest, NUBoolSetting,
+                            NUAuxiliaryImageRenderRequest,
+                            NUAuxiliaryPropertiesRenderJob,
+                            NUAuxiliaryPropertiesRequest, NUBoolSetting,
                             NUBrushMaskGenerator, NUBrushRasterizer, NUBrushStroke,
                             NUBufferAdapter, NUBufferImageAccumulationNode,
                             NUBufferImageAdapter, NUBufferRenderClient,
@@ -418,8 +420,9 @@ exports:
                             NUZoomFactorScalePolicy, _NSPredicateBlockRule,
                             _NSPredicateRule, _NUAbstractBufferStorage,
                             _NUAbstractStorage, _NUAuxiliaryImageRenderResult,
-                            _NUBlockRule, _NUBrushStrokeCIImageProvider,
-                            _NUBufferImage, _NUBufferRenderResult,
+                            _NUAuxiliaryPropertiesResult, _NUBlockRule,
+                            _NUBrushStrokeCIImageProvider, _NUBufferImage,
+                            _NUBufferRenderResult,
                             _NUClassifyPipelineImageCorrectionResult,
                             _NUColorSamplerResult, _NUContiguousImageLayout,
                             _NUExportResult, _NUFaceDetectionResult,

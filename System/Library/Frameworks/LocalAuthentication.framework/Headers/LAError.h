@@ -61,6 +61,8 @@ typedef NS_ENUM(NSInteger, LAError)
     
     /// Authentication could not start because there was no paired watch device nearby.
     LAErrorWatchNotAvailable API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, watchos, tvos) = kLAErrorWatchNotAvailable,
+    
+
 } API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
 
 /// LocalAuthentication error domain.

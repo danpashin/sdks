@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           08DDCC2B-8986-3D0E-975C-AEAFC5E99267
   - target:          arm64-ios
-    value:           D102175D-24A2-3627-B92E-B37EF66A5415
+    value:           515B2248-52B0-31B7-B0CB-E1FA7503CA68
   - target:          arm64e-ios
-    value:           CEF2E89B-248F-3C3D-846F-F5A5BF525F8B
+    value:           77943582-7BE8-39E8-86E0-0A8513E75CE8
 install-name:    '/System/Library/Frameworks/UIKit.framework/UIKit'
-current-version: 4003.1.101
+current-version: 4006
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation' ]
@@ -1414,11 +1414,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           62617D34-0015-364D-A1FF-36AF7401727D
+    value:           1771C510-62F1-3F27-9AE6-897E82C74E98
   - target:          arm64e-ios
-    value:           7AEC5543-4D0A-3521-B97B-89180FD21BAE
+    value:           C54186DE-7FA4-3735-8A07-880D6D4E6D64
 install-name:    '/System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager'
-current-version: 200.3.1
+current-version: 200.4.1
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _DOCAdaptSizeToRect, _DOCAlertItemIsNotReadable, _DOCAlertUserTheNetworkIsNotReachable, 
@@ -1503,11 +1503,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B3CA5731-77AE-30F9-826E-931C924A1DC6
+    value:           75BDAAE9-7407-3DFB-89D3-D4E21253F4A5
   - target:          arm64e-ios
-    value:           E17677EB-C73B-39CD-9447-4FA1706393E0
+    value:           5C25C6AB-8F55-3595-8E68-4AB408E3AEC9
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet'
-current-version: 1575
+current-version: 1579
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _SUIActivityTypeShare, _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, 
@@ -1566,11 +1566,11 @@ uuids:
   - target:          armv7s-ios
     value:           ACEC1989-4A4E-3A2C-884A-9777DEBC328B
   - target:          arm64-ios
-    value:           E2795707-05A1-3C64-8AB3-7B267E157BC5
+    value:           95D74BF6-D60F-3D0B-939A-F6B614E4AC3F
   - target:          arm64e-ios
-    value:           2F5D26E3-7883-3742-8AA2-A523744A874B
+    value:           9B241BD0-11AB-38C2-A1AC-19F09EC6E1B1
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation'
-current-version: 726.4.1
+current-version: 727.2
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _NSFileExtendedAttributes, _UIFoundationErrorDomain, _UIGraphicsSetShadow, 
@@ -1745,8 +1745,9 @@ exports:
                        __NSStringHasRightToLeftBaseWritingDirectionAtIndex, __NSStringHasRightToLeftCharactersInRange, 
                        __NSStringImputedBaseWritingDirectionAtIndex, __NSXMLEncoding, 
                        __UIFoundationRoundedInverseTextScalingFactor, __UIFoundationRoundedTextScalingFactor, 
-                       __UISystemFontName, ___CTFontGetExtraData, ___NSTokenizerLanguageSet, 
-                       _kUIFoundationUIFoundationVersionNumber, _kUIFoundationUIFoundationVersionString ]
+                       __UISystemFontName, ___CTFontGetExtraData, ___NSTextLayoutManagerLinearLayoutFragmentsDump, 
+                       ___NSTokenizerLanguageSet, _kUIFoundationUIFoundationVersionNumber, 
+                       _kUIFoundationUIFoundationVersionString ]
     objc-classes:    [ NSATSGlyphStorage, NSATSLineFragment, NSATSTypesetter, NSAttributeDictionary, 
                        NSAttributeDictionaryEnumerator, NSCIDGlyphInfo, NSCTGlyphInfo, 
                        NSConcreteNotifyingMutableAttributedString, NSConcreteTextStorage, 
@@ -1849,11 +1850,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           3405666F-F281-3F71-BA86-83E5A27AB5B0
+    value:           CE5038DF-F97D-3A53-9192-66F6E8F936B5
   - target:          arm64e-ios
-    value:           23311071-8AD7-3E8F-836A-BE5DC8A8B0DF
+    value:           A68A810F-C531-3ED8-AC28-916A91869FD3
 install-name:    '/System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore'
-current-version: 4003.1.101
+current-version: 4006
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation' ]
@@ -2600,10 +2601,11 @@ exports:
                        _UIMenuSubstitutionOptions, _UIMenuSubstitutions, _UIMenuSubstitutionsPanel, 
                        _UIMenuText, _UIMenuTextColor, _UIMenuTextSize, _UIMenuTextStyle, 
                        _UIMenuTextStylePasteboard, _UIMenuToolbar, _UIMenuTransformations, 
-                       _UIMenuUndoRedo, _UIMenuView, _UIMenuWindow, _UIMenuWritingDirection, 
-                       _UIMidPointBetweenPoints, _UIMinimumKeepAliveTimeout, _UIMinutelessTimeFormat, 
-                       _UIMonthDayFormat, _UIMonthYearFormat, _UINamedLayerFocusDirectionKey, 
-                       _UINavBarButtonFont, _UINavigationControllerDidCollapseNavigationViewNotification, 
+                       _UIMenuUndoRedo, _UIMenuView, _UIMenuViewOrientation, _UIMenuViewSizing, 
+                       _UIMenuWindow, _UIMenuWritingDirection, _UIMidPointBetweenPoints, 
+                       _UIMinimumKeepAliveTimeout, _UIMinutelessTimeFormat, _UIMonthDayFormat, 
+                       _UIMonthYearFormat, _UINamedLayerFocusDirectionKey, _UINavBarButtonFont, 
+                       _UINavigationControllerDidCollapseNavigationViewNotification, 
                        _UINavigationControllerDidExpandNavigationViewNotification, 
                        _UINavigationControllerHideShowBarDuration, _UINavigationControllerWillCollapseNavigationViewNotification, 
                        _UINavigationControllerWillExpandNavigationViewNotification, 
