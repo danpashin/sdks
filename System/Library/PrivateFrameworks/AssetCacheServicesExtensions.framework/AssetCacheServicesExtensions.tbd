@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssetCacheServicesExtensions.framework/AssetCacheServicesExtensions
-current-version:       105
+current-version:       111
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -15,7 +15,12 @@ exports:
                             _kACSEPersonalCachingAndImportKey,
                             _kACSEPersonalCachingKey, _kACSEPublicIPAddressKey,
                             _kACSEPublicIPAddressRangesKey,
-                            _kACSEReachabilityKey, _kACSERefreshedServersKey,
+                            _kACSEReachabilityKey,
+                            _kACSERefreshedFavoredServerRangesKey,
+                            _kACSERefreshedPublicIPAddressRangesKey,
+                            _kACSERefreshedServersKey,
+                            _kACSESavedFavoredServerRangesKey,
+                            _kACSESavedPublicIPAddressRangesKey,
                             _kACSESavedServersKey, _kACSESharedCachingKey ]
     objc-classes:         [ AssetCacheServicesReporter ]
 ...

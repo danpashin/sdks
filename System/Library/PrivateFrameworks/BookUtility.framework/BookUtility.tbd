@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BookUtility.framework/BookUtility
-current-version:       247
+current-version:       268
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -47,7 +47,9 @@ exports:
                             _AMSBooksBagKeyUserReviewsSortOptions,
                             _AMSBooksBagKeyWriteUserReviewURL,
                             _AMSBooksBagProfileName, _AMSBooksBagProfileVersion,
-                            _BUArrayDescription, _BUAssertionFailed, _BUBundle,
+                            _BUArrayDescription, _BUAssertionFailed,
+                            _BUBagKeyMobileNetworkConstraints,
+                            _BUBooksGroupContainerIdentifier, _BUBundle,
                             _BUCFTypeCast, _BUCastRecord, _BUCastStatsDump, _BUClamp,
                             _BUClassAndProtocolCast, _BUCoalescingCallBlockLog,
                             _BUCrashBreakpoint, _BUCrashFinalThrow, _BUDynamicCast,
@@ -60,6 +62,7 @@ exports:
                             _BUIsStoreBookAssetID,
                             _BULocalizedErrorAlertMessageKey,
                             _BULocalizedErrorAlertTitleKey, _BUMix,
+                            _BUNetworkMonitorInterfaceDidChangeNotification,
                             _BUObjectReferenceDescription, _BUProtocolCast,
                             _BURandom, _BURandomBetween,
                             _BUReportAssertionFailureWithMessage,
@@ -87,7 +90,7 @@ exports:
                             BUCountingAssertionProvider, BUDescription,
                             BUEncodedBlockInfoInternal,
                             BUEncodedBlockInfoWithDecodedLengthInternal,
-                            BUFileIOChannel, BUIOUtils,
+                            BUFileIOChannel, BUIOUtils, BUNetworkMonitor,
                             BUReadChannelInputStreamAdapter,
                             BUTemporaryDirectory, BUZipArchive, BUZipEntry,
                             BUZipFileArchive, BUZipFileDescriptorWrapper,

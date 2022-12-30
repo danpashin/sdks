@@ -3,12 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BookLibrary.framework/BookLibrary
-current-version:       247
+current-version:       268
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _BLAssertionFailed, _BLAudiobookSyncLog,
+    symbols:              [ _BLAssertionFailed,
+                            _BLAudiobookDownloadInBookassetdEnabled,
+                            _BLAudiobookStreamingEnabled, _BLAudiobookSyncLog,
                             _BLBookCacheDeleteLog, _BLBookInstallLog,
                             _BLBookTypeFromPathExtension, _BLDaemonLog,
                             _BLDefaultLog,
@@ -60,10 +62,12 @@ exports:
                             _BLServiceDownloadStreamingZipLog, _BLServiceLog,
                             _BLServiceNotificationLog, _BLServiceProxyLog,
                             _BLServicePurchaseManagerLog,
-                            _BLUnknownDownloadError, _BLUtilitiesLog,
-                            _BOOK_PRODUCER, _BookLibraryVersionNumber,
-                            _BookLibraryVersionString, _CONTRIBUTOR_ELEMENT,
-                            _DC_TERMS_NAMESPACE, _IDENTIFIER_ELEMENT, _ID_ATTR,
+                            _BLUnknownDownloadError,
+                            _BLUseAMSInsteadOfStoreServicesEnabled,
+                            _BLUtilitiesLog, _BOOK_PRODUCER,
+                            _BookLibraryVersionNumber, _BookLibraryVersionString,
+                            _CONTRIBUTOR_ELEMENT, _DC_TERMS_NAMESPACE,
+                            _IDENTIFIER_ELEMENT, _ID_ATTR,
                             _IMStreamingHashStringWithFilePath,
                             _IMStreamingHashStringWithFilePathSync,
                             _IMStreamingHashWithFilePath,
@@ -93,11 +97,14 @@ exports:
                             _kStashedSamplesPlistName ]
     objc-classes:         [ BLAssertionHandler, BLBookItem, BLDownload,
                             BLDownloadQueue, BLDownloadStatus, BLEduCloudContainer,
-                            BLHLSAudiobookFetcher, BLHLSGroup, BLHLSKey, BLHLSMap,
-                            BLHLSMedia, BLHLSPlaylist, BLHLSPlaylistState,
-                            BLHLSSegment, BLHLSStreamInf, BLLibrary,
-                            BLLibraryUtility, BLM3U8Parser, BLPurchaseRequest,
-                            BLPurchaseResponse, BLServiceProxy, BLUtilities,
-                            IMLibraryPlist, IMLockFile ]
+                            BLHLSAudiobookFetcher, BLHLSGroup, BLHLSKey,
+                            BLHLSKeyFetcher, BLHLSMap, BLHLSMedia, BLHLSPlaylist,
+                            BLHLSPlaylistState, BLHLSSegment, BLHLSStreamInf,
+                            BLLibrary, BLLibraryUtility, BLM3U8Parser,
+                            BLOfflineKeyRequest, BLPurchaseRequest,
+                            BLPurchaseResponse,
+                            BLSecureOfflineKeyDeliveryRequest, BLServiceProxy,
+                            BLStoreItemMetadataRequest, BLStreamingKeyRequest,
+                            BLUtilities, IMLibraryPlist, IMLockFile ]
     objc-ivars:           [ IMLockFile._fd, IMLockFile._locked ]
 ...

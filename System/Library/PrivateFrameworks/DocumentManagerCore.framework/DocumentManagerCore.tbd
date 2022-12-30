@@ -3,13 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerCore.framework/DocumentManagerCore
-current-version:       171.2.5
+current-version:       171.4.14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AreTagsEqualByNameAndColor,
-                            _DOCApplicationWithBundleIdentifierSupportsDocuments,
+    symbols:              [ _DOCApplicationWithBundleIdentifierSupportsDocuments,
+                            _DOCAreTagsEqualByNameAndColor,
                             _DOCBundleIdentifierGarageBand,
                             _DOCBundleIdentifierKeynote,
                             _DOCBundleIdentifierNumbers,
@@ -37,6 +37,9 @@ exports:
                             _DOCGetDefaultUserTags, _DOCInitLogging,
                             _DOCItemCollectionViewBackgroundViewIdentifier,
                             _DOCItemCollectionViewFooterViewIdentifier,
+                            _DOCItemCollectionViewIdentifier,
+                            _DOCItemCollectionViewSearchResultsCountLabelIdentifier,
+                            _DOCItemCollectionViewSearchSuggestionsTableViewIdentifier,
                             _DOCLocalProviderLocalizedDisplayName,
                             _DOCLocalStorageFileProviderIdentifier,
                             _DOCLocalizedDisplayName,
@@ -52,9 +55,16 @@ exports:
                             _DOCProviderDomainIDIsWebDAV,
                             _DOCProviderDomainIsICloud,
                             _DOCProviderDomainIsSharedServerDomain,
-                            _DOCRandomRankBetween, _DOCRunInMainThread,
+                            _DOCRandomRankBetween,
+                            _DOCRecentsPopoverItemCollectionViewIdentifier,
+                            _DOCRecentsRowItemCollectionViewIdentifier,
+                            _DOCRecentsWidgetItemCollectionViewIdentifier,
+                            _DOCRunInMainThread,
+                            _DOCSearchControllerContainerViewIdentifier,
+                            _DOCSearchResultsItemCollectionViewIdentifier,
+                            _DOCSharedRowItemCollectionViewIdentifier,
                             _DOCShouldApplicationShowRecentsPopover,
-                            _DOCTagFromFPTag,
+                            _DOCSpringLoadingPhaseDuration, _DOCTagFromFPTag,
                             _DOCTagRegistryChangeDiscoveredTagsDidChangeKey,
                             _DOCTagRegistryChangeUserTagsDidChangeKey,
                             _DOCTagRegistryLocalStorageDidChangeNotification,
@@ -67,7 +77,6 @@ exports:
                             _DOCUserDefaultsCachedDisplayNamesBySourceIdentifier,
                             _DOCUserDefaultsKeyActivityDelay,
                             _DOCUserDefaultsKeyCopyLinkUIEnabled,
-                            _DOCUserDefaultsKeyEnableShareOnFolders,
                             _DOCUserDefaultsKeyForceRemovableFPSupport,
                             _DOCUserDefaultsKeyIsListMode,
                             _DOCUserDefaultsKeyMetadataLevelOfDetail,
@@ -90,13 +99,14 @@ exports:
                             _documentmanager_perf_log, _kDOCItemCountUnset,
                             _kFinderTagsDictKey, _kFinderTagsKey,
                             _kFinderTagsSerialNumberKey, _kFinderTagsVersionKey ]
-    objc-classes:         [ DOCConfiguration, DOCDownloadImportManager,
-                            DOCDownloadSettings, DOCEnumerationProperties,
-                            DOCFPItemCollectionManager, DOCFavoritesManager,
-                            DOCItemCollectionObserver,
+    objc-classes:         [ DOCAXIdentifier, DOCConfiguration,
+                            DOCDownloadImportManager, DOCDownloadSettings,
+                            DOCEnumerationProperties, DOCFPItemCollectionManager,
+                            DOCFavoritesManager, DOCItemCollectionObserver,
                             DOCItemCollectionSubscriber, DOCManagedPermission,
                             DOCTag, DOCTagLocalStorage, DOCTagRegistry,
                             DOCTagRegistryICloudDataSource,
-                            DOCUserInterfaceState ]
+                            DOCUserInterfaceState, _DOCItemInfoViewAXIdentifier,
+                            _DOCViewStyleSelectorAXIdentifier ]
     objc-ivars:           [ DOCFPItemCollectionManager._activeCollections ]
 ...

@@ -3,8 +3,8 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/MobileAccessoryUpdater
-current-version:       1
-compatibility-version: 1
+current-version:       0
+compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -22,18 +22,18 @@ exports:
                             _metadataTLVGetNext, _objectFinalizer,
                             _objectFromXpcDictionary,
                             _parseSuperBinaryAndPayloadHeaders,
-                            _parseSuperBinaryHeader, _parseUInt16, _parseUInt32,
-                            _printSuperBinaryHeader,
+                            _parseSuperBinaryHeader, _printSuperBinaryHeader,
                             _sendMessageToExternalClient,
                             _sendMessageToInternalClient,
                             _sendReplyMessageToClient,
                             _sendReplyMessageToExternalClient,
                             _sendReplyMessageToInternalClient,
                             _unarchivedKeyedObject, _updateSuperBinaryPayload ]
-    objc-classes:         [ AUDAccessory, FudInternalConnection,
-                            FudPersonalizationObjectInfo,
+    objc-classes:         [ AUDAccessory, AUServiceAdapter, AUServiceManager,
+                            FudInternalConnection, FudPersonalizationObjectInfo,
                             FudPersonalizationRequest, FudProgressWeights,
-                            FudXPCConnection, MobileAccessoryUpdater ]
+                            FudXPCConnection, MobileAccessoryUpdater,
+                            ServiceDelegate ]
     objc-ivars:           [ FudInternalConnection.clientIdentifier,
                             FudInternalConnection.didStop,
                             FudInternalConnection.handlerQueue,

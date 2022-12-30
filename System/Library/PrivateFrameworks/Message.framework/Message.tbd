@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/Message
-current-version:       3601.9.7
+current-version:       3608.80.24
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -17,6 +17,8 @@ exports:
                             _AccountMailboxListingDidLoad,
                             _AccountMailboxListingWillFetch,
                             _AccountMailboxListingWillLoad, _CcMeCriterionName,
+                            _DebugAccount, _DebugIdentifer,
+                            _DebugLastKnownCapabilities,
                             _DeliveryAccountShouldUseAuthentication,
                             _DeliveryAccountsKey, _EASGeneratedICSAttachmentCID,
                             _EASGeneratedICSDisplayName,
@@ -313,7 +315,7 @@ exports:
                             __MFCurrentCapabilities, __MFMoveDatabase,
                             __MailAccountCachePolicy, __archive_close_callback,
                             __archive_open_callback, __archive_write_callback,
-                            __junkLevelForFlags, __powerChanged,
+                            __junkLevelForFlags, __powerChanged, __stateCancelable,
                             _copyAccountsForEmailAddress,
                             _copyRFC822DataForPlainTextMessage,
                             _domainChildWithName, _gCommandSpecTable,
@@ -356,13 +358,13 @@ exports:
                             MFDAMessageStore, MFDAMessageStoreSaveDraftRequest,
                             MFDAMoveResponseConsumer, MFDARequestQueue,
                             MFDAStoreDraftConsumer, MFDATransferActionReplayer,
-                            MFDbJournal, MFDecryptedAttachmentDataProvider,
-                            MFDeliveryResult, MFDigestMD5AuthScheme, MFError,
-                            MFFakeAccountsProvider, MFFakeLibraryMessage,
-                            MFFakeMailAccount, MFFakeMailMessage, MFFakeMailboxUid,
-                            MFFetchLimits, MFFile, MFFileArchive,
-                            MFFileArchiveDirectory, MFFileArchiveEntry,
-                            MFFileCompressionQueue,
+                            MFDbJournal, MFDebugAccountState,
+                            MFDecryptedAttachmentDataProvider, MFDeliveryResult,
+                            MFDigestMD5AuthScheme, MFError, MFFakeAccountsProvider,
+                            MFFakeLibraryMessage, MFFakeMailAccount,
+                            MFFakeMailMessage, MFFakeMailboxUid, MFFetchLimits,
+                            MFFile, MFFileArchive, MFFileArchiveDirectory,
+                            MFFileArchiveEntry, MFFileCompressionQueue,
                             MFFileCompressionQueueActivityManager,
                             MFInvocationQueue, MFLibraryMessage, MFLibraryStore,
                             MFLocalActionPersistence_iOS,
@@ -527,8 +529,7 @@ exports:
                             MFBufferedQueue._maximumLatency,
                             MFBufferedQueue._maximumSize, MFBufferedQueue._queue,
                             MFBufferedQueue._timeOfLastFlush,
-                            MFConnection._allowFallbacks, MFConnection._buffer,
-                            MFConnection._bufferLength,
+                            MFConnection._buffer, MFConnection._bufferLength,
                             MFConnection._bufferRemainingBytes,
                             MFConnection._bufferStart,
                             MFConnection._compressionEnabled,
@@ -570,9 +571,7 @@ exports:
                             MFLibraryMessage._uniqueRemoteId,
                             MFLibraryStore._criterion,
                             MFLibraryStore._earliestReceivedDate,
-                            MFLibraryStore._library,
-                            MFLibraryStore._serverMessageCount,
-                            MFMailDelivery._account,
+                            MFLibraryStore._library, MFMailDelivery._account,
                             MFMailDelivery._archiveAccount,
                             MFMailDelivery._compositionSpecification,
                             MFMailDelivery._delegate, MFMailDelivery._headers,
@@ -707,7 +706,7 @@ exports:
                             MailAccount._currentChokedActions,
                             MailAccount._deletionLock,
                             MailAccount._draftsMailboxUid, MailAccount._flags,
-                            MailAccount._inboxMailboxUid,
+                            MailAccount._flagsLock, MailAccount._inboxMailboxUid,
                             MailAccount._junkMailboxUid,
                             MailAccount._lastConnectionError,
                             MailAccount._library, MailAccount._mailboxCachePath,

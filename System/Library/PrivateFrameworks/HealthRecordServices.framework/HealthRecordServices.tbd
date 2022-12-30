@@ -8,8 +8,15 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _HDHRSClinicalItemPropertyKeyExtractionFailureInfo,
+    symbols:              [ _HDCIErrorDomain,
+                            _HDHRSClinicalItemPropertyKeyExtractionFailureInfo,
                             _HDHealthRecordsXPCServiceInterface,
+                            _HRSAccumulatedIngestionErrorDomain,
+                            _HRSAccumulatedIngestionErrorUserInfoKeyAuthorizationFailures,
+                            _HRSAccumulatedIngestionErrorUserInfoKeyOtherErrors,
+                            _HRSAccumulatedIngestionErrorUserInfoKeyResourceFetchFailures,
+                            _HRSAccumulatedIngestionErrorUserInfoKeyUnsatisfiedConditions,
+                            _HRSPrivateErrorDomain,
                             _HealthRecordServicesVersionNumber,
                             _HealthRecordServicesVersionString,
                             _NSStringFromHDClinicalAnalyticsExtractionFailureCode ]

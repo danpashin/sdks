@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1238.40.4
+current-version:       1238.100.26
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -19,7 +19,26 @@ exports:
                             _CLIPS_MODULE_OTA_SERIAL_NUMBER_KEY,
                             _CLIPS_MODULE_REQUIRED_MODULES_KEY,
                             _CLIPS_NETWORKING_MODULE, _CLIPS_SYMPTOMS_MODULE,
-                            _CLIPS_WIFI_MODULE,
+                            _CLIPS_WIFI_MODULE, _CTShimSubscriberLastUpdateTime,
+                            _CTShimSubscriberMDN, _CTShimSubscriberSlotID,
+                            _CTShimSubscriberTag, _CTShimSubscriberTagCounter,
+                            _CTShimSubscriptionInfoBars,
+                            _CTShimSubscriptionInfoCTCellInfo,
+                            _CTShimSubscriptionInfoCarrierName,
+                            _CTShimSubscriptionInfoDataStall,
+                            _CTShimSubscriptionInfoDataTransferTime,
+                            _CTShimSubscriptionInfoDataTransferTimeEnabled,
+                            _CTShimSubscriptionInfoInUse,
+                            _CTShimSubscriptionInfoIsCurrentDataSubscription,
+                            _CTShimSubscriptionInfoLinkPowerCost,
+                            _CTShimSubscriptionInfoLinkQualityFingerprint,
+                            _CTShimSubscriptionInfoLinkState,
+                            _CTShimSubscriptionInfoOperatorName,
+                            _CTShimSubscriptionInfoSlot,
+                            _CTShimSubscriptionInfoTimestamp,
+                            _CTShimSubscriptionInfoTrafficClass,
+                            _CTShimSubscriptionInfoUserDataPreferred,
+                            _CTShimSubscriptions,
                             _activate_symptom_evaluator_handling, _boottime_secs,
                             _client_transactions_release,
                             _configure_analytics_launchpad_for_helper,
@@ -77,11 +96,12 @@ exports:
                             _timeStringMillisecondsFromReferenceInterval,
                             _timeStringMillisecondsFromTimeInterval,
                             _uptime_secs ]
-    objc-classes:         [ AnalyticsEngineCore, CLIPSShim, CellFallbackHandler,
-                            CountDown, DailyMaintenanceActivity, DateRounder,
-                            DecisionDetails, Evaluation, EventDescription,
-                            ExpertSystemHandlerCore, ExpertSystemStateCore,
-                            FlowAnalyticsEngine, ImpoExpoService, JournalTimeStamp,
+    objc-classes:         [ AnalyticsEngineCore, CLIPSShim, CTServerConnection,
+                            CellFallbackHandler, CoreTelephonyShim, CountDown,
+                            DailyMaintenanceActivity, DateRounder, DecisionDetails,
+                            Evaluation, EventDescription, ExpertSystemHandlerCore,
+                            ExpertSystemStateCore, FlowAnalyticsEngine,
+                            ImpoExpoService, JournalTimeStamp,
                             LQMPredictionInternalRecord, ManagedEventHandler,
                             ManagedEventTransport, MathUtility, NWAppAdvice,
                             NWNetworkAdviceUpdate, NWNetworkOfInterest,
@@ -91,6 +111,6 @@ exports:
                             SFActivityBitmaps, SFActivityFullBitmaps,
                             SemiDailyMaintenanceActivity, StopWatch,
                             SymptomEvaluator, SymptomExpertSystemHandler,
-                            WeeklyMaintenanceActivity ]
+                            SystemProperties, WeeklyMaintenanceActivity ]
     objc-ivars:           [ AnalyticsEngineCore.workspace ]
 ...

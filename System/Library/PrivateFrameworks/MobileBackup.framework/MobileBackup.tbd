@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
-current-version:       1713
+current-version:       1715.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -43,8 +43,9 @@ exports:
                             _MBGetTraceLog, _MBGroupWaitForever,
                             _MBHTTPDateFormatter, _MBHardwareModel,
                             _MBIsAbsolutePath, _MBIsFatalErrorCode,
-                            _MBIsInternalInstall, _MBIsRunningInDaemon,
-                            _MBIsTransientErrorCode, _MBIsValidRelativePath,
+                            _MBIsInternalInstall, _MBIsRestoreCompatible,
+                            _MBIsRunningInDaemon, _MBIsTransientErrorCode,
+                            _MBIsValidRelativePath,
                             _MBIsValidRelativePathIgnoreTilde,
                             _MBIsiCloudSnapshotPath, _MBLocale, _MBLocalizations,
                             _MBLocalizedStringFromTable, _MBLogDeviceProperties,
@@ -55,6 +56,7 @@ exports:
                             _MBRandomDataWithLength, _MBRandomUUID,
                             _MBReleaseRestoreLock,
                             _MBRemoveTemporaryPathDirectory,
+                            _MBRequiredProductVersion,
                             _MBRunLoopPerformBlockAndWait,
                             _MBSQLiteJournalSuffixes, _MBSQLitePathExtensions,
                             _MBSemaphoreWaitForever, _MBSerialNumber,

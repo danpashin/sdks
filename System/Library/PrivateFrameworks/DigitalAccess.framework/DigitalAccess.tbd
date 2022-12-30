@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/DigitalAccess.framework/DigitalAccess
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _DAErrorDomain, _DAErrorString,
+                            _DigitalAccessVersionNumber,
+                            _DigitalAccessVersionString, _KmlLogFunc2,
+                            _KmlLogFunc_InternalOnly, _KmlLogInternal,
+                            _isDeviceKeyAttestationTag, _isEndOfKeyConfigTag,
+                            _isInternalBuild, _kmlErrorCodeToDAErrorCode,
+                            _kmlErrorToDAError, _kmlUtilDataForHexString,
+                            _kmlUtilHexStringFromData, _kmlUtilLogLargeData,
+                            _kmlUtilSHA1, _kmlUtilSHA256, _kmlUtilTimeNow,
+                            _kmlUtilTimeOneMinuteFromNow,
+                            _kmlUtilTimeOneYearFromNow ]
+    objc-classes:         [ DAKeyBindingAttestationRequestData,
+                            DAKeyEncryptedRequest, DAKeyInformation,
+                            DAKeyInvitationRequestConfig, DAKeyManagementSession,
+                            DAKeyPairingSession, DAKeySharingConfiguration,
+                            DAKeySharingInvitationData, DAKeySharingSession,
+                            DAManager, DASession, DASessionInternal,
+                            KmlKeyManagementInterface, KmlManagerInterface, KmlTlv ]
+...

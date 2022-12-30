@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit
-current-version:       265
+current-version:       265.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -137,6 +137,7 @@ exports:
                             _AVTUpgradePairedPresetCategoriesIfNeeded,
                             _AVTUpgradePaletteIdentifierIfNeeded,
                             _AVTUpgradePresetIdentifierIfNeeded,
+                            _AVTViewSnapshotDisableSuperSamplingFactorKey,
                             _AvatarKitVersionNumber, _AvatarKitVersionString,
                             _KAVTStickerConfigurationPropRotationKey,
                             _KAVTStickerConfigurationPropScaleKey,
@@ -162,6 +163,8 @@ exports:
                             _kAVTStickerConfigurationPoseKey,
                             _kAVTStickerConfigurationPreRenderedKey,
                             _kAVTStickerConfigurationPresetOverridesKey,
+                            _kAVTStickerConfigurationPropAdjustmentPresetValue,
+                            _kAVTStickerConfigurationPropAdjustments,
                             _kAVTStickerConfigurationPropImageKey,
                             _kAVTStickerConfigurationPropMovieKey,
                             _kAVTStickerConfigurationPropOrientToCameraKey,
@@ -190,8 +193,11 @@ exports:
                             _kAVTStickerPackDefaultPlistFilename,
                             _kAVTStickerPackPoses,
                             _kAVTStickerPackPosesPlistFilename,
+                            _kAVTStickerPackPrerelease,
+                            _kAVTStickerPackPrereleasePlistFilename,
                             _kAVTStickerPlistDefaultAnimojiName,
                             _kAVTStickerPlistKeyConfiguration,
+                            _kAVTStickerPlistKeyIdentifier,
                             _kAVTStickerPlistMemojiName,
                             _kAVTStickerPlistUnavailableAnimoji,
                             _kAVTStickerShaderModifierPrefix,
@@ -224,8 +230,9 @@ exports:
                             AVTStickerImageProp, AVTStickerLogger,
                             AVTStickerMorpherOverride, AVTStickerMovieProp,
                             AVTStickerMoviePropNode, AVTStickerPresetOverride,
-                            AVTStickerProp, AVTStickerSceneProp,
-                            AVTStickerShaderModifier,
+                            AVTStickerProp,
+                            AVTStickerPropAdjustTransformProperty,
+                            AVTStickerSceneProp, AVTStickerShaderModifier,
                             AVTStickerShaderModifierProperty, AVTView ]
     objc-ivars:           [ AVTFaceTrackingInfo._arFrame,
                             AVTFaceTrackingInfo._deleteWhenDone,

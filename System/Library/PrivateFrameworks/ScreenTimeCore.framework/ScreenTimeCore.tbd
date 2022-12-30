@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenTimeCore.framework/ScreenTimeCore
-current-version:       354
+current-version:       433
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -23,7 +23,6 @@ exports:
                             _RMRemoteManagementScreenTimeViewUsageReadFrom,
                             _STActivationIdentifierDowntime,
                             _STActivationIdentifierUsageLimit,
-                            _STAgentMachServiceName,
                             _STAskForTimeMessageReceivedNotification,
                             _STAskMachServiceName,
                             _STAvailableCategoriesExcludingSystemCategories,
@@ -64,17 +63,20 @@ exports:
                             _STCompassAppBundleID,
                             _STConfigurationIdentifierDowntime,
                             _STConfigurationIdentifierUsageLimit,
+                            _STConversationUnknownHandle,
                             _STCopyURIForUserDSIDWithDeviceUUID,
                             _STDefaultNotificationTimeInterval,
-                            _STDisableLocalRestrictions, _STErrorDomain,
+                            _STDisableLocalRestrictions,
+                            _STEntitlementScreenTimePrivate, _STErrorDomain,
                             _STErrorKeyNumberOfPINAuthenticationAttempts,
                             _STFaceTimeAppBundleID, _STFamilyDataSourceKey,
                             _STFamilyMemberTypeAdult, _STFamilyMemberTypeChild,
                             _STFamilyMemberTypeTeen, _STFamilyMemberTypeUnknown,
                             _STFamilyMembersKey, _STGetDeviceName,
                             _STGetDeviceUUID, _STHealthAppBundleID,
-                            _STMachServiceNameContacts, _STMailAppBundleID,
-                            _STManagementStateStateDidChange,
+                            _STMachServiceNameContacts,
+                            _STMachServiceNameScreenTimePrivate,
+                            _STMailAppBundleID, _STManagementStateStateDidChange,
                             _STNotificationActionIdentifierApproveDay,
                             _STNotificationActionIdentifierApproveFifteen,
                             _STNotificationActionIdentifierApproveHour,
@@ -109,7 +111,6 @@ exports:
                             _STSafariAppBundleID,
                             _STScreenTimeDowntimeNotificationBundleIdentifier,
                             _STScreenTimeEnabledNotificationBundleIdentifier,
-                            _STScreenTimeEntitlement,
                             _STScreenTimeNotificationsBundleIdentifier,
                             _STSettingsDidChangeNotification,
                             _STToolMachServiceName,
@@ -178,7 +179,8 @@ exports:
                             STManagementState, STManagementStateObserver,
                             STPINController, STPersistenceConfiguration,
                             STPersistenceController, STReconciler,
-                            STScreenTimeAgentProxy, STScreenTimeCoreBundle,
+                            STScreenTimeAgentPrivateConnection,
+                            STScreenTimeCoreBundle,
                             STScreenTimeEnabledUserNotificationContext,
                             STScreenTimeSettings, STTestSyncableObject,
                             STTestSyncableSubObject,
@@ -189,7 +191,7 @@ exports:
                             STUserDescription, STUserDeviceState, STVersionVector,
                             STWebUsageController,
                             STWeeklyReportUserNotificationContext,
-                            STiCloudOrganization ]
+                            STXPCRemoteObjectProxy, STiCloudOrganization ]
     objc-ivars:           [ RMCategoryLimitUsageChange._changeInUsage,
                             RMCategoryLimitUsageChange._daysSinceCreationDate,
                             RMCategoryLimitUsageChange._has,

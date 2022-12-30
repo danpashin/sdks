@@ -10,18 +10,19 @@ exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _BTSUnregisterHealthDeviceNotification,
                             _NotificationCallback, __currentDevice,
-                            _createLowSecurityBody, _createLowSecurityTitle,
+                            _createWarningCellBody, _createWarningCellTitle,
                             _isPreferredLanguageEnglish,
                             _sharedBluetoothSettingsLogComponent ]
     objc-classes:         [ AccessoryControlListItemsController,
                             AccessoryControlTableCell,
                             BTAccessoryListeningModeControl, BTAlert,
-                            BTDeviceNameEditingController, BTLowSecurity,
-                            BTSDevice, BTSDeviceClassic, BTSDeviceConfigController,
+                            BTDeviceNameEditingController, BTSDevice,
+                            BTSDeviceClassic, BTSDeviceConfigController,
                             BTSDeviceLE, BTSDevicesController,
                             BTSFitTestController, BTSFitTestWelcomeController,
                             BTSPairController, BTSPairSetup, BTSSPPairingRequest,
-                            BTTableCell, BTTableSharingCell, DevicesHeaderView ]
+                            BTTableCell, BTTableSharingCell, BTWarningCell,
+                            DevicesHeaderView ]
     objc-ivars:           [ BTAlert._alert, BTAlert._delegate, BTAlert._device,
                             BTSDeviceConfigController._aacpControlSpecifiers,
                             BTSDeviceConfigController._ancsControlSpecifiers,

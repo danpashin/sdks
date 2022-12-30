@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils
-current-version:       693.40.8
+current-version:       693.100.21
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -63,7 +63,9 @@ exports:
                             _GetSerializedRequirementSize,
                             _GetSerializedVerifyAclConstraintSize,
                             _GetSerializedVerifyPolicySize, _LAErrorDomain,
-                            _LAErrorSubcodeKey,
+                            _LAErrorSubcodeKey, _LALogCategoryForOptions,
+                            _LALogCategoryForPolicy, _LALogForCategory,
+                            _LALogForPolicy, _LALogSetProcessCategory,
                             _LibCall_ACMContexAddCredentialWithScope,
                             _LibCall_ACMContexRemoveCredentialsByTypeAndScope,
                             _LibCall_ACMContextCreate,

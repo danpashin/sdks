@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ktrace.framework/ktrace
-current-version:       354.40.7
+current-version:       354.100.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -235,8 +235,9 @@ exports:
                             _ktrace_iter_destroy, _ktrace_iter_equal,
                             _ktrace_iter_get_event, _ktrace_iter_next,
                             _ktrace_iter_next_until, _ktrace_iter_prev,
-                            _ktrace_iterate_threads, _ktrace_kperf, _ktrace_log,
-                            _ktrace_log_init, _ktrace_machine_active_cpus,
+                            _ktrace_iterate_threads, _ktrace_kpdecode,
+                            _ktrace_kperf, _ktrace_log, _ktrace_log_init,
+                            _ktrace_machine_active_cpus,
                             _ktrace_machine_apple_internal,
                             _ktrace_machine_boot_args, _ktrace_machine_boot_uuid,
                             _ktrace_machine_copy_description,

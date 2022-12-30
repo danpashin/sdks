@@ -15,8 +15,9 @@ exports:
                             _TRINamespaceUpdateNotificationName,
                             _TrialVersionNumber, _TrialVersionString,
                             _kRotationDateSecondsSinceReferenceDate ]
-    objc-classes:         [ TRIClient, TRIDefaultFactorProvider, TRIDevLogger,
-                            TRILazyObject, TRILogTreatmentReader, TRILogger,
+    objc-classes:         [ TRIClient, TRIClientGuardedData,
+                            TRIDefaultFactorProvider, TRIDevLogger, TRILazyObject,
+                            TRILogTreatmentReader, TRILogger,
                             TRINamespaceDescriptor, TRINamespaceFactorProvider,
                             TRINamespaceFactorProviderChain,
                             TRINamespaceUpdateNotification, TRINotificationToken,
@@ -24,7 +25,10 @@ exports:
                             TRISubjectProviderGuardedData,
                             TRISystemConfiguration, TRISystemInfo, TRITrackingId,
                             TRITreatmentInfo ]
-    objc-ivars:           [ TRISubjectProviderGuardedData.nextRotationDate,
+    objc-ivars:           [ TRIClientGuardedData.namespaceUpdateHandlerTokens,
+                            TRIClientGuardedData.trackingId,
+                            TRIClientGuardedData.updatedNamespaceIds,
+                            TRISubjectProviderGuardedData.nextRotationDate,
                             TRISubjectProviderGuardedData.subject,
                             TRISubjectProviderGuardedData.tempDeviceIds ]
 ...

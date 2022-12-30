@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalizationPortraitInternals.framework/PersonalizationPortraitInternals
-current-version:       1052.14
+current-version:       1052.33
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -100,6 +100,7 @@ exports:
                             _PPMPortraitFeedbackTypeRejectedExplicit,
                             _PPMPortraitFeedbackTypeRejectedImplicit,
                             _PPMTopicAlgorithmContextKit,
+                            _PPMTopicAlgorithmHealthKitImport,
                             _PPMTopicAlgorithmHighLevelTopicExtraction,
                             _PPMTopicAlgorithmLookupHint,
                             _PPMTopicAlgorithmNamedEntity,
@@ -113,6 +114,7 @@ exports:
                             _PPMTopicDonationErrorReasonDeleteBlacklist,
                             _PPMTopicDonationErrorReasonDonation,
                             _PPMTopicDonationErrorReasonHTML,
+                            _PPMTopicDonationErrorReasonUnknown,
                             _PPMTopicDonationErrorReasonZeroSafariHTML,
                             _PPMTopicDonationErrorReasonZeroSafariReader,
                             _PPMTopicDonationErrorReasonZeroTopic,
@@ -472,9 +474,11 @@ exports:
                             PPM2TopicsScoredForMapping._error,
                             PPM2TopicsScoredForMapping._exclusionSpec,
                             PPM2TopicsScoredForMapping._has,
+                            PPM2TopicsScoredForMapping._limitHit,
                             PPM2TopicsScoredForMapping._mappingId,
                             PPM2TopicsScoredForMapping._resultSizeLog10,
                             PPM2TopicsScoredForMapping._timeLimited,
+                            PPM2TopicsScoredForMapping._timeSpec,
                             PPMeCardData.meContact,
                             PPMockLocationGuardedData._locations,
                             PPMutableFeaturedItem._countForAlgorithm,

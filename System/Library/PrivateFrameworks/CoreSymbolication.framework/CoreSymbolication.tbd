@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSymbolication.framework/CoreSymbolication
-current-version:       64509.98.1
+current-version:       64535.33.1
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -37,12 +37,15 @@ exports:
                             _CSSourceInfoGetSymbol, _CSSourceInfoGetSymbolOwner,
                             _CSSourceInfoGetSymbolicator,
                             _CSSymbolCopyDescriptionWithIndent,
+                            _CSSymbolForeachInlineRange,
+                            _CSSymbolForeachInlineRangeAtDepth,
                             _CSSymbolForeachSourceInfo, _CSSymbolGetFlags,
                             _CSSymbolGetInstructionData, _CSSymbolGetMangledName,
                             _CSSymbolGetName, _CSSymbolGetRange,
                             _CSSymbolGetRegion, _CSSymbolGetSection,
                             _CSSymbolGetSegment, _CSSymbolGetSymbolOwner,
-                            _CSSymbolGetSymbolicator, _CSSymbolIsArm,
+                            _CSSymbolGetSymbolicator,
+                            _CSSymbolHasInlinedSourceInfo, _CSSymbolIsArm,
                             _CSSymbolIsDebugMap, _CSSymbolIsDwarf,
                             _CSSymbolIsDyldStub, _CSSymbolIsExternal,
                             _CSSymbolIsFunction, _CSSymbolIsFunctionStarts,
@@ -131,7 +134,7 @@ exports:
                             _CSSymbolOwnerSetRelocationCount,
                             _CSSymbolOwnerSetTransientUserData,
                             _CSSymbolOwnerSetUnloadTimestamp,
-                            _CSSymbolOwnerUsesCPlusPlus,
+                            _CSSymbolOwnerUsesCPlusPlus, _CSSymbolReleaseMemory,
                             _CSSymbolicatorAddSymbolOwner,
                             _CSSymbolicatorApplyMutableContextBlock,
                             _CSSymbolicatorCopyDescriptionWithIndent,
@@ -227,7 +230,8 @@ exports:
                             _create_sampling_context_for_task_pid_symbolicator,
                             _demangle, _destroy_mapped_memory_cache,
                             _destroy_sampling_context,
-                            _dispatch_queue_name_for_serial_number, _find_node,
+                            _dispatch_queue_name_for_serial_number,
+                            _enumerate_mapped_memory_cache, _find_node,
                             _get_remote_thread_dispatch_queue,
                             _kCSRegionMachHeaderName,
                             _kCSTypeDictionaryKeyCallBacks,

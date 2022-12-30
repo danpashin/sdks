@@ -3,18 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MessageSupport.framework/MessageSupport
-current-version:       3601.9.7
+current-version:       3608.80.24
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MFAutoFetchLog,
-                            _MFBlockRemoteContentUserDefaultsKey,
+    symbols:              [ _MFAccountsLog, _MFAutoFetchLog,
+                            _MFBlockRemoteContentUserDefaultsKey, _MFComposeLog,
                             _MFCompositionServiceDomain,
-                            _MFDebugUseLegacyWebViewForComposeDefaultsKey,
                             _MFDeviceSupportsForceTouch,
                             _MFDeviceSupportsHighRefreshRate,
-                            _MFDeviceSupportsNanoCompanion,
+                            _MFDeviceSupportsNanoCompanion, _MFExchangeLog,
                             _MFImageScaleSelectionUserDefaultsKey,
                             _MFIsMobileMail, _MFLogGeneral, _MFLogNetwork,
                             _MFMailActivityHandoffBrowseMailboxKeyFocusedMessageID,
@@ -50,8 +49,8 @@ exports:
                             _MFMailActivityHandoffTypeSendMail,
                             _MFMessagePreferencesDomain,
                             _MFMobileMailContainerPath,
-                            _MFMobileMailPreferenceDomain, _MFPowerLog,
-                            _kMFLoggingDefaultsChangedDomain,
+                            _MFMobileMailPreferenceDomain, _MFPersistenceLog,
+                            _MFPowerLog, _kMFLoggingDefaultsChangedDomain,
                             _kMFMailAccountsChangedNotification,
                             _kMFMobileMailBundleIdentifier,
                             _kMFNumberOfActiveAccountsChangedNotification,

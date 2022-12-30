@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64510.160.2
+current-version:       64535.34
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -56,9 +56,10 @@ exports:
                             _vmu_remove_stack_from_backtrace_uniquing_table,
                             _vmu_stack_frames_for_uniqued_stack ]
     objc-classes:         [ VMUArchitecture, VMUBacktrace, VMUCallTreeNode,
-                            VMUCallTreeRoot, VMUClassInfo, VMUClassInfoMap,
-                            VMUDebugTimer, VMUDirectedGraph, VMUFieldInfo,
-                            VMUGraphStackLogReader, VMUMutableClassInfo,
+                            VMUCallTreeRoot, VMUCallTreeRootWithBacktrace,
+                            VMUClassInfo, VMUClassInfoMap, VMUDebugTimer,
+                            VMUDirectedGraph, VMUFieldInfo, VMUGraphStackLogReader,
+                            VMULeakDetector, VMUMutableClassInfo,
                             VMUMutableFieldInfo, VMUNodeToStringMap,
                             VMUNonOverlappingRangeArray, VMUObjectGraph,
                             VMUObjectIdentifier, VMUProcInfo, VMUProcList,

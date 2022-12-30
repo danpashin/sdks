@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-current-version:       3612.11.110
+current-version:       3642.12.210
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -160,7 +160,7 @@ exports:
                             _CAMCaptureMetadataAddDebugInfoToUserCommentsKey,
                             _CAMCaptureMetadataDiagnosticsKey,
                             _CAMCaptureModeInvalid,
-                            _CAMColorSpaceCommandColorSpace,
+                            _CAMColorSpaceCommandColorSpace, _CAMDarkYellowColor,
                             _CAMDebugResetTimeoutSeconds,
                             _CAMDeferredProcessingEnabledKey,
                             _CAMDynamicShutterSettingsDefault,
@@ -184,7 +184,7 @@ exports:
                             _CAMHDRSuggestionMonitoringEnabled,
                             _CAMHighResolutionStillImageCommandEnabled,
                             _CAMImageControlModeCommandCaptureMode,
-                            _CAMImageWellInteractionScale,
+                            _CAMImageWellInteractionScale, _CAMImageWithColor,
                             _CAMImageWithTextColorFont,
                             _CAMInternalPreferenceOverriddenBackBurstCaptureInterval,
                             _CAMInternalPreferenceOverriddenFrontBurstCaptureInterval,
@@ -270,8 +270,8 @@ exports:
                             _CAMShutterButtonConstrastBorderWidth,
                             _CAMShutterButtonSpecForLayoutStyle,
                             _CAMShutterButtonSpecGetInnerCircleDiameter,
-                            _CAMShutterButtonSpecMake, _CAMSizeForDimensions,
-                            _CAMSizeForPhotoMetadata,
+                            _CAMShutterButtonSpecMake, _CAMSignpostWithArgs,
+                            _CAMSizeForDimensions, _CAMSizeForPhotoMetadata,
                             _CAMSpatialOverCaptureEnabledKey,
                             _CAMStageCircleGeometryZero,
                             _CAMStageGradientGeometryZero,
@@ -367,7 +367,7 @@ exports:
                             _CAMViewfinderControlDrawerVerticalMargins,
                             _CAMViewfinderReticleThinMaterialOpacity,
                             _CAMWhiteBalanceCommandMatchExposureMode,
-                            _CAMWhiteBalanceCommandWhiteBalance,
+                            _CAMWhiteBalanceCommandWhiteBalance, _CAMYellowColor,
                             _CAMZoomButtonPlatterAlpha,
                             _CAMZoomButtonZoomFactorFormatter,
                             _CAMZoomControlAnimationDurationKey,
@@ -553,9 +553,8 @@ exports:
                             CAMShutterButtonRingView, CAMShutterIndicatorView,
                             CAMShutterUtilities, CAMSnapshotView,
                             CAMSpatialOverCaptureEnabledCommand, CAMSpring,
-                            CAMStageLightAnimator,
-                            CAMStageLightOverlayCircleView,
-                            CAMStageLightOverlayView, CAMStartPanoramaCommand,
+                            CAMStageLightAnimator, CAMStageLightOverlayView,
+                            CAMStartPanoramaCommand,
                             CAMStartVideoRecordingCommand,
                             CAMStereoAudioCaptureCommand,
                             CAMStillImageCaptureCommand,

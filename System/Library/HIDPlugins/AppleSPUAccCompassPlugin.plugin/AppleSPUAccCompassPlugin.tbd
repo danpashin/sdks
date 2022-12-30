@@ -5,6 +5,7 @@ flags:                 [ flat_namespace ]
 install-name:          /System/Library/HIDPlugins/AppleSPUAccCompassPlugin.plugin/AppleSPUAccCompassPlugin
 current-version:       0
 compatibility-version: 0
+objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AppleSPUAccCompassServicePluginFactory,
@@ -14,6 +15,7 @@ exports:
                             __ZN24AppleSPUAccCompassPlugin14QueryInterfaceE11CFUUIDBytesPPv,
                             __ZN24AppleSPUAccCompassPlugin14performCommandEP14ServiceContextjPvmS2_Pm,
                             __ZN24AppleSPUAccCompassPlugin20accAddedNotificationEPviS0_P13__IOHIDDevice,
+                            __ZN24AppleSPUAccCompassPlugin21checkForBatteryRepairEP14ServiceContext,
                             __ZN24AppleSPUAccCompassPlugin21copyPropertyForClientEPK10__CFStringPKv,
                             __ZN24AppleSPUAccCompassPlugin22accRemovalNotificationEPviS0_P13__IOHIDDevice,
                             __ZN24AppleSPUAccCompassPlugin22verifyAccMatchedDeviceEP13__IOHIDDevice,
@@ -34,5 +36,6 @@ exports:
                             __ZN24AppleSPUAccCompassPluginC2EPK13__CFAllocator,
                             __ZN24AppleSPUAccCompassPluginD1Ev,
                             __ZN24AppleSPUAccCompassPluginD2Ev,
-                            __ZN24AppleSPUAccCompassPlugindlEPv ]
+                            __ZN24AppleSPUAccCompassPlugindlEPv,
+                            __getBatteryChemID, __hadHadAuthorizedBatteryRepair ]
 ...

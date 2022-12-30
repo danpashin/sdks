@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 1C5C5C58-BFCF-3C99-83ED-B4851E3A8BA4', 'armv7s: 3D439D0E-75CC-3DFF-9EAA-5891ED69A175', 
-                   'arm64: FEA74D36-5C3D-3F3C-9798-C5960C721452', 'arm64e: C4D6B244-6F7B-39AF-90D5-8BDE34AD51D7' ]
+                   'arm64: 70ED3EF1-D826-3D55-B5EA-E657AC5E8057', 'arm64e: 1426DF1D-4901-3A07-85A0-B5E3B3E64085' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/CoreMotion.framework/CoreMotion'
-current-version: 2388.0.21
+current-version: 2394.0.25
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _CLSF_biermanUpdate_6x3, _CLSF_thorntonUpdate_6x6, _CMCaptureModeData, 
@@ -27,11 +27,12 @@ exports:
                        _CLApplyArchivedAuthorizationDecisions, _CLAuthorizationStatusChangedNotification, 
                        _CLClientCreateIso6709Notation, _CLClientGetDistanceCoordinates, 
                        _CLClientGetDistanceHighPrecision, _CLCopyAppsUsingLocation, 
-                       _CLCopyNearbyAssetSettings, _CLCopyTechnologiesInUse, _CLDaemonStartedNotification, 
-                       _CLDeleteCurrentEmergencyLocationAsset, _CLGetAccessoryMotionSensorLogs, 
-                       _CLGetArchivedAuthorizationDecisions, _CLGetControlPlaneStatusReport, 
-                       _CLGetEmergencyLocationSettingsVersionInfo, _CLGetLocationDefault, 
-                       _CLGetMotionSensorLogs, _CLGetPipelinedCache, _CLGetStatusBarIconState, 
+                       _CLCopyGnssBandsInUse, _CLCopyNearbyAssetSettings, _CLCopyTechnologiesInUse, 
+                       _CLDaemonStartedNotification, _CLDeleteCurrentEmergencyLocationAsset, 
+                       _CLGetAccessoryMotionSensorLogs, _CLGetArchivedAuthorizationDecisions, 
+                       _CLGetControlPlaneStatusReport, _CLGetEmergencyLocationSettingsVersionInfo, 
+                       _CLGetLocationDefault, _CLGetMotionSensorLogs, _CLGetPipelinedCache, 
+                       _CLGetStatusBarIconState, _CLGnssBandsChangedNotification, 
                        _CLInternalPerformMigration, _CLMotionSyncStoreLastUpdate, 
                        _CLPassKitNotifyPayment, _CLPingDaemon, _CLSetLocationDefault, 
                        _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 
@@ -61,8 +62,11 @@ exports:
                        _CMFallImpactLoggingStatsThreshold, _CMFallInternalMetricState, 
                        _CMFallInternalNotifierState, _CMFallLastReplyAopTimestamp, 
                        _CMFallOptInsAndProfiles, _CMFallOptInsAndProfiles_fallAdditionalProfileLoggingEnabled, 
+                       _CMFallOptInsAndProfiles_isBackgroundSensorDataLoggingAllowed, 
                        _CMFallOptInsAndProfiles_isImproveHealthAndFitnessOptInEnabled, 
-                       _CMFallOptInsAndProfiles_lastFallAdditionalProfileLoggingEnabled, 
+                       _CMFallOptInsAndProfiles_isTapToRadarFallSubmissionAllowed, 
+                       _CMFallOptInsAndProfiles_isTapToRadarNearFallSubmissionAllowed, 
+                       _CMFallOptInsAndProfiles_isTapToRadarSubmissionAllowed, _CMFallOptInsAndProfiles_lastFallAdditionalProfileLoggingEnabled, 
                        _CMFallSetStatsEnabled, _CMFallSetStatsNameOfCurrentFile, 
                        _CMFallSetStatsNumberOfAvailableFiles, _CMFallSetStatsSizeOfCurrentFile, 
                        _CMFallState, _CMFallState_isSensorKitLoggingEnabled, _CMFallState_isSensorRecordingEnabled, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 7A6FFFF8-7920-3A7C-9CE8-DED0E97F4B84', 'arm64e: A5E84FFB-95DE-36C9-9766-93BC0736FD91' ]
+                   'arm64: 99700767-F48D-36CB-8CCB-1D9E33962EDA', 'arm64e: E6E2C044-1603-3B0A-ADF1-7B859647DF3F' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/ImageCaptureCore'
 exports:         
@@ -16,13 +16,15 @@ exports:
                        _ICDeleteErrorFileMissing, _ICDeleteErrorReadOnly, _ICDeleteFailed, 
                        _ICDeleteSuccessful, _ICDeviceCanEjectOrDisconnect, _ICDownloadSidecarFiles, 
                        _ICDownloadsDirectoryURL, _ICEnumerationChronologicalOrder, 
-                       _ICErrorDomain, _ICImageSourceShouldCache, _ICImageSourceThumbnailMaxPixelSize, 
-                       _ICLoggingDomain, _ICLoggingLevel, _ICMetadataBrevity, _ICMetadataBrevityEssential, 
-                       _ICOverwrite, _ICPreferencesDomain, _ICSaveAsFilename, _ICSavedAncillaryFiles, 
+                       _ICEnumerationPrioritizeSpeed, _ICErrorDomain, _ICImageSourceShouldCache, 
+                       _ICImageSourceThumbnailMaxPixelSize, _ICLoggingDomain, _ICLoggingLevel, 
+                       _ICMetadataBrevity, _ICMetadataBrevityEssential, _ICOverwrite, 
+                       _ICPreferencesDomain, _ICSaveAsFilename, _ICSavedAncillaryFiles, 
                        _ICSavedFilename, _ICStatusNotificationKey, _ICTransportTypeExFAT, 
                        _ICTransportTypeMassStorage, _ICTransportTypeTCPIP, _ICTransportTypeUSB, 
-                       ___ICLogDateString, ___ICLogTypeEnabled, ___ICOSLogCreate, 
-                       ___ICReadPrefs, __gICOSLog ]
+                       ___ICAddDecodedErrorToDict, ___ICLogDateString, ___ICLogTypeEnabled, 
+                       ___ICLongValueToErrorString, ___ICOSLogCreate, ___ICReadPrefs, 
+                       ___ICValueToErrorString, __gICOSLog ]
     objc-classes:    [ ICAccessManager, ICCameraDevice, ICCameraFile, ICCameraFolder, 
                        ICCameraItem, ICDevice, ICDeviceBrowser ]
 ...

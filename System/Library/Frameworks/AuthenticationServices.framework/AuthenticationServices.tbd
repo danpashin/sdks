@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 52D726E2-795D-355B-B627-5B2295337F13', 'arm64e: 46013012-097A-3B8E-BDD9-4C7690410C30' ]
+                   'arm64: 5AF6C2EA-423E-34CD-BE63-B7567D256DEF', 'arm64e: FD159353-7A75-3FFB-B674-4AEBF2E48B36' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices'
-current-version: 608.3.10
+current-version: 609.1.20
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
@@ -25,5 +25,5 @@ exports:
                        ASWebAuthenticationSession, _ASCredentialListViewController, 
                        _ASCredentialProviderExtensionConfigurationViewController, 
                        _ASCredentialProviderExtensionHostContext, _ASExtensionViewController, 
-                       _ASPasswordCredentialAuthenticationViewController ]
+                       _ASIncomingCallObserver, _ASPasswordCredentialAuthenticationViewController ]
 ...

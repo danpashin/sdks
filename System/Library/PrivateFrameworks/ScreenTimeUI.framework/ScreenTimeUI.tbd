@@ -3,31 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
-current-version:       354
+current-version:       433
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _STNotificationKeyPINSuccess,
-                            _STPINRemoteViewControllerInterface,
-                            _STPINServiceViewControllerInterface,
-                            _STRestrictionsPINControllerDidFinishNotification,
-                            _STSharedServicesScreenTimeSpecifierId, _STUIBundle,
-                            _STUISortedAvailableCategoriesExcludingSystemCategories ]
-    objc-classes:         [ STAllowance, STAlwaysAllowList, STCandyBarView,
-                            STChildSetupController, STDeviceBedtime,
-                            STDeviceUnlockStateListener,
-                            STFamilyCircleSpecifierProvider,
-                            STHorizontallySegmentedView, STKeyValuePair,
-                            STListViewController,
-                            STLockoutRestrictionsPINController,
-                            STLockoutViewController, STPINListViewController,
-                            STPINRemoteViewController, STRootViewController,
-                            STRootViewModelCoordinator, STScreenTimeUIBundle,
-                            STSegmentItem, STSetupAssistantViewController, STUILog,
-                            STUIUser, STUnlockForContentView,
-                            STUsageDetailsViewModelCoordinator,
-                            STUsageGraphViewController, STUsageItem, STUsageReport,
-                            STUsageSummaryTitleView, STWeeklyReportAppUsageView,
-                            STWeeklyReportViewController ]
+                            _STRestrictionsPINControllerDidFinishNotification ]
+    objc-classes:         [ STLockoutRestrictionsPINController,
+                            STLockoutViewController ]
 ...

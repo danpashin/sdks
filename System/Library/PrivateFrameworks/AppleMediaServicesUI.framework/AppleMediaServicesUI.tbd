@@ -8,8 +8,14 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AMSNotificationSettingsVisibleKey ]
     objc-classes:         [ AMSUIAlertDialogTask, AMSUIAuthenticateTask,
-                            AMSUICGRectHelper, AMSUIOnboardingFeature,
+                            AMSUICGRectHelper, AMSUIDynamicViewController,
+                            AMSUIManageSubsriptionSpecifierProvider,
+                            AMSUINotificationSettingsViewController,
+                            AMSUIOnboardingFeature,
                             AMSUIOnboardingViewController,
-                            AMSUIPrivacyViewController ]
+                            AMSUIPrivacyViewController,
+                            AMSUISubscriptionsViewController, AMSUIWebAppearance,
+                            AMSUIWebViewController ]
 ...

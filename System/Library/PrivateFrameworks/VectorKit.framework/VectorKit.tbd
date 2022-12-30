@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
-current-version:       1606.31.8
+current-version:       1606.34.10
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -53,8 +53,19 @@ exports:
                             _VectorKitConfig_ManeuverComplexityJunctionCountMin,
                             _VectorKitConfig_MaxNavCameraHeight,
                             _VectorKitConfig_MaxZoomScaleDefault,
+                            _VectorKitConfig_MnBumpBackwardDuration,
+                            _VectorKitConfig_MnBumpBackwardFriction,
+                            _VectorKitConfig_MnBumpForwardDuration,
+                            _VectorKitConfig_MnBumpForwardFriction,
+                            _VectorKitConfig_MnDriveCollectionPointSpacing,
+                            _VectorKitConfig_MnDriveCollectionPointSpacingVariance,
+                            _VectorKitConfig_MnDriveMaxDuration,
+                            _VectorKitConfig_MnDriveNeighborSearchRadius,
+                            _VectorKitConfig_MnDriveStepSizeMaxDistance,
+                            _VectorKitConfig_MnDriveStepSizeMaxValue,
+                            _VectorKitConfig_MnDriveStepSizeMinDistance,
+                            _VectorKitConfig_MnDriveStepSizeMinValue,
                             _VectorKitConfig_MnIntermediateLod,
-                            _VectorKitConfig_MnMaxDuration,
                             _VectorKitConfig_MnMaxDurationDistance,
                             _VectorKitConfig_MnMaxSnapshotMetadataTileSearchRadius,
                             _VectorKitConfig_MnMaxTargetPointDistance,
@@ -64,20 +75,25 @@ exports:
                             _VectorKitConfig_MnNearbyLodOffsetCount,
                             _VectorKitConfig_MnResourceAgePenalty,
                             _VectorKitConfig_MnResourcePenalty,
-                            _VectorKitConfig_MnStepSizeMaxDistance,
-                            _VectorKitConfig_MnStepSizeMaxValue,
-                            _VectorKitConfig_MnStepSizeMinDistance,
-                            _VectorKitConfig_MnStepSizeMinValue,
                             _VectorKitConfig_MnStepSizePenalty,
                             _VectorKitConfig_MnStepSizePenaltyDeadZone,
                             _VectorKitConfig_MnTapBillboardFaceCamera,
                             _VectorKitConfig_MnTargetLodMaxSizes,
                             _VectorKitConfig_MnTargetPointHiddenLod,
                             _VectorKitConfig_MnTargetPointOmniLod,
+                            _VectorKitConfig_MnWalkCollectionPointSpacing,
+                            _VectorKitConfig_MnWalkCollectionPointSpacingVariance,
+                            _VectorKitConfig_MnWalkMaxDuration,
+                            _VectorKitConfig_MnWalkNeighborSearchRadius,
+                            _VectorKitConfig_MnWalkStepSizeMaxDistance,
+                            _VectorKitConfig_MnWalkStepSizeMaxValue,
+                            _VectorKitConfig_MnWalkStepSizeMinDistance,
+                            _VectorKitConfig_MnWalkStepSizeMinValue,
                             _VectorKitConfig_NavCameraShouldUseStartLocationForPounce,
                             _dynamicValueAnimation,
                             _dynamicValueAnimationDuration,
                             _dynamicValueAnimationTimingFunction,
+                            _dynamicValueAnimationVelocity,
                             _kVKOuterStrokeWidthAttributeName ]
     objc-classes:         [ MIController, VKAlternateRouteInfo, VKAnchorWrapper,
                             VKAnimation, VKCameraRegionRestriction,

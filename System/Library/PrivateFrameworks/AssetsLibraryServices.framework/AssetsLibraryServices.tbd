@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
-current-version:       3612.27.220
+current-version:       3642.30.210
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -175,6 +175,7 @@ exports:
                             _PLKeepDaemonAliveServiceName,
                             _PLLegacyMigrationStateKey,
                             _PLLibraryServicesOperationNameActivateTCC,
+                            _PLLibraryServicesOperationNameCoreAnalyticsSetup,
                             _PLLibraryServicesOperationNameCrashRecoveryImportFromFileSystem,
                             _PLLibraryServicesOperationNameCrashRecoveryOps,
                             _PLLibraryServicesOperationNameCrashRecoveryRebuildCloudFeed,
@@ -241,7 +242,7 @@ exports:
                             _PLPhotoLibraryServicesFrameworkBundle,
                             _PLPhotoStreamDataDirectoryName,
                             _PLPhotosErrorDomain,
-                            _PLPhotosErrorKeyNewURLBookmarkData,
+                            _PLPhotosErrorKeyNewURLSandboxExtension,
                             _PLPhotosErrorKeyValidationFailureReasons,
                             _PLPhotosFolderName, _PLPhysicalScreenScale,
                             _PLPhysicalScreenSize, _PLPlatformAnalysisSupported,
@@ -294,6 +295,7 @@ exports:
                             _PLResultWithUnfairLock, _PLRunWithLock,
                             _PLRunWithUnfairLock, _PLSafeResultWithUnfairLock,
                             _PLSafeRunWithUnfairLock,
+                            _PLSandboxExtensionTokenAsData,
                             _PLSandboxedURLFromDictionary,
                             _PLSandboxedURLFromXPCDictionary,
                             _PLScaleDimensionsForThumbnailCore,
@@ -347,7 +349,6 @@ exports:
                             _PLVideoMetadataFileSuffix,
                             _PLWatchPlatformLibraryServicesOperationNameMigrateOrRebuild,
                             _PLWatchPlatformLibraryServicesOperationNameWaitForFirstUnlock,
-                            _PLWhitelistedResourceTypeForResourceType,
                             _PLWhitelistedResourceTypes,
                             _PLXPCArrayAppendManagedObjectID,
                             _PLXPCDictionarySetArray, _PLXPCDictionarySetData,
@@ -631,6 +632,15 @@ exports:
                             ___PLPhotoSharingOnceToken,
                             ___PLPhotoSharingPersistentASLClient,
                             ___PLPhotoSharingPrefix, ___PLPhotoSharingRegistered,
+                            ___PLPhotosObjectLifecycleASLClient,
+                            ___PLPhotosObjectLifecycleCanPersist,
+                            ___PLPhotosObjectLifecycleLogDomain,
+                            ___PLPhotosObjectLifecycleLogLevel,
+                            ___PLPhotosObjectLifecycleOSLog,
+                            ___PLPhotosObjectLifecycleOnceToken,
+                            ___PLPhotosObjectLifecyclePersistentASLClient,
+                            ___PLPhotosObjectLifecyclePrefix,
+                            ___PLPhotosObjectLifecycleRegistered,
                             ___PLPhotosPlayerASLClient,
                             ___PLPhotosPlayerCanPersist,
                             ___PLPhotosPlayerLogDomain,
@@ -774,6 +784,7 @@ exports:
                             _pl_result_with_autoreleasepool, _stringFromData ]
     objc-classes:         [ PLAppPrivateData, PLAssetFormatsCore,
                             PLAssetsdBaseClient, PLAssetsdClient,
+                            PLAssetsdClientSandboxExtensions,
                             PLAssetsdClientService, PLAssetsdClientXPCConnection,
                             PLAssetsdCloudClient, PLAssetsdCloudInternalClient,
                             PLAssetsdDebugClient, PLAssetsdDemoClient,

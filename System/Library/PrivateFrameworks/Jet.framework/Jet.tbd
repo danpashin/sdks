@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Jet.framework/Jet
-current-version:       8.14
+current-version:       8.16
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -186,14 +186,17 @@ exports:
                             __ZN17jet_context_Metal17set_vertex_bufferEP10jet_bufferi,
                             __ZN17jet_context_Metal18create_buffer_poolE18jet_component_typejj,
                             __ZN17jet_context_Metal18create_render_modeEP11jet_program14jet_blend_mode18jet_texture_formatS3_S3_bbbbj,
+                            __ZN17jet_context_Metal18ensureCommandQueueEv,
                             __ZN17jet_context_Metal18get_Metal_DrawableEP11jet_texture,
                             __ZN17jet_context_Metal18set_vertex_samplerEP11jet_sampleri,
                             __ZN17jet_context_Metal18set_vertex_textureEP11jet_texturei,
                             __ZN17jet_context_Metal18set_wireframe_modeEb,
                             __ZN17jet_context_Metal19create_stencil_modeE19jet_compare_fuction14jet_stencil_opS1_S1_jj,
+                            __ZN17jet_context_Metal19ensureCommandBufferEb,
                             __ZN17jet_context_Metal19set_vertex_constantEP12jet_constanti,
                             __ZN17jet_context_Metal20set_fragment_samplerEP11jet_sampleri,
                             __ZN17jet_context_Metal20set_fragment_textureEP11jet_texturei,
+                            __ZN17jet_context_Metal21getNativeCommandQueueEv,
                             __ZN17jet_context_Metal21set_fragment_constantEP12jet_constanti,
                             __ZN17jet_context_Metal21set_scheduled_handlerENSt3__18functionIFvvEEE,
                             __ZN17jet_context_Metal21submit_command_bufferEP18jet_command_buffer,

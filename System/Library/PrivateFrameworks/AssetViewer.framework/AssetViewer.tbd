@@ -3,12 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssetViewer.framework/AssetViewer
-current-version:       111.2
+current-version:       130.34
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ARQuickLookCallToAction,
+    symbols:              [ _ARQLPrivateSourceAppKey,
+                            _ARQLPrivateSourceAppWebKit,
+                            _ARQLWebsiteURLParameterKey,
                             _ASVBadgeSizeForThumbnailSize,
                             _ASVControlStyleForDisplayMode, _ASVErrorDomain,
                             _ASVHexErrorDomain, _ASVPositionIsValid,
@@ -141,8 +143,13 @@ exports:
                             __FLSimpleSpringFromCompoundSpring, _float2ToPoint,
                             _float3ToFloat2, _getDeviceClass, _getPlaneInfo,
                             _kASVAnalyticsARModeDurationKey,
+                            _kASVAnalyticsCheckoutStyle,
+                            _kASVAnalyticsCheckoutStyleCustomHeight,
+                            _kASVAnalyticsCheckoutStyleCustomTimeToLoadRequest,
                             _kASVAnalyticsContainsPhysics,
                             _kASVAnalyticsCurrentModeKey,
+                            _kASVAnalyticsDidCloseBeforeCheckoutStyleCustomFinishedLoading,
+                            _kASVAnalyticsDidCloseByTappingOnCheckout,
                             _kASVAnalyticsExperienceAnchorType,
                             _kASVAnalyticsFrameDimensions,
                             _kASVAnalyticsLoadedModelType,

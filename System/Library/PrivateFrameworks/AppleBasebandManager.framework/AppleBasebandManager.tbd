@@ -5,7 +5,6 @@ flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleBasebandManager.framework/AppleBasebandManager
 current-version:       0
 compatibility-version: 1
-objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ __Z23ABMGetRootVersionStringv,
@@ -67,6 +66,7 @@ exports:
                             __ZN3abm15kSetWorkoutInfoE,
                             __ZN3abm16kCTRadioMaxPowerE,
                             __ZN3abm16kCommandGetStatsE,
+                            __ZN3abm16kE75TypeKeyboardE,
                             __ZN3abm16kKeyABMDomainPIDE,
                             __ZN3abm16kKeyAudioOutputsE,
                             __ZN3abm16kKeyIsLastPacketE,
@@ -79,11 +79,13 @@ exports:
                             __ZN3abm16kTraceSystemLogsE,
                             __ZN3abm16kTraceTapToRadarE,
                             __ZN3abm17kCTAccessoryStateE,
+                            __ZN3abm17kCommandAWDMetricE,
                             __ZN3abm17kCommandSetBundleE,
                             __ZN3abm17kE75StateAttachedE,
                             __ZN3abm17kE75StateDetachedE,
                             __ZN3abm17kEventBrickEnableE,
                             __ZN3abm17kEventServerErrorE,
+                            __ZN3abm17kKeyAWDMetricDataE,
                             __ZN3abm17kKeyAWDPowerCountE,
                             __ZN3abm17kKeyAWDPowerMsgIDE,
                             __ZN3abm17kKeyAWDPowerWakesE,
@@ -103,6 +105,7 @@ exports:
                             __ZN3abm18kKeyBasebandCertIDE,
                             __ZN3abm18kKeyBasebandChipIDE,
                             __ZN3abm18kKeyBasebandPKHashE,
+                            __ZN3abm18kKeyBasebandTicketE,
                             __ZN3abm18kKeyBasebandVendorE,
                             __ZN3abm18kKeyPreFlightErrorE,
                             __ZN3abm18kKeySimTestPayloadE,
@@ -130,6 +133,7 @@ exports:
                             __ZN3abm20kEventABMHasShutdownE,
                             __ZN3abm20kKeyABMDomainHWModelE,
                             __ZN3abm20kKeyABMDomainVersionE,
+                            __ZN3abm20kKeyAWDAccessoryTypeE,
                             __ZN3abm20kKeyAWDNVMSyncReasonE,
                             __ZN3abm20kKeyAWDTraceFileNameE,
                             __ZN3abm20kKeyBasebandBootTimeE,
@@ -162,6 +166,7 @@ exports:
                             __ZN3abm21kE75TypeGenericStringE,
                             __ZN3abm21kEventBasebandVersionE,
                             __ZN3abm21kKeyABMDomainBootArgsE,
+                            __ZN3abm21kKeyAWDAccessoryStateE,
                             __ZN3abm21kKeyAWDNVMSyncSuccessE,
                             __ZN3abm21kKeyAWDPowerEventTypeE,
                             __ZN3abm21kKeyAWDPowerOpDeferesE,
@@ -471,6 +476,7 @@ exports:
                             __ZN3abm33kCTTxPowerAudioModeConfiguredModeE,
                             __ZN3abm33kCTTxPowerAudioModeSupportedModesE,
                             __ZN3abm33kCollectTelephonyLogsWithCoredumpE,
+                            __ZN3abm33kCommandSendBasebandRFSelfTestReqE,
                             __ZN3abm33kCommandSimulatePowerNotificationE,
                             __ZN3abm33kEventBasebandOperatingModeChangeE,
                             __ZN3abm33kKeyBasebandLTELightSleepDurationE,
@@ -482,6 +488,7 @@ exports:
                             __ZN3abm34kBasebandResetSubTypeUserTriggeredE,
                             __ZN3abm34kCTTxPowerAudioAlertConfiguredModeE,
                             __ZN3abm34kCTTxPowerProxMotionAssistModeAutoE,
+                            __ZN3abm34kCommandGetBasebandRFSelfTestNonceE,
                             __ZN3abm34kKeyAWDTransportEof2ViolationCountE,
                             __ZN3abm34kKeyConfigDomainBasebandLogEnabledE,
                             __ZN3abm34kKeyTracePropertyWaitForCompletionE,

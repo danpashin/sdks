@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ICQActionParameterServerLinkIdentifierKey,
+    symbols:              [ _ICQActionParameterOpenURLKey,
+                            _ICQActionParameterServerLinkIdentifierKey,
                             _ICQActionParameterURLKey,
                             _ICQActionParameterURLQueryParametersKey,
                             _ICQCreateError, _ICQCreateErrorWithMessage,
@@ -54,9 +55,10 @@ exports:
                             __ICQUpgradeSuccessWiFiPageIdentifier,
                             _iCloudQuotaVersionNumber, _iCloudQuotaVersionString,
                             _kNonBreakingSpaceCharacter, _kSpaceCharacter ]
-    objc-classes:         [ ICQLink, ICQOffer, ICQOfferManager,
-                            _ICQAlertSpecification, _ICQBannerSpecification,
-                            _ICQButtonSpecification, _ICQFlowSpecification,
+    objc-classes:         [ ICQLink, ICQOffer, ICQOfferManager, ICQRemoteContext,
+                            ICQRemotePresentationManager, _ICQAlertSpecification,
+                            _ICQBannerSpecification, _ICQButtonSpecification,
+                            _ICQFlowSpecification, _ICQFollowupSpecification,
                             _ICQPageSpecification,
                             _ICQUpgradeCompletePageSpecification,
                             _ICQUpgradeFlowSpecification,

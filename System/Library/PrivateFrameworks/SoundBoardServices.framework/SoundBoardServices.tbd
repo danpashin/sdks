@@ -8,26 +8,14 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SBAccessoryMovedNotification,
-                            _SBAirplayMinimumMediaUserPrivilegeNotification,
-                            _SBAirplayP2PAccessNotification,
-                            _SBAirplaySetPasswordNotification,
-                            _SBAutoSUNotification, _SBDeviceResetNotification,
-                            _SBRebootDeviceRequest, _SBRebootDeviceResponse,
-                            _SBThermalPressureCurrentLevelKey,
-                            _SBThermalPressureTokenKey,
-                            _SoundBoardServicesVersionNumber,
+    symbols:              [ _SoundBoardServicesVersionNumber,
                             _SoundBoardServicesVersionString,
                             _kCannedDemoEntitlement, _kClientBundleIdentifier,
-                            _kCurrentVolumeLevel, _kDebugInfoEntitlement,
-                            _kHPCDRestartCannedDemo,
-                            _kNowPlayingApplicationMusicGenre,
-                            _kNowPlayingApplicationName,
-                            _kStereoLeaderEntitlement, _kSysdiagnoseEntitlement,
-                            _kSystemEntitlement, _toMicroSeconds ]
+                            _kDebugInfoEntitlement, _kHPCDRestartCannedDemo,
+                            _kSettingsEntitlement, _kStereoLeaderEntitlement,
+                            _kSysdiagnoseEntitlement, _kSystemEntitlement ]
     objc-classes:         [ SBCannedDemoInterface, SBSAppleCareInterface,
-                            SBSClient, SBSDebugInterface, SBSDefaultInfo,
-                            SBSDefaults, SBSServer, SBSSettingsManager,
-                            SBSStereoLeaderInterface, SBSSysdiagnoseInterface,
-                            SBSSystemInterface ]
+                            SBSClient, SBSDebugInterface, SBSServer,
+                            SBSSettingsInterface, SBSStereoLeaderInterface,
+                            SBSSysdiagnoseInterface, SBSSystemInterface ]
 ...

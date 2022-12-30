@@ -8,5 +8,8 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ AAAccountNotificationPlugin ]
+    symbols:              [ _BridgeAppleIDFollowUpIdentifier,
+                            _BridgeFollowUpDomain ]
+    objc-classes:         [ AAAccountNotificationPlugin,
+                            AABridgeFollowUpController ]
 ...

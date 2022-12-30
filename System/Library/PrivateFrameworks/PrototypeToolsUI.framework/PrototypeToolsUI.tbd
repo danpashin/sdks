@@ -8,8 +8,10 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PTUIClientInterface, _PTUIMachService,
-                            _PTUINumericKeypadIsNeeded,
+    symbols:              [ _PTUIClientInterface,
+                            _PTUIEditingServerDidReloadDomainsNotification,
+                            _PTUIEditingServerDidReloadTestRecipesNotification,
+                            _PTUIMachService, _PTUINumericKeypadIsNeeded,
                             _PTUINumericKeypadSetNeededWithWindow,
                             _PTUIServerInterface, _PrototypeToolsUIVersionNumber,
                             _PrototypeToolsUIVersionString ]
@@ -18,13 +20,13 @@ exports:
                             PTUIDrillDownRowTableViewCell,
                             PTUIEditFloatRowTableViewCell,
                             PTUIEditRowTableViewCell,
-                            PTUIEditStringRowTableViewCell, PTUIModuleController,
-                            PTUINumericKeypad,
+                            PTUIEditStringRowTableViewCell, PTUIEditingServer,
+                            PTUIModuleController, PTUINumericKeypad,
+                            PTUIPaddedHeaderLabel,
                             PTUIPresentViewControllerRowAction,
                             PTUIPushViewControllerRowAction,
                             PTUIRowTableViewCell, PTUISettingsController,
                             PTUISliderRowTableViewCell,
                             PTUISwitchRowTableViewCell, _KeypadButton,
-                            _KeypadDismissButton, _PTSAccessorySlider,
-                            _PTUIChoiceCell ]
+                            _KeypadDismissButton, _PTUIChoiceCell ]
 ...

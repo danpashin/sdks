@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: D5FED001-75DC-39D7-881E-D31C0E1AFCB4', 'armv7s: 40B5865E-BD06-31A9-A1C7-4D2121ACB847', 
-                   'arm64: ACB7D60D-DA11-36F0-99D5-34E9093BF9FC', 'arm64e: AD815B00-058B-3F3E-84C8-1316822C98C6' ]
+                   'arm64: C8B1E677-D384-35D3-8B12-BAB96C65A426', 'arm64e: D4004814-1BAF-3C69-BF1E-227B15723610' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2388.0.21
+current-version: 2394.0.25
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -52,12 +52,13 @@ exports:
                        _CLClientStopHeadingUpdates, _CLClientStopLocationUpdates, 
                        _CLClientStopVehicleHeadingUpdates, _CLClientStopVehicleSpeedUpdates, 
                        _CLClientUpdateARSessionState, _CLClientUpdateLSLHeadingEstimation, 
-                       _CLClientUpdateVIOEstimation, _CLCopyAppsUsingLocation, _CLCopyNearbyAssetSettings, 
-                       _CLCopyTechnologiesInUse, _CLDaemonStartedNotification, _CLDeleteCurrentEmergencyLocationAsset, 
-                       _CLGenerateRoadSegmentId, _CLGetAccessoryMotionSensorLogs, 
-                       _CLGetArchivedAuthorizationDecisions, _CLGetControlPlaneStatusReport, 
-                       _CLGetEmergencyLocationSettingsVersionInfo, _CLGetLocationDefault, 
-                       _CLGetMotionSensorLogs, _CLGetPipelinedCache, _CLGetStatusBarIconState, 
+                       _CLClientUpdateVIOEstimation, _CLCopyAppsUsingLocation, _CLCopyGnssBandsInUse, 
+                       _CLCopyNearbyAssetSettings, _CLCopyTechnologiesInUse, _CLDaemonStartedNotification, 
+                       _CLDeleteCurrentEmergencyLocationAsset, _CLGenerateRoadSegmentId, 
+                       _CLGetAccessoryMotionSensorLogs, _CLGetArchivedAuthorizationDecisions, 
+                       _CLGetControlPlaneStatusReport, _CLGetEmergencyLocationSettingsVersionInfo, 
+                       _CLGetLocationDefault, _CLGetMotionSensorLogs, _CLGetPipelinedCache, 
+                       _CLGetStatusBarIconState, _CLGnssBandsChangedNotification, 
                        _CLInternalPerformMigration, _CLLocationCoordinate2DGetDistanceFrom, 
                        _CLLocationCoordinate2DIsValid, _CLLocationCoordinate2DMake, 
                        _CLLocationDistanceMax, _CLPassKitNotifyPayment, _CLPingDaemon, 

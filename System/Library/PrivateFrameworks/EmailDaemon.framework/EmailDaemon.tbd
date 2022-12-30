@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3601.9.7
+current-version:       3608.80.24
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -65,6 +65,7 @@ exports:
                             _EDPETSubmittedEventReadFrom,
                             _EDPersistenceProtectedDatabaseFilename,
                             _EDPropertyMapperLookupKeySelectIndex,
+                            _EDSearchableIndexItemEncryptedAttributeName,
                             _EDSearchableIndexSchedulerActivityTypeBudgeted,
                             _EDSearchableIndexSchedulerActivityTypeMaintenance,
                             _EMPersistenceConversationFlagChangeKeyIsMuted,
@@ -82,10 +83,11 @@ exports:
     objc-classes:         [ EDAccountECAccountTransformer, EDAccountRepository,
                             EDActivityPersistence, EDActivityRegistry,
                             EDAddMessagesDeletedDateReceivedIndexUpgradeStep,
+                            EDAddMessagesSearchableMessageColumnUpgradeStep,
                             EDAddThreadTablesUpgradeStep,
                             EDAssetDownloadScheduler, EDCachingMailboxPredictor,
-                            EDCategorySubsystem, EDClientState, EDCloudKitControl,
-                            EDCloudMirroringPersistentStore,
+                            EDCategorySubsystem, EDClientResumer, EDClientState,
+                            EDCloudKitControl, EDCloudMirroringPersistentStore,
                             EDConversationDailyCloudExportActivityManager,
                             EDConversationDailyiCloudExporter,
                             EDConversationInfo,
@@ -155,6 +157,7 @@ exports:
                             EDPersonaPersistenceLayoutManager,
                             EDPrecomputedThreadQueryHandler,
                             EDProtectedDatabasePersistence, EDRemoteClient,
+                            EDRemoteClientResumer,
                             EDRemoveUnusedSchemaTableUpgradeStep,
                             EDRenameThreadsTableUpgradeStep, EDSearchableIndex,
                             EDSearchableIndexAttachmentItem,
@@ -180,6 +183,7 @@ exports:
                             EDVIPManager, EDVIPManagerProxy,
                             _EDAssetDownloadSchedulerContinuation,
                             _EDLazyWrappedMessage, _EDMailboxServerCount,
+                            _EDMessageItemIDCollector,
                             _EDPersistenceDatabaseConnectionWrapper,
                             _EDThreadMigrationState,
                             _EDThreadPersistence_PersistedThread,

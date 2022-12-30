@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/MailServices/IMAP.framework/IMAP
-current-version:       3601.9.7
+current-version:       3608.80.24
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -50,7 +50,7 @@ exports:
                             _MFUIDPlusInfoFromResponse,
                             __IMAPListsOnlySubscribedMailboxes,
                             __IMAPMailboxAttributesKey, _flagsFromFetchResults,
-                            _uidFromFetchResults ]
+                            _lastPushRegistrationTime, _uidFromFetchResults ]
     objc-classes:         [ AOLAccount, CastleIMAPAccount, ExchangeAccount,
                             GmailAccount, IMAPAccount, MFAOLSMTPAccount,
                             MFAPSManager, MFBaseSyncResponseQueue,
@@ -193,7 +193,9 @@ exports:
                             MFLibraryIMAPStore._relativePath,
                             MFLibraryIMAPStore._reserved,
                             MFLibraryIMAPStore._selectedUID,
+                            MFLibraryIMAPStore._serverCountLock,
                             MFLibraryIMAPStore._serverDeletedCount,
+                            MFLibraryIMAPStore._serverMessageCount,
                             MFLibraryIMAPStore._serverUidNext,
                             MFLibraryIMAPStore._settingServerCount,
                             MFLibraryIMAPStore._supportsCustomPermanentFlags,

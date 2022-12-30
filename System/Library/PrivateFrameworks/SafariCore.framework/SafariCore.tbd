@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       608.3.10
+current-version:       609.1.20
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -103,9 +103,9 @@ exports:
                             _WBSSafariBookmarksSyncAgentSyncResultKey,
                             _WBSSavedPasswordStoreDidChangeNotification,
                             _WBSSuppressCloudKitBookmarkMigrationForCyclerTestPreferenceKey,
-                            __WBSHasAlreadyRunBlock, __WBSLocalizedString,
-                            __WBSSetHasAlreadyRunBlock,
-                            _canonicalizedCharacterClasses,
+                            __WBSLocalizedString,
+                            __WBSLocalizedStringWithCurrentUserLocale,
+                            __WBSRunOnceImpl, _canonicalizedCharacterClasses,
                             _parseCustomCharacterClass, _parseIdentifier,
                             _parseNamedCharacterClass,
                             _parsePasswordRequiredOrAllowedPropertyValue,
@@ -185,7 +185,7 @@ exports:
                             WBSSQLiteStore, WBSSafariBookmarksSyncAgentProxy,
                             WBSSavedPassword, WBSSavedPasswordAuditor,
                             WBSSavedPasswordStore, WBSScopeExitHandler,
-                            WBSURLCredentialCache,
+                            WBSURLCredentialCache, WBSUserDefaultObservation,
                             _WBSNSURLProtectionSpaceAndDate ]
     objc-ivars:           [ WBSAnalyticsLogger._analyticsSynchronizationQueue,
                             WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._has,

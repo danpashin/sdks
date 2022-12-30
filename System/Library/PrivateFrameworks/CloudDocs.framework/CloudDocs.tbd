@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-current-version:       681
+current-version:       698.2
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -136,6 +136,8 @@ exports:
                             _BRLoggedInUserHasManagedAppleIDKey,
                             _BRLoggedInUserLastNameKey, _BRLogsAbsolutePath,
                             _BRMakeiWorkSharingOptions,
+                            _BRMetadataCreatorNameComponentsKey,
+                            _BRMetadataIsTopLevelSharedItemKey,
                             _BRMetadataItemFileObjectIdentifierKey,
                             _BRMetadataItemParentFileIDKey,
                             _BRMetadataQueryUbiquitousTrashScope,
@@ -145,6 +147,7 @@ exports:
                             _BRMetadataUbiquitousItemSourceContainerDisplayNameKey,
                             _BRMetadataUbiquitousItemSourceContainerIdentifierKey,
                             _BRMetadataUbiquitousItemUploadingSizeKey,
+                            _BRModifiedSinceSharedKey,
                             _BRNSUbiquitousContainerIsDocumentScopePublic,
                             _BRNSUbiquitousContainerName,
                             _BRNSUbiquitousContainerSupportedFolderLevels,
@@ -171,7 +174,8 @@ exports:
                             _BRSetMigrationStatusForDSID,
                             _BRSetMigrationStatusForDSIDAndUpdateAccount,
                             _BRSetMigrationStatusForDSIDInPref,
-                            _BRSharedFolderType, _BRSharingBulkCopyShareID,
+                            _BRSharedByMeURLsKey, _BRSharedFolderType,
+                            _BRSharedToMeURLsKey, _BRSharingBulkCopyShareID,
                             _BRSharingCopyCurrentUserIdentifier,
                             _BRSharingCopyCurrentUserNameAndDisplayHandle,
                             _BRSharingCopyCurrentUserNameAndEmail,
@@ -186,6 +190,7 @@ exports:
                             _BRThumbnailChangedAtURL,
                             _BRTrashExternalDocumentReference, _BRURLTagNamesKey,
                             _BRURLUbiquitousDocumentRecordIDKey,
+                            _BRURLUbiquitousIsTopLevelSharedItemKey,
                             _BRURLUbiquitousItemIdentifierKey,
                             _BRURLUbiquitousItemIsConflictedKey,
                             _BRURLUbiquitousItemLastEditorDeviceNameKey,
@@ -283,11 +288,12 @@ exports:
                             _kBRCTestsServiceName,
                             _kBRCUpdateSenderBundleVersionNumber,
                             _kBRCUpdateSenderSandboxExtension,
+                            _kBRQueryItemCreatedByCurrentUserKey,
+                            _kBRQueryItemCreatorNameComponentsKey,
                             _kBRQueryItemDLErrorKey, _kBRQueryItemDLPercentKey,
                             _kBRQueryItemDownloadedSize,
                             _kBRQueryItemInflightProgress,
                             _kBRQueryItemLastEditorNameComponentsKey,
-                            _kBRQueryItemLastEditorNameKey,
                             _kBRQueryItemLocalRepresentationPathKey,
                             _kBRQueryItemNeedsDownloadSize,
                             _kBRQueryItemNeedsFaultingCount,
@@ -295,11 +301,10 @@ exports:
                             _kBRQueryItemNeedsUploadSize,
                             _kBRQueryItemNumberOfFaults,
                             _kBRQueryItemOwnerNameComponentsKey,
-                            _kBRQueryItemOwnerNameKey,
                             _kBRQueryItemQuotaAvailableKey,
                             _kBRQueryItemSyncedUpCount, _kBRQueryItemTagsKey,
                             _kBRQueryItemULErrorKey, _kBRQueryItemULPercentKey,
-                            _kBRQueryItemUploadedSize,
+                            _kBRQueryItemUploadedSize, _kBRSideCarContainerID,
                             _kBRSyncedLocationsChangedNotification ]
     objc-classes:         [ BRAccount, BRContainer, BRContainersMonitor,
                             BRDaemonConnection, BRDocObjectID,
@@ -364,6 +369,7 @@ exports:
                             BRQueryItem._parentZoneRowID,
                             BRQueryItem._physicalHandle,
                             BRQueryItem._physicalName, BRQueryItem._replacement,
+                            BRQueryItem._shareRootFileObjectID,
                             BRQueryItem._size, BRQueryItem._url,
                             BRQueryItem._zoneRowID, BRReachabilityMonitor._queue,
                             BRReachabilityMonitor._reachabilityFlags,

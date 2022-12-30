@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CLLocationCoordinateFromNSData,
+    symbols:              [ _CLLocationCoordinate2DFromGEOLocationCoordinate2D,
+                            _CLLocationCoordinateFromNSData,
                             _GEOComposedWaypointFromMapsSuggestionsEntry,
                             _GEOConfigFromMapsSuggestionsEntryType,
                             _GEOConfigMapsSuggestionsAlreadyThereFilterEnabled,
@@ -191,6 +192,9 @@ exports:
                             _GEOConfigMapsSuggestionsMinTemperatureForHotWeather,
                             _GEOConfigMapsSuggestionsMinimumDurationForImminentWindow,
                             _GEOConfigMapsSuggestionsNanoMapsFilterCompanionsRoutineSource,
+                            _GEOConfigMapsSuggestionsNavigationTrackingTaskMaxAge,
+                            _GEOConfigMapsSuggestionsNavigationTrackingTaskMaxDistance,
+                            _GEOConfigMapsSuggestionsNavigationTrackingTaskMinVisits,
                             _GEOConfigMapsSuggestionsNearbyFilterEnabled,
                             _GEOConfigMapsSuggestionsNearbyFilterMinNearbyDistance,
                             _GEOConfigMapsSuggestionsNoAddressFilterEnabled,
@@ -419,6 +423,7 @@ exports:
                             _GEOConfigMapsSuggestionsWalletSourceEnabled,
                             _GEOConfigMapsSuggestionsWalletUpdateIntervalInSeconds,
                             _GEOConfigMapsSuggestionsWeatherFeelerEnabled,
+                            _GEOConfigMapsSuggestionsWeatherFeelerExpireTimeForNonSignalValue,
                             _GEOConfigMapsSuggestionsWeightForSharedToMeEvents,
                             _GEOConfigNMGSuggestionsRelayDefaultInterval,
                             _GEOConfigNMGSuggestionsRelayDefaultLeeway,
@@ -542,6 +547,9 @@ exports:
                             _MapsSuggestionsMapItemStreetWithNumber,
                             _MapsSuggestionsMapItemWithCorrectedLocation,
                             _MapsSuggestionsMapItemsAreEqual,
+                            _MapsSuggestionsMeCardFilter,
+                            _MapsSuggestionsMeCardUnion,
+                            _MapsSuggestionsMeCardWithinDistance,
                             _MapsSuggestionsMergeAsShortcut,
                             _MapsSuggestionsMostRecentLocation,
                             _MapsSuggestionsMutableSignalPackFromData,
@@ -736,6 +744,6 @@ exports:
                             MapsSuggestionsTrafficAndETAResult,
                             MapsSuggestionsTravelFlightImprover,
                             MapsSuggestionsUniqueIdentifierDeduper,
-                            MapsSuggestionsUnknownFilter,
+                            MapsSuggestionsUnknownFilter, MapsSuggestionsUser,
                             MapsSuggestionsVisitTrackingLocationUpdater ]
 ...

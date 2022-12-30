@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3601.9.7
+current-version:       3608.80.24
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -94,6 +94,7 @@ exports:
                             _EMPredicateMailboxKeyPathMailboxChildren,
                             _EMPredicateMailboxKeyPathName,
                             _EMPredicateMailboxKeyPathType,
+                            _EMPredicateMessageKeyPathFrom,
                             _EMPredicateMessageKeyPathInternalID,
                             _EMPredicateMessageKeyPathMessageIDHeaderHash,
                             _EMPredicateMessageKeyPathObjectID,
@@ -103,6 +104,8 @@ exports:
                             _EMUserDefaultAlwaysBCCSelf,
                             _EMUserDefaultBlockedSenderAction,
                             _EMUserDefaultBlockedSenderEnabled,
+                            _EMUserDefaultConversationToolbarEnabled,
+                            _EMUserDefaultFavoriteFlagColorMailbox,
                             _EMUserDefaultFilesMarkedPurgeable,
                             _EMUserDefaultFilterPaletteEnabled,
                             _EMUserDefaultForceAccountIsManaged,
@@ -117,6 +120,7 @@ exports:
                             _EMUserDefaultNewQueryResults,
                             _EMUserDefaultPrototypeUIEnabled,
                             _EMUserDefaultQueryResultComparison,
+                            _EMUserDefaultSearchFlagColors,
                             _EMUserDefaultSharingFromSafariUI,
                             _EMUserDefaultShowDebugInfo,
                             _EMUserDefaultsDidChangeNotification,
@@ -142,13 +146,12 @@ exports:
                             EMAccountRepository, EMActivity, EMActivityObjectID,
                             EMActivityRegistry, EMBlockedSenderManager,
                             EMCachingContactStore, EMCertificateTrustInformation,
-                            EMClientState, EMCollection, EMContentRepresentation,
-                            EMContentRequestOptions, EMCreateMailboxChangeAction,
+                            EMClientState, EMCollection,
+                            EMCollectionItemIDStateCapturer,
+                            EMContentRepresentation, EMContentRequestOptions,
+                            EMCreateMailboxChangeAction, EMDaemonBooster,
                             EMDaemonInterface, EMDaemonInterfaceRequest,
                             EMDeleteMailboxChangeAction, EMDeliveryAccount,
-                            EMFakeBlockedSenderManager, EMFakeDaemonInterface,
-                            EMFakeMailboxRepository, EMFakeMessageRepository,
-                            EMFakeRepositoryValidityTracker, EMFakeVIPManager,
                             EMFeaturePreferences, EMFetchController,
                             EMInteractionLogger, EMListUnsubscribeCommand,
                             EMListUnsubscribeCommandMessageHeaders,
@@ -163,8 +166,8 @@ exports:
                             EMMessageConversationFlagChangeAction,
                             EMMessageDeleteAction, EMMessageDeleteAllAction,
                             EMMessageDeliveryResult, EMMessageFlagChangeAction,
-                            EMMessageFlagChangeAllAction, EMMessageList,
-                            EMMessageListChangeObserverHelper,
+                            EMMessageFlagChangeAllAction, EMMessageHeaders,
+                            EMMessageList, EMMessageListChangeObserverHelper,
                             EMMessageListItemChange, EMMessageListItemPredicates,
                             EMMessageObjectID, EMMessageRepository,
                             EMMessageSigner, EMMessageTransferAction,

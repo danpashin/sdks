@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: BA29D457-3E4F-37D5-A8B2-EEC7BC39E1ED', 'armv7s: C0F49639-BE96-39C0-8AE3-EDE7F0C42E41', 
-                   'arm64: DD20AC90-7476-3DE8-9538-7CB7C7B1E144', 'arm64e: D5F41209-CE3B-3120-8784-87E1FD80D0BA' ]
+                   'arm64: CB722684-5BC8-3F52-8EF0-EB5E3D9E7D06', 'arm64e: C6D3A8A4-0CF6-351B-8491-6DE451F38D05' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/VideoToolbox.framework/VideoToolbox'
 exports:         
@@ -215,8 +215,9 @@ exports:
                        _kVTCompressionPropertyKey_VideoResolutionAdaptation, _kVTCompressionPropertyKey_YCbCrMatrix, 
                        _kVTCompressionProperty_MaxQuantizationParameter, _kVTCompressionProperty_SoftMaxQuantizationParameter, 
                        _kVTCompressionProperty_SoftMinH264QuantizationParameter, 
-                       _kVTCompressionProperty_SoftMinQuantizationParameter, _kVTDecompressionPropertyKey_ActiveVideoResolution, 
-                       _kVTDecompressionPropertyKey_CalculateYUVChecksum, _kVTDecompressionPropertyKey_CanvasPixelBufferAttributes, 
+                       _kVTCompressionProperty_SoftMinQuantizationParameter, _kVTDecoderCapability_IsHDRAllowedOnDevice, 
+                       _kVTDecompressionPropertyKey_ActiveVideoResolution, _kVTDecompressionPropertyKey_CalculateYUVChecksum, 
+                       _kVTDecompressionPropertyKey_CanvasPixelBufferAttributes, 
                        _kVTDecompressionPropertyKey_ClientPID, _kVTDecompressionPropertyKey_ColorPrimaries, 
                        _kVTDecompressionPropertyKey_ContentHasInterframeDependencies, 
                        _kVTDecompressionPropertyKey_DeinterlaceMode, _kVTDecompressionPropertyKey_EnableIOFenceDecode, 
@@ -255,11 +256,12 @@ exports:
                        _kVTDecompressionProperty_TemporalLevelLimit, _kVTDecompressionResolutionKey_Height, 
                        _kVTDecompressionResolutionKey_Width, _kVTDecompressionSessionNotification_FrameDecodeCompleted, 
                        _kVTDecompressionSessionOption_AllowClientProcessDecode, _kVTDecompressionSessionOption_ClientPID, 
-                       _kVTDecompressionSessionOption_SharePixelBufferPool, _kVTDownsamplingMode_Average, 
-                       _kVTDownsamplingMode_Decimate, _kVTEncodeFrameOptionKey_AcknowledgedTokens, 
-                       _kVTEncodeFrameOptionKey_AdaptiveResolution, _kVTEncodeFrameOptionKey_AutoExposureState, 
-                       _kVTEncodeFrameOptionKey_AverageBurstyErrorLength, _kVTEncodeFrameOptionKey_AverageTransmissionBitRate, 
-                       _kVTEncodeFrameOptionKey_AverageTransmissionBitRateWindowSize, 
+                       _kVTDecompressionSessionOption_SharePixelBufferPool, _kVTDolbyVisionDecoderCapability_IsHardwareAccelerated, 
+                       _kVTDolbyVisionDecoderCapability_SupportedLevels, _kVTDolbyVisionDecoderCapability_SupportedProfiles, 
+                       _kVTDownsamplingMode_Average, _kVTDownsamplingMode_Decimate, 
+                       _kVTEncodeFrameOptionKey_AcknowledgedTokens, _kVTEncodeFrameOptionKey_AdaptiveResolution, 
+                       _kVTEncodeFrameOptionKey_AutoExposureState, _kVTEncodeFrameOptionKey_AverageBurstyErrorLength, 
+                       _kVTEncodeFrameOptionKey_AverageTransmissionBitRate, _kVTEncodeFrameOptionKey_AverageTransmissionBitRateWindowSize, 
                        _kVTEncodeFrameOptionKey_DirtyRects, _kVTEncodeFrameOptionKey_FECNumBitsAdded, 
                        _kVTEncodeFrameOptionKey_FinalFrame, _kVTEncodeFrameOptionKey_FirstMbInDuplicateSlices, 
                        _kVTEncodeFrameOptionKey_FirstMbInRecvSlices, _kVTEncodeFrameOptionKey_FirstMbInSkipSlices, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 14084CCC-7BCA-3FF5-A413-98E3FE33A728', 'armv7s: 74AD1314-46E5-3B45-9A54-814C63D27378', 
-                   'arm64: 6B68B0F4-6419-34E2-9A38-3DA45F7C2634', 'arm64e: E0E68EA0-B00F-3EA5-822B-389F3037E894' ]
+                   'arm64: 9EEA0978-FCAD-33CC-9E30-35EA939B2143', 'arm64e: E5BF43AA-26C8-37EB-96A5-87E48ABE22EA' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox'
 current-version: 1000
@@ -258,7 +258,7 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 0C5CEE7C-1718-34CC-BE35-F22CD8DE7566', 'arm64e: 006C91F6-A83E-3EC7-BCAA-D6FEE1386BEA' ]
+                   'arm64: 5CC99C07-D3B3-317A-A0AA-90B7EDB05D00', 'arm64e: C49D3916-F10D-3E99-8BF2-7728E20B5AF6' ]
 platform:        ios
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/AudioToolboxCore'
 exports:         
@@ -432,16 +432,27 @@ exports:
                        __ZN8DSPGraph12FileRecorderC2EPNS_4WireEPKcbb, __ZN8DSPGraph12FileRecorderD0Ev, 
                        __ZN8DSPGraph12FileRecorderD1Ev, __ZN8DSPGraph12FileRecorderD2Ev, 
                        __ZN8DSPGraph12ReblockerBox10initializeEv, __ZN8DSPGraph12ReblockerBox7processEi, 
-                       __ZN8DSPGraph12kAUPresetStrE, __ZN8DSPGraph13MakeCBRFormatEjdiiij, 
-                       __ZN8DSPGraph13RingBufferBox10dryRunInitEv, __ZN8DSPGraph13RingBufferBox10dryRunReadEx, 
-                       __ZN8DSPGraph13RingBufferBox10initializeEv, __ZN8DSPGraph13RingBufferBox11dryRunWriteEx, 
-                       __ZN8DSPGraph13RingBufferBox12uninitializeEv, __ZN8DSPGraph13RingBufferBox18selfLatencyInTicksEv, 
-                       __ZN8DSPGraph13RingBufferBox19configureFromDryRunEv, __ZN8DSPGraph13RingBufferBox19configureRingBufferEii, 
-                       __ZN8DSPGraph13RingBufferBox21unconfigureRingBufferEv, __ZN8DSPGraph13RingBufferBox5resetEv, 
-                       __ZN8DSPGraph13VectorGainBox10initializeEv, __ZN8DSPGraph13VectorGainBox11getPropertyEjjjRjPv, 
-                       __ZN8DSPGraph13VectorGainBox11setPropertyEjjjjPKv, __ZN8DSPGraph13VectorGainBox15getPropertyInfoEjjjRjRb, 
-                       __ZN8DSPGraph13VectorGainBox7processEi, __ZN8DSPGraph13kAudioUnitStrE, 
-                       __ZN8DSPGraph13kClassNameStrE, __ZN8DSPGraph14NewBoxRegistry3addERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERK25AudioComponentDescriptionRKNS1_8functionIFPNS_3BoxEjjEEE, 
+                       __ZN8DSPGraph12TestAnalyzer11getPropertyEjjjRjPv, __ZN8DSPGraph12TestAnalyzer11setPropertyEjjjjPKv, 
+                       __ZN8DSPGraph12TestAnalyzer12getParameterEjjj, __ZN8DSPGraph12TestAnalyzer12setParameterEjjjfj, 
+                       __ZN8DSPGraph12TestAnalyzer13processBufferEPNS_6BufferEj, 
+                       __ZN8DSPGraph12TestAnalyzer13resetAnalysisEv, __ZN8DSPGraph12TestAnalyzer15getPropertyInfoEjjjRjRb, 
+                       __ZN8DSPGraph12TestAnalyzer15setFormatOnUnitERK27AudioStreamBasicDescriptionjj, 
+                       __ZN8DSPGraph12TestAnalyzer16getParameterInfoEjjR22AudioUnitParameterInfo, 
+                       __ZN8DSPGraph12TestAnalyzer16getParameterListEjPjRi, __ZN8DSPGraph12TestAnalyzer17getFormatFromUnitER27AudioStreamBasicDescriptionjj, 
+                       __ZN8DSPGraph12TestAnalyzer4openEv, __ZN8DSPGraph12TestAnalyzerC1EjRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZN8DSPGraph12TestAnalyzerC2EjRKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZN8DSPGraph12TestAnalyzerD0Ev, __ZN8DSPGraph12TestAnalyzerD1Ev, 
+                       __ZN8DSPGraph12TestAnalyzerD2Ev, __ZN8DSPGraph12kAUPresetStrE, 
+                       __ZN8DSPGraph13MakeCBRFormatEjdiiij, __ZN8DSPGraph13RingBufferBox10dryRunInitEv, 
+                       __ZN8DSPGraph13RingBufferBox10dryRunReadEx, __ZN8DSPGraph13RingBufferBox10initializeEv, 
+                       __ZN8DSPGraph13RingBufferBox11dryRunWriteEx, __ZN8DSPGraph13RingBufferBox12uninitializeEv, 
+                       __ZN8DSPGraph13RingBufferBox18selfLatencyInTicksEv, __ZN8DSPGraph13RingBufferBox19configureFromDryRunEv, 
+                       __ZN8DSPGraph13RingBufferBox19configureRingBufferEii, __ZN8DSPGraph13RingBufferBox21unconfigureRingBufferEv, 
+                       __ZN8DSPGraph13RingBufferBox5resetEv, __ZN8DSPGraph13VectorGainBox10initializeEv, 
+                       __ZN8DSPGraph13VectorGainBox11getPropertyEjjjRjPv, __ZN8DSPGraph13VectorGainBox11setPropertyEjjjjPKv, 
+                       __ZN8DSPGraph13VectorGainBox15getPropertyInfoEjjjRjRb, __ZN8DSPGraph13VectorGainBox7processEi, 
+                       __ZN8DSPGraph13kAudioUnitStrE, __ZN8DSPGraph13kClassNameStrE, 
+                       __ZN8DSPGraph14NewBoxRegistry3addERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERK25AudioComponentDescriptionRKNS1_8functionIFPNS_3BoxEjjEEE, 
                        __ZN8DSPGraph14NewBoxRegistry3hasERK25AudioComponentDescription, 
                        __ZN8DSPGraph14NewBoxRegistry3hasERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN8DSPGraph14NewBoxRegistry6newBoxERK25AudioComponentDescriptionjj, 
@@ -665,8 +676,9 @@ exports:
                        __ZNK8DSPGraph5Graph10numOutputsEv, __ZNK8DSPGraph5Graph11hasPropertyEj, 
                        __ZNK8DSPGraph5Graph12hasParameterEj, __ZNK8DSPGraph5Graph14getFormatNamesEv, 
                        __ZNK8DSPGraph5Graph16GetProfilingInfoEv, __ZNK8DSPGraph5Graph16getParameterListEv, 
-                       __ZNK8DSPGraph5Graph17computeMaxDeficitEPNS_8IsoGroupE, __ZNK8DSPGraph5Graph22getOrderingConstraintsEv, 
-                       __ZNK8DSPGraph5Graph2inEi, __ZNK8DSPGraph5Graph3outEi, __ZNK8DSPGraph5Graph5printERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEii, 
+                       __ZNK8DSPGraph5Graph22computeMaxDeficitTicksEPNS_8IsoGroupE, 
+                       __ZNK8DSPGraph5Graph22getOrderingConstraintsEv, __ZNK8DSPGraph5Graph2inEi, 
+                       __ZNK8DSPGraph5Graph3outEi, __ZNK8DSPGraph5Graph5printERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEii, 
                        __ZNK8DSPGraph5Graph9decompileEPKcj, __ZNK8DSPGraph5Graph9decompileERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEj, 
                        __ZNK8DSPGraph5Graph9decompileEj, __ZNK8DSPGraph5Graph9numInputsEv, 
                        __ZNK8DSPGraph6Buffer5printERNSt3__113basic_ostreamIcNS1_11char_traitsIcEEEEii, 
@@ -682,17 +694,18 @@ exports:
                        __ZTVN8DSPGraph11GraphOutputE, __ZTVN8DSPGraph11InterpreterE, 
                        __ZTVN8DSPGraph11TimeFreqBoxE, __ZTVN8DSPGraph12FileInjectorE, 
                        __ZTVN8DSPGraph12FileRecorderE, __ZTVN8DSPGraph12ReblockerBoxE, 
-                       __ZTVN8DSPGraph13RingBufferBoxE, __ZTVN8DSPGraph13VectorGainBoxE, 
-                       __ZTVN8DSPGraph14NewBoxRegistryE, __ZTVN8DSPGraph15AnalyzerBuilderE, 
-                       __ZTVN8DSPGraph16ChannelCopierBoxE, __ZTVN8DSPGraph16ChannelJoinerBoxE, 
-                       __ZTVN8DSPGraph17ConstantSourceBoxE, __ZTVN8DSPGraph17DecibelControlBoxE, 
-                       __ZTVN8DSPGraph18ChannelSplitterBoxE, __ZTVN8DSPGraph26SingleRateLPCMConverterBoxE, 
-                       __ZTVN8DSPGraph3BoxE, __ZTVN8DSPGraph4BaseE, __ZTVN8DSPGraph4PortE, 
-                       __ZTVN8DSPGraph4WireE, __ZTVN8DSPGraph5AUBoxE, __ZTVN8DSPGraph5FCBoxE, 
-                       __ZTVN8DSPGraph5GraphE, __ZTVN8DSPGraph6BufferE, __ZTVN8DSPGraph6MixBoxE, 
-                       __ZTVN8DSPGraph6SRCBoxE, __ZTVN8DSPGraph6SumBoxE, __ZTVN8DSPGraph7CopyBoxE, 
-                       __ZTVN8DSPGraph7GainBoxE, __ZTVN8DSPGraph7TestBoxE, __ZTVN8DSPGraph8AnalyzerE, 
-                       __ZTVN8DSPGraph8DelayBoxE, __ZTVN8DSPGraph9DBGainBoxE, __ZTVN8DSPGraph9InputPortE ]
+                       __ZTVN8DSPGraph12TestAnalyzerE, __ZTVN8DSPGraph13RingBufferBoxE, 
+                       __ZTVN8DSPGraph13VectorGainBoxE, __ZTVN8DSPGraph14NewBoxRegistryE, 
+                       __ZTVN8DSPGraph15AnalyzerBuilderE, __ZTVN8DSPGraph16ChannelCopierBoxE, 
+                       __ZTVN8DSPGraph16ChannelJoinerBoxE, __ZTVN8DSPGraph17ConstantSourceBoxE, 
+                       __ZTVN8DSPGraph17DecibelControlBoxE, __ZTVN8DSPGraph18ChannelSplitterBoxE, 
+                       __ZTVN8DSPGraph26SingleRateLPCMConverterBoxE, __ZTVN8DSPGraph3BoxE, 
+                       __ZTVN8DSPGraph4BaseE, __ZTVN8DSPGraph4PortE, __ZTVN8DSPGraph4WireE, 
+                       __ZTVN8DSPGraph5AUBoxE, __ZTVN8DSPGraph5FCBoxE, __ZTVN8DSPGraph5GraphE, 
+                       __ZTVN8DSPGraph6BufferE, __ZTVN8DSPGraph6MixBoxE, __ZTVN8DSPGraph6SRCBoxE, 
+                       __ZTVN8DSPGraph6SumBoxE, __ZTVN8DSPGraph7CopyBoxE, __ZTVN8DSPGraph7GainBoxE, 
+                       __ZTVN8DSPGraph7TestBoxE, __ZTVN8DSPGraph8AnalyzerE, __ZTVN8DSPGraph8DelayBoxE, 
+                       __ZTVN8DSPGraph9DBGainBoxE, __ZTVN8DSPGraph9InputPortE ]
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     allowable-clients: [ AudioCodecs, AudioDSPGraph, AudioDSPManager, AudioHistory, 
                          AudioServerDriver, AudioToolbox, CoreAudio, CoreMedia, EmbeddedSystemAUs, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 8BD4C21C-F1E9-35B2-8F78-4E21C1C0A79C', 'arm64e: 702CC4AA-DE47-3591-B3D7-7D9753C20BC1' ]
+                   'arm64: B2D5C531-A956-38C6-9553-1339B1BBFA52', 'arm64e: B3ABA692-E9D1-366D-ABF0-B4386994F2DE' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing'
 current-version: 0
@@ -12,13 +12,14 @@ exports:
                        _QLImageCreateForDefaultThumbnailGenerationFromData, _QLShouldUseExtendedRangeForContextWithColorspace, 
                        _QLTCreateCGContext, _QLTCreateCGContextWithSize, _QLTGetDefaultCacheLocation, 
                        _QLTImageClassWithError, _QLTInitLogging, _QLTPrefersExtendedRange, 
-                       _QLThumbnailAdditionMetadataKey, _QLThumbnailErrorDomain, 
-                       _QLThumbnailGenerationRequestRepresentationTypeNone, _QLThumbnailHostContexErrorDomain, 
-                       _QLThumbnailMetadataContentRectKey, _QLThumbnailMetadataFileNamesDictionaryKey, 
-                       _QLThumbnailMetadataFileVersion2Key, _QLThumbnailMetadataFileVersionKey, 
-                       _QLThumbnailMetadataFlavorKey, _QLThumbnailMetadataQLPropertiesKey, 
-                       _QLThumbnailRepresentationTypeToString, _QLThumbnailRequestOperationRepresentationTypeNone, 
-                       _QLThumbnailsServiceErrorDomain, _QL_SANDBOX_READ, __QLComputeValuesForCGContextCreationWithSizeAndScale, 
+                       _QLTSandboxWrapperForParentURLOf, _QLThumbnailAdditionMetadataKey, 
+                       _QLThumbnailErrorDomain, _QLThumbnailGenerationRequestRepresentationTypeNone, 
+                       _QLThumbnailHostContexErrorDomain, _QLThumbnailMetadataContentRectKey, 
+                       _QLThumbnailMetadataFileNamesDictionaryKey, _QLThumbnailMetadataFileVersion2Key, 
+                       _QLThumbnailMetadataFileVersionKey, _QLThumbnailMetadataFlavorKey, 
+                       _QLThumbnailMetadataQLPropertiesKey, _QLThumbnailRepresentationTypeToString, 
+                       _QLThumbnailRequestOperationRepresentationTypeNone, _QLThumbnailsServiceErrorDomain, 
+                       _QL_SANDBOX_READ, __QLComputeValuesForCGContextCreationWithSizeAndScale, 
                        __QLCopyResourcePropertyForKey, __QLSetResourcePropertyForKey, 
                        _allSupportedRequestOperationRepresentationTypes, _allSupportedRequestRepresentationTypes, 
                        _kQLSupportedInController, _kQLThumbnailCacheFileName, _kQLThumbnailPropertyIconFlavorKey, 
@@ -46,10 +47,10 @@ exports:
                        QLThumbnailItem._downloadStatus, QLThumbnailItem._fileExtensionHandle, 
                        QLThumbnailItem._fileExtensionToken, QLThumbnailItem._overriddenContentType, 
                        QLThumbnailItem._url, QLThumbnailItem._urlWrapperForExtension, 
-                       QLThumbnailMetadata._baseline, QLThumbnailMetadata._inlinePreviewMode, 
-                       QLThumbnailServiceProxy._connection, QLThumbnailServiceProxy._indexProxy, 
-                       QLThumbnailServiceProxy._proxy, QLThumbnailStoreRetrievalOperation._addition, 
-                       QLThumbnailStoreRetrievalOperation._allowsThumbnailGeneration, 
+                       QLThumbnailItem._urlWrapperForParentDirectory, QLThumbnailMetadata._baseline, 
+                       QLThumbnailMetadata._inlinePreviewMode, QLThumbnailServiceProxy._connection, 
+                       QLThumbnailServiceProxy._indexProxy, QLThumbnailServiceProxy._proxy, 
+                       QLThumbnailStoreRetrievalOperation._addition, QLThumbnailStoreRetrievalOperation._allowsThumbnailGeneration, 
                        QLThumbnailStoreRetrievalOperation._destinationURL, QLThumbnailStoreRetrievalOperation._documentURL, 
                        QLThumbnailStoreRetrievalOperation._error, QLThumbnailStoreRetrievalOperation._executing, 
                        QLThumbnailStoreRetrievalOperation._finished, QLThumbnailStoreRetrievalOperation._generateThumbnailsAtBackgroundPriority, 

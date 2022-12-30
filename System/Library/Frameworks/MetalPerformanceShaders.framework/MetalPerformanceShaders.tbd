@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: A3ED655B-727E-391A-A741-7B73B4939695', 'armv7s: E3657660-EFCF-3278-A7EF-6C52F5DF55C8', 
-                   'arm64: D88DE485-D197-336D-B587-B9F73BEDD323', 'arm64e: 4D01BA5C-EA82-3348-A4E1-C91C7397FE0D' ]
+                   'arm64: 7DE1DBB3-6818-3555-8DFB-8C6D50DE268B', 'arm64e: D833A176-5388-325E-9E42-D36E4D462969' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/MetalPerformanceShaders'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _MPSExerciseDeviceKernelList_Private, _MPSGetDeviceInfo, _MPSGetDevicePixelInfo, 
@@ -39,10 +39,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 24937D19-51A3-35CB-873E-E5C861664102', 'arm64e: 0BC8022B-AF5C-33D8-83FE-454C953D6440' ]
+                   'arm64: 7F98E0D3-952A-38C0-9BC3-14765766FC86', 'arm64e: 939479FA-F9D0-34E2-8264-F5AD1F98EA71' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ arm64, arm64e ]
     symbols:         [ __Z21MPSDecrementReadCountP17MPSTemporaryImage, __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, 
@@ -131,10 +131,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: C059222D-B886-3B75-995B-31C56B8015C7', 'arm64e: 8359CC5F-6FF0-3A58-B677-8842A81D0838' ]
+                   'arm64: 63F5FFC1-702E-36FF-841A-BAFCD47D0301', 'arm64e: 26D91283-51AC-33BC-8C44-65CBD6B6906C' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/MPSImage'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     allowable-clients: [ MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -142,17 +142,17 @@ exports:
     objc-classes:    [ MPSBinaryImageKernel, MPSImageAdd, MPSImageAreaMax, MPSImageAreaMin, 
                        MPSImageArithmetic, MPSImageBilinearScale, MPSImageBox, MPSImageBox3D, 
                        MPSImageConversion, MPSImageConvolution, MPSImageCopyToMatrix, 
-                       MPSImageDilate, MPSImageDivide, MPSImageErode, MPSImageEuclideanDistanceTransform, 
-                       MPSImageFindKeypoints, MPSImageGaussianBlur, MPSImageGaussianPyramid, 
-                       MPSImageGuidedFilter, MPSImageHistogram, MPSImageHistogramEqualization, 
-                       MPSImageHistogramSpecification, MPSImageIntegral, MPSImageIntegralOfSquares, 
-                       MPSImageLanczosScale, MPSImageLaplacian, MPSImageLaplacianPyramid, 
-                       MPSImageLaplacianPyramidAdd, MPSImageLaplacianPyramidSubtract, 
-                       MPSImageMedian, MPSImageMultiply, MPSImageNormalizedHistogram, 
-                       MPSImageReduceColumnMax, MPSImageReduceColumnMean, MPSImageReduceColumnMin, 
-                       MPSImageReduceColumnSum, MPSImageReduceRowMax, MPSImageReduceRowMean, 
-                       MPSImageReduceRowMin, MPSImageReduceRowSum, MPSImageSobel, 
-                       MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
+                       MPSImageDilate, MPSImageDivide, MPSImageEDLines, MPSImageErode, 
+                       MPSImageEuclideanDistanceTransform, MPSImageFindKeypoints, 
+                       MPSImageGaussianBlur, MPSImageGaussianPyramid, MPSImageGuidedFilter, 
+                       MPSImageHistogram, MPSImageHistogramEqualization, MPSImageHistogramSpecification, 
+                       MPSImageIntegral, MPSImageIntegralOfSquares, MPSImageLanczosScale, 
+                       MPSImageLaplacian, MPSImageLaplacianPyramid, MPSImageLaplacianPyramidAdd, 
+                       MPSImageLaplacianPyramidSubtract, MPSImageMedian, MPSImageMultiply, 
+                       MPSImageNormalizedHistogram, MPSImageReduceColumnMax, MPSImageReduceColumnMean, 
+                       MPSImageReduceColumnMin, MPSImageReduceColumnSum, MPSImageReduceRowMax, 
+                       MPSImageReduceRowMean, MPSImageReduceRowMin, MPSImageReduceRowSum, 
+                       MPSImageSobel, MPSImageSpatioTemporalGuidedFilter, MPSImageSpatioTemporalGuidedFilterDescriptor, 
                        MPSImageStatisticsMean, MPSImageStatisticsMeanAndVariance, 
                        MPSImageStatisticsMinAndMax, MPSImageSubtract, MPSImageTent, 
                        MPSImageThresholdBinary, MPSImageThresholdBinaryInverse, MPSImageThresholdToZero, 
@@ -164,10 +164,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 6CF5BA4F-D91A-3701-9A0E-175BD27CB950', 'arm64e: F6CFDAF6-BD6A-3C6F-87EC-5526295706C5' ]
+                   'arm64: CB977B3D-A929-362A-9A59-A85BA312A392', 'arm64e: 13949ACA-C76B-357B-AB5F-F5EA7B81B37E' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ arm64, arm64e ]
     symbols:         [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
@@ -183,7 +183,7 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: 923DEFBC-3A70-3A4C-9D18-84624666624E', 'arm64e: 40A573CE-CD0E-3CE5-B57C-BE4A19CC7CD5' ]
+                   'arm64: 8A75D75A-84C4-39E0-BDF5-78136CEB73F1', 'arm64e: 2232F167-15BE-3E5C-B748-508268B6A68D' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray'
 exports:         
@@ -255,10 +255,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: C1683973-9AB1-326B-8903-A2E56F47B0DF', 'arm64e: 4E1043F2-8793-3DCE-AD8D-8BBADB44C0CB' ]
+                   'arm64: 4B7B42C8-4E25-3875-8D25-03BCAF4C695D', 'arm64e: A6AEE65A-A12E-3C1A-A3FF-B01821A959E2' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/MPSNeuralNetwork'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     allowable-clients: [ MetalPerformanceShaders ]
@@ -362,10 +362,10 @@ exports:
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 00000000-0000-0000-0000-000000000000', 'armv7s: 00000000-0000-0000-0000-000000000000', 
-                   'arm64: EB0CF9E9-2D06-3312-B4B2-49288E395775', 'arm64e: 4A3F3127-C36E-3212-8A48-187957EFCAB9' ]
+                   'arm64: 9D947816-460C-35E2-B072-E2D9B809D01B', 'arm64e: 1EB3313A-514E-37E7-9D70-1FDA86DFB261' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector'
-current-version: 122.2
+current-version: 122.5.5
 exports:         
   - archs:           [ armv7, armv7s, arm64, arm64e ]
     allowable-clients: [ MetalPerformanceShaders ]

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
-current-version:       1052.14
+current-version:       1052.33
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -16,8 +16,8 @@ exports:
                             _SGContactDetailTypeDescription,
                             _SGContactDetailTypeToEntityTypes,
                             _SGConvertUtf8ByteOffsetsToUtf16WordOffsets,
-                            _SGDBatteryMonitoringStart, _SGDCKEventReadFrom,
-                            _SGDCKInteractionInfoReadFrom,
+                            _SGCustomResponseCKPT, _SGDBatteryMonitoringStart,
+                            _SGDCKEventReadFrom, _SGDCKInteractionInfoReadFrom,
                             _SGDCKLocationReadFrom, _SGDCKTimeRangeReadFrom,
                             _SGDExit, _SGDIsConnectedToPower,
                             _SGDSetTrainingSourceRecoverer,
@@ -59,6 +59,7 @@ exports:
                             _SGM2ContactDetailSentReadFrom,
                             _SGM2ContactsInterfaceCacheCountReadFrom,
                             _SGM2ContactsInterfaceCacheHitReadFrom,
+                            _SGM2CustomResponsesHarvestReadFrom,
                             _SGM2FoundInMailModelScoreReadFrom,
                             _SGM2MailClientInMailAppReadFrom,
                             _SGM2PerfXPCLatencyReadFrom,
@@ -623,8 +624,8 @@ exports:
                             SGDHarvestQueueItemLegacy, SGDHarvestQueueItemOnDisk,
                             SGDHarvestQueueLegacy, SGDHarvestQueueNop,
                             SGDHarvestQueueOnDisk, SGDManagerForCTS,
-                            SGDNotificationBroadcaster, SGDPWordRecorder,
-                            SGDPluginManager, SGDPowerBudget,
+                            SGDNotificationBroadcaster, SGDPLogging,
+                            SGDPWordRecorder, SGDPluginManager, SGDPowerBudget,
                             SGDPowerBudgetThrottlingState, SGDPowerLog,
                             SGDSpotlightCommander, SGDSpotlightReceiver,
                             SGDSqlHarvestQueueStore, SGDSuggestManager,
@@ -658,6 +659,7 @@ exports:
                             SGM2ContactDetailExtraction, SGM2ContactDetailSent,
                             SGM2ContactsInterfaceCacheCount,
                             SGM2ContactsInterfaceCacheHit,
+                            SGM2CustomResponsesHarvest,
                             SGM2FoundInMailModelScore, SGM2MailClientInMailApp,
                             SGM2PerfXPCLatency,
                             SGM2SearchResultsIncludedPureSuggestion,
@@ -836,6 +838,8 @@ exports:
                             SGM2ContactsInterfaceCacheHit._cacheHit,
                             SGM2ContactsInterfaceCacheHit._has,
                             SGM2ContactsInterfaceCacheHit._key,
+                            SGM2CustomResponsesHarvest._customResponsesAfterPruning,
+                            SGM2CustomResponsesHarvest._has,
                             SGM2FoundInMailModelScore._contactDetail,
                             SGM2FoundInMailModelScore._correct,
                             SGM2FoundInMailModelScore._has,
