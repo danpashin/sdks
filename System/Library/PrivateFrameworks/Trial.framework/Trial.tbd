@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Trial.framework/Trial
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _LogCategory_ClientFramework,
+                            _TRINamespaceDescriptorDirectoryDefault,
+                            _TRINamespaceDescriptorDirectoryExperiment,
+                            _TRINamespaceDescriptorDirectoryRollout,
+                            _TRINamespaceUpdateNotificationName,
+                            _TrialVersionNumber, _TrialVersionString,
+                            _kRotationDateSecondsSinceReferenceDate ]
+    objc-classes:         [ TRIClient, TRIDefaultFactorProvider, TRILazyObject,
+                            TRILogTreatmentReader, TRILogger,
+                            TRINamespaceDescriptor, TRINamespaceFactorProvider,
+                            TRINamespaceFactorProviderChain,
+                            TRINamespaceUpdateNotification, TRINotificationToken,
+                            TRIStopwatch, TRISubjectProvider,
+                            TRISystemConfiguration, TRISystemInfo, TRITrackingId,
+                            TRITreatmentInfo ]
+...

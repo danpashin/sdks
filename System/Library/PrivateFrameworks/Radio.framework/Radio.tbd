@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Radio.framework/Radio
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _RadioAddStationRequestShareURLDictionaryKey,
+                            _RadioArtworkDictionaryHeightKey,
+                            _RadioArtworkDictionaryURLKey,
+                            _RadioArtworkDictionaryWidthKey,
+                            _RadioAvailabilityControllerRadioAvailableDidChangeNotification,
+                            _RadioGetArtworkURLFromVariantsForSize,
+                            _RadioNetworkObserverIsCellularNetworkingAllowedDidChangeNotification,
+                            _RadioNetworkObserverIsUsingNetworkDidChangeNotification,
+                            _RadioRecentStationsControllerStationsDidChangeNotification,
+                            _RadioRequestErrorCodeIsUserLockoutError,
+                            _RadioRequestErrorDomain,
+                            _RadioStationMatchLibraryTrackMetadataKindMusicVideo,
+                            _RadioStationMatchLibraryTrackMetadataKindSong,
+                            _RadioStationMatchLibraryTrackMetadataKindUploadedAudio,
+                            _RadioStationMatchLibraryTrackMetadataKindUploadedVideo,
+                            _RadioStoreBagDidLoadNotification ]
+    objc-classes:         [ RadioAddStationRequest, RadioArtwork,
+                            RadioArtworkCollection, RadioAvailabilityController,
+                            RadioGetFeaturedStationsRequest,
+                            RadioGetGenreTreeNodesRequest, RadioImageCache,
+                            RadioLoadStoreBagRequest, RadioModel,
+                            RadioMutableRecentStationsGroup,
+                            RadioMutableSeedMetadata, RadioNetworkObserver,
+                            RadioPushNotificationController,
+                            RadioRecentStationsController,
+                            RadioRecentStationsGroup, RadioRecentStationsRequest,
+                            RadioRecentStationsResponse,
+                            RadioRecentStationsResponseStationGroup,
+                            RadioRequest, RadioRequestContext, RadioSeedMetadata,
+                            RadioStation, RadioStationMatchContext,
+                            RadioStationMatchLibraryAlbumMetadata,
+                            RadioStationMatchLibraryArtistMetadata,
+                            RadioStationMatchLibraryTrackMetadata,
+                            RadioStationMatchMetadata,
+                            RadioStationMatchStoreMetadata, RadioStoreBag,
+                            RadioSyncRequest, RadioTermsCheckRequest ]
+...

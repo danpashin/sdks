@@ -1,0 +1,57 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SPOwner.framework/SPOwner
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _SPBeaconEstimatedLocationChangedNotification,
+                            _SPBeaconRoleIdUndefined,
+                            _SPBeaconTaskNameAcceptShare,
+                            _SPBeaconTaskNameBeginLeashing,
+                            _SPBeaconTaskNameBeginRanging,
+                            _SPBeaconTaskNameDeclineShare,
+                            _SPBeaconTaskNameDisableLostMode,
+                            _SPBeaconTaskNameDisableNotifyWhenFound,
+                            _SPBeaconTaskNameEnableLostMode,
+                            _SPBeaconTaskNameEnableNotifyWhenFound,
+                            _SPBeaconTaskNameEndLeashing,
+                            _SPBeaconTaskNameEndRanging,
+                            _SPBeaconTaskNameLocating,
+                            _SPBeaconTaskNamePlaySound,
+                            _SPBeaconTaskNameStartSharing,
+                            _SPBeaconTaskNameStopSharing,
+                            _SPBeaconTaskNameStopSound,
+                            _SPBeaconZoneCreationDateKey,
+                            _SPBeaconZoneCreationErrorCodeKey,
+                            _SPBeaconingStateChangedNotification,
+                            _SPBeaconsChangedNotification, _SPCommandErrorDomain,
+                            _SPDisabledReasonLowAccountSecurity,
+                            _SPDisabledReasonNone, _SPDisabledReasonUserOptOut,
+                            _SPDisabledReasoniCloudSignedOut,
+                            _SPEvaluateLocalBeaconingNotification,
+                            _SPLastKeyRollDateKey,
+                            _SPOwnerBeaconsChangedLocalNotification,
+                            _SPOwnerSessionErrorDomain,
+                            _SPPairingSessionErrorDomain, _SPSelfBeaconUUIDKey,
+                            _SPSelfBeaconingChangedNotification,
+                            _SPServiceSettingsChangedNotification,
+                            _SPServiceStateDisabled, _SPServiceStateEnabled,
+                            _SPSettingsServiceDisabledReasonsKey,
+                            _SPSettingsServiceStateKey,
+                            _SPSettingsSharedSuiteName ]
+    objc-classes:         [ SPBeacon, SPBeaconDescription, SPBeaconLocation,
+                            SPBeaconManager, SPBeaconRole, SPBeaconShare,
+                            SPBeaconTaskInformation, SPBeaconUpdates,
+                            SPBeaconingKey, SPCommand, SPCommandKeys, SPHandle,
+                            SPLocationAddress, SPLostModeInfo, SPMacBeaconConfig,
+                            SPObservationLocation, SPOwnerInterface,
+                            SPOwnerSession, SPPairingData, SPPairingManager,
+                            SPPairingSession, SPRawSearchResult, SPRole,
+                            SPSafeLocation, SPSettingsConfiguration,
+                            SPUnauthorizedTrackingAdvertisement,
+                            SPUnauthorizedTrackingObservation ]
+...

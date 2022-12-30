@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/IntentsServices.framework/IntentsServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _INSAssistantErrorDomain,
+                            _INSExtensionServiceTraceCompletionHandlerWithCode,
+                            _INSExtractPreferencesResponseFromMetricsContext,
+                            _INSGenerateMetricsContextUsingAppPreferenceResponse,
+                            _INSJSONEncodedIntent, _INSJSONEncodedIntentResponse,
+                            _INSJSONEncodedSlotResolutionResult,
+                            _INSShouldLoadNativeMessagesExtensionAsBundleKey,
+                            _INSSiriAceErrorDomain,
+                            _INSSiriSerializedUserActivityKey,
+                            _IntentsServicesVersionNumber,
+                            _IntentsServicesVersionString ]
+    objc-classes:         [ INSAnalytics, INSExtensionService ]
+...

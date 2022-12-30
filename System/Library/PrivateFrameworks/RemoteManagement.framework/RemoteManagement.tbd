@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteManagement.framework/RemoteManagement
+current-version:       2
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _RMAssetTypeAppStoreApp, _RMAssetTypeEnterpriseApp,
+                            _RMAssetTypeImage, _RMConfigurationTypeAccountMail,
+                            _RMConfigurationTypeApplicationManagement,
+                            _RMConfigurationTypeDeviceLockScreenMessage,
+                            _RMConfigurationTypeDeviceName,
+                            _RMConfigurationTypeManagementTest,
+                            _RMConfigurationTypeNetworkWiFi,
+                            _RMConfigurationTypePasscodeSettings,
+                            _RMConfigurationTypeSystemCamera,
+                            _RMConfigurationTypeWebClip, _RMErrorDomain,
+                            _RMHTTPStatusCodeKey, _RMStatusTypeDeviceName,
+                            _RMXPCMachServiceName ]
+    objc-classes:         [ RMAsset, RMAssetResolver, RMBundle, RMConfiguration,
+                            RMConfigurationAccount, RMConfigurationRepository,
+                            RMConfigurationSubscription, RMErrorUtilities,
+                            RMExtensionConfigurationSubscriber,
+                            RMExtensionContext, RMExtensionRequestHandler,
+                            RMExtensionStatusPublisher, RMLog, RMPolicy,
+                            RMPolicyStore, RMResolvedAsset, RMResolvedDataAsset,
+                            RMResolvedFileAsset, RMUnresolvedDataAsset,
+                            RMUnresolvedFileAsset, RMXPCProxy,
+                            RemoteManagement_Subsystem ]
+...

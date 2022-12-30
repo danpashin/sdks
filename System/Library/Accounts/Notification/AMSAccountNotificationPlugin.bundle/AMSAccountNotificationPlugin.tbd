@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Accounts/Notification/AMSAccountNotificationPlugin.bundle/AMSAccountNotificationPlugin
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AMSAccountNotificationPluginVersionNumber,
+                            _AMSAccountNotificationPluginVersionString,
+                            _AMSBagKeyAccountFlagsURL, _AMSBagKeyAuthenticateURL,
+                            _AMSBagKeyPrivacyAcknowledgementURL ]
+    objc-classes:         [ AMSAccountNotificationPlugin, AMSLogoutTask,
+                            AMSSyncAccountFlagsResult, AMSSyncAccountFlagsTask ]
+...

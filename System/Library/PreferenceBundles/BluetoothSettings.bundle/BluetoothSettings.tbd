@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/BluetoothSettings.bundle/BluetoothSettings
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _BTSUnregisterHealthDeviceNotification,
+                            _NotificationCallback, _createLowSecurityBody,
+                            _createLowSecurityTitle, _currentDevice,
+                            _sharedBluetoothSettingsLogComponent ]
+    objc-classes:         [ AccessoryControlListItemsController,
+                            BTAccessoryListeningModeControl, BTAlert,
+                            BTDeviceNameEditingController, BTLowSecurity,
+                            BTSDevice, BTSDeviceClassic, BTSDeviceConfigController,
+                            BTSDeviceLE, BTSDevicesController, BTSPairController,
+                            BTSPairSetup, BTSSPPairingRequest, BTTableCell,
+                            BTTableSharingCell, DevicesHeaderView ]
+    objc-ivars:           [ BTAccessoryListeningModeControl._buttonsAdded,
+                            BTAccessoryListeningModeControl._numModes,
+                            BTAccessoryListeningModeControl.listeningModeButtonsStackView,
+                            BTAlert._alert, BTAlert._delegate, BTAlert._device,
+                            BTSDeviceConfigController._aacpControlSpecifiers,
+                            BTSDeviceConfigController._ancsControlSpecifiers,
+                            BTSDeviceConfigController._controlGroupSpecifiers,
+                            BTSDeviceConfigController._device,
+                            BTSDeviceConfigController._dismissed,
+                            BTSDeviceConfigController._isWatch,
+                            BTSDeviceConfigController._lastSelectedSyncGroup,
+                            BTSDeviceConfigController._messagingEnabled,
+                            BTSDeviceConfigController._messagingSpecifiers,
+                            BTSDeviceConfigController._supportsMAP,
+                            BTSDeviceConfigController._syncContactsSpecifiers,
+                            BTSDeviceConfigController._syncGroupsSpecifiers,
+                            BTSDeviceConfigController._syncSettings,
+                            BTSPairController._device,
+                            BTSPairController._dismissed,
+                            BTSPairController._promptFormat,
+                            BTSSPPairingRequest._alert,
+                            BTSSPPairingRequest._delegate,
+                            BTSSPPairingRequest._device,
+                            BTSSPPairingRequest._pairingStyle,
+                            BTSSPPairingRequest._specifier ]
+...

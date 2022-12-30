@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/StarBoardServices.framework/StarBoardServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _NSStringFromHMEState,
+                            _SRPresentationAssestionServiceMachName,
+                            _SRSHMEStateFromString,
+                            _StarBoardServicesVersionNumber,
+                            _StarBoardServicesVersionString ]
+    objc-classes:         [ SRSPresentationAssertion,
+                            SRSPresentationAssertionService,
+                            SRSPresentationAssertionServiceSpecification,
+                            SRSService, SRSServiceController, SRSSessionController,
+                            SRSSessionService, SRSSessionServiceSpecification,
+                            SRSToolController, SRSToolService,
+                            SRSToolServiceSpecification ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SharingUI.framework/SharingUI
+current-version:       1447.19
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _SFAirDropActivityMaxPreviewsKey,
+                            _SFFontForTextStyleWithAdditionalSymbolicTraits,
+                            _SFImageStackFromImages, _SFRoundToScreen,
+                            _SFScaleAndRotateImage,
+                            _SFVisualEffectViewWrapperForView,
+                            _activityImageForCurrentTraitCollectionWithName ]
+    objc-classes:         [ SFAirDropActivityViewController,
+                            SFAirDropDiscoveryController, SFAirDropPayload,
+                            SFAirDropViewController, SFB332SetupObserver,
+                            SFCircleProgressView, SFHighlightButton,
+                            SFMediaPlayerView, SFPersonCollectionViewCell,
+                            SFPersonImageView, SFShareAudioViewController,
+                            SFSharedAudioDeviceInfo ]
+...

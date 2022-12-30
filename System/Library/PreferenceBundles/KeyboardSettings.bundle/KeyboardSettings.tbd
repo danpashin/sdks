@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/KeyboardSettings.bundle/KeyboardSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _EditUserWordShortcutDidUpdateNotification,
+                            _TICurrentShuangpinTypeUsesSemicolon,
+                            _TIFilteredLayoutsByCurrentShuangpinType,
+                            _TIGetCurrentShuangpinName,
+                            _TIGetCurrentShuangpinType,
+                            _TIGetShuangpinNameFromType, _TIGetShuangpinTypes,
+                            _TIInputModeIsChineseShuangpin,
+                            _TIKBAllIdentifiersKey, _TIKBIdentifiersKey,
+                            _TIKBRequestsOpenAccessKey,
+                            _TIUpdateShuangpinSWLayout, _kPinyinIdentifier,
+                            _kSWLayoutPrefixPinyin,
+                            _kSWLayoutPrefixShuangpinWithSemicolon,
+                            _kShuangpinIdentifier ]
+    objc-classes:         [ AddInputModeTableViewCell, DictationFooterView,
+                            EditUserWordController, KeyboardController,
+                            KeyboardSettingsBundleController,
+                            ListUserWordsController, SearchUserWordsController,
+                            TIAboutKeyboardPrivacyController,
+                            TIAddExtensionKeyboardController,
+                            TIAddKeyboardController,
+                            TIAddKeyboardLanguageListController,
+                            TIAddKeyboardLanguageListSetupController,
+                            TIDictationLanguageListController,
+                            TIFuzzyPinyinController, TIFuzzyPinyinPairTableCell,
+                            TIHardwareInputModeTableCell,
+                            TIHardwareKeyboardController,
+                            TIHardwareKeyboardDetailController,
+                            TIInputModeTableCell, TIKeyboardExtensionController,
+                            TIKeyboardListController,
+                            TIKeyboardListControllerTable,
+                            TISoftwareLayoutDetailControllerViewController,
+                            TIUserWordsManager, UIEditUserWordController ]
+    objc-ivars:           [ KeyboardController._needsReloadSpecifiers,
+                            KeyboardSettingsBundleController._specifier,
+                            ListUserWordsController._contentView,
+                            ListUserWordsController._noContentImage,
+                            ListUserWordsController._noContentLabel,
+                            ListUserWordsController._noWordsLabel,
+                            ListUserWordsController._propertiesToShow,
+                            ListUserWordsController._tableView,
+                            ListUserWordsController.filteredListContent,
+                            ListUserWordsController.savedSearchTerm,
+                            ListUserWordsController.searchIsActive ]
+...

@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PreferenceBundles/WirelessModemSettings.bundle/WirelessModemSettings
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _MISManagerStateChangedNotification,
+                            _WMSLogComponent, __wiFiDevicePowerCallback,
+                            _textPaddingVert ]
+    objc-classes:         [ BluetoothSetupView, FamilyHotspotSettingsController,
+                            HotspotClientUsageController, HotspotFamilyMember,
+                            MISManager, SetupView, TetheringSetupView,
+                            TetheringSwitchFooterView, USBSetupView,
+                            WiFiPasswordController, WiFiSetupView,
+                            WirelessModemBundleController,
+                            WirelessModemController ]
+    objc-ivars:           [ TetheringSwitchFooterView._labels ]
+...

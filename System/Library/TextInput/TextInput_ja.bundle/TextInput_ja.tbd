@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/TextInput/TextInput_ja.bundle/TextInput_ja
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    objc-classes:         [ Romakana, TICandidateSorter,
+                            TIKeyboardFeatureSpecialization_ja,
+                            TIKeyboardInputManager_ja,
+                            TIKeyboardInputManager_ja_Kana,
+                            TIKeyboardInputManager_ja_Romaji,
+                            TIWordSearch3x3Kana, TIWordSearch50onKana,
+                            TIWordSearchJapaneseOperationGetCandidates,
+                            TIWordSearchKana, TIWordSearchRomajiKana ]
+    objc-ivars:           [ Romakana._consonantsCharacterSet,
+                            TIKeyboardInputManager_ja._kbws,
+                            TIKeyboardInputManager_ja._remainingInputLength,
+                            TIKeyboardInputManager_ja._shouldLearnAcceptedCandidate ]
+...

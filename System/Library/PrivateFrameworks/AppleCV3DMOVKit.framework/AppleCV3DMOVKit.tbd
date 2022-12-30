@@ -1,0 +1,40 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleCV3DMOVKit.framework/AppleCV3DMOVKit
+current-version:       2.57.4
+compatibility-version: 2.57.4
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CVPixelBufferAttachmentIntrinsicsKey, _dummy,
+                            _kAVCaptureDeviceTypeBuiltInSuperWideAngleCamera,
+                            _kAVCaptureDeviceTypeBuiltInUltraWideCamera,
+                            _kAVMetadataIdentifierMovieSummary,
+                            _kAVMetadataIdentifierRecordingEnvironment,
+                            _kCVAFeatureBufferIdentifierValue,
+                            _kCVAPRDeviceIdentifierValue,
+                            _kCVAUserEventIdentifierValue,
+                            _kCameraExposureTimeKey,
+                            _kCoreLocationIdentifierValue,
+                            _kIMUMotionIdentifierValue, _kMOVSummaryBundleID,
+                            _kMOVSummaryBundleID_1_0_0, _kMOVSummaryDeviceName,
+                            _kMOVSummaryDeviceString,
+                            _kMOVSummaryDeviceString_1_0_0,
+                            _kMOVSummaryMOVKitVersion, _kMOVSummaryProductType,
+                            _kMOVSummarySerialNumber, _kMOVSummaryVersion,
+                            _kRawAccelerometerIdentifierValue,
+                            _kRawGyroscopeIdentifierValue, _kTrackAdded,
+                            _kTrackBitrate, _kTrackForceH264, _kTrackLossless,
+                            _kWrapperClassData ]
+    objc-classes:         [ CMData, CMDataContainer, CMEvent, CMFileInterface,
+                            CMMessage, CVACLLocation, CVACLMotionTypeDoubleVector4,
+                            CVACLMotionTypeVector3, CVACMAccelerometerData,
+                            CVACMDeviceMotionData, CVACMGyroData,
+                            CVACMMotionTypeDeviceMotionData, CVAFeatureBuffer,
+                            CVAPRAngleMeasurement, CVAPRDevice,
+                            CVAPRRangeMeasurement, CVAUserEvent,
+                            MOVReaderInterface, MOVWriterInterface,
+                            MetadataWrapper, TimedBuffer ]
+...

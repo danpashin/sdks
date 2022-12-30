@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/AccessibilityBundles/LinkPresentation.axbundle/LinkPresentation
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ __Failover, _accessibilityLocalizedString ]
+    objc-classes:         [ AXLinkPresentationGlue, LPLinkViewAccessibility,
+                            LPTextViewAccessibility,
+                            __LPLinkViewAccessibility_super,
+                            __LPTextViewAccessibility_super ]
+...

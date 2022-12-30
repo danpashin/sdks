@@ -1,0 +1,30 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SensorKitUI.framework/SensorKitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _SRAuthorizationAllServices,
+                            _SRAuthorizationGroupForService,
+                            _SRAuthorizationGroupToServiceIdentifierMap,
+                            _SRErrorDomain, _SRLocalizationIdentifier,
+                            _SRLocalizedDescriptionForAuthorizationGroup,
+                            _SRLocalizedDescriptionForSensor,
+                            _SRLocalizedNameForAuthorizationGroup,
+                            _SRLocalizedNameForSensor,
+                            _SRRealCategoryToInfoPlistAuthCategory,
+                            _SensorKitUIVersionNumber, _SensorKitUIVersionString,
+                            _kTCCOverrideDummyBundleId ]
+    objc-classes:         [ SRAppInfoPlistHelper, SRAppUsageCell,
+                            SRAuthorizationCategoryDetailCell,
+                            SRAuthorizationCategoryGroupViewController,
+                            SRAuthorizationCell, SRAuthorizationCommonUI,
+                            SRAuthorizationPromptPresentationController,
+                            SRAuthorizationStore, SRError,
+                            SRRemoteAuthorizationPromptViewController,
+                            SRSampleViewController ]
+...
