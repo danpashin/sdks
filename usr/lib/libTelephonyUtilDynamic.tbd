@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E84E0346-EAA1-3332-886F-6F8ED4906473
   - target:          arm64-ios
-    value:           E47A9E7E-2383-38FD-AC0D-B53EBCAFAE05
+    value:           6C5FA600-C809-318D-9256-274343735F83
   - target:          arm64e-ios
-    value:           5A9D29CF-F052-3CD9-B6DB-A5763611B94F
+    value:           2260AB37-EC0B-3142-A16B-56E2647643A0
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -349,6 +349,7 @@ exports:
                        _TelephonyCapabilitiesRadioBBTraceVersion2Supported, _TelephonyCapabilitiesRadioC2kDevice, 
                        _TelephonyCapabilitiesRadioCoreDumpCaptureTime, _TelephonyCapabilitiesRadioCoreDumpCommandTimeout, 
                        _TelephonyCapabilitiesRadioCoreDumpGetCoreDumpInterface, _TelephonyCapabilitiesRadioCoreDumpGetPersonality, 
+                       _TelephonyCapabilitiesRadioCoreDumpRecoveryForControlMessageTimeout, 
                        _TelephonyCapabilitiesRadioCoreDumpSupportsGPIOSignalling, 
                        _TelephonyCapabilitiesRadioCoredumpCommandTimeout, _TelephonyCapabilitiesRadioCoredumpSupportsGPIOSignalling, 
                        _TelephonyCapabilitiesRadioDIAGDiagVersion, _TelephonyCapabilitiesRadioDIAGDrainTimerSupported, 
@@ -370,9 +371,9 @@ exports:
                        _TelephonyCapabilitiesRadioGetChipID, _TelephonyCapabilitiesRadioGetCoreDumpInterface, 
                        _TelephonyCapabilitiesRadioGetFirmwarePath, _TelephonyCapabilitiesRadioGetFirmwarePathSuffix, 
                        _TelephonyCapabilitiesRadioGetFirmwarePrefix, _TelephonyCapabilitiesRadioGetPacketFilteringVersion, 
-                       _TelephonyCapabilitiesRadioGetSafeResetTime, _TelephonyCapabilitiesRadioGetStartupMode, 
-                       _TelephonyCapabilitiesRadioHSICGetBootedProductID, _TelephonyCapabilitiesRadioHSICGetBootedProductIDs, 
-                       _TelephonyCapabilitiesRadioHSICGetDefaultRecoveryTimeoutSeconds, 
+                       _TelephonyCapabilitiesRadioGetQMuxPendingRequestsLimit, _TelephonyCapabilitiesRadioGetSafeResetTime, 
+                       _TelephonyCapabilitiesRadioGetStartupMode, _TelephonyCapabilitiesRadioHSICGetBootedProductID, 
+                       _TelephonyCapabilitiesRadioHSICGetBootedProductIDs, _TelephonyCapabilitiesRadioHSICGetDefaultRecoveryTimeoutSeconds, 
                        _TelephonyCapabilitiesRadioHSICGetEnumerationErrorRetries, 
                        _TelephonyCapabilitiesRadioHSICGetFlushTimers, _TelephonyCapabilitiesRadioHSICGetIdleDisconnectTime, 
                        _TelephonyCapabilitiesRadioHSICGetNumControlChannels, _TelephonyCapabilitiesRadioHSICGetNumberResumeRetries, 
@@ -393,7 +394,8 @@ exports:
                        _TelephonyCapabilitiesRadioRemoteFilesystemSupported, _TelephonyCapabilitiesRadioSupportsBasebandStateController, 
                        _TelephonyCapabilitiesRadioSupportsDataService, _TelephonyCapabilitiesRadioSupportsFlashless, 
                        _TelephonyCapabilitiesRadioSupportsGetWakeReasonV2, _TelephonyCapabilitiesRadioSupportsMultiClientAWD, 
-                       _TelephonyCapabilitiesRadioSupportsSDIReset, _TelephonyCapabilitiesRadioTxPowerAntennaFreeSpaceConfigSupported, 
+                       _TelephonyCapabilitiesRadioSupportsQMuxSendWindow, _TelephonyCapabilitiesRadioSupportsSDIReset, 
+                       _TelephonyCapabilitiesRadioTxPowerAntennaFreeSpaceConfigSupported, 
                        _TelephonyCapabilitiesRadioTxPowerAudioJackReportSupported, 
                        _TelephonyCapabilitiesRadioTxPowerAudioSpeakerSupported, _TelephonyCapabilitiesRadioTxPowerConfigSupported, 
                        _TelephonyCapabilitiesRadioTxPowerControlInputSupported, _TelephonyCapabilitiesRadioTxPowerDelayProximityTimeoutResetSupported, 

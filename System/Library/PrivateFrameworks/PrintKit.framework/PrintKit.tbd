@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
-current-version:       253
+current-version:       253.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -104,7 +104,11 @@ exports:
                             __ippFindOption, __liteDrawImageToSheet,
                             __lite_page_transform, __pk_mdns_queryTxtSynchronous,
                             __pk_mdns_reconfirm, __pk_mdns_resolveSynchronous,
-                            __pwgMediaNearSize, __pwgMediaTable, __urfSetLineSize,
+                            __pwgMediaNearSize, __pwgMediaTable,
+                            __srv_cupsDoProxyRequest,
+                            __srv_mdns_queryTxtSynchronous, __srv_mdns_reconfirm,
+                            __srv_mdns_resolveSynchronous, __srv_proxyClose,
+                            __srv_proxyConnectHTTP, __urfSetLineSize,
                             __urfSetStats, _copyMatchingCerts, _cupsAddDest,
                             _cupsAddDestMediaOptions, _cupsAddIntegerOption,
                             _cupsAddOption, _cupsArrayAdd, _cupsArrayClear,

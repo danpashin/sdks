@@ -8,10 +8,18 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PCXPCServiceName, _ProximityControlVersionNumber,
-                            _ProximityControlVersionString ]
-    objc-classes:         [ PCCLIClient, PCDisambiguationContext, PCDisplayContext,
-                            PCHomeKitIdentifier, PCMediaRemoteDisplayContext,
-                            PCProgressEvent, PCProximityEvent,
-                            PCRemoteActivityClient ]
+    symbols:              [ _PCFrameworkBundleIdentifier, _PCXPCServiceName,
+                            _ProximityControlVersionNumber,
+                            _ProximityControlVersionString,
+                            _kProximityControlAlarmActivityType,
+                            _kProximityControlCallActivityType,
+                            _kProximityControlMediaActivityType,
+                            _kProximityControlTimerActivityType ]
+    objc-classes:         [ PCActivityUtility, PCAlarmActivity, PCCLIClient,
+                            PCDisambiguationContext, PCDisplayContext,
+                            PCHomeKitIdentifier, PCLocalizedString,
+                            PCMediaActivity, PCMediaRemoteDisplayContext,
+                            PCMediaRemoteIdentifier, PCProgressEvent,
+                            PCProximityEvent, PCRemoteActivityClient,
+                            PCTelephonyActivity, PCTimerActivity ]
 ...

@@ -8,10 +8,12 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ OspreyChannel, OspreyConnectionMetrics,
+    objc-classes:         [ OspreyChannel, OspreyConnectionConfiguration,
+                            OspreyConnectionMetrics, OspreyConnectionPool,
                             OspreyConnectionPreferences,
                             OspreyGRPCStreamingContext, OspreyKeychain,
                             OspreyMessageProducer, OspreyMethodCall,
                             OspreyMutableRequest, OspreyPreferences, OspreyRequest,
-                            OspreyService, OspreyUnaryMethodCall ]
+                            OspreyService, OspreyServiceConfiguration,
+                            OspreyUnaryMethodCall ]
 ...

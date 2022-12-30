@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           CD8B460A-0F51-38B5-9DFB-DED80B238703
   - target:          arm64-ios
-    value:           62CFA68A-3A9D-3575-9DC0-48B6B1AC99CF
+    value:           152A71F4-0F10-3DE5-9A7F-A673BF96B023
   - target:          arm64e-ios
-    value:           C55FA504-819C-3F8D-ADA2-7606D3280CBA
+    value:           37501144-205A-386B-B429-36F2D10D0DAF
 install-name:    '/usr/lib/libSystem.B.dylib'
-current-version: 1292
+current-version: 1292.60.1
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/usr/lib/system/libkeymgr.dylib', '/usr/lib/system/libsystem_coretls.dylib', 
@@ -49,9 +49,9 @@ uuids:
   - target:          armv7s-ios
     value:           7E1F8D6D-A166-37E6-8E52-FAE288FFE811
   - target:          arm64-ios
-    value:           93F46DE3-34C8-3B54-8E87-B685E63149E7
+    value:           5C4AC308-04A3-3C62-9E34-BA81450F9532
   - target:          arm64e-ios
-    value:           B99EFABB-0EEC-35E1-B3D2-2B8F9786335F
+    value:           E8008B66-F5E9-3D40-A485-FC01E4005DE8
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83
 parent-umbrella:
@@ -81,9 +81,9 @@ uuids:
   - target:          armv7s-ios
     value:           0055E658-E557-3C3E-B05C-661E1DEB2F44
   - target:          arm64-ios
-    value:           163C756F-A441-3BB7-B2CA-067463D98526
+    value:           ADFF8F05-C3DD-398C-AFEF-12741670B2A4
   - target:          arm64e-ios
-    value:           CEE070EB-C8BE-388A-A678-7366A3C26EB4
+    value:           2642DB07-006D-3E4D-A311-AAA8A3765AA3
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
 current-version: 60178.40.2
 parent-umbrella:
@@ -177,9 +177,9 @@ uuids:
   - target:          armv7s-ios
     value:           182FACEE-469E-3B9E-ACFB-DCAD641E7FF0
   - target:          arm64-ios
-    value:           6749DF43-8089-311B-939A-87F9CA479EFD
+    value:           BCA759CA-335A-35B7-A62D-B36AA605EA22
   - target:          arm64e-ios
-    value:           94009075-862D-3374-81EB-C6CE2F19C920
+    value:           11006AB7-252C-3428-8B4B-B752D35170B3
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 102.3
 parent-umbrella:
@@ -731,9 +731,9 @@ uuids:
   - target:          armv7s-ios
     value:           24E8017B-F649-395F-9AFE-530BF82F1504
   - target:          arm64-ios
-    value:           5EA5D77A-EBC9-3045-9A3C-CF1838E73C6B
+    value:           2FBB177F-95FF-316E-9BD7-1AF630AA2F2F
   - target:          arm64e-ios
-    value:           BE954C55-CB06-3214-862F-EE46429C1851
+    value:           C0AC35BC-1FA6-375F-BC02-457FC85BF2F1
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -754,11 +754,11 @@ uuids:
   - target:          armv7s-ios
     value:           D998CF6C-EDE6-35A4-9CB0-FEC4DA22454D
   - target:          arm64-ios
-    value:           071F7A20-1CF6-3247-83D7-D4E309A64C16
+    value:           71981BCD-68F7-3621-AA73-CE429E27B119
   - target:          arm64e-ios
-    value:           8E5A940B-E1F2-393F-98FB-3C11CA9D7AF1
+    value:           E8F7626F-8A8A-3E65-B83B-2400DD8344D8
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 1000.40.21
+current-version: 1000.62.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -795,18 +795,22 @@ exports:
                        _ccaes_ltc_ecb_encrypt_mode, _ccaes_ofb_crypt_mode, _ccaes_siv_decrypt_mode, 
                        _ccaes_siv_encrypt_mode, _ccaes_siv_hmac_sha256_decrypt_mode, 
                        _ccaes_siv_hmac_sha256_encrypt_mode, _ccaes_unwind, _ccaes_xts_decrypt_mode, 
-                       _ccaes_xts_encrypt_mode, _ccansikdf_x963, _ccblowfish_cbc_decrypt_mode, 
-                       _ccblowfish_cbc_encrypt_mode, _ccblowfish_cfb8_decrypt_mode, 
-                       _ccblowfish_cfb8_encrypt_mode, _ccblowfish_cfb_decrypt_mode, 
-                       _ccblowfish_cfb_encrypt_mode, _ccblowfish_ctr_crypt_mode, 
-                       _ccblowfish_ecb_decrypt_mode, _ccblowfish_ecb_encrypt_mode, 
-                       _ccblowfish_ofb_crypt_mode, _cccast_cbc_decrypt_mode, _cccast_cbc_encrypt_mode, 
-                       _cccast_cfb8_decrypt_mode, _cccast_cfb8_encrypt_mode, _cccast_cfb_decrypt_mode, 
-                       _cccast_cfb_encrypt_mode, _cccast_ctr_crypt_mode, _cccast_ecb_decrypt_mode, 
-                       _cccast_ecb_encrypt_mode, _cccast_ofb_crypt_mode, _cccbc_one_shot, 
-                       _ccchacha20, _ccchacha20_final, _ccchacha20_init, _ccchacha20_reset, 
-                       _ccchacha20_setcounter, _ccchacha20_setnonce, _ccchacha20_update, 
-                       _ccchacha20poly1305_aad, _ccchacha20poly1305_decrypt, _ccchacha20poly1305_decrypt_oneshot, 
+                       _ccaes_xts_encrypt_mode, _ccansikdf_x963, _ccapsic_client_check_intersect_response, 
+                       _ccapsic_client_generate_match_response, _ccapsic_client_init, 
+                       _ccapsic_client_state_sizeof, _ccapsic_server_determine_intersection, 
+                       _ccapsic_server_encode_element, _ccapsic_server_init, _ccapsic_server_state_sizeof, 
+                       _ccblowfish_cbc_decrypt_mode, _ccblowfish_cbc_encrypt_mode, 
+                       _ccblowfish_cfb8_decrypt_mode, _ccblowfish_cfb8_encrypt_mode, 
+                       _ccblowfish_cfb_decrypt_mode, _ccblowfish_cfb_encrypt_mode, 
+                       _ccblowfish_ctr_crypt_mode, _ccblowfish_ecb_decrypt_mode, 
+                       _ccblowfish_ecb_encrypt_mode, _ccblowfish_ofb_crypt_mode, 
+                       _cccast_cbc_decrypt_mode, _cccast_cbc_encrypt_mode, _cccast_cfb8_decrypt_mode, 
+                       _cccast_cfb8_encrypt_mode, _cccast_cfb_decrypt_mode, _cccast_cfb_encrypt_mode, 
+                       _cccast_ctr_crypt_mode, _cccast_ecb_decrypt_mode, _cccast_ecb_encrypt_mode, 
+                       _cccast_ofb_crypt_mode, _cccbc_one_shot, _ccchacha20, _ccchacha20_final, 
+                       _ccchacha20_init, _ccchacha20_reset, _ccchacha20_setcounter, 
+                       _ccchacha20_setnonce, _ccchacha20_update, _ccchacha20poly1305_aad, 
+                       _ccchacha20poly1305_decrypt, _ccchacha20poly1305_decrypt_oneshot, 
                        _ccchacha20poly1305_encrypt, _ccchacha20poly1305_encrypt_oneshot, 
                        _ccchacha20poly1305_finalize, _ccchacha20poly1305_incnonce, 
                        _ccchacha20poly1305_info, _ccchacha20poly1305_init, _ccchacha20poly1305_reset, 
@@ -859,8 +863,9 @@ exports:
                        _ccec_compact_export, _ccec_compact_export_pub, _ccec_compact_generate_key, 
                        _ccec_compact_import_priv, _ccec_compact_import_priv_size, 
                        _ccec_compact_import_pub, _ccec_compact_import_pub_size, _ccec_compact_transform_key, 
-                       _ccec_compute_key, _ccec_cp_192, _ccec_cp_224, _ccec_cp_256, 
-                       _ccec_cp_384, _ccec_cp_521, _ccec_curve_for_length_lookup, 
+                       _ccec_compressed_x962_export_pub, _ccec_compressed_x962_export_pub_size, 
+                       _ccec_compressed_x962_import_pub, _ccec_compute_key, _ccec_cp_192, 
+                       _ccec_cp_224, _ccec_cp_256, _ccec_cp_384, _ccec_cp_521, _ccec_curve_for_length_lookup, 
                        _ccec_der_export_diversified_pub, _ccec_der_export_diversified_pub_size, 
                        _ccec_der_export_priv, _ccec_der_export_priv_size, _ccec_der_import_diversified_pub, 
                        _ccec_der_import_priv, _ccec_der_import_priv_keytype, _ccec_diversify_min_entropy_len, 
@@ -998,9 +1003,9 @@ uuids:
   - target:          armv7s-ios
     value:           5F9FCD5D-9EF7-3609-A4D2-C3B31982E7A3
   - target:          arm64-ios
-    value:           6C143C51-288F-3CD0-84DD-17B9A0AAEE62
+    value:           04B54A98-8EAD-371E-8C12-AD116CB118E2
   - target:          arm64e-ios
-    value:           3277BF1E-B994-3609-9B30-E0186BBF3C25
+    value:           0F3905E0-6720-3D08-9AE0-A43A8DA244C0
 install-name:    '/usr/lib/system/libdispatch.dylib'
 current-version: 1271.40.12
 parent-umbrella:
@@ -1196,9 +1201,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD69BD0A-55C7-3DDF-B179-CA8A6109B4B8
   - target:          arm64-ios
-    value:           E31C0887-C999-3047-9B80-203248EC2396
+    value:           FC5D448B-5EE3-3786-86E7-CCE6C21A212B
   - target:          arm64e-ios
-    value:           BA60CB9E-95C5-3646-BEED-D313E15586CF
+    value:           785BEE7F-AC2C-388D-865C-36279D1B3DD1
 install-name:    '/usr/lib/system/libdyld.dylib'
 current-version: 828.5
 parent-umbrella:
@@ -1254,9 +1259,9 @@ uuids:
   - target:          armv7s-ios
     value:           AFEF8B9F-347B-3B89-B1D3-0EDD209301FE
   - target:          arm64-ios
-    value:           A0B8F064-A9EE-310E-8B97-6E27F49A05F2
+    value:           4A07D8CB-A22C-3895-94AD-3B9EB47D343E
   - target:          arm64e-ios
-    value:           910B87C7-FFBC-3870-AD49-2C33C6BAC42F
+    value:           533EC8C5-AADE-3DEB-AAD3-AB3A13505298
 install-name:    '/usr/lib/system/liblaunch.dylib'
 current-version: 2038.40.38
 parent-umbrella:
@@ -1314,9 +1319,9 @@ uuids:
   - target:          armv7s-ios
     value:           01731FC8-474E-3997-8C53-D2A503B5F2B8
   - target:          arm64-ios
-    value:           863174FC-6466-3104-ACA3-8D1D4A82D075
+    value:           5978CF71-D648-328B-A850-433C9649F418
   - target:          arm64e-ios
-    value:           6135FD25-7D29-3340-B73A-89F4F47BEBC0
+    value:           FF7EC7BE-2E07-3304-A6B6-71F5443105F3
 install-name:    '/usr/lib/system/libmacho.dylib'
 current-version: 973.0.1
 parent-umbrella:
@@ -1371,9 +1376,9 @@ uuids:
   - target:          armv7s-ios
     value:           3015797A-CD33-3DFE-A768-30AD28634889
   - target:          arm64-ios
-    value:           FC34EEC2-B901-3EBB-BC31-E73F38842B70
+    value:           E17CBEC5-AB49-32C5-A1C2-FA2BC56F1043
   - target:          arm64e-ios
-    value:           E8844FD6-E768-3D86-91CA-E8FCDF998BE6
+    value:           57A84695-3C1C-3FD0-88D1-306786BCFF80
 install-name:    '/usr/lib/system/libremovefile.dylib'
 current-version: 49.40.3
 parent-umbrella:
@@ -1397,9 +1402,9 @@ uuids:
   - target:          armv7s-ios
     value:           14D03741-B281-3689-9A5E-4B657E825EFE
   - target:          arm64-ios
-    value:           441ADB81-097F-31D6-A85D-380A72993D66
+    value:           A44BF9EC-0BA2-33A7-9D9E-73A9F229A395
   - target:          arm64e-ios
-    value:           AAF99DE1-C3B7-3654-ADF0-D1E1873D4F0F
+    value:           7EFA85EA-F058-3CC1-97FA-18FAE89C68E0
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 385
 parent-umbrella:
@@ -1486,9 +1491,9 @@ uuids:
   - target:          armv7s-ios
     value:           B6B9673C-843E-3D2D-8EAD-DA86DE4A3E5C
   - target:          arm64-ios
-    value:           BC8AFA7D-401E-35F7-89E8-9E7A59AEF82B
+    value:           090B4C9C-0782-3249-B5B3-53484501F777
   - target:          arm64e-ios
-    value:           0264EB22-80A7-34BB-8922-8396234AE825
+    value:           460D7D6F-783A-3E58-8E34-DEC38EAE1938
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 78
 parent-umbrella:
@@ -1513,9 +1518,9 @@ uuids:
   - target:          armv7s-ios
     value:           E55FF556-683B-3CE5-BE62-D25F242213BB
   - target:          arm64-ios
-    value:           EDF3E843-A62A-3DD0-92CC-EBE94D5A83E3
+    value:           ABF42B71-753F-3C1C-8184-960651EB9CC6
   - target:          arm64e-ios
-    value:           41D8B3B5-2007-3B5C-8291-CE0CE64AF7C0
+    value:           CA117552-E721-3C86-96A2-213AFD7B7D57
 install-name:    '/usr/lib/system/libsystem_c.dylib'
 current-version: 1439.40.11
 parent-umbrella:
@@ -1807,9 +1812,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           828126F3-E658-3DA2-ACEA-C728678588DE
+    value:           0C3C8D0F-246F-303A-82D2-19A11DA48FAD
   - target:          arm64e-ios
-    value:           511397D6-9295-31AE-A7E0-A3DD5EB3DD22
+    value:           6BBBBBEF-813D-3FE4-9801-8CA5A772E7AD
 install-name:    '/usr/lib/system/libsystem_collections.dylib'
 current-version: 1439.40.11
 parent-umbrella:
@@ -1835,11 +1840,11 @@ uuids:
   - target:          armv7s-ios
     value:           7D81C3C1-C07E-3B9D-8475-88832EC110A9
   - target:          arm64-ios
-    value:           27DB1D5D-6075-30BF-888E-DCA2C13E80EF
+    value:           F821866B-715C-3A87-9F8D-94CCF995A8BF
   - target:          arm64e-ios
-    value:           C8890758-B4C4-3EC0-8D5F-228C22086258
+    value:           0C1135CE-B3F7-3AF2-80DC-4C5F0683687E
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1109.40.9
+current-version: 1109.60.2
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1870,9 +1875,9 @@ uuids:
   - target:          armv7s-ios
     value:           737BDF97-AD23-38E4-8447-7BFEDDFBC8DD
   - target:          arm64-ios
-    value:           CB5192CE-591F-3BB8-BC45-5646BB298477
+    value:           A2C610BE-0B7C-3B6C-BEF3-F7389ABD8855
   - target:          arm64e-ios
-    value:           A88E3AA2-0257-3530-AF6B-78E2F95B91D1
+    value:           FCC1A0A9-FEF7-3D0A-A26C-F14C40C7018B
 install-name:    '/usr/lib/system/libsystem_containermanager.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -1934,9 +1939,9 @@ uuids:
   - target:          armv7s-ios
     value:           C173D0E3-586D-31D8-9832-6828B5188A39
   - target:          arm64-ios
-    value:           B3A52AD6-13A8-3868-AB48-5B08B9C8FA23
+    value:           E2336A6F-B3EB-37A8-9C02-D9524601B878
   - target:          arm64e-ios
-    value:           C9EB71E0-DF21-33E2-8FB7-046A81AF5A76
+    value:           0A689C1F-686E-3643-8D53-B96905739505
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 125.2
 parent-umbrella:
@@ -1960,9 +1965,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E5BEC594-B464-3527-B60E-F752CB6E3386
+    value:           8B686231-F6D4-3782-8999-91ADAFCAB966
   - target:          arm64e-ios
-    value:           3811E6BC-768D-37D3-AB92-8AF58F302DD9
+    value:           79C4ABEC-DB93-344B-AF91-77D91DDC7A64
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -1999,11 +2004,11 @@ uuids:
   - target:          armv7s-ios
     value:           09688D44-95A5-36A2-A5AC-C291B9D546AD
   - target:          arm64-ios
-    value:           E4268FDD-91B5-3139-9454-6631865C32CA
+    value:           88A0EA7C-4737-3C07-9D0B-BB0D9E58F04B
   - target:          arm64e-ios
-    value:           BD2172E5-7BA2-3066-B1A5-8309A3FE23C0
+    value:           0BA7DB32-BD5E-3E05-A500-C78112B5F2C6
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
-current-version: 1310.40.42
+current-version: 1310.60.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2038,11 +2043,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           1E7CD17E-B528-3B85-BF4A-27E1AA8DFA3E
+    value:           EB75A028-2484-377D-BD47-89E62C9D79F9
   - target:          arm64e-ios
-    value:           D87DF8C1-AA82-3899-9BE5-49F6F7A523AC
+    value:           9276D111-4990-3A06-8474-C9051685B4D5
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
-current-version: 28.40.2
+current-version: 28.60.1
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2058,9 +2063,9 @@ uuids:
   - target:          armv7s-ios
     value:           1AB16714-C54D-3A29-8D84-B8E786898BA6
   - target:          arm64-ios
-    value:           3536D46D-36CD-3AF4-B92C-67E4BDEBD8C6
+    value:           C8BFB9C9-6318-3796-B80F-5936E5F9A4D3
   - target:          arm64e-ios
-    value:           952B8888-3AAE-33C0-A532-3871881DA0AE
+    value:           076D8DED-D18B-3E41-B7B6-B644C60CFA44
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2221,11 +2226,11 @@ uuids:
   - target:          armv7s-ios
     value:           68FA1096-7323-3338-81A3-0CA2EB1240AA
   - target:          arm64-ios
-    value:           810291C2-281D-31CE-BEAE-C2FFDAEE5F9F
+    value:           70F0BF28-5A58-32C7-B85E-ED47A2216291
   - target:          arm64e-ios
-    value:           F4D85377-F215-3DA3-921E-3FE870E622E9
+    value:           95C83DA7-B2CA-3C43-BA7F-7088C04DE757
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
-current-version: 7195.40.143
+current-version: 7195.62.1
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2677,9 +2682,9 @@ uuids:
   - target:          armv7s-ios
     value:           93E03298-413E-3EBF-9A20-76DDBD3A9E4C
   - target:          arm64-ios
-    value:           DEDEEC34-1F9E-3964-A5FF-79CDDC6A811E
+    value:           3A0CB1F1-46AF-3B9F-B3DB-65AEE5DD0EA5
   - target:          arm64e-ios
-    value:           588D2652-EA2D-38CA-87DA-2ABD2D4D2A13
+    value:           14E5EE34-A36E-3891-B4C2-D42CDC33511E
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3186.40.3
 parent-umbrella:
@@ -2775,9 +2780,9 @@ uuids:
   - target:          armv7s-ios
     value:           B732D518-10FE-38C1-8874-BA49BA81DB70
   - target:          arm64-ios
-    value:           9F2D3D46-83D9-358F-972C-1CF61C073A31
+    value:           6DFD20B2-41D1-3689-B016-07374D3FB040
   - target:          arm64e-ios
-    value:           CFAE13F0-5B0A-3CE5-B3D2-C2F7276C1FE1
+    value:           DD80EBFD-9727-3ACE-97C1-84F53EAED689
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
 current-version: 317.40.8
 parent-umbrella:
@@ -2841,9 +2846,9 @@ uuids:
   - target:          armv7s-ios
     value:           20DA5438-E7CF-34E3-B964-17CC383FE077
   - target:          arm64-ios
-    value:           0E557735-57BA-3611-994C-E782F3CBFE75
+    value:           297E446A-BCE8-3A85-BD6C-2551810E37ED
   - target:          arm64e-ios
-    value:           24D587DF-9DB9-373F-A182-9C6C5F69FBC8
+    value:           DBC568BD-3B06-35F6-96A9-FE6D2418A47F
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2918,9 +2923,9 @@ uuids:
   - target:          armv7s-ios
     value:           120E1144-53F4-3E0F-95D9-6586A061F349
   - target:          arm64-ios
-    value:           4DBD2E3E-6BC4-3D13-88D0-E01BA0CC4E07
+    value:           8E01F099-22FB-37AC-8960-12132058A2B6
   - target:          arm64e-ios
-    value:           94A64F0E-93BC-34A4-9DA7-50227BB11E7D
+    value:           7A1B577F-2D85-3B1D-BC32-B48B6895BAEE
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 279.40.4
 exports:
@@ -2976,9 +2981,9 @@ uuids:
   - target:          armv7s-ios
     value:           D0FF48E9-F969-3DED-8D50-C193173C82BC
   - target:          arm64-ios
-    value:           ABB790D3-1875-3996-AAEE-06E7568EA1C9
+    value:           2B25322B-286E-3302-9D09-0CD510D369B4
   - target:          arm64e-ios
-    value:           73F3E459-0F82-3377-A7D1-EF05CAE41C0A
+    value:           AD029366-1E30-32CD-8E4C-A025B49E513B
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 254.40.4
 parent-umbrella:
@@ -3054,9 +3059,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           61B5D856-3FB3-3FE9-B305-40A45F659732
+    value:           1B7B4A37-05F1-37B0-A3BC-9BD9E03F3C5F
   - target:          arm64e-ios
-    value:           1AC730A9-DE2F-32DF-A875-392AA0007EF2
+    value:           953DFC0D-B642-3864-B345-DBDE8EFB5862
 install-name:    '/usr/lib/system/libsystem_product_info_filter.dylib'
 current-version: 8.40.1
 parent-umbrella:
@@ -3071,9 +3076,9 @@ uuids:
   - target:          armv7s-ios
     value:           1F8C60A5-799C-3721-AE24-B52CDB5F0801
   - target:          arm64-ios
-    value:           D307501E-0546-3E3D-9676-328D6A8F5A1F
+    value:           D5035724-3CF4-33BE-B3C1-4F5502A9130F
   - target:          arm64e-ios
-    value:           8037266D-20EA-3057-880E-57BD92A94ECF
+    value:           85AA620C-0B54-3F75-B11F-0D45CDD71628
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
 current-version: 454.40.3
 parent-umbrella:
@@ -3167,11 +3172,11 @@ uuids:
   - target:          armv7s-ios
     value:           2D5C9579-46AF-3FD3-9626-443FF1532869
   - target:          arm64-ios
-    value:           C8DD2F5A-5A52-3023-96F2-3B8A70DFFE69
+    value:           F21F8AD1-C374-3DB9-B2FA-35BE58DEFF8D
   - target:          arm64e-ios
-    value:           1BE65BAF-13CE-39D1-B9CF-AC1934A3AB28
+    value:           416CF773-B03C-39BA-8678-7A7AF263EED3
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
-current-version: 1441.40.38
+current-version: 1441.60.4
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3241,9 +3246,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD7353A8-1C7E-373B-863B-E661CB0CD846
   - target:          arm64-ios
-    value:           CF41BA3E-1EA6-34E5-8692-D79F7C1B90B8
+    value:           8006AE8A-15DB-320F-864B-8113D544F4B0
   - target:          arm64e-ios
-    value:           3BFBC859-7697-318B-A51C-93CE93998184
+    value:           24674A06-F072-3AA3-A7F0-B33556FAB0FD
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -3264,9 +3269,9 @@ uuids:
   - target:          armv7s-ios
     value:           D7C9FB6B-CA5D-330F-9FDB-4140848515D6
   - target:          arm64-ios
-    value:           4ED5B6B4-80E9-3227-84B5-90BC92570931
+    value:           8A92417F-7DA6-3353-B477-766F8A96CCF3
   - target:          arm64e-ios
-    value:           4CC64130-3C00-3E0D-9F93-29F250E62552
+    value:           30D179D6-2E14-31D9-A8CC-998C8C77A480
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
 current-version: 1277.40.18
 parent-umbrella:
@@ -3337,9 +3342,9 @@ uuids:
   - target:          armv7s-ios
     value:           1AF55CB8-D4FE-3D46-8290-5B05F4F72F8D
   - target:          arm64-ios
-    value:           B7CD41AD-5133-35AC-8429-9BC0DCC6511B
+    value:           EE63A8C0-353A-3FFF-8534-8BD38402C5FE
   - target:          arm64e-ios
-    value:           056B2B8F-555B-3F75-A9A9-8B6C42648DDD
+    value:           65659B25-7A80-323F-AF04-023C255731B7
 install-name:    '/usr/lib/system/libunwind.dylib'
 current-version: 200.10
 parent-umbrella:
@@ -3420,9 +3425,9 @@ uuids:
   - target:          armv7s-ios
     value:           603F52D6-E25F-3349-AC6A-F76685E2DC82
   - target:          arm64-ios
-    value:           E3552D23-ADFB-36FE-B7D0-B23090553C49
+    value:           141B14C6-D162-3FE6-8F72-DA88EF6411DA
   - target:          arm64e-ios
-    value:           71A903B4-E731-36B6-BFDA-BA9E03B53E8C
+    value:           3B74544B-B441-312D-8A64-DD5A3E60E74E
 install-name:    '/usr/lib/system/libxpc.dylib'
 current-version: 2038.40.38
 parent-umbrella:

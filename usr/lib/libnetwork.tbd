@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00DEC2AA-15AB-3D9A-AD8F-7A2218F3E48E
   - target:          arm64-ios
-    value:           BEB645EC-1E26-337A-94CC-15CB4423D58D
+    value:           8D385D9D-117B-311A-9579-F209B9D6F9D8
   - target:          arm64e-ios
-    value:           9B849F84-6C4E-3D36-9E77-919D9239A2C9
+    value:           BA939C74-DB97-3081-9771-11BED18DA835
 install-name:    '/usr/lib/libnetwork.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1007,10 +1007,9 @@ exports:
                        _nw_quic_connection_copy_sec_protocol_metadata, _nw_quic_connection_copy_sec_protocol_options, 
                        _nw_quic_connection_copy_stream_metadata, _nw_quic_connection_execute_locked, 
                        _nw_quic_connection_get_ack_delay_size, _nw_quic_connection_get_application_error, 
-                       _nw_quic_connection_get_application_error_handler, _nw_quic_connection_get_application_result, 
-                       _nw_quic_connection_get_application_result_handler, _nw_quic_connection_get_force_version_negotiation, 
-                       _nw_quic_connection_get_idle_timeout, _nw_quic_connection_get_initial_max_data, 
-                       _nw_quic_connection_get_initial_max_stream_data_bidirectional_local, 
+                       _nw_quic_connection_get_application_result, _nw_quic_connection_get_application_result_handler, 
+                       _nw_quic_connection_get_force_version_negotiation, _nw_quic_connection_get_idle_timeout, 
+                       _nw_quic_connection_get_initial_max_data, _nw_quic_connection_get_initial_max_stream_data_bidirectional_local, 
                        _nw_quic_connection_get_initial_max_stream_data_bidirectional_remote, 
                        _nw_quic_connection_get_initial_max_stream_data_unidirectional, 
                        _nw_quic_connection_get_initial_max_streams_bidirectional, 
@@ -1023,9 +1022,10 @@ exports:
                        _nw_quic_connection_get_retry, _nw_quic_connection_inject_packet, 
                        _nw_quic_connection_inject_packet_handler, _nw_quic_connection_metadata_set_stream_options, 
                        _nw_quic_connection_report_application_result, _nw_quic_connection_set_ack_delay_size, 
-                       _nw_quic_connection_set_application_result_handler, _nw_quic_connection_set_close_with_error_handler, 
-                       _nw_quic_connection_set_force_version_negotiation, _nw_quic_connection_set_idle_timeout, 
-                       _nw_quic_connection_set_initial_max_data, _nw_quic_connection_set_initial_max_stream_data_bidirectional_local, 
+                       _nw_quic_connection_set_application_error_internal, _nw_quic_connection_set_application_result_handler, 
+                       _nw_quic_connection_set_close_with_error_handler, _nw_quic_connection_set_force_version_negotiation, 
+                       _nw_quic_connection_set_idle_timeout, _nw_quic_connection_set_initial_max_data, 
+                       _nw_quic_connection_set_initial_max_stream_data_bidirectional_local, 
                        _nw_quic_connection_set_initial_max_stream_data_bidirectional_remote, 
                        _nw_quic_connection_set_initial_max_stream_data_unidirectional, 
                        _nw_quic_connection_set_initial_max_streams_bidirectional, 
@@ -1047,9 +1047,9 @@ exports:
                        _nw_quic_metadata_copy_stream_options, _nw_quic_metadata_set_original, 
                        _nw_quic_report_application_result_on_queue, _nw_quic_report_race_result_on_queue, 
                        _nw_quic_stream_copy_shared_connection_options, _nw_quic_stream_execute_locked, 
-                       _nw_quic_stream_get_application_error, _nw_quic_stream_get_application_error_handler, 
-                       _nw_quic_stream_get_id, _nw_quic_stream_get_is_unidirectional, 
-                       _nw_quic_stream_set_application_error, _nw_quic_stream_set_application_error_handler, 
+                       _nw_quic_stream_get_application_error, _nw_quic_stream_get_id, 
+                       _nw_quic_stream_get_is_unidirectional, _nw_quic_stream_set_application_error, 
+                       _nw_quic_stream_set_application_error_handler, _nw_quic_stream_set_application_error_internal, 
                        _nw_quic_stream_set_id, _nw_quic_stream_set_is_unidirectional, 
                        _nw_release, _nw_replicate_create_options, _nw_replicate_metadata_add_endpoint, 
                        _nw_replicate_metadata_remove_endpoint, _nw_replicate_options_add_endpoint, 

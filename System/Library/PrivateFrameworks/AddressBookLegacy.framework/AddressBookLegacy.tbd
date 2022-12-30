@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AddressBookLegacy.framework/AddressBookLegacy
-current-version:       12623
+current-version:       12623.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -447,6 +447,7 @@ exports:
                             _ABCThumbnailImageFormatProperty,
                             _ABCThumbnailImageRecordIDProperty,
                             _ABChangeHistoryAssociateSequenceNumberWithClient,
+                            _ABChangeHistoryClearChangesToSequenceNumber,
                             _ABChangeHistoryClearChangesUpToSequenceNumberForClient,
                             _ABChangeHistoryClearEntityChangeTableRowIDsForClient,
                             _ABChangeHistoryClearEntityChangesUpToSequenceNumberAndRecordIDForClient,
@@ -457,6 +458,7 @@ exports:
                             _ABChangeHistoryGetChanges,
                             _ABChangeHistoryGetEntityChangesSinceSequenceNumberForClient,
                             _ABChangeHistoryGetLatestConsumedSequenceNumberForClient,
+                            _ABChangeHistoryGetSequenceNumberForClearingChanges,
                             _ABChangeHistoryHasClientWithIdentifier,
                             _ABChangeHistoryHasClients,
                             _ABChangeHistoryHasSyncAgentClient,
@@ -466,9 +468,11 @@ exports:
                             _ABChangeHistoryInsertPersonChangeRecordIntoAddressBook,
                             _ABChangeHistoryInsertPersonImageChangeRecordForRecordsWithIdentifiers,
                             _ABChangeHistoryInsertUpdatesForRecordsFromBlockWithClientIdentifier,
+                            _ABChangeHistoryMigrateAddingSaveTimestamp,
                             _ABChangeHistoryPurgeIdleClients,
                             _ABChangeHistoryRegisterClientForSource,
                             _ABChangeHistorySetAddressBookClientIdentifier,
+                            _ABChangeHistorySetSaveTimestamp,
                             _ABChangeHistoryTableCount,
                             _ABChangeHistoryUnregisterClientForSource,
                             _ABChineseJapaneseKoreanCharacterSet,
@@ -794,6 +798,9 @@ exports:
                             __createUTF8StringFromCFString,
                             __darwinNotificationCancellationCount,
                             __entityChangesExistWithSequenceNumberAfterRecordID,
+                            __findMinConsumedSequenceNumberForDataAccess,
+                            __findSequenceNumberForAgeLimit,
+                            __findSequenceNumberForPersonChangesLimit,
                             __getCString, __getWriterConnection,
                             __hasClientWithIdentifier,
                             __intValueForSanitiziedPhoneNumberInDictionary,
@@ -809,6 +816,7 @@ exports:
                             __movePeopleAndGroupsToSource,
                             __movePicturesFromPersonToPerson,
                             __moveRecordsInTableToSource,
+                            __performQueryToClearSequenceNumber,
                             __removeSyncImagesFromSource,
                             __runPhoneQueryWithContextForNumber, __saveCount,
                             __setImageDataWithCropRect,
@@ -1041,6 +1049,7 @@ exports:
                             _kABPersonOrganizationPronunciationProperty,
                             _kABPersonOrganizationProperty,
                             _kABPersonParentLabel, _kABPersonPartnerLabel,
+                            _kABPersonPhoneAppleWatchLabel,
                             _kABPersonPhoneAssistantLabel,
                             _kABPersonPhoneCarLabel,
                             _kABPersonPhoneCompanyMainLabel,
@@ -1116,7 +1125,6 @@ exports:
                             _updateRecordsForMoveToSource ]
     objc-classes:         [ ABAccountScorer, ABAnyValuePredicate, ABBinders,
                             ABBufferQuery, ABBufferQueryCursor, ABCCallbackInvoker,
-                            ABChangeStoreInfo, ABChangeStoreRowInfo,
                             ABDataCollection, ABDowntimeWhitelistMigrator,
                             ABDynamicLoader, ABFacebookMigrator, ABFavoritesEntry,
                             ABFavoritesListManager,

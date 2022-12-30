@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           A4C0E8C7-478D-371B-972D-6DB15F419884
   - target:          arm64-ios
-    value:           F30D9945-55A6-3A8F-B5AF-14E1FBBCA6B3
+    value:           A355FDD1-514C-3B96-8918-979EFFEBBDCD
   - target:          arm64e-ios
-    value:           F1B5AC87-9E96-3D37-B08B-C1E4F2455E39
+    value:           98782730-408D-377D-B095-4D69408815E4
 install-name:    '/usr/lib/libTelephonyIOKitDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -45,7 +45,8 @@ exports:
                        __ZTSU13block_pointerFvPN3ctu5iokit10controllerEE ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN3ctu5iokit10Controller11mesaServiceEjjPv, __ZN3ctu5iokit10Controller13faceIDServiceEjjPv, 
-                       __ZN3ctu5iokit10Controller14displayServiceEjPv, __ZN3ctu5iokit10Controller14setMesaQualityENS0_31TelephonyIOKitMesaSignalQualityE, 
+                       __ZN3ctu5iokit10Controller14displayServiceEjPv, __ZN3ctu5iokit10Controller14getBatteryInfoEPNS0_25TelephonyIOKitBatteryInfoE, 
+                       __ZN3ctu5iokit10Controller14setMesaQualityENS0_31TelephonyIOKitMesaSignalQualityE, 
                        __ZN3ctu5iokit10Controller14setPDPCallbackEN8dispatch8callbackIU13block_pointerFvNS0_17TelephonyIOKitPDPEEEEPKc, 
                        __ZN3ctu5iokit10Controller15setMesaCallbackEN8dispatch8callbackIU13block_pointerFvNS0_23TelephonyIOKitMesaEventEEEE, 
                        __ZN3ctu5iokit10Controller16accessoryServiceEjjPv, __ZN3ctu5iokit10Controller16getAccessoryTypeERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE, 
@@ -57,8 +58,11 @@ exports:
                        __ZN3ctu5iokit10Controller20setAccessoryCallbackEN8dispatch8callbackIU13block_pointerFvNS0_32TelephonyIOKitAccessoryParameterEEEE, 
                        __ZN3ctu5iokit10Controller21accessoryServiceAddedEj, __ZN3ctu5iokit10Controller22setPowerSourceCallbackEN8dispatch8callbackIU13block_pointerFvNS0_25TelephonyIOKitPowerSourceEEEE, 
                        __ZN3ctu5iokit10Controller23registerForIOKitServiceEjPFvPvjjS2_ERj, 
-                       __ZN3ctu5iokit10Controller25cleanUpDisplayNotifcationEv, __ZN3ctu5iokit10Controller28stopPowerSourceNotificationsEv, 
+                       __ZN3ctu5iokit10Controller25cleanUpDisplayNotifcationEv, __ZN3ctu5iokit10Controller28registerForBatteryInfoChangeEN8dispatch8callbackIU13block_pointerFvNS0_25TelephonyIOKitBatteryInfoEEEE, 
+                       __ZN3ctu5iokit10Controller28stopBatteryInfoNotificationsEv, 
+                       __ZN3ctu5iokit10Controller28stopPowerSourceNotificationsEv, 
                        __ZN3ctu5iokit10Controller29getAccessoryPrimaryPortNumberEv, 
+                       __ZN3ctu5iokit10Controller30processBatteryInfoNotificationEv, 
                        __ZN3ctu5iokit10Controller33getModelNumberViaAccessoryManagerEj, 
                        __ZN3ctu5iokit10Controller4initEv, __ZN3ctu5iokit10Controller6createENSt3__110shared_ptrINS_9LogServerEEEP11__CFRunLoop, 
                        __ZN3ctu5iokit10Controller7releaseEv, __ZN3ctu5iokit10ControllerC1ENSt3__110shared_ptrINS_9LogServerEEEP11__CFRunLoop, 

@@ -9,6 +9,10 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AMPIDServiceMachServiceName,
+                            _IDSecretRecordExpirationField,
+                            _IDSecretRecordKeyField,
+                            _IDSecretRecordNamespaceField,
+                            _IDSecretRecordValueField,
                             _MTAMSBagKeyMescalSignedRequests,
                             _MTAMSBagKeyMescalSignedResponses,
                             _MTAMSBagKeyMetrics, _MTAMSBagKeyPrimingURL,
@@ -18,7 +22,6 @@ exports:
                             _MTAMSBagKeyTrustedDomains, _MTActionTypeStart,
                             _MTActionTypeStop,
                             _MTCloudKitAccountDidChangeNotification,
-                            _MTCloudKitRecordDidSyncNotification,
                             _MTConfigurationError, _MTError, _MTErrorDomain,
                             _MTErrorMetricsDataKey, _MTEventHandlerNameAccount,
                             _MTEventHandlerNameClick, _MTEventHandlerNameDialog,
@@ -134,10 +137,11 @@ exports:
                             _MTFieldNameXpViewablePercentage,
                             _MTIDNamespacesDidResetNotification,
                             _MTIDNamespacesKey, _MTIDOptionCachePolicy,
-                            _MTIDOptionDate, _MTIDOptionIDType, _MTIDOptionReset,
-                            _MTIDOptionSyncWaitTime, _MTIDSchemeOptionContainer,
+                            _MTIDOptionDSID, _MTIDOptionDate, _MTIDOptionIDType,
+                            _MTIDOptionReset, _MTIDOptionSyncWaitTime,
+                            _MTIDSchemeOptionContainer,
                             _MTIDSchemeOptionCorrelations,
-                            _MTIDSchemeOptionLifespan,
+                            _MTIDSchemeOptionDefault, _MTIDSchemeOptionLifespan,
                             _MTIDSchemeOptionNamespace,
                             _MTIDSchemeOptionRotation, _MTIDSchemeOptionTopics,
                             _MTIDSchemeOptionType, _MTIDSchemeOptionVersion,
@@ -217,9 +221,10 @@ exports:
                             _MTPageRenderTimestampPrimaryDataResponseStartTime,
                             _MTPageRenderTimestampResourceRequestEndTime,
                             _MTPageRenderTimestampResourceRequestStartTime,
-                            _MTSetExceptionsEnabled, _MTUndelegatedMethodError,
-                            _MTWrappedError, _MetricsKitVersionNumber,
-                            _MetricsKitVersionString ]
+                            _MTSetExceptionsEnabled,
+                            _MTStandardIDServiceClientCacheKeyAMSBag,
+                            _MTUndelegatedMethodError, _MTWrappedError,
+                            _MetricsKitVersionNumber, _MetricsKitVersionString ]
     objc-classes:         [ MTAPAFKit, MTAccountEventHandler,
                             MTBaseEventDataProvider, MTCallerSuppliedFields,
                             MTClickEventHandler, MTConfig,
@@ -238,8 +243,8 @@ exports:
                             MTHLSVideoPlaylist, MTHashAction, MTIDCache,
                             MTIDCloudKitLocalDB, MTIDCloudKitPromiseManager,
                             MTIDCloudKitStore, MTIDCompositeSecretStore,
-                            MTIDConfig, MTIDFileStore, MTIDInfo, MTIDScheme,
-                            MTIDSecret, MTIDXPCSecretStore,
+                            MTIDConfig, MTIDInfo, MTIDScheme, MTIDSecret, MTIDSpan,
+                            MTIDSyncEngine, MTIDXPCSecretStore,
                             MTImpressionableEventHandler,
                             MTImpressionsEventHandler,
                             MTInterprocessChangeNotifier, MTJSContextEventFilter,
@@ -265,5 +270,5 @@ exports:
                             MTTreatmentAction, MTTreatmentContext,
                             MTTreatmentProfile,
                             MTUIKitStoreAMSBagDelegatePackage, MTURLDeresAction,
-                            MTUtils, MTVPAFKit ]
+                            MTUtils, MTVPAFKit, MTVersionDeresAction ]
 ...

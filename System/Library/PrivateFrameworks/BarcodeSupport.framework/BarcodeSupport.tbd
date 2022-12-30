@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _BCSActionErrorDomain,
+                            _BCSAppClipCodeURLDecoderErrorDomain,
                             _BCSBarcodeNotificationPayloadActionsKey,
                             _BCSBarcodeNotificationPayloadContactKey,
                             _BCSBarcodeNotificationPayloadContentIsPreviewableKey,
@@ -25,7 +26,8 @@ exports:
                             __bcs_notificationIconBaseURL,
                             __bcs_pointToRectDistance ]
     objc-classes:         [ BCSAVParsingSession, BCSAWDLogger, BCSActionPickerItem,
-                            BCSAnalyticsLogger, BCSConfigurationManager,
+                            BCSAnalyticsLogger, BCSAppClipCodeURLDecoder,
+                            BCSConfigurationManager,
                             BCSDataDetectionActionPickerItem, BCSNFCCodeParser,
                             BCSNFCReaderConnection, BCSNotification,
                             BCSNotificationManager,

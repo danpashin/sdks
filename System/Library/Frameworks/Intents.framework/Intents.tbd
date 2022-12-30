@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           976A0876-8B9F-3318-8B4C-E1A0D155893E
   - target:          arm64-ios
-    value:           F3199470-A117-3B99-9887-09C323BCADAF
+    value:           3A3155AF-25D9-3FF8-9B3F-01DDA21EAF05
   - target:          arm64e-ios
-    value:           22D0EFB4-9FA1-3FDC-A600-181ED377CF80
+    value:           312278EB-9869-32CA-9FF0-BDC2386C0DC0
 install-name:    '/System/Library/Frameworks/Intents.framework/Intents'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -387,6 +387,7 @@ exports:
                        _INIntentSlotValueRedactedVoiceCommandStepInfoFromVoiceCommandStepInfo, 
                        _INIntentSlotValueRedactedVolumeFromVolume, _INIntentSlotValueRedactedVolumesFromVolumes, 
                        _INIntentSlotValueRedactedWholeHouseAudioMetadataFromWholeHouseAudioMetadata, 
+                       _INIntentSlotValueRedactedWorkoutAssociatedItemFromWorkoutAssociatedItem, 
                        _INIntentSlotValueTransformFromActivities, _INIntentSlotValueTransformFromActivity, 
                        _INIntentSlotValueTransformFromAirline, _INIntentSlotValueTransformFromAirlines, 
                        _INIntentSlotValueTransformFromAirport, _INIntentSlotValueTransformFromAirportGate, 
@@ -543,6 +544,7 @@ exports:
                        _INIntentSlotValueTransformFromWellnessUnitType, _INIntentSlotValueTransformFromWellnessUnitTypes, 
                        _INIntentSlotValueTransformFromWellnessValue, _INIntentSlotValueTransformFromWellnessValues, 
                        _INIntentSlotValueTransformFromWholeHouseAudioMetadata, _INIntentSlotValueTransformFromWholeHouseAudioMetadatas, 
+                       _INIntentSlotValueTransformFromWorkoutAssociatedItem, _INIntentSlotValueTransformFromWorkoutAssociatedItems, 
                        _INIntentSlotValueTransformToActivities, _INIntentSlotValueTransformToActivity, 
                        _INIntentSlotValueTransformToAirline, _INIntentSlotValueTransformToAirlines, 
                        _INIntentSlotValueTransformToAirport, _INIntentSlotValueTransformToAirportGate, 
@@ -692,6 +694,7 @@ exports:
                        _INIntentSlotValueTransformToWellnessUnitType, _INIntentSlotValueTransformToWellnessUnitTypes, 
                        _INIntentSlotValueTransformToWellnessValue, _INIntentSlotValueTransformToWellnessValues, 
                        _INIntentSlotValueTransformToWholeHouseAudioMetadata, _INIntentSlotValueTransformToWholeHouseAudioMetadatas, 
+                       _INIntentSlotValueTransformToWorkoutAssociatedItem, _INIntentSlotValueTransformToWorkoutAssociatedItems, 
                        _INIntentTestConfirmUnexpectedException, _INIntentTestHandleUnexpectedException, 
                        _INIntentTestResolveUnexpectedException, _INIntentWithTypedIntent, 
                        _INIntentsExtensionDiscoveryEntitlement, _INIntentsExtensionHandleInAppEntitlement, 
@@ -1067,6 +1070,12 @@ exports:
                        _INWorkflowDomainGetIntentResponseDescriptionWithDataClass, 
                        _INWorkflowDomainGetIntentResponseDescriptionWithFacadeClass, 
                        _INWorkflowDomainGetIntentResponseDescriptionWithName, _INWorkflowDomainGetIntentResponseDescriptionWithType, 
+                       _INWorkoutAssociatedItemLabelGetBackingType, _INWorkoutAssociatedItemLabelGetFacadeType, 
+                       _INWorkoutAssociatedItemLabelGetLocalizedName, _INWorkoutAssociatedItemLabelGetName, 
+                       _INWorkoutAssociatedItemLabelHasBackingType, _INWorkoutAssociatedItemLabelWithString, 
+                       _INWorkoutContentRatingLabelGetBackingType, _INWorkoutContentRatingLabelGetFacadeType, 
+                       _INWorkoutContentRatingLabelGetLocalizedName, _INWorkoutContentRatingLabelGetName, 
+                       _INWorkoutContentRatingLabelHasBackingType, _INWorkoutContentRatingLabelWithString, 
                        _INWorkoutGoalUnitTypeGetBackingType, _INWorkoutGoalUnitTypeGetFacadeType, 
                        _INWorkoutGoalUnitTypeGetLocalizedName, _INWorkoutGoalUnitTypeGetName, 
                        _INWorkoutGoalUnitTypeHasBackingType, _INWorkoutGoalUnitTypeWithString, 
@@ -1085,6 +1094,9 @@ exports:
                        _INWorkoutNameIdentifierStand, _INWorkoutNameIdentifierSteps, 
                        _INWorkoutNameIdentifierSwim, _INWorkoutNameIdentifierValueAsString, 
                        _INWorkoutNameIdentifierWalk, _INWorkoutNameIdentifierYoga, 
+                       _INWorkoutSequenceLabelGetBackingType, _INWorkoutSequenceLabelGetFacadeType, 
+                       _INWorkoutSequenceLabelGetLocalizedName, _INWorkoutSequenceLabelGetName, 
+                       _INWorkoutSequenceLabelHasBackingType, _INWorkoutSequenceLabelWithString, 
                        _INWorkoutsDomainGetIntentDescriptionWithDataClass, _INWorkoutsDomainGetIntentDescriptionWithFacadeClass, 
                        _INWorkoutsDomainGetIntentDescriptionWithName, _INWorkoutsDomainGetIntentDescriptionWithType, 
                        _INWorkoutsDomainGetIntentResponseDescriptionWithDataClass, 
@@ -1315,7 +1327,8 @@ exports:
                        __INPBVolumeValueReadFrom, __INPBWellnessMetadataPairReadFrom, 
                        __INPBWellnessMetadataValueReadFrom, __INPBWellnessObjectResultValueReadFrom, 
                        __INPBWellnessUnitTypeReadFrom, __INPBWellnessValueReadFrom, 
-                       __INPBWholeHouseAudioMetadataReadFrom, __INPlayMediaMediaItemUnsupportedReasonAppAccountFailure, 
+                       __INPBWholeHouseAudioMetadataReadFrom, __INPBWorkoutAssociatedItemReadFrom, 
+                       __INPlayMediaMediaItemUnsupportedReasonAppAccountFailure, 
                        __INPlayMediaMediaItemUnsupportedReasonAppDoesntSupportIntent, 
                        __INPlayMediaMediaItemUnsupportedReasonAppNotAvailable, __INPlayMediaMediaItemUnsupportedReasonAppNotConfigured, 
                        __INPlayMediaMediaItemUnsupportedReasonCreateRadioFailed, 
@@ -1507,8 +1520,8 @@ exports:
                        INIntentVoiceCommandStepInfoSlotValueTransformer, INIntentVolumeSlotValueTransformer, 
                        INIntentWellnessMetadataPairSlotValueTransformer, INIntentWellnessObjectResultValueSlotValueTransformer, 
                        INIntentWellnessUnitTypeSlotValueTransformer, INIntentWellnessValueSlotValueTransformer, 
-                       INIntentWholeHouseAudioMetadataSlotValueTransformer, INInteraction, 
-                       INJSONDecoder, INJSONEncoder, INJSONEncoderConfiguration, 
+                       INIntentWholeHouseAudioMetadataSlotValueTransformer, INIntentWorkoutAssociatedItemSlotValueTransformer, 
+                       INInteraction, INJSONDecoder, INJSONEncoder, INJSONEncoderConfiguration, 
                        INKeyImageExtraction, INLengthResolutionResult, INListCarsIntent, 
                        INListCarsIntentResponse, INListRideOptionsIntent, INListRideOptionsIntentResponse, 
                        INListShortcutsIntent, INListShortcutsIntentResponse, INLocationRelevanceProvider, 
@@ -1640,18 +1653,18 @@ exports:
                        INWellnessObjectResultValue, INWellnessObjectTypeResolutionResult, 
                        INWellnessQueryResultTypeResolutionResult, INWellnessQuestionTypeResolutionResult, 
                        INWholeHouseAudioMetadata, INWidgetDescriptor, INWidgetDescriptorManager, 
-                       INWorkoutGoalUnitTypeResolutionResult, INWorkoutLocationTypeResolutionResult, 
-                       _INAggregator, _INExtension, _INExtensionContext, _INPBActivateCarSignalIntent, 
-                       _INPBActivateCarSignalIntentResponse, _INPBActivity, _INPBActivityList, 
-                       _INPBAddMediaIntent, _INPBAddMediaIntentResponse, _INPBAddTasksIntent, 
-                       _INPBAddTasksIntentResponse, _INPBAirline, _INPBAirport, _INPBAirportGate, 
-                       _INPBAlarm, _INPBAlarmSearch, _INPBAnnouncement, _INPBAnnouncementRecord, 
-                       _INPBAnswerCallIntent, _INPBAnswerCallIntentResponse, _INPBAppBuild, 
-                       _INPBAppBundleInfo, _INPBAppId, _INPBAppIdentifier, _INPBAppNames, 
-                       _INPBAppendToNoteIntent, _INPBAppendToNoteIntentResponse, 
-                       _INPBArchivedObject, _INPBBalanceAmountValue, _INPBBillDetailsValue, 
-                       _INPBBillPayeeValue, _INPBBoatReservation, _INPBBoatTrip, 
-                       _INPBBool, _INPBBoolValue, _INPBBuildId, _INPBBusReservation, 
+                       INWorkoutAssociatedItem, INWorkoutGoalUnitTypeResolutionResult, 
+                       INWorkoutLocationTypeResolutionResult, _INAggregator, _INExtension, 
+                       _INExtensionContext, _INPBActivateCarSignalIntent, _INPBActivateCarSignalIntentResponse, 
+                       _INPBActivity, _INPBActivityList, _INPBAddMediaIntent, _INPBAddMediaIntentResponse, 
+                       _INPBAddTasksIntent, _INPBAddTasksIntentResponse, _INPBAirline, 
+                       _INPBAirport, _INPBAirportGate, _INPBAlarm, _INPBAlarmSearch, 
+                       _INPBAnnouncement, _INPBAnnouncementRecord, _INPBAnswerCallIntent, 
+                       _INPBAnswerCallIntentResponse, _INPBAppBuild, _INPBAppBundleInfo, 
+                       _INPBAppId, _INPBAppIdentifier, _INPBAppNames, _INPBAppendToNoteIntent, 
+                       _INPBAppendToNoteIntentResponse, _INPBArchivedObject, _INPBBalanceAmountValue, 
+                       _INPBBillDetailsValue, _INPBBillPayeeValue, _INPBBoatReservation, 
+                       _INPBBoatTrip, _INPBBool, _INPBBoolValue, _INPBBuildId, _INPBBusReservation, 
                        _INPBBusTrip, _INPBCallMetrics, _INPBCallMetricsValue, _INPBCallRecordFilter, 
                        _INPBCallRecordValue, _INPBCancelWorkoutIntent, _INPBCancelWorkoutIntentResponse, 
                        _INPBCar, _INPBCarChargingConnectorPower, _INPBCarHeadUnit, 
@@ -1807,8 +1820,9 @@ exports:
                        _INPBVolume, _INPBVolumeValue, _INPBWellnessMetadataPair, 
                        _INPBWellnessMetadataValue, _INPBWellnessObjectResultValue, 
                        _INPBWellnessUnitType, _INPBWellnessValue, _INPBWholeHouseAudioMetadata, 
-                       _INSiriAuthorizationManager, _INSyncTransaction, _INVocabulary, 
-                       _INVocabularyConnection, _INVocabularyGenerationDiff, _INVocabularyGenerationDocument, 
-                       _INVocabularyItem, _INVocabularyStoreManager, _INVocabularyValidator ]
+                       _INPBWorkoutAssociatedItem, _INSiriAuthorizationManager, _INSyncTransaction, 
+                       _INVocabulary, _INVocabularyConnection, _INVocabularyGenerationDiff, 
+                       _INVocabularyGenerationDocument, _INVocabularyItem, _INVocabularyStoreManager, 
+                       _INVocabularyValidator ]
     objc-ivars:      [ INInteraction._intent, INInteraction._intentResponse ]
 ...

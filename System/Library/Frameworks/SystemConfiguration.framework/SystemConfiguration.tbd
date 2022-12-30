@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           89520873-AAC0-33FD-B5C7-FBA79C6CD30E
   - target:          arm64-ios
-    value:           75FEC680-1505-3F2E-84DC-4A0A8586C617
+    value:           7A2E540E-B65D-3AA7-B9E0-81126A3F6B90
   - target:          arm64e-ios
-    value:           98796725-FD6C-39B6-AF67-B09485215996
+    value:           097A53F5-B92E-3E8C-8D94-AAD83A3AC34D
 install-name:    '/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration'
-current-version: 1109.40.9
+current-version: 1109.60.2
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _IPMonitorControlGetInterfacePrimaryRank, _SCDynamicStoreCopyLocation, 
@@ -230,12 +230,13 @@ exports:
                        __SC_logMachPortStatus, __SC_sendMachMessage, __SC_sockaddr_to_string, 
                        __SC_stringIsValidDNSName, __SC_string_to_sockaddr, __SC_syslog_os_log_mapping, 
                        __SC_trimDomain, ___SCDynamicStoreCreatePrivate, ___SCNetworkConfigurationClean, 
-                       ___SCNetworkConfigurationSaveModel, ___SCNetworkConfigurationUpgrade, 
-                       ___SCNetworkConnectionCopyOnDemandInfoWithName, ___SCNetworkInterfaceCreateCapabilities, 
-                       ___SCNetworkInterfaceCreateMediaOptions, ___SCNetworkInterfaceSetDisableUntilNeededValue, 
-                       ___SC_Log, ___SC_log_enabled, ___SC_log_send, __sc_debug, 
-                       __sc_log, __sc_verbose, __scprefs_observer_cancel, __scprefs_observer_watch, 
-                       _isa_xpc_bool, _isa_xpc_connection, _isa_xpc_dictionary, _isa_xpc_error, 
+                       ___SCNetworkConfigurationReport, ___SCNetworkConfigurationSaveModel, 
+                       ___SCNetworkConfigurationUpgrade, ___SCNetworkConnectionCopyOnDemandInfoWithName, 
+                       ___SCNetworkInterfaceCreateCapabilities, ___SCNetworkInterfaceCreateMediaOptions, 
+                       ___SCNetworkInterfaceSetDisableUntilNeededValue, ___SC_Log, 
+                       ___SC_log_enabled, ___SC_log_send, __sc_debug, __sc_log, __sc_verbose, 
+                       __scprefs_observer_cancel, __scprefs_observer_watch, _isa_xpc_bool, 
+                       _isa_xpc_connection, _isa_xpc_dictionary, _isa_xpc_error, 
                        _kCFErrorDomainSystemConfiguration, _kCFErrorDomainVPNTunnel, 
                        _kCNNetworkInfoKeyBSSID, _kCNNetworkInfoKeySSID, _kCNNetworkInfoKeySSIDData, 
                        _kSCCompAnyRegex, _kSCCompGlobal, _kSCCompHostNames, _kSCCompInterface, 
@@ -260,7 +261,8 @@ exports:
                        _kSCEntNetPPTP, _kSCEntNetProxies, _kSCEntNetQoSMarkingPolicy, 
                        _kSCEntNetRefreshConfiguration, _kSCEntNetService, _kSCEntNetVPN, 
                        _kSCNetworkConfigurationMigrationActionKey, _kSCNetworkConfigurationRepair, 
-                       _kSCNetworkInterfaceIPv4, _kSCNetworkInterfaceLoopback, _kSCNetworkInterfaceType6to4, 
+                       _kSCNetworkConfigurationRepairModel, _kSCNetworkInterfaceIPv4, 
+                       _kSCNetworkInterfaceLoopback, _kSCNetworkInterfaceType6to4, 
                        _kSCNetworkInterfaceTypeBluetooth, _kSCNetworkInterfaceTypeBond, 
                        _kSCNetworkInterfaceTypeBridge, _kSCNetworkInterfaceTypeCellular, 
                        _kSCNetworkInterfaceTypeEthernet, _kSCNetworkInterfaceTypeFireWire, 

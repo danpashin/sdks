@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Weather.framework/Weather
-current-version:       1695
+current-version:       1726
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -163,14 +163,19 @@ exports:
                             _kUserSelectedLocalCityKey,
                             _kWATodayHourlyForecastViewWidth,
                             _kWAUpdateErrorCityKey,
+                            _kWeatherAirQualityAllowUseDefaultScaleIfCacheEmpty,
                             _kWeatherAirQualityAvailabilityForCountryOverride,
                             _kWeatherAirQualityCategoryOverride,
+                            _kWeatherAirQualityClearAQIScaleCacheOnNextLaunch,
                             _kWeatherAirQualityDataOriginationOverride,
                             _kWeatherAirQualityDataProviderOverride,
                             _kWeatherAirQualityDemoModeEnabled,
                             _kWeatherAirQualityIndexOverride,
                             _kWeatherAirQualityOverridesEnabled,
                             _kWeatherAirQualityRecommendationEnabled,
+                            _kWeatherAirQualityScaleAscendingOverride,
+                            _kWeatherAirQualityScaleNumericalOverride,
+                            _kWeatherAirQualityScaleOverridesEnabled,
                             _kWeatherAirQualitySignificanceOverride,
                             _kWeatherAirQualityUseDefaultAttribution,
                             _kWeatherEffectiveBundleId, _kWeatherErrorDomain,
@@ -198,8 +203,8 @@ exports:
                             _winteryMixDayMini ]
     objc-classes:         [ City, ProgressController, TWCCityUpdater,
                             TWCLocationUpdater, WAAQIAttributionStringBuilder,
-                            WAAQICategory, WAAQIColor, WAAQIGradient, WAAQIScale,
-                            WAAQIScaleView, WAAQIView, WAAQIViewStyler,
+                            WAAQICategory, WAAQIGradient, WAAQIGradientStop,
+                            WAAQIScale, WAAQIScaleView, WAAQIView, WAAQIViewStyler,
                             WACurrentForecast, WADayForecast, WAForecastModel,
                             WAForecastModelController, WAForecastOperation,
                             WAGradientProvider, WAGreetingView, WAHourlyForecast,

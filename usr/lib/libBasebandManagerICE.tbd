@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           54CA8EFA-B2C4-3A0B-BFEC-8DC89A41412A
   - target:          arm64-ios
-    value:           08E179F8-FD76-3ECF-9A0C-88E5E425A266
+    value:           8FB37B57-6DF7-3314-8480-9C25C7A2CC1E
   - target:          arm64e-ios
-    value:           7EA73057-2541-3B7B-B5FB-C70DAF30E07C
+    value:           31644303-F611-3C05-A37A-76DE861A0A20
 install-name:    '/usr/lib/libBasebandManagerICE.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -310,9 +310,10 @@ exports:
                        __ZN11RadioModule14setRegion_syncEv, __ZN11RadioModule15getVersion_syncEN8dispatch5blockIU13block_pointerFvNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEEEE, 
                        __ZN11RadioModule21getOperatingMode_syncEN8dispatch5blockIU13block_pointerFviEEE, 
                        __ZN11RadioModule21setOperatingMode_syncEjN5radio13OperatingModeEN8dispatch5blockIU13block_pointerFvbEEE, 
-                       __ZN11RadioModule23getResetProperties_syncEv, __ZN11RadioModule23startHealthService_syncEv, 
-                       __ZN11RadioModule25finishInitialization_syncEv, __ZN11RadioModule25queryFieldTestConfig_syncEv, 
-                       __ZN11RadioModule29queryRFCalibrationStatus_syncEv, __ZN11RadioModule34queryFactoryCalibrationStatus_syncEv, 
+                       __ZN11RadioModule23getResetProperties_syncEv, __ZN11RadioModule23monitorBatteryInfo_syncEv, 
+                       __ZN11RadioModule23startHealthService_syncEv, __ZN11RadioModule25finishInitialization_syncEv, 
+                       __ZN11RadioModule25queryFieldTestConfig_syncEv, __ZN11RadioModule29queryRFCalibrationStatus_syncEv, 
+                       __ZN11RadioModule30stopMonitoringBatteryInfo_syncEv, __ZN11RadioModule34queryFactoryCalibrationStatus_syncEv, 
                        __ZN11RadioModule4initEv, __ZN11RadioModule4wakeEN8dispatch13group_sessionE, 
                        __ZN11RadioModule5sleepEN8dispatch13group_sessionE, __ZN11RadioModule5startEN8dispatch13group_sessionE, 
                        __ZN11RadioModule6createENSt3__18weak_ptrI14ServiceManagerEE, 
@@ -356,8 +357,8 @@ exports:
                        __ZN12Capabilities32getFileSystemFlushTimeoutSecondsEv, __ZN12Capabilities33getBEDLogCollectionTimeoutSecondsEv, 
                        __ZN12Capabilities33getFileSystemFlushIntervalSecondsEv, __ZN12Capabilities39shouldTriggerCoreDumpOnSoftResetTimeoutEv, 
                        __ZN12Capabilities39shouldTriggerStackshotOnShutdownTimeoutEv, 
-                       __ZN12Capabilities7isWatchEv, __ZN12CapabilitiesC1Ev, __ZN12CapabilitiesC2Ev, 
-                       __ZN12PowerManager10initializeEv, __ZN12PowerManager20createPowerAssertionENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_6chrono8durationIxNS0_5ratioILl1ELl1000EEEEE, 
+                       __ZN12CapabilitiesC1Ev, __ZN12CapabilitiesC2Ev, __ZN12PowerManager10initializeEv, 
+                       __ZN12PowerManager20createPowerAssertionENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_6chrono8durationIxNS0_5ratioILl1ELl1000EEEEE, 
                        __ZN12PowerManager21releasePowerAssertionENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN12PowerManager22registerForPowerEventsEN8dispatch5blockIU13block_pointerFv10PowerStateNS0_13group_sessionEEEE, 
                        __ZN12PowerManager6createENSt3__18weak_ptrI14ServiceManagerEE, 
@@ -1090,6 +1091,7 @@ exports:
                        __ZNK12Capabilities26getDataAggregationProtocolEv, __ZNK12Capabilities26isAccessoryModuleSupportedEv, 
                        __ZNK12Capabilities26isCellularLoggingSupportedEv, __ZNK12Capabilities27isCoexGPSReportingSupportedEv, 
                        __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, 
+                       __ZNK12Capabilities32isBatteryInfoMonitoringSupportedEv, __ZNK12Capabilities7isWatchEv, 
                        __ZNK12TraceManager17getShutdownStagesEv, __ZNK12TraceManager22submitTraceMetric_syncENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES6_, 
                        __ZNK12TraceManager7getNameEv, __ZNK13AntennaModule17getShutdownStagesEv, 
                        __ZNK13AntennaModule7getNameEv, __ZNK13DriverFactory17getShutdownStagesEv, 

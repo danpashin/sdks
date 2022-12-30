@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MailSupport.framework/MailSupport
-current-version:       3654.20
+current-version:       3654.40
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -136,6 +136,20 @@ exports:
                             _MSPreferredAbbreviatedNameForAddressAndDisplayName,
                             _MSPreferredCompositeNameForAddressAndDisplayName,
                             _MSPreferredCompositeNameForContact,
+                            _MSSearchScopeFrom, _MSSearchScopeMailbox,
+                            _MSSearchScopeMessage, _MSSearchScopeSubject,
+                            _MSSearchScopeTo,
+                            _MSSearchSuggestionCategoryAttachment,
+                            _MSSearchSuggestionCategoryDates,
+                            _MSSearchSuggestionCategoryFlagged,
+                            _MSSearchSuggestionCategoryFreeText,
+                            _MSSearchSuggestionCategoryMailboxes,
+                            _MSSearchSuggestionCategoryPeople,
+                            _MSSearchSuggestionCategoryRaw,
+                            _MSSearchSuggestionCategorySubject,
+                            _MSSearchSuggestionCategoryTopHit,
+                            _MSSearchSuggestionCategoryUnread,
+                            _MSSearchSuggestionCategoryVIPs,
                             _MSSharedContactStore,
                             _MSUserNotificationCenterTopicFavoriteMailboxes,
                             _MSUserNotificationCenterTopicNotifiedThreads,
@@ -147,7 +161,16 @@ exports:
                             _MSUserNotificationContentKeyNanoMessageId,
                             _MSUserNotificationContentKeySenderAddress,
                             _MSUserNotificationContentKeySuppressionContext,
-                            _MSUserNotificationsLog ]
+                            _MSUserNotificationsLog, _kMessageListResultBundleID,
+                            _kMessageListSectionBundleID,
+                            _kStructuredQueryComponent,
+                            _kStructuredQueryMailboxFilter,
+                            _kStructuredQueryMailboxFilterAll,
+                            _kStructuredQueryMailboxFilterCurrent,
+                            _kStructuredQueryNumberCharacters,
+                            _kStructuredQueryNumberWords, _kStructuredQueryScope,
+                            _kStructuredQueryToggle, _kSuggestionBundleID,
+                            _kTopHitBundleID ]
     objc-classes:         [ AWDMailAutoFetchReport,
                             AWDMailCannotGetMailErrorReport,
                             AWDMailComposeAttachmentReport, AWDMailError,
@@ -171,7 +194,12 @@ exports:
                             MSJunkTriageAction, MSMessageListItemSelection,
                             MSMessageLoadingAnalyticController,
                             MSMoveTriageAction, MSMuteTriageAction,
-                            MSNotifyTriageAction, MSRadarInteraction,
+                            MSNotifyTriageAction, MSParsecSearchSession,
+                            MSParsecSearchSessionMessageListResult,
+                            MSParsecSearchSessionMessageResult,
+                            MSParsecSearchSessionQueryComponent,
+                            MSParsecSearchSessionSuggestion,
+                            MSParsecSearchSessionTopHit, MSRadarInteraction,
                             MSRadarURLBuilder, MSReadTriageAction,
                             MSSearchSessionController, MSSendMailIntent,
                             MSSendMailIntentFormatter, MSSendMailIntentResponse,

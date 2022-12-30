@@ -3,12 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
-current-version:       550.10.17
+current-version:       550.20.22
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _VUIBoolLogString,
+    symbols:              [ _VUIAssetDidWriteNotification,
+                            _VUIAssetDidWriteNotificationAssetPathKey,
+                            _VUIAssetDidWriteNotificationErrorKey,
+                            _VUIBoolLogString,
+                            _VUICompositeBitmapImageOfSizeForImages,
+                            _VUICornerRadiiZero,
                             _VUIDefaultsAvailabilityEndOverrideInSeconds,
                             _VUIDefaultsCanaryURL,
                             _VUIDefaultsCollectionMaxCacheValueKey,
@@ -45,23 +50,28 @@ exports:
                             _VUINetworkReachabilityMonitorNetworkReachabilityDidChangeNotification,
                             _VUINetworkReachabilityMonitorNetworkReachabilityDidChangeUserInfoKeyNetworkReachable,
                             _VUIRequireKeyedCoder, _VUIRequireMainThread,
+                            _VUIStackedImageControlStateFocusedIdle,
+                            _VUIStackedImageViewImageDidUpdateNotification,
                             _VUIStateMachineContextKey,
                             _VUIStateMachineNewStateKey,
                             _VUIStateMachineOldStateKey,
                             _VUIStateMachineStateChangedNotification,
                             _VUIWaitForDebugger, _VUIWaitForDebuggerUntilDate,
                             _VideosUICoreErrorDomain ]
-    objc-classes:         [ VUIAsynchronousOperation, VUIAsynchronousWorkToken,
-                            VUICollectionChange, VUICollectionChangeSet,
-                            VUICollectionComparator, VUICoreImageView,
-                            VUIDebugDefaults, VUIDelayOperation,
+    objc-classes:         [ VUIAssetLibrary, VUIAsynchronousOperation,
+                            VUIAsynchronousWorkToken, VUICollectionChange,
+                            VUICollectionChangeSet, VUICollectionComparator,
+                            VUICoreUtilities, VUIDebugDefaults, VUIDelayOperation,
                             VUIDurationValueTransformer,
                             VUIEntitiesSortedByDateValueTransformer,
-                            VUIFeatureFlag, VUIFeatureManager, VUIImage,
-                            VUIImageDecorator, VUIImageFactory,
-                            VUIMobileGestaltLookup,
-                            VUINetworkReachabilityMonitor, VUIRestrictions,
-                            VUISortUtilities, VUIStateMachine,
-                            VUITitleSortDescriptor, VUIURLImageLoader,
-                            VUIURLRequestOperation ]
+                            VUIFeatureFlag, VUIFeatureManager,
+                            VUIGraphicsImageRenderer, VUIImage, VUIImageDecorator,
+                            VUIImageFactory, VUIImageProxy, VUIImageScaleDecorator,
+                            VUIImageView, VUILayeredImageContainerView,
+                            VUILayeredImageProxy, VUIMobileGestaltLookup,
+                            VUINetworkReachabilityMonitor,
+                            VUIRemoteImageDescriptor, VUIResourceImageDescriptor,
+                            VUIRestrictions, VUISortUtilities, VUIStackedImageView,
+                            VUIStateMachine, VUITitleSortDescriptor,
+                            VUIURLImageLoader, VUIURLRequestOperation ]
 ...

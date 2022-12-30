@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5FF90157-BE8B-36C6-969E-DCE875302D62
   - target:          arm64-ios
-    value:           B62E011E-0B4D-35A0-A884-F1CCE0B248AD
+    value:           48202B1D-BC86-3FF5-B58E-BB295683C72D
   - target:          arm64e-ios
-    value:           15A40A26-44BF-3C4F-9160-2B16C1FDE98B
+    value:           8D4D792B-8560-33EE-A9B9-08F6E8B4FE86
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/CoreMedia'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1627,6 +1627,7 @@ exports:
                        _FigCreatePathForPersistentURL, _FigCreateSerializedDictionaryFromNSErrorUserInfo, 
                        _FigCustomURLHandlerConfirmNeighborProcessByPID, _FigCustomURLHandlerGetCMBaseObject, 
                        _FigCustomURLHandlerGetClassID, _FigCustomURLHandlerGetTypeID, 
+                       _FigCustomURLHandlerRemoteClientCopyExistingOrCreateIfNeccessaryWithXPCEndpoint, 
                        _FigCustomURLHandlerRemoteClientCreateWithXPCEndpoint, _FigCustomURLHandlerRemoteCreateWithID, 
                        _FigCustomURLHandlerServerAssociateObjectAndContentKeySessionByPID, 
                        _FigCustomURLHandlerServerAssociateObjectByPID, _FigCustomURLHandlerServerCopyXPCEndpoint, 
@@ -2061,9 +2062,9 @@ exports:
                        _FigTransportStreamSendBatchSlow, _FigUInt32NearestPowerOfTwo, 
                        _FigUInt64MulDiv, _FigUSleep, _FigUserBreak, _FigUserCrash, 
                        _FigVideoCreateBlockBufferAndFormatDescriptionForHoistingInStreamParameterSets, 
-                       _FigVideoFormatDescriptionContainsAlphaChannel, _FigVideoFormatDescriptionContainsDolbyVisionMetadata, 
-                       _FigVideoFormatDescriptionContainsHDR, _FigVideoFormatDescriptionContainsWideColor, 
-                       _FigVideoFormatDescriptionCopyAsBigEndianImageDescriptionBlockBuffer, 
+                       _FigVideoFormatDescriptionConformsToDolbyVisionProfile84, 
+                       _FigVideoFormatDescriptionContainsAlphaChannel, _FigVideoFormatDescriptionContainsHDR, 
+                       _FigVideoFormatDescriptionContainsWideColor, _FigVideoFormatDescriptionCopyAsBigEndianImageDescriptionBlockBuffer, 
                        _FigVideoFormatDescriptionCreateFromBigEndianImageDescriptionBlockBuffer, 
                        _FigVideoFormatDescriptionCreateFromBigEndianImageDescriptionBlockBufferWithReporter, 
                        _FigVideoFormatDescriptionCreateFromBigEndianImageDescriptionData, 
@@ -2526,7 +2527,8 @@ exports:
                        _kFigCustomURLLoaderFinalReportKey_NetworkProtocolName, _kFigDispatchQueueCFDictionaryValueCallbacks, 
                        _kFigEndPointPlaybackSessionKey_ShouldProvideFPSSecureStop, 
                        _kFigEndpointActivateOptionKey_ApplicationDisplayID, _kFigEndpointActivateOptionKey_AvoidAuthPrompt, 
-                       _kFigEndpointActivateOptionKey_ClientPID, _kFigEndpointActivateOptionKey_EnableSplitter, 
+                       _kFigEndpointActivateOptionKey_ClientPID, _kFigEndpointActivateOptionKey_CrossfadePlayback, 
+                       _kFigEndpointActivateOptionKey_EnableSplitter, _kFigEndpointActivateOptionKey_FadeDurationInSeconds, 
                        _kFigEndpointActivateOptionKey_ForAdminControl, _kFigEndpointActivateOptionKey_HijackID, 
                        _kFigEndpointActivateOptionKey_IsAddOperation, _kFigEndpointActivateOptionKey_IsPerAppDisplay, 
                        _kFigEndpointActivateOptionKey_PrimaryUsage, _kFigEndpointActivateOptionKey_RemoteScreenSender, 
@@ -2561,6 +2563,7 @@ exports:
                        _kFigEndpointConfigurationRequest_PeersToRemove, _kFigEndpointConfigurationResponse_PeersList, 
                        _kFigEndpointConfiguration_DeviceName, _kFigEndpointConfiguration_EnableHKAccessControl, 
                        _kFigEndpointConfiguration_HKAccessControlLevel, _kFigEndpointConfiguration_Password, 
+                       _kFigEndpointDeactivateOptionKey_CrossfadePlayback, _kFigEndpointDeactivateOptionKey_FadeDurationInSeconds, 
                        _kFigEndpointDeactivateOptionKey_IsRemoveOperation, _kFigEndpointDeactivateOptionKey_Reason, 
                        _kFigEndpointDeactivateOptionKey_RoutingContextUUID, _kFigEndpointDeactivateReason_PrimaryUsageChange, 
                        _kFigEndpointDeactivateReason_UserRoutedAway, _kFigEndpointDuckAudioCommand_Duck, 
@@ -2901,6 +2904,7 @@ exports:
                        _kFigPKDCPECryptorPackagedPersistentKeyDecryptFormatType_CBCS, 
                        _kFigPKDCPECryptorPackagedPersistentKeyDecryptFormatType_CTR, 
                        _kFigPKDCPECryptorPackagedPersistentKeyKey_DecryptFormatType, 
+                       _kFigPixelBufferRecipientNotification_ServerConnectionDied, 
                        _kFigPowerLogSupportPlaybackEventKey_AverageBitRate, _kFigPowerLogSupportPlaybackEventKey_AverageNetworkThroughput, 
                        _kFigPowerLogSupportPlaybackEventKey_AverageRank, _kFigPowerLogSupportPlaybackEventKey_Category, 
                        _kFigPowerLogSupportPlaybackEventKey_IsAudioOnly, _kFigPowerLogSupportPlaybackEventKey_LogID, 

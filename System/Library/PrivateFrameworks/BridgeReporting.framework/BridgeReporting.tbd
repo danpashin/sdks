@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _BRAutomation, _BRGetAllMetricKeysAndValues,
+    symbols:              [ _BRAutomation, _BRCDPEnrollmentSuccess,
+                            _BRCDPEnrollmentTimed, _BRGetAllMetricKeysAndValues,
                             _BRGetCurrentMetricIDFromMetricDir,
                             _BRIsInternalInstall, _BRMigrationBeganTimeKey,
                             _BRMigrationDeviceUnpairedBecauseKeychainIsOffKey,
@@ -33,7 +34,8 @@ exports:
                             _BRPairingTimeEventToString, _BRReportingErrorDomain,
                             _BRSignInFailureErrorForAccountType,
                             _BRSignInPairingTimeEventForAccountType,
-                            _BRStaleOrNoPairingMetric,
+                            _BRStaleOrNoPairingMetric, _BRStartedCDPEnrollment,
+                            _BRTinkerSignInErrorCode, _BRTinkerSignInErrorDomain,
                             _BridgeReportingVersionNumber,
                             _BridgeReportingVersionString,
                             _COSSignInAccountTypeFaceTime,

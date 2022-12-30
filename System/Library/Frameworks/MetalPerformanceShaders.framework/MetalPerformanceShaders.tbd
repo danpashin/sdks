@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           C7330A97-0A44-35FB-8D53-98FB91151134
   - target:          arm64-ios
-    value:           582F018B-BAC2-3491-96B8-B077B982659E
+    value:           7623F66D-1ABD-3A4D-ABA7-66BA0BDBED2F
   - target:          arm64e-ios
-    value:           728F55E4-F788-3D0C-91DC-94C51B6518E1
+    value:           54579591-AF2C-331B-B854-C3C1E3633EBC
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/MetalPerformanceShaders'
-current-version: 124.0.29
+current-version: 124.2
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore', 
@@ -54,11 +54,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E2173A38-3B78-325F-BEE5-1955F38A3EA8
+    value:           ED390B46-61D7-36EB-8080-1EB65B2DD379
   - target:          arm64e-ios
-    value:           D9092029-FB81-3E67-A51D-75B05E47F999
+    value:           4D56444D-0084-3A57-85C0-7CEAD595779A
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork, MPSParallelPrimitives, 
@@ -133,6 +133,7 @@ exports:
                        __ZN12MPSKernelDAG6acosOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
                        __ZN12MPSKernelDAG6asinOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
                        __ZN12MPSKernelDAG6atanOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
+                       __ZN12MPSKernelDAG6castOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
                        __ZN12MPSKernelDAG6ceilOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
                        __ZN12MPSKernelDAG6coshOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
                        __ZN12MPSKernelDAG6nandOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc, 
@@ -232,11 +233,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C0D95279-698F-3A34-9807-7CAA16E1A425
+    value:           AC5E507D-4ABE-3B62-9758-0CF03254CB0F
   - target:          arm64e-ios
-    value:           839AD16E-8571-3E68-A065-B32C8600E74A
+    value:           43662C4A-92B5-3C3C-B009-BAD12D7B82F0
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/MPSImage'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -274,11 +275,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E5D05308-82A1-3756-BA96-2F6842ECC751
+    value:           2552EB12-D1D0-3436-8AAF-8A055B8A937B
   - target:          arm64e-ios
-    value:           77BBABF3-E816-3A31-9611-0A96CBA6681A
+    value:           B7733E9C-D430-3B9A-88C2-424F57442335
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/MPSMatrix'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MPSNDArray, MPSNeuralNetwork, MetalPerformanceShaders ]
@@ -303,11 +304,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           CD7A72AC-B56F-347E-B1AC-A5C57BFD89DD
+    value:           9A0AF589-B4A4-3E1D-90D7-22C4ECF563EF
   - target:          arm64e-ios
-    value:           ED6A5D91-8018-3C79-8CFF-962EBC923657
+    value:           BE33B81C-02F0-317A-B735-65C9048D9FC1
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MetalPerformanceShaders ]
@@ -400,11 +401,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           FBEB0A92-41CC-36F6-AE81-B7958EA92EA5
+    value:           94634625-2B3A-3611-914A-13D7F7B81F11
   - target:          arm64e-ios
-    value:           8F57A915-CAD5-3057-9FEB-D66886F15BC9
+    value:           BE74CF58-1800-3242-8AAE-F486B1F615A5
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/MPSNeuralNetwork'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MetalPerformanceShaders ]
@@ -517,11 +518,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           ADE3EA0A-0312-3C0C-AACB-02CC185B1363
+    value:           19B7A9E3-5300-348C-AC92-A080A6584D56
   - target:          arm64e-ios
-    value:           BD6A892E-72D4-38FC-A431-766246D274DE
+    value:           DF0BABDF-4ADD-3D0E-B6F7-DF5C3FD6FE27
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector'
-current-version: 124.0.29
+current-version: 124.2
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     clients:         [ MetalPerformanceShaders ]

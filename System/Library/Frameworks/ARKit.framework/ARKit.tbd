@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           136832B1-AD30-3D9F-808A-943A6958E393
+    value:           2391D8D1-E1E0-3D09-BFB3-5BE17E77F38C
   - target:          arm64e-ios
-    value:           537EC00F-41B5-37C6-852C-8C5D76AD3F5D
+    value:           BB5FD46F-D91F-3C1F-B07B-1881FF2A6C19
 install-name:    '/System/Library/Frameworks/ARKit.framework/ARKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -78,9 +78,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           4AC1432D-4198-3064-BD0A-8B8AD22DA2AB
+    value:           68F66C4D-BDE8-3FA5-9463-B679B10F1F70
   - target:          arm64e-ios
-    value:           39AE8B8F-1798-375E-AA2D-2FE5EFADAA42
+    value:           75040FE9-52BC-30B7-8367-880DC471BB7C
 install-name:    '/System/Library/PrivateFrameworks/ARKitCore.framework/ARKitCore'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -194,8 +194,8 @@ exports:
                        _ARLeftBrowInner, _ARLeftBrowMiddle, _ARLeftBrowOuter, _ARLeftEyeInnerCorner, 
                        _ARLeftEyeLowerInner, _ARLeftEyeLowerOuter, _ARLeftEyeOuterCorner, 
                        _ARLeftEyePupil, _ARLeftEyeUpperInner, _ARLeftEyeUpperOuter, 
-                       _ARLinkedOnOrAfterAzul, _ARLinkedOnOrAfterPeace, _ARLinkedOnOrAfterPeaceE, 
-                       _ARLinkedOnOrAfterYukon, _ARLocationIntegrationSlamConfigurationName, 
+                       _ARLinkedOnOrAfterAzul, _ARLinkedOnOrAfterAzulC, _ARLinkedOnOrAfterPeace, 
+                       _ARLinkedOnOrAfterPeaceE, _ARLinkedOnOrAfterYukon, _ARLocationIntegrationSlamConfigurationName, 
                        _ARMLDepthDataSourceDescription, _ARMLImageDownScalingRegionOfInterest, 
                        _ARMLImageDownScalingRotationOfResultTensorKey, _ARMLModelPath, 
                        _ARMTLPixelFormatFromOSType, _ARMakeSRT, _ARMatrix3x3CopyValues, 
@@ -390,13 +390,13 @@ exports:
                        AR3DSkeletonDetectionResults, AR3DSkeletonLiftingTechnique, 
                        AR3DSkeletonRegistrationData, AR3DSkeletonRegistrationTechnique, 
                        AR3DSkeletonRetargetingTechnique, ARAccelerometerData, ARAltitudeUndulationPair, 
-                       ARAnchor, ARArchive, ARAudioData, ARBKSAccelerometer, ARBVHExporter, 
-                       ARBody2D, ARBodyAnchor, ARBodyTrackingConfiguration, ARBufferPopulationMonitor, 
-                       ARCamera, ARCameraAlignmentData, ARCircularArray, ARCollaborationData, 
-                       ARCollaborationStats, ARConfiguration, ARCoreRESkeletonResult, 
-                       ARCoreRESkeletonResults, ARCubemapCompletion, ARCubemapGenerator, 
-                       ARCustomTechniquesConfiguration, ARDaemon, ARDaemonService, 
-                       ARDaemonServiceListener, ARDepthBasedPersonDetectionResult, 
+                       ARAnchor, ARAppClipCodeAnchor, ARArchive, ARAudioData, ARBKSAccelerometer, 
+                       ARBVHExporter, ARBody2D, ARBodyAnchor, ARBodyTrackingConfiguration, 
+                       ARBufferPopulationMonitor, ARCamera, ARCameraAlignmentData, 
+                       ARCircularArray, ARCollaborationData, ARCollaborationStats, 
+                       ARConfiguration, ARCoreRESkeletonResult, ARCoreRESkeletonResults, 
+                       ARCubemapCompletion, ARCubemapGenerator, ARCustomTechniquesConfiguration, 
+                       ARDaemon, ARDaemonService, ARDaemonServiceListener, ARDepthBasedPersonDetectionResult, 
                        ARDepthData, ARDepthEstimationTechnique, ARDepthMapData, ARDepthPointCloudCoalescer, 
                        ARDepthSensor, ARDepthSensorSettings, ARDepthTechnique, ARDeviceOrientationData, 
                        ARDeviceOrientationSensor, ARDirectionalLightEstimate, ARDisplayLink, 
@@ -429,18 +429,19 @@ exports:
                        ARObjectDetectionTechnique, ARObjectScanningConfiguration, 
                        AROrientationTrackingConfiguration, ARParentImageSensor, ARParentImageSensorSettings, 
                        ARParentTechnique, ARParticipantAnchor, ARPatchGrid, ARPersonDetectionData, 
-                       ARPersonDetectionResult, ARPersonDetectionTechnique, ARPersonOcclusionParentTechnique, 
-                       ARPersonOcclusionTechnique, ARPlaceholderMLDepthData, ARPlaneAnchor, 
-                       ARPlaneData, ARPlaneEstimationTechnique, ARPlaneGeometry, 
-                       ARPointCloud, ARPointCloudSensorData, ARPoseContext, ARPositionalTrackingConfiguration, 
-                       ARQAHelper, ARQATracer, ARQuickLookPreviewItem, ARRawSceneUnderstandingData, 
-                       ARRaycastQuery, ARRaycastResult, ARRecordingConfiguration, 
-                       ARRecordingTechniquePublic, ARReferenceImage, ARReferenceObject, 
-                       ARRemoteGeoTrackingTechnique, ARRemoteLocationSensor, ARRemoteService, 
-                       ARRemoteTechnique, ARRenderSyncScheduler, ARReplayConfiguration, 
-                       ARReplaySensor, ARReplaySensorPublic, ARRollingNumberSeries, 
-                       ARRunLoop, ARSLAMState, ARSceneReconstructionOptions, ARSegmentationData, 
-                       ARSegmentationSingleTechnique, ARSegmentationTechnique, ARSemanticSegmentationTechnique, 
+                       ARPersonDetectionResult, ARPersonDetectionTechnique, ARPersonMetadata, 
+                       ARPersonOcclusionParentTechnique, ARPersonOcclusionTechnique, 
+                       ARPlaceholderMLDepthData, ARPlaneAnchor, ARPlaneData, ARPlaneEstimationTechnique, 
+                       ARPlaneGeometry, ARPointCloud, ARPointCloudSensorData, ARPoseContext, 
+                       ARPositionalTrackingConfiguration, ARQAHelper, ARQATracer, 
+                       ARQuickLookPreviewItem, ARRawSceneUnderstandingData, ARRaycastQuery, 
+                       ARRaycastResult, ARRecordingConfiguration, ARRecordingTechniquePublic, 
+                       ARReferenceImage, ARReferenceObject, ARRemoteGeoTrackingTechnique, 
+                       ARRemoteLocationSensor, ARRemoteService, ARRemoteTechnique, 
+                       ARRenderSyncScheduler, ARReplayConfiguration, ARReplaySensor, 
+                       ARReplaySensorPublic, ARRollingNumberSeries, ARRunLoop, ARSLAMState, 
+                       ARSceneReconstructionOptions, ARSegmentationData, ARSegmentationSingleTechnique, 
+                       ARSegmentationTechnique, ARSemanticSegmentationTechnique, 
                        ARServer, ARSession, ARSessionMetrics, ARSessionReplayStats, 
                        ARSharedGPUDevice, ARSkeleton, ARSkeleton2D, ARSkeleton3D, 
                        ARSkeletonDefinition, ARSkipTileBounds, ARStreamFormat, ARTechnique, 

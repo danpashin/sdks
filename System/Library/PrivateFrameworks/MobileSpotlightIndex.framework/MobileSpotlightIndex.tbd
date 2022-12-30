@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileSpotlightIndex.framework/MobileSpotlightIndex
-current-version:       2149.1
+current-version:       2150.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -29,6 +29,7 @@ exports:
                             _MDPlistBytesBeginDictionary,
                             _MDPlistBytesBeginPlist,
                             _MDPlistBytesCopyChildPlistBytesAtIndex,
+                            _MDPlistBytesCopyDispatchData,
                             _MDPlistBytesCopyPlistAtIndex,
                             _MDPlistBytesCopyPlistAtIndexWithAllocator,
                             _MDPlistBytesCopyPlistAtIndexWithCallbacks,
@@ -60,6 +61,7 @@ exports:
                             _MDPlistContainerBeginArray,
                             _MDPlistContainerBeginContainer,
                             _MDPlistContainerBeginDictionary,
+                            _MDPlistContainerCopyDispatchData,
                             _MDPlistContainerCopyObject,
                             _MDPlistContainerCopyObjectAtKeyArray,
                             _MDPlistContainerCopyObjectAtKeyPath,
@@ -81,7 +83,6 @@ exports:
                             _MDPlistContainerGetPlistObjectAtKeyArray,
                             _MDPlistContainerGetPlistObjectAtKeyPath,
                             _MDPlistContainerHasObjectAtKeyPath,
-                            _MDPlistContainerSetShouldDeallocate,
                             _MDPlistContainerWillUseMalloc,
                             _MDPlistDataGetBytePtr, _MDPlistDateGetValue,
                             _MDPlistDictionaryGetCount,
@@ -144,7 +145,7 @@ exports:
                             _SIExecuteQueryWithResultsCallback,
                             _SIExecuteQueryWithResultsCallbackForTags,
                             _SIFetchCSClientState, _SIFixupPaths,
-                            _SIFlushAndSuspendIndex,
+                            _SIFlushAndSuspendIndex, _SIForceResume,
                             _SIGetAccumulatedCountForBundleId,
                             _SIGetAccumulatedSizeForGroup,
                             _SIGetAccumulatedStorageSizeForBundleId,
