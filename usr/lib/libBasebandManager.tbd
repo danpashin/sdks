@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           A4228D4C-11F0-3ADF-8209-8DBFFCB9263B
   - target:          arm64-ios
-    value:           B23B58EC-1F3B-3CD6-971C-629ECD0F88D7
+    value:           A2A3955E-8E64-3418-B7B2-134D4240A0FF
   - target:          arm64e-ios
-    value:           D13CEDA1-67FD-3879-AB1A-18EA9B868688
+    value:           7BB8CE85-413B-3167-9C57-FDD2C1DE03A5
 install-name:    '/usr/lib/libBasebandManager.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1149,8 +1149,8 @@ exports:
                        __ZNK11PowerBudget9to_stringEv, __ZNK11RadioModule17getShutdownStagesEv, 
                        __ZNK11RadioModule7getNameEv, __ZNK11StatsModule17getShutdownStagesEv, 
                        __ZNK11StatsModule7getNameEv, __ZNK12Capabilities14isCarrierBuildEv, 
-                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isFurySupportedEv, 
-                       __ZNK12Capabilities15isInternalBuildEv, __ZNK12Capabilities18getDataFlowControlEv, 
+                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isInternalBuildEv, 
+                       __ZNK12Capabilities18getDataFlowControlEv, __ZNK12Capabilities18isMagSafeSupportedEv, 
                        __ZNK12Capabilities19getCoredumpAttemptsEv, __ZNK12Capabilities20isCoexEur5GSupportedEv, 
                        __ZNK12Capabilities20isETSBypassSupportedEv, __ZNK12Capabilities21isRFSelfTestSupportedEv, 
                        __ZNK12Capabilities22getDataPowerSaveConfigEv, __ZNK12Capabilities23isRFFEScanDataSupportedEv, 
@@ -1159,6 +1159,7 @@ exports:
                        __ZNK12Capabilities26isAccessoryModuleSupportedEv, __ZNK12Capabilities26isCellularLoggingSupportedEv, 
                        __ZNK12Capabilities27isCoexGPSReportingSupportedEv, __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, 
                        __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, __ZNK12Capabilities32isBatteryInfoMonitoringSupportedEv, 
+                       __ZNK12Capabilities32isDisplayCoverAccessorySupportedEv, __ZNK12Capabilities34isSmartConnectorAccessorySupportedEv, 
                        __ZNK12Capabilities7isWatchEv, __ZNK12QMIXpcServer7getNameEv, 
                        __ZNK12TraceManager17getShutdownStagesEv, __ZNK12TraceManager22submitTraceMetric_syncENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES6_, 
                        __ZNK12TraceManager7getNameEv, __ZNK13AntennaModule17getShutdownStagesEv, 
@@ -1348,13 +1349,15 @@ exports:
                        __ZGVN3ctu9SingletonI16ABMNetworkPolicyS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZGVN3ctu9SingletonI9ABMServerS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZGVN3ctu9SingletonIN3abm9AWDHelperES2_NS_23PthreadMutexGuardPolicyIS2_EEE9sInstanceE, 
+                       __ZGVN3ctu9SingletonINS_7GestaltES1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI12CapabilitiesS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI13ABMPropertiesS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI13ABMStatisticsS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI13ServerLoggingS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI16ABMNetworkPolicyS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI9ABMServerS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
-                       __ZN3ctu9SingletonIN3abm9AWDHelperES2_NS_23PthreadMutexGuardPolicyIS2_EEE9sInstanceE ]
+                       __ZN3ctu9SingletonIN3abm9AWDHelperES2_NS_23PthreadMutexGuardPolicyIS2_EEE9sInstanceE, 
+                       __ZN3ctu9SingletonINS_7GestaltES1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _AppleBasebandManagerGetProfile, _AppleBasebandManagerInitServer, 
                        _AppleBasebandManagerShutdownServer, _AppleBasebandManagerStartServer, 

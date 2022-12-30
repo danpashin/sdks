@@ -1,11 +1,15 @@
 --- !tapi-tbd
 tbd-version:     4
-targets:         [ arm64-ios, arm64e-ios ]
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           56126D5F-B0EE-3FC5-8E4A-070763899D57
+    value:           F8CFEC16-9509-3AAA-84D5-E1A1E88447C5
   - target:          arm64e-ios
-    value:           43578120-CCCE-3BC4-A76F-F7BF053A8817
+    value:           082A7DE8-751B-32A7-993D-92DC13469390
 install-name:    '/usr/lib/swift/libswiftDemangle.dylib'
 current-version: 0
 exports:
@@ -64,7 +68,7 @@ exports:
                        __ZN5swift8Demangle9Demangler15createSwiftTypeENS0_4Node4KindEPKc, 
                        __ZN5swift8Demangle9Demangler15createWithChildENS0_4Node4KindEPS2_, 
                        __ZN5swift8Demangle9Demangler15demangleNaturalEv, __ZN5swift8Demangle9Demangler15demangleWitnessEv, 
-                       __ZN5swift8Demangle9Demangler15popFunctionTypeENS0_4Node4KindE, 
+                       __ZN5swift8Demangle9Demangler15popFunctionTypeENS0_4Node4KindEb, 
                        __ZN5swift8Demangle9Demangler16DemangleInitRAIIC1ERS1_N4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
                        __ZN5swift8Demangle9Demangler16DemangleInitRAIIC2ERS1_N4llvm9StringRefENSt3__18functionIFPNS0_4NodeENS0_21SymbolicReferenceKindENS0_10DirectnessEiPKvEEE, 
                        __ZN5swift8Demangle9Demangler16DemangleInitRAIID1Ev, __ZN5swift8Demangle9Demangler16DemangleInitRAIID2Ev, 
@@ -72,8 +76,8 @@ exports:
                        __ZN5swift8Demangle9Demangler16demangleMetatypeEv, __ZN5swift8Demangle9Demangler16demangleOperatorEv, 
                        __ZN5swift8Demangle9Demangler16demangleVariableEv, __ZN5swift8Demangle9Demangler16popAssocTypeNameEv, 
                        __ZN5swift8Demangle9Demangler16popAssocTypePathEv, __ZN5swift8Demangle9Demangler17demangleArchetypeEv, 
-                       __ZN5swift8Demangle9Demangler17demangleSubscriptEv, __ZN5swift8Demangle9Demangler17parseAndPushNodesEv, 
-                       __ZN5swift8Demangle9Demangler17popFunctionParamsENS0_4Node4KindE, 
+                       __ZN5swift8Demangle9Demangler17demangleClangTypeEv, __ZN5swift8Demangle9Demangler17demangleSubscriptEv, 
+                       __ZN5swift8Demangle9Demangler17parseAndPushNodesEv, __ZN5swift8Demangle9Demangler17popFunctionParamsENS0_4Node4KindE, 
                        __ZN5swift8Demangle9Demangler18createWithChildrenENS0_4Node4KindEPS2_S4_, 
                        __ZN5swift8Demangle9Demangler18createWithChildrenENS0_4Node4KindEPS2_S4_S4_, 
                        __ZN5swift8Demangle9Demangler18createWithChildrenENS0_4Node4KindEPS2_S4_S4_S4_, 
@@ -110,6 +114,7 @@ exports:
                        __ZN5swift8Demangle9Demangler28demangleStandardSubstitutionEv, 
                        __ZN5swift8Demangle9Demangler28getDependentGenericParamTypeEii, 
                        __ZN5swift8Demangle9Demangler29demangleGenericSpecializationENS0_4Node4KindE, 
+                       __ZN5swift8Demangle9Demangler29demangleImplDifferentiabilityEv, 
                        __ZN5swift8Demangle9Demangler29demangleThunkOrSpecializationEv, 
                        __ZN5swift8Demangle9Demangler29popAnyProtocolConformanceListEv, 
                        __ZN5swift8Demangle9Demangler30demangleAssociatedTypeCompoundEPNS0_4NodeE, 
@@ -135,8 +140,9 @@ exports:
                        __ZNK5swift8Demangle4Node14getNumChildrenEv, __ZNK5swift8Demangle4Node3endEv, 
                        __ZNK5swift8Demangle4Node5beginEv, __ZNR5swift8Demangle16DemanglerPrinter8writeHexEy, 
                        __ZNR5swift8Demangle16DemanglerPrinterlsEx, __ZNR5swift8Demangle16DemanglerPrinterlsEy, 
-                       __ZTVN5swift8Demangle11NodeFactoryE, __ZTVN5swift8Demangle9DemanglerE, 
-                       __swift_mangleSimpleClass, __swift_mangleSimpleProtocol, _fnd_get_demangled_name, 
+                       __ZTVN5swift8Demangle11NodeFactoryE, __ZTVN5swift8Demangle9DemanglerE ]
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ __swift_mangleSimpleClass, __swift_mangleSimpleProtocol, _fnd_get_demangled_name, 
                        _swift_demangle_getDemangledName, _swift_demangle_getModuleName, 
                        _swift_demangle_getSimplifiedDemangledName, _swift_demangle_hasSwiftCallingConvention ]
 ...

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/Message
-current-version:       3654.60
+current-version:       3654.80
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -627,8 +627,11 @@ exports:
                             MFNetworkController._activeCalls,
                             MFNetworkController._alternateAdviceState,
                             MFNetworkController._backgroundWifiClients,
+                            MFNetworkController._callObserverInitialized,
                             MFNetworkController._cellularDataAvailable,
                             MFNetworkController._ctc,
+                            MFNetworkController._dataStatusInitialized,
+                            MFNetworkController._dataStatusInitializerLock,
                             MFNetworkController._dataStatusQueue,
                             MFNetworkController._dns, MFNetworkController._flags,
                             MFNetworkController._hasCellDataCapability,

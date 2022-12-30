@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils
-current-version:       827.80.7
+current-version:       827.100.23
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -95,6 +95,7 @@ exports:
                             _LibCall_ACMKernDoubleClickNotify,
                             _LibCall_ACMKernelControl,
                             _LibCall_ACMKernelControl_Block, _LibCall_ACMPing,
+                            _LibCall_ACMPublishTrustedAccessories,
                             _LibCall_ACMRequirementDelete,
                             _LibCall_ACMRequirementGetPriority,
                             _LibCall_ACMRequirementGetPropertyData,
@@ -138,14 +139,14 @@ exports:
                             _Util_hexDumpToStrHelper, _Util_isNonNullEqualMemory,
                             _Util_isNullOrZeroMemory, __isMultiUser,
                             _gAllocatedBytes, _gLastAllocatedBytes,
-                            _kServiceTypeSecureStorage ]
-    objc-classes:         [ BaseService, BaseServiceManager, DefaultServiceSession,
-                            LAACMHelper, LAADMUser, LAAssertionsProxy,
-                            LACachedExternalizedContext, LAErrorHelper,
+                            _kLAServiceTypeSecureStorage ]
+    objc-classes:         [ LAACMHelper, LAADMUser, LAAssertionsProxy, LABaseService,
+                            LABaseServiceManager, LACachedExternalizedContext,
+                            LADefaultServiceSession, LAErrorHelper,
                             LAInternalProtocols, LAManagedACMParameter,
                             LAParamChecker, LAPasscodeHelper, LASecureData,
-                            LAStorageHelper, LAUtils, NSXPCInvocation, WeakBox ]
-    objc-ivars:           [ BaseService._clients, BaseService._listener,
-                            BaseService._terminating,
-                            BaseServiceManager._sessions ]
+                            LAStorageHelper, LAUtils, LAWeakBox ]
+    objc-ivars:           [ LABaseService._clients, LABaseService._listener,
+                            LABaseService._terminating,
+                            LABaseServiceManager._sessions ]
 ...

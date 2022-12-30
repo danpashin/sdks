@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/AuthenticationServicesCore
+current-version:       611.1.21
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _ASCAuthorizationErrorDomain,
+                            _ASCAuthorizationPresentationContextDataKey,
+                            _ASViewServiceClientEntitlement,
+                            _ASViewServiceProcess, _descriptionForErrorCode ]
+    objc-classes:         [ ASCAppleIDCredential, ASCAppleIDLoginChoice,
+                            ASCAuthorizationPresentationContext,
+                            ASCAuthorizationPresenter,
+                            ASCAuthorizationPresenterHostInterface,
+                            ASCCredentialRequestContext, ASCPasswordCredential,
+                            ASCPasswordLoginChoice,
+                            ASCPlatformPublicKeyCredential,
+                            ASCPlatformPublicKeyCredentialLoginChoice,
+                            ASCSecurityKeyPublicKeyCredential,
+                            ASCSecurityKeyPublicKeyCredentialLoginChoice,
+                            ASCViewServiceInterface ]
+...

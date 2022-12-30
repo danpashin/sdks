@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoordinationCore.framework/CoordinationCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _COMeshNodeErrorDomain ]
+    objc-classes:         [ COBallot, COConstituent, COCoordinationService,
+                            CODistantAccessoryCollectionSetting,
+                            CODistantAccessoryDataSetting,
+                            CODistantAccessoryNumberSetting,
+                            CODistantAccessorySelectionSetting,
+                            CODistantAccessorySetting,
+                            CODistantAccessoryStringSetting, COMeshAddOn,
+                            COMeshAlarmAddOn, COMeshCommand, COMeshController,
+                            COMeshHomeKitAddOn, COMeshLocalNode, COMeshNode,
+                            COMeshNotification, COMeshRequest, COMeshResponse,
+                            COMeshTimerAddOn, COMutableBallot ]
+...

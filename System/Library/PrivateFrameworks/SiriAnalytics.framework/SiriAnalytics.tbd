@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/SiriAnalytics.framework/SiriAnalytics
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _SiriAnalyticsCurrentClockIdentifier,
+                            _SiriAnalyticsLogContextAssistant,
+                            _SiriAnalyticsLogContextStorage,
+                            _SiriAnalyticsLogContextStreaming,
+                            _SiriAnalyticsLogContextUtility,
+                            _SiriAnalyticsLogContextXPC,
+                            _SiriAnalyticsLoggingInit,
+                            _SiriAnalyticsLoggingSubsystem,
+                            _SiriAnalyticsVersionNumber,
+                            _SiriAnalyticsVersionString,
+                            _SiriAnalyticsXPCServiceInterface,
+                            _kAssistantSiriAnalyticsServiceName ]
+    objc-classes:         [ AssistantSiriAnalytics,
+                            AssistantSiriAnalyticsService,
+                            SiriAnalyticsFBFMessageStorageProvider,
+                            SiriAnalyticsMessageObserverHandle,
+                            SiriAnalyticsMessageObserverStream,
+                            SiriAnalyticsTimePeriodBuffer,
+                            SiriAnalyticsTimeStamp, SiriAnalyticsXPCConnection,
+                            SiriAnalyticsXPCMessageEnvelope,
+                            SiriAnalyticsXPCMessageStream,
+                            SiriAnalyticsXPCServiceListener ]
+...

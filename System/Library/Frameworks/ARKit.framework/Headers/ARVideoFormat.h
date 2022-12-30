@@ -21,6 +21,11 @@ NS_SWIFT_NAME(ARConfiguration.VideoFormat)
 @property (nonatomic, readonly) AVCaptureDevicePosition captureDevicePosition API_AVAILABLE(ios(13.0));
 
 /**
+ Indicates the type of AVCaptureDevice.
+ */
+@property (nonatomic, readonly) AVCaptureDeviceType captureDeviceType API_AVAILABLE(ios(14.5));
+
+/**
  Image resolution.
  */
 @property (nonatomic, readonly) CGSize imageResolution;

@@ -8,7 +8,12 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _calculateBearingAngleHorizontalDistanceAndVerticalDistance,
+    symbols:              [ _PRArmsReachThresholdEnter,
+                            _PRArmsReachThresholdExit,
+                            _PRItemFoundThresholdEnter,
+                            _PRItemFoundThresholdExit, _PRVerticalThresholdEnter,
+                            _PRVerticalThresholdExit,
+                            _calculateBearingAngleHorizontalDistanceAndVerticalDistance,
                             _platformSupportsProximity ]
     objc-classes:         [ PRARKitDataRecorder, PRDataRecorder,
                             PRDataRecorderBase, PRDevicePoseProvider,

@@ -7,16 +7,16 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           CBB1F2CC-5768-38BF-A5DB-5115A29DC664
+    value:           644A905D-215A-3D59-94C6-1D78BD375E12
   - target:          arm64e-ios
-    value:           73C7D4B8-1379-3B30-A753-51C8C6CDB0F9
+    value:           B2128708-B708-3BAA-9F57-AD6889728C1D
 install-name:    '/usr/lib/libBasebandDiagnostic.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZN18BasebandDiagnostic12addAWDConfigENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN18BasebandDiagnostic13resetBasebandERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEb, 
-                       __ZN18BasebandDiagnostic15removeAWDConfigEv, __ZN18BasebandDiagnostic16getOperatingModeEv, 
-                       __ZN18BasebandDiagnostic16setOperatingModeE14BasebandOpMode, 
+                       __ZN18BasebandDiagnostic15getBasebandTypeEv, __ZN18BasebandDiagnostic15removeAWDConfigEv, 
+                       __ZN18BasebandDiagnostic16getOperatingModeEv, __ZN18BasebandDiagnostic16setOperatingModeE14BasebandOpMode, 
                        __ZN18BasebandDiagnostic18saveToUserDefaultsERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEPK8__CFData, 
                        __ZN18BasebandDiagnostic19addAWDConfigPayloadEPcm, __ZN18BasebandDiagnostic22removeFromUserDefaultsERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN18BasebandDiagnostic24registerAWDMetricHandlerENSt3__18functionIFvNS0_6vectorIhNS0_9allocatorIhEEEEEEE, 
@@ -31,10 +31,11 @@ exports:
                        __ZN18BasebandDiagnosticD1Ev, __ZN18BasebandDiagnosticD2Ev, 
                        __ZN20BasebandRFDiagnostic19getAPAuthParametersEv, __ZN20BasebandRFDiagnostic20isBasebandWaitForFTMEv, 
                        __ZN20BasebandRFDiagnostic21clearRFSelfTestTicketEv, __ZN20BasebandRFDiagnostic22getPersonalizationInfoEv, 
-                       __ZN20BasebandRFDiagnostic23getSignedTicketAndStoreEb, __ZN20BasebandRFDiagnostic23startBasebandRFSelfTestEj, 
-                       __ZN20BasebandRFDiagnostic27registerRFSelfTestDataEventENSt3__18functionIFvNS0_6vectorIhNS0_9allocatorIhEEEES5_S5_EEE, 
+                       __ZN20BasebandRFDiagnostic23getSignedTicketAndStoreEb, __ZN20BasebandRFDiagnostic27registerRFSelfTestDataEventENSt3__18functionIFvNS0_6vectorIhNS0_9allocatorIhEEEES5_S5_EEE, 
+                       __ZN20BasebandRFDiagnostic27setBasebandRFSelfTestTicketEv, 
                        __ZN20BasebandRFDiagnostic28getBasebandEstimatedTestTimeEv, 
-                       __ZN20BasebandRFDiagnostic32startBasebandRFSelfTestInFactoryEj, 
+                       __ZN20BasebandRFDiagnostic30startBasebandRFSelfTestFTMModeEj, 
+                       __ZN20BasebandRFDiagnostic31startBasebandRFSelfTestAST2ModeEv, 
                        __ZN20BasebandRFDiagnostic36sendCommandBasebandRequestRFSelfTestEN3xpc4dictE, 
                        __ZN20BasebandRFDiagnostic6createEv, __ZN20BasebandRFDiagnostic7getNameEv, 
                        __ZN20BasebandRFDiagnostic8asStringE21RFDiagnosticErrorCode, 

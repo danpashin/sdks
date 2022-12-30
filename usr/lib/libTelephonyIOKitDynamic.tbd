@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           A4C0E8C7-478D-371B-972D-6DB15F419884
   - target:          arm64-ios
-    value:           BC10757E-9891-37C7-B5B2-C606A8E98E40
+    value:           AE12341F-7921-31CA-851C-88DF66074690
   - target:          arm64e-ios
-    value:           EC060CA3-FC59-3A39-A962-6FC2F0D06616
+    value:           7C4C1AA2-B881-37C1-951A-243779135D93
 install-name:    '/usr/lib/libTelephonyIOKitDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -64,6 +64,8 @@ exports:
                        __ZN3ctu5iokit10Controller29getAccessoryPrimaryPortNumberEv, 
                        __ZN3ctu5iokit10Controller30processBatteryInfoNotificationEv, 
                        __ZN3ctu5iokit10Controller33getModelNumberViaAccessoryManagerEj, 
+                       __ZN3ctu5iokit10Controller34stopDisplayCoverStateNotificationsEv, 
+                       __ZN3ctu5iokit10Controller35registerForDisplayCoverStateChangedEN8dispatch8callbackIU13block_pointerFvNS0_31TelephonyIOKitDisplayCoverStateEEEE, 
                        __ZN3ctu5iokit10Controller4initEv, __ZN3ctu5iokit10Controller6createENSt3__110shared_ptrINS_9LogServerEEEP11__CFRunLoop, 
                        __ZN3ctu5iokit10Controller7releaseEv, __ZN3ctu5iokit10ControllerC1ENSt3__110shared_ptrINS_9LogServerEEEP11__CFRunLoop, 
                        __ZN3ctu5iokit10ControllerC2ENSt3__110shared_ptrINS_9LogServerEEEP11__CFRunLoop, 
@@ -80,6 +82,7 @@ exports:
                        __ZN3ctu5iokit8asStringENS0_25TelephonyIOKitPowerSourceE, 
                        __ZN3ctu5iokit8asStringENS0_27TelephonyIOKitAccessoryTypeE, 
                        __ZN3ctu5iokit8asStringENS0_29TelephonyIOKitAccessoryStatusE, 
+                       __ZN3ctu5iokit8asStringENS0_31TelephonyIOKitDisplayCoverStateE, 
                        __ZN3ctu5iokit8asStringEj, __ZN3ctu5power7manager14listenerHandleclERKjRKbRKN8dispatch5groupENSt3__110shared_ptrINSB_6atomicIbEEEE, 
                        __ZNK3ctu5iokit15IOHIDController24setHIDMatchingDictionaryEjj, 
                        __ZTIN3ctu5iokit10ControllerE, __ZTSN3ctu5iokit10ControllerE, 

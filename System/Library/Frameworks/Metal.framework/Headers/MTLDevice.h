@@ -418,15 +418,21 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @abstract Query device for 32-bit Float texture filtering support. Specifically, R32Float, RG32Float, and RGBA32Float.
  @return BOOL value. If YES, the device supports filtering 32-bit Float textures. If NO, the device does not.
  */
-@property(readonly) BOOL supports32BitFloatFiltering API_AVAILABLE(macos(11.0)) API_UNAVAILABLE(ios);
+@property(readonly) BOOL supports32BitFloatFiltering API_AVAILABLE(macos(11.0), ios(14.0));
 
 /*!
  @property supports32BitMSAA
  @abstract Query device for 32-bit MSAA texture support. Specifically, added support for allocating 32-bit Integer format textures (R32Uint, R32Sint, RG32Uint, RG32Sint, RGBA32Uint, and RGBA32Sint) and resolving 32-bit Float format textures (R32Float, RG32Float, and RGBA32Float).
  @return BOOL value. If YES, the device supports these additional 32-bit MSAA texture capabilities. If NO, the devices does not.
  */
-@property(readonly) BOOL supports32BitMSAA API_AVAILABLE(macos(11.0)) API_UNAVAILABLE(ios);
+@property(readonly) BOOL supports32BitMSAA API_AVAILABLE(macos(11.0), ios(14.0));
 
+/*!
+@property supportsQueryTextureLOD
+@abstract Query device for whether it supports the `calculate_clampled_lod` and `calculate_unclamped_lod` Metal shading language functionality.
+@return BOOL value. If YES, the device supports the calculate LOD functionality. If NO, the device does not.
+*/
+@property (readonly) BOOL supportsQueryTextureLOD API_AVAILABLE(macos(11.0), ios(14.0));
 
 /*!
  @property supportsBCTextureCompression

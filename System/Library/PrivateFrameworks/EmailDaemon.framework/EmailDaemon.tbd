@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3654.60
+current-version:       3654.80
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -112,11 +112,12 @@ exports:
                             EDConversationPruningActivityManager,
                             EDConversationRemoteCloudKitStorage,
                             EDConversationRemoteKVSStorage,
-                            EDDaemonInterfaceFactory,
+                            EDDaemonInterfaceFactory, EDDiagnosticInfoGatherer,
                             EDDifferentialPrivacyReporter, EDFetchController,
                             EDGmailLabelPersistence,
                             EDHeuristicsMailboxPredictor, EDInMemoryThread,
                             EDInMemoryThreadQueryHandler, EDInteractionEvent,
+                            EDInteractionEventLogLegacyPersistentBitsProvider,
                             EDInteractionEventLogMultiplexer,
                             EDInteractionEventLogSaltProvider,
                             EDInteractionLogger, EDListUnsubscribeHandler,

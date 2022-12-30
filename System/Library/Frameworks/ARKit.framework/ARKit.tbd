@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A107F0D3-AFED-320D-9B9A-DCE861D6A21B
+    value:           FFB5CF80-3839-381E-9EDF-12727D20710E
   - target:          arm64e-ios
-    value:           964AD61C-B22A-3237-9415-36DFAC9FD07D
+    value:           FB6EE172-3607-3FC3-B027-D357B134B2E7
 install-name:    '/System/Library/Frameworks/ARKit.framework/ARKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -78,21 +78,22 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           F6B1605B-E994-3381-BB80-000C5FFE192A
+    value:           88C83627-3D41-3C2F-888C-3F7FD747D1F1
   - target:          arm64e-ios
-    value:           6B449CD2-86E2-3ABF-81E1-E616F5D25BE4
+    value:           663A16FC-06B6-3E3A-A5D1-21C9D110ADFB
 install-name:    '/System/Library/PrivateFrameworks/ARKitCore.framework/ARKitCore'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ARAVCaptureDevicePositionToString, _ARAdjustIntrincisForMirroring, 
                        _ARAdjustIntrincisForOrientation, _ARAdjustIntrinsicsForViewportSize, 
                        _ARAnchorToECEFTransform, _ARAnchorsForPoseGraphUpdates, _ARAnchorsFromAnchorsData, 
-                       _ARAppleDepthAggregationBankCount, _ARAppleDepthComputeNormals, 
-                       _ARAppleDepthPersonOcclusionAverageDepthBoundingBox, _ARAppleDepthPersonOcclusionUseExpFilter, 
-                       _ARAppleDepthTemporalFilteringStoredFrames, _ARAppleDepthTemporalSmoothingMethod, 
-                       _ARAppleNeuralEngine, _ARBackFacingUltraWideImageSensorExposureDurationUserDefaultsKey, 
+                       _ARAppClipCodePerformanceTestModeDefaultsKey, _ARAppleDepthAggregationBankCount, 
+                       _ARAppleDepthComputeNormals, _ARAppleDepthPersonOcclusionAverageDepthBoundingBox, 
+                       _ARAppleDepthPersonOcclusionUseExpFilter, _ARAppleDepthTemporalFilteringStoredFrames, 
+                       _ARAppleDepthTemporalSmoothingMethod, _ARAppleNeuralEngine, 
+                       _ARBackFacingUltraWideImageSensorExposureDurationUserDefaultsKey, 
                        _ARBackFacingUltraWideImageSensorFrameRateUserDefaultsKey, 
-                       _ARBackFacingUltraWideImageSensorGeometridDistortionCorrectionEnabledDefaultsKey, 
+                       _ARBackFacingUltraWideImageSensorGeometricDistortionCorrectionEnabledDefaultsKey, 
                        _ARBackFacingUltraWideImageSensorISOUserDefaultsKey, _ARBackFacingUltraWideImageSensorResolutionUserDefaultsKey, 
                        _ARBackFacingUltraWideImageSensorVideoBinnedUserDefaultsKey, 
                        _ARBackFacingUltraWideImageSensorWhiteBalanceUserDefaultsKey, 
@@ -194,11 +195,11 @@ exports:
                        _ARLeftBrowInner, _ARLeftBrowMiddle, _ARLeftBrowOuter, _ARLeftEyeInnerCorner, 
                        _ARLeftEyeLowerInner, _ARLeftEyeLowerOuter, _ARLeftEyeOuterCorner, 
                        _ARLeftEyePupil, _ARLeftEyeUpperInner, _ARLeftEyeUpperOuter, 
-                       _ARLinkedOnOrAfterAzul, _ARLinkedOnOrAfterAzulC, _ARLinkedOnOrAfterPeace, 
-                       _ARLinkedOnOrAfterPeaceE, _ARLinkedOnOrAfterYukon, _ARLocationIntegrationSlamConfigurationName, 
-                       _ARMLDepthDataSourceDescription, _ARMLImageDownScalingRegionOfInterest, 
-                       _ARMLImageDownScalingRotationOfResultTensorKey, _ARMLModelPath, 
-                       _ARMTLPixelFormatFromOSType, _ARMakeSRT, _ARMatrix3x3CopyValues, 
+                       _ARLinkedOnOrAfterAzul, _ARLinkedOnOrAfterAzulC, _ARLinkedOnOrAfterAzulE, 
+                       _ARLinkedOnOrAfterPeace, _ARLinkedOnOrAfterPeaceE, _ARLinkedOnOrAfterYukon, 
+                       _ARLocationIntegrationSlamConfigurationName, _ARMLDepthDataSourceDescription, 
+                       _ARMLImageDownScalingRegionOfInterest, _ARMLImageDownScalingRotationOfResultTensorKey, 
+                       _ARMLModelPath, _ARMTLPixelFormatFromOSType, _ARMakeSRT, _ARMatrix3x3CopyValues, 
                        _ARMatrix3x3Description, _ARMatrix3x3FromArray, _ARMatrix3x3FromColumnMajorFlatArray, 
                        _ARMatrix3x3FromMatrix4x4, _ARMatrix3x3FromNSData, _ARMatrix3x3FromRowMajorFlatArray, 
                        _ARMatrix3x3MakeColumnMajorTransform, _ARMatrix3x3MakeRowMajorTransform, 
@@ -222,7 +223,8 @@ exports:
                        _ARMattingDepthScale, _ARMattingDisableSoftEdges, _ARMattingEpsilon, 
                        _ARMattingErosionRadius, _ARMattingGuideDoubleMLResolutionForIPad, 
                        _ARMattingUncertaintyRadius, _ARMattingUseTemporalSmoothing, 
-                       _ARMeasureAppSlamConfigurationName, _ARMotionSensorSampleRateUserDefaultsKey, 
+                       _ARMeasureAppSlamConfigurationName, _ARMetadataIdentifierForARRecordableResultsClass, 
+                       _ARMetadataIdentifierForARSensorDataClass, _ARMotionSensorSampleRateUserDefaultsKey, 
                        _ARMouthCenterLower, _ARMouthCenterPhiltrum, _ARMouthInnerDown, 
                        _ARMouthInnerDownLeft, _ARMouthInnerDownRight, _ARMouthInnerUp, 
                        _ARMouthInnerUpLeft, _ARMouthInnerUpRight, _ARMouthLeftCorner, 
@@ -358,29 +360,29 @@ exports:
                        _AVCaptureDeviceTypeBuiltInSuperWideAngleCameraForReplayBackwardsCompatibility, 
                        _AVCaptureDeviceTypeFromStreamIdentifier, _AVMetadataIdentifierCVPixelBufferAttachment, 
                        _AVMetadataIdentifierIMUDataType, _AVMetadataIdentifierJasperCalibrationData, 
-                       _AVMetadataIdentifierQuickTimeARAccelerometerData, _AVMetadataIdentifierQuickTimeARCustomData, 
-                       _AVMetadataIdentifierQuickTimeARDeviceOrientationData, _AVMetadataIdentifierQuickTimeARDeviceString, 
-                       _AVMetadataIdentifierQuickTimeARGyroscopeData, _AVMetadataIdentifierQuickTimeARImageData, 
-                       _AVMetadataIdentifierQuickTimeARKitVersion, _AVMetadataIdentifierQuickTimeAROSVersion, 
-                       _AVMetadataIdentifierQuickTimeARSensorDataTypeInformation, 
+                       _AVMetadataIdentifierPrefixResultData, _AVMetadataIdentifierQuickTimeARAccelerometerData, 
+                       _AVMetadataIdentifierQuickTimeARCustomData, _AVMetadataIdentifierQuickTimeARDeviceOrientationData, 
+                       _AVMetadataIdentifierQuickTimeARDeviceString, _AVMetadataIdentifierQuickTimeARGyroscopeData, 
+                       _AVMetadataIdentifierQuickTimeARImageData, _AVMetadataIdentifierQuickTimeARKitVersion, 
+                       _AVMetadataIdentifierQuickTimeAROSVersion, _AVMetadataIdentifierQuickTimeARSensorDataTypeInformation, 
                        _AVMetadataIdentifierRawAccelerometerReadings, _AVMetadataIdentifierRawDeviceMotionReadings, 
                        _AVMetadataIdentifierRawGyroscopeReadings, _AVMetadataIdentifierRawLocationReadings, 
-                       _AVMetadataIdentifierRecordingEnvironment, _AVMetadataIdentifierStreamDataType, 
-                       _AVStreamIdentifierQuickTimeARAudio, _AVStreamIdentifierQuickTimeARImageData, 
-                       _AppleCV3DValuesFromExternalCalibrationDictionary, _CV3DSLAMCameraVideoModeForResolutionAndDeviceType, 
-                       _NSStringFromARAltitudeSource, _NSStringFromARCollaborationData, 
-                       _NSStringFromAREnvironmentTexturing, _NSStringFromARFrameSemantics, 
-                       _NSStringFromARGeoTrackingAccuracy, _NSStringFromARGeoTrackingInternalFailureReason, 
-                       _NSStringFromARGeoTrackingState, _NSStringFromARGeoTrackingStateReason, 
-                       _NSStringFromARPlaneClassification, _NSStringFromARPlaneClassificationStatus, 
-                       _NSStringFromARPlaneDetection, _NSStringFromARReplayMode, 
-                       _NSStringFromARWorldAlignment, _NSStringFromARWorldMappingStatus, 
-                       _NSStringFromCV3DPosePredictionReturn, _NSStringFromCV3DSLAMCalibrationReturn, 
-                       _NSStringFromCV3DSLAMJasperPointCloudReturn, _NSStringFromCV3DSLAMReturn, 
-                       _NSStringFromCV3DSceneUnderstandingReturn, _NSStringFromCV3DSurfaceDetectionDetectionPolicy, 
-                       _NSStringFromCV3DSurfaceDetectionExtentType, _NSStringFromCV3DSurfaceDetectionOrientation, 
-                       _NSStringFromCV3DSurfaceDetectionReturn, _NSStringFromCV3DSurfaceDetectionRuntimeConfiguration, 
-                       _NSStringFromCV3DVIOReturn, _NSStringFromSLAMCMDataType, _NSStringFromSceneUnderstandingLabel, 
+                       _AVMetadataIdentifierStreamDataType, _AVStreamIdentifierQuickTimeARAudio, 
+                       _AVStreamIdentifierQuickTimeARImageData, _AppleCV3DValuesFromExternalCalibrationDictionary, 
+                       _CV3DSLAMCameraVideoModeForResolutionAndDeviceType, _NSStringFromARAltitudeSource, 
+                       _NSStringFromARCollaborationData, _NSStringFromAREnvironmentTexturing, 
+                       _NSStringFromARFrameSemantics, _NSStringFromARGeoTrackingAccuracy, 
+                       _NSStringFromARGeoTrackingInternalFailureReason, _NSStringFromARGeoTrackingState, 
+                       _NSStringFromARGeoTrackingStateReason, _NSStringFromARPlaneClassification, 
+                       _NSStringFromARPlaneClassificationStatus, _NSStringFromARPlaneDetection, 
+                       _NSStringFromARReplayMode, _NSStringFromARWorldAlignment, 
+                       _NSStringFromARWorldMappingStatus, _NSStringFromCV3DPosePredictionReturn, 
+                       _NSStringFromCV3DSLAMCalibrationReturn, _NSStringFromCV3DSLAMJasperPointCloudReturn, 
+                       _NSStringFromCV3DSLAMReturn, _NSStringFromCV3DSceneUnderstandingReturn, 
+                       _NSStringFromCV3DSurfaceDetectionDetectionPolicy, _NSStringFromCV3DSurfaceDetectionExtentType, 
+                       _NSStringFromCV3DSurfaceDetectionOrientation, _NSStringFromCV3DSurfaceDetectionReturn, 
+                       _NSStringFromCV3DSurfaceDetectionRuntimeConfiguration, _NSStringFromCV3DVIOReturn, 
+                       _NSStringFromSLAMCMDataType, _NSStringFromSceneUnderstandingLabel, 
                        _NSStringFromUIInterfaceOrientation, _ar_pixelBufferPoolCreateNew, 
                        _replayModeByApplyingUserDefaultOverrides ]
     objc-classes:    [ AR2D3DSkeletonLiftingData, AR2DSkeletonDetectionPostProcessGPU, 

@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           ACEDAA63-1829-3AFA-8CC2-49F6E92EB254
   - target:          arm64-ios
-    value:           F3021642-E3C0-33F8-9911-DD303A6056D0
+    value:           373EC2DD-3A29-3E74-B85D-BE4EE925167A
   - target:          arm64e-ios
-    value:           727F2644-EB4E-3D57-BC2E-E6803BA92366
+    value:           58500388-BF36-397C-84CF-17315A3445B6
 install-name:    '/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation'
-current-version: 1774.101
+current-version: 1775.118.101
 compatibility-version: 150
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -40,7 +40,9 @@ exports:
                        _NSURLQuarantinePropertiesKey, _NSURLTagNamesKey, __CFBagGetKVOBit, 
                        __CFBagSetKVOBit, __CFCalendarAddComponentsV, __CFCalendarComposeAbsoluteTimeV, 
                        __CFCalendarDecomposeAbsoluteTimeV, __CFCalendarGetComponentDifferenceV, 
-                       __CFPreferencesCreatePathToUsersManagedPrefsDirectory, __CFSTEvaluatorAddString, 
+                       __CFPreferencesCreatePathToUsersManagedPrefsDirectory, __CFPrefsTestingFlushClientSideCacheEveryRead, 
+                       __CFPrefsTestingFlushClientSideCacheEveryWrite, __CFPrefsTestingRandomlySynchronous, 
+                       __CFPrefsTestingSimulateSlowFilesystem, __CFSTEvaluatorAddString, 
                        __CFSTEvaluatorCreateLabelsForString, __CFSTEvaluatorCreateWithModelFile, 
                        __CFSTEvaluatorFinalize, __CFSTEvaluatorRelease, __CFSTFeatureCounterAddString, 
                        __CFSTFeatureCounterCreate, __CFSTFeatureCounterRelease, __CFSTTrainerAddString, 
@@ -558,11 +560,12 @@ exports:
                        _NSURLUbiquitousItemDownloadingStatusCurrent, _NSURLUbiquitousItemDownloadingStatusDownloaded, 
                        _NSURLUbiquitousItemDownloadingStatusKey, _NSURLUbiquitousItemDownloadingStatusNotDownloaded, 
                        _NSURLUbiquitousItemHasUnresolvedConflictsKey, _NSURLUbiquitousItemIsDownloadedKey, 
-                       _NSURLUbiquitousItemIsDownloadingKey, _NSURLUbiquitousItemIsSharedKey, 
-                       _NSURLUbiquitousItemIsUploadedKey, _NSURLUbiquitousItemIsUploadingKey, 
-                       _NSURLUbiquitousItemPercentDownloadedKey, _NSURLUbiquitousItemPercentUploadedKey, 
-                       _NSURLUbiquitousItemUploadingErrorKey, _NSURLUbiquitousSharedItemCurrentUserPermissionsKey, 
-                       _NSURLUbiquitousSharedItemCurrentUserRoleKey, _NSURLUbiquitousSharedItemMostRecentEditorNameComponentsKey, 
+                       _NSURLUbiquitousItemIsDownloadingKey, _NSURLUbiquitousItemIsExcludedFromSyncKey, 
+                       _NSURLUbiquitousItemIsSharedKey, _NSURLUbiquitousItemIsUploadedKey, 
+                       _NSURLUbiquitousItemIsUploadingKey, _NSURLUbiquitousItemPercentDownloadedKey, 
+                       _NSURLUbiquitousItemPercentUploadedKey, _NSURLUbiquitousItemUploadingErrorKey, 
+                       _NSURLUbiquitousSharedItemCurrentUserPermissionsKey, _NSURLUbiquitousSharedItemCurrentUserRoleKey, 
+                       _NSURLUbiquitousSharedItemMostRecentEditorNameComponentsKey, 
                        _NSURLUbiquitousSharedItemOwnerNameComponentsKey, _NSURLUbiquitousSharedItemOwnerNameKey, 
                        _NSURLUbiquitousSharedItemPermissionsKey, _NSURLUbiquitousSharedItemPermissionsReadOnly, 
                        _NSURLUbiquitousSharedItemPermissionsReadWrite, _NSURLUbiquitousSharedItemReadOnlyPermissions, 
@@ -709,19 +712,18 @@ exports:
                        __CFPreferencesWriteManagedDomain, __CFPreferencesWriteManagedDomainForUser, 
                        __CFPreferencesWriteUserPreferencesWithCorrectOwner, __CFPrefsCopyAppDictionary, 
                        __CFPrefsCopyAppDictionaryWithContainer, __CFPrefsCopyDescriptionOfAllSearchLists, 
-                       __CFPrefsCopyUserForContainer, __CFPrefsDirectMode, __CFPrefsDirectModeEnabledForDomain, 
+                       __CFPrefsCopyDirectModeConnection, __CFPrefsCopyUserForContainer, 
+                       __CFPrefsDirectMode, __CFPrefsDirectModeEnabledForDomain, 
                        __CFPrefsDumpDescriptionOfAllSearchLists, __CFPrefsEnableWritingToExternalAppCloudPreferences, 
                        __CFPrefsExtractQuadrupleFromPathIfPossible, __CFPrefsGenerateDirectoryURLForTriplet_testing, 
                        __CFPrefsImpersonateApplicationWithIdentifierAndAuditToken, 
                        __CFPrefsImpersonateApplicationWithIdentifierAndContainerDataPath, 
-                       __CFPrefsImpersonateApplicationWithIdentifierAndPID, __CFPrefsInterruptConnectionOnceEachMessage, 
-                       __CFPrefsRegisterUserDefaultsInstance, __CFPrefsRegisterUserDefaultsInstanceWithCloudConfigurationURL, 
-                       __CFPrefsSetDirectModeEnabled, __CFPrefsSetEphemeralMultiUserEnabled, 
-                       __CFPrefsSetReadOnly, __CFPrefsSetSynchronizeIsSynchronous, 
-                       __CFPrefsSynchronizeForProcessTermination, __CFPrefsTestingCloudConfigurationOverrideURL, 
-                       __CFPrefsTestingFlushClientSideCacheEveryRead, __CFPrefsTestingFlushClientSideCacheEveryWrite, 
-                       __CFPrefsTestingInterruptObservationConnections, __CFPrefsTestingRandomlySynchronous, 
-                       __CFPrefsTestingSimulateOutOfDiskSpace, __CFPrefsTestingSimulateSlowFilesystem, 
+                       __CFPrefsImpersonateApplicationWithIdentifierAndPID, __CFPrefsRegisterUserDefaultsInstance, 
+                       __CFPrefsRegisterUserDefaultsInstanceWithCloudConfigurationURL, 
+                       __CFPrefsSetDirectModeConnection, __CFPrefsSetDirectModeEnabled, 
+                       __CFPrefsSetEphemeralMultiUserEnabled, __CFPrefsSetReadOnly, 
+                       __CFPrefsSetSynchronizeIsSynchronous, __CFPrefsSynchronizeForProcessTermination, 
+                       __CFPrefsTestingCloudConfigurationOverrideURL, __CFPrefsTestingFlags, 
                        __CFPrefsUnregisterUserDefaultsInstance, __CFPrintForDebugger, 
                        __CFProcessPath, __CFPropertyListCopyTopLevelKeys, __CFPropertyListCreateFiltered, 
                        __CFPropertyListCreateFromXMLData, __CFPropertyListCreateFromXMLString, 
@@ -1149,11 +1151,12 @@ exports:
                        _kCFURLUbiquitousItemDownloadingStatusCurrent, _kCFURLUbiquitousItemDownloadingStatusDownloaded, 
                        _kCFURLUbiquitousItemDownloadingStatusKey, _kCFURLUbiquitousItemDownloadingStatusNotDownloaded, 
                        _kCFURLUbiquitousItemHasUnresolvedConflictsKey, _kCFURLUbiquitousItemIsDownloadedKey, 
-                       _kCFURLUbiquitousItemIsDownloadingKey, _kCFURLUbiquitousItemIsSharedKey, 
-                       _kCFURLUbiquitousItemIsUploadedKey, _kCFURLUbiquitousItemIsUploadingKey, 
-                       _kCFURLUbiquitousItemPercentDownloadedKey, _kCFURLUbiquitousItemPercentUploadedKey, 
-                       _kCFURLUbiquitousItemUploadingErrorKey, _kCFURLUbiquitousSharedItemCurrentUserPermissionsKey, 
-                       _kCFURLUbiquitousSharedItemCurrentUserRoleKey, _kCFURLUbiquitousSharedItemMostRecentEditorNameComponentsKey, 
+                       _kCFURLUbiquitousItemIsDownloadingKey, _kCFURLUbiquitousItemIsExcludedFromSyncKey, 
+                       _kCFURLUbiquitousItemIsSharedKey, _kCFURLUbiquitousItemIsUploadedKey, 
+                       _kCFURLUbiquitousItemIsUploadingKey, _kCFURLUbiquitousItemPercentDownloadedKey, 
+                       _kCFURLUbiquitousItemPercentUploadedKey, _kCFURLUbiquitousItemUploadingErrorKey, 
+                       _kCFURLUbiquitousSharedItemCurrentUserPermissionsKey, _kCFURLUbiquitousSharedItemCurrentUserRoleKey, 
+                       _kCFURLUbiquitousSharedItemMostRecentEditorNameComponentsKey, 
                        _kCFURLUbiquitousSharedItemOwnerNameComponentsKey, _kCFURLUbiquitousSharedItemOwnerNameKey, 
                        _kCFURLUbiquitousSharedItemPermissionsKey, _kCFURLUbiquitousSharedItemPermissionsReadOnly, 
                        _kCFURLUbiquitousSharedItemPermissionsReadWrite, _kCFURLUbiquitousSharedItemReadOnlyPermissions, 

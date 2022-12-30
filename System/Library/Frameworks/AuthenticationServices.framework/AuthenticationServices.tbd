@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B70F7FBB-EC65-32B9-B6E0-C2D70D033D7F
+    value:           D0526D82-BF2F-3AB0-8A6F-7DA3DC8EE8A7
   - target:          arm64e-ios
-    value:           6E898A99-9249-36DA-9722-B47B44431A1A
+    value:           3768E6B6-A3D4-3ECB-9737-A898472EB2DC
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices'
-current-version: 610.4.3
+current-version: 611.1.21
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
@@ -37,5 +37,6 @@ exports:
                        ASWebAuthenticationSession, _ASAccountAuthenticationModificationExtensionManager, 
                        _ASAccountAuthenticationModificationHostViewController, _ASAccountAuthenticationModificationRemoteViewController, 
                        _ASCredentialListViewController, _ASCredentialProviderExtensionConfigurationViewController, 
-                       _ASExtensionViewController, _ASIncomingCallObserver, _ASPasswordCredentialAuthenticationViewController ]
+                       _ASDevice, _ASExtensionViewController, _ASIncomingCallObserver, 
+                       _ASPasswordCredentialAuthenticationViewController ]
 ...

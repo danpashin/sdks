@@ -8,8 +8,9 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _APAdvertiserCreate, _APAdvertiserDebugShow,
-                            _APAdvertiserGetTypeID, _APAdvertiserInfoCopy,
+    symbols:              [ _APAdvertiserCopyNANWifiStats, _APAdvertiserCreate,
+                            _APAdvertiserDebugShow, _APAdvertiserGetTypeID,
+                            _APAdvertiserInfoCopy,
                             _APAdvertiserInfoCopyAirPlayData,
                             _APAdvertiserInfoCopyAirPlayP2PData,
                             _APAdvertiserInfoCopyAirPlayP2PDataWithNANServiceType,
@@ -26,7 +27,8 @@ exports:
                             _APAdvertiserInfoDebugShow,
                             _APAdvertiserInfoGetTypeID,
                             _APAdvertiserInfoSetProperty,
-                            _APAdvertiserInvalidate, _APAdvertiserReportNANIssue,
+                            _APAdvertiserInvalidate, _APAdvertiserPreWarmNAN,
+                            _APAdvertiserReportNANIssue,
                             _APAdvertiserSetProperty, _APAdvertiserStart,
                             _APAdvertiserStop,
                             _APNetworkClockNTPClientLegacyCreate,
@@ -198,6 +200,9 @@ exports:
                             _kAPReceiverAudioSessionProperty_SampleRate,
                             _kAPReceiverAudioSessionProperty_StreamType,
                             _kAPReceiverAudioSessionProperty_VolumeLinear,
+                            _kAPReceiverAudioSessionStopPacketProcessorOption_CCCountAPSender,
+                            _kAPReceiverAudioSessionStopPacketProcessorOption_CCCountNonAPSender,
+                            _kAPReceiverAudioSessionStopPacketProcessorOption_SenderNANWifiStats,
                             _kAPReceiverNTPClientProperty_TimingPortLocal,
                             _kAPReceiverRemoteControlSessionProperty_ClientTypeUUID,
                             _kAPReceiverRemoteControlSessionProperty_ListenPort,

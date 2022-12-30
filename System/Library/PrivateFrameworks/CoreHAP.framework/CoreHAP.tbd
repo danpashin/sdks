@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
-current-version:       714.4.11
+current-version:       723.5.59
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -31,14 +31,25 @@ exports:
                             _HAP2TLVServicePropertiesAsString,
                             _HAP2TLVThreadOperationTypeAsString,
                             _HAP2UnpairedAccessoryServerPermissionTypeToString,
+                            _HAPAccessoriesListUpdated, _HAPAccessoryCategory,
+                            _HAPAccessoryCharacteristic, _HAPAccessoryDuration,
+                            _HAPAccessoryError, _HAPAccessoryFailedPingCount,
+                            _HAPAccessoryFirmwareVersion,
                             _HAPAccessoryHasPairings, _HAPAccessoryIdentifier,
-                            _HAPAccessoryInstanceID,
+                            _HAPAccessoryInstance, _HAPAccessoryInstanceID,
+                            _HAPAccessoryLinkType, _HAPAccessoryManufacturer,
+                            _HAPAccessoryProduct,
                             _HAPAccessoryReachabilityDefaultConfirmInterval,
                             _HAPAccessoryReachabilityDefaultSleepyConfirmInterval,
+                            _HAPAccessoryReachable, _HAPAccessoryReason,
+                            _HAPAccessoryServerLinkTypeToString,
                             _HAPAccessoryServerPairSetupTypeToString,
                             _HAPAccessoryServerRelayMaximumReachabilityProbeTimeInterval,
                             _HAPAccessoryServerRelayMinimumReachabilityProbeTimeInterval,
                             _HAPAccessoryServerRelayReachabilityProbeFactor,
+                            _HAPAccessoryService,
+                            _HAPAccessorySuccessfulPingCount,
+                            _HAPAccessoryUptimeDuration,
                             _HAPAttributeDatabaseKey_Accessories,
                             _HAPAttributeDatabaseKey_AccessoryInstanceID,
                             _HAPAttributeDatabaseKey_AuthorizationData,
@@ -248,7 +259,9 @@ exports:
                             _HAPDescriptorUUID_CharacteristicProperties,
                             _HAPDescriptorUUID_CharacteristicStepValue,
                             _HAPDeviceIDLength,
+                            _HAPDiagnosticsSnapshotAudioAsString,
                             _HAPDiagnosticsSnapshotFormatAsString,
+                            _HAPDiagnosticsSnapshotOptionsAsString,
                             _HAPDiagnosticsSnapshotTypeAsString,
                             _HAPDispatchQueueName,
                             _HAPEncryption256BitKeySizeBytes,
@@ -754,7 +767,9 @@ exports:
                             HAPDataStreamTransportSetupResponse,
                             HAPDataStreamTransportSupportedConfiguration,
                             HAPDataValueTransformer, HAPDataWrapper, HAPDeviceID,
+                            HAPDiagnosticsSnapshotAudioWrapper,
                             HAPDiagnosticsSnapshotFormatWrapper,
+                            HAPDiagnosticsSnapshotOptionsWrapper,
                             HAPDiagnosticsSnapshotTypeWrapper,
                             HAPDiscoveredBTLEAccessoryServerTuple,
                             HAPFieldWrapper, HAPFirmwareUpdateReadiness,
@@ -801,6 +816,7 @@ exports:
                             HAPWiFiConfigurationUpdateStatusWrapper,
                             HAPWiFiSecurityModeWrapper,
                             HAPWiFiStationConfiguration,
+                            HMFObjectCacheHAPCharacteristicMetadata,
                             _HAPAccessoryServerBTLE100,
                             _HAPAccessoryServerBTLE200, _HAPBTLEDiscoveryContext ]
     objc-ivars:           [ HAP2Lock._lockCount, HAPAccessoryServer._identifier,

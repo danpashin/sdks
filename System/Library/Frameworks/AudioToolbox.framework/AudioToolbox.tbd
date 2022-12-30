@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           EF70D595-F4B6-3A8D-9AA0-73078DE8D03F
   - target:          arm64-ios
-    value:           7403032B-46D6-3F9E-8384-04339C7EF367
+    value:           7425342C-B8D2-31EE-9542-AEB245EAAF7B
   - target:          arm64e-ios
-    value:           62B83683-7F22-37F8-9CD6-AED24461DF2C
+    value:           1E0023F6-E178-3BAE-A294-758ED5A12C5F
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox'
 current-version: 1000
 reexported-libraries:
@@ -135,7 +135,8 @@ exports:
                        _AUGraphIsOpen, _AUGraphIsRunning, _AUGraphNodeInfo, _AUGraphOpen, 
                        _AUGraphRemoveNode, _AUGraphRemoveRenderNotify, _AUGraphSetNodeInputCallback, 
                        _AUGraphStart, _AUGraphStop, _AUGraphUninitialize, _AUGraphUpdate, 
-                       _AudioGetSessionSpatializationCapabilities, _AudioGetSimulatorDeviceUID, 
+                       _AudioGetSessionSpatialPreferencesForContentType, _AudioGetSessionSpatializationCapabilities, 
+                       _AudioGetSessionSpatializationCapabilitiesWithSize, _AudioGetSimulatorDeviceUID, 
                        _AudioQueueAddPropertyListener, _AudioQueueAllocateBuffer, 
                        _AudioQueueAllocateBufferWithMemory, _AudioQueueAllocateBufferWithPacketDescriptions, 
                        _AudioQueueAllocateBufferWithPacketDescriptionsWithMemory, 
@@ -172,11 +173,11 @@ exports:
                        _AudioSessionAddPropertyListener_Priv, _AudioSessionCheckActive, 
                        _AudioSessionCopyCMSessionForSessionID, _AudioSessionCopyProperty_Priv, 
                        _AudioSessionCreateCMSession, _AudioSessionCreateForID, _AudioSessionCreateForPID, 
-                       _AudioSessionCreatePrimarySession_Priv, _AudioSessionCreateSession_Priv, 
-                       _AudioSessionDeactivateAndSetPriority_Priv, _AudioSessionDestroyCMSession, 
-                       _AudioSessionDestroySession_Priv, _AudioSessionGetCMSessionForPID, 
-                       _AudioSessionGetPrimarySessionIDForPID, _AudioSessionGetProperty, 
-                       _AudioSessionGetPropertySize, _AudioSessionGetServerProperty, 
+                       _AudioSessionCreatePrimarySession_Priv, _AudioSessionCreateSessionWithIdentifier_Priv, 
+                       _AudioSessionCreateSession_Priv, _AudioSessionDeactivateAndSetPriority_Priv, 
+                       _AudioSessionDestroyCMSession, _AudioSessionDestroySession_Priv, 
+                       _AudioSessionGetCMSessionForPID, _AudioSessionGetPrimarySessionIDForPID, 
+                       _AudioSessionGetProperty, _AudioSessionGetPropertySize, _AudioSessionGetServerProperty, 
                        _AudioSessionInitialize, _AudioSessionRemovePropertyListener, 
                        _AudioSessionRemovePropertyListenerWithUserData, _AudioSessionRemovePropertyListener_Priv, 
                        _AudioSessionRequestRecordPermission, _AudioSessionSetActive, 
@@ -260,13 +261,13 @@ exports:
                        _kAudioSession_DataSourceDescriptionKey_MicrophoneRegion, 
                        _kAudioSession_DataSourceDescriptionKey_Name, _kAudioSession_DataSourceDescriptionKey_SelectedMicrophonePolarPattern, 
                        _kAudioSession_InputSourceKey_Description, _kAudioSession_InputSourceKey_ID, 
-                       _kAudioSession_InterruptionInfoKey_InterruptorName, _kAudioSession_InterruptionInfoKey_State, 
-                       _kAudioSession_InterruptionInfoKey_Type, _kAudioSession_InterruptionInfoKey_WasSuspended, 
-                       _kAudioSession_OutputDestinationKey_Description, _kAudioSession_OutputDestinationKey_ID, 
-                       _kAudioSession_RouteAttributesKey_ID, _kAudioSession_RouteAttributesKey_Sources, 
-                       _kAudioSession_RouteAttributesKey_Type, _kAudioSession_RouteChangeKey_Reason, 
-                       _kAudioSession_RouteGroupDescriptionKey_ID, _kAudioSession_RouteGroupDescriptionKey_Routes, 
-                       _readHapticCommand ]
+                       _kAudioSession_InterruptionInfoKey_InterruptionReason, _kAudioSession_InterruptionInfoKey_InterruptorName, 
+                       _kAudioSession_InterruptionInfoKey_State, _kAudioSession_InterruptionInfoKey_Type, 
+                       _kAudioSession_InterruptionInfoKey_WasSuspended, _kAudioSession_OutputDestinationKey_Description, 
+                       _kAudioSession_OutputDestinationKey_ID, _kAudioSession_RouteAttributesKey_ID, 
+                       _kAudioSession_RouteAttributesKey_Sources, _kAudioSession_RouteAttributesKey_Type, 
+                       _kAudioSession_RouteChangeKey_Reason, _kAudioSession_RouteGroupDescriptionKey_ID, 
+                       _kAudioSession_RouteGroupDescriptionKey_Routes, _readHapticCommand ]
     objc-classes:    [ AVHapticEvent, AVHapticParameterCurveValue, AVHapticPlayer, 
                        AVHapticPlayerChannel, AVHapticPlayerParameterCurve, AVHapticPlayerParameterCurveControlPoint, 
                        AVHapticSequence ]
@@ -279,9 +280,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C4986294-45DA-3D4D-A065-1AE13AB9EBA2
+    value:           658E8220-633D-363D-B6E4-688898260D78
   - target:          arm64e-ios
-    value:           D1CB61EF-AD60-3BD3-B0D2-006E7F6C5476
+    value:           DEF3B645-87FC-30E6-B518-0F141873C1C1
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/AudioToolboxCore'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]

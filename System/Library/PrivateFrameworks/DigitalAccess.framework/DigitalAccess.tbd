@@ -9,24 +9,29 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _DAErrorDomain, _DAErrorString,
+                            _DAKeyTransportTypeAsString,
+                            _DAManagerSetMachServiceName,
                             _DigitalAccessVersionNumber,
                             _DigitalAccessVersionString, _KmlLogFunc2,
                             _KmlLogFunc_InternalOnly, _KmlLogInternal,
                             _KmlSharingLogFunc, _isDeviceKeyAttestationTag,
                             _isEndOfKeyConfigTag, _isInternalBuild,
                             _kmlErrorCodeToDAErrorCode, _kmlErrorToDAError,
-                            _kmlUtilDataForHexString, _kmlUtilHexStringFromData,
-                            _kmlUtilInfiniteTime,
-                            _kmlUtilIsImmoTokenOnlineSettingInDeviceConfig,
-                            _kmlUtilLogLargeData, _kmlUtilSHA1, _kmlUtilSHA256,
+                            _kmlUtilDataForHexString, _kmlUtilGetDckIdFromSlotId,
+                            _kmlUtilGetOOBKey, _kmlUtilHexStringFromData,
+                            _kmlUtilInfiniteTime, _kmlUtilIsUwbEnabled,
+                            _kmlUtilLogLargeData, _kmlUtilRandomDataWithSize,
+                            _kmlUtilSHA1, _kmlUtilSHA256,
                             _kmlUtilSanitizeFriendlyName,
                             _kmlUtilTimeFiveMinutesFromNow, _kmlUtilTimeNow,
-                            _kmlUtilUUIDToData, _randomStringWithLength ]
+                            _kmlUtilUUIDToData, _passKitRunTimeKey,
+                            _randomStringWithLength ]
     objc-classes:         [ DAKeyBindingAttestationRequestData,
                             DAKeyEncryptedRequest, DAKeyInformation,
                             DAKeyInvitationRequestConfig, DAKeyManagementSession,
                             DAKeyPairingSession, DAKeySharingConfiguration,
                             DAKeySharingInvitationData, DAKeySharingSession,
                             DAManager, DASession, DASessionInternal,
+                            KmlDeviceConfigurationData,
                             KmlKeyManagementInterface, KmlManagerInterface, KmlTlv ]
 ...

@@ -21,16 +21,7 @@ HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierLabResultRecord
 HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierMedicationRecord API_AVAILABLE(ios(12.0), watchos(5.0));
 HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierProcedureRecord API_AVAILABLE(ios(12.0), watchos(5.0));
 HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierVitalSignRecord API_AVAILABLE(ios(12.0), watchos(5.0));
-#if HK_ENABLE_CHR_ADDITIONAL_DSTU2_TYPES
-HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierDeviceRecord API_AVAILABLE(ios(14.0), watchos(7.0));
-#endif // HK_ENABLE_CHR_ADDITIONAL_DSTU2_TYPES
-#if HK_ENABLE_CHR_ADDITIONAL_DSTU2_TYPES
-HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierCarePlanRecord API_AVAILABLE(ios(14.0), watchos(7.0));
-#endif // HK_ENABLE_CHR_ADDITIONAL_DSTU2_TYPES
 HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierCoverageRecord API_AVAILABLE(ios(14.0), watchos(7.0));
-#if HK_ENABLE_CHR_LIFESTYLE
-HK_EXTERN HKClinicalTypeIdentifier const HKClinicalTypeIdentifierSocialHistoryRecord API_AVAILABLE(ios(14.0), watchos(7.0));
-#endif // HK_ENABLE_CHR_LIFESTYLE
 
 @interface HKObjectType (ClinicalType)
 + (nullable HKClinicalType *)clinicalTypeForIdentifier:(HKClinicalTypeIdentifier)identifier API_AVAILABLE(ios(12.0), watchos(5.0));

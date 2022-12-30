@@ -316,13 +316,11 @@
 # define CGFLOAT_IS_DOUBLE 1
 # define CGFLOAT_MIN DBL_MIN
 # define CGFLOAT_MAX DBL_MAX
-# define CGFLOAT_EPSILON DBL_EPSILON
 #else
 # define CGFLOAT_TYPE float
 # define CGFLOAT_IS_DOUBLE 0
 # define CGFLOAT_MIN FLT_MIN
 # define CGFLOAT_MAX FLT_MAX
-# define CGFLOAT_EPSILON FLT_EPSILON
 #endif
 
 /* Definition of the `CGFloat' type and `CGFLOAT_DEFINED'. */

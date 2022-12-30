@@ -7,11 +7,13 @@ uuids:
   - target:          armv7s-ios
     value:           3EEEBB41-90B9-3A0D-A55A-48EB720818C6
   - target:          arm64-ios
-    value:           8D8CA608-0D9F-3813-AF14-47B764D096A7
+    value:           B07DF989-524C-331C-88DE-CB9CE6E3E5EA
   - target:          arm64e-ios
-    value:           AF3BD935-704C-3326-A38F-725BD2A01142
+    value:           B51D2FAF-605D-3FFE-B00D-C171C0BCE04B
 install-name:    '/System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory'
 exports:
+  - targets:         [ armv7-ios, armv7s-ios ]
+    objc-ivars:      [ EABluetoothAccessoryPicker._delegate, EABluetoothAccessoryPicker._picker ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _ACCExternalAccessoryProtocolDetailsKey, _EAAccessoryAccessibilityActionKey, 
                        _EAAccessoryAccessibilityContextKey, _EAAccessoryAccessibilityHeightKey, 
@@ -112,8 +114,7 @@ exports:
     objc-classes:    [ EAAccessory, EAAccessoryInternal, EAAccessoryManager, EABluetoothAccessoryPicker, 
                        EAInputStream, EAOutputStream, EAPostAlert, EASession, EAWiFiUnconfiguredAccessory, 
                        EAWiFiUnconfiguredAccessoryBrowser, WACLogging ]
-    objc-ivars:      [ EABluetoothAccessoryPicker._delegate, EABluetoothAccessoryPicker._picker, 
-                       EAInputStream._accessory, EAInputStream._delegate, EAInputStream._hasNewBytesAvailable, 
+    objc-ivars:      [ EAInputStream._accessory, EAInputStream._delegate, EAInputStream._hasNewBytesAvailable, 
                        EAInputStream._inputFromAccBuffer, EAInputStream._inputFromAccCondition, 
                        EAInputStream._inputFromAccData, EAInputStream._inputFromAccQueue, 
                        EAInputStream._isAtEndEventSent, EAInputStream._isOpenCompletedEventSent, 

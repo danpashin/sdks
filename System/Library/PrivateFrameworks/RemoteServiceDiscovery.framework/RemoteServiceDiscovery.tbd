@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/RemoteServiceDiscovery
-current-version:       2038.80.3
+current-version:       1.100.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -15,6 +15,8 @@ exports:
                             _bridge_version_read_current,
                             _bridge_version_read_plist,
                             _bridge_version_serialize, _bridge_version_unparse,
+                            _local_device_copy_description,
+                            _local_device_copy_service_names,
                             _remote_control_attach_loopback,
                             _remote_control_connect_loopback,
                             _remote_control_detach_loopback,
@@ -33,6 +35,7 @@ exports:
                             _remote_device_copy_device_with_name,
                             _remote_device_copy_device_with_uuid,
                             _remote_device_copy_internal_build,
+                            _remote_device_copy_local_service_names,
                             _remote_device_copy_os_build,
                             _remote_device_copy_os_version,
                             _remote_device_copy_product_type,

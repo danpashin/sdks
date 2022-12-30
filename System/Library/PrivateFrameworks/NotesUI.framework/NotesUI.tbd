@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
-current-version:       1800
+current-version:       1832
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -142,7 +142,9 @@ exports:
                             _kNoteWebViewMinimumHorizontalMargin,
                             _kNoteWebViewMinimumVerticalMargin,
                             _kNoteWebViewUpdateContentDelay, _kTitleFontScale ]
-    objc-classes:         [ ICAccessibility, ICAddAttachmentsManager,
+    objc-classes:         [ ICAbstractAttachmentViewController,
+                            ICAbstractTextAttachment, ICAccessibility,
+                            ICAddAttachmentsManager,
                             ICAddAttachmentsManagerAttachmentInfo,
                             ICAlertController, ICArcLayer,
                             ICAttachmentActivityItemSource,
@@ -194,9 +196,11 @@ exports:
                             ICImageAndMovieThumbnailView, ICImageCache,
                             ICImageTextAttachment, ICIndexHandwritingOperation,
                             ICInkPaletteController, ICInkToolPickerResponder,
+                            ICInlineAttachmentView,
                             ICInlineDrawingChangeCoalescer,
                             ICInlineDrawingDefaults,
                             ICInlineDrawingTextAttachment,
+                            ICInlineTextAttachment,
                             ICKeyboardNotificationListener, ICLabel,
                             ICLearnMoreTextView, ICLegacyAttachment,
                             ICLegacyContentUtilities, ICLegacyNoteUtilities,

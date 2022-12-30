@@ -9,8 +9,9 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _JWTClockSkew ]
-    objc-classes:         [ DAEASOAuthClient, DAEASOAuthFlowController,
-                            DAEASOAuthIdentity, DAEASOAuthJWTValidator,
+    objc-classes:         [ DAEASExchangeOAuthMigrationRequest, DAEASOAuthClient,
+                            DAEASOAuthFlowController, DAEASOAuthIdentity,
+                            DAEASOAuthJWTValidator, DAEASOAuthMigrationActivity,
                             DAEASOAuthMigrationRequest, DAEASOAuthPKCEChallenge,
                             DAEASOAuthRequest, DAEASOAuthTokenRefreshResponse,
                             DAEASOAuthTokenRequest, DAEASOAuthTokenResponse,
@@ -18,5 +19,7 @@ exports:
                             DAEASOpenIDMetadataRequest,
                             DAEASOpenIDMetadataResponse,
                             DAExchangeOAuthFlowController,
-                            DAOAuthSafariViewController ]
+                            DAOAuthSafariViewController,
+                            ESExchangeEmptyBearerRequest,
+                            ESExchangeEmptyBearerResponse ]
 ...

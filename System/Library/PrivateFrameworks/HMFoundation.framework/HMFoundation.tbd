@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
-current-version:       607.3.3
+current-version:       613.13
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -41,9 +41,11 @@ exports:
                             _HMFProcessMemoryStateUpdateKey,
                             _HMFProductClassFromString, _HMFProductClassToString,
                             _HMFProductInfoArcherBOSVersion,
+                            _HMFProductInfoArcherEOSVersion,
                             _HMFProductInfoArcherHWOSVersion,
                             _HMFProductInfoArcherOSVersion,
                             _HMFProductInfoAzulBOSVersion,
+                            _HMFProductInfoAzulEOSVersion,
                             _HMFProductInfoAzulHWOSVersion,
                             _HMFProductInfoAzulOSVersion,
                             _HMFProductInfoBlowfishOSVersion,
@@ -71,6 +73,7 @@ exports:
                             _HMFProductInfoGloryCOSVersion,
                             _HMFProductInfoGloryGOSVersion,
                             _HMFProductInfoGloryOSVersion,
+                            _HMFProductInfoGoldenGateEOSVersion,
                             _HMFProductInfoGoldenGateOSVersion,
                             _HMFProductInfoGoldenOSVersion,
                             _HMFProductInfoGraceBOSVersion,
@@ -81,6 +84,7 @@ exports:
                             _HMFProductInfoHopeGOSVersion,
                             _HMFProductInfoHopeOSVersion,
                             _HMFProductInfoHunterBOSVersion,
+                            _HMFProductInfoHunterEOSVersion,
                             _HMFProductInfoHunterOSVersion,
                             _HMFProductInfoJazzBOSVersion,
                             _HMFProductInfoJazzFOSVersion,
@@ -180,13 +184,15 @@ exports:
                             HMFMutableHTTPResponse, HMFMutableMessage,
                             HMFMutableNetService, HMFNetAddress, HMFNetManager,
                             HMFNetMonitor, HMFNetService, HMFNetServiceBrowser,
-                            HMFOSTransaction, HMFObject, HMFObjectObserver,
-                            HMFOperation, HMFOperationBudget, HMFPairingIdentity,
-                            HMFPairingKey, HMFPowerAssertion, HMFPowerLogger,
-                            HMFPowerManager, HMFPreference, HMFPreferences,
-                            HMFPrivateObjectFormatter, HMFProcessInfo,
-                            HMFProductInfo, HMFScheduler, HMFSoftwareVersion,
-                            HMFStagedValue, HMFStringIndentation, HMFSystemInfo,
+                            HMFNotificationCenter, HMFOSTransaction, HMFObject,
+                            HMFObjectCacheNSString, HMFObjectCacheNSUUID,
+                            HMFObjectObserver, HMFOperation, HMFOperationBudget,
+                            HMFPairingIdentity, HMFPairingKey, HMFPowerAssertion,
+                            HMFPowerLogger, HMFPowerManager, HMFPreference,
+                            HMFPreferences, HMFPrivateObjectFormatter,
+                            HMFProcessInfo, HMFProductInfo, HMFScheduler,
+                            HMFSoftwareVersion, HMFStagedValue,
+                            HMFStringIndentation, HMFSystemInfo,
                             HMFSystemPreference, HMFTimer, HMFUnfairLock, HMFVersion,
                             HMFWeakObject, HMFWiFiManager,
                             HMFWiFiManagerDataSource, HMFWiFiNetworkInfo,

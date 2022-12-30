@@ -7,7 +7,7 @@
 
 #import <TargetConditionals.h>
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE || TARGET_OS_MACCATALYST
 #import <UIKit/UIKit.h>
 #else
 #import <AppKit/AppKit.h>
@@ -18,7 +18,7 @@
 
 
 /// Standard view controller for sending friend requests to other players. Present modally from the top view controller.
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE || TARGET_OS_MACCATALYST
 NS_ASSUME_NONNULL_BEGIN
 
 NS_CLASS_DEPRECATED(10_8, 10_12, 4_2, 10_0) 

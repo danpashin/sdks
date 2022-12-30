@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       610.4.3
+current-version:       611.1.21
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -51,6 +51,7 @@ exports:
                             _WBSAnalyticsSafariViewControllerDismissedEventReadFrom,
                             _WBSAnalyticsSafariViewControllerPresentedFromHostAppEventReadFrom,
                             _WBSAnalyticsSafariViewControllerTappedOnToolbarButtonEventReadFrom,
+                            _WBSAppWasLaunchedAfterMajorOSUpgrade,
                             _WBSApplicationIdentifierFromAuditToken,
                             _WBSAriadneComponent, _WBSAuditTokenHasEntitlement,
                             _WBSCloudBookmarkListRecordNameBookmarksMenu,
@@ -70,6 +71,12 @@ exports:
                             _WBSIsEqual,
                             _WBSKeychainCredentialNotificationMonitorDoNotCoalesceInterval,
                             _WBSLogWithDifferentialPrivacy,
+                            _WBSMakeOperatingSystemVersion,
+                            _WBSNSExtensionFromNSExtension,
+                            _WBSNullOperatingSystemVersion,
+                            _WBSOperatingSystemVersionsEqual,
+                            _WBSParseOperatingSystemVersion,
+                            _WBSParsecEnabledDidChangeNotification,
                             _WBSPasswordCharacterClassIdentifierASCIIPrintable,
                             _WBSPasswordCharacterClassIdentifierDigit,
                             _WBSPasswordCharacterClassIdentifierLower,
@@ -106,6 +113,7 @@ exports:
                             _WBSSafariBookmarksSyncAgentServiceName,
                             _WBSSafariBookmarksSyncAgentSyncResultKey,
                             _WBSSavedPasswordStoreDidChangeNotification,
+                            _WBSStatusCodeGroupFromStatusCode,
                             _WBSSuppressCloudKitBookmarkMigrationForCyclerTestPreferenceKey,
                             _WBSTeamIdentifierFromAuditToken,
                             __WBSLocalizedString,
@@ -161,6 +169,7 @@ exports:
                             WBSAnalyticsSafariViewControllerDismissedEvent,
                             WBSAnalyticsSafariViewControllerPresentedFromHostAppEvent,
                             WBSAnalyticsSafariViewControllerTappedOnToolbarButtonEvent,
+                            WBSAsynchronousRequestHelper,
                             WBSAutoFillAssociatedDomainsManager,
                             WBSAutoFillQuirksManager, WBSAutoFillQuirksSnapshot,
                             WBSAutoFillQuirksSnapshotTransformer,

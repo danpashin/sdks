@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSymbolication.framework/CoreSymbolication
-current-version:       64541.4
+current-version:       64544.69.1
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -19,13 +19,14 @@ exports:
                             _CSCopyDescription, _CSCopyDescriptionWithIndent,
                             _CSCppAddMmapArchivesFromSymbolicatorToDirectory,
                             _CSCppAddMmapArchivesToDirectory,
-                            _CSCppConvertLegacyPreVersion5ArchiveToModern,
                             _CSCppConvertLegacyPreVersion5ArchiveToModernCopy,
-                            _CSCppConvertModernArchiveToLegacyPreVersion5,
-                            _CSCppConvertModernArchiveToLegacyPreVersion5Copy,
-                            _CSCppConvertSymbolOwnerArchiveToLegacyPreVersion5Copy,
+                            _CSCppConvertLegacyPreVersion6ArchiveToModernCopy,
+                            _CSCppConvertModernArchiveToLegacyPreVersion6Copy,
                             _CSCppConvertSymbolOwnerLegacyPreVersion5ArchiveToModernCopy,
+                            _CSCppConvertSymbolOwnerLegacyPreVersion6ArchiveToModernCopy,
+                            _CSCppConvertSymbolOwnerModernArchiveToLegacyPreVersion6Copy,
                             _CSCppExtractMMapArchiveFromSymbolOwner,
+                            _CSCppExtractTRawSymbolOwnerDataFromSymbolOwner,
                             _CSCppPopulateCachesWithMmapArchives,
                             _CSCppPopulateCachesWithMmapArchivesAndGroupKey,
                             _CSDemangleSymbolName, _CSEqual,
@@ -141,8 +142,10 @@ exports:
                             _CSSymbolOwnerIsRestricted, _CSSymbolOwnerIsSlid,
                             _CSSymbolOwnerIsStaticLibraryArchiveEntry,
                             _CSSymbolOwnerMakeMutableInContext,
+                            _CSSymbolOwnerMakeMutableInContextWithSOD,
                             _CSSymbolOwnerNeedsResymbolication,
                             _CSSymbolOwnerRemoveInContext,
+                            _CSSymbolOwnerReplaceInContextWithSOD,
                             _CSSymbolOwnerSegmentsMatch,
                             _CSSymbolOwnerSetLoadTimestamp,
                             _CSSymbolOwnerSetPath,
@@ -256,8 +259,8 @@ exports:
                             _CSUUIDCFUUIDBytesToString,
                             _CSUUIDStringToCFUUIDBytes, _clear_mapped_memory,
                             _create_mapped_memory_cache_for_task,
+                            _create_mapped_memory_cache_for_task_with_label,
                             _create_sampling_context_for_task,
-                            _create_sampling_context_for_task_and_pid,
                             _create_sampling_context_for_task_pid_symbolicator,
                             _demangle, _destroy_mapped_memory_cache,
                             _destroy_sampling_context,
@@ -272,9 +275,14 @@ exports:
                             _kCSTypeSetCallBacks, _kCSTypeSetWeakCallBacks,
                             _map_new_node, _mapped_memory_read,
                             _mapped_memory_read_pointer, _next_node,
-                            _release_mapped_memory_cache,
                             _retain_mapped_memory_cache, _sample_remote_thread,
                             _sample_remote_thread_with_dispatch_queue,
-                            _sampling_context_clear_cache, _task_is_64bit,
-                            _task_is_translated, _thread_name_for_thread_port ]
+                            _sampling_context_clear_cache,
+                            _set_mapped_memory_cache_region_info_block,
+                            _task_get_mapped_memory_cache,
+                            _task_get_mapped_memory_cache_with_label,
+                            _task_is_64bit, _task_is_translated,
+                            _task_lookup_mapped_memory_cache,
+                            _task_release_mapped_memory_cache,
+                            _thread_name_for_thread_port, _unmap_node ]
 ...

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TipsCore.framework/TipsCore
-current-version:       566.1
+current-version:       568.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -19,10 +19,10 @@ exports:
                             _TPSAnalyticsDaemonActiveReasonDuet,
                             _TPSAnalyticsDaemonActiveReasonLanguageChange,
                             _TPSAnalyticsDaemonActiveReasonRealTimeAnalytics,
-                            _TPSAnalyticsDaemonActiveReasonRestart,
                             _TPSAnalyticsDaemonActiveReasonTipKitConnection,
                             _TPSAnalyticsDaemonActiveReasonTipsAppConnection,
                             _TPSAnalyticsDaemonActiveReasonTipsAppRemovalConnection,
+                            _TPSAnalyticsDaemonActiveReasonUpgrade,
                             _TPSAnalyticsDaemonActiveReasonUpgradeNetworkLoad,
                             _TPSAnalyticsDismissTypeDesiredOutcome,
                             _TPSAnalyticsDismissTypeHintMaxDisplayedCountExceeded,
@@ -95,6 +95,7 @@ exports:
                             _TPSContentURLControllerRequestMetaAPI,
                             _TPSCoreAdditionsMaxDeliveryInfoLifetimeInterval,
                             _TPSCoreAdditionsMaxEventTimeToLiveInterval,
+                            _TPSDiscoverabilityUsageControllerErrorDomain,
                             _TPSDocumentDeliveryInfoKey,
                             _TPSDocumentDocumentRootKey, _TPSDocumentKey,
                             _TPSDocumentTitleKey, _TPSDocumentVariantIDKey,
@@ -115,7 +116,10 @@ exports:
                             _TPSWidgetShownTips,
                             _TPSWidgetWelcomeNotificationStartDateKey,
                             _TPSXPCServerInterface, _TipsCoreVersionNumber,
-                            _TipsCoreVersionString, __lastContentViewedRef,
+                            _TipsCoreVersionString,
+                            __DKDiscoverabilityUsageMetadataKeyFlags,
+                            __TPSDefaultXPCConnectionOptions,
+                            __lastContentViewedRef,
                             _analyticsViewModeFromInterfaceStyle,
                             _kAnalyticsPersistenceUserDefaultsKey,
                             _kAnalyticsVersionKey,
@@ -123,6 +127,7 @@ exports:
                             _kTipsAnalyticsBundleIDKey,
                             _kTipsAnalyticsContentIDKey,
                             _kTipsAnalyticsContextKey,
+                            _kTipsAnalyticsDesiredOutcomePerformedKey,
                             _kTipsAnalyticsDisplayTypeCollectionString,
                             _kTipsAnalyticsDisplayTypeKey,
                             _kTipsAnalyticsDisplayTypeLockScreenString,
@@ -133,6 +138,7 @@ exports:
                             _kTipsAnalyticsExperimentCampAllContentString,
                             _kTipsAnalyticsExperimentCampHoldoutString,
                             _kTipsAnalyticsExperimentCampIDKey,
+                            _kTipsAnalyticsExperimentCampOverrideHoldoutString,
                             _kTipsAnalyticsExperimentCampUnspecifiedString,
                             _kTipsAnalyticsExperimentIDKey,
                             _kTipsAnalyticsTimeToDesiredOutcomeKey,
@@ -270,6 +276,6 @@ exports:
                             TPSURLSessionItem, TPSURLSessionManager,
                             TPSURLSessionTask, TPSUserTypeChecker,
                             TPSViewSourceProxy, TPSWidgetAssetFetchOperation,
-                            TPSWidgetContent, TPSWidgetController,
+                            TPSWidgetContent, TPSWidgetController, _TPSEligibleTip,
                             _TPSXPCConnection, _TPSXPCExportedObjectProxy ]
 ...

@@ -9,6 +9,8 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _MCDeviceIsNetworkTethered,
+                            _MCSendMDMCommandAnalyticsEvent,
+                            _MCSendMDMPushAnalyticsEvent,
                             __getBaseInterfaceForService,
                             __isIPv4AddressAndNetmaskUseful,
                             __isIPv4ConfigInfoUseful,
@@ -116,6 +118,7 @@ exports:
                             _kMCMDMPRequestTypeTriggerDiagnostics,
                             _kMCMDMPRequestTypeUserList,
                             _kMCMDMPRequestTypeValidateApplications,
+                            _kMCMDMPSettingsMinimumSessionTimeout,
                             _kMCMDMPSettingsResidentUserMinimumQuotaSize,
                             _kMCMDMPSettingsSettingsAppAttributes,
                             _kMCMDMPSettingsSettingsAppConfig,
@@ -127,13 +130,19 @@ exports:
                             _kMCMDMPSettingsSettingsQuotaSizeKey,
                             _kMCMDMPSettingsSettingsResidentUsersKey,
                             _kMCMDMPSettingsSettingsSharedDeviceConfiguration,
+                            _kMCMDMPSettingsSettingsSoftwareUpdate,
+                            _kMCMDMPSettingsSettingsTemporarySessionOnlyKey,
+                            _kMCMDMPSettingsSettingsTemporarySessionTimeoutKey,
+                            _kMCMDMPSettingsSettingsUserSessionTimeoutKey,
                             _kMCMDMPSettingsSettingsVoiceRoaming,
                             _kMCMDMPSettingsSettingsWallpaper,
                             _kMCMDMPSettingsStatusKey, _kMCMDMPStatusIdle,
                             _kMCMDMPStatusNotNow, _kMCMDMPStatusNotPermitted,
                             _kMCMDMPTokenKey, _kMCMDMPTopicKey,
-                            _kMCMDMPUnlockTokenKey ]
-    objc-classes:         [ MCAppleAccountUtilities, MCBlockOperation,
+                            _kMCMDMPUnlockTokenKey,
+                            _kSettingsSettingsSoftwareUpdatePathKey ]
+    objc-classes:         [ MCAMSUtilities, MCAppleAccountUtilities,
+                            MCAuthKitUtilities, MCBlockOperation,
                             MCDMDAppPropertyShim, MCDMDAppPropertyShimException,
                             MCMDMInstalledApplicationListCommand, MCMDMParser,
                             MCMDMUtilities, MCManagedAssetManager,

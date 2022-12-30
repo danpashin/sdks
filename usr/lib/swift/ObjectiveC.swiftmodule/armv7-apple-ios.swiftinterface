@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.3 (swiftlang-1200.2.41.2 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.24.14 clang-1205.0.19.54)
 // swift-module-flags: -target armv7-apple-ios10.3 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftObjectiveC -swift-version 5 -enforce-exclusivity=checked -O -disable-objc-attr-requires-foundation-module -module-name ObjectiveC
 @_exported import ObjectiveC
 import Swift
@@ -39,16 +39,16 @@ extension ObjCBool : Swift.CustomStringConvertible {
   internal var ptr: Swift.OpaquePointer
   public init(_ str: Swift.String)
   public init(stringLiteral value: Swift.String)
-  public typealias StringLiteralType = Swift.String
   public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
   public typealias UnicodeScalarLiteralType = Swift.String
 }
 extension Selector : Swift.Equatable, Swift.Hashable {
   public static func == (a: ObjectiveC.Selector, b: ObjectiveC.Selector) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 extension Selector : Swift.CustomStringConvertible {
   public var description: Swift.String {

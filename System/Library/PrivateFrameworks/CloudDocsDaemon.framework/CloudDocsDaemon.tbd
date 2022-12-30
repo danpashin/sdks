@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-current-version:       725
+current-version:       737
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -110,13 +110,20 @@ exports:
                             BRCServerZone, BRCSharedServerZone, BRCStageRegistry,
                             BRCStatInfo, BRCSyncThrottle, BRCTermDumper,
                             BRCURLToItemLookup, BRCUserDefaults, BRCVersion,
-                            BRFieldCKInfo, BRFieldFinderTags, BRFieldPkgHeader,
-                            BRFieldPkgItem, BRFieldPkgLocalItem,
+                            BRCZoneRootItem, BRFieldCKInfo, BRFieldFinderTags,
+                            BRFieldPkgHeader, BRFieldPkgItem, BRFieldPkgLocalItem,
                             BRFieldUserIdentity, BRFieldXattr, BRFieldXattrBlob ]
     objc-ivars:           [ AppTelemetryInvestigation._errorCode,
                             AppTelemetryInvestigation._errorDescription,
                             AppTelemetryInvestigation._errorDomain,
                             AppTelemetryInvestigation._has,
+                            AppTelemetryInvestigation._hasForegroundClients,
+                            AppTelemetryInvestigation._isPCSChained,
+                            AppTelemetryInvestigation._itemID,
+                            AppTelemetryInvestigation._lastStep,
+                            AppTelemetryInvestigation._nonDiscretionary,
+                            AppTelemetryInvestigation._operationType,
+                            AppTelemetryInvestigation._reason,
                             AppTelemetryInvestigation._sharedZone,
                             AppTelemetryInvestigation._zoneName,
                             AppTelemetryTelemetryMessage._events,

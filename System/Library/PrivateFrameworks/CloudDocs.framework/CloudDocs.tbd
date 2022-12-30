@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-current-version:       725
+current-version:       737
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -188,6 +188,9 @@ exports:
                             _BRSyncStatusLastSyncDateKey,
                             _BRSyncedDocumentIDForDocumentAtURL,
                             _BRSyncedLocationInfoInvalidated,
+                            _BRTelemetryReportAddPeopleDisplayed,
+                            _BRTelemetryReportSettingUpiCloudDriveDisplay,
+                            _BRTelemetryReportShareInvitation,
                             _BRThumbnailChangedAtURL,
                             _BRTrashExternalDocumentReference, _BRURLTagNamesKey,
                             _BRURLUbiquitousDocumentRecordIDKey,
@@ -251,7 +254,8 @@ exports:
                             __BRFaultCopyLogicalNameOfFaultAtURL,
                             __BRFaultCopyLogicalURLOfFaultAtURL,
                             __BRFaultCopyPropertiesOfFaultAtURL,
-                            __BRLocalizedString, __BRLocalizedStringWithFormat,
+                            __BRFolderShareType, __BRLocalizedString,
+                            __BRLocalizedStringWithFormat,
                             __BRNSMetadataUbiquitousSharedItemLastEditorNameComponentsKey,
                             __BRNSMetadataUbiquitousSharedItemLastEditorNameKey,
                             __BRPromiseURLCombine, __BRSetResourcePropertyForKey,
@@ -316,7 +320,7 @@ exports:
                             BROperation, BRProgressUpdate, BRQueryItem,
                             BRReachabilityMonitor, BRRemoteUserDefaults,
                             BRServerInfoRecordInfo, BRServerMetrics,
-                            BRShareCleanSubitems,
+                            BRShareAcceptOperation, BRShareCleanSubitems,
                             BRShareCopyAccessTokenOperation,
                             BRShareCopyDocumentURLForRecordID,
                             BRShareCopyOperation, BRShareCopyShareURLOperation,

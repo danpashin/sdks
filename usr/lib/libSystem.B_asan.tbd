@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           CD8B460A-0F51-38B5-9DFB-DED80B238703
   - target:          arm64-ios
-    value:           AC1A5EB3-897A-3575-B6FF-7709312ACF89
+    value:           38C8E5D0-FB9F-3075-98AF-888C74A29D86
   - target:          arm64e-ios
-    value:           B17CBA62-B4A9-30EE-94AC-64B7BFCF9B0B
+    value:           700A4659-449B-30A0-B9DE-C6D2FDC47CA0
 install-name:    '/usr/lib/libSystem.B.dylib'
-current-version: 1292.60.1
+current-version: 1292.100.5
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/usr/lib/system/libkeymgr.dylib', '/usr/lib/system/libsystem_coretls.dylib', 
@@ -50,9 +50,9 @@ uuids:
   - target:          armv7s-ios
     value:           7E1F8D6D-A166-37E6-8E52-FAE288FFE811
   - target:          arm64-ios
-    value:           30242F39-3DFC-3FF0-895D-D44AF38C0144
+    value:           E8C62622-20FB-379E-84BC-9DB3B2ABA0AC
   - target:          arm64e-ios
-    value:           7567DFAA-324E-306A-A66F-C2DDA88B033B
+    value:           8C6D6165-FD33-31AC-8F78-73AF9099E7F3
 install-name:    '/usr/lib/system/libcache.dylib'
 current-version: 83
 parent-umbrella:
@@ -82,11 +82,11 @@ uuids:
   - target:          armv7s-ios
     value:           0055E658-E557-3C3E-B05C-661E1DEB2F44
   - target:          arm64-ios
-    value:           2A0EE79A-5840-3594-8139-F436F5A54A6F
+    value:           471ABD72-CCA0-3FD9-AC8E-7F371A40CFC3
   - target:          arm64e-ios
-    value:           25ABFBDF-ED44-31F7-A628-BD742E231F31
+    value:           7D3249C3-1118-334B-B92E-A5C5F61ED6BB
 install-name:    '/usr/lib/system/libcommonCrypto.dylib'
-current-version: 60178.40.2
+current-version: 60178.100.1
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -178,9 +178,9 @@ uuids:
   - target:          armv7s-ios
     value:           182FACEE-469E-3B9E-ACFB-DCAD641E7FF0
   - target:          arm64-ios
-    value:           46CD4552-4D2F-31E6-9B02-54E7E576DF05
+    value:           8916D0AD-DB84-34E5-BCD4-0D8AB5D76C02
   - target:          arm64e-ios
-    value:           D33E7410-2BAE-3735-85ED-EB219279AA43
+    value:           C1CA7500-E55E-3FD4-8520-14FD05ECDFEE
 install-name:    '/usr/lib/system/libcompiler_rt.dylib'
 current-version: 102.3
 parent-umbrella:
@@ -732,9 +732,9 @@ uuids:
   - target:          armv7s-ios
     value:           24E8017B-F649-395F-9AFE-530BF82F1504
   - target:          arm64-ios
-    value:           ACB48771-DC88-397A-A68A-726BF75940DB
+    value:           0B6710AE-B058-3F4D-8FC1-C09D008582D2
   - target:          arm64e-ios
-    value:           FAE70DA0-EBAD-33F2-93AC-496DCBE46FEA
+    value:           7227B64C-FD03-3016-89EA-92784A6F8835
 install-name:    '/usr/lib/system/libcopyfile.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -755,11 +755,11 @@ uuids:
   - target:          armv7s-ios
     value:           D998CF6C-EDE6-35A4-9CB0-FEC4DA22454D
   - target:          arm64-ios
-    value:           71EB44AA-3065-3AB7-83DB-3C46F4579ABA
+    value:           2E9FD7DA-70C3-3B9B-8657-31152687F678
   - target:          arm64e-ios
-    value:           7282F135-D289-3712-9081-A2B32FDB3622
+    value:           193092C2-CA43-370B-B2F5-FC9912342AFE
 install-name:    '/usr/lib/system/libcorecrypto.dylib'
-current-version: 1000.80.5
+current-version: 1000.100.38
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -902,56 +902,57 @@ exports:
                        _cch2c_p384_sha384_sae_compat_info, _cch2c_p384_sha512_sswu_ro_info, 
                        _cch2c_p521_sha512_sswu_ro_info, _cchkdf, _cchkdf_expand, 
                        _cchkdf_extract, _cchmac, _cchmac_final, _cchmac_init, _cchmac_update, 
-                       _cchpke_initiator_encrypt, _cchpke_initiator_seal, _cchpke_initiator_setup, 
-                       _cchpke_kem_generate_key_pair, _cchpke_params_sizeof_aead_key, 
+                       _cchpke_initiator_encrypt, _cchpke_initiator_export, _cchpke_initiator_seal, 
+                       _cchpke_initiator_setup, _cchpke_kem_generate_key_pair, _cchpke_params_sizeof_aead_key, 
                        _cchpke_params_sizeof_aead_nonce, _cchpke_params_sizeof_aead_tag, 
                        _cchpke_params_sizeof_kdf_hash, _cchpke_params_sizeof_kem_enc, 
                        _cchpke_params_sizeof_kem_pk, _cchpke_params_sizeof_kem_pk_marshalled, 
-                       _cchpke_params_sizeof_kem_sk, _cchpke_params_sizeof_kem_zz, 
+                       _cchpke_params_sizeof_kem_shared_secret, _cchpke_params_sizeof_kem_sk, 
                        _cchpke_params_x25519_AESGCM128_HKDF_SHA256, _cchpke_responder_decrypt, 
-                       _cchpke_responder_open, _cchpke_responder_setup, _ccmd2_ltc_di, 
-                       _ccmd4_ltc_di, _ccmd5_di, _ccmd5_ltc_di, _ccmgf, _ccmode_factory_cbc_decrypt, 
-                       _ccmode_factory_cbc_encrypt, _ccmode_factory_ccm_decrypt, 
-                       _ccmode_factory_ccm_encrypt, _ccmode_factory_cfb8_decrypt, 
-                       _ccmode_factory_cfb8_encrypt, _ccmode_factory_cfb_decrypt, 
-                       _ccmode_factory_cfb_encrypt, _ccmode_factory_ctr_crypt, _ccmode_factory_gcm_decrypt, 
-                       _ccmode_factory_gcm_encrypt, _ccmode_factory_ofb_crypt, _ccmode_factory_omac_decrypt, 
-                       _ccmode_factory_omac_encrypt, _ccmode_factory_siv_decrypt, 
-                       _ccmode_factory_siv_encrypt, _ccmode_factory_xts_decrypt, 
-                       _ccmode_factory_xts_encrypt, _ccn_add, _ccn_add1, _ccn_addmul1, 
-                       _ccn_bitlen, _ccn_cmp, _ccn_cmpn, _ccn_div_euclid, _ccn_lprint, 
-                       _ccn_mul, _ccn_mul1, _ccn_n, _ccn_print, _ccn_random_bits, 
-                       _ccn_read_uint, _ccn_set, _ccn_shift_right, _ccn_sub, _ccn_sub1, 
-                       _ccn_write_int, _ccn_write_int_size, _ccn_write_uint, _ccn_write_uint_padded_ct, 
-                       _ccn_write_uint_size, _ccn_zero_multi, _ccnistkdf_ctr_cmac, 
-                       _ccnistkdf_ctr_cmac_fixed, _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, 
-                       _ccnistkdf_fb_hmac, _ccnistkdf_fb_hmac_fixed, _ccpad_cts1_decrypt, 
-                       _ccpad_cts1_encrypt, _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, 
-                       _ccpad_cts3_decrypt, _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, 
-                       _ccpad_pkcs7_decrypt, _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, 
-                       _ccpad_pkcs7_encrypt, _ccpad_xts_decrypt, _ccpad_xts_encrypt, 
-                       _ccpbkdf2_hmac, _ccpoly1305, _ccpoly1305_final, _ccpoly1305_init, 
-                       _ccpoly1305_update, _ccrc2_cbc_decrypt_mode, _ccrc2_cbc_encrypt_mode, 
-                       _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, _ccrc2_cfb_decrypt_mode, 
-                       _ccrc2_cfb_encrypt_mode, _ccrc2_ctr_crypt_mode, _ccrc2_ecb_decrypt_mode, 
-                       _ccrc2_ecb_encrypt_mode, _ccrc2_ofb_crypt_mode, _ccrc4, _ccrc4_eay, 
-                       _ccrmd160_ltc_di, _ccrng, _ccrng_drbg_done, _ccrng_drbg_init, 
-                       _ccrng_drbg_init_withdrbg, _ccrng_drbg_reseed, _ccrng_ecfips_test_init, 
-                       _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, _ccrng_rsafips_test_set_next, 
-                       _ccrng_sequence_init, _ccrng_system_done, _ccrng_system_init, 
-                       _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, _ccrsa_decrypt_eme_pkcs1v15, 
-                       _ccrsa_decrypt_eme_pkcs1v15_blinded, _ccrsa_decrypt_oaep, 
-                       _ccrsa_decrypt_oaep_blinded, _ccrsa_dump_full_key, _ccrsa_dump_public_key, 
-                       _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_encode, 
-                       _ccrsa_emsa_pkcs1v15_verify, _ccrsa_emsa_pss_decode, _ccrsa_emsa_pss_encode, 
-                       _ccrsa_encrypt_eme_pkcs1v15, _ccrsa_encrypt_oaep, _ccrsa_export_pub, 
-                       _ccrsa_generate_fips186_key, _ccrsa_generate_key, _ccrsa_get_fullkey_components, 
-                       _ccrsa_get_pubkey_components, _ccrsa_import_pub, _ccrsa_init_pub, 
-                       _ccrsa_make_priv, _ccrsa_make_pub, _ccrsa_oaep_decode_parameter, 
-                       _ccrsa_oaep_encode_parameter, _ccrsa_priv_crypt, _ccrsa_priv_crypt_blinded, 
-                       _ccrsa_pub_crypt, _ccrsa_pubkeylength, _ccrsa_recover_priv, 
-                       _ccrsa_sign_pkcs1v15, _ccrsa_sign_pkcs1v15_msg, _ccrsa_sign_pss, 
-                       _ccrsa_sign_pss_msg, _ccrsa_verify_pkcs1v15, _ccrsa_verify_pkcs1v15_allowshortsigs, 
+                       _cchpke_responder_export, _cchpke_responder_open, _cchpke_responder_setup, 
+                       _ccmd2_ltc_di, _ccmd4_ltc_di, _ccmd5_di, _ccmd5_ltc_di, _ccmgf, 
+                       _ccmode_factory_cbc_decrypt, _ccmode_factory_cbc_encrypt, 
+                       _ccmode_factory_ccm_decrypt, _ccmode_factory_ccm_encrypt, 
+                       _ccmode_factory_cfb8_decrypt, _ccmode_factory_cfb8_encrypt, 
+                       _ccmode_factory_cfb_decrypt, _ccmode_factory_cfb_encrypt, 
+                       _ccmode_factory_ctr_crypt, _ccmode_factory_gcm_decrypt, _ccmode_factory_gcm_encrypt, 
+                       _ccmode_factory_ofb_crypt, _ccmode_factory_omac_decrypt, _ccmode_factory_omac_encrypt, 
+                       _ccmode_factory_siv_decrypt, _ccmode_factory_siv_encrypt, 
+                       _ccmode_factory_xts_decrypt, _ccmode_factory_xts_encrypt, 
+                       _ccn_add, _ccn_add1, _ccn_addmul1, _ccn_bitlen, _ccn_cmp, 
+                       _ccn_cmpn, _ccn_div_euclid, _ccn_lprint, _ccn_mul, _ccn_mul1, 
+                       _ccn_n, _ccn_print, _ccn_random_bits, _ccn_read_uint, _ccn_set, 
+                       _ccn_shift_right, _ccn_sub, _ccn_sub1, _ccn_write_int, _ccn_write_int_size, 
+                       _ccn_write_uint, _ccn_write_uint_padded_ct, _ccn_write_uint_size, 
+                       _ccn_zero_multi, _ccnistkdf_ctr_cmac, _ccnistkdf_ctr_cmac_fixed, 
+                       _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, _ccnistkdf_fb_hmac, 
+                       _ccnistkdf_fb_hmac_fixed, _ccpad_cts1_decrypt, _ccpad_cts1_encrypt, 
+                       _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, _ccpad_cts3_decrypt, 
+                       _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, _ccpad_pkcs7_decrypt, 
+                       _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, _ccpad_pkcs7_encrypt, 
+                       _ccpad_xts_decrypt, _ccpad_xts_encrypt, _ccpbkdf2_hmac, _ccpoly1305, 
+                       _ccpoly1305_final, _ccpoly1305_init, _ccpoly1305_update, _ccrc2_cbc_decrypt_mode, 
+                       _ccrc2_cbc_encrypt_mode, _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, 
+                       _ccrc2_cfb_decrypt_mode, _ccrc2_cfb_encrypt_mode, _ccrc2_ctr_crypt_mode, 
+                       _ccrc2_ecb_decrypt_mode, _ccrc2_ecb_encrypt_mode, _ccrc2_ofb_crypt_mode, 
+                       _ccrc4, _ccrc4_eay, _ccrmd160_ltc_di, _ccrng, _ccrng_drbg_done, 
+                       _ccrng_drbg_init, _ccrng_drbg_init_withdrbg, _ccrng_drbg_reseed, 
+                       _ccrng_ecfips_test_init, _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, 
+                       _ccrng_rsafips_test_set_next, _ccrng_sequence_init, _ccrng_system_done, 
+                       _ccrng_system_init, _ccrng_test_done, _ccrng_test_init, _ccrng_uniform, 
+                       _ccrsa_decrypt_eme_pkcs1v15, _ccrsa_decrypt_eme_pkcs1v15_blinded, 
+                       _ccrsa_decrypt_oaep, _ccrsa_decrypt_oaep_blinded, _ccrsa_dump_full_key, 
+                       _ccrsa_dump_public_key, _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, 
+                       _ccrsa_emsa_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_verify, 
+                       _ccrsa_emsa_pss_decode, _ccrsa_emsa_pss_encode, _ccrsa_encrypt_eme_pkcs1v15, 
+                       _ccrsa_encrypt_oaep, _ccrsa_export_pub, _ccrsa_generate_fips186_key, 
+                       _ccrsa_generate_key, _ccrsa_get_fullkey_components, _ccrsa_get_pubkey_components, 
+                       _ccrsa_import_pub, _ccrsa_init_pub, _ccrsa_make_priv, _ccrsa_make_pub, 
+                       _ccrsa_oaep_decode_parameter, _ccrsa_oaep_encode_parameter, 
+                       _ccrsa_priv_crypt, _ccrsa_priv_crypt_blinded, _ccrsa_pub_crypt, 
+                       _ccrsa_pubkeylength, _ccrsa_recover_priv, _ccrsa_sign_pkcs1v15, 
+                       _ccrsa_sign_pkcs1v15_msg, _ccrsa_sign_pss, _ccrsa_sign_pss_msg, 
+                       _ccrsa_verify_pkcs1v15, _ccrsa_verify_pkcs1v15_allowshortsigs, 
                        _ccrsa_verify_pkcs1v15_digest, _ccrsa_verify_pkcs1v15_msg, 
                        _ccrsa_verify_pss, _ccrsa_verify_pss_digest, _ccrsa_verify_pss_msg, 
                        _ccscrypt, _ccscrypt_storage_size, _ccsha1_di, _ccsha1_eay_di, 
@@ -977,9 +978,11 @@ exports:
                        _ccsrp_test_calculations, _ccss_shamir_parameters_init, _ccss_shamir_parameters_maximum_secret_length, 
                        _ccss_shamir_share_bag_add_share, _ccss_shamir_share_bag_init, 
                        _ccss_shamir_share_bag_recover_secret, _ccss_shamir_share_export, 
-                       _ccss_shamir_share_generator_generate_share, _ccss_shamir_share_generator_init, 
+                       _ccss_shamir_share_generator_deserialize, _ccss_shamir_share_generator_generate_share, 
+                       _ccss_shamir_share_generator_init, _ccss_shamir_share_generator_serialize, 
                        _ccss_shamir_share_import, _ccss_shamir_share_init, _ccss_shamir_share_sizeof_y, 
-                       _ccvrf_derive_public_key, _ccvrf_factory_irtfdraft03, _ccvrf_factory_irtfdraft03_default, 
+                       _ccss_sizeof_shamir_share_generator_serialization, _ccvrf_derive_public_key, 
+                       _ccvrf_factory_irtfdraft03, _ccvrf_factory_irtfdraft03_default, 
                        _ccvrf_proof_to_hash, _ccvrf_prove, _ccvrf_sizeof_hash, _ccvrf_sizeof_proof, 
                        _ccvrf_sizeof_public_key, _ccvrf_sizeof_secret_key, _ccvrf_verify, 
                        _ccwrap_auth_decrypt, _ccwrap_auth_decrypt_withiv, _ccwrap_auth_encrypt, 
@@ -1004,11 +1007,11 @@ uuids:
   - target:          armv7s-ios
     value:           5F9FCD5D-9EF7-3609-A4D2-C3B31982E7A3
   - target:          arm64-ios
-    value:           AF27E74C-BE4A-3364-BB27-AED9916CE02D
+    value:           16C9F613-7AE3-32CE-BA3A-B0DCF0464F0E
   - target:          arm64e-ios
-    value:           B92757B1-0434-3E9B-A3AC-B6DA6B81945C
+    value:           FFC93E7E-8360-32A0-9EB5-FE3761B8C90A
 install-name:    '/usr/lib/system/libdispatch.dylib'
-current-version: 1271.40.12
+current-version: 1271.100.5
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1202,11 +1205,11 @@ uuids:
   - target:          armv7s-ios
     value:           BD69BD0A-55C7-3DDF-B179-CA8A6109B4B8
   - target:          arm64-ios
-    value:           0B475C78-3C12-3121-B7F8-2B95B83DAF44
+    value:           19E502BE-AFC1-3E00-AD3F-D28C0AE1287E
   - target:          arm64e-ios
-    value:           21B19919-1334-38BC-B233-896E929945E0
+    value:           B08AB7C2-64E8-3937-9487-C33D0175FD34
 install-name:    '/usr/lib/system/libdyld.dylib'
-current-version: 828.5
+current-version: 851.28
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1228,13 +1231,13 @@ exports:
                        __dyld_get_shared_cache_uuid, __dyld_has_fix_for_radar, __dyld_image_count, 
                        __dyld_images_for_addresses, __dyld_initializer, __dyld_is_memory_immutable, 
                        __dyld_is_objc_constant, __dyld_launch_mode, __dyld_missing_symbol_abort, 
-                       __dyld_objc_notify_register, __dyld_process_info_create, __dyld_process_info_for_each_aot_image, 
-                       __dyld_process_info_for_each_image, __dyld_process_info_for_each_segment, 
-                       __dyld_process_info_get_aot_cache, __dyld_process_info_get_cache, 
-                       __dyld_process_info_get_platform, __dyld_process_info_get_state, 
-                       __dyld_process_info_notify, __dyld_process_info_notify_main, 
-                       __dyld_process_info_notify_release, __dyld_process_info_notify_retain, 
-                       __dyld_process_info_release, __dyld_process_info_retain, __dyld_register_driverkit_main, 
+                       __dyld_objc_notify_register, __dyld_process_info_create, __dyld_process_info_for_each_image, 
+                       __dyld_process_info_for_each_segment, __dyld_process_info_get_aot_cache, 
+                       __dyld_process_info_get_cache, __dyld_process_info_get_platform, 
+                       __dyld_process_info_get_state, __dyld_process_info_notify, 
+                       __dyld_process_info_notify_main, __dyld_process_info_notify_release, 
+                       __dyld_process_info_notify_retain, __dyld_process_info_release, 
+                       __dyld_process_info_retain, __dyld_register_driverkit_main, 
                        __dyld_register_for_bulk_image_loads, __dyld_register_for_image_loads, 
                        __dyld_register_func_for_add_image, __dyld_register_func_for_remove_image, 
                        __dyld_shared_cache_contains_path, __dyld_shared_cache_is_locally_built, 
@@ -1260,11 +1263,11 @@ uuids:
   - target:          armv7s-ios
     value:           AFEF8B9F-347B-3B89-B1D3-0EDD209301FE
   - target:          arm64-ios
-    value:           AC7E574F-727A-3707-A332-4343B867BDD4
+    value:           C0B27A3D-C479-3141-90C6-D9A8FF3CBF71
   - target:          arm64e-ios
-    value:           24842280-87BC-30C6-8B69-739B80187B10
+    value:           BC02B6CC-6F65-332D-964F-669A23C50199
 install-name:    '/usr/lib/system/liblaunch.dylib'
-current-version: 2038.80.3
+current-version: 2038.100.48
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1320,11 +1323,11 @@ uuids:
   - target:          armv7s-ios
     value:           01731FC8-474E-3997-8C53-D2A503B5F2B8
   - target:          arm64-ios
-    value:           128A2B03-9274-3D6B-A667-AD41272431DF
+    value:           10F716EB-A3E1-3CB0-AF65-1A36F659ECC3
   - target:          arm64e-ios
-    value:           4228E603-5761-3377-8ACE-FC84D49A4D2F
+    value:           C50ED148-95B0-30AC-BADC-6CAF1A399DC3
 install-name:    '/usr/lib/system/libmacho.dylib'
-current-version: 973.0.1
+current-version: 980
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1377,11 +1380,11 @@ uuids:
   - target:          armv7s-ios
     value:           3015797A-CD33-3DFE-A768-30AD28634889
   - target:          arm64-ios
-    value:           183025EA-F37F-382A-807C-0F093EB64763
+    value:           5580DAEF-E9BA-3C5C-81E4-8A3E39E8DEB1
   - target:          arm64e-ios
-    value:           904853F0-4265-3ABE-9373-0A3ECDF39678
+    value:           92A55423-38D5-3C8F-9222-132940ABB36A
 install-name:    '/usr/lib/system/libremovefile.dylib'
-current-version: 49.40.3
+current-version: 49.102.1
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1403,9 +1406,9 @@ uuids:
   - target:          armv7s-ios
     value:           14D03741-B281-3689-9A5E-4B657E825EFE
   - target:          arm64-ios
-    value:           727B6CE7-A069-389B-BE9B-BABAA54A6A80
+    value:           B35362BA-C0DE-339E-A54D-DD168F87E0B6
   - target:          arm64e-ios
-    value:           6861DA31-B33A-393E-ADEA-A36DA03BA670
+    value:           7EA474D4-DA40-363C-A729-CB534D12462C
 install-name:    '/usr/lib/system/libsystem_asl.dylib'
 current-version: 385
 parent-umbrella:
@@ -1492,9 +1495,9 @@ uuids:
   - target:          armv7s-ios
     value:           B6B9673C-843E-3D2D-8EAD-DA86DE4A3E5C
   - target:          arm64-ios
-    value:           F56D3126-F752-364E-9279-C1FFEFD4CAA9
+    value:           AE093248-E9C8-3111-9052-25F810536822
   - target:          arm64e-ios
-    value:           F285E167-AAA7-3AB7-A092-085CA4D1A0C5
+    value:           AF2C7FDA-17B4-3613-9BAC-35A64A801967
 install-name:    '/usr/lib/system/libsystem_blocks.dylib'
 current-version: 78
 parent-umbrella:
@@ -1519,11 +1522,11 @@ uuids:
   - target:          armv7s-ios
     value:           E55FF556-683B-3CE5-BE62-D25F242213BB
   - target:          arm64-ios
-    value:           A07A482A-E889-392A-8C66-C328CF5320C9
+    value:           F13B015D-F42F-3EBB-91D3-0C6DF9871065
   - target:          arm64e-ios
-    value:           961A8FB0-DE8A-3567-B437-5D99CD549FAE
+    value:           7A2B5CFA-F443-345B-9A81-8746D01CA8C0
 install-name:    '/usr/lib/system/libsystem_c.dylib'
-current-version: 1439.40.11
+current-version: 1439.100.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1534,10 +1537,10 @@ exports:
                        '$ld$weak$os10.11$_dirname_r', '$ld$weak$os10.11$_getentropy', 
                        '$ld$weak$os10.11$_mkostemp', '$ld$weak$os10.11$_mkostemps', 
                        '$ld$weak$os10.11$_timingsafe_bcmp', ___cVersionNumber, ___cVersionString, 
-                       ___fdnlist, _kvm_close, _kvm_getargv, _kvm_getenvv, _kvm_geterr, 
-                       _kvm_getfiles, _kvm_getloadavg, _kvm_getprocs, _kvm_nlist, 
-                       _kvm_open, _kvm_openfiles, _kvm_read, _kvm_uread, _kvm_write, 
-                       _nlist, _wordexp, _wordfree ]
+                       ___fdnlist, __atexit_receipt, _kvm_close, _kvm_getargv, _kvm_getenvv, 
+                       _kvm_geterr, _kvm_getfiles, _kvm_getloadavg, _kvm_getprocs, 
+                       _kvm_nlist, _kvm_open, _kvm_openfiles, _kvm_read, _kvm_uread, 
+                       _kvm_write, _nlist, _wordexp, _wordfree ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ _off32, _off64, _skip ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -1588,24 +1591,24 @@ exports:
                        ___tens_D2A, ___tinytens_D2A, ___tolower, ___tolower_l, ___toupper, 
                        ___toupper_l, ___trailz_D2A, ___ulp_D2A, ___ungetc, ___ungetwc, 
                        ___vsnprintf_chk, ___vsprintf_chk, ___wcwidth, ___wcwidth_l, 
-                       __allocenvstate, __atexit_receipt, __c_locale, __cleanup, 
-                       __closeutx, __copyenv, __cthread_init_routine, __deallocenvstate, 
-                       __endutxent, __flockfile_debug_stub, __fseeko, __ftello, __fwalk, 
-                       __getenvp, __getutxent, __getutxid, __getutxline, __inet_aton_check, 
-                       __init_clock_port, __int_to_time, __libc_fork_child, __libc_initializer, 
-                       __long_to_time, __mkpath_np, __mktemp, __openutx, __os_assert_log, 
-                       __os_assert_log_ctx, __os_assumes_log, __os_assumes_log_ctx, 
-                       __os_avoid_tail_call, __os_crash, __os_crash_callback, __os_crash_fmt, 
-                       __os_debug_log, __os_debug_log_error_str, __putenvp, __pututxline, 
-                       __rand48_add, __rand48_mult, __rand48_seed, __readdir_unlocked, 
-                       __reclaim_telldir, __seekdir, __setenvp, __setutxent, __sigaction_nobind, 
-                       __sigintr, __signal_nobind, __sigvec_nobind, __sread, __sseek, 
-                       __subsystem_init, __swrite, __time32_to_time, __time64_to_time, 
-                       __time_to_int, __time_to_long, __time_to_time32, __time_to_time64, 
-                       __unsetenvp, __utmpxname, _a64l, _abort, _abort_report_np, 
-                       _abs, _acl_add_flag_np, _acl_add_perm, _acl_calc_mask, _acl_clear_flags_np, 
-                       _acl_clear_perms, _acl_copy_entry, _acl_copy_ext, _acl_copy_ext_native, 
-                       _acl_copy_int, _acl_copy_int_native, _acl_create_entry, _acl_create_entry_np, 
+                       __allocenvstate, __c_locale, __cleanup, __closeutx, __copyenv, 
+                       __cthread_init_routine, __deallocenvstate, __endutxent, __flockfile_debug_stub, 
+                       __fseeko, __ftello, __fwalk, __getenvp, __getutxent, __getutxid, 
+                       __getutxline, __inet_aton_check, __init_clock_port, __int_to_time, 
+                       __libc_fork_child, __libc_initializer, __long_to_time, __mkpath_np, 
+                       __mktemp, __openutx, __os_assert_log, __os_assert_log_ctx, 
+                       __os_assumes_log, __os_assumes_log_ctx, __os_avoid_tail_call, 
+                       __os_crash, __os_crash_callback, __os_crash_fmt, __os_debug_log, 
+                       __os_debug_log_error_str, __putenvp, __pututxline, __rand48_add, 
+                       __rand48_mult, __rand48_seed, __readdir_unlocked, __reclaim_telldir, 
+                       __seekdir, __setenvp, __setutxent, __sigaction_nobind, __sigintr, 
+                       __signal_nobind, __sigvec_nobind, __sread, __sseek, __subsystem_init, 
+                       __swrite, __time32_to_time, __time64_to_time, __time_to_int, 
+                       __time_to_long, __time_to_time32, __time_to_time64, __unsetenvp, 
+                       __utmpxname, _a64l, _abort, _abort_report_np, _abs, _acl_add_flag_np, 
+                       _acl_add_perm, _acl_calc_mask, _acl_clear_flags_np, _acl_clear_perms, 
+                       _acl_copy_entry, _acl_copy_ext, _acl_copy_ext_native, _acl_copy_int, 
+                       _acl_copy_int_native, _acl_create_entry, _acl_create_entry_np, 
                        _acl_delete_def_file, _acl_delete_entry, _acl_delete_fd_np, 
                        _acl_delete_file_np, _acl_delete_flag_np, _acl_delete_link_np, 
                        _acl_delete_perm, _acl_dup, _acl_free, _acl_from_text, _acl_get_entry, 
@@ -1813,13 +1816,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A4036286-5B22-3915-805E-584BDF7E0340
+    value:           F0067CB5-8659-3226-A91A-B75C2ABA2373
   - target:          arm64e-ios
-    value:           EA857473-7832-3FA1-8286-E5B16BC56A4E
+    value:           5477100D-4FE8-36BB-9853-29F17506EAC0
 install-name:    '/usr/lib/system/libsystem_collections.dylib'
-current-version: 1439.40.11
+current-version: 1439.100.3
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     umbrella:        System
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -1841,11 +1844,11 @@ uuids:
   - target:          armv7s-ios
     value:           7D81C3C1-C07E-3B9D-8475-88832EC110A9
   - target:          arm64-ios
-    value:           22243418-A82C-37EF-8B87-485B1729B7D4
+    value:           FC12C19E-DF5A-34CD-90F9-20A2A829A2E9
   - target:          arm64e-ios
-    value:           230A7783-B6AC-3C7F-BA69-91BDFA91823D
+    value:           612EF67C-1BC3-3F68-80C9-3226EAE86BF3
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1109.60.2
+current-version: 1109.100.4
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -1876,9 +1879,9 @@ uuids:
   - target:          armv7s-ios
     value:           737BDF97-AD23-38E4-8447-7BFEDDFBC8DD
   - target:          arm64-ios
-    value:           10A4EDBF-ECDD-36F7-AE8F-29014D50852C
+    value:           C0D15650-E0DB-3B8D-907A-190BA03BC8A2
   - target:          arm64e-ios
-    value:           01BA22F7-ABCE-3319-860F-B76D10A0D6D9
+    value:           E60BA1C8-E8E5-3C52-B73D-CC4FEC1FB3FF
 install-name:    '/usr/lib/system/libsystem_containermanager.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -1940,9 +1943,9 @@ uuids:
   - target:          armv7s-ios
     value:           C173D0E3-586D-31D8-9832-6828B5188A39
   - target:          arm64-ios
-    value:           773E2E00-6905-3349-9D66-A10059933DED
+    value:           0DD39EB6-D505-31F6-B241-F90412095409
   - target:          arm64e-ios
-    value:           F83A3238-B830-3072-AB91-13587ED26129
+    value:           91A23B90-1D89-3E09-AE79-19DB3DBF905C
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 125.2
 parent-umbrella:
@@ -1966,12 +1969,12 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A453301A-5572-313F-AC30-531DEAE896F8
+    value:           50176836-81E9-368A-848B-09534ACA71A3
   - target:          arm64e-ios
-    value:           63485FA6-FE92-35B7-83A0-0554E0194EBA
+    value:           33C070A2-ACDC-317E-ACC8-97D32BFC8B12
 install-name:    '/usr/lib/system/libsystem_darwin.dylib'
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     umbrella:        System
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -2005,11 +2008,11 @@ uuids:
   - target:          armv7s-ios
     value:           09688D44-95A5-36A2-A5AC-C291B9D546AD
   - target:          arm64-ios
-    value:           F18DCDED-B893-302E-B8BB-71C8A42741CC
+    value:           D89F3496-D007-38FB-9208-04B3A8AA7E69
   - target:          arm64e-ios
-    value:           591126C3-FFDB-3DF8-AFB3-CB5F5C3E79A0
+    value:           ECE151B0-95B9-3705-AD3B-89E5484CD0C5
 install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
-current-version: 1310.80.1
+current-version: 1310.100.10
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2044,13 +2047,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           D00A671C-F562-3DF6-8441-F169DA31255B
+    value:           C1113305-8E7D-326D-ADB4-960A0062E474
   - target:          arm64e-ios
-    value:           A5CA1F87-0AEF-3EEE-876E-0C077D7638EE
+    value:           75DC6964-7293-3AC3-AE03-DFBCE443E66F
 install-name:    '/usr/lib/system/libsystem_featureflags.dylib'
 current-version: 28.60.1
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     umbrella:        System
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -2064,9 +2067,9 @@ uuids:
   - target:          armv7s-ios
     value:           1AB16714-C54D-3A29-8D84-B8E786898BA6
   - target:          arm64-ios
-    value:           3D3B0C9A-5163-3165-8EBA-2B97FA3E3090
+    value:           45C349AB-A36D-3003-9FAA-3A74DBEBC48B
   - target:          arm64e-ios
-    value:           41413922-13E5-30B7-907D-6662A1EAB27E
+    value:           A64375AC-1644-3A9F-8C03-98DF6855971E
 install-name:    '/usr/lib/system/libsystem_info.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2227,11 +2230,11 @@ uuids:
   - target:          armv7s-ios
     value:           68FA1096-7323-3338-81A3-0CA2EB1240AA
   - target:          arm64-ios
-    value:           782E667E-18A2-3B98-B53D-BFC9A4A701B7
+    value:           269E9333-8D3B-3CC5-8A93-AEB94FE3E32E
   - target:          arm64e-ios
-    value:           B373B97B-671E-301C-A6B7-C9F92E17DCA0
+    value:           8C05F540-6315-39E2-9385-2765F56E844A
 install-name:    '/usr/lib/system/libsystem_kernel.dylib'
-current-version: 7195.80.35
+current-version: 7195.100.255
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2337,28 +2340,29 @@ exports:
                        __kernelrpc_mach_port_special_reply_port_reset_link, __kernelrpc_mach_port_swap_guard, 
                        __kernelrpc_mach_port_type, __kernelrpc_mach_port_type_trap, 
                        __kernelrpc_mach_port_unguard, __kernelrpc_mach_port_unguard_trap, 
-                       __kernelrpc_mach_vm_allocate, __kernelrpc_mach_vm_allocate_trap, 
-                       __kernelrpc_mach_vm_deallocate, __kernelrpc_mach_vm_deallocate_trap, 
-                       __kernelrpc_mach_vm_map, __kernelrpc_mach_vm_map_trap, __kernelrpc_mach_vm_protect, 
+                       __kernelrpc_mach_task_is_self, __kernelrpc_mach_vm_allocate, 
+                       __kernelrpc_mach_vm_allocate_trap, __kernelrpc_mach_vm_deallocate, 
+                       __kernelrpc_mach_vm_deallocate_trap, __kernelrpc_mach_vm_map, 
+                       __kernelrpc_mach_vm_map_trap, __kernelrpc_mach_vm_protect, 
                        __kernelrpc_mach_vm_protect_trap, __kernelrpc_mach_vm_purgable_control, 
                        __kernelrpc_mach_vm_purgable_control_trap, __kernelrpc_mach_vm_read, 
-                       __kernelrpc_mach_vm_remap, __kernelrpc_mach_voucher_extract_attr_recipe, 
-                       __kernelrpc_task_set_port_space, __kernelrpc_thread_policy, 
-                       __kernelrpc_thread_policy_set, __kernelrpc_thread_set_policy, 
-                       __kernelrpc_vm_map, __kernelrpc_vm_purgable_control, __kernelrpc_vm_read, 
-                       __kernelrpc_vm_remap, __mach_errors, __mach_fork_child, __mach_snprintf, 
-                       __mach_vsnprintf, __os_alloc_once_table, __register_gethostuuid_callback, 
-                       __thread_set_tsd_base, _abort_with_payload, _abort_with_reason, 
-                       _accept, '_accept$NOCANCEL', _access, _accessx_np, _acct, 
-                       _act_get_state, _act_set_state, _adjtime, _aio_cancel, _aio_error, 
-                       _aio_fsync, _aio_read, _aio_return, _aio_suspend, '_aio_suspend$NOCANCEL', 
-                       _aio_write, _audit, _audit_session_join, _audit_session_port, 
-                       _audit_session_self, _auditctl, _auditon, _bind, _bootstrap_port, 
-                       _cerror, _cerror_nocancel, _change_fdguard_np, _chdir, _chflags, 
-                       _chmod, _chown, _chroot, _clock_alarm, _clock_alarm_reply, 
-                       _clock_get_attributes, _clock_get_time, _clock_set_attributes, 
-                       _clock_set_time, _clock_sleep, _clock_sleep_trap, _clonefile, 
-                       _clonefileat, _close, '_close$NOCANCEL', _coalition_create, 
+                       __kernelrpc_mach_vm_remap, __kernelrpc_mach_vm_remap_new, 
+                       __kernelrpc_mach_voucher_extract_attr_recipe, __kernelrpc_task_set_port_space, 
+                       __kernelrpc_thread_policy, __kernelrpc_thread_policy_set, 
+                       __kernelrpc_thread_set_policy, __kernelrpc_vm_map, __kernelrpc_vm_purgable_control, 
+                       __kernelrpc_vm_read, __kernelrpc_vm_remap, __kernelrpc_vm_remap_new, 
+                       __mach_errors, __mach_fork_child, __mach_snprintf, __mach_vsnprintf, 
+                       __os_alloc_once_table, __register_gethostuuid_callback, __thread_set_tsd_base, 
+                       _abort_with_payload, _abort_with_reason, _accept, '_accept$NOCANCEL', 
+                       _access, _accessx_np, _acct, _act_get_state, _act_set_state, 
+                       _adjtime, _aio_cancel, _aio_error, _aio_fsync, _aio_read, 
+                       _aio_return, _aio_suspend, '_aio_suspend$NOCANCEL', _aio_write, 
+                       _audit, _audit_session_join, _audit_session_port, _audit_session_self, 
+                       _auditctl, _auditon, _bind, _bootstrap_port, _cerror, _cerror_nocancel, 
+                       _change_fdguard_np, _chdir, _chflags, _chmod, _chown, _chroot, 
+                       _clock_alarm, _clock_alarm_reply, _clock_get_attributes, _clock_get_time, 
+                       _clock_set_attributes, _clock_set_time, _clock_sleep, _clock_sleep_trap, 
+                       _clonefile, _clonefileat, _close, '_close$NOCANCEL', _coalition_create, 
                        _coalition_info_resource_usage, _coalition_info_set_efficiency, 
                        _coalition_info_set_name, _coalition_ledger_set_logical_writes_limit, 
                        _coalition_reap, _coalition_terminate, _connect, '_connect$NOCANCEL', 
@@ -2446,21 +2450,23 @@ exports:
                        _mach_right_recv_construct, _mach_right_recv_destruct, _mach_right_send_create, 
                        _mach_right_send_once_consume, _mach_right_send_once_create, 
                        _mach_right_send_release, _mach_right_send_retain, _mach_sync_ipc_link_monitoring_start, 
-                       _mach_sync_ipc_link_monitoring_stop, _mach_task_self, _mach_task_self_, 
-                       _mach_task_special_port_description, _mach_task_special_port_for_id, 
-                       _mach_thread_self, _mach_timebase_info, _mach_timebase_info_trap, 
+                       _mach_sync_ipc_link_monitoring_stop, _mach_task_is_self, _mach_task_self, 
+                       _mach_task_self_, _mach_task_special_port_description, _mach_task_special_port_for_id, 
+                       _mach_thread_self, _mach_thread_special_port_description, 
+                       _mach_thread_special_port_for_id, _mach_timebase_info, _mach_timebase_info_trap, 
                        _mach_vm_allocate, _mach_vm_behavior_set, _mach_vm_copy, _mach_vm_deallocate, 
                        _mach_vm_inherit, _mach_vm_machine_attribute, _mach_vm_map, 
                        _mach_vm_msync, _mach_vm_page_info, _mach_vm_page_query, _mach_vm_page_range_query, 
                        _mach_vm_protect, _mach_vm_purgable_control, _mach_vm_read, 
                        _mach_vm_read_list, _mach_vm_read_overwrite, _mach_vm_region, 
-                       _mach_vm_region_recurse, _mach_vm_remap, _mach_vm_wire, _mach_vm_write, 
-                       _mach_voucher_attr_command, _mach_voucher_deallocate, _mach_voucher_debug_info, 
-                       _mach_voucher_extract_all_attr_recipes, _mach_voucher_extract_attr_content, 
-                       _mach_voucher_extract_attr_recipe, _mach_voucher_extract_attr_recipe_trap, 
-                       _mach_wait_until, _mach_zone_force_gc, _mach_zone_get_btlog_records, 
-                       _mach_zone_get_zlog_zones, _mach_zone_info, _mach_zone_info_for_largest_zone, 
-                       _mach_zone_info_for_zone, _macx_backing_store_recovery, _macx_backing_store_suspend, 
+                       _mach_vm_region_recurse, _mach_vm_remap, _mach_vm_remap_new, 
+                       _mach_vm_wire, _mach_vm_write, _mach_voucher_attr_command, 
+                       _mach_voucher_deallocate, _mach_voucher_debug_info, _mach_voucher_extract_all_attr_recipes, 
+                       _mach_voucher_extract_attr_content, _mach_voucher_extract_attr_recipe, 
+                       _mach_voucher_extract_attr_recipe_trap, _mach_wait_until, 
+                       _mach_zone_force_gc, _mach_zone_get_btlog_records, _mach_zone_get_zlog_zones, 
+                       _mach_zone_info, _mach_zone_info_for_largest_zone, _mach_zone_info_for_zone, 
+                       _macx_backing_store_recovery, _macx_backing_store_suspend, 
                        _macx_swapoff, _macx_swapon, _macx_triggers, _madvise, _memorystatus_control, 
                        _memorystatus_get_level, _mig_allocate, _mig_dealloc_reply_port, 
                        _mig_dealloc_special_reply_port, _mig_deallocate, _mig_get_reply_port, 
@@ -2517,7 +2523,7 @@ exports:
                        _os_packet_get_transport_retransmit, _os_packet_get_transport_traffic_background, 
                        _os_packet_get_transport_traffic_realtime, _os_packet_get_truncated, 
                        _os_packet_get_vlan_id, _os_packet_get_vlan_priority, _os_packet_get_vlan_tag, 
-                       _os_packet_increment_use_count, _os_packet_set_compression_generation_count, 
+                       _os_packet_increment_use_count, _os_packet_is_traced, _os_packet_set_compression_generation_count, 
                        _os_packet_set_expire_time, _os_packet_set_flow_uuid, _os_packet_set_group_end, 
                        _os_packet_set_group_start, _os_packet_set_headroom, _os_packet_set_inet_checksum, 
                        _os_packet_set_link_broadcast, _os_packet_set_link_ethfcs, 
@@ -2526,6 +2532,7 @@ exports:
                        _os_packet_set_traffic_class, _os_packet_set_transport_last_packet, 
                        _os_packet_set_transport_retransmit, _os_packet_set_transport_traffic_background, 
                        _os_packet_set_transport_traffic_realtime, _os_packet_set_vlan_tag, 
+                       _os_packet_trace_end, _os_packet_trace_event, _os_packet_trace_start, 
                        _os_proc_available_memory, _panic, _panic_init, _pathconf, 
                        _peeloff, _pid_for_task, _pid_hibernate, _pid_resume, _pid_shutdown_networking, 
                        _pid_shutdown_sockets, _pid_suspend, _pipe, _pivot_root, _pkt_subtype_assert_fail, 
@@ -2593,15 +2600,15 @@ exports:
                        _pwritev, '_pwritev$NOCANCEL', _quotactl, _read, '_read$NOCANCEL', 
                        _readlink, _readlinkat, _readv, '_readv$NOCANCEL', _reboot, 
                        _reboot_np, _recvfrom, '_recvfrom$NOCANCEL', _recvmsg, '_recvmsg$NOCANCEL', 
-                       _recvmsg_x, _removexattr, _rename, _rename_ext, _renameat, 
-                       _renameatx_np, _renamex_np, _revoke, _rmdir, _searchfs, _select, 
-                       '_select$DARWIN_EXTSN', '_select$DARWIN_EXTSN$NOCANCEL', '_select$NOCANCEL', 
-                       _sem_close, _sem_destroy, _sem_getvalue, _sem_init, _sem_open, 
-                       _sem_post, _sem_trywait, _sem_unlink, _sem_wait, '_sem_wait$NOCANCEL', 
-                       _semaphore_create, _semaphore_destroy, _semaphore_signal, 
-                       _semaphore_signal_all, _semaphore_signal_all_trap, _semaphore_signal_thread, 
-                       _semaphore_signal_thread_trap, _semaphore_signal_trap, _semaphore_timedwait, 
-                       _semaphore_timedwait_signal, _semaphore_timedwait_signal_trap, 
+                       _recvmsg_x, _register_uexc_handler, _removexattr, _rename, 
+                       _rename_ext, _renameat, _renameatx_np, _renamex_np, _revoke, 
+                       _rmdir, _searchfs, _select, '_select$DARWIN_EXTSN', '_select$DARWIN_EXTSN$NOCANCEL', 
+                       '_select$NOCANCEL', _sem_close, _sem_destroy, _sem_getvalue, 
+                       _sem_init, _sem_open, _sem_post, _sem_trywait, _sem_unlink, 
+                       _sem_wait, '_sem_wait$NOCANCEL', _semaphore_create, _semaphore_destroy, 
+                       _semaphore_signal, _semaphore_signal_all, _semaphore_signal_all_trap, 
+                       _semaphore_signal_thread, _semaphore_signal_thread_trap, _semaphore_signal_trap, 
+                       _semaphore_timedwait, _semaphore_timedwait_signal, _semaphore_timedwait_signal_trap, 
                        _semaphore_timedwait_trap, _semaphore_wait, _semaphore_wait_signal, 
                        _semaphore_wait_signal_trap, _semaphore_wait_trap, _semctl, 
                        _semget, _semop, _semsys, _sendfile, _sendmsg, '_sendmsg$NOCANCEL', 
@@ -2623,10 +2630,13 @@ exports:
                        _statfs64, _swapon, _swtch, _swtch_pri, _symlink, _symlinkat, 
                        _sync, _syscall, _syscall_thread_switch, _system_get_sfi_window, 
                        _system_override, _system_set_sfi_window, _task_assign, _task_assign_default, 
-                       _task_create, _task_create_suid_cred, _task_for_pid, _task_generate_corpse, 
+                       _task_create, _task_create_identity_token, _task_create_suid_cred, 
+                       _task_dyld_process_info_notify_deregister, _task_dyld_process_info_notify_get, 
+                       _task_dyld_process_info_notify_register, _task_for_pid, _task_generate_corpse, 
                        _task_get_assignment, _task_get_dyld_image_infos, _task_get_emulation_vector, 
-                       _task_get_exc_guard_behavior, _task_get_exception_ports, _task_get_mach_voucher, 
-                       _task_get_special_port, _task_get_state, _task_info, _task_inspect, 
+                       _task_get_exc_guard_behavior, _task_get_exception_ports, _task_get_exception_ports_info, 
+                       _task_get_mach_voucher, _task_get_special_port, _task_get_state, 
+                       _task_identity_token_get_task_port, _task_info, _task_inspect, 
                        _task_inspect_for_pid, _task_map_corpse_info, _task_map_corpse_info_64, 
                        _task_name_for_pid, _task_policy, _task_policy_get, _task_policy_set, 
                        _task_purgable_info, _task_read_for_pid, _task_register_dyld_get_process_state, 
@@ -2644,23 +2654,24 @@ exports:
                        _thread_abort, _thread_abort_safely, _thread_assign, _thread_assign_default, 
                        _thread_convert_thread_state, _thread_create, _thread_create_running, 
                        _thread_depress_abort, _thread_destruct_special_reply_port, 
-                       _thread_get_assignment, _thread_get_exception_ports, _thread_get_mach_voucher, 
-                       _thread_get_register_pointer_values, _thread_get_special_port, 
-                       _thread_get_special_reply_port, _thread_get_state, _thread_info, 
-                       _thread_policy, _thread_policy_get, _thread_policy_set, _thread_resume, 
-                       _thread_sample, _thread_self_trap, _thread_selfcounts, _thread_set_exception_ports, 
-                       _thread_set_mach_voucher, _thread_set_policy, _thread_set_special_port, 
-                       _thread_set_state, _thread_suspend, _thread_swap_exception_ports, 
-                       _thread_swap_mach_voucher, _thread_switch, _thread_terminate, 
-                       _thread_wire, _truncate, _umask, _undelete, _unlink, _unlinkat, 
-                       _unmount, _usrctl, _utimensat, _utimes, _vfork, _vfs_purge, 
-                       _vm_allocate, _vm_allocate_cpm, _vm_behavior_set, _vm_copy, 
-                       _vm_deallocate, _vm_inherit, _vm_kernel_page_mask, _vm_kernel_page_shift, 
-                       _vm_kernel_page_size, _vm_machine_attribute, _vm_map, _vm_map_page_query, 
-                       _vm_msync, _vm_page_mask, _vm_page_shift, _vm_page_size, _vm_pressure_monitor, 
-                       _vm_protect, _vm_purgable_control, _vm_read, _vm_read_list, 
-                       _vm_read_overwrite, _vm_region_64, _vm_region_recurse_64, 
-                       _vm_remap, _vm_wire, _vm_write, _voucher_mach_msg_adopt, _voucher_mach_msg_clear, 
+                       _thread_get_assignment, _thread_get_exception_ports, _thread_get_exception_ports_info, 
+                       _thread_get_mach_voucher, _thread_get_register_pointer_values, 
+                       _thread_get_special_port, _thread_get_special_reply_port, 
+                       _thread_get_state, _thread_info, _thread_policy, _thread_policy_get, 
+                       _thread_policy_set, _thread_resume, _thread_sample, _thread_self_trap, 
+                       _thread_selfcounts, _thread_set_exception_ports, _thread_set_mach_voucher, 
+                       _thread_set_policy, _thread_set_special_port, _thread_set_state, 
+                       _thread_suspend, _thread_swap_exception_ports, _thread_swap_mach_voucher, 
+                       _thread_switch, _thread_terminate, _thread_wire, _truncate, 
+                       _umask, _undelete, _unlink, _unlinkat, _unmount, _usrctl, 
+                       _utimensat, _utimes, _vfork, _vfs_purge, _vm_allocate, _vm_allocate_cpm, 
+                       _vm_behavior_set, _vm_copy, _vm_deallocate, _vm_inherit, _vm_kernel_page_mask, 
+                       _vm_kernel_page_shift, _vm_kernel_page_size, _vm_machine_attribute, 
+                       _vm_map, _vm_map_page_query, _vm_msync, _vm_page_mask, _vm_page_shift, 
+                       _vm_page_size, _vm_pressure_monitor, _vm_protect, _vm_purgable_control, 
+                       _vm_read, _vm_read_list, _vm_read_overwrite, _vm_region_64, 
+                       _vm_region_recurse_64, _vm_remap, _vm_remap_new, _vm_wire, 
+                       _vm_write, _voucher_mach_msg_adopt, _voucher_mach_msg_clear, 
                        _voucher_mach_msg_revert, _voucher_mach_msg_set, _vprintf_stderr_func, 
                        _wait4, _waitid, '_waitid$NOCANCEL', _work_interval_copy_port, 
                        _work_interval_create, _work_interval_destroy, _work_interval_get_flags_from_port, 
@@ -2683,11 +2694,11 @@ uuids:
   - target:          armv7s-ios
     value:           93E03298-413E-3EBF-9A20-76DDBD3A9E4C
   - target:          arm64-ios
-    value:           47A923F7-76AD-3214-BC1F-34051C03B2EE
+    value:           5A8CCFAB-10A8-389D-AE46-BC4BE30BC7A6
   - target:          arm64e-ios
-    value:           C9E29EEE-8F90-3777-95C6-25952802E491
+    value:           6EA765D8-3621-3DEC-9765-713265931FCD
 install-name:    '/usr/lib/system/libsystem_m.dylib'
-current-version: 3186.40.3
+current-version: 3186.100.3
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2781,11 +2792,11 @@ uuids:
   - target:          armv7s-ios
     value:           B732D518-10FE-38C1-8874-BA49BA81DB70
   - target:          arm64-ios
-    value:           8979FB06-A317-3C57-AFEA-2732627A08E5
+    value:           F96914C0-3DF4-37C6-AA33-3C02B4AD13C5
   - target:          arm64e-ios
-    value:           BBADE385-3AF5-3399-B1D6-180C6D33DF9C
+    value:           A5ADDCE2-9852-31C2-8A5B-03FADB759923
 install-name:    '/usr/lib/system/libsystem_malloc.dylib'
-current-version: 317.40.8
+current-version: 317.100.9
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -2793,10 +2804,10 @@ exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ ___disk_stack_logging_log_stack, ___invalid_stack_id, ___libsystem_mallocVersionNumber, 
                        ___libsystem_mallocVersionString, ___stack_log_file_path__, 
-                       ___stack_logging_fork_child, ___stack_logging_fork_parent, 
-                       ___stack_logging_fork_prepare, _bitarray_create, _bitarray_first_set, 
-                       _bitarray_get, _bitarray_set, _bitarray_size, _bitarray_zap, 
-                       _bitarray_zap_first_set, _bitarray_zap_first_set_multiple, 
+                       ___stack_logging_early_finished, ___stack_logging_fork_child, 
+                       ___stack_logging_fork_parent, ___stack_logging_fork_prepare, 
+                       _bitarray_create, _bitarray_first_set, _bitarray_get, _bitarray_set, 
+                       _bitarray_size, _bitarray_zap, _bitarray_zap_first_set, _bitarray_zap_first_set_multiple, 
                        _is_stack_logging_lite_enabled, _malloc_debug_flags, _stack_logging_dontcompact, 
                        _stack_logging_finished_init, _stack_logging_lite_batch_free, 
                        _stack_logging_lite_batch_malloc, _stack_logging_mode, _stack_logging_postponed, 
@@ -2811,7 +2822,7 @@ exports:
                        ___mach_stack_logging_uniquing_table_read_stack, ___mach_stack_logging_uniquing_table_release, 
                        ___mach_stack_logging_uniquing_table_retain, ___mach_stack_logging_uniquing_table_serialize, 
                        ___mach_stack_logging_uniquing_table_sizeof, ___malloc_init, 
-                       ___stack_logging_early_finished, __malloc_fork_child, __malloc_fork_parent, 
+                       ___malloc_late_init, __malloc_fork_child, __malloc_fork_parent, 
                        __malloc_fork_prepare, __malloc_no_asl_log, __os_cpu_number_override, 
                        _aligned_alloc, _calloc, _free, _mag_set_thread_index, _malloc, 
                        _malloc_check_counter, _malloc_check_each, _malloc_check_start, 
@@ -2847,9 +2858,9 @@ uuids:
   - target:          armv7s-ios
     value:           20DA5438-E7CF-34E3-B964-17CC383FE077
   - target:          arm64-ios
-    value:           CBEDB2F5-8D9D-3DAA-A677-620746C058BF
+    value:           70EE38C2-505A-3F63-979F-D6858E250943
   - target:          arm64e-ios
-    value:           72E9B04C-EFB3-3113-9813-0FAA22FD28AF
+    value:           3FBD7AB2-B561-34DD-AFFF-3F701A0E8D70
 install-name:    '/usr/lib/system/libsystem_networkextension.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -2924,9 +2935,9 @@ uuids:
   - target:          armv7s-ios
     value:           120E1144-53F4-3E0F-95D9-6586A061F349
   - target:          arm64-ios
-    value:           70FF494D-1CC3-3FCA-BADD-1C308D560BE4
+    value:           98278FC3-409C-39D4-AAF9-73E8CB9EBE40
   - target:          arm64e-ios
-    value:           CB00557E-ECB7-3B8E-BEE9-4DE4A0B862AA
+    value:           72BB0E38-4AF2-37EF-A46C-22E51A15CD6C
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 279.40.4
 exports:
@@ -2982,9 +2993,9 @@ uuids:
   - target:          armv7s-ios
     value:           D0FF48E9-F969-3DED-8D50-C193173C82BC
   - target:          arm64-ios
-    value:           3A71914A-C2A7-3514-B519-DF319E7A6E02
+    value:           D5E47884-B93D-388E-B0BC-3DABCEA2F1EF
   - target:          arm64e-ios
-    value:           88FA2F54-074D-32C4-9F48-79EB67E67B7B
+    value:           F35753B9-9120-3131-858F-B0A60E2F4238
 install-name:    '/usr/lib/system/libsystem_platform.dylib'
 current-version: 254.80.2
 parent-umbrella:
@@ -3049,7 +3060,7 @@ exports:
                        _setcontext, _setjmp, _siglongjmp, _sigsetjmp, _spin_lock, 
                        _spin_lock_try, _spin_unlock, _swapcontext, _sys_cache_control, 
                        _sys_dcache_flush, _sys_icache_invalidate ]
-  - targets:         [ arm64e-ios, armv7-ios, armv7s-ios ]
+  - targets:         [ arm64e-ios ]
     symbols:         [ __OSSpinLockLockSlow ]
 --- !tapi-tbd
 tbd-version:     4
@@ -3060,13 +3071,13 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           2E2A22F0-761B-3E62-B353-76926358512E
+    value:           02B1E68D-8BE5-32DE-A675-1063CA69E255
   - target:          arm64e-ios
-    value:           563AC8A6-230F-305B-BADA-77870FEC6204
+    value:           6D31B687-8061-30E4-92C6-12A8B04663AE
 install-name:    '/usr/lib/system/libsystem_product_info_filter.dylib'
 current-version: 8.40.1
 parent-umbrella:
-  - targets:         [ arm64-ios, arm64e-ios ]
+  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     umbrella:        System
 --- !tapi-tbd
 tbd-version:     4
@@ -3077,11 +3088,11 @@ uuids:
   - target:          armv7s-ios
     value:           1F8C60A5-799C-3721-AE24-B52CDB5F0801
   - target:          arm64-ios
-    value:           CD2075FF-948B-313A-8A02-E2AD1E676A74
+    value:           32A07BA4-7865-3AD4-9BCF-AD54DA07CF54
   - target:          arm64e-ios
-    value:           C939A2AB-D3B1-3B0A-83C5-7CE2F4F339A9
+    value:           EE321B11-5741-3B4A-A3DC-A7D210F15A1D
 install-name:    '/usr/lib/system/libsystem_pthread.dylib'
-current-version: 454.80.2
+current-version: 454.100.8
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3173,11 +3184,11 @@ uuids:
   - target:          armv7s-ios
     value:           2D5C9579-46AF-3FD3-9626-443FF1532869
   - target:          arm64-ios
-    value:           638B8447-2157-3F9A-88C9-22612525E4CA
+    value:           C67A45D2-1C28-3352-A408-42EB07DC08C0
   - target:          arm64e-ios
-    value:           D7EA5944-52B7-3C88-82C4-726694052A14
+    value:           D4AD0FC6-9087-3DB7-B16F-057AC96014DA
 install-name:    '/usr/lib/system/libsystem_sandbox.dylib'
-current-version: 1441.60.4
+current-version: 1441.102.1
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3247,9 +3258,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD7353A8-1C7E-373B-863B-E661CB0CD846
   - target:          arm64-ios
-    value:           A8784EA9-ECB9-39FA-BDAC-695877FC2B4B
+    value:           071749B0-E4B9-3D01-8F29-896A9775238A
   - target:          arm64e-ios
-    value:           EE0315AC-9AAB-3BD4-AB86-EDE010DB097A
+    value:           F47448FA-C086-3FA9-ACE9-74C38ACC3FA5
 install-name:    '/usr/lib/system/libsystem_symptoms.dylib'
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -3270,11 +3281,11 @@ uuids:
   - target:          armv7s-ios
     value:           D7C9FB6B-CA5D-330F-9FDB-4140848515D6
   - target:          arm64-ios
-    value:           3B5F5D25-A59C-3D7E-90BE-F8D6481D1CA9
+    value:           EE731D0E-FFA4-3284-8381-1AE3140293A9
   - target:          arm64e-ios
-    value:           3520924C-65A7-351D-ADBE-A07268A9BCA7
+    value:           DE6B2AA8-D12E-39BF-997E-A9CC29BEA159
 install-name:    '/usr/lib/system/libsystem_trace.dylib'
-current-version: 1277.80.2
+current-version: 1277.100.21
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3343,11 +3354,11 @@ uuids:
   - target:          armv7s-ios
     value:           1AF55CB8-D4FE-3D46-8290-5B05F4F72F8D
   - target:          arm64-ios
-    value:           07BD6C4F-4305-3E01-91DC-30C05754DA0C
+    value:           52D20423-0BD4-3B34-A04E-63533E6A5FF7
   - target:          arm64e-ios
-    value:           D08AC1CF-F13C-37CF-9306-6CC664058CF0
+    value:           7B646B04-009C-394A-B1B9-C9E9C1D26221
 install-name:    '/usr/lib/system/libunwind.dylib'
-current-version: 200.10
+current-version: 201
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3426,11 +3437,11 @@ uuids:
   - target:          armv7s-ios
     value:           603F52D6-E25F-3349-AC6A-F76685E2DC82
   - target:          arm64-ios
-    value:           9B754030-D4B6-3814-8840-D3DAC9C54212
+    value:           90BCE30E-AF1F-3A0D-BBD7-4F98EBE53364
   - target:          arm64e-ios
-    value:           CC048C8E-1CAD-36C8-8A96-15966103BD3A
+    value:           51B3F90E-3B21-383E-9DBD-AE48625C9E9D
 install-name:    '/usr/lib/system/libxpc.dylib'
-current-version: 2038.80.3
+current-version: 2038.100.48
 parent-umbrella:
   - targets:         [ arm64-ios, arm64e-ios ]
     umbrella:        System
@@ -3461,10 +3472,11 @@ exports:
                        _XPC_ACTIVITY_MOTION_STATE_AUTOMOTIVE, _XPC_ACTIVITY_MOTION_STATE_AUTOMOTIVE_MOVING, 
                        _XPC_ACTIVITY_MOTION_STATE_AUTOMOTIVE_STATIONARY, _XPC_ACTIVITY_MOTION_STATE_CYCLING, 
                        _XPC_ACTIVITY_MOTION_STATE_RUNNING, _XPC_ACTIVITY_MOTION_STATE_STATIONARY, 
-                       _XPC_ACTIVITY_MOTION_STATE_WALKING, _XPC_ACTIVITY_NETWORK_TRANSFER_BIDIRECTIONAL, 
-                       _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION, _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION_DOWNLOAD, 
-                       _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION_UPLOAD, _XPC_ACTIVITY_NETWORK_TRANSFER_ENDPOINT, 
-                       _XPC_ACTIVITY_NETWORK_TRANSFER_PARAMETERS, _XPC_ACTIVITY_NETWORK_TRANSFER_SIZE, 
+                       _XPC_ACTIVITY_MOTION_STATE_WALKING, _XPC_ACTIVITY_NETWORK_DOWNLOAD_SIZE, 
+                       _XPC_ACTIVITY_NETWORK_TRANSFER_BIDIRECTIONAL, _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION, 
+                       _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION_DOWNLOAD, _XPC_ACTIVITY_NETWORK_TRANSFER_DIRECTION_UPLOAD, 
+                       _XPC_ACTIVITY_NETWORK_TRANSFER_ENDPOINT, _XPC_ACTIVITY_NETWORK_TRANSFER_PARAMETERS, 
+                       _XPC_ACTIVITY_NETWORK_TRANSFER_SIZE, _XPC_ACTIVITY_NETWORK_UPLOAD_SIZE, 
                        _XPC_ACTIVITY_POST_INSTALL, _XPC_ACTIVITY_POWER_NAP, _XPC_ACTIVITY_PRIORITY, 
                        _XPC_ACTIVITY_PRIORITY_MAINTENANCE, _XPC_ACTIVITY_PRIORITY_UTILITY, 
                        _XPC_ACTIVITY_RANDOM_INITIAL_DELAY, _XPC_ACTIVITY_REPEATING, 
@@ -3550,16 +3562,17 @@ exports:
                        _launch_msg, _launch_path_for_user_service_4coresim, _launch_perfcheck_property_endpoint_active, 
                        _launch_perfcheck_property_endpoint_event, _launch_perfcheck_property_endpoint_name, 
                        _launch_perfcheck_property_endpoint_needs_activation, _launch_perfcheck_property_endpoints, 
-                       _launch_remove_external_service, _launch_service_instance_create, 
-                       _launch_service_instance_remove, _launch_service_stats_disable_4ppse, 
-                       _launch_service_stats_enable_4ppse, _launch_service_stats_is_enabled_4ppse, 
-                       _launch_set_service_enabled, _launch_set_system_service_enabled, 
-                       _launch_socket_service_check_in, _launch_version_for_user_service_4coresim, 
-                       _launch_wait, _launchd_close, _launchd_fdopen, _launchd_getfd, 
-                       _launchd_msg_recv, _launchd_msg_send, _load_launchd_jobs_at_loginwindow_prompt, 
-                       _mpm_uncork_fork, _mpm_wait, _os_system_version_get_current_version, 
-                       _os_system_version_sim_get_current_host_version, _os_transaction_copy_description, 
-                       _os_transaction_create, _os_transaction_get_timestamp, _os_transaction_needs_more_time, 
+                       _launch_remove_external_service, _launch_service_instance_copy_uuids, 
+                       _launch_service_instance_create, _launch_service_instance_remove, 
+                       _launch_service_stats_disable_4ppse, _launch_service_stats_enable_4ppse, 
+                       _launch_service_stats_is_enabled_4ppse, _launch_set_service_enabled, 
+                       _launch_set_system_service_enabled, _launch_socket_service_check_in, 
+                       _launch_version_for_user_service_4coresim, _launch_wait, _launchd_close, 
+                       _launchd_fdopen, _launchd_getfd, _launchd_msg_recv, _launchd_msg_send, 
+                       _load_launchd_jobs_at_loginwindow_prompt, _mpm_uncork_fork, 
+                       _mpm_wait, _os_system_version_get_current_version, _os_system_version_sim_get_current_host_version, 
+                       _os_transaction_copy_description, _os_transaction_create, 
+                       _os_transaction_get_timestamp, _os_transaction_needs_more_time, 
                        _place_hold_on_real_loginwindow, _reboot2, _reboot3, _vproc_release, 
                        _vproc_retain, _vproc_standby_begin, _vproc_standby_end, _vproc_swap_complex, 
                        _vproc_swap_integer, _vproc_swap_string, _vproc_transaction_begin, 

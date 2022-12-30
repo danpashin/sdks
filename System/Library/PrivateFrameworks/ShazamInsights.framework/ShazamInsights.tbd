@@ -3,13 +3,11 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShazamInsights.framework/ShazamInsights
-current-version:       83
+current-version:       99
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SQErrorDomain ]
-    objc-classes:         [ SQGenre, SQMediaItem, SQPool, SQPoolQuery, SQProfile,
-                            SQQuery, SQQueryProvider, SQRegion, SQRegionQuery,
-                            SQSimilarityCluster, SQSimilarityClusterQuery ]
+    symbols:              [ _SHInsightsErrorDomain ]
+    objc-classes:         [ SHAffinityGroup, SHAffinityGroupQuery, SHRegion ]
 ...

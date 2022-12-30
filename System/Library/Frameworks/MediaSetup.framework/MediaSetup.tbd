@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           F593A783-5D42-3E6B-84BF-2B9A30BCD6BA
+    value:           FFA4D68A-165A-3FC1-9A40-141A8AA33356
   - target:          arm64e-ios
-    value:           CA887FB4-9BEE-36D9-B137-EB8B492F7AA4
+    value:           4DC3137F-288D-38EC-921F-84A72A34509A
 install-name:    '/System/Library/Frameworks/MediaSetup.framework/MediaSetup'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -18,12 +18,12 @@ exports:
                        _MSDefaultServiceRecordName, _MSDefaultServiceRecordType, 
                        _MSErrorDomain, _MSHomeParticipantHomeIdentifier, _MSHomeParticipantHomeUserIdentifier, 
                        _MSMaxDelayInSecsForSchedulingCoalescerTask, _MSMaxWaitInSecondsForFetchDataFromCloudKit, 
-                       _MSMinDelayInSecForSchedulingCoalescerTask, _MSPlaceholderRecordName, 
-                       _MSPlaceholderRecordType, _MSPrivateDatabaseRefreshIntervalInSecs, 
+                       _MSMaxWaitTimeForServiceIconDownload, _MSMinDelayInSecForSchedulingCoalescerTask, 
+                       _MSPlaceholderRecordName, _MSPlaceholderRecordType, _MSPrivateDatabaseRefreshIntervalInSecs, 
                        _MSPublicDatabaseRefreshIntervalInSecs, _MSPublicInfoRecordZoneName, 
                        _MSPublicInfoServiceRecordType, _MSServiceAccountRecordType, 
-                       _MSServiceSetupErrorDomain, _MSUserInfoErrorStringKey, _MediaServiceAccountName, 
-                       _MediaServiceAuthClientID, _MediaServiceAuthClientSecret, 
+                       _MSServiceSetupErrorDomain, _MSUserInfoErrorStringKey, _MSiTunesCloudSubscriptionStatusMaxTimeOut, 
+                       _MediaServiceAccountName, _MediaServiceAuthClientID, _MediaServiceAuthClientSecret, 
                        _MediaServiceAuthConfiguration, _MediaServiceAuthCredential, 
                        _MediaServiceAuthFatalError, _MediaServiceAuthURL, _MediaServiceBundleIdentifier, 
                        _MediaServiceConfigurationAsset, _MediaServiceConfigurationETag, 
@@ -37,25 +37,26 @@ exports:
                        _kBackgroundActivityPublicDatabaseRefreshTaskIdentifier, _kBackgroundActivityUserShareRetryTaskIdentifier, 
                        _kCKDatabaseAccessUserInfoHomeIDKey, _kCKDatabaseAccessUserInfoHomeUserIDKey, 
                        _kCloudMediaServicesBundleIdentifier, _kHomeMultiUserStatusChangedNotification, 
-                       _kHomeUserCloudShareChangedNotification, _kHomeUserCloudShareRepairNotification, 
-                       _kLastPlaybackIntentDefault, _kMediaSetupCAConfigurationEvent, 
-                       _kMediaSetupCAGetServicesEvent, _kMediaSetupCAPlaybackIntentEvent, 
-                       _kMediaSetupCAPrimaryUserChangedEvent, _kMediaSetupCARemovalEvent, 
-                       _kMediaSetupCASetupEvent, _kMediaSetupCloudKitContainerIdentifier, 
+                       _kHomeUserCloudShareChangedNotification, _kLastPlaybackIntentDefault, 
+                       _kMediaSetupCAConfigurationEvent, _kMediaSetupCAGetServicesEvent, 
+                       _kMediaSetupCAPlaybackIntentEvent, _kMediaSetupCAPrimaryUserChangedEvent, 
+                       _kMediaSetupCARemovalEvent, _kMediaSetupCASetupEvent, _kMediaSetupCloudKitContainerIdentifier, 
                        _kMediaSetupDeveloperUserDefaultsDomain, _kMediaSetupExtensionIdentifier, 
                        _kMediaSetupInterfaceEntitlementKey, _kMediaSetupKeyHostBundleID, 
                        _kMediaSetupKeyMediaService, _kMediaSetupKeyTestUIFlags, _kMediaSetupMachServiceName, 
                        _kMediaSetupPublicCloudKitContainerIdentifier, _kMediaSetupServiceEntitlement, 
                        _kMediaSetupServicesChanged, _kMediaSetupTestingProfileDefaultsIdentifier, 
-                       _kMediaSetupUserDefaultsDomain, _kPodcastsBundleIdentifier, 
+                       _kMediaSetupUserDefaultsDomain, _kOverrideAppleMusicSubscriptionStatus, 
+                       _kOverrideAppleMusicSubscriptionStatusAllUsers, _kPodcastsBundleIdentifier, 
                        _voiceRecoginitionSettingsKeyPath ]
     objc-classes:    [ CMSAuthenticationConfiguration, CMSAuthenticationCredential, 
                        MSAnalytics, MSAssistantPreferences, MSAuthenticationConfiguration, 
                        MSAuthenticationCredential, MSClient, MSConfigurationEvent, 
-                       MSDDefaultsInfo, MSOAuthTokenHandler, MSPrimaryUserChangedEvent, 
-                       MSPublicDBInfo, MSRemovalEvent, MSServer, MSServiceAccount, 
-                       MSServiceAppInfo, MSServiceEvent, MSServiceResolutionInfo, 
-                       MSServiceUpdatedHandler, MSSetupEvent, MSSetupSession, MSSetupViewController, 
-                       MSUserAccountInfo, MediaService, MediaServiceConfiguration, 
+                       MSDDefaultsInfo, MSDeviceInfo, MSFeatureStatus, MSOAuthTokenHandler, 
+                       MSPrimaryUserChangedEvent, MSPublicDBInfo, MSRemovalEvent, 
+                       MSServer, MSServiceAccount, MSServiceAppInfo, MSServiceEvent, 
+                       MSServiceResolutionInfo, MSServiceUpdatedHandler, MSSetupEvent, 
+                       MSSetupSession, MSSetupViewController, MSUserAccountInfo, 
+                       MSUserSettingsInfo, MediaService, MediaServiceConfiguration, 
                        _MSRemoteViewController ]
 ...

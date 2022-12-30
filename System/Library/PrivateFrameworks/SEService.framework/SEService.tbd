@@ -8,7 +8,10 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _All, _Any, _DERAccessDescriptionItemSpecs,
+    symbols:              [ _All, _Any, _DCKEnableSMB, _DCKPassThrough,
+                            _DCKSetUWBConfigData, _DCKSetUWBDebugOptions,
+                            _DCKSetUWBStartTimeOffsetMS, _DCKSuspendRanging,
+                            _DERAccessDescriptionItemSpecs,
                             _DERAlgorithmIdItemSpecs,
                             _DERAttributeTypeAndValueItemSpecs,
                             _DERAuthorityKeyIdentifierItemSpecs,
@@ -86,11 +89,13 @@ exports:
                             _SESEndPointAddInvitationWithId,
                             _SESEndPointAuthorizeWithAuth,
                             _SESEndPointAuthorizeWithAuthEx, _SESEndPointCAList,
-                            _SESEndPointConfigureMailBoxes, _SESEndPointCreate,
-                            _SESEndPointCreateCA,
+                            _SESEndPointConfigureKeySlot,
+                            _SESEndPointConfigureMailBoxes,
+                            _SESEndPointConfigureMailBoxesWithSession,
+                            _SESEndPointCreate, _SESEndPointCreateCA,
                             _SESEndPointCreateEncryptionKey,
-                            _SESEndPointCreateNew, _SESEndPointDelete,
-                            _SESEndPointDeleteCA,
+                            _SESEndPointCreateNew, _SESEndPointCreateWithSession,
+                            _SESEndPointDelete, _SESEndPointDeleteCA,
                             _SESEndPointDeleteEndpointIdWithUuid,
                             _SESEndPointDeleteInvitationWithId,
                             _SESEndPointDeleteWithSession,
@@ -108,8 +113,9 @@ exports:
                             _SESEndPointGetInvitations,
                             _SESEndPointGetPrivateData,
                             _SESEndPointGetVehicleOEMRootPKCertificate,
-                            _SESEndPointList, _SESEndPointListWithSession,
-                            _SESEndPointPreWarm, _SESEndPointPreWarmWithReply,
+                            _SESEndPointList, _SESEndPointListContainers,
+                            _SESEndPointListWithSession, _SESEndPointPreWarm,
+                            _SESEndPointPreWarmWithReply,
                             _SESEndPointPrivacyDecryption,
                             _SESEndPointPrivacyEncryption,
                             _SESEndPointRemoteTerminationRequest,
@@ -151,12 +157,14 @@ exports:
                             _kSEKeyCertOIDNonce, _kSEKeyCertOIDSEID,
                             _kSEKeyCertOIDUCRTDeviceIdentifiers,
                             _libDERErrorString, _seserviced_os_log ]
-    objc-classes:         [ CALogger, PTClassicKey, SEEndPoint,
+    objc-classes:         [ CALogger, DCK2XPCClient, PTClassicKey, SEEndPoint,
                             SEEndPointAuthorizeResponse,
                             SEEndPointBindingAttestationRequestItems,
                             SEEndPointCA, SEEndPointConfiguration,
                             SEEndPointCreateAuthorizationIDResponse,
                             SEEndPointPrivacyEncryptResponse,
                             SEEndPointSignatureResponse, SEProxy, SESAlarm,
-                            SESAuthorizationInfo, SESClient, SESTLV ]
+                            SESAuthorizationInfo, SESClient, SESDCKSession,
+                            SESEndPointContainerInfo, SESSessionManager, SESTLV,
+                            SESXPCEventListener ]
 ...

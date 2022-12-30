@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E84E0346-EAA1-3332-886F-6F8ED4906473
   - target:          arm64-ios
-    value:           D3CEB024-92F5-309F-A590-4898682CB14D
+    value:           30BBAB8B-F657-3704-8801-96EBA8606F05
   - target:          arm64e-ios
-    value:           E604B216-7DAE-34E5-892B-42791848D0F3
+    value:           6836DA9D-0DBD-3D44-A74C-4FDCB6E5C12E
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -84,7 +84,7 @@ exports:
                        __ZN3ctu4rest36createAutoReplyValueInsideOuterReplyERKNSt3__110shared_ptrIN3xpc6objectEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN3ctu6LogTagC1EOS0_, __ZN3ctu6LogTagC1Ev, __ZN3ctu6LogTagC2EOS0_, 
                        __ZN3ctu6LogTagC2Ev, __ZN3ctu6LogTagD1Ev, __ZN3ctu6LogTagD2Ev, 
-                       __ZN3ctu6LogTagaSEOS0_, __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEN8dispatch5queueE, 
+                       __ZN3ctu6LogTagaSEOS0_, __ZN3ctu7Gestalt6createEv, __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEN8dispatch5queueE, 
                        __ZN3ctu9XpcLogger6createEN8dispatch5queueENSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEES9_N3xpc8endpointE, 
                        __ZN3ctu9XpcLoggerC1EN8dispatch5queueENSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEES9_, 
                        __ZN3ctu9XpcLoggerC2EN8dispatch5queueENSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEES9_, 
@@ -255,8 +255,8 @@ exports:
                        __ZN3ctu4rest9data_viewC2EN3xpc6objectE, __ZN3ctu4rest9data_viewC2ENS_2cf11CFSharedRefIK8__CFDataEE, 
                        __ZN3ctu4rest9data_viewC2EONSt3__16vectorIhNS2_9allocatorIhEEEE, 
                        __ZN3ctu4rest9data_viewC2EPK8__CFData, __ZN3ctu4rest9data_viewC2ERKNSt3__16vectorIhNS2_9allocatorIhEEEE, 
-                       __ZN3ctu8asStringENS_13TextConverter16DcsLanguageTypesE, __ZN3ctu9LogServer10setEnabledEb, 
-                       __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKN8dispatch5queueERKNS8_8workloopE, 
+                       __ZN3ctu7Gestalt21create_default_globalEv, __ZN3ctu8asStringENS_13TextConverter16DcsLanguageTypesE, 
+                       __ZN3ctu9LogServer10setEnabledEb, __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKN8dispatch5queueERKNS8_8workloopE, 
                        __ZN3ctu9XpcClientC2ENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKN8dispatch8workloopE, 
                        __ZN3ctu9XpcLogger6createEN8dispatch5queueEPKcNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEN3xpc8endpointE, 
                        __ZN3ctu9XpcLoggerC1EN8dispatch5queueEPKcNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE, 
@@ -305,7 +305,9 @@ exports:
                        __ZNK3ctu4rest27WatchableRestResourceHelper17hasActiveWatchersEv, 
                        __ZNK3ctu4rest27WatchableRestResourceHelper3mapENSt3__18functionIFvRKNS_22RestResourceConnectionEEEE, 
                        __ZNK3ctu4rest9data_view4dataEv, __ZNK3ctu4rest9data_view4sizeEv, 
-                       __ZNK3ctu4rest9data_viewcvbEv, __ZNK3ctu9LogServer10getEnabledEv, 
+                       __ZNK3ctu4rest9data_viewcvbEv, __ZNK3ctu7Gestalt17getSysctlAsStringEPKc, 
+                       __ZNK3ctu7Gestalt5isMacEv, __ZNK3ctu7Gestalt6isIPadEv, __ZNK3ctu7Gestalt7isWatchEv, 
+                       __ZNK3ctu7Gestalt8isIPhoneEv, __ZNK3ctu9LogServer10getEnabledEv, 
                        __ZTIN3ctu12RestListenerE, __ZTIN3ctu12StaticLoggerE, __ZTIN3ctu15RestXpcListenerE, 
                        __ZTIN3ctu20RestDispatchListenerE, __ZTIN3ctu24RestListenerDelegateBaseE, 
                        __ZTIN3ctu30DispatchRestResourceConnectionE, __ZTIN3ctu32ReplyCallbackRestResourceContextE, 
@@ -469,6 +471,7 @@ exports:
                        __TeleponyCapabilitiesRadioPreferencesHSICPowersaveEnabled, 
                        __TeleponyCapabilitiesRadioPreferencesHSICSupportsPDPStallNotifications, 
                        __TeleponyCapabilitiesRadioPreferencesIPCControlDataPrintSize, 
+                       __TeleponyCapabilitiesRadioPreferencesRecoveryForControlMessageTimeout, 
                        __TeleponyCapabilitiesRadioPreferencesUARTFailureUnexpectedSeqNum, 
                        __TeleponyCapabilitiesRadioPreferencesUARTSupportsQMI, __ZN3ctu10LogMessageC1ENS_9TimeStampENS_8LogLevelENSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEOS9_ONS3_6vectorIS9_NS7_IS9_EEEE, 
                        __ZN3ctu10LogMessageC2ENS_9TimeStampENS_8LogLevelENSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEOS9_ONS3_6vectorIS9_NS7_IS9_EEEE, 
@@ -822,13 +825,12 @@ exports:
                        __ZN3ctu6binaryEt, __ZN3ctu6binaryEx, __ZN3ctu6binaryEy, __ZN3ctu6hex_spEPKvm, 
                        __ZN3ctu6hex_spERKNSt3__16vectorIhNS0_9allocatorIhEEEE, __ZN3ctu6serial9configureEijjjb, 
                        __ZN3ctu6to_rleEPKvm, __ZN3ctu6to_rleERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
-                       __ZN3ctu7Gestalt6createEv, __ZN3ctu7GestaltD0Ev, __ZN3ctu7GestaltD1Ev, 
-                       __ZN3ctu7GestaltD2Ev, __ZN3ctu7binary0Ea, __ZN3ctu7binary0Ec, 
-                       __ZN3ctu7binary0Eh, __ZN3ctu7binary0Ei, __ZN3ctu7binary0Ej, 
-                       __ZN3ctu7binary0El, __ZN3ctu7binary0Em, __ZN3ctu7binary0Es, 
-                       __ZN3ctu7binary0Et, __ZN3ctu7binary0Ex, __ZN3ctu7binary0Ey, 
-                       __ZN3ctu7combineENS_8LogLevelES0_, __ZN3ctu7dirnameENS_4llvm9StringRefE, 
-                       __ZN3ctu7replaceERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_4llvm9StringRefES9_, 
+                       __ZN3ctu7GestaltD0Ev, __ZN3ctu7GestaltD1Ev, __ZN3ctu7GestaltD2Ev, 
+                       __ZN3ctu7binary0Ea, __ZN3ctu7binary0Ec, __ZN3ctu7binary0Eh, 
+                       __ZN3ctu7binary0Ei, __ZN3ctu7binary0Ej, __ZN3ctu7binary0El, 
+                       __ZN3ctu7binary0Em, __ZN3ctu7binary0Es, __ZN3ctu7binary0Et, 
+                       __ZN3ctu7binary0Ex, __ZN3ctu7binary0Ey, __ZN3ctu7combineENS_8LogLevelES0_, 
+                       __ZN3ctu7dirnameENS_4llvm9StringRefE, __ZN3ctu7replaceERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_4llvm9StringRefES9_, 
                        __ZN3ctu8PathView4skipENS_4llvm13TempStringRefE, __ZN3ctu8PathView7advanceEl, 
                        __ZN3ctu8PathViewC1ENS_4llvm9StringRefE, __ZN3ctu8PathViewC1Ev, 
                        __ZN3ctu8PathViewC2ENS_4llvm9StringRefE, __ZN3ctu8PathViewC2Ev, 

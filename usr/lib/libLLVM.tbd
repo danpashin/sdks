@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           11643C1F-6642-33A2-8310-C5E671C84F79
   - target:          arm64-ios
-    value:           24D16EFF-B3F5-3432-8D9C-52161405C2C5
+    value:           C9073CAF-A2C9-335A-BA7B-B4DD6852F500
   - target:          arm64e-ios
-    value:           7449FE36-6C08-3A05-AA61-D27D91172DC2
+    value:           52F71042-E329-39BF-9A84-16103EC16250
 install-name:    '/usr/lib/libLLVM.dylib'
-current-version: 31001.50
+current-version: 31001.144.1
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _ConvertUTF16toUTF32, _ConvertUTF16toUTF8, _ConvertUTF32toUTF16, 
@@ -2676,6 +2676,7 @@ exports:
                        __ZN4llvm14isKnownNonZeroEPKNS_5ValueERKNS_10DataLayoutEjPNS_15AssumptionCacheEPKNS_11InstructionEPKNS_13DominatorTreeE, 
                        __ZN4llvm14lowertypetests13BitSetBuilder5buildEv, __ZN4llvm14lowertypetests16ByteArrayBuilder8allocateERKNSt3__13setIyNS2_4lessIyEENS2_9allocatorIyEEEEyRyRh, 
                        __ZN4llvm14lowertypetests19GlobalLayoutBuilder11addFragmentERKNSt3__13setIyNS2_4lessIyEENS2_9allocatorIyEEEE, 
+                       __ZN4llvm14makeNamedTimerENS_9StringRefES0_PNS_10TimerGroupE, 
                        __ZN4llvm14printLowerCaseENS_9StringRefERNS_11raw_ostreamE, 
                        __ZN4llvm14raw_fd_ostream6anchorEv, __ZN4llvm14raw_fd_ostreamC1ENS_9StringRefERNSt3__110error_codeE, 
                        __ZN4llvm14raw_fd_ostreamC1ENS_9StringRefERNSt3__110error_codeENS_3sys2fs10FileAccessE, 
@@ -3602,7 +3603,7 @@ exports:
                        __ZN4llvm19haveNoCommonBitsSetEPKNS_5ValueES2_RKNS_10DataLayoutEPNS_15AssumptionCacheEPKNS_11InstructionEPKNS_13DominatorTreeE, 
                        __ZN4llvm19isBitcodeWriterPassEPNS_4PassE, __ZN4llvm19isConsecutiveAccessEPNS_5ValueES1_RKNS_10DataLayoutERNS_15ScalarEvolutionEb, 
                        __ZN4llvm19isLegalUTF8SequenceEPKhS1_, __ZN4llvm19lowerObjectSizeCallEPNS_13IntrinsicInstERKNS_10DataLayoutEPKNS_17TargetLibraryInfoEb, 
-                       __ZN4llvm19parseAssemblyStringENS_9StringRefERNS_12SMDiagnosticERNS_11LLVMContextEPNS_11SlotMappingEbS0_, 
+                       __ZN4llvm19makeNamedTimerGroupENS_9StringRefES0_, __ZN4llvm19parseAssemblyStringENS_9StringRefERNS_12SMDiagnosticERNS_11LLVMContextEPNS_11SlotMappingEbS0_, 
                        __ZN4llvm19skipDebugIntrinsicsENS_14ilist_iteratorINS_12ilist_detail12node_optionsINS_11InstructionELb0ELb0EvEELb0ELb0EEE, 
                        __ZN4llvm20AAResultsWrapperPass13runOnFunctionERNS_8FunctionE, 
                        __ZN4llvm20AAResultsWrapperPass2IDE, __ZN4llvm20AAResultsWrapperPassC1Ev, 
@@ -5141,8 +5142,8 @@ exports:
                        __ZN4llvm9Intrinsic24getIntrinsicForMSBuiltinEPKcNS_9StringRefE, 
                        __ZN4llvm9Intrinsic25getIntrinsicForGCCBuiltinEPKcNS_9StringRefE, 
                        __ZN4llvm9Intrinsic25remangleIntrinsicFunctionEPNS_8FunctionE, 
-                       __ZN4llvm9Intrinsic7getNameENS0_2IDE, __ZN4llvm9KnownBits16computeForAddSubEbbRKS0_S0_, 
-                       __ZN4llvm9LCSSAPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_JEEE, 
+                       __ZN4llvm9Intrinsic7getNameENS0_2IDE, __ZN4llvm9KnownBits13computeForMulERKS0_S2_, 
+                       __ZN4llvm9KnownBits16computeForAddSubEbbRKS0_S0_, __ZN4llvm9LCSSAPass3runERNS_8FunctionERNS_15AnalysisManagerIS1_JEEE, 
                        __ZN4llvm9MCContext11reportErrorENS_5SMLocERKNS_5TwineE, __ZN4llvm9MCContext12getCVContextEv, 
                        __ZN4llvm9MCContext12getDwarfFileENS_9StringRefES1_jPNS_3MD59MD5ResultENS_8OptionalIS1_EEj, 
                        __ZN4llvm9MCContext13getELFSectionERKNS_5TwineEjjjPKNS_11MCSymbolELFEjS6_, 
@@ -5739,14 +5740,14 @@ exports:
                        __ZNK4llvm6Module20getOperandBundleTagsERNS_15SmallVectorImplINS_9StringRefEEE, 
                        __ZNK4llvm6Module26getTargetVariantSDKVersionEv, __ZNK4llvm6Module27getNumberRegisterParametersEv, 
                        __ZNK4llvm6Module28debug_compile_units_iteratordeEv, __ZNK4llvm6Module28debug_compile_units_iteratorptEv, 
-                       __ZNK4llvm6Triple14isLittleEndianEv, __ZNK4llvm6Triple16isCompatibleWithERKS0_, 
-                       __ZNK4llvm6Triple17getWatchOSVersionERjS1_S1_, __ZNK4llvm6Triple17isMacOSXVersionLTEjjj, 
-                       __ZNK4llvm6Triple18getBridgeOSVersionERjS1_S1_, __ZNK4llvm6Triple19getDriverKitVersionERjS1_S1_, 
-                       __ZNK4llvm6Triple28getMinimumSupportedOSVersionEv, __ZNK4llvm6Triple5mergeERKS0_, 
-                       __ZNK4llvm6detail13DoubleAPFloat10isDenormalEv, __ZNK4llvm6detail13DoubleAPFloat10isNegativeEv, 
-                       __ZNK4llvm6detail13DoubleAPFloat10isSmallestEv, __ZNK4llvm6detail13DoubleAPFloat11getCategoryEv, 
-                       __ZNK4llvm6detail13DoubleAPFloat14bitcastToAPIntEv, __ZNK4llvm6detail13DoubleAPFloat14bitwiseIsEqualERKS1_, 
-                       __ZNK4llvm6detail13DoubleAPFloat15getExactInverseEPNS_7APFloatE, 
+                       __ZNK4llvm6Triple13getAIRVersionEv, __ZNK4llvm6Triple14isLittleEndianEv, 
+                       __ZNK4llvm6Triple16isCompatibleWithERKS0_, __ZNK4llvm6Triple17getWatchOSVersionERjS1_S1_, 
+                       __ZNK4llvm6Triple17isMacOSXVersionLTEjjj, __ZNK4llvm6Triple18getBridgeOSVersionERjS1_S1_, 
+                       __ZNK4llvm6Triple19getDriverKitVersionERjS1_S1_, __ZNK4llvm6Triple28getMinimumSupportedOSVersionEv, 
+                       __ZNK4llvm6Triple5mergeERKS0_, __ZNK4llvm6detail13DoubleAPFloat10isDenormalEv, 
+                       __ZNK4llvm6detail13DoubleAPFloat10isNegativeEv, __ZNK4llvm6detail13DoubleAPFloat10isSmallestEv, 
+                       __ZNK4llvm6detail13DoubleAPFloat11getCategoryEv, __ZNK4llvm6detail13DoubleAPFloat14bitcastToAPIntEv, 
+                       __ZNK4llvm6detail13DoubleAPFloat14bitwiseIsEqualERKS1_, __ZNK4llvm6detail13DoubleAPFloat15getExactInverseEPNS_7APFloatE, 
                        __ZNK4llvm6detail13DoubleAPFloat16convertToIntegerENS_15MutableArrayRefIyEEjbNS_11APFloatBase12roundingModeEPb, 
                        __ZNK4llvm6detail13DoubleAPFloat18convertToHexStringEPcjbNS_11APFloatBase12roundingModeE, 
                        __ZNK4llvm6detail13DoubleAPFloat20compareAbsoluteValueERKS1_, 

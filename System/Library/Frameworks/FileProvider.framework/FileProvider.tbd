@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           9FCA752E-2E8F-3A52-BEF8-65ACD263D21C
+    value:           A087A406-83D3-32EA-A3AB-9845E0968AF9
   - target:          arm64e-ios
-    value:           D9607B48-E828-313D-8873-3480C22FBC28
+    value:           1B1A916C-C61E-320E-A9D0-7374AEF73435
 install-name:    '/System/Library/Frameworks/FileProvider.framework/FileProvider'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -34,15 +34,13 @@ exports:
                        _FPActionDuplicate, _FPActionEvict, _FPActionFavorite, _FPActionFetchPublishingURL, 
                        _FPActionImportHere, _FPActionModifyFlags, _FPActionPin, _FPActionRename, 
                        _FPActionReparent, _FPActionTag, _FPActionTrash, _FPActionUnarchive, 
-                       _FPActionUnpin, _FPActionUntrash, _FPAppRegistryDidRemoveAppsNotification, 
-                       _FPAppRegistryDidUpdateAppsNotification, _FPAppRegistryListOfAppsKey, 
-                       _FPAppRegistryListOfBundleIDsKey, _FPArchiveServiceErrorDomain, 
-                       _FPArchiveServiceStreamingXPCInterface, _FPArchiveServiceXPCInterface, 
-                       _FPBookmarkableStringFromDocumentURL, _FPCFCopyAttributeValuesForItem, 
-                       _FPCFGetAttributeValuesForItem, _FPClientLacksEntitlement, 
-                       _FPCopyExtensionMatchingDictionaryForItem, _FPCopyItemForURLWithEUID, 
-                       _FPCreateBookmarkableStringFromDocumentURL, _FPCreateCrossDeviceItemIDForItemAtURL, 
-                       _FPCreateCrossDeviceItemIDForItemAtURLOnBehalfOfApplication, 
+                       _FPActionUnpin, _FPActionUntrash, _FPAppRegistryDidUpdateAppsNotification, 
+                       _FPArchiveServiceErrorDomain, _FPArchiveServiceStreamingXPCInterface, 
+                       _FPArchiveServiceXPCInterface, _FPBookmarkableStringFromDocumentURL, 
+                       _FPCFCopyAttributeValuesForItem, _FPCFGetAttributeValuesForItem, 
+                       _FPClientLacksEntitlement, _FPCopyExtensionMatchingDictionaryForItem, 
+                       _FPCopyItemForURLWithEUID, _FPCreateBookmarkableStringFromDocumentURL, 
+                       _FPCreateCrossDeviceItemIDForItemAtURL, _FPCreateCrossDeviceItemIDForItemAtURLOnBehalfOfApplication, 
                        _FPCreateCrossDeviceItemIDForItemID, _FPCreateDocumentURLFromBookmarkableString, 
                        _FPCrossDeviceItemIDExtendedForReceivingApplication, _FPCrossDeviceItemIDForItemAtURL, 
                        _FPCrossDeviceItemIDForItemID, _FPDDaemonXPCInterface, _FPDaemonActionOperationXPCInterface, 
@@ -112,10 +110,11 @@ exports:
                        ___fp_log_adopt, ___fp_log_fork, ___fp_pop_log, _fp_backtrace, 
                        _fp_backtrace_exception_snprint, _fp_current_or_default_log, 
                        _fp_default_log, _fp_dispatch_async_with_logs, _fp_dispatch_group_async_with_logs, 
-                       _fp_simulate_crash, _fpfs_adopt_log, _fpfs_create_log_for_provider, 
-                       _fpfs_current_log, _fpfs_current_or_default_log, _kACLReadEntitlement, 
-                       _kACLWriteEntitlement, _kAlternateContentsEntitlement, _kCloudDocsAccountManagementEntitlement, 
-                       _kDebugEntitlement, _kEnumerateEntitlement, _kFPPath_Library_Slash_CloudStorage_Slash, 
+                       _fp_shouldObfuscateFilenames, _fp_simulate_crash, _fpfs_adopt_log, 
+                       _fpfs_create_log_for_provider, _fpfs_current_log, _fpfs_current_or_default_log, 
+                       _kACLReadEntitlement, _kACLWriteEntitlement, _kAlternateContentsEntitlement, 
+                       _kCloudDocsAccountManagementEntitlement, _kDebugEntitlement, 
+                       _kEnumerateEntitlement, _kFPPath_Library_Slash_CloudStorage_Slash, 
                        _kFetchURLEntitlement, _kTestingHarnessEntitlement, _kiWorkCollaborationMessagingEntitlement ]
     objc-classes:    [ FPAccessControlManager, FPActionOperation, FPActionOperationInfo, 
                        FPActionOperationLocator, FPAggregateProgress, FPAppMetadata, 

@@ -7,21 +7,22 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           4DFB9122-A04E-3A87-89FF-9CFA73C33071
+    value:           623757B9-BC1F-393B-8D4E-A2BC13B3EBD1
   - target:          arm64e-ios
-    value:           C419810A-5D01-3A9C-A294-88C1C49FA283
+    value:           25BF7880-3731-387D-A8CC-6037E9892A5F
 install-name:    '/usr/lib/libAudioIssueDetector.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _AudioDataAnalysisManagerCreate, _AudioDataAnalysisManagerCreateNodeEnvSPL, 
+    symbols:         [ _AudioDataAnalysisManagerConnectedWiredDeviceIsHeadphone, 
+                       _AudioDataAnalysisManagerCreate, _AudioDataAnalysisManagerCreateNodeEnvSPL, 
                        _AudioDataAnalysisManagerCreateNodePCM, _AudioDataAnalysisManagerCreateNodeSPL, 
                        _AudioDataAnalysisManagerDispose, _AudioDataAnalysisManagerInitialize, 
-                       _AudioDataAnalysisManagerProcessAudio, _AudioDataAnalysisManagerProcessEnvSPL, 
-                       _AudioDataAnalysisManagerProcessSPL, _AudioDataAnalysisManagerRemoveNode, 
-                       _AudioDataAnalysisManagerReset, _AudioDataAnalysisManagerSetDeviceInfo, 
-                       _AudioDataAnalysisManagerStartServices, _AudioDataAnalysisManagerUpdateReportingSessions, 
-                       _AudioIssueDetectorAnalyzeBuffer, _AudioIssueDetectorCreate, 
-                       _AudioIssueDetectorDispose, _AudioIssueDetectorInitialize, 
+                       _AudioDataAnalysisManagerIsSessionInitialized, _AudioDataAnalysisManagerProcessAudio, 
+                       _AudioDataAnalysisManagerProcessEnvSPL, _AudioDataAnalysisManagerProcessSPL, 
+                       _AudioDataAnalysisManagerRemoveNode, _AudioDataAnalysisManagerReset, 
+                       _AudioDataAnalysisManagerSetDeviceInfo, _AudioDataAnalysisManagerStartServices, 
+                       _AudioDataAnalysisManagerUpdateReportingSessions, _AudioIssueDetectorAnalyzeBuffer, 
+                       _AudioIssueDetectorCreate, _AudioIssueDetectorDispose, _AudioIssueDetectorInitialize, 
                        _AudioIssueDetectorRemoveNode, _AudioIssueDetectorReset, _AudioIssueDetectorSetDownlinkVolume, 
                        _AudioIssueDetectorSetNodeFormat, _AudioIssueDetectorSetNodeFormatWithDirection, 
                        _AudioIssueDetectorSetRouteSpecificDownlinkGainAdjustment, 

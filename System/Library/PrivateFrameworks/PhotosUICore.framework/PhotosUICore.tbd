@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
-current-version:       330.0.150
+current-version:       340.0.221
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -21,7 +21,6 @@ exports:
                             _PGFeedbackCollectionServerURL,
                             _PHQuestionStringFromType,
                             _PHVariationSuggestionTypeFromAssetVariationType,
-                            _PLSAggregateDictionaryKeyForShareOrigin,
                             _PUSearchResultsImageViewSize,
                             _PUUIPasteboardTypeAssetLocalIdentifier,
                             _PXActionPerformerTitleUseCaseDescription,
@@ -286,7 +285,9 @@ exports:
                             _PXCMMStatusPlaceholderViewTileKind,
                             _PXCMMStringForExpiryDate, _PXCMMSupportsLiveBubbles,
                             _PXCMMTitleAndSubtitleForAssetCollection,
-                            _PXCMMTypeForURL, _PXCPLActionTypeManageAirplaneMode,
+                            _PXCMMTypeForURL,
+                            _PXCPLActionTypeLearnMoreClientVersionTooOld,
+                            _PXCPLActionTypeManageAirplaneMode,
                             _PXCPLActionTypeManageCellularDataDisabled,
                             _PXCPLActionTypeManageCloudStorage,
                             _PXCPLActionTypeManageExitMode,
@@ -713,6 +714,10 @@ exports:
                             _PXLayoutMetricIPhone10PortraitWidth,
                             _PXLayoutMetricIPhone11_4LandscapeWidth,
                             _PXLayoutMetricIPhone11_4PortraitWidth,
+                            _PXLayoutMetricIPhone13_2Landscape_844,
+                            _PXLayoutMetricIPhone13_2Portrait_390,
+                            _PXLayoutMetricIPhone13_4Landscape_926,
+                            _PXLayoutMetricIPhone13_4Portrait_428,
                             _PXLayoutMetricIPhone4LandscapeWidth,
                             _PXLayoutMetricIPhone4PortraitWidth,
                             _PXLayoutMetricIPhone5LandscapeWidth,
@@ -1158,8 +1163,7 @@ exports:
                             _TTRSnapshotErrorDomain, _ToZoomLevelInAnimation,
                             _UIContentSizeCategoryFromPXPreferredContentSizeCategory,
                             _UserPreferredContentSizeCategory,
-                            _VideoPlayerContext, _VideoSessionContext,
-                            _ZoomLevelInAnimationUsingKey,
+                            _VideoSessionContext, _ZoomLevelInAnimationUsingKey,
                             __BaselineDistanceForFontSetSpecSetVariant,
                             __ChangeFromKey, __ChangeItemGeometry,
                             __ChangeToAssetCollectionReference,
@@ -1523,6 +1527,7 @@ exports:
                             PXCNRecipientSearchDataSourceManager,
                             PXCNRecipientSearchResult, PXCPLActionManager,
                             PXCPLActionPerformer,
+                            PXCPLLearnMoreClientVersionTooOldInformationActionPerformer,
                             PXCPLManageAirplaneModeActionPerformer,
                             PXCPLManageCellularDataDisabledActionPerformer,
                             PXCPLManageCloudExitModeActionPerformer,

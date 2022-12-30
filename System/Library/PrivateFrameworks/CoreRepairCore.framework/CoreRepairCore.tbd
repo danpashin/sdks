@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreRepairCore.framework/CoreRepairCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CRCConnObj, _CRCOnceToken, _CRErrorDomain, __logHandler ]
+    objc-classes:         [ CRAttestationHandler, CRCAttestationManager,
+                            CRCCertificate, CRChallengeObject, CRChallengeResponse,
+                            CREANController, CRFDRBaseDeviceHandler,
+                            CRFDRDeviceController, CRFDRSeal,
+                            CRFileSystemController, CRNVRAMController,
+                            CRPersonalizationElement, CRPersonalizationManager,
+                            CRStrongComponent, CRUtils ]
+...

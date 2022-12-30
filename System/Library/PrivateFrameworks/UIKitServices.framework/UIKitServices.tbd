@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIKitServices.framework/UIKitServices
-current-version:       4006.1
+current-version:       4218.1.101
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,8 +20,10 @@ exports:
                             _UISDeviceContextDeviceCornerRadiusKey,
                             _UISDeviceContextHomeButtonTypeKey,
                             _UISOpenApplicationOptionAppBasedViewService,
+                            _UISOpenApplicationOptionClickAttribution,
                             _UISOpenApplicationOptionKeySceneSessionPersistentIdentifier,
                             _UISOpenApplicationOptionKeyTargetContentIdentifier,
+                            _UISRenderImage,
                             _UISUserInterfaceStyleModeOverrideNone,
                             _UISUserInterfaceStyleModeOverridesEqual,
                             _UISUserInterfaceStyleModeScheduleDefault,
@@ -41,7 +43,7 @@ exports:
                             UISApplicationSupportClient,
                             UISApplicationSupportDisplayEdgeInfo,
                             UISApplicationSupportDisplayEdgeInsetsWrapper,
-                            UISApplicationSupportService,
+                            UISApplicationSupportService, UISClickAttribution,
                             UISCurrentUserInterfaceStyleValue, UISDeviceContext,
                             UISDisplayContext, UISFetchContentInBackgroundAction,
                             UISFetchContentInBackgroundActionResponse,
@@ -54,7 +56,9 @@ exports:
                             UISMutableApplicationInitializationContext,
                             UISMutableDeviceContext, UISMutableDisplayContext,
                             UISNotificationResponseAction, UISOpenURLAction,
-                            UISSceneRequestOptions, UISUserInterfaceStyleMode ]
+                            UISSceneRequestOptions, UISSlotMachine,
+                            UISSlotRemoteContent, UISSlotStyle,
+                            UISUserInterfaceStyleMode ]
     objc-ivars:           [ UISApplicationInitializationContext._defaultSceneToken,
                             UISApplicationInitializationContext._deviceContext,
                             UISApplicationInitializationContext._displayContext,

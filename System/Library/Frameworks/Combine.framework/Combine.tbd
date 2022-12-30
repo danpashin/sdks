@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           7EAFE790-735A-3C7C-A373-A544D8F8BC4C
+    value:           357BE8AB-01E0-3FB7-8AC3-C1E53699529D
   - target:          arm64e-ios
-    value:           15B9213C-5959-36BE-871F-3F582776B8C4
+    value:           AD79DD78-C666-3868-8A90-9246FA175A20
 install-name:    '/System/Library/Frameworks/Combine.framework/Combine'
-current-version: 252.100
+current-version: 252.157
 swift-abi-version: 7
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -1259,7 +1259,14 @@ exports:
                        '_$s7Combine25ObservableObjectPublisherCMn', '_$s7Combine25ObservableObjectPublisherCMo', 
                        '_$s7Combine25ObservableObjectPublisherCMu', '_$s7Combine25ObservableObjectPublisherCN', 
                        '_$s7Combine25ObservableObjectPublisherCfD', '_$s7Combine25ObservableObjectPublisherCfd', 
-                       '_$s7Combine32SchedulerTimeIntervalConvertibleMp', '_$s7Combine32SchedulerTimeIntervalConvertibleP11nanosecondsyxSiFZTj', 
+                       '_$s7Combine25_ObservableObjectPropertyMp', '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvMTj', 
+                       '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvMTq', 
+                       '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvgTj', 
+                       '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvgTq', 
+                       '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvsTj', 
+                       '_$s7Combine25_ObservableObjectPropertyP16objectWillChangeAA0bC9PublisherCSgvsTq', 
+                       '_$s7Combine25_ObservableObjectPropertyTL', '_$s7Combine32SchedulerTimeIntervalConvertibleMp', 
+                       '_$s7Combine32SchedulerTimeIntervalConvertibleP11nanosecondsyxSiFZTj', 
                        '_$s7Combine32SchedulerTimeIntervalConvertibleP11nanosecondsyxSiFZTq', 
                        '_$s7Combine32SchedulerTimeIntervalConvertibleP12microsecondsyxSiFZTj', 
                        '_$s7Combine32SchedulerTimeIntervalConvertibleP12microsecondsyxSiFZTq', 
@@ -1356,14 +1363,20 @@ exports:
                        '_$s7Combine9PublishedV14projectedValueAC9PublisherVyx_GvM', 
                        '_$s7Combine9PublishedV14projectedValueAC9PublisherVyx_Gvg', 
                        '_$s7Combine9PublishedV14projectedValueAC9PublisherVyx_Gvs', 
+                       '_$s7Combine9PublishedV16objectWillChangeAA25ObservableObjectPublisherCSgvM', 
+                       '_$s7Combine9PublishedV16objectWillChangeAA25ObservableObjectPublisherCSgvg', 
+                       '_$s7Combine9PublishedV16objectWillChangeAA25ObservableObjectPublisherCSgvpMV', 
+                       '_$s7Combine9PublishedV16objectWillChangeAA25ObservableObjectPublisherCSgvs', 
                        '_$s7Combine9PublishedV18_enclosingInstance7wrapped7storagexqd___s24ReferenceWritableKeyPathCyqd__xGAHyqd__ACyxGGtcRld__CluiMZ', 
                        '_$s7Combine9PublishedV18_enclosingInstance7wrapped7storagexqd___s24ReferenceWritableKeyPathCyqd__xGAHyqd__ACyxGGtcRld__CluigZ', 
                        '_$s7Combine9PublishedV18_enclosingInstance7wrapped7storagexqd___s24ReferenceWritableKeyPathCyqd__xGAHyqd__ACyxGGtcRld__CluisZ', 
                        '_$s7Combine9PublishedV9PublisherV7receive10subscriberyqd___t5InputQyd__RszAA10SubscriberRd__s5NeverO7FailureRtd__lF', 
                        '_$s7Combine9PublishedV9PublisherVMa', '_$s7Combine9PublishedV9PublisherVMn', 
                        '_$s7Combine9PublishedV9PublisherVyx_GAadAMc', '_$s7Combine9PublishedV9PublisherVyx_GAadAWP', 
-                       '_$s7Combine9PublishedVMa', '_$s7Combine9PublishedVMn', '_$s7Combine9PublisherMp', 
-                       '_$s7Combine9PublisherP7FailureAC_s5ErrorTn', '_$s7Combine9PublisherP7receive10subscriberyqd___tAA10SubscriberRd__7FailureQyd__AGRtz5InputQyd__6OutputRtzlFTj', 
+                       '_$s7Combine9PublishedVMa', '_$s7Combine9PublishedVMn', '_$s7Combine9PublishedVyxGAA25_ObservableObjectPropertyAAMc', 
+                       '_$s7Combine9PublishedVyxGAA25_ObservableObjectPropertyAAWP', 
+                       '_$s7Combine9PublisherMp', '_$s7Combine9PublisherP7FailureAC_s5ErrorTn', 
+                       '_$s7Combine9PublisherP7receive10subscriberyqd___tAA10SubscriberRd__7FailureQyd__AGRtz5InputQyd__6OutputRtzlFTj', 
                        '_$s7Combine9PublisherP7receive10subscriberyqd___tAA10SubscriberRd__7FailureQyd__AGRtz5InputQyd__6OutputRtzlFTq', 
                        '_$s7Combine9PublisherPA2aB6OutputRpzs5NeverOAD_7FailureRTzrlE14switchToLatestAA10PublishersO06SwitchgH0Vy_AL03SetE4TypeVy_AeHQzGAL3MapVy_xARGGyF', 
                        '_$s7Combine9PublisherPAA6Output_7FailureQZAERtzAabDRpzrlE14switchToLatestAA10PublishersO06SwitchfG0Vy_AHxGyF', 

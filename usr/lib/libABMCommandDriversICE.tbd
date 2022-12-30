@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           FFCD4816-0C63-3C9D-95D2-66E2030F85B1
   - target:          arm64-ios
-    value:           8086338B-7804-33A6-8388-05EA500918E3
+    value:           64C77321-F293-36A8-B71D-B9B4D1DC60F0
   - target:          arm64e-ios
-    value:           5A1465D2-646F-3A43-B5AC-A7C42C81037D
+    value:           DC7CF6C2-EE35-36E9-B6C1-847609F30F21
 install-name:    '/usr/lib/libABMCommandDriversICE.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -169,7 +169,6 @@ exports:
                        __ZN3abm21kCollectTelephonyLogsE, __ZN3abm21kKeyPowerBudgetScalesE, 
                        __ZN3abm21kKeyTraceFilterActionE, __ZN3abm21kKeyTracePropertyNameE, 
                        __ZN3abm21kQueryPowerMitigationE, __ZN3abm21kTraceFilterFreeSpaceE, 
-                       __ZN3abm22convertBasebandThermIDENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN3abm22kCommandAddTraceFilterE, __ZN3abm22kCommandGetTraceFilterE, 
                        __ZN3abm22kCommandTraceDumpStateE, __ZN3abm22kKeyTraceDumpStatePathE, 
                        __ZN3abm22kKeyTracePropertyValueE, __ZN3abm22kTraceFilterActionLiteE, 
@@ -234,6 +233,7 @@ exports:
                        __ZN4coex13CommandDriver31kKeyExtPowerLimitingRBThresholdE, 
                        __ZN4coex13CommandDriver31kKeyNGCTxFrameDenialsParametersE, 
                        __ZN4coex13CommandDriver31kKeyTimeShareConfigLongDrxCycleE, 
+                       __ZN4coex13CommandDriver31kKeyWCI2TxAntMapEnableMmwTxInfoE, 
                        __ZN4coex13CommandDriver32kKeyTimeShareConfigShortDrxCycleE, 
                        __ZN4coex13CommandDriver33kKeyControllerPowerLimitingEnableE, 
                        __ZN4coex13CommandDriver33kKeyExtConsecutiveDenialThresholdE, 
@@ -295,6 +295,7 @@ exports:
                        __ZN5radio16ARICommandDriver17sendRFSelfTestReqEN3ctu2cf11CFSharedRefIK14__CFDictionaryEEN8dispatch8callbackIU13block_pointerFvNS3_I9__CFErrorEES6_EEE, 
                        __ZN5radio16ARICommandDriver18forceNetworkSearchEv, __ZN5radio16ARICommandDriver18getRFSelfTestNonceEN8dispatch8callbackIU13block_pointerFvN3xpc6objectES4_EEE, 
                        __ZN5radio16ARICommandDriver18getResetPropertiesEN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENS5_IK14__CFDictionaryEEEEE, 
+                       __ZN5radio16ARICommandDriver19setRFSelfTestTicketEN3ctu2cf11CFSharedRefIK14__CFDictionaryEEN8dispatch8callbackIU13block_pointerFvNS3_I9__CFErrorEEEEE, 
                        __ZN5radio16ARICommandDriver21getAntennaTxPort_syncEN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENS5_IK14__CFDictionaryEEEEESA_, 
                        __ZN5radio16ARICommandDriver21sendBatteryInfoUpdateEhbN8dispatch8callbackIU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEEEEE, 
                        __ZN5radio16ARICommandDriver28setupRFSelfTestDataInFactoryEN8dispatch8callbackIU13block_pointerFvbNSt3__16vectorIhNS3_9allocatorIhEEEES7_S7_EEENS2_IU13block_pointerFvN3ctu2cf11CFSharedRefI9__CFErrorEENSD_IK14__CFDictionaryEEEEE, 
