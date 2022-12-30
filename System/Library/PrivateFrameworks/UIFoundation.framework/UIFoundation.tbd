@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-current-version:       728.2
+current-version:       779
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -107,6 +107,8 @@ exports:
                             _NSTextAlternativesSelectedAlternativeKey,
                             _NSTextAlternativesSelectedAlternativeStringNotification,
                             _NSTextCheckedAttributeName,
+                            _NSTextContentManagerUnsupportedAttributeNotification,
+                            _NSTextContentStorageUnsupportedAttributeAddedNotification,
                             _NSTextCorrectionAttributeName, _NSTextDrawingTrace,
                             _NSTextEditedAttributeName,
                             _NSTextEffectAttributeName,
@@ -201,13 +203,15 @@ exports:
                             _UIFontWeightUltraLight, _UIFontWidthCondensed,
                             _UIFontWidthExpanded, _UIFontWidthStandard,
                             _UIFontWidthTrait, _UIInlinedValueMarker,
-                            _UIMaximumCompatibleFormatVersion, _UINewFont,
+                            _UIMaximumCompatibleFormatVersion,
                             _UINibArchiveIndexFromNumber,
                             _UINibCoderValueTypeToString,
                             _UINumberWithNibArchiveIndex,
+                            _UIRetainedIdentityArrayCallbacks,
                             _UIRetainedIdentityKeyDictionaryCallbacks,
                             _UIRetainedIdentitySetCallbacks,
                             _UIRetainedIdentityValueDictionaryCallbacks,
+                            _UIRetainedValueUniquingSetCallbacks,
                             _UISystemFontBoldForSize, _UISystemFontCreate,
                             _UISystemFontForSize, _UIWriteArchiveToData,
                             __NSAttachmentCharacterSet,
@@ -233,7 +237,8 @@ exports:
                             ___NSTextLayoutManagerLinearLayoutFragmentsDump,
                             ___NSTokenizerLanguageSet,
                             _kUIFoundationUIFoundationVersionNumber,
-                            _kUIFoundationUIFoundationVersionString ]
+                            _kUIFoundationUIFoundationVersionString,
+                            _setCurrentCGContextDuringBlock_iOS ]
     objc-classes:         [ NSATSGlyphStorage, NSATSLineFragment, NSATSTypesetter,
                             NSAttributeDictionary,
                             NSAttributeDictionaryEnumerator, NSCIDGlyphInfo,
@@ -271,12 +276,13 @@ exports:
                             UIFont, UIFontDescriptor, UINibCoderValue, UINibDecoder,
                             UINibEncoder, UINibStringIDTable, UIPointFIFO,
                             UIQuadCurvePointFIFO, _NSATSTypesetterGuts,
-                            _NSAttributeRun, _NSAttributes,
-                            _NSCachedAttributedString, _NSTextStorageSideData,
-                            _UICache, _UIFontCacheKey, _UIFontDescriptorCacheKey,
-                            _UIFontNameCacheKey, _UIFontSystemCacheKey,
-                            _UIFontTextStyleCacheKey, __NSATSStringSegment,
-                            __NSFontExtraData ]
+                            _NSAttributeRun, _NSAttributedStringIntentResolver,
+                            _NSAttributedStringWithResolvedIntents,
+                            _NSAttributes, _NSCachedAttributedString,
+                            _NSTextStorageSideData, _UICache, _UIFontCacheKey,
+                            _UIFontDescriptorCacheKey, _UIFontNameCacheKey,
+                            _UIFontSystemCacheKey, _UIFontTextStyleCacheKey,
+                            __NSATSStringSegment, __NSFontExtraData ]
     objc-ivars:           [ NSAttributeDictionaryEnumerator.dictionary,
                             NSAttributeDictionaryEnumerator.nextElement,
                             NSHTMLWebDelegate._baseURL,
@@ -374,7 +380,6 @@ exports:
                             UINibEncoder.objectIDsToObjects,
                             UINibEncoder.objectsReplacedWithNil,
                             UINibEncoder.objectsToObjectIDs,
-                            UINibEncoder.objectsUniquedByValue,
                             UINibEncoder.recursiveState,
                             UINibEncoder.replacements, UINibEncoder.values,
                             UINibStringIDTable.buckets, UINibStringIDTable.count,
@@ -390,6 +395,8 @@ exports:
                             UIQuadCurvePointFIFO._prevPoints,
                             UIQuadCurvePointFIFO._unitScale,
                             UIQuadCurvePointFIFO._view,
+                            _NSAttributedStringWithResolvedIntents._resolver,
+                            _NSAttributedStringWithResolvedIntents._string,
                             _NSCachedAttributedString._allocedRunsSize,
                             _NSCachedAttributedString._baseAttributes,
                             _NSCachedAttributedString._contents,

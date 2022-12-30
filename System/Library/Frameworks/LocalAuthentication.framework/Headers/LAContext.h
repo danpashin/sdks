@@ -107,7 +107,8 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
 ///              contains error information if policy evaluation is not possible.
 ///
 /// @return YES if the policy can be evaluated, NO otherwise.
-- (BOOL)canEvaluatePolicy:(LAPolicy)policy error:(NSError * __autoreleasing *)error __attribute__((swift_error(none)))
+- (BOOL)canEvaluatePolicy:(LAPolicy)policy error:(NSError * __autoreleasing *)error
+    NS_SWIFT_NOTHROW
     API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
 
 /// Evaluates the specified policy.
@@ -166,6 +167,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0))
 - (void)evaluatePolicy:(LAPolicy)policy
        localizedReason:(NSString *)localizedReason
                  reply:(void(^)(BOOL success, NSError * __nullable error))reply
+    NS_SWIFT_ASYNC_THROWS_ON_FALSE(0)
     API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
 
 /// Invalidates the context.
@@ -300,6 +302,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
                     operation:(LAAccessControlOperation)operation
               localizedReason:(NSString *)localizedReason
                         reply:(void(^)(BOOL success, NSError * __nullable error))reply
+                        NS_SWIFT_ASYNC_THROWS_ON_FALSE(0)
                         API_AVAILABLE(macos(10.11), ios(9.0), watchos(3.0)) API_UNAVAILABLE(tvos);
 
 /// Fallback button title.
@@ -308,7 +311,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 @property (nonatomic, nullable, copy) NSString *localizedFallbackTitle API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0), tvos(10.0));
 
 /// This property is deprecated and setting it has no effect.
-@property (nonatomic, nullable) NSNumber *maxBiometryFailures NS_DEPRECATED_IOS(8_3, 9_0) __WATCHOS_UNAVAILABLE __TVOS_UNAVAILABLE;
+@property (nonatomic, nullable) NSNumber *maxBiometryFailures API_DEPRECATED("No longer supported", ios(8.3, 9.0), macos(10.10.3, 10.11)) API_UNAVAILABLE(watchos, tvos);
 
 /// Cancel button title.
 /// @discussion Allows cancel button title customization. A default title "Cancel" is used when
@@ -376,6 +379,7 @@ typedef NS_ENUM(NSInteger, LABiometryType)
     
     /// The device supports Face ID.
     LABiometryTypeFaceID API_AVAILABLE(macos(10.15)),
+
 } API_AVAILABLE(macos(10.13.2), ios(11.0)) API_UNAVAILABLE(watchos, tvos);
 
 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           905825B4-EAE9-3CFB-87ED-5E459C9C94E7
+    value:           48BF25BF-690D-33AD-A175-86295D7C6A4D
   - target:          arm64e-ios
-    value:           F25F3793-4192-3C96-BAAD-921387BC10D8
+    value:           1FB534E5-070D-31CC-96D2-B4FACBA9DFBA
 install-name:    '/System/Library/Frameworks/NearbyInteraction.framework/NearbyInteraction'
 current-version: 0
 compatibility-version: 0
@@ -19,8 +19,10 @@ exports:
                        _NINearbyObjectDirectionNotAvailable_Private, _NINearbyObjectDistanceNotAvailable, 
                        _NINearbyObjectDistanceNotAvailable_Private, _NINearbyObjectElevationNotAvailable, 
                        _NINearbyObjectQuaternionNotAvailable, _NINotifySystemShutdownWithReason, 
-                       _kNISystemShutdownCompletionTimeoutSeconds ]
-    objc-classes:    [ NICarKeyConfiguration, NIConfiguration, NIDiscoveryToken, 
-                       NIHomeDeviceConfiguration, NINearbyObject, NINearbyPeerConfiguration, 
+                       _NITruthTagLabelKey, _NITruthTagSourceClientApp, _NITruthTagSourceDirectUserInput, 
+                       _NITruthTagSourceKey, _kNISystemShutdownCompletionTimeoutSeconds ]
+    objc-classes:    [ NICarKeyConfiguration, NICarKeyEventNotifier, NIConfiguration, 
+                       NIDeviceCapabilities, NIDiscoveryToken, NIHomeDeviceConfiguration, 
+                       NINearbyAccessoryConfiguration, NINearbyObject, NINearbyPeerConfiguration, 
                        NIRegionPredicate, NISession, _NIWiFiRangingTestConfiguration ]
 ...

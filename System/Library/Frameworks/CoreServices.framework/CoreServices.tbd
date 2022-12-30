@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           F5AD9F58-8056-340A-A21F-9632A45D87AF
+    value:           6D82F27B-4CD5-33D4-B8B4-A13591550B7C
   - target:          arm64e-ios
-    value:           6C07F046-E45A-3FAF-9788-5725A53F1EE7
+    value:           8D3FF6AB-C6ED-39A7-8C72-F68DC150901F
 install-name:    '/System/Library/Frameworks/CoreServices.framework/CoreServices'
-current-version: 1122.33
+current-version: 1141.1
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ '$ld$install_name$os10.0$/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices', 
@@ -68,18 +68,19 @@ exports:
                        _FSEventsPurgeEventsForDeviceUpToEventId, _LSApplicationSINFKey, 
                        _LSApplicationWorkspaceErrorDomain, _LSApplicationsChangedNotificationName, 
                        _LSApplyURLOverridesForContacts, _LSBlockUntilCompleteKey, 
-                       _LSContinuityErrorDomain, _LSDefaultIconName, _LSDisableURLOverrides, 
-                       _LSDocumentTypesChangedNotificationName, _LSFileProviderStringKey, 
-                       _LSGeoJSONKey, _LSHiddenAppType, _LSInit, _LSInstallTypeKey, 
-                       _LSInternalApplicationType, _LSMoveDocumentOnOpenKey, _LSNewsstandArtworkKey, 
-                       _LSOpenApplicationPayloadOptionsKey, _LSOpenInBackgroundKey, 
-                       _LSPackageTypeCarrierBundle, _LSPackageTypeCustomer, _LSPackageTypeDeveloper, 
-                       _LSPackageTypeKey, _LSPackageTypePlaceholder, _LSPlugInKitType, 
-                       _LSReferrerURLKey, _LSRequireOpenInPlaceKey, _LSRestrictedKey, 
-                       _LSSimulatorRootPathKey, _LSSimulatorUserPathKey, _LSSupressNotificationKey, 
-                       _LSSystemApplicationType, _LSTargetBSServiceConnectionEndpointKey, 
-                       _LSTypeDeclarationsChangedNotificationName, _LSURLTypesChangedNotificationName, 
-                       _LSUninstallUserDataOnly, _LSUpdatePlaceholderIconKey, _LSUserActivityAlwaysEligibleKey, 
+                       _LSContinuityErrorDomain, _LSDefaultApplicationManagementDomain, 
+                       _LSDefaultIconName, _LSDisableURLOverrides, _LSDocumentTypesChangedNotificationName, 
+                       _LSFileProviderStringKey, _LSGeoJSONKey, _LSHiddenAppType, 
+                       _LSInit, _LSInstallTypeKey, _LSInternalApplicationType, _LSMoveDocumentOnOpenKey, 
+                       _LSNewsstandArtworkKey, _LSOpenApplicationPayloadOptionsKey, 
+                       _LSOpenInBackgroundKey, _LSPackageTypeCarrierBundle, _LSPackageTypeCustomer, 
+                       _LSPackageTypeDeveloper, _LSPackageTypeKey, _LSPackageTypePlaceholder, 
+                       _LSPlugInKitType, _LSReferrerURLKey, _LSRequireOpenInPlaceKey, 
+                       _LSRestrictedKey, _LSSimulatorRootPathKey, _LSSimulatorUserPathKey, 
+                       _LSSupressNotificationKey, _LSSystemApplicationType, _LSSystemPlaceholderType, 
+                       _LSTargetBSServiceConnectionEndpointKey, _LSTypeDeclarationsChangedNotificationName, 
+                       _LSURLTypesChangedNotificationName, _LSUninstallUserDataOnly, 
+                       _LSUpdatePlaceholderIconKey, _LSUserActivityAlwaysEligibleKey, 
                        _LSUserActivityAlwaysPickKey, _LSUserActivityHasWebPageURLOptionKey, 
                        _LSUserActivityIsForPairedDeviceOptionKey, _LSUserActivityIsHighPriorityOptionKey, 
                        _LSUserActivityIsNotificationOptionKey, _LSUserActivityManagerActivityContinuationIsEnabledChangedNotification, 
@@ -124,11 +125,13 @@ exports:
                        __LSCreateDatabaseLookupStringFromHashedBytesForAdvertising, 
                        __LSCreateDeviceTypeIdentifierWithModelCode, __LSCreateDeviceTypeIdentifierWithModelCodeAndColorComponents, 
                        __LSCreateHashedBytesForAdvertisingFromString, __LSCreatePackageExtensionsArray, 
-                       __LSDatabaseContextSetDetachProxyObjects, __LSDatabaseCopyURLForUser, 
-                       __LSDebugAdvertismentValue, __LSDisplayData, __LSGetStatus, 
-                       __LSGetVersionFromString, __LSHandlerRankAlternate, __LSHandlerRankDefault, 
-                       __LSHandlerRankNone, __LSHandlerRankOwner, __LSIconDictionarySupportsAssetCatalogs, 
+                       __LSDServiceGetXPCProxyForServiceClass, __LSDatabaseContextSetDetachProxyObjects, 
+                       __LSDatabaseCopyURLForUser, __LSDebugAdvertismentValue, __LSDefaultLog, 
+                       __LSDisplayData, __LSExtensionsLog, __LSGetStatus, __LSGetVersionFromString, 
+                       __LSHandlerRankAlternate, __LSHandlerRankDefault, __LSHandlerRankNone, 
+                       __LSHandlerRankOwner, __LSIconDictionarySupportsAssetCatalogs, 
                        __LSMakeVersionNumber, __LSPersistentIdentifierCompare, __LSPersistentIdentifierGetDebugDescription, 
+                       __LSPersistentIdentifierGetKnowledgeUUID4CoreDevice, __LSPersistentIdentifierGetSequenceNumber4CoreDevice, 
                        __LSRegisterFilePropertyProvider, __LSServerMain, __LSSetDatabaseIsSeeded, 
                        __LSSetDefaultWebBrowserWithBundleIdentifierAndVersion, __LSSetSchemeHandler, 
                        __LSURLBindingReasonKey, __LSUserActivityContainsFileProviderURLKey, 
@@ -210,14 +213,15 @@ exports:
                        _kUTTypeVideo, _kUTTypeVolume, _kUTTypeWaveformAudio, _kUTTypeWebArchive, 
                        _kUTTypeWindowsExecutable, _kUTTypeX509Certificate, _kUTTypeXML, 
                        _kUTTypeXMLPropertyList, _kUTTypeXPCService, _kUTTypeZipArchive ]
-    objc-classes:    [ LSAppLink, LSApplicationExtensionRecord, LSApplicationProxy, 
-                       LSApplicationRecord, LSApplicationWorkspace, LSApplicationWorkspaceObserver, 
-                       LSBundleInfoCachedValues, LSBundleProxy, LSBundleRecord, LSClaimBinding, 
-                       LSClaimBindingConfiguration, LSClaimRecord, LSDatabaseContext, 
-                       LSDocumentProxy, LSEnumerator, LSExtensionPoint, LSExtensionPointRecord, 
-                       LSPlugInKitProxy, LSPlugInQuery, LSPlugInQueryWithIdentifier, 
-                       LSPlugInQueryWithQueryDictionary, LSPlugInQueryWithURL, LSPropertyList, 
-                       LSRecord, LSResourceProxy, LSVPNPluginProxy, UTTypeRecord, 
+    objc-classes:    [ LSAppLink, LSApplicationExtensionRecord, LSApplicationIdentity, 
+                       LSApplicationProxy, LSApplicationRecord, LSApplicationWorkspace, 
+                       LSApplicationWorkspaceObserver, LSBundleInfoCachedValues, 
+                       LSBundleProxy, LSBundleRecord, LSClaimBinding, LSClaimBindingConfiguration, 
+                       LSClaimRecord, LSDatabaseContext, LSDocumentProxy, LSEnumerator, 
+                       LSExtensionPoint, LSExtensionPointRecord, LSObserver, LSPlugInKitProxy, 
+                       LSPlugInQuery, LSPlugInQueryWithIdentifier, LSPlugInQueryWithQueryDictionary, 
+                       LSPlugInQueryWithURL, LSPropertyList, LSRecord, LSRecordPromise, 
+                       LSResourceProxy, LSSpotlightAction, LSVPNPluginProxy, UTTypeRecord, 
                        _LSApplicationState, _LSDefaults, _LSDiskUsage, _LSDisplayNameConstructor, 
                        _LSLazyPropertyList, _LSOpenConfiguration, _LSQuery, _LSQueryContext, 
                        _LSQueryResult, _LSRecordEnumerator, _LSStringLocalizer, _LSURLOverride ]

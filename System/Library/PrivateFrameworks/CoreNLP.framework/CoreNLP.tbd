@@ -3,12 +3,23 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreNLP.framework/CoreNLP
-current-version:       245.2
+current-version:       273
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NLCNNModelCopyFeatureRepresentation,
+    symbols:              [ _CoreLMClear, _CoreLMCopyBatchingConfig,
+                            _CoreLMCopyConditionalProbabilities,
+                            _CoreLMCopyConditionalProbabilitiesOverVocabulary,
+                            _CoreLMCopyPredictions, _CoreLMCopyTextForTokenIds,
+                            _CoreLMCopyTokenIdsForText, _CoreLMCopyVocabulary,
+                            _CoreLMCreate, _CoreLMCreateCopy,
+                            _CoreLMCreateCopyState,
+                            _CoreLMGetConditionalProbabilitiesOverVocabulary,
+                            _CoreLMGetProbabilitiesForSequences,
+                            _CoreLMGetSpecialTokenId, _CoreLMReset,
+                            _CoreLMSetTemperature, _CoreLMUpdateWithContext,
+                            _NLCNNModelCopyFeatureRepresentation,
                             _NLCNNModelCopyFeatureRepresentationLayers,
                             _NLCNNModelCreateCharacterBasedModel,
                             _NLCNNModelCreateWordBasedModel,
@@ -92,6 +103,7 @@ exports:
                             _NLStringEmbeddingCreateFromData,
                             _NLStringEmbeddingCreateFromFile,
                             _NLStringEmbeddingCreateWithOptions,
+                            _NLStringEmbeddingFillTokenVectorsWithShape,
                             _NLStringEmbeddingFillWordVectors,
                             _NLStringEmbeddingFillWordVectorsWithShape,
                             _NLStringEmbeddingGetDimension,
@@ -120,6 +132,7 @@ exports:
                             _NLTaggerEnumerateTokens, _NLTaggerGetTokenAtIndex,
                             _NLTaggerSetGazetteers, _NLTaggerSetLocaleForRange,
                             _NLTaggerSetString, _NLTaggerSetStringEditedInRange,
+                            _NLTaggerTestModel, _NLTaggerTrainModel,
                             _NLTokenTypeOther, _NLTokenTypePunctuation,
                             _NLTokenTypeWhitespace, _NLTokenTypeWord,
                             _NLTokenizerCopyTranscriptionOfCurrentToken,
@@ -154,6 +167,19 @@ exports:
                             __NLStringTokenizerTokenize,
                             __NLStringTokenizerTokenizeCompoundWord,
                             __NLStringTokenizerTokenizeWithTranscriptions,
+                            _kCoreLMArchitectureKey, _kCoreLMArchitectureLSTM,
+                            _kCoreLMArchitectureTransformer, _kCoreLMEngineANE,
+                            _kCoreLMEngineCPU, _kCoreLMEngineKey,
+                            _kCoreLMLocaleKey, _kCoreLMSamplingMaxLengthKey,
+                            _kCoreLMSamplingMethodGREEDY,
+                            _kCoreLMSamplingMethodKey,
+                            _kCoreLMSamplingMethodTOPK,
+                            _kCoreLMSamplingMethodTOPP,
+                            _kCoreLMSamplingNumberKey, _kCoreLMSamplingTopKKey,
+                            _kCoreLMSamplingTopPKey,
+                            _kCoreLMVocabularyTypeCharacter,
+                            _kCoreLMVocabularyTypeFragment,
+                            _kCoreLMVocabularyTypeKey,
                             _kNLGazetteerCompressedModelData,
                             _kNLGazetteerCompressedModelURL,
                             _kNLGazetteerEntities,

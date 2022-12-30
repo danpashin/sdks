@@ -572,7 +572,7 @@
 #define	SYS_coalition_ledger 532
 #define	SYS_log_data       533
 #define	SYS_memorystatus_available_memory 534
-			/* 535  */
+#define	SYS_objc_bp_assist_cfg_np 535
 #define	SYS_shared_region_map_and_slide_2_np 536
 #define	SYS_pivot_root     537
 #define	SYS_task_inspect_for_pid 538
@@ -583,7 +583,9 @@
 #define	SYS_pwritev_nocancel 543
 #define	SYS_ulock_wait2    544
 #define	SYS_proc_info_extended_id 545
-#define	SYS_MAXSYSCALL	546
+#define	SYS_tracker_action 546
+#define	SYS_debug_syscall_reject 547
+#define	SYS_MAXSYSCALL	548
 #define	SYS_invalid	63
 
 #endif /* __APPLE_API_PRIVATE */

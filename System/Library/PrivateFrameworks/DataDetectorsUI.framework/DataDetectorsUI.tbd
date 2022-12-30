@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
-current-version:       397.3
+current-version:       430
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,9 +20,10 @@ exports:
                             _DDMapAddressFromURL, _DDMapURLForResult,
                             _DDMapURLForString, _DDMapURLForURL,
                             _DDMapsGetBestAddressForResults,
-                            _DDResultAttributeName,
+                            _DDMapsURLForUrlAndResult, _DDResultAttributeName,
                             _DDUIAugmentedContextForEvent, _DDUIEventForResults,
                             _DDUISuggestedEventForResults,
+                            _DDWebSearchURLFromQuery,
                             _DataDetectorsUIVersionNumber,
                             _DataDetectorsUIVersionString,
                             __ddui_parsec_xpcInterface,
@@ -31,9 +32,13 @@ exports:
                             _dd_requireDeviceUnlockAndPerformBlock,
                             _dd_urlLooksSuspicious, _dd_urlUserVisibleString,
                             _dueDateAndTimezoneOfEventResults,
+                            _kDDContextMenuActionsKey,
+                            _kDDContextMenuWantsPreviewKey, _kDDHighlighterKey,
                             _kDDMessageActionMoneyAmountKey,
                             _kDDMessageActionMoneyCurrencyKey,
                             _kDDMessageActionMoneyType,
+                            _kDDRVInteractionDidFinishNotification,
+                            _kDDRVInteractionWillStartNotification,
                             _kDataDetectorsAllResultsKey,
                             _kDataDetectorsContactKey,
                             _kDataDetectorsCoreRecentsMetadataDictionaryKey,
@@ -60,7 +65,7 @@ exports:
                             DDParsecCollectionViewController,
                             DDParsecLoadingViewController,
                             DDParsecNoDataViewController, DDPreviewAction,
-                            DDRemoteActionViewControllerProvider,
+                            DDRemoteActionViewControllerProvider, DDRevealBridge,
                             DDShowItemAction, DDTelephoneNumberAction,
-                            DDTrackShipmentAction ]
+                            DDTrackShipmentAction, DDUIAction ]
 ...

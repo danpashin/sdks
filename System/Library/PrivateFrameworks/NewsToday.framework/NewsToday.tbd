@@ -3,15 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
-current-version:       1
+current-version:       2916
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _FCConsumedArticleFilterMethodForReadArticlesFilterMethod,
                             _FCConsumedArticleFilterMethodForSeenArticlesFilterMethod,
-                            _FCFeedPersonalizingContentHalfLifeScoreWithMillisecondDate,
-                            _FRPersonalizationUtilitiesStaticHourlyFlowRate,
                             _NNCreateHeadlineSyncableHeadline,
                             _NNHeadlineSyncableResultFromHeadline,
                             _NNHeadlineSyncableResultFromResult,
@@ -37,8 +35,7 @@ exports:
                             _NTShouldUseParsecResults,
                             _NTUnknownSourceIdentifier, _NTXPCSuitableError,
                             _NewsTodayVersionNumber, _NewsTodayVersionString ]
-    objc-classes:         [ FRPersonalizationUtilities, FRRingBuffer,
-                            NTAggregationBudgetInfo,
+    objc-classes:         [ FRRingBuffer, NTAggregationBudgetInfo,
                             NTArticleIDsSectionFetchDescriptor,
                             NTArticleListSectionFetchDescriptor,
                             NTCatchUpOperation,
@@ -47,7 +44,7 @@ exports:
                             NTCatchUpOperationForYouRequest,
                             NTCatchUpOperationResults,
                             NTCatchUpOperationTagRequest,
-                            NTCostAwareLimitTransformation, NTFeedPersonalizer,
+                            NTCostAwareLimitTransformation,
                             NTFeedTransformationFeedItem,
                             NTFeedTransformationHeadlineItem,
                             NTFeedTransformationIncrementalPersonalizedDiversifiedLimit,
@@ -81,8 +78,7 @@ exports:
                             NTPersonalizedSectionFetchDescriptor,
                             NTPersonalizedSectionLimitTransformation,
                             NTPersonalizedSectionSortTransformation,
-                            NTQueueConfigSectionQueueDescriptor,
-                            NTReadablePrivateDataStorage, NTSection,
+                            NTQueueConfigSectionQueueDescriptor, NTSection,
                             NTSectionConfigSectionDescriptor,
                             NTSectionFeedFilterTransformation,
                             NTSectionPlaceholderDescriptor,
@@ -94,6 +90,5 @@ exports:
                             NTTodayHeadlineProtoitem, NTTodayItemOperation,
                             NTTodayModuleDescriptorsOperation,
                             NTTodayResultOperation, NTTodayResults,
-                            NTTodayResultsSource, NTTodayWebEmbedProtoitem,
-                            NTWritablePrivateDataStorage ]
+                            NTTodayResultsSource, NTTodayWebEmbedProtoitem ]
 ...

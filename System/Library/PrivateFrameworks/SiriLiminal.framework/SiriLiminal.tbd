@@ -11,10 +11,15 @@ exports:
     symbols:              [ _SLErrorDomain, _SLLogContextFacilityCoreSpeech,
                             _SLLogInitIfNeeded, _SLLoggingSubsystem,
                             _SiriLiminalVersionNumber, _SiriLiminalVersionString,
-                            _kSLAudioSourceOption, _kSLInvocationType,
-                            _kSLLanguageCode, _kSLLoggingContextFramework,
+                            _kSLAssetVersion, _kSLAudioSourceOption,
+                            _kSLInvocationType, _kSLLanguageCode,
+                            _kSLLoggingContextFramework, _kSLNumAsrRecords,
+                            _kSLNumTokensTopPath, _kSLThresholdUsed,
+                            _kSLTrailingSilenceDuration,
                             _kSLVoiceTriggerEventInfo ]
-    objc-classes:         [ SLProgressiveCheckerAnalyzer,
+    objc-classes:         [ SLASRFeatureExtractor, SLASRFeatures, SLLRNNFeatures,
+                            SLProgressiveCheckerAnalyzer,
                             SLProgressiveCheckerContext,
-                            SLProgressiveCheckerResult, SLUtils ]
+                            SLProgressiveCheckerResult, SLUresMitigator,
+                            SLUresMitigatorIpFeats, SLUresMitigatorResult, SLUtils ]
 ...

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E84E0346-EAA1-3332-886F-6F8ED4906473
   - target:          arm64-ios
-    value:           30BBAB8B-F657-3704-8801-96EBA8606F05
+    value:           3BE05BBB-B063-3110-A14F-A7F39B22F426
   - target:          arm64e-ios
-    value:           6836DA9D-0DBD-3D44-A74C-4FDCB6E5C12E
+    value:           282106F5-C3A9-34F7-84B7-203EF53AFD40
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -155,6 +155,7 @@ exports:
                        __ZN3ctu12XpcLogServerC1ENSt3__110shared_ptrINS_9LogServerEEEPKcNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN3ctu12XpcLogServerC2ENSt3__110shared_ptrINS_9LogServerEEEPKcNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN3ctu13TextConverter25decodeCbsDataCodingSchemeEiRNS0_16DcsLanguageTypesE, 
+                       __ZN3ctu13TextConverter25decodeSmsDataCodingSchemeEiRNS0_12MessageClassERNS0_15MessageEncodingERbS5_S5_S5_S5_RNSt3__112basic_stringIcNS6_11char_traitsIcEENS6_9allocatorIcEEEE, 
                        __ZN3ctu14asChronoStringENSt3__16chrono8durationIxNS0_5ratioILl1ELl1000000000EEEEE, 
                        __ZN3ctu14asChronoStringENSt3__16chrono8durationIxNS0_5ratioILl1ELl1EEEEE, 
                        __ZN3ctu15RestModuleState13connectCommonENSt3__110shared_ptrINS_4rest13RestConnectorEEE, 
@@ -181,6 +182,8 @@ exports:
                        __ZN3ctu16LogMessageBuffer7vprintfEPKcPc, __ZN3ctu16ScopedLogFlusherC1ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILl1ELl1000EEEEE, 
                        __ZN3ctu16ScopedLogFlusherC2ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILl1ELl1000EEEEE, 
                        __ZN3ctu18XpcJetsamAssertion11addActivityENSt3__18weak_ptrINS0_8ActivityEEE, 
+                       __ZN3ctu18appendLeftoverBitsERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEyPKc, 
+                       __ZN3ctu19appendLabelIfBitSetERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERyPKcySA_, 
                        __ZN3ctu20DispatchTimerService17scheduleAfterImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEEN8dispatch5queueENSG_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService22createOneShotTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE11qos_class_tN8dispatch5queueENSH_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService23createPeriodicTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE11qos_class_tN8dispatch5queueENSH_5blockIU13block_pointerFvvEEE, 
@@ -193,11 +196,16 @@ exports:
                        __ZN3ctu20RestDispatchListener6createEN8dispatch5queueE, __ZN3ctu20RestDispatchListenerC1EN8dispatch5queueE, 
                        __ZN3ctu20RestDispatchListenerC2EN8dispatch5queueE, __ZN3ctu22ConnectionRestResource33getAllConnectionsForXpcConnectionERKN3xpc10connectionE, 
                        __ZN3ctu24RestListenerDelegateBaseD0Ev, __ZN3ctu24RestListenerDelegateBaseD1Ev, 
-                       __ZN3ctu24RestListenerDelegateBaseD2Ev, __ZN3ctu2cf12convert_copyERPK10__CFStringPKcjPK13__CFAllocator, 
+                       __ZN3ctu24RestListenerDelegateBaseD2Ev, __ZN3ctu24getBitFieldPrintWithDescEhRKNSt3__14pairIhhEENS0_8functionIFNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEiEEE, 
+                       __ZN3ctu24getBitFieldPrintWithDescEhRKNSt3__14pairIhhEERKNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
+                       __ZN3ctu26getStraddlingBitFieldPrintEiiRKNSt3__16vectorIhNS0_9allocatorIhEEEEmRKNS0_12basic_stringIcNS0_11char_traitsIcEENS2_IcEEEE, 
+                       __ZN3ctu2cf12convert_copyERPK10__CFStringPKcjPK13__CFAllocator, 
                        __ZN3ctu2cf12convert_copyERPK10__CFStringRKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEjPK13__CFAllocator, 
-                       __ZN3ctu2cf14assign_looselyERiPKv, __ZN3ctu2cf16create_allocatorERKNS_10MallocZoneEPK13__CFAllocator, 
-                       __ZN3ctu2fs10close_fileEi, __ZN3ctu2fs10remove_dirENS_4llvm9StringRefE, 
-                       __ZN3ctu2fs11file_existsENS_4llvm9StringRefE, __ZN3ctu2fs11read_folderENS_4llvm9StringRefERNSt3__16vectorINS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEENS8_ISA_EEEEb, 
+                       __ZN3ctu2cf14assign_looselyERiPKv, __ZN3ctu2cf14assign_looselyERxPKv, 
+                       __ZN3ctu2cf16create_allocatorERKNS_10MallocZoneEPK13__CFAllocator, 
+                       __ZN3ctu2cf6assignERyPK10__CFNumber, __ZN3ctu2fs10close_fileEi, 
+                       __ZN3ctu2fs10remove_dirENS_4llvm9StringRefE, __ZN3ctu2fs11file_existsENS_4llvm9StringRefE, 
+                       __ZN3ctu2fs11read_folderENS_4llvm9StringRefERNSt3__16vectorINS3_12basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEENS8_ISA_EEEEb, 
                        __ZN3ctu2fs11remove_fileENS_4llvm9StringRefE, __ZN3ctu2fs12get_dir_nameENS_4llvm9StringRefE, 
                        __ZN3ctu2fs12is_directoryENS_4llvm9StringRefE, __ZN3ctu2fs13get_base_nameENS_4llvm9StringRefE, 
                        __ZN3ctu2fs13get_file_sizeENS_4llvm9StringRefERm, __ZN3ctu2fs13get_file_sizeERNSt3__114basic_ifstreamIcNS1_11char_traitsIcEEEERm, 
@@ -401,7 +409,8 @@ exports:
                        _TelephonyCapabilitiesRadioTxPowerAudioJackReportSupported, 
                        _TelephonyCapabilitiesRadioTxPowerAudioSpeakerSupported, _TelephonyCapabilitiesRadioTxPowerConfigSupported, 
                        _TelephonyCapabilitiesRadioTxPowerControlInputSupported, _TelephonyCapabilitiesRadioTxPowerDelayProximityTimeoutResetSupported, 
-                       _TelephonyCapabilitiesRadioTxPowerFaceIDSupported, _TelephonyCapabilitiesRadioTxPowerHandDetectionSupported, 
+                       _TelephonyCapabilitiesRadioTxPowerFaceIDSupported, _TelephonyCapabilitiesRadioTxPowerFrontCameraSupported, 
+                       _TelephonyCapabilitiesRadioTxPowerHandDetectionSupported, 
                        _TelephonyCapabilitiesRadioTxPowerKeyboardSupported, _TelephonyCapabilitiesRadioTxPowerLTEBandsV2, 
                        _TelephonyCapabilitiesRadioTxPowerMaxPowerConfig, _TelephonyCapabilitiesRadioTxPowerMotionAlwaysSupported, 
                        _TelephonyCapabilitiesRadioTxPowerMotionSupported, _TelephonyCapabilitiesRadioTxPowerPPMSupported, 
@@ -424,9 +433,10 @@ exports:
                        _TelephonyUtilBinToHex, _TelephonyUtilBinToHexGetBufferSize, 
                        _TelephonyUtilDebugRegisterDelegate, _TelephonyUtilDebugSetFlags, 
                        _TelephonyUtilDecodeHexWithDefault, _TelephonyUtilEncodeHex, 
-                       _TelephonyUtilGetSystemTime, _TelephonyUtilHexToBin, _TelephonyUtilIsCarrierBuild, 
-                       _TelephonyUtilIsDesenseBuild, _TelephonyUtilIsInternalBuild, 
-                       _TelephonyUtilIsRestoreOS, _TelephonyUtilIsVendorBuild, _TelephonyUtilLogBinaryToBuffer, 
+                       _TelephonyUtilGetSystemTime, _TelephonyUtilGetSystemWakeReason, 
+                       _TelephonyUtilHexToBin, _TelephonyUtilIsCarrierBuild, _TelephonyUtilIsDesenseBuild, 
+                       _TelephonyUtilIsInternalBuild, _TelephonyUtilIsRestoreOS, 
+                       _TelephonyUtilIsVendorBuild, _TelephonyUtilLogBinaryToBuffer, 
                        _TelephonyUtilLogGetBufferSize, _TelephonyUtilParseHardwareModel, 
                        _TelephonyUtilRingBufferExtractFD, _TelephonyUtilRingBufferExtractRaw, 
                        _TelephonyUtilRingBufferGetLinearReadRemaining, _TelephonyUtilRingBufferGetLinearWriteRemaining, 
@@ -455,8 +465,7 @@ exports:
                        __TelephonyCapabilitiesRadioPreferencesHSICGetFlushTotalTimers, 
                        __TelephonyCapabilitiesRadioPreferencesHSICGetIOSuspendTimers, 
                        __TelephonyCapabilitiesRadioPreferencesHSICGetIdleDisconnectTime, 
-                       __TelephonyCapabilitiesRadioPreferencesOverrideProfile, __TelephonyCapabilitiesRadioPreferencesPanicSupported, 
-                       __TelephonyCapabilitiesRadioPreferencesRemoteFilesystemSupported, 
+                       __TelephonyCapabilitiesRadioPreferencesOverrideProfile, __TelephonyCapabilitiesRadioPreferencesRemoteFilesystemSupported, 
                        __TelephonyCapabilitiesRadioPreferencesUARTGetDesiredBaudRate, 
                        __TelephonyCapabilitiesRadioPreferencesUARTGetInactivityTimer, 
                        __TelephonyCapabilitiesRadioPreferencesUARTReliableRetryLimit, 

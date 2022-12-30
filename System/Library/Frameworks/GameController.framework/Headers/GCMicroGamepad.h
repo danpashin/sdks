@@ -18,6 +18,43 @@ NS_ASSUME_NONNULL_BEGIN
 @class GCControllerButtonInput;
 
 /**
+ The primary directional input surface for the directional gamepad
+ 
+ @note Equivalent to microgamepad.dpad
+ 
+ @note For the 1st generation and 2nd generation Siri Remotes, this represents touching anywhere on the entire touch surface.
+*/
+GAMECONTROLLER_EXTERN NSString *const GCInputMicroGamepadDpad API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0));
+
+/**
+ The primary button for the microgamepad
+ 
+ @note For the 1st generation and 2nd generation Siri Remotes, this represents pressing anywhere on the touch surface.
+*/
+GAMECONTROLLER_EXTERN NSString *const GCInputMicroGamepadButtonA API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0));
+
+/**
+ The secondary button for the microgamepad
+ 
+ @note Equivalent to microgamepad.buttonX
+ 
+ @note For the 1st and 2nd generation Siri Remotes, this represents pressing the play/pause button.
+*/
+GAMECONTROLLER_EXTERN NSString *const GCInputMicroGamepadButtonX API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0));
+
+/**
+ The primary menu button for the microgamepad
+ 
+ @note Equivalent to microgamepad.buttonMenu
+ 
+ @note For the 1st generation Siri Remote, this represents pressing the play/pause button. For the 2nd generation Siri Remote, this represents pressing the back button.
+ 
+ @note You should avoid polling this button every frame. tvOS will run a gesture recognizer on events before forwarding them to your application that can reduce the window
+    to poll button changes. Instead, register a pressedChangedHandler or a valueChangedHandler.
+*/
+GAMECONTROLLER_EXTERN NSString *const GCInputMicroGamepadButtonMenu API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0));
+
+/**
  Micro Gamepad profile.
  
  All controller profiles provide a base level of information about the controller they belong to.

@@ -8,11 +8,9 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PKGlyphViewSize, _PKMatrixForRotationAroundXAxis,
-                            _PKMatrixForRotationAroundYAxis, _PKMatrixForScale,
-                            _PKMatrixIdentity ]
-    objc-classes:         [ PK3DCardView, PKAuthenticator,
-                            PKAuthenticatorEvaluationContext,
+    symbols:              [ _PKGlyphViewSize ]
+    objc-classes:         [ PKAppleCashCardView, PKAppleHomeKeyCardView,
+                            PKAuthenticator, PKAuthenticatorEvaluationContext,
                             PKAuthenticatorEvaluationRequest,
                             PKAuthenticatorEvaluationResponse,
                             PKAuthenticatorSharedRootContext,
@@ -25,5 +23,8 @@ exports:
                             PKPeerPayment3DCharacter, PKPeerPayment3DScene,
                             PKPeerPayment3DStore, PKPeerPayment3DTextView,
                             PKPhoneGlyphLayer, PKRenderLoop,
+                            PKTexturedCardRenderer, PKTexturedCardView,
                             PKUISpringAnimationFactory ]
+    objc-ivars:           [ PKRenderLoop._delegate, PKRenderLoop._drawing,
+                            PKRenderLoop._invalidated ]
 ...

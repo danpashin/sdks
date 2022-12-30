@@ -15,9 +15,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#if UIKIT_HAS_UIFOUNDATION_SYMBOLS
+
 // When attributes=nil, the methods declared here uses the default behavior for each attribute described in <UIKit/NSAttributedString.h>. When stringDrawingContext=nil, it's equivalent of passing the default instance initialized with [[NSStringDrawingContext alloc] init].
 
-UIKIT_EXTERN API_AVAILABLE(macos(10.11), ios(6.0)) @interface NSStringDrawingContext : NSObject
+UIKIT_EXTERN API_AVAILABLE(macos(10.11), ios(6.0))
+@interface NSStringDrawingContext : NSObject
 
 // Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this property is set, the extended string drawing methods will attempt to draw the attributed string in the given bounds by proportionally scaling the font(s) in the attributed string
 @property (NS_NONATOMIC_IOSONLY) CGFloat minimumScaleFactor;
@@ -68,6 +71,8 @@ typedef NS_OPTIONS(NSInteger, NSStringDrawingOptions) {
 @property (nonatomic) CGFloat minimumTrackingAdjustment API_DEPRECATED("", ios(6.0, 7.0)) API_UNAVAILABLE(tvos);
 @property (nonatomic, readonly) CGFloat actualTrackingAdjustment API_DEPRECATED("", ios(6.0, 7.0)) API_UNAVAILABLE(tvos);
 @end
+
+#endif // UIKIT_HAS_UIFOUNDATION_SYMBOLS
 
 NS_ASSUME_NONNULL_END
 

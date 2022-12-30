@@ -3,14 +3,17 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       124.2.4
+current-version:       125.0.31
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    objc-classes:         [ MPSNDArrayACos, MPSNDArrayACosGradient,
-                            MPSNDArrayACosh, MPSNDArrayACoshGradient,
-                            MPSNDArrayAND, MPSNDArrayANDPrimaryGradient,
+    symbols:              [ _MPSSetResourcesOnCommandEncoder ]
+    objc-classes:         [ MPSExternalNDArrayBinary,
+                            MPSExternalNDArrayBinaryGradient, MPSNDArrayACos,
+                            MPSNDArrayACosGradient, MPSNDArrayACosh,
+                            MPSNDArrayACoshGradient, MPSNDArrayAND,
+                            MPSNDArrayANDPrimaryGradient,
                             MPSNDArrayANDSecondaryGradient, MPSNDArrayASin,
                             MPSNDArrayASinGradient, MPSNDArrayASinh,
                             MPSNDArrayASinhGradient, MPSNDArrayATan,
@@ -33,7 +36,8 @@ exports:
                             MPSNDArrayConvolution2DGradientWithInput,
                             MPSNDArrayConvolution2DGradientWithWeights,
                             MPSNDArrayCos, MPSNDArrayCosGradient, MPSNDArrayCosh,
-                            MPSNDArrayCoshGradient,
+                            MPSNDArrayCoshGradient, MPSNDArrayCropResize,
+                            MPSNDArrayDepthwiseConvolution2DDescriptor,
                             MPSNDArrayDepthwiseConvolutionKernel,
                             MPSNDArrayDivision,
                             MPSNDArrayDivisionPrimaryGradient,
@@ -56,7 +60,8 @@ exports:
                             MPSNDArrayGreaterThanOrEqualToSecondaryGradient,
                             MPSNDArrayGreaterThanPrimaryGradient,
                             MPSNDArrayGreaterThanSecondaryGradient,
-                            MPSNDArrayIdentity, MPSNDArrayInitialization,
+                            MPSNDArrayGridSample, MPSNDArrayIdentity,
+                            MPSNDArrayInitialization,
                             MPSNDArrayInitializationConstant,
                             MPSNDArrayInitializationGlorotNormal,
                             MPSNDArrayInitializationGlorotUniform,
@@ -72,8 +77,9 @@ exports:
                             MPSNDArrayLessThanOrEqualToSecondaryGradient,
                             MPSNDArrayLessThanPrimaryGradient,
                             MPSNDArrayLessThanSecondaryGradient,
-                            MPSNDArrayLogSoftMax, MPSNDArrayLogSoftMaxGradient,
-                            MPSNDArrayLogarithm, MPSNDArrayLogarithmBase10,
+                            MPSNDArrayLocalConvolution, MPSNDArrayLogSoftMax,
+                            MPSNDArrayLogSoftMaxGradient, MPSNDArrayLogarithm,
+                            MPSNDArrayLogarithmBase10,
                             MPSNDArrayLogarithmBase10Gradient,
                             MPSNDArrayLogarithmBase2,
                             MPSNDArrayLogarithmBase2Gradient,
@@ -89,6 +95,7 @@ exports:
                             MPSNDArrayMathUnaryKernel,
                             MPSNDArrayMatrixMultiplication,
                             MPSNDArrayMatrixMultiplicationGradient,
+                            MPSNDArrayMatrixMultiplicationSparse,
                             MPSNDArrayMaximum, MPSNDArrayMaximumPrimaryGradient,
                             MPSNDArrayMaximumSecondaryGradient,
                             MPSNDArrayMinimum, MPSNDArrayMinimumPrimaryGradient,
@@ -117,9 +124,9 @@ exports:
                             MPSNDArrayPoolingKernel, MPSNDArrayPower,
                             MPSNDArrayPowerPrimaryGradient,
                             MPSNDArrayPowerSecondaryGradient,
-                            MPSNDArrayReciprocal, MPSNDArrayReciprocalGradient,
-                            MPSNDArrayReduction, MPSNDArrayReductionGradient,
-                            MPSNDArrayReductionSum,
+                            MPSNDArrayQRDecomposition, MPSNDArrayReciprocal,
+                            MPSNDArrayReciprocalGradient, MPSNDArrayReduction,
+                            MPSNDArrayReductionGradient, MPSNDArrayReductionSum,
                             MPSNDArrayReductionSumGradient, MPSNDArrayResample,
                             MPSNDArrayResampleGradient,
                             MPSNDArrayReverseSquareRoot,
@@ -136,18 +143,28 @@ exports:
                             MPSNDArraySinhGradient, MPSNDArraySoftMax,
                             MPSNDArraySoftMaxGradient, MPSNDArraySquare,
                             MPSNDArraySquareGradient, MPSNDArraySquareRoot,
-                            MPSNDArraySquareRootGradient, MPSNDArrayStridedSlice,
+                            MPSNDArraySquareRootGradient,
+                            MPSNDArrayStencilKernel, MPSNDArrayStridedSlice,
                             MPSNDArrayStridedSliceGradient,
                             MPSNDArraySubtraction,
                             MPSNDArraySubtractionPrimaryGradient,
                             MPSNDArraySubtractionSecondaryGradient,
                             MPSNDArrayTan, MPSNDArrayTanGradient, MPSNDArrayTanh,
                             MPSNDArrayTanhGradient, MPSNDArrayTileGradientKernel,
-                            MPSNDArrayTileKernel, MPSNDArrayUnaryGradientKernel,
-                            MPSNDArrayUnaryKernel, MPSNDArrayXNOR,
-                            MPSNDArrayXNORPrimaryGradient,
+                            MPSNDArrayTileKernel, MPSNDArrayTopK,
+                            MPSNDArrayTopKGradient,
+                            MPSNDArrayUnaryGradientKernel, MPSNDArrayUnaryKernel,
+                            MPSNDArrayXNOR, MPSNDArrayXNORPrimaryGradient,
                             MPSNDArrayXNORSecondaryGradient, MPSNDArrayXOR,
                             MPSNDArrayXORPrimaryGradient,
-                            MPSNDArrayXORSecondaryGradient ]
-    objc-ivars:           [ MPSNDArrayGatherGradientState._axis ]
+                            MPSNDArrayXORSecondaryGradient,
+                            MPSPluginNDArrayConvolutionDescriptor ]
+    objc-ivars:           [ MPSNDArrayConvolution2D._autoTuningParams,
+                            MPSNDArrayConvolution2D._autoTuningTarget,
+                            MPSNDArrayConvolution2DGradientWithWeights._autoTuning,
+                            MPSNDArrayConvolution2DGradientWithWeights._autoTuningParams,
+                            MPSNDArrayGatherGradientState._axis,
+                            MPSNDArrayGradientState._provenance,
+                            MPSNDArrayGradientState._srcCount,
+                            MPSNDArrayGradientState._srcInfo ]
 ...

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           0BCFA536-48B2-322A-BCF6-DE10F8E05D41
   - target:          arm64-ios
-    value:           BA235D13-4D53-307A-B368-3B7A96FF95BB
+    value:           77642D6E-0C63-3522-9FE9-6380CE9BC322
   - target:          arm64e-ios
-    value:           841F7E18-F4D7-30FD-927A-01886A03E050
+    value:           401C2842-CADC-31D6-AA13-777255943129
 install-name:    '/usr/lib/libATCommandStudioDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -27,7 +27,8 @@ exports:
                        __ZN12ATDispatcher6createEP13ATCSIPCDriverPvRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEP16ATCSResetInvokerbb, 
                        __ZN12ATDispatcher8sendBulkEPKcz, __ZN12ATDispatcher8tearDownEv, 
                        __ZN12ATDispatcher9bootstrapEv, __ZN12ATDispatcherC2Ev, __ZN12ATDispatcherD0Ev, 
-                       __ZN12ATDispatcherD1Ev, __ZN12ATDispatcherD2Ev, __ZN13QMuxQueueItem9serializeEPvtt, 
+                       __ZN12ATDispatcherD1Ev, __ZN12ATDispatcherD2Ev, __ZN13QMIServiceMsg10encodeByteEPPch, 
+                       __ZN13QMIServiceMsg10encodeWordEPPct, __ZN13QMuxQueueItem9serializeEPvtt, 
                        __ZN13QMuxQueueItemC1EN3qmi11ServiceTypeEhtRK13QMIServiceMsg, 
                        __ZN13QMuxQueueItemC2EN3qmi11ServiceTypeEhtRK13QMIServiceMsg, 
                        __ZN14_ATCSException15constructCommonEPKcjS1_Pv, __ZN14_ATCSException6appendEPKcPv, 
@@ -44,6 +45,7 @@ exports:
                        __ZN17ATCSTextConverterD2Ev, __ZN17QMIClientCallback13exitPowerModeEP9QMIClient, 
                        __ZN17QMIClientCallback14enterPowerModeEP9QMIClientP16dispatch_group_sN3qmi12PowerProfileE, 
                        __ZN19ATCSRouterIPCDriver15setErrorHandlerEPNS_12ErrorHandlerE, 
+                       __ZN22ATCSCommPortConfigurerC1Eijjjb, __ZN22ATCSCommPortConfigurerC2Eijjjb, 
                        __ZN3qmi11ClientProxy5State11Transaction10startTimerEU13block_pointerFvvE, 
                        __ZN3qmi11ClientProxy5State11TransactionC1EPK13QMIServiceMsgtj, 
                        __ZN3qmi11ClientProxy5State11TransactionC1ERKS2_, __ZN3qmi11ClientProxy5State11TransactionC2EPK13QMIServiceMsgtj, 
@@ -166,12 +168,14 @@ exports:
                        __Z19ATCSThreadStartStubPv, __Z22strncasecmp_terminatedPKcS0_j, 
                        __Z8asStringN4QMux4NameE, __ZN10ATCSLogger5faultE12ATCSLogGroupPKcz, 
                        __ZN10ReadBuffer10readFromFDEi, __ZN10ReadBuffer7consumeEj, 
+                       __ZN13QMIServiceMsg10encodeByteEPPhh, __ZN13QMIServiceMsg10encodeWordEPPht, 
                        __ZN13QMIServiceMsg16createIndicationEPKvt, __ZN13QMIServiceMsg6createERKN3qmi11MessageBaseE, 
                        __ZN13QMuxQueueItemC1EN3qmi11ServiceTypeEhRKNSt3__110shared_ptrINS0_17SerializedMessageEEE, 
                        __ZN13QMuxQueueItemC2EN3qmi11ServiceTypeEhRKNSt3__110shared_ptrINS0_17SerializedMessageEEE, 
                        __ZN14_ATCSException15constructCommonEPKcjS1_Pc, __ZN14_ATCSException6appendEPKcPc, 
                        __ZN16CallbacksHandler15getSendCallbackEt, __ZN16CallbacksHandler20registerSendCallbackEtU13block_pointerFvtE, 
                        __ZN16CallbacksHandler22deRegisterSendCallbackEt, __ZN19ATCSRouterIPCDriver15setErrorHandlerENSt3__18functionIFvNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEEEE, 
+                       __ZN22ATCSCommPortConfigurerC1Eijhhb, __ZN22ATCSCommPortConfigurerC2Eijhhb, 
                        __ZN34ATCSFileDescriptorIPCDriverPrivate10kickReaderEv, __ZN34ATCSFileDescriptorIPCDriverPrivate10kickWriterEv, 
                        __ZN34ATCSFileDescriptorIPCDriverPrivate12exitLowPowerEv, 
                        __ZN34ATCSFileDescriptorIPCDriverPrivate13enterLowPowerEv, 
@@ -254,8 +258,9 @@ exports:
                        __ZN3qmi6ClientC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_11ServiceTypeEN8dispatch5queueES9_N3xpc10connectionE, 
                        __ZN3qmi6ClientC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_11ServiceTypeEN8dispatch5queueES9_NS1_8weak_ptrIvEEN3xpc10connectionE, 
                        __ZN3qmi8asStringENS_11ClientProxy5State9QMuxStateE, __ZN3qmi8asStringENS_16SubscriptionTypeE, 
-                       __ZN3qmi8asStringENS_6Client5EventE, __ZN3tlv17TlvParseExceptionC1Eml, 
-                       __ZN3tlv17TlvParseExceptionC2Eml, __ZN3tlv17throwIfNotAlignedEPKhS1_m, 
+                       __ZN3qmi8asStringENS_6Client5EventE, __ZN3tlv17TlvParseExceptionC1Emm, 
+                       __ZN3tlv17TlvParseExceptionC1Ev, __ZN3tlv17TlvParseExceptionC2Emm, 
+                       __ZN3tlv17TlvParseExceptionC2Ev, __ZN3tlv17throwIfNotAlignedEPKhS1_m, 
                        __ZN3tlv21throwIfNotEnoughBytesEPKhS1_m, __ZN3tlv4sizeIN3ctl3tlv10AssignedIdEEEmRKT_, 
                        __ZN3tlv4sizeIN3ctl3tlv10DataFormatEEEmRKT_, __ZN3tlv4sizeIN3ctl3tlv11ServiceTypeEEEmRKT_, 
                        __ZN3tlv4sizeIN3ctl3tlv13IndicationSetEEEmRKT_, __ZN3tlv4sizeIN3ctl3tlv14PowerSaveStateEEEmRKT_, 
@@ -363,7 +368,6 @@ exports:
                        __ZN13ATCSIPCDriver9bootstrapEv, __ZN13ATCSIPCDriverC2Ev, 
                        __ZN13ATCSIPCDriverD0Ev, __ZN13ATCSIPCDriverD1Ev, __ZN13ATCSIPCDriverD2Ev, 
                        __ZN13QMIServiceMsg10decodeByteEPKv, __ZN13QMIServiceMsg10decodeWordEPKv, 
-                       __ZN13QMIServiceMsg10encodeByteEPPch, __ZN13QMIServiceMsg10encodeWordEPPct, 
                        __ZN13QMIServiceMsg13createRequestEPKvt, __ZN13QMIServiceMsg14setErrorValuesEv, 
                        __ZN13QMIServiceMsg17createFromRawDataEPKhth, __ZN13QMIServiceMsg17createFromRawDataERKNSt3__16vectorIhNS0_9allocatorIhEEEEh, 
                        __ZN13QMIServiceMsg6addTlvEP3Tlv, __ZN13QMIServiceMsg6createEPKvt, 
@@ -403,8 +407,7 @@ exports:
                        __ZN21ATCSThreadedIPCDriver17writeWorkerStaticEPv, __ZN21ATCSThreadedIPCDriver19stopWorkersInternalEv, 
                        __ZN21ATCSThreadedIPCDriver20startWorkersInternalEv, __ZN21ATCSThreadedIPCDriver21startRemainingWorkersEv, 
                        __ZN21ATCSThreadedIPCDriver24startRemainingWorkers_nlEv, __ZN21ATCSThreadedIPCDriverC2Ev, 
-                       __ZN22ATCSCommPortConfigurer9configureEv, __ZN22ATCSCommPortConfigurerC1Eijjjb, 
-                       __ZN22ATCSCommPortConfigurerC2Eijjjb, __ZN27ATCSFileDescriptorIPCDriver6createEbjj, 
+                       __ZN22ATCSCommPortConfigurer9configureEv, __ZN27ATCSFileDescriptorIPCDriver6createEbjj, 
                        __ZN27ATCSFileDescriptorIPCDriverC2Ev, __ZN27ATCSFileDescriptorIPCDriverD0Ev, 
                        __ZN27ATCSFileDescriptorIPCDriverD1Ev, __ZN27ATCSFileDescriptorIPCDriverD2Ev, 
                        __ZN3Tlv10getDWordAtEt, __ZN3Tlv10getQWordAtEt, __ZN3Tlv10putDWordAtEjt, 

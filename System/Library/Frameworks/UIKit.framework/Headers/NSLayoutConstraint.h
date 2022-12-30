@@ -36,6 +36,8 @@ typedef float NSLayoutPriority NS_TYPED_EXTENSIBLE_ENUM;
 #define NSLAYOUTCONSTRAINT_EXTERN extern __attribute((visibility("default")))
 #endif
 
+#if UIKIT_HAS_UIFOUNDATION_SYMBOLS
+
 typedef NS_ENUM(NSInteger, NSLayoutRelation) {
     NSLayoutRelationLessThanOrEqual = -1,
     NSLayoutRelationEqual = 0,
@@ -120,7 +122,7 @@ typedef NS_OPTIONS(NSUInteger, NSLayoutFormatOptions) {
 #endif
 };
 
-NSLAYOUTCONSTRAINT_EXTERN API_AVAILABLE(macos(10.7), ios(6.0), tvos(9.0))
+NSLAYOUTCONSTRAINT_EXTERN API_AVAILABLE(macos(10.7), ios(6.0), tvos(9.0)) NS_SWIFT_UI_ACTOR
 @interface NSLayoutConstraint : NSObject
 
 /* Create an array of constraints using an ASCII-art-like visual format string.  The values of the `metrics` dictionary should be NSNumber (or some other type that responds to -doubleValue and returns a double).
@@ -195,6 +197,8 @@ NSLAYOUTCONSTRAINT_EXTERN NSDictionary<NSString *, id> *_NSDictionaryOfVariableB
 
 @end
 
+#endif // UIKIT_HAS_UIFOUNDATION_SYMBOLS
+
 #endif // NSLAYOUTCONSTRAINT_H
 
 /*
@@ -204,6 +208,8 @@ NSLAYOUTCONSTRAINT_EXTERN NSDictionary<NSString *, id> *_NSDictionaryOfVariableB
  factory methods.
  */
 @class NSLayoutYAxisAnchor, NSLayoutDimension;
+
+NS_SWIFT_UI_ACTOR
 @protocol UILayoutSupport <NSObject>
 @property(nonatomic,readonly) CGFloat length;  // As a courtesy when not using auto layout, this value is safe to refer to in -viewDidLayoutSubviews, or in -layoutSubviews after calling super
 

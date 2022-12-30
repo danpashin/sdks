@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet
-current-version:       1618.3
+current-version:       1737.1.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -37,6 +37,7 @@ exports:
                             _UIActivityViewControllerSharingExpandedNotification,
                             _UIDocumentInteractionControllerResultModifiedURLKey,
                             _UIDocumentInteractionControllerResultOriginalURLKey,
+                            __NSExtensionExcludedFromShareSheet,
                             __NSExtensionItemsFromActivityItemValues,
                             __NSExtensionItemsFromActivityItemValuesForExtensionItemDataRequest,
                             __NSExtensionItemsFromActivityItemValuesForExtensionItemDataRequestWithProcessingBlock,
@@ -44,7 +45,8 @@ exports:
                             __ShareSheetBundle,
                             __ShareSheetBundleIDFromAuditToken,
                             __ShareSheetCanUseCustomViewController,
-                            __ShareSheetCurrentDeviceClass,
+                            __ShareSheetCurrentDeviceClass, __ShareSheetIsCamera,
+                            __ShareSheetIsSupportedPrintActivity,
                             __SharingUIAuditTokenForCurrentProcess,
                             __UIActivityActivitiesArrayUserDefaultsKey,
                             __UIActivityCanDisplayActivityForApplicationProxy,
@@ -73,6 +75,7 @@ exports:
                             __UIActivityUserDefaultsMigrationKey,
                             __UIActivityUserDefaultsMigrationVersion,
                             __UIActivityUserDefaultsUserActivitiesEditedKey,
+                            __UIActivityViewControllerExecuteActivityNotification,
                             __UIApplicationCanOpenInPlaceByCopyingFromOriginalFile,
                             __UIApplicationCanOpenInPlaceByReferenceOriginalFile,
                             __UIApplicationExtensionAttributeIsFPSpecific,
@@ -108,12 +111,26 @@ exports:
                             ___NSExtensionItemsFromUIActivityItems,
                             ___UIEnumerateApplicationsInPreferredOrderForOpeningDocument,
                             ___UIIsContentManagedReferenceKey, _magic_head_log,
-                            _share_sheet_log ]
+                            _sh_dispatch_on_main_queue, _share_sheet_log ]
     objc-classes:         [ ObjectManipulationViewController,
-                            SFShareSheetSlotManager, SUIShareActivity, UIActivity,
-                            UIActivityActionGroupCell,
+                            SFShareSheetSlotManager, SHSheetActivitiesManager,
+                            SHSheetActivityItemUtilities,
+                            SHSheetActivityItemsManager,
+                            SHSheetActivityItemsResult, SHSheetActivityPerformer,
+                            SHSheetActivityPerformerResult,
+                            SHSheetActivityPresentationContext,
+                            SHSheetAirdropTransferContext, SHSheetContext,
+                            SHSheetFactory, SHSheetMainInteractor,
+                            SHSheetMainPresenter, SHSheetMainRouter,
+                            SHSheetOptionsViewContext, SHSheetPeopleSuggestion,
+                            SHSheetRemoteConnectionContext,
+                            SHSheetServiceManager, SHSheetSession,
+                            SHSheetTestActivity, SHSheetUserDefaultsContext,
+                            SHSheetViewModel, SUIShareActivity, UIActivity,
+                            UIActivityActionCell, UIActivityActionGroupCell,
                             UIActivityContentViewController,
                             UIActivityGroupViewController,
+                            UIActivityHeroActionCell,
                             UIActivityItemCustomization, UIActivityItemImageRep,
                             UIActivityItemProvider, UIActivityItemURLRep,
                             UIActivityViewController, UIAddToReadingListActivity,
@@ -142,6 +159,7 @@ exports:
                             UISUISecurityContext, UISUISecurityScopedResource,
                             UISaveToCameraRollActivity, UIShareGroupActivityCell,
                             UIShortcutActivity, UISocialActivity,
+                            _UIActivityActionCellBadgeView,
                             _UIActivityActionCellTitleLabel,
                             _UIActivityApplicationExtensionDiscovery,
                             _UIActivityApplicationExtensionsCache,
@@ -151,6 +169,7 @@ exports:
                             _UIActivityContentCollectionView,
                             _UIActivityContentFooterView,
                             _UIActivityContentNavigationBar,
+                            _UIActivityContentSectionHeaderView,
                             _UIActivityContentTitleView,
                             _UIActivityDiscoveryContext,
                             _UIActivityDragGestureRecognizer,

@@ -25,8 +25,13 @@
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
+#ifndef _BSD_MACHINE__MCONTEXT_H_
+#define _BSD_MACHINE__MCONTEXT_H_
+
 #if   defined (__arm__) || defined (__arm64__)
 #include "arm/_mcontext.h"
 #else
 #error architecture not supported
 #endif
+
+#endif /* _BSD_MACHINE__MCONTEXT_H_ */

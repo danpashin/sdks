@@ -3,27 +3,27 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
-current-version:       60
+current-version:       67
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _IsPerfLoggingInterval, _PassesPerfLoggingWhitelist,
+    symbols:              [ _IsPerfLoggingInterval, _PassesPerfLoggingAllowlist,
                             _SSCAEventTypeForSignpost,
                             _SSCAIntervalTypeForSignpostInterval,
                             _SSCAIsCAMetadataSubsystemCategory,
                             _SignpostPlatformForDevice,
                             _SignpostPlatformForString,
-                            _SignpostReporterCrossPlatformAppleAccountWhitelist,
-                            _SignpostReporterCrossPlatformAppleIDAuthenticationWhitelist,
-                            _SignpostReporterCrossPlatformAuthKitWhitelist,
+                            _SignpostReporterAllowlistedStringSet,
+                            _SignpostReporterCrossPlatformAppleAccountAllowlist,
+                            _SignpostReporterCrossPlatformAppleIDAuthenticationAllowlist,
+                            _SignpostReporterCrossPlatformAuthKitAllowlist,
                             _SignpostReporterCrossPlatformSiriAudioStringPasslist,
                             _SignpostReporterCrossPlatformSiriHomeAutomationStringPasslist,
                             _SignpostReporterCrossPlatformSiriPersonalUpdateStringPasslist,
                             _SignpostReporterCrossPlatformSiriPlaybackControlsStringPasslist,
                             _SignpostReporterCrossPlatformSiriVideoUTSOperationRequestStringPasslist,
-                            _SignpostReporterShouldUseWhitelist,
-                            _SignpostReporterWhitelistedStringSet,
+                            _SignpostReporterShouldUseAllowlist,
                             _SignpostSupportAverageDurationMachContinuousTimeForIntervals,
                             _SignpostSupportAverageDurationNsForIntervals,
                             _SignpostSupportAverageDurationOfLongestIntervalsInMachContinuousTime,
@@ -40,7 +40,7 @@ exports:
                             _SignpostSupportTotalDurationNsForIntervals,
                             _SignpostSystemTimebaseRatio,
                             _StringForSignpostPlatform,
-                            _StringPassesSignpostReporterStringWhitelist,
+                            _StringPassesSignpostReporterStringAllowlist,
                             __SignpostSerializeableObjectFromSerializedObjectDictionary,
                             __SignpostSupportSerializationDataFromObjectArray,
                             __signpost_debug_log,
@@ -63,7 +63,9 @@ exports:
                             SignpostObject, SignpostRenderServerRenderInterval,
                             SignpostStackFrame, SignpostStreamEvent,
                             SignpostSupportCompositorInterval,
+                            SignpostSupportExactProcessNameAllowlist,
                             SignpostSupportExactProcessNameBlacklist,
+                            SignpostSupportExactProcessNameBlocklist,
                             SignpostSupportExactProcessNameFilter,
                             SignpostSupportExactProcessNameWhitelist,
                             SignpostSupportLogMessage,
@@ -74,15 +76,21 @@ exports:
                             SignpostSupportObject,
                             SignpostSupportObjectExtractor,
                             SignpostSupportObjectFilter,
+                            SignpostSupportPIDAllowlist,
                             SignpostSupportPIDBlacklist,
+                            SignpostSupportPIDBlocklist,
                             SignpostSupportPIDFilter,
                             SignpostSupportPIDWhitelist,
                             SignpostSupportSerializabledObjectCollection,
+                            SignpostSupportSubsystemCategoryAllowlist,
                             SignpostSupportSubsystemCategoryBlacklist,
+                            SignpostSupportSubsystemCategoryBlocklist,
                             SignpostSupportSubsystemCategoryFilter,
                             SignpostSupportSubsystemCategoryFilterEntry,
                             SignpostSupportSubsystemCategoryWhitelist,
+                            SignpostSupportUniquePIDAllowlist,
                             SignpostSupportUniquePIDBlacklist,
+                            SignpostSupportUniquePIDBlocklist,
                             SignpostSupportUniquePIDFilter,
                             SignpostSupportUniquePIDWhitelist ]
 ...

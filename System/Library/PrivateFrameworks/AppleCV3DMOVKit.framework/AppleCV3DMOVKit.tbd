@@ -3,19 +3,15 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleCV3DMOVKit.framework/AppleCV3DMOVKit
-current-version:       3.21.1
-compatibility-version: 3.21.1
+current-version:       4.41
+compatibility-version: 4.41
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CVPixelBufferAttachmentIntrinsicsKey,
-                            __currentBankToProjector,
-                            __firstCurrentBankToProjectorOS,
-                            __legacyBankToProjector, __roughlyMarch17, _dummy,
+    symbols:              [ _CVPixelBufferAttachmentIntrinsicsKey, _dummy,
                             _kALSIdentifierPrefixValue,
                             _kAVMetadataIdentifierCalibration,
                             _kAVMetadataIdentifierFrameworkState,
-                            _kAVMetadataIdentifierMovieSummary,
                             _kAVMetadataIdentifierRecordingEnvironment,
                             _kAccelerometerIdentifierValue,
                             _kCMDataIdentifierValue,
@@ -27,13 +23,12 @@ exports:
                             _kCVAUserEventIdentifierValue,
                             _kCameraExposureTimeKey, _kCompassIdentifierValue,
                             _kCoreLocationIdentifierValue, _kDepthFrameRate,
-                            _kDepthTOFIdentifierValue, _kExpectedFPS,
-                            _kExtraConfigs, _kGyroscopeIdentifierValue,
+                            _kDepthTOFIdentifierValue,
+                            _kDepthTOFIdentifierValue2_3,
+                            _kGyroscopeIdentifierValue,
                             _kIMUMotionIdentifierValue, _kJasperCalibData,
                             _kMDDExtrinsics, _kMOVSummaryBundleID,
-                            _kMOVSummaryBundleID_1_0_0, _kMOVSummaryDeviceName,
-                            _kMOVSummaryDeviceString,
-                            _kMOVSummaryDeviceString_1_0_0,
+                            _kMOVSummaryDeviceName, _kMOVSummaryDeviceString,
                             _kMOVSummaryJasperExtrinsics,
                             _kMOVSummaryMOVKitVersion,
                             _kMOVSummaryOSBuildVersion, _kMOVSummaryProductType,
@@ -43,9 +38,7 @@ exports:
                             _kRawAccelerometerIdentifierValue,
                             _kRawCompassIdentifierValue,
                             _kRawGyroscopeIdentifierValue,
-                            _kSTFirmwareVersionData, _kTrackAdded, _kTrackBitrate,
-                            _kTrackForceH264, _kTrackLossless, _kUnitInfoData,
-                            _kWrapperClassData ]
+                            _kSTFirmwareVersionData, _kUnitInfoData ]
     objc-classes:         [ CMData, CMDataContainer, CMEvent, CMFileInterface,
                             CMMessage, CVACLLocation, CVACLMotionTypeDoubleVector3,
                             CVACLMotionTypeDoubleVector4, CVACLMotionTypeVector3,
@@ -59,5 +52,5 @@ exports:
                             CVAPRRangeMeasurement, CVATimedValue, CVAUserEvent,
                             JasperDepthFrameProcessor, MOVReaderInterface,
                             MOVWriterInterface, MetadataWrapper,
-                            StreamEncodingObject, TimedBuffer ]
+                            StreamEncodingObject ]
 ...

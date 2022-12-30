@@ -1,0 +1,33 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           8A777BF5-5650-39F1-9607-DA49B5FA23F1
+  - target:          arm64e-ios
+    value:           DC420909-59A8-396B-A73A-B67BA84C7FF7
+install-name:    '/System/Library/Frameworks/ShazamKit.framework/ShazamKit'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _SHErrorDeviceToDeviceEncryptionKey, _SHErrorDiscardedAudioDurationKey, 
+                       _SHErrorDomain, _SHEventSignalIdentifierMusicRecognitionHistoryActivated, 
+                       _SHEventSignalIdentifierMusicRecognitionRecognitionActivated, 
+                       _SHMaximumSignatureDuration, _SHMediaItemAlbumName, _SHMediaItemAppleMusicID, 
+                       _SHMediaItemAppleMusicURL, _SHMediaItemArtist, _SHMediaItemArtworkURL, 
+                       _SHMediaItemAudioStartDate, _SHMediaItemExplicitContent, _SHMediaItemFrequencySkew, 
+                       _SHMediaItemGenres, _SHMediaItemISRC, _SHMediaItemLyricsSnippet, 
+                       _SHMediaItemMatchOffset, _SHMediaItemReleaseDate, _SHMediaItemShazamID, 
+                       _SHMediaItemSpeedSkew, _SHMediaItemStaticLyricLines, _SHMediaItemSubtitle, 
+                       _SHMediaItemSyncedLyricsSnippet, _SHMediaItemTitle, _SHMediaItemVideoURL, 
+                       _SHMediaItemWebURL ]
+    objc-classes:    [ SHAttribution, SHCatalog, SHCustomCatalog, SHError, SHEventSignaller, 
+                       SHLibraryChange, SHLibraryDifference, SHLibraryGroup, SHLibraryItemMetadata, 
+                       SHLibraryTrack, SHLyricLine, SHManagedSession, SHMatch, SHMatchedMediaItem, 
+                       SHMatcherResponse, SHMediaItem, SHMediaLibrary, SHMediaLibraryTrackUpdate, 
+                       SHMutableSignature, SHSession, SHShazamCatalog, SHShazamKey, 
+                       SHSignature, SHSignatureGenerator, SHSyncedLyrics ]
+...

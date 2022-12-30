@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
-current-version:       43
+current-version:       62
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -193,8 +193,10 @@ exports:
                             _DMFDeviceiTunesStoreAccountHashKey,
                             _DMFDeviceiTunesStoreAccountIsActiveKey,
                             _DMFEffectivePolicyTypeApplication,
+                            _DMFEffectivePolicyTypeApplicationCategory,
                             _DMFEffectivePolicyTypeCategory,
                             _DMFEffectivePolicyTypeWeb,
+                            _DMFEffectivePolicyTypeWebCategory,
                             _DMFEffectivePolicyTypeiCloudAccountLogout,
                             _DMFEmergencyModeChangedNotification,
                             _DMFEmergencyModeLog,
@@ -232,7 +234,7 @@ exports:
                             _DMFSecurityPasscodeLockGracePeriodKey,
                             _DMFSecuritySupportsBlockLevelEncryptionKey,
                             _DMFSecuritySystemIntegrityProtectionEnabledKey,
-                            _DMFURLStringErrorKey,
+                            _DMFServerLog, _DMFURLStringErrorKey,
                             _DMFiCloudAccountDidChangeDarwinNotification ]
     objc-classes:         [ DMFActivityTransactionRequest, DMFApp,
                             DMFAppManagementInformation, DMFAppRequest,

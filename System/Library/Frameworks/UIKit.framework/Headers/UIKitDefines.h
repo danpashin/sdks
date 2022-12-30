@@ -28,11 +28,31 @@
 #define UIKIT_CLASS_AVAILABLE_IOS_TVOS(_ios, _tvos) UIKIT_EXTERN __IOS_AVAILABLE(_ios) __WATCHOS_UNAVAILABLE __TVOS_AVAILABLE(_tvos)
 #define UIKIT_CLASS_AVAILABLE_IOS_WATCHOS_TVOS(_ios, _watchos, _tvos) UIKIT_EXTERN __IOS_AVAILABLE(_ios) __WATCHOS_AVAILABLE(_watchos) __TVOS_AVAILABLE(_tvos)
 
+#define UIKIT_SWIFT_ACTOR_INDEPENDENT __attribute__((swift_attr("@actorIndependent(unsafe)")))
+
 #if __swift__
 #define UIKIT_SWIFT_FORWARD_DECLARE(DECLARATION) DECLARATION;
 #else
 #define UIKIT_SWIFT_FORWARD_DECLARE(DECLARATION)
 #endif
+
+#if !defined(UIKIT_EXTERN_C_BEGIN) && !defined(UIKIT_EXTERN_C_END)
+    #ifdef __cplusplus
+        #define UIKIT_EXTERN_C_BEGIN extern "C" {
+        #define UIKIT_EXTERN_C_END }
+    #else
+        #define UIKIT_EXTERN_C_BEGIN
+        #define UIKIT_EXTERN_C_END
+    #endif
+#endif
+
+#if !defined(UIKIT_HAS_UIFOUNDATION_SYMBOLS)
+    #if defined(UIKIT_BUILDING_UIKITMACHELPER)
+        #define UIKIT_HAS_UIFOUNDATION_SYMBOLS TARGET_OS_IPHONE
+    #else
+        #define UIKIT_HAS_UIFOUNDATION_SYMBOLS 1
+    #endif // defined(UIKIT_BUILDING_UIKITMACHELPER)
+#endif // !defined(UIKIT_HAS_UIFOUNDATION_SYMBOLS)
 
 #else
 #import <UIKitCore/UIKitDefines.h>

@@ -9,13 +9,13 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _HUCCPerformCommonInitialization,
-                            _HUCCPreferencesDidChangeNotification,
-                            _HUCCUpdateRunningState,
+                            _HUCCStringForOrientation, _HUCCUpdateRunningState,
+                            _HUCCUpdateRunningStateWithAppleMediaAccessories,
                             _launchHomeAppForModuleViewController ]
     objc-classes:         [ HUCCCompactModuleContentViewController,
                             HUCCCompactModulePropertyAnimator,
                             HUCCControlCenterCompactModule,
                             HUCCDashboardContainerViewController,
-                            HUCCLockStateHandler, HUCCPreferences,
+                            HUCCLockStateHandler,
                             HUCCRemoteDashboardViewController ]
 ...

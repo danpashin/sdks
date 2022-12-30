@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomeDeviceSetup.framework/HomeDeviceSetup
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _FrontBoardOpenURLOptions, _HDSDashboardLogJSON,
+                            _HDSDeviceLocked, _HDSDispatchTimerSet,
+                            _HDSIsDevicePhone, _HDSLocalizedStringForKey,
+                            _HDSMetricsLog, _HomeDeviceSetupVersionNumber,
+                            _HomeDeviceSetupVersionString, _SFIsGreenTeaDevice,
+                            _SFTestFlagsFromString,
+                            _SVSAddSuffixForCurrentDeviceClass,
+                            _SVSAddSuffixForDeviceClass,
+                            _SVSLocalizedNameForDeviceClassCode,
+                            _SVSLocalizedString, _SVSLocalizedStringEx,
+                            _SVSLocalizedStringEx2, _SVSLocalizedStringExF,
+                            _SVSLocalizedStringExV, _SVSLocalizedStringF,
+                            _SVSLocalizedStringV,
+                            _gLogCategory_HDSDeviceActivation,
+                            _gLogCategory_HDSSetupService,
+                            _gLogCategory_HDSSetupSession,
+                            _kActivationRequestKeyActivationResult,
+                            _kActivationRequestKeyServerData,
+                            _kActivationRequestKeyServerHeaders,
+                            _kActivationRequestKeyStep,
+                            _kActivationRequestKeyURLRequest,
+                            _kDeviceActivationErrorDomain ]
+    objc-classes:         [ HDSDeviceActivation, HDSDeviceActivationOperation,
+                            HDSSetupService, HDSSetupSession ]
+...

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B61AB34A-5FE0-3882-9F0C-DB4626C0DC39
+    value:           6FC36350-2EB0-3EC6-8D5F-9A597C527E68
   - target:          arm64e-ios
-    value:           3465394D-E5CD-368C-B62F-4AD3B48CE973
+    value:           8801CF32-1679-3B65-B04A-D3ED02FF1842
 install-name:    '/System/Library/Frameworks/IOSurface.framework/IOSurface'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -26,7 +26,8 @@ exports:
                        _IOSurfaceBindAccel, _IOSurfaceBindAccelOnPlane, _IOSurfaceCopyAllValues, 
                        _IOSurfaceCopyDataValueBytes, _IOSurfaceCopyValue, _IOSurfaceCreate, 
                        _IOSurfaceCreateChildSurface, _IOSurfaceCreateMachPort, _IOSurfaceCreateMachPortWithOptions, 
-                       _IOSurfaceCreateXPCObject, _IOSurfaceDecrementUseCount, _IOSurfaceFlushProcessorCaches, 
+                       _IOSurfaceCreateWiringAssertion, _IOSurfaceCreateXPCObject, 
+                       _IOSurfaceDecrementUseCount, _IOSurfaceFlushProcessorCaches, 
                        _IOSurfaceGetAddressFormatOfPlane, _IOSurfaceGetAllocSize, 
                        _IOSurfaceGetBaseAddress, _IOSurfaceGetBaseAddressOfCompressedTileDataRegionOfPlane, 
                        _IOSurfaceGetBaseAddressOfCompressedTileHeaderRegionOfPlane, 
@@ -79,13 +80,14 @@ exports:
                        _IOSurfaceRemoteServerOptionDebugLogQueue, _IOSurfaceRemoveAllValues, 
                        _IOSurfaceRemoveValue, _IOSurfaceSetBulkAttachments, _IOSurfaceSetBulkAttachments2, 
                        _IOSurfaceSetCompressedTileDataRegionMemoryUsedOfPlane, _IOSurfaceSetDetachModeCode, 
-                       _IOSurfaceSetIndexedTimestamp, _IOSurfaceSetOwnership, _IOSurfaceSetPurgeable, 
-                       _IOSurfaceSetTiled, _IOSurfaceSetTimestamp, _IOSurfaceSetValue, 
-                       _IOSurfaceSetValues, _IOSurfaceSetYCbCrMatrix, _IOSurfaceSharedEventAddEventListener, 
-                       _IOSurfaceSharedEventAddListener, _IOSurfaceSharedEventNotifyEventListener, 
-                       _IOSurfaceSharedEventNotifyListener, _IOSurfaceSharedEventRemoveEventListener, 
-                       _IOSurfaceSharedEventRemoveListener, _IOSurfaceSignalEvent, 
-                       _IOSurfaceSupportsProtectionOptions, _IOSurfaceUnlock, _IOSurfaceUnlockPlane, 
+                       _IOSurfaceSetIndexedTimestamp, _IOSurfaceSetOwnership, _IOSurfaceSetOwnershipIdentity, 
+                       _IOSurfaceSetPurgeable, _IOSurfaceSetTiled, _IOSurfaceSetTimestamp, 
+                       _IOSurfaceSetValue, _IOSurfaceSetValues, _IOSurfaceSetYCbCrMatrix, 
+                       _IOSurfaceSharedEventAddEventListener, _IOSurfaceSharedEventAddListener, 
+                       _IOSurfaceSharedEventNotifyEventListener, _IOSurfaceSharedEventNotifyListener, 
+                       _IOSurfaceSharedEventRemoveEventListener, _IOSurfaceSharedEventRemoveListener, 
+                       _IOSurfaceSignalEvent, _IOSurfaceSupportsProtectionOptions, 
+                       _IOSurfaceUnlock, _IOSurfaceUnlockPlane, _IOSurfaceWiringAssertionGetTypeID, 
                        _IOSurfaceWrapClientImage, _IOSurfaceWrapClientMemory, _kDisplayColorRemapModeKey, 
                        _kIOFenceAllowTearing, _kIOSurfaceAcceleratorAlphaOverride, 
                        _kIOSurfaceAcceleratorBorderFillAlpha, _kIOSurfaceAcceleratorBorderFillBlueCr, 
@@ -167,7 +169,7 @@ exports:
                        _kIOSurfaceWidth, _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_ITU_R_601_4_String, 
                        _kIOSurfaceYCbCrMatrix_ITU_R_709_2_String, _kIOSurfaceYCbCrMatrix_SMPTE_240M_1995_String ]
     objc-classes:    [ IOSurface, IOSurfaceDebugDescription, IOSurfaceRemoteServer, 
-                       IOSurfaceSharedEvent, IOSurfaceSharedEventListener ]
+                       IOSurfaceSharedEvent, IOSurfaceSharedEventListener, IOSurfaceWiringAssertion ]
     objc-ivars:      [ IOSurfaceSharedEvent._eventPort, IOSurfaceSharedEvent._globalTraceObjectID, 
                        IOSurfaceSharedEventListener._dispatchQueue, IOSurfaceSharedEventListener._notificationPort ]
 ...

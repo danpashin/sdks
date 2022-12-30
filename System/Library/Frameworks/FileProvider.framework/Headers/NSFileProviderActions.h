@@ -11,9 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+FILEPROVIDER_API_AVAILABILITY_V2_V3
+typedef NSString *NSFileProviderExtensionActionIdentifier NS_EXTENSIBLE_STRING_ENUM;
+
 /**
  This category encapsulates common user-driven actions on FileProvider's items.
  */
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderExtension (NSFileProviderActions)
 
 /**
@@ -30,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
    - filename (to fileURL's resource value for key NSURLNameKey)
    - creationDate (to NSURLCreationDateKey)
    - contentModificationDate (to NSURLContentModificationDateKey)
-   - typeIdentifier (to NSURLTypeIdentifierKey)
+   - contentType (to NSURLContentTypeKey)
    - documentSize (to NSURLTotalFileSizeKey on a flat file, or to the sum of the
      files sizes for a package)
    - capabilities
@@ -79,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)importDocumentAtURL:(NSURL *)fileURL
      toParentItemIdentifier:(NSFileProviderItemIdentifier)parentItemIdentifier
-          completionHandler:(void (^)(NSFileProviderItem _Nullable importedDocumentItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("createItem:fields:contents:options:completionHandler:");
+          completionHandler:(void (^)(NSFileProviderItem _Nullable importedDocumentItem, NSError * _Nullable error))completionHandler;
 
 /**
  Create a directory.
@@ -91,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
  - parentItemIdentifier (to the value passed in to this method)
  - filename (to directoryName)
  - creationDate (to the current date and time)
- - typeIdentifier (to "public.folder")
+ - contentType (to "public.folder" - UTTypeFolder)
  - childItemCount (to 0)
  - capabilities
 
@@ -101,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)createDirectoryWithName:(NSString *)directoryName
          inParentItemIdentifier:(NSFileProviderItemIdentifier)parentItemIdentifier
-              completionHandler:(void (^)(NSFileProviderItem _Nullable createdDirectoryItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("createItem:fields:contents:options:completionHandler:");
+              completionHandler:(void (^)(NSFileProviderItem _Nullable createdDirectoryItem, NSError * _Nullable error))completionHandler;
 
 
 /**
@@ -120,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)renameItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
                           toName:(NSString *)itemName
-               completionHandler:(void (^)(NSFileProviderItem _Nullable renamedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+               completionHandler:(void (^)(NSFileProviderItem _Nullable renamedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Move an item to a new directory.
@@ -137,7 +141,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reparentItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
         toParentItemWithIdentifier:(NSFileProviderItemIdentifier)parentItemIdentifier
                            newName:(nullable NSString *)newName
-                 completionHandler:(void (^)(NSFileProviderItem _Nullable reparentedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+                 completionHandler:(void (^)(NSFileProviderItem _Nullable reparentedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Move an item to the trash.
@@ -160,7 +164,7 @@ NS_ASSUME_NONNULL_BEGIN
  NSFileProviderItemCapabilitiesAllowsTrashing.
  */
 - (void)trashItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-              completionHandler:(void (^)(NSFileProviderItem _Nullable trashedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+              completionHandler:(void (^)(NSFileProviderItem _Nullable trashedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Move an item out of the trash.
@@ -178,7 +182,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)untrashItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
            toParentItemIdentifier:(nullable NSFileProviderItemIdentifier)parentItemIdentifier
-                completionHandler:(void (^)(NSFileProviderItem _Nullable untrashedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+                completionHandler:(void (^)(NSFileProviderItem _Nullable untrashedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Delete an item forever.
@@ -191,7 +195,7 @@ NS_ASSUME_NONNULL_BEGIN
  NSFileProviderItemCapabilitiesAllowsDeleting.
  */
 - (void)deleteItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-               completionHandler:(void (^)(NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("deleteItemWithIdentifier:baseVersion:options:completionHandler:");
+               completionHandler:(void (^)(NSError * _Nullable error))completionHandler;
 
 /**
  Mark an item as recently used, or clear its lastUsedDate if nil.
@@ -209,7 +213,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setLastUsedDate:(nullable NSDate *)lastUsedDate
       forItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-      completionHandler:(void (^)(NSFileProviderItem _Nullable recentlyUsedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+      completionHandler:(void (^)(NSFileProviderItem _Nullable recentlyUsedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Tag an item, or untag it if tagData is nil.
@@ -229,7 +233,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setTagData:(nullable NSData *)tagData
  forItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
- completionHandler:(void (^)(NSFileProviderItem _Nullable taggedItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+ completionHandler:(void (^)(NSFileProviderItem _Nullable taggedItem, NSError * _Nullable error))completionHandler;
 
 /**
  Mark a directory as favorite (or no longer favorite if favoriteRank is nil.)
@@ -248,7 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setFavoriteRank:(nullable NSNumber *)favoriteRank
       forItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
-      completionHandler:(void (^)(NSFileProviderItem _Nullable favoriteItem, NSError * _Nullable error))completionHandler FILEPROVIDER_API_DEPRECATED_V3("itemChanged:baseVersion:changedFields:contents:completionHandler:");
+      completionHandler:(void (^)(NSFileProviderItem _Nullable favoriteItem, NSError * _Nullable error))completionHandler;
 
 @end
 

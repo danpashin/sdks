@@ -8,7 +8,16 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _BKErrorDomain, _BKLogCode, _BKLogEvent,
+    symbols:              [ _AppendCommentToPGM, _BKErrorDomain, _BKLogCode,
+                            _BKLogEvent, _LoadRawImageAsPGM, _RIESAdd, _RIESClear,
+                            _RIESDelete, _RIESInit, _RIESLoad, _RIESSave, _RIESUpdate,
+                            _SaveRawImageAsPGM, __BKLogEventOrCode,
+                            _absoluteToMiliseconds, _absoluteToNanoseconds,
+                            _dictionaryGetBool, _dictionaryGetData,
+                            _dictionaryGetDouble, _dictionaryGetInteger,
+                            _getBootArgs, _getSensorPatchVersion,
+                            _isEphemeralMultiUser, _isFaceIDPlatform,
+                            _isInternalBuild, _isTouchIDPlatform,
                             _kBiometricKitEnrollProgressDetailExtendedComponentID,
                             _kBiometricKitEnrollProgressDetailMergedInComponents,
                             _kBiometricKitEnrollProgressDetailNewComponentID,
@@ -22,6 +31,7 @@ exports:
                             _kBiometricKitIdentityAttributeKey,
                             _kBiometricKitIdentityCreationTimeKey,
                             _kBiometricKitIdentityEntityKey,
+                            _kBiometricKitIdentityFlagsKey,
                             _kBiometricKitIdentityMatchCountKey,
                             _kBiometricKitIdentityNameKey,
                             _kBiometricKitIdentityTypeKey,
@@ -32,13 +42,17 @@ exports:
                             _kBiometricKitTemplateDetailLargestComponentNodes,
                             _kBiometricKitTemplateDetailTotalArea,
                             _kBiometricKitTemplateDetailTotalNodes,
-                            _kBiometricKitTemplateUpdated ]
+                            _kBiometricKitTemplateUpdated, _localizeAbsolute,
+                            _nanosecondsToAbsolute, _rotateBitmap90Data16,
+                            _rotateBitmap90Data8, _roundMostSignificant ]
     objc-classes:         [ BKDevice, BKDeviceDescriptor, BKDeviceManager,
                             BKDevicePearl, BKDeviceTouchID, BKEnrollOperation,
                             BKEnrollPearlOperation, BKEnrollPearlProgressInfo,
+                            BKEnrollPearlResultInfo, BKEnrollResultInfo,
                             BKEnrollTouchIDOperation,
                             BKExtendEnrollTouchIDOperation,
                             BKFaceDetectOperation, BKFaceDetectStateInfo,
+                            BKFaceOcclusionInfo, BKFaceWUPoseEligibilityInfo,
                             BKFingerDetectOperation, BKIdentity, BKMatchEvent,
                             BKMatchOperation, BKMatchPearlOperation,
                             BKMatchPearlResultInfo, BKMatchResultInfo,
@@ -50,5 +64,6 @@ exports:
                             BiometricKitEnrollProgressInfo,
                             BiometricKitEnrollProgressMergedComponent,
                             BiometricKitIdentity, BiometricKitMatchInfo,
-                            BiometricKitTemplateInfo ]
+                            BiometricKitTemplateInfo, BiometricPreferences,
+                            BiometricSupportTools ]
 ...

@@ -1,11 +1,12 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.24.14 clang-1205.0.19.54)
-// swift-module-flags: -target armv7s-apple-ios10.3 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreLocation -swift-version 5 -enforce-exclusivity=checked -O -module-name CoreLocation
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.29.207 clang-1300.0.28.1)
+// swift-module-flags: -target armv7s-apple-ios7.0 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreLocation -swift-version 5 -enforce-exclusivity=checked -O -module-name CoreLocation
 @_exported import CoreLocation
 import Foundation
 import Swift
+import _Concurrency
 @available(iOS 13.0, *)
-extension CLBeaconIdentityConstraint {
+extension CoreLocation.CLBeaconIdentityConstraint {
   public var major: Swift.UInt16? {
     get
   }
@@ -13,12 +14,12 @@ extension CLBeaconIdentityConstraint {
     get
   }
 }
-extension CLError {
+extension CoreLocation.CLError {
   public var alternateRegion: CoreLocation.CLRegion? {
     get
   }
 }
-extension CLLocationCoordinate2D : Swift._ObjectiveCBridgeable {
+extension CoreLocation.CLLocationCoordinate2D : Swift._ObjectiveCBridgeable {
   public func _bridgeToObjectiveC() -> Foundation.NSValue
   public static func _forceBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout CoreLocation.CLLocationCoordinate2D?)
   public static func _conditionallyBridgeFromObjectiveC(_ source: Foundation.NSValue, result: inout CoreLocation.CLLocationCoordinate2D?) -> Swift.Bool

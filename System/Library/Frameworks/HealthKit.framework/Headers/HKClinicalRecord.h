@@ -43,6 +43,9 @@ __WATCHOS_PROHIBITED
  */
 @property (copy, readonly, nullable) HKFHIRResource *FHIRResource;
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @end
 
 NS_ASSUME_NONNULL_END

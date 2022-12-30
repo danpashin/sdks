@@ -3,12 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NeutrinoKit.framework/NeutrinoKit
-current-version:       340.0.221
+current-version:       402.5.140
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NUBoundingRectForRotatedRect,
+    symbols:              [ _NSStringFromCATransform3D,
+                            _NUBoundingRectForRotatedRect,
                             _NUEdgeInsetsInsetRect,
                             _NUFitScaleForImageRectInRect,
                             _NUMaxRectInRotatedRect,
@@ -17,11 +18,10 @@ exports:
                             _NeutrinoKitVersionNumber, _NeutrinoKitVersionString,
                             __NUViewCommonInit, __commonInit, _stringFromTransform ]
     objc-classes:         [ NUAVPlayerController, NUAVPlayerView,
-                            NUDebugRenderView, NUGLLayer, NUImageLayer, NUMediaView,
-                            NUMediaViewRenderer, NURenderView, NUScrollView,
-                            NUTileLayer, NUTiledImageLayer, NUViewGeometry,
-                            NUViewport, NUViewportRegionPolicy,
-                            _NUAVPlayerItemObservation, _NUBackfillLayer,
-                            _NUContainerLayer, _NUROILayer, _NUTiledBackfillLayer,
+                            NUDebugRenderView, NUMediaView, NUMediaViewRenderer,
+                            NURenderView, NUScrollView, NUTileLayer,
+                            NUTiledImageLayer, NUViewGeometry, NUViewport,
+                            NUViewportRegionPolicy, _NUAVPlayerItemObservation,
+                            _NUContainerLayer, _NUTiledBackfillLayer,
                             _NUTiledROILayer ]
 ...

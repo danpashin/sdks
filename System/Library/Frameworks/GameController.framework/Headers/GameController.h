@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <TargetConditionals.h>
 
 #import <GameController/GCExtern.h>
 #import <GameController/GCColor.h>
@@ -45,6 +46,7 @@
 #import <GameController/GCMicroGamepadSnapshot.h>
 #import <GameController/GCDirectionalGamepad.h>
 
+#import <GameController/GCProductCategories.h>
 #import <GameController/GCDevice.h>
 #import <GameController/GCController.h>
 #import <GameController/GCKeyboard.h>
@@ -52,3 +54,5 @@
 #import <GameController/GCEventViewController.h>
 
 #import <GameController/GCDeviceHaptics.h>
+
+#import <GameController/GCVirtualController.h>

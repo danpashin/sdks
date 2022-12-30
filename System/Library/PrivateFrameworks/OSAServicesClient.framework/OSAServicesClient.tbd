@@ -9,6 +9,11 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _OSAServicesClientVersionNumber,
-                            _OSAServicesClientVersionString ]
-    objc-classes:         [ OSAServicesClient ]
+                            _OSAServicesClientVersionString,
+                            _kOSALogInfoErrorCode, _kOSALogInfoErrorDesc,
+                            _kOSALogInfoErrorDomain, _kOSALogInfoLogFilePath,
+                            _kOSALogInfoLogId, _kOSANotificationDidWriteLog,
+                            _kOSANotificationWillWriteLog ]
+    objc-classes:         [ OSADiagnosticMonitorClient, OSAServicesClient,
+                            ObserverInfo ]
 ...

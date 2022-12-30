@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreIDVRGBLiveness.framework/CoreIDVRGBLiveness
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CIDVRGBCaptureImageQualityOptionCaptureTime,
+                            _CIDVRGBCaptureImageQualityOptionFaces,
+                            _CIDVRGBCaptureImageQualityOptionFlashROI,
+                            _CIDVRGBCaptureImageQualityOptionLightweight,
+                            _CIDVRGBCaptureImageQualityOptionLive,
+                            _CIDVRGBCaptureImageQualityOptionROI,
+                            _CIDVRGBCaptureImageQualityOptionStartOutOfBoundsTimer,
+                            _CIDVRGBCaptureImageQualityOptionTurnOnFlash,
+                            _classifierResultFromCaptureResult ]
+    objc-classes:         [ CIDVRGBCaptureConfig, CIDVRGBCaptureController,
+                            CIDVRGBCaptureResult, CIDVRGBCaptureSelfieVC,
+                            CIDVRGBCaptureTimer ]
+...

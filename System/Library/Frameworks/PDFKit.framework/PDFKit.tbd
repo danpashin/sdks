@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           53BF12F2-2853-3002-ABC1-E6FC7DA5BC98
+    value:           A628D3E4-A5A6-316B-9134-E4244CA87B90
   - target:          arm64e-ios
-    value:           A2ABDF83-2C94-3958-8193-EA9FE4BD47A9
+    value:           953AB75C-F163-3F47-BF5D-B2307AE66615
 install-name:    '/System/Library/Frameworks/PDFKit.framework/PDFKit'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -39,7 +39,8 @@ exports:
                        _PDFAnnotationSubtypeCircle, _PDFAnnotationSubtypeFreeText, 
                        _PDFAnnotationSubtypeHighlight, _PDFAnnotationSubtypeInk, 
                        _PDFAnnotationSubtypeLine, _PDFAnnotationSubtypeLink, _PDFAnnotationSubtypePopup, 
-                       _PDFAnnotationSubtypeSquare, _PDFAnnotationSubtypeStamp, _PDFAnnotationSubtypeStrikeOut, 
+                       _PDFAnnotationSubtypeSignature, _PDFAnnotationSubtypeSquare, 
+                       _PDFAnnotationSubtypeStamp, _PDFAnnotationSubtypeStrikeOut, 
                        _PDFAnnotationSubtypeText, _PDFAnnotationSubtypeUnderline, 
                        _PDFAnnotationSubtypeWidget, _PDFAnnotationTextIconTypeComment, 
                        _PDFAnnotationTextIconTypeHelp, _PDFAnnotationTextIconTypeInsert, 
@@ -51,15 +52,16 @@ exports:
                        _PDFAppearanceCharacteristicsKeyCaption, _PDFAppearanceCharacteristicsKeyDownCaption, 
                        _PDFAppearanceCharacteristicsKeyRolloverCaption, _PDFAppearanceCharacteristicsKeyRotation, 
                        _PDFBorderKeyDashPattern, _PDFBorderKeyLineWidth, _PDFBorderKeyStyle, 
-                       _PDFDocumentAuthorAttribute, _PDFDocumentCreationDateAttribute, 
-                       _PDFDocumentCreatorAttribute, _PDFDocumentDidBeginFindNotification, 
-                       _PDFDocumentDidBeginPageFindNotification, _PDFDocumentDidBeginPageWriteNotification, 
-                       _PDFDocumentDidBeginWriteNotification, _PDFDocumentDidEndFindNotification, 
-                       _PDFDocumentDidEndPageFindNotification, _PDFDocumentDidEndPageWriteNotification, 
-                       _PDFDocumentDidEndWriteNotification, _PDFDocumentDidFindMatchNotification, 
-                       _PDFDocumentDidUnlockNotification, _PDFDocumentKeywordsAttribute, 
+                       _PDFDocumentAccessPermissionsOption, _PDFDocumentAuthorAttribute, 
+                       _PDFDocumentCreationDateAttribute, _PDFDocumentCreatorAttribute, 
+                       _PDFDocumentDidBeginFindNotification, _PDFDocumentDidBeginPageFindNotification, 
+                       _PDFDocumentDidBeginPageWriteNotification, _PDFDocumentDidBeginWriteNotification, 
+                       _PDFDocumentDidEndFindNotification, _PDFDocumentDidEndPageFindNotification, 
+                       _PDFDocumentDidEndPageWriteNotification, _PDFDocumentDidEndWriteNotification, 
+                       _PDFDocumentDidFindMatchNotification, _PDFDocumentDidUnlockNotification, 
+                       _PDFDocumentFoundSelectionKey, _PDFDocumentKeywordsAttribute, 
                        _PDFDocumentModificationDateAttribute, _PDFDocumentOwnerPasswordOption, 
-                       _PDFDocumentProducerAttribute, _PDFDocumentSubjectAttribute, 
+                       _PDFDocumentPageIndexKey, _PDFDocumentProducerAttribute, _PDFDocumentSubjectAttribute, 
                        _PDFDocumentTitleAttribute, _PDFDocumentUserPasswordOption, 
                        _PDFPageAnnotationAddedNotification, _PDFPageAnnotationRemovedNotification, 
                        _PDFPageBackgroundCompleteNotification, _PDFPageChangedBoundsForBoxNotification, 
@@ -74,8 +76,8 @@ exports:
                        _PDFRectGetMinY, _PDFRectInset, _PDFRectIntegral, _PDFRectIntersection, 
                        _PDFRectIntersectsRect, _PDFRectIsEmpty, _PDFRectMake, _PDFRectOffset, 
                        _PDFRectToCGRect, _PDFRectUnion, _PDFScrollViewPageMayHaveChangedNotification, 
-                       _PDFSelectionChangedColorNotification, _PDFSizeFromCGSize, 
-                       _PDFSizeMake, _PDFSizeToCGSize, _PDFTextSelectionMenuDidChangeScrollPosition, 
+                       _PDFScrollViewWillBeginDraggingNotification, _PDFSelectionChangedColorNotification, 
+                       _PDFSizeFromCGSize, _PDFSizeMake, _PDFSizeToCGSize, _PDFTextSelectionMenuDidChangeScrollPosition, 
                        _PDFTextSelectionMenuWillChangeScrollPosition, _PDFTextSelectionMenuWillChangeZoomFactor, 
                        _PDFThumbnailViewDocumentEditedNotification, _PDFViewAnnotationHitNotification, 
                        _PDFViewAnnotationWillHitNotification, _PDFViewAnnotationsDidChangeNotification, 
@@ -86,8 +88,8 @@ exports:
                        _PDFViewPrintPermissionNotification, _PDFViewScaleChangedNotification, 
                        _PDFViewSelectionChangedNotification, _PDFViewVisiblePagesChangedNotification, 
                        _PDFViewWillBeginChangingSelectionNotification, _kPDFDestinationUnspecifiedValue, 
-                       _kPDFDocumentWriteOption_SaveWithCorePDFLayout, _kPDFDocumentWriteOption_SaveWithTaggedLayout, 
-                       _kPDFDocumentWriteOption_UseAppendMode ]
+                       _kPDFDocumentWriteOption_BurnInAnnotations, _kPDFDocumentWriteOption_SaveWithCorePDFLayout, 
+                       _kPDFDocumentWriteOption_SaveWithTaggedLayout, _kPDFDocumentWriteOption_UseAppendMode ]
     objc-classes:    [ PDFAction, PDFActionGoTo, PDFActionNamed, PDFActionRemoteGoTo, 
                        PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAppearanceCharacteristics, 
                        PDFBorder, PDFDestination, PDFDocument, PDFExtensionContext, 

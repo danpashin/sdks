@@ -3,14 +3,20 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvDSP.dylib
-current-version:       760.100.3
+current-version:       1
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _vDSP_DCT_CreateSetup, _vDSP_DCT_Execute,
                             _vDSP_DFT_CreateSetup, _vDSP_DFT_DestroySetup,
                             _vDSP_DFT_DestroySetupD, _vDSP_DFT_Execute,
-                            _vDSP_DFT_ExecuteD, _vDSP_DFT_zop,
+                            _vDSP_DFT_ExecuteD,
+                            _vDSP_DFT_Interleaved_CreateSetup,
+                            _vDSP_DFT_Interleaved_CreateSetupD,
+                            _vDSP_DFT_Interleaved_DestroySetup,
+                            _vDSP_DFT_Interleaved_DestroySetupD,
+                            _vDSP_DFT_Interleaved_Execute,
+                            _vDSP_DFT_Interleaved_ExecuteD, _vDSP_DFT_zop,
                             _vDSP_DFT_zop_CreateSetup,
                             _vDSP_DFT_zop_CreateSetupD,
                             _vDSP_DFT_zrop_CreateSetup,
@@ -18,7 +24,9 @@ exports:
                             _vDSP_FFT16_zopv, _vDSP_FFT32_copv, _vDSP_FFT32_zopv,
                             _vDSP_biquad, _vDSP_biquadD, _vDSP_biquad_CreateSetup,
                             _vDSP_biquad_CreateSetupD, _vDSP_biquad_DestroySetup,
-                            _vDSP_biquad_DestroySetupD, _vDSP_biquadm,
+                            _vDSP_biquad_DestroySetupD,
+                            _vDSP_biquad_SetCoefficientsDouble,
+                            _vDSP_biquad_SetCoefficientsSingle, _vDSP_biquadm,
                             _vDSP_biquadmD, _vDSP_biquadm_CopyState,
                             _vDSP_biquadm_CopyStateD, _vDSP_biquadm_CreateSetup,
                             _vDSP_biquadm_CreateSetupD,

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
-current-version:       993.4.1
+current-version:       1101
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -16,8 +16,10 @@ exports:
                             _CalDAVComplianceClass_CalendarNoTimezone,
                             _CalDAVComplianceClass_CalendarQueryExtended,
                             _CalDAVComplianceClass_CalendarRecurrenceSplit,
+                            _CalDAVComplianceClass_CalendarRole,
                             _CalDAVComplianceClass_InboxAvailability,
                             _CalDAVComplianceClass_LikenessPropagation,
+                            _CalDAVComplianceClass_ManagedSubscriptionCalendars,
                             _CalDAVComplianceClass_PrincipalPropertySearch,
                             _CalDAVComplianceClass_PrivateComments,
                             _CalDAVComplianceClass_PrivateEvents,
@@ -25,6 +27,7 @@ exports:
                             _CalDAVComplianceClass_Sharing,
                             _CalDAVComplianceClass_SharingNoScheduling,
                             _CalDAVComplianceClass_SubscriptionCalendars,
+                            _CalDAVComplianceClass_SubscriptionMirroring,
                             _CalDAVComplianceClass_Telephone, _CalDAVErrorDomain,
                             _CalDAVHTTPHeader_IfScheduleTagMatch,
                             _CalDAVHTTPHeader_ScheduleReply,
@@ -204,8 +207,8 @@ exports:
                             CalDAVMultiMoveWithFallbackTaskGroup,
                             CalDAVMultiPutTask,
                             CalDAVNotificationContainerSyncTaskGroup,
-                            CalDAVNotificationItemData, CalDAVOperation,
-                            CalDAVPostAuditFailureTask,
+                            CalDAVNotificationItemData, CalDAVOccurrenceChange,
+                            CalDAVOperation, CalDAVPostAuditFailureTask,
                             CalDAVPostCalendarItemRecurrenceSplitTask,
                             CalDAVPostCalendarItemTask, CalDAVPostStreamTask,
                             CalDAVPostWithSharedAsResponse,
@@ -221,6 +224,7 @@ exports:
                             CalDAVReportJunkTaskGroup, CalDAVResourceTypeItem,
                             CalDAVRetrieveSharedCalendarShareesTaskGroup,
                             CalDAVScheduleCalendarTranspItem,
+                            CalDAVScheduleChangesProperty,
                             CalDAVScheduleResponseDetailsItem,
                             CalDAVScheduleResponseItem, CalDAVScheduleTask,
                             CalDAVServerVersion, CalDAVSetOfficeHoursTaskGroup,

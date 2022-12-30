@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/PhotosImagingFoundation
-current-version:       340.0.221
+current-version:       402.5.140
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -94,8 +94,10 @@ exports:
                             _IPAPhotoAdjustmentFormatVersion_1_6,
                             _IPAPhotoAdjustmentFormatVersion_1_7,
                             _IPAPhotoAdjustmentFormatVersion_1_8,
+                            _IPAPhotoAdjustmentFormatVersion_1_9,
                             _IPAPhotoAdjustmentIdentifier_RawDecode,
                             _IPAPhotoAdjustmentMaskUUIDKey,
+                            _IPAPhotoAdjustment_CinematicDepthEffect_Identifier,
                             _IPAPhotoAdjustment_Crop_Identifier,
                             _IPAPhotoAdjustment_Crop_Key_ConstraintHeight,
                             _IPAPhotoAdjustment_Crop_Key_ConstraintWidth,
@@ -269,10 +271,9 @@ exports:
                             _PhotosImagingFoundationVersionNumber,
                             _PhotosImagingFoundationVersionString,
                             _RKThumbnailSize, _TIFFOrientationFromIPAOrientation,
-                            _kCGImageHorizontalAccuracyNotSet,
                             _kIPAGeometryInvalidPoint,
                             _kIPAImageGeometryInputSpace,
-                            _kIPAImageGeometryOutputSpace, _kRKFileUTTypeKey ]
+                            _kIPAImageGeometryOutputSpace ]
     objc-classes:         [ IPAAdjustment, IPAAdjustmentEnvelope,
                             IPAAdjustmentSerialization, IPAAdjustmentStack,
                             IPAAdjustmentStackSerializer, IPAAdjustmentVersion,
@@ -292,12 +293,11 @@ exports:
                             IPAImageIdentityTransform, IPAImageSizePolicy,
                             IPAImageTransform, IPAImageTransformSequence,
                             IPALocalPreviewSizeRegistry, IPAManualAutoSettings,
-                            IPAMetadata, IPAMetadataStateBreadcrumb,
-                            IPAMetadataStateHandler, IPAMutableRectArray,
-                            IPAMutableRegion, IPAOrientationOperator,
-                            IPAOriginalSizePolicy, IPAPendingAutoSettings,
-                            IPAPerspectiveOperator, IPAPhotoAdjustment,
-                            IPAPhotoAdjustmentPipeline, IPAPhotoAdjustmentStack,
+                            IPAMutableRectArray, IPAMutableRegion,
+                            IPAOrientationOperator, IPAOriginalSizePolicy,
+                            IPAPendingAutoSettings, IPAPerspectiveOperator,
+                            IPAPhotoAdjustment, IPAPhotoAdjustmentPipeline,
+                            IPAPhotoAdjustmentStack,
                             IPAPhotoAdjustmentStackSerializer,
                             IPAPhotoAdjustmentStackSerializer_SLM_v11,
                             IPAPhotoAdjustmentStackSerializer_v10,

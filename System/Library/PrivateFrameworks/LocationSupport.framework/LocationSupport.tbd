@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LocationSupport.framework/LocationSupport
-current-version:       2420.16.24
+current-version:       2663.0.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -102,8 +102,10 @@ exports:
                             CLIntersiloServiceMockPayload, CLIntersiloUniverse,
                             CLPermissiveTimer, CLRunLoopSilo, CLServiceVendor,
                             CLSettingsDictionary, CLSettingsManagerInternal,
-                            CLSettingsMirror, CLSilo, CLTimer ]
+                            CLSettingsMirror, CLSilo, CLSiloHeartbeatRecord, CLTimer ]
     objc-ivars:           [ CLIntersiloUniverse._silo,
                             CLIntersiloUniverse._vendor,
-                            CLSettingsDictionary._internal, CLSilo._identifier ]
+                            CLSettingsDictionary._internal, CLSilo._identifier,
+                            CLSiloHeartbeatRecord._ackCount,
+                            CLSiloHeartbeatRecord._synCount ]
 ...

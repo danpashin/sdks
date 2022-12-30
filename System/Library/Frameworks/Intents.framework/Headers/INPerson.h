@@ -12,6 +12,12 @@
 @class INImage;
 @class INPersonHandle;
 
+typedef NS_ENUM(NSInteger, INPersonSuggestionType) {
+    INPersonSuggestionTypeNone API_AVAILABLE(ios(12.0), watchos(5.0)),
+    INPersonSuggestionTypeSocialProfile,
+    INPersonSuggestionTypeInstantMessageAddress
+} API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2)) API_UNAVAILABLE(tvos);
+
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2))
@@ -43,6 +49,24 @@ API_UNAVAILABLE(tvos)
                     customIdentifier:(nullable NSString *)customIdentifier
                                 isMe:(BOOL)isMe NS_DESIGNATED_INITIALIZER API_AVAILABLE(ios(12.0), watchos(5.0));
 
+- (instancetype)initWithPersonHandle:(INPersonHandle *)personHandle
+                      nameComponents:(nullable NSPersonNameComponents *)nameComponents
+                         displayName:(nullable NSString *)displayName
+                               image:(nullable INImage *)image
+                   contactIdentifier:(nullable NSString *)contactIdentifier
+                    customIdentifier:(nullable NSString *)customIdentifier
+                                isMe:(BOOL)isMe
+                     suggestionType:(INPersonSuggestionType)suggestionType API_AVAILABLE(ios(15.0), macos(12.0), watchos(8.0));
+
+- (instancetype)initWithPersonHandle:(INPersonHandle *)personHandle
+                      nameComponents:(nullable NSPersonNameComponents *)nameComponents
+                         displayName:(nullable NSString *)displayName
+                               image:(nullable INImage *)image
+                   contactIdentifier:(nullable NSString *)contactIdentifier
+                    customIdentifier:(nullable NSString *)customIdentifier
+                 isContactSuggestion:(BOOL)isContactSuggestion
+                      suggestionType:(INPersonSuggestionType)suggestionType API_AVAILABLE(ios(15.0), macos(12.0), watchos(8.0));
+
 // The identity of the person in the application
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INPersonHandle *personHandle;
 
@@ -65,13 +89,10 @@ API_UNAVAILABLE(tvos)
 // This person's relationship to the user
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INPersonRelationship relationship API_AVAILABLE(ios(10.2));
 
-@end
+// Indicates that the person is confirmed
+@property (readonly, NS_NONATOMIC_IOSONLY, getter=isContactSuggestion) BOOL contactSuggestion API_AVAILABLE(ios(15.0), macos(12.0), watchos(8.0));
 
-typedef NS_ENUM(NSInteger, INPersonSuggestionType) {
-    INPersonSuggestionTypeNone API_AVAILABLE(ios(12.0), watchos(5.0)),
-    INPersonSuggestionTypeSocialProfile,
-    INPersonSuggestionTypeInstantMessageAddress
-} API_AVAILABLE(ios(10.0), macos(11.0), watchos(3.2)) API_UNAVAILABLE(tvos);
+@end
 
 @interface INPerson (INInteraction)
 

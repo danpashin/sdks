@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MMCS.framework/MMCS
-current-version:       573
+current-version:       594
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -125,6 +125,7 @@ exports:
                             _kMMCSRequestFetchAuthorizationOnly,
                             _kMMCSRequestForceGetCompleteRequest,
                             _kMMCSRequestOptionAllowsCellularAccess,
+                            _kMMCSRequestOptionAllowsExpensiveAccess,
                             _kMMCSRequestOptionAllowsPowerNapScheduling,
                             _kMMCSRequestOptionAllowsRetryForBackgroundDataTasks,
                             _kMMCSRequestOptionAuthTokenTimeout,
@@ -170,7 +171,6 @@ exports:
                             _kMMCSRequestOptionUseFORD,
                             _kMMCSRequestOptionUseProxy,
                             _kMMCSRequestOptionUseRegistryForDownloads,
-                            _kMMCSRequestOptionUseVendorIP,
                             _kMMCSRequestTimeoutPeriod,
                             _kMMCSRequestUrlExpiryDuration,
                             _kMMCSRequestValidateFileContents,
@@ -264,7 +264,7 @@ exports:
                             _mmcs_key_description_create_with_bytes,
                             _mmcs_key_description_create_with_cfdata,
                             _mmcs_library_init, _mmcs_logging_log_header_level,
-                            _mmcs_logging_logger_awd, _mmcs_logging_logger_chunk,
+                            _mmcs_logging_logger_chunk,
                             _mmcs_logging_logger_default,
                             _mmcs_logging_logger_network_performance,
                             _mmcs_logging_logger_summary,
@@ -289,7 +289,9 @@ exports:
                             _mmcs_request_queue_enqueue_request,
                             _mmcs_request_queue_request_did_complete,
                             _mmcs_request_queue_request_did_transmit,
+                            _mmcs_request_queue_set_revert_radar_78285647,
                             _mmcs_request_type_for_behavior_and_activity,
+                            _mmcs_request_type_get_activity_type,
                             _mmcs_server_version_make_from_CFString,
                             _mmcs_time_convert_cfabsolutetime_to_server_time,
                             _mmcs_time_convert_date_header_to_cfabsolutetime,

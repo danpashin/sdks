@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
-current-version:       3418.1
+current-version:       3443
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -12,10 +12,14 @@ exports:
                             _CNContactsUIErrorDomain, _CNContactsUIErrorURLKey,
                             _CNContactsUIErrorUserActivityKey,
                             _CNLaunchServicesAppicationDatabaseLookupEntitlement,
+                            _CNTUCallProviderIdentifierSUIUNTool,
                             _CNTUCallProviderIdentifierTinCan,
                             _CNUIActivityTypeEditingContact,
                             _CNUIActivityTypeViewingContact,
                             _CNUIActivityTypeViewingList,
+                            _CNUIActivityUserInformationDisplayedContactKey,
+                            _CNUIActivityUserInformationListTopContactKey,
+                            _CNUIActivityUserInformationSearchStringKey,
                             _CNUIAddCircleToContextInRect,
                             _CNUIAddRoundedRectToContextInRect,
                             _CNUIApplyOutlineToContext, _CNUIBitmapContextCreate,
@@ -38,8 +42,6 @@ exports:
                             _CNUIUserActionRecentsDateKey,
                             _CNUIUserActionRecentsDomain,
                             _DrawSilhouetteInContext, ___CNUISmartCeiling,
-                            __centeredSquareRect,
-                            __croppedImageDataFromFullSizeImageData,
                             _imageFromImageRef, _imageRefFromImage,
                             _kCNUICoreContactToIdentifier ]
     objc-classes:         [ CNAvatarCacheChangeAnalysis,
@@ -47,6 +49,8 @@ exports:
                             CNAvatarCacheChangeListener,
                             CNAvatarCacheFingerprintCollector,
                             CNAvatarChangeHistoryReportingTask,
+                            CNAvatarPickerServiceExtensionContext,
+                            CNAvatarPickerServiceHostContext,
                             CNCallProvidersChangedCancelationToken,
                             CNCapabilities, CNContactsUIError,
                             CNDiscoveredUserActionReplaySubject,
@@ -97,6 +101,7 @@ exports:
                             CNUICreateContactIntent,
                             CNUICreateContactIntentResponse,
                             CNUIDHandleAvailabilityFuture,
+                            CNUIDSExpanseHandleAvailabilityCache,
                             CNUIDSFaceTimeHandleAvailabilityCache,
                             CNUIDSHandleAvailabilityCache,
                             CNUIDSHandleAvailabilityPromise,
@@ -108,10 +113,13 @@ exports:
                             CNUIIDSIDQueryControllerWrapper, CNUIIDSRequest,
                             CNUIImageProvider, CNUIInteractionDonor,
                             CNUILibraryFolderDiscovery, CNUILikenessFingerprint,
-                            CNUILikenessRenderer, CNUILikenessRenderingScope,
+                            CNUILikenessMediaContextBadge, CNUILikenessRenderer,
+                            CNUILikenessRenderingScope,
+                            CNUILikenessSystemImageBadge,
                             CNUIMeContactComparisonStrategyIdentifier,
                             CNUIMeContactComparisonStrategyUnified,
                             CNUIMeContactMonitor,
+                            CNUIPRLikenessBadgeImageProvider,
                             CNUIPRLikenessLoadingGroupPlaceholderProvider,
                             CNUIPRLikenessLoadingPlaceholderProvider,
                             CNUIPRLikenessLookup, CNUIPRLikenessPhotoProvider,
@@ -149,14 +157,14 @@ exports:
                             _CNUILikenessFingerprintGroupImpl,
                             _CNUILikenessFingerprintNonpersistedContactImpl,
                             _CNUILikenessFingerprintPersistedContactImpl,
-                            _CNUILikenessRenderer, _CNUILocalPhotoFuture,
-                            _CNUIRTTUtilities,
+                            _CNUILikenessRenderer, _CNUIRTTUtilities,
                             _CNUIUserActionCallProviderVideoTarget,
                             _CNUIUserActionCallProviderVoiceTarget,
                             _CNUIUserActionCurator,
                             _CNUIUserActionDialRequestItem,
                             _CNUIUserActionDialRequestOpener,
                             _CNUIUserActionDirectionsTarget,
+                            _CNUIUserActionExpanseTarget,
                             _CNUIUserActionFaceTimeVideoTarget,
                             _CNUIUserActionFaceTimeVoiceTarget,
                             _CNUIUserActionImageProvider,

@@ -62,7 +62,7 @@ WK_EXTERN API_AVAILABLE(macos(10.10), ios(8.0))
 
 /*! @abstract A Boolean value indicating whether text interaction is disabled.
 */
-@property (nonatomic) BOOL textInteractionEnabled API_AVAILABLE(macos(11.3), ios(14.5));
+@property (nonatomic, getter=isTextInteractionEnabled) BOOL textInteractionEnabled API_AVAILABLE(macos(12.0), ios(15.0));
 
 @end
 

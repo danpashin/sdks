@@ -1,0 +1,18 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
+uuids:
+  - target:          armv7-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          armv7s-ios
+    value:           00000000-0000-0000-0000-000000000000
+  - target:          arm64-ios
+    value:           8ECD93AB-188B-3869-A016-6C4C7DFB2CC5
+  - target:          arm64e-ios
+    value:           BC738099-79BE-3ACE-AFA4-8B00FE705CC2
+install-name:    '/System/Library/Frameworks/CoreLocationUI.framework/CoreLocationUI'
+exports:
+  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
+    symbols:         [ _CoreLocationUIVersionNumber, _CoreLocationUIVersionString ]
+    objc-classes:    [ CLLocationButton, CLLocationButtonDrawing, CLLocationButtonTag ]
+...

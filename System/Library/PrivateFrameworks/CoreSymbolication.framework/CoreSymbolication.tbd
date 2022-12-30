@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSymbolication.framework/CoreSymbolication
-current-version:       64544.69.1
+current-version:       64550.88.1
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -31,18 +31,21 @@ exports:
                             _CSCppPopulateCachesWithMmapArchivesAndGroupKey,
                             _CSDemangleSymbolName, _CSEqual,
                             _CSExceptionSafeThreadRunBlock,
-                            _CSGetForceSafeMachVMReads, _CSGetRetainCount,
-                            _CSIsNull, _CSMMapArchiveCacheCopyMMapArchive,
+                            _CSGetDebugLoggingLevel, _CSGetForceSafeMachVMReads,
+                            _CSGetRetainCount, _CSIsNull,
+                            _CSMMapArchiveCacheCopyMMapArchive,
                             _CSMMapArchiveCacheReleaseMMapArchive,
                             _CSMMapArchiveCacheSetShouldStoreToDaemon,
-                            _CSRangeContainsRange, _CSRangeIntersectsRange,
+                            _CSPlatformForTask, _CSRangeContainsRange,
+                            _CSRangeIntersectsRange,
                             _CSRegionCopyDescriptionWithIndent,
                             _CSRegionForeachSourceInfo, _CSRegionForeachSymbol,
                             _CSRegionGetName, _CSRegionGetRange,
                             _CSRegionGetSymbolOwner, _CSRegionGetSymbolicator,
                             _CSRelease, _CSRetain, _CSSectionGetSegment,
-                            _CSSegmentForeachSection, _CSSetForceSafeMachVMReads,
-                            _CSShow, _CSSourceInfoCopyDescriptionWithIndent,
+                            _CSSegmentForeachSection, _CSSetDebugLoggingLevel,
+                            _CSSetForceSafeMachVMReads, _CSShow,
+                            _CSSourceInfoCopyDescriptionWithIndent,
                             _CSSourceInfoGetColumn, _CSSourceInfoGetFilename,
                             _CSSourceInfoGetLineNumber, _CSSourceInfoGetPath,
                             _CSSourceInfoGetRange, _CSSourceInfoGetRegion,
@@ -87,7 +90,6 @@ exports:
                             _CSSymbolOwnerCreateSignatureWithSlide,
                             _CSSymbolOwnerCreateSparseDataWithBlock,
                             _CSSymbolOwnerCreateSparseSignature,
-                            _CSSymbolOwnerCreateUnmanagedWithSingleSymbolOwnerSignature,
                             _CSSymbolOwnerEditRelocations,
                             _CSSymbolOwnerForEachStackFrameAtAddress,
                             _CSSymbolOwnerForeachRegion,
@@ -255,6 +257,8 @@ exports:
                             _CSSymbolicatorSetGroupKey,
                             _CSSymbolicatorSubscribeToTaskMainNotification,
                             _CSSymbolicatorTranslateFromNativeAddress,
+                            _CSTaskHasStarted, _CSTaskIs64Bit, _CSTaskIsDriverKit,
+                            _CSTaskIsSimulator, _CSTaskIsTranslated,
                             _CSTotalBytesMapped, _CSUUIDCFUUIDBytesToPath,
                             _CSUUIDCFUUIDBytesToString,
                             _CSUUIDStringToCFUUIDBytes, _clear_mapped_memory,
@@ -284,5 +288,6 @@ exports:
                             _task_is_64bit, _task_is_translated,
                             _task_lookup_mapped_memory_cache,
                             _task_release_mapped_memory_cache,
-                            _thread_name_for_thread_port, _unmap_node ]
+                            _thread_name_for_thread_port, _unmap_node,
+                            _vm_tag_is_malloc ]
 ...

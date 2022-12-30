@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class UIGraphicsImageRendererFormat;
 #endif
 
+#if __has_include(<UIKit/UIScreen.h>)
+@class UIScreen;
+#endif
+
 typedef NS_ENUM(NSInteger, UIImageOrientation) {
     UIImageOrientationUp,            // default orientation
     UIImageOrientationDown,          // 180 deg rotation
@@ -263,6 +267,30 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIImage : NSObject <NSSecureCodi
 - (UIImage *)imageWithTintColor:(UIColor *)color API_AVAILABLE(ios(13.0),tvos(13.0),watchos(6.0));
 - (UIImage *)imageWithTintColor:(UIColor *)color renderingMode:(UIImageRenderingMode)renderingMode API_AVAILABLE(ios(13.0),tvos(13.0),watchos(6.0));
 
+#if __has_include(<UIKit/UIScreen.h>)
+
+/// Synchronously prepares this image for displaying on the specified screen.
+///
+/// @return A UIImage object that contains the prepared image.
+///
+/// @note The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+- (nullable UIImage *)imageByPreparingForDisplay API_AVAILABLE(ios(15.0),tvos(15.0),watchos(8.0));
+
+/// Asynchronously prepares this image for displaying on the specified screen.
+///
+/// The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning the prepared image to an image view.
+///
+/// @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse the image data is corrupt), @c image will be nil.
+///
+/// @note The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+- (void)prepareForDisplayWithCompletionHandler:(void (^)(UIImage *_Nullable))completionHandler NS_SWIFT_ASYNC_NAME(byPreparingForDisplay()) API_AVAILABLE(ios(15.0),tvos(15.0),watchos(8.0));
+
+- (nullable UIImage *)imageByPreparingThumbnailOfSize:(CGSize)size API_AVAILABLE(ios(15.0),tvos(15.0),watchos(8.0));
+
+- (void)prepareThumbnailOfSize:(CGSize)size completionHandler:(void (^)(UIImage *_Nullable))completionHandler NS_SWIFT_ASYNC_NAME(byPreparingThumbnail(ofSize:)) API_AVAILABLE(ios(15.0),tvos(15.0),watchos(8.0));
+
+#endif
+
 @end
 
 @interface UIImage (PreconfiguredSystemImages)
@@ -274,6 +302,7 @@ UIKIT_EXTERN API_AVAILABLE(ios(2.0)) @interface UIImage : NSObject <NSSecureCodi
 @property (class, readonly, strong) UIImage *strokedCheckmarkImage API_AVAILABLE(ios(13.0),tvos(13.0),watchos(6.0)); // currently: white ✓ on tinted filled and white stroked circle
 
 @end
+
 
 #if TARGET_OS_IOS
 @interface UIImage (NSItemProvider) <NSItemProviderReading, NSItemProviderWriting, UIItemProviderPresentationSizeProviding>

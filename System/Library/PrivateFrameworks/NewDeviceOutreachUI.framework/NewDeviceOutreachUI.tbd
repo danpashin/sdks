@@ -8,15 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NDOAppleSuportAppURLKey,
+    symbols:              [ _NDOACControllerKey, _NDOAppleSuportAppURLKey,
                             _NDOAppleSuportDictionaryKey,
-                            _NDOCoverageItemSubtitleKey, _NDOWarrantyKey,
+                            _NDOCoverageItemSubtitleKey, _NDODeviceInfoKey,
+                            _NDOSubscriptionURLBagKey, _NDOWarrantyKey,
                             _NewDeviceOutreachUIVersionNumber,
                             _NewDeviceOutreachUIVersionString, __NDOLogSystem ]
     objc-classes:         [ NDOACController, NDOAppItemViewCell,
                             NDOAppleCareAMSUIViewController,
                             NDOAppleCareViewController,
-                            NDOAppleCareWebViewController, NDOFollowUp,
+                            NDOAppleCareWebViewController,
+                            NDOCustomCellBackground, NDODeviceCell, NDOFollowUp,
                             NDOSpecifierDataSource,
                             NDOWarrantyBenefitsViewController,
                             NDOWarrantyInfoController, NDOWarrantySubTextCell ]

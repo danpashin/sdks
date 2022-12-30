@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerCore.framework/DocumentManagerCore
-current-version:       200.5.2
+current-version:       229
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -16,7 +16,6 @@ exports:
                             _DOCBundleIdentifierPages,
                             _DOCBundleIdentifierRealityComposer,
                             _DOCChromelessDocumentManagerViewIdentifier,
-                            _DOCContentTypeIsKindOfContentTypes,
                             _DOCContentTypesReadableByApplicationWithBundleIdentifier,
                             _DOCDefaultDownloadLocationKey,
                             _DOCDefaultsSuiteName, _DOCDeviceIsPad,
@@ -24,6 +23,7 @@ exports:
                             _DOCDocumentSourceIdentifierExternalDeviceFileProvider,
                             _DOCDocumentSourceIdentifierICloud,
                             _DOCDocumentSourceIdentifierICloudLegacy,
+                            _DOCDocumentSourceIdentifierICloudManaged,
                             _DOCDocumentSourceIdentifierLocal,
                             _DOCDocumentSourceIdentifierPhotos,
                             _DOCDocumentSourceIdentifierRecentDocuments,
@@ -38,7 +38,6 @@ exports:
                             _DOCFullDocumentManagerViewControllerNavigationBarSearchFieldIdentifier,
                             _DOCFullDocumentManagerViewControllerTemplateChooserIdentifier,
                             _DOCGetDefaultUserTags, _DOCInitLogging,
-                            _DOCItemCollectionViewBackgroundViewIdentifier,
                             _DOCItemCollectionViewFooterViewIdentifier,
                             _DOCItemCollectionViewIdentifier,
                             _DOCItemCollectionViewSearchResultsCountLabelIdentifier,
@@ -49,6 +48,7 @@ exports:
                             _DOCLocalizedProviderOnlyDisplayName,
                             _DOCLogAssertionFailure,
                             _DOCLogAssertionFailureMessage_Swift,
+                            _DOCLogBacktrace,
                             _DOCPresentDocumentManagerButtonIdentifier,
                             _DOCProviderDomainIDIsDefaultSharedServer,
                             _DOCProviderDomainIDIsExternalDevice,
@@ -76,15 +76,17 @@ exports:
                             _DOCTestUserDefaultsKeyBrowseTabSelected,
                             _DOCTestUserDefaultsKeyProviderForPPT,
                             _DOCTestUserDefaultsKeySelectedDisplayMode,
-                            _DOCUnicodeFSI, _DOCUnicodeLRM, _DOCUnicodePDI,
-                            _DOCUnicodeRLM,
                             _DOCUserDefaultsCachedDisplayNamesBySourceIdentifier,
+                            _DOCUserDefaultsDisplayModeKey,
+                            _DOCUserDefaultsGroupingEnabledKey,
+                            _DOCUserDefaultsGroupingTypeKey,
                             _DOCUserDefaultsKeyActivityDelay,
                             _DOCUserDefaultsKeyCopyLinkUIEnabled,
                             _DOCUserDefaultsKeyForceRemovableFPSupport,
                             _DOCUserDefaultsKeyIsListMode,
                             _DOCUserDefaultsKeyMetadataLevelOfDetail,
                             _DOCUserDefaultsKeyMostRecentEffectiveRootLocation,
+                            _DOCUserDefaultsKeyMostRecentGoToLocations,
                             _DOCUserDefaultsKeyMostRecentlyVisitedLocation,
                             _DOCUserDefaultsKeyRecentsHomeScreenWidgetCache,
                             _DOCUserDefaultsKeyRecentsHomeScreenWidgetCacheLastUpdatedAt,
@@ -101,7 +103,8 @@ exports:
                             _FPTagsFromDOCTags, __DocumentManagerBundle,
                             _docAnalyticsLogHandle, _docApplicationLogHandle,
                             _docDownloadServiceLogHandle, _docLogHandle,
-                            _docPickerLogHandle, _docRenameLogHandle,
+                            _docPersonaLogHandle, _docPickerLogHandle,
+                            _docProgressUILogHandle, _docRenameLogHandle,
                             _docSmartFolderLogHandle, _docSourceLogHandle,
                             _docStateStoreHandle, _docTestsLogHandle,
                             _docUILogHandle, _documentmanager_perf_log,
@@ -114,7 +117,9 @@ exports:
                             DOCFavoritesManager, DOCFeature, DOCFeatureState,
                             DOCFeatureStateFFSetting, DOCItemCollectionObserver,
                             DOCItemCollectionSubscriber, DOCManagedPermission,
-                            DOCTag, DOCTagLocalStorage, DOCTagRegistry,
+                            DOCOperationBuffer, DOCPostLaunchBuffer,
+                            DOCPostSearchInitializationBuffer, DOCTag,
+                            DOCTagLocalStorage, DOCTagRegistry,
                             DOCTagRegistryICloudDataSource,
                             DOCUserInterfaceState, _DOCItemInfoViewAXIdentifier,
                             _DOCSidebarAXIdentifier,

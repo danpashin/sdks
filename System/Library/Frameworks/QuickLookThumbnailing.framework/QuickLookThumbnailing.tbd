@@ -7,32 +7,33 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           EAF376FE-2F19-3F36-B42B-D8AEE01C5A65
+    value:           0F37FC7E-2050-37DA-B58E-68FB494DBD00
   - target:          arm64e-ios
-    value:           21367C19-BEF5-3438-8471-66F81D543F79
+    value:           8F1589F6-7964-31FA-82B9-977F5ADD936B
 install-name:    '/System/Library/Frameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing'
 current-version: 0
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _QLCGImageRefPNGRepresentation, _QLCompareVersion, _QLCreateCGImageWithData, 
-                       _QLCreateColorSpaceForThumbnailExtension, _QLExternalThumbnailCacheDatabaseErrorDomain, 
-                       _QLExternalThumbnailCacheErrorDomain, _QLImageCreateForDefaultThumbnailGenerationFromData, 
-                       _QLShouldUseExtendedRangeForContextWithColorspace, _QLTCreateCGContext, 
-                       _QLTCreateCGContextWithSize, _QLTGetDefaultCacheLocation, 
+                       _QLCreateCGImageWithDataAndFormat, _QLCreateColorSpaceForThumbnailExtension, 
+                       _QLExternalThumbnailCacheDatabaseErrorDomain, _QLExternalThumbnailCacheErrorDomain, 
+                       _QLIconAutoDisplayExtension, _QLImageCreateForDefaultThumbnailGenerationFromData, 
+                       _QLSetContainsContentType, _QLShouldUseExtendedRangeForContextWithColorspace, 
+                       _QLTCreateCGContext, _QLTCreateCGContextWithSize, _QLTGetDefaultCacheLocation, 
                        _QLTImageClassWithError, _QLTInitLogging, _QLTPrefersExtendedRange, 
-                       _QLTSandboxWrapperForParentURLOf, _QLThumbnailAdditionMetadataKey, 
-                       _QLThumbnailErrorDomain, _QLThumbnailGenerationRequestRepresentationTypeNone, 
-                       _QLThumbnailHostContexErrorDomain, _QLThumbnailMetadataContentRectKey, 
-                       _QLThumbnailMetadataFileNamesDictionaryKey, _QLThumbnailMetadataFileVersion2Key, 
-                       _QLThumbnailMetadataFileVersionKey, _QLThumbnailMetadataFlavorKey, 
-                       _QLThumbnailMetadataQLPropertiesKey, _QLThumbnailRepresentationTypeToString, 
-                       _QLThumbnailRequestOperationRepresentationTypeNone, _QLThumbnailsServiceErrorDomain, 
-                       _QL_SANDBOX_READ, __QLComputeValuesForCGContextCreationWithSizeAndScale, 
+                       _QLTRunInMainThreadAsync, _QLTRunInMainThreadSync, _QLTSandboxWrapperForParentURLOf, 
+                       _QLThumbnailAdditionMetadataKey, _QLThumbnailErrorDomain, 
+                       _QLThumbnailGenerationRequestRepresentationTypeNone, _QLThumbnailHostContexErrorDomain, 
+                       _QLThumbnailMetadataContentRectKey, _QLThumbnailMetadataFileNamesDictionaryKey, 
+                       _QLThumbnailMetadataFileVersion2Key, _QLThumbnailMetadataFileVersionKey, 
+                       _QLThumbnailMetadataFlavorKey, _QLThumbnailMetadataQLPropertiesKey, 
+                       _QLThumbnailRepresentationTypeToString, _QLThumbnailRequestOperationRepresentationTypeNone, 
+                       _QLThumbnailsServiceErrorDomain, _QL_SANDBOX_READ, __QLComputeValuesForCGContextCreationWithSizeAndScale, 
                        __QLCopyResourcePropertyForKey, __QLSetResourcePropertyForKey, 
                        _allSupportedRequestOperationRepresentationTypes, _allSupportedRequestRepresentationTypes, 
-                       _kQLSupportedInController, _kQLThumbnailCacheFileName, _kQLThumbnailPropertyIconFlavorKey, 
-                       _kQLThumbnailPropertyInlinePreviewModeKey, _kQLThumbnailPropertyYBaselineKey, 
-                       _qltLogHandles ]
+                       _kQLSupportedInController, _kQLThumbnailCacheFileName, _kQLThumbnailPropertyExtensionBadgeKey, 
+                       _kQLThumbnailPropertyIconFlavorKey, _kQLThumbnailPropertyInlinePreviewModeKey, 
+                       _kQLThumbnailPropertyYBaselineKey, _qltLogHandles ]
     objc-classes:    [ QLAsynchronousOperation, QLCacheBasicFileIdentifier, QLCacheBasicVersionedFileIdentifier, 
                        QLCacheFileIdentifier, QLCacheFileProviderFileIdentifier, 
                        QLCacheFileProviderVersionedFileIdentifier, QLCacheVersionedFileIdentifier, 

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
-current-version:       1
+current-version:       933
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -26,18 +26,20 @@ exports:
                             _RCCloudRecording_SharedFlags,
                             _RCCloudRecording_UniqueID,
                             _RCCloudRecording_iTunesPersistentID,
-                            _RCComputeDataDigest, _RCComputeFileDigest,
-                            _RCDebugAssertsDisabled, _RCDiskCacheDirectory,
-                            _RCDispatchNoSoonerThan, _RCDisplayStringForString,
+                            _RCComputeFileDigest, _RCDebugAssertsDisabled,
+                            _RCDiskCacheDirectory, _RCDispatchNoSoonerThan,
+                            _RCDisplayStringForString,
                             _RCErrorWithTypeAndDescription, _RCGenericError,
                             _RCGenericErrorWithUnderlyingError,
                             _RCHasEnoughDiskSpaceToRecord, _RCIsBeingDebugged,
                             _RCIsBeingUnitTested, _RCIsVoiceMemosApplication,
                             _RCIsVoiceMemosApplicationInstalled,
+                            _RCLegacyRecordingsDirectoryURL,
                             _RCLocalizationNotNeeded,
                             _RCLocalizedDurationWithStyle,
                             _RCLocalizedDurationWithStyleAndSizingDigit,
                             _RCLocalizedFrameworkString, _RCLocalizedInteger,
+                            _RCLocalizedPlaybackTimeWithMinimumAndHiddenComponents,
                             _RCLocalizedPlaybackTimeWithMinimumComponents,
                             _RCLocalizedRecordingDateWithOptions,
                             _RCLocalizedRecordingDuration, _RCLogsDirectoryURL,
@@ -67,7 +69,7 @@ exports:
                             _RCSavedRecordingsModelDidFailToCreateDatabaseNotification,
                             _RCSavedRecordingsModelNewIndexPathUserInfoKey,
                             _RCScalarDecibelValue, _RCSearchableItemForRecording,
-                            _RCShouldAssertWarnings,
+                            _RCShouldAssertWarnings, _RCStockRecordingsURL,
                             _RCTestAlwaysShowLockScreenPlugin,
                             _RCTestAudioTrimmingProgressWithDuration,
                             _RCTestAutoSelectedRecordingIndex,
@@ -110,7 +112,7 @@ exports:
                             RCLocationsOfInterestManager,
                             RCManagedConfigurationHelper, RCMutableComposition,
                             RCMutableCompositionFragment, RCMutableWaveform,
-                            RCPlaceholderComposition,
+                            RCPlaceholderComposition, RCRegulatoryLogger,
                             RCSSavedRecordingAccessToken,
                             RCSSavedRecordingService,
                             RCSSavedRecordingServiceConnection, RCSavedRecording,

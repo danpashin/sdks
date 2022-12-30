@@ -7,12 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B45E109C-2D94-3222-907D-5D1F4D755707
+    value:           15CB0357-7C22-3784-9084-27E0CBB95A14
   - target:          arm64e-ios
-    value:           1D45F4EE-D723-396F-A68F-A82936FD4276
+    value:           13487D46-64F4-3FF6-B565-203163D17494
 install-name:    '/usr/lib/libusrtcp.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _nw_protocol_sfotcp_identifier, _nw_protocol_tcp_identifier, 
-                       _tcp_next_mtu ]
+    symbols:         [ _nw_protocol_tcp_identifier, _tcp_next_mtu ]
 ...

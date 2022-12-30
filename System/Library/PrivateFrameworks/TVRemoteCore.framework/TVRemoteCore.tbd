@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
-current-version:       135.40.15
+current-version:       190.0.13
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -18,7 +18,7 @@ exports:
                             _TVRCDeviceModelTypeAirplaySetTopBox,
                             _TVRCDeviceModelTypeAirplayStick,
                             _TVRCDeviceModelTypeAirplayTelevision,
-                            _TVRCErrorDomain,
+                            _TVRCDeviceNameKey, _TVRCErrorDomain,
                             _TVRCErrorMediaRemotePairingLockoutDelayKey,
                             _TVRCFetchLaunchableApplicationsEvent,
                             _TVRCFetchUserAccountsEvent, _TVRCMakeError,
@@ -94,7 +94,9 @@ exports:
                             __TVRCButtonLongPressEndActionKey, __TVRCGeneralLog,
                             __TVRCHomeKitLog, __TVRCMDMLog,
                             __TVRCMRTelevisionWrapperAssociatedObject,
+                            __TVRCMediaEventsManagerLog,
                             __TVRCMediaRemoteConnectionLog,
+                            __TVRCMediaRemoteEndpointManagerLog,
                             __TVRCMediaRemoteKeyboardLog, __TVRCRMSLog,
                             __TVRCRapportLog, __TVRCRemoteTextInputLog,
                             __TVRCSendVirtualTouchEvent,
@@ -102,7 +104,7 @@ exports:
                             _generateRandomPasscode,
                             _kReachabilityChangedNotification,
                             _kTVRAppleTVModelString, _kTVRCReconnectionWindow ]
-    objc-classes:         [ Reachability, TVRCAnalytics, TVRCButton, TVRCButtonEvent,
+    objc-classes:         [ TVRCAnalytics, TVRCButton, TVRCButtonEvent,
                             TVRCConstants, TVRCDevice,
                             TVRCDeviceAuthenticationChallenge,
                             TVRCDeviceEventManager, TVRCDeviceInfo,
@@ -143,9 +145,9 @@ exports:
                             TVRMSPairingSessionDidPairMessage,
                             TVRMSPairingSessionProxy, TVRMSPickAudioRouteMessage,
                             TVRMSPlaybackCommandMessage, TVRMSPowerAssertion,
-                            TVRMSResponseCodeMessage, TVRMSRunAssertion,
-                            TVRMSSeekToPlaybackTimeMessage, TVRMSService,
-                            TVRMSServiceMessage, TVRMSSessionManager,
+                            TVRMSReachability, TVRMSResponseCodeMessage,
+                            TVRMSRunAssertion, TVRMSSeekToPlaybackTimeMessage,
+                            TVRMSService, TVRMSServiceMessage, TVRMSSessionManager,
                             TVRMSSessionMessage, TVRMSSessionProxy,
                             TVRMSSetLikeStateMessage, TVRMSSetVolumeMessage,
                             TVRMSTouchMessage, TVRMSTouchRemoteSocket,
@@ -179,9 +181,8 @@ exports:
                             _TVRCRMSDeviceQuery, _TVRCRMSDeviceWrapper,
                             _TVRCRMSNowPlayingState,
                             _TVRCRPCompanionLinkClientWrapper,
-                            _TVRCRPCompanionLinkClientWrapper_UnpairedBLE,
-                            _TVRCRapportDeviceImpl, _TVRCRapportDeviceQuery,
-                            _TVRCRapportDeviceRecord,
+                            _TVRCRapportDeviceImpl, _TVRCRapportDeviceManager,
+                            _TVRCRapportDeviceQuery, _TVRCRapportDeviceRecord,
                             _TVRCRapportMediaEventsManager,
                             _TVRCRapportRemoteTextInputKeyboardImpl,
                             _TVRCWeakObjectWrapper, _TVRCXPCClient,

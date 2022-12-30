@@ -27,7 +27,7 @@ API_AVAILABLE(tvos(11.2)) API_UNAVAILABLE(ios) API_UNAVAILABLE(macos, watchos)
 @private
 	AVDisplayCriteriaInternal *_displayCriteria;
 }
-
+AV_INIT_UNAVAILABLE
 @end
 
 NS_ASSUME_NONNULL_END

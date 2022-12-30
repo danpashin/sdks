@@ -7,25 +7,26 @@ uuids:
   - target:          armv7s-ios
     value:           AC43A41B-99E0-3C47-9447-AE589BFDD866
   - target:          arm64-ios
-    value:           2A56A465-301D-3875-A9EF-168B43742F74
+    value:           AB435A76-B46E-3964-9A1B-B7D0760A0645
   - target:          arm64e-ios
-    value:           699E1D06-A916-3136-9578-7AF127E2BDA8
+    value:           FFE4F14D-5399-328F-A1CB-7CCCB48A8236
 install-name:    '/System/Library/Frameworks/CoreMIDI.framework/CoreMIDI'
 current-version: 69
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MIDISetNotificationRunLoop ]
   - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __ZN4MIDI11StreamState22update_with_v1_packetsEN3gsl4spanIKjLln1EEE, 
+    symbols:         [ __ZN4MIDI11StreamState22update_with_v1_packetsENSt3__14spanIKjLm18446744073709551615EEE, 
                        __ZN4MIDI11StreamState5chaseERNS_10PacketizerE, __ZN4MIDI11StreamState5clearEv, 
                        __ZN4MIDI11StreamState5resetERNS_10PacketizerE, __ZN4MIDI11StreamStateC1Ej, 
                        __ZN4MIDI11StreamStateC2Ej, __ZN4MIDI16LegacyPacketList4dumpERKS0_, 
-                       __ZN4MIDI16LegacyPacketList6createE14MIDIProtocolIDyN3gsl4spanIKhLln1EEE, 
+                       __ZN4MIDI16LegacyPacketList6createE14MIDIProtocolIDyNSt3__14spanIKhLm18446744073709551615EEE, 
                        __ZN4MIDI16LegacyPacketList7destroyEPS0_, __ZN4MIDI9EventList4dumpERKS0_, 
-                       __ZN4MIDI9EventList6createE14MIDIProtocolIDyN3gsl4spanIKjLln1EEE, 
+                       __ZN4MIDI9EventList6createE14MIDIProtocolIDyNSt3__14spanIKjLm18446744073709551615EEE, 
                        __ZN4MIDI9EventList6createERKS0_, __ZNK4MIDI9EventList4sizeEv ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _MIDIClientCreate, _MIDIClientCreateWithBlock, _MIDIClientDispose, 
+    symbols:         [ _MIDICapabilityGetDiscoveryMUID, _MIDICapabilityMUIDCollides, 
+                       _MIDIClientCreate, _MIDIClientCreateWithBlock, _MIDIClientDispose, 
                        _MIDIConfigCheckVirginState, _MIDIConfigDelete, _MIDIConfigDuplicate, 
                        _MIDIConfigExists, _MIDIConfigGetCurrent, _MIDIConfigGetList, 
                        _MIDIConfigInstall, _MIDIConfigNew, _MIDIConfigRename, _MIDIDestinationCreate, 
@@ -38,8 +39,8 @@ exports:
                        _MIDIEntityAddOrRemoveEndpoints, _MIDIEntityGetDestination, 
                        _MIDIEntityGetDevice, _MIDIEntityGetNumberOfDestinations, 
                        _MIDIEntityGetNumberOfSources, _MIDIEntityGetSource, _MIDIEventListAdd, 
-                       _MIDIEventListInit, _MIDIExternalDeviceCreate, _MIDIFlushOutput, 
-                       _MIDIGetDestination, _MIDIGetDevice, _MIDIGetDriverDeviceList, 
+                       _MIDIEventListForEachEvent, _MIDIEventListInit, _MIDIExternalDeviceCreate, 
+                       _MIDIFlushOutput, _MIDIGetDestination, _MIDIGetDevice, _MIDIGetDriverDeviceList, 
                        _MIDIGetDriverIORunLoop, _MIDIGetExternalDevice, _MIDIGetNumberOfDestinations, 
                        _MIDIGetNumberOfDevices, _MIDIGetNumberOfExternalDevices, 
                        _MIDIGetNumberOfSources, _MIDIGetSource, _MIDIInputPortCreate, 

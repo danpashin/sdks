@@ -7,14 +7,15 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B07862ED-DDF5-3346-9997-9B756E637E2F
+    value:           6731F90F-D0DD-3E20-9C39-771494D646BE
   - target:          arm64e-ios
-    value:           DFD5DC56-8A38-3CD7-9BAF-3A99CAF4CC0F
+    value:           ADE1C6F2-4F72-324C-A73B-CEED99564895
 install-name:    '/usr/lib/libAudioStatistics.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CAReporterProxyKeyReporterID, _CAReporterProxyKeyServiceType, 
-                       _CAReportingApplicationName, _CAReportingAriadnePlistFilePath, 
+                       _CAReportingApplicationName, _CAReportingAriadneOutputFileDirectory, 
+                       _CAReportingAriadneOutputFileName, _CAReportingAriadnePlistFilePath, 
                        _CAReportingClientCopyConfiguration, _CAReportingClientCreateReporterID, 
                        _CAReportingClientCreateReporterIDFromSessionID, _CAReportingClientCreateTestReporterID, 
                        _CAReportingClientDestroyReporterID, _CAReportingClientGetAudioServiceType, 
@@ -24,7 +25,7 @@ exports:
                        _CAReportingClientStopReporter, _CAReportingDelayPerfEndSnapShot, 
                        _CAReportingInternalEventEpochTime, _CAReportingInternalEventProcessUptimeMS, 
                        _CAReportingInternalEventSystemUptimeSec, _CAReportingLogsDirectory, 
-                       _CAReportingPerfProcesses, _CAReportingPerfProjectName, _CAReportingRTCReportingTimeOut, 
+                       _CAReportingPerfProcesses, _CAReportingPerfProjectName, _CAReportingQueueName, 
                        _CAReportingServiceNameAlarms, _CAReportingServiceNameAlerts, 
                        _CAReportingServiceNameAudioDeviceUsage, _CAReportingServiceNameGeneric, 
                        _CAReportingServiceNameHaptics, _CAReportingServiceNameLongFormAudio, 
@@ -34,8 +35,9 @@ exports:
                        _CAReportingServiceNameUnknown, _CAReportingSessionBlacklistFieldsKey, 
                        _CAReportingSessionThrottleSecondsKey, _CAReportingTestName, 
                        _CAReportingTraceType, _CAReportingTraceTypeArtrace, _CAReportingTraceTypeKtrace, 
-                       _CAReportingUtilityAllowSessionTransactions, _CAReportingUtilityExtractSessionIDFromReporterID, 
-                       _CAReportingUtilityGenerateServiceNameFromServiceType, _CAReportingUtilityGenerateServiceTypeFromServiceName, 
+                       _CAReportingTracingLogsDirectory, _CAReportingUtilityAddDates, 
+                       _CAReportingUtilityExtractSessionIDFromReporterID, _CAReportingUtilityGenerateServiceNameFromServiceType, 
+                       _CAReportingUtilityGenerateServiceTypeFromServiceName, _CAReportingUtilityGetReportingServerQueue, 
                        _CAReportingUtilityIsInternalBuild, _CAReportingUtilityShouldSendMessage, 
                        _CAReportingVersionNumber, _CreateSharedCAReportingClient ]
     objc-classes:    [ CAReporter, CATestReporter ]

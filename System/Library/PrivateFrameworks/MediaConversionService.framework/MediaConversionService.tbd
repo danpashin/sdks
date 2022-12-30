@@ -3,13 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaConversionService.framework/MediaConversionService
-current-version:       340.0.221
+current-version:       402.5.140
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _MediaConversionServiceVersionNumber,
                             _MediaConversionServiceVersionString,
+                            _PAMediaConversionJobPriorityIsOptional,
                             _PAMediaConversionNameForErrorCode,
                             _PAMediaConversionNameForJobPriority,
                             _PAMediaConversionNameForJobStatus,
@@ -19,10 +20,14 @@ exports:
                             _PAMediaConversionResourceRoleMainResourceSpatialOverCapture,
                             _PAMediaConversionResourceRoleVideoComplement,
                             _PAMediaConversionResourceRoleVideoComplementSpatialOverCapture,
+                            _PAMediaConversionServiceAdjustmentCropKey,
                             _PAMediaConversionServiceAdjustmentDataKey,
                             _PAMediaConversionServiceAdjustmentFinalizationDispositionKey,
                             _PAMediaConversionServiceAdjustmentFormatIdentifierKey,
                             _PAMediaConversionServiceAdjustmentFormatVersionKey,
+                            _PAMediaConversionServiceAdjustmentOrientationKey,
+                            _PAMediaConversionServiceBlastDoorSourcePropertiesKey,
+                            _PAMediaConversionServiceBlastDoorVideoComplementSourcePropertiesKey,
                             _PAMediaConversionServiceBookmarkKey,
                             _PAMediaConversionServiceConversionDequeueAndStartProcessingDateKey,
                             _PAMediaConversionServiceConversionEndDateKey,
@@ -55,8 +60,10 @@ exports:
                             _PAMediaConversionServiceOptionAdjustmentFinalizationCandidacyKey,
                             _PAMediaConversionServiceOptionAdjustmentInformationKey,
                             _PAMediaConversionServiceOptionApplyOrientationTransformKey,
+                            _PAMediaConversionServiceOptionBlastDoorMediaIsImageKey,
                             _PAMediaConversionServiceOptionBoundingBoxKey,
                             _PAMediaConversionServiceOptionColorSpaceKey,
+                            _PAMediaConversionServiceOptionCropAdjustmentInformationKey,
                             _PAMediaConversionServiceOptionEnableOutputCorruptionDetectionHeuristicsKey,
                             _PAMediaConversionServiceOptionExportPresetNameKey,
                             _PAMediaConversionServiceOptionFormatConversionOnlyKey,
@@ -75,6 +82,7 @@ exports:
                             _PAMediaConversionServiceOptionProgressUpdateTimeIntervalKey,
                             _PAMediaConversionServiceOptionRasterizationDPIKey,
                             _PAMediaConversionServiceOptionRequestReasonKey,
+                            _PAMediaConversionServiceOptionRequiresBlastDoorAccessKey,
                             _PAMediaConversionServiceOptionRotationAngleDegreesKey,
                             _PAMediaConversionServiceOptionScaleFactorKey,
                             _PAMediaConversionServiceOptionTargetFileSizeKey,

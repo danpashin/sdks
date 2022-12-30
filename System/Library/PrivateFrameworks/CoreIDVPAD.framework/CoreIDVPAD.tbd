@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CoreIDVPAD.framework/CoreIDVPAD
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CGRectAV2VN, _CGRectCenterScaleUp, _CGRectGetArea,
+                            _CGRectRotate, _CGRectTranslate, _CGRectUnit,
+                            _CGRectUnnormalized, _CGRectVN2AV,
+                            _CGrectGetDescription,
+                            _PADAuditDataRepositoryDefault, _PADClassifierInit,
+                            _PADFACFrameProcessingCompleteNotification,
+                            _PADFACFrameProcessingErrorOccurredNotification,
+                            _PADFrameProcessingCompleteNotification,
+                            _PADPRDFrameProcessingCompleteNotification,
+                            _PADTAFrameProcessingCompleteNotification,
+                            _PADVNFaceLandmarksInit,
+                            _VNDetectFaceLandmarksRequestInit,
+                            _VNFaceLandmarkRegion2DGetNormalizedPoints,
+                            _VNFaceObservationWithAVFoundationFaceBounds ]
+    objc-classes:         [ PADAVAssetReader, PADClassifierRequest,
+                            PADClassifierResult, PADFace, PADFrame, PADPose,
+                            PADVNSerialRequestsScheduler ]
+...

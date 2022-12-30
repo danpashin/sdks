@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CompanionAuthentication.framework/CompanionAuthentication
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CASCancellationReasonErrorKey,
+                            _CASCustomAuthenticationMethodErrorKey,
+                            _CASCustomAuthenticationMethodOther,
+                            _CASCustomAuthenticationMethodRestorePurchase,
+                            _CASCustomAuthenticationMethodVideoSubscriberAccount,
+                            _CASErrorDomain, _CASErrorGetCancellationReason,
+                            _CASErrorGetCustomAuthenticationMethod,
+                            _CASErrorMake, _CASErrorMultipleUnderlyingMake,
+                            _CASErrorUnderlyingMake,
+                            _CASMetricsSessionResultWithCustomMethod,
+                            _CompanionAuthenticationVersionNumber,
+                            _CompanionAuthenticationVersionString,
+                            _cas_daemon_log, _cas_service_connection_log,
+                            _cas_service_listener_log, _cas_service_log,
+                            _cas_session_log ]
+    objc-classes:         [ CASAppSignInRequest, CASAppSignInResponse,
+                            CASAuthenticationRequest, CASAuthenticationResponse,
+                            CASAuthenticationSession, CASDevice, CASMetrics,
+                            CASPasswordCredential,
+                            CASPaymentSheetPresentationContext, CASServiceProxy,
+                            CASStorePurchaseRequest, CASStorePurchaseResponse,
+                            CASSystemAuthenticationRequest,
+                            CASSystemAuthenticationResponse,
+                            CASViewServicePresenterInterface ]
+...

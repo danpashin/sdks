@@ -1,7 +1,7 @@
 //
 //  NSFileProviderExtension.h
 //
-//  Copyright (c) 2014-2017 Apple Inc. All rights reserved.
+//  Copyright (c) 2014-2020 Apple Inc. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <FileProvider/NSFileProviderDefines.h>
@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSFileProviderDomain;
 
-FILEPROVIDER_CLASS_AVAILABILITY
+FILEPROVIDER_API_AVAILABILITY_V1
 @interface NSFileProviderExtension : NSObject
 
 - (nullable NSFileProviderItem)itemForIdentifier:(NSFileProviderItemIdentifier)identifier error:(NSError * _Nullable *)error NS_SWIFT_NAME(item(for:)) FILEPROVIDER_API_AVAILABILITY_V2;
@@ -59,9 +59,9 @@ FILEPROVIDER_CLASS_AVAILABILITY
  */
 - (void)itemChangedAtURL:(NSURL *)url;
 
-
 @end
 
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderExtension (Deprecated)
 
 /**

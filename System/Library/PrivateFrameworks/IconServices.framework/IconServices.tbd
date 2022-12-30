@@ -3,15 +3,18 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IconServices.framework/IconServices
-current-version:       440.24
+current-version:       493
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __ISIconDataForResourceProxy,
+    re-exports:           [ /System/Library/PrivateFrameworks/IconFoundation.framework/IconFoundation ]
+    symbols:              [ __ISDefaultLog, __ISIconDataForResourceProxy,
                             __ISInvalidateCacheEntriesForBundleIdentifier,
-                            __ISPrimaryIconDataForApplicationProxy,
-                            _kISIconDecorationAliasType,
+                            __ISPrepareISIconSignpostLog,
+                            __ISPrimaryIconDataForApplicationProxy, __ISTraceLog,
+                            __ISURLCacheLog, _kISBackgroundResourceKey,
+                            _kISBadgeResourceKey, _kISIconDecorationAliasType,
                             _kISIconDecorationBadgeType,
                             _kISIconDecorationCautionAlertType,
                             _kISIconDecorationDropFolderBadgeType,
@@ -37,17 +40,29 @@ exports:
                             _kISImageDescriptorCustomDocumentSize,
                             _kISImageDescriptorCustomDocumentTable,
                             _kISImageDescriptorHomeScreen,
+                            _kISImageDescriptorLargeHomeScreen,
                             _kISImageDescriptorMessagesExtensionBadge,
                             _kISImageDescriptorMessagesExtensionLauncher,
                             _kISImageDescriptorMessagesExtensionStatus,
                             _kISImageDescriptorNotification,
                             _kISImageDescriptorSpotlight,
                             _kISImageDescriptorTableUIName,
-                            _kISPrimaryResourceKey ]
-    objc-classes:         [ ISAssetCatalogResource, ISCompositor, ISGenericRecipe,
-                            ISHintedRect, ISIcon, ISIconCacheIOS, ISIconDecoration,
-                            ISIconLayer, ISIconObserver, ISIconResourceLocator,
-                            ISIconSpecification, ISIconTypeResourceLocator,
-                            ISImage, ISImageCache, ISImageDescriptor,
-                            ISSymbolImageDescriptor ]
+                            _kISPrimaryResourceKey, _kISTextResourceKey,
+                            _kISTintColorResourceKey ]
+    objc-classes:         [ ISAssetCatalogResource, ISBundleIdentifierIcon,
+                            ISCenterEmbossRecipe, ISCompositor,
+                            ISCompositorElement, ISConcreteIcon, ISDefaults,
+                            ISGenerationRequest, ISGenerationResponse,
+                            ISGenericRecipe, ISHintedRect, ISIcon, ISIconCache,
+                            ISIconCacheConfiguration, ISIconDecoration,
+                            ISIconLayer, ISIconManager, ISIconObserver,
+                            ISIconResourceLocator, ISIconSpecification,
+                            ISIconTypeResourceLocator, ISImage, ISImageBagIcon,
+                            ISImageCache, ISImageDescriptor,
+                            ISImageStyleDescriptor, ISLeadingStatusBadgeRecipe,
+                            ISMutableStoreIndex, ISResourceProvider, ISStoreIndex,
+                            ISStoreMapTable, ISSymbol, ISSymbolImageDescriptor,
+                            ISTrailingStatusBadgeRecipe,
+                            ISURLResourcePropertySpecification,
+                            ISiosDocumentRecipe ]
 ...

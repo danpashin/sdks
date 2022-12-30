@@ -36,7 +36,9 @@ exports:
                             _PLBatteryUsageUIQuery, _PLBuildEnergyBucket,
                             _PLBuildEnergyBucketTillNow, _PLBuildUsageSnapshot,
                             _PLCalculateEndOfDay, _PLCalculateEndOfHour,
-                            _PLCopyBatteryUIPlists, _PLCopyPowerlog,
+                            _PLCopyBatteryUIPlists,
+                            _PLCopyExtendedPersistenceLog,
+                            _PLCopyMetadataReports, _PLCopyPowerlog,
                             _PLCrashMoverCopyPowerlog, _PLForceBatching,
                             _PLGenerateBatteryUIPlist, _PLLogEvent,
                             _PLLogRegisteredAggregateEvent,
@@ -47,8 +49,14 @@ exports:
                             _PLQueryRegistered, _PLShouldLogEvent,
                             _PLShouldLogRegisteredEvent,
                             _PLSysdiagnoseCopyBatteryUILogs,
-                            _PLSysdiagnoseCopyPowerlog, _PLTalkToPowerlogHelper ]
+                            _PLSysdiagnoseCopyPowerlog, _PLTalkToPowerlogHelper,
+                            _PerfPowerTelemetryCreateIdentifier,
+                            _PerfPowerTelemetrySendEvent,
+                            _perfpowertelemetry_create_identifier,
+                            _perfpowertelemetry_send_event ]
     objc-classes:         [ PLCoreDuetEvent, PLCoreDuetEventInterval,
+                            PLDiscretionaryEnergyMonitor,
+                            PLDiscretionaryIntervalManager,
                             PLDuetActivitySchedulerUsageSnapshot, PLEnergyBucket,
                             PLModelingUtilities, PLNetworkEnergyModel,
                             PLUsageSnapshot ]

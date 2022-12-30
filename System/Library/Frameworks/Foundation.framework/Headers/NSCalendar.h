@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 #define NS_CALENDAR_DEPRECATED_MAC(A, B, ...) NS_DEPRECATED_MAC(A, B, __VA_ARGS__)
 #endif
 
-typedef NSString * NSCalendarIdentifier NS_EXTENSIBLE_STRING_ENUM;
+typedef NSString * NSCalendarIdentifier NS_TYPED_EXTENSIBLE_ENUM;
 
 FOUNDATION_EXPORT NSCalendarIdentifier const NSCalendarIdentifierGregorian  API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0)); // the common calendar in Europe, the Western Hemisphere, and elsewhere
 FOUNDATION_EXPORT NSCalendarIdentifier const NSCalendarIdentifierBuddhist            API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0));

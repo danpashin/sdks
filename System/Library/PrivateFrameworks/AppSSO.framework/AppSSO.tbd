@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SOAuthorizationOperationConfigurationRemoved,
+                            _SOAuthorizationOperationFetchNetworkCredentials,
                             _SOAuthorizationOptionInitiatingAction,
                             _SOAuthorizationOptionInitiatorOrigin,
                             _SOAuthorizationOptionRemovedProfileExtensionBundleIdentifier,
@@ -24,15 +25,17 @@ exports:
                             _SONotificationConfigurationChanged,
                             _SONotificationExtensionsChanged,
                             _appSSO_handleResponse,
-                            _appSSO_handleResponseCredential, _appSSO_init,
-                            _appSSO_performResponse,
+                            _appSSO_handleResponseCredential,
+                            _appSSO_handleResponseImpersonationCredential,
+                            _appSSO_init, _appSSO_performResponse,
                             _appSSO_performResponseCredential,
                             _appSSO_willHandle, _appSSO_willPerform ]
     objc-classes:         [ SOAuthorization, SOAuthorizationCredential,
                             SOAuthorizationHints, SOAuthorizationParameters,
                             SOAuthorizationRequest,
                             SOAuthorizationRequestParameters,
-                            SOConfigurationHost, SOConfigurationManager,
-                            SODebugHints, SOExtension, SOExtensionManager,
-                            SOPreferences, SORequestQueue, SORequestQueueItem ]
+                            SOAuthorizationResult, SOConfigurationHost,
+                            SOConfigurationManager, SODebugHints, SOExtension,
+                            SOExtensionManager, SOPreferences, SORequestQueue,
+                            SORequestQueueItem ]
 ...

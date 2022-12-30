@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MailServices.framework/MailServices
-current-version:       3654.80
+current-version:       3693.0.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -79,6 +79,7 @@ exports:
                             _MSCriterionTypeRecipient, _MSCriterionTypeReference,
                             _MSCriterionTypeSender, _MSCriterionTypeSubject,
                             _MSDCategorizeMessageErrorDomain,
+                            _MSDEntitledOpenComposeProtocolDelegateXPCInterface,
                             _MSDFetchErrorDomain,
                             _MSDMessageBodyLoaderErrorDomain,
                             _MSKeyValueStoreArgumentKey,
@@ -148,11 +149,16 @@ exports:
                             __MSResultsKeyPublisherBulletinID,
                             __MSResultsKeyRFC822Data,
                             __MSResultsKeySuppressionContexts,
+                            _kMSOpenComposeDelegateIdentifierKey,
+                            _kMSOpenMailComposeViewControllerContextKey,
                             _kVIPDisplayNameKey, _kVIPEmailAddressesKey,
                             _kVIPURLKey, _kVIPUniqueIdentifierKey,
                             _kVIPUnreadCountKey ]
     objc-classes:         [ MSAccounts, MSAutosave, MSAutosaveSession, MSCriterion,
                             MSEmailModel, MSIdleAutosaveItem, MSKeyValueStore,
-                            MSMailDefaultService, MSPushRegistration, MSSaveEmail,
-                            MSSearch, MSSendEmail, MSService, MSXPCService ]
+                            MSMailDefaultService, MSOpenCompose,
+                            MSOpenComposeDelegateRequest,
+                            MSOpenMailComposeViewControllerContext,
+                            MSPushRegistration, MSSaveEmail, MSSearch, MSSendEmail,
+                            MSService, MSXPCService ]
 ...

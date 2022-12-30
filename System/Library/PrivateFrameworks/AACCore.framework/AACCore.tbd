@@ -8,13 +8,24 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo,
+    symbols:              [ _AACLoggingSubsystem,
+                            _AEAssessmentStateDidChangeNotificationName,
+                            _AEAssessmentStatePublisherRegisteringMachServiceName,
+                            _AECoreError, _AECoreErrorDomain, _AECoreErrorUserInfo,
                             _AELocalizedStringFromTableInBundle,
                             _AEPolicySessionFailedToActivateSubsystemsKey,
                             _AEPolicySessionFailedToDeactivateSubsystemsKey ]
-    objc-classes:         [ AEActivePolicySession, AELocalizedErrorDescriptions,
-                            AEOSGestalt, AEOptionMirror,
-                            AEPerformancePrimitivesProvider, AEPolicyBundle,
-                            AEPreferencesProvider, AERSingleAppModeConfiguration,
-                            AERSingleAppModePrimitivesProvider ]
+    objc-classes:         [ AEActivePolicySession,
+                            AEAssessmentApplicationDescriptor,
+                            AEAssessmentIndividualConfiguration,
+                            AEAssessmentModeGestalt, AEAssessmentState,
+                            AEAssessmentStatePublishingProxy,
+                            AEAssessmentStatePublishingXPCInterfaceFactory,
+                            AEAssessmentStateSourceRegisteringProxy,
+                            AEAssessmentStateSourceRegisteringXPCInterfaceFactory,
+                            AEFileSystem, AELifecycleEventHandlingProxy,
+                            AELifecycleEventHandlingXPCInterfaceFactory,
+                            AELocalizedErrorDescriptions, AEOSGestalt,
+                            AEOptionMirror, AEPerformancePrimitivesProvider,
+                            AEPolicyBundle, AEPreferencesProvider ]
 ...

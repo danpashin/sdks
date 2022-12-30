@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _SFAccessibilityMakeWithMode,
+                            _SFCoreCryptoErrorDomain,
                             _SFCryptoServicesErrorDecryptionFailed,
                             _SFCryptoServicesErrorDeserializationFailed,
                             _SFCryptoServicesErrorDigest,
@@ -101,7 +102,8 @@ exports:
                             SFTrustPolicy, SFWrappedKeyCiphertext,
                             SFWrappedKeyCiphertext_Ivars, SFX509TrustPolicy,
                             SFX963KeyDerivationOperation,
-                            SFX963KeyDerivationOperation_Ivars, _SFAESKey,
+                            SFX963KeyDerivationOperation_Ivars, SPAKE2Common,
+                            SPAKE2Prover, SPAKE2Verifier, _SFAESKey,
                             _SFAESKeySpecifier, _SFAccessPolicy,
                             _SFAsymmetricKeyAttributes,
                             _SFAsymmetricKeySpecifier,

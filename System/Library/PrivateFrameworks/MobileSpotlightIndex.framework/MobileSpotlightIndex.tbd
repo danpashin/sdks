@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileSpotlightIndex.framework/MobileSpotlightIndex
-current-version:       2150.15
+current-version:       2175.5
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -135,8 +135,8 @@ exports:
                             _SIAddCorrection, _SIBulkDeleteAttributes,
                             _SIBulkGetAttributeNames, _SIBulkGetAttributes,
                             _SIBulkSetAttributes, _SICalculateSize, _SICancel,
-                            _SICloseIndex, _SICopyCorrections, _SICopyProperties,
-                            _SICopyProperty, _SICopyRoundedDate,
+                            _SIClearICUCache, _SICloseIndex, _SICopyCorrections,
+                            _SICopyProperties, _SICopyProperty, _SICopyRoundedDate,
                             _SICorrectionCommit, _SICorrectionCreate,
                             _SICorrectionDestory, _SICrashStringInit,
                             _SICreateIndex, _SICreateNewIndex, _SIDeleteAttributes,
@@ -206,11 +206,12 @@ exports:
                             _SISetCSAttributes, _SISetCodedAttributes,
                             _SISetCompletionRankingWeights,
                             _SISetDefaultSchemaData,
-                            _SISetFileProvidersCallbacks, _SISetLogging,
-                            _SISetLoggingBlock, _SISetPowerState, _SISetProperty,
-                            _SISetQueryCSFieldNameCallback, _SISetScanCount,
-                            _SISetStoreCookie, _SISetTransactionCount,
-                            _SIShutdownIndex, _SISupportsFastScoping, _SISyncIndex,
+                            _SISetFileProvidersCallbacks, _SISetICUCacheFd,
+                            _SISetLogging, _SISetLoggingBlock, _SISetPowerState,
+                            _SISetProperty, _SISetQueryCSFieldNameCallback,
+                            _SISetScanCount, _SISetStoreCookie,
+                            _SISetTransactionCount, _SIShutdownIndex,
+                            _SISupportsFastScoping, _SISyncIndex,
                             _SISyncIndexForLikelyShutdown,
                             _SISyncIndexVaccuumIfNeeded, _SISynchedOp,
                             _SISynchedOpPropagatingPriority,
@@ -244,7 +245,8 @@ exports:
                             __SIConsistencyCheck, __SICooldownIndexFilesForMerge,
                             __SICopyPropertyIDMap, __SICreateContactMailCounts,
                             __SICreateContactSMSCounts,
-                            __SIDirectoryStoreIterate, __SIFlushAndSyncIndex,
+                            __SIDirectoryStoreIterate,
+                            __SIFilterValidatedCSImports, __SIFlushAndSyncIndex,
                             __SIGetAllOids, __SIGetErrorString, __SIGetFileOptions,
                             __SIGetIndexCount, __SIGetLastUsedDate,
                             __SIGetMissingParentOID, __SIGetRecoverTimeStamp,

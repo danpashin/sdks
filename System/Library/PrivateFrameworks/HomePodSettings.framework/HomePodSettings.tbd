@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HomePodSettings.framework/HomePodSettings
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _HPAccessoryMoved,
+                            _HPAirplayMinimumMediaUserPrivilegeModified,
+                            _HPAirplayP2PAccessModified,
+                            _HPAirplaySetPasswordModified, _HPAutoSUModified,
+                            _HPDeviceReset, _HPHomeKitSetupComplete,
+                            _HPSettingErrorDomain,
+                            _HPSettingsUserInfoErrorStringKey,
+                            _HomePodSettingsVersionNumber,
+                            _HomePodSettingsVersionString, __HPSLoggingFacility,
+                            _kAccessibilityVoiceOverEnabled,
+                            _kAccessoryDeviceName, _kAccessoryHomeName,
+                            _kAccessoryRoomName, _kAllowExplicitContent,
+                            _kDefaultRoomsInHome, _kEndPointSettingsEntitlement,
+                            _kHPDeviceResetMethodKey,
+                            _kHomeKitSettingAllowExplicitContent,
+                            _kHomeKitSettingLocationEnabled, _kHomeOTAEnabled,
+                            _kHomePodSettingsDefaults,
+                            _kHomePodSettingsEntitlement,
+                            _kHomePodSettingsMachServerName,
+                            _kHomeSettingsMachServerName,
+                            _kHomeSiriSettingSoundAlert,
+                            _kMediaPeerToPeerEnabled,
+                            _kMinimumMediaUserPrivilege, _kNumberOfHomePods,
+                            _kSiriBackUpDefaults ]
+    objc-classes:         [ HPAccessibilitySettingsManager,
+                            HPLocationServicesSettingsManager,
+                            HPMediaRestrictionsSettingsManager,
+                            HPSHomeAccessoryInterfaceMediator,
+                            HPSHomeAccessorySettingsInterface,
+                            HPSHomeAccessorySettingsListener,
+                            HPSHomeAccessorySettingsProvider, HPSHomeInterface,
+                            HPSHomeInterfaceMediator, HPSHomeProxy, HPSServer,
+                            HPSettingSessionClient, HPSettingsDefaults,
+                            HPSettingsManager, HPSettingsUtility ]
+...

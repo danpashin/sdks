@@ -8,8 +8,8 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CHILDREN_KEY, _FEEDURL_KEY, _MAX_PLAYBACK_RATE,
-                            _MIN_PLAYBACK_RATE,
+    symbols:              [ _AccountDSIDChangedNotification, _CHILDREN_KEY,
+                            _FEEDURL_KEY, _MAX_PLAYBACK_RATE, _MIN_PLAYBACK_RATE,
                             _MPAssistantWatchGetCompanionOriginUniqueIdentifier,
                             _MPAssistantWatchGetCurrentAudioRoutingInfo,
                             _MPAssistantWatchIsConnectedToCompanion,
@@ -27,11 +27,14 @@ exports:
                             _POUtilitiesMRSendCommandErrorDomain,
                             _POUtilitiesNeedsNetworkError,
                             _POUtilitiesNoActiveiTunesAccountError,
-                            _POUtilitiesWatchNeedsCompanionError, _TITLE_KEY,
+                            _POUtilitiesWatchNeedsCompanionError,
+                            _ShouldCheckShowWelcomeNotificationName, _TITLE_KEY,
                             _UUID_KEY, _kMTCollectionViewInterItemSpacing,
                             _kMTCollectionViewInterLineSpacing,
                             _kMTCollectionViewVerticalSectionInset,
                             _kMTIntentsArtworkSize, _kMTPreferredArtworkSize,
+                            _kMTPreferredChannelUberArtworkHeight,
+                            _kMTPreferredChannelUberArtworkWidth,
                             _kMTPreferredLogoArtworkSize,
                             _kMTPreferredShowUberArtworkHeight,
                             _kMTPreferredShowUberArtworkWidth,
@@ -41,8 +44,7 @@ exports:
                             _kSetPlaybackQueueSharedUserIdKey ]
     objc-classes:         [ MTAccountController,
                             MTMPCAssistantGenericPlaybackQueue,
-                            MTPlaybackIdentifierUtil, MTSingleton,
-                            MTSingletonHolder, MTURLCommandRequest,
+                            MTPlaybackIdentifierUtil, MTURLCommandRequest,
                             POBasicPodcastAppSearch,
                             POBasicPodcastAppSearchCompleted, PODataSource,
                             POPlayPodcastCollection, POPlayPodcastEpisode,
@@ -51,5 +53,4 @@ exports:
                             POPodcastRevision, POPodcastStation,
                             POPodcastSyncHandler, POSubscribeToPodcastCollection,
                             POUtilities ]
-    objc-ivars:           [ MTSingletonHolder._lock ]
 ...

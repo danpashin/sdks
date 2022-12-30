@@ -5,6 +5,7 @@ flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/AudioToolbox.framework/libEmbeddedSystemAUs.dylib
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _AUBandpassFactory, _AUConverterFactory,
@@ -19,7 +20,8 @@ exports:
                             _AUNewTimePitchFactory,
                             _AUNotQuiteSoSimpleTimeFactory,
                             _AUParametricEQFactory, _AUPeakLimiterFactory,
-                            _AUSampleDelayFactory, _AUSimpleTimeFactory,
+                            _AUPitchFactory, _AUSampleDelayFactory,
+                            _AUSimpleTimeFactory,
                             _AUSpecialPurposeSweepFilterFactory,
                             _AUSplitterFactory, _AUVarispeedFactory,
                             _AudioOutputUnitPublish_Impl, _MIDISynthFactory,

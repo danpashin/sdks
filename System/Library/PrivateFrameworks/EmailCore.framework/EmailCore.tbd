@@ -3,16 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailCore.framework/EmailCore
-current-version:       3654.80
+current-version:       3693.0.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _ECAccountCacheKeyEnabled,
                             _ECAccountCacheKeyParentAccount,
-                            _ECAccountSchemeDataAccess, _ECAccountSchemeEWS,
-                            _ECAccountSchemeIMAP, _ECAccountSchemeLocal,
-                            _ECAccountSchemePOP, _ECAllowNetworkActivityButLog,
+                            _ECAllowNetworkActivityButLog,
                             _ECAssertNetworkActivityAllowed, _ECAuthSchemeAPOP,
                             _ECAuthSchemeAppleToken, _ECAuthSchemeClearText,
                             _ECAuthSchemeCramMD5, _ECAuthSchemeDigestMD5,
@@ -144,6 +142,8 @@ exports:
                             ECEmailCoreFramework, ECEncodedWordDecoder,
                             ECEncodedWordEncoder, ECExchangeAccount,
                             ECExternalAuthScheme, ECFlagChangeMessageAction,
+                            ECFlagChangeMessageActionResults,
+                            ECFlagChangeMessageActionResultsBuilder,
                             ECFlagChangeUndownloadedMessageAction,
                             ECGSSAPIAuthScheme, ECGmailLabelChangeReplayer,
                             ECHTMLStringAndMIMECharset, ECIDNADecoder,
@@ -156,7 +156,9 @@ exports:
                             ECNWActivity, ECNWConnectionWrapper,
                             ECOAuth2AuthScheme, ECPOPAccount, ECPlainAuthScheme,
                             ECRawMessageHeader, ECRawMessageHeaders,
-                            ECSASLAuthenticator, ECSASLClient, ECSMTPAccount,
+                            ECRemoteContentParser, ECRemoteContentParserState,
+                            ECRemoteContentWebViewObserver, ECSASLAuthenticator,
+                            ECSASLClient, ECSMTPAccount,
                             ECSecureMIMETrustEvaluation, ECServerMessage,
                             ECSubject, ECSubjectFormatter, ECSubjectParser,
                             ECTransferActionIMAPReplayer,

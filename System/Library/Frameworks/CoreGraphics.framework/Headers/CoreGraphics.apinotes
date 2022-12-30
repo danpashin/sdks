@@ -506,7 +506,8 @@ Functions:
 - Name: CGEventCreateFromData
   SwiftName: CGEvent.init(withDataAllocator:data:)
 - Name: CGEventCreateData
-  SwiftName: getter:CGEvent.data(self:)
+  SwiftName: CGEvent.__data(allocator:self:)
+  SwiftPrivate: true
 - Name: CGEventCreateCopy
   SwiftName: CGEvent.copy(self:)
 - Name: CGEventPostToPid
@@ -1232,8 +1233,12 @@ Globals:
   SwiftName: CGColorSpace.dcip3
 - Name: kCGColorSpaceExtendedITUR_2020
   SwiftName: CGColorSpace.extendedITUR_2020
+- Name: kCGColorSpaceLinearITUR_2020
+  SwiftName: CGColorSpace.linearITUR_2020
 - Name: kCGColorSpaceExtendedLinearITUR_2020
   SwiftName: CGColorSpace.extendedLinearITUR_2020
+- Name: kCGColorSpaceLinearDisplayP3
+  SwiftName: CGColorSpace.linearDisplayP3
 - Name: kCGColorSpaceExtendedDisplayP3
   SwiftName: CGColorSpace.extendedDisplayP3
 - Name: kCGColorSpaceExtendedLinearDisplayP3
@@ -1250,6 +1255,10 @@ Globals:
   SwiftName: CGColorSpace.displayP3_HLG
 - Name: kCGColorSpaceITUR_2020_HLG
   SwiftName: CGColorSpace.itur_2020_HLG
+- Name: kCGColorSpaceITUR_2100_HLG
+  SwiftName: CGColorSpace.itur_2100_HLG
+- Name: kCGColorSpaceITUR_2100_PQ
+  SwiftName: CGColorSpace.itur_2100_PQ
 - Name: kCGColorSpaceExtendedSRGB
   SwiftName: CGColorSpace.extendedSRGB
 - Name: kCGColorSpaceLinearSRGB

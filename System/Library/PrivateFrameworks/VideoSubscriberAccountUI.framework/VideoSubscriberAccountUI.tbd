@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
-current-version:       364.40.15
+current-version:       402.0.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -11,10 +11,13 @@ exports:
     symbols:              [ _VSAlertForError,
                             _VSAppSettingsFacadeAppsDidChangeNotification,
                             _VSIconForBundleWithIdentifier,
+                            _VSWLKAppInstallationOperationNotificationUserInfoAppAdamIDKey,
+                            _VSWLKAppInstallationOperationNotificationUserInfoInstallProgressKey,
+                            _VSWLKAppInstallationOperationProgressDidChange,
                             _kVSDeveloperTwoCharCode ]
-    objc-classes:         [ VSAMSStorefrontFetchAllOperation,
-                            VSAppDescriptionFetchOperation, VSAppSettingsFacade,
-                            VSAppSettingsViewModel, VSBindableSwitch,
+    objc-classes:         [ VSAMSStorefrontFetchAllOperation, VSAppDescription,
+                            VSAppSettingsFacade, VSAppSettingsViewModel,
+                            VSBindableSwitch, VSCircularProgressView,
                             VSErrorViewController,
                             VSFetchAllSupportedAppsOperation, VSFontCenter,
                             VSIdentityProviderFetchAllOperation,
@@ -27,10 +30,12 @@ exports:
                             VSIdentityProviderViewController,
                             VSImageLoadOperation, VSMaximumWidthMultilineButton,
                             VSMaximumWidthTintedBackgroundButton,
-                            VSMultilineButton, VSOnboardingInfoCenter,
-                            VSSetupFlowController, VSSetupView, VSStorefront,
-                            VSStorefrontFilter, VSSupportedAppsViewController,
+                            VSMultilineButton, VSNonChannelAppDecider,
+                            VSOnboardingInfoCenter, VSSetupFlowController,
+                            VSSetupView, VSStorefront, VSStorefrontFilter,
+                            VSSupportedAppsViewController,
                             VSTintedBackgroundButton,
                             VSTopShelfPurgingAccountStore,
-                            VSViewControllerFactory ]
+                            VSViewControllerFactory,
+                            VSWLKAppInstallationOperation ]
 ...

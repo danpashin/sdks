@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           ED32B646-2D46-38F6-8A64-62739C13C7EF
+    value:           C84AC4BA-1D56-39B4-B05F-DF7E81CF2DE6
   - target:          arm64e-ios
-    value:           5251BCE9-EA6B-3EA7-91B4-BDBBA2D977DC
+    value:           7ED741FD-1EC4-3BE3-B15C-393AECDFDBD2
 install-name:    '/usr/lib/libIOABP.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -18,13 +18,14 @@ exports:
                        __Z24getABPBHIRegistersString15abpBHIRegisters, __Z24getABPBTIRegistersString15abpBTIRegisters, 
                        __ZN10IOABPClass10writeAsyncEPKvjPFvPviS2_ES2_, __ZN10IOABPClass12readRegisterEjPvPj, 
                        __ZN10IOABPClass13timeSyncAsyncEPvjPFvS0_iS0_ES0_, __ZN10IOABPClass14clearIteratorsEv, 
-                       __ZN10IOABPClass14sendImageAsyncEPKvjPFvPviS2_S2_ES2_, __ZN10IOABPClass16interfaceMatchedEPvj, 
+                       __ZN10IOABPClass14mapMemoryAsyncEtPKvjPFvPviES2_, __ZN10IOABPClass14sendImageAsyncEPKvjPFvPviS2_S2_ES2_, 
+                       __ZN10IOABPClass16interfaceMatchedEPvj, __ZN10IOABPClass16unmapMemoryAsyncEtPFvPviES0_, 
                        __ZN10IOABPClass17abortChannelAsyncE12abpDirectionPFvPviES1_, 
-                       __ZN10IOABPClass17startChannelAsyncE12abpDirectionPFvPviES1_, 
-                       __ZN10IOABPClass19setNotificationPortEv, __ZN10IOABPClass20notificationCallbackEPvjjS0_, 
-                       __ZN10IOABPClass21clearNotificationPortEv, __ZN10IOABPClass25setUpNotificationCallbackEj, 
-                       __ZN10IOABPClass27cleanUpNotificationCallbackEv, __ZN10IOABPClass4openEj, 
-                       __ZN10IOABPClass4readEPvPj, __ZN10IOABPClass4stopEP16dispatch_group_s, 
+                       __ZN10IOABPClass17registerTimeEventEjPFvPviPS0_jES0_, __ZN10IOABPClass17startChannelAsyncE12abpDirectionPFvPviES1_, 
+                       __ZN10IOABPClass19deregisterTimeEventEjPFvPviES0_, __ZN10IOABPClass19setNotificationPortEv, 
+                       __ZN10IOABPClass20notificationCallbackEPvjjS0_, __ZN10IOABPClass21clearNotificationPortEv, 
+                       __ZN10IOABPClass25setUpNotificationCallbackEj, __ZN10IOABPClass27cleanUpNotificationCallbackEv, 
+                       __ZN10IOABPClass4openEj, __ZN10IOABPClass4readEPvPj, __ZN10IOABPClass4stopEP16dispatch_group_s, 
                        __ZN10IOABPClass5closeEv, __ZN10IOABPClass5startEPKcP11__CFRunLoopU13block_pointerFvjES5_U13block_pointerFv12abpErrorTypejiE, 
                        __ZN10IOABPClass5startEPKcP16dispatch_queue_sU13block_pointerFvjES5_U13block_pointerFv12abpErrorTypejiE, 
                        __ZN10IOABPClass5writeEPKvj, __ZN10IOABPClass7open_nlEj, __ZN10IOABPClass8close_nlEv, 
@@ -59,5 +60,6 @@ exports:
                        __ZN17IOABPControlClass5startEv, __ZN17IOABPControlClass7open_nlEP11__CFRunLoopP16dispatch_queue_s, 
                        __ZN17IOABPControlClass8close_nlEv, __ZN17IOABPControlClassC1Ev, 
                        __ZN17IOABPControlClassC2Ev, __ZN17IOABPControlClassD1Ev, 
-                       __ZN17IOABPControlClassD2Ev ]
+                       __ZN17IOABPControlClassD2Ev, __ZTI10IOABPClass, __ZTS10IOABPClass, 
+                       __ZTV10IOABPClass ]
 ...

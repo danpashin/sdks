@@ -7,15 +7,17 @@ uuids:
   - target:          armv7s-ios
     value:           3609F0D4-7838-3E7E-B034-A51BF2CA4FAD
   - target:          arm64-ios
-    value:           5BF980DE-EC08-3A9D-9DE2-EC20D8D8CD2B
+    value:           456FA8FE-051C-3308-A488-8D3D6F3B027C
   - target:          arm64e-ios
-    value:           012004FE-051E-3F76-ABCA-B3D9C24F488E
+    value:           6CB63AF1-CF08-35A9-8F07-FBAC247628EB
 install-name:    '/System/Library/Frameworks/PushKit.framework/PushKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _PushKitVersionNumber, _PushKitVersionString ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _PKPushIncomingCallReportedNotification, _PKPushTypeComplication, 
-                       _PKPushTypeFileProvider, _PKPushTypeUserNotifications, _PKPushTypeVoIP ]
-    objc-classes:    [ PKPushCredentials, PKPushPayload, PKPushRegistry, PKUserNotificationsRemoteNotificationServiceConnection ]
+    symbols:         [ _PKNonMacTokenName, _PKPushIncomingCallReportedNotification, 
+                       _PKPushTypeComplication, _PKPushTypeFileProvider, _PKPushTypeUserNotifications, 
+                       _PKPushTypeVoIP ]
+    objc-classes:    [ PKPublicChannel, PKPushCredentials, PKPushPayload, PKPushRegistry, 
+                       PKUserNotificationsRemoteNotificationServiceConnection ]
 ...

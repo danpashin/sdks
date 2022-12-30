@@ -3,24 +3,38 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/AuthenticationServicesCore
-current-version:       611.1.21
+current-version:       612.1.27
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ASCAuthorizationErrorDomain,
+    symbols:              [ _ASCAgentBundleIdentifier, _ASCAgentServiceName,
+                            _ASCAuthorizationErrorDomain,
                             _ASCAuthorizationPresentationContextDataKey,
+                            _ASCAuthorizationPresenterClientEntitlementName,
                             _ASViewServiceClientEntitlement,
-                            _ASViewServiceProcess, _descriptionForErrorCode ]
-    objc-classes:         [ ASCAppleIDCredential, ASCAppleIDLoginChoice,
+                            _ASViewServiceProcess,
+                            _ascCredentialRequestTypesAllPublicKey,
+                            _authenticationServicesViewServiceBundleIdentifier,
+                            _descriptionForErrorCode ]
+    objc-classes:         [ ASCAgent, ASCAgentInterface, ASCAgentListener,
+                            ASCAgentProxy, ASCAppleIDCredential,
+                            ASCAppleIDLoginChoice,
                             ASCAuthorizationPresentationContext,
                             ASCAuthorizationPresenter,
                             ASCAuthorizationPresenterHostInterface,
+                            ASCAuthorizationTrafficController,
                             ASCCredentialRequestContext, ASCPasswordCredential,
                             ASCPasswordLoginChoice,
-                            ASCPlatformPublicKeyCredential,
+                            ASCPlatformPublicKeyCredentialAssertion,
                             ASCPlatformPublicKeyCredentialLoginChoice,
-                            ASCSecurityKeyPublicKeyCredential,
+                            ASCPlatformPublicKeyCredentialRegistration,
+                            ASCPublicKeyCredentialAssertionOptions,
+                            ASCPublicKeyCredentialCreationOptions,
+                            ASCPublicKeyCredentialDescriptor,
+                            ASCSecurityKeyPublicKeyCredentialAssertion,
                             ASCSecurityKeyPublicKeyCredentialLoginChoice,
-                            ASCViewServiceInterface ]
+                            ASCSecurityKeyPublicKeyCredentialRegistration,
+                            ASCViewServiceInterface, ASCWebKitSPISupport,
+                            ASFeatureManager ]
 ...

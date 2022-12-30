@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2002 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2000-2021 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  *
@@ -103,7 +103,8 @@ typedef int             vm_prot_t;
  *	looks like VM_PROT_ALL and then some.
  */
 
-#define VM_PROT_NO_CHANGE       ((vm_prot_t) 0x08)
+#define VM_PROT_NO_CHANGE_LEGACY       ((vm_prot_t) 0x08)
+#define VM_PROT_NO_CHANGE              ((vm_prot_t) 0x01000000)
 
 /*
  *      When a caller finds that he cannot obtain write permission on a
@@ -148,6 +149,9 @@ typedef int             vm_prot_t;
  */
 #define VM_PROT_STRIP_READ              ((vm_prot_t) 0x80)
 #define VM_PROT_EXECUTE_ONLY    (VM_PROT_EXECUTE|VM_PROT_STRIP_READ)
+
+
+#define VM_PROT_ALLEXEC                 (VM_PROT_EXECUTE)
 
 
 #endif  /* _MACH_VM_PROT_H_ */

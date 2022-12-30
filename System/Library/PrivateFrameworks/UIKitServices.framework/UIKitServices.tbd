@@ -3,27 +3,35 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIKitServices.framework/UIKitServices
-current-version:       4218.1.101
+current-version:       5067.3.107
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _UIKitServicesVersionNumber,
                             _UIKitServicesVersionString,
+                            _UISAllDeviceRotationCount, _UISAllDeviceRotations,
+                            _UISAllDeviceScaleCount, _UISAllDeviceScales,
                             _UISApplicationInitializationContextAlwaysVendEntitlement,
                             _UISApplicationPushKeepAliveInterval,
                             _UISApplicationStateServiceErrorDomain,
                             _UISApplicationStateServiceIdentifier,
                             _UISApplicationStateServiceMessageKeyBundleIdentifier,
                             _UISApplicationSupportServiceIdentifier,
+                            _UISCalloutBarFontSize, _UISCreateImageFromDrawing,
                             _UISDeviceContextDeviceClassKey,
                             _UISDeviceContextDeviceCornerRadiusKey,
+                            _UISDeviceContextDeviceIdiomKey,
                             _UISDeviceContextHomeButtonTypeKey,
+                            _UISDidCreateWindowForSceneNotification,
+                            _UISGetFontContentSizeCategory,
+                            _UISMainHostWindowDidBecomeKeyNotification,
+                            _UISMainHostWindowDidChangeNotification,
+                            _UISMainHostWindowDidResignKeyNotification,
                             _UISOpenApplicationOptionAppBasedViewService,
                             _UISOpenApplicationOptionClickAttribution,
                             _UISOpenApplicationOptionKeySceneSessionPersistentIdentifier,
                             _UISOpenApplicationOptionKeyTargetContentIdentifier,
-                            _UISRenderImage,
                             _UISUserInterfaceStyleModeOverrideNone,
                             _UISUserInterfaceStyleModeOverridesEqual,
                             _UISUserInterfaceStyleModeScheduleDefault,
@@ -44,8 +52,11 @@ exports:
                             UISApplicationSupportDisplayEdgeInfo,
                             UISApplicationSupportDisplayEdgeInsetsWrapper,
                             UISApplicationSupportService, UISClickAttribution,
+                            UISCompatibilityContext,
                             UISCurrentUserInterfaceStyleValue, UISDeviceContext,
-                            UISDisplayContext, UISFetchContentInBackgroundAction,
+                            UISDisplayContext, UISDisplayShape,
+                            UISDisplaySingleRectShape,
+                            UISFetchContentInBackgroundAction,
                             UISFetchContentInBackgroundActionResponse,
                             UISHandleApplicationShortcutAction,
                             UISHandleBackgroundURLSessionAction,
@@ -54,18 +65,28 @@ exports:
                             UISIntentForwardingAction,
                             UISIntentForwardingActionResponse,
                             UISMutableApplicationInitializationContext,
+                            UISMutableCompatibilityContext,
                             UISMutableDeviceContext, UISMutableDisplayContext,
-                            UISNotificationResponseAction, UISOpenURLAction,
-                            UISSceneRequestOptions, UISSlotMachine,
-                            UISSlotRemoteContent, UISSlotStyle,
-                            UISUserInterfaceStyleMode ]
-    objc-ivars:           [ UISApplicationInitializationContext._defaultSceneToken,
+                            UISMutableSlotStyle, UISNotificationResponseAction,
+                            UISOpenURLAction, UISPasteVariant,
+                            UISSceneRequestOptions, UISSlotEmptyContent,
+                            UISSlotLocalContent, UISSlotMachine,
+                            UISSlotRemoteContent, UISSlotStyle, UISTextLineDrawing,
+                            UISTextParagraphDrawing, UISTransform3DGrader,
+                            UISUserInterfaceStyleMode, UISVectorGlyphDrawing ]
+    objc-ivars:           [ UISApplicationInitializationContext._compatibilityContext,
+                            UISApplicationInitializationContext._defaultSceneToken,
                             UISApplicationInitializationContext._deviceContext,
                             UISApplicationInitializationContext._displayContext,
                             UISApplicationInitializationContext._persistedSceneIdentifiers,
+                            UISApplicationInitializationContext._supportAppSceneRequests,
+                            UISCompatibilityContext._supportedDisplaySizes,
                             UISDeviceContext._deviceInfoKeysToValues,
                             UISDisplayContext._artworkSubtype,
                             UISDisplayContext._displayConfiguration,
                             UISDisplayContext._displayEdgeInfo,
-                            UISDisplayContext._userInterfaceStyle ]
+                            UISDisplayContext._exclusionArea,
+                            UISDisplayContext._userInterfaceStyle,
+                            UISSlotStyle._fields, UISSlotStyle._localization,
+                            UISSlotStyle._tintColor ]
 ...

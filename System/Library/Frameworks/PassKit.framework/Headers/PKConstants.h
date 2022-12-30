@@ -38,7 +38,8 @@ extern PKPaymentNetwork const PKPaymentNetworkVisa API_AVAILABLE(macos(11.0), io
 extern PKPaymentNetwork const PKPaymentNetworkVPay API_AVAILABLE(macos(11.0), ios(12.0), watchos(5.0));
 extern PKPaymentNetwork const PKPaymentNetworkBarcode API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0));
 extern PKPaymentNetwork const PKPaymentNetworkGirocard API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0));
-
+extern PKPaymentNetwork const PKPaymentNetworkWaon API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0));
+extern PKPaymentNetwork const PKPaymentNetworkNanaco API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0));
 typedef NSString * PKContactField NS_STRING_ENUM;
 extern PKContactField const PKContactFieldPostalAddress API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0));
 extern PKContactField const PKContactFieldEmailAddress  API_AVAILABLE(macos(11.0), ios(11.0), watchos(4.0));
@@ -83,7 +84,8 @@ typedef NS_ENUM(NSInteger, PKPaymentButtonType) {
     PKPaymentButtonTypeRent  API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0)),
     PKPaymentButtonTypeSupport  API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0)),
     PKPaymentButtonTypeContribute  API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0)),
-    PKPaymentButtonTypeTip  API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0))
+    PKPaymentButtonTypeTip  API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0)),
+    PKPaymentButtonTypeContinue  API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0))
 } API_AVAILABLE(macos(11.0), ios(8.3), watchos(3.0));
 
 typedef NS_OPTIONS(NSUInteger, PKRadioTechnology) {

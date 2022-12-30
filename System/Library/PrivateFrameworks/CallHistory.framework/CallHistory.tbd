@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CHCallerIdAvailabilityAsString,
+    symbols:              [ _CHCallInteractionsDidChangeDarwinNotification,
+                            _CHCallerIdAvailabilityAsString, _CHHash,
                             _DeserializeTransactions,
                             _HandleInteractionsForDeserializedTransactions,
                             _createBackgroundTaskAssertion,
@@ -58,13 +59,14 @@ exports:
                             _kCHTimerLifetimeKey, _kCHTimerOutgoingKey,
                             _kCallDBDirName, _kCallDBMLogDomain,
                             _kCallDBPropertiesEntity, _kCallDBSharedUtilDomain,
+                            _kCallHistoryCallRecordInsertedNotification,
                             _kCallHistoryDBName, _kCallHistoryDataStoreExtension,
                             _kCallHistoryDatabaseChangedNotification,
-                            _kCallHistoryDatabaseChangedTokenKey,
                             _kCallHistoryDatabaseInitializedKey,
                             _kCallHistoryDatabasePluginUpdateNotification,
                             _kCallHistoryDatabaseRemoteUpdateReadNotification,
                             _kCallHistoryObjectModelResourceExtension,
+                            _kCallHistorySyncHelperReadyNotification,
                             _kCallHistoryTempDBName,
                             _kCallHistoryTimersChangedNotification,
                             _kCallRecordEntity, _kCallUpdatePropertyBytesUsed,
@@ -80,16 +82,17 @@ exports:
                             _kSyncHelperServiceIdentifier, _kTmpDBLocationKey,
                             _maybeAppendStringWithSeparator,
                             _maybeLogVersionInfo, _notifyClientsOfEvent ]
-    objc-classes:         [ CHConfiguration, CHConfigurationAggregator, CHHandle,
-                            CHLogger, CHManager, CHMigrator, CHPhoneNumber,
-                            CHPluginHelper, CHRecentCall, CHSynchronizable,
-                            CHSynchronizedLoggable, CHTransaction,
-                            CHUserConfiguration, CallDBManager,
+    objc-classes:         [ CHCallInteractionManager, CHConfiguration,
+                            CHConfigurationAggregator, CHDelegateController,
+                            CHDelegateManager, CHDeviceDataSource,
+                            CHDeviceObserver, CHHandle, CHLogger, CHManager,
+                            CHMigrator, CHPhoneNumber, CHPluginHelper, CHRecentCall,
+                            CHSynchronizable, CHSynchronizedLoggable,
+                            CHTransaction, CHUserConfiguration, CallDBManager,
                             CallDBManagerServer, CallHistoryDBClientHandle,
                             CallHistoryDBHandle, DBManager, DBMigrationResult,
-                            DeserializedTransaction, GateKeeper ]
+                            DeserializedTransaction ]
     objc-ivars:           [ CHLogger._logHandle,
-                            CallHistoryDBClientHandle._observerCallRecordRef,
                             CallHistoryDBClientHandle._observerCallTimersRef,
                             CallHistoryDBClientHandle.dbStoreHandle,
                             CallHistoryDBHandle._dataStoreAddedRef,
@@ -98,6 +101,5 @@ exports:
                             CallHistoryDBHandle._observerCallRecordRef,
                             CallHistoryDBHandle.callDBManager,
                             CallHistoryDBHandle.fCallDBPropertiesContext,
-                            CallHistoryDBHandle.fCallRecordContext,
-                            CallHistoryDBHandle.objectId ]
+                            CallHistoryDBHandle.fCallRecordContext ]
 ...

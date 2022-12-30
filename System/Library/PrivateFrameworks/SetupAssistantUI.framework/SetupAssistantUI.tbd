@@ -8,12 +8,7 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _BFFFlowSkipIdentifierAppleID,
-                            _BFFFlowSkipIdentifierApplePay,
-                            _BFFFlowSkipIdentifierPasscode,
-                            _BFFFlowSkipIdentifierSiri,
-                            _BFFFlowSkipIdentifierTouchID, _BFFIsiPad,
-                            _BFFIsiPhone, _BFFPointImageOfColor,
+    symbols:              [ _BFFIsiPad, _BFFIsiPhone, _BFFPointImageOfColor,
                             _BFFRoundRectToPixel, _BFFRoundToPixel,
                             _SetupIsInternalInstall, __BFFCGFloatByDeviceHeight,
                             __BFFHeaderTextStyle, __BFFHeightByDeviceSize,
@@ -21,8 +16,7 @@ exports:
     objc-classes:         [ BFFBarButtonSpinnerView, BFFCapabilities,
                             BFFComplexPasscodeInputView, BFFContinueButton,
                             BFFFaceIDViewController,
-                            BFFFinishSetupViewController, BFFFlow,
-                            BFFFlowSkipController, BFFFlowStarter,
+                            BFFFinishSetupViewController, BFFFlow, BFFFlowStarter,
                             BFFLinkLabelFooterView,
                             BFFMigrationTimeRemainingController,
                             BFFNavBarSpinnerManager, BFFNavigationController,

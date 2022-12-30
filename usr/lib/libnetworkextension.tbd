@@ -7,13 +7,21 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           C735238A-25E2-361F-80E5-4C1BE32F99F0
+    value:           DCEE1798-7665-3498-8E91-0E8E347DBF53
   - target:          arm64e-ios
-    value:           CAA737D9-5B05-3A6E-9B86-2B6EF8DF5768
+    value:           FD23D981-394D-327E-98AD-2245D44F47FF
 install-name:    '/usr/lib/libnetworkextension.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _ne_filter_allocate_globals, _ne_filter_copy_connection, _ne_filter_crypto_generate_client_key, 
+    symbols:         [ _NEHelperTrackerAddIP, _NEHelperTrackerAddIPForAllFlows, _NEHelperTrackerAddIPWithDisposition, 
+                       _NEHelperTrackerAppInfoIsBrowser, _NEHelperTrackerAppInfoSetAuditToken, 
+                       _NEHelperTrackerAppInfoSetIsBrowser, _NEHelperTrackerAppInfoSetPID, 
+                       _NEHelperTrackerAppInfoSetSigningIdentifier, _NEHelperTrackerAppInfoSetUUID, 
+                       _NEHelperTrackerClearCache, _NEHelperTrackerContextGetDomain, 
+                       _NEHelperTrackerContextGetDomainOwner, _NEHelperTrackerDumpIPEntries, 
+                       _NEHelperTrackerFreeAppInfo, _NEHelperTrackerGetAppInfo, _NEHelperTrackerGetAppUUID, 
+                       _NEHelperTrackerGetDisposition, _ne_filter_allocate_globals, 
+                       _ne_filter_copy_connection, _ne_filter_crypto_generate_client_key, 
                        _ne_filter_crypto_init_client, _ne_filter_crypto_init_master, 
                        _ne_filter_crypto_sign_data, _ne_filter_crypto_validate_data, 
                        _ne_filter_deallocate_globals, _ne_filter_get_definition, 

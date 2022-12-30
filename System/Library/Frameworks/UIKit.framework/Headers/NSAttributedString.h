@@ -14,6 +14,9 @@
 @class NSURL;
 
 NS_ASSUME_NONNULL_BEGIN
+
+#if UIKIT_HAS_UIFOUNDATION_SYMBOLS
+
 /************************ Attributes ************************/
 
 // Predefined character attributes for text. If the key is not present in the dictionary, it indicates the default value described below.
@@ -194,11 +197,12 @@ static const NSUnderlineStyle NSUnderlinePatternDashDot = NSUnderlineStylePatter
 static const NSUnderlineStyle NSUnderlinePatternDashDotDot = NSUnderlineStylePatternDashDotDot;
 static const NSUnderlineStyle NSUnderlineByWord = NSUnderlineStyleByWord;
 
-
+#if TARGET_OS_IPHONE
 typedef NS_ENUM(NSInteger, NSTextWritingDirection) {
     NSTextWritingDirectionEmbedding     = (0 << 1),
     NSTextWritingDirectionOverride      = (1 << 1)
 } API_DEPRECATED_WITH_REPLACEMENT("NSWritingDirectionFormatType", ios(7.0, 9.0)) API_UNAVAILABLE(tvos);
+#endif
 
 @interface NSAttributedString(NSDeprecatedKitAdditions)
 - (nullable instancetype)initWithFileURL:(NSURL *)url options:(NSDictionary *)options documentAttributes:(NSDictionary* __nullable * __nullable)dict error:(NSError **)error API_DEPRECATED_WITH_REPLACEMENT("initWithURL:options:documentAttributes:error:", ios(7.0, 9.0)) API_UNAVAILABLE(tvos);
@@ -207,6 +211,9 @@ typedef NS_ENUM(NSInteger, NSTextWritingDirection) {
 @interface NSMutableAttributedString (NSDeprecatedKitAdditions)
 - (BOOL)readFromFileURL:(NSURL *)url options:(NSDictionary *)opts documentAttributes:(NSDictionary* __nullable * __nullable)dict error:(NSError **)error API_DEPRECATED_WITH_REPLACEMENT("readFromURL:options:documentAttributes:error:", ios(7.0, 9.0)) API_UNAVAILABLE(tvos);
 @end
+
+#endif // UIKIT_HAS_UIFOUNDATION_SYMBOLS
+
 NS_ASSUME_NONNULL_END
 
 #else

@@ -9,23 +9,19 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _HUCCPerformCommonInitialization,
-                            _HUCCPreferencesDidChangeNotification,
                             _HUCCSizeSubclassForModuleViewWidth,
-                            _HUCCUpdateRunningState,
+                            _HUCCStringForOrientation, _HUCCUpdateRunningState,
+                            _HUCCUpdateRunningStateWithAppleMediaAccessories,
                             _HUControlCenterViewSizeSubclass,
                             __HUCCLayoutStyleForModuleViewWidth,
                             _launchHomeAppForModuleViewController ]
     objc-classes:         [ HUCCControlCenterModule,
                             HUCCDashboardContainerViewController,
-                            HUCCGridItemManager, HUCCGridViewController,
-                            HUCCHomeButton, HUCCLockStateHandler,
-                            HUCCModuleContentViewController,
-                            HUCCModuleExpandingTransition, HUCCModuleView,
-                            HUCCOpenURLHandler, HUCCPageItemManager,
-                            HUCCPreferences, HUCCRemoteDashboardViewController,
+                            HUCCLockStateHandler, HUCCOpenURLHandler,
+                            HUCCRemoteDashboardViewController,
                             HUCCSmartContainerView,
                             HUCCSmartGridContentViewController,
                             HUCCSmartGridItemManager, HUCCSmartGridLayout,
                             HUCCSmartGridPropertyAnimator,
-                            HUCCSmartGridViewController, HUCCWarningLabelView ]
+                            HUCCSmartGridViewController ]
 ...

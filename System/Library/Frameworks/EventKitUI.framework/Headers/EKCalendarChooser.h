@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, EKCalendarChooserDisplayStyle) {
 
 @protocol EKCalendarChooserDelegate;
 
-
 EVENTKITUI_EXTERN @interface EKCalendarChooser : UIViewController
 
 - (id)initWithSelectionStyle:(EKCalendarChooserSelectionStyle)selectionStyle

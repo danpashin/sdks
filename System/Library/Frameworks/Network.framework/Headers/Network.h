@@ -13,6 +13,7 @@
 #define __NW_SET_INDIRECT__
 #endif // __NW_INDIRECT__
 
+#include <Network/nw_object.h>
 #include <Network/advertise_descriptor.h>
 #include <Network/browser.h>
 #include <Network/browse_result.h>
@@ -34,6 +35,7 @@
 #include <Network/path.h>
 #include <Network/privacy_context.h>
 #include <Network/protocol_options.h>
+#include <Network/quic_options.h>
 #include <Network/resolver_config.h>
 #include <Network/tcp_options.h>
 #include <Network/tls_options.h>

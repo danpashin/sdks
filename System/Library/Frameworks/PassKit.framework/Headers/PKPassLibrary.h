@@ -93,12 +93,16 @@ API_AVAILABLE(ios(6.0), watchos(3.0))
 
 // These methods may be utilized to activate a payment pass that is provisioned but currently in the inactive state, by providing
 // either a cryptographic OTP, or an activation code.
-- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activateSecureElementPass:withActivationData:completion: instead", ios(8.0, API_TO_BE_DEPRECATED));
-- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationCode:(NSString *)activationCode completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activatePaymentPass:withActivationData:completion: instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED;
+- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activateSecureElementPass:withActivationData:completion: instead", ios(8.0, API_TO_BE_DEPRECATED)) NS_SWIFT_DISABLE_ASYNC;
+- (void)activatePaymentPass:(PKPaymentPass *)paymentPass withActivationCode:(NSString *)activationCode completion:(nullable void(^)(BOOL success, NSError *error))completion API_DEPRECATED("Use activatePaymentPass:withActivationData:completion: instead", ios(8.0, 9.0)) __WATCHOS_PROHIBITED NS_SWIFT_DISABLE_ASYNC;
 - (void)activateSecureElementPass:(PKSecureElementPass *)secureElementPass withActivationData:(NSData *)activationData completion:(nullable void(^)(BOOL success, NSError * _Nullable error))completion NS_SWIFT_NAME(activate(_:activationData:completion:)) API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos);
 
 // Sign a payload using the pass
 - (void)signData:(NSData *)signData withSecureElementPass:(PKSecureElementPass *)secureElementPass completion:(void(^)(NSData * _Nullable signedData, NSData * _Nullable signature, NSError * _Nullable error))completion NS_SWIFT_NAME(sign(_:using:completion:)) API_AVAILABLE(ios(13.4), watchos(6.2));
+
+// Returns custom data for a given secure element pass, if supported by that pass
+- (void)serviceProviderDataForSecureElementPass:(PKSecureElementPass *)secureElementPass completion:(void(^)(NSData * _Nullable serviceProviderData, NSError* _Nullable error))completion NS_SWIFT_NAME(serviceProviderData(for:completion:)) API_AVAILABLE(ios(15.0), watchos(8.0));
+
 @end
 
 // This notification is issued by a library instance, with that instance as the sender.  If there are no instantiated library objects,

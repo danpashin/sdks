@@ -8,8 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NULoadMtlTextureFromMemory,
-                            _NULoggingObjectForDomain,
+    symbols:              [ _NUNILoadMtlTextureFromMemory,
+                            _NUNILoggingObjectForDomain,
                             _NanoUniverseVersionNumber,
                             _NanoUniverseVersionString, __Z10UMQuatMakeDv3_f,
                             __Z10UMQuatMakeDv3_fS_S_, __Z10UMQuatMakefff,
@@ -17,6 +17,8 @@ exports:
                             __Z11UMTranspose8float3x3,
                             __Z14UMFloat3x3Make6UMQuat,
                             __Z14UMFloat3x3MakeDv3_fS_S_,
+                            __Z14UMFloat4x4Make6UMQuat,
+                            __Z15UMFloat4x4Equal8float4x4S_,
                             __Z19UMFloat4x4MakeOrthoffffff,
                             __Z19UMFloat4x4MakeScaleDv3_f,
                             __Z19UMFloat4x4MakeScalef,
@@ -30,6 +32,7 @@ exports:
                             __Z5UMMul8float4x4S_, __Z7UMSlerp6UMQuatS_f,
                             __Z8UMNegate8float3x3, _kUMFloat4x4Identity,
                             _kUMFloat4x4Zero ]
-    objc-classes:         [ NUAnimation, NUMetalQuad, NURenderer, NUResources, NUScene,
-                            NUSpheroid, NUView, _NUGeometry ]
+    objc-classes:         [ NUNIAnimation, NUNIMetalQuad, NUNIRenderer,
+                            NUNIResources, NUNIScene, NUNISpheroid, NUNIView,
+                            _NUNIGeometry ]
 ...

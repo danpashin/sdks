@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Message.framework/MailServices/IMAP.framework/IMAP
-current-version:       3654.80
+current-version:       3693.0.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -14,7 +14,6 @@ exports:
                             _GmailPermanentTagAllMail, _GmailPermanentTagSpam,
                             _GmailPermanentTagStarred,
                             _GmailSpecialUseAttributeImportant,
-                            _IMAPAccountOfflineOperationQueuedNotification,
                             _IMAPCreateArrayForMessageFlags, _IMAPESearchAllKey,
                             _IMAPESearchCountKey, _IMAPESearchMaxKey,
                             _IMAPESearchMinKey, _IMAPESearchTagKey,
@@ -72,7 +71,7 @@ exports:
                             MFOSXServerIMAPAccount, MFOSXServerSMTPAccount,
                             MFSearchFetchResponseQueue, MFSearchResponseQueue,
                             MFSyncResponseQueue, MFYahooSMTPAccount, YahooAccount,
-                            YahooDeliveryAccount, _MFFlagChangeEntry,
+                            YahooDeliveryAccount,
                             _MFGmailClientTokenAuthenticator,
                             _MFIMAPAppendMessagesContext,
                             _MFIMAPCommandParameters, _MFIMAPFetchUnit,
@@ -82,10 +81,8 @@ exports:
     objc-ivars:           [ IMAPAccount._cachedConnections,
                             IMAPAccount._connectionLock,
                             IMAPAccount._fetchedMailboxList,
-                            IMAPAccount._greatestInboxUid,
                             IMAPAccount._isOffline,
                             IMAPAccount._lockOrderingArray,
-                            IMAPAccount._mailboxesToSynchronize,
                             IMAPAccount._nextConnectionTag,
                             IMAPAccount._offlineCache,
                             IMAPAccount._offlineCacheFlushHandler,
@@ -211,10 +208,6 @@ exports:
                             MFSearchResponseQueue.indexSet,
                             MFSearchResponseQueue.limit,
                             MFSyncResponseQueue._shouldSyncFlags,
-                            _MFFlagChangeEntry.changes,
-                            _MFFlagChangeEntry.commitTime,
-                            _MFFlagChangeEntry.connectionTag,
-                            _MFFlagChangeEntry.path, _MFFlagChangeEntry.uid,
                             _MFIMAPAppendMessagesContext.customFlagsToSet,
                             _MFIMAPAppendMessagesContext.destUidNext,
                             _MFIMAPAppendMessagesContext.flagsToSet,

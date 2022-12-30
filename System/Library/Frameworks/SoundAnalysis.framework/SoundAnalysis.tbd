@@ -7,32 +7,39 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           25FA76CD-0521-3AEC-B958-B78E3D60426D
+    value:           81F06A9A-C2CA-3D0C-BFCA-E96A75D8DC7B
   - target:          arm64e-ios
-    value:           79EB469D-48E2-3EA2-9B89-EF5E3654AA4C
+    value:           371DB28C-8215-3572-8D85-97B9763ED701
 install-name:    '/System/Library/Frameworks/SoundAnalysis.framework/SoundAnalysis'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _SNErrorDomain, _SNSoundIdentifierApplause, _SNSoundIdentifierBabble, 
+    symbols:         [ _SNClassifierIdentifierVersion1, _SNDetectorIdentifierSoundPrintALaughter, 
+                       _SNDetectorIdentifierSoundPrintAShouting, _SNDetectorIdentifierSoundPrintASpeech, 
+                       _SNErrorDomain, _SNSoundIdentifierApplause, _SNSoundIdentifierBabble, 
                        _SNSoundIdentifierBeep, _SNSoundIdentifierBuzzer, _SNSoundIdentifierCatMeow, 
                        _SNSoundIdentifierCheering, _SNSoundIdentifierDingBell, _SNSoundIdentifierDistressedBaby, 
                        _SNSoundIdentifierDogBark, _SNSoundIdentifierDoorKnock, _SNSoundIdentifierDoorbell, 
                        _SNSoundIdentifierFireAlarm, _SNSoundIdentifierLaughter, _SNSoundIdentifierMusic, 
                        _SNSoundIdentifierShouting, _SNSoundIdentifierSmokeAlarm, 
-                       _SNSoundIdentifierSpeech, _SNVGGishFeatureEmbeddingCustomModelName, 
+                       _SNSoundIdentifierSpeech, _SNSoundPrintAFeatureEmbeddingCustomModelName, 
+                       _SNSoundPrintKFeatureEmbeddingCustomModelName, _SNVGGishFeatureEmbeddingCustomModelName, 
                        _SNVGGishFrontEndProcessingCustomModelName ]
-    objc-classes:    [ SNAudioCorrelationResult, SNAudioFileAnalyzer, SNAudioOffsetResult, 
-                       SNAudioStreamAnalyzer, SNClassification, SNClassificationResult, 
-                       SNClassifySoundRequest, SNCopyFilesRequest, SNCorrelateAudioRequest, 
-                       SNCreateFeaturePrintRequest, SNDaemon, SNDeleteFilesRequest, 
-                       SNDetectSignalThresholdRequest, SNDetectSoundRequest, SNDetectSpeechUtteranceRequest, 
+    objc-classes:    [ SNAudioConfiguration, SNAudioCorrelationResult, SNAudioFileAnalyzer, 
+                       SNAudioOffsetResult, SNAudioStreamAnalyzer, SNClassification, 
+                       SNClassificationResult, SNClassifySoundRequest, SNCopyFilesRequest, 
+                       SNCorrelateAudioRequest, SNCreateFeaturePrintRequest, SNDaemon, 
+                       SNDeleteFilesRequest, SNDetectSignalThresholdRequest, SNDetectSoundRequest, 
+                       SNDetectSpeechUtteranceRequest, SNDetectVoiceTriggerRequest, 
                        SNDetectionResult, SNDirectionOfArrivalResult, SNDiscoverFileServerRequest, 
-                       SNEstimateAudioOffsetRequest, SNEstimateDirectionOfArrivalRequest, 
+                       SNDistanceClassifier, SNEstimateAudioOffsetRequest, SNEstimateDirectionOfArrivalRequest, 
                        SNEstimateSpeechDistanceRequest, SNEstimateSpeechEmotionRequest, 
                        SNFeaturePrint, SNFileCopyingResult, SNFileDeletionResult, 
                        SNFileListingResult, SNFileServerDiscoveryResult, SNFileServerInfo, 
-                       SNFileSystem, SNLKFSResult, SNListFilesRequest, SNMeasureLKFSRequest, 
-                       SNNullRequest, SNNullResult, SNResultsCollector, SNResultsPrinter, 
-                       SNSignalThresholdResult, SNSpeechDistanceResult, SNSpeechEmotionResult, 
-                       SNSpeechUtteranceResult, SNSystemAudioAnalyzer ]
+                       SNFileSystem, SNKShotFeaturizationResult, SNKShotFeaturizer, 
+                       SNKShotSegment, SNKShotSegmentationRequest, SNKShotSegmentationResult, 
+                       SNLKFSResult, SNListFilesRequest, SNMeasureLKFSRequest, SNNullRequest, 
+                       SNNullResult, SNResultsCollector, SNResultsPrinter, SNSignalThresholdResult, 
+                       SNSpeechDistanceResult, SNSpeechEmotionResult, SNSpeechUtteranceResult, 
+                       SNSystemAudioAnalyzer, SNTimeDurationConstraint, SNVoiceTriggerCommand, 
+                       SNVoiceTriggerResult ]
 ...

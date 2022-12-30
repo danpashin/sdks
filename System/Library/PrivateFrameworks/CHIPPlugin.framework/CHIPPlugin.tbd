@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CHIPPlugin.framework/CHIPPlugin
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _CHIPPluginProtocolOperationErrorDomain ]
+    objc-classes:         [ CHIPAccessoryServer, CHIPAccessoryServerBrowser,
+                            CHIPAccessoryServerBuilder,
+                            CHIPAccessoryServerFactory,
+                            CHIPPluginAccessoryReachabilityManager,
+                            CHIPPluginAccessorySetupPayload,
+                            CHIPPluginClusterDescription, CHIPPluginFileManager,
+                            CHIPPluginHAPServiceDescription,
+                            CHIPPluginMutableAccessorySetupPayload,
+                            CHIPPluginMutableVendorMetadata,
+                            CHIPPluginMutableVendorMetadataProduct,
+                            CHIPPluginMutableVendorMetadataVendor,
+                            CHIPPluginPairing, CHIPPluginProtocolMap,
+                            CHIPPluginProtocolOperation,
+                            CHIPPluginProtocolOperationManager,
+                            CHIPPluginResidentStateManager, CHIPPluginStorage,
+                            CHIPPluginUtilities, CHIPPluginVendorMetadata,
+                            CHIPPluginVendorMetadataProduct,
+                            CHIPPluginVendorMetadataStore,
+                            CHIPPluginVendorMetadataVendor ]
+...

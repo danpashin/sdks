@@ -3,12 +3,14 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
-current-version:       691.2
+current-version:       735
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CSIEqualMetrics, _CSIIllegalMetrics,
+                            _CUIAccumulateSVGShapesIntoJoinedPath,
+                            _CUIAccumulateSVGShapesIntoPath,
                             _CUIBlendModeDescriptionFromCGBlendMode,
                             _CUIBlendModeLSRDescriptionFromCGBlendMode,
                             _CUICGBitmapContextCreate,
@@ -23,7 +25,9 @@ exports:
                             _CUIConvertCompressionTypeToString,
                             _CUIConvertDeepImageTo8,
                             _CUIConvertImageToPixelFormat,
-                            _CUIConvertPixelFormatToString, _CUICurrentPlatform,
+                            _CUIConvertPixelFormatToString,
+                            _CUICreateJoinedPathFromSVGNode,
+                            _CUICreatePathFromSVGNode, _CUICurrentPlatform,
                             _CUIDeallocateRGBAImageBuffer,
                             _CUIDefaultThemeRenditionKeyFormat,
                             _CUIDrawExtrudedImageInContext,
@@ -39,7 +43,7 @@ exports:
                             _CUIFillCARKeyArrayForRenditionKey2,
                             _CUIGetDeviceArtworkDisplayGamut,
                             _CUIGetFormatForFeatureSetAndPixelFormat,
-                            _CUIGetRGBAImageBuffer,
+                            _CUIGetRGBAImageBuffer, _CUIGetSVGAttributeUnitScale,
                             _CUIImageCompressedWithColorQuantization,
                             _CUIImageIsMonochrome, _CUIImageIsWideGamut,
                             _CUIKeyFormatToArrayString, _CUILogLogToStderr,
@@ -50,6 +54,7 @@ exports:
                             _CUIParseDeploymentTarget,
                             _CUIPlatformNameForPlatform,
                             _CUIPointSizeForDimensionForVectorGlyph,
+                            _CUIPreferredVectorGlyphConfigurationsForPlatform,
                             _CUIRenditionKeyCopy,
                             _CUIRenditionKeyFormatRemoveAttribute,
                             _CUIRenditionKeyHasIdentifier,
@@ -57,6 +62,9 @@ exports:
                             _CUIRenditionKeyStandardize,
                             _CUIRenditionKeyTokenCount,
                             _CUIRenditionKeyValueForAttribute,
+                            _CUISVGAttributeGetBoolean,
+                            _CUISVGNodeCanBeRepresentedAsPath,
+                            _CUISVGNodeGetTransform,
                             _CUISystemThemeRenditionKeyFormat,
                             _CUIThemeInfoVersion,
                             _CUIUncompressQuantizedImageData,
@@ -120,5 +128,6 @@ exports:
                             CUIThemeSchemaPSDLayer, CUIThemeSchemaPSDLayerGroup,
                             CUIThemeSchemaPSDRenditionLayer,
                             CUIThemeSchemaRendition,
-                            CUIThemeSchemaRenditionGroup, CoreUI ]
+                            CUIThemeSchemaRenditionGroup, CUIVectorGlyphMutator,
+                            CoreUI ]
 ...

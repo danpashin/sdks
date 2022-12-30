@@ -3,13 +3,12 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RunningBoard.framework/RunningBoard
-current-version:       505.100.7
+current-version:       617.0.30
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NSStringFromRBSJetsamBand,
-                            _RBAttributePrimitiveEntitlement,
+    symbols:              [ _RBAttributePrimitiveEntitlement,
                             _RBBackBoardClientEntitlement,
                             _RBBackgroundViewServicesEntitlement,
                             _RBDomainAttributeManagerDataProviderErrorDomain,
@@ -33,6 +32,7 @@ exports:
                             _RBTerminateManagedProcessesEntitlement,
                             _RBTerminateProcessEntitlement,
                             _RBTerminationAssertionEntitlement,
+                            _RBTrustedTargetEntitlement,
                             _RBUnlimitedProcessAssertionsEntitlement,
                             _RBViewServicesEntitlement,
                             _RBVoIPProcessAssertionEntitlement ]
@@ -48,20 +48,17 @@ exports:
                             RBAttributeContext, RBAttributeFactory,
                             RBAttributeTemplate, RBBundleProperties,
                             RBBundlePropertiesBSXPCProvider,
-                            RBBundlePropertiesBackgroundRefreshProvider,
                             RBBundlePropertiesLSProvider,
                             RBBundlePropertiesManager,
                             RBClientInheritanceManager, RBConcreteTarget, RBDaemon,
                             RBDomainAttributeManager,
                             RBDomainAttributeManagerDataProvider,
-                            RBEntitlementManager, RBEntitlementPredicate,
-                            RBEntitlements, RBEventQueue, RBEventQueueEvent,
-                            RBIgnoreAllEntitlementsManager,
-                            RBInheritanceCollection, RBJetsamBandProvider,
-                            RBLSBundleProperties, RBLaunchdInterface,
-                            RBLaunchdJobManager, RBLaunchdProperties,
-                            RBMeteredMessageQueue,
-                            RBMutableInheritanceCollection,
+                            RBDomainRestriction, RBEntitlementManager,
+                            RBEntitlementPredicate, RBEntitlements, RBEventQueue,
+                            RBEventQueueEvent, RBIgnoreAllEntitlementsManager,
+                            RBInheritanceCollection, RBLSBundleProperties,
+                            RBLaunchdInterface, RBLaunchdJobManager,
+                            RBLaunchdProperties, RBMutableInheritanceCollection,
                             RBMutableLaunchdProperties,
                             RBMutableProcessAppNapState, RBMutableProcessState,
                             RBMutableSystemState, RBPowerAssertionManager,
@@ -74,10 +71,12 @@ exports:
                             RBProcessStateChange, RBProcessStateChangeSet,
                             RBStateCaptureManager, RBSystemState,
                             RBThrottleBestEffortNetworkingManager,
-                            RBXPCBundleProperties ]
+                            RBTimeProvider, RBXNUWrapper, RBXPCBundleProperties ]
     objc-ivars:           [ RBLaunchdProperties._bundleID,
+                            RBLaunchdProperties._disableFreezing,
                             RBLaunchdProperties._doesOverrideManagement,
                             RBLaunchdProperties._executablePath,
+                            RBLaunchdProperties._explicitAngelFlag,
                             RBLaunchdProperties._hostPid,
                             RBLaunchdProperties._jobLabel,
                             RBLaunchdProperties._multiInstance,
@@ -89,9 +88,11 @@ exports:
                             RBLaunchdProperties._type,
                             RBLaunchdProperties._underlyingAssertion,
                             RBLaunchdProperties._variableEUID,
-                            RBProcessState._flags, RBProcessState._identity,
+                            RBProcessState._explicitJetsamBand,
+                            RBProcessState._flags, RBProcessState._gpuRole,
+                            RBProcessState._guaranteedRunning,
+                            RBProcessState._identity,
                             RBProcessState._inheritances,
-                            RBProcessState._jetsamBand,
                             RBProcessState._jetsamLenientModeByRole,
                             RBProcessState._legacyAssertions,
                             RBProcessState._legacyFinishTaskReason,

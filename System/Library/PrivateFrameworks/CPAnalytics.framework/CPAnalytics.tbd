@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CPAnalytics.framework/CPAnalytics
-current-version:       340.0.221
+current-version:       402.5.140
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -36,7 +36,10 @@ exports:
                             _CPAnalyticsDeviceFreeSpaceVeryHigh,
                             _CPAnalyticsDeviceFreeSpaceVeryLow,
                             _CPAnalyticsErrorPropertyCode,
+                            _CPAnalyticsErrorPropertyCodeAsString,
+                            _CPAnalyticsErrorPropertyDescription,
                             _CPAnalyticsErrorPropertyDomain,
+                            _CPAnalyticsErrorPropertyIndepthErrors,
                             _CPAnalyticsEventAppDidBecomeActive,
                             _CPAnalyticsEventAppSession,
                             _CPAnalyticsEventAppWillResignActive,
@@ -61,6 +64,7 @@ exports:
                             _CPAnalyticsEventScreenshotTaken,
                             _CPAnalyticsEventShareCanceled,
                             _CPAnalyticsEventShareCompleted,
+                            _CPAnalyticsEventShareFailed,
                             _CPAnalyticsEventTabIdentifierChanged,
                             _CPAnalyticsEventUnknownIntervalName,
                             _CPAnalyticsEventViewDidAppear,
@@ -72,7 +76,9 @@ exports:
                             _CPAnalyticsLog, _CPAnalyticsMediaPropertyAdjusted,
                             _CPAnalyticsMediaPropertyCameraType,
                             _CPAnalyticsMediaPropertyFavorite,
+                            _CPAnalyticsMediaPropertyHasSyndicationIdentifier,
                             _CPAnalyticsMediaPropertyImportSource,
+                            _CPAnalyticsMediaPropertyLibraryType,
                             _CPAnalyticsMediaPropertyLocalIdentifier,
                             _CPAnalyticsMediaPropertyMediaAge,
                             _CPAnalyticsMediaPropertyMediaAgeInMinutes,
@@ -83,7 +89,9 @@ exports:
                             _CPAnalyticsMediaPropertyOrientation,
                             _CPAnalyticsMediaPropertySceneType,
                             _CPAnalyticsMediaPropertySubject,
+                            _CPAnalyticsMediaPropertySyndicationState,
                             _CPAnalyticsMediaPropertyUUID,
+                            _CPAnalyticsMusicPropertyHasAppleMusicSubscription,
                             _CPAnalyticsPayloadAppEventNameKey,
                             _CPAnalyticsPayloadAssetCollectionKey,
                             _CPAnalyticsPayloadAssetCollectionLocalIdentifierKey,
@@ -132,11 +140,18 @@ exports:
                             _CPAnalyticsSystemPropertyCollectionCount,
                             _CPAnalyticsSystemPropertyDeviceFreeSpace,
                             _CPAnalyticsSystemPropertyDeviceModel,
+                            _CPAnalyticsSystemPropertyFaceAnalysisProgress,
+                            _CPAnalyticsSystemPropertyFullAnalysisProgress,
                             _CPAnalyticsSystemPropertyLibrarySizeRange,
                             _CPAnalyticsSystemPropertyLowPowerModeEnabled,
+                            _CPAnalyticsSystemPropertyMomentCount,
+                            _CPAnalyticsSystemPropertyMomentCountRange,
                             _CPAnalyticsSystemPropertyOSVersion,
+                            _CPAnalyticsSystemPropertyPersonCount,
+                            _CPAnalyticsSystemPropertyPersonCountRange,
                             _CPAnalyticsSystemPropertyPhotosCount,
                             _CPAnalyticsSystemPropertyProcess,
+                            _CPAnalyticsSystemPropertySceneAnalysisProgress,
                             _CPAnalyticsSystemPropertyVideosCount,
                             _CPAnalyticsTrackIntervalsKey,
                             _CPAnalyticsUserPropertyiCPLEnabled,
@@ -166,5 +181,6 @@ exports:
                             CPAnalyticsScreenManager,
                             CPAnalyticsSignpostDestination,
                             CPAnalyticsSystemProperties,
+                            CPAnalyticsTrialLoggingDestination,
                             PhotosAnalyticsSystemPropertyProvider ]
 ...

@@ -9,15 +9,13 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CoreFollowUpUIVersionNumber,
-                            _CoreFollowUpUIVersionString,
-                            _SPYGLASS_START_USING_ICLOUD_UID,
-                            _SPYGLASS_VERIFY_PRIMARY_EMAIL_UID,
-                            _SPYGLASS_VERIFY_TERMS_UID, _createFollowUpSubtitle,
-                            _createFollowUpTitle ]
-    objc-classes:         [ FLExtensionContext, FLExtensionViewController,
+                            _CoreFollowUpUIVersionString ]
+    objc-classes:         [ FLAlertControllerAction, FLAlertControllerHelper,
+                            FLExtensionContext, FLExtensionViewController,
                             FLFollowUpActionHandler, FLHeaderCell,
-                            FLHostViewController, FLNetworkObserver,
-                            FLNetworkStatePrompter, FLPreferencesController,
+                            FLHiddenImageTableCell, FLHostViewController,
+                            FLNetworkObserver, FLNetworkStatePrompter,
+                            FLPreferencesController,
                             FLPreferencesFollowUpItemListViewController,
                             FLSpecifierTapHandler, FLViewExtensionLoader,
                             _FLNetworkObserverBlock ]

@@ -1,0 +1,37 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CalendarMigration.framework/CalendarMigration
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _kCalAccountIdentifierDictionaryKey,
+                            _kCalAccountTypeDictionaryKey,
+                            _kCalCalendarDirectoryRelativeToHomeForMigration,
+                            _kCalCalendarMigrationBackupFileName,
+                            _kCalCurrentReminderMigrationCleanupVersion,
+                            _kCalDefaultCalendarName, _kCalDefaultGroupName,
+                            _kCalDefaultListName,
+                            _kCalLastReminderMigrationCleanupVersionDefaultsKey,
+                            _kCalLocalAccountName,
+                            _kCalMaximumCalendarDirectorySizeAllowedForBackupInBytes,
+                            _kCalMigrationErrorDomain,
+                            _kCalMigrationToolOptionsArgumentParseErrorDomain,
+                            _kCalMigrationToolOptionsArgumentParseErrorUserInfoKey_Argument,
+                            _kCalMigrationToolOptionsArgumentParseErrorUserInfoKey_Message,
+                            _kCalReminderMigrationBackupFileName,
+                            _kCalShouldBackupBeforeReminderMigrationDefaultsKey ]
+    objc-classes:         [ CalAggregateMigrationController,
+                            CalCalendarDatabaseReminderMigrator,
+                            CalDefaultReminderKitDatabaseMigrationContext,
+                            CalDefaultReminderKitProvider,
+                            CalDefaultReminderMigrationDefaultsProvider,
+                            CalMigrationBackup, CalMigrationControllerProvider,
+                            CalMigrationErrorUtils, CalMigrationFailure,
+                            CalMigrationLog, CalMigrationToolArgumentParser,
+                            CalMigrationUtilities, CalMigratorProvider,
+                            CalOutOfProcessMigrator ]
+...

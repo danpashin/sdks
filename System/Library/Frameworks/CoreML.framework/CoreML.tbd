@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A56442E1-5FD8-3E4D-AF7F-5535EB3CDE25
+    value:           1B6FD1BE-185C-3343-A14C-CD206EFFEE90
   - target:          arm64e-ios
-    value:           E63B5688-E4BF-311E-81AF-768DE88859AA
+    value:           2A484230-3C33-3EF5-A48D-DBCF5F57017A
 install-name:    '/System/Library/Frameworks/CoreML.framework/CoreML'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -20,7 +20,7 @@ exports:
                        _MLModelCreatorDefinedKey, _MLModelDescriptionKey, _MLModelErrorDomain, 
                        _MLModelLicenseKey, _MLModelVersionStringKey, _MLNLPSentenceClassifierModelName, 
                        _MLNLPWordTaggingModelName, _MLScenePrintCustomModelName, 
-                       _MLScenePrintRequestRevisionKey, _MLVGGishFeatureEmbeddingModelName, 
+                       _MLScenePrintRequestRevisionKey, _MLSoundPrintModelName, _MLVGGishFeatureEmbeddingModelName, 
                        _MLVGGishFrontendProcessingModelName, _kMLLayerComputeUnitHintFallbackFromCPU, 
                        _kMLLayerComputeUnitHintFallbackFromGPU, _kMLLayerComputeUnitHintFallbackFromNE, 
                        _kMLModelKeyInfoIV, _kMLModelKeyInfoKey, _kMLModelKeyInfoKeyIdentifier, 
@@ -32,8 +32,9 @@ exports:
                        _svm_get_svm_type, _svm_get_svr_probability, _svm_load_model, 
                        _svm_predict, _svm_predict_probability, _svm_predict_values, 
                        _svm_save_model, _svm_set_print_string_function, _svm_train ]
-    objc-classes:    [ CoreMLModelSecurityServiceToClient, CoreMLVersion, MLAppleGazetteer, 
-                       MLAppleGazetteerParameters, MLAppleImageFeatureExtractor, 
+    objc-classes:    [ CoreMLModelSecurityServiceToClient, CoreMLVersion, MLAppleAudioFeatureExtractor, 
+                       MLAppleAudioFeatureExtractorParameters, MLAppleAudioFeatureExtractorSoundPrintParameters, 
+                       MLAppleGazetteer, MLAppleGazetteerParameters, MLAppleImageFeatureExtractor, 
                        MLAppleImageFeatureExtractorObjectPrintParameters, MLAppleImageFeatureExtractorParameters, 
                        MLAppleImageFeatureExtractorScenePrintParameters, MLAppleSoundAnalysisPreprocessing, 
                        MLAppleTextClassifier, MLAppleTextClassifierParameters, MLAppleWordEmbedding, 
@@ -43,9 +44,10 @@ exports:
                        MLBackgroundTask, MLBatchProviderUtils, MLBayesianProbitRegression, 
                        MLCategoricalMapping, MLClassifier, MLClassifierResult, MLCloudDeploymentUtils, 
                        MLCloudSession, MLCompiler, MLCompilerOptions, MLCompilerResult, 
-                       MLCustomModelLoader, MLDataConversionUtils, MLDefaultCustomLayerFactory, 
-                       MLDefaultCustomModelFactory, MLDictVectorizer, MLDictionaryConstraint, 
-                       MLDictionaryFeatureProvider, MLFairPlayDecryptSession, MLFairPlayDecryptSessionManager, 
+                       MLComputeBatchDataSource, MLComputeDataSource, MLCustomModelLoader, 
+                       MLDataConversionUtils, MLDefaultCustomLayerFactory, MLDefaultCustomModelFactory, 
+                       MLDictVectorizer, MLDictionaryConstraint, MLDictionaryFeatureProvider, 
+                       MLFairPlayDecryptSession, MLFairPlayDecryptSessionManager, 
                        MLFairPlayKeyLoadingSession, MLFeatureDescription, MLFeatureFlags, 
                        MLFeatureProviderUtils, MLFeatureTypeUtils, MLFeatureValue, 
                        MLFeatureVectorizer, MLGKDecisionTree, MLGLMClassification, 
@@ -56,11 +58,12 @@ exports:
                        MLModel, MLModelAsset, MLModelCollection, MLModelCollectionEntry, 
                        MLModelConfiguration, MLModelDescription, MLModelEncryptionUtils, 
                        MLModelErrorUtils, MLModelExecutionSchedule, MLModelIOUtils, 
-                       MLModelInterface, MLModelMetadata, MLModelVisionFeaturePrintInfo, 
-                       MLMultiArray, MLMultiArrayAsNSArrayWrapper, MLMultiArrayConstraint, 
-                       MLMultiArrayShapeConstraint, MLMultiArrayUtils, MLNNLayerComputeUnitSelectionUtils, 
-                       MLNearestNeighborsSingleKdTreeIndex, MLNeuralNetworkCompiler, 
-                       MLNeuralNetworkContainer, MLNeuralNetworkEngine, MLNeuralNetworkUpdateEngine, 
+                       MLModelMetadata, MLModelVisionFeaturePrintInfo, MLMultiArray, 
+                       MLMultiArrayAsNSArrayWrapper, MLMultiArrayConstraint, MLMultiArrayShapeConstraint, 
+                       MLMultiArrayUtils, MLNNLayerComputeUnitSelectionUtils, MLNearestNeighborsSingleKdTreeIndex, 
+                       MLNeuralNetworkCompiler, MLNeuralNetworkContainer, MLNeuralNetworkEngine, 
+                       MLNeuralNetworkMLComputeLayer, MLNeuralNetworkMLComputeUpdateEngine, 
+                       MLNeuralNetworkUpdateEngine, MLNeuralNetworkV1Container, MLNeuralNetworkV1Engine, 
                        MLNonMaximumSuppression, MLNonMaximumSuppressionParameters, 
                        MLNormalizer, MLNumericConstraint, MLObjectBoundingBoxOutputDescription, 
                        MLOneHotEncoder, MLParameterContainer, MLParameterDescription, 
@@ -70,9 +73,10 @@ exports:
                        MLProgramContainer, MLProgramEngine, MLRegressor, MLRegressorResult, 
                        MLSVMEngine, MLSVMLoader, MLSVREngine, MLSVRLoader, MLSaver, 
                        MLScaler, MLSecureModel, MLSecureModelDecryptCredential, MLSequence, 
-                       MLSequenceConstraint, MLShufflingBatchProvider, MLSupervisedOnlineUpdateOptions, 
-                       MLSupportVectorClassifier, MLSupportVectorRegressor, MLTask, 
-                       MLTreeEnsembleClassifier, MLTreeEnsembleRegressor, MLTreeEnsembleXGBoostClassifier, 
+                       MLSequenceConstraint, MLShufflingBatchProvider, MLStreamingInputDataSource, 
+                       MLSupervisedOnlineUpdateOptions, MLSupportVectorClassifier, 
+                       MLSupportVectorRegressor, MLTask, MLTreeEnsembleClassifier, 
+                       MLTreeEnsembleRegressor, MLTreeEnsembleXGBoostClassifier, 
                        MLTreeEnsembleXGBoostUpdateEngine, MLUpdateContext, MLUpdateProgressHandlers, 
                        MLUpdateProgressHandlersUtils, MLUpdateTask, MLVersionInfo, 
                        MLWrappedModel, MLWritableWrappedModel, _MLDataSource, _MLInternalNLPModelWriter ]

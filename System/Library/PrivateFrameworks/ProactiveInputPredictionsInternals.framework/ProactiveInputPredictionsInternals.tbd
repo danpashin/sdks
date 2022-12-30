@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveInputPredictionsInternals.framework/ProactiveInputPredictionsInternals
-current-version:       1115.255
+current-version:       1153.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -14,7 +14,7 @@ exports:
                             _PSGPBTypingSpeedReadFrom,
                             _ProactiveInputPredictionsInternalsVersionNumber,
                             _ProactiveInputPredictionsInternalsVersionString ]
-    objc-classes:         [ PSGExperimentResolver,
+    objc-classes:         [ PSGDiagnostics, PSGExperimentResolver,
                             PSGInputSuggesterMetricsLogger,
                             PSGInputSuggesterServerDelegate,
                             PSGInputSuggesterServerRequestHandler,
@@ -23,10 +23,8 @@ exports:
                             PSGPBPrediction, PSGPBQuery, PSGPBTrigger,
                             PSGPBTypingSpeed, PSGResponseSuggestionsExpConfig,
                             PSGResponseSuggestionsExpConfigDefaults,
-                            PSGResponseSuggestionsExpConfigGuardedData,
                             PSGWordBoundarySuggestionsExpConfig,
                             PSGWordBoundarySuggestionsExpConfigDefaults,
-                            PSGWordBoundarySuggestionsExpConfigGuardedData,
                             PSGXPCServer ]
     objc-ivars:           [ PSGPBEngagement._bundleIdentifier,
                             PSGPBEngagement._dataSourceType,
@@ -166,7 +164,5 @@ exports:
                             PSGPBTypingSpeed._wbTreatmentName,
                             PSGPBTypingSpeed._zkwExperimentId,
                             PSGPBTypingSpeed._zkwTreatmentId,
-                            PSGPBTypingSpeed._zkwTreatmentName,
-                            PSGResponseSuggestionsExpConfigGuardedData._responseSuggestionConfigs,
-                            PSGWordBoundarySuggestionsExpConfigGuardedData._wordBoundaryConfigs ]
+                            PSGPBTypingSpeed._zkwTreatmentName ]
 ...

@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/Seeding.framework/Seeding
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _SDBrainAssetType, _SDIsInternalInstall,
+                            _SDPreferenceAppID, _SDPreferenceMemberEnrolled,
+                            _SDPreferenceOriginalBrain,
+                            _SDPreferenceOriginalUpdate,
+                            _SDPreferenceSeedProgram, _SDPreferenceServerURL,
+                            _SDSeedProfileIdentifier,
+                            _SDSeedProgramIsValidSeedProgram,
+                            _SDSeedProgramMetadataKeyAssetAudience,
+                            _SDSeedProgramMetadataKeyProgram,
+                            _SDSeedProgramStringCustomerSeed,
+                            _SDSeedProgramStringDeveloperSeed,
+                            _SDSeedProgramStringPublicSeed, _SDUpdateAssetType,
+                            _SeedingVersionNumber, _SeedingVersionString,
+                            _kSeedEnrollmentCookiePath ]
+    objc-classes:         [ SDAnalytics, SDBetaManager, SDBetaProgram, SDBuildInfo,
+                            SDCatalogUtilities, SDConstants, SDHTTPClient,
+                            SDLegalDoc, SDProfileUtilities, SDSeedProgramManager,
+                            SDSeedProgramMigrator, SDSeedingLogging ]
+...

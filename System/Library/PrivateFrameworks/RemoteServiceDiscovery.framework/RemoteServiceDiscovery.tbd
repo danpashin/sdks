@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/RemoteServiceDiscovery
-current-version:       1.100.7
+current-version:       44.10.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -19,10 +19,13 @@ exports:
                             _local_device_copy_service_names,
                             _remote_control_attach_loopback,
                             _remote_control_connect_loopback,
+                            _remote_control_connect_network_peer,
                             _remote_control_detach_loopback,
                             _remote_control_disable_bonjour,
+                            _remote_control_disable_network_peer,
                             _remote_control_enable_bonjour,
                             _remote_control_enable_bonjour_loopback,
+                            _remote_control_enable_network_peer,
                             _remote_control_reset_loopback,
                             _remote_control_resume_loopback,
                             _remote_control_suspend_loopback,
@@ -44,7 +47,8 @@ exports:
                             _remote_device_copy_service,
                             _remote_device_copy_service_names,
                             _remote_device_copy_unique_of_type,
-                            _remote_device_copy_uuid, _remote_device_get_alias,
+                            _remote_device_copy_uuid, _remote_device_disconnect,
+                            _remote_device_get_alias,
                             _remote_device_get_bridge_version,
                             _remote_device_get_connectable,
                             _remote_device_get_heartbeat_stats,
@@ -59,6 +63,7 @@ exports:
                             _remote_device_start_browsing,
                             _remote_device_start_browsing_matching,
                             _remote_device_state_get_description,
+                            _remote_device_timesync,
                             _remote_device_type_get_description,
                             _remote_device_type_is_trusted,
                             _remote_device_type_parse,

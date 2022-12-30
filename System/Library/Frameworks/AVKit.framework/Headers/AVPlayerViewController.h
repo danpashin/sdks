@@ -153,6 +153,16 @@ API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, watchos, tvos)
 - (void)playerViewController:(AVPlayerViewController *)playerViewController willEndFullScreenPresentationWithAnimationCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator API_AVAILABLE(ios(12.0));
 
 /*!
+ @method		playerViewController:restoreUserInterfaceForFullScreenExitWithCompletionHandler:
+ @param			playerViewController
+ 				The player view controller.
+ @param			completionHandler
+ 				The completion handler the delegate must call after restoring the interface for an exit full screen transition.
+ @abstract		The delegate can implement this method to restore the user interface before exiting fullscreen.
+ */
+- (void)playerViewController:(AVPlayerViewController *)playerViewController restoreUserInterfaceForFullScreenExitWithCompletionHandler:(void (^)(BOOL restored))completionHandler API_AVAILABLE(ios(15.0));
+
+/*!
 	@method		playerViewControllerWillStartPictureInPicture:
 	@param		playerViewController
 				The player view controller.

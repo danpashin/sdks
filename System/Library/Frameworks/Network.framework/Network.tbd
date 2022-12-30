@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           6C806F20-BB87-3EB8-9352-FB1D3AA2E012
   - target:          arm64-ios
-    value:           D2276D0F-5A2A-3F63-BCF3-82F2F7FEDAC4
+    value:           AAAF5FFC-1BE7-3C9A-A3C2-2D9AE42067C0
   - target:          arm64e-ios
-    value:           EA77AA57-6779-3C64-9506-7D33A143A93E
+    value:           64D46347-01CC-3C73-B057-A2D256ED295C
 install-name:    '/System/Library/Frameworks/Network.framework/Network'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -43,16 +43,20 @@ exports:
                        _NWUtilsCreateNSStringFromSockaddr, _NWUtilsCreateXPCDictionaryFromNSDictionary, 
                        _NWUtilsStringMatchesPattern, __NWConnectionWriteCompletionIdempotent, 
                        _updateOSLogPlistFromLevel ]
-    objc-classes:    [ NWAccumulator, NWActivityEmptyTrigger, NWActivityEpilogueStatistics, 
-                       NWActivityStatistics, NWAddressEndpoint, NWAdvertiseDescriptor, 
-                       NWBonjourBrowseDescriptor, NWBonjourServiceEndpoint, NWBrowseDescriptor, 
-                       NWBrowser, NWCandidatePathMonitor, NWConnection, NWConnectionStatistics, 
-                       NWDatagramConnection, NWDeviceReport, NWEndpoint, NWGenericNetworkAgent, 
-                       NWHostEndpoint, NWInboundMessage, NWInterface, NWL2Report, 
-                       NWMessage, NWMessageConnection, NWMonitor, NWNetworkAgentRegistration, 
+    objc-classes:    [ NWAccumulator, NWActivityClientMetricStatistics, NWActivityEmptyTrigger, 
+                       NWActivityEpilogueStatistics, NWActivityStatistics, NWAddressEndpoint, 
+                       NWAdvertiseDescriptor, NWBonjourBrowseDescriptor, NWBonjourServiceEndpoint, 
+                       NWBrowseDescriptor, NWBrowser, NWCandidatePathMonitor, NWConnection, 
+                       NWConnectionStatistics, NWDatagramConnection, NWDeviceReport, 
+                       NWEndpoint, NWGenericNetworkAgent, NWHostEndpoint, NWInboundMessage, 
+                       NWInterface, NWL2InterfaceQueueStats, NWL2Report, NWMessage, 
+                       NWMessageConnection, NWMonitor, NWNetworkAgentRegistration, 
                        NWNetworkDescription, NWOutboundMessage, NWParameters, NWPath, 
-                       NWPathEvaluator, NWProtocolTransform, NWRemoteConnectionActor, 
-                       NWRemoteConnectionDirector, NWRemotePacketProxy, NWResolver, 
-                       NWStreamConnection, NWSystemPathMonitor, NWTCPConnection, 
-                       NWTCPListener, NWUDPListener, NWUDPSession ]
+                       NWPathEvaluator, NWPrivacyProxyNetwork, NWPrivacyProxyTraffic, 
+                       NWProtocolTransform, NWRemoteConnectionActor, NWRemoteConnectionDirector, 
+                       NWRemotePacketProxy, NWResolver, NWStreamConnection, NWSystemPathMonitor, 
+                       NWTCPConnection, NWTCPListener, NWUDPListener, NWUDPSession, 
+                       NWURLSession, NWURLSessionDataTask, NWURLSessionDownloadTask, 
+                       NWURLSessionStreamTask, NWURLSessionTask, NWURLSessionUploadTask, 
+                       NWURLSessionWebSocketTask ]
 ...

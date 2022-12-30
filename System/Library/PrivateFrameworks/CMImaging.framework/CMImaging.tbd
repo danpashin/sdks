@@ -15,7 +15,9 @@ exports:
                             _CreatePixelBufferFromCFData,
                             _CreatePixelBufferFromFile,
                             _CreatePixelBufferFromPGMFile,
-                            _CreatePixelBufferPool, _CreateSampleBuffer,
+                            _CreatePixelBufferPool,
+                            _CreatePixelBufferWithWiringAssertion,
+                            _CreateSampleBuffer,
                             _DeriveImageWidthHeightFromFilesize,
                             _DerivePixelFormatTypeFromFilename, _FigMetalDecRef,
                             _FigMetalIncRef, _FigMetalIsValid,
@@ -25,11 +27,11 @@ exports:
                             _WriteFloat16PixelBufferChannelToPGMFile,
                             _WriteOneComponent8PixelBufferToPGMFile,
                             _WritePixelBufferToFile ]
-    objc-classes:         [ FigM2MController, FigMetalAllocator,
-                            FigMetalAllocatorDescriptor,
-                            FigMetalAllocatorMetadata, FigMetalContext,
+    objc-classes:         [ CMImagingShaderPrecompilation, FigM2MController,
+                            FigMetalAllocator, FigMetalAllocatorDescriptor,
+                            FigMetalBufferDescriptor, FigMetalContext,
                             FigMetalExecutionStatus, FigMetalTextureDescriptor,
-                            InterceptConfig ]
-    objc-ivars:           [ FigMetalAllocatorMetadata._allocator,
-                            FigMetalAllocatorMetadata._refCount ]
+                            FigRegToolboxGPU, FigRegWarpPPGPU,
+                            FigRegWarpPPGPUShared, GDCTransform, RegWarpPP,
+                            STFIBPProvider, VISIBPProvider ]
 ...

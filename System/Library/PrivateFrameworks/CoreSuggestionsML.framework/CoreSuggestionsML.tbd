@@ -3,22 +3,23 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsML.framework/CoreSuggestionsML
-current-version:       1115.255
+current-version:       1153.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _CoreSuggestionsMLVersionNumber,
                             _CoreSuggestionsMLVersionString,
-                            _SGCharacterSetWithCharactersInString,
-                            _SGRepairString, _markFilteredQuery,
+                            _SGNormalizeEmojisInString,
+                            _SGPersonalizeEmojisInString, _markFilteredQuery,
                             _perRecipientCountUpsertQuery ]
     objc-classes:         [ SGConversationTracker, SGConversationTurn,
-                            SGCustomResponsesParameters, SGDefaultAssets,
-                            SGLanguageDetection, SGLazyInit, SGMessagePair,
-                            SGMessagePairIterator, SGModelAsset, SGModelFeatures,
-                            SGModelHyperparameters, SGModelSampler, SGModelSource,
-                            SGNestedArray, SGPipelineTransformer, SGQuickResponse,
+                            SGCustomResponsesParameters, SGDeduperML,
+                            SGDefaultAssets, SGLanguageDetection, SGLazyInit,
+                            SGLexiconML, SGMessagePair, SGMessagePairIterator,
+                            SGModelAsset, SGModelFeatures, SGModelHyperparameters,
+                            SGModelSampler, SGModelSource, SGNestedArray,
+                            SGPipelineTransformer, SGQuickResponse,
                             SGQuickResponsesCategoryScore,
                             SGQuickResponsesClassScore,
                             SGQuickResponsesClassificationModel,
@@ -39,5 +40,5 @@ exports:
                             SGSelectiveTransformer, SGStringLabelingTransformer,
                             SGStringPreprocessingTransformer,
                             SGStringPreprocessor, SGTextLabelTransformer,
-                            SGTokenJoiningTransformer ]
+                            SGTokenJoiningTransformer, SGTokenizerML ]
 ...

@@ -33,6 +33,26 @@ NW_OBJECT_DECL(nw_group_descriptor);
 #endif // NW_GROUP_DESCRIPTOR_IMPL
 
 /*!
+ * @function nw_group_descriptor_create_multiplex
+ *
+ * @abstract
+ *		Creates a new group descriptor object based on an endpoint
+ *		to which communication will be established using a multiplexing protocol,
+ *		represented as an nw_endpoint containing the remote endpoint
+ *		to use for communication.
+ *
+ * @param remote_endpoint
+ *		An endpoint that can be used for communication over a multiplexing protocol.
+ *
+ * @result
+ *		An instantiated group descriptor object or nil if the specified
+ *		endpoint is not valid.
+ */
+API_AVAILABLE(macos(12.0), ios(15.0), watchos(8.0), tvos(15.0))
+NW_RETURNS_RETAINED nw_group_descriptor_t
+nw_group_descriptor_create_multiplex(nw_endpoint_t remote_endpoint);
+
+/*!
  * @function nw_group_descriptor_create_multicast
  *
  * @abstract
@@ -47,7 +67,7 @@ NW_OBJECT_DECL(nw_group_descriptor);
  *		endpoint is not an address endpoint representing a valid multicast
  *		group.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 NW_RETURNS_RETAINED nw_group_descriptor_t
 nw_group_descriptor_create_multicast(nw_endpoint_t multicast_group);
 
@@ -66,7 +86,7 @@ nw_group_descriptor_create_multicast(nw_endpoint_t multicast_group);
  * @result Returns true if the endpoint was added, false if the endpoint was
  * 		not of a valid type and therefore not added.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 bool
 nw_group_descriptor_add_endpoint(nw_group_descriptor_t descriptor,
 								 nw_endpoint_t endpoint);
@@ -101,7 +121,7 @@ typedef bool (^nw_group_descriptor_enumerate_endpoints_block_t)(nw_endpoint_t en
  *		Returning true from the block will continue to enumerate, and returning false will stop
  *		enumerating.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 void
 nw_group_descriptor_enumerate_endpoints(nw_group_descriptor_t descriptor,
 										NW_NOESCAPE nw_group_descriptor_enumerate_endpoints_block_t enumerate_block);
@@ -120,7 +140,7 @@ nw_group_descriptor_enumerate_endpoints(nw_group_descriptor_t descriptor,
  * @param source
  *		An endpoint describing the source for this descriptor.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 void
 nw_multicast_group_descriptor_set_specific_source(nw_group_descriptor_t multicast_descriptor,
 												  nw_endpoint_t source);
@@ -137,7 +157,7 @@ nw_multicast_group_descriptor_set_specific_source(nw_group_descriptor_t multicas
  * @param disable_unicast_traffic
  *		A boolean indicating if receiving unicast traffic should be disabled.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 void
 nw_multicast_group_descriptor_set_disable_unicast_traffic(nw_group_descriptor_t multicast_descriptor,
 														  bool disable_unicast_traffic);
@@ -153,7 +173,7 @@ nw_multicast_group_descriptor_set_disable_unicast_traffic(nw_group_descriptor_t 
  *
  * @result A boolean indicating if receiving unicast traffic should be disabled.
  */
-NW_EXPORT
+API_AVAILABLE(macos(11.0), ios(14.0), watchos(7.0), tvos(14.0))
 bool
 nw_multicast_group_descriptor_get_disable_unicast_traffic(nw_group_descriptor_t multicast_descriptor);
 

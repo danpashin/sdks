@@ -3,13 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Settings/DisplayAndBrightnessSettings.framework/DisplayAndBrightnessSettings
-current-version:       1
-compatibility-version: 1
+current-version:       0
+compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _DBSAnimationPackageURLForDeviceAppIconSizeAndUserInterfaceStyle,
-                            _DBSAnimationPackageURLForDisplayZoomOptionAndUserInterfaceStyle,
+    symbols:              [ _DBSAnimationPackageURLForDisplayZoomOptionAndUserInterfaceStyle,
+                            _DBSLargeTextUsesExtendedRangeKey,
                             _DBSLockScreenTimeString, _DBSLogForCategory,
                             _DBSMagnifyModeDidChangeNotification,
                             _DBSPurgeKeyboardCache,
@@ -21,14 +21,15 @@ exports:
                             _DBS_LocalizedStringForConnectedDisplays,
                             _DBS_LocalizedStringForDeviceAppearance,
                             _DBS_LocalizedStringForDisplays,
-                            _DBS_LocalizedStringForHomeScreen,
+                            _DBS_LocalizedStringForHomeScreenBase,
+                            _DBS_LocalizedStringForHomeScreenPad,
                             _DBS_LocalizedStringForLargeFontSettings,
                             _DBS_LocalizedStringForMagnify,
-                            _DBS_LocalizedStringForPictureInPicture,
-                            _kPSLargeTextUsesExtendedRangeKey ]
+                            _DBS_LocalizedStringForPictureInPicture ]
     objc-classes:         [ DBSDeviceDisplayZoomAnimationView,
                             DBSDisplayZoomConfigurationController,
-                            DBSDisplayZoomMode, DBSHomeScreenListController,
+                            DBSDisplayZoomMode, DBSHomeScreenBaseListController,
+                            DBSHomeScreenPadListController,
                             DBSHomeScreenPhoneListController,
                             DBSLargeTextController, DBSSettingsController ]
 ...

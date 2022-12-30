@@ -4,7 +4,7 @@
 
 	Framework:  AVFoundation
  
-	Copyright 2016-2017 Apple Inc. All rights reserved.
+	Copyright 2016-2021 Apple Inc. All rights reserved.
 
 */
 
@@ -72,13 +72,22 @@ API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0), watchos(4.0))
 	@discussion
 		Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
 	
-		The default value on iOS is AVAudioTimePitchAlgorithmLowQualityZeroLatency and on macOS is AVAudioTimePitchAlgorithmTimeDomain.
+		The default value for applications linked on or after iOS 15.0 or macOS 12.0 is AVAudioTimePitchAlgorithmTimeDomain. For iOS versions prior to 15.0 the default value is AVAudioTimePitchAlgorithmLowQualityZeroLatency.
+		For macOS versions prior to 12.0 the default value is AVAudioTimePitchAlgorithmSpectral.
 
 		If the timebase's rate is not supported by the audioTimePitchAlgorithm, audio will be muted.
 
 		Modifying this property while the timebase's rate is not 0.0 may cause the rate to briefly change to 0.0.
 */
 @property (nonatomic, copy) AVAudioTimePitchAlgorithm audioTimePitchAlgorithm;
+
+/*!
+	@property allowedAudioSpatializationFormats
+	@abstract Indicates the source audio channel layouts allowed by the receiver for spatialization.
+	@discussion
+		Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played on specialized headphones and speaker arrangements. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMonoAndStereo the  AVSampleBufferAudioRenderer will attempt to spatialize content tagged with a stereo channel layout, two-channel content with no layout specified as well as mono. It is considered incorrect to render a binaural recording with spatialization. A binaural recording is captured using two carefully placed microphones at each ear where the intent, when played on headphones, is to reproduce a naturally occurring spatial effect. Content tagged with a binaural channel layout will ignore this property value. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMultichannel the  AVSampleBufferAudioRenderer will attempt to spatialize any decodable multichannel layout. Setting this property to AVAudioSpatializationFormatMonoStereoAndMultichannel indicates that the sender allows the  AVSampleBufferAudioRenderer to spatialize any decodable mono, stereo or multichannel layout. This property is not observable. The default value for this property is AVAudioSpatializationFormatMultichannel.
+ */
+@property (nonatomic, assign) AVAudioSpatializationFormats allowedAudioSpatializationFormats API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);
 
 @end
 
@@ -131,6 +140,14 @@ API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0), watchos(4.0))
 		This notification is delivered on an arbitrary thread.  If sample buffers are being enqueued with the renderer concurrently with the receipt of this notification, it is possible that one or more sample buffers will remain enqueued in the renderer.  This is generally undesirable, because the sample buffers that remain will likely have timestamps far ahead of the timebase's current time and so won't be rendered for some time.  The best practice is to invoke the -flush method, in a manner that is serialized with enqueueing sample buffers, after receiving this notification and before resuming the enqueueing of sample buffers.
  */
 AVF_EXPORT NSNotificationName const AVSampleBufferAudioRendererWasFlushedAutomaticallyNotification API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0), watchos(4.0));
+
+/*!
+	@constant		AVSampleBufferAudioRendererOutputConfigurationDidChangeNotification
+	@abstract		A notification that indicates the hardware configuration does not match the enqueued data format.
+	@discussion
+		The output configuration of the playback hardware might change during the playback session if other clients play content with different format. In such cases, if the media content format does not match the hardware configuration it would produce suboptimal rendering of the enqueued media data. When the framework detects such mismatch it will issue this notification, so the client can flush the renderer and re-enqueue the sample buffers from the current media playhead, which will configure the hardware based on the format of newly enqueued sample buffers.
+ */
+AVF_EXPORT NSNotificationName const AVSampleBufferAudioRendererOutputConfigurationDidChangeNotification API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0), watchos(8.0));
 
 	/*!
 		@constant		AVSampleBufferAudioRendererFlushTimeKey

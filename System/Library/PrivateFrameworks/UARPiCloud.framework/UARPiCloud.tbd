@@ -8,8 +8,12 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _UARPiCloudVersionNumber, _UARPiCloudVersionString,
-                            _getEntryForKey, _saveEntryForKey ]
-    objc-classes:         [ UARPiCloudAccessory, UARPiCloudAccessoryRecord,
-                            UARPiCloudContainer, UARPiCloudManager, UARPiCloudZone ]
+    symbols:              [ _GetInternalStorageDirectoryPath,
+                            _UARPiCloudVersionNumber, _UARPiCloudVersionString,
+                            _getEntryForKey,
+                            _kUARPStringInternalStorageDirectoryPath,
+                            _saveEntryForKey ]
+    objc-classes:         [ CHIPAccessoriesRecord, UARPiCloudAccessory,
+                            UARPiCloudAccessoryRecord, UARPiCloudContainer,
+                            UARPiCloudManager, UARPiCloudZone ]
 ...

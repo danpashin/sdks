@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       611.1.21
+current-version:       612.1.27
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -64,13 +64,23 @@ exports:
                             _WBSCloudBookmarksMigrationCoordinatorDataDirectory,
                             _WBSCloudBookmarksMigrationCoordinatorLogsDirectory,
                             _WBSCloudBookmarksMigrationCoordinatorLogsDirectoryURL,
-                            _WBSCloudTabsErrorDomain,
+                            _WBSCloudKitStartPageSectionOrderPreferenceKey,
+                            _WBSCloudTabsErrorDomain, _WBSDPrintf,
                             _WBSDispatchAsyncToMainQueueWithAutoreleasePool,
                             _WBSDispatchSyncToMainQueueWithAutoreleasePool,
                             _WBSEnableCloudKitBookmarkDebugUtilitiesPreferenceKey,
+                            _WBSEnableCloudSettingsSyncPreferenceKey,
+                            _WBSExtensionTypeAppExtension,
+                            _WBSExtensionTypeContentBlocker,
+                            _WBSExtensionTypeWebExtension,
+                            _WBSExtensionsTelemetryNumberOfDisabledExtensions,
+                            _WBSExtensionsTelemetryNumberOfDisabledWebExtensions,
+                            _WBSExtensionsTelemetryNumberOfEnabledExtensions,
+                            _WBSExtensionsTelemetryNumberOfEnabledWebExtensions,
                             _WBSIsEqual,
                             _WBSKeychainCredentialNotificationMonitorDoNotCoalesceInterval,
                             _WBSLogWithDifferentialPrivacy,
+                            _WBSMakeAccessibilityIdentifier,
                             _WBSMakeOperatingSystemVersion,
                             _WBSNSExtensionFromNSExtension,
                             _WBSNullOperatingSystemVersion,
@@ -100,9 +110,11 @@ exports:
                             _WBSPasswordManagerURLTrue,
                             _WBSPasswordRuleParserErrorCodeNoError,
                             _WBSPasswordRuleParserErrorDomain,
-                            _WBSPrivacyPreservingDescription,
+                            _WBSPerformBlockOnMainRunLoopWithCommonModes,
+                            _WBSPrintf, _WBSPrivacyPreservingDescription,
                             _WBSReleaseOnMainQueueImpl,
                             _WBSRemoteAutoFillQuirksLastUpdateTimePreferenceKey,
+                            _WBSRunLoopRunUntilTerminationSignal,
                             _WBSSQLiteErrorDomain,
                             _WBSSafariBookmarksSyncAgentBugIDsKey,
                             _WBSSafariBookmarksSyncAgentCloudTabsWereUpdatedOnServerNotificationName,
@@ -178,8 +190,10 @@ exports:
                             WBSCloudKitContainerManateeObserver,
                             WBSCloudKitThrottler,
                             WBSConfigurationDataTransformer,
-                            WBSConfigurationDownloader, WBSCoreClass,
-                            WBSDontSaveMarker, WBSFeatureAvailability,
+                            WBSConfigurationDownloader,
+                            WBSCoreAnalyticsExtensionsStatistics, WBSCoreClass,
+                            WBSDontSaveMarker, WBSExtensionTelemetryData,
+                            WBSFeatureAvailability,
                             WBSFetchedCloudTabDeviceOrCloseRequest,
                             WBSFileLogger,
                             WBSKeychainCredentialNotificationMonitor,
@@ -199,7 +213,9 @@ exports:
                             WBSSQLiteStatement, WBSSQLiteStatementCache,
                             WBSSQLiteStore, WBSSafariBookmarksSyncAgentProxy,
                             WBSSavedPassword, WBSSavedPasswordAuditor,
-                            WBSSavedPasswordStore, WBSScopeExitHandler,
+                            WBSSavedPasswordChangeRequest,
+                            WBSSavedPasswordSidecar, WBSSavedPasswordStore,
+                            WBSScopeExitHandler, WBSTOTPGenerator,
                             WBSURLCredentialCache, WBSUserDefaultObservation,
                             _WBSSavedPasswordPartialCredential ]
     objc-ivars:           [ WBSAnalyticsLogger._analyticsSynchronizationQueue,

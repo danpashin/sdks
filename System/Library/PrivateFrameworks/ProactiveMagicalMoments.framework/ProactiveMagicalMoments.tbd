@@ -8,14 +8,27 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PMMInitializeInOwnerProcess,
+    symbols:              [ _ATXPredictionReasonLocationTransportType,
+                            _ATXPredictionReasonLocationTransportTypeAutomobile,
+                            _ATXPredictionReasonLocationTransportTypeRide,
+                            _ATXPredictionReasonLocationTransportTypeTransit,
+                            _PMMInitializeInOwnerProcess,
                             _PMMNowPlayingRecommendationEnded,
                             _PMMNowPlayingRecommendationStarted,
                             _PMMPredictionReasonBluetoothDeviceName,
                             _PMMPredictionReasonDeviceName,
                             _PMMPredictionReasonLocationOfInterestType,
                             _ProactiveMagicalMomentsVersionNumber,
-                            _ProactiveMagicalMomentsVersionString ]
+                            _ProactiveMagicalMomentsVersionString,
+                            _kATXActionNumberOfScoreInputsForCoarseGeoHash,
+                            _kATXActionNumberOfScoreInputsForSpecificGeoHash,
+                            _kATXActionTotalBucketsForTimeOfDay,
+                            _kATXAppNumberOfScoreInputsForCoarseGeoHash,
+                            _kATXAppNumberOfScoreInputsForSpecificGeoHash,
+                            _kATXAppNumberOfScoreInputsForZoom7GeoHash,
+                            _kATXBacklightActivityAppName,
+                            _kATXCoreDuetClientIdentifier,
+                            _kATXMaximumStorageTimeSeconds ]
     objc-classes:         [ PMMAudioDisconnectListener, PMMConstants,
                             PMMContextHelper, PMMDataProtectionMonitor,
                             PMMMusicContainer, PMMMusicStateProcessor,

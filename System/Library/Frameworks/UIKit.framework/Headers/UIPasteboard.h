@@ -27,6 +27,23 @@ UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternProb
 /// NSNumber value
 UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternNumber API_AVAILABLE(ios(14.0));
 
+/// Array of DDMatchLink values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternLink NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchPhoneNumber values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternPhoneNumber NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchEmailAddress values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternEmailAddress NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchAddress values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternPostalAddress NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchCalendarEvent values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternCalendarEvent NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchShipmentTrackingNumber values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternShipmentTrackingNumber NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchFlightNumber values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternFlightNumber NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+/// Array of DDMatchMoneyAmount values
+UIKIT_EXTERN UIPasteboardDetectionPattern const UIPasteboardDetectionPatternMoneyAmount  NS_REFINED_FOR_SWIFT API_AVAILABLE(ios(15.0));
+
 @class UIColor, UIImage;
 
 UIKIT_EXTERN API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(watchos) @interface UIPasteboard : NSObject

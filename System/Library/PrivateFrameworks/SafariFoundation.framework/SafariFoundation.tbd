@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
-current-version:       611.1.21
+current-version:       612.1.27
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -31,6 +31,7 @@ exports:
     objc-classes:         [ SFAppAutoFillOneTimeCodeProvider,
                             SFAutoFillFeatureManager, SFAutoFillHelperProxy,
                             SFAutoFillOneTimeCode,
+                            SFAutoFillOneTimeCodeEmbeddedDomainPair,
                             SFCredentialProviderExtensionHelperProxy,
                             SFCredentialProviderExtensionManager,
                             SFCredentialProviderExtensionState,
@@ -42,6 +43,6 @@ exports:
                             SFSharablePasswordReceiver,
                             SFSharedWebCredentialsDatabaseEntry,
                             SFStrongPasswordGenerator, SFSuggestedUser,
-                            SFSuggestedUserProvider,
+                            SFSuggestedUserProvider, TOTPGeneratorSnapshot,
                             _SFSharablePasswordEncryptionInformation ]
 ...

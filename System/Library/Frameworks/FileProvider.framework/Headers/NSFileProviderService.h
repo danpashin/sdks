@@ -2,7 +2,7 @@
 //  NSFileProviderService.h
 //  FileProvider
 //
-//  Copyright © 2017 Apple Inc. All rights reserved.
+//  Copyright © 2017-2020 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSXPCListenerEndpoint;
 
-FILEPROVIDER_API_AVAILABILITY_V2
+FILEPROVIDER_API_AVAILABILITY_V2_V3
 @protocol NSFileProviderServiceSource
 
 /**
@@ -44,6 +44,7 @@ FILEPROVIDER_API_AVAILABILITY_V2
  Client applications can retrieve the list of supported services by calling
  @c -[NSFileManager getFileProviderServicesForItemAtURL:] for a specific item URL.
  */
+FILEPROVIDER_API_AVAILABILITY_V2
 @interface NSFileProviderExtension (NSFileProviderService)
 
 - (nullable NSArray <id <NSFileProviderServiceSource>> *)supportedServiceSourcesForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier error:(NSError **)error NS_SWIFT_NAME(supportedServiceSources(for:)) FILEPROVIDER_API_AVAILABILITY_V2;

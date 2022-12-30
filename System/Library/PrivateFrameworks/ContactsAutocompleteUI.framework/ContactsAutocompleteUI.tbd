@@ -3,12 +3,13 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/ContactsAutocompleteUI
-current-version:       634.0.1
+current-version:       664.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CNAUILocalizedAddressSeparator,
+    symbols:              [ _CNAUIEllipsesCharacterSet,
+                            _CNAUILocalizedAddressSeparator,
                             _CNAutocompleteContactKeyForRecentsKind,
                             _CNAutocompleteCopyClosestMatchingExistingContactUsingAddressesAndDisplayName,
                             _CNAutocompleteCopyClosestMatchingExistingContactUsingAddressesAndDisplayNameUnified,
@@ -39,6 +40,7 @@ exports:
                             _CNMFCompositionServiceDomain,
                             _ContactsAutocompleteUIVersionNumber,
                             _ContactsAutocompleteUIVersionString,
+                            _CreateSuggestionsFetchDebounceDispatchTimer,
                             _getSimulateAutocompleteResultsInternalSetting,
                             _kCNPasteboardTypeComposeRecipient ]
     objc-classes:         [ CNAtomCenteredTextAttachment, CNAtomIcon,
@@ -49,17 +51,27 @@ exports:
                             CNAutocompleteGroupDetailViewController,
                             CNAutocompleteResultsTableView,
                             CNAutocompleteResultsTableViewController,
+                            CNAutocompleteResultsViewController,
+                            CNAutocompleteSearchController,
+                            CNAutocompleteSearchControllerSafeDelegateWrapper,
                             CNAutocompleteSearchManager,
                             CNAutocompleteSearchOperation,
+                            CNAutocompleteSuggestionsCell,
+                            CNAutocompleteSuggestionsViewController,
+                            CNAutocompleteSuggestionsViewSectionHeader,
                             CNAutocompleteSupplementalGroup,
                             CNAutocompleteSupplementalGroupMember,
+                            CNAutocompleteSupplementalGroupRecipient,
+                            CNAutocompleteSupplementalRecipient,
                             CNAutocompleteUIPreferences, CNChevronButton,
                             CNComposeAddressConcatenator, CNComposeDragSource,
                             CNComposeDropTarget, CNComposeHeaderLabelView,
                             CNComposeHeaderView, CNComposeRecipient,
                             CNComposeRecipientActionButton,
                             CNComposeRecipientAtom, CNComposeRecipientGroup,
+                            CNComposeRecipientNamer,
                             CNComposeRecipientOriginContext,
+                            CNComposeRecipientShortNamer,
                             CNComposeRecipientTableViewCell,
                             CNComposeRecipientTextView, CNComposeRecipients,
                             CNComposeTableViewCell,
@@ -67,7 +79,7 @@ exports:
                             CNModernAtomBackgroundView, CNModernAtomIconView,
                             CNRecentComposeRecipient,
                             CNRecentComposeRecipientGroup,
-                            CNUnifiedComposeRecipient,
+                            CNSuggestedRecipientItem, CNUnifiedComposeRecipient,
                             _CNAUICRRecentContactCNContext, _CNAtomAttachment,
                             _CNAtomFieldEditor, _CNAtomLayoutView,
                             _CNAtomTextAttachment, _CNAtomTextSelectionRect,
