@@ -17,34 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @class ENExposureDetectionSummary;
 @class ENExposureInfo;
 
-/// Invoked when getDiagnosisKeysWithCompletionHandler completes.
-/// If it completes successfully, keys will contain the Diagnosis Keys for this device and error will be nil.
-/// If it fails, keys will be nil and error indicates the reason it failed.
-EN_API_AVAILABLE
-typedef void ( ^ENGetDiagnosisKeysHandler )( NSArray <ENTemporaryExposureKey *> * _Nullable keys, NSError * _Nullable error );
-
-/// Invoked when detecting exposures completes. It provides a summary of exposures.
-/// If it completes successfully, summary will contain a summary of exposures and error will be nil.
-/// If it fails, summary will be nil and error indicates the reason it failed.
-EN_API_AVAILABLE
-typedef void ( ^ENDetectExposuresHandler )( ENExposureDetectionSummary * _Nullable summary, NSError * _Nullable error );
-
-/// Invoked when getting exposures completes. It provides info about each exposure.
-/// If it completes successfully, exposures will contain info about each exposure and error will be nil.
-/// If it fails, exposures will be nil and error indicates the reason it failed.
-EN_API_AVAILABLE
-typedef void ( ^ENGetExposureInfoHandler )( NSArray <ENExposureInfo *> * _Nullable exposures, NSError * _Nullable error );
-
-/// Invoked when getExposureWindows completes. It provides info about each exposure window.
-/// If it completes successfully, exposureWIndows will non-nil and error will be nil.
-/// If it fails, exposureWindows will be nil and error indicates the reason it failed.
-EN_API_AVAILABLE_V2
-typedef void ( ^ENGetExposureWindowsHandler )( NSArray <ENExposureWindow *> * _Nullable exposureWindows, NSError * _Nullable error );
-
-/// Invoked when getUserTraveled completes.
-EN_API_AVAILABLE_V2
-typedef void ( ^ENGetUserTraveledHandler )( BOOL traveled, NSError * _Nullable error );
-
 //===========================================================================================================================
 /*!	@brief	Overall status of Exposure Notification on the system.
 */
@@ -69,9 +41,43 @@ typedef NS_ENUM( NSInteger, ENStatus )
 	/// When in this state, the app cannot enable Exposure Notification.
 	ENStatusRestricted		= 4,
 	
-	/// The user paused Exposure Notification to temporarily disable Bluetooth advertising and scanning.
+	/// For future use. Not returned by any APIs yet.
 	ENStatusPaused			= 5,
-};
+
+	/// Exposure Notification is not available due to insufficient authorization.
+	ENStatusUnauthorized	= 6,
+	
+}	EN_API_AVAILABLE;
+
+//===========================================================================================================================
+
+/// Invoked when getDiagnosisKeysWithCompletionHandler completes.
+/// If it completes successfully, keys will contain the Diagnosis Keys for this device and error will be nil.
+/// If it fails, keys will be nil and error indicates the reason it failed.
+EN_API_AVAILABLE
+typedef void ( ^ENGetDiagnosisKeysHandler )( NSArray <ENTemporaryExposureKey *> * _Nullable keys, NSError * _Nullable error );
+
+/// Invoked when detecting exposures completes. It provides a summary of exposures.
+/// If it completes successfully, summary will contain a summary of exposures and error will be nil.
+/// If it fails, summary will be nil and error indicates the reason it failed.
+EN_API_AVAILABLE
+typedef void ( ^ENDetectExposuresHandler )( ENExposureDetectionSummary * _Nullable summary, NSError * _Nullable error );
+
+/// Invoked when getting exposures completes. It provides info about each exposure.
+/// If it completes successfully, exposures will contain info about each exposure and error will be nil.
+/// If it fails, exposures will be nil and error indicates the reason it failed.
+EN_API_AVAILABLE
+typedef void ( ^ENGetExposureInfoHandler )( NSArray <ENExposureInfo *> * _Nullable exposures, NSError * _Nullable error );
+
+/// Invoked when getExposureWindows completes. It provides info about each exposure window.
+/// If it completes successfully, exposureWindows will non-nil and error will be nil.
+/// If it fails, exposureWindows will be nil and error indicates the reason it failed.
+EN_API_AVAILABLE_V2
+typedef void ( ^ENGetExposureWindowsHandler )( NSArray <ENExposureWindow *> * _Nullable exposureWindows, NSError * _Nullable error );
+
+/// Invoked when getUserTraveled completes.
+EN_API_AVAILABLE_V2
+typedef void ( ^ENGetUserTraveledHandler )( BOOL traveled, NSError * _Nullable error );
 
 //===========================================================================================================================
 /*!	@brief	Manages Exposure Notification functionality.
@@ -166,8 +172,18 @@ EN_API_AVAILABLE_V2;
 	This allows an app to supply positive diagnosis keys from a server and a configuration to detect exposure.
 */
 
+/// Detects exposures using the specified configuration to control the scoring algorithm.
+/// This uses the diagnosis keys already known to the system.
+/// Only available to apps with ENAPIVersion 2 or higher.
+- (NSProgress *)
+	detectExposuresWithConfiguration:	(ENExposureConfiguration *) configuration
+	completionHandler:					(ENDetectExposuresHandler)	completionHandler
+EN_API_AVAILABLE_V2
+NS_SWIFT_NAME(detectExposures(configuration:completionHandler:));
+
 /// Detects exposures using the specified configuration to control the scoring algorithm and URLs to specify the 
 /// files containing diagnosis keys the app has downloaded. The diagnosis key files must be signed appropriately.
+/// When the app's ENAPIVersion is 2 or higher, keys already known to the system are included in the analysis.
 - (NSProgress *)
 	detectExposuresWithConfiguration:	(ENExposureConfiguration *) configuration
 	diagnosisKeyURLs:					(NSArray <NSURL *> *)		diagnosisKeyURLs
@@ -181,6 +197,7 @@ NS_SWIFT_NAME(detectExposures(configuration:diagnosisKeyURLs:completionHandler:)
 	getExposureInfoFromSummary:	(ENExposureDetectionSummary *)	summary
 	userExplanation:			(NSString *)					userExplanation
 	completionHandler:			(ENGetExposureInfoHandler)		completionHandler
+API_DEPRECATED( "Use getExposureWindowsFromSummary, if needed.", ios( 13.5, 13.6 ) )
 NS_SWIFT_NAME(getExposureInfo(summary:userExplanation:completionHandler:));
 
 /// Gets info about each exposure window from the summary provided when exposure detection completes.
@@ -199,11 +216,6 @@ NS_SWIFT_NAME(getExposureWindows(summary:completionHandler:));
 	they may have been exposed. This should only be used after proper verification is performed and after the user has 
 	agreed to share this information.
 */
-
-/// Authorizes a one-time, future release of diagnosis keys without a user prompt at the time of release.
-/// This allows the user to authorize ahead of time in case they are unable to approve at the time of positive diagnosis.
-- (void) preAuthorizeDiagnosisKeysWithCompletionHandler:(ENErrorHandler) completionHandler
-EN_API_AVAILABLE_V2;
 
 /// Requests the temporary exposure keys used by this device to share with a server.
 /// Each use of this API will present the user with system UI to authorize it.

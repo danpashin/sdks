@@ -37,7 +37,7 @@ extern "C" {
 #define EN_API_AVAILABLE			API_AVAILABLE( ios( 13.5 ) ) API_UNAVAILABLE(macos, tvos, watchos)
 
 /// Indicates the platforms this API is available for version 2 of the API. Used for non-exportable items, such as typedefs.
-#define EN_API_AVAILABLE_V2			API_UNAVAILABLE(ios) API_UNAVAILABLE(macos, tvos, watchos)
+#define EN_API_AVAILABLE_V2			API_AVAILABLE( ios( 13.7 ) ) API_UNAVAILABLE(macos, tvos, watchos)
 
 /// Indicates the platforms this API is available for version 1 of the API and exports the symbol via the framework.
 #define EN_API_AVAILABLE_EXPORT		EN_API_AVAILABLE __attribute__( ( visibility( "default" ) ) )
@@ -56,26 +56,28 @@ extern NSErrorDomain const		ENErrorDomain;
 /// Error codes used with ENErrorDomain.
 typedef NS_ERROR_ENUM( ENErrorDomain, ENErrorCode )
 {
-	ENErrorCodeUnknown				= 1,  /// Underlying failure with an unknown cause.
-	ENErrorCodeBadParameter			= 2,  /// Missing or incorrect parameter.
-	ENErrorCodeNotEntitled			= 3,  /// Calling process doesn't have the correct entitlement.
-	ENErrorCodeNotAuthorized		= 4,  /// User denied this process access to Exposure Notification functionality.
-	ENErrorCodeUnsupported			= 5,  /// Operation is not supported.
-	ENErrorCodeInvalidated			= 6,  /// Invalidate was called before the operation completed normally.
-	ENErrorCodeBluetoothOff			= 7,  /// Bluetooth was turned off the by user.
-	ENErrorCodeInsufficientStorage	= 8,  /// Insufficient storage space to enable Exposure Notification.
-	ENErrorCodeNotEnabled			= 9,  /// Exposure Notification has not been enabled.
-	ENErrorCodeAPIMisuse			= 10, /// The API was used incorrectly.
-	ENErrorCodeInternal				= 11, /// Internal error. This indicates a bug in this framework.
-	ENErrorCodeInsufficientMemory	= 12, /// Not enough memory to perform an operation.
-	ENErrorCodeRateLimited			= 13, /// API called too frequently. See API for acceptable frequency.
-	ENErrorCodeRestricted			= 14, /// Exposure Notification is disabled due to system policies.
-	ENErrorCodeBadFormat			= 15, /// File or data format problem.
-	ENErrorCodeDataInaccessible		= 16, /// The device must be unlocked before data is accessible.
-};
+	ENErrorCodeUnknown					= 1,  /// Underlying failure with an unknown cause.
+	ENErrorCodeBadParameter				= 2,  /// Missing or incorrect parameter.
+	ENErrorCodeNotEntitled				= 3,  /// Calling process doesn't have the correct entitlement.
+	ENErrorCodeNotAuthorized			= 4,  /// User denied this process access to Exposure Notification functionality.
+	ENErrorCodeUnsupported				= 5,  /// Operation is not supported.
+	ENErrorCodeInvalidated				= 6,  /// Invalidate was called before the operation completed normally.
+	ENErrorCodeBluetoothOff				= 7,  /// Bluetooth was turned off the by user.
+	ENErrorCodeInsufficientStorage		= 8,  /// Insufficient storage space to enable Exposure Notification.
+	ENErrorCodeNotEnabled				= 9,  /// Exposure Notification has not been enabled.
+	ENErrorCodeAPIMisuse				= 10, /// The API was used incorrectly.
+	ENErrorCodeInternal					= 11, /// Internal error. This indicates a bug in this framework.
+	ENErrorCodeInsufficientMemory		= 12, /// Not enough memory to perform an operation.
+	ENErrorCodeRateLimited				= 13, /// API called too frequently. See API for acceptable frequency.
+	ENErrorCodeRestricted				= 14, /// Exposure Notification is disabled due to system policies.
+	ENErrorCodeBadFormat				= 15, /// File or data format problem.
+	ENErrorCodeDataInaccessible			= 16, /// The device must be unlocked before data is accessible.
+	ENErrorCodeTravelStatusNotAvailable	= 17, /// Travel status is not available
+	
+}	EN_API_AVAILABLE;
 
 /// Type for returning NSError's from functions. Avoids long and repetitious method signatures.
-typedef NSError * _Nullable __autoreleasing * _Nullable		ENErrorOutType;
+typedef NSError * _Nullable __autoreleasing * _Nullable		ENErrorOutType EN_API_AVAILABLE;
 
 //===========================================================================================================================
 // MARK: -
@@ -88,11 +90,11 @@ typedef NSError * _Nullable __autoreleasing * _Nullable		ENErrorOutType;
 	away. For example, two people could be very close and facing each other with their phones in their back pockets. This 
 	may report higher attenuation (i.e. weaker received signal) even though the individuals are very close together.
 */
-typedef uint8_t		ENAttenuation;
+typedef uint8_t		ENAttenuation EN_API_AVAILABLE;
 enum
 {
-	ENAttenuationMin = 0,
-	ENAttenuationMax = 0xFF,
+	ENAttenuationMin EN_API_AVAILABLE = 0,
+	ENAttenuationMax EN_API_AVAILABLE = 0xFF,
 };
 
 //===========================================================================================================================
@@ -113,12 +115,12 @@ typedef NS_ENUM( NSInteger, ENAuthorizationStatus )
 	
 	/// The user has authorized this app to use Exposure Notification.
 	ENAuthorizationStatusAuthorized		= 3,
-};
+	
+}	EN_API_AVAILABLE;
 
 //===========================================================================================================================
 /*!	@brief	Confidence in calibration data.
 */
-EN_API_AVAILABLE_V2
 typedef NS_ENUM( uint8_t, ENCalibrationConfidence )
 {
 	/// No calibration data.
@@ -132,12 +134,18 @@ typedef NS_ENUM( uint8_t, ENCalibrationConfidence )
 	
 	/// Determined using significant calibration data for this model.
 	ENCalibrationConfidenceHigh		= 3,
-};
+	
+}	EN_API_AVAILABLE_V2;
+
+//===========================================================================================================================
+/*!	@brief	The value used when days since onset of symptoms is unspecified.
+*/
+EN_API_AVAILABLE_V2
+static const NSInteger ENDaysSinceOnsetOfSymptomsUnknown = NSIntegerMax;
 
 //===========================================================================================================================
 /*!	@brief	How positive diagnosis was reported.
 */
-EN_API_AVAILABLE_V2
 typedef NS_ENUM( uint32_t, ENDiagnosisReportType )
 {
 	/// Diagnosis type unknown or not available.
@@ -152,34 +160,25 @@ typedef NS_ENUM( uint32_t, ENDiagnosisReportType )
 	/// User reported positive diagnosis without health authority involvement.
 	ENDiagnosisReportTypeSelfReported				= 3,
 	
-	/// Person determined to be positive based on exposure to another person confirmed to be positive.
+	/// Person determined to be positive based on exposure to another person confirmed to be positive. This report type
+	/// is reserved for future use and keys with this report type are not matched by iOS.
 	ENDiagnosisReportTypeRecursive					= 4,
 	
-	/// Negative test. This is mainly to negate a previously positive report that may have been in error.
+	/// Negative test. This is mainly to negate a previous self report or clinical diagnosis that may have been in error.
 	ENDiagnosisReportTypeRevoked					= 5,
-};
-
-//===========================================================================================================================
-/*!	@brief	Flags affecting exposure calculations.
-*/
-EN_API_AVAILABLE_V2
-typedef NS_OPTIONS( uint32_t, ENExposureFlags )
-{
-	ENExposureFlagsNone			= 0,			/// No flags.
-	ENExposureFlagsCache		= ( 1U << 0 ),	/// Enable detection from a cache of previously downloaded keys.
-	ENExposureFlagsScoringV2	= ( 1U << 1 ),	/// Enable version 2 scoring algorithm.
-};
+	
+}	EN_API_AVAILABLE_V2;
 
 //===========================================================================================================================
 /*!	@brief	How infectious based on days since onset of symptoms.
 */
-EN_API_AVAILABLE_V2
 typedef NS_ENUM( uint32_t, ENInfectiousness )
 {
 	ENInfectiousnessNone		= 0, /// Never returned through the API, but used for configuration.
 	ENInfectiousnessStandard	= 1,
 	ENInfectiousnessHigh		= 2,
-};
+	
+}	EN_API_AVAILABLE_V2;
 
 //===========================================================================================================================
 /*!	@brief	ENIntervalNumber (ENIN)
@@ -191,36 +190,36 @@ typedef NS_ENUM( uint32_t, ENInfectiousness )
 	
 	It's encoded as an unsigned 32-bit (uint32_t), little endian value.
 */
-typedef uint32_t	ENIntervalNumber;
+typedef uint32_t	ENIntervalNumber EN_API_AVAILABLE;
 
 //===========================================================================================================================
 /*!	@brief	Represents a risk level, ranging from 0-7.
 */
-typedef uint8_t		ENRiskLevel;
+typedef uint8_t		ENRiskLevel EN_API_AVAILABLE;
 enum
 {
-	ENRiskLevelMin = 0,
-	ENRiskLevelMax = 7,
+	ENRiskLevelMin EN_API_AVAILABLE = 0,
+	ENRiskLevelMax EN_API_AVAILABLE = 7,
 };
 
 //===========================================================================================================================
 /*!	@brief	The value, ranging from 0 to 8, that the app assigns to each Risk Level in each of the Risk Level Parameters.
 */
-typedef uint8_t		ENRiskLevelValue;
+typedef uint8_t		ENRiskLevelValue EN_API_AVAILABLE;
 enum
 {
-	ENRiskLevelValueMin = 0,
-	ENRiskLevelValueMax = 8,
+	ENRiskLevelValueMin EN_API_AVAILABLE = 0,
+	ENRiskLevelValueMax EN_API_AVAILABLE = 8,
 };
 
 //===========================================================================================================================
 /*!	@brief	Represents estimated risk calculated by a scoring algorithm. Range is 0-255. 255 is the highest risk.
 */
-typedef uint8_t		ENRiskScore;
+typedef uint8_t		ENRiskScore EN_API_AVAILABLE;
 enum
 {
-	ENRiskScoreMin = 0,
-	ENRiskScoreMax = 255,
+	ENRiskScoreMin EN_API_AVAILABLE = 0,
+	ENRiskScoreMax EN_API_AVAILABLE = 255,
 };
 
 //===========================================================================================================================
@@ -228,11 +227,11 @@ enum
 */
 enum
 {
-	ENRiskWeightDefault		= 1,
-	ENRiskWeightDefaultV2	= 100,
-	ENRiskWeightMin			= 0,
-	ENRiskWeightMax			= 100,
-	ENRiskWeightMaxV2		= 200,
+	ENRiskWeightDefault		EN_API_AVAILABLE	= 1,
+	ENRiskWeightDefaultV2	EN_API_AVAILABLE_V2	= 100,
+	ENRiskWeightMin			EN_API_AVAILABLE	= 0,
+	ENRiskWeightMax			EN_API_AVAILABLE	= 100,
+	ENRiskWeightMaxV2		EN_API_AVAILABLE_V2	= 250,
 };
 
 //===========================================================================================================================
@@ -240,6 +239,7 @@ enum
 // MARK: == Handlers ==
 
 /// Invoked when an operation completes. Error is nil for success or non-nil if an error occurred.
+EN_API_AVAILABLE
 typedef void ( ^ENErrorHandler )( NSError * _Nullable error );
 
 // MARK: -
@@ -261,31 +261,30 @@ typedef void ( ^ENErrorHandler )( NSError * _Nullable error );
 EN_API_AVAILABLE_EXPORT
 @interface ENExposureConfiguration : NSObject
 
-/// Flags to control how detection is performed.
-@property (readwrite, assign, nonatomic) ENExposureFlags flags EN_API_AVAILABLE_V2;
-
-/// Weights to apply to durations at each proximity level based on attenuation. Range is 0-200%.
+/// Weights to apply to durations at each proximity level based on attenuation. Range is 0-250%.
 @property (readwrite, assign, nonatomic) double immediateDurationWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double nearDurationWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double mediumDurationWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double otherDurationWeight EN_API_AVAILABLE_V2;
 
-/// Maps daysSinceOnsetOfSymptoms to infectiousness.
-/// Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
-/// Defaults to ENInfectiousnessStandard for days not specified.
-@property (readwrite, copy, nonatomic) NSDictionary <NSNumber *, NSNumber *> *infectiousnessForDaysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
+/// Maps daysSinceOnsetOfSymptoms to infectiousness. Must be configured if using V2 scoring.
+/// Key is a daysSinceOnsetOfSymptoms: -14 to 14 and ENDaysSinceOnsetOfSymptomsUnknown. Value is an ENInfectiousness.
+/// Defaults to ENInfectiousnessNone for days not specified.
+/// If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
+@property (readwrite, copy, nonatomic, nullable) NSDictionary <NSNumber *, NSNumber *> *infectiousnessForDaysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
 
-/// Weights to apply for infectiousness. Range is 0-200%.
+/// Weights to apply for infectiousness. Range is 0-250%.
 @property (readwrite, assign, nonatomic) double infectiousnessStandardWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double infectiousnessHighWeight EN_API_AVAILABLE_V2;
 
-/// Weights to apply for each report type. Range is 0-200%.
+/// Weights to apply for each report type. Range is 0-250%.
 @property (readwrite, assign, nonatomic) double reportTypeConfirmedTestWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double reportTypeConfirmedClinicalDiagnosisWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double reportTypeSelfReportedWeight EN_API_AVAILABLE_V2;
 @property (readwrite, assign, nonatomic) double reportTypeRecursiveWeight EN_API_AVAILABLE_V2;
 
-/// Report type to map none/unknown to.
+/// Maps scenarios when Report Type is not present into one of the available report types.
+/// If this is set to ENDiagnosisReportTypeUnknown, the key will be ignored if it does not contain a report type.
 @property (readwrite, assign, nonatomic) ENDiagnosisReportType reportTypeNoneMap EN_API_AVAILABLE_V2;
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -395,7 +394,7 @@ EN_API_AVAILABLE_EXPORT
 /// Date when the exposure occurred. This may have reduced precision, such as within 1 day of the actual time.
 @property (readonly, copy, nonatomic) NSDate *						date;
 
-/// Number of days since the onset of symptoms.
+/// Number of days since the onset of symptoms. Defaults to ENDaysSinceOnsetOfSymptomsUnknown.
 @property (readonly, assign, nonatomic) NSInteger					daysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
 
 /// How positive diagnosis was reported.
@@ -485,12 +484,6 @@ EN_API_AVAILABLE_EXPORT_V2
 */
 EN_API_AVAILABLE_EXPORT
 @interface ENTemporaryExposureKey : NSObject
-
-/// Number of days since the onset of symptoms.
-@property (readwrite, assign, nonatomic) NSInteger				daysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
-
-/// How positive diagnosis was reported.
-@property (readwrite, assign, nonatomic) ENDiagnosisReportType	diagnosisReportType EN_API_AVAILABLE_V2;
 
 /// Key material used to generate Rolling Proximity Identifiers.
 @property (readwrite, copy, nonatomic) NSData *					keyData;
