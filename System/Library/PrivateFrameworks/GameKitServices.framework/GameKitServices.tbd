@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           0F2138D3-E78E-34EA-B663-90E87716139A
   - target:          arm64-ios
-    value:           DF5DDC3E-0EBF-3945-BFD4-B1C27A943468
+    value:           D35A48FF-F911-397A-8E14-6370D4D42497
   - target:          arm64e-ios
-    value:           4A4DE0F0-20CC-33FD-95AF-12F2D7FB94CA
+    value:           B0A72CFE-A76F-3EFC-A086-0A513F28E69A
 install-name:    '/System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -221,9 +221,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           08965616-E676-31EF-A27F-1C67846B1B94
+    value:           03455C12-D1E1-3A8E-8168-83C49B2B3BC9
   - target:          arm64e-ios
-    value:           328459A2-04FF-3FAD-B30A-B39268B07762
+    value:           5E16AD08-E57A-3C9E-BD10-34CE7FBA1251
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/AVConference'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -268,43 +268,46 @@ exports:
                        _GKSCommNATServerMain0Address, _GKSCommNATServerMain0Name, 
                        _GKSCommNATServerMain1Address, _GKSCommNATServerMain1Name, 
                        _GKSConnectionBlobMaxBytes, _GKSConnectivitySettingsUpdateName, 
-                       _GKSConnectivitySettings_GetICETimeout, _GKSConnectivitySettings_GetNetworkConditionsTimeout, 
-                       _GKSConnectivitySettings_GetNoRemotePacketsTimeout, _GKSDecryptionTimeoutInterval, 
-                       _GKSDidStartParameter_CallID, _GKSDidStartParameter_ConnType, 
-                       _GKSDidStartParameter_DidStart, _GKSDidStartParameter_Error, 
-                       _GKSDidStartParameter_Event, _GKSDidStartParameter_localUseCell, 
-                       _GKSDidStartParameter_remoteUseCell, _GKSErrorDetailedError, 
-                       _GKSErrorReturnCode, _GKSICETimeout, _GKSKeepAliveTimeoutCarrierSpecific, 
-                       _GKSLocalGamingDiscoveryHeartbeat, _GKSLocalGamingDiscoveryTimeout, 
-                       _GKSMaxBitrate2G, _GKSMaxBitrate3G, _GKSMaxBitrateLTE, _GKSMaxBitrateLTEv2, 
+                       _GKSConnectivitySettings_GetICETimeout, _GKSConnectivitySettings_GetMinQueueSizeOverride5G, 
+                       _GKSConnectivitySettings_GetNetworkConditionsTimeout, _GKSConnectivitySettings_GetNoRemotePacketsTimeout, 
+                       _GKSDecryptionTimeoutInterval, _GKSDidStartParameter_CallID, 
+                       _GKSDidStartParameter_ConnType, _GKSDidStartParameter_DidStart, 
+                       _GKSDidStartParameter_Error, _GKSDidStartParameter_Event, 
+                       _GKSDidStartParameter_localUseCell, _GKSDidStartParameter_remoteUseCell, 
+                       _GKSErrorDetailedError, _GKSErrorReturnCode, _GKSICETimeout, 
+                       _GKSKeepAliveTimeoutCarrierSpecific, _GKSLocalGamingDiscoveryHeartbeat, 
+                       _GKSLocalGamingDiscoveryTimeout, _GKSMaxBitrate2G, _GKSMaxBitrate3G, 
+                       _GKSMaxBitrate5G, _GKSMaxBitrateLTE, _GKSMaxBitrateLTEv2, 
                        _GKSMaxBitrateWiFi, _GKSMaxRelayBitrate, _GKSMaxTCPRelayBitrate, 
-                       _GKSNATCheckTimeout, _GKSNATObserver_AddCarrierFlag, _GKSNATObserver_AddInRangeFlag, 
-                       _GKSNATObserver_CheckTCPAndSSL, _GKSNATObserver_FavorNonCarrier, 
-                       _GKSNATObserver_IgnoreCache, _GKSNATObserver_NewCarrierType, 
-                       _GKSNATObserver_NonCarrierOnly, _GKSNetworkConditionsTimeout, 
-                       _GKSNewSessionJoiningInterval, _GKSNoRemotePacketsTimeout, 
-                       _GKSPreEmptiveRelayTimeout, _GKSRateControllerType, _GKSRelayParameter_ClientData, 
-                       _GKSRelayParameter_ConnectionID, _GKSRelayParameter_PeerAddrPointer, 
-                       _GKSRelayParameter_PeerBlob, _GKSRelayParameter_PeerExternalAddr, 
-                       _GKSRelayParameter_PeerID, _GKSRelayParameter_PeerNatType, 
-                       _GKSRelayParameter_PeerRelayIP, _GKSRelayParameter_PeerRelayNatIP, 
-                       _GKSRelayParameter_PeerRelayNatPort, _GKSRelayParameter_PeerRelayPort, 
-                       _GKSRelayParameter_RemotePrimaryId, _GKSRelayParameter_SelfAddrPointer, 
-                       _GKSRelayParameter_SelfBlob, _GKSRelayParameter_SelfExternalAddr, 
-                       _GKSRelayParameter_SelfNatType, _GKSRelayParameter_SelfRelayIP, 
-                       _GKSRelayParameter_SelfRelayNatIP, _GKSRelayParameter_SelfRelayNatPort, 
-                       _GKSRelayParameter_SelfRelayPort, _GKSRelayParameter_Token, 
-                       _GKSRelayParameter_TransactionID, _GKSRelayType, _GKSSSLCheckServerName, 
-                       _GKSStartupTimeout, _GKSStaticNATTypeCarrierSpecific, _GKSSupportsEVSCodec, 
-                       _GKSSupportsHEVCEncoding, _GKSSupportsRedAudio, _GKSTCPCheckServerName, 
-                       _GKSVideoDegradedThreshold, _GKSVideoThrottlingTimeout, _GKSiRATRecommendationSupport, 
-                       _GKVoiceChatServiceErrorDomain, _RTCACMaxBitrate2G, _RTCACMaxBitrate3G, 
-                       _RTCACMaxBitrateLTE, _RTCACMaxRelayBitrate, _RTCACMaxTCPRelayBitrate, 
-                       _RTCSSMaxBitrate2G, _RTCSSMaxBitrate3G, _RTCSSMaxBitrateLTE, 
-                       _VCAbTestAudioEnhancementFeatureCombos, _VCAbTestDuplicationEnhancementFeatureCombos, 
-                       _VCAbTestMasterLocalSwitch, _VCAbTestNetworkEnhancementFeatureCombos, 
-                       _VCAbTestRateControlEnhancementFeatureCombos, _VCAbTestVideoEnhancementFeatureCombos, 
-                       _VCAbTestingState, _VCAdaptiveLearningAdaptiveLearningA, _VCAdaptiveLearningAdaptiveLearningB, 
+                       _GKSMinJBQueueSize5G, _GKSNATCheckTimeout, _GKSNATObserver_AddCarrierFlag, 
+                       _GKSNATObserver_AddInRangeFlag, _GKSNATObserver_CheckTCPAndSSL, 
+                       _GKSNATObserver_FavorNonCarrier, _GKSNATObserver_IgnoreCache, 
+                       _GKSNATObserver_NewCarrierType, _GKSNATObserver_NonCarrierOnly, 
+                       _GKSNetworkConditionsTimeout, _GKSNewSessionJoiningInterval, 
+                       _GKSNoRemotePacketsTimeout, _GKSPreEmptiveRelayTimeout, _GKSRateControllerType, 
+                       _GKSRelayParameter_ClientData, _GKSRelayParameter_ConnectionID, 
+                       _GKSRelayParameter_PeerAddrPointer, _GKSRelayParameter_PeerBlob, 
+                       _GKSRelayParameter_PeerExternalAddr, _GKSRelayParameter_PeerID, 
+                       _GKSRelayParameter_PeerNatType, _GKSRelayParameter_PeerRelayIP, 
+                       _GKSRelayParameter_PeerRelayNatIP, _GKSRelayParameter_PeerRelayNatPort, 
+                       _GKSRelayParameter_PeerRelayPort, _GKSRelayParameter_RemotePrimaryId, 
+                       _GKSRelayParameter_SelfAddrPointer, _GKSRelayParameter_SelfBlob, 
+                       _GKSRelayParameter_SelfExternalAddr, _GKSRelayParameter_SelfNatType, 
+                       _GKSRelayParameter_SelfRelayIP, _GKSRelayParameter_SelfRelayNatIP, 
+                       _GKSRelayParameter_SelfRelayNatPort, _GKSRelayParameter_SelfRelayPort, 
+                       _GKSRelayParameter_Token, _GKSRelayParameter_TransactionID, 
+                       _GKSRelayType, _GKSSSLCheckServerName, _GKSStartupTimeout, 
+                       _GKSStaticNATTypeCarrierSpecific, _GKSSupportsEVSCodec, _GKSSupportsHEVCEncoding, 
+                       _GKSSupportsRedAudio, _GKSTCPCheckServerName, _GKSVideoDegradedThreshold, 
+                       _GKSVideoNearDegradedThreshold, _GKSVideoThrottlingTimeout, 
+                       _GKSiRATRecommendationSupport, _GKVoiceChatServiceErrorDomain, 
+                       _RTCACMaxBitrate2G, _RTCACMaxBitrate3G, _RTCACMaxBitrateLTE, 
+                       _RTCACMaxRelayBitrate, _RTCACMaxTCPRelayBitrate, _RTCSSMaxBitrate2G, 
+                       _RTCSSMaxBitrate3G, _RTCSSMaxBitrateLTE, _VCAbTestAudioEnhancementFeatureCombos, 
+                       _VCAbTestDuplicationEnhancementFeatureCombos, _VCAbTestMasterLocalSwitch, 
+                       _VCAbTestNetworkEnhancementFeatureCombos, _VCAbTestRateControlEnhancementFeatureCombos, 
+                       _VCAbTestVideoEnhancementFeatureCombos, _VCAbTestingState, 
+                       _VCAdaptiveLearningAdaptiveLearningA, _VCAdaptiveLearningAdaptiveLearningB, 
                        _VCAdaptiveLearningAdjustmentFactorA, _VCAdaptiveLearningAdjustmentFactorB, 
                        _VCAdaptiveLearningAdjustmentFactorC, _VCAdaptiveLearningEnabled, 
                        _VCAdaptiveLearningLongTermHistoryLength, _VCAdaptiveLearningLongTermValueWeightA, 
@@ -339,8 +342,9 @@ exports:
                        _VCViewpointCorrectionEnableThreshold, _VCViewpointCorrectionEnabled, 
                        _VCVplrFecEnableThreshold, _VCWifiAssistBudgetStatusEnableThreshold, 
                        _VCWifiAssistDuplicationEnableThreshold, _VCWifiAssistStatusBarEnableThreshold, 
-                       _VCWifiLowTierRedundancyEnableThreshold, _VCiRATMetricsEnableThreshold, 
-                       _VCiRATRtpEnableThreshold, _hwrandom, _hwrandom16, _kAVCKeyAudioPowerSpectrumTokenInput, 
+                       _VCWifiLowTierRedundancyEnableThreshold, _VCiRATDuplicationEnableThreshold, 
+                       _VCiRATMetricsEnableThreshold, _VCiRATRtpEnableThreshold, 
+                       _hwrandom, _hwrandom16, _kAVCKeyAudioPowerSpectrumTokenInput, 
                        _kAVCKeyAudioPowerSpectrumTokenOutput, _kAVCKeyRTCPSocket, 
                        _kAVCKeyRTPLocalSSRC, _kAVCKeyRTPSocket, _kAVCKeySharedSocket, 
                        _kAVCKeySourcePort, _kAVCKeySupportedAudioCodecs, _kAVCKeySupportedCodecs, 
@@ -449,9 +453,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           5213D6E2-B31B-3B80-9B0A-FFE3338B9FDE
+    value:           E7DC1021-71ED-3B0E-BEB7-84EA1FBE9FB5
   - target:          arm64e-ios
-    value:           CAACBB48-3959-34C6-9FE1-6C4BC6CECC17
+    value:           B62AA0B4-3174-34CB-A8E7-22E3A7385C39
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/LegacyHandle'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -466,9 +470,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           25A653BF-11D1-3FAB-B8D4-57F62F078346
+    value:           526E5E72-11E3-3E68-B8A4-956A92A47011
   - target:          arm64e-ios
-    value:           39CD1784-2C00-3A99-89C5-D2EEB66564AA
+    value:           0B1345FA-26D3-3095-A3E8-0C2C2FB32FF9
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/snatmap.framework/snatmap'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]

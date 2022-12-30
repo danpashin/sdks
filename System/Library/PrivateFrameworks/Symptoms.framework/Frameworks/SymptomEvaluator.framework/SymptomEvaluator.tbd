@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           4FB92D76-D397-3F04-B6D2-618C17820CD0
   - target:          arm64-ios
-    value:           A0D5E684-4821-3842-A5B1-AAB543DC58D3
+    value:           9D060810-E68C-3931-ACCD-9FCE443C147E
   - target:          arm64e-ios
-    value:           EF5E5A1F-8C87-3F55-A93F-A1033B29ED1E
+    value:           08DED8DC-5907-3853-A491-F90C8DE574B8
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator'
-current-version: 1431.0.17
+current-version: 1431.11.4
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _AWDSymptomsAdvisoryAlternateNetworkTypeReadFrom, _AWDSymptomsAdvisoryAppCanUseAlternateNetworkReadFrom, 
@@ -869,14 +869,16 @@ exports:
                        _CTShimSubscriberLastUpdateTime, _CTShimSubscriberMDN, _CTShimSubscriberSlotID, 
                        _CTShimSubscriberTag, _CTShimSubscriberTagCounter, _CTShimSubscriptionCurrentRATSelection, 
                        _CTShimSubscriptionInfoBars, _CTShimSubscriptionInfoCTCellInfo, 
-                       _CTShimSubscriptionInfoCarrierName, _CTShimSubscriptionInfoDataStall, 
-                       _CTShimSubscriptionInfoDataTransferTime, _CTShimSubscriptionInfoDataTransferTimeEnabled, 
+                       _CTShimSubscriptionInfoCTDataStatus, _CTShimSubscriptionInfoCarrierName, 
+                       _CTShimSubscriptionInfoDataStall, _CTShimSubscriptionInfoDataTransferTime, 
+                       _CTShimSubscriptionInfoDataTransferTimeEnabled, _CTShimSubscriptionInfoHighThroughput, 
                        _CTShimSubscriptionInfoInUse, _CTShimSubscriptionInfoIsCurrentDataSubscription, 
                        _CTShimSubscriptionInfoLinkPowerCost, _CTShimSubscriptionInfoLinkQualityFingerprint, 
                        _CTShimSubscriptionInfoLinkState, _CTShimSubscriptionInfoOperatorName, 
                        _CTShimSubscriptionInfoSlot, _CTShimSubscriptionInfoTimestamp, 
                        _CTShimSubscriptionInfoTrafficClass, _CTShimSubscriptionInfoUserDataPreferred, 
-                       _CTShimSubscriptionPreferredRATSelection, _CTShimSubscriptionRATSelectionMask, 
+                       _CTShimSubscriptionNRServingCellType, _CTShimSubscriptionPreferredRATSelection, 
+                       _CTShimSubscriptionRATSelectionIsNR, _CTShimSubscriptionRATSelectionMask, 
                        _CTShimSubscriptions, _activate_symptom_evaluator_handling, 
                        _boottime_secs, _client_transactions_release, _configure_analytics_launchpad_for_helper, 
                        _configure_symptom_evaluator_handling, _configure_symptom_logging, 

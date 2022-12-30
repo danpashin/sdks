@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           AE713687-B7F6-3432-816D-6F6766575036
+    value:           107D7E18-3643-3248-BC80-0CE242D74F6A
   - target:          arm64e-ios
-    value:           B1454852-03E7-3577-953E-645DDD352B13
+    value:           29AC7B16-2372-39EB-B21B-EBADCA266152
 install-name:    '/System/Library/PrivateFrameworks/AppleDepth.framework/AppleDepth'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -86,21 +86,31 @@ exports:
                        _kADEspressoBufferIDInputRefColor, _kADEspressoBufferIDOutputAlphaMap, 
                        _kADEspressoBufferIDOutputConfidence, _kADEspressoBufferIDOutputDepth, 
                        _kADEspressoBufferIDOutputDisparity, _kADEspressoBufferIDOutputNormals, 
-                       _kADEspressoBufferIDOutputOpaqueFeatures, _kADNetworkIDJasperColor, 
-                       _kADNetworkIDMonocular ]
+                       _kADEspressoBufferIDOutputOpaqueFeatures, _kADNetworkIDDisparityDenseFusion, 
+                       _kADNetworkIDJasperColor, _kADNetworkIDMonocular, _kADNetworkIDSIJNetBackend, 
+                       _kADNetworkIDSIJNetFrontend, _kADNetworkIDStereoFSD, _kADNetworkIDStereoFSD60Deg, 
+                       _kADNetworkIDStereoStillImages, _kADNetworkIDStillImage ]
     objc-classes:    [ ADAggregationParameters, ADCameraCalibration, ADDefaults, 
                        ADEspressoBuffer, ADEspressoImageDescriptor, ADEspressoInferenceDescriptor, 
-                       ADEspressoJasperColorInferenceDescriptor, ADEspressoMonocularInferenceDescriptor, 
-                       ADEspressoRunner, ADExecutor, ADExecutorParameters, ADImageDescriptor, 
-                       ADJasperColorExecutor, ADJasperColorExecutorParameters, ADJasperColorPipeline, 
-                       ADJasperColorPipelineParameters, ADJasperPointCloud, ADJasperPointCloudFilterParamaters, 
+                       ADEspressoJasperColorInferenceDescriptor, ADEspressoJasperToColorTransformCorrectionBackendInfrerenceDescriptor, 
+                       ADEspressoJasperToColorTransformCorrectionFrontendInfrerenceDescriptor, 
+                       ADEspressoMonocularInferenceDescriptor, ADEspressoPearlColorInferenceDescriptor, 
+                       ADEspressoRunner, ADEspressoStereoInferenceDescriptor, ADEspressoStillImageInferenceDescriptor, 
+                       ADExecutor, ADExecutorParameters, ADImageDescriptor, ADJasperColorExecutor, 
+                       ADJasperColorExecutorParameters, ADJasperColorPipeline, ADJasperColorPipelineParameters, 
+                       ADJasperColorStillsExecutor, ADJasperColorStillsExecutorParameters, 
+                       ADJasperColorStillsPipeline, ADJasperColorStillsPipelineParameters, 
+                       ADJasperPointCloud, ADJasperPointCloudFilterParamaters, ADJasperToColorTransformCorrectionResult, 
                        ADLKTExecutor, ADLKTOpticalFlow, ADLKTTexturesDescriptor, 
                        ADMagnificationForRadiusLensDistortionModel, ADMillimeterRadiusPairsLensDistortionModel, 
                        ADMonocularExecutor, ADMonocularExecutorParameters, ADMonocularPipeline, 
                        ADMonocularPipelineParameters, ADMutableCameraCalibration, 
                        ADMutableJasperPointCloud, ADNetworkProvider, ADNilDistortionModel, 
-                       ADNormals, ADNormalsBuffer, ADPipelineParameters, ADPointCloudAggregator, 
-                       ADPolynomialsLensDistortionModel, ADReprojection, ADTimeProfiler, 
+                       ADNormals, ADNormalsBuffer, ADPearlColorExecutor, ADPearlColorExecutorParameters, 
+                       ADPearlColorPipeline, ADPearlColorPipelineParameters, ADPipelineParameters, 
+                       ADPointCloudAggregator, ADPolynomialsLensDistortionModel, 
+                       ADReprojection, ADStereoExecutor, ADStereoExecutorParameters, 
+                       ADStereoPipeline, ADStereoPipelineParameters, ADTimeProfiler, 
                        ADUtils, DFMetalUtils ]
     objc-ivars:      [ ADCameraCalibration._cameraToPlatformTransform, ADCameraCalibration._distortionModel, 
                        ADCameraCalibration._intrinsicMatrix, ADCameraCalibration._pixelSize, 

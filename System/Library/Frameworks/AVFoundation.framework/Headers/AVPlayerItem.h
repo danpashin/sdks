@@ -522,6 +522,13 @@ AV_INIT_UNAVAILABLE
  */
 @property (copy) AVVideoApertureMode videoApertureMode API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);
 
+/*!
+@property	appliesPerFrameHDRDisplayMetadata
+@abstract	Controls whether or not to apply the per frame HDR display metadata of the source during playback.
+@discussion
+*/
+@property (nonatomic) BOOL appliesPerFrameHDRDisplayMetadata API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) API_UNAVAILABLE(watchos);  // default is YES
+
 
 @end
 

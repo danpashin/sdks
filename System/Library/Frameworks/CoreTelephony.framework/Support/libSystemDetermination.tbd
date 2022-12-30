@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           CD5A58D0-C522-3FCD-AE07-AE2321E311AD
+    value:           DED5A256-BCF5-3568-95DC-5E2088E467BE
   - target:          arm64e-ios
-    value:           83D7D047-70AE-3D12-AA91-07BFE1CF508F
+    value:           76FE589C-1AD9-39E1-9C4D-0A2C2C867C3F
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -44,7 +44,7 @@ exports:
                        __ZN26SystemDeterminationManager24handleRadioDisabled_syncEv, 
                        __ZN26SystemDeterminationManager24handleSSPTransportUpdateERK13PersonalityIDb, 
                        __ZN26SystemDeterminationManager24handleWifiAvailable_syncEb, 
-                       __ZN26SystemDeterminationManager25handleImsDownCommand_syncEN10subscriber7SimSlotE, 
+                       __ZN26SystemDeterminationManager25handleImsDownCommand_syncERKNSt3__14pairIN10subscriber7SimSlotEbEE, 
                        __ZN26SystemDeterminationManager25handleTTYModeChanged_syncERK13PersonalityIDRK16TTYEnabledStatus, 
                        __ZN26SystemDeterminationManager25parseQoSPacketFilter_syncEN10subscriber7SimSlotEbRKPK9__CFArrayRNSt3__16vectorItNS7_9allocatorItEEEE, 
                        __ZN26SystemDeterminationManager26handleCountryOfOriginationERKNSt3__110shared_ptrIN2sd32IMSSubscriberControllerInterfaceEEERKNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
@@ -177,7 +177,7 @@ exports:
                        __ZN2sd23IMSSubscriberController23sendThumperEnabled_syncEb, 
                        __ZN2sd23IMSSubscriberController23updateCallWaitingStatusEb, 
                        __ZN2sd23IMSSubscriberController24handleRegistrationActiveERKN3ims22RegistrationActiveInfoE, 
-                       __ZN2sd23IMSSubscriberController24initializeImsClient_syncEv, 
+                       __ZN2sd23IMSSubscriberController24initializeImsClient_syncEb, 
                        __ZN2sd23IMSSubscriberController24limitedAccessImsRegisterEv, 
                        __ZN2sd23IMSSubscriberController24publishCallWaitingStatusEb, 
                        __ZN2sd23IMSSubscriberController24requestCallWaitingStatusEv, 
@@ -205,7 +205,7 @@ exports:
                        __ZN2sd23IMSSubscriberController29evaluateAndSendXcapConfigInfoEv, 
                        __ZN2sd23IMSSubscriberController29handlePersonalityRemoved_syncEv, 
                        __ZN2sd23IMSSubscriberController29setTTYModeForIpTelephony_syncEb, 
-                       __ZN2sd23IMSSubscriberController29unsuppressIMSStatusToBasebandEPKc, 
+                       __ZN2sd23IMSSubscriberController29unsuppressIMSStatusToBasebandEPKcb, 
                        __ZN2sd23IMSSubscriberController30handleRegistrationStateChangedERKN3ims17RegistrationStateE, 
                        __ZN2sd23IMSSubscriberController30handleSubscriptionChanged_syncEv, 
                        __ZN2sd23IMSSubscriberController30onImsRegStatusReportingTimeoutEv, 
@@ -219,6 +219,7 @@ exports:
                        __ZN2sd23IMSSubscriberController35updateImsClientNetworkServices_syncEb, 
                        __ZN2sd23IMSSubscriberController37handleDataLowPowerModeTransition_syncEb, 
                        __ZN2sd23IMSSubscriberController37setPendingImsSwitchStatusNotificationEb, 
+                       __ZN2sd23IMSSubscriberController39suppressIMSStatusToBasebandWithCallbackEPKcNSt3__18functionIFbvEEE, 
                        __ZN2sd23IMSSubscriberController5startEv, __ZN2sd23IMSSubscriberController6createERKNSt3__110shared_ptrIK8RegistryEEN8dispatch5queueENS1_10unique_ptrINS_29IMSSubscriberFactoryInterfaceENS1_14default_deleteISB_EEEERKNS2_INS_31IMSSubscriberControllerDelegateEEERKNS2_INS_27IMSSubscriberModelInterfaceEEE, 
                        __ZN2sd23IMSSubscriberController8shutdownEN8dispatch13group_sessionE, 
                        __ZN2sd23IMSSubscriberController9bootstrapERKNSt3__110shared_ptrINS_27IMSSubscriberEventInterfaceEEE, 
@@ -328,9 +329,9 @@ exports:
                        __ZNK2sd19IMSSubscriberConfig18CopyIMSConfigValueEPKcPKvbb, 
                        __ZNK2sd19IMSSubscriberConfig18CopyIMSConfigValueEPKcS2_PKvbb, 
                        __ZNK2sd19IMSSubscriberConfig18CopyIMSConfigValueEPKcS2_S2_PKvbb, 
-                       __ZNK2sd19IMSSubscriberConfig19getCBConnHelperTypeEv, __ZNK2sd19IMSSubscriberConfig19getpCSCFSettingAddrEv, 
-                       __ZNK2sd19IMSSubscriberConfig20isUnsupportedCarrierEv, __ZNK2sd19IMSSubscriberConfig20isVoiceCallSupportedEv, 
-                       __ZNK2sd19IMSSubscriberConfig21CopyIMSConfigSIMValueEPKcPKvb, 
+                       __ZNK2sd19IMSSubscriberConfig18isQoSRevokeEnabledEv, __ZNK2sd19IMSSubscriberConfig19getCBConnHelperTypeEv, 
+                       __ZNK2sd19IMSSubscriberConfig19getpCSCFSettingAddrEv, __ZNK2sd19IMSSubscriberConfig20isUnsupportedCarrierEv, 
+                       __ZNK2sd19IMSSubscriberConfig20isVoiceCallSupportedEv, __ZNK2sd19IMSSubscriberConfig21CopyIMSConfigSIMValueEPKcPKvb, 
                        __ZNK2sd19IMSSubscriberConfig22getImsDomainFromBundleERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEb, 
                        __ZNK2sd19IMSSubscriberConfig22getWifiAccessTypeFieldEv, __ZNK2sd19IMSSubscriberConfig23getImpiFormatFromBundleEb, 
                        __ZNK2sd19IMSSubscriberConfig23isUSIMFallbackSupportedEb, 
@@ -451,7 +452,7 @@ exports:
                        __ZThn48_N26SystemDeterminationManager23handleRadioEnabled_syncEv, 
                        __ZThn48_N26SystemDeterminationManager24handleRadioDisabled_syncEv, 
                        __ZThn48_N26SystemDeterminationManager24handleWifiAvailable_syncEb, 
-                       __ZThn48_N26SystemDeterminationManager25handleImsDownCommand_syncEN10subscriber7SimSlotE, 
+                       __ZThn48_N26SystemDeterminationManager25handleImsDownCommand_syncERKNSt3__14pairIN10subscriber7SimSlotEbEE, 
                        __ZThn48_N26SystemDeterminationManager25handleTTYModeChanged_syncERK13PersonalityIDRK16TTYEnabledStatus, 
                        __ZThn48_N26SystemDeterminationManager26handleDeviceIdChanged_syncERK13PersonalityIDRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE, 
                        __ZThn48_N26SystemDeterminationManager26handleIsRoamingUpdate_syncEN10subscriber7SimSlotE13RoamingResult, 

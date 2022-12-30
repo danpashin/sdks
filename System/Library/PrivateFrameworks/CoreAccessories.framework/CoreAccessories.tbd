@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           A13CBE37-CD03-391A-9851-F5DBB6328EC9
+    value:           351AD8FF-FE6A-3FC7-BD7F-191D4E9D220C
   - target:          arm64e-ios
-    value:           9FD8E048-00EE-3464-9AE7-7015858B4A94
+    value:           D123FAED-7138-3698-A1F4-47E8913462DB
 install-name:    '/System/Library/PrivateFrameworks/CoreAccessories.framework/CoreAccessories'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -59,8 +59,10 @@ exports:
                        _ACCUserDefaultsKey_ACCAuthProtocolAllowMutualAuth, _ACCUserDefaultsKey_ACCAuthProtocolMaxMessageSize, 
                        _ACCUserDefaultsKey_ACCAuthProtocolPretendAuth, _ACCUserDefaultsKey_ACCAuthProtocolRoleSupport, 
                        _ACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport, _ACCUserDefaultsKey_BypassTrustDialog, 
-                       _ACCUserDefaultsKey_DisableWirelessCTA, _ACCUserDefaultsKey_EnableTrustDialog, 
-                       _ACCUserDefaultsKey_ForceAuthFail, _ACCUserDefaultsKey_KnownAccessories, 
+                       _ACCUserDefaultsKey_DisableACCAuthProtocolOnInductive, _ACCUserDefaultsKey_DisableWirelessCTA, 
+                       _ACCUserDefaultsKey_EnableACCAuthProtocolOnNFC, _ACCUserDefaultsKey_EnableTrustDialog, 
+                       _ACCUserDefaultsKey_ExposeSleeves, _ACCUserDefaultsKey_ForceAuthFail, 
+                       _ACCUserDefaultsKey_KnownAccessories, _ACCUserDefaultsKey_NFCAnalyticsDate, 
                        _ACCUserDefaultsKey_ShowHiddenAccessories, _ACCUserDefaultsNotification, 
                        _CoreAccessoriesInitForHID, _CoreAccessoriesVersionNumber, 
                        _CoreAccessoriesVersionString, _NSObjectIfNotNull, _acc_policies_allowACCAuthProtocolOnAllTransport, 
@@ -134,7 +136,12 @@ exports:
                        _kACCProperties_Connection_HideFromUI, _kACCProperties_Connection_PrimaryPortNumber, 
                        _kACCProperties_Endpoint_Bluetooth_HIDFunction, _kACCProperties_Endpoint_DockType, 
                        _kACCProperties_Endpoint_EA_MatchAction, _kACCProperties_Endpoint_EA_SessionOpen, 
-                       _kACCProperties_Endpoint_EA_SessionUUID, _kACCProperties_Endpoint_OOBPairingData, 
+                       _kACCProperties_Endpoint_EA_SessionUUID, _kACCProperties_Endpoint_NFC_AccessoryPower, 
+                       _kACCProperties_Endpoint_NFC_DevicePower, _kACCProperties_Endpoint_NFC_DisplayP3Rgb, 
+                       _kACCProperties_Endpoint_NFC_DisplayP3RgbSecondary, _kACCProperties_Endpoint_NFC_PinDrop, 
+                       _kACCProperties_Endpoint_NFC_SessionOpen, _kACCProperties_Endpoint_NFC_TagId, 
+                       _kACCProperties_Endpoint_NFC_TimeWindow, _kACCProperties_Endpoint_NFC_Type, 
+                       _kACCProperties_Endpoint_NFC_WashIndex, _kACCProperties_Endpoint_OOBPairingData, 
                        _kACCProperties_Endpoint_PortNumber, _kACCProperties_Endpoint_ResistorID, 
                        _kACCProperties_Endpoint_iAP2_Initialized, _kACCVehicleInfoActiveConnectorKey, 
                        _kACCVehicleInfoAlerts, _kACCVehicleInfoBarometricPressure, 
@@ -195,6 +202,11 @@ exports:
                        _kCFACCProperties_Connection_PrimaryPortNumber, _kCFACCProperties_Endpoint_Bluetooth_HIDFunction, 
                        _kCFACCProperties_Endpoint_DockType, _kCFACCProperties_Endpoint_EA_MatchAction, 
                        _kCFACCProperties_Endpoint_EA_SessionOpen, _kCFACCProperties_Endpoint_EA_SessionUUID, 
+                       _kCFACCProperties_Endpoint_NFC_AccessoryPower, _kCFACCProperties_Endpoint_NFC_DevicePower, 
+                       _kCFACCProperties_Endpoint_NFC_DisplayP3Rgb, _kCFACCProperties_Endpoint_NFC_DisplayP3RgbSecondary, 
+                       _kCFACCProperties_Endpoint_NFC_PinDrop, _kCFACCProperties_Endpoint_NFC_SessionOpen, 
+                       _kCFACCProperties_Endpoint_NFC_TagId, _kCFACCProperties_Endpoint_NFC_TimeWindow, 
+                       _kCFACCProperties_Endpoint_NFC_Type, _kCFACCProperties_Endpoint_NFC_WashIndex, 
                        _kCFACCProperties_Endpoint_OOBPairingData, _kCFACCProperties_Endpoint_PortNumber, 
                        _kCFACCProperties_Endpoint_ResistorID, _kCFACCProperties_Endpoint_iAP2_Initialized, 
                        _kCFACCUserDefaultsIapdKey_ChargingPowerBehavior, _kCFACCUserDefaultsIapdKey_ChargingPowerOverride, 
@@ -202,9 +214,11 @@ exports:
                        _kCFACCUserDefaultsKey_ACCAuthProtocolAllowMutualAuth, _kCFACCUserDefaultsKey_ACCAuthProtocolMaxMessageSize, 
                        _kCFACCUserDefaultsKey_ACCAuthProtocolPretendAuth, _kCFACCUserDefaultsKey_ACCAuthProtocolRoleSupport, 
                        _kCFACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport, 
-                       _kCFACCUserDefaultsKey_AuthenticationOverride, _kCFACCUserDefaultsKey_DisableWirelessCTA, 
-                       _kCFACCUserDefaultsKey_EnableTrustDialog, _kCFACCUserDefaultsKey_ForceAuthFail, 
-                       _kCFACCUserDefaultsKey_MaxOutboundiAP2PacketSize, _kCFACCVehicleInfoActiveConnectorKey, 
+                       _kCFACCUserDefaultsKey_AuthenticationOverride, _kCFACCUserDefaultsKey_DisableACCAuthProtocolOnInductive, 
+                       _kCFACCUserDefaultsKey_DisableWirelessCTA, _kCFACCUserDefaultsKey_EnableACCAuthProtocolOnNFC, 
+                       _kCFACCUserDefaultsKey_EnableTrustDialog, _kCFACCUserDefaultsKey_ExposeSleeves, 
+                       _kCFACCUserDefaultsKey_ForceAuthFail, _kCFACCUserDefaultsKey_MaxOutboundiAP2PacketSize, 
+                       _kCFACCUserDefaultsKey_NFCAnalyticsDate, _kCFACCVehicleInfoActiveConnectorKey, 
                        _kCFACCVehicleInfoAlerts, _kCFACCVehicleInfoBarometricPressure, 
                        _kCFACCVehicleInfoChargeLevelElectricKey, _kCFACCVehicleInfoChargingParameterKey, 
                        _kCFACCVehicleInfoConsumptionParameterKey, _kCFACCVehicleInfoCurrentBatteryChargeKey, 

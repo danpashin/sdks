@@ -1732,10 +1732,13 @@ typedef NS_ENUM(NSInteger, AVCaptureDeviceTransportControlsPlaybackMode) {
     The sGRB color space ( https://www.w3.org/Graphics/Color/srgb )
  @constant AVCaptureColorSpace_P3_D65
     The P3 D65 wide color space which uses Illuminant D65 as the white point.
+ @constant AVCaptureColorSpace_HLG_BT2020
+    The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer function.
  */
 typedef NS_ENUM(NSInteger, AVCaptureColorSpace) {
     AVCaptureColorSpace_sRGB       = 0,
     AVCaptureColorSpace_P3_D65     = 1,
+    AVCaptureColorSpace_HLG_BT2020 API_AVAILABLE(ios(14.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos) = 2,
 } API_AVAILABLE(macos(10.15), ios(10.0)) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 
 
@@ -2197,7 +2200,7 @@ AV_INIT_UNAVAILABLE
     A property indicating whether the format supports high dynamic range streaming.
  
  @discussion
-    videoHDRSupported is a BOOL indicating whether the format supports high dynamic range streaming. See AVCaptureDevice's videoHDREnabled property.
+    videoHDRSupported is a BOOL indicating whether the format supports high dynamic range streaming, also known as Extended Dynamic Range (EDR). When enabled, the device streams at twice the published frame rate, capturing an under-exposed frame and correctly exposed frame for each frame time at the published rate. Portions of the under-exposed frame are combined with the correctly exposed frame to recover detail in darker areas of the scene. EDR is a separate and distinct feature from 10-bit HDR video (first seen in 2020 iPhones). 10-bit formats have greater dynamic range by virtue of their expanded bit depth and HLG BT2020 color space, and when captured in movies, contain Dolby Vision metadata. They are, in effect, "always on" HDR formats and thus their videoHDRSupported property is always NO, since HDR cannot be enabled or disabled. To enable videoHDR (EDR), set the AVCaptureDevice.videoHDREnabled property.
  */
 @property(nonatomic, readonly, getter=isVideoHDRSupported) BOOL videoHDRSupported API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos);
 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E113D13B-F618-38A4-8C2E-1573A17102DC
   - target:          arm64-ios
-    value:           FDD3574C-2513-3335-B3DD-AEF2617F50A9
+    value:           668D3AEE-2B31-3EDC-9DF9-12427BE0A46C
   - target:          arm64e-ios
-    value:           D4F04E00-8A29-3243-8273-C45A18CD529D
+    value:           FD76A347-6069-32A6-95B8-80A163207F76
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -298,7 +298,9 @@ exports:
                        __ZTSNSt3__123enable_shared_from_thisIN10subscriber16SimCommandDriverEEE, 
                        __ZTSNSt3__123enable_shared_from_thisIN3awd16AwdCommandDriverEEE ]
   - targets:         [ arm64-ios, arm64e-ios ]
-    symbols:         [ __Z18decodeOperatorNamePKN3ctu11OsLogLoggerERKNSt3__16vectorIhNS3_9allocatorIhEEEE16DataCodingScheme, 
+    symbols:         [ __Z15read_rest_valueR15NRDisableStatusRKN3xpc6objectE, __Z15read_rest_valueR6NrCellRKN3xpc6objectE, 
+                       __Z16write_rest_valueRK15NRDisableStatus, __Z16write_rest_valueRK6NrCell, 
+                       __Z18decodeOperatorNamePKN3ctu11OsLogLoggerERKNSt3__16vectorIhNS3_9allocatorIhEEEE16DataCodingScheme, 
                        __Z19enforceStringIsUtf8PKN3ctu11OsLogLoggerERNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE, 
                        __Z23convertBandToMaskForRatt21RadioAccessTechnology, __Z24convertMaskToBandsForRaty21RadioAccessTechnology, 
                        __Z8asString16VinylDriverError, __Z8asString16VinylDriverReady, 
@@ -307,7 +309,7 @@ exports:
                        __Z8asStringN23ActivationCommandDriver13ResponseError7CmdTypeE, 
                        __Z8asStringN37NetworkListCommandDriverResponseError5ErrorE, 
                        __Z8asStringN37NetworkListCommandDriverResponseError7CmdTypeE, 
-                       __ZN10subscriber14getSimFilePathEPKN3ctu10LoggerBaseINSt3__110shared_ptrINS0_9LogServerEEEEENS_7SimTypeERKNS_6FileIdE, 
+                       __Z8asStringj, __ZN10subscriber14getSimFilePathEPKN3ctu10LoggerBaseINSt3__110shared_ptrINS0_9LogServerEEEEENS_7SimTypeERKNS_6FileIdE, 
                        __ZN10subscriber16SimCommandDriver11setDelegateENSt3__110shared_ptrI43SubscriberSimCommandDriverDelegateInterfaceEE, 
                        __ZN10subscriber16SimCommandDriver16handleSimHwEventENS_7SimSlotENS_20SimHwTrayEventStatusE, 
                        __ZN10subscriber16SimCommandDriver36updateAndNotifySimTrayStatusIfNeededENS_12SimTrayStateENS_7SimSlotE, 
@@ -507,13 +509,13 @@ exports:
                        __ZN4rest23kDefaultLastVisibleMccsE, __ZN4rest23kDefaultLastVisibleMncsE, 
                        __ZN4rest23kDefaultServingNetworksE, __ZN4rest24kDefaultCsAttachedStatesE, 
                        __ZN4rest24kDefaultLastVisiblePlmnsE, __ZN4rest24kDefaultNetworkScanStateE, 
-                       __ZN4rest24kDefaultPsAttachedStatesE, __ZN4rest26kDefaultDataAttachedStatesE, 
-                       __ZN4rest27kDefaultDataBearerDataModesE, __ZN4rest27kDefaultImsPreferenceStatesE, 
-                       __ZN4rest27kDefaultNetworkAttachStatesE, __ZN4rest28kDefaultRegistrationStatusesE, 
-                       __ZN4rest31kDefaultRadioAccessTechnologiesE, __ZN4rest32kDefaultTrackingAreaUpdateTimersE, 
-                       __ZN4rest36kDefaultEffectiveDataRoamingSettingsE, __ZN4resteqERKNS_14ServingNetworkES2_, 
-                       __ZN4resteqERKNS_18ImsPreferenceStateES2_, __ZN4resteqERKNS_8DataModeES2_, 
-                       __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE13RoamingResultNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
+                       __ZN4rest24kDefaultPsAttachedStatesE, __ZN4rest25kDefaultNRDisableStatusesE, 
+                       __ZN4rest26kDefaultDataAttachedStatesE, __ZN4rest27kDefaultDataBearerDataModesE, 
+                       __ZN4rest27kDefaultImsPreferenceStatesE, __ZN4rest27kDefaultNetworkAttachStatesE, 
+                       __ZN4rest28kDefaultRegistrationStatusesE, __ZN4rest31kDefaultRadioAccessTechnologiesE, 
+                       __ZN4rest32kDefaultTrackingAreaUpdateTimersE, __ZN4rest36kDefaultEffectiveDataRoamingSettingsE, 
+                       __ZN4resteqERKNS_14ServingNetworkES2_, __ZN4resteqERKNS_18ImsPreferenceStateES2_, 
+                       __ZN4resteqERKNS_8DataModeES2_, __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE13RoamingResultNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE21RadioAccessTechnologyNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE3MCCNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE3MNCNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
@@ -860,7 +862,7 @@ exports:
                        __ZTVN3awd16AwdCommandDriverE, __Zde8FileType, __ZeqRK19LteEmergencySupportS1_, 
                        __ZneRK19LteEmergencySupportS1_, __ZppR8FileType, _ctConvertCdmaBandToInteger, 
                        _ctConvertCdmaBandToMask, _ctConvertGsmBandToInteger, _ctConvertGsmBandToMask, 
-                       _ctConvertLteBandToInteger, _ctConvertLteBandToMask, _ctConvertTdsBandToInteger, 
-                       _ctConvertTdsBandToMask, _ctConvertUmtsBandToInteger, _ctConvertUmtsBandToMask, 
-                       _kDefaultSMSCommandTimeoutMS ]
+                       _ctConvertLteBandToInteger, _ctConvertLteBandToMask, _ctConvertNR5GBandToInteger, 
+                       _ctConvertNrBandToMask, _ctConvertTdsBandToInteger, _ctConvertTdsBandToMask, 
+                       _ctConvertUmtsBandToInteger, _ctConvertUmtsBandToMask, _kDefaultSMSCommandTimeoutMS ]
 ...

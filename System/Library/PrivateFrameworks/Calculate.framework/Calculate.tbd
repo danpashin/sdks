@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           28D60357-1DF2-33C7-9FDF-5974C65FF029
   - target:          arm64-ios
-    value:           425FB0AF-75B2-382D-8A32-2AF9D93D00BE
+    value:           5A1E8326-FCF9-3A35-9D06-1435897A3E18
   - target:          arm64e-ios
-    value:           96533713-90F2-3798-981C-DD769CD770A2
+    value:           9379D87B-FF00-371C-AB5D-F0663E1D3DC6
 install-name:    '/System/Library/PrivateFrameworks/Calculate.framework/Calculate'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -105,7 +105,7 @@ exports:
                        _bid_f128_sincosd, _bid_f128_sind, _bid_f128_sinh, _bid_f128_sinhcosh, 
                        _bid_f128_sqrt, _bid_f128_sub, _bid_f128_tan, _bid_f128_tand, 
                        _bid_f128_tanh, _bid_f128_tgamma, _bid_f128_trunc, _signgam ]
-    objc-ivars:      [ CurrencyCache._mutableCurrencyCache, CurrencyCache._persistenceQueue ]
+    objc-ivars:      [ CurrencyCache._persistenceQueue ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CalculateExpression, _CalculateExpressionError, _CalculateInternationalExpression, 
                        _CalculatePerformExpression ]
@@ -117,6 +117,6 @@ exports:
                        Converter._localizedOutputValueAndUnit, Converter._outputUnit, 
                        Converter._outputValue, CurrencyCache._currencyData, CurrencyCache._currentCurrency, 
                        CurrencyCache._currentRate, CurrencyCache._currentString, 
-                       CurrencyCache._lastRefreshDate, CurrencyCache._serializer, 
-                       CurrencyCache._uuid ]
+                       CurrencyCache._lastRefreshDate, CurrencyCache._mutableCurrencyCache, 
+                       CurrencyCache._serializer, CurrencyCache._uuid ]
 ...

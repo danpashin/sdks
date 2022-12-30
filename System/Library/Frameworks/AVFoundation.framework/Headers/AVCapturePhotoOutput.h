@@ -350,7 +350,7 @@ typedef NS_ENUM(NSInteger, AVCapturePhotoQualityPrioritization) {
     Specifies whether the photo output's current configuration supports delivery of AVCameraCalibrationData in the resultant AVCapturePhoto.
 
  @discussion
-    Camera calibration data delivery (intrinsics, extrinsics, lens distortion characteristics, etc.) is only supported if virtualDeviceConstituentPhotoDeliveryEnabled is YES and the source device's geometricDistortionCorrectionEnabled property is set to NO. This property is key-value observable.
+    Camera calibration data delivery (intrinsics, extrinsics, lens distortion characteristics, etc.) is only supported if virtualDeviceConstituentPhotoDeliveryEnabled is YES and contentAwareDistortionCorrectionEnabled is NO and the source device's geometricDistortionCorrectionEnabled property is set to NO. This property is key-value observable.
  */
 @property(nonatomic, readonly, getter=isCameraCalibrationDataDeliverySupported) BOOL cameraCalibrationDataDeliverySupported API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos);
 
@@ -508,6 +508,25 @@ typedef NS_ENUM(NSInteger, AVCapturePhotoQualityPrioritization) {
  */
 + (nullable NSData *)DNGPhotoDataRepresentationForRawSampleBuffer:(CMSampleBufferRef)rawSampleBuffer previewPhotoSampleBuffer:(nullable CMSampleBufferRef)previewPhotoSampleBuffer API_DEPRECATED_WITH_REPLACEMENT("-[AVCapturePhoto fileDataRepresentation]", ios(10.0, 11.0)) API_UNAVAILABLE(macos);
 
+/*!
+ @property contentAwareDistortionCorrectionSupported
+ @abstract
+    A BOOL value specifying whether content aware distortion correction is supported.
+
+ @discussion
+    The rectilinear model used in optical design and by geometric distortion correction only preserves lines but not area, angles, or distance. Thus the wider the field of view of a lens, the greater the areal distortion at the edges of images. Content aware distortion correction, when enabled, intelligently corrects distortions by taking content into consideration, such as faces near the edges of the image. This property returns YES if the session's current configuration allows photos to be captured with content aware distortion correction. When switching cameras or formats or enabling depth data delivery this property may change. When this property changes from YES to NO, contentAwareDistortionCorrectionEnabled also reverts to NO. This property is key-value observable.
+ */
+@property(nonatomic, readonly, getter=isContentAwareDistortionCorrectionSupported) BOOL contentAwareDistortionCorrectionSupported API_AVAILABLE(ios(14.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
+
+/*!
+ @property contentAwareDistortionCorrectionEnabled
+ @abstract
+    A BOOL value specifying whether the photo render pipeline is set up to perform content aware distortion correction.
+
+ @discussion
+    Default is NO. Set to YES if you wish content aware distortion correction to be performed on your AVCapturePhotos. This property may only be set to YES if contentAwareDistortionCorrectionSupported is YES. Note that warping the photos to preserve more natural looking content may result in a small change in field of view compared to what you see in the AVCaptureVideoPreviewLayer. The amount of field of view lost or gained is content specific and may vary from photo to photo. Enabling this property requires a lengthy reconfiguration of the capture render pipeline, so you should set this property to YES before calling -[AVCaptureSession startRunning].
+ */
+@property(nonatomic, getter=isContentAwareDistortionCorrectionEnabled) BOOL contentAwareDistortionCorrectionEnabled API_AVAILABLE(ios(14.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 @end
 
 
@@ -1205,6 +1224,15 @@ API_AVAILABLE(macos(10.15), ios(10.0)) __WATCHOS_PROHIBITED __TVOS_PROHIBITED
  */
 @property(nonatomic, copy, nullable) NSDictionary<NSString *, id> *rawEmbeddedThumbnailPhotoFormat API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 
+/*!
+ @property autoContentAwareDistortionCorrectionEnabled
+ @abstract
+    Specifies whether the photo output should use content aware distortion correction on this photo request (at its discretion).
+
+ @discussion
+    Default is NO. Set to YES if you wish content aware distortion correction to be performed on your AVCapturePhotos, when the photo output deems it necessary. Photos may or may not benefit from distortion correction. For instance, photos lacking faces may be left as is. Setting this property to YES does introduce a small additional amount of latency to the photo processing. You may check your AVCaptureResolvedPhotoSettings to see whether content aware distortion correction will be enabled for a given photo request. Throws an exception if -[AVCapturePhotoOutput contentAwareDistortionCorrectionEnabled] is not set to YES.
+ */
+@property(nonatomic, getter=isAutoContentAwareDistortionCorrectionEnabled) BOOL autoContentAwareDistortionCorrectionEnabled API_AVAILABLE(ios(14.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 @end
 
 
@@ -1460,6 +1488,12 @@ AV_INIT_UNAVAILABLE
  */
 @property(readonly) CMTimeRange photoProcessingTimeRange API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos);
 
+/*!
+ @property contentAwareDistortionCorrectionEnabled
+ @abstract
+    Indicates whether content aware distortion correction will be employed when capturing the photo.
+ */
+@property(readonly, getter=isContentAwareDistortionCorrectionEnabled) BOOL contentAwareDistortionCorrectionEnabled API_AVAILABLE(ios(14.1)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos);
 @end
 
 

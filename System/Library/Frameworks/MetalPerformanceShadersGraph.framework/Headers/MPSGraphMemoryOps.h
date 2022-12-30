@@ -78,8 +78,20 @@ MPS_SWIFT_NAME( constant(_:shape:dataType:) );
  *  @abstract   Create a constant op and return the result tensor
  *
  *  @param      scalar                          scalar to fill the entire tensor values with
- *  @param      shape                            shape of the output tensor, has to be statically shaped
- *  @param      dataType                     dataType of theconstant tensor
+ *  @param      dataType                     dataType of the constant tensor
+ *
+ *  @return     A valid MPSGraphTensor object.
+ */
+-(MPSGraphTensor *) constantWithScalar:(double) scalar
+                              dataType:(MPSDataType) dataType
+MPS_SWIFT_NAME( constant(_:dataType:) );
+
+/*!
+ *  @abstract   Create a constant op and return the result tensor
+ *
+ *  @param      scalar                          scalar to fill the entire tensor values with
+ *  @param      shape                            shape of the output tensor. @[], @[@1] or @[@-1] means that the shape will be resolved via shape inference at runtime
+ *  @param      dataType                     dataType of the constant tensor
  *
  *  @return     A valid MPSGraphTensor object.
  */

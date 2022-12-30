@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           01C74100-672A-3A67-9102-3DDFCE3ECBD4
   - target:          arm64-ios
-    value:           D6B2C1CB-544D-3D62-8F8B-0E86922622DC
+    value:           00C6957E-72F5-38FC-8D9C-FD7C3C96F2E2
   - target:          arm64e-ios
-    value:           561035EB-C716-38DC-B870-4157D8E33A12
+    value:           0A4E3833-7475-3AC3-B647-C3A53DD1C18D
 install-name:    '/System/Library/Frameworks/Security.framework/Security'
-current-version: 59754.0.19
+current-version: 59754.11.1
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _DERDecodeItem, _DEROidCompare, _SOSAccountPeerGotInSync, 
@@ -193,32 +193,33 @@ exports:
                        _SFAnalyticsTableHardFailures, _SFAnalyticsTableNotes, _SFAnalyticsTableSamples, 
                        _SFAnalyticsTableSchema, _SFAnalyticsTableSoftFailures, _SFAnalyticsTableSuccessCount, 
                        _SFAnalyticsTopicCloudServices, _SFAnalyticsTopicKeySync, 
-                       _SFAnalyticsTopicTransparency, _SFAnalyticsTopicTrust, _SFAnalyticsUserDefaultsSuite, 
-                       _SFSQLiteJournalSuffixes, _SOSBKSBKeyIsInKeyBag, _SOSBKSBPeerBackupKeyIsInKeyBag, 
-                       _SOSBKSBPrefixedKeyIsInKeyBag, _SOSBSKBAllPeersBackupKeysAreInKeyBag, 
-                       _SOSBSKBCopyAKSBag, _SOSBSKBCopyEncoded, _SOSBSKBCopyRecoveryKey, 
-                       _SOSBSKBCountPeers, _SOSBSKBGetPeers, _SOSBSKBHasRecoveryKey, 
-                       _SOSBSKBHasThisRecoveryKey, _SOSBSKBIsDirect, _SOSBSKBIsGoodBackupPublic, 
-                       _SOSBSKBLoadAndUnlockWithDirectSecret, _SOSBSKBLoadAndUnlockWithPeerIDAndSecret, 
-                       _SOSBSKBLoadAndUnlockWithPeerSecret, _SOSBSKBLoadAndUnlockWithWrappingSecret, 
-                       _SOSBSKBLoadLocked, _SOSBSKBPeerIsInKeyBag, _SOSBackupSliceKeyBagCreate, 
-                       _SOSBackupSliceKeyBagCreateDirect, _SOSBackupSliceKeyBagCreateFromData, 
-                       _SOSBackupSliceKeyBagCreateWithAdditionalKeys, _SOSCCAcceptApplicants, 
-                       _SOSCCAccountGetAccountPrivateCredential, _SOSCCAccountGetKeyCircleGeneration, 
-                       _SOSCCAccountGetPublicKey, _SOSCCAccountHasPublicKey, _SOSCCAccountSetToNew, 
-                       _SOSCCBailFromCircle_BestEffort, _SOSCCCanAuthenticate, _SOSCCCircleHash, 
-                       _SOSCCCleanupKVSKeys, _SOSCCCopyApplicantPeerInfo, _SOSCCCopyApplication, 
-                       _SOSCCCopyCircleJoiningBlob, _SOSCCCopyConcurringPeerPeerInfo, 
-                       _SOSCCCopyGenerationPeerInfo, _SOSCCCopyInitialSyncData, _SOSCCCopyMyPeerInfo, 
-                       _SOSCCCopyMyPeerWithNewDeviceRecoverySecret, _SOSCCCopyNotValidPeerPeerInfo, 
-                       _SOSCCCopyPeerPeerInfo, _SOSCCCopyRecoveryPublicKey, _SOSCCCopyRetirementPeerInfo, 
-                       _SOSCCCopyValidPeerPeerInfo, _SOSCCCopyViewUnawarePeerInfo, 
-                       _SOSCCCredentialQueue, _SOSCCForEachEngineStateAsString, _SOSCCForEachEngineStateAsStringFromArray, 
-                       _SOSCCGetLastDepartureReason, _SOSCCGetStatusDescription, 
-                       _SOSCCGetViewResultDescription, _SOSCCGhostBust, _SOSCCGhostBustInfo, 
-                       _SOSCCGhostBustTriggerTimed, _SOSCCIsAppleTVSyncing, _SOSCCIsContinuityUnlockSyncing, 
-                       _SOSCCIsHomeKitSyncing, _SOSCCIsIcloudKeychainSyncing, _SOSCCIsSafariSyncing, 
-                       _SOSCCIsWiFiSyncing, _SOSCCJoinWithCircleJoiningBlob, _SOSCCLoggedIntoAccount, 
+                       _SFAnalyticsTopicNetworking, _SFAnalyticsTopicTransparency, 
+                       _SFAnalyticsTopicTrust, _SFAnalyticsUserDefaultsSuite, _SFSQLiteJournalSuffixes, 
+                       _SOSBKSBKeyIsInKeyBag, _SOSBKSBPeerBackupKeyIsInKeyBag, _SOSBKSBPrefixedKeyIsInKeyBag, 
+                       _SOSBSKBAllPeersBackupKeysAreInKeyBag, _SOSBSKBCopyAKSBag, 
+                       _SOSBSKBCopyEncoded, _SOSBSKBCopyRecoveryKey, _SOSBSKBCountPeers, 
+                       _SOSBSKBGetPeers, _SOSBSKBHasRecoveryKey, _SOSBSKBHasThisRecoveryKey, 
+                       _SOSBSKBIsDirect, _SOSBSKBIsGoodBackupPublic, _SOSBSKBLoadAndUnlockWithDirectSecret, 
+                       _SOSBSKBLoadAndUnlockWithPeerIDAndSecret, _SOSBSKBLoadAndUnlockWithPeerSecret, 
+                       _SOSBSKBLoadAndUnlockWithWrappingSecret, _SOSBSKBLoadLocked, 
+                       _SOSBSKBPeerIsInKeyBag, _SOSBackupSliceKeyBagCreate, _SOSBackupSliceKeyBagCreateDirect, 
+                       _SOSBackupSliceKeyBagCreateFromData, _SOSBackupSliceKeyBagCreateWithAdditionalKeys, 
+                       _SOSCCAcceptApplicants, _SOSCCAccountGetAccountPrivateCredential, 
+                       _SOSCCAccountGetKeyCircleGeneration, _SOSCCAccountGetPublicKey, 
+                       _SOSCCAccountHasPublicKey, _SOSCCAccountSetToNew, _SOSCCBailFromCircle_BestEffort, 
+                       _SOSCCCanAuthenticate, _SOSCCCircleHash, _SOSCCCleanupKVSKeys, 
+                       _SOSCCCopyApplicantPeerInfo, _SOSCCCopyApplication, _SOSCCCopyCircleJoiningBlob, 
+                       _SOSCCCopyConcurringPeerPeerInfo, _SOSCCCopyGenerationPeerInfo, 
+                       _SOSCCCopyInitialSyncData, _SOSCCCopyMyPeerInfo, _SOSCCCopyMyPeerWithNewDeviceRecoverySecret, 
+                       _SOSCCCopyNotValidPeerPeerInfo, _SOSCCCopyPeerPeerInfo, _SOSCCCopyRecoveryPublicKey, 
+                       _SOSCCCopyRetirementPeerInfo, _SOSCCCopyValidPeerPeerInfo, 
+                       _SOSCCCopyViewUnawarePeerInfo, _SOSCCCredentialQueue, _SOSCCForEachEngineStateAsString, 
+                       _SOSCCForEachEngineStateAsStringFromArray, _SOSCCGetLastDepartureReason, 
+                       _SOSCCGetStatusDescription, _SOSCCGetViewResultDescription, 
+                       _SOSCCGhostBust, _SOSCCGhostBustInfo, _SOSCCGhostBustTriggerTimed, 
+                       _SOSCCIsAppleTVSyncing, _SOSCCIsContinuityUnlockSyncing, _SOSCCIsHomeKitSyncing, 
+                       _SOSCCIsIcloudKeychainSyncing, _SOSCCIsSafariSyncing, _SOSCCIsWiFiSyncing, 
+                       _SOSCCJoinWithCircleJoiningBlob, _SOSCCLoggedIntoAccount, 
                        _SOSCCLoggedOutOfAccount, _SOSCCMessageFromPeerIsPending, 
                        _SOSCCPeersHaveViewsEnabled, _SOSCCProcessEnsurePeerRegistration, 
                        _SOSCCProcessSyncWithAllPeers, _SOSCCProcessSyncWithPeers, 

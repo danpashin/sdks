@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           60A3AE73-1F44-369F-8F3E-FA16E39CD04C
   - target:          arm64-ios
-    value:           F098BCDF-3690-3912-ABC3-D552579F286E
+    value:           6A3F7C1E-F235-3E0B-A2F2-5AA99E1D4521
   - target:          arm64e-ios
-    value:           35F988C5-A7C0-350E-9F29-FF72D6306666
+    value:           AD78CDA7-E531-3145-B8C5-3B761F69F3CF
 install-name:    '/System/Library/PrivateFrameworks/ACTFramework.framework/ACTFramework'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -22,12 +22,13 @@ exports:
                        _ABRegRegisterSlices, _ABRegRegisterSlicesRobust, _ABRegUpdateIntegralImage, 
                        _ACTAddCSVMetadata, _ACTAttachRegistrationMetadata, _ACTFinalThreadedNoiseReduction, 
                        _ACTLogAddListener, _ACTLogMessageImp, _ACTLogRemoveListener, 
-                       _ACTLogReset, _ACTNoiseReduction, _ACTPostRegisterSlices, 
-                       _ACTPreRegisterSlices, _ACTQueryPredictorValidator, _ACTRegisterSlices, 
-                       _ACTRegistrationWarmup, _ACTThreadCreate, _ACTThreadIsAlive, 
-                       _ACTThreadIsLocked, _ACTThreadMutexLock, _ACTThreadMutexUnlock, 
-                       _ACTThreadRelease, _ACTThreadWaitForSemaphore, _ACTThreadWakeup, 
-                       _ACTUpdatePredictorValidator, _ACT_CopyDefaultConfigurationForPanorama, 
+                       _ACTLogReset, _ACTNoiseReduction, _ACTPano_GPUDownscaler, 
+                       _ACTPano_GPUDownscaler_destroy, _ACTPano_GPUDownscaler_downscale, 
+                       _ACTPostRegisterSlices, _ACTPreRegisterSlices, _ACTQueryPredictorValidator, 
+                       _ACTRegisterSlices, _ACTRegistrationWarmup, _ACTThreadCreate, 
+                       _ACTThreadIsAlive, _ACTThreadIsLocked, _ACTThreadMutexLock, 
+                       _ACTThreadMutexUnlock, _ACTThreadRelease, _ACTThreadWaitForSemaphore, 
+                       _ACTThreadWakeup, _ACTUpdatePredictorValidator, _ACT_CopyDefaultConfigurationForPanorama, 
                        _ACT_FigSampleBufferProcessorCreateForPanoramaWithOptions, 
                        _ACT_FigSampleBufferProcessorCreateForPanoramaWithOptionsAndPreviewScale, 
                        _ACT_FigSampleBufferProcessorCreateForPanoramaWithOptionsAndPreviewSize, 
@@ -232,8 +233,8 @@ exports:
                        _updateACTNoiseReductionContext, _updateBandPassNoiseReductionCropRect, 
                        _updateMultiBandNoiseReductionCropRect, _updateMultiBandNoiseReductionMetadata, 
                        _vmdLog ]
-    objc-classes:    [ ACTGLBase, ACTSlowmoResults, ACTVideoMotionDetector, ACTVideoProcessor, 
-                       ACTVideoUtilities ]
+    objc-classes:    [ ACTGLBase, ACTPanoGPUDownscaler, ACTSlowmoResults, ACTVideoMotionDetector, 
+                       ACTVideoProcessor, ACTVideoUtilities ]
     objc-ivars:      [ ACTGLBase.mFramebuffer, ACTGLBase.mGLBackupContext, ACTGLBase.mGLContext, 
                        ACTGLBase.mTextureArray, ACTSlowmoResults._results, ACTVideoMotionDetector._colGradient, 
                        ACTVideoMotionDetector._curProjIndex, ACTVideoMotionDetector._frameCount, 

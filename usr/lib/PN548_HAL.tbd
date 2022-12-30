@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5EA46259-B736-3D7C-85D0-B5EB3F380264
   - target:          arm64-ios
-    value:           03A1BAC7-D5B3-34EA-BEBC-3BEBF1E7AFF4
+    value:           455AC5D7-3C9E-3926-A39E-BAD53B3087DC
   - target:          arm64e-ios
-    value:           CAE24D0B-E288-32FD-B6D8-B910069D5D14
+    value:           5FC177C6-EC0A-3ABB-BED0-6EEDE480BF11
 install-name:    '/usr/lib/PN548_HAL.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -20,32 +20,36 @@ exports:
                        _NFHardwareUARTWrite, _NFSharedLogSetDiagnosticLogging ]
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _NFCalibrationGetData, _NFCalibrationGetRFConfigTLVs, _NFHardwareDebug, 
-                       _NFHardwareGPIOClose, _NFHardwareGPIOIsHostWakeCapable, _NFHardwareGPIOOpen, 
-                       _NFHardwareGPIOSetDeviceWake, _NFHardwareGPIOSetDownloadRequest, 
-                       _NFHardwareGPIOSetIcefallDownloadRequest, _NFHardwareGPIOSetPMUStandbyPowerEnabled, 
-                       _NFHardwareGPIOSetPower, _NFHardwareGPIOSetVBAT, _NFHardwareGPIOWasItSPMINack, 
-                       _NFHardwareGetCalibration, _NFHardwareGetRFConfigTLVs, _NFHardwareGetUARTLogEnabled, 
-                       _NFHardwareInterfaceClose, _NFHardwareInterfaceFlush, _NFHardwareInterfaceGetFlowControl, 
-                       _NFHardwareInterfaceGetType, _NFHardwareInterfaceIsHostWakeCapable, 
+                       _NFHardwareGPIOClose, _NFHardwareGPIOConfigureHammerfestSPMI, 
+                       _NFHardwareGPIOIsHostWakeCapable, _NFHardwareGPIOOpen, _NFHardwareGPIOSetDeviceWake, 
+                       _NFHardwareGPIOSetDownloadRequest, _NFHardwareGPIOSetIcefallDownloadRequest, 
+                       _NFHardwareGPIOSetPMUStandbyPowerEnabled, _NFHardwareGPIOSetPower, 
+                       _NFHardwareGPIOSetVBAT, _NFHardwareGPIOValidateSPMIConfig, 
+                       _NFHardwareGPIOWasItSPMINack, _NFHardwareGetCalibration, _NFHardwareGetRFConfigTLVs, 
+                       _NFHardwareGetUARTLogEnabled, _NFHardwareInterfaceClose, _NFHardwareInterfaceFlush, 
+                       _NFHardwareInterfaceGetFlowControl, _NFHardwareInterfaceGetType, 
+                       _NFHardwareInterfaceIsHammerfestAlive, _NFHardwareInterfaceIsHostWakeCapable, 
                        _NFHardwareInterfaceIsSupported, _NFHardwareInterfaceOpen, 
                        _NFHardwareInterfaceRead, _NFHardwareInterfaceReadAbort, _NFHardwareInterfaceResetSerial, 
                        _NFHardwareInterfaceSetBaudRate, _NFHardwareInterfaceSetCRCEnabled, 
                        _NFHardwareInterfaceSetDeviceWake, _NFHardwareInterfaceSetDownloadRequest, 
                        _NFHardwareInterfaceSetIcefallDownloadRequest, _NFHardwareInterfaceSetLogFunction, 
                        _NFHardwareInterfaceSetPMUStandbyEnabled, _NFHardwareInterfaceSetPMUStandbyPowerEnabled, 
-                       _NFHardwareInterfaceSetPower, _NFHardwareInterfaceSetVBAT, 
+                       _NFHardwareInterfaceSetPower, _NFHardwareInterfaceSetSPMIConfig, 
+                       _NFHardwareInterfaceSetVBAT, _NFHardwareInterfaceValidateSPMIConfig, 
                        _NFHardwareInterfaceWasItNACK, _NFHardwareInterfaceWrite, 
                        _NFHardwareLoad, _NFHardwareSerialClose, _NFHardwareSerialDebugDump, 
                        _NFHardwareSerialDebugDump_wCB, _NFHardwareSerialDebugLastMessage, 
                        _NFHardwareSerialDebugLog, _NFHardwareSerialDebugMaxEntriesPrinted, 
                        _NFHardwareSerialDump, _NFHardwareSerialFlush, _NFHardwareSerialGetCTS, 
-                       _NFHardwareSerialGetDefaultInterfaceType, _NFHardwareSerialIsSupported, 
-                       _NFHardwareSerialOpen, _NFHardwareSerialPower, _NFHardwareSerialRead, 
-                       _NFHardwareSerialReadAbort, _NFHardwareSerialReset, _NFHardwareSerialSetBaudRate, 
-                       _NFHardwareSerialSetCRCEnabled, _NFHardwareSerialSetLogFunction, 
-                       _NFHardwareSerialSetPrimary, _NFHardwareSerialWrite, _NFHardwareSetLogFunc, 
-                       _NFHardwareUnload, _NFSharedDumpTransport, _NFSharedLogLock, 
-                       _NFSharedLogOpen2, _NFSharedLogSetSynchronousLogging, _NFSharedLogTransport, 
+                       _NFHardwareSerialGetDefaultInterfaceType, _NFHardwareSerialIsHammerfestAlive, 
+                       _NFHardwareSerialIsSupported, _NFHardwareSerialOpen, _NFHardwareSerialPower, 
+                       _NFHardwareSerialRead, _NFHardwareSerialReadAbort, _NFHardwareSerialReset, 
+                       _NFHardwareSerialSetBaudRate, _NFHardwareSerialSetCRCEnabled, 
+                       _NFHardwareSerialSetLogFunction, _NFHardwareSerialSetPrimary, 
+                       _NFHardwareSerialWrite, _NFHardwareSetLogFunc, _NFHardwareUnload, 
+                       _NFSharedDumpTransport, _NFSharedLogLock, _NFSharedLogOpen2, 
+                       _NFSharedLogSetSynchronousLogging, _NFSharedLogTransport, 
                        _NFSharedLogUnlock, _NFSharedLogv, _NFSharedLogv_GreenTea, 
                        _NFSharedSignpostLog, __NFSharedLogClose, __NFSharedLogOpen, 
                        ___NFSharedLogv, _gNFHardwareLogv, _gPN548_HAL_Logv, _gpphOsalNfc_Context, 

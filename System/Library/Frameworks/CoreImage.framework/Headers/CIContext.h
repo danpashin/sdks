@@ -400,6 +400,8 @@ CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemant
 // The value for kCIImageRepresentationSemanticSegmentationTeethMatteImage should be a monochome CIImage object. */
 CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemanticSegmentationTeethMatteImage NS_AVAILABLE(10_15, 13_0);
 
+// The value for kCIImageRepresentationSemanticSegmentationGlassesMatteImage should be a monochome CIImage object. */
+CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemanticSegmentationGlassesMatteImage NS_AVAILABLE(11_0, 14_1);
 
 
 
@@ -530,6 +532,14 @@ CORE_IMAGE_EXPORT CIImageRepresentationOption const kCIImageRepresentationSemant
                                           orientation:(CGImagePropertyOrientation)orientation
                                               options:(nullable NSDictionary *)options NS_AVAILABLE(10_15,13_0);
 
+- (nullable CIFilter *) depthBlurEffectFilterForImage:(CIImage *)image
+                                       disparityImage:(CIImage *)disparityImage
+                                 portraitEffectsMatte:(nullable CIImage *)portraitEffectsMatte
+                             hairSemanticSegmentation:(nullable CIImage *)hairSemanticSegmentation
+                                         glassesMatte:(nullable CIImage *)glassesMatte
+                                              gainMap:(nullable CIImage *)gainMap
+                                          orientation:(CGImagePropertyOrientation)orientation
+                                              options:(nullable NSDictionary *)options NS_AVAILABLE(11_0,14_1);
 
 @end
 

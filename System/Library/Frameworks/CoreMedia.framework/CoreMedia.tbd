@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           5FF90157-BE8B-36C6-969E-DCE875302D62
   - target:          arm64-ios
-    value:           B48E8AE4-1FE4-37B0-BFC9-BF9255A835EF
+    value:           67458EA7-EFED-3605-B1FD-B16E378CA6B0
   - target:          arm64e-ios
-    value:           F9E32BBB-D96D-3857-BBF4-082764D82BC2
+    value:           7BC76CD9-9CB3-3412-9366-3C3FA12860AF
 install-name:    '/System/Library/Frameworks/CoreMedia.framework/CoreMedia'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -1841,13 +1841,15 @@ exports:
                        _FigHALAudioStreamGetCMBaseObject, _FigHALAudioStreamGetClassID, 
                        _FigHALPluginDriverGetInterface, _FigHEVCBridge_CopyHEVCSEIPayloadData, 
                        _FigHEVCBridge_CopyParsingInformation, _FigHEVCBridge_CreateAlphaInfoSEI, 
-                       _FigHEVCBridge_CreateArrayOfSEINALUnitsFromJumboSEINALUnit, 
-                       _FigHEVCBridge_CreateHLSfMP4ParsingInfoFromHVCCData, _FigHEVCBridge_CreateHVCCFromHEVCParameterSets, 
-                       _FigHEVCBridge_CreateMuxedAlphaDataBuffer, _FigHEVCBridge_CreateMuxedAlphaFormatDescription, 
-                       _FigHEVCBridge_CreateMuxedAlphaHVCC, _FigHEVCBridge_CreateSelectedLayerFormatDescriptionFromMuxedAlphaFormatDescription, 
+                       _FigHEVCBridge_CreateAmbientViewingEnvironmentSEINAL, _FigHEVCBridge_CreateArrayOfSEINALUnitsFromJumboSEINALUnit, 
+                       _FigHEVCBridge_CreateDolbyRPUNAL, _FigHEVCBridge_CreateHLSfMP4ParsingInfoFromHVCCData, 
+                       _FigHEVCBridge_CreateHVCCFromHEVCParameterSets, _FigHEVCBridge_CreateMuxedAlphaDataBuffer, 
+                       _FigHEVCBridge_CreateMuxedAlphaFormatDescription, _FigHEVCBridge_CreateMuxedAlphaHVCC, 
+                       _FigHEVCBridge_CreateSelectedLayerFormatDescriptionFromMuxedAlphaFormatDescription, 
                        _FigHEVCBridge_CreateSelectedLayerHVCCFromMuxedAlphaHVCC, 
                        _FigHEVCBridge_CreateUpdatedHVCCWithAdditionalHEVCParameterSets, 
-                       _FigHEVCBridge_GetATCSEI, _FigHEVCBridge_GetHEVCParameterSetAtIndex, 
+                       _FigHEVCBridge_GetATCSEI, _FigHEVCBridge_GetAmbientViewingEnvironment, 
+                       _FigHEVCBridge_GetHEVCParameterSetAtIndex, _FigHEVCBridge_GetL1RPUMetadata, 
                        _FigHEVCBridge_GetNALUnitHeader, _FigHEVCBridge_GetNALUnitHeaderLengthFromHVCC, 
                        _FigHEVCBridge_GetSEIAlphaChannelInfo, _FigHEVCBridge_GetSPSBitDepths, 
                        _FigHEVCBridge_GetSPSChromaFormatAndBitDepths, _FigHEVCBridge_GetSPSIsInterlaced, 
@@ -1856,12 +1858,13 @@ exports:
                        _FigHEVCBridge_GetVPSAlphaChannelNuhLayerId, _FigHEVCBridge_HLSfMP4ParsingInfoDestroy, 
                        _FigHEVCBridge_LocateSliceHeaderForHLSfMP4EncryptableNAL, 
                        _FigHEVCBridge_MeasureSliceHeader, _FigHEVCBridge_ParseMuxedAlphaFrameAndWriteSelectedLayerNALUnitsToBuffer, 
-                       _FigHostTimeToNanoseconds, _FigInstallSysdiagnoseBlock, _FigInt64MulDiv, 
-                       _FigIsHDRAllowedOnDevice, _FigIsItOKToLogURLs, _FigIsMemoryPoolBlockBuffer, 
-                       _FigIsPersistentURL, _FigIsReferenceAllowedBySecurityPolicy, 
-                       _FigJSONObjectCreateWithData, _FigKTraceInit, _FigLogBacktrace, 
-                       _FigLogBacktraceFrames, _FigLogCALayers, _FigLogRingBufferAppend, 
-                       _FigLogRingBufferCreate, _FigLogRingBufferGetBufferSize, _FigLogRingBufferGetCompressedLogSize, 
+                       _FigHEVCBridge_WritePaddingNALU, _FigHostTimeToNanoseconds, 
+                       _FigInstallSysdiagnoseBlock, _FigInt64MulDiv, _FigIsHDRAllowedOnDevice, 
+                       _FigIsItOKToLogURLs, _FigIsMemoryPoolBlockBuffer, _FigIsPersistentURL, 
+                       _FigIsReferenceAllowedBySecurityPolicy, _FigJSONObjectCreateWithData, 
+                       _FigKTraceInit, _FigLogBacktrace, _FigLogBacktraceFrames, 
+                       _FigLogCALayers, _FigLogRingBufferAppend, _FigLogRingBufferCreate, 
+                       _FigLogRingBufferGetBufferSize, _FigLogRingBufferGetCompressedLogSize, 
                        _FigLogRingBufferGetCount, _FigLogRingBufferGetEntries, _FigLogRingBufferRelease, 
                        _FigLogRingBufferSetWriteRotatingLogFiles, _FigLogRingBufferWriteAndCopyURLContainingLogs, 
                        _FigLogRingBufferWriteLogsAsync, _FigLoggingStartServer, _FigMachPortReleaseReceiveRight_, 
@@ -2065,6 +2068,7 @@ exports:
                        _FigVideoFormatDescriptionCreateFromBigEndianImageDescriptionData, 
                        _FigVideoFormatDescriptionCreateFromBigEndianImageDescriptionDataWithReporter, 
                        _FigVideoFormatDescriptionCreateFromSPSAndPPS, _FigVideoFormatDescriptionCreateUpdatedFromHEVCParameterSets, 
+                       _FigVideoFormatDescriptionCreateUpdatedHVCCWithAdditionalHEVCParameterSets, 
                        _FigVideoFormatDescriptionCreateWithSampleDescriptionExtensionAtom, 
                        _FigWatchdogBeginVitalWork, _FigWatchdogCompleteVitalWork, 
                        _FigWatchdogMonitorDispatchQueue, _FigWatchdogStart, _FigXPCArrayGetCount, 
@@ -2150,6 +2154,7 @@ exports:
                        _kCMFormatDescriptionColorPrimaries_SMPTE_C, _kCMFormatDescriptionConformsToMPEG2VideoProfile, 
                        _kCMFormatDescriptionExtensionKey_MetadataKeyTable, _kCMFormatDescriptionExtension_AlphaChannelMode, 
                        _kCMFormatDescriptionExtension_AlternativeTransferCharacteristics, 
+                       _kCMFormatDescriptionExtension_AmbientViewingEnvironment, 
                        _kCMFormatDescriptionExtension_AuxiliaryTypeInfo, _kCMFormatDescriptionExtension_BytesPerRow, 
                        _kCMFormatDescriptionExtension_ChromaLocationBottomField, 
                        _kCMFormatDescriptionExtension_ChromaLocationTopField, _kCMFormatDescriptionExtension_CleanAperture, 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E4A6EA72-93BB-3DFA-84F2-84B2D3694570
   - target:          arm64-ios
-    value:           BB26609F-DB0D-3079-BCBE-E8B5757DEABD
+    value:           9AE54E0C-9BAE-3476-B2BC-9FBA2E4E0F02
   - target:          arm64e-ios
-    value:           1DB71A5D-D37F-3930-9B78-459D935170F5
+    value:           6D7A8DEB-885D-3CAA-9434-8E620B701C43
 install-name:    '/System/Library/Frameworks/MediaToolbox.framework/MediaToolbox'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -2525,8 +2525,9 @@ exports:
                        _kFigOriginToPresentationLatency_Max, _kFigOriginToPresentationLatency_Mean, 
                        _kFigOriginToPresentationLatency_Min, _kFigOutputMonitorNotification_RecordingStateChanged, 
                        _kFigPhotoAuxiliaryImageTypeURN_Alpha, _kFigPhotoAuxiliaryImageTypeURN_Depth, 
-                       _kFigPhotoAuxiliaryImageTypeURN_MIAF_Alpha, _kFigPhotoAuxiliaryImageTypeURN_MIAF_Depth, 
-                       _kFigPhotoAuxiliaryImageTypeURN_PortraitEffectsMatte, _kFigPhotoAuxiliaryImageTypeURN_SemanticHairMatte, 
+                       _kFigPhotoAuxiliaryImageTypeURN_HDRGainMap, _kFigPhotoAuxiliaryImageTypeURN_MIAF_Alpha, 
+                       _kFigPhotoAuxiliaryImageTypeURN_MIAF_Depth, _kFigPhotoAuxiliaryImageTypeURN_PortraitEffectsMatte, 
+                       _kFigPhotoAuxiliaryImageTypeURN_SemanticGlassesMatte, _kFigPhotoAuxiliaryImageTypeURN_SemanticHairMatte, 
                        _kFigPhotoAuxiliaryImageTypeURN_SemanticSkinMatte, _kFigPhotoAuxiliaryImageTypeURN_SemanticTeethMatte, 
                        _kFigPhotoCodecSessionPoolOptionKey_IdleTimeoutMilliseconds, 
                        _kFigPhotoCodecSessionPoolOptionKey_MaxSimultaneousCompressionSessions, 
@@ -2821,7 +2822,8 @@ exports:
                        _kFigPlaybackItemProperty_PlayabilityMetrics, _kFigPlaybackItemProperty_PlayableTimeIntervals, 
                        _kFigPlaybackItemProperty_PlaybackItemProperties, _kFigPlaybackItemProperty_PreferSDRVideo, 
                        _kFigPlaybackItemProperty_PreferredMaximumBufferDuration, 
-                       _kFigPlaybackItemProperty_ProgressToPlayThrough, _kFigPlaybackItemProperty_ProtectedContentSupportStorageURL, 
+                       _kFigPlaybackItemProperty_ProgressToPlayThrough, _kFigPlaybackItemProperty_PropagatePerFrameHDRDisplayMetadata, 
+                       _kFigPlaybackItemProperty_ProtectedContentSupportStorageURL, 
                        _kFigPlaybackItemProperty_QualityGear, _kFigPlaybackItemProperty_RTCReportingFlags, 
                        _kFigPlaybackItemProperty_ReadAheadAllowBackfill, _kFigPlaybackItemProperty_ReadBandwidth, 
                        _kFigPlaybackItemProperty_RecommendedTimeOffsetFromLive, _kFigPlaybackItemProperty_RequiredExternalProtectionMethod, 
@@ -3148,11 +3150,12 @@ exports:
                        _kFigRenderPipelineOption_BufferedAirPlayDecode, _kFigRenderPipelineOption_ClientPID, 
                        _kFigRenderPipelineOption_DisallowMultiplePlayResources, _kFigRenderPipelineOption_EarlyDumpStage, 
                        _kFigRenderPipelineOption_EnableSpatialization, _kFigRenderPipelineOption_FormatDescription, 
-                       _kFigRenderPipelineOption_HardwarePassthrough, _kFigRenderPipelineOption_InhibitPixelFormatConversion, 
-                       _kFigRenderPipelineOption_MaximizePowerEfficiency, _kFigRenderPipelineOption_NeroVideoMode, 
-                       _kFigRenderPipelineOption_NonRealTime, _kFigRenderPipelineOption_PreparedQueueHighWaterLevel, 
-                       _kFigRenderPipelineOption_PreparedQueueLowWaterLevel, _kFigRenderPipelineOption_SharePixelBufferPool, 
-                       _kFigRenderPipelineOption_ShouldRotateAndScale, _kFigRenderPipelineOption_SortSampleBufferQueueByOutputPTS, 
+                       _kFigRenderPipelineOption_HardwarePassthrough, _kFigRenderPipelineOption_InhibitCompressedBufferUse, 
+                       _kFigRenderPipelineOption_InhibitPixelFormatConversion, _kFigRenderPipelineOption_MaximizePowerEfficiency, 
+                       _kFigRenderPipelineOption_NeroVideoMode, _kFigRenderPipelineOption_NonRealTime, 
+                       _kFigRenderPipelineOption_PreparedQueueHighWaterLevel, _kFigRenderPipelineOption_PreparedQueueLowWaterLevel, 
+                       _kFigRenderPipelineOption_SharePixelBufferPool, _kFigRenderPipelineOption_ShouldRotateAndScale, 
+                       _kFigRenderPipelineOption_SortSampleBufferQueueByOutputPTS, 
                        _kFigRenderPipelineProperty_ActiveHapticChannelIndex, _kFigRenderPipelineProperty_AllowVideoQualityOfServiceAdjustments, 
                        _kFigRenderPipelineProperty_CAImageQueueCaptionsMayAppearHint, 
                        _kFigRenderPipelineProperty_CachedTimeRange, _kFigRenderPipelineProperty_CachedVideoFrames, 
@@ -3177,6 +3180,7 @@ exports:
                        _kFigRenderPipelineProperty_PreferredClock, _kFigRenderPipelineProperty_PrefersConsumptionDrivenReads, 
                        _kFigRenderPipelineProperty_PrerollRate, _kFigRenderPipelineProperty_PreserveSyncFrames, 
                        _kFigRenderPipelineProperty_PreventDisplaySleepDuringVideoPlayback, 
+                       _kFigRenderPipelineProperty_PropagatePerFrameHDRDisplayMetadata, 
                        _kFigRenderPipelineProperty_Rate2, _kFigRenderPipelineProperty_RenderEmptyMedia, 
                        _kFigRenderPipelineProperty_Rotation, _kFigRenderPipelineProperty_SourceSampleBufferConsumer, 
                        _kFigRenderPipelineProperty_SourceSampleBufferQueue, _kFigRenderPipelineProperty_SupportsGaplessTransitionsAcrossFormatChanges, 
@@ -3624,10 +3628,10 @@ exports:
                        _kFigVideoQueueProperty_UpcomingOutputPTSRangeChanged, _kFigVideoQueueProperty_VisualContextArray, 
                        _kFigVideoQueueProperty_VisualContextArrayOptions, _kFigVideoQueueUpcomingOutputPTSRangeMayOverlapQueuedOutputPTSRange, 
                        _kFigVideoReceiverPropertyKey_XPCEndpointID, _kFigVideoSlotUsage_SlotNumber, 
-                       _kFigVideoSlotUsage_UsedForScrubbingOnly, _kFigVirtualDisplayColorSpace_Mode1, 
-                       _kFigVirtualDisplayColorSpace_Mode2, _kFigVirtualDisplayEncodeSettings_EncoderUsage, 
-                       _kFigVirtualDisplayHDRMode_Mode0, _kFigVirtualDisplayHDRMode_Mode1, 
-                       _kFigVirtualDisplayHDRMode_Mode2, _kFigVirtualDisplayModeDynamicRange_FullRange, 
+                       _kFigVideoSlotUsage_UsedForScrubbingOnly, _kFigVirtualDisplayColorSpace_DoVi, 
+                       _kFigVirtualDisplayColorSpace_HDR10, _kFigVirtualDisplayEncodeSettings_EncoderUsage, 
+                       _kFigVirtualDisplayHDRMode_DoVi, _kFigVirtualDisplayHDRMode_HDR10, 
+                       _kFigVirtualDisplayHDRMode_SDR, _kFigVirtualDisplayModeDynamicRange_FullRange, 
                        _kFigVirtualDisplayModeDynamicRange_Limited, _kFigVirtualDisplayModeGamut_HLG, 
                        _kFigVirtualDisplayModeGamut_PQ, _kFigVirtualDisplayModeOption_ColorSpace, 
                        _kFigVirtualDisplayModeOption_DynamicRange, _kFigVirtualDisplayModeOption_Gamut, 
@@ -3750,7 +3754,8 @@ exports:
                        _kVideoMediaConverter2NotificationParameter_OutputPresentationTimeStamp, 
                        _kVideoMediaConverter2NotificationParameter_RequestID, _kVideoMediaConverter2Notification_CompletedDecodeForPreroll, 
                        _kVideoMediaConverter2Notification_DecodeError, _kVideoMediaConverter2Option_AllowClientProcessDecode, 
-                       _kVideoMediaConverter2Option_ClientPID, _kVideoMediaConverter2Option_InhibitPixelFormatConversion, 
+                       _kVideoMediaConverter2Option_ClientPID, _kVideoMediaConverter2Option_InhibitCompressedBufferUse, 
+                       _kVideoMediaConverter2Option_InhibitPixelFormatConversion, 
                        _kVideoMediaConverter2Option_MaximizePowerEfficiency, _kVideoMediaConverter2Option_RealTime, 
                        _kVideoMediaConverter2Option_SharePixelBufferPool, _kVideoMediaConverter2OutputImageQueueOption_DestinationPixelBufferAttributes, 
                        _kVideoMediaConverter2OutputImageQueueOption_EnsureModifiableImageBuffers, 
@@ -3764,6 +3769,7 @@ exports:
                        _kVideoMediaConverter2Property_MaxAgeForOutputPixelBufferPool, 
                        _kVideoMediaConverter2Property_ObeyEmptyMediaMarkers, _kVideoMediaConverter2Property_OutputPixelBufferPool, 
                        _kVideoMediaConverter2Property_PlaybackSessionID, _kVideoMediaConverter2Property_PreserveSyncFrames, 
+                       _kVideoMediaConverter2Property_PropagatePerFrameHDRDisplayMetadata, 
                        _kVideoMediaConverter2Property_QualityOfServiceTier, _kVideoMediaConverter2Property_RenderEmptyMedia, 
                        _kVideoMediaConverter2Property_ThrottleForBackground, _kVideoMediaConverter2Property_TransferFunction, 
                        _kVideoMediaConverter2Property_VideoDecoderIsSecondary, _kVideoMediaConverter2Property_YCbCrMatrix, 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           37B6538C-104B-3E82-AB44-4FFF9759A104
   - target:          arm64-ios
-    value:           EF35CDEA-36FD-35CC-BE8A-402B9B7DE767
+    value:           E4E51890-2727-360B-A996-BE4195C393AB
   - target:          arm64e-ios
-    value:           AA1E267E-7BCC-308C-950E-71821710AB0E
+    value:           F35BBDAE-8229-3E0E-BD4F-D522CEFD7124
 install-name:    '/usr/lib/libnfshared.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -49,11 +49,11 @@ exports:
                        _AWDNFCTSMEndEventReadFrom, _AWDNFCTSMStartEventReadFrom, 
                        _AWDNFCTransactionEndOfOperationEventReadFrom, _AWDNFCTransactionLastAPDUSentEventReadFrom, 
                        _AWDNFCVASTransactionExceptionEventReadFrom, _AWDNFCVersionsReadFrom, 
-                       _GetElapsedTimeInMillisecondsFromMachTime, _NFBuildVersion, 
-                       _NFCreateRootQueue, _NFDataAppend, _NFDataAppendBytes, _NFDataAsHexString, 
-                       _NFDataCreateWithBytes, _NFDataCreateWithBytesNoCopy, _NFDataCreateWithFile, 
-                       _NFDataCreateWithHexString, _NFDataCreateWithLength, _NFDataPrintAsHexString, 
-                       _NFDataRelease, _NFDataRetain, _NFDataScannerCreateWithData, 
+                       _GetElapsedTimeInMillisecondsFromMachTime, _NFAccessoryTagI2CBridgeErrorDomain, 
+                       _NFBuildVersion, _NFCreateRootQueue, _NFDataAppend, _NFDataAppendBytes, 
+                       _NFDataAsHexString, _NFDataCreateWithBytes, _NFDataCreateWithBytesNoCopy, 
+                       _NFDataCreateWithFile, _NFDataCreateWithHexString, _NFDataCreateWithLength, 
+                       _NFDataPrintAsHexString, _NFDataRelease, _NFDataRetain, _NFDataScannerCreateWithData, 
                        _NFDataScannerEOF, _NFDataScannerRead, _NFDataScannerRead16, 
                        _NFDataScannerRead32, _NFDataScannerRead8, _NFDataScannerReadData, 
                        _NFDataScannerRelease, _NFDataScannerRetain, _NFGetProductType, 
@@ -119,12 +119,12 @@ exports:
                        NFAWDTSMConnectivityException, NFAWDTSMEnd, NFAWDTSMStart, 
                        NFAWDTransactionEndOfOperation, NFAWDTransactionLastRADPU, 
                        NFAWDVASGetData, NFAWDVASSelect, NFAWDVASTransactionException, 
-                       NFAWDVersionInfo, NFCommandAPDU, NFCurrency, NFJSONEncoder, 
-                       NFMSEIParser, NFMemoryObserver, NFNSCheckedDecoder, NFNdefMessageInternal, 
-                       NFNdefRecordInternal, NFPowerAssertion, NFPowerObserver, NFPreferenceObserver, 
-                       NFReaderSessionConfig, NFResponseAPDU, NFRunScriptParameters, 
-                       NFSecureXPCEventPublisher, NFTLV, NFTagInternal, NFTimer, 
-                       NFVASPassConfig, NFXPCEventPublisher ]
+                       NFAWDVersionInfo, NFAccessoryTag, NFAccessoryTagI2CBridge, 
+                       NFCommandAPDU, NFCurrency, NFJSONEncoder, NFMSEIParser, NFMemoryObserver, 
+                       NFNSCheckedDecoder, NFNdefMessageInternal, NFNdefRecordInternal, 
+                       NFPowerAssertion, NFPowerObserver, NFPreferenceObserver, NFReaderSessionConfig, 
+                       NFResponseAPDU, NFRunScriptParameters, NFSecureXPCEventPublisher, 
+                       NFTLV, NFTagInternal, NFTimer, NFVASPassConfig, NFXPCEventPublisher ]
     objc-ivars:      [ AWDExpressTransactionType._appletType, AWDExpressTransactionType._count, 
                        AWDExpressTransactionType._has, AWDExpressTransactionType._ridAndPix, 
                        AWDExpressTransactionType._spid, AWDNFCCRSAuthExceptionEvent._has, 

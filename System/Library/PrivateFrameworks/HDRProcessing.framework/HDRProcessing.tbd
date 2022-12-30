@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           2B59E76F-3254-33B2-83F7-FB75D7144FD5
+    value:           0A3DB60B-5E4C-3202-A01E-615F4DA8F736
   - target:          arm64e-ios
-    value:           6CA49863-1D5A-3B6C-B36E-51880DA4D7D4
+    value:           DFFA5500-4AF6-3164-B379-BE0040D21517
 install-name:    '/System/Library/PrivateFrameworks/HDRProcessing.framework/HDRProcessing'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -67,7 +67,10 @@ exports:
                        _debugGetTransferFunctionName, _debugLlUseDM31, _debugMSRStages, 
                        _debug_logAmbAdaptationParam, _debug_logAuxData, _debug_logDpcParam, 
                        _debug_logEdrAdaptationParam, _debug_log_config, _degamma_srgb, 
-                       _deriveSrcRect, _dovi_applyTonemapCurveS, _dovi_calculateTonemapCurveParamS, 
+                       _deriveSrcRect, _dovi84_applyTonemapCurveS, _dovi84_generateAmbAdaptationDataS, 
+                       _dovi84_generateEdrAdaptationDataS, _dovi84_getScalingFactor, 
+                       _dovi84_getScalingFactorForPT, _dovi84_getScalingFactorS_L, 
+                       _dovi_applyTonemapCurveS, _dovi_calculateTonemapCurveParamS, 
                        _dovi_debug_logTmData, _dovi_debug_logTmParam, _dovi_debug_log_config, 
                        _dovi_generateAmbAdaptationDataS, _dovi_generateEdrAdaptationDataS, 
                        _dovi_getScalingFactor, _dovi_getScalingFactorForPT, _dovi_getScalingFactorS_L, 
@@ -85,11 +88,11 @@ exports:
                        _getProcessingType, _getProcessingTypeName, _getRGB2YMatrix, 
                        _getRGBtoLMSMatrixForUITargetColorPrimary, _getRGBtoRGBMatrixForUITargetColorPrimary, 
                        _getRGBtoYUVMatrixForUITargetColorPrimary, _getSat2FactorForI, 
-                       _getSat2FactorForI_llDovi, _getSat2FactorForPT, _getSat2FactorForPT_llDovi, 
-                       _getSat2Parameters, _getScalingFactorByTable, _getSourceOffset, 
-                       _getStaticToneCurves, _getToneCurveParameters, _getToneCurves, 
-                       _getToneCurvesDM31, _getUITargetColorPrimary, _getUsageName, 
-                       _hasTrim, _hdr10_applyTonemapCurveS, _hdr10_calculateTonemapCurveParamS, 
+                       _getSat2FactorForI_llDovi, _getSat2FactorForPT, _getSat2FactorForPT_Dovi84, 
+                       _getSat2FactorForPT_llDovi, _getSat2Parameters, _getScalingFactorByTable, 
+                       _getSourceOffset, _getStaticToneCurves, _getToneCurveParameters, 
+                       _getToneCurves, _getToneCurvesDM31, _getUITargetColorPrimary, 
+                       _getUsageName, _hasTrim, _hdr10_applyTonemapCurveS, _hdr10_calculateTonemapCurveParamS, 
                        _hdr10_debug_logTmData, _hdr10_debug_logTmParam, _hdr10_debug_log_config, 
                        _hdr10_generateAmbAdaptationDataS, _hdr10_generateEdrAdaptationDataS, 
                        _hdr10_getLumaMixFactorS_L, _hdr10_getLumaMixFactorS_L_NormIn, 
@@ -107,13 +110,14 @@ exports:
                        _isValidOverrideDPCMode, _isValidOverrideDoViTMPresetType, 
                        _isValidOverrideEdrAdaptationGain, _isValidOverrideHDR10TMCurveType, 
                        _isValidOverrideHDR10TMPresetType, _isValidOverrideHDR10TMSEndNits, 
-                       _isValidOverrideHLGTMPresetType, _isValidOverrideTargetDisplayContrastRatio, 
-                       _isValidOverrideTargetDisplayReflectionRatio, _kHDRProcessingAmbientLightInNitsKey, 
-                       _kHDRProcessingColorPrimariesKey, _kHDRProcessingCurrentMaxPanelNitsKey, 
-                       _kHDRProcessingCurrentMinPanelNitsKey, _kHDRProcessingDestinationDisplayTypeDolbyVisionTV, 
-                       _kHDRProcessingDestinationDisplayTypeHDR10TV, _kHDRProcessingDestinationDisplayTypeInternalPanel, 
-                       _kHDRProcessingDestinationDisplayTypeInternalPanelLCD, _kHDRProcessingDestinationDisplayTypeInternalPanelMac, 
-                       _kHDRProcessingDestinationDisplayTypeKey, _kHDRProcessingDestinationDisplayTypeLowLatencyDolbyVisionTV, 
+                       _isValidOverrideHLGOOTFMixingMode, _isValidOverrideHLGTMPresetType, 
+                       _isValidOverrideTargetDisplayContrastRatio, _isValidOverrideTargetDisplayReflectionRatio, 
+                       _kHDRProcessingAmbientLightInNitsKey, _kHDRProcessingColorPrimariesKey, 
+                       _kHDRProcessingCurrentMaxPanelNitsKey, _kHDRProcessingCurrentMinPanelNitsKey, 
+                       _kHDRProcessingDestinationDisplayTypeDolbyVisionTV, _kHDRProcessingDestinationDisplayTypeHDR10TV, 
+                       _kHDRProcessingDestinationDisplayTypeInternalPanel, _kHDRProcessingDestinationDisplayTypeInternalPanelLCD, 
+                       _kHDRProcessingDestinationDisplayTypeInternalPanelMac, _kHDRProcessingDestinationDisplayTypeKey, 
+                       _kHDRProcessingDestinationDisplayTypeLowLatencyDolbyVisionTV, 
                        _kHDRProcessingDestinationDisplayTypeReferenceDisplay, _kHDRProcessingDestinationDisplayTypeSDRTV, 
                        _kHDRProcessingDisplayAdjustsBlackLevelKey, _kHDRProcessingDisplayAverageBrightnessInNitsKey, 
                        _kHDRProcessingDisplayChromaticityBx, _kHDRProcessingDisplayChromaticityBy, 
@@ -142,11 +146,15 @@ exports:
                        _kHDRProcessingSourceContentTypeHLG, _kHDRProcessingSourceContentTypeKey, 
                        _kHDRProcessingSourceContentTypeSDR, _kHDRProcessingUILayerScaleFactor, 
                        _limitHLGTo1000Nits, _linearInterpolation, _logInstanceID, 
-                       _logLevel, _lux2ReflectionNits, _overrideAmbAdaptationLux2nitsRatio, 
-                       _overrideDPCGain, _overrideDPCMode, _overrideDefaults, _overrideDisplayType, 
-                       _overrideDoViTMPresetType, _overrideEDRFactor, _overrideEdrAdaptationGain, 
-                       _overrideHDR10TMCurveType, _overrideHDR10TMPresetType, _overrideHDR10TMSEndNits, 
-                       _overrideHLGTMPresetType, _overrideMaxEDRValue, _overrideProcessingType, 
+                       _logLevel, _lux2ReflectionNits, _overrideAdjTdivCDropPower, 
+                       _overrideAdjTdivCRatioMax, _overrideAdjTdivCRatioMin, _overrideAdjTdivCRatioPower, 
+                       _overrideAmbAdaptationLux2nitsRatio, _overrideDPCGain, _overrideDPCMode, 
+                       _overrideDefaults, _overrideDisplayType, _overrideDoViTMPresetType, 
+                       _overrideEDRFactor, _overrideEdrAdaptationGain, _overrideEdrK1MixFactor, 
+                       _overrideEdrK2MixFactor, _overrideHDR10TMCurveType, _overrideHDR10TMPresetType, 
+                       _overrideHDR10TMSEndNits, _overrideHLGOOTFMixingMode, _overrideHLGTMPresetType, 
+                       _overrideHeadroomLimit, _overrideHeadroomLimitMode, _overrideMaxEDRValue, 
+                       _overrideProcessingType, _overrideSDRLookHLGOOTFTmaxNits, 
                        _overrideTargetDisplayContrastRatio, _overrideTargetDisplayReflectionRatio, 
                        _overrideTargetMaxLinear, _overrideTargetMinLinear, _piecewiseLinearInterp, 
                        _prevLogInstanceID, _printDMDataFlag, _ptv_debug_log_config, 

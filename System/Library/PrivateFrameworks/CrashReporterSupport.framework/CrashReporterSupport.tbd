@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           B6CAF197-2DE8-33C5-A080-CD43335EAFA8
   - target:          arm64-ios
-    value:           02A6AD80-2AB1-37E9-A23A-4936922C071E
+    value:           7AE7246A-0AB9-302C-A370-922E61B37041
   - target:          arm64e-ios
-    value:           BDF378F6-0A9E-3BD3-BD3D-94D0FFA969E7
+    value:           31A66684-AABA-373B-9450-A0FA625647BE
 install-name:    '/System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -139,9 +139,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           4FE55202-95D9-3E42-87B2-F3D284B8340C
+    value:           06DCAE5F-5F7B-36E6-B6C5-CB9FC402E67B
   - target:          arm64e-ios
-    value:           C550FCEA-1311-305C-81A4-613D6B017C00
+    value:           7C972195-D684-3A1B-915E-537295D68932
 install-name:    '/System/Library/PrivateFrameworks/OSAnalytics.framework/OSAnalytics'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -149,8 +149,10 @@ exports:
                        _OSASanitizeOptionKeepFilename, _OSASanitizeOptionMountedVolume, 
                        _OSASanitizeOptionNetworkVolume, _OSASanitizePath, _OSAnalyticsVersionNumber, 
                        _OSAnalyticsVersionString, _SimulateCrash, _WriteJetsamMemoryReport, 
-                       _WriteStackshotReport, _WriteStackshotReportWithOptions, _WriteStackshotReportWithOptions_async, 
-                       _WriteStackshotReportWithPID, _WriteStackshotReportWithPID_async, 
+                       _WriteJetsamMemoryReportWithIDAndPids, _WriteStackshotReport, 
+                       _WriteStackshotReportWithOptions, _WriteStackshotReportWithOptionsAndPayload, 
+                       _WriteStackshotReportWithOptions_async, _WriteStackshotReportWithPID, 
+                       _WriteStackshotReportWithPID_async, _WriteStackshotReportWithPayload, 
                        _WriteStackshotReport_async, _WriteStackshotReport_stdc, _WriteSystemMemoryResetReport, 
                        _WriteSystemMemoryResetReportWithPids, _adsc_addScalarForKey, 
                        _adsc_batchKeys, _adsc_pushDistrubtionForKey, _adsc_setScalarForKey, 
@@ -201,17 +203,18 @@ exports:
                        OSACrashReport._threadStateCount, OSACrashReport._threadStateFlavor, 
                        OSACrashReport._uid, OSACrashReport._uniqId, OSACrashReport._usedImages, 
                        OSACrashReport._vmregion_info, OSACrashReport._workloop_id, 
-                       OSAJetsamReport._aleFlag, OSAJetsamReport._event_code, OSAJetsamReport._event_reason, 
+                       OSAJetsamReport._aleFlag, OSAJetsamReport._audioAssertionState, 
+                       OSAJetsamReport._event_code, OSAJetsamReport._event_reason, 
                        OSAJetsamReport._isSuspendedOnlyJetsam, OSAJetsamReport._killedActiveApps, 
                        OSAJetsamReport._killed_or_suspended_count, OSAJetsamReport._largestActiveApp, 
                        OSAJetsamReport._largestProcess, OSAJetsamReport._snapshot, 
                        OSAJetsamReport._visibilityEndowmentState, OSAJetsamReport._wiredBytes, 
                        OSALog._filepath, OSALog._metaData, OSALog._stream, OSAReport._capture_time, 
                        OSAReport._incidentID, OSAReport._logType, OSAReport._logWritingOptions, 
-                       OSAReport._notes, OSAStackShotReport._appName, OSAStackShotReport._exceptionCodeCount, 
-                       OSAStackShotReport._exceptionCodes, OSAStackShotReport._extras, 
-                       OSAStackShotReport._frontmostPids, OSAStackShotReport._pid, 
-                       OSAStackShotReport._reason, OSAStackShotReport._ss_trace_buffer, 
+                       OSAReport._notes, OSAStackShotReport._additionalPayload, OSAStackShotReport._appName, 
+                       OSAStackShotReport._exceptionCodeCount, OSAStackShotReport._exceptionCodes, 
+                       OSAStackShotReport._extras, OSAStackShotReport._frontmostPids, 
+                       OSAStackShotReport._pid, OSAStackShotReport._reason, OSAStackShotReport._ss_trace_buffer, 
                        OSAStackShotReport._ss_trace_length, OSAStackShotReport._stackshot_config, 
                        OSAStackShotReport._thermalNotificationCurrentLevel, OSAStackShotReport._thermalSensorValues, 
                        OSASymbolInfo._uuid ]

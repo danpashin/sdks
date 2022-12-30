@@ -124,8 +124,14 @@ CG_AVAILABLE_STARTING(10.11, 9.0);
 CG_EXTERN const CFStringRef kCGColorSpaceDCIP3
 CG_AVAILABLE_STARTING(10.11, 9.0);
 
+CG_EXTERN const CFStringRef kCGColorSpaceExtendedITUR_2020
+CG_AVAILABLE_STARTING(11.0, 14.0);
+
 CG_EXTERN const CFStringRef kCGColorSpaceExtendedLinearITUR_2020
 CG_AVAILABLE_STARTING(10.14.3, 12.3);
+
+CG_EXTERN const CFStringRef kCGColorSpaceExtendedDisplayP3
+CG_AVAILABLE_STARTING(11.0, 14.0);
 
 CG_EXTERN const CFStringRef kCGColorSpaceExtendedLinearDisplayP3
 CG_AVAILABLE_STARTING(10.14.3, 12.3);
@@ -390,10 +396,16 @@ CG_AVAILABLE_STARTING(10.12, 10.0);
 CG_EXTERN bool CGColorSpaceIsWideGamutRGB(CGColorSpaceRef)
 CG_AVAILABLE_STARTING(10.12, 10.0);
 
-/* Return true if color space uses transfer functions defined in ITU Rec.2100 */
+/* Return true if color space uses transfer functions defined in ITU Rec.2100
+   Please use CGColorSpaceUsesITUR_2100TF instead */
 
 CG_EXTERN bool CGColorSpaceIsHDR(CGColorSpaceRef)
 CG_AVAILABLE_BUT_DEPRECATED(10.15, 10.15.4, 13.0, 13.4);
+
+/* Return true if color space uses transfer functions defined in ITU Rec.2100 */
+
+CG_EXTERN bool CGColorSpaceUsesITUR_2100TF(CGColorSpaceRef)
+CG_AVAILABLE_STARTING(11.0, 14.0);
 
 /* Return true if `space' can be used as a destination color space; false
  otherwise. */
@@ -414,6 +426,21 @@ CG_AVAILABLE_STARTING(10.12, 10.0);
 
 CG_EXTERN bool CGColorSpaceUsesExtendedRange(CGColorSpaceRef space)
 CG_AVAILABLE_STARTING(10.12, 10.0);
+
+/* Create a linearized copy of the color space if the color space is matrix based.
+   Return NULL if otherwise */
+CG_EXTERN CGColorSpaceRef  __nullable CGColorSpaceCreateLinearized(CGColorSpaceRef space)
+CG_AVAILABLE_STARTING(11.0, 14.0);
+
+/* Create a copy of the color space which uses extended range [-Inf, +Inf] if the color space is
+   matrix based. Return NULL if otherwise */
+CG_EXTERN CGColorSpaceRef  __nullable CGColorSpaceCreateExtended(CGColorSpaceRef space)
+CG_AVAILABLE_STARTING(11.0, 14.0);
+
+/* Create a linearized copy of the color space which uses extended range [-Inf, +Inf]
+   if the color space is matrix based. Return NULL if otherwise */
+CG_EXTERN CGColorSpaceRef  __nullable CGColorSpaceCreateExtendedLinearized(CGColorSpaceRef space)
+CG_AVAILABLE_STARTING(11.0, 14.0);
 
 
 /* Deprecated functions */

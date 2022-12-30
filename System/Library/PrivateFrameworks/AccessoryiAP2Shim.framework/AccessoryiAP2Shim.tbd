@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           FA6D9888-5E14-32BF-87EB-C2797D82E72C
+    value:           D9949692-373E-3A3D-8A36-913640E72FBC
   - target:          arm64e-ios
-    value:           C7349C16-F67E-3F6D-972A-1F909AF42E98
+    value:           B0034306-7480-3A32-BDCD-600140A6E0A2
 install-name:    '/System/Library/PrivateFrameworks/AccessoryiAP2Shim.framework/AccessoryiAP2Shim'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -19,8 +19,10 @@ exports:
                        _ACCUserDefaultsKey_ACCAuthProtocolAllowMutualAuth, _ACCUserDefaultsKey_ACCAuthProtocolMaxMessageSize, 
                        _ACCUserDefaultsKey_ACCAuthProtocolPretendAuth, _ACCUserDefaultsKey_ACCAuthProtocolRoleSupport, 
                        _ACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport, _ACCUserDefaultsKey_BypassTrustDialog, 
-                       _ACCUserDefaultsKey_DisableWirelessCTA, _ACCUserDefaultsKey_EnableTrustDialog, 
-                       _ACCUserDefaultsKey_ForceAuthFail, _ACCUserDefaultsKey_KnownAccessories, 
+                       _ACCUserDefaultsKey_DisableACCAuthProtocolOnInductive, _ACCUserDefaultsKey_DisableWirelessCTA, 
+                       _ACCUserDefaultsKey_EnableACCAuthProtocolOnNFC, _ACCUserDefaultsKey_EnableTrustDialog, 
+                       _ACCUserDefaultsKey_ExposeSleeves, _ACCUserDefaultsKey_ForceAuthFail, 
+                       _ACCUserDefaultsKey_KnownAccessories, _ACCUserDefaultsKey_NFCAnalyticsDate, 
                        _ACCUserDefaultsKey_ShowHiddenAccessories, _ACCUserDefaultsNotification, 
                        _AccessoryiAP2ShimVersionNumber, _AccessoryiAP2ShimVersionString, 
                        _EAManagerAccessorySessions, _EAProcessAssertionIdentifierAccessoryConnect, 
@@ -42,9 +44,11 @@ exports:
                        _kCFACCUserDefaultsIapdKey_PretendBatteryLevel, _kCFACCUserDefaultsKey_ACCAuthProtocolAllowMutualAuth, 
                        _kCFACCUserDefaultsKey_ACCAuthProtocolMaxMessageSize, _kCFACCUserDefaultsKey_ACCAuthProtocolPretendAuth, 
                        _kCFACCUserDefaultsKey_ACCAuthProtocolRoleSupport, _kCFACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport, 
-                       _kCFACCUserDefaultsKey_AuthenticationOverride, _kCFACCUserDefaultsKey_DisableWirelessCTA, 
-                       _kCFACCUserDefaultsKey_EnableTrustDialog, _kCFACCUserDefaultsKey_ForceAuthFail, 
-                       _kCFACCUserDefaultsKey_MaxOutboundiAP2PacketSize, _kIap2dConnectionIDMask, 
+                       _kCFACCUserDefaultsKey_AuthenticationOverride, _kCFACCUserDefaultsKey_DisableACCAuthProtocolOnInductive, 
+                       _kCFACCUserDefaultsKey_DisableWirelessCTA, _kCFACCUserDefaultsKey_EnableACCAuthProtocolOnNFC, 
+                       _kCFACCUserDefaultsKey_EnableTrustDialog, _kCFACCUserDefaultsKey_ExposeSleeves, 
+                       _kCFACCUserDefaultsKey_ForceAuthFail, _kCFACCUserDefaultsKey_MaxOutboundiAP2PacketSize, 
+                       _kCFACCUserDefaultsKey_NFCAnalyticsDate, _kIap2dConnectionIDMask, 
                        _kIap2dInternalConnectionIDMask, _kIapdConnectionIDMask, _kIapdInternalConnectionIDMask, 
                        _kInvalidConnectionID, _kInvalidConnectionIDMask, _kUnknownConnectionIDMask, 
                        _kXPCAccessoryPowerDisable, _kXPCAccessoryPowerToggle, _kXPCActionStr, 

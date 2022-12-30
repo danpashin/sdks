@@ -220,7 +220,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 
 /*!
  @property productKind
- @abstract ￼Type of the device. Possible values are: @"iPhone", @"iPod", @"Camera".
+ @abstract ￼Type of the device. Possible values are: @"iPhone", @"iPod", @"iPad", @"Camera", @"Scanner"
  */
 @property (nonatomic, readonly, copy, nullable) NSString* productKind IC_AVAILABLE(macos(10.4), ios(13.0));
 

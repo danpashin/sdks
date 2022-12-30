@@ -7,18 +7,19 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           E2351EDF-B45D-3A74-A6A1-7770E3EC7D77
+    value:           5E96034E-5910-37F4-BBD8-860018DE5B3D
   - target:          arm64e-ios
-    value:           3B7DD892-95B7-3320-9606-88E6CBAFB7F8
+    value:           F0F431F6-1530-3998-84A7-DAA24454A840
 install-name:    '/System/Library/PrivateFrameworks/NPTKit.framework/NPTKit'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _BASE_URL, _GET_URL, _GET_URL_FORMAT_STRING, _NPTKitVersionNumber, 
-                       _NPTKitVersionString, _PING_URL, _POST_URL, _POST_URL_EXTENSION, 
-                       _TEMP_FILE_NAME, _UNIQUE_QUERY_PARAM, _USER_AGENT_FORMAT_STRING, 
-                       _dataBearerTechnologyToString, _indicatorToString, _wirelessAccessTechnologyToString ]
-    objc-classes:    [ NPTCellularCollector, NPTDownload, NPTFileSizeConverter, NPTLogger, 
-                       NPTMetadataCollector, NPTMetricResult, NPTPerformanceTest, 
+    symbols:         [ _BASE_URL, _CDN_JSON_ENDPOINT, _GET_URL, _GET_URL_FORMAT_STRING, 
+                       _NPTKitVersionNumber, _NPTKitVersionString, _PING_URL, _POST_URL, 
+                       _POST_URL_EXTENSION, _TEMP_FILE_NAME, _UNIQUE_QUERY_PARAM, 
+                       _USER_AGENT_FORMAT_STRING, _dataBearerTechnologyToString, 
+                       _indicatorToString, _wirelessAccessTechnologyToString ]
+    objc-classes:    [ NPTCDNDebugCollector, NPTCellularCollector, NPTDownload, NPTFileSizeConverter, 
+                       NPTLogger, NPTMetadataCollector, NPTMetricResult, NPTPerformanceTest, 
                        NPTPerformanceTestConfiguration, NPTPing, NPTPingResult, NPTResults, 
                        NPTSpeedMetric, NPTTaskMetrics, NPTUpload, Ping, SimplePing ]
 ...

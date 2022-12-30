@@ -37,7 +37,7 @@ typedef NS_OPTIONS(NSUInteger, MTLAccelerationStructureUsage) {
     MTLAccelerationStructureUsagePreferFastBuild = (1 << 1),
 } API_AVAILABLE(macos(11.0), ios(14.0));
 
-typedef NS_OPTIONS(unsigned int, MTLAccelerationStructureInstanceOptions) {
+typedef NS_OPTIONS(uint32_t, MTLAccelerationStructureInstanceOptions) {
     /**
      * @brief No options
      */
@@ -207,17 +207,17 @@ typedef struct {
     /**
      * @brief Instance mask used to ignore geometry during ray tracing
      */
-    unsigned int mask;
+    uint32_t mask;
 
     /**
      * @brief Used to index into intersection function tables
      */
-    unsigned int intersectionFunctionTableOffset;
+    uint32_t intersectionFunctionTableOffset;
     
     /**
      * @brief Acceleration structure index to use for this instance
      */
-    unsigned int accelerationStructureIndex;
+    uint32_t accelerationStructureIndex;
 } MTLAccelerationStructureInstanceDescriptor;
 
 /**

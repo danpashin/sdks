@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           41638650-C8F8-3D62-92E0-E3BF25CD8A9A
+    value:           CA74D408-DBFF-34A6-BF02-4FE68DB2EF0B
   - target:          arm64e-ios
-    value:           5C5B1D3C-8A33-3C60-AB33-D22ABD85D1CE
+    value:           3762A2F7-7EF8-309A-98F7-B93B48C4F3EF
 install-name:    '/System/Library/PrivateFrameworks/ANECompiler.framework/ANECompiler'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -580,6 +580,7 @@ exports:
                        __ZN13ZinIrPoolUnitC2ERK13ZinIrUnitInfoRK17ZinIrPoolUnitInfo, 
                        __ZN13ZinIrRegSpill10SpillWriteEP14ZinEngineLayer, __ZN13ZinIrRegSpill12InsertL2CopyEP10ZinPELayerm, 
                        __ZN13ZinIrRegSpill17SpillReadWithCopyEP16ZinNEBypassLayerP10ZinPELayerm, 
+                       __ZN13ZinIrRegSpill22HasMismatchedDualInputEP12ZinIrOpLayer, 
                        __ZN13ZinIrRegSpill28InitializeSpillingCandidatesEv, __ZN13ZinIrRegSpill3RunEv, 
                        __ZN13ZinIrRegSpill7DoSpillEP11ZinIrTensor, __ZN13ZinIrRegSpill9SpillReadEP14ZinEngineLayerm, 
                        __ZN13ZinIrRegSpillC1EP17ZinIrOpLayerGraphRKNSt3__16vectorIP12ZinIrOpLayerNS2_9allocatorIS5_EEEEP18ZinIrLocalRegAllocRKN8ZinIrHal18ZinIrHalParametersEb, 
@@ -970,6 +971,7 @@ exports:
                        __ZN17ZinMirL2Legalizer16IsSpaceSplitableEP14ZinEngineLayerm, 
                        __ZN17ZinMirL2Legalizer18IsChannelSplitableEP14ZinEngineLayerm, 
                        __ZN17ZinMirL2Legalizer19GetInOutL2FootprintEP14ZinEngineLayer, 
+                       __ZN17ZinMirL2Legalizer19GetLayerL2FootprintEP14ZinEngineLayerR14ZinMirL2ConfigR20ZinObjectNameFactory, 
                        __ZN17ZinMirL2Legalizer23TryAdjustDimensionOrderEP17ZinIrOpLayerGraphP11ZinIrTensorN21ZinMirTensorTransform4AxisE, 
                        __ZN17ZinMirL2Legalizer26GetInputTensorsL2FootprintEP14ZinEngineLayerR14ZinMirL2Config, 
                        __ZN17ZinMirL2Legalizer26GetOutputTensorL2FootprintEP14ZinEngineLayerR14ZinMirL2Config, 
@@ -1908,7 +1910,6 @@ exports:
                        __ZNK13ZinIrRegSpill15VerifyL2SymbolsEv, __ZNK13ZinIrRegSpill16GetOrderedLayersEv, 
                        __ZNK13ZinIrRegSpill16NeedMemCopyCacheEP12ZinIrOpLayermP11ZinIrTensor, 
                        __ZNK13ZinIrRegSpill19IsQualifiedForSpillEP11ZinIrTensor, 
-                       __ZNK13ZinIrRegSpill22HasMismatchedDualInputEP12ZinIrOpLayer, 
                        __ZNK13ZinIrTargetM910CodegenTdsEP12ZinIrContextjR17ZinIrCodegenStatsP18ZinIrNetworkStatus, 
                        __ZNK13ZinIrTargetT010CodegenTdsEP12ZinIrContextjR17ZinIrCodegenStatsP18ZinIrNetworkStatus, 
                        __ZNK13ZinNEPoolPerf23GetCyclesBeforeSparsityEm, __ZNK13ZinPEGOCLayer16DebugDetailPrintEi, 

@@ -7,17 +7,18 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           3B73333F-4F56-33DC-8D4F-2F544B585E3A
+    value:           93D3EA90-1ABD-3422-AA27-F85B3BAB1458
   - target:          arm64e-ios
-    value:           58EA6792-0DEB-360C-A083-EC30CB00ACE5
+    value:           2B6FF693-6F5F-3D69-B1C8-285A25966743
 install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/SPFinder'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _SPFinderDisabledReasonCannotPublishAnonymously, _SPFinderDisabledReasonFindMyiPhoneOff, 
-                       _SPFinderDisabledReasonLocationServices, _SPFinderDisabledReasonLocationServicesFindMyFramework, 
-                       _SPFinderDisabledReasonLowAccountSecurity, _SPFinderDisabledReasonNone, 
-                       _SPFinderDisabledReasonServiceDisabled, _SPFinderDisabledReasonUserOptOut, 
-                       _SPFinderDisabledReasoniCloudSignedOut, _SPFinderStateChangedNotification ]
+    symbols:         [ _SPFinderDisabledReasonBlockedDeviceRegion, _SPFinderDisabledReasonCannotPublishAnonymously, 
+                       _SPFinderDisabledReasonFindMyiPhoneOff, _SPFinderDisabledReasonLocationServices, 
+                       _SPFinderDisabledReasonLocationServicesFindMyFramework, _SPFinderDisabledReasonLowAccountSecurity, 
+                       _SPFinderDisabledReasonNone, _SPFinderDisabledReasonServiceDisabled, 
+                       _SPFinderDisabledReasonUserOptOut, _SPFinderDisabledReasoniCloudSignedOut, 
+                       _SPFinderStateChangedNotification ]
     objc-classes:    [ SPAdvertisement, SPAdvertisementCache, SPAdvertisementCacheSearchCriteria, 
                        SPAdvertisementCacheSearchResult, SPBeaconAdvertisement, SPBeaconPayload, 
                        SPBeaconPayloadCacheSearchCriteria, SPBeaconPayloadCacheSearchResult, 

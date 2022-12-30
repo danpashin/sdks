@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           8BE15B6A-BBF6-3708-96E6-0CE17F130781
   - target:          arm64-ios
-    value:           A2CB42C2-525D-339F-8772-366A6766BDBB
+    value:           9145E4B0-5AA6-334C-8C29-4EE953CB953E
   - target:          arm64e-ios
-    value:           6050B44D-A72D-3F2B-9E26-2EFB43085C8E
+    value:           CDA62FCF-7D0F-32BB-89AF-7D46903E91D6
 install-name:    '/System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -92,15 +92,16 @@ exports:
                        _AFDescriptionOfBKSApplicationState, _AFDeviceColor, _AFDeviceContextKeyAlarm, 
                        _AFDeviceContextKeyAll, _AFDeviceContextKeyContexts, _AFDeviceContextKeyData, 
                        _AFDeviceContextKeyDeviceInfo, _AFDeviceContextKeyHeardVoiceTrigger, 
-                       _AFDeviceContextKeyIdentifier, _AFDeviceContextKeyLocation, 
-                       _AFDeviceContextKeyMetadata, _AFDeviceContextKeyMetadataExpirationDate, 
-                       _AFDeviceContextKeyMetadataRedactedKeyPaths, _AFDeviceContextKeyMetadataTimestamp, 
-                       _AFDeviceContextKeyMetadataType, _AFDeviceContextKeyMultiUserState, 
-                       _AFDeviceContextKeyMyriadAdvertisement, _AFDeviceContextKeyPlaybackState, 
-                       _AFDeviceContextKeyPrivacyClass, _AFDeviceContextKeyTimer, 
-                       _AFDeviceContextOptionsGetNames, _AFDeviceContextOptionsValidate, 
-                       _AFDeviceContextPrivacyClassFromString, _AFDeviceContextPrivacyClassGetStringDescription, 
-                       _AFDeviceEnclosureColor, _AFDeviceHasAddressBook, _AFDeviceHighestLanguageModelCapabilityIdentifier, 
+                       _AFDeviceContextKeyHomeAnnouncement, _AFDeviceContextKeyIdentifier, 
+                       _AFDeviceContextKeyLocation, _AFDeviceContextKeyMetadata, 
+                       _AFDeviceContextKeyMetadataExpirationDate, _AFDeviceContextKeyMetadataRedactedKeyPaths, 
+                       _AFDeviceContextKeyMetadataTimestamp, _AFDeviceContextKeyMetadataType, 
+                       _AFDeviceContextKeyMultiUserState, _AFDeviceContextKeyMyriadAdvertisement, 
+                       _AFDeviceContextKeyPlaybackState, _AFDeviceContextKeyPrivacyClass, 
+                       _AFDeviceContextKeyTimer, _AFDeviceContextOptionsGetNames, 
+                       _AFDeviceContextOptionsValidate, _AFDeviceContextPrivacyClassFromString, 
+                       _AFDeviceContextPrivacyClassGetStringDescription, _AFDeviceEnclosureColor, 
+                       _AFDeviceHasAddressBook, _AFDeviceHighestLanguageModelCapabilityIdentifier, 
                        _AFDeviceIsTinker, _AFDeviceIsVictory, _AFDeviceMessagingOptionsGetNames, 
                        _AFDeviceName, _AFDeviceProximityCompare, _AFDeviceProximityGetName, 
                        _AFDeviceRegionCode, _AFDeviceRingerSwitchStateGetFromName, 
@@ -140,6 +141,8 @@ exports:
                        _AFGryphonAssetsExistForLanguage, _AFHasBaseband, _AFHasCellularData, 
                        _AFHasCellularTelephony, _AFHasGPS, _AFHasHapticEngine, _AFHasPairedBTDeviceForSpokenMessages, 
                        _AFHasProxyCellularTelephony, _AFHasRingerSwitch, _AFHasUnlockedSinceBoot, 
+                       _AFHomeAnnouncementKey, _AFHomeAnnouncementSnapshotKey, _AFHomeAnnouncementStateGetFromNames, 
+                       _AFHomeAnnouncementStateGetNames, _AFHomeAnnouncementStateValidate, 
                        _AFInstallCommonSignalHandlers, _AFIntentSupportAndVocabSyncKey, 
                        _AFIntentSupportAndVocabSyncNanoKey, _AFInternalConfigValueForKey, 
                        _AFInternalPreferencesDidChangeDarwinNotification, _AFInternalPreferencesSynchronize, 
@@ -587,7 +590,8 @@ exports:
                        AFError, AFExperiment, AFExperimentConfiguration, AFExperimentContext, 
                        AFExperimentGroup, AFFeatureFlags, AFFlowServiceConnection, 
                        AFFuture, AFGetSettingsRequest, AFGetSettingsResponse, AFGetTimerRequest, 
-                       AFGetTimerResponse, AFImagePNGData, AFInitiateCallRequest, 
+                       AFGetTimerResponse, AFHomeAnnouncement, AFHomeAnnouncementObserver, 
+                       AFHomeAnnouncementSnapshot, AFImagePNGData, AFInitiateCallRequest, 
                        AFInstrumentationObserverConnection, AFInterstitialCommandWrapper, 
                        AFInterstitialConfiguration, AFInterstitialProvider, AFLanguageDetectionUserContext, 
                        AFLinkedListItem, AFLocalization, AFLocationSnapshot, AFMachServiceSiriTaskDeliverer, 
@@ -648,7 +652,8 @@ exports:
                        _AFClockAlarmMutation, _AFClockAlarmSnapshotMutation, _AFClockTimerMutation, 
                        _AFClockTimerSnapshotMutation, _AFDataStoreEntry, _AFDeleteSiriHistoryContextMutation, 
                        _AFExperimentConfigurationMutation, _AFExperimentContextMutation, 
-                       _AFExperimentGroupMutation, _AFExperimentMutation, _AFInterstitialAction, 
+                       _AFExperimentGroupMutation, _AFExperimentMutation, _AFHomeAnnouncementMutation, 
+                       _AFHomeAnnouncementSnapshotMutation, _AFInterstitialAction, 
                        _AFInterstitialConfigurationMutation, _AFLocationSnapshotMutation, 
                        _AFMediaPlaybackStateSnapshotMutation, _AFMemoryInfoMutation, 
                        _AFMultiUserStateSnapshotMutation, _AFMyriadAdvertisementContextMutation, 

@@ -3,7 +3,7 @@
 	
 	Framework:  VideoToolbox
 	
-	Copyright 2007-2018 Apple Inc. All rights reserved.
+	Copyright 2007-2020 Apple Inc. All rights reserved.
 	
 	Standard Video Toolbox compression properties.
 */
@@ -790,6 +790,19 @@ VT_EXPORT const CFStringRef kVTCompressionPropertyKey_MultiPassStorage API_AVAIL
 		Matches the value specified in kVTVideoEncoderSpecification_EncoderID, and the kVTVideoEncoderList_EncoderID value returned from VTCopyVideoEncoderList.
 */
 VT_EXPORT const CFStringRef kVTCompressionPropertyKey_EncoderID API_AVAILABLE(macosx(10.13), ios(11.0), tvos(11.0)); // CFStringRef
+
+/*!
+	@constant	kVTCompressionPropertyKey_PreserveDynamicHDRMetadata
+	@abstract
+		Controls whether or not to preserve any dynamic HDR metadata on the input pixel buffer
+	@discussion
+		If set to false, and kVTCompressionPropertyKey_HDRMetadataInsertionMode is not
+		kVTHDRMetadataInsertionMode_None, then VTCompressionSession will generate the
+		dynamic HDR metadata for the pixel buffer, if the HDR format is supported.
+*/
+VT_EXPORT const CFStringRef kVTCompressionPropertyKey_PreserveDynamicHDRMetadata // CFBoolean, Write, Optional
+							API_AVAILABLE(macosx(11.0), ios(14.0), tvos(14.0));
+
 
 	
 CM_ASSUME_NONNULL_END

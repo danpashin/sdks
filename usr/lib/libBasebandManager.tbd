@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           A4228D4C-11F0-3ADF-8209-8DBFFCB9263B
   - target:          arm64-ios
-    value:           4B2807B0-496A-34E0-85C9-47DADCE93CAD
+    value:           EBD5F57E-B5AD-335F-94E7-AB88CD10604C
   - target:          arm64e-ios
-    value:           49F06543-2860-3188-A211-B97810853712
+    value:           502E605B-804F-32B2-A00F-911078770958
 install-name:    '/usr/lib/libBasebandManager.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -904,8 +904,12 @@ exports:
                        __ZN4coex9XpcClient7getNameEv, __ZN4coex9XpcClientC1ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN4coex9XpcClientC2ERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN4coex9XpcClientD0Ev, __ZN4coex9XpcClientD1Ev, __ZN4coex9XpcClientD2Ev, 
+                       __ZN4diag6config12equal_nocaseERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
                        __ZN4diag6config15kADPLScratchDirE, __ZN4diag6config15kQDSSScratchDirE, 
-                       __ZN4diag6config20kDefaultWatchHistoryE, __ZN4prop10systemlogs3getERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_, 
+                       __ZN4diag6config15toStringCompactENS0_8RecoveryE, __ZN4diag6config20kDefaultWatchHistoryE, 
+                       __ZN4diag6config25kStallDetectionRetriesKeyE, __ZN4diag6config29kDefaultStallDetectionRetriesE, 
+                       __ZN4diag6config30kDefaultStallDetectionRecoveryE, __ZN4diag6config6asEnumERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS0_8RecoveryE, 
+                       __ZN4prop10systemlogs3getERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_, 
                        __ZN4prop10systemlogs3setERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
                        __ZN4prop11compression3getERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_, 
                        __ZN4prop11compression3setERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
@@ -1079,12 +1083,12 @@ exports:
                        __ZN8defaults5bbipc7enabledEv, __ZN8defaults5bbipc8logLevelEv, 
                        __ZN8defaults6helper9supportedEv, __ZN8defaults7bbtrace11max_historyEv, 
                        __ZN8defaults7bbtrace11primary_dmcEv, __ZN8defaults7bbtrace12data_loggingEv, 
-                       __ZN8defaults7bbtrace13secondary_dmcEv, __ZN8defaults7bbtrace14low_water_markEv, 
-                       __ZN8defaults7bbtrace14stall_recoveryEv, __ZN8defaults7bbtrace15high_water_markEv, 
-                       __ZN8defaults7bbtrace15stall_detectionEv, __ZN8defaults7bbtrace17keep_scratch_logsEv, 
-                       __ZN8defaults7bbtrace20buffering_on_ap_wakeEv, __ZN8defaults7bbtrace20enabled_during_sleepEv, 
-                       __ZN8defaults7bbtrace21max_memory_file_countEv, __ZN8defaults7bbtrace23carrier_logging_allowedEv, 
-                       __ZN8defaults7bbtrace3getERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_, 
+                       __ZN8defaults7bbtrace13secondary_dmcEv, __ZN8defaults7bbtrace13stall_retriesEv, 
+                       __ZN8defaults7bbtrace14low_water_markEv, __ZN8defaults7bbtrace14stall_recoveryEv, 
+                       __ZN8defaults7bbtrace15high_water_markEv, __ZN8defaults7bbtrace15stall_detectionEv, 
+                       __ZN8defaults7bbtrace17keep_scratch_logsEv, __ZN8defaults7bbtrace20buffering_on_ap_wakeEv, 
+                       __ZN8defaults7bbtrace20enabled_during_sleepEv, __ZN8defaults7bbtrace21max_memory_file_countEv, 
+                       __ZN8defaults7bbtrace23carrier_logging_allowedEv, __ZN8defaults7bbtrace3getERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_, 
                        __ZN8defaults7bbtrace4modeEv, __ZN8defaults7bbtrace7enabledEv, 
                        __ZN8defaults7bbtrace7historyEv, __ZN8defaults7bbtrace9extra_dmcEv, 
                        __ZN8defaults7bbtrace9high_tputEv, __ZN8defaults7bbtrace9sleep_dmcEv, 
@@ -1143,16 +1147,17 @@ exports:
                        __ZNK11PowerBudget9to_stringEv, __ZNK11RadioModule17getShutdownStagesEv, 
                        __ZNK11RadioModule7getNameEv, __ZNK11StatsModule17getShutdownStagesEv, 
                        __ZNK11StatsModule7getNameEv, __ZNK12Capabilities14isCarrierBuildEv, 
-                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isInternalBuildEv, 
-                       __ZNK12Capabilities18getDataFlowControlEv, __ZNK12Capabilities19getCoredumpAttemptsEv, 
+                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isFurySupportedEv, 
+                       __ZNK12Capabilities15isInternalBuildEv, __ZNK12Capabilities18getDataFlowControlEv, 
+                       __ZNK12Capabilities19getCoredumpAttemptsEv, __ZNK12Capabilities20isCoexEur5GSupportedEv, 
                        __ZNK12Capabilities20isETSBypassSupportedEv, __ZNK12Capabilities21isRFSelfTestSupportedEv, 
                        __ZNK12Capabilities22getDataPowerSaveConfigEv, __ZNK12Capabilities23isRFFEScanDataSupportedEv, 
-                       __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, __ZNK12Capabilities25getDataAggregationMaxSizeEv, 
-                       __ZNK12Capabilities26getDataAggregationProtocolEv, __ZNK12Capabilities26isAccessoryModuleSupportedEv, 
-                       __ZNK12Capabilities26isCellularLoggingSupportedEv, __ZNK12Capabilities27isCoexGPSReportingSupportedEv, 
-                       __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, 
-                       __ZNK12QMIXpcServer7getNameEv, __ZNK12TraceManager17getShutdownStagesEv, 
-                       __ZNK12TraceManager22submitTraceMetric_syncENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES6_, 
+                       __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, __ZNK12Capabilities24isWakeReasonDebugEnabledEv, 
+                       __ZNK12Capabilities25getDataAggregationMaxSizeEv, __ZNK12Capabilities26getDataAggregationProtocolEv, 
+                       __ZNK12Capabilities26isAccessoryModuleSupportedEv, __ZNK12Capabilities26isCellularLoggingSupportedEv, 
+                       __ZNK12Capabilities27isCoexGPSReportingSupportedEv, __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, 
+                       __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, __ZNK12QMIXpcServer7getNameEv, 
+                       __ZNK12TraceManager17getShutdownStagesEv, __ZNK12TraceManager22submitTraceMetric_syncENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES6_, 
                        __ZNK12TraceManager7getNameEv, __ZNK13AntennaModule17getShutdownStagesEv, 
                        __ZNK13AntennaModule7getNameEv, __ZNK13DriverFactory17getShutdownStagesEv, 
                        __ZNK13DriverFactory7getNameEv, __ZNK14BootController7getNameEv, 

@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           7B1005F9-6D80-337F-9F25-3EEC37FBF095
   - target:          arm64-ios
-    value:           486B1137-D98A-3A9F-91F3-86BD7F2F425D
+    value:           114D47E6-F774-3826-8A38-FC9ADA41DF8C
   - target:          arm64e-ios
-    value:           D9BF07A0-BAF2-344C-B166-A361C3B60F3F
+    value:           CC354C68-5B5A-361A-B18F-2AFCBE7103A3
 install-name:    '/System/Library/PrivateFrameworks/ColorSync.framework/ColorSync'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -38,23 +38,24 @@ exports:
                        _ColorSyncProfileCreateMutableCopy, _ColorSyncProfileCreateSanitizedCopy, 
                        _ColorSyncProfileCreateWithName, _ColorSyncProfileCreateWithURL, 
                        _ColorSyncProfileGetData, _ColorSyncProfileGetMD5, _ColorSyncProfileGetTypeID, 
-                       _ColorSyncProfileGetURL, _ColorSyncProfileIsWideGamut, _ColorSyncProfileProducesMatrixTransform, 
-                       _ColorSyncProfileRemoveTag, _ColorSyncProfileSetDescriptionTag, 
-                       _ColorSyncProfileSetHeader, _ColorSyncProfileSetLocalizedStringDictionary, 
-                       _ColorSyncProfileSetParametricTRCTag, _ColorSyncProfileSetTag, 
-                       _ColorSyncProfileUsesITU_R709OETF, _ColorSyncProfileVerify, 
-                       _ColorSyncProfileWriteToFile, _ColorSyncPureGammaOriginalTRC, 
+                       _ColorSyncProfileGetURL, _ColorSyncProfileIsMatrixBased, _ColorSyncProfileIsWideGamut, 
+                       _ColorSyncProfileProducesMatrixTransform, _ColorSyncProfileRemoveTag, 
+                       _ColorSyncProfileSetDescriptionTag, _ColorSyncProfileSetHeader, 
+                       _ColorSyncProfileSetLocalizedStringDictionary, _ColorSyncProfileSetParametricTRCTag, 
+                       _ColorSyncProfileSetTag, _ColorSyncProfileUsesITU_R709OETF, 
+                       _ColorSyncProfileVerify, _ColorSyncProfileWriteToFile, _ColorSyncPureGammaOriginalTRC, 
                        _ColorSyncSwapProfileHeader, _ColorSyncTRCGetFunction, _ColorSyncTRCGetGammaID, 
                        _ColorSyncTRCGetInputRange, _ColorSyncTRCGetOptions, _ColorSyncTRCGetOutputRange, 
                        _ColorSyncTRCGetProperties, _ColorSyncTRCGetTypeID, _ColorSyncTransformConvert, 
                        _ColorSyncTransformCopyProperty, _ColorSyncTransformCreate, 
                        _ColorSyncTransformCreateWithName, _ColorSyncTransformGetTypeID, 
                        _ColorSyncTransformIterate, _ColorSyncTransformSetProperty, 
-                       _ColorSyncVerifyAdobeRGBData, _ColorSyncVerifyDisplayP3Data, 
-                       _ColorSyncVerifyGenericGrayGamma2_2Data, _ColorSyncVerifyGenericLabData, 
-                       _ColorSyncVerifyICC_DataByName, _ColorSyncVerifySRGBData, 
-                       _kColorSyncACESCGLinearProfile, _kColorSyncAdobeRGB1998Profile, 
-                       _kColorSyncBadDescription, _kColorSyncBestQuality, _kColorSyncBlackPointCompensation, 
+                       _ColorSyncVerifyAdobeRGBData, _ColorSyncVerifyCoreVideo709Data, 
+                       _ColorSyncVerifyDisplayP3Data, _ColorSyncVerifyGenericGrayGamma2_2Data, 
+                       _ColorSyncVerifyGenericLabData, _ColorSyncVerifyICC_DataByName, 
+                       _ColorSyncVerifySRGBData, _kColorSyncACESCGLinearProfile, 
+                       _kColorSyncAdobeRGB1998Profile, _kColorSyncBadDescription, 
+                       _kColorSyncBestQuality, _kColorSyncBlackPointCompensation, 
                        _kColorSyncConversion1DLut, _kColorSyncConversion3DLut, _kColorSyncConversionBPC, 
                        _kColorSyncConversionChannelID, _kColorSyncConversionGridPoints, 
                        _kColorSyncConversionInpChan, _kColorSyncConversionMatrix, 
@@ -65,8 +66,8 @@ exports:
                        _kColorSyncConversionParamHLGOETF, _kColorSyncConversionParamPQEOTF, 
                        _kColorSyncConversionParamPQInvEOTF, _kColorSyncConvertQuality, 
                        _kColorSyncConvertThreadCount, _kColorSyncConvertUseExtendedRange, 
-                       _kColorSyncConvertUseVectorUnit, _kColorSyncDCIP3Profile, 
-                       _kColorSyncDisplayP3Profile, _kColorSyncDisplayP3_HLGProfile, 
+                       _kColorSyncConvertUseVectorUnit, _kColorSyncCoreVideo709Profile, 
+                       _kColorSyncDCIP3Profile, _kColorSyncDisplayP3Profile, _kColorSyncDisplayP3_HLGProfile, 
                        _kColorSyncDisplayP3_PQProfile, _kColorSyncDoNotValidateProfiles, 
                        _kColorSyncDraftQuality, _kColorSyncExtendedRange, _kColorSyncFixedPointRange, 
                        _kColorSyncGenericCMYKProfile, _kColorSyncGenericGrayGamma22Profile, 

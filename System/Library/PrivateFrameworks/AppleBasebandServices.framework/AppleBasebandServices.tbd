@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           F73802E2-EC98-3D4C-A6FF-EA7F79A577EF
   - target:          arm64-ios
-    value:           EC0DDCBC-EEC7-3C37-B1BE-EA9B02E35ED9
+    value:           6F5A2637-5D9C-3054-BB78-FA6333DC453C
   - target:          arm64e-ios
-    value:           8E7BD0A1-1E0D-390D-85C8-A6118913F858
+    value:           A9EE5887-4154-30AA-AD76-3D37AE110F72
 install-name:    '/System/Library/PrivateFrameworks/AppleBasebandServices.framework/AppleBasebandServices'
 current-version: 0
 exports:
@@ -97,8 +97,11 @@ exports:
                        __ZN3sys10UIObserver30handleDisplayLockedChange_syncEv, __ZN3sys10UIObserver40registerForScreenLockedNotification_syncEv, 
                        __ZN3sys10UIObserver42unregisterForScreenLockedNotification_syncEv, 
                        __ZN3sys10UIObserver7observeEb, __ZN3sys10UIObserverC1Ev, 
-                       __ZN3sys10UIObserverC2Ev, __ZN4diag6config15kADPLScratchDirE, 
-                       __ZN4diag6config15kQDSSScratchDirE, __ZN4diag6config20kDefaultWatchHistoryE, 
+                       __ZN3sys10UIObserverC2Ev, __ZN4diag6config12equal_nocaseERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
+                       __ZN4diag6config15kADPLScratchDirE, __ZN4diag6config15kQDSSScratchDirE, 
+                       __ZN4diag6config15toStringCompactENS0_8RecoveryE, __ZN4diag6config20kDefaultWatchHistoryE, 
+                       __ZN4diag6config25kStallDetectionRetriesKeyE, __ZN4diag6config29kDefaultStallDetectionRetriesE, 
+                       __ZN4diag6config30kDefaultStallDetectionRecoveryE, __ZN4diag6config6asEnumERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS0_8RecoveryE, 
                        __ZN4util2fs10fileExistsERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN4util2fs10removeFileERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN4util2fs11getBasePathERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
@@ -139,17 +142,18 @@ exports:
                        __ZN9TraceFileC1ERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEjjNS0_10shared_ptrI10MallocZoneEE, 
                        __ZN9TraceFileC2ERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEjjNS0_10shared_ptrI10MallocZoneEE, 
                        __ZN9TraceFileD1Ev, __ZN9TraceFileD2Ev, __ZNK12Capabilities14isCarrierBuildEv, 
-                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isInternalBuildEv, 
-                       __ZNK12Capabilities18getDataFlowControlEv, __ZNK12Capabilities19getCoredumpAttemptsEv, 
+                       __ZNK12Capabilities15isCPMSSupportedEv, __ZNK12Capabilities15isFurySupportedEv, 
+                       __ZNK12Capabilities15isInternalBuildEv, __ZNK12Capabilities18getDataFlowControlEv, 
+                       __ZNK12Capabilities19getCoredumpAttemptsEv, __ZNK12Capabilities20isCoexEur5GSupportedEv, 
                        __ZNK12Capabilities20isETSBypassSupportedEv, __ZNK12Capabilities21isRFSelfTestSupportedEv, 
                        __ZNK12Capabilities22getDataPowerSaveConfigEv, __ZNK12Capabilities23isRFFEScanDataSupportedEv, 
-                       __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, __ZNK12Capabilities25getDataAggregationMaxSizeEv, 
-                       __ZNK12Capabilities26getDataAggregationProtocolEv, __ZNK12Capabilities26isAccessoryModuleSupportedEv, 
-                       __ZNK12Capabilities26isCellularLoggingSupportedEv, __ZNK12Capabilities27isCoexGPSReportingSupportedEv, 
-                       __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, 
-                       __ZNK19TraceFileCollection19getNewestFileNumberEv, __ZNK9Timestamp3getER7timevalNS_10TimeDomainE, 
-                       __ZNK9Timestamp8asStringENS_10TimeDomainENS_6FormatE, __ZNK9TraceFile16handleWriteErrorEv, 
-                       __ZNK9TraceFile17writeToCompletionEiPKhj ]
+                       __ZNK12Capabilities24getQMIMaxPacketSizeBytesEv, __ZNK12Capabilities24isWakeReasonDebugEnabledEv, 
+                       __ZNK12Capabilities25getDataAggregationMaxSizeEv, __ZNK12Capabilities26getDataAggregationProtocolEv, 
+                       __ZNK12Capabilities26isAccessoryModuleSupportedEv, __ZNK12Capabilities26isCellularLoggingSupportedEv, 
+                       __ZNK12Capabilities27isCoexGPSReportingSupportedEv, __ZNK12Capabilities30getDataAggregationMaxDatagramsEv, 
+                       __ZNK12Capabilities30isTraceBackgroundModeSupportedEv, __ZNK19TraceFileCollection19getNewestFileNumberEv, 
+                       __ZNK9Timestamp3getER7timevalNS_10TimeDomainE, __ZNK9Timestamp8asStringENS_10TimeDomainENS_6FormatE, 
+                       __ZNK9TraceFile16handleWriteErrorEv, __ZNK9TraceFile17writeToCompletionEiPKhj ]
     weak-symbols:    [ __ZGVN3ctu9SingletonI13ABMPropertiesS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 
                        __ZGVN3ctu9SingletonIN3sys10UIObserverES2_NS_23PthreadMutexGuardPolicyIS2_EEE9sInstanceE, 
                        __ZN3ctu9SingletonI13ABMPropertiesS1_NS_23PthreadMutexGuardPolicyIS1_EEE9sInstanceE, 

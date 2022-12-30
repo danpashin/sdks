@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           E65EC8E8-F41C-3712-A27E-9226E5F72CB9
   - target:          arm64-ios
-    value:           D66A3B74-E6D6-3CE1-B643-0C10D5905323
+    value:           96CD5485-8888-3A8B-A995-D606C86D0A3E
   - target:          arm64e-ios
-    value:           3D4AA9E6-7F3B-3563-BD89-42DEDA0AB888
+    value:           F6A2671D-E17B-3426-9A0C-02E4D7668867
 install-name:    '/System/Library/Frameworks/PassKit.framework/PassKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -40,9 +40,9 @@ uuids:
   - target:          armv7s-ios
     value:           BD3C0638-BD27-3F9E-A223-4F83B702DC58
   - target:          arm64-ios
-    value:           4365BC44-FF75-3E38-B281-4A7D7E33B9C4
+    value:           24FC6A75-D966-3927-942B-30CCA0C98851
   - target:          arm64e-ios
-    value:           38EB1FCF-70CD-3182-83FE-C9DA4E18DFAC
+    value:           BB187731-DED9-3CE4-837E-B15B4156A92E
 install-name:    '/System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -2191,9 +2191,9 @@ uuids:
   - target:          armv7s-ios
     value:           9326B878-864C-3718-B5F6-FF649D8E93F8
   - target:          arm64-ios
-    value:           5FA5A523-7AD2-32AF-AB52-2D292CECC93E
+    value:           3F43CF3C-0132-335E-B5C6-E1EBD101E958
   - target:          arm64e-ios
-    value:           9E985056-764D-3965-99B9-0AC52A84F649
+    value:           73DF37CC-9865-3B80-8364-97CB238C4885
 install-name:    '/System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -2344,8 +2344,9 @@ exports:
                        _PKTransactionGroupThumbnailPresenterIdentifier, _PKTransactionHistoryMerchantHeaderCellIconCornerRadius, 
                        _PKTransactionHistoryMerchantHeaderCellIconSize, _PKTransactionHistoryTransactionGroupHeaderCellImageSize, 
                        _PKUIApplePayLogo, _PKUIBeginTrackingPresentation, _PKUIChevronImage, 
-                       _PKUIEndTrackingPresentation, _PKUIFeatureNotImplementedAlertViewController, 
-                       _PKUIGetMinScreenType, _PKUIGetMinScreenWidthType, _PKUIIconDataForApplicationProxy, 
+                       _PKUIDynamicImage, _PKUIDynamicImageNamed, _PKUIEndTrackingPresentation, 
+                       _PKUIFeatureNotImplementedAlertViewController, _PKUIGetMinScreenType, 
+                       _PKUIGetMinScreenWidthType, _PKUIIconDataForApplicationProxy, 
                        _PKUIIconForApplicationProxy, _PKUIImageFromPDF, _PKUIImageNamed, 
                        _PKUIInfoButtonImage, _PKUIInfoButtonImageWithDefaultConfiguration, 
                        _PKUIIsTrackingPresentation, _PKUIPearlHeroPhoneImage, _PKUIPeerPaymentTopUpIconImage, 
@@ -2449,17 +2450,18 @@ exports:
                        PKDynamicProvisioningPageViewController, PKEditGroupViewController, 
                        PKEditGroupsAction, PKEditGroupsViewController, PKEditPassesNavigationController, 
                        PKEditPassesTableViewCell, PKEditPendingCacheRequest, PKEditSinglePassViewController, 
-                       PKEditTableNoPassesView, PKEditTableViewController, PKEducationViewController, 
-                       PKEnterCurrencyAmountPassTableHeaderFooterView, PKEnterCurrencyAmountPassView, 
-                       PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKExplanationView, 
-                       PKExplanationViewController, PKExpressPassesViewController, 
-                       PKFamilyMemberRowModel, PKFamilyMemberTableViewCell, PKFamilyMemberTransactionsViewController, 
-                       PKFeatureExplanationBodyView, PKFeatureOnBoardingViewController, 
-                       PKFeatureTermsAndConditionsViewController, PKFindBankAccountInformationFooterView, 
-                       PKFixedAmountWrapperView, PKFooterHyperlinkView, PKFooterTransactionView, 
-                       PKFusedDoubleCellView, PKGreenTicketDetailViewController, 
-                       PKHeroCardExplainationHeaderView, PKIdentityVerificationExplanationViewController, 
-                       PKIdleTimerAssertion, PKImageViewCell, PKInstallmentPlanDetailLineItem, 
+                       PKEditTableNoPassesView, PKEditTableViewController, PKEducationPhone, 
+                       PKEducationViewController, PKEnterCurrencyAmountPassTableHeaderFooterView, 
+                       PKEnterCurrencyAmountPassView, PKEnterCurrencyAmountView, 
+                       PKEnterValueNewBalanceView, PKExplanationView, PKExplanationViewController, 
+                       PKExpressPassesViewController, PKFamilyMemberRowModel, PKFamilyMemberTableViewCell, 
+                       PKFamilyMemberTransactionsViewController, PKFeatureExplanationBodyView, 
+                       PKFeatureOnBoardingViewController, PKFeatureTermsAndConditionsViewController, 
+                       PKFindBankAccountInformationFooterView, PKFixedAmountWrapperView, 
+                       PKFooterHyperlinkView, PKFooterTransactionView, PKFusedDoubleCellView, 
+                       PKGreenTicketDetailViewController, PKHeroCardExplainationHeaderView, 
+                       PKIdentityVerificationExplanationViewController, PKIdleTimerAssertion, 
+                       PKImageSequenceView, PKImageViewCell, PKInstallmentPlanDetailLineItem, 
                        PKInstallmentPlanDetailsViewController, PKInstallmentPlanProgressCollectionViewCell, 
                        PKInstallmentPlansViewController, PKIssuerProvisioningExtensionAuthorizationPlaceholderViewController, 
                        PKIssuerProvisioningExtensionAuthorizationRemoteViewController, 
@@ -2585,8 +2587,9 @@ exports:
                        PKPerformActionEnterValueView, PKPerformActionLoadingView, 
                        PKPerformActionPassView, PKPerformActionSelectItemCell, PKPerformActionSelectItemExpiresHeader, 
                        PKPerformActionSelectItemView, PKPerformActionViewController, 
-                       PKPhoneHeroImageView, PKPhysicalCardActionController, PKPhysicalCardActivationAnimationView, 
-                       PKPhysicalCardArtworkView, PKPhysicalCardController, PKPhysicalCardManualActivationViewController, 
+                       PKPhoneHeroImageView, PKPhoneHeroView, PKPhysicalCardActionController, 
+                       PKPhysicalCardActivationAnimationView, PKPhysicalCardArtworkView, 
+                       PKPhysicalCardController, PKPhysicalCardManualActivationViewController, 
                        PKPhysicalCardReaderModeActivationViewController, PKPhysicalCardSupportViewController, 
                        PKPickerItem, PKPickerSection, PKPinCodeField, PKPortraitNavigationController, 
                        PKPresentationControllerForOpaqueDestination, PKPresentationControllerForOpaqueViewControllerDestination, 
