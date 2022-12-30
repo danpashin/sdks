@@ -208,7 +208,7 @@ MIDICI1_0_AVAILABILITY
                  associated MIDI source that responds to capability inquiries.
 */
 MIDICI1_1_AVAILABILITY
-@interface MIDICIDiscoveredNode : NSObject
+@interface MIDICIDiscoveredNode : NSObject <NSSecureCoding>
 @property (nonatomic, readonly) MIDIEntityRef 		destination;
 @property (nonatomic, readonly) MIDICIDeviceInfo *	deviceInfo;
 @property (nonatomic, readonly) BOOL 				supportsProfiles;

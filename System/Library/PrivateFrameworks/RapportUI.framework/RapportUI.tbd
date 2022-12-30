@@ -1,22 +1,16 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           ADF183E2-5ACD-3AF9-8B68-DAD694C92F73
-  - target:          arm64e-ios
-    value:           27A2AE81-8423-3699-979D-1A4E09554887
-install-name:    '/System/Library/PrivateFrameworks/RapportUI.framework/RapportUI'
-current-version: 0
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RapportUI.framework/RapportUI
+current-version:       0
 compatibility-version: 0
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _RPImageForDeviceModel, _RPUILocalizedString, _RPUILocalizedStringF, 
-                       _RPUILocalizedStringV ]
-    objc-classes:    [ RPPINEntryView, RPPairingManagerUIController, RPPairingPromptViewController, 
-                       RPPairingShowViewController, RPPairingUIController ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _RPImageForDeviceModel, _RPUILocalizedString,
+                            _RPUILocalizedStringF, _RPUILocalizedStringV ]
+    objc-classes:         [ RPPINEntryView, RPPairingManagerUIController,
+                            RPPairingPromptViewController,
+                            RPPairingShowViewController, RPPairingUIController ]
 ...

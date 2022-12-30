@@ -12,7 +12,7 @@
 #import <Metal/MTLFunctionHandle.h>
 
 MTL_EXPORT API_AVAILABLE(macos(11.0), ios(14.0))
-@interface MTLVisibleFunctionTableDescriptor : NSObject
+@interface MTLVisibleFunctionTableDescriptor : NSObject <NSCopying>
 
 /*!
  @method visibleFunctionTableDescriptor

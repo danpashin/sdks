@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           3EEEBB41-90B9-3A0D-A55A-48EB720818C6
   - target:          arm64-ios
-    value:           57E18D0C-7292-3C40-ACBE-8FA51522969C
+    value:           9B27BC2B-CCBB-3ECE-BBC5-F3F3B7BF319F
   - target:          arm64e-ios
-    value:           E93AABED-DB4C-3D81-B961-691219F795A4
+    value:           577087FB-882C-301D-B948-CB011DCD9647
 install-name:    '/System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -92,9 +92,10 @@ exports:
                        _EAWiFiUnconfiguredAccessoryErrorUnexpectedCode, _EAWiFiUnconfiguredAccessoryErrorUserCanceledCode, 
                        _EAWiFiUnconfiguredAccessoryNotificationBrowserState, _GetEAAccesoryManager, 
                        _WACExtensionIdentifier, ___EAWiFiUnconfiguredAccessoryBrowserManager, 
-                       _kAirPortAssistantWACDeviceFriendlyNameKey, _kAirPortAssistantWACDeviceMACAddressKey, 
-                       _kAirPortAssistantWACDeviceManufacturerNameKey, _kAirPortAssistantWACDeviceModelNameKey, 
-                       _kAirPortAssistantWACDeviceSSIDKey, _kAirPortAssistantWACDeviceSupportsAirPlayKey, 
+                       _kAirPortAssistantWACDeviceFriendlyNameKey, _kAirPortAssistantWACDeviceIdentifier, 
+                       _kAirPortAssistantWACDeviceMACAddressKey, _kAirPortAssistantWACDeviceManufacturerNameKey, 
+                       _kAirPortAssistantWACDeviceModelNameKey, _kAirPortAssistantWACDeviceSSIDKey, 
+                       _kAirPortAssistantWACDeviceSupportsAirPlayKey, _kAirPortAssistantWACDeviceSupportsSecureWAC, 
                        _kAirPortAssistantWACDeviceSupportsSpruce, _kCFAccessoryDestinationSharingOptionsKey, 
                        _kCFAccessoryPortA2DPIn, _kCFAccessoryPortA2DPOut, _kCFAccessoryPortDisplayPort, 
                        _kCFAccessoryPortHFP, _kCFAccessoryPortLineIn, _kCFAccessoryPortLineOut, 
@@ -104,11 +105,12 @@ exports:
                        _kCFAccessoryPortPropertyIsVoiceSignalProcessingSupported, 
                        _kCFAccessoryPortPropertyNumSupportedSampleRates, _kCFAccessoryPortPropertySupportedSampleRatesInHz, 
                        _kCFAccessoryPortPropertyVolumeControlIsSupported, _kCFAccessoryPortPropertyVolumeScalar, 
-                       _kCFAccessoryPortUSBIn, _kCFAccessoryPortUSBOut, _kErrorBadState, 
-                       _kErrorNone, _kErrorUnexpected, _kErrorUserCanceled, _kExternalAccessoryBundleIdentifier, 
+                       _kCFAccessoryPortUSBIn, _kCFAccessoryPortUSBOut, _kEASecureWACNotificationMessage, 
+                       _kEASecureWACNotificationTitle, _kErrorBadState, _kErrorNone, 
+                       _kErrorUnexpected, _kErrorUserCanceled, _kExternalAccessoryBundleIdentifier, 
                        _kWACEntitlementKey, _kWACUIBitsBundleName ]
     objc-classes:    [ EAAccessory, EAAccessoryInternal, EAAccessoryManager, EABluetoothAccessoryPicker, 
-                       EAInputStream, EAOutputStream, EASession, EAWiFiUnconfiguredAccessory, 
+                       EAInputStream, EAOutputStream, EAPostAlert, EASession, EAWiFiUnconfiguredAccessory, 
                        EAWiFiUnconfiguredAccessoryBrowser, WACLogging ]
     objc-ivars:      [ EABluetoothAccessoryPicker._delegate, EABluetoothAccessoryPicker._picker, 
                        EAInputStream._accessory, EAInputStream._delegate, EAInputStream._hasNewBytesAvailable, 

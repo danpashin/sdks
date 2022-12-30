@@ -286,6 +286,15 @@ typedef NS_ENUM(NSInteger, HKCategoryValuePresence) {
 } API_AVAILABLE(ios(13.6), watchos(7.0));
 
 /*!
+@enum          HKCategoryValueHeadphoneAudioExposureEvent
+@abstract      Specifies the kind of headphone exposure event associated with the sample.
+@constant      HKCategoryValueHeadphoneAudioExposureEventSevenDayLimit     This constant defines headphone events associated with the user being exposed to significant audio levels throught a seven-day period.
+*/
+typedef NS_ENUM(NSInteger, HKCategoryValueHeadphoneAudioExposureEvent) {
+    HKCategoryValueHeadphoneAudioExposureEventSevenDayLimit = 1
+} API_AVAILABLE(ios(14.2), watchos(7.1));
+
+/*!
  @enum          HKActivityMoveMode
  @abstract      This enumerated type is used to represent the activity mode for the user's move ring.
  @constant      HKActivityMoveModeActiveEnergy     User's move ring is updated from Active Energy Burned

@@ -148,6 +148,10 @@
 #endif
 
 
+#if __DARWIN_C_LEVEL >= __DARWIN_C_FULL
+#define O_NOFOLLOW_ANY  0x20000000      /* no symlinks allowed in path */
+#endif
+
 
 #if __DARWIN_C_LEVEL >= 200809L
 /*

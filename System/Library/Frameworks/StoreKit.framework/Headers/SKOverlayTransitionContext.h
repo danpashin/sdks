@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 SK_EXTERN_CLASS
 SK_CLASS_FINAL
 NS_SWIFT_NAME(SKOverlay.TransitionContext)
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 @interface SKOverlayTransitionContext : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

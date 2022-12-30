@@ -3,7 +3,7 @@
  
      Contains:   Master include for vecLib framework
  
-     Version:    vecLib-760.11
+     Version:    vecLib-760.40
  
      Copyright:  Copyright (c) 2000-2020 by Apple Inc. All rights reserved.
  

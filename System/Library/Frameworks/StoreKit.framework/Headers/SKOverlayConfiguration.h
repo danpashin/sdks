@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, SKOverlayPosition) {
     SKOverlayPositionBottom = 0,
     SKOverlayPositionBottomRaised = 1,
-} API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED NS_SWIFT_NAME(SKOverlay.Position);
+} API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED NS_SWIFT_NAME(SKOverlay.Position);
 
 SK_EXTERN_CLASS
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 NS_SWIFT_NAME(SKOverlay.Configuration)
 @interface SKOverlayConfiguration : NSObject
 
@@ -28,7 +28,7 @@ NS_SWIFT_NAME(SKOverlay.Configuration)
 
 SK_EXTERN_CLASS
 SK_CLASS_FINAL
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 NS_SWIFT_NAME(SKOverlay.AppConfiguration)
 /// An overlay configuration that can be used to show any app from the App Store.
 @interface SKOverlayAppConfiguration : SKOverlayConfiguration
@@ -64,7 +64,7 @@ NS_SWIFT_NAME(SKOverlay.AppConfiguration)
 
 SK_EXTERN_CLASS
 SK_CLASS_FINAL
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 NS_SWIFT_NAME(SKOverlay.AppClipConfiguration)
 /// An overlay configuration that can be used to show an app clip's full app.
 @interface SKOverlayAppClipConfiguration : SKOverlayConfiguration

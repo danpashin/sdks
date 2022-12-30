@@ -398,7 +398,7 @@ struct so_np_extensions {
 #define AF_RESERVED_36  36              /* Reserved for internal usage */
 #define AF_IEEE80211    37              /* IEEE 802.11 protocol */
 #define AF_UTUN         38
-#define AF_VSOCK        40              /* vSockets			*/
+#define AF_VSOCK        40              /* VM Sockets */
 #define AF_MAX          41
 #endif  /* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
@@ -680,7 +680,7 @@ struct cmsgcred {
 #define SHUT_WR         1               /* shut down the writing side */
 #define SHUT_RDWR       2               /* shut down both sides */
 
-#if !defined(_POSIX_C_SOURCE)
+#if !defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE)
 /*
  * sendfile(2) header/trailer struct
  */
@@ -692,7 +692,7 @@ struct sf_hdtr {
 };
 
 
-#endif  /* !_POSIX_C_SOURCE */
+#endif  /* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
 
 __BEGIN_DECLS

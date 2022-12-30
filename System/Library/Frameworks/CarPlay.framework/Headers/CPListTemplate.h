@@ -31,7 +31,7 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /**
  The list template's delegate is informed of list selection events.
  */
-@property (nullable, nonatomic, weak) id<CPListTemplateDelegate> delegate API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem listItemHandler]", ios(12.0, 14.0));
+@property (nullable, nonatomic, weak) id<CPListTemplateDelegate> delegate API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem handler]", ios(12.0, 14.0));
 
 /**
  The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
@@ -115,8 +115,8 @@ API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
 
 @end
 
-API_AVAILABLE(ios(12.0)) API_UNAVAILABLE(macos, watchos, tvos)
-API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem listItemHandler]", ios(12.0, 14.0))
+API_UNAVAILABLE(macos, watchos, tvos)
+API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem handler]", ios(12.0, 14.0))
 @protocol CPListTemplateDelegate <NSObject>
 
 /**
@@ -131,7 +131,7 @@ API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem listItemHandler]", ios(12.0, 14.0)
  @param item The item selected by the user
  @param completionHandler A completion block you must call after you have updated your UI.
  */
-- (void)listTemplate:(CPListTemplate *)listTemplate didSelectListItem:(CPListItem *)item completionHandler:(void (^)(void))completionHandler;
+- (void)listTemplate:(CPListTemplate *)listTemplate didSelectListItem:(CPListItem *)item completionHandler:(void (^)(void))completionHandler API_DEPRECATED_WITH_REPLACEMENT("-[CPListItem handler]", ios(12.0, 14.0));
 
 @end
 

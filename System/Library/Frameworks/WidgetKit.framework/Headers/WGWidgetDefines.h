@@ -2,7 +2,6 @@
 //  WKDefines.h
 //  WidgetKit
 //
-//  Created by Izzy F on 7/17/20.
 //  Copyright © 2020 Apple, Inc. All rights reserved.
 //
 

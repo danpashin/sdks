@@ -111,7 +111,7 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
     @param      graphs       The list of training graphs to link
     @return     A boolean indicating success or failure
  */
-- (BOOL)linkWithGraphs:(NSArray<MLCTrainingGraph *> * _Nullable)graphs;
+- (BOOL)linkWithGraphs:(NSArray<MLCTrainingGraph *> *)graphs;
 
 /*! @abstract   Get the gradient tensor for an input tensor
     @param      input   The input tensor
@@ -142,6 +142,8 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
                       - MLCInstanceNormalizationLayer
                       - MLCGroupNormalizationLayer
                       - MLCLayerNormalizationLayer
+                      - MLCEmbeddingLayer
+                      - MLCMultiheadAttentionLayer
     @return     The gradient data.  Will return nil if the layer is marked as not trainable or if
                 training graph is not executed with separate calls to forward and gradient passes.
 */
@@ -158,10 +160,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 
 /*! @abstract   Execute the training graph (forward, gradient and optimizer update) with given source and label data
     @discussion Execute the training graph with given source and label data.  If an optimizer is specified, the optimizer update is applied.
-                For variable length sequences for LSTMs/RNNs use the key "sortedSequenceLengths" and pass in MLCTensorData of the
-                sortedSequenceLengths to be used for input tensor ( [MLCStrings sortedSequenceLengths] can be used for the key).
-                (See tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType
-                for discussion onsortedSequenceLengths)
                 If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
                 Otherwise, this method returns after the graph has been queued for execution. The completion handler is called after the graph
                 has finished execution.
@@ -273,6 +271,22 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
  */
 - (BOOL)setTrainingTensorParameters:(NSArray<MLCTensorParameter *> *)parameters
     NS_SWIFT_NAME(setTrainingTensorParameters(_:));
+
+/*! @abstract   Associates the given optimizer data and device data buffers with the tensor.
+                Returns true if the data is successfully associated with the tensor and copied to the device.
+    @discussion The caller must guarantee the lifetime of the underlying memory of \p data for the entirety of the tensor's
+                lifetime.  The \p deviceData buffers are allocated by MLCompute.  This method must be called
+                before executeOptimizerUpdateWithOptions or executeWithInputsData is called for the training graph.
+                We recommend using this method instead of using [MLCTensor bindOptimizerData] especially if the
+                optimizer update is being called multiple times for each batch.
+    @param      data                The optimizer data to be associated with the tensor
+    @param      deviceData  The optimizer device data to be associated with the tensor
+    @param      tensor           The tensor
+    @return     A Boolean value indicating whether the data is successfully associated with the tensor .
+*/
+- (BOOL)bindOptimizerData:(NSArray<MLCTensorData *> *)data
+               deviceData:(NSArray<MLCTensorOptimizerDeviceData *> * _Nullable)deviceData
+               withTensor:(MLCTensor *)tensor;
 
 @end
 

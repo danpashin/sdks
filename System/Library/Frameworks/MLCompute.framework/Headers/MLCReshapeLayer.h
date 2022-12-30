@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @class      MLCReshapeLayer
     @abstract   A reshape layer
  */
-MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(10.15), ios(14.0), tvos(14.0))
+MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 @interface MLCReshapeLayer : MLCLayer
 
 /*! @abstract   Create a reshape layer

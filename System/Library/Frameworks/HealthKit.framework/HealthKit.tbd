@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           9571F318-D5FE-30C0-9925-625921557F25
   - target:          arm64-ios
-    value:           B0F0CF30-9146-3D32-B672-727D32E54F92
+    value:           1B111CCE-99A5-3E2E-9E12-8BA66416AA57
   - target:          arm64e-ios
-    value:           4A542AD7-A645-3B81-AD9F-0D3189DA98C9
+    value:           8B4EA9BD-FE95-3150-98A2-E546BE970FA4
 install-name:    '/System/Library/Frameworks/HealthKit.framework/HealthKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -357,7 +357,7 @@ exports:
                        _HKECGOnboardingVersionOverrideKey, _HKECGWatchAppInstallIsAllowedDidChangeNotification, 
                        _HKElectrocardiogramAppBundleID, _HKElectrocardiogramFirstOnboardingCompletedKey, 
                        _HKElectrocardiogramIsAvailableForGeolocatedCountryCode, _HKElectrocardiogramOnboardingCountryCodeKey, 
-                       _HKElectrocardiogramOnboardingVersionCompletedDefaultKey, 
+                       _HKElectrocardiogramOnboardingHistoryKey, _HKElectrocardiogramOnboardingVersionCompletedDefaultKey, 
                        _HKElectrocardiogramSupportedCountries, _HKElectrocardiogramSupportedStatedForGeolocatedCountryCodeAndIOSVersion, 
                        _HKElectrocardiogramSupportedStatedForGeolocatedCountryCodeAndWatchOSVersion, 
                        _HKElectrocardiogramSymptomsStatusFromPrivateElectrocardiogramSymptoms, 
@@ -377,7 +377,7 @@ exports:
                        _HKFHIRResourceTypeProcedure, _HKFeatureAvailabilityReadEntitlement, 
                        _HKFeatureAvailabilityReadWriteEntitlement, _HKFeatureAvailabilityStoreClientInterface, 
                        _HKFeatureAvailabilityStoreServerInterface, _HKFeatureFlagBloodOxygenSaturationEnabled, 
-                       _HKFeatureFlagHeadphoneExposureNotificationsEnabled, _HKFeatureFlagSleepEnabled, 
+                       _HKFeatureFlagHeartRateNotificationsEnabledByDefault, _HKFeatureFlagSleepEnabled, 
                        _HKFeatureIdentifierOxygenSaturationRecording, _HKFeatureIdentifierSleepActions, 
                        _HKFeatureIdentifierSleepCoaching, _HKFeatureIdentifierSleepTracking, 
                        _HKFirstDayOfWeekForWeeklyGoalCalculations, _HKFitnessMachineConnectionClientInterface, 
@@ -513,7 +513,8 @@ exports:
                        _HKPredicateKeyPathWorkoutTotalDistance, _HKPredicateKeyPathWorkoutTotalEnergyBurned, 
                        _HKPredicateKeyPathWorkoutTotalFlightsClimbed, _HKPredicateKeyPathWorkoutTotalSwimmingStrokeCount, 
                        _HKPredicateKeyPathWorkoutType, _HKPreferredSourceEntitlement, 
-                       _HKPrivateHealthKitAccessEntitlement, _HKPrivateHealthKitAccessIdentifierCardioFitnessMedicationUse, 
+                       _HKPrivateActivitySummaryEntitlement, _HKPrivateHealthKitAccessEntitlement, 
+                       _HKPrivateHealthKitAccessIdentifierCardioFitnessMedicationUse, 
                        _HKPrivateHealthKitAccessIdentifierHeadphoneNotifications, 
                        _HKPrivateHealthKitAccessIdentifierHealthRecordsPrivate, _HKPrivateHealthKitAccessIdentifierMenstrualCyclesSPI, 
                        _HKPrivateHealthKitAccessIdentifierSleep, _HKPrivateHealthKitEntitlement, 
@@ -804,9 +805,10 @@ exports:
                        _kHKHeartRateKeyStationaryDiscordanceMinimumBPM, _kHKHeartRateNotificationsPreferencesDomain, 
                        _kHKHeartRhythmDefaultsDomain, _kHKInternalSettingsKeyCHRHideTTR, 
                        _kHKInternalSettingsKeyCHRHideUnknownRecords, _kHKInternalSettingsKeyCloudSyncEnabled, 
-                       _kHKInternalSettingsKeyEnableVideoPlayback, _kHKInternalSettingsKeyForceBuddy, 
-                       _kHKInternalSettingsKeyHealthCloudCHRStudyEnvironment, _kHKInternalSettingsKeyLastCloudSyncDateCheckEnabled, 
-                       _kHKInternalSettingsKeySpringboardVisibilityDefault, _kHKInternalSettingsKeySpringboardVisibilityNotification, 
+                       _kHKInternalSettingsKeyElectrocardiogramQuiesceWifi, _kHKInternalSettingsKeyEnableVideoPlayback, 
+                       _kHKInternalSettingsKeyForceBuddy, _kHKInternalSettingsKeyHealthCloudCHRStudyEnvironment, 
+                       _kHKInternalSettingsKeyLastCloudSyncDateCheckEnabled, _kHKInternalSettingsKeySpringboardVisibilityDefault, 
+                       _kHKInternalSettingsKeySpringboardVisibilityNotification, 
                        _kHKInternalSettingsKeyVideoPlaybackServerURL, _kHKInternalSettingsOverrideDeviceSupported, 
                        _kHKKeepAliveExpirationInterval, _kHKLatestAnalyzedSampleDateKey, 
                        _kHKLocalDeviceBundleIdentifier, _kHKMedicalIDDidChangeNotification, 
@@ -908,16 +910,17 @@ exports:
                        HKQuantitySeriesSampleEditor, HKQuantitySeriesSampleEditorTaskServerConfiguration, 
                        HKQuantitySeriesSampleQuery, HKQuantityType, HKQuery, HKQueryAnchor, 
                        HKQueryServerConfiguration, HKQuerySortConstraint, HKRatioValue, 
-                       HKReferenceRange, HKRegionAvailabilityMask, HKRegionAvailabilityMasks, 
-                       HKRemoteFeatureAvailabilityRuleSet, HKSample, HKSampleCountQuery, 
-                       HKSampleListDataProviderFilter, HKSampleQuery, HKSampleQueryDescription, 
-                       HKSampleType, HKSampleTypeChange, HKScalarUnit, HKSecondaryDevicePairingAgent, 
-                       HKSecondaryPairedDeviceConfiguration, HKSemanticDate, HKSeriesBuilder, 
-                       HKSeriesBuilderConfiguration, HKSeriesSample, HKSeriesType, 
-                       HKSleepAnalysis, HKSleepAnalysisUtilities, HKSleepDay, HKSleepPeriod, 
-                       HKSleepPeriodSegment, HKSleepQuery, HKSleepSchedule, HKSortedQueryAnchor, 
-                       HKSortedSampleArray, HKSource, HKSourceQuery, HKSourceRevision, 
-                       HKSourceStore, HKStateMachine, HKStateMachineState, HKStateMachineTransition, 
+                       HKReferenceRange, HKRegionAvailabilityComparator, HKRegionAvailabilityMask, 
+                       HKRegionAvailabilityMasks, HKRemoteFeatureAvailabilityRuleSet, 
+                       HKSample, HKSampleCountQuery, HKSampleListDataProviderFilter, 
+                       HKSampleQuery, HKSampleQueryDescription, HKSampleType, HKSampleTypeChange, 
+                       HKScalarUnit, HKSecondaryDevicePairingAgent, HKSecondaryPairedDeviceConfiguration, 
+                       HKSemanticDate, HKSeriesBuilder, HKSeriesBuilderConfiguration, 
+                       HKSeriesSample, HKSeriesType, HKSleepAnalysis, HKSleepAnalysisUtilities, 
+                       HKSleepDay, HKSleepPeriod, HKSleepPeriodSegment, HKSleepQuery, 
+                       HKSleepSchedule, HKSortedQueryAnchor, HKSortedSampleArray, 
+                       HKSource, HKSourceQuery, HKSourceRevision, HKSourceStore, 
+                       HKStateMachine, HKStateMachineState, HKStateMachineTransition, 
                        HKStaticSyncControl, HKStatistics, HKStatisticsCollection, 
                        HKStatisticsCollectionQuery, HKStatisticsQuery, HKSynchronousObserverSet, 
                        HKTableFormatter, HKTaskConfiguration, HKTaskServerProxyProvider, 

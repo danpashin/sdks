@@ -13,7 +13,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /*! @class      MLCDevice
-    @discussion A device that will be used to execute a neural network
+    @discussion A device that will be used to execute a neural network.
+                If a MLCdevice is created with multiple devices using the [devicesWithType:selectMultipleDvices], on configurations
+                where multiple GPUs are available such as on the Mac Pro, the framework may transparently schedule the execution
+                across multiple GPUs.  There are some requirements for a MLCDevice with multiple devices such as there can only be
+                one training and/or inference graph associated with this device.  If multiple graphs are used, they must be compiled using
+                MLCGraphCompilationOptionsLinkGraphs specified in compileOptions and the multiple graphs should be linked together
+                with linkWithGraphs.
  */
 MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 @interface MLCDevice : NSObject<NSCopying>
@@ -44,6 +50,14 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
     @return     A new device object
  */
 + (instancetype _Nullable)deviceWithType:(MLCDeviceType)type;
+
+/*! @abstract   Create a MLCDevice object that uses multiple devices if available
+    @param      type    A device type
+    @param      selectsMultipleComputeDevices    A boolean to indicate whether to select multiple compute devices
+    @return     A new device object
+ */
++ (instancetype _Nullable)deviceWithType:(MLCDeviceType)type
+           selectsMultipleComputeDevices:(BOOL)selectsMultipleComputeDevices;
 
 /*! @abstract   Create a MLCDevice object
     @discussion This method can be used by developers to select specific GPUs

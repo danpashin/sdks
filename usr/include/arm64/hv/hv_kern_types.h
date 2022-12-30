@@ -67,14 +67,3 @@ enum {
 };
 
 typedef uint64_t hv_memory_flags_t;
-
-/*!
- * @enum       hv_vm_space_t
- * @abstract   Type of a guest address space
- */
-enum {
-	HV_VM_SPACE_DEFAULT = 0ull, /* Default space which must be present for every VM */
-	HV_VM_SPACE_CURRENT = ~0Ull /* Active space on current vCPU */
-};
-
-typedef uint64_t hv_vm_space_t;

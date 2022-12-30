@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSArray<ObjectType>;
 @class NSString;
+@class VSAccountApplicationProvider;
 
 /// Specifies which information the app wants to obtain about the subscriber's account.
 /// You should only request the information you need to fulfill your contractual obligations.
@@ -64,6 +65,10 @@ API_AVAILABLE(ios(10.2), tvos(10.1));
 /// A value that an account provider application may set to pass an existing authentication session.
 /// For use by TV Provider applications only.
 @property (nonatomic, copy, nullable) NSString *accountProviderAuthenticationToken API_AVAILABLE(ios(13.0), tvos(13.0));
+
+/// Application-specific providers to be added to the list of account providers.
+@property (nonatomic, copy, nullable) NSArray<VSAccountApplicationProvider *> *applicationAccountProviders
+API_AVAILABLE(ios(14.2), tvos(14.2));
 
 @end
 

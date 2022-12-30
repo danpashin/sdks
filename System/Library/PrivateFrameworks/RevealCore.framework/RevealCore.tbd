@@ -1,18 +1,13 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           F53485C0-D41C-380E-AE3D-2F5891E7F5B1
-  - target:          arm64e-ios
-    value:           5428032A-2B89-319C-9B44-93913214B8BD
-install-name:    '/System/Library/PrivateFrameworks/RevealCore.framework/RevealCore'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RevealCore.framework/RevealCore
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
-    objc-classes:    [ RVDocumentContext, RVItem, RVSelection ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
+    objc-classes:         [ RVDocumentContext, RVItem, RVSelection ]
 ...

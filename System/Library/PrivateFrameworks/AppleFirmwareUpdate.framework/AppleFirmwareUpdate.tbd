@@ -1,19 +1,14 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           740C6E70-9E70-3C81-B45B-1C4E642DBA9B
-  - target:          arm64e-ios
-    value:           F0042BA8-3521-3BFC-800E-A9CE07185DF1
-install-name:    '/System/Library/PrivateFrameworks/AppleFirmwareUpdate.framework/AppleFirmwareUpdate'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleFirmwareUpdate.framework/AppleFirmwareUpdate
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _AppleFirmwareUpdateVersionNumber, _AppleFirmwareUpdateVersionString, 
-                       _errorString ]
-    objc-classes:    [ AppleFirmwareUpdateController ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AppleFirmwareUpdateVersionNumber,
+                            _AppleFirmwareUpdateVersionString, _errorString ]
+    objc-classes:         [ AppleFirmwareUpdateController ]
 ...

@@ -470,7 +470,7 @@ bool CTFontManagerIsSupportedFont(
 */
 CFRunLoopSourceRef _Nullable CTFontManagerCreateFontRequestRunLoopSource(
     CFIndex         sourceOrder,
-    CFArrayRef    (^createMatchesCallback)(CFDictionaryRef requestAttributes, pid_t requestingProcess)) CT_AVAILABLE(macos(10.6)) CT_UNAVAILABLE(ios, watchos, tvos);
+    CFArrayRef    (^createMatchesCallback)(CFDictionaryRef requestAttributes, pid_t requestingProcess)) CT_DEPRECATED("This functionality will be removed in a future release", macos(10.6, 11.0)) CT_UNAVAILABLE(ios, watchos, tvos);
 #endif // defined(__BLOCKS__)
 
 /*!

@@ -9,7 +9,6 @@
 #error "Please use <OSLog/OSLog.h> instead of directly using this file."
 #endif
 
-typedef NS_OPTIONS(NSUInteger, OSLogEnumeratorOptions);
 @class OSLogEnumerator;
 @class OSLogPosition;
 

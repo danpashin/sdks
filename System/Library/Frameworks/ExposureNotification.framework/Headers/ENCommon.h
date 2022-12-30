@@ -45,6 +45,10 @@ extern "C" {
 /// Indicates the platforms this API is available for version 2 of the API and exports the symbol via the framework.
 #define EN_API_AVAILABLE_EXPORT_V2	EN_API_AVAILABLE_V2 __attribute__( ( visibility( "default" ) ) )
 
+/// Converts value to string
+#define ENStringify( X )            # X
+#define ENStringifyExpansion( X )   ENStringify( X )
+
 //===========================================================================================================================
 // MARK: -
 // MARK: == Errors ==
@@ -140,7 +144,7 @@ typedef NS_ENUM( uint8_t, ENCalibrationConfidence )
 //===========================================================================================================================
 /*!	@brief	The value used when days since onset of symptoms is unspecified.
 */
-EN_API_AVAILABLE_V2
+API_DEPRECATED( "Server must provide keys with days_since_onset_of_symptoms set.", ios( 14.0, 14.2 ) )
 static const NSInteger ENDaysSinceOnsetOfSymptomsUnknown = NSIntegerMax;
 
 //===========================================================================================================================
@@ -268,7 +272,7 @@ EN_API_AVAILABLE_EXPORT
 @property (readwrite, assign, nonatomic) double otherDurationWeight EN_API_AVAILABLE_V2;
 
 /// Maps daysSinceOnsetOfSymptoms to infectiousness. Must be configured if using V2 scoring.
-/// Key is a daysSinceOnsetOfSymptoms: -14 to 14 and ENDaysSinceOnsetOfSymptomsUnknown. Value is an ENInfectiousness.
+/// Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
 /// Defaults to ENInfectiousnessNone for days not specified.
 /// If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
 @property (readwrite, copy, nonatomic, nullable) NSDictionary <NSNumber *, NSNumber *> *infectiousnessForDaysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;

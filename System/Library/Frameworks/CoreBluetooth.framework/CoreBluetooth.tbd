@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           99601387-DBED-3A3A-B1A8-6F69E2F2A805
   - target:          arm64-ios
-    value:           F0BBB4B4-03EA-3FFB-86A8-F94D33C922A8
+    value:           7B8D9C1C-0E66-3B8B-9872-23CA895FBD6D
   - target:          arm64e-ios
-    value:           95E96BC8-8893-34E1-A571-5C579DFEA4DF
+    value:           FA6AA38F-5C42-3E13-9FD0-326473F89A43
 install-name:    '/System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -131,13 +131,14 @@ exports:
                        _CBUUIDServiceChangedString, _CBUUIDSoftwareRevisionStringCharacteristicString, 
                        _CBUUIDStartStreamingCharacteristicString, _CBUUIDStopStreamingCharacteristicString, 
                        _CBUUIDSupportedCodecsCharacteristicString, _CBUUIDSystemIDCharacteristicString, 
-                       _CBXPCDecodeNSArrayOfNSData, _CBXPCEncodeNSArrayOfNSData, 
-                       _CBXPCGetNextClientID, _gCBDaemon ]
+                       _CBUUIDUARPDataControlPointCharacteristicString, _CBUUIDUnifiedAccessoryRestoreProtocolServiceString, 
+                       _CBXPCGetNextClientID, _gCBDaemonServer ]
     objc-classes:    [ BTDevicePicker, CBATTRequest, CBAttribute, CBCentral, CBCentralManager, 
                        CBCharacteristic, CBConnection, CBController, CBDescriptor, 
                        CBDevice, CBDiscovery, CBIdentity, CBL2CAPChannel, CBManager, 
                        CBMutableCharacteristic, CBMutableDescriptor, CBMutableService, 
                        CBPairingAgent, CBPeer, CBPeripheral, CBPeripheralManager, 
                        CBReadRequest, CBScalablePipe, CBScalablePipeManager, CBServer, 
-                       CBService, CBSpatialInteractionSession, CBUUID, CBWriteRequest ]
+                       CBService, CBSpatialInteractionSession, CBSpatialMeasurement, 
+                       CBUUID, CBWriteRequest ]
 ...

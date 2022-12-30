@@ -257,7 +257,7 @@ CG_EXTERN CGColorSpaceRef __nullable CGColorSpaceCreateLab(const CGFloat whitePo
 /* Create an ICC-based color space using the ICC profile raw data specified by
    `data' which can be either CFDataRef or CGDataProviderRef */
 
-CG_EXTERN CGColorSpaceRef CGColorSpaceCreateWithICCData(CFTypeRef cg_nullable data)
+CG_EXTERN CGColorSpaceRef __nullable CGColorSpaceCreateWithICCData(CFTypeRef cg_nullable data)
   CG_AVAILABLE_STARTING(10.12, 10.0);
 
 /* Create an ICC-based color space. `nComponents' specifies the number of

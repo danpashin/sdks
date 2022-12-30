@@ -370,6 +370,7 @@ struct stat64 __DARWIN_STRUCT_STAT64;
 #define EF_IS_SYNC_ROOT         0x00000004      /* file is a sync root for iCloud */
 #define EF_IS_PURGEABLE         0x00000008      /* file is purgeable */
 #define EF_IS_SPARSE            0x00000010      /* file has at least one sparse region */
+#define EF_IS_SYNTHETIC         0x00000020      /* a synthetic directory/symlink */
 #endif
 
 

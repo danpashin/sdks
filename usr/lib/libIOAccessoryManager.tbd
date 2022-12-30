@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           2B8F2681-171A-3563-997E-4653431007EF
   - target:          arm64-ios
-    value:           AA433E72-5346-3C98-9F98-24498CC7D857
+    value:           24BA7A45-46CC-3854-9160-483BA3E47CAE
   - target:          arm64e-ios
-    value:           41FAB626-D140-3CBF-9BF4-AEA3D6EA5B72
+    value:           75C51EF0-14CC-3001-B4EA-1709D3019E45
 install-name:    '/usr/lib/libIOAccessoryManager.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -43,6 +43,9 @@ exports:
                        _IOAccessoryManagerGetUSBCurrentLimit, _IOAccessoryManagerGetUSBCurrentLimitBase, 
                        _IOAccessoryManagerGetUSBCurrentLimitMaximum, _IOAccessoryManagerGetUSBCurrentLimitOffset, 
                        _IOAccessoryManagerGetUpstreamPrimaryPort, _IOAccessoryManagerGetUpstreamService, 
+                       _IOAccessoryManagerLDCMEnableMitigations, _IOAccessoryManagerLDCMEnableUserOverride, 
+                       _IOAccessoryManagerLDCMGetAvailablePins, _IOAccessoryManagerLDCMGetMeasurementStatus, 
+                       _IOAccessoryManagerLDCMSetLiquidDetected, _IOAccessoryManagerLDCMSetState, 
                        _IOAccessoryManagerOverrideDPDNBTConfig, _IOAccessoryManagerOverrideDPDNConfig, 
                        _IOAccessoryManagerOverrideDetect, _IOAccessoryManagerOverrideDetectClear, 
                        _IOAccessoryManagerOverrideDigitalID, _IOAccessoryManagerPowerDuringSleepIsSupported, 
@@ -52,11 +55,12 @@ exports:
                        _IOAccessoryManagerRevokeHighCurrentPower, _IOAccessoryManagerSelectEisPin, 
                        _IOAccessoryManagerSetAccessoryRequestedCurrent, _IOAccessoryManagerSetAccessoryUsedCurrent, 
                        _IOAccessoryManagerSetAttachStyle, _IOAccessoryManagerSetBatteryPackMode, 
-                       _IOAccessoryManagerSetGoldbondMode, _IOAccessoryManagerSetPowerDuringSleep, 
-                       _IOAccessoryManagerSetUSBCurrentLimitBase, _IOAccessoryManagerSetUSBCurrentLimitMaximum, 
-                       _IOAccessoryManagerSetUSBCurrentOffset, _IOAccessoryManagerSetUSBPowerIgnore, 
-                       _IOAccessoryManagerSetUSBPreventSourceDetection, _IOAccessoryManagerSetVoltageDetected, 
-                       _IOAccessoryOOBPairingInterfaceCopyDeviceDockType, _IOAccessoryOOBPairingInterfaceCopyDeviceFirmwareRevision, 
+                       _IOAccessoryManagerSetGoldbondMode, _IOAccessoryManagerSetLDCM, 
+                       _IOAccessoryManagerSetPowerDuringSleep, _IOAccessoryManagerSetUSBCurrentLimitBase, 
+                       _IOAccessoryManagerSetUSBCurrentLimitMaximum, _IOAccessoryManagerSetUSBCurrentOffset, 
+                       _IOAccessoryManagerSetUSBPowerIgnore, _IOAccessoryManagerSetUSBPreventSourceDetection, 
+                       _IOAccessoryManagerSetVoltageDetected, _IOAccessoryOOBPairingInterfaceCopyDeviceDockType, 
+                       _IOAccessoryOOBPairingInterfaceCopyDeviceFirmwareRevision, 
                        _IOAccessoryOOBPairingInterfaceCopyDeviceHardwareRevision, 
                        _IOAccessoryOOBPairingInterfaceCopyDeviceModelNumber, _IOAccessoryOOBPairingInterfaceCopyDeviceName, 
                        _IOAccessoryOOBPairingInterfaceCopyDeviceSerialNumber, _IOAccessoryOOBPairingInterfaceCopyDeviceVendorName, 

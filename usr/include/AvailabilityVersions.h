@@ -109,6 +109,7 @@
 #define __IPHONE_13_7    130700
 #define __IPHONE_14_0    140000
 #define __IPHONE_14_1    140100
+#define __IPHONE_14_2    140200
 /* __IPHONE_NA is not defined to a value but is used as a token by macros to indicate that the API is unavailable */
 
 #define __TVOS_9_0        90000
@@ -134,6 +135,7 @@
 #define __TVOS_13_4      130400
 #define __TVOS_14_0      140000
 #define __TVOS_14_1      140100
+#define __TVOS_14_2      140200
 
 #define __WATCHOS_1_0     10000
 #define __WATCHOS_2_0     20000

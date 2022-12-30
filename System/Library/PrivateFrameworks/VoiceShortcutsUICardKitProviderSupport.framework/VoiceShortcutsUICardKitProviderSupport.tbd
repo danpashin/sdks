@@ -1,20 +1,18 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           96856873-28F7-3407-A288-301E7FE9BA55
-  - target:          arm64e-ios
-    value:           2AA16BCC-7FB9-3F1C-9911-A2D87E2A7CE0
-install-name:    '/System/Library/PrivateFrameworks/VoiceShortcutsUICardKitProviderSupport.framework/VoiceShortcutsUICardKitProviderSupport'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/VoiceShortcutsUICardKitProviderSupport.framework/VoiceShortcutsUICardKitProviderSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _VoiceShortcutsUICardKitProviderSupportVersionNumber, _VoiceShortcutsUICardKitProviderSupportVersionString ]
-    objc-classes:    [ VSUIActionStatusView, VSUIAsyncLoadingCard, VSUICKPEntryPoint, 
-                       VSUIPerformActionCardProvider, VSUIPerformActionCardViewController, 
-                       VSUIProgressCardViewController, VSUIVoiceShortcutCard, _VSUIActionStatusErrorView ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _VoiceShortcutsUICardKitProviderSupportVersionNumber,
+                            _VoiceShortcutsUICardKitProviderSupportVersionString ]
+    objc-classes:         [ VSUIActionStatusView, VSUIAsyncLoadingCard,
+                            VSUICKPEntryPoint, VSUIPerformActionCardProvider,
+                            VSUIPerformActionCardViewController,
+                            VSUIProgressCardViewController,
+                            VSUIVoiceShortcutCard, _VSUIActionStatusErrorView ]
 ...

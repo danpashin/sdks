@@ -221,6 +221,8 @@
 
 #define __kpi_unavailable
 
+#define __kpi_deprecated_arm64_macos_unavailable
+
 /* Delete pseudo-keywords wherever they are not available or needed. */
 #ifndef __dead
 #define __dead

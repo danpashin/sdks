@@ -83,7 +83,7 @@ API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, tvos)
 /**
  A block that is called when the user selects one of the images in this image row item.
  
- The user may also select the cell itself - for that event, specify a @c listItemHandler.
+ The user may also select the cell itself - for that event, specify a @c handler.
  */
 @property (nullable, nonatomic, copy) void (^listImageRowHandler) (CPListImageRowItem *item,          // The image row item that the user selected.
                                                                    NSInteger index,                   // The index of the image in the image row item that the user selected.

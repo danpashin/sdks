@@ -20,6 +20,7 @@
 /// Standard view controller for sending friend requests to other players. Present modally from the top view controller.
 #if TARGET_OS_IPHONE
 NS_ASSUME_NONNULL_BEGIN
+
 NS_CLASS_DEPRECATED(10_8, 10_12, 4_2, 10_0) 
 @interface GKFriendRequestComposeViewController : UINavigationController
 @end
@@ -54,4 +55,5 @@ NS_DEPRECATED(10_8, 10_12, 4_2, 10_0)
 /// The compose view has finished
 - (void)friendRequestComposeViewControllerDidFinish:(GKFriendRequestComposeViewController *)viewController NS_DEPRECATED(10_8, 10_12, 4_2, 10_0) ;
 @end
+
 NS_ASSUME_NONNULL_END

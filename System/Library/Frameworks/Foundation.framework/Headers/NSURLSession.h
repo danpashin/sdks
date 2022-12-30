@@ -731,8 +731,10 @@ API_AVAILABLE(macos(10.9), ios(7.0), watchos(2.0), tvos(9.0))
  * Allows the app to be resumed or launched in the background when tasks in background sessions complete
  * or when auth is required. This only applies to configurations created with +backgroundSessionConfigurationWithIdentifier:
  * and the default value is YES.
+ *
+ * NOTE: macOS apps based on AppKit do not support background launch.
  */
-@property BOOL sessionSendsLaunchEvents API_AVAILABLE(ios(7.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+@property BOOL sessionSendsLaunchEvents API_AVAILABLE(macos(11.0), ios(7.0), watchos(2.0), tvos(9.0));
 
 /* The proxy dictionary, as described by <CFNetwork/CFHTTPStream.h> */
 @property (nullable, copy) NSDictionary *connectionProxyDictionary;
@@ -862,7 +864,7 @@ API_AVAILABLE(macos(10.9), ios(7.0), watchos(2.0), tvos(9.0))
  * completion handler, or to begin any internal updates that will
  * result in invoking the completion handler.
  */
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session API_AVAILABLE(ios(7.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos);
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session API_AVAILABLE(macos(11.0), ios(7.0), watchos(2.0), tvos(9.0));
 
 @end
 

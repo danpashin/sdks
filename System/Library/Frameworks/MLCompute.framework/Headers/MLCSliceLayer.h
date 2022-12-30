@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @abstract   Slice layer is used to slice a given source.
  *  @discussion Slicing should not decrease the tensor dimension.
  *              The start, end and stride vectors must have the same number of dimension as the source tensor.
- *              Only positive stride is supported. Slice on batch dimension is not supported.
+ *              Only positive stride is supported. 
  */
 MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 @interface MLCSliceLayer : MLCLayer

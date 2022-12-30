@@ -146,6 +146,13 @@ API_AVAILABLE(ios(9.0), macos(10.15), tvos(14.0)) API_UNAVAILABLE(watchos)
  */
 @property (nonatomic) BOOL requiresLinearPlayback API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0)) API_UNAVAILABLE(watchos);
 
+/*!
+     @property    canStartPictureInPictureAutomaticallyFromInline
+     @abstract    Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
+     @discussion  This property must only be set to YES for content intended to be the user's primary focus.
+ */
+@property (nonatomic) BOOL canStartPictureInPictureAutomaticallyFromInline API_AVAILABLE(ios(14.2)) API_UNAVAILABLE(watchos, tvos, macos);
+
 @end
 
 

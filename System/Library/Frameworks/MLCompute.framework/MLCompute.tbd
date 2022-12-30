@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           923911F1-2EC2-307E-9AE0-67328A9CFCA8
+    value:           13864808-285B-3E38-96B0-347FDAF26B37
   - target:          arm64e-ios
-    value:           08134904-B371-396F-8EFF-DF527493B742
+    value:           745F50D7-90AD-3DA2-B37F-62A7772758A7
 install-name:    '/System/Library/Frameworks/MLCompute.framework/MLCompute'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -50,7 +50,7 @@ exports:
                        _GPU_GetDataType, _GPU_GetTensorWidthAndHeight, _GPU_GetTensorWidthAndHeightStrides, 
                        _GPU_ScaleMPSImageBatchWithKernel, _GPU_SetFullyConnectedPaddingPolicy, 
                        _GPU_SetPaddingPolicyForLayer, _GPU_SetPoolingLayerPaddingPolicy, 
-                       _MLCActivationTypeDebugDescription, _MLCArithmeticOperationDebugDescription, 
+                       _GPU_isAppleFamily, _MLCActivationTypeDebugDescription, _MLCArithmeticOperationDebugDescription, 
                        _MLCConvolutionTypeDebugDescription, _MLCDeviceTypeANE, _MLCLSTMResultModeDebugDescription, 
                        _MLCLossTypeDebugDescription, _MLCPaddingPolicyDebugDescription, 
                        _MLCPaddingTypeDebugDescription, _MLCPoolingTypeDebugDescription, 
@@ -72,20 +72,21 @@ exports:
                        MLCCustomLayerTensor, MLCDataHelper, MLCDevice, MLCDeviceANE, 
                        MLCDeviceCPU, MLCDeviceGPU, MLCDeviceGPUHeapAllocator, MLCDeviceOps, 
                        MLCDeviceOptimizer, MLCDropoutLayer, MLCEmbeddingDescriptor, 
-                       MLCEmbeddingLayer, MLCErrors, MLCFullyConnectedLayer, MLCGPUDeviceOps, 
-                       MLCGPUHelper, MLCGramMatrixLayer, MLCGraph, MLCGroupNormalizationLayer, 
-                       MLCInferenceGraph, MLCInstanceNormalizationLayer, MLCLSTMDescriptor, 
-                       MLCLSTMLayer, MLCLayer, MLCLayerNormGPUDeviceOps, MLCLayerNormalizationLayer, 
-                       MLCLog, MLCLossDescriptor, MLCLossLayer, MLCMHACPUDeviceOps, 
-                       MLCMHAGPUDeviceOps, MLCMatMulDescriptor, MLCMatMulLayer, MLCMultiGPUDeviceOps, 
-                       MLCMultiheadAttentionDescriptor, MLCMultiheadAttentionLayer, 
-                       MLCOptimizer, MLCOptimizerDescriptor, MLCPaddingLayer, MLCPhiLayer, 
-                       MLCPlatformInfo, MLCPoolingDescriptor, MLCPoolingLayer, MLCRMSPropOptimizer, 
-                       MLCRNNCPUDeviceOps, MLCRNNGPUDeviceOps, MLCReductionLayer, 
-                       MLCReshapeLayer, MLCSGDOptimizer, MLCSliceCPUDeviceOps, MLCSliceLayer, 
-                       MLCSoftmaxLayer, MLCSplitLayer, MLCStrings, MLCTensor, MLCTensorData, 
-                       MLCTensorDescriptor, MLCTensorOptimizerDeviceData, MLCTensorParameter, 
-                       MLCTrainingGraph, MLCTransposeLayer, MLCUpsampleLayer, MLCYOLOLossDescriptor, 
+                       MLCEmbeddingGPUDeviceOps, MLCEmbeddingLayer, MLCErrors, MLCFullyConnectedLayer, 
+                       MLCGPUDeviceOps, MLCGPUHelper, MLCGramMatrixLayer, MLCGraph, 
+                       MLCGroupNormalizationLayer, MLCInferenceGraph, MLCInstanceNormalizationLayer, 
+                       MLCLSTMDescriptor, MLCLSTMLayer, MLCLayer, MLCLayerNormGPUDeviceOps, 
+                       MLCLayerNormalizationLayer, MLCLog, MLCLossDescriptor, MLCLossLayer, 
+                       MLCMHACPUDeviceOps, MLCMHAGPUDeviceOps, MLCMatMulDescriptor, 
+                       MLCMatMulLayer, MLCMultiGPUDeviceOps, MLCMultiheadAttentionDescriptor, 
+                       MLCMultiheadAttentionLayer, MLCOptimizer, MLCOptimizerDescriptor, 
+                       MLCPaddingLayer, MLCPhiLayer, MLCPlatformInfo, MLCPoolingDescriptor, 
+                       MLCPoolingLayer, MLCRMSPropOptimizer, MLCRNNCPUDeviceOps, 
+                       MLCRNNGPUDeviceOps, MLCReductionLayer, MLCReshapeLayer, MLCSGDOptimizer, 
+                       MLCSliceCPUDeviceOps, MLCSliceLayer, MLCSoftmaxLayer, MLCSplitLayer, 
+                       MLCStrings, MLCTensor, MLCTensorData, MLCTensorDescriptor, 
+                       MLCTensorOptimizerDeviceData, MLCTensorParameter, MLCTrainingGraph, 
+                       MLCTransposeLayer, MLCUpsampleLayer, MLCYOLOLossDescriptor, 
                        MLCYOLOLossLayer, _MLCANEArithmeticParameters, _MLCANEConcatParameters, 
                        _MLCANEConvolutionParameters, _MLCANEIOSurfaceObject, _MLCANEMatMulParameters, 
                        _MLCANEModelObject, _MLCANENeuronParameters, _MLCANENormalizationParameters, 
@@ -97,8 +98,8 @@ exports:
                        _MLCCPUSlice, _MLCCPUSoftmax, _MLCCPUSplit, _MLCGPUArithmetic, 
                        _MLCGPUBatchNormDataSource, _MLCGPUBatchNormalization, _MLCGPUCompare, 
                        _MLCGPUConvolution, _MLCGPUConvolutionTransposePadding, _MLCGPUDropout, 
-                       _MLCGPUFullyConnected, _MLCGPUGramMatrix, _MLCGPUGroupNormDataSource, 
-                       _MLCGPUGroupNormalization, _MLCGPUInstanceNormDataSource, 
+                       _MLCGPUEmbedding, _MLCGPUFullyConnected, _MLCGPUGramMatrix, 
+                       _MLCGPUGroupNormDataSource, _MLCGPUGroupNormalization, _MLCGPUInstanceNormDataSource, 
                        _MLCGPUInstanceNormalization, _MLCGPULSTM, _MLCGPULayer, _MLCGPULayerNormalization, 
                        _MLCGPUMHAttention, _MLCGPUMatMul, _MLCGPUNeuron, _MLCGPUPadding, 
                        _MLCGPUPooling, _MLCGPUReduction, _MLCGPUReshape, _MLCGPUSlice, 

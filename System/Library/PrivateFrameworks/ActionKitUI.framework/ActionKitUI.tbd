@@ -1,25 +1,23 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           029DFDC1-6ED0-3E38-B284-C6802F739741
-  - target:          arm64e-ios
-    value:           841E5A32-C293-37C1-8634-81B0435EA96A
-install-name:    '/System/Library/PrivateFrameworks/ActionKitUI.framework/ActionKitUI'
-swift-abi-version: 7
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ActionKitUI.framework/ActionKitUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ '_$s11ActionKitUI013WFShazamMediaA4ViewC5frameACSo6CGRectV_tcfC', 
-                       '_$s11ActionKitUI013WFShazamMediaA4ViewC5frameACSo6CGRectV_tcfc', 
-                       '_$s11ActionKitUI013WFShazamMediaA4ViewCACycfC', '_$s11ActionKitUI013WFShazamMediaA4ViewCACycfc', 
-                       '_$s11ActionKitUI013WFShazamMediaA4ViewCMa', '_$s11ActionKitUI013WFShazamMediaA4ViewCMn', 
-                       '_$s11ActionKitUI013WFShazamMediaA4ViewCMo', '_$s11ActionKitUI013WFShazamMediaA4ViewCN', 
-                       '_$s11ActionKitUI013WFShazamMediaA4ViewCfD' ]
-    objc-classes:    [ WFAccountLoginViewController, WFContentAttributionSetDebuggerViewController, 
-                       _TtC11ActionKitUI23WFShazamMediaActionView ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _$s11ActionKitUI013WFShazamMediaA4ViewC5frameACSo6CGRectV_tcfC,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewC5frameACSo6CGRectV_tcfc,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCACycfC,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCACycfc,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCMa,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCMn,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCMo,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCN,
+                            _$s11ActionKitUI013WFShazamMediaA4ViewCfD ]
+    objc-classes:         [ WFAccountLoginViewController,
+                            WFContentAttributionSetDebuggerViewController,
+                            _TtC11ActionKitUI23WFShazamMediaActionView ]
 ...

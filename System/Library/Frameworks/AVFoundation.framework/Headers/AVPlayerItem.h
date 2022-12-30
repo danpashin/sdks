@@ -529,7 +529,6 @@ AV_INIT_UNAVAILABLE
 */
 @property (nonatomic) BOOL appliesPerFrameHDRDisplayMetadata API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0)) API_UNAVAILABLE(watchos);  // default is YES
 
-
 @end
 
 
@@ -657,7 +656,7 @@ AV_INIT_UNAVAILABLE
  
 	On releases prior to macOS 10.15, iOS 13, tvOS 13 and watchOS 6, AVPlayer starts HLS playback with the first eligible variant in the master playlist.
 	On releases starting with macOS 10.15, iOS 13, tvOS 13 and watchOS 6, AVPlayer starts HLS playback by choosing an initial variant that optimizes the startup experience.
-	On releases starting with macOS 10.16, iOS 14, tvOS 14 and watchOS 7, applications may set this property to YES to request that AVPlayer use the previous behaviour of using the first eligible variant in the master playlist. This would be appropriate, for example, for applications which wish to control initial variant selection by ordering the variants in the master playlist.
+	On releases starting with macOS 11.0, iOS 14, tvOS 14 and watchOS 7, applications may set this property to YES to request that AVPlayer use the previous behaviour of using the first eligible variant in the master playlist. This would be appropriate, for example, for applications which wish to control initial variant selection by ordering the variants in the master playlist.
 	
 	Note that changing this property may impact stream startup performance and quality. In order to be effective this property must be set before initial variant selection occurs.
 	This property only applies to HTTP Live Streaming assets. The default value of this property is NO.

@@ -41,6 +41,9 @@ typedef NS_ENUM(int32_t, MLCDataType) {
     /*! The 64-bit integer data type.
      */
     MLCDataTypeInt64   = 5,
+    /*! The 32-bit integer data type.
+     */
+    MLCDataTypeInt32   = 7,
 
     // Must be last
     MLCDataTypeCount   NS_SWIFT_UNAVAILABLE(""), // holds the number of MLCDataTypes
@@ -81,9 +84,6 @@ typedef NS_ENUM(int32_t, MLCDeviceType) {
     MLCDeviceTypeGPU NS_SWIFT_NAME(gpu) = 1,
     /*! The any device type.  When selected, the framework will automatically use the appropriate devices to achieve the best
      *  performance.
-     *
-     *  @discussion On configurations where multiple GPUs are available such as on the Mac Pro, the framework will also transparently
-     *      schedule the execution across multiple GPUs.
      */
     MLCDeviceTypeAny = 2,
 

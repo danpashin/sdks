@@ -45,7 +45,7 @@ API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, tvos)
  When the system needs to present now playing on behalf of your app, it will present
  this shared instance.
  */
-@property (nonatomic, strong, class) CPNowPlayingTemplate *sharedTemplate;
+@property (nonatomic, strong, class, readonly) CPNowPlayingTemplate *sharedTemplate;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

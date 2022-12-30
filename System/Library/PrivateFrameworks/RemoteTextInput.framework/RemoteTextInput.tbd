@@ -1,25 +1,26 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           2A699D1F-87BB-3F7D-917D-F3C58C5A8520
-  - target:          arm64e-ios
-    value:           80F6E033-C000-35A1-BFCD-0162710E52D4
-install-name:    '/System/Library/PrivateFrameworks/RemoteTextInput.framework/RemoteTextInput'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RemoteTextInput.framework/RemoteTextInput
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _RTICanLogMessageAtLevel, _RTILogFacility, _RTIServiceAnonymousName, 
-                       _RTIServiceIOSMacName, _RTIServiceMediaRemoteName, _RTIServiceRapportName, 
-                       _RTIServiceSharingName, _RTIServiceSharingSafariName, _RTIServiceTVControlServicesName, 
-                       _RemoteTextInputVersionNumber, _RemoteTextInputVersionString, 
-                       __RTI_NSStringFromCGRect ]
-    objc-classes:    [ RTIDataPayload, RTIDocumentState, RTIDocumentTraits, RTIInputSystemClient, 
-                       RTIInputSystemClientSession, RTIInputSystemDataPayload, RTIInputSystemService, 
-                       RTIInputSystemServiceSession, RTIInputSystemSession, RTIInputSystemSourceSession, 
-                       RTIStyledIntermediateText, RTITextOperations, RTIUtilities ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _RTICanLogMessageAtLevel, _RTILogFacility,
+                            _RTIServiceAnonymousName, _RTIServiceIOSMacName,
+                            _RTIServiceMediaRemoteName, _RTIServiceRapportName,
+                            _RTIServiceSharingName, _RTIServiceSharingSafariName,
+                            _RTIServiceTVControlServicesName,
+                            _RemoteTextInputVersionNumber,
+                            _RemoteTextInputVersionString,
+                            __RTI_NSStringFromCGRect ]
+    objc-classes:         [ RTIDataPayload, RTIDocumentState, RTIDocumentTraits,
+                            RTIInputSystemClient, RTIInputSystemClientSession,
+                            RTIInputSystemDataPayload, RTIInputSystemService,
+                            RTIInputSystemServiceSession, RTIInputSystemSession,
+                            RTIInputSystemSourceSession,
+                            RTIStyledIntermediateText, RTITextOperations,
+                            RTIUtilities ]
 ...

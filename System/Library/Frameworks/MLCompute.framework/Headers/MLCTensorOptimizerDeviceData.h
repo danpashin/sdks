@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MLCTensorOptimizerDeviceData : NSObject<NSCopying>
 
 + (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init;
 
 @end
 

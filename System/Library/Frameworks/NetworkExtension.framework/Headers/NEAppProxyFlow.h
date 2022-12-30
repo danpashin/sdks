@@ -115,6 +115,13 @@ API_AVAILABLE(macos(10.11), ios(9.0)) API_UNAVAILABLE(tvos) __WATCHOS_PROHIBITED
  */
 @property NECOPYNULLABLE nw_interface_t networkInterface API_AVAILABLE(macos(10.15.4), ios(13.4)) API_UNAVAILABLE(tvos) __WATCHOS_PROHIBITED;
 
+/*!
+ * @property remoteHostname
+ * @discussion If the flow was created by passing a hostname to a "connect by name" API such as NSURLSession or Network.framework, this property is set to the
+ *     remote hostname.
+ */
+@property (readonly, nullable) NSString *remoteHostname API_AVAILABLE(macos(11.0), ios(14.2)) API_UNAVAILABLE(tvos, watchos) __WATCHOS_PROHIBITED;
+
 @end
 
 NS_ASSUME_NONNULL_END

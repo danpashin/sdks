@@ -158,6 +158,20 @@ int     posix_spawnattr_setsuidcredport_np(posix_spawnattr_t * __restrict, mach_
 
 int     posix_spawnattr_setnosmt_np(const posix_spawnattr_t * __restrict attr) __API_AVAILABLE(macos(11.0));
 
+/*
+ * Set CPU Security Mitigation on the spawned process
+ * This attribute affects all threads and is inherited on fork and exec
+ */
+int     posix_spawnattr_set_csm_np(const posix_spawnattr_t * __restrict attr, uint32_t flags) __API_AVAILABLE(macos(11.0));
+/*
+ * flags for CPU Security Mitigation attribute
+ * POSIX_SPAWN_NP_CSM_ALL should be used in most cases,
+ * the individual flags are provided only for performance evaluation etc
+ */
+#define POSIX_SPAWN_NP_CSM_ALL         0x0001
+#define POSIX_SPAWN_NP_CSM_NOSMT       0x0002
+#define POSIX_SPAWN_NP_CSM_TECS        0x0004
+
 int     posix_spawn_file_actions_addinherit_np(posix_spawn_file_actions_t *,
     int) __API_AVAILABLE(macos(10.7), ios(4.3)) __API_UNAVAILABLE(watchos, tvos);
 

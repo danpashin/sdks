@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           7001DFC7-93F3-3A6A-BCAE-BAC71FCDC69A
   - target:          arm64-ios
-    value:           85F13816-9909-37D4-BF7D-96DA51FF114B
+    value:           9C095D15-2995-3F9D-AF18-6A3A3D13A1F2
   - target:          arm64e-ios
-    value:           DE5DF9A9-B7C3-3653-84F4-BC5E23799E46
+    value:           5FBF5868-67C2-3779-BE81-02182FAFF4B0
 install-name:    '/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics'
-current-version: 1455
+current-version: 1463
 compatibility-version: 64
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -352,21 +352,21 @@ exports:
                        _CGDigesterCreateMD5, _CGDigesterGetDigest, _CGDigesterRelease, 
                        _CGDisplayList2Create, _CGDisplayList2CreateWithRect, _CGDisplayList2GetTypeID, 
                        _CGDisplayListContainsTransparentContent, _CGDisplayListContextCreate, 
-                       _CGDisplayListCreate, _CGDisplayListCreateWithRect, _CGDisplayListCreateWithURL, 
-                       _CGDisplayListDrawInContext, _CGDisplayListDrawInContextDelegate, 
-                       _CGDisplayListDumpToFile, _CGDisplayListExecute, _CGDisplayListGetBoundingBox, 
-                       _CGDisplayListGetTypeID, _CGDisplayListRelease, _CGDisplayListReset, 
-                       _CGDisplayListSerializeToURL, _CGDisplayListSetBoundingBox, 
-                       _CGFloatIsValid, _CGFontApplyFunction, _CGFontCacheCreate, 
-                       _CGFontCacheGetLocalCache, _CGFontCacheGetMaxSize, _CGFontCachePrint, 
-                       _CGFontCacheRelease, _CGFontCacheRemoveFont, _CGFontCacheReset, 
-                       _CGFontCacheRetain, _CGFontCacheSetMaxSize, _CGFontCacheSetShouldAutoExpire, 
-                       _CGFontCanCreatePostScriptSubset, _CGFontCopyCharacterSet, 
-                       _CGFontCopyFamilyName, _CGFontCopyFullName, _CGFontCopyGlyphNameForGlyph, 
-                       _CGFontCopyLocalizedName, _CGFontCopyName, _CGFontCopyPath, 
-                       _CGFontCopyPostScriptName, _CGFontCopyTableForTag, _CGFontCopyTableTags, 
-                       _CGFontCopyURL, _CGFontCopyVariationAxes, _CGFontCopyVariations, 
-                       _CGFontCreate, _CGFontCreateCopy, _CGFontCreateCopyWithVariations, 
+                       _CGDisplayListContextCreateImage, _CGDisplayListCreate, _CGDisplayListCreateWithRect, 
+                       _CGDisplayListCreateWithURL, _CGDisplayListDrawInContext, 
+                       _CGDisplayListDrawInContextDelegate, _CGDisplayListDumpToFile, 
+                       _CGDisplayListExecute, _CGDisplayListGetBoundingBox, _CGDisplayListGetTypeID, 
+                       _CGDisplayListRelease, _CGDisplayListReset, _CGDisplayListSerializeToURL, 
+                       _CGDisplayListSetBoundingBox, _CGFloatIsValid, _CGFontApplyFunction, 
+                       _CGFontCacheCreate, _CGFontCacheGetLocalCache, _CGFontCacheGetMaxSize, 
+                       _CGFontCachePrint, _CGFontCacheRelease, _CGFontCacheRemoveFont, 
+                       _CGFontCacheReset, _CGFontCacheRetain, _CGFontCacheSetMaxSize, 
+                       _CGFontCacheSetShouldAutoExpire, _CGFontCanCreatePostScriptSubset, 
+                       _CGFontCopyCharacterSet, _CGFontCopyFamilyName, _CGFontCopyFullName, 
+                       _CGFontCopyGlyphNameForGlyph, _CGFontCopyLocalizedName, _CGFontCopyName, 
+                       _CGFontCopyPath, _CGFontCopyPostScriptName, _CGFontCopyTableForTag, 
+                       _CGFontCopyTableTags, _CGFontCopyURL, _CGFontCopyVariationAxes, 
+                       _CGFontCopyVariations, _CGFontCreate, _CGFontCreateCopy, _CGFontCreateCopyWithVariations, 
                        _CGFontCreateFontSubset, _CGFontCreateFontsFromData, _CGFontCreateFontsWithPath, 
                        _CGFontCreateFontsWithURL, _CGFontCreateGlyphPath, _CGFontCreateMatchingFont, 
                        _CGFontCreatePostScriptEncoding, _CGFontCreatePostScriptSubset, 
@@ -755,8 +755,8 @@ exports:
                        _kCGAutoBitDepthMax, _kCGCFNumberPointerType, _kCGCFNumberSizeTType, 
                        _kCGColorBlack, _kCGColorClear, _kCGColorConversionBlackPointCompensation, 
                        _kCGColorConversionTRCSize, _kCGColorSpaceACESCGLinear, _kCGColorSpaceAdobeRGB1998, 
-                       _kCGColorSpaceDCIP3, _kCGColorSpaceDisplayP3, _kCGColorSpaceDisplayP3_HLG, 
-                       _kCGColorSpaceDisplayP3_PQ, _kCGColorSpaceDisplayP3_PQ_EOTF, 
+                       _kCGColorSpaceDCIP3, _kCGColorSpaceDisplayP3, _kCGColorSpaceDisplayP3_709OETF, 
+                       _kCGColorSpaceDisplayP3_HLG, _kCGColorSpaceDisplayP3_PQ, _kCGColorSpaceDisplayP3_PQ_EOTF, 
                        _kCGColorSpaceExtendedDisplayP3, _kCGColorSpaceExtendedGray, 
                        _kCGColorSpaceExtendedITUR_2020, _kCGColorSpaceExtendedLinearDisplayP3, 
                        _kCGColorSpaceExtendedLinearGray, _kCGColorSpaceExtendedLinearITUR_2020, 

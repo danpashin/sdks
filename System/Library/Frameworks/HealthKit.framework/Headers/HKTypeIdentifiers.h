@@ -142,6 +142,7 @@ HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierAudioExposureEv
     API_DEPRECATED_WITH_REPLACEMENT("HKCategoryTypeIdentifierEnvironmentalAudioExposureEvent", ios(13.0, 14.0), watchos(6.0, 7.0));
 HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierToothbrushingEvent API_AVAILABLE(ios(13.0), watchos(6.0));                 // HKCategoryValue
 HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierEnvironmentalAudioExposureEvent API_AVAILABLE(ios(14.0), watchos(7.0));    // HKCategoryValueEnvironmentalAudioExposureEvent
+HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierHeadphoneAudioExposureEvent API_AVAILABLE(ios(14.2), watchos(7.1));        // HKCategoryValueHeadphoneAudioExposureEvent
 HK_EXTERN HKCategoryTypeIdentifier const HKCategoryTypeIdentifierHandwashingEvent API_AVAILABLE(ios(14.0), watchos(7.0));                   // HKCategoryValue
 
 // Symptoms

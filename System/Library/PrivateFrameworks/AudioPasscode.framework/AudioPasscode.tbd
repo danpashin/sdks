@@ -1,20 +1,18 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           72046BAF-F22F-3995-BF48-0D9B4FBCBB19
-  - target:          arm64e-ios
-    value:           6C0D3F5B-CA97-3856-9B4C-74FF965805C3
-install-name:    '/System/Library/PrivateFrameworks/AudioPasscode.framework/AudioPasscode'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AudioPasscode.framework/AudioPasscode
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _AudioPasscodeVersionNumber, _AudioPasscodeVersionString ]
-    objc-classes:    [ APCCodecInfo, APCDecoderProcessor, APCEncoderProcessor, APCListener, 
-                       APCListenerResultData, APCPlayer, APCPlayerEmbedInfo, AUPasscodeCodecCapability, 
-                       AUPasscodeCodecCommandLineOption, AUPasscodeCodecConfiguration ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AudioPasscodeVersionNumber,
+                            _AudioPasscodeVersionString ]
+    objc-classes:         [ APCCodecInfo, APCDecoderProcessor, APCEncoderProcessor,
+                            APCListener, APCListenerResultData, APCPlayer,
+                            APCPlayerEmbedInfo, AUPasscodeCodecCapability,
+                            AUPasscodeCodecCommandLineOption,
+                            AUPasscodeCodecConfiguration ]
 ...

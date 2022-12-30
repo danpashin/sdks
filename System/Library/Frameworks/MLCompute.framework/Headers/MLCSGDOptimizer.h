@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! @class      MLCSGDOptimizer
     @discussion The MLCSGDOptimizer specifies a stochastic gradient descent optimizer.
  */
-MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(10.15), ios(14.0), tvos(14.0))
+MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 @interface  MLCSGDOptimizer : MLCOptimizer<NSCopying>
 
 /*! @property   momentumScale
@@ -34,18 +34,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(10.15), ios(14.0), tvos(14.0))
     @return     A new MLCSGDOptimizer object.
  */
 + (instancetype)optimizerWithDescriptor:(MLCOptimizerDescriptor *)optimizerDescriptor;
-
-/*! @abstract   Create an MLCSGDOptimizer object
-    @param      optimizerDescriptor    The optimizer descriptor object
-    @param      momentumScale                 The momentum scale
-    @param      usesNestrovMomentum      A boolean to enable / disable nesterov momentum
-    @return     A new MLCSGDOptimizer object.
- */
-+ (instancetype)optimizerWithDescriptor:(MLCOptimizerDescriptor *)optimizerDescriptor
-                          momentumScale:(float)momentumScale
-                    usesNestrovMomentum:(BOOL)usesNestrovMomentum
-    API_DEPRECATED("Please use +optimizerWithDescriptor:momentumScale:usesNesterovMomentum: instead",
-                   macos(10.16, 11.0), ios(14.0, 14.0), tvos(14.0, 14.0));
 
 /*! @abstract   Create an MLCSGDOptimizer object
     @param      optimizerDescriptor    The optimizer descriptor object

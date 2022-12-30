@@ -111,6 +111,8 @@ typedef NS_ERROR_ENUM(AVFoundationErrorDomain, AVError) {
 	AVErrorUnsupportedDeviceActiveFormat API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(tvos, watchos) = -11873,
 	AVErrorIncorrectlyConfigured API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), watchos(7.0)) = -11875,
 	AVErrorSegmentStartedWithNonSyncSample API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), watchos(7.0)) = -11876,
+	AVErrorRosettaNotInstalled API_AVAILABLE(macos(11.0), ios(14.0), tvos(14.0), watchos(7.0)) = -11877,
+
 };
 
 #else

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class SKOverlay, SKOverlayTransitionContext;
 
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 @protocol SKOverlayDelegate <NSObject>
 
 @optional
@@ -32,7 +32,7 @@ API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PRO
 
 SK_EXTERN_CLASS
 SK_CLASS_FINAL
-API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos, macCatalyst) __TVOS_PROHIBITED
+API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(macos, watchos) __TVOS_PROHIBITED
 @interface SKOverlay : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;

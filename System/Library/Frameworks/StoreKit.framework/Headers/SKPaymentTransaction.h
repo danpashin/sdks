@@ -44,7 +44,7 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SK
 @property(nonatomic, readonly, nullable) NSString *transactionIdentifier API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
 // Only valid if state is SKPaymentTransactionStatePurchased.
-@property(nonatomic, readonly, nullable) NSData *transactionReceipt API_DEPRECATED_WITH_REPLACEMENT("-[NSBundle appStoreReceiptURL]", ios(3.0, 7.0)) API_UNAVAILABLE(macos, macCatalyst, watchos);
+@property(nonatomic, readonly, nullable) NSData *transactionReceipt API_DEPRECATED_WITH_REPLACEMENT("-[NSBundle appStoreReceiptURL]", ios(3.0, 7.0), macCatalyst(13.0, 13.0)) API_UNAVAILABLE(macos, watchos);
 
 @property(nonatomic, readonly) SKPaymentTransactionState transactionState API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 

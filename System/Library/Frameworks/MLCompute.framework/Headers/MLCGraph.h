@@ -52,6 +52,7 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 /*! @abstract   Add a layer to the graph
     @param      layer        The layer
     @param      sources    A list of source tensors
+    @discussion For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
     @return     A result tensor
  */
 - (MLCTensor * _Nullable)nodeWithLayer:(MLCLayer *)layer
@@ -61,6 +62,7 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
     @param      layer                       The layer
     @param      sources                   A list of source tensors
     @param      disableUpdate     A flag to indicate if optimizer update should be disabled for this layer
+    @discussion For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
     @return     A result tensor
  */
 - (MLCTensor * _Nullable)nodeWithLayer:(MLCLayer *)layer
@@ -70,6 +72,7 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 /*! @abstract   Add a loss layer to the graph
     @param      layer                      The loss layer
     @param      lossLabels           The loss labels tensor
+    @discussion For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
     @return     A result tensor
  */
 - (MLCTensor * _Nullable)nodeWithLayer:(MLCLayer *)layer

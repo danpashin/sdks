@@ -2,6 +2,7 @@
 #define __OS_CLOCK__
 
 #include <os/base.h>
+#include <stdint.h>
 
 /*
  * @typedef os_clockid_t

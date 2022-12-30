@@ -45,6 +45,7 @@
 #import <NetworkExtension/NEProxySettings.h>
 #import <NetworkExtension/NETransparentProxyManager.h>
 #import <NetworkExtension/NETransparentProxyNetworkSettings.h>
+#import <NetworkExtension/NETransparentProxyProvider.h>
 #import <NetworkExtension/NETunnelProvider.h>
 #import <NetworkExtension/NETunnelProviderManager.h>
 #import <NetworkExtension/NETunnelProviderSession.h>

@@ -322,16 +322,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
  */
 @property (readonly, nonatomic) BOOL hasValidNumerics;
 
-/*! @abstract   Specify the host side optimizer buffers to use
-    @discussion These spcify the momentum, velocity vectors that will be used by the optimizer
-                The developer can specify these buffers.  If not, MLCompute will allocate them
-                This need to saved/restored by the developer in order to continue training from a checkpoint
-    @param optimizerData    The user specified buffers
-    @return     Returns YES if success, NO if there is a failure.
- */
-- (BOOL)optimizerData:(NSArray<MLCTensorData *> *)optimizerData
-    API_DEPRECATED("Please use -bindOptimizerData:deviceData: instead", macos(10.16, 11.0), ios(14.0, 14.0), tvos(14.0, 14.0));
-
 /*! @abstract   Synchronize the data in host memory.
     @discussion Synchronize the data in host memory i.e. tensor.data with latest contents in device memory
                 This should only be called once the graph that this tensor is used with has finished execution;

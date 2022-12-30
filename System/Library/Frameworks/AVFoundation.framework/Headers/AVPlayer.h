@@ -432,8 +432,6 @@ typedef NS_ENUM(NSInteger, AVPlayerActionAtItemEnd)
 	@discussion		Once the completion handler is called with YES, the player's rate can be set with minimal latency.
 					The completion handler will be called with NO if the preroll is interrupted by a time change or incompatible rate change, or if preroll is not possible for some other reason.
 					Call this method only when the rate is currently zero and only after the AVPlayer's status has become AVPlayerStatusReadyToPlay.
-
-					Note that advanced rate control is not currently supported for HTTP Live Streaming.
 	@param rate		The intended rate for subsequent playback.
 	@param completionHandler
 					The block that will be called when the preroll is either completed or is interrupted.

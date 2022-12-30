@@ -80,14 +80,11 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
     @param      graphs     The list of inference graphs to link
     @return     A boolean indicating success or failure
  */
-- (BOOL)linkWithGraphs:(NSArray<MLCInferenceGraph *> * _Nullable)graphs
+- (BOOL)linkWithGraphs:(NSArray<MLCInferenceGraph *> *)graphs
     NS_SWIFT_NAME(link(with:));
 
 /*! @abstract   Execute the inference graph with given input data
     @discussion Execute the inference graph given input data.
-                For variable length sequences for LSTMs/RNNs use the key "sortedSequenceLengths" and pass in MLCTensorData of the
-                sortedSequenceLengths to be used for input tensor. (See tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType
-                for discussion onsortedSequenceLengths). [MLCStrings sortedSequenceLengths] can be used for the key.
                 If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
                 Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
     @param      inputsData                       The data objects to use for inputs
@@ -104,9 +101,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 
 /*! @abstract   Execute the inference graph with given input data
     @discussion Execute the inference graph given input data.
-                For variable length sequences for LSTMs/RNNs use the key "sortedSequenceLengths" and pass in MLCTensorData of the
-                sortedSequenceLengths to be used for input tensor. (See tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType
-                for discussion onsortedSequenceLengths). [MLCStrings sortedSequenceLengths] can be used for the key.
                 If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
                 Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
     @param      inputsData                       The data objects to use for inputs
@@ -126,9 +120,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 
 /*! @abstract   Execute the inference graph with given input data
     @discussion Execute the inference graph given input data.
-                For variable length sequences for LSTMs/RNNs use the key "sortedSequenceLengths" and pass in MLCTensorData of the
-                sortedSequenceLengths to be used for input tensor. (See tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType
-                for discussion onsortedSequenceLengths). [MLCStrings sortedSequenceLengths] can be used for the key.
                 If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
                 Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
     @param      inputsData                       The data objects to use for inputs
@@ -150,9 +141,6 @@ MLCOMPUTE_CLASS_AVAILABLE_STARTING(macos(11.0), ios(14.0), tvos(14.0))
 
 /*! @abstract   Execute the inference graph with given input data
     @discussion Execute the inference graph given input data.
-                For variable length sequences for LSTMs/RNNs use the key "sortedSequenceLengths" and pass in MLCTensorData of the
-                sortedSequenceLengths to be used for input tensor. (See tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType
-                for discussion onsortedSequenceLengths). [MLCStrings sortedSequenceLengths] can be used for the key.
                 If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
                 Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
     @param      inputsData                       The data objects to use for inputs

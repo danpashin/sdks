@@ -2381,8 +2381,8 @@ MIDIRestart(void)											API_AVAILABLE(macos(10.1), ios(4.2), tvos(12.0));
 					in memory if it is part of a MIDIEventList.
      
      @param			pkt
-						A pointer to a MIDIPacket in a MIDIPacketList.
-     @result		The subsequent packet in the MIDIPacketList.
+						A pointer to a MIDIEventPacket in a MIDIEventList.
+     @result		The subsequent packet in the MIDIEventList.
 */
 CF_INLINE MIDIEventPacket *MIDIEventPacketNext(const MIDIEventPacket *pkt)
 {

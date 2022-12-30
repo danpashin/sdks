@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           C6FF1F1D-DCD4-3C9F-919D-EF5F2A78138C
   - target:          arm64-ios
-    value:           D4EED522-94AF-3A89-8423-AB9D14B534BB
+    value:           8BC27737-C402-3A13-B831-20EBA1154595
   - target:          arm64e-ios
-    value:           13A8F1D0-1631-34DA-B1CA-F334FE5EECCA
+    value:           05A84660-0CB7-3314-9E62-4D723FB3278B
 install-name:    '/System/Library/Frameworks/Photos.framework/Photos'
-current-version: 310.1.160
+current-version: 310.2.210
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _PHAdjustmentDataOpaqueFormatIdentifier, _PHAssertPredicateContainsNoManagedObjects, 
@@ -69,12 +69,13 @@ exports:
                        _PHAssetAnalysisCountProcessedKey, _PHAssetAnalysisCountTotalAllowedKey, 
                        _PHAssetAnalysisCountUnavailableKey, _PHAssetBundleExportSessionErrorDomain, 
                        _PHAssetCanPerformAdditionalProcessingOnAsset, _PHAssetCollectionReferenceType, 
-                       _PHAssetDateAndTimeZoneFromISO8601DateString, _PHAssetDeferredProcessingNeededDescription, 
-                       _PHAssetExportRequestAccessibilityDescriptionMetadataOperationForAssetWithOptions, 
+                       _PHAssetDateAndTimeZoneFromISO8601DateString, _PHAssetDeferredProcessingInvalidatesContentWhenCompleted, 
+                       _PHAssetDeferredProcessingNeededDescription, _PHAssetExportRequestAccessibilityDescriptionMetadataOperationForAssetWithOptions, 
                        _PHAssetExportRequestAdjustmentBaseFullSizePhotoURLKey, _PHAssetExportRequestAdjustmentBasePairedVideoURLKey, 
                        _PHAssetExportRequestAdjustmentBaseVideoURLKey, _PHAssetExportRequestAdjustmentDataFileURLKey, 
                        _PHAssetExportRequestAlternatePhotoURLKey, _PHAssetExportRequestAssetAvailabilityDescription, 
-                       _PHAssetExportRequestAssetBundleURLKey, _PHAssetExportRequestCaptionMetadataOperationForAssetWithOptions, 
+                       _PHAssetExportRequestAssetBundleURLKey, _PHAssetExportRequestCanCreateLivePhotoBundleForAssetWithOptions, 
+                       _PHAssetExportRequestCaptionMetadataOperationForAssetWithOptions, 
                        _PHAssetExportRequestCustomDateForAssetWithOptions, _PHAssetExportRequestError, 
                        _PHAssetExportRequestErrorDomain, _PHAssetExportRequestFullSizePhotoURLKey, 
                        _PHAssetExportRequestFullSizeVideoURLKey, _PHAssetExportRequestLivePhotoBundleURLKey, 
@@ -227,13 +228,13 @@ exports:
                        PHAssetResourceManager, PHAssetResourceQualityClass, PHAssetResourceRequestOptions, 
                        PHAssetSceneAnalysisProperties, PHAssetSceneprintProperties, 
                        PHAssetUserActivityProperties, PHBatchFetchedAssetPropertySet, 
-                       PHBatchFetchingArray, PHCPAnalyticsMediaPropertyProvider, 
-                       PHCachingImageManager, PHChange, PHChangeRequest, PHChangeRequestHelper, 
-                       PHChangeValidationController, PHCloudIdentifier, PHCloudSharedAlbum, 
-                       PHCollection, PHCollectionList, PHCollectionListAncestryContext, 
-                       PHCollectionListChangeRequest, PHCollectionListReference, 
-                       PHCollectionReference, PHCompositeMediaResult, PHConcurrentMapTable, 
-                       PHContentEditingInput, PHContentEditingInputRequestOptions, 
+                       PHBatchFetchingArray, PHCPAnalyticsCachedPropertyProvider, 
+                       PHCPAnalyticsMediaPropertyProvider, PHCachingImageManager, 
+                       PHChange, PHChangeRequest, PHChangeRequestHelper, PHChangeValidationController, 
+                       PHCloudIdentifier, PHCloudSharedAlbum, PHCollection, PHCollectionList, 
+                       PHCollectionListAncestryContext, PHCollectionListChangeRequest, 
+                       PHCollectionListReference, PHCollectionReference, PHCompositeMediaResult, 
+                       PHConcurrentMapTable, PHContentEditingInput, PHContentEditingInputRequestOptions, 
                        PHContentEditingInputResult, PHContentEditingOutput, PHContentEditingOutputRequestOptions, 
                        PHEntityKeyMap, PHFace, PHFaceChangeRequest, PHFaceClusteringProperties, 
                        PHFaceCrop, PHFaceCropChangeRequest, PHFaceGroup, PHFaceGroupChangeRequest, 

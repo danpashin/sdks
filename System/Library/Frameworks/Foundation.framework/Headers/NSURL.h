@@ -272,7 +272,7 @@ FOUNDATION_EXPORT NSURLResourceKey const NSURLFileAllocatedSizeKey           API
 FOUNDATION_EXPORT NSURLResourceKey const NSURLTotalFileSizeKey               API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0)); // Total displayable size of the file in bytes (this may include space used by metadata), or nil if not available. (Read-only, value type NSNumber)
 FOUNDATION_EXPORT NSURLResourceKey const NSURLTotalFileAllocatedSizeKey      API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0)); // Total allocated size of the file in bytes (this may include space used by metadata), or nil if not available. This can be less than the value returned by NSURLTotalFileSizeKey if the resource is compressed. (Read-only, value type NSNumber)
 FOUNDATION_EXPORT NSURLResourceKey const NSURLIsAliasFileKey                 API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0)); // true if the resource is a Finder alias file or a symlink, false otherwise ( Read-only, value type boolean NSNumber)
-FOUNDATION_EXPORT NSURLResourceKey const NSURLFileProtectionKey              API_AVAILABLE(ios(9.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos); // The protection level for this file
+FOUNDATION_EXPORT NSURLResourceKey const NSURLFileProtectionKey              API_AVAILABLE(macos(10.11), ios(9.0), watchos(2.0), tvos(9.0)); // The protection level for this file
 
 typedef NSString * NSURLFileProtectionType NS_STRING_ENUM;
 /* The protection level values returned for the NSURLFileProtectionKey

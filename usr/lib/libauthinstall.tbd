@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           CAF6BD2E-DE55-3F92-9A8B-A96F8FBF0F9E
   - target:          arm64-ios
-    value:           D1B97EA7-1DC7-3D54-9595-74FBCCB1B988
+    value:           A73F36CB-9A64-339E-90F0-9807F4EDF28B
   - target:          arm64e-ios
-    value:           907EAD88-0610-327E-A4D6-DB8200FE5942
+    value:           64C35025-14BB-3D22-91F2-4DA0A57EEAC8
 install-name:    '/usr/lib/libauthinstall.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -172,14 +172,15 @@ exports:
                        _kAMAuthInstallApParameterImg4DigestType, _kAMAuthInstallApParameterInRomDFU, 
                        _kAMAuthInstallApParameterIsX86, _kAMAuthInstallApParameterProductionMode, 
                        _kAMAuthInstallApParameterSecurityDomain, _kAMAuthInstallApParameterSecurityMode, 
-                       _kAMAuthInstallApParameterSepNonce, _kAMAuthInstallApParameterSupportsImg4, 
-                       _kAMAuthInstallApParameterTagPrefix, _kAMAuthInstallApParameterUseGlobalSigning, 
-                       _kAMAuthInstallBasebandActivationKeyHash, _kAMAuthInstallBasebandCalibrationKeyHash, 
-                       _kAMAuthInstallBasebandFDRSecurityKeyHash, _kAMAuthInstallBasebandFactoryActivationKeyHash, 
-                       _kAMAuthInstallBasebandProvisioningKeyHash, _kAMAuthInstallBasebandRequestEuiccTicket, 
-                       _kAMAuthInstallBuildIdentifyApOSRamdiskKey, _kAMAuthInstallBuildIdentityAlamo, 
-                       _kAMAuthInstallBuildIdentityApAppleLogoKey, _kAMAuthInstallBuildIdentityApBaseSystemKey, 
-                       _kAMAuthInstallBuildIdentityApBaseSystemVolumeKey, _kAMAuthInstallBuildIdentityApBaseSystemVolumeTrustCacheKey, 
+                       _kAMAuthInstallApParameterSepNonce, _kAMAuthInstallApParameterSoftwareNonceForUpdateFreshness, 
+                       _kAMAuthInstallApParameterSupportsImg4, _kAMAuthInstallApParameterTagPrefix, 
+                       _kAMAuthInstallApParameterUseGlobalSigning, _kAMAuthInstallBasebandActivationKeyHash, 
+                       _kAMAuthInstallBasebandCalibrationKeyHash, _kAMAuthInstallBasebandFDRSecurityKeyHash, 
+                       _kAMAuthInstallBasebandFactoryActivationKeyHash, _kAMAuthInstallBasebandProvisioningKeyHash, 
+                       _kAMAuthInstallBasebandRequestEuiccTicket, _kAMAuthInstallBuildIdentifyApOSRamdiskKey, 
+                       _kAMAuthInstallBuildIdentityAlamo, _kAMAuthInstallBuildIdentityApAppleLogoKey, 
+                       _kAMAuthInstallBuildIdentityApBaseSystemKey, _kAMAuthInstallBuildIdentityApBaseSystemVolumeKey, 
+                       _kAMAuthInstallBuildIdentityApBaseSystemVolumeTrustCacheKey, 
                        _kAMAuthInstallBuildIdentityApBatteryCharging0Key, _kAMAuthInstallBuildIdentityApBatteryCharging1Key, 
                        _kAMAuthInstallBuildIdentityApBatteryChargingKey, _kAMAuthInstallBuildIdentityApBatteryFullKey, 
                        _kAMAuthInstallBuildIdentityApBatteryLow0Key, _kAMAuthInstallBuildIdentityApBatteryLow1Key, 
@@ -217,17 +218,20 @@ exports:
                        _kAMAuthInstallEntitlementFDRAllowIncomplete, _kAMAuthInstallEntitlementFDRAllowUnsealed, 
                        _kAMAuthInstallErrorDomain, _kAMAuthInstallTagApAllowMixAndMatch, 
                        _kAMAuthInstallTagApAllowNeRDBoot, _kAMAuthInstallTagApBCert, 
-                       _kAMAuthInstallTagApBoardId, _kAMAuthInstallTagApChipId, _kAMAuthInstallTagApEPOC, 
-                       _kAMAuthInstallTagApEcid, _kAMAuthInstallTagApImg3PartialDigest, 
-                       _kAMAuthInstallTagApImg3Stitch, _kAMAuthInstallTagApImg4Ticket, 
-                       _kAMAuthInstallTagApLeafCertStatus, _kAMAuthInstallTagApLocalBoot, 
-                       _kAMAuthInstallTagApLocalNonceHash, _kAMAuthInstallTagApLocalPolicy, 
-                       _kAMAuthInstallTagApManaged, _kAMAuthInstallTagApNextStageIM4MHash, 
+                       _kAMAuthInstallTagApBoardId, _kAMAuthInstallTagApChipId, _kAMAuthInstallTagApCurrentOSSecurityVersion, 
+                       _kAMAuthInstallTagApEPOC, _kAMAuthInstallTagApEcid, _kAMAuthInstallTagApEngineeringUseOnlyUnit, 
+                       _kAMAuthInstallTagApImg3PartialDigest, _kAMAuthInstallTagApImg3Stitch, 
+                       _kAMAuthInstallTagApImg4Ticket, _kAMAuthInstallTagApInternalUseOnlySW, 
+                       _kAMAuthInstallTagApInternalUseOnlyUnit, _kAMAuthInstallTagApLeafCertStatus, 
+                       _kAMAuthInstallTagApLocalBoot, _kAMAuthInstallTagApLocalNonceHash, 
+                       _kAMAuthInstallTagApLocalPolicy, _kAMAuthInstallTagApManaged, 
+                       _kAMAuthInstallTagApMinimumOSSecurityVersion, _kAMAuthInstallTagApNextStageIM4MHash, 
                        _kAMAuthInstallTagApNonce, _kAMAuthInstallTagApOSEnvironment, 
-                       _kAMAuthInstallTagApProductionMode, _kAMAuthInstallTagApRecoveryNonceHash, 
-                       _kAMAuthInstallTagApRecoveryOSPolicyNonceHash, _kAMAuthInstallTagApRelaxedImageVerification, 
-                       _kAMAuthInstallTagApRequestImg4Ticket, _kAMAuthInstallTagApSecurityDomain, 
-                       _kAMAuthInstallTagApSecurityMode, _kAMAuthInstallTagApSepNonce, 
+                       _kAMAuthInstallTagApOSLongVersion, _kAMAuthInstallTagApProductionMode, 
+                       _kAMAuthInstallTagApRecoveryNonceHash, _kAMAuthInstallTagApRecoveryOSPolicyNonceHash, 
+                       _kAMAuthInstallTagApRelaxedImageVerification, _kAMAuthInstallTagApRequestImg4Ticket, 
+                       _kAMAuthInstallTagApSecurityDomain, _kAMAuthInstallTagApSecurityMode, 
+                       _kAMAuthInstallTagApSepNonce, _kAMAuthInstallTagApSoftwareNonceForUpdateFreshness, 
                        _kAMAuthInstallTagApTicket, _kAMAuthInstallTagApUseGlobalSigning, 
                        _kAMAuthInstallTagApVolumeUUID, _kAMAuthInstallTagBb2GFWDownloadDigest, 
                        _kAMAuthInstallTagBb2GFWHashSectionDigest, _kAMAuthInstallTagBb3GFWDownloadDigest, 

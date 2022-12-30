@@ -16,7 +16,6 @@
 #import <CarPlay/CPContactTemplate.h>
 #import <CarPlay/CPDashboardButton.h>
 #import <CarPlay/CPDashboardController.h>
-#import <CarPlay/CPEntity.h>
 #import <CarPlay/CPButton.h>
 #import <CarPlay/CPGridButton.h>
 #import <CarPlay/CPGridTemplate.h>

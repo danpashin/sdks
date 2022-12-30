@@ -98,6 +98,7 @@
 #ifndef _NETINET6_IN6_H_
 #define _NETINET6_IN6_H_
 #include <sys/appleapiopts.h>
+
 #include <sys/_types.h>
 #include <sys/_types/_sa_family_t.h>
 
@@ -178,6 +179,7 @@ struct sockaddr_in6 {
 
 
 
+
 /*
  * Definition of some useful macros to handle IP6 addresses
  */
@@ -206,6 +208,7 @@ struct sockaddr_in6 {
 #define IN6ADDR_V4MAPPED_INIT \
 	{{{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, \
 	    0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00 }}}
+#define IN6ADDR_MULTICAST_PREFIX        IN6MASK8
 #endif /* (_POSIX_C_SOURCE && !_DARWIN_C_SOURCE) */
 
 extern const struct in6_addr in6addr_any;
@@ -674,5 +677,5 @@ extern int inet6_rth_segments(const void *);
 extern struct in6_addr *inet6_rth_getaddr(const void *, int);
 
 __END_DECLS
-#endif /* (_POSIX_C_SOURCE && !_DARWIN_C_SOURCE) */
+#endif /* PLATFORM_DriverKit */
 #endif /* !_NETINET6_IN6_H_ */

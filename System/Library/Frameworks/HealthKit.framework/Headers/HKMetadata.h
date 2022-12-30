@@ -511,6 +511,15 @@ HK_EXTERN NSString * const HKMetadataKeyAverageMETs API_AVAILABLE(ios(13.0), wat
 HK_EXTERN NSString * const HKMetadataKeyAudioExposureLevel API_AVAILABLE(ios(13.0), watchos(6.0));
 
 /*!
+@constant      HKMetadataKeyAudioExposureDuration
+@abstract      Represents the duration of time that is covered by audio samples.
+@discussion    The expected value type is an HKQuantity object compatible with a time unit.
+               This key may be set on headphone audio exposure event samples to indicate
+               the duration of time that the user was actually exposed to audio through their headphones.
+*/
+HK_EXTERN NSString * const HKMetadataKeyAudioExposureDuration API_AVAILABLE(ios(14.2), watchos(7.1));
+
+/*!
  @enum          HKAppleECGAlgorithmVersion
  @abstract      Indicates which algorithm version number was used by the ECG app on Apple Watch.
 

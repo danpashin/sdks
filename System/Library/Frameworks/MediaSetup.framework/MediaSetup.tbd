@@ -7,9 +7,9 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           B9650113-2DB4-346B-B8EC-A40531073F2C
+    value:           EF1DAE71-CDAC-3D59-8938-984E482C0751
   - target:          arm64e-ios
-    value:           FF72A8AD-1B1E-3BAA-A692-9AFDB1602600
+    value:           9CE3248E-AA73-3FE3-95AA-71C2FAAF5F0A
 install-name:    '/System/Library/Frameworks/MediaSetup.framework/MediaSetup'
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
@@ -30,15 +30,18 @@ exports:
                        _MediaServiceConfigurationPublicKey, _MediaServiceConfigurationURL, 
                        _MediaServiceIconPath, _MediaServiceIdentifier, _MediaServiceName, 
                        _MediaServiceType, _MediaServiceUpdateListeningHistory, _MediaSetupVersionNumber, 
-                       _MediaSetupVersionString, _kAPSDelegatePort, _kAPSTopic, _kAppleMusicApplicationIdentifier, 
-                       _kAppleMusicBundleIdentifier, _kAppleMusicServiceIdentifier, 
-                       _kAppleMusicServiceType, _kBackgroundActivityDataRefreshTaskIdentifier, 
+                       _MediaSetupVersionString, _allowiTunesAccountSettingsKeyPath, 
+                       _findSettingWithKeyPath, _kAPSDelegatePort, _kAPSTopic, _kAddServiceTransactionIdentifier, 
+                       _kAppleMusicApplicationIdentifier, _kAppleMusicBundleIdentifier, 
+                       _kAppleMusicServiceIdentifier, _kAppleMusicServiceType, _kBackgroundActivityDataRefreshTaskIdentifier, 
                        _kBackgroundActivityPublicDatabaseRefreshTaskIdentifier, _kBackgroundActivityUserShareRetryTaskIdentifier, 
                        _kCKDatabaseAccessUserInfoHomeIDKey, _kCKDatabaseAccessUserInfoHomeUserIDKey, 
                        _kCloudMediaServicesBundleIdentifier, _kHomeMultiUserStatusChangedNotification, 
                        _kHomeUserCloudShareChangedNotification, _kHomeUserCloudShareRepairNotification, 
-                       _kMediaSetupCAConfigurationEvent, _kMediaSetupCAGetServicesEvent, 
-                       _kMediaSetupCARemovalEvent, _kMediaSetupCASetupEvent, _kMediaSetupCloudKitContainerIdentifier, 
+                       _kLastPlaybackIntentDefault, _kMediaSetupCAConfigurationEvent, 
+                       _kMediaSetupCAGetServicesEvent, _kMediaSetupCAPlaybackIntentEvent, 
+                       _kMediaSetupCAPrimaryUserChangedEvent, _kMediaSetupCARemovalEvent, 
+                       _kMediaSetupCASetupEvent, _kMediaSetupCloudKitContainerIdentifier, 
                        _kMediaSetupDeveloperUserDefaultsDomain, _kMediaSetupExtensionIdentifier, 
                        _kMediaSetupInterfaceEntitlementKey, _kMediaSetupKeyHostBundleID, 
                        _kMediaSetupKeyMediaService, _kMediaSetupKeyTestUIFlags, _kMediaSetupMachServiceName, 
@@ -49,8 +52,10 @@ exports:
     objc-classes:    [ CMSAuthenticationConfiguration, CMSAuthenticationCredential, 
                        MSAnalytics, MSAssistantPreferences, MSAuthenticationConfiguration, 
                        MSAuthenticationCredential, MSClient, MSConfigurationEvent, 
-                       MSDDefaultsInfo, MSOAuthTokenHandler, MSPublicDBInfo, MSRemovalEvent, 
-                       MSServer, MSServiceAccount, MSServiceEvent, MSServiceUpdatedHandler, 
-                       MSSetupEvent, MSSetupSession, MSSetupViewController, MediaService, 
-                       MediaServiceConfiguration, _MSRemoteViewController ]
+                       MSDDefaultsInfo, MSOAuthTokenHandler, MSPrimaryUserChangedEvent, 
+                       MSPublicDBInfo, MSRemovalEvent, MSServer, MSServiceAccount, 
+                       MSServiceAppInfo, MSServiceEvent, MSServiceResolutionInfo, 
+                       MSServiceUpdatedHandler, MSSetupEvent, MSSetupSession, MSSetupViewController, 
+                       MSUserAccountInfo, MediaService, MediaServiceConfiguration, 
+                       _MSRemoteViewController ]
 ...

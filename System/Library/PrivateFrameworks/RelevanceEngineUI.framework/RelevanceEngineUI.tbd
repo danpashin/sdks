@@ -1,39 +1,58 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           566A44A2-735B-3C55-A743-E5612DC23CEF
-  - target:          arm64e-ios
-    value:           83AB7509-2A51-3E5E-988A-442DCA0A3BD4
-install-name:    '/System/Library/PrivateFrameworks/RelevanceEngineUI.framework/RelevanceEngineUI'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/RelevanceEngineUI.framework/RelevanceEngineUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _MaxPercentage, _REApplicationTintColor, _REDecodeImage, _REEncodeImage, 
-                       _REEncodedImageCapInsetsKey, _REEncodedImageDataKey, _REEncodedImageOrientationKey, 
-                       _REEncodedImageResizingModeKey, _REEncodedImageScaleKey, _REEncodedImageSupressHairlineKey, 
-                       _REEncodedImageTemplateKey, _REImageNamedFromBundle, _RELegibilityColorForContentColor, 
-                       _REMetadataBundleIdentifierKey, _RESuggestedBodyImageSizeForStyle, 
-                       _RESuggestedHeaderImageSizeForStyle, _REUIActionsAlertProviderClientInterface, 
-                       _REUIActionsAlertProviderMachService, _REUIActionsAlertProviderServerInterface, 
-                       _REUIGraphicCircularTemplateForAppWithIdentifier, _REUILocalizedString, 
-                       _REUINowPlayingPlaceholderAlbumArtwork, _REUISampleRelevanceProviderForPosition, 
-                       _REUISampleRelevanceProviderForSamplePosition, _REUISampleRelevanceProviderForSamplePositionWithPercentage, 
-                       _REUIScaledFullColorImageProviderWithImage, _REUIScaledFullColorImageViewImageMetadataKey, 
-                       _REUITrainingContextActionInteraction, _REUITrainingContextAppActionInteraction, 
-                       _REUITrainingContextDwellInteraction, _REUITrainingContextTapInteraction, 
-                       _RelevanceEngineUIVersionNumber, _RelevanceEngineUIVersionString ]
-    objc-classes:    [ REImageImage, REUIDonatedElementDemoProperties, REUIDonatedElementProperties, 
-                       REUIElementDonatedActionAction, REUIElementIntentAction, REUIRelevanceEngineController, 
-                       REUIRelevanceEngineControllerUpdateOperation, REUIScaledFullColorImageView, 
-                       REUITrainingContext, REUIUpNextDataSource, REUpNextAccessoryView, 
-                       REUpNextBaseCell, REUpNextCollectionView, REUpNextCollectionViewFlowLayout, 
-                       REUpNextCollectionViewFlowLayoutAttributes, REUpNextCollectionViewSingleItemFlowLayout, 
-                       REUpNextHeaderView, REUpNextImageView, REUpNextLargeTextCell, 
-                       REUpNextLargeWithDetailTextCell, REUpNextMultilineCell, REUpNextThumbnailCell, 
-                       TableCell, _REUIBundlePlaceholder, _REUIControllerTrainingContext ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _MaxPercentage, _REApplicationTintColor,
+                            _REDecodeImage, _REEncodeImage,
+                            _REEncodedImageCapInsetsKey, _REEncodedImageDataKey,
+                            _REEncodedImageOrientationKey,
+                            _REEncodedImageResizingModeKey,
+                            _REEncodedImageScaleKey,
+                            _REEncodedImageSupressHairlineKey,
+                            _REEncodedImageTemplateKey, _REImageNamedFromBundle,
+                            _RELegibilityColorForContentColor,
+                            _REMetadataBundleIdentifierKey,
+                            _RESuggestedBodyImageSizeForStyle,
+                            _RESuggestedHeaderImageSizeForStyle,
+                            _REUIActionsAlertProviderClientInterface,
+                            _REUIActionsAlertProviderMachService,
+                            _REUIActionsAlertProviderServerInterface,
+                            _REUIGraphicCircularTemplateForAppWithIdentifier,
+                            _REUILocalizedString,
+                            _REUINowPlayingPlaceholderAlbumArtwork,
+                            _REUISampleRelevanceProviderForPosition,
+                            _REUISampleRelevanceProviderForSamplePosition,
+                            _REUISampleRelevanceProviderForSamplePositionWithPercentage,
+                            _REUIScaledFullColorImageProviderWithImage,
+                            _REUIScaledFullColorImageViewImageMetadataKey,
+                            _REUITrainingContextActionInteraction,
+                            _REUITrainingContextAppActionInteraction,
+                            _REUITrainingContextDwellInteraction,
+                            _REUITrainingContextTapInteraction,
+                            _RelevanceEngineUIVersionNumber,
+                            _RelevanceEngineUIVersionString ]
+    objc-classes:         [ REImageImage, REUIDonatedElementDemoProperties,
+                            REUIDonatedElementProperties,
+                            REUIElementDonatedActionAction,
+                            REUIElementIntentAction,
+                            REUIRelevanceEngineController,
+                            REUIRelevanceEngineControllerUpdateOperation,
+                            REUIScaledFullColorImageView, REUITrainingContext,
+                            REUIUpNextDataSource, REUpNextAccessoryView,
+                            REUpNextBaseCell, REUpNextCollectionView,
+                            REUpNextCollectionViewFlowLayout,
+                            REUpNextCollectionViewFlowLayoutAttributes,
+                            REUpNextCollectionViewSingleItemFlowLayout,
+                            REUpNextHeaderView, REUpNextImageView,
+                            REUpNextLargeTextCell,
+                            REUpNextLargeWithDetailTextCell,
+                            REUpNextMultilineCell, REUpNextThumbnailCell,
+                            TableCell, _REUIBundlePlaceholder,
+                            _REUIControllerTrainingContext ]
 ...

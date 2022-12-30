@@ -21,7 +21,7 @@
 #include <CoreMIDI/MIDIDriver.h>
 #include <CoreMIDI/MIDIMessages.h>
 
-#if TARGET_OS_IPHONE && __OBJC__
+#if __OBJC__
 #import <CoreMIDI/MIDINetworkSession.h>
 #endif
 

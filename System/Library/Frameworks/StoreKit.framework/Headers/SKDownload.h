@@ -36,7 +36,7 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(6.0), macos(10.8), watchos(6.2)) @interface SK
 #if TARGET_OS_OSX
 @property(nonatomic, copy, readonly) NSNumber *contentLength API_DEPRECATED_WITH_REPLACEMENT("-[SKDownload expectedContentLength]", macos(10.8, 10.15)) API_UNAVAILABLE(ios, watchos, tvos);
 #else
-@property(nonatomic, readonly) long long contentLength API_DEPRECATED_WITH_REPLACEMENT("-[SKDownload expectedContentLength]", ios(6.0, 13.0), tvos(9.0, 13.0)) API_UNAVAILABLE(macos, macCatalyst, watchos);
+@property(nonatomic, readonly) long long contentLength API_DEPRECATED_WITH_REPLACEMENT("-[SKDownload expectedContentLength]", ios(6.0, 13.0), tvos(9.0, 13.0), macCatalyst(13.0, 13.0)) API_UNAVAILABLE(macos, watchos);
 #endif
 
 // Total size of the content, in bytes

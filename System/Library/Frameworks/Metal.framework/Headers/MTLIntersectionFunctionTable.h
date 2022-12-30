@@ -42,7 +42,7 @@ typedef NS_OPTIONS(NSUInteger, MTLIntersectionFunctionSignature) {
 } MTL_EXPORT API_AVAILABLE(macos(11.0), ios(14.0));
 
 MTL_EXPORT API_AVAILABLE(macos(11.0), ios(14.0))
-@interface MTLIntersectionFunctionTableDescriptor : NSObject
+@interface MTLIntersectionFunctionTableDescriptor : NSObject <NSCopying>
 
 /*!
  @method intersectionFunctionTableDescriptor

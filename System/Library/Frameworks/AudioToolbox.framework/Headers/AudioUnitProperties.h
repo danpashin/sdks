@@ -1451,12 +1451,15 @@ typedef CF_OPTIONS(UInt32, AudioUnitParameterOptions)
 	@var  			name
 						UNUSED - set to zero - UTF8 encoded C string (originally). 
 	@var  			unitName
-						Only valid if kAudioUnitParameterUnit_CustomUnit is set. If kAudioUnitParameterUnit_CustomUnit
-						is set, this field must contain a valid CFString.
+						Only valid if the unit field equals kAudioUnitParameterUnit_CustomUnit, in
+						which case, unitName must contain a valid CFStringRef. As with cfNameString,
+						if (flags & kAudioUnitParameterFlag_CFNameRelease) is non-zero, the
+						AudioUnit must return a +1 reference to this string, and the host must
+						release it.
 	@var  			clumpID
 						Only valid if kAudioUnitParameterFlag_HasClump is set.
 	@var  			cfNameString
-						Only valid if kAudioUnitParameterFlag_HasCFNameString i set.
+						Only valid if kAudioUnitParameterFlag_HasCFNameString is set.
 	@var  			unit				
 						If the "unit" field contains a value not in the enum above, then assume 
 						kAudioUnitParameterUnit_Generic

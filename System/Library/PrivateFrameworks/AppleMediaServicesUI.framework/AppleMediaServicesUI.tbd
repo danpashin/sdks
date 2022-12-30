@@ -1,31 +1,42 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           8FF45A45-85AF-3626-9B19-757898646040
-  - target:          arm64e-ios
-    value:           7E365371-9CC8-3A1C-8CAF-E00C9A06DA84
-install-name:    '/System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/AppleMediaServicesUI'
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/AppleMediaServicesUI
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
-    symbols:         [ _AMSNotificationSettingsVisibleKey, _AMSUIDynamicClientOptionsKeyMarketingItemQueryParams ]
-    objc-classes:    [ AMSPaymentVerificationTokenResult, AMSUIAlertDialogTask, AMSUIAuthKitUpdateTask, 
-                       AMSUIAuthenticateTask, AMSUIAutomaticDownloadKindsSetTask, 
-                       AMSUIBundleViewController, AMSUICGRectHelper, AMSUICardMetadata, 
-                       AMSUICommonButton, AMSUICommonCollectionView, AMSUICommonDynamicColor, 
-                       AMSUICommonLabel, AMSUICommonScreen, AMSUICommonStackView, 
-                       AMSUICommonTextView, AMSUICommonView, AMSUICommonViewController, 
-                       AMSUICommonVisualEffectView, AMSUIDynamicImpressionItem, AMSUIDynamicImpressionMetrics, 
-                       AMSUIDynamicImpressionMetricsIdentifier, AMSUIDynamicViewController, 
-                       AMSUIEngagementTask, AMSUIManageSubsriptionSpecifierProvider, 
-                       AMSUIMarketingItemViewController, AMSUIMessageGroup, AMSUINotificationSettingsViewController, 
-                       AMSUIOnboardingFeature, AMSUIOnboardingViewController, AMSUIPasswordSettingsViewController, 
-                       AMSUIPaymentVerificationTokenFetchTask, AMSUIPrivacyViewController, 
-                       AMSUISubscriptionsViewController, AMSUIUpdateMultiUserTokenTask, 
-                       AMSUIUserNotificationViewController, AMSUIWebAppearance, AMSUIWebViewController ]
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _AMSNotificationSettingsVisibleKey,
+                            _AMSUIDynamicClientOptionsKeyMarketingItemQueryParams ]
+    objc-classes:         [ AMSPaymentVerificationTokenResult,
+                            AMSUIAlertDialogTask, AMSUIAuthKitUpdateTask,
+                            AMSUIAuthenticateTask,
+                            AMSUIAutomaticDownloadKindsSetTask,
+                            AMSUIBundleViewController, AMSUICGRectHelper,
+                            AMSUICardMetadata, AMSUICommonButton,
+                            AMSUICommonCollectionView,
+                            AMSUICommonCollectionViewCell,
+                            AMSUICommonDynamicColor, AMSUICommonImageView,
+                            AMSUICommonLabel, AMSUICommonScreen,
+                            AMSUICommonStackView, AMSUICommonTextView,
+                            AMSUICommonView, AMSUICommonViewController,
+                            AMSUICommonVisualEffectView,
+                            AMSUIDynamicImpressionItem,
+                            AMSUIDynamicImpressionMetrics,
+                            AMSUIDynamicImpressionMetricsIdentifier,
+                            AMSUIDynamicViewController, AMSUIEngagementTask,
+                            AMSUIManageSubsriptionSpecifierProvider,
+                            AMSUIMarketingItemViewController, AMSUIMessageGroup,
+                            AMSUINotificationSettingsViewController,
+                            AMSUIOnboardingFeature,
+                            AMSUIOnboardingViewController,
+                            AMSUIPasswordSettingsViewController,
+                            AMSUIPaymentVerificationTokenFetchTask,
+                            AMSUIPrivacyViewController,
+                            AMSUISubscriptionsViewController,
+                            AMSUIUpdateMultiUserTokenTask,
+                            AMSUIUserNotificationViewController,
+                            AMSUIWebAppearance, AMSUIWebViewController ]
 ...

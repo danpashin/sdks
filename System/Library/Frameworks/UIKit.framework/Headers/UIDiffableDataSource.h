@@ -77,8 +77,8 @@ UIKIT_EXTERN API_AVAILABLE(ios(13.0),tvos(13.0),watchos(6.0))
 
 @end
 
-typedef UICollectionViewCell * _Nullable (^UICollectionViewDiffableDataSourceCellProvider)(UICollectionView * _Nonnull,NSIndexPath * _Nonnull, id _Nonnull);
-typedef UICollectionReusableView * _Nullable (^UICollectionViewDiffableDataSourceSupplementaryViewProvider)(UICollectionView* _Nonnull, NSString * _Nonnull, NSIndexPath * _Nonnull);
+typedef UICollectionViewCell * _Nullable (^UICollectionViewDiffableDataSourceCellProvider)(UICollectionView * _Nonnull collectionView, NSIndexPath * _Nonnull indexPath, id _Nonnull itemIdentifier);
+typedef UICollectionReusableView * _Nullable (^UICollectionViewDiffableDataSourceSupplementaryViewProvider)(UICollectionView* _Nonnull collectionView, NSString * _Nonnull elementKind, NSIndexPath * _Nonnull indexPath);
 
 
 UIKIT_EXTERN API_AVAILABLE(ios(14.0),tvos(14.0))

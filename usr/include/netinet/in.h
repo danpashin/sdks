@@ -63,14 +63,14 @@
 
 #ifndef _NETINET_IN_H_
 #define _NETINET_IN_H_
+
 #include <sys/appleapiopts.h>
-#include <sys/_types.h>
 #include <stdint.h>             /* uint(8|16|32)_t */
 
 #include <Availability.h>
 
-#include <sys/_types/_in_addr_t.h>
 
+#include <sys/_types/_in_addr_t.h>
 #include <sys/_types/_in_port_t.h>
 
 /*

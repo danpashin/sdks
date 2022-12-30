@@ -7,11 +7,11 @@ uuids:
   - target:          armv7s-ios
     value:           00000000-0000-0000-0000-000000000000
   - target:          arm64-ios
-    value:           9998630C-5FCE-3059-A21B-8B65F2A2B692
+    value:           55DF4D6A-0665-36F5-9649-EA0CCEBB3043
   - target:          arm64e-ios
-    value:           1D290DF0-5438-345F-AB0A-F69A65A69035
+    value:           23A16D30-64AB-340F-9F3F-ED083A2B18A4
 install-name:    '/System/Library/Frameworks/ClassKit.framework/ClassKit'
-current-version: 146.0.70
+current-version: 146.1.11
 exports:
   - targets:         [ arm64-ios, arm64e-ios, armv7-ios, armv7s-ios ]
     symbols:         [ _CLSAdoptPersonaUniqueIdentifier, _CLSAppleContactsPrivateEntitlement, 
@@ -31,7 +31,9 @@ exports:
                        _CLSContextPropertyDisplayOrder, _CLSContextPropertyIdentifierPath, 
                        _CLSContextPropertyObjectIDPath, _CLSContextPropertyStableObjectIDPath, 
                        _CLSContextPropertyStoreIdentifier, _CLSContextPropertyStoreTeamID, 
-                       _CLSContextPropertySuggestedAge, _CLSContextPropertySuggestedCompletionTime, 
+                       _CLSContextPropertySuggestedAge, _CLSContextPropertySuggestedAgeLen, 
+                       _CLSContextPropertySuggestedAgeLoc, _CLSContextPropertySuggestedCompletionTime, 
+                       _CLSContextPropertySuggestedCompletionTimeLen, _CLSContextPropertySuggestedCompletionTimeLoc, 
                        _CLSContextPropertySummary, _CLSContextPropertyThumbnail, 
                        _CLSContextPropertyType, _CLSContextThumbnailMaximumAllowedDimension, 
                        _CLSContextThumbnailMinimumAllowedDimension, _CLSContextTopicArtsAndMusic, 
@@ -45,11 +47,12 @@ exports:
                        _CLSDevModeFromString, _CLSDeveloperModeDidChangeNotification, 
                        _CLSDispatchQueueName, _CLSEndpointServerInterface, _CLSErrorCodeDomain, 
                        _CLSErrorObjectKey, _CLSErrorUnderlyingErrorsKey, _CLSExecutableLinkedOnOrAfter_iOS13_2, 
-                       _CLSExecutableLinkedOnOrAfter_iOS14_0, _CLSExpectedPersonaKey, 
-                       _CLSExtensionPropertiesForConnection, _CLSExtensionPropertiesForCurrentTask, 
-                       _CLSFavoriteTypeFromString, _CLSHandoutAttachmentCompletionStatusFromString, 
-                       _CLSHandoutAttachmentTypeFromString, _CLSHandoutPublishingStateFromString, 
-                       _CLSHandoutStateFromString, _CLSInitLog, _CLSInitialSyncCompleteDarwinNotificationName, 
+                       _CLSExecutableLinkedOnOrAfter_iOS14_0, _CLSExecutableLinkedOnOrAfter_iOS14_2, 
+                       _CLSExpectedPersonaKey, _CLSExtensionPropertiesForConnection, 
+                       _CLSExtensionPropertiesForCurrentTask, _CLSFavoriteTypeFromString, 
+                       _CLSHandoutAttachmentCompletionStatusFromString, _CLSHandoutAttachmentTypeFromString, 
+                       _CLSHandoutPublishingStateFromString, _CLSHandoutStateFromString, 
+                       _CLSInitLog, _CLSInitialSyncCompleteDarwinNotificationName, 
                        _CLSIsAppExtensionWithProperties, _CLSIsCurrentTaskAppExtension, 
                        _CLSLocalizedNameFromContextType, _CLSLogASMSync, _CLSLogApp, 
                        _CLSLogAsset, _CLSLogAuthorization, _CLSLogClasses, _CLSLogCollection, 
@@ -57,8 +60,8 @@ exports:
                        _CLSLogDefault, _CLSLogFetch, _CLSLogHandout, _CLSLogJSON, 
                        _CLSLogNotifications, _CLSLogOperations, _CLSLogPDTool, _CLSLogPush, 
                        _CLSLogSearch, _CLSLogSetup, _CLSLogSync, _CLSLogUpload, _CLSLogXPCDisabledApps, 
-                       _CLSObjectsClasses, _CLSOriginatingSourceFromString, _CLSPerformOperationOnOperationQueueWithTimeOut, 
-                       _CLSPerformWithPersona, _CLSPermissionTypeFromString, _CLSPersonalPersonaUniqueIdentifier, 
+                       _CLSObjectsClasses, _CLSOriginatingSourceFromString, _CLSPerformWithPersona, 
+                       _CLSPermissionTypeFromString, _CLSPersonalPersonaUniqueIdentifier, 
                        _CLSPredicateKeyPathAlertType, _CLSPredicateKeyPathAssignable, 
                        _CLSPredicateKeyPathBundleIdentifier, _CLSPredicateKeyPathClassTempID, 
                        _CLSPredicateKeyPathContextIdentifier, _CLSPredicateKeyPathCurrentActivityID, 

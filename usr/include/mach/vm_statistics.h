@@ -522,6 +522,9 @@ enum virtual_memory_guard_exception_codes {
 /* memory allocated by EmbeddedAcousticRecognition for speech decoder */
 #define VM_MEMORY_EAR_DECODER 102
 
+/* CoreUI cached image data */
+#define VM_MEMORY_COREUI_CACHED_IMAGE_DATA 103
+
 /* Reserve 230-239 for Rosetta */
 #define VM_MEMORY_ROSETTA 230
 #define VM_MEMORY_ROSETTA_THREAD_CONTEXT 231

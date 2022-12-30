@@ -20,7 +20,7 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2)) @interface SK
 
 + (instancetype)paymentWithProduct:(SKProduct *)product API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));
 
-+ (id)paymentWithProductIdentifier:(NSString *)identifier API_DEPRECATED_WITH_REPLACEMENT("+[SKPayment paymentWithProduct:]", ios(3.0, 5.0)) API_UNAVAILABLE(tvos, macos, macCatalyst, watchos);
++ (id)paymentWithProductIdentifier:(NSString *)identifier API_DEPRECATED_WITH_REPLACEMENT("+[SKPayment paymentWithProduct:]", ios(3.0, 5.0), macCatalyst(13.0, 13.0)) API_UNAVAILABLE(tvos, macos, watchos);
 
 // Identifier agreed upon with the store.  Required.
 @property(nonatomic, copy, readonly) NSString *productIdentifier API_AVAILABLE(ios(3.0), macos(10.7), watchos(6.2));

@@ -58,6 +58,7 @@
 //      ARM_THREAD_STATE_LAST    8 /* legacy */
 #define ARM_THREAD_STATE32       9
 
+
 /* API */
 #define ARM_DEBUG_STATE32        14
 #define ARM_DEBUG_STATE64        15
