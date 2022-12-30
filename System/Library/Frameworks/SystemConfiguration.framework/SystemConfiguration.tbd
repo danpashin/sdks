@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 1260046C-9A56-331C-A01D-765D19015DE1', 'armv7s: C67BB7EA-FF5E-343F-BEC9-FD055D488744', 
-                   'arm64: 97D4A21F-62DE-39D4-BAC3-EDA6E23B867B', 'arm64e: 46F9E302-FF71-3C25-87FD-4BA889AA0899' ]
+                   'arm64: 25BB5609-C713-3FEA-9E99-0FFF6869BF42', 'arm64e: 65122DBC-236E-3647-9429-69344CA1EFF9' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration'
-current-version: 1061.120.2
+current-version: 1061.140.1
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _IPMonitorControlGetInterfacePrimaryRank, _SCDynamicStoreCopyLocation, 
@@ -225,22 +225,23 @@ exports:
                        ___SCNetworkConfigurationSaveModel, ___SCNetworkConfigurationUpgrade, 
                        ___SCNetworkConnectionCopyOnDemandInfoWithName, ___SCNetworkInterfaceCreateCapabilities, 
                        ___SCNetworkInterfaceCreateMediaOptions, ___SCNetworkInterfaceSetDisableUntilNeededValue, 
-                       ___SC_Log, __sc_debug, __sc_log, __sc_verbose, __scprefs_observer_cancel, 
-                       __scprefs_observer_watch, _isa_xpc_bool, _isa_xpc_connection, 
-                       _isa_xpc_dictionary, _isa_xpc_error, _kCFErrorDomainSystemConfiguration, 
-                       _kCFErrorDomainVPNTunnel, _kCNNetworkInfoKeyBSSID, _kCNNetworkInfoKeySSID, 
-                       _kCNNetworkInfoKeySSIDData, _kSCCompAnyRegex, _kSCCompGlobal, 
-                       _kSCCompHostNames, _kSCCompInterface, _kSCCompNetwork, _kSCCompService, 
-                       _kSCCompSystem, _kSCCompUsers, _kSCDynamicStoreDomainFile, 
-                       _kSCDynamicStoreDomainPlugin, _kSCDynamicStoreDomainPrefs, 
-                       _kSCDynamicStoreDomainSetup, _kSCDynamicStoreDomainState, 
-                       _kSCDynamicStorePropNetInterfaces, _kSCDynamicStorePropNetPrimaryInterface, 
-                       _kSCDynamicStorePropNetPrimaryService, _kSCDynamicStorePropNetServiceIDs, 
-                       _kSCDynamicStorePropSetupCurrentSet, _kSCDynamicStorePropSetupLastUpdated, 
-                       _kSCDynamicStoreUseHostServer, _kSCDynamicStoreUseSessionKeys, 
-                       _kSCEntNet6to4, _kSCEntNetAirPort, _kSCEntNetAppLayer, _kSCEntNetCommCenter, 
-                       _kSCEntNetDHCP, _kSCEntNetDNS, _kSCEntNetEAPOL, _kSCEntNetEthernet, 
-                       _kSCEntNetFireWire, _kSCEntNetIPSec, _kSCEntNetIPv4, _kSCEntNetIPv4ARPCollision, 
+                       ___SC_Log, ___SC_log_enabled, ___SC_log_send, __sc_debug, 
+                       __sc_log, __sc_verbose, __scprefs_observer_cancel, __scprefs_observer_watch, 
+                       _isa_xpc_bool, _isa_xpc_connection, _isa_xpc_dictionary, _isa_xpc_error, 
+                       _kCFErrorDomainSystemConfiguration, _kCFErrorDomainVPNTunnel, 
+                       _kCNNetworkInfoKeyBSSID, _kCNNetworkInfoKeySSID, _kCNNetworkInfoKeySSIDData, 
+                       _kSCCompAnyRegex, _kSCCompGlobal, _kSCCompHostNames, _kSCCompInterface, 
+                       _kSCCompNetwork, _kSCCompService, _kSCCompSystem, _kSCCompUsers, 
+                       _kSCDynamicStoreDomainFile, _kSCDynamicStoreDomainPlugin, 
+                       _kSCDynamicStoreDomainPrefs, _kSCDynamicStoreDomainSetup, 
+                       _kSCDynamicStoreDomainState, _kSCDynamicStorePropNetInterfaces, 
+                       _kSCDynamicStorePropNetPrimaryInterface, _kSCDynamicStorePropNetPrimaryService, 
+                       _kSCDynamicStorePropNetServiceIDs, _kSCDynamicStorePropSetupCurrentSet, 
+                       _kSCDynamicStorePropSetupLastUpdated, _kSCDynamicStoreUseHostServer, 
+                       _kSCDynamicStoreUseSessionKeys, _kSCEntNet6to4, _kSCEntNetAirPort, 
+                       _kSCEntNetAppLayer, _kSCEntNetCommCenter, _kSCEntNetDHCP, 
+                       _kSCEntNetDNS, _kSCEntNetEAPOL, _kSCEntNetEthernet, _kSCEntNetFireWire, 
+                       _kSCEntNetIPSec, _kSCEntNetIPv4, _kSCEntNetIPv4ARPCollision, 
                        _kSCEntNetIPv4PortInUse, _kSCEntNetIPv4RouterARPAlive, _kSCEntNetIPv4RouterARPFailure, 
                        _kSCEntNetIPv6, _kSCEntNetIPv6RouterExpired, _kSCEntNetIdleRoute, 
                        _kSCEntNetInterface, _kSCEntNetInterfaceActiveDuringSleepRequested, 

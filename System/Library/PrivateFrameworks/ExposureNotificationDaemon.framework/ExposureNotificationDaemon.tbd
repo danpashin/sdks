@@ -1,0 +1,54 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ExposureNotificationDaemon.framework/ExposureNotificationDaemon
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _ENAdvertisementStoreErrorDomain,
+                            _ENBundleIdentifierForURLSessions,
+                            _ENConfigurationManagerErrorDomain,
+                            _ENDownloadManagerDownloadsAvailable,
+                            _ENReadLinesFromFile, _ENSQLiteBindFoundationValue,
+                            _ENSQLiteColumnAsData, _ENSQLiteColumnAsNaturalType,
+                            _ENSQLiteColumnAsString,
+                            _ENServerConfigurationReadFrom ]
+    objc-classes:         [ ENAdvertisement, ENAdvertisementDatabase,
+                            ENAdvertisementDatabaseQuerySession,
+                            ENAdvertisementMetadata, ENAdvertisementSQLiteStore,
+                            ENConfigurationManager, ENCoreTelephonyUtility,
+                            ENDownloadEndpoint, ENDownloadManager,
+                            ENDownloadManagerState, ENExposureCalculationSession,
+                            ENExposureDatabase, ENExposureDetectionDaemonSession,
+                            ENExposureDetectionManager, ENLoggingPrefs,
+                            ENNetworkMonitor, ENPersistentTemporaryExposureKey,
+                            ENRegionMonitor,
+                            ENRegionMonitorCoreRoutineDataSource,
+                            ENSQLiteConnection, ENSecureArchiveFileWrapper,
+                            ENServerConfiguration, ENXPCTimer ]
+    objc-ivars:           [ ENServerConfiguration._advertisingIntervalInMilliSec,
+                            ENServerConfiguration._applicationBackgroundRuntimeIntervalinHours,
+                            ENServerConfiguration._attenuationMinThreshold,
+                            ENServerConfiguration._attenuationThresholdForExposureInfo,
+                            ENServerConfiguration._callbackIntervalInMin,
+                            ENServerConfiguration._enEnabled,
+                            ENServerConfiguration._fetchAllRanges,
+                            ENServerConfiguration._fetchIncrementalRanges,
+                            ENServerConfiguration._has,
+                            ENServerConfiguration._maximumFutureDayKeysToPublish,
+                            ENServerConfiguration._maximumPastDaysKeysToFetchOrPublish,
+                            ENServerConfiguration._proximityDurationMaxThresholdInSec,
+                            ENServerConfiguration._proximityDurationMinAPWakeThresholdInSec,
+                            ENServerConfiguration._proximityDurationMinForceAPWakeThresholdInSec,
+                            ENServerConfiguration._proximityDurationMinThresholdInSec,
+                            ENServerConfiguration._proximityDurationScanDurationAudioInSec,
+                            ENServerConfiguration._proximityDurationScanDurationInSec,
+                            ENServerConfiguration._proximityDurationScanIntervalAudioInMilliSec,
+                            ENServerConfiguration._regionIdentifier,
+                            ENServerConfiguration._rollingIdentifierIntervalInMin,
+                            ENServerConfiguration._rollingIdentifiersCacheExpiryAgeInSec,
+                            ENServerConfiguration._serverConfigVersion ]
+...

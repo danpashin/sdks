@@ -35,6 +35,16 @@ typedef void ( ^ENDetectExposuresHandler )( ENExposureDetectionSummary * _Nullab
 EN_API_AVAILABLE
 typedef void ( ^ENGetExposureInfoHandler )( NSArray <ENExposureInfo *> * _Nullable exposures, NSError * _Nullable error );
 
+/// Invoked when getExposureWindows completes. It provides info about each exposure window.
+/// If it completes successfully, exposureWIndows will non-nil and error will be nil.
+/// If it fails, exposureWindows will be nil and error indicates the reason it failed.
+EN_API_AVAILABLE_V2
+typedef void ( ^ENGetExposureWindowsHandler )( NSArray <ENExposureWindow *> * _Nullable exposureWindows, NSError * _Nullable error );
+
+/// Invoked when getUserTraveled completes.
+EN_API_AVAILABLE_V2
+typedef void ( ^ENGetUserTraveledHandler )( BOOL traveled, NSError * _Nullable error );
+
 //===========================================================================================================================
 /*!	@brief	Overall status of Exposure Notification on the system.
 */
@@ -58,6 +68,9 @@ typedef NS_ENUM( NSInteger, ENStatus )
 	/// Exposure Notification is not active due to system restrictions, such as parental controls.
 	/// When in this state, the app cannot enable Exposure Notification.
 	ENStatusRestricted		= 4,
+	
+	/// The user paused Exposure Notification to temporarily disable Bluetooth advertising and scanning.
+	ENStatusPaused			= 5,
 };
 
 //===========================================================================================================================
@@ -105,6 +118,10 @@ EN_API_AVAILABLE_EXPORT
 /// Stops any outstanding operations and invalidates this object. Once this is called, the object can no longer be used.
 /// To start using ENManager again, a new instance of the class must be created and activated.
 - (void) invalidate;
+
+/// Reports if the user traveled within an exposure period (e.g. 14 days).
+- (void) getUserTraveledWithCompletionHandler:(ENGetUserTraveledHandler) completionHandler
+EN_API_AVAILABLE_V2;
 
 // MARK: == Authorization ==
 
@@ -166,6 +183,13 @@ NS_SWIFT_NAME(detectExposures(configuration:diagnosisKeyURLs:completionHandler:)
 	completionHandler:			(ENGetExposureInfoHandler)		completionHandler
 NS_SWIFT_NAME(getExposureInfo(summary:userExplanation:completionHandler:));
 
+/// Gets info about each exposure window from the summary provided when exposure detection completes.
+- (NSProgress *)
+	getExposureWindowsFromSummary:	(ENExposureDetectionSummary *)	summary
+	completionHandler:				(ENGetExposureWindowsHandler)	completionHandler
+EN_API_AVAILABLE_V2
+NS_SWIFT_NAME(getExposureWindows(summary:completionHandler:));
+
 // MARK: == Diagnosis Keys and Data ==
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -175,6 +199,11 @@ NS_SWIFT_NAME(getExposureInfo(summary:userExplanation:completionHandler:));
 	they may have been exposed. This should only be used after proper verification is performed and after the user has 
 	agreed to share this information.
 */
+
+/// Authorizes a one-time, future release of diagnosis keys without a user prompt at the time of release.
+/// This allows the user to authorize ahead of time in case they are unable to approve at the time of positive diagnosis.
+- (void) preAuthorizeDiagnosisKeysWithCompletionHandler:(ENErrorHandler) completionHandler
+EN_API_AVAILABLE_V2;
 
 /// Requests the temporary exposure keys used by this device to share with a server.
 /// Each use of this API will present the user with system UI to authorize it.

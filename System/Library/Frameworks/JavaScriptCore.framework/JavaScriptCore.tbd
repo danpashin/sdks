@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: 106A107E-8662-3CF1-85DF-F1A4FD0225FD', 'armv7s: 3421B127-2686-3D81-B222-582ED8AFA09C', 
-                   'arm64: 6B20D2ED-B287-34A2-9DFB-4115CEE617D9', 'arm64e: 03568D30-96EC-314B-9C89-7F0A73DA18C6' ]
+                   'arm64: 4635D178-58AE-32EF-A6EF-36DE31899627', 'arm64e: D942BD32-F931-3E7D-A27D-4E16E47EF558' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore'
-current-version: 609.2.9
+current-version: 609.3.5
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _WTFInstallReportBacktraceOnCrashHook, _WTFSetCrashHook, _WebCoreWebThreadRunSync, 
@@ -1950,7 +1950,7 @@ exports:
                        __ZN3WTF4Lock10unlockSlowEv, __ZN3WTF4Lock13safepointSlowEv, 
                        __ZN3WTF4Lock16unlockFairlySlowEv, __ZN3WTF4Lock8lockSlowEv, 
                        __ZN3WTF50dispatchAsyncOnMainThreadWithWebThreadLockIfNeededEU13block_pointerFvvE, 
-                       __ZN3WTF6String28numberToStringFixedPrecisionEdjNS_29TrailingZerosTruncatingPolicyE, 
+                       __ZN3WTF6Config17permanentlyFreezeEv, __ZN3WTF6String28numberToStringFixedPrecisionEdjNS_29TrailingZerosTruncatingPolicyE, 
                        __ZN3WTF6String28numberToStringFixedPrecisionEfjNS_29TrailingZerosTruncatingPolicyE, 
                        __ZN3WTF6String6numberEd, __ZN3WTF6String6numberEf, __ZN3WTF6String6removeEjj, 
                        __ZN3WTF6Thread10allThreadsERKNS_6LockerINS_4LockEEE, __ZN3WTF6Thread12getRegistersER27__darwin_arm_thread_state64, 
@@ -2882,19 +2882,18 @@ exports:
                        __ZNK3WTF3URL10protocolIsEPKc, __ZNK3WTF3URL11createCFURLEv, 
                        __ZNK3WTF3URL11encodedPassEv, __ZNK3WTF3URL11encodedUserEv, 
                        __ZNK3WTF3URL11hostAndPortEv, __ZNK3WTF3URL11isLocalFileEv, 
-                       __ZNK3WTF3URL12baseAsStringEv, __ZNK3WTF3URL12copyToBufferERNS_6VectorIcLm512ENS_15CrashOnOverflowELm16ENS_10FastMallocEEE, 
-                       __ZNK3WTF3URL12isolatedCopyEv, __ZNK3WTF3URL14fileSystemPathEv, 
-                       __ZNK3WTF3URL14isHierarchicalEv, __ZNK3WTF3URL15protocolIsAboutEv, 
-                       __ZNK3WTF3URL16isMatchingDomainERKNS_6StringE, __ZNK3WTF3URL17lastPathComponentEv, 
-                       __ZNK3WTF3URL18fragmentIdentifierEv, __ZNK3WTF3URL19protocolHostAndPortEv, 
-                       __ZNK3WTF3URL21hasFragmentIdentifierEv, __ZNK3WTF3URL24strippedForUseAsReferrerEv, 
-                       __ZNK3WTF3URL30stringCenterEllipsizedToLengthEj, __ZNK3WTF3URL4hostEv, 
-                       __ZNK3WTF3URL4passEv, __ZNK3WTF3URL4pathEv, __ZNK3WTF3URL4portEv, 
-                       __ZNK3WTF3URL4userEv, __ZNK3WTF3URL5queryEv, __ZNK3WTF3URL8protocolEv, 
-                       __ZNK3WTF3URL9hostStartEv, __ZNK3WTF3URLcvP5NSURLEv, __ZNK3WTF6Logger17LogSiteIdentifier8toStringEv, 
-                       __ZNK3WTF6String10tryGetUtf8ENS_14ConversionModeE, __ZNK3WTF6String10tryGetUtf8Ev, 
-                       __ZNK3WTF6String25splitAllowingEmptyEntriesERKS0_, __ZNK3WTF6String25splitAllowingEmptyEntriesEt, 
-                       __ZNK3WTF6String25splitAllowingEmptyEntriesEtRKNS_8FunctionIFvRKNS_10StringViewEEEE, 
+                       __ZNK3WTF3URL12baseAsStringEv, __ZNK3WTF3URL12isolatedCopyEv, 
+                       __ZNK3WTF3URL14fileSystemPathEv, __ZNK3WTF3URL14isHierarchicalEv, 
+                       __ZNK3WTF3URL15protocolIsAboutEv, __ZNK3WTF3URL16isMatchingDomainERKNS_6StringE, 
+                       __ZNK3WTF3URL17lastPathComponentEv, __ZNK3WTF3URL18fragmentIdentifierEv, 
+                       __ZNK3WTF3URL19protocolHostAndPortEv, __ZNK3WTF3URL21hasFragmentIdentifierEv, 
+                       __ZNK3WTF3URL24strippedForUseAsReferrerEv, __ZNK3WTF3URL30stringCenterEllipsizedToLengthEj, 
+                       __ZNK3WTF3URL4hostEv, __ZNK3WTF3URL4passEv, __ZNK3WTF3URL4pathEv, 
+                       __ZNK3WTF3URL4portEv, __ZNK3WTF3URL4userEv, __ZNK3WTF3URL5queryEv, 
+                       __ZNK3WTF3URL8protocolEv, __ZNK3WTF3URL9hostStartEv, __ZNK3WTF3URLcvP5NSURLEv, 
+                       __ZNK3WTF6Logger17LogSiteIdentifier8toStringEv, __ZNK3WTF6String10tryGetUtf8ENS_14ConversionModeE, 
+                       __ZNK3WTF6String10tryGetUtf8Ev, __ZNK3WTF6String25splitAllowingEmptyEntriesERKS0_, 
+                       __ZNK3WTF6String25splitAllowingEmptyEntriesEt, __ZNK3WTF6String25splitAllowingEmptyEntriesEtRKNS_8FunctionIFvRKNS_10StringViewEEEE, 
                        __ZNK3WTF6String28convertToLowercaseWithLocaleERKNS_10AtomStringE, 
                        __ZNK3WTF6String28convertToUppercaseWithLocaleERKNS_10AtomStringE, 
                        __ZNK3WTF6String33stripLeadingAndTrailingCharactersEPFbtE, 
@@ -4062,6 +4061,6 @@ exports:
                        __ZTVN9Inspector38ScriptProfilerBackendDispatcherHandlerE, 
                        __ZTVN9Inspector40ApplicationCacheBackendDispatcherHandlerE, 
                        _g_gigacageConfig, _g_jscConfig, _g_opcodeMap, _g_opcodeMapWide16, 
-                       _g_opcodeMapWide32, _kJSClassDefinitionEmpty ]
+                       _g_opcodeMapWide32, _g_wtfConfig, _kJSClassDefinitionEmpty ]
     objc-classes:    [ JSContext, JSManagedValue, JSScript, JSValue, JSVirtualMachine ]
 ...

@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 extern "C" {
 #endif
 
+@class ENExposureSummaryItem;
+@class ENScanInstance;
+
 //===========================================================================================================================
 // MARK: -
 // MARK: == Configuration ==
@@ -30,11 +33,17 @@ extern "C" {
 	#endif
 #endif
 
-/// Indicates the platforms this API is available. Used for non-exportable items, such as typedefs.
-#define EN_API_AVAILABLE			API_AVAILABLE( ios( 13.5 ) ) API_UNAVAILABLE( macos, tvos, watchos )
+/// Indicates the platforms this API is available for version 1 of the API. Used for non-exportable items, such as typedefs.
+#define EN_API_AVAILABLE			API_AVAILABLE( ios( 13.5 ) ) API_UNAVAILABLE(macos, tvos, watchos)
 
-/// Indicates the platforms this API is available and exports the symbol via the framework.
+/// Indicates the platforms this API is available for version 2 of the API. Used for non-exportable items, such as typedefs.
+#define EN_API_AVAILABLE_V2			API_UNAVAILABLE(ios) API_UNAVAILABLE(macos, tvos, watchos)
+
+/// Indicates the platforms this API is available for version 1 of the API and exports the symbol via the framework.
 #define EN_API_AVAILABLE_EXPORT		EN_API_AVAILABLE __attribute__( ( visibility( "default" ) ) )
+
+/// Indicates the platforms this API is available for version 2 of the API and exports the symbol via the framework.
+#define EN_API_AVAILABLE_EXPORT_V2	EN_API_AVAILABLE_V2 __attribute__( ( visibility( "default" ) ) )
 
 //===========================================================================================================================
 // MARK: -
@@ -62,6 +71,7 @@ typedef NS_ERROR_ENUM( ENErrorDomain, ENErrorCode )
 	ENErrorCodeRateLimited			= 13, /// API called too frequently. See API for acceptable frequency.
 	ENErrorCodeRestricted			= 14, /// Exposure Notification is disabled due to system policies.
 	ENErrorCodeBadFormat			= 15, /// File or data format problem.
+	ENErrorCodeDataInaccessible		= 16, /// The device must be unlocked before data is accessible.
 };
 
 /// Type for returning NSError's from functions. Avoids long and repetitious method signatures.
@@ -79,6 +89,11 @@ typedef NSError * _Nullable __autoreleasing * _Nullable		ENErrorOutType;
 	may report higher attenuation (i.e. weaker received signal) even though the individuals are very close together.
 */
 typedef uint8_t		ENAttenuation;
+enum
+{
+	ENAttenuationMin = 0,
+	ENAttenuationMax = 0xFF,
+};
 
 //===========================================================================================================================
 /*!	@brief	Indicates the status of authorization for the app.
@@ -101,6 +116,72 @@ typedef NS_ENUM( NSInteger, ENAuthorizationStatus )
 };
 
 //===========================================================================================================================
+/*!	@brief	Confidence in calibration data.
+*/
+EN_API_AVAILABLE_V2
+typedef NS_ENUM( uint8_t, ENCalibrationConfidence )
+{
+	/// No calibration data.
+	ENCalibrationConfidenceLowest	= 0,
+	
+	/// Using average calibration over phones of this manufacturer or Android beacons from EN API version < 1.5.
+	ENCalibrationConfidenceLow		= 1,
+	
+	/// Using single-antenna orientation for a similar phone model or iPhone beacons from EN API version < 1.5.
+	ENCalibrationConfidenceMedium	= 2,
+	
+	/// Determined using significant calibration data for this model.
+	ENCalibrationConfidenceHigh		= 3,
+};
+
+//===========================================================================================================================
+/*!	@brief	How positive diagnosis was reported.
+*/
+EN_API_AVAILABLE_V2
+typedef NS_ENUM( uint32_t, ENDiagnosisReportType )
+{
+	/// Diagnosis type unknown or not available.
+	ENDiagnosisReportTypeUnknown					= 0,
+	
+	/// Confirmed test.
+	ENDiagnosisReportTypeConfirmedTest				= 1,
+	
+	/// Confirmed clinical diagnosis.
+	ENDiagnosisReportTypeConfirmedClinicalDiagnosis	= 2,
+	
+	/// User reported positive diagnosis without health authority involvement.
+	ENDiagnosisReportTypeSelfReported				= 3,
+	
+	/// Person determined to be positive based on exposure to another person confirmed to be positive.
+	ENDiagnosisReportTypeRecursive					= 4,
+	
+	/// Negative test. This is mainly to negate a previously positive report that may have been in error.
+	ENDiagnosisReportTypeRevoked					= 5,
+};
+
+//===========================================================================================================================
+/*!	@brief	Flags affecting exposure calculations.
+*/
+EN_API_AVAILABLE_V2
+typedef NS_OPTIONS( uint32_t, ENExposureFlags )
+{
+	ENExposureFlagsNone			= 0,			/// No flags.
+	ENExposureFlagsCache		= ( 1U << 0 ),	/// Enable detection from a cache of previously downloaded keys.
+	ENExposureFlagsScoringV2	= ( 1U << 1 ),	/// Enable version 2 scoring algorithm.
+};
+
+//===========================================================================================================================
+/*!	@brief	How infectious based on days since onset of symptoms.
+*/
+EN_API_AVAILABLE_V2
+typedef NS_ENUM( uint32_t, ENInfectiousness )
+{
+	ENInfectiousnessNone		= 0, /// Never returned through the API, but used for configuration.
+	ENInfectiousnessStandard	= 1,
+	ENInfectiousnessHigh		= 2,
+};
+
+//===========================================================================================================================
 /*!	@brief	ENIntervalNumber (ENIN)
 	
 	A number for each 10 minute window that is shared between all devices participating in the protocol.
@@ -116,16 +197,43 @@ typedef uint32_t	ENIntervalNumber;
 /*!	@brief	Represents a risk level, ranging from 0-7.
 */
 typedef uint8_t		ENRiskLevel;
+enum
+{
+	ENRiskLevelMin = 0,
+	ENRiskLevelMax = 7,
+};
 
 //===========================================================================================================================
-/*!	@brief	The value, ranging from 1 to 8, that the app assigns to each Risk Level in each of the Risk Level Parameters.
+/*!	@brief	The value, ranging from 0 to 8, that the app assigns to each Risk Level in each of the Risk Level Parameters.
 */
 typedef uint8_t		ENRiskLevelValue;
+enum
+{
+	ENRiskLevelValueMin = 0,
+	ENRiskLevelValueMax = 8,
+};
 
 //===========================================================================================================================
-/*!	@brief	Represents estimated risk calculated by a scoring algorithm. Range is 1-8. 8 is the highest risk.
+/*!	@brief	Represents estimated risk calculated by a scoring algorithm. Range is 0-255. 255 is the highest risk.
 */
 typedef uint8_t		ENRiskScore;
+enum
+{
+	ENRiskScoreMin = 0,
+	ENRiskScoreMax = 255,
+};
+
+//===========================================================================================================================
+/*!	@brief	Constants for risk weights.
+*/
+enum
+{
+	ENRiskWeightDefault		= 1,
+	ENRiskWeightDefaultV2	= 100,
+	ENRiskWeightMin			= 0,
+	ENRiskWeightMax			= 100,
+	ENRiskWeightMaxV2		= 200,
+};
 
 //===========================================================================================================================
 // MARK: -
@@ -140,145 +248,93 @@ typedef void ( ^ENErrorHandler )( NSError * _Nullable error );
 //===========================================================================================================================
 /*!	@brief	Configuration parameters for exposure detection.
 
-	Risk Parameters
+	Configuration parameters are used to calculate an exposure duration for each exposure using the following formula.
 	
-	The four parameters used to calculate the Total Risk Score:
-	
-	-	Transmission - purely app defined, flexibility to tag a specific positive key. Could be tagged based on symptoms, 
-		level of diagnosis verification or other determination from the app/health authority.
-	-	Duration (measured by API) - Cumulative duration of the exposure Days (measured by API).
-	-	Days since the exposure incident.
-	-	Attenuation (measured by API) - Minimum bluetooth signal strength attenuation (Tx Power - RSSI).
-	
-	Risk Level Value:
-	The value, ranging from 1 to 8, that the app assigns to each Risk Level in each of the Risk Level Parameter.  
-	
-	Risk Level:
-	The eight “buckets” assigned to each Risk Level Parameter.
-	
-	Risk Score:
-	The resulting score from the risk calculation (an integer).  The maximum score per person over a 24 hour period.
-	
-	These parameters are used to calculate a risk for each exposure incident using the following forumula:
-	
-	Sum = 
-		( attenuationLevelValue * attenuationWeight ) + 
-		( daysSinceLastExposureLevelValue * daysSinceLastExposureWeight ) + 
-		( durationLevelValue * durationWeight ) + 
-		( transmissionRiskLevelValue * transmissionRiskWeight )
-	TotalRiskScore = Sum / ( attenuationWeight + daysSinceLastExposureWeight + durationWeight + transmissionRiskWeight )
-	
-	Level values are in the range 1-8.
-	Weights must be in the range 0-100.
-	TotalRiskScore will be in the range 1-8.
+	exposureDuration = 
+		( ( immediateDuration * immediateDurationWeight ) + 
+		  ( nearDuration      * nearDurationWeight ) + 
+		  ( mediumDuration    * mediumDurationWeight ) + 
+		  ( otherDuration     * otherDurationWeight ) )
+		* infectiousnessWeight )
+		* reportTypeWeight )
 */
 EN_API_AVAILABLE_EXPORT
 @interface ENExposureConfiguration : NSObject
 
-/// Metadata associated with the configuration.
-@property (readwrite, copy, nullable, nonatomic) NSDictionary *		metadata;
+/// Flags to control how detection is performed.
+@property (readwrite, assign, nonatomic) ENExposureFlags flags EN_API_AVAILABLE_V2;
 
-/// Minimum risk score. Excludes exposure incidents with scores lower than this. Defaults to no minimum.
-@property (readwrite, assign, nonatomic) ENRiskScore				minimumRiskScore;
+/// Weights to apply to durations at each proximity level based on attenuation. Range is 0-200%.
+@property (readwrite, assign, nonatomic) double immediateDurationWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double nearDurationWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double mediumDurationWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double otherDurationWeight EN_API_AVAILABLE_V2;
+
+/// Maps daysSinceOnsetOfSymptoms to infectiousness.
+/// Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
+/// Defaults to ENInfectiousnessStandard for days not specified.
+@property (readwrite, copy, nonatomic) NSDictionary <NSNumber *, NSNumber *> *infectiousnessForDaysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
+
+/// Weights to apply for infectiousness. Range is 0-200%.
+@property (readwrite, assign, nonatomic) double infectiousnessStandardWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double infectiousnessHighWeight EN_API_AVAILABLE_V2;
+
+/// Weights to apply for each report type. Range is 0-200%.
+@property (readwrite, assign, nonatomic) double reportTypeConfirmedTestWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double reportTypeConfirmedClinicalDiagnosisWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double reportTypeSelfReportedWeight EN_API_AVAILABLE_V2;
+@property (readwrite, assign, nonatomic) double reportTypeRecursiveWeight EN_API_AVAILABLE_V2;
+
+/// Report type to map none/unknown to.
+@property (readwrite, assign, nonatomic) ENDiagnosisReportType reportTypeNoneMap EN_API_AVAILABLE_V2;
 
 //---------------------------------------------------------------------------------------------------------------------------
-/*!	@brief	Level values for attenuation buckets. Must contain a value for each bucket as defined below:
-	
-	attenuationScores[0] when Attenuation > 73.
-	attenuationScores[1] when 73 >= Attenuation > 63.
-	attenuationScores[2] when 63 >= Attenuation > 51.
-	attenuationScores[3] when 51 >= Attenuation > 33.
-	attenuationScores[4] when 33 >= Attenuation > 27.
-	attenuationScores[5] when 27 >= Attenuation > 15.
-	attenuationScores[6] when 15 >= Attenuation > 10.
-	attenuationScores[7] when 10 >= Attenuation.
-*/
+
+/// Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
+///
+/// Index		|0	|1	|2		
+/// Variable	|X	|Y	|Z
+@property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		attenuationDurationThresholds;
+
+/// Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
+@property (readwrite, assign, nonatomic) NSInteger					daysSinceLastExposureThreshold EN_API_AVAILABLE_V2;
+
+/// Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to ENRiskScore.
+@property (readwrite, assign, nonatomic) double						minimumRiskScoreFullRange;
+
+//---------------------------------------------------------------------------------------------------------------------------
+// Soon to be deprecated parameters. Use the parameters above instead.
+
 @property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		attenuationLevelValues;
-
-/// Weight to apply to the attenuation level value. Must be in the range 0-100.
 @property (readwrite, assign, nonatomic) double						attenuationWeight;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@brief	Level values for days since last exposure buckets. Must contain a value for each bucket as defined below:
-
-	daysSinceLastExposureScores[0] when Days >= 14.
-	daysSinceLastExposureScores[1] else Days >= 12
-	daysSinceLastExposureScores[2] else Days >= 10
-	daysSinceLastExposureScores[3] else Days >= 8
-	daysSinceLastExposureScores[4] else Days >= 6
-	daysSinceLastExposureScores[5] else Days >= 4
-	daysSinceLastExposureScores[6] else Days >= 2
-	daysSinceLastExposureScores[7] else Days >= 0
-*/
 @property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		daysSinceLastExposureLevelValues;
-
-/// Weight to apply to the days since last exposure level value. Must be in the range 0-100.
 @property (readwrite, assign, nonatomic) double						daysSinceLastExposureWeight;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@brief	Level values for duration buckets. Must contain a value for each bucket as defined below:
-
-	durationScores[0] when Duration == 0
-	durationScores[1] else Duration <= 5
-	durationScores[2] else Duration <= 10
-	durationScores[3] else Duration <= 15
-	durationScores[4] else Duration <= 20
-	durationScores[5] else Duration <= 25
-	durationScores[6] else Duration <= 30
-	durationScores[7] else Duration  > 30
-*/
 @property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		durationLevelValues;
-
-/// Weight to apply to the duration level value. Must be in the range 0-100.
 @property (readwrite, assign, nonatomic) double						durationWeight;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@brief	Level values for transmission risk buckets. Must contain a value for each bucket as defined below:
-
-	transmissionRiskScores[0] for risk level 0.
-	transmissionRiskScores[1] for risk level 1.
-	transmissionRiskScores[2] for risk level 2.
-	transmissionRiskScores[3] for risk level 3.
-	transmissionRiskScores[4] for risk level 4.
-	transmissionRiskScores[5] for risk level 5.
-	transmissionRiskScores[6] for risk level 6.
-	transmissionRiskScores[7] for risk level 7.
-*/
+@property (readwrite, copy, nullable, nonatomic) NSDictionary *		metadata;
+@property (readwrite, assign, nonatomic) ENRiskScore				minimumRiskScore;
 @property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		transmissionRiskLevelValues;
-
-/// Weight to apply to the transmission risk level value. Must be in the range 0-100.
 @property (readwrite, assign, nonatomic) double						transmissionRiskWeight;
 
 @end
 
 //===========================================================================================================================
-/*!	@brief	Info about an exposure.
+/*!	@brief	Summary of exposure info for a single day.
 */
-EN_API_AVAILABLE_EXPORT
-@interface ENExposureInfo : NSObject
+EN_API_AVAILABLE_EXPORT_V2
+@interface ENExposureDaySummary : NSObject
 
-/// Array of durations in seconds at certain radio signal attenuations.
-/// Array index 0: Sum of durations for this exposure when attenuation was <= 50.
-/// Array index 1: Sum of durations for this exposure when attenuation was > 50.
-@property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		attenuationDurations;
+/// Day the exposure occurred.
+@property (readonly, copy, nonatomic) NSDate *date;
 
-/// Attenuation value of the peer device when exposure occurred.
-@property (readonly, assign, nonatomic) ENAttenuation				attenuationValue;
+/// Summary of all exposures on this day of a specific diagnosis report type.
+@property (readonly, strong, nullable, nonatomic) ENExposureSummaryItem *confirmedTestSummary;
+@property (readonly, strong, nullable, nonatomic) ENExposureSummaryItem *confirmedClinicalDiagnosisSummary;
+@property (readonly, strong, nullable, nonatomic) ENExposureSummaryItem *recursiveSummary;
+@property (readonly, strong, nullable, nonatomic) ENExposureSummaryItem *selfReportedSummary;
 
-/// Date when the exposure occurred. This may have reduced precision, such as within 1 day of the actual time.
-@property (readonly, copy, nonatomic) NSDate *						date;
-
-/// Length of exposure in 5 minute increments with a 30 minute maximum.
-@property (readonly, assign, nonatomic) NSTimeInterval				duration;
-
-/// Metadata associated with the exposure.
-@property (readonly, copy, nullable, nonatomic) NSDictionary *		metadata;
-
-/// Indicates the total risk calculated for this exposure incident.
-@property (readonly, assign, nonatomic) ENRiskScore					totalRiskScore;
-
-/// Indicates the transmission risk associated with the diagnosis key.
-@property (readonly, assign, nonatomic) ENRiskLevel					transmissionRiskLevel;
+/// Summary of all exposures on this day.
+@property (readonly, strong, nonatomic) ENExposureSummaryItem *daySummary;
 
 @end
 
@@ -289,22 +345,138 @@ EN_API_AVAILABLE_EXPORT
 @interface ENExposureDetectionSummary : NSObject
 
 /// Array of durations in seconds at certain radio signal attenuations.
-/// Array index 0: Sum of durations for all exposures when attenuation was <= 50.
-/// Array index 1: Sum of durations for all exposures when attenuation was > 50.
-/// These durations are aggregated across all exposures and capped at 30 minutes.
-@property (readwrite, copy, nonatomic) NSArray <NSNumber *> *		attenuationDurations;
+/// Array index 0: Sum of durations for all exposures when attenuation <= X
+/// Array index 1: Sum of durations for all exposures when attenuation <= Y
+/// Array index 2: Sum of durations for all exposures when attenuation <= Z
+/// Array index 3: Sum of durations for all exposures when attenuation >  Z
+/// X, Y, Z come from the attenuationDurationThresholds on the configuration object.
+@property (readonly, copy, nonatomic) NSArray <NSNumber *> *					attenuationDurations;
 
 /// Number of days since the most recent exposure. 0 = today, 1 = yesterday, etc. Only valid if matchedKeyCount > 0.
-@property (readonly, assign, nonatomic) NSInteger					daysSinceLastExposure;
+@property (readonly, assign, nonatomic) NSInteger								daysSinceLastExposure;
 
 /// Number of diagnosis keys that matched.
-@property (readonly, assign, nonatomic) uint64_t					matchedKeyCount;
+@property (readonly, assign, nonatomic) uint64_t								matchedKeyCount;
 
 /// Highest risk score of all exposure incidents.
-@property (readonly, assign, nonatomic) ENRiskScore					maximumRiskScore;
+@property (readonly, assign, nonatomic) ENRiskScore								maximumRiskScore;
+
+/// Highest risk score of all exposure incidents.
+@property (readonly, assign, nonatomic) double									maximumRiskScoreFullRange;
 
 /// Metadata associated with the summary.
+@property (readonly, copy, nullable, nonatomic) NSDictionary *					metadata;
+
+/// Sum of risk scores for all exposures. Summed using the full range risk scores before capping to ENRiskScore.
+@property (readonly, assign, nonatomic) double									riskScoreSumFullRange;
+
+/// Summary of each day containing an exposure.
+@property (readonly, copy, nonatomic) NSArray <ENExposureDaySummary *> *		daySummaries EN_API_AVAILABLE_V2;
+
+@end
+
+//===========================================================================================================================
+/*!	@brief	Info about an exposure.
+*/
+EN_API_AVAILABLE_EXPORT
+@interface ENExposureInfo : NSObject
+
+/// Array of durations in seconds at certain radio signal attenuations.
+/// Array index 0: Sum of durations for this exposure when attenuation <= X
+/// Array index 1: Sum of durations for this exposure when attenuation <= Y
+/// Array index 2: Sum of durations for this exposure when attenuation <= Z
+/// Array index 3: Sum of durations for this exposure when attenuation >  Z
+/// X, Y, Z come from the attenuationDurationThresholds on the configuration object.
+@property (readonly, copy, nonatomic) NSArray <NSNumber *> *		attenuationDurations;
+
+/// Duration-weighted average of the attenuations associated with this exposure.
+@property (readonly, assign, nonatomic) ENAttenuation				attenuationValue;
+
+/// Date when the exposure occurred. This may have reduced precision, such as within 1 day of the actual time.
+@property (readonly, copy, nonatomic) NSDate *						date;
+
+/// Number of days since the onset of symptoms.
+@property (readonly, assign, nonatomic) NSInteger					daysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
+
+/// How positive diagnosis was reported.
+@property (readonly, assign, nonatomic) ENDiagnosisReportType		diagnosisReportType EN_API_AVAILABLE_V2;
+
+/// Length of exposure in 5 minute increments with a 30 minute maximum.
+@property (readonly, assign, nonatomic) NSTimeInterval				duration;
+
+/// Metadata associated with the exposure.
 @property (readonly, copy, nullable, nonatomic) NSDictionary *		metadata;
+
+/// Indicates the total risk calculated for this exposure incident. Capped to ENRiskScore range.
+@property (readonly, assign, nonatomic) ENRiskScore					totalRiskScore;
+
+/// Indicates the total risk calculated for this exposure incident. Full range and not capped to ENRiskScore.
+@property (readonly, assign, nonatomic) double						totalRiskScoreFullRange;
+
+/// Indicates the transmission risk associated with the diagnosis key.
+@property (readonly, assign, nonatomic) ENRiskLevel					transmissionRiskLevel;
+
+@end
+
+//===========================================================================================================================
+/*!	@brief	Summary for a specific time period or report type.
+*/
+EN_API_AVAILABLE_EXPORT_V2
+@interface ENExposureSummaryItem : NSObject
+
+/// Highest score of all exposures for this item.
+@property (readonly, assign, nonatomic) double maximumScore;
+
+/// Sum of scores for all exposure for this item.
+@property (readonly, assign, nonatomic) double scoreSum;
+
+/// Sum of exposure durations weighted by their attenuation.
+/// weightedDurationSum = 
+///		( immediateDuration * immediateDurationWeight ) +
+///		( nearDuration      * nearDurationWeight ) +
+///		( mediumDuration    * mediumDurationWeight ) +
+///		( otherDuration     * otherDurationWeight ).
+@property (readonly, assign, nonatomic) NSTimeInterval weightedDurationSum;
+
+@end
+
+//===========================================================================================================================
+/*!	@brief	A duration of up to 30 minutes during which beacons from a TEK were observed.
+*/
+EN_API_AVAILABLE_EXPORT_V2
+@interface ENExposureWindow : NSObject
+
+/// Transmitting device's calibration confidence.
+@property (readonly, assign, nonatomic) ENCalibrationConfidence			calibrationConfidence;
+
+/// Day the exposure occurred.
+@property (readonly, copy, nonatomic) NSDate *							date;
+
+/// How positive diagnosis was reported for this the TEK observed for this window.
+@property (readonly, assign, nonatomic) ENDiagnosisReportType			diagnosisReportType;
+
+/// How infectious based on days since onset of symptoms.
+@property (readonly, assign, nonatomic) ENInfectiousness				infectiousness;
+
+/// Each scan instance corresponds to a scan (of a few seconds) when a beacon with a TEK causing this exposure was observed.
+@property (readonly, copy, nonatomic) NSArray <ENScanInstance *> *		scanInstances;
+
+@end
+
+//===========================================================================================================================
+/*!	@brief	Aggregation of attenuations of all of this TEK's beacons received during a scan.
+*/
+EN_API_AVAILABLE_EXPORT_V2
+@interface ENScanInstance : NSObject
+
+/// Minimum attenuation of all of this TEK's beacons received during the scan.
+@property (readonly, assign, nonatomic) ENAttenuation		minimumAttenuation;
+
+/// Aggregation of the attenuations of all of this TEK's beacons received during the scan.
+@property (readonly, assign, nonatomic) ENAttenuation		typicalAttenuation;
+
+/// Seconds elapsed since the the previous scan.
+@property (readonly, assign, nonatomic) NSInteger			secondsSinceLastScan;
 
 @end
 
@@ -313,6 +485,12 @@ EN_API_AVAILABLE_EXPORT
 */
 EN_API_AVAILABLE_EXPORT
 @interface ENTemporaryExposureKey : NSObject
+
+/// Number of days since the onset of symptoms.
+@property (readwrite, assign, nonatomic) NSInteger				daysSinceOnsetOfSymptoms EN_API_AVAILABLE_V2;
+
+/// How positive diagnosis was reported.
+@property (readwrite, assign, nonatomic) ENDiagnosisReportType	diagnosisReportType EN_API_AVAILABLE_V2;
 
 /// Key material used to generate Rolling Proximity Identifiers.
 @property (readwrite, copy, nonatomic) NSData *					keyData;
