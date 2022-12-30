@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-current-version:       609.1.20
+current-version:       609.2.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -223,6 +223,8 @@ exports:
                             __ZN3PAL48get_AVFoundation_AVLayerVideoGravityResizeAspectEv,
                             __ZN3PAL48get_AVFoundation_AVMediaCharacteristicEasyToReadEv,
                             __ZN3PAL48get_AVFoundation_AVVideoCompressionPropertiesKeyEv,
+                            __ZN3PAL48softLinkMediaToolboxMTOverrideShouldPlayHDRVideoE,
+                            __ZN3PAL49canLoad_MediaToolbox_MTOverrideShouldPlayHDRVideoEv,
                             __ZN3PAL49get_PassKit_PKPaymentErrorContactFieldUserInfoKeyEv,
                             __ZN3PAL49softLinkUIKitUIAccessibilityIsReduceMotionEnabledE,
                             __ZN3PAL50canLoad_AVFoundation_AVVideoCodecTypeHEVCWithAlphaEv,
@@ -2598,6 +2600,7 @@ exports:
                             __ZN7WebCore16MIMETypeRegistry13isXMLMIMETypeERKN3WTF6StringE,
                             __ZN7WebCore16MIMETypeRegistry14isTextMIMETypeERKN3WTF6StringE,
                             __ZN7WebCore16MIMETypeRegistry15canShowMIMETypeERKN3WTF6StringE,
+                            __ZN7WebCore16MIMETypeRegistry19isXMLEntityMIMETypeEN3WTF10StringViewE,
                             __ZN7WebCore16MIMETypeRegistry20isJavaAppletMIMETypeERKN3WTF6StringE,
                             __ZN7WebCore16MIMETypeRegistry22systemPreviewMIMETypesEv,
                             __ZN7WebCore16MIMETypeRegistry23getMIMETypeForExtensionERKN3WTF6StringE,
@@ -3879,7 +3882,6 @@ exports:
                             __ZN7WebCore21WheelEventTestMonitor23removeDeferralForReasonEPKvNS0_11DeferReasonE,
                             __ZN7WebCore21WheelEventTestMonitor40setTestCallbackAndStartNotificationTimerEON3WTF8FunctionIFvvEEE,
                             __ZN7WebCore21WindowsLatin1EncodingEv,
-                            __ZN7WebCore21applicationSDKVersionEv,
                             __ZN7WebCore21convertDictionaryToJSERN3JSC14JSGlobalObjectERNS_17JSDOMGlobalObjectERKNS_16ApplePayLineItemE,
                             __ZN7WebCore21convertDictionaryToJSERN3JSC14JSGlobalObjectERNS_17JSDOMGlobalObjectERKNS_21ApplePayPaymentMethodE,
                             __ZN7WebCore21convertDictionaryToJSERN3JSC14JSGlobalObjectERNS_17JSDOMGlobalObjectERKNS_22ApplePayShippingMethodE,
@@ -4169,7 +4171,6 @@ exports:
                             __ZN7WebCore24presentingApplicationPIDEv,
                             __ZN7WebCore24previousSentencePositionERKNS_15VisiblePositionE,
                             __ZN7WebCore24redirectChainAllowsReuseENS_24RedirectChainCacheStatusENS_28ReuseExpiredRedirectionOrNotE,
-                            __ZN7WebCore24setApplicationSDKVersionEj,
                             __ZN7WebCore24supportsPictureInPictureEv,
                             __ZN7WebCore25ApplicationManifestParser5parseERKN3WTF6StringERKNS1_3URLES7_,
                             __ZN7WebCore25ApplicationManifestParser5parseERNS_22ScriptExecutionContextERKN3WTF6StringERKNS3_3URLES9_,
@@ -4404,7 +4405,7 @@ exports:
                             __ZN7WebCore27SWServerToContextConnection22findClientByIdentifierEyN3WTF16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEENS_29ServiceWorkerClientIdentifierE,
                             __ZN7WebCore27SWServerToContextConnection26scriptContextFailedToStartERKN3WTF8OptionalINS_30ServiceWorkerJobDataIdentifierEEENS1_16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEERKNS1_6StringE,
                             __ZN7WebCore27SWServerToContextConnection32setServiceWorkerHasPendingEventsEN3WTF16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEEb,
-                            __ZN7WebCore27SWServerToContextConnection5claimEyN3WTF16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEE,
+                            __ZN7WebCore27SWServerToContextConnection5claimEN3WTF16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEEONS1_17CompletionHandlerIFvONS1_8OptionalINS_13ExceptionDataEEEEEE,
                             __ZN7WebCore27SWServerToContextConnection8matchAllEyN3WTF16ObjectIdentifierINS_27ServiceWorkerIdentifierTypeEEERKNS_31ServiceWorkerClientQueryOptionsE,
                             __ZN7WebCore27SWServerToContextConnectionC2EONS_17RegistrableDomainE,
                             __ZN7WebCore27SWServerToContextConnectionD0Ev,
@@ -4606,6 +4607,7 @@ exports:
                             __ZN7WebCore30rejectPromiseWithThisTypeErrorERN3JSC14JSGlobalObjectEPKcS4_,
                             __ZN7WebCore30rejectPromiseWithThisTypeErrorERNS_15DeferredPromiseEPKcS3_,
                             __ZN7WebCore30removeQLPreviewConverterForURLEP5NSURL,
+                            __ZN7WebCore30screenSupportsHighDynamicRangeEPNS_6WidgetE,
                             __ZN7WebCore30setApplicationBundleIdentifierERKN3WTF6StringE,
                             __ZN7WebCore31AVStreamDataParserMIMETypeCache9singletonEv,
                             __ZN7WebCore31BasicColorMatrixFilterOperation5blendEPKNS_15FilterOperationEdb,

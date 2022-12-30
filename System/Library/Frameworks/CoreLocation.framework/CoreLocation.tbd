@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ armv7, armv7s, arm64, arm64e ]
 uuids:           [ 'armv7: D5FED001-75DC-39D7-881E-D31C0E1AFCB4', 'armv7s: 40B5865E-BD06-31A9-A1C7-4D2121ACB847', 
-                   'arm64: D5EA81A0-091B-3205-B5E9-3310658DCE98', 'arm64e: 3F9A11C0-A874-39F3-9217-FA0B0D746FAC' ]
+                   'arm64: 9836AF7D-3A91-3FAD-B09C-B6994BAF3890', 'arm64e: 16D12CAC-8947-363E-A20C-00984F351BB5' ]
 platform:        ios
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2394.0.25
+current-version: 2394.0.31
 exports:         
   - archs:           [ armv7, armv7s ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -63,15 +63,15 @@ exports:
                        _CLLocationCoordinate2DIsValid, _CLLocationCoordinate2DMake, 
                        _CLLocationDistanceMax, _CLPassKitNotifyPayment, _CLPingDaemon, 
                        _CLSetLocationDefault, _CLSetMapMatchingRouteHint, _CLSetRouteHintsForMapMatching, 
-                       _CLShouldDisplayStatusBarIconChangedNotification, _CLStartStopAdvertisingBeacon, 
-                       _CLTechStatusChangedNotification, _CLTimeIntervalMax, _CLWeatherNotifyForecast, 
-                       _kCLClientDistanceFilterNone, _kCLClientHeadingFilterNone, 
-                       _kCLCommonLocationAlwaysAndWhenInUseUsageDescriptionKey, _kCLCommonLocationAlwaysUsageDescriptionKey, 
-                       _kCLCommonLocationUsageDescriptionKey, _kCLCommonLocationWhenInUseUsageDescriptionKey, 
-                       _kCLCommonWKRunsIndependentlyOfCompanionAppKey, _kCLCommonWKWatchOnlyKey, 
-                       _kCLDistanceFilterNone, _kCLErrorDomain, _kCLErrorDomainPrivate, 
-                       _kCLErrorUserInfoAlternateRegionKey, _kCLHeadingFilterNone, 
-                       _kCLLocationAccuracyBest, _kCLLocationAccuracyBestForNavigation, 
+                       _CLShouldDisplayEEDUI, _CLShouldDisplayStatusBarIconChangedNotification, 
+                       _CLStartStopAdvertisingBeacon, _CLTechStatusChangedNotification, 
+                       _CLTimeIntervalMax, _CLWeatherNotifyForecast, _kCLClientDistanceFilterNone, 
+                       _kCLClientHeadingFilterNone, _kCLCommonLocationAlwaysAndWhenInUseUsageDescriptionKey, 
+                       _kCLCommonLocationAlwaysUsageDescriptionKey, _kCLCommonLocationUsageDescriptionKey, 
+                       _kCLCommonLocationWhenInUseUsageDescriptionKey, _kCLCommonWKRunsIndependentlyOfCompanionAppKey, 
+                       _kCLCommonWKWatchOnlyKey, _kCLDistanceFilterNone, _kCLErrorDomain, 
+                       _kCLErrorDomainPrivate, _kCLErrorUserInfoAlternateRegionKey, 
+                       _kCLHeadingFilterNone, _kCLLocationAccuracyBest, _kCLLocationAccuracyBestForNavigation, 
                        _kCLLocationAccuracyBystander, _kCLLocationAccuracyE911CallInviteHigh, 
                        _kCLLocationAccuracyE911CallInviteLow, _kCLLocationAccuracyHundredMeters, 
                        _kCLLocationAccuracyKilometer, _kCLLocationAccuracyLeech, 
