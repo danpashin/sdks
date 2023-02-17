@@ -1,26 +1,46 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ProximityReader
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 112.1
-import AVFoundation
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name ProximityReader
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 114.21.1
 import CryptoKit
 import Foundation
-import LocalAuthentication
 import OSLog
 @_exported import ProximityReader
-import RegexBuilder
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
 import os.log
 import os
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public struct PaymentCardReadResult : Swift.Identifiable, Swift.Sendable {
   public let id: Swift.String
   public let paymentCardData: Swift.String?
   public let generalCardData: Swift.String?
+  @available(iOS 16.4, *)
+  public enum ReadOutcome : Swift.Sendable {
+    case success
+    case cardDeclined
+    case failure
+    public static func == (a: ProximityReader.PaymentCardReadResult.ReadOutcome, b: ProximityReader.PaymentCardReadResult.ReadOutcome) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @available(iOS 16.4, *)
+  public let outcome: ProximityReader.PaymentCardReadResult.ReadOutcome
   public typealias ID = Swift.String
 }
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public struct PaymentCardVerificationRequest : Swift.Sendable {
   public let currencyCode: Swift.String
   public let verificationReason: ProximityReader.PaymentCardVerificationRequest.Reason
@@ -37,6 +57,11 @@ public struct PaymentCardVerificationRequest : Swift.Sendable {
   }
   public init(currencyCode: Swift.String, for reason: ProximityReader.PaymentCardVerificationRequest.Reason = .other)
 }
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public enum PaymentCardReaderError : Swift.Error, Swift.Sendable {
   case notAllowed
   case backgroundRequestNotAllowed
@@ -61,6 +86,8 @@ public enum PaymentCardReaderError : Swift.Error, Swift.Sendable {
   case accountLinkingFailed
   case accountLinkingRequiresiCloudSignIn
   case accountLinkingCancelled
+  @available(iOS 16.4, *)
+  case accountLinkingCheckFailed
   case merchantBlocked
   case invalidMerchant
   public var errorDescription: Swift.String {
@@ -94,6 +121,8 @@ public class PaymentCardReader : @unchecked Swift.Sendable {
     case readNotCompleted
     case pinEntryRequested
     case pinEntryCompleted
+    @available(iOS 16.4, *)
+    case userInterfaceDismissed
     public var name: Swift.String {
       get
     }
@@ -108,6 +137,10 @@ public class PaymentCardReader : @unchecked Swift.Sendable {
   }
   public struct Options : Swift.Sendable {
     public var vasMerchants: [ProximityReader.VASRequest.Merchant]
+    @available(iOS 16.4, *)
+    public var returnReadResultImmediately: Swift.Bool
+    @available(iOS 16.4, *)
+    public var includeErrorInReadResult: Swift.Bool
     public init(vasMerchants: [ProximityReader.VASRequest.Merchant] = [])
   }
   public struct Token : Swift.RawRepresentable, Swift.Hashable, Swift.Sendable {
@@ -117,6 +150,10 @@ public class PaymentCardReader : @unchecked Swift.Sendable {
   }
   public init(options: ProximityReader.PaymentCardReader.Options = .init())
   @objc deinit
+  #if compiler(>=5.3) && $AsyncAwait
+  @available(iOS 16.4, *)
+  public func isAccountLinked(using token: ProximityReader.PaymentCardReader.Token) async throws -> Swift.Bool
+  #endif
   #if compiler(>=5.3) && $AsyncAwait
   public func linkAccount(using token: ProximityReader.PaymentCardReader.Token) async throws
   #endif
@@ -138,10 +175,17 @@ public class PaymentCardReader : @unchecked Swift.Sendable {
   public func prepare(using token: ProximityReader.PaymentCardReader.Token, updateHandler: ((ProximityReader.PaymentCardReader.UpdateEvent) -> Swift.Void)?) async throws -> ProximityReader.PaymentCardReaderSession
   #endif
 }
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public struct PaymentCardTransactionRequest : Swift.Sendable {
   public let amount: Foundation.Decimal
   public let currencyCode: Swift.String
   public let type: ProximityReader.PaymentCardTransactionRequest.TransactionType
+  @available(iOS 16.4, *)
+  public var preferredAIDList: [Foundation.Data]
   public init(amount: Foundation.Decimal, currencyCode: Swift.String, for type: ProximityReader.PaymentCardTransactionRequest.TransactionType = .purchase)
   public enum TransactionType : Swift.Sendable {
     case purchase
@@ -153,6 +197,11 @@ public struct PaymentCardTransactionRequest : Swift.Sendable {
     }
   }
 }
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public class VASRequest : @unchecked Swift.Sendable {
   final public let vasMerchants: [ProximityReader.VASRequest.Merchant]
   final public let localizedVASType: Swift.String
@@ -160,13 +209,22 @@ public class VASRequest : @unchecked Swift.Sendable {
   public struct Merchant : Swift.Identifiable, Swift.Sendable {
     public let id: Swift.String
     public let url: Foundation.URL?
+    @available(iOS, introduced: 15.4, deprecated: 16.4, message: "Not supported")
     public let shouldSendURLOnly: Swift.Bool
     public var localizedName: Swift.String
+    @available(iOS, introduced: 15.4, deprecated: 16.4, message: "Not supported")
     public init(id: Swift.String, url: Foundation.URL? = nil, shouldSendURLOnly: Swift.Bool = false, localizedName: Swift.String? = nil)
+    @available(iOS 16.4, *)
+    public init(id: Swift.String, url: Foundation.URL? = nil, localizedName: Swift.String? = nil)
     public typealias ID = Swift.String
   }
   @objc deinit
 }
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 public struct VASReadResult : Swift.Identifiable, Swift.Sendable {
   public let id: Swift.String
   public let entries: [ProximityReader.VASReadResult.ReadEntry]
@@ -194,6 +252,9 @@ public struct VASReadResult : Swift.Identifiable, Swift.Sendable {
     public typealias ID = Swift.String
   }
   public typealias ID = Swift.String
+}
+@objc public protocol InternalClientInterface {
+  @objc func notifyIncomingCall()
 }
 @_hasMissingDesignatedInitializers @available(iOS 15.4, *)
 @available(macOS, unavailable)
@@ -235,6 +296,8 @@ public class PaymentCardReaderSession : @unchecked Swift.Sendable {
     case readCancelled
     case invalidAmount
     case invalidCurrencyCode
+    @available(iOS 16.4, *)
+    case invalidPreferredAID
     case nfcDisabled
     case readNotAllowedDuringCall
     case passcodeDisabled
@@ -308,12 +371,59 @@ public class PaymentCardReaderSession : @unchecked Swift.Sendable {
   public func capturePIN(using token: ProximityReader.PaymentCardReaderSession.PINToken, cardReaderTransactionID: Swift.String) async throws -> ProximityReader.PaymentCardReadResult
   #endif
 }
+@available(iOS 16.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension ProximityReader.PaymentCardReadResult.ReadOutcome : Swift.Equatable {}
+@available(iOS 16.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
+extension ProximityReader.PaymentCardReadResult.ReadOutcome : Swift.Hashable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardVerificationRequest.Reason : Swift.Equatable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardVerificationRequest.Reason : Swift.Hashable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardTransactionRequest.TransactionType : Swift.Equatable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.PaymentCardTransactionRequest.TransactionType : Swift.Hashable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.Equatable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.Hashable {}
+@available(iOS 15.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+@available(macCatalyst, unavailable)
 extension ProximityReader.VASReadResult.ReadEntry.Status : Swift.RawRepresentable {}
 @available(macOS, unavailable)
 @available(tvOS, unavailable)

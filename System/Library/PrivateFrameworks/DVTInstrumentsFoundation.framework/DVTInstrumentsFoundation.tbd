@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DVTInstrumentsFoundation.framework/DVTInstrumentsFoundation
-current-version:       64556.3.2
+current-version:       64559.104.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -191,6 +191,8 @@ exports:
                             _DTDeviceInfoRequestDeviceConfigurationInformation,
                             _DTDeviceInfoRequestKTraceMachineInformation,
                             _DTDeviceInfoRequestKey,
+                            _DTDeviceInfoRunningProcessBundleIdentifierKey,
+                            _DTDeviceInfoRunningProcessForegroundRunningKey,
                             _DTDeviceInfoRunningProcessIsApplicationKey,
                             _DTDeviceInfoRunningProcessNameKey,
                             _DTDeviceInfoRunningProcessPidKey,
@@ -271,6 +273,7 @@ exports:
                             _DTStoreKitServiceCapabilityVersion,
                             _DTStoreKitServiceCapabilityVersionAzden,
                             _DTStoreKitServiceCapabilityVersionStarskyC,
+                            _DTStoreKitServiceCapabilityVersionStarskyE,
                             _DTSysmonSampleKey_CPUCount,
                             _DTSysmonSampleKey_CPUUsage_NiceLoad,
                             _DTSysmonSampleKey_CPUUsage_SystemLoad,
@@ -323,6 +326,8 @@ exports:
                             _GCDAsyncSocketSSLSessionOptionSendOneByteRecord,
                             _GCDAsyncSocketThreadName,
                             _GCDAsyncSocketUseCFStreamForTLS,
+                            _LibViewDebuggerSupportCoreDevice,
+                            _LibViewDebuggerSupportMobileDevice,
                             _XRApplicationBundleIdentifierKey,
                             _XRApplicationBundlePathKey,
                             _XRApplicationDisplayNameKey,
@@ -349,8 +354,6 @@ exports:
                             __kDTServiceHubClientErrorDomain,
                             _authorization_create_from_xpc_message,
                             _authorized_coreprofile_core_control,
-                            _authorized_get_process_command_name_and_path,
-                            _authorized_kill_process,
                             _authorized_ktrace_bless_client,
                             _authorized_ktrace_file,
                             _authorized_ktrace_machine_cpu_topologies,
@@ -377,8 +380,7 @@ exports:
                             _pid_watcher_disconnect,
                             _pid_watcher_symbolicator_for_pid, _sBufferConstants,
                             _sDTKPLogClient, _sDTKPLogQueue, _sDTTapLogClient,
-                            _sTapFactory, _setup_launch_daemon,
-                            _with_analysis_task_for_pid,
+                            _sTapFactory, _with_analysis_task_for_pid,
                             _with_authorized_xpc_message,
                             _xpc_dictionary_get_archived_object,
                             _xpc_dictionary_set_archived_object,

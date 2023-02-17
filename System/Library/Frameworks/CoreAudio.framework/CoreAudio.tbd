@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           6508BD27-3C52-35B5-96ED-0435F7D38E6E
-  - target:          armv7s-ios
-    value:           BD3EA922-B46D-3893-9983-383A6E469936
-  - target:          arm64-ios
-    value:           EF8DADF0-3F82-3AAD-A664-8813AD6203E9
-  - target:          arm64e-ios
-    value:           7A9E0253-FD79-3ED6-A63D-1C7EC113CEAD
 install-name:    '/System/Library/Frameworks/CoreAudio.framework/CoreAudio'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -334,13 +325,13 @@ exports:
                        __ZNK4AMCP6System14get_clock_listEv, __ZNK4AMCP6System15get_device_listEv, 
                        __ZNK4AMCP6System15get_driver_listEv, __ZNK4AMCP6System19get_io_context_listEv, 
                        __ZNK4AMCP6System31wait_for_notification_quiesenceEd, __ZNK4AMCP6System32create_ioc_graph_update_observerERKNSt3__14pairINS1_8functionIFNS2_INS_17Graph_DescriptionENS_25Modify_Graph_Destroy_ListEEEvEEENS3_IFvRKS4_EEEEE, 
-                       __ZNK4AMCP6System33create_end_config_change_observerERKNSt3__18functionIFvjRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeENS9_13new_allocatorINS1_4pairISB_SC_EEEEEESI_SI_EEENS1_4lessIjEENSE_INSF_IjSJ_EEEEEEEEEEEE, 
-                       __ZNK4AMCP6System33create_end_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeENS9_13new_allocatorINS1_4pairISB_SC_EEEEEESI_SI_EEENS1_4lessIjEENSE_INSF_IjSJ_EEEEEEEEEEEE, 
+                       __ZNK4AMCP6System33create_end_config_change_observerERKNSt3__18functionIFvjRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeEvEESE_SE_EEENS1_4lessIjEEvEEEEEEEE, 
+                       __ZNK4AMCP6System33create_end_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeEvEESE_SE_EEENS1_4lessIjEEvEEEEEEEE, 
                        __ZNK4AMCP6System35create_begin_config_change_observerERKNSt3__18functionIFvjEEE, 
-                       __ZNK4AMCP6System35create_begin_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeENS9_13new_allocatorINS1_4pairISB_SC_EEEEEESI_SI_EEENS1_4lessIjEENSE_INSF_IjSJ_EEEEEEEEEEEE, 
+                       __ZNK4AMCP6System35create_begin_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeEvEESE_SE_EEENS1_4lessIjEEvEEEEEEEE, 
                        __ZNK4AMCP6System35execute_task_against_config_changesERKNSt3__18functionIFvvEEE, 
                        __ZNK4AMCP6System38find_devices_to_stop_for_config_changeEj, 
-                       __ZNK4AMCP6System40create_continuing_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeENS9_13new_allocatorINS1_4pairISB_SC_EEEEEESI_SI_EEENS1_4lessIjEENSE_INSF_IjSJ_EEEEEEEEEEEE, 
+                       __ZNK4AMCP6System40create_continuing_config_change_observerERKNSt3__18functionIFvjbRKNS1_5tupleIJNS1_6vectorIjNS1_9allocatorIjEEEES7_N5boost9container8flat_mapIjNS3_IJNSA_INS_7AddressENS_5ThingENSB_15Is_Exact_BeforeEvEESE_SE_EEENS1_4lessIjEEvEEEEEEEE, 
                        __ZNK4AMCP6System41execute_task_against_config_changes_asyncERKNSt3__18functionIFvvEEE, 
                        __ZNK4AMCP7Control11get_elementEv, __ZNK4AMCP7Control12is_read_onlyEv, 
                        __ZNK4AMCP7Control9get_scopeEv, __ZNK4AMCP9IOContext11get_latencyEv, 

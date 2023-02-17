@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
-current-version:       1845.32.9
+current-version:       1845.34.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -73,9 +73,12 @@ exports:
                             _VectorKitConfig_BaseSSLPMEnabled,
                             _VectorKitConfig_CleanupDestroysAllocators,
                             _VectorKitConfig_CommandQueueResetMaxAttempts,
+                            _VectorKitConfig_DisplayOptions,
                             _VectorKitConfig_DistanceToCurrentManeuverSimilarityThresholdInMeters,
                             _VectorKitConfig_EnableClientDrapedVectorPolygons,
                             _VectorKitConfig_EnableCommandQueueResetOnErrors,
+                            _VectorKitConfig_EnableDrapingContinuity,
+                            _VectorKitConfig_EnableExploreModeRoadClosures,
                             _VectorKitConfig_EnableServerDrapedElevatedPolygons,
                             _VectorKitConfig_GetConfigStoreStringKeysForWatchSync,
                             _VectorKitConfig_GetUserDefaultStringKeysForWatchSync,
@@ -155,9 +158,10 @@ exports:
                             VKIconManager, VKIconModifiers, VKImage,
                             VKImageSourceKey, VKLabelExclusionRegion,
                             VKLabelMarker, VKLabelMarkerShield, VKLogicDebugInfo,
-                            VKMapSnapshot, VKMapSnapshotCreator, VKMapView, VKMarker,
-                            VKMarkerFeatureHandle, VKMuninJunction, VKMuninMarker,
-                            VKMuninRoad, VKNavContext, VKNavigationPuck,
+                            VKMapSnapshot, VKMapSnapshotCreator, VKMapView,
+                            VKMapViewDescriptor, VKMarker, VKMarkerFeatureHandle,
+                            VKMuninJunction, VKMuninMarker, VKMuninRoad,
+                            VKNavContext, VKNavigationPuck,
                             VKNavigationPuckLocationTracingEvent,
                             VKObjectBoundsContext, VKOverlay, VKPlatform,
                             VKPolylineGroupOverlay, VKPolylineOverlay,

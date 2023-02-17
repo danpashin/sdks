@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
-current-version:       614.3.7
+current-version:       615.1.21
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -16,6 +16,7 @@ exports:
                             _SFAccountModificationSystemEntitlement,
                             _SFAutoFillFromAddressBookPreferenceKey,
                             _SFAutoFillHelperErrorDomain,
+                            _SFCredentialIdentityInvalidRowIdentifier,
                             _SFCredentialIdentityStoreIdentifierCreateWithApplicationBundleIdentifier,
                             _SFCredentialIdentityStoreIdentifierCreateWithConnectionToExtension,
                             _SFCredentialIdentityStoreIdentifierGetApplicationBundleIdentifier,
@@ -27,7 +28,6 @@ exports:
                             _SFCreditCardExpirationDateKey, _SFCreditCardNameKey,
                             _SFCreditCardNumberKey, _SFCreditCardSecurityCodeKey,
                             _SFExternalCredentialIdentityStoreErrorDomain,
-                            _SFPasswordCredentialIdentityInvalidRowIdentifier,
                             _SFPasswordGenerationNoLengthLimit,
                             _SFSharablePasswordURLSchemeForAirDrop,
                             _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
@@ -37,6 +37,7 @@ exports:
                             SFAutoFillOneTimeCode,
                             SFAutoFillOneTimeCodeEmbeddedDomainPair,
                             SFAutoFillPasskey, SFAutoFillPasskeyIdentifier,
+                            SFCredentialIdentity,
                             SFCredentialProviderExtensionHelperProxy,
                             SFCredentialProviderExtensionManager,
                             SFCredentialProviderExtensionState,

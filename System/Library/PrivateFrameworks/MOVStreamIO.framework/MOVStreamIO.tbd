@@ -41,7 +41,8 @@ exports:
                             __ZN19HEVCLosslessEncoder15isSessionClosedEv,
                             __ZN19HEVCLosslessEncoder16useQPCompressionEi,
                             __ZN19HEVCLosslessEncoder22frameReorderingEnabledEv,
-                            __ZN19HEVCLosslessEncoder4OpenEii10IMG_FORMATdPFvPvS1_ijP20opaqueCMSampleBufferES1_,
+                            __ZN19HEVCLosslessEncoder25propogateColorAttachmentsEPK25opaqueCMFormatDescriptionP26OpaqueVTCompressionSession,
+                            __ZN19HEVCLosslessEncoder4OpenEii10IMG_FORMATdPK25opaqueCMFormatDescriptionPFvPvS4_ijP20opaqueCMSampleBufferES4_,
                             __ZN19HEVCLosslessEncoder5CloseEv,
                             __ZN19HEVCLosslessEncoderC1Ev,
                             __ZN19HEVCLosslessEncoderC2Ev,
@@ -90,8 +91,9 @@ exports:
                             PreProcessorFactory, RawBayerFromYUVPostProcessor,
                             RawBayerPostProcessor, RawBayerPreProcessor,
                             RawBayerTo1stPlaneYUVPreProcessor,
-                            RawBayerToYUVPreProcessor, SampleBufferAndMetadata,
+                            RawBayerToYUVPreProcessor,
+                            RawBayerToy416PreProcessor, SampleBufferAndMetadata,
                             SampleTimeBuffer, SampleTimeList,
                             SampleTimeRangeBuffer, SampleTimeRangeList, Version,
-                            VideoEncoderInterface ]
+                            VideoEncoderInterface, y416ToRawBayerPostProcessor ]
 ...

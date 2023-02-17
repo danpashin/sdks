@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
  * the created surface. */
 
 #ifndef GLES_SILENCE_DEPRECATION
-API_DEPRECATED("OpenGLES is deprecated", ios(2.0, 12.0), watchos(2.0, 5.0), tvos(9.0, 12.0)) API_UNAVAILABLE(macos)
+API_DEPRECATED("OpenGLES is deprecated", ios(2.0, 12.0), watchos(2.0, 5.0), tvos(9.0, 12.0))
+API_UNAVAILABLE(macos)
 #else
 API_AVAILABLE(ios(2.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos)
 #endif

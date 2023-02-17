@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           90EC5804-FC51-3C22-982B-1CD662CC3998
-  - target:          armv7s-ios
-    value:           08DDCC2B-8986-3D0E-975C-AEAFC5E99267
-  - target:          arm64-ios
-    value:           D1E2C8B5-46C4-374E-BA1B-EA647F96E7A0
-  - target:          arm64e-ios
-    value:           69731341-DDDA-3AE9-A26C-ABA8338FC35A
 install-name:    '/System/Library/Frameworks/UIKit.framework/UIKit'
-current-version: 6209
+current-version: 6434.0.102
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation' ]
@@ -1409,15 +1400,6 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           A705AB5F-9798-315B-9B5F-8155223CBE6E
-  - target:          arm64e-ios
-    value:           FA336E12-4374-3CAB-8C00-DDCE4B00C865
 install-name:    '/System/Library/PrivateFrameworks/CollectionViewCore.framework/CollectionViewCore'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -1432,17 +1414,8 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           72F1424E-EABD-323B-9EE3-7A1AB560F320
-  - target:          arm64e-ios
-    value:           6008B78B-4B56-3818-AF46-5D23401584AD
 install-name:    '/System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager'
-current-version: 280.3.4
+current-version: 280.5.8
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _DOCAdaptSizeToRect, _DOCAlertItemIsNotReadable, _DOCAlertUserTheNetworkIsNotReachable, 
@@ -1473,7 +1446,8 @@ exports:
                        _DOCUserDefaultsKeyMostRecentEffectiveRootLocation, _DOCUserDefaultsKeyMostRecentGoToLocations, 
                        _DOCUserDefaultsKeyMostRecentlyVisitedLocation, _DOCUserDefaultsKeyRecentsHomeScreenWidgetCache, 
                        _DOCUserDefaultsKeyRecentsHomeScreenWidgetCacheLastUpdatedAt, 
-                       _DOCUserDefaultsKeyReportAllFileProviderErrors, _DOCUserDefaultsLastNumberOfRecentsDocuments, 
+                       _DOCUserDefaultsKeyReportAllFileProviderErrors, _DOCUserDefaultsKeyUseDSEnumForExternalVolumes, 
+                       _DOCUserDefaultsKeyUseDSEnumForLocalStorage, _DOCUserDefaultsLastNumberOfRecentsDocuments, 
                        _DOCUserDefaultsLastNumberOfSharedDocuments, _DOCUserDefaultsMostRecentSceneState, 
                        _DOCUserDefaultsSceneState, _DOCUserDefaultsSortingModeReversedKey, 
                        _DOCUserDefaultsSortingModeSortTypeKey, _DOCUserDefaultsTimestampOfLastCallToRenameAPI, 
@@ -1508,17 +1482,8 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           7519C137-9DE6-3E24-822D-732C83E8D044
-  - target:          arm64e-ios
-    value:           1E8FB2BC-29BB-3841-9830-BF7CF27A17DC
 install-name:    '/System/Library/PrivateFrameworks/PrintKitUI.framework/PrintKitUI'
-current-version: 15.1
+current-version: 15.3
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _UIPrintErrorDomain ]
@@ -1530,23 +1495,14 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           A286066B-6033-3C51-8E24-B88C5D09BC46
-  - target:          arm64e-ios
-    value:           A3970E5C-4F16-3AF8-A27C-66E69AE14C14
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet'
-current-version: 1853
+current-version: 1879
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _SUIActivityTypeShare, _UIActivityContentFooterSectionKind, 
-                       _UIActivityContentHeaderSectionKind, _UIActivityTypeAddToReadingList, 
-                       _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, _UIActivityTypeBoxInvite, 
-                       _UIActivityTypeCloudSharing, _UIActivityTypeCollaborationCopyLink, 
+                       _UIActivityContentHeaderSectionKind, _UIActivityTypeAddToHomeScreen, 
+                       _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, 
+                       _UIActivityTypeBoxInvite, _UIActivityTypeCloudSharing, _UIActivityTypeCollaborationCopyLink, 
                        _UIActivityTypeCollaborationInviteWithLink, _UIActivityTypeCopyToPasteboard, 
                        _UIActivityTypeCreatePDF, _UIActivityTypeCreateReminder, _UIActivityTypeMail, 
                        _UIActivityTypeMarkupAsPDF, _UIActivityTypeMessage, _UIActivityTypeOpenInIBooks, 
@@ -1581,13 +1537,14 @@ exports:
                        SHSheetUIServiceClientContext, SUIHostActivityProxy, SUIShareActivity, 
                        UIActivity, UIActivityContentViewController, UIActivityGroupViewController, 
                        UIActivityItemCustomization, UIActivityItemProvider, UIActivityViewController, 
-                       UIAddToReadingListActivity, UIAirDropActivity, UIAirDropExtensionItemDataSource, 
-                       UIAirDropNode, UIApplicationExtensionActivity, UIAssignToContactActivity, 
-                       UIBoxInviteActivity, UICollaborationCopyLinkActivity, UICollaborationInviteWithLinkActivity, 
-                       UICopyToPasteboardActivity, UICreatePDFActivity, UIDocumentInteractionController, 
-                       UIDocumentInteractionControllerDismissMarkupAction, UIFileProviderApplicationExtensionActivity, 
-                       UIMailActivity, UIMessageActivity, UIOpenInIBooksActivity, 
-                       UIPrintActivity, UISDShareSheetSessionConfiguration, UISUIActivityConfiguration, 
+                       UIAddToHomeScreenActivity, UIAddToReadingListActivity, UIAirDropActivity, 
+                       UIAirDropExtensionItemDataSource, UIAirDropNode, UIApplicationExtensionActivity, 
+                       UIAssignToContactActivity, UIBoxInviteActivity, UICollaborationCopyLinkActivity, 
+                       UICollaborationInviteWithLinkActivity, UICopyToPasteboardActivity, 
+                       UICreatePDFActivity, UIDocumentInteractionController, UIDocumentInteractionControllerDismissMarkupAction, 
+                       UIFileProviderApplicationExtensionActivity, UIMailActivity, 
+                       UIMessageActivity, UIOpenInIBooksActivity, UIPrintActivity, 
+                       UISDShareSheetSessionConfiguration, UISUIActivityConfiguration, 
                        UISUIActivityExtensionItemData, UISUIActivityExtensionItemDataRequest, 
                        UISUIActivityViewControllerConfiguration, UISUIAirDropSecurityScopedResource, 
                        UISUIOpenInByCopySecurityScopedResource, UISUISecurityContext, 
@@ -1602,17 +1559,8 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           F259A209-6527-34E1-A0E1-53DFDEC06801
-  - target:          armv7s-ios
-    value:           ACEC1989-4A4E-3A2C-884A-9777DEBC328B
-  - target:          arm64-ios
-    value:           D77B562F-BCFE-345A-8D4C-AC438738F1CB
-  - target:          arm64e-ios
-    value:           84582FD6-B99F-3605-8643-8450C0918B01
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation'
-current-version: 856.3
+current-version: 857.5
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _NSFileExtendedAttributes, _UIFoundationErrorDomain, _UIGraphicsSetShadow, 
@@ -1892,17 +1840,8 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           5299CD70-DDBC-3FC8-A5F2-01FE98B9E2E9
-  - target:          arm64e-ios
-    value:           CC0E8CB4-1234-3740-A792-CBD05B3A0FC3
 install-name:    '/System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore'
-current-version: 6209
+current-version: 6434.0.102
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     libraries:       [ '/System/Library/PrivateFrameworks/CollectionViewCore.framework/CollectionViewCore', 
@@ -2013,8 +1952,8 @@ exports:
                        _UIAccessibilityVoiceOverStatusChanged, _UIAccessibilityVoiceOverStatusDidChangeNotification, 
                        _UIAccessibilityWhitePointStatusChangedNotification, _UIAccessibilityZoomFocusChanged, 
                        _UIActionPaste, _UIActionPasteAndGo, _UIActionPasteAndMatchStyle, 
-                       _UIActionPasteAndSearch, _UIActivityItemsConfigurationInteractionShare, 
-                       _UIActivityItemsConfigurationMetadataKeyLinkPresentationMetadata, 
+                       _UIActionPasteAndSearch, _UIActivityItemsConfigurationInteractionCopy, 
+                       _UIActivityItemsConfigurationInteractionShare, _UIActivityItemsConfigurationMetadataKeyLinkPresentationMetadata, 
                        _UIActivityItemsConfigurationMetadataKeyMessageBody, _UIActivityItemsConfigurationMetadataKeyTitle, 
                        _UIActivityItemsConfigurationPreviewIntentFullSize, _UIActivityItemsConfigurationPreviewIntentThumbnail, 
                        _UIAddObjectToStateRestorationRoots, _UIAlertWindowLevel, 
@@ -2142,9 +2081,15 @@ exports:
                        _UIEdgeInsetsMin, _UIEdgeInsetsNull, _UIEdgeInsetsReplace, 
                        _UIEdgeInsetsRotate, _UIEdgeInsetsSubtract, _UIEdgeInsetsZero, 
                        _UIEditableAlertWindowLevel, _UIEventButtonMaskForButtonNumber, 
-                       _UIFindInteractionFindSessionDidBeginNotification, _UIFindInteractionFindSessionDidEndNotification, 
-                       _UIFloatRangeInfinite, _UIFloatRangeIsEqualToRange, _UIFloatRangeIsInfinite, 
-                       _UIFloatRangeZero, _UIFloorToScale, _UIFloorToViewScale, _UIFlowLayoutCommonRowHorizontalAlignmentKey, 
+                       _UIEventSessionActionAnalyticsActionBundleIDKey, _UIEventSessionActionAnalyticsActionCountKey, 
+                       _UIEventSessionActionAnalyticsActionKeyboardAttachedKey, _UIEventSessionActionAnalyticsActionMagicKeyboardAttachedKey, 
+                       _UIEventSessionActionAnalyticsActionSequenceNumberKey, _UIEventSessionActionAnalyticsActionSessionIDKey, 
+                       _UIEventSessionActionAnalyticsActionSourceKey, _UIEventSessionActionAnalyticsActionTypeKey, 
+                       _UIEventSessionActionAnalyticsActionUIInterfaceOrientationKey, 
+                       _UIEventSessionActionAnalyticsMaxSequenceNumber, _UIFindInteractionFindSessionDidBeginNotification, 
+                       _UIFindInteractionFindSessionDidEndNotification, _UIFloatRangeInfinite, 
+                       _UIFloatRangeIsEqualToRange, _UIFloatRangeIsInfinite, _UIFloatRangeZero, 
+                       _UIFloorToScale, _UIFloorToViewScale, _UIFlowLayoutCommonRowHorizontalAlignmentKey, 
                        _UIFlowLayoutLastRowHorizontalAlignmentKey, _UIFlowLayoutRowVerticalAlignmentKey, 
                        _UIFocusDidUpdateNotification, _UIFocusGetSensitivitySetting, 
                        _UIFocusMovementDidFailNotification, _UIFocusSetSensitivitySetting, 
@@ -2670,9 +2615,9 @@ exports:
                        _UIKeyboardStringContinue, _UIKeyboardStringDefaultLocaleNumericID, 
                        _UIKeyboardStringDone, _UIKeyboardStringEmergencyCall, _UIKeyboardStringFullwidthSpace, 
                        _UIKeyboardStringGo, _UIKeyboardStringHalfwidthSpace, _UIKeyboardStringIconLabel, 
-                       _UIKeyboardStringIconLabelLanguage, _UIKeyboardStringIconLabelLanguageVariant, 
-                       _UIKeyboardStringIconLabelScript, _UIKeyboardStringJapaneseAIU, 
-                       _UIKeyboardStringJoin, _UIKeyboardStringLanguageIndicator, 
+                       _UIKeyboardStringIconLabelLanguage, _UIKeyboardStringIconLabelLanguageUsesCondensedFont, 
+                       _UIKeyboardStringIconLabelLanguageVariant, _UIKeyboardStringIconLabelScript, 
+                       _UIKeyboardStringJapaneseAIU, _UIKeyboardStringJoin, _UIKeyboardStringLanguageIndicator, 
                        _UIKeyboardStringMaxAlternateCurrencySignCount, _UIKeyboardStringNext, 
                        _UIKeyboardStringNextPage, _UIKeyboardStringNothing, _UIKeyboardStringNumbers, 
                        _UIKeyboardStringNumbersSymbols, _UIKeyboardStringPause, _UIKeyboardStringPrimaryCurrencySign, 
@@ -2869,12 +2814,14 @@ exports:
                        _UITextGranularityFromNSTextSelectionGranularity, _UITextGranularityToNSTextSelectionGranularity, 
                        _UITextInputActionsAnalyticsEventFullName, _UITextInputActionsBundleIdKey, 
                        _UITextInputActionsInputActionCountKey, _UITextInputActionsInputModeDelimiter, 
-                       _UITextInputActionsInsertedObjectsKey, _UITextInputActionsKeyboardLayoutKey, 
-                       _UITextInputActionsKeyboardTypeKey, _UITextInputActionsKeyboardVariantKey, 
-                       _UITextInputActionsLanguageKey, _UITextInputActionsObjectTypeKey, 
-                       _UITextInputActionsRegionKey, _UITextInputActionsRemovedObjectsKey, 
-                       _UITextInputActionsSessionIsModelessKey, _UITextInputActionsSourceKey, 
-                       _UITextInputActionsTypeKey, _UITextInputContextIdentifierDataDidUpdateNotification, 
+                       _UITextInputActionsIsEmojiSearchKey, _UITextInputActionsIsMarkedTextKey, 
+                       _UITextInputActionsKeyboardLayoutKey, _UITextInputActionsKeyboardTypeKey, 
+                       _UITextInputActionsKeyboardVariantKey, _UITextInputActionsLanguageKey, 
+                       _UITextInputActionsNetCharactersKey, _UITextInputActionsNetEmojiCharactersKey, 
+                       _UITextInputActionsRegionKey, _UITextInputActionsSessionIsModelessKey, 
+                       _UITextInputActionsSessionModalitiesKey, _UITextInputActionsSourceKey, 
+                       _UITextInputActionsTypeKey, _UITextInputActionsUserRemovedCharactersKey, 
+                       _UITextInputActionsUserRemovedEmojiCharactersKey, _UITextInputContextIdentifierDataDidUpdateNotification, 
                        _UITextInputContextIdentifierPreferencesDomain, _UITextInputContextIdentifierPreferencesDomainKey, 
                        _UITextInputContextIdentifierPreferencesIdentifierKey, _UITextInputContextIdentifierPreferencesIdentifierSetTimeKey, 
                        _UITextInputContextIdentifierPreferencesPrefix, _UITextInputContextIdentifierPreferencesSetTimeSuffix, 
@@ -2886,7 +2833,12 @@ exports:
                        _UITextInputResponderCapabilitiesChangedNotification, _UITextInputResponderCapabilitiesChangedSelectionDidChangeKey, 
                        _UITextInputResponderDidChangeNotification, _UITextInputResponderIsReloadedNotification, 
                        _UITextInputReturnKeyStateChangedDisplayStringKey, _UITextInputReturnKeyStateChangedNotification, 
-                       _UITextInputReturnKeyStateChangedStateKey, _UITextInputSessionActionAnalyticsEventName, 
+                       _UITextInputReturnKeyStateChangedStateKey, _UITextInputSessionAccidentalDictationAnalyticsEventFullName, 
+                       _UITextInputSessionAccidentalDictationInputModeDelimiter, 
+                       _UITextInputSessionAccidentalDictationKeyboardLayoutKey, _UITextInputSessionAccidentalDictationKeyboardTypeKey, 
+                       _UITextInputSessionAccidentalDictationKeyboardVariantKey, 
+                       _UITextInputSessionAccidentalDictationLanguageKey, _UITextInputSessionAccidentalDictationRegionKey, 
+                       _UITextInputSessionAccidentalDictationTypeKey, _UITextInputSessionActionAnalyticsEventName, 
                        _UITextInputSessionActionAnalyticsUpdateEventName, _UITextInputSessionActionIdentifierKey, 
                        _UITextInputSessionActionInputSourceDictation, _UITextInputSessionActionInputSourceKey, 
                        _UITextInputSessionActionInputSourceKeyboardCamera, _UITextInputSessionActionInputSourceKeyboardHardware, 
@@ -2901,7 +2853,9 @@ exports:
                        _UITextInputSessionDictationToDeletionCount, _UITextInputSessionDictationToEmojiCount, 
                        _UITextInputSessionDictationToEmojiEditCount, _UITextInputSessionDictationToKeyboardCount, 
                        _UITextInputSessionDictationToPunctuationCount, _UITextInputSessionDictationToPunctuationEditCount, 
-                       _UITextInputSessionDictationToWhitespaceCount, _UITextInputSessionEditingEfficacy, 
+                       _UITextInputSessionDictationToWhitespaceCount, _UITextInputSessionEditedCameraWithOtherCount, 
+                       _UITextInputSessionEditedDictationWithKeyboardCount, _UITextInputSessionEditedKeyboardWithPencilCount, 
+                       _UITextInputSessionEditedPencilWithKeyboardCount, _UITextInputSessionEditingEfficacy, 
                        _UITextInputSessionEfficacyAnalyticsEventName, _UITextInputSessionEfficacyDenominator, 
                        _UITextInputSessionEfficacyNumerator, _UITextInputSessionEmojiCount, 
                        _UITextInputSessionInsertion2SelectionInsertionCount, _UITextInputSessionInsertionCount, 
@@ -3082,12 +3036,12 @@ exports:
                        __UIDragInteractionDefaultLiftDelay, __UIDragInteractionDefaultLiftMoveHysteresis, 
                        __UIDragInteractionDefaultPointerLiftDelay, __UIDragInteractionDefaultPointerLiftMoveHysteresis, 
                        __UIDragStatisticLogItemsInDragByType, __UIDragStatisticsLogTextDelegateItems, 
-                       __UIDraggingSystemEmbeddedDisplayIdentifier, __UIDropAllowedBetweenApps, 
-                       __UIDropAllowedWithinAccountBasedApp, __UIDynamicAnimationFrictionHigh, 
-                       __UIDynamicAnimationFrictionNormal, __UIDynamicAnimationUnitSizeRotationRadians, 
-                       __UIDynamicAnimationUnitSizeScale, __UIDynamicAnimationUnitSizeTranslation, 
-                       __UIDynamicUserInterfaceStyleEnabled, __UIEffectiveSourceDataOwnerForReportedDataOwner, 
-                       __UIEventDeferringRecreationReasonBehaviorDelegateSuppressed, 
+                       __UIDraggingSystemConnectionEntitlement, __UIDraggingSystemEmbeddedDisplayIdentifier, 
+                       __UIDropAllowedBetweenApps, __UIDropAllowedWithinAccountBasedApp, 
+                       __UIDynamicAnimationFrictionHigh, __UIDynamicAnimationFrictionNormal, 
+                       __UIDynamicAnimationUnitSizeRotationRadians, __UIDynamicAnimationUnitSizeScale, 
+                       __UIDynamicAnimationUnitSizeTranslation, __UIDynamicUserInterfaceStyleEnabled, 
+                       __UIEffectiveSourceDataOwnerForReportedDataOwner, __UIEventDeferringRecreationReasonBehaviorDelegateSuppressed, 
                        __UIEventDeferringRecreationReasonChangingScreenIdentifier, 
                        __UIEventDeferringRecreationReasonDetachedContext, __UIEventDeferringRecreationReasonNoLongerTopRemoteRecord, 
                        __UIEventDeferringRecreationReasonTopRemoteElementNotVisible, 
@@ -3420,6 +3374,7 @@ exports:
                        ___UIImageCacheKeySentinel, ___UIImageCacheKeyWithSentinel, 
                        ___UILogGetCategoryCachedImpl, ___UILogGetCategoryImpl, ___UILogIdenticalLayouts, 
                        ___UILogRegulatoryLog, ___UILogSyncCategories, ___UITraitEnvironmentLayoutDirectionFromCUILayoutDirection, 
+                       ___UIVIEWANIMATABLEPROPERTYTRANSFORMER_IS_EXECUTING_CALLBACK__, 
                        ___UIVIEW_IS_EXECUTING_ANIMATION_COMPLETION_BLOCK__, ___UIViewConvertRectInViewToSceneSpace, 
                        ___UIViewReadableWidthForBodyFont, ___UIViewReadableWidthForFont, 
                        __applicationCanBeRestored, __checkApplicationRestorationState, 
@@ -3814,8 +3769,8 @@ exports:
                        _UINavigationControllerVisualStyleIOS, _UINavigationInteractiveTransition, 
                        _UINavigationInteractiveTransitionBase, _UINavigationItemRenameHandler, 
                        _UINavigationParallaxTransition, _UINonEditableTextSelectionForceGesture, 
-                       _UINotificationFeedbackGeneratorConfiguration, _UINullSubstrate, 
-                       _UIOHypogeanViewHandle, _UIOHypogeanViewRequestAction_TestingOnly, 
+                       _UINonHostingVisibilityPropagationView, _UINotificationFeedbackGeneratorConfiguration, 
+                       _UINullSubstrate, _UIOHypogeanViewHandle, _UIOHypogeanViewRequestAction_TestingOnly, 
                        _UIOHypogeanViewRequestConfiguration, _UIOShowAlertAction_TestingOnly, 
                        _UIOShowTouchAction_TestingOnly, _UIOrientationRequestAction, 
                        _UIOutlineItemRenderer, _UIOutlineItemRendererInternal, _UIOverlayService, 
@@ -3839,8 +3794,8 @@ exports:
                        _UIRemoteViewService, _UIRepeatingPressGestureRecognizer, 
                        _UIResilientRemoteViewContainerViewController, _UIRootWindow, 
                        _UIRotaryGestureRecognizer, _UIRotatingAlertController, _UISceneApplicationActionsHandler, 
-                       _UISceneConnectionOptionsContext, _UISceneLifecycleMonitor, 
-                       _UISceneResizeFinishedAction, _UIScreenRoutePickerViewController, 
+                       _UISceneBaseLifecycleSettingsDiffAction, _UISceneConnectionOptionsContext, 
+                       _UISceneLifecycleMonitor, _UISceneResizeFinishedAction, _UIScreenRoutePickerViewController, 
                        _UIScrollViewScrollIndicator, _UIScrollViewScrollIndicatorVisualStyle_CarPlay, 
                        _UIScrollViewScrollIndicatorVisualStyle_iOS, _UIScrollViewScrollIndicatorVisualStyle_tvOS, 
                        _UISearchAtomView, _UISearchAtomViewVisualStyle, _UISearchSuggestionItem_dci, 
@@ -4113,16 +4068,14 @@ exports:
                        UITransformer._transforms, UITransitionView._delegate, UITransitionView._firstResponderToRemember, 
                        UITransitionView._fromView, UITransitionView._frozenSubviews, 
                        UITransitionView._originalWindow, UITransitionView._toView, 
-                       UITransitionView._transitionViewFlags, UIView._captureGroupName, 
-                       UIView._effectHost, UIView._intermediateLayer, UIView._intermediateLayerRetained, 
-                       UIView._layer, UIView._privateSubviews, UIWebBrowserView._accessory, 
-                       UIWebBrowserView._accessoryEnabled, UIWebBrowserView._activeHighlighters, 
-                       UIWebBrowserView._addressViewBounds, UIWebBrowserView._allowDOMFocusRedirects, 
-                       UIWebBrowserView._allowsLinkPreview, UIWebBrowserView._allowsPictureInPictureVideo, 
-                       UIWebBrowserView._alwaysDispatchesScrollEvents, UIWebBrowserView._assistedNodeStartingFocusRedirects, 
-                       UIWebBrowserView._audioSessionCategoryOverride, UIWebBrowserView._currentAssistedNode, 
-                       UIWebBrowserView._deferredTouchEvents, UIWebBrowserView._dispatchedTouchEvents, 
-                       UIWebBrowserView._editingDelegateForEverythingExceptForms, 
+                       UITransitionView._transitionViewFlags, UIView._layer, UIView._viewBackingAux, 
+                       UIWebBrowserView._accessory, UIWebBrowserView._accessoryEnabled, 
+                       UIWebBrowserView._activeHighlighters, UIWebBrowserView._addressViewBounds, 
+                       UIWebBrowserView._allowDOMFocusRedirects, UIWebBrowserView._allowsLinkPreview, 
+                       UIWebBrowserView._allowsPictureInPictureVideo, UIWebBrowserView._alwaysDispatchesScrollEvents, 
+                       UIWebBrowserView._assistedNodeStartingFocusRedirects, UIWebBrowserView._audioSessionCategoryOverride, 
+                       UIWebBrowserView._currentAssistedNode, UIWebBrowserView._deferredTouchEvents, 
+                       UIWebBrowserView._dispatchedTouchEvents, UIWebBrowserView._editingDelegateForEverythingExceptForms, 
                        UIWebBrowserView._focusPreservingTokens, UIWebBrowserView._forceInputView, 
                        UIWebBrowserView._formDelegate, UIWebBrowserView._formIsAutoFilling, 
                        UIWebBrowserView._hasEditedTextField, UIWebBrowserView._input, 
@@ -4136,7 +4089,8 @@ exports:
                        UIWebClip.delegate, UIWebClip.fullScreen, UIWebClip.iconImage, 
                        UIWebClip.iconIsPrecomposed, UIWebClip.iconIsPrerendered, 
                        UIWebClip.iconIsScreenShotBased, UIWebClip.icons, UIWebClip.identifier, 
-                       UIWebClip.initialLaunchImage, UIWebClip.pageURL, UIWebClip.removalDisallowed, 
+                       UIWebClip.initialLaunchImage, UIWebClip.manifestId, UIWebClip.pageURL, 
+                       UIWebClip.placeholderBundleIdentifier, UIWebClip.removalDisallowed, 
                        UIWebClip.startupImage, UIWebClip.startupImageURL, UIWebClip.startupLandscapeImage, 
                        UIWebClip.startupLandscapeImageURL, UIWebClip.statusBarStyle, 
                        UIWebClip.supportedOrientations, UIWebClip.title, UIWebClipIcon._bestSize, 

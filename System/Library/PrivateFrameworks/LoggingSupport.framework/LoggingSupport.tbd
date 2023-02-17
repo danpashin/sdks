@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LoggingSupport.framework/LoggingSupport
-current-version:       1406.62.1
+current-version:       1431.100.11
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -89,11 +89,11 @@ exports:
                             _ctf_dtd_insert, _ctf_dtd_lookup, _ctf_enum_iter,
                             _ctf_enum_name, _ctf_enum_value, _ctf_errmsg, _ctf_errno,
                             _ctf_fdopen, _ctf_free, _ctf_func_args, _ctf_func_info,
-                            _ctf_get_ctt_size, _ctf_getmodel, _ctf_getspecific,
-                            _ctf_hash_create, _ctf_hash_define, _ctf_hash_destroy,
-                            _ctf_hash_insert, _ctf_hash_lookup, _ctf_hash_size,
-                            _ctf_import, _ctf_list_append, _ctf_list_delete,
-                            _ctf_list_prepend, _ctf_lookup_by_id,
+                            _ctf_get_ctt_lsize, _ctf_get_ctt_size, _ctf_getmodel,
+                            _ctf_getspecific, _ctf_hash_create, _ctf_hash_define,
+                            _ctf_hash_destroy, _ctf_hash_insert, _ctf_hash_lookup,
+                            _ctf_hash_size, _ctf_import, _ctf_list_append,
+                            _ctf_list_delete, _ctf_list_prepend, _ctf_lookup_by_id,
                             _ctf_lookup_by_name, _ctf_lookup_by_symbol,
                             _ctf_member_info, _ctf_member_iter, _ctf_open,
                             _ctf_parent_file, _ctf_parent_name, _ctf_sect_mmap,
@@ -106,7 +106,8 @@ exports:
                             _ctf_type_printf_compat, _ctf_type_ptrauth,
                             _ctf_type_reference, _ctf_type_resolve, _ctf_type_size,
                             _ctf_type_visit, _ctf_update, _ctf_version, _ctf_write,
-                            _ctf_zopen,
+                            _ctf_zopen, _get_type_ctt_info, _get_type_ctt_name,
+                            _get_type_ctt_size, _get_type_ctt_type,
                             _kOSLogPersistenceKeyActivityCreationCount,
                             _kOSLogPersistenceKeyLogMessageCount,
                             _kOSLogPersistenceKeyLogPrivateSize,

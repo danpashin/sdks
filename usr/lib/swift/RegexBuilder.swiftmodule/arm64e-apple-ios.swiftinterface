@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64e-apple-ios16.2 -enable-objc-interop -enable-library-evolution -module-link-name swiftRegexBuilder -swift-version 5 -O -enforce-exclusivity=unchecked -module-name RegexBuilder
-// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.7.1.134.3
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -module-link-name swiftRegexBuilder -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -module-name RegexBuilder
+// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.8.0.117.6
 import Swift
 import _StringProcessing
 extension Swift.BidirectionalCollection where Self.SubSequence == Swift.Substring {
@@ -135,13 +135,16 @@ extension _StringProcessing.RegexComponent where Self == RegexBuilder.CharacterC
   public static var anyGraphemeCluster: RegexBuilder.CharacterClass {
     get
   }
-  public static var whitespace: RegexBuilder.CharacterClass {
-    get
-  }
   public static var digit: RegexBuilder.CharacterClass {
     get
   }
   public static var hexDigit: RegexBuilder.CharacterClass {
+    get
+  }
+  public static var word: RegexBuilder.CharacterClass {
+    get
+  }
+  public static var whitespace: RegexBuilder.CharacterClass {
     get
   }
   public static var horizontalWhitespace: RegexBuilder.CharacterClass {
@@ -151,9 +154,6 @@ extension _StringProcessing.RegexComponent where Self == RegexBuilder.CharacterC
     get
   }
   public static var verticalWhitespace: RegexBuilder.CharacterClass {
-    get
-  }
-  public static var word: RegexBuilder.CharacterClass {
     get
   }
 }
@@ -788,9 +788,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -809,9 +809,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -823,9 +823,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -835,18 +835,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_disfavoredOverload @_alwaysEmitIntoClient public init<Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, R.Bound == Swift.Int {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -858,9 +858,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -879,9 +879,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -893,9 +893,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<W, C1, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -905,18 +905,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<W, C1, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -928,9 +928,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -949,9 +949,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -963,9 +963,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -975,18 +975,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -998,9 +998,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1019,9 +1019,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1033,9 +1033,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1045,18 +1045,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1068,9 +1068,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1089,9 +1089,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1103,9 +1103,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1115,18 +1115,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1138,9 +1138,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1159,9 +1159,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1173,9 +1173,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1185,18 +1185,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1208,9 +1208,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1229,9 +1229,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1243,9 +1243,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1255,18 +1255,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1278,9 +1278,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1299,9 +1299,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1313,9 +1313,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1325,18 +1325,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1348,9 +1348,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1369,9 +1369,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1383,9 +1383,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1395,18 +1395,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1418,9 +1418,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1439,9 +1439,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1453,9 +1453,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1465,18 +1465,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1488,9 +1488,9 @@ extension RegexBuilder.Optionally {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Optionally {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.zeroOrOne(component(), behavior))
+    self.init(factory.zeroOrOne(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1509,9 +1509,9 @@ extension RegexBuilder.ZeroOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.ZeroOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.zeroOrMore(component(), behavior))
+    self.init(factory.zeroOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1523,9 +1523,9 @@ extension RegexBuilder.OneOrMore {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.OneOrMore {
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(_ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.oneOrMore(component(), behavior))
+    self.init(factory.oneOrMore(componentBuilder(), behavior))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1535,18 +1535,18 @@ extension RegexBuilder.Repeat {
     let factory = makeFactory()
     self.init(factory.exactly(count, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(count: Swift.Int, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     precondition(count >= 0, "Must specify a positive count")
     let factory = makeFactory()
-    self.init(factory.exactly(count, component()))
+    self.init(factory.exactly(count, componentBuilder()))
   }
   @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component, R>(_ component: Component, _ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R.Bound == Swift.Int {
     let factory = makeFactory()
     self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component))
   }
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R.Bound == Swift.Int {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component, R>(_ expression: R, _ behavior: _StringProcessing.RegexRepetitionBehavior? = nil, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1?, C2?, C3?, C4?, C5?, C6?, C7?, C8?, C9?, C10?), Component : _StringProcessing.RegexComponent, R : Swift.RangeExpression, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R.Bound == Swift.Int {
     let factory = makeFactory()
-    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, component()))
+    self.init(factory.repeating(expression.relative(to: 0..<Int.max), behavior, componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1560,9 +1560,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == Swift.Substring, Component : _StringProcessing.RegexComponent {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1576,9 +1576,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<W, C1, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1592,9 +1592,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1608,9 +1608,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1624,9 +1624,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1640,9 +1640,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1656,9 +1656,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1672,9 +1672,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1688,9 +1688,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1704,9 +1704,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -1720,9 +1720,9 @@ extension RegexBuilder.Local {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Local {
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(@RegexBuilder.RegexComponentBuilder _ component: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, Component>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> Component) where Output == (Swift.Substring, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), Component : _StringProcessing.RegexComponent, Component.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.atomicNonCapturing(component()))
+    self.init(factory.atomicNonCapturing(componentBuilder()))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2282,32 +2282,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
+  @_disfavoredOverload @_alwaysEmitIntoClient public init<R, W, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture), R : _StringProcessing.RegexComponent, W == R.RegexOutput {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2342,32 +2342,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
+  @_alwaysEmitIntoClient public init<R, W, C1, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2402,32 +2402,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2462,32 +2462,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2522,32 +2522,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2582,32 +2582,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2642,32 +2642,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2702,32 +2702,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2762,32 +2762,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2822,32 +2822,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
@@ -2882,32 +2882,32 @@ extension RegexBuilder.TryCapture {
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.Capture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>(@RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.capture(component()))
+    self.init(factory.capture(componentBuilder()))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ component: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10>(as reference: RegexBuilder.Reference<W>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R) where Output == (Swift.Substring, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw))
+    self.init(factory.capture(componentBuilder(), reference._raw))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), nil, transform))
+    self.init(factory.capture(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.capture(component(), reference._raw, transform))
+    self.init(factory.capture(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension RegexBuilder.TryCapture {
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(@RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(@RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), nil, transform))
+    self.init(factory.captureOptional(componentBuilder(), nil, transform))
   }
-  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ component: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
+  @_alwaysEmitIntoClient public init<R, W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, NewCapture>(as reference: RegexBuilder.Reference<NewCapture>, @RegexBuilder.RegexComponentBuilder _ componentBuilder: () -> R, transform: @escaping (W) throws -> NewCapture?) where Output == (Swift.Substring, NewCapture, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10), R : _StringProcessing.RegexComponent, R.RegexOutput == (W, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10) {
     let factory = makeFactory()
-    self.init(factory.captureOptional(component(), reference._raw, transform))
+    self.init(factory.captureOptional(componentBuilder(), reference._raw, transform))
   }
 }
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)

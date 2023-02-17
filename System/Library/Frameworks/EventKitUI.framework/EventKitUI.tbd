@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           A1E58E61-E7EA-3EB2-B8F8-06BD568230F3
-  - target:          armv7s-ios
-    value:           843F33DE-02E7-3756-A650-62BF6771F971
-  - target:          arm64-ios
-    value:           D907A8AB-6773-34C1-B849-4266C25681CE
-  - target:          arm64e-ios
-    value:           2549ADD9-DF99-31C4-BAE6-788D03C983BB
 install-name:    '/System/Library/Frameworks/EventKitUI.framework/EventKitUI'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -149,8 +140,9 @@ exports:
                        _CalDateCountdownString, _CalDateIntervalMonthDayYear, _CalDateIntervalMonthYear, 
                        _CalDateIntervalShortMonthDay, _CalDateIntervalShortMonthDayYear, 
                        _CalDateIntervalShortMonthYear, _CalDateIntervalVeryShortMonthDay, 
-                       _CalDayLongMonthStringForDate, _CalDayOfWeekIsWeekend, _CalDetailStringsForCalendarEvent, 
-                       _CalDetermineWeekStart, _CalDisableFocusRingForView, _CalDisplayStringForAvailability, 
+                       _CalDayLongMonthStringForDate, _CalDayOfWeekIsWeekend, _CalDefaultDurationForNewEvents, 
+                       _CalDetailStringsForCalendarEvent, _CalDetermineWeekStart, 
+                       _CalDisableFocusRingForView, _CalDisplayStringForAvailability, 
                        _CalDisplayStringForTravelTimeUsingShortFormat, _CalDisplayStringLocationUsingFirstCommaSeparatedFragment, 
                        _CalDisplayStringLocationUsingFirstLine, _CalDisplayStringTravelTimeAndDuration, 
                        _CalDisplayStringTravelToLocationWithRoutingModeAndDuration, 
@@ -164,9 +156,10 @@ exports:
                        _CalGregorianUnitsForRecurrenceTypeAndInterval, _CalHourDesignatorsAreBeforeHour, 
                        _CalImageFromGlyph, _CalInterfaceIsLeftToRight, _CalInvalidateToday, 
                        _CalInvalidateTodayAndDetermineIfChanged, _CalIsDateNumberBeforeWeekdayName, 
-                       _CalIsRectEffectivelyEqualToRect, _CalIsWeekdayNameFirst, 
-                       _CalIsWeekdayNameLast, _CalIsYearBeforeMonth, _CalLocaleChangedNotification, 
-                       _CalLocaleIsRightToLeft, _CalLocalizedStringForInteger, _CalLocalizedStringForNumber, 
+                       _CalIsRectEffectivelyEqualToRect, _CalIsValidDurationForNewEvents, 
+                       _CalIsWeekdayNameFirst, _CalIsWeekdayNameLast, _CalIsYearBeforeMonth, 
+                       _CalLocaleChangedNotification, _CalLocaleIsRightToLeft, _CalLocalizedStringForInteger, 
+                       _CalLocalizedStringForNumber, _CalLocalizedStringForNumberWithMinimumTwoDigits, 
                        _CalLongDayLongMonthStringForDate, _CalLongDayStringForDate, 
                        _CalLongDayStringForDateNoYear, _CalLongMonthStringWithDateNoYear, 
                        _CalLongStringForDateAndTime, _CalLongStringForDateWithCommaAndYear, 
@@ -185,9 +178,10 @@ exports:
                        _CalShortStringForMonthYear, _CalShortStringForWeekday, _CalShortStringForWeekdayWithDateComponents, 
                        _CalShortStringMonthAndDay, _CalShortTZString, _CalShouldDisplayNotes, 
                        _CalShouldShowTimezoneClarification, _CalShow24Hours, _CalSizeClassChangedNotification, 
-                       _CalSnapDateTo15MinuteInterval, _CalSpaceBetweenDesignatorsAndHour, 
-                       _CalStringAbbreviationForDayOfWeek, _CalStringAbbreviationForDayOfWeekNotStandalone, 
-                       _CalStringAbbreviationForMonth, _CalStringForDate, _CalStringForDateAndDayOfWeekInCalendarTimezone, 
+                       _CalSnapDateTo15MinuteInterval, _CalSnapDateTo15MinuteOr5MinuteInterval, 
+                       _CalSpaceBetweenDesignatorsAndHour, _CalStringAbbreviationForDayOfWeek, 
+                       _CalStringAbbreviationForDayOfWeekNotStandalone, _CalStringAbbreviationForMonth, 
+                       _CalStringForDate, _CalStringForDateAndDayOfWeekInCalendarTimezone, 
                        _CalStringForDateAndDayOfWeekInCalendarTimezoneWithFormattingContext, 
                        _CalStringForDateAndDayOfWeekInTimezone, _CalStringForDateAndDayOfWeekSystemTime, 
                        _CalStringForDateAndTime, _CalStringForDateComponents, _CalStringForDateWithCommaAndYear, 
@@ -356,12 +350,12 @@ exports:
                        EKRecentContactWithImage, EKShareePickerViewController, EKShareeViewController, 
                        EKStrikethroughLabel, EKStringFactory, EKStructuredLocationWithImage, 
                        EKTextViewWithLabelTextMetrics, EKUIAccountErrorDisplayer, 
-                       EKUIAccountErrorsAnalyticsTracker, EKUIAlarm, EKUIAvailabilityNavigationController, 
-                       EKUIAvailabilityViewController, EKUICenteredTextTableViewCell, 
-                       EKUIClearButtonCell, EKUIConferenceRoom, EKUIConstrainedFontUtilities, 
-                       EKUIConstrainedFontsTableViewCell, EKUIContextMenuActions, 
-                       EKUICustomRecurrenceViewController, EKUIDebugPreferences, 
-                       EKUIDeclineCommentController, EKUIDiscoverabilityUtilities, 
+                       EKUIAccountErrorsAnalyticsTracker, EKUIAlarm, EKUIAppReviewUtils, 
+                       EKUIAvailabilityNavigationController, EKUIAvailabilityViewController, 
+                       EKUICenteredTextTableViewCell, EKUIClearButtonCell, EKUIConferenceRoom, 
+                       EKUIConstrainedFontUtilities, EKUIConstrainedFontsTableViewCell, 
+                       EKUIContextMenuActions, EKUICustomRecurrenceViewController, 
+                       EKUIDebugPreferences, EKUIDeclineCommentController, EKUIDiscoverabilityUtilities, 
                        EKUIEmailCompositionManager, EKUIEventDescriptionGenerator, 
                        EKUIEventNotificationRepresentation, EKUIEventStatusButtonsView, 
                        EKUIFocusBannerTableViewCell, EKUIFocusBannerView, EKUIIOSMacUtils, 

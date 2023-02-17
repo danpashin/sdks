@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           F3C30464-7A71-3A21-BBCE-8C209A742C91
-  - target:          armv7s-ios
-    value:           383EF69C-7227-3492-A8F7-A7DAD4FC2D79
-  - target:          arm64-ios
-    value:           97F80C3D-9727-3920-963A-2ADEE28AB066
-  - target:          arm64e-ios
-    value:           836C1BE3-7694-3BC7-8AC1-1D4782BC7BB7
 install-name:    '/System/Library/Frameworks/MessageUI.framework/MessageUI'
-current-version: 3731.255.101
+current-version: 3731.255.195
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _MFABPropertyForRecentsKind, _MFAccessibilityLargeTextEnabled, 
@@ -153,11 +144,9 @@ exports:
     symbols:         [ _MFAddressHasSafeDomain, _MFAttachmentAttributeActionKey, 
                        _MFAttachmentAttributeContentIDKey, _MFAttachmentAttributeContentTypeKey, 
                        _MFAttachmentAttributeProgressKey, _MFAttachmentAttributeSubtitleKey, 
-                       _MFAttachmentAttributeTitleKey, _MFAutomaticHorizontalDirectionalEdgeInsets, 
-                       _MFAutomaticHorizontalEdgeInsets, _MFCSSColorFromUIColor, 
-                       _MFCSSLinkColor, _MFCSSStringFromDictionary, _MFCameraRollSaveAssetWithURL, 
-                       _MFCameraRollSaveImage, _MFCenteredRectInRectWithViewScale, 
-                       _MFComposeEmptyStringMarkup, _MFComposeRecipientDragType, 
+                       _MFAttachmentAttributeTitleKey, _MFCSSColorFromUIColor, _MFCSSLinkColor, 
+                       _MFCSSStringFromDictionary, _MFCameraRollSaveAssetWithURL, 
+                       _MFCameraRollSaveImage, _MFComposeEmptyStringMarkup, _MFComposeRecipientDragType, 
                        _MFComposeRecipientStringMatchAddress, _MFComposeRecipientStringMatchFirstName, 
                        _MFComposeRecipientStringMatchLastName, _MFComposeRecipientStringMatchMiddleName, 
                        _MFComposeRecipientStringMatchType, _MFComposeRecipientTextViewIsCollectingPreviousKeyResponder, 
@@ -235,11 +224,10 @@ exports:
                        _MFModernUIApplicationPreferredContentSizeIsAccessibility, 
                        _MFModernUIApplicationPreferredContentSizeIsLargerThanLarge, 
                        _MFModernUIContentSizeAwareImageNameWithPrefix, _MFModernUIContentSizeCategoryOrdering, 
-                       _MFPointRoundedToViewScale, _MFPreferredAbbreviatedNameForAddressAndDisplayName, 
-                       _MFPreferredCompositeNameForAddressAndDisplayName, _MFPreferredCompositeNameForPerson, 
-                       _MFUIContentSizeCategoryMin, _MFUTTypeInternalMessageTransfer, 
-                       _MFUserStyleSheetCSS, _MFUserStyleSheetDictionary, __ArrayContainsKindOfObjects, 
-                       __MFShowAttachmentMarkup, _kMFMessageProgressLayerFadeDuration ]
+                       _MFPreferredAbbreviatedNameForAddressAndDisplayName, _MFPreferredCompositeNameForAddressAndDisplayName, 
+                       _MFPreferredCompositeNameForPerson, _MFUIContentSizeCategoryMin, 
+                       _MFUTTypeInternalMessageTransfer, _MFUserStyleSheetCSS, _MFUserStyleSheetDictionary, 
+                       __ArrayContainsKindOfObjects, __MFShowAttachmentMarkup, _kMFMessageProgressLayerFadeDuration ]
     objc-classes:    [ MFActivityIndicatorLabel, MFAddressBookManager, MFAddressConcatenator, 
                        MFAddressPickerReformatter, MFAlertOverlayController, MFAtomTextView, 
                        MFAttachmentDragPreviewInfo, MFAttachmentImageGenerator, MFAttachmentMarkup, 

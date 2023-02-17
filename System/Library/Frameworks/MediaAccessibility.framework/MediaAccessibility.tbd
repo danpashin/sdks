@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           90A82CE6-D96E-31AB-B6A0-5DA2DFE1A3C3
-  - target:          armv7s-ios
-    value:           4D4470D5-2526-3DEA-986C-DAEBA38C2032
-  - target:          arm64-ios
-    value:           BDE7B12D-191A-3552-ACEB-26846F94C12B
-  - target:          arm64e-ios
-    value:           4EEBD603-9ADD-3C6A-A3EB-E1E66E2D05B6
 install-name:    '/System/Library/Frameworks/MediaAccessibility.framework/MediaAccessibility'
 current-version: 62
 exports:
@@ -108,9 +99,10 @@ exports:
                        _MACaptionAppearancePrefTempProfileIDLargeText, _MACaptionAppearancePrefTempProfileIDOutlineText, 
                        _MACaptionAppearanceSetDidDisplayCaptionsCallback, _MACaptionAppearanceSetDisplayType, 
                        _MACaptionAppearanceSetShowCaptions, _MACaptionFontAttributeStrokeWidth, 
-                       _MADisplayFilterCanUseGamutRemap, _MADisplayFilterCombine, 
-                       _MADisplayFilterCopyGamutRemapLeafNodes, _MADisplayFilterCopyGamutRemapLeafNodesForFilter, 
-                       _MADisplayFilterCopyGamutRemapNonLeafNodeConfig, _MADisplayFilterCopyGamutRemapNonLeafNodeConfigForFilter, 
+                       _MADimFlashingLightsEnabled, _MADisplayFilterCanUseGamutRemap, 
+                       _MADisplayFilterCombine, _MADisplayFilterCopyGamutRemapLeafNodes, 
+                       _MADisplayFilterCopyGamutRemapLeafNodesForFilter, _MADisplayFilterCopyGamutRemapNonLeafNodeConfig, 
+                       _MADisplayFilterCopyGamutRemapNonLeafNodeConfigForFilter, 
                        _MADisplayFilterCopyGamutRemapNonLeafNodes, _MADisplayFilterCopyGamutRemapNonLeafNodesForFilter, 
                        _MADisplayFilterCopyGamutRemapXYZtoYuvCoeffs, _MADisplayFilterCopyGamutRemapYuvtoXYZCoeffs, 
                        _MADisplayFilterCopySystemFilter, _MADisplayFilterCreateBlueColorCorrection, 
@@ -190,12 +182,13 @@ exports:
                        _MAXCaptionAppearancePrefSetWindowOpacity, _MAXCaptionAppearancePrefSetWindowRoundedCornerRadius, 
                        _MAXCaptionAppearanceSetPreferredLanguage, _MAXCaptionAppearanceShowCaptionsWhenAvailable, 
                        _kMAAudibleMediaSettingsChangedNotification, _kMACaptionAppearanceSettingsChangedNotification, 
-                       _kMADisplayFilterPrefBlueColorIntensityMax, _kMADisplayFilterPrefBlueColorIntensityMin, 
-                       _kMADisplayFilterPrefBrightnessIntensityMax, _kMADisplayFilterPrefBrightnessIntensityMin, 
-                       _kMADisplayFilterPrefGreenColorIntensityMax, _kMADisplayFilterPrefGreenColorIntensityMin, 
-                       _kMADisplayFilterPrefRedColorIntensityMax, _kMADisplayFilterPrefRedColorIntensityMin, 
-                       _kMADisplayFilterPrefReduceWhitePointIntensityMax, _kMADisplayFilterPrefReduceWhitePointIntensityMin, 
-                       _kMADisplayFilterPrefSingleColorIntensityMax, _kMADisplayFilterPrefSingleColorIntensityMin, 
-                       _kMADisplayFilterPrefWarmthIntensityMax, _kMADisplayFilterPrefWarmthIntensityMin, 
-                       _kMADisplayFilterSettingsChangedNotification, _kMAXCaptionAppearanceSettingsChangedNotification ]
+                       _kMADimFlashingLightsChangedNotification, _kMADisplayFilterPrefBlueColorIntensityMax, 
+                       _kMADisplayFilterPrefBlueColorIntensityMin, _kMADisplayFilterPrefBrightnessIntensityMax, 
+                       _kMADisplayFilterPrefBrightnessIntensityMin, _kMADisplayFilterPrefGreenColorIntensityMax, 
+                       _kMADisplayFilterPrefGreenColorIntensityMin, _kMADisplayFilterPrefRedColorIntensityMax, 
+                       _kMADisplayFilterPrefRedColorIntensityMin, _kMADisplayFilterPrefReduceWhitePointIntensityMax, 
+                       _kMADisplayFilterPrefReduceWhitePointIntensityMin, _kMADisplayFilterPrefSingleColorIntensityMax, 
+                       _kMADisplayFilterPrefSingleColorIntensityMin, _kMADisplayFilterPrefWarmthIntensityMax, 
+                       _kMADisplayFilterPrefWarmthIntensityMin, _kMADisplayFilterSettingsChangedNotification, 
+                       _kMAXCaptionAppearanceSettingsChangedNotification ]
 ...

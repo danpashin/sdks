@@ -14,12 +14,14 @@ exports:
                             _PPTPBMetricStreamReadFrom, _PPTPBRoundingReadFrom,
                             _PPTPBSourceReadFrom, _PPTPBUnitReadFrom,
                             _PPTStorageLog, _PPTStoreLog, _logHandle, _metricDeclMap ]
-    objc-classes:         [ PPTBatteryMetrics, PPTCadence, PPTCadenceTuple,
-                            PPTClientInterface, PPTFileUtilities, PPTMetadataStore,
-                            PPTMetric, PPTMetricManager, PPTPBCadence,
-                            PPTPBCadenceTuple, PPTPBMetric, PPTPBMetricHistory,
-                            PPTPBMetricStream, PPTPBRounding, PPTPBSource, PPTPBUnit,
-                            PPTRounding, PPTStorageMetrics, PPTUnit, PPTUtilities ]
+    objc-classes:         [ PPSEnergyMetrics, PPTBatteryMetrics, PPTCadence,
+                            PPTCadenceTuple, PPTClientInterface, PPTConfigMetrics,
+                            PPTDisplayMetrics, PPTFileUtilities, PPTLocaleMetrics,
+                            PPTMetadataStore, PPTMetric, PPTMetricManager,
+                            PPTPBCadence, PPTPBCadenceTuple, PPTPBMetric,
+                            PPTPBMetricHistory, PPTPBMetricStream, PPTPBRounding,
+                            PPTPBSource, PPTPBUnit, PPTRounding, PPTStorageMetrics,
+                            PPTUnit, PPTUtilities, PPTWifiMetrics ]
     objc-ivars:           [ PPTPBCadence._cadences, PPTPBCadenceTuple._has,
                             PPTPBCadenceTuple._type, PPTPBCadenceTuple._value,
                             PPTPBMetric._build, PPTPBMetric._cadence,
@@ -30,6 +32,7 @@ exports:
                             PPTPBMetric._exampleValue, PPTPBMetric._has,
                             PPTPBMetric._metricDescription, PPTPBMetric._mode,
                             PPTPBMetric._name, PPTPBMetric._obfuscation,
+                            PPTPBMetric._privacyClassification,
                             PPTPBMetric._rounding, PPTPBMetric._source,
                             PPTPBMetric._storage, PPTPBMetric._subsystem,
                             PPTPBMetric._timeToLive, PPTPBMetric._unit,

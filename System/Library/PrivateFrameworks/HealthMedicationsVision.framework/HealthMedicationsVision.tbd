@@ -8,7 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _HKTextBlockFromDocumentsClosestToPoint ]
+    symbols:              [ _HKTextBlockFromDocumentsClosestToPoint,
+                            _MedicationsResolverErrorDomain, _NoNgramsErrorCode ]
     objc-classes:         [ HKFullMedicationSearchResult,
                             HKGenericMedicationSearchResult,
                             HKIngredientSearchResult,
@@ -16,8 +17,10 @@ exports:
                             HKMedicationsBarcodeNDCParser,
                             HKMedicationsDemoSearchAssetInterface,
                             HKMedicationsImageFeatureExtractor,
-                            HKMedicationsMercuryId, HKMedicationsMercuryIdGroup,
-                            HKMedicationsResolutionEngine,
+                            HKMedicationsMapResult, HKMedicationsMercuryId,
+                            HKMedicationsMercuryIdGroup,
+                            HKMedicationsNumberToNumberMap,
+                            HKMedicationsResolutionEngine, HKMedicationsResolver,
                             HKMedicationsResolverResult,
                             HKMedicationsScoredMercuryId,
                             HKMedicationsTextExtractor,

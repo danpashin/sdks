@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           91405E9E-7BAB-3564-94AF-57F78298A9F9
-  - target:          armv7s-ios
-    value:           FB1DFB3C-D311-3013-89C2-AD5797990ACA
-  - target:          arm64-ios
-    value:           92612B93-ADBC-3475-8C88-DA052D252C22
-  - target:          arm64e-ios
-    value:           A661C86A-A2A0-37B8-A50E-D35922D5D19C
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount'
-current-version: 453.20.8
+current-version: 453.40.31
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -39,9 +30,6 @@ exports:
                        '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeOMa', '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeOMn', 
                        '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeON', '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeOSHAAMc', 
                        '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeOSQAAMc', '_$s22VideoSubscriberAccount06VSUserC0V0C4TypeOSYAAMc', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO04objcF0So0dceF0Vvg', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO04objcF0So0dceF0VvpMV', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO08fromObjcF0yAESo0dceF0VFZ', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO3appyA2EmFWC', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO3webyA2EmFWC', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10SourceTypeO8provideryA2EmFWC', 
@@ -61,6 +49,7 @@ exports:
                        '_$s22VideoSubscriberAccount06VSUserC0V10sourceTypeAC06SourceF0OvpMV', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10sourceTypeAC06SourceF0Ovs', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountType9updateURL19requiresSystemTrust7deleted17fromCurrentDeviceA2C0cF0O_10Foundation0H0VSgS3btcfC', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11accountType9updateURLA2C0cF0O_10Foundation0H0VSgtcfC', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0OvM', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0Ovg', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0OvpMV', 
@@ -163,12 +152,12 @@ exports:
                        _VSElementKeyAutoAuthenticationTemplate, _VSElementKeyOnscreenCodeAuthenticationTemplate, 
                        _VSElementKeyTwoFactorVerificationTemplate, _VSElementKeyWebAuthenticationTemplate, 
                        _VSEnqueueCompletionOperation, _VSEntitlementNameAnalyticsReportFederatedEvents, 
-                       _VSEntitlementNameAnalyticsService, _VSEntitlementNameDeveloperService, 
-                       _VSEntitlementNameInternalSubscriptionService, _VSEntitlementNameInternalUserAccountService, 
-                       _VSEntitlementNameInternalUserAccountServiceDelete, _VSEntitlementNameInternalUserAccountServiceForceUpdate, 
-                       _VSEntitlementNamePrivacyService, _VSEntitlementNameSingleSignOn, 
-                       _VSEntitlementNameSmootSubscriptionService, _VSEntitlementNameSubscriptionRegistration, 
-                       _VSEntitlementNameSubscriptionServiceFetchFromAllSources, 
+                       _VSEntitlementNameAnalyticsReportMetricsEvents, _VSEntitlementNameAnalyticsService, 
+                       _VSEntitlementNameDeveloperService, _VSEntitlementNameInternalSubscriptionService, 
+                       _VSEntitlementNameInternalUserAccountService, _VSEntitlementNameInternalUserAccountServiceDelete, 
+                       _VSEntitlementNameInternalUserAccountServiceForceUpdate, _VSEntitlementNamePrivacyService, 
+                       _VSEntitlementNameSingleSignOn, _VSEntitlementNameSmootSubscriptionService, 
+                       _VSEntitlementNameSubscriptionRegistration, _VSEntitlementNameSubscriptionServiceFetchFromAllSources, 
                        _VSEntitlementNameSubscriptionServiceReadWriteWebSources, 
                        _VSEntitlementNameSubscriptionServiceSubscriberIdentifierHashModifiers, 
                        _VSEntitlementNameUserAccountService, _VSErrorDestructiveRecoveryOptionIndexSet, 
@@ -180,13 +169,23 @@ exports:
                        _VSJSAppErrorDomain, _VSJSAppObjectName, _VSJSErrorDomain, 
                        _VSJSONDataValueTransformerName, _VSLoadInterfaceFramework, 
                        _VSMainConcurrencyBindingOptions, _VSMainThreadOperationWithBlock, 
+                       _VSMetricBaseFieldHasSetTopBoxProfile, _VSMetricBaseFieldSelectedProvider, 
+                       _VSMetricBaseFieldSelectedProviderProfile, _VSMetricBaseFieldSignedInProvider, 
+                       _VSMetricBaseFieldValueSelectedProviderNone, _VSMetricBaseFieldValueSelectedProviderSTB, 
+                       _VSMetricBaseFieldValueSelectedProviderSupported, _VSMetricBaseFieldValueSelectedProviderUnsupported, 
                        _VSMetricClickTargetContinue, _VSMetricClickTargetFindMoreApps, 
                        _VSMetricClickTargetIdentityProvider, _VSMetricClickTargetInstallApp, 
                        _VSMetricClickTargetNotNow, _VSMetricClickTargetOpenApp, _VSMetricClickTargetSTBOptOut, 
-                       _VSMetricClickTargetSignIn, _VSMetricClickTargetSignOut, _VSMetricPageBuddyMain, 
-                       _VSMetricPageBuddySingleProvider, _VSMetricPageBuddyZSO, _VSMetricPageSettingsAccountInfo, 
-                       _VSMetricPageSettingsHome, _VSMetricPageSettingsPicker, _VSMetricPageTypeBuddy, 
-                       _VSMetricPageTypeSettings, _VSMetricPageTypeViewService, _VSMetricPageViewServiceMain, 
+                       _VSMetricClickTargetSignIn, _VSMetricClickTargetSignOut, _VSMetricClickTargetUpdateApp, 
+                       _VSMetricFlexibleFieldBundleID, _VSMetricFlexibleFieldErrorCode, 
+                       _VSMetricFlexibleFieldErrorType, _VSMetricFlexibleFieldErrorsUnderlying, 
+                       _VSMetricFlexibleFieldProviderID, _VSMetricFlexibleFieldRequestor, 
+                       _VSMetricFlexibleFieldSuccess, _VSMetricFlexibleFieldSupportedProvider, 
+                       _VSMetricFlexibleFieldValueFalse, _VSMetricFlexibleFieldValueTrue, 
+                       _VSMetricPageBuddyMain, _VSMetricPageBuddySingleProvider, 
+                       _VSMetricPageBuddyZSO, _VSMetricPageSettingsAccountInfo, _VSMetricPageSettingsHome, 
+                       _VSMetricPageSettingsPicker, _VSMetricPageTypeBuddy, _VSMetricPageTypeSettings, 
+                       _VSMetricPageTypeViewService, _VSMetricPageViewServiceMain, 
                        _VSOnceAndOnlyOnceBlock, _VSOpenTVProviderSettingsURLString, 
                        _VSOpenURL, _VSPerformBlockOnMainThread, _VSPerformCompletionHandler, 
                        _VSPlatformTemplateElements, _VSPrivacyServiceInterface, _VSPrivacyUsageInfoPlistKey, 

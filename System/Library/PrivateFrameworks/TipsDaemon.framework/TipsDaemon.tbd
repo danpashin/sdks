@@ -3,12 +3,20 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TipsDaemon.framework/TipsDaemon
-current-version:       663
+current-version:       665.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s10TipsDaemon17SearchItemIndexerC4nameACSS_tcfC,
+    symbols:              [ _$s10TipsDaemon16UserGuideManagerC10userGuidesSay0A4Core0cD0CGyFZ,
+                            _$s10TipsDaemon16UserGuideManagerCACycfC,
+                            _$s10TipsDaemon16UserGuideManagerCACycfc,
+                            _$s10TipsDaemon16UserGuideManagerCMa,
+                            _$s10TipsDaemon16UserGuideManagerCMn,
+                            _$s10TipsDaemon16UserGuideManagerCMo,
+                            _$s10TipsDaemon16UserGuideManagerCN,
+                            _$s10TipsDaemon16UserGuideManagerCfD,
+                            _$s10TipsDaemon17SearchItemIndexerC4nameACSS_tcfC,
                             _$s10TipsDaemon17SearchItemIndexerC4nameACSS_tcfCTj,
                             _$s10TipsDaemon17SearchItemIndexerC4nameACSS_tcfCTq,
                             _$s10TipsDaemon17SearchItemIndexerC4nameACSS_tcfc,
@@ -100,10 +108,12 @@ exports:
                             _TPSHMManagerSpeakersConfiguredChangedNotificationString,
                             _TPSTipsManagerErrorDomain, _TipsDaemonVersionNumber,
                             _TipsDaemonVersionString,
-                            _kTPSPairedAirTagValidation,
+                            _kTPSPairedAirTagValidation, _kTPSPairedAppleWatch,
+                            _kTPSPairedAppleWatchUltra,
                             _kTPSPairedCarPlayValidation,
                             _kTPSPairedHomePodMiniValidation,
                             _kTPSPairedHomePodValidation,
+                            _kTPSPairedLargeHomePodValidation,
                             _kTPSPairedWatchValidation ]
     objc-classes:         [ TPSAltAccountPairingValidation,
                             TPSAnalyticsEventProcessedUsageEvents,
@@ -175,7 +185,9 @@ exports:
                             TPSPairedCarPlayValidation,
                             TPSPairedDeviceValidation, TPSPairedDevicesCondition,
                             TPSPairedHomePodMiniValidation,
-                            TPSPairedHomePodValidation, TPSPairedWatchValidation,
+                            TPSPairedHomePodValidation,
+                            TPSPairedLargeHomePodValidation,
+                            TPSPairedWatchValidation,
                             TPSPeopleSuggestionValidation,
                             TPSPineBoardBulletinController,
                             TPSPreferredLanguageValidation, TPSRegionsCondition,
@@ -194,7 +206,7 @@ exports:
                             TPSSystemVersionUpdateValidation, TPSTargetingCache,
                             TPSTargetingValidateOperation,
                             TPSTargetingValidation, TPSTargetingValidator,
-                            TPSTipsManager, TPSTrial,
+                            TPSTipsManager, TPSTrial, TPSUserGuideManager,
                             TPSUserNotificationController, TPSUserTypeCondition,
                             TPSUserTypesValidation, TPSWelcomeDocument,
                             TPSWelcomeInformation ]

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
-current-version:       91
+current-version:       99
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -49,11 +49,17 @@ exports:
                             __SignpostSerializeableObjectFromSerializedObjectDictionary,
                             __SignpostSupportSerializationDataFromObjectArray,
                             __signpost_debug_log,
+                            _kCAFieldValue_DynamicDescription,
+                            _kCAFieldValue_WindowDuration,
                             _kSignpostSupportDefaultFirstFrameGraceTimeMs,
                             _kSignpostSupportDefaultUserInitiatedFirstFrameGraceTimeMs,
                             _kSignpostSupportDefaultUserInteractiveFirstFrameGraceTimeMs,
                             _kSignpostSupportMachTimeTranslator_UnknownTime ]
-    objc-classes:         [ SignpostAnimationAccumulatedState,
+    objc-classes:         [ SignpostAggregation, SignpostAggregationAccumulator,
+                            SignpostAggregationAccumulatorEntry,
+                            SignpostAggregationGroup,
+                            SignpostAggregationGroupDuration,
+                            SignpostAnimationAccumulatedState,
                             SignpostAnimationInterval,
                             SignpostAnimationSubInterval,
                             SignpostAnimationTransactionLifetime,

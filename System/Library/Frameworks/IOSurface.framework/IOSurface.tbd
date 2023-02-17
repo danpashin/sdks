@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           708F2D1D-B327-3273-8A8D-37076FEFEE30
-  - target:          arm64e-ios
-    value:           94F7DE11-7FB5-3726-82CE-8CA78D45ABAF
 install-name:    '/System/Library/Frameworks/IOSurface.framework/IOSurface'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -52,13 +43,13 @@ exports:
                        _IOSurfaceGetID, _IOSurfaceGetIndexedTimestamp, _IOSurfaceGetNameOfComponentOfPlane, 
                        _IOSurfaceGetNumberOfComponentsOfPlane, _IOSurfaceGetNumberOfUseCountCategories, 
                        _IOSurfaceGetOffsetOfPlane, _IOSurfaceGetParentID, _IOSurfaceGetPixelFormat, 
-                       _IOSurfaceGetPlaneCount, _IOSurfaceGetPropertyAlignment, _IOSurfaceGetPropertyMaximum, 
-                       _IOSurfaceGetProtectionOptions, _IOSurfaceGetRangeOfComponentOfPlane, 
-                       _IOSurfaceGetRegistryID, _IOSurfaceGetSeed, _IOSurfaceGetSeedOfPlane, 
-                       _IOSurfaceGetSizeOfPlane, _IOSurfaceGetSliceCount, _IOSurfaceGetSubsampling, 
-                       _IOSurfaceGetTileFormat, _IOSurfaceGetTraceID, _IOSurfaceGetTypeID, 
-                       _IOSurfaceGetTypeOfComponentOfPlane, _IOSurfaceGetUseCount, 
-                       _IOSurfaceGetVerticalPixelOffsetWithinCompressedTileArrayOfPlane, 
+                       _IOSurfaceGetPlaneCount, _IOSurfaceGetProhibitUseCount, _IOSurfaceGetPropertyAlignment, 
+                       _IOSurfaceGetPropertyMaximum, _IOSurfaceGetProtectionOptions, 
+                       _IOSurfaceGetRangeOfComponentOfPlane, _IOSurfaceGetRegistryID, 
+                       _IOSurfaceGetSeed, _IOSurfaceGetSeedOfPlane, _IOSurfaceGetSizeOfPlane, 
+                       _IOSurfaceGetSliceCount, _IOSurfaceGetSubsampling, _IOSurfaceGetTileFormat, 
+                       _IOSurfaceGetTraceID, _IOSurfaceGetTypeID, _IOSurfaceGetTypeOfComponentOfPlane, 
+                       _IOSurfaceGetUseCount, _IOSurfaceGetVerticalPixelOffsetWithinCompressedTileArrayOfPlane, 
                        _IOSurfaceGetWidth, _IOSurfaceGetWidthInCompressedTilesOfPlane, 
                        _IOSurfaceGetWidthOfPlane, _IOSurfaceGetYCbCrMatrix, _IOSurfaceIncrementUseCount, 
                        _IOSurfaceIncrementUseCountForCategory, _IOSurfaceInitDetachModeCode, 
@@ -165,18 +156,23 @@ exports:
                        _kIOSurfacePlaneInfo, _kIOSurfacePlaneOffset, _kIOSurfacePlaneSize, 
                        _kIOSurfacePlaneVerticalPixelOffsetWithinCompressedTileArray, 
                        _kIOSurfacePlaneWidth, _kIOSurfacePlaneWidthInCompressedTiles, 
-                       _kIOSurfacePreallocPages, _kIOSurfacePrefetchPages, _kIOSurfaceProtectionOptions, 
-                       _kIOSurfacePurgeWhenNotInUse, _kIOSurfaceRemoteServiceName, 
-                       _kIOSurfaceScalerTimes, _kIOSurfaceSliceCount, _kIOSurfaceSubsampling, 
-                       _kIOSurfaceSuperbuffer, _kIOSurfaceSysMemOnly, _kIOSurfaceTimingInfo, 
-                       _kIOSurfaceTouchEventTimes, _kIOSurfaceTransferFunction, _kIOSurfaceTransferFunction_ARIB_STD_B67_HLG, 
+                       _kIOSurfacePreallocPages, _kIOSurfacePrefetchPages, _kIOSurfacePrefixForUnrecognizedColorPrimariesCodePoint, 
+                       _kIOSurfacePrefixForUnrecognizedTransferFunctionCodePoint, 
+                       _kIOSurfacePrefixForUnrecognizedYCbCrMatrixCodePoint, _kIOSurfaceProhibitUseCount, 
+                       _kIOSurfaceProtectionOptions, _kIOSurfacePurgeWhenNotInUse, 
+                       _kIOSurfaceRemoteServiceName, _kIOSurfaceScalerTimes, _kIOSurfaceSliceCount, 
+                       _kIOSurfaceSubsampling, _kIOSurfaceSuperbuffer, _kIOSurfaceSysMemOnly, 
+                       _kIOSurfaceTimingInfo, _kIOSurfaceTouchEventTimes, _kIOSurfaceTransferFunction, 
+                       _kIOSurfaceTransferFunction_ARIB_STD_B67_HLG, _kIOSurfaceTransferFunction_ITU_R_2020, 
                        _kIOSurfaceTransferFunction_ITU_R_2100_HLG, _kIOSurfaceTransferFunction_ITU_R_709_2, 
                        _kIOSurfaceTransferFunction_Linear, _kIOSurfaceTransferFunction_SMPTE_240M_1995, 
                        _kIOSurfaceTransferFunction_SMPTE_ST_2084_PQ, _kIOSurfaceTransferFunction_SMPTE_ST_428_1, 
                        _kIOSurfaceTransferFunction_UseGamma, _kIOSurfaceTransferFunction_aYCC, 
                        _kIOSurfaceTransferFunction_sRGB, _kIOSurfaceType, _kIOSurfaceUseReserve, 
-                       _kIOSurfaceWidth, _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_ITU_R_601_4_String, 
-                       _kIOSurfaceYCbCrMatrix_ITU_R_709_2_String, _kIOSurfaceYCbCrMatrix_SMPTE_240M_1995_String ]
+                       _kIOSurfaceWidth, _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_IPT_String, 
+                       _kIOSurfaceYCbCrMatrix_ITU_R_2020_String, _kIOSurfaceYCbCrMatrix_ITU_R_2100_ICtCp_String, 
+                       _kIOSurfaceYCbCrMatrix_ITU_R_601_4_String, _kIOSurfaceYCbCrMatrix_ITU_R_709_2_String, 
+                       _kIOSurfaceYCbCrMatrix_SMPTE_240M_1995_String ]
     objc-classes:    [ IOSurface, IOSurfaceDebugDescription, IOSurfaceMemoryPool, 
                        IOSurfaceRemoteServer, IOSurfaceSharedEvent, IOSurfaceSharedEventListener, 
                        IOSurfaceWiringAssertion ]

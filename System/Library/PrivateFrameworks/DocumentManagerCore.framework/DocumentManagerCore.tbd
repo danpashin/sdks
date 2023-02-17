@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerCore.framework/DocumentManagerCore
-current-version:       280.3.4
+current-version:       280.5.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -23,6 +23,9 @@ exports:
                             _DOCDocumentSourceIdentifierExternalDeviceFileProvider,
                             _DOCDocumentSourceIdentifierICloud,
                             _DOCDocumentSourceIdentifierICloudFPFS,
+                            _DOCDocumentSourceIdentifierICloudFPFSManaged,
+                            _DOCDocumentSourceIdentifierICloudFPv2,
+                            _DOCDocumentSourceIdentifierICloudFPv2Managed,
                             _DOCDocumentSourceIdentifierICloudLegacy,
                             _DOCDocumentSourceIdentifierICloudManaged,
                             _DOCDocumentSourceIdentifierLocal,
@@ -49,7 +52,8 @@ exports:
                             _DOCLogAssertionFailure,
                             _DOCLogAssertionFailureMessage_Swift,
                             _DOCLogBacktrace, _DOCNodeEncodedObjectKey,
-                            _DOCNodeEncodedTypeKey, _DOCNodeFromCoder,
+                            _DOCNodeEncodedTypeKey, _DOCNodeErrorDomain,
+                            _DOCNodeFromCoder,
                             _DOCPresentDocumentManagerButtonIdentifier,
                             _DOCProviderDomainIDIsDefaultSharedServer,
                             _DOCProviderDomainIDIsExternalDevice,
@@ -93,6 +97,8 @@ exports:
                             _DOCUserDefaultsKeyRecentsHomeScreenWidgetCache,
                             _DOCUserDefaultsKeyRecentsHomeScreenWidgetCacheLastUpdatedAt,
                             _DOCUserDefaultsKeyReportAllFileProviderErrors,
+                            _DOCUserDefaultsKeyUseDSEnumForExternalVolumes,
+                            _DOCUserDefaultsKeyUseDSEnumForLocalStorage,
                             _DOCUserDefaultsLastNumberOfRecentsDocuments,
                             _DOCUserDefaultsLastNumberOfSharedDocuments,
                             _DOCUserDefaultsMostRecentSceneState,
@@ -123,9 +129,9 @@ exports:
                             DOCFeatureState, DOCFeatureStateFFSetting,
                             DOCItemCollectionObserver,
                             DOCItemCollectionSubscriber, DOCManagedPermission,
-                            DOCModifyFavoritesOperation, DOCOperationBuffer,
-                            DOCPostLaunchBuffer,
-                            DOCPostSearchInitializationBuffer,
+                            DOCModifyFavoritesOperation, DOCNodeStartupManager,
+                            DOCOperationBuffer, DOCPostLaunchBuffer,
+                            DOCPostSearchInitializationBuffer, DOCRenameSupport,
                             DOCSetTagsOperation, DOCTag, DOCTagCloudSource,
                             DOCTagLocalStorage, DOCTagRegistry, DOCUndoManager,
                             DOCUserInterfaceState, _DOCItemInfoViewAXIdentifier,

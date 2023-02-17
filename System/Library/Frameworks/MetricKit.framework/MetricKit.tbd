@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           E5730BA0-594C-3A11-8F0D-37D46B5EAB45
-  - target:          arm64e-ios
-    value:           12988D30-DCD4-3AD9-9B73-178527E420E7
 install-name:    '/System/Library/Frameworks/MetricKit.framework/MetricKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -31,17 +22,8 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           F22C0E49-9A82-3D0A-814E-6D6A34BA703C
-  - target:          arm64e-ios
-    value:           39D2758B-7AD6-3CDF-9AC3-1E688BB86BC7
 install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/SignpostMetrics'
-current-version: 91
+current-version: 99
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ __MXSignpostMetricsSnapshot ]

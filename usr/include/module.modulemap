@@ -760,6 +760,7 @@ module dnssd [system] [extern_c] {
  header "dns_sd.h"
  export *
 }
+extern module libunwind "libunwind.modulemap"
 module os [system] {
  module atomic {
   header "os/atomic.h"
@@ -836,6 +837,7 @@ module notify [system] [extern_c] {
  header "notify.h"
  export *
 }
+extern module unwind "libunwind.modulemap"
 module zlib [system] [extern_c] {
  header "zconf.h"
  header "zlib.h"

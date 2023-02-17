@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           AAAFC1D3-4659-386E-B323-29581D428EFC
-  - target:          arm64e-ios
-    value:           62CDF02A-C9D9-342F-9401-80A53117EB6F
 install-name:    '/System/Library/Frameworks/ARKit.framework/ARKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -22,15 +13,6 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           F1F718E0-C234-357E-8215-20FF7832919C
-  - target:          arm64e-ios
-    value:           2E2B7A43-69D1-3097-BD0E-0C9E98C0DAF3
 install-name:    '/System/Library/PrivateFrameworks/ARKitCore.framework/ARKitCore'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -124,17 +106,17 @@ exports:
                        _ARDepthRepresentationDictionaryClassList, _ARDepthSPIApprovedBundleIDPrefix, 
                        _ARDeviceANEVersion, _ARDeviceClass, _ARDeviceHasBackCamera, 
                        _ARDeviceHasFrontCamera, _ARDeviceHasGPSCapability, _ARDeviceHasHomeButton, 
-                       _ARDeviceHasInternetConnectivity, _ARDeviceHasIsland, _ARDeviceIsiPad, 
-                       _ARDeviceName, _ARDeviceOrientationForCameraPositionAndVideoTransform, 
-                       _ARDeviceRequiresFrameTrendControllerWorkaround, _ARDeviceString, 
-                       _ARDeviceSupported, _ARDeviceSupportsJasper, _ARDeviceSupportsMulticamMode, 
-                       _ARDeviceSupportsMulticamWithTripleRGBStreaming, _ARDeviceSupportsSceneLuminanceEstimation, 
-                       _ARDeviceSupportsUltraWideCamera, _ARDeviceUDID, _ARDictionaryFromAnchors, 
-                       _ARDispatchAfterLeewayForTimeInterval, _ARDispatchQueueIsCurrentDispatchQueue, 
-                       _ARDispatchQueueIsEqualToDispatchQueue, _ARDisplayCenterTransformForCaptureDevicePosition, 
-                       _ARDrawNormalizedCGRectIntoYUVPixelBuffer, _ARECEFToENU, _ARECEFToLLA, 
-                       _ARENUToECEF, _ARENUToECEFTransform, _AREarthMoversDistance, 
-                       _AREnvironmentTexturingHDRMaxValueUserDefaultsKey, _AREnvironmentTexturingMinimumProbeUpdateIntervalUserDefaultsKey, 
+                       _ARDeviceHasInternetConnectivity, _ARDeviceIsiPad, _ARDeviceName, 
+                       _ARDeviceOrientationForCameraPositionAndVideoTransform, _ARDeviceRequiresFrameTrendControllerWorkaround, 
+                       _ARDeviceString, _ARDeviceSupported, _ARDeviceSupportsJasper, 
+                       _ARDeviceSupportsMulticamMode, _ARDeviceSupportsMulticamWithTripleRGBStreaming, 
+                       _ARDeviceSupportsSceneLuminanceEstimation, _ARDeviceSupportsUltraWideCamera, 
+                       _ARDeviceUDID, _ARDictionaryFromAnchors, _ARDispatchAfterLeewayForTimeInterval, 
+                       _ARDispatchQueueIsCurrentDispatchQueue, _ARDispatchQueueIsEqualToDispatchQueue, 
+                       _ARDisplayCenterTransformForCaptureDevicePosition, _ARDrawNormalizedCGRectIntoYUVPixelBuffer, 
+                       _ARECEFToENU, _ARECEFToLLA, _ARENUToECEF, _ARENUToECEFTransform, 
+                       _AREarthMoversDistance, _AREnvironmentTexturingHDRMaxValueUserDefaultsKey, 
+                       _AREnvironmentTexturingMinimumProbeUpdateIntervalUserDefaultsKey, 
                        _AREnvironmentTexturingWantsHDRUserDefaultsKey, _AREqualTransforms, 
                        _ARErrorCodeFaceTrackingFailed, _ARErrorCodeImageDetectionQualityEstimationFailed, 
                        _ARErrorCodePhotoLibraryAccessUnauthorized, _ARErrorCodeRecordingFailed, 
@@ -239,9 +221,9 @@ exports:
                        _AROSTypeToString, _AROSVersionString, _ARObjectDetectionFixedPriorityProcessingQueueKey, 
                        _ARObjectDetectionRegionProposalModel, _ARObjectScanningSlamConfigurationName, 
                        _AROverrideARAppleNeuralEngine, _AROverrideARDeviceHasGPSCapability, 
-                       _AROverrideARDeviceHasHomeButton, _AROverrideARDeviceHasIsland, 
-                       _AROverrideARDeviceIsiPad, _AROverrideARDeviceSupportsJasper, 
-                       _AROverrideARUserDefaultsMulticamModeEnabled, _ARParentImageSensorAlwaysAttemptAVCaptureSessionFailureRecoveryDefaultsKey, 
+                       _AROverrideARDeviceHasHomeButton, _AROverrideARDeviceIsiPad, 
+                       _AROverrideARDeviceSupportsJasper, _AROverrideARUserDefaultsMulticamModeEnabled, 
+                       _ARParentImageSensorAlwaysAttemptAVCaptureSessionFailureRecoveryDefaultsKey, 
                        _ARParentImageSensorAttemptAVCaptureSessionFailureRecoveryAfterBackgroundDefaultsKey, 
                        _ARParseAndAddCameraCalibrationParameters, _ARParseAndAddImuCalibrationParameters, 
                        _ARPearlCameraSupported, _ARPersonDetectionTechniqueMergeLargelyOverlappingBoundingBoxes, 
@@ -358,13 +340,13 @@ exports:
                        _ARWorldTrackingPoseGraphUpdatesUserDefaultsKey, _ARWorldTrackingResultLatencyDefault, 
                        _ARWorldTrackingResultLatencyUserDefaultsKey, _ARWorldTrackingSLAMConfigurationUserDefaultsKey, 
                        _ARWorldTrackingSimluateHWFeatureDetectionDefaultsKey, _ARWorldTrackingTransformToExternalSubmapDefaultsKey, 
-                       _ARWorldTrackingUseFixedIntrinsicsUserDefaultsKey, _ARWorldTrackingUseLACCIfAvailableDefaultsKey, 
-                       _ARWorldTrackingUseNewCV3DApisUserDefaultsKey, _ARWorldTrackingUseUltraWideDefaultsKey, 
-                       _ARWorldTrackingVisionDataUserDefaultsKey, _ARWorldTrackingWarningSoundsUserDefaultsKey, 
-                       _ARWorldTransformFromVisionTransform, _ARWorldVectorFromVisionVector, 
-                       _ARWrapCVPixelBufferPlaneVImage, _ARWrapCVPixelBufferVImage, 
-                       _ARWrapDepth32BitsBufferOneComponent16Buffer, _ARWrapDepth32BitsBufferOneComponent16BufferWithScale, 
-                       _ARWrapDepth32BitsBufferOneComponent8BufferWithScale, _ARWrapDepth32BitsBuffer_FixedPointUnsigned13_3_OneComponent16Buffer, 
+                       _ARWorldTrackingUseFixedIntrinsicsUserDefaultsKey, _ARWorldTrackingUseNewCV3DApisUserDefaultsKey, 
+                       _ARWorldTrackingUseUltraWideDefaultsKey, _ARWorldTrackingVisionDataUserDefaultsKey, 
+                       _ARWorldTrackingWarningSoundsUserDefaultsKey, _ARWorldTransformFromVisionTransform, 
+                       _ARWorldVectorFromVisionVector, _ARWrapCVPixelBufferPlaneVImage, 
+                       _ARWrapCVPixelBufferVImage, _ARWrapDepth32BitsBufferOneComponent16Buffer, 
+                       _ARWrapDepth32BitsBufferOneComponent16BufferWithScale, _ARWrapDepth32BitsBufferOneComponent8BufferWithScale, 
+                       _ARWrapDepth32BitsBuffer_FixedPointUnsigned13_3_OneComponent16Buffer, 
                        _ARWriteOBJForMeshAnchorsToStream, _ARYawDifference, _AVCaptureDevicePositionFromStreamIdentifier, 
                        _AVCaptureDeviceTypeBuiltInSuperWideAngleCameraForReplayBackwardsCompatibility, 
                        _AVCaptureDeviceTypeFromStreamIdentifier, _AVMetadataIdentifierCVPixelBufferAttachment, 
@@ -483,15 +465,6 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           3A08C381-356E-340B-9314-A13491DFD5B8
-  - target:          arm64e-ios
-    value:           18F151DC-5EDA-3EE2-87D5-29B54BDFDCE9
 install-name:    '/System/Library/PrivateFrameworks/ARKitFoundation.framework/ARKitFoundation'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -505,15 +478,6 @@ exports:
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           8378760E-7448-30D5-BF39-CA49F2394E88
-  - target:          arm64e-ios
-    value:           5FF4A5A8-827E-3288-8957-CCBB68C23FBE
 install-name:    '/System/Library/PrivateFrameworks/ARKitUI.framework/ARKitUI'
 allowable-clients:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]

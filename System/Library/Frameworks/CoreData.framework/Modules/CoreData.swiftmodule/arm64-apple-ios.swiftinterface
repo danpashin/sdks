@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.134.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios16.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CoreData
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1244.5
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name CoreData
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1251.3
 import Combine
 @_exported import CoreData
 import Foundation
@@ -40,7 +40,7 @@ extension CoreData.NSExpressionDescription {
 }
 extension CoreData.NSManagedObjectContext {
   public func fetch<T>(_ request: CoreData.NSFetchRequest<T>) throws -> [T] where T : CoreData.NSFetchRequestResult
-  @_disfavoredOverload public func fetch(_ request: CoreData.NSFetchRequest<CoreData.NSFetchRequestResult>) throws -> [Any]
+  @_disfavoredOverload public func fetch(_ request: CoreData.NSFetchRequest<any CoreData.NSFetchRequestResult>) throws -> [Any]
   public func count<T>(for request: CoreData.NSFetchRequest<T>) throws -> Swift.Int where T : CoreData.NSFetchRequestResult
 }
 @available(iOS 14.0, *)
@@ -911,7 +911,7 @@ extension CoreData.NSPersistentStore.StoreType {
 }
 @available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 extension CoreData.NSManagedObject {
-  @_disfavoredOverload @objc dynamic public class func fetchRequest() -> CoreData.NSFetchRequest<CoreData.NSFetchRequestResult>
+  @_disfavoredOverload @objc dynamic public class func fetchRequest() -> CoreData.NSFetchRequest<any CoreData.NSFetchRequestResult>
 }
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension CoreData.NSManagedObject : Foundation.ObservableObject {

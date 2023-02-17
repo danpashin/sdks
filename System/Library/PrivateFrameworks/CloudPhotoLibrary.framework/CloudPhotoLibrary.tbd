@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
-current-version:       522.0.100
+current-version:       540.0.250
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -111,11 +111,20 @@ exports:
                             _CPLSyncProgressCountOfPulledAssetsKey,
                             _CPLSyncProgressStateKey,
                             _CPLSyncSessionDetachedSequenceNumber,
+                            _CPLSyncSessionMetricsNotificationName,
                             _CPLSyncSessionPredictionTypeDownloadResourceSize,
                             _CPLSyncSessionPredictionTypeUploadResourceSize,
                             _CloudPhotoLibraryVersionNumber,
-                            _CloudPhotoLibraryVersionString, __CPLAbort,
-                            __CPLConfigurationDidChangeNotification,
+                            _CloudPhotoLibraryVersionString,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionBatteryBlockedCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionBlockedSessionsCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionCellularBlockedCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionLowDataModeBlockedCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionLowPowerModeBlockedCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionTotalSessionsCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionUIVisibleBlockedCountKey,
+                            _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionUnknownReasonBlockedCountKey,
+                            __CPLAbort, __CPLConfigurationDidChangeNotification,
                             __CPLDefaultValueBOOLNO, __CPLDefaultValueNSINTEGER0,
                             __CPLDefaultValueObjectNil,
                             __CPLDontDelayChangeSessionUpdate, __CPLExit,
@@ -251,9 +260,9 @@ exports:
                             CPLSuggestionAssetFlag, CPLSuggestionChange,
                             CPLSuggestionMemory, CPLSuggestionPerson,
                             CPLSuggestionRecordList, CPLSyncIndicator,
-                            CPLSyncSession, CPLSyncSessionPrediction,
-                            CPLSyncSessionPredictor, CPLSyncStep,
-                            CPLTestFeedbackMessage, CPLTransaction,
+                            CPLSyncSession, CPLSyncSessionMetrics,
+                            CPLSyncSessionPrediction, CPLSyncSessionPredictor,
+                            CPLSyncStep, CPLTestFeedbackMessage, CPLTransaction,
                             CPLTransientRepositoryStorage,
                             CPLTransportScopeMapping,
                             CPLTransportUpdateScopeTask, CPLTransportUpdateTask,

@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           B9723266-7EEF-3004-814F-37DC27C11C6D
-  - target:          armv7s-ios
-    value:           0DC88380-6968-362B-8B97-7059CE27B9A4
-  - target:          arm64-ios
-    value:           0A6DCA9E-B053-3E79-9990-0C3E8E5612B4
-  - target:          arm64e-ios
-    value:           A61CB903-E5C7-32FC-BD87-4FB3AD76412B
 install-name:    '/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit'
 current-version: 275
 exports:
@@ -31,8 +22,9 @@ exports:
                        _IOMapMemory, _IOPMUserDidChangeCallback, _IOPSCopyChargeLog, 
                        __IOHIDCopyServiceIDs, __IOHIDEventSystemConnectionContainsEntitlement, 
                        __IOHIDEventSystemConnectionGetExecutablePath, __IOHIDEventSystemConnectionSetEventFilterMask, 
-                       __IOHIDHasEntitlement, __IOHIDServiceCopyDebugDescriptionForClient, 
-                       __IOHIDServiceCopyRecordForClient, ___CachedPropertiesRefreshApplierFunction, 
+                       __IOHIDEventSystemGetPropertyForConnection, __IOHIDHasEntitlement, 
+                       __IOHIDServiceCopyDebugDescriptionForClient, __IOHIDServiceCopyRecordForClient, 
+                       __IOHIDSessionGetPropertyForClient, ___CachedPropertiesRefreshApplierFunction, 
                        ___IOHIDElementRegister, ___IOHIDEventSystemClientRefresh, 
                        ___IOHIDSession, ___IOHIDSessionQueueDidExecute, ___IOHIDSessionQueueWillExecute, 
                        ___IOHIDSessionRef, ___IOHIDSessionReportActivity, _gIOHIDLogLevel, 
@@ -695,21 +687,21 @@ exports:
                        __IOHIDEventSystemConnectionAddNotification, __IOHIDEventSystemConnectionAddServices, 
                        __IOHIDEventSystemConnectionContainsService, __IOHIDEventSystemConnectionCopyEventCounts, 
                        __IOHIDEventSystemConnectionCopyEventLog, __IOHIDEventSystemConnectionCopyNotification, 
-                       __IOHIDEventSystemConnectionCopyQueue, __IOHIDEventSystemConnectionCopyRecord, 
-                       __IOHIDEventSystemConnectionCopyServices, __IOHIDEventSystemConnectionCreate, 
-                       __IOHIDEventSystemConnectionCreatePrivate, __IOHIDEventSystemConnectionCreateVirtualService, 
-                       __IOHIDEventSystemConnectionDispatchEvent, __IOHIDEventSystemConnectionDispatchEventForVirtualService, 
+                       __IOHIDEventSystemConnectionCopyProperty, __IOHIDEventSystemConnectionCopyQueue, 
+                       __IOHIDEventSystemConnectionCopyRecord, __IOHIDEventSystemConnectionCopyServices, 
+                       __IOHIDEventSystemConnectionCreate, __IOHIDEventSystemConnectionCreatePrivate, 
+                       __IOHIDEventSystemConnectionCreateVirtualService, __IOHIDEventSystemConnectionDispatchEvent, 
+                       __IOHIDEventSystemConnectionDispatchEventForVirtualService, 
                        __IOHIDEventSystemConnectionEventFilterCompare, __IOHIDEventSystemConnectionFilterEvent, 
                        __IOHIDEventSystemConnectionGetDispatchQueue, __IOHIDEventSystemConnectionGetEventFilterPriority, 
                        __IOHIDEventSystemConnectionGetPID, __IOHIDEventSystemConnectionGetPort, 
-                       __IOHIDEventSystemConnectionGetProperty, __IOHIDEventSystemConnectionGetReplyPort, 
-                       __IOHIDEventSystemConnectionGetSystem, __IOHIDEventSystemConnectionInvalidate, 
-                       __IOHIDEventSystemConnectionIsResponsive, __IOHIDEventSystemConnectionIsValid, 
-                       __IOHIDEventSystemConnectionLogEvent, __IOHIDEventSystemConnectionPropertyChanged, 
-                       __IOHIDEventSystemConnectionQueueStart, __IOHIDEventSystemConnectionQueueStop, 
-                       __IOHIDEventSystemConnectionRecordClientChanged, __IOHIDEventSystemConnectionRecordServiceChanged, 
-                       __IOHIDEventSystemConnectionRegisterDemuxCallback, __IOHIDEventSystemConnectionRegisterEventFilter, 
-                       __IOHIDEventSystemConnectionRegisterPropertyChangedNotification, 
+                       __IOHIDEventSystemConnectionGetReplyPort, __IOHIDEventSystemConnectionGetSystem, 
+                       __IOHIDEventSystemConnectionInvalidate, __IOHIDEventSystemConnectionIsResponsive, 
+                       __IOHIDEventSystemConnectionIsValid, __IOHIDEventSystemConnectionLogEvent, 
+                       __IOHIDEventSystemConnectionPropertyChanged, __IOHIDEventSystemConnectionQueueStart, 
+                       __IOHIDEventSystemConnectionQueueStop, __IOHIDEventSystemConnectionRecordClientChanged, 
+                       __IOHIDEventSystemConnectionRecordServiceChanged, __IOHIDEventSystemConnectionRegisterDemuxCallback, 
+                       __IOHIDEventSystemConnectionRegisterEventFilter, __IOHIDEventSystemConnectionRegisterPropertyChangedNotification, 
                        __IOHIDEventSystemConnectionRegisterRecordClientChanged, __IOHIDEventSystemConnectionRegisterRecordServiceChanged, 
                        __IOHIDEventSystemConnectionRegisterTerminationCallback, __IOHIDEventSystemConnectionReleasePrivate, 
                        __IOHIDEventSystemConnectionRemoveAllServices, __IOHIDEventSystemConnectionRemoveNotification, 
@@ -720,8 +712,8 @@ exports:
                        __IOHIDEventSystemConnectionUnregisterRecordClientChanged, 
                        __IOHIDEventSystemConnectionUnregisterRecordServiceChanged, 
                        __IOHIDEventSystemConnectionUnscheduleAsync, __IOHIDEventSystemConnectionVirtualServiceNotify, 
-                       __IOHIDEventSystemCopyRecord, __IOHIDEventSystemDispatchEvent, 
-                       __IOHIDEventSystemGetPropertyForConnection, __IOHIDEventSystemGetSession, 
+                       __IOHIDEventSystemCopyPropertyForConnection, __IOHIDEventSystemCopyRecord, 
+                       __IOHIDEventSystemDispatchEvent, __IOHIDEventSystemGetSession, 
                        __IOHIDEventSystemPropertyChanged, __IOHIDEventSystemRegisterEventFilter, 
                        __IOHIDEventSystemRegisterRecordClientChanged, __IOHIDEventSystemRegisterRecordServiceChanged, 
                        __IOHIDEventSystemRemoveConnection, __IOHIDEventSystemRemoveNotificationForConnection, 
@@ -761,9 +753,9 @@ exports:
                        __IOHIDServiceSetEventDeadlineForClient, __IOHIDServiceSetMiscDebugDebugInfo, 
                        __IOHIDServiceSetPropertyForClient, __IOHIDServiceSetReportIntervalForClient, 
                        __IOHIDServiceSupportReportLatency, __IOHIDServiceTerminate, 
-                       __IOHIDServiceUnscheduleAsync, __IOHIDSessionCreateActivityNotification, 
-                       __IOHIDSessionCreatePrivate, __IOHIDSessionDispatchEvent, 
-                       __IOHIDSessionGetPropertyForClient, __IOHIDSessionReleasePrivate, 
+                       __IOHIDServiceUnscheduleAsync, __IOHIDSessionCopyPropertyForClient, 
+                       __IOHIDSessionCreateActivityNotification, __IOHIDSessionCreatePrivate, 
+                       __IOHIDSessionDispatchEvent, __IOHIDSessionReleasePrivate, 
                        __IOHIDSessionSetPropertyForClient, __IOHIDSetFixedMouseLocation, 
                        __IOHIDSimpleQueueApplyBlock, __IOHIDSimpleQueueCreate, __IOHIDSimpleQueueDequeue, 
                        __IOHIDSimpleQueueEnqueue, __IOHIDSimpleQueuePeek, __IOHIDStringAppendIndendationAndFormat, 

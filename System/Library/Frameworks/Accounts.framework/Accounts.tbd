@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           1A95D659-22BD-3216-A8C9-C7002344E15C
-  - target:          armv7s-ios
-    value:           F7CCCCC9-15C1-320D-A50D-0955717A8C94
-  - target:          arm64-ios
-    value:           5D1BF310-6F15-345A-978A-6EDDACF042F3
-  - target:          arm64e-ios
-    value:           0A68AC1E-B87F-3A8A-8493-5EA613D47CF1
 install-name:    '/System/Library/Frameworks/Accounts.framework/Accounts'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -114,9 +105,10 @@ exports:
                        _ACIsInternal, _ACKeepPasswordsAround, _ACKeyTransparencyTokenKey, 
                        _ACLinkedInAppIdKeyDeprecated, _ACLinkedInPermissionsKeyDeprecated, 
                        _ACLiverpoolContainerIdKey, _ACMDMServerAuthTokenKey, _ACMapsTokenKey, 
-                       _ACOAuthGraphAPITokenKey, _ACOAuthTokenKey, _ACOAuthTokenNoSyncKey, 
-                       _ACOAuthTokenNoSyncSeparator, _ACOAuthTokenSecretKey, _ACOldPasswordKey, 
-                       _ACPasswordKey, _ACPasswordResetTokenBackupKey, _ACPasswordResetTokenKey, 
+                       _ACMonitoredAccountStoreDidChangeNotification, _ACOAuthGraphAPITokenKey, 
+                       _ACOAuthTokenKey, _ACOAuthTokenNoSyncKey, _ACOAuthTokenNoSyncSeparator, 
+                       _ACOAuthTokenSecretKey, _ACOldPasswordKey, _ACPasswordKey, 
+                       _ACPasswordResetTokenBackupKey, _ACPasswordResetTokenKey, 
                        _ACPropertyKeyAccountProperties, _ACPropertyKeyAccountType, 
                        _ACPropertyKeyActive, _ACPropertyKeyAuthenticated, _ACPropertyKeyCredential, 
                        _ACPropertyKeyDataclassProperties, _ACPropertyKeyDate, _ACPropertyKeyEnabledDataclasses, 

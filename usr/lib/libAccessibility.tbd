@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           BF7241F9-02BA-33AB-A6DB-2364368B0E4D
-  - target:          armv7s-ios
-    value:           79F7ED8A-6722-3439-96BD-51C621617ACB
-  - target:          arm64-ios
-    value:           A4AFA78B-9105-362C-9EC5-2BB9F7078E12
-  - target:          arm64e-ios
-    value:           2E8507B7-2481-353F-8833-49574FF9812C
 install-name:    '/usr/lib/libAccessibility.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -186,7 +177,10 @@ exports:
                        __AXSOpaqueTouchTapSpeed, __AXSPearlAuthenticationHapticsEnabled, 
                        __AXSPearlRestingUnlock, __AXSPearlRestingUnlockEverSet, __AXSPearlSetRestingUnlock, 
                        __AXSPhoneLockToEndCallEnabled, __AXSPhoneLockToEndCallSetEnabled, 
-                       __AXSPhoneticFeedbackEnabled, __AXSPointerAllowAppCustomizationEnabled, 
+                       __AXSPhoneticFeedbackEnabled, __AXSPhotosensitiveMitigationEnabled, 
+                       __AXSPhotosensitiveMitigationSetEnabled, __AXSPhotosensitiveSourceCopyDebuggingEnabled, 
+                       __AXSPhotosensitiveSourceCopyDebuggingSetEnabled, __AXSPhotosensitiveVisualDebuggingEnabled, 
+                       __AXSPhotosensitiveVisualDebuggingSetEnabled, __AXSPointerAllowAppCustomizationEnabled, 
                        __AXSPointerAllowAppCustomizationSetEnabled, __AXSPointerAutoHideDuration, 
                        __AXSPointerAutoHideEnabled, __AXSPointerAutoHideSetEnabled, 
                        __AXSPointerEffectScalingEnabled, __AXSPointerEffectScalingSetEnabled, 
@@ -389,7 +383,8 @@ exports:
                        _kAXSOpaqueTouchTapSpeedChangedNotification, _kAXSOpaqueTouchTapSpeedPreference, 
                        _kAXSPairedHearingUUIDsChangedNotification, _kAXSPearlAuthenticationHapticsEnabledNotification, 
                        _kAXSPersonalAudioPreferenceDomain, _kAXSPhoneticFeedbackEnabledNotification, 
-                       _kAXSPointerAllowAppCustomizationPreferenceDidChangeNotification, 
+                       _kAXSPhotosensitiveMitigationEnabledNotification, _kAXSPhotosensitiveSourceCopyDebuggingEnabledNotification, 
+                       _kAXSPhotosensitiveVisualDebuggingEnabledNotification, _kAXSPointerAllowAppCustomizationPreferenceDidChangeNotification, 
                        _kAXSPointerAutoHideDurationMaximum, _kAXSPointerAutoHideDurationMinimum, 
                        _kAXSPointerAutoHideDurationPreferenceDidChangeNotification, 
                        _kAXSPointerAutoHidePreferenceDidChangeNotification, _kAXSPointerEffectScalingPreferenceDidChangeNotification, 

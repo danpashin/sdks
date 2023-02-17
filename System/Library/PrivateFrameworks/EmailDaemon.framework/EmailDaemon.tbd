@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailDaemon.framework/EmailDaemon
-current-version:       3731.255.101
+current-version:       3731.255.195
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -154,6 +154,7 @@ exports:
                             EDActivityRegistry,
                             EDAddBrandIndicatorsTableUpgradeStep,
                             EDAddDisplayDateColumnUpgradeStep,
+                            EDAddDownloadStateToMessageGlobalDataUpgradeStep,
                             EDAddFollowUpJsonStringForModelEvaluationForSuggestionsColumnUpgradeStep,
                             EDAddMessagesBrandIndicatorColumnUpgradeStep,
                             EDAddMessagesDeletedDateReceivedIndexUpgradeStep,
@@ -168,7 +169,8 @@ exports:
                             EDAddSendersTableUpgradeStep,
                             EDAddThreadTablesUpgradeStep,
                             EDAddUnsubscribeFlagsStep, EDAssetDownloadScheduler,
-                            EDAttachmentMetadata, EDAttachmentPersistence,
+                            EDAttachmentFileWriter, EDAttachmentMetadata,
+                            EDAttachmentPersistence,
                             EDAttachmentPersistenceManager, EDBIMIManager,
                             EDBiomeInteractionEventLog,
                             EDCachingMailboxPredictor, EDCategorySubsystem,
@@ -260,6 +262,7 @@ exports:
                             EDPersonaPersistenceLayoutManager,
                             EDPopulateSendersTableMigrationStep,
                             EDPrecomputedThreadQueryHandler,
+                            EDPreviouslyDownloadedMessageData,
                             EDProtectedDatabasePersistence, EDQueryCreator,
                             EDReadLaterCloudStorage,
                             EDReadLaterCloudStorageChangeElement,

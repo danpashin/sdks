@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           EA0EBD6E-0DDC-3486-B833-F96FBF0DAB1C
-  - target:          arm64e-ios
-    value:           D2432FBF-A368-35F5-A98D-7976AFD7CD6A
 install-name:    '/System/Library/Frameworks/PDFKit.framework/PDFKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -99,9 +90,9 @@ exports:
                        _kPDFDocumentWriteOption_SaveWithCorePDFLayout, _kPDFDocumentWriteOption_SaveWithTaggedLayout, 
                        _kPDFDocumentWriteOption_UseAppendMode ]
     objc-classes:    [ PDFAction, PDFActionGoTo, PDFActionNamed, PDFActionRemoteGoTo, 
-                       PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAppearanceCharacteristics, 
-                       PDFBorder, PDFDestination, PDFDocument, PDFExtensionContext, 
-                       PDFExtensionViewController, PDFHostExtensionContext, PDFHostViewController, 
-                       PDFOutline, PDFPage, PDFPageEvaluator, PDFSelection, PDFThumbnailView, 
-                       PDFView, PDFViewLayout, XPCExtensionInterface ]
+                       PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAnnotationPKDrawing, 
+                       PDFAppearanceCharacteristics, PDFBorder, PDFDestination, PDFDocument, 
+                       PDFExtensionContext, PDFExtensionViewController, PDFHostExtensionContext, 
+                       PDFHostViewController, PDFOutline, PDFPage, PDFPageEvaluator, 
+                       PDFSelection, PDFThumbnailView, PDFView, PDFViewLayout, XPCExtensionInterface ]
 ...

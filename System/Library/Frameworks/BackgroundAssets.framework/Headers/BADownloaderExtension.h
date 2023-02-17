@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macos(13.0), macCatalyst(16.0), ios(16.1)) API_UNAVAILABLE(tvos, watchos)
+API_AVAILABLE(macos(13.0), ios(16.1)) API_UNAVAILABLE(tvos, watchos)
 NS_REFINED_FOR_SWIFT
 @protocol BADownloaderExtension <NSObject>
 

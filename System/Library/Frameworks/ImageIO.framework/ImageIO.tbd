@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           0F1FC129-840E-3A29-9F08-8C4EE3D0A6A6
-  - target:          armv7s-ios
-    value:           BA45F03D-ADB3-36B7-B2B0-4B6E5DC176B4
-  - target:          arm64-ios
-    value:           D78EE727-527C-34B2-8D8D-D33BE194D0C2
-  - target:          arm64e-ios
-    value:           DC89AFD9-53FB-3C99-BD1E-BF2B668A3131
 install-name:    '/System/Library/Frameworks/ImageIO.framework/ImageIO'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -491,11 +482,11 @@ exports:
                        _kCGImageSourceCreateThumbnailFromImageProxy, _kCGImageSourceCreateThumbnailWithTransform, 
                        _kCGImageSourceCreateUnpremultipliedPNG, _kCGImageSourceDisableParallelDecode, 
                        _kCGImageSourceDrawAnnotations, _kCGImageSourceEnableMosquitoNoiseFiltering, 
-                       _kCGImageSourceEnableRestrictedDecoding, _kCGImageSourceForCoreImage, 
-                       _kCGImageSourceIgnoreJPEGAuxImages, _kCGImageSourceJPEGInterchangeFormat, 
-                       _kCGImageSourceJPEGInterchangeFormatLength, _kCGImageSourceMemoryMapAsShared, 
-                       _kCGImageSourceMethodCurrentVersion, _kCGImageSourceNeutralX, 
-                       _kCGImageSourceNeutralY, _kCGImageSourceNoiseTransitionEnabled, 
+                       _kCGImageSourceEnableRestrictedDecoding, _kCGImageSourceFailForDataNotMatchingHint, 
+                       _kCGImageSourceForCoreImage, _kCGImageSourceIgnoreJPEGAuxImages, 
+                       _kCGImageSourceJPEGInterchangeFormat, _kCGImageSourceJPEGInterchangeFormatLength, 
+                       _kCGImageSourceMemoryMapAsShared, _kCGImageSourceMethodCurrentVersion, 
+                       _kCGImageSourceNeutralX, _kCGImageSourceNeutralY, _kCGImageSourceNoiseTransitionEnabled, 
                        _kCGImageSourcePreferHEIFCollection, _kCGImageSourcePreferredThreadCount, 
                        _kCGImageSourceRasterizationDPI, _kCGImageSourceRawReconstructionDefaults, 
                        _kCGImageSourceRawReconstructionMethodVersions, _kCGImageSourceRawReconstructionOptions, 

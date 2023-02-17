@@ -3,12 +3,16 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
-current-version:       762.20.25
+current-version:       762.40.64
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _VUIAccessibilityReduceMotionStatusDidChangeNotification,
+    symbols:              [ _CALayerKeyBounds, _CALayerKeyBoundsOrigin,
+                            _CALayerKeyBoundsSize, _CALayerKeyPosition,
+                            _CALayerKeyShadowPath,
+                            _VUIAccessibilityIdDisplayTypeDocument,
+                            _VUIAccessibilityReduceMotionStatusDidChangeNotification,
                             _VUIAccessibilityVoiceOverStatusDidChangeNotification,
                             _VUIApplicationDidBecomeActiveNotification,
                             _VUIApplicationDidEnterBackgroundNotification,
@@ -69,6 +73,7 @@ exports:
                             _VUIModalPresentationKeyNavigationBarHidden,
                             _VUIModalPresentationKeySourceRect,
                             _VUIModalPresentationKeySourceView,
+                            _VUIModalPresentationNavigationControllerDidShowNotification,
                             _VUIModalPresentationNavigationControllerDismissedNotification,
                             _VUIModalPresentationTypeKey,
                             _VUIModalPresentationTypeKeyActionSheet,
@@ -105,11 +110,12 @@ exports:
                             _VideosUICoreErrorHTTPStatusKey ]
     objc-classes:         [ VUIAccessibility, VUIApplicationNotificationManager,
                             VUIAssetLibrary, VUIAsynchronousOperation,
-                            VUIAsynchronousWorkToken, VUICollectionChange,
-                            VUICollectionChangeSet, VUICollectionComparator,
-                            VUIContentRating, VUIContentRatingBadgeManager,
-                            VUICoreUtilities, VUIDebugDefaults, VUIDelayOperation,
-                            VUIDevice, VUIDurationValueTransformer,
+                            VUIAsynchronousWorkToken, VUICALayerLoopbackDelegate,
+                            VUICollectionChange, VUICollectionChangeSet,
+                            VUICollectionComparator, VUIContentRating,
+                            VUIContentRatingBadgeManager, VUICoreUtilities,
+                            VUIDebugDefaults, VUIDelayOperation, VUIDevice,
+                            VUIDurationValueTransformer,
                             VUIEntitiesSortedByDateValueTransformer,
                             VUIFeatureFlag, VUIFeatureManager,
                             VUIGraphicsImageRenderer, VUIImage, VUIImageDecorator,
@@ -120,8 +126,10 @@ exports:
                             VUIModalPresentationConfiguration,
                             VUIModalPresentationNavigationController,
                             VUIModalPresenter, VUINetworkReachabilityMonitor,
-                            VUIRemoteImageDescriptor, VUIResourceImageDescriptor,
-                            VUIRestrictions, VUISortUtilities, VUIStackedImageView,
-                            VUIStateMachine, VUITitleSortDescriptor,
-                            VUIURLImageLoader, VUIURLRequestOperation ]
+                            VUIPathAnimationAction, VUIPointAnimationAction,
+                            VUIRectAnimationAction, VUIRemoteImageDescriptor,
+                            VUIResourceImageDescriptor, VUIRestrictions,
+                            VUISortUtilities, VUIStackedImageView, VUIStateMachine,
+                            VUITitleSortDescriptor, VUIURLImageLoader,
+                            VUIURLRequestOperation ]
 ...

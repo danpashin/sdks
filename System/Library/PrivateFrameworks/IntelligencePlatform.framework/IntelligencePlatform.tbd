@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IntelligencePlatform.framework/IntelligencePlatform
-current-version:       28.13
+current-version:       28.20
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -146,6 +146,9 @@ exports:
                             _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvgTj,
                             _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvgTq,
                             _$s20IntelligencePlatform11ViewServiceC011peopleAliasC0AA06PeoplefC0VSgvpMV,
+                            _$s20IntelligencePlatform11ViewServiceC032entityRelevanceHistoricalFeatureC0AA06EntityfghC0VSgvgTj,
+                            _$s20IntelligencePlatform11ViewServiceC032entityRelevanceHistoricalFeatureC0AA06EntityfghC0VSgvgTq,
+                            _$s20IntelligencePlatform11ViewServiceC032entityRelevanceHistoricalFeatureC0AA06EntityfghC0VSgvpMV,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvgTj,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvgTq,
                             _$s20IntelligencePlatform11ViewServiceC06handleC0AA06HandleC0VSgvpMV,
@@ -284,6 +287,27 @@ exports:
                             _$s20IntelligencePlatform16EntityIdentifierVs23CustomStringConvertibleAAMc,
                             _$s20IntelligencePlatform16EntityIdentifierVyACSgSScfC,
                             _$s20IntelligencePlatform16EntityIdentifierVyACs6UInt64VcfC,
+                            _$s20IntelligencePlatform21SystemPreferencesImplC36personalizationDataCollectionAllowedSbyFZ,
+                            _$s20IntelligencePlatform21SystemPreferencesImplC42updatePersonalizationDataCollectionAllowedyySbFZ,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCACycfC,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCACycfc,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCMa,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCMn,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCMo,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCN,
+                            _$s20IntelligencePlatform21SystemPreferencesImplCfD,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsV07labeledE0SaySaySo8NSNumberCG11inputVector_AF6targettGvg,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsV07labeledE0SaySaySo8NSNumberCG11inputVector_AF6targettGvpMV,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsV12featureNamesSaySSGvg,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsV12featureNamesSaySSGvpMV,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsVMa,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsVMn,
+                            _$s20IntelligencePlatform27GDGBDTLabeledFeatureVectorsVN,
+                            _$s20IntelligencePlatform36EntityRelevanceHistoricalFeatureViewV06legacyF11NameMappingSDyS2SGvgZ,
+                            _$s20IntelligencePlatform36EntityRelevanceHistoricalFeatureViewV30getPFLTrainingDataForAllEvents12featureNamesAA013GDGBDTLabeledF7VectorsVSaySSG_tKF,
+                            _$s20IntelligencePlatform36EntityRelevanceHistoricalFeatureViewVMa,
+                            _$s20IntelligencePlatform36EntityRelevanceHistoricalFeatureViewVMn,
+                            _$s20IntelligencePlatform36EntityRelevanceHistoricalFeatureViewVN,
                             _$s20IntelligencePlatform5GDLogO10defaultLog2os6LoggerVvgZ,
                             _$s20IntelligencePlatform5GDLogO12construction2os6LoggerVvgZ,
                             _$s20IntelligencePlatform5GDLogO8signpost2os6LoggerVvgZ,
@@ -307,6 +331,8 @@ exports:
                             _$sSo12GDFeatureKeyC20IntelligencePlatformE6stringABSgSS_tcfC,
                             _$sSo12GDFeatureKeyC20IntelligencePlatformE9separatorSSvgZ,
                             _$sSo14NSUserDefaultsC20IntelligencePlatformE04makecd4UserB0AByFZ,
+                            _$sSo17MLFeatureProviderP20IntelligencePlatformE10dictionarySDySSSo0A5ValueCGvg,
+                            _$sSo17MLFeatureProviderP20IntelligencePlatformE10dictionarySDySSSo0A5ValueCGvpMV,
                             _$sSp20IntelligencePlatformSo16os_unfair_lock_sVRszlE0E0yyF,
                             _$sSp20IntelligencePlatformSo16os_unfair_lock_sVRszlE11cleanupLockyyF,
                             _$sSp20IntelligencePlatformSo16os_unfair_lock_sVRszlE6unlockyyF,
@@ -325,6 +351,7 @@ exports:
                             _kGDNotificationsConstructionEnd,
                             _kGDNotificationsConstructionFailure,
                             _kGDNotificationsConstructionStart,
+                            _kGDNotificationsPersonalizationDataCollectionAllowedChanged,
                             _kGDXPCCoordinationEntitlement,
                             _kGDXPCCoordinationServiceName,
                             _kGDXPCEntityResolutionEntitlement,
@@ -347,7 +374,8 @@ exports:
                             GDLocationAddress, GDMetaContext, GDOSVariant, GDPerson,
                             GDPersonLink, GDPersonNameComponents,
                             GDPersonViewPerson, GDRankerItem, GDRankerResult, GDSpan,
-                            GDSubEntityIdentifier, GDViewAccessRequester,
+                            GDSubEntityIdentifier, GDSystemPreferences,
+                            GDSystemPreferencesImpl, GDViewAccessRequester,
                             GDViewAccessToken, GDViewService, GDVisualIdentifier,
                             GDVisualIdentifierViewLocation,
                             GDVisualIdentifierViewPerson,

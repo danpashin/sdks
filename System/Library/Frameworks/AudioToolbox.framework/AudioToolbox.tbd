@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           FB97D25E-F213-3981-9AA4-8EB3A760F235
-  - target:          armv7s-ios
-    value:           EF70D595-F4B6-3A8D-9AA0-73078DE8D03F
-  - target:          arm64-ios
-    value:           19493213-E064-36D1-8656-E731E16233F9
-  - target:          arm64e-ios
-    value:           BD81D976-A519-3840-A8F7-BD8196D73B36
 install-name:    '/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox'
 current-version: 1000
 reexported-libraries:
@@ -121,14 +112,18 @@ exports:
                        _AQOfflineMixerConnectAudioQueue, _AQOfflineMixerDisconnectAudioQueue, 
                        _AQOfflineMixerDispose, _AQOfflineMixerGetProperty, _AQOfflineMixerGetPropertySize, 
                        _AQOfflineMixerNew, _AQOfflineMixerRender, _AQOfflineMixerReset, 
-                       _AQOfflineMixerSetProperty, _AUGraphAddNode, _AUGraphAddRenderNotify, 
-                       _AUGraphClearConnections, _AUGraphClose, _AUGraphConnectNodeInput, 
-                       _AUGraphCountNodeInteractions, _AUGraphDisconnectNodeInput, 
-                       _AUGraphGetCPULoad, _AUGraphGetIndNode, _AUGraphGetInteractionInfo, 
-                       _AUGraphGetMaxCPULoad, _AUGraphGetNodeCount, _AUGraphGetNodeInteractions, 
-                       _AUGraphGetNumberOfInteractions, _AUGraphInitialize, _AUGraphIsInitialized, 
-                       _AUGraphIsOpen, _AUGraphIsRunning, _AUGraphNodeInfo, _AUGraphOpen, 
-                       _AUGraphRemoveNode, _AUGraphRemoveRenderNotify, _AUGraphSetNodeInputCallback, 
+                       _AQOfflineMixerSetProperty, _ATThreadSafeHeadTrackerCreate, 
+                       _ATThreadSafeHeadTrackerGetForwardPredictionAnchor, _ATThreadSafeHeadTrackerGetSharedInstance, 
+                       _ATThreadSafeHeadTrackerIsPrepared, _ATThreadSafeHeadTrackerPredictLatestTransform, 
+                       _ATThreadSafeHeadTrackerPredictTransformAtTime, _ATThreadSafeHeadTrackerSetForwardPredictionAnchor, 
+                       _AUGraphAddNode, _AUGraphAddRenderNotify, _AUGraphClearConnections, 
+                       _AUGraphClose, _AUGraphConnectNodeInput, _AUGraphCountNodeInteractions, 
+                       _AUGraphDisconnectNodeInput, _AUGraphGetCPULoad, _AUGraphGetIndNode, 
+                       _AUGraphGetInteractionInfo, _AUGraphGetMaxCPULoad, _AUGraphGetNodeCount, 
+                       _AUGraphGetNodeInteractions, _AUGraphGetNumberOfInteractions, 
+                       _AUGraphInitialize, _AUGraphIsInitialized, _AUGraphIsOpen, 
+                       _AUGraphIsRunning, _AUGraphNodeInfo, _AUGraphOpen, _AUGraphRemoveNode, 
+                       _AUGraphRemoveRenderNotify, _AUGraphSetNodeInputCallback, 
                        _AUGraphStart, _AUGraphStop, _AUGraphUninitialize, _AUGraphUpdate, 
                        _AudioGetSessionSpatialPreferencesForContentType, _AudioGetSimulatorDeviceUID, 
                        _AudioQueueAddPropertyListener, _AudioQueueAllocateBuffer, 
@@ -279,24 +274,15 @@ exports:
                        __ZN14AQIONodeClient26GetPIDFromClientAuditTokenEv, __ZN14AQIONodeClient32SetRoutingBehaviorFromDictionaryEPK14__CFDictionary, 
                        __ZN14AQIONodeClientD0Ev, __ZN14AQIONodeClientD1Ev, __ZN14AQIONodeClientD2Ev, 
                        __ZN2AT9IOBindingC1EPK10__CFString, __ZN2AT9IOBindingC2EPK10__CFString, 
-                       __ZNK14AQIONodeClient16AudioSessionModeEv, __ZNK14AQIONodeClient20IsNowPlayingEligibleEv, 
-                       __ZNK14AQIONodeClient21HasBooleanEntitlementEPK10__CFString, 
-                       __ZNK14AQIONodeClient21SoundStagePreferencesEv, __ZNK2AT9IOBinding11descriptionEv, 
+                       __ZNK14AQIONodeClient16AudioSessionModeEv, __ZNK14AQIONodeClient20AudioSessionCategoryEv, 
+                       __ZNK14AQIONodeClient20IsNowPlayingEligibleEv, __ZNK14AQIONodeClient21HasBooleanEntitlementEPK10__CFString, 
+                       __ZNK14AQIONodeClient27SpatialExperienceParametersEv, __ZNK2AT9IOBinding11descriptionEv, 
                        __ZNK2AT9IOBinding14serializedObjCEv, __ZNK2AT9IOBinding8deviceIDEv, 
                        __ZNK2AT9IOBinding8objcCopyEv, __ZNK2AT9IOBinding9deviceUIDEv, 
                        __ZNK2AT9IOBindingeqERKS0_, __ZTV14AQIONodeClient ]
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           732E01E2-455A-310D-8B0D-D7A75F80ABD0
-  - target:          arm64e-ios
-    value:           B1490626-9A37-3D4E-AEC3-EC1DBD0BF0D7
 install-name:    '/System/Library/PrivateFrameworks/AudioToolboxCore.framework/AudioToolboxCore'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]

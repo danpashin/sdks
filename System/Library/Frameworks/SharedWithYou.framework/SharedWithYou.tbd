@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           E1EBAACB-A653-3862-92DA-6A339454A94A
-  - target:          arm64e-ios
-    value:           89B37531-5215-317A-8643-F6B3375E78B3
 install-name:    '/System/Library/Frameworks/SharedWithYou.framework/SharedWithYou'
 swift-abi-version: 7
 reexported-libraries:
@@ -95,6 +86,7 @@ exports:
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC22activeParticipantCountSuvg', 
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC22activeParticipantCountSuvpMV', 
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC22activeParticipantCountSuvs', 
+                       '_$s13SharedWithYou30_SWCollaborationButtonViewImplC23updatePlaceholderSymbol5scale6weight9pointSizeySo07UIImageJ5ScaleV_So0oJ6WeightV12CoreGraphics7CGFloatVtF', 
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC25adaptivePresentationStyle3for15traitCollectionSo07UIModaliJ0VSo24UIPresentationControllerC_So07UITraitM0CtF', 
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC29prepareForPopoverPresentationyySo09UIPopoverK10ControllerCF', 
                        '_$s13SharedWithYou30_SWCollaborationButtonViewImplC30cloudSharingControllerDelegateSo07UICloudijK0_pSgvM', 
@@ -169,12 +161,10 @@ exports:
                        '_$sSo36_SWCollaborationDetailViewControllerC13SharedWithYouE9viewModelAC013CollaborationbcI0Cvg', 
                        '_$sSo36_SWCollaborationDetailViewControllerC13SharedWithYouE9viewModelAC013CollaborationbcI0CvpMV', 
                        '_$sSo36_SWCollaborationDetailViewControllerC13SharedWithYouE9viewModelAC013CollaborationbcI0Cvs', 
-                       '_OBJC_CLASS_$_SWCollaborationDetailViewModel', '_OBJC_CLASS_$__SWCollaborationButtonViewImpl', 
-                       '_OBJC_METACLASS_$_SWCollaborationDetailViewModel', '_OBJC_METACLASS_$__SWCollaborationButtonViewImpl', 
                        _SWCollaborationMetadataTypeIdentifier, _SWHighlightErrorDomain ]
-    objc-classes:    [ SWAttributionView, SWCollaborationDetailViewModel, SWCollaborationHighlight, 
-                       SWCollaborationView, SWCoreSpotlightUtilities, SWHighlight, 
-                       SWHighlightCenter, SWHighlightChangeEvent, SWHighlightContextMenu, 
+    objc-classes:    [ SWAttributionView, SWBackgroundSendUtility, SWCollaborationDetailViewModel, 
+                       SWCollaborationHighlight, SWCollaborationView, SWCoreSpotlightUtilities, 
+                       SWHighlight, SWHighlightCenter, SWHighlightChangeEvent, SWHighlightContextMenu, 
                        SWHighlightMembershipEvent, SWHighlightMentionEvent, SWHighlightPersistenceEvent, 
                        SWRemoveParticipantAlertController, SWShareableContent, SWShareableContentExtractor, 
                        _SWCollaborationBarButtonItem, _SWCollaborationButtonView, 

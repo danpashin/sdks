@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           282AB326-45D9-3D87-96FE-A06A201D41C9
-  - target:          arm64e-ios
-    value:           EEB22795-BF15-31D9-8203-4C051BCDB881
 install-name:    '/usr/lib/libBKDM1.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -49,9 +40,9 @@ exports:
                        BioLogBase._logPath, BioLogBase._logStartDate, BioLogBase._loggingType, 
                        BioLogBase._mesaScanningStateNotification, BioLogBase._milisecondsFormatter, 
                        BioLogBase._mode, BioLogBase._notificationPort, BioLogBase._osLog, 
-                       BioLogBase._powerSourceNotification, BioLogBase._radarPromptLock, 
-                       BioLogBase._rootPath, BioLogBase._server, BioLogBase._templateList, 
-                       BioLogBase._timeBox, BioLogBase._timeZoneFormatter, BioLogBase._timestampFormatter, 
+                       BioLogBase._powerSourceNotification, BioLogBase._rootPath, 
+                       BioLogBase._server, BioLogBase._templateList, BioLogBase._timeBox, 
+                       BioLogBase._timeZoneFormatter, BioLogBase._timestampFormatter, 
                        MesaCoreAnalyticsEvent._bioLog, MesaCoreAnalyticsEvent._fingerOn, 
                        MesaCoreAnalyticsEvent._lastBioDevice, MesaCoreAnalyticsEvent._previousDeviceType ]
 ...

@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           24DD0742-DE70-345C-B918-92093B84A22C
-  - target:          arm64e-ios
-    value:           2B43AA20-1E4D-3F6A-84B1-322A43E03D1B
 install-name:    '/System/Library/Frameworks/MatterSupport.framework/MatterSupport'
 swift-abi-version: 7
 exports:
@@ -83,6 +74,10 @@ exports:
                        '_$s13MatterSupport0A16AddDeviceRequestV12setupPayloadSo08MTRSetupG0CSgvs', 
                        '_$s13MatterSupport0A16AddDeviceRequestV16serializedAsData10Foundation0H0VSgvg', 
                        '_$s13MatterSupport0A16AddDeviceRequestV16serializedAsData10Foundation0H0VSgvpMV', 
+                       '_$s13MatterSupport0A16AddDeviceRequestV18shouldScanNetworksSbvM', 
+                       '_$s13MatterSupport0A16AddDeviceRequestV18shouldScanNetworksSbvg', 
+                       '_$s13MatterSupport0A16AddDeviceRequestV18shouldScanNetworksSbvpMV', 
+                       '_$s13MatterSupport0A16AddDeviceRequestV18shouldScanNetworksSbvs', 
                        '_$s13MatterSupport0A16AddDeviceRequestV2eeoiySbAC_ACtFZ', 
                        '_$s13MatterSupport0A16AddDeviceRequestV4HomeV11displayNameAESS_tcfC', 
                        '_$s13MatterSupport0A16AddDeviceRequestV4HomeV11displayNameSSvM', 
@@ -136,6 +131,7 @@ exports:
                        '_$s13MatterSupport0A16AddDeviceRequestV8TopologyVSHAAMc', 
                        '_$s13MatterSupport0A16AddDeviceRequestV8TopologyVSQAAMc', 
                        '_$s13MatterSupport0A16AddDeviceRequestV8TopologyVSeAAMc', 
+                       '_$s13MatterSupport0A16AddDeviceRequestV8topology12setupPayload7showing18shouldScanNetworksA2C8TopologyV_So08MTRSetupH0CSgAC0D8CriteriaOSbtcfC', 
                        '_$s13MatterSupport0A16AddDeviceRequestV8topology12setupPayload7showingA2C8TopologyV_So08MTRSetupH0CSgAC0D8CriteriaOtcfC', 
                        '_$s13MatterSupport0A16AddDeviceRequestV8topologyAC8TopologyVvM', 
                        '_$s13MatterSupport0A16AddDeviceRequestV8topologyAC8TopologyVvg', 
@@ -308,9 +304,7 @@ exports:
                        _MTSDeviceSetupExtensionIdentifier, _MTSDeviceSetupExtensionMessageUserInfoKeyData, 
                        _MTSErrorDomain, _MTSKeychainStoreDataSourceAccessGroup, _MTSKeychainStoreScopeKeyValue, 
                        _MTSXPCEntitlementNameAllowSetupPayload, _MTSXPCEntitlementNameDevicePairing, 
-                       _MTSXPCEntitlementNamePrivateHomeKit, _MTSXPCMachServiceName, 
-                       '_OBJC_CLASS_$__TtC13MatterSupport38MatterAddDeviceExtensionRequestHandler', 
-                       '_OBJC_METACLASS_$__TtC13MatterSupport38MatterAddDeviceExtensionRequestHandler' ]
+                       _MTSXPCEntitlementNamePrivateHomeKit, _MTSXPCMachServiceName ]
     objc-classes:    [ MTSDeviceCredential, MTSDevicePairing, MTSDevicePairingEcosystem, 
                        MTSDevicePairingFabric, MTSDevicePairingManager, MTSDevicePairingVendor, 
                        MTSDeviceSetupDevicePredicate, MTSDeviceSetupExtensionConfigureDeviceRequest, 

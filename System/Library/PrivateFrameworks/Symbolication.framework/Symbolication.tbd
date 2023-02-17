@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64556.3.1
+current-version:       64559.86.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -15,6 +15,7 @@ exports:
                             _VMUEnumerateVMAnnotatedMallocObjectsWithBlock,
                             _VMUGetFlagsForAllVMRegionStatistics,
                             _VMUGraphNodeTypeDescription,
+                            _VMUGraphNodeType_IsAddressValid,
                             _VMUGraphNodeType_IsRoot,
                             _VMUGraphNodeType_IsVMRegion, _VMUIntersectionRange,
                             _VMUIsOwningReference, _VMULiteZoneIndex,
@@ -47,9 +48,9 @@ exports:
                             _kVMUPrintArchivingTiming, _kVMURootRetainCycle,
                             _kVMUThreadSpecificDataKeyString, _pidFromHint,
                             _psName, _task_enumerate_malloc_blocks,
-                            _task_find_leaks, _task_foreach_malloc_zone,
-                            _task_get_malloc_ptrs, _task_get_malloc_ptrs_by_zone,
-                            _task_peek, _task_peek_natural_size, _task_peek_string,
+                            _task_foreach_malloc_zone, _task_get_malloc_ptrs,
+                            _task_get_malloc_ptrs_by_zone, _task_peek,
+                            _task_peek_natural_size, _task_peek_string,
                             _task_read_ptr_at, _task_read_unsigned_at,
                             _task_start_peeking, _task_stop_peeking,
                             _task_try_peek, _vmu_context_for_uniqued_stack,
@@ -77,13 +78,14 @@ exports:
                             VMUObjectGraph, VMUObjectIdentifier,
                             VMUObjectIdentifierDriverKitSupport, VMUOptionParser,
                             VMUProcInfo, VMUProcList, VMUProcessDescription,
-                            VMUProcessObjectGraph, VMUProgressBar, VMURangeArray,
-                            VMURangeToStringMap, VMUReverseGraphEnumerator,
-                            VMUSampler, VMUScanOverlay, VMUStackLogConsolidator,
-                            VMUStackLogReaderBase, VMUSwiftRuntimeInfo,
-                            VMUSymbolStore, VMUTaskMemoryCache,
-                            VMUTaskMemoryScanner, VMUTaskStackLogReader,
-                            VMUTaskThreadStates, VMUTerminalColorizer, VMUVMRegion,
+                            VMUProcessLedger, VMUProcessObjectGraph,
+                            VMUProgressBar, VMURangeArray, VMURangeToStringMap,
+                            VMUReverseGraphEnumerator, VMUSampler, VMUScanOverlay,
+                            VMUStackLogConsolidator, VMUStackLogReaderBase,
+                            VMUSwiftRuntimeInfo, VMUSymbolStore,
+                            VMUTaskMemoryCache, VMUTaskMemoryScanner,
+                            VMUTaskStackLogReader, VMUTaskThreadStates,
+                            VMUTerminalColorizer, VMUVMRegion,
                             VMUVMRegionIdentifier, VMUVMRegionRangeInfo,
                             VMUVMRegionTracker ]
     objc-ivars:           [ VMUBacktrace._asyncCallstack,

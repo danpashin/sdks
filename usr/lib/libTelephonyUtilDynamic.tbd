@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           6DFD60E8-E58E-3240-81E7-BDB845574909
-  - target:          armv7s-ios
-    value:           E84E0346-EAA1-3332-886F-6F8ED4906473
-  - target:          arm64-ios
-    value:           25D647F6-C126-3844-BA27-8FCB0F24E90D
-  - target:          arm64e-ios
-    value:           24D59667-3AB3-3108-B7AC-33A8272BEBEE
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -100,14 +91,16 @@ exports:
                        __ZN3ctu16LogMessageBuffer7vprintfEPKcPv, __ZN3ctu16ScopedLogFlusherC1ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILx1ELx1000EEEEE, 
                        __ZN3ctu16ScopedLogFlusherC2ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILx1ELx1000EEEEE, 
                        __ZN3ctu18XpcJetsamAssertion11addActivityENSt3__18weak_ptrINS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEE, 
+                       __ZN3ctu19RequestRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_24RequestRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
                        __ZN3ctu20DispatchTimerService17scheduleAfterImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEN8dispatch5queueENSG_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService18scheduleAfter_syncENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEP16dispatch_queue_sN8dispatch5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService22createOneShotTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEN8dispatch5queueENSG_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService23createOneShotTimer_syncENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEP16dispatch_queue_sN8dispatch5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService23createPeriodicTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEN8dispatch5queueENSG_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService24createPeriodicTimer_syncENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILx1ELx1000000EEEEEEEEP16dispatch_queue_sN8dispatch5blockIU13block_pointerFvvEEE, 
-                       __ZN3ctu20DispatchTimerService9init_syncEv, __ZN3ctu21maybe_add_logging_tagEN8dispatch5queueE, 
-                       __ZN3ctu22ConnectionRestResource16lookupConnectionERKN3xpc10connectionE, 
+                       __ZN3ctu20DispatchTimerService9init_syncEv, __ZN3ctu20PropertyRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_25PropertyRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
+                       __ZN3ctu21AssertionRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_26AssertionRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
+                       __ZN3ctu21maybe_add_logging_tagEN8dispatch5queueE, __ZN3ctu22ConnectionRestResource16lookupConnectionERKN3xpc10connectionE, 
                        __ZN3ctu23get_current_logging_tagEv, __ZN3ctu2cf12convert_copyERPK10__CFStringPKcmPK13__CFAllocator, 
                        __ZN3ctu2cf12convert_copyERPK10__CFStringRKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEmPK13__CFAllocator, 
                        __ZN3ctu2cf14assign_looselyERlPKv, __ZN3ctu2fs11file_existsERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
@@ -422,8 +415,7 @@ exports:
                        __ZN3ctu18XpcJetsamAssertion6tidyUpEv, __ZN3ctu18XpcJetsamAssertionC1Ev, 
                        __ZN3ctu18XpcJetsamAssertionC2Ev, __ZN3ctu18appendLeftoverBitsERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEmPKc, 
                        __ZN3ctu18getBytePrettyPrintEmhRKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
-                       __ZN3ctu18symbolicate_framesEPPvm, __ZN3ctu19RequestRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_24RequestRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
-                       __ZN3ctu19RequestRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
+                       __ZN3ctu18symbolicate_framesEPPvm, __ZN3ctu19RequestRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu19RequestRestResource21handleRestMessage_POPERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu19RequestRestResource21handleRestMessage_SETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu19RequestRestResource22handleMessage_Root_GETERNS_19RestResourceContextE, 
@@ -452,8 +444,7 @@ exports:
                        __ZN3ctu20DispatchTimerServiceC1ENSt3__110shared_ptrINS_9LogServerEEE, 
                        __ZN3ctu20DispatchTimerServiceC2ENSt3__110shared_ptrINS_9LogServerEEE, 
                        __ZN3ctu20DispatchTimerServiceD0Ev, __ZN3ctu20DispatchTimerServiceD1Ev, 
-                       __ZN3ctu20DispatchTimerServiceD2Ev, __ZN3ctu20PropertyRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_25PropertyRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
-                       __ZN3ctu20PropertyRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
+                       __ZN3ctu20DispatchTimerServiceD2Ev, __ZN3ctu20PropertyRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu20PropertyRestResource21handleRestMessage_POPERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu20PropertyRestResource21handleRestMessage_SETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu20PropertyRestResource22handleMessage_Meta_GETERNS_19RestResourceContextE, 
@@ -477,8 +468,7 @@ exports:
                        __ZN3ctu20PropertyRestResource44handleMessage_Meta_Watched_Meta_Watchers_GETERNS_19RestResourceContextE, 
                        __ZN3ctu20PropertyRestResourceC1Eb, __ZN3ctu20PropertyRestResourceC2Eb, 
                        __ZN3ctu20PropertyRestResourceD0Ev, __ZN3ctu20PropertyRestResourceD1Ev, 
-                       __ZN3ctu20PropertyRestResourceD2Ev, __ZN3ctu21AssertionRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container16container_detail12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_26AssertionRestResourceStateENS1_14default_deleteISG_EEEEEELb0EEE, 
-                       __ZN3ctu21AssertionRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
+                       __ZN3ctu20PropertyRestResourceD2Ev, __ZN3ctu21AssertionRestResource21handleRestMessage_GETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu21AssertionRestResource21handleRestMessage_POPERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu21AssertionRestResource21handleRestMessage_SETERNS_19RestResourceContextERKNS_8PathViewE, 
                        __ZN3ctu21AssertionRestResource22handleMessage_Root_GETERNS_19RestResourceContextE, 
@@ -893,10 +883,12 @@ exports:
                        __ZN3ctu16ScopedLogFlusherC2ERKNSt3__110shared_ptrINS_9LogServerEEENS1_6chrono8durationIxNS1_5ratioILl1ELl1000EEEEE, 
                        __ZN3ctu18XpcJetsamAssertion11addActivityENSt3__18weak_ptrINS0_8ActivityEEE, 
                        __ZN3ctu18appendLeftoverBitsERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEyPKc, 
+                       __ZN3ctu19RequestRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_24RequestRestResourceStateENS1_14default_deleteISF_EEEEEELb0EEE, 
                        __ZN3ctu19appendLabelIfBitSetERNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERyPKcySA_, 
                        __ZN3ctu20DispatchTimerService17scheduleAfterImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEEN8dispatch5queueENSG_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService22createOneShotTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE11qos_class_tN8dispatch5queueENSH_5blockIU13block_pointerFvvEEE, 
                        __ZN3ctu20DispatchTimerService23createPeriodicTimerImplENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS1_5tupleIJNS_8TimeTypeENS1_6chrono8durationIxNS1_5ratioILl1ELl1000000EEEEEEEE11qos_class_tN8dispatch5queueENSH_5blockIU13block_pointerFvvEEE, 
+                       __ZN3ctu20PropertyRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_25PropertyRestResourceStateENS1_14default_deleteISF_EEEEEELb0EEE, 
                        __ZN3ctu20PropertyRestResource23handleDroppedConnectionERNS_19RestResourceContextERKNS_8PathViewERKNSt3__110shared_ptrINS_22RestResourceConnectionEEE, 
                        __ZN3ctu20RestDispatchListener15createConnectorEv, __ZN3ctu20RestDispatchListener17handleClientErrorEPKNS_4rest23RestConnectorSourceBaseEN3xpc6objectE, 
                        __ZN3ctu20RestDispatchListener19handleClientMessageENSt3__110shared_ptrIKNS_4rest23RestConnectorSourceBaseEEEN3xpc4dictE, 
@@ -904,7 +896,8 @@ exports:
                        __ZN3ctu20RestDispatchListener28handleClientMessageWithReplyENSt3__110shared_ptrIKNS_4rest23RestConnectorSourceBaseEEEN3xpc4dictENS1_8functionIFvNS7_6objectEEEE, 
                        __ZN3ctu20RestDispatchListener34getOrCreateResourceConnection_syncERKNSt3__110shared_ptrIKNS_4rest23RestConnectorSourceBaseEEENS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZN3ctu20RestDispatchListener6createEN8dispatch5queueE, __ZN3ctu20RestDispatchListenerC1EN8dispatch5queueE, 
-                       __ZN3ctu20RestDispatchListenerC2EN8dispatch5queueE, __ZN3ctu22ConnectionRestResource33getAllConnectionsForXpcConnectionERKN3xpc10connectionE, 
+                       __ZN3ctu20RestDispatchListenerC2EN8dispatch5queueE, __ZN3ctu21AssertionRestResource18createIfNotPresentERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERN5boost9container12vec_iteratorIPNS1_4pairIS7_NS1_10unique_ptrINS_26AssertionRestResourceStateENS1_14default_deleteISF_EEEEEELb0EEE, 
+                       __ZN3ctu22ConnectionRestResource33getAllConnectionsForXpcConnectionERKN3xpc10connectionE, 
                        __ZN3ctu24RestListenerDelegateBaseD0Ev, __ZN3ctu24RestListenerDelegateBaseD1Ev, 
                        __ZN3ctu24RestListenerDelegateBaseD2Ev, __ZN3ctu24getBitFieldPrintWithDescEhRKNSt3__14pairIhhEENS0_8functionIFNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEiEEE, 
                        __ZN3ctu24getBitFieldPrintWithDescEhRKNSt3__14pairIhhEERKNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 

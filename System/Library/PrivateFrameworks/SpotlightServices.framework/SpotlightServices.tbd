@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
-current-version:       2230.7.3
+current-version:       2230.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -353,6 +353,7 @@ exports:
                             _SSResultTypeIsLocalSuggestion,
                             _SSResultTypeIsServer, _SSResultTypeIsSuggestion,
                             _SSRoundDouble, _SSRoundUInt64,
+                            _SSScreenTimeStatusClearCache,
                             _SSScreenTimeStatusForApplicationPathWithCompletionHandler,
                             _SSScreenTimeStatusForBundleIDWithCompletionHandler,
                             _SSScreenTimeStatusForFilePathWithCompletionHandler,
@@ -494,7 +495,7 @@ exports:
                             _richTextForStringWithMatchesFromEvaluatorWithHeadTruncation,
                             _sMaxAccumulator, _sMaxPicker, _sMeanAccumulator,
                             _sMinAccumulator, _sMinPicker,
-                            _sRankingQueryIndexDictionary,
+                            _sRankingQueryIndexDictionary, _screenTimeCacheLock,
                             _shouldUpdateCrossAttributeFeature,
                             _shouldUpdateFuncForSnippetFeature, _strippedURL,
                             _suffixTrimSetForMathQueries, _syllableToConsonant,
