@@ -73,7 +73,7 @@ API_AVAILABLE(ios(15.0))
 /// > following declaration:
 /// >
 /// > ```swift
-/// > func allCredentials() async throws -> Set<THCredentials>
+/// > func allActiveCredentials() async throws -> Set<THCredentials>
 /// > ```
 /// >
 /// > For information about concurrency and asynchronous code in Swift, see <doc://com.apple.documentation/documentation/swift/calling-objective-c-apis-asynchronously>.

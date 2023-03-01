@@ -2948,7 +2948,7 @@ API_AVAILABLE(macos(13.0), ios(16.0), macCatalyst(16.0)) API_UNAVAILABLE(tvos) A
  @discussion
     This property changes to reflect the Studio Light state in Control Center. It is key-value observable.
  */
-@property(class, getter=isStudioLightEnabled) BOOL studioLightEnabled API_AVAILABLE(macos(13.0), ios(16.0), macCatalyst(16.0), tvos(16.0)) API_UNAVAILABLE(watchos);
+@property(class, readonly, getter=isStudioLightEnabled) BOOL studioLightEnabled API_AVAILABLE(macos(13.0), ios(16.0), macCatalyst(16.0), tvos(16.0)) API_UNAVAILABLE(watchos);
 
 /*!
  @property studioLightActive

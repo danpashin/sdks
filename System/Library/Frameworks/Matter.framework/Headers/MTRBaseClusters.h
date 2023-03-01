@@ -19337,15 +19337,15 @@ typedef NS_OPTIONS(uint8_t, MTRNetworkCommissioningWiFiSecurity) {
         ios(16.1, 16.4), macos(13.0, 13.3), watchos(9.1, 9.4), tvos(16.1, 16.4))
     = 0x2,
     MTRNetworkCommissioningWiFiSecurityWPAPersonal API_AVAILABLE(ios(16.4), macos(13.3), watchos(9.4), tvos(16.4)) = 0x4,
-    MTRNetworkCommissioningWiFiSecurityWpaPersonal API_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPAPersonal",
+    MTRNetworkCommissioningWiFiSecurityWpaPersonal MTR_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPAPersonal",
         ios(16.1, 16.4), macos(13.0, 13.3), watchos(9.1, 9.4), tvos(16.1, 16.4))
     = 0x4,
     MTRNetworkCommissioningWiFiSecurityWPA2Personal API_AVAILABLE(ios(16.4), macos(13.3), watchos(9.4), tvos(16.4)) = 0x8,
-    MTRNetworkCommissioningWiFiSecurityWpa2Personal API_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPA2Personal",
+    MTRNetworkCommissioningWiFiSecurityWpa2Personal MTR_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPA2Personal",
         ios(16.1, 16.4), macos(13.0, 13.3), watchos(9.1, 9.4), tvos(16.1, 16.4))
     = 0x8,
     MTRNetworkCommissioningWiFiSecurityWPA3Personal API_AVAILABLE(ios(16.4), macos(13.3), watchos(9.4), tvos(16.4)) = 0x10,
-    MTRNetworkCommissioningWiFiSecurityWpa3Personal API_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPA3Personal",
+    MTRNetworkCommissioningWiFiSecurityWpa3Personal MTR_DEPRECATED("Please use MTRNetworkCommissioningWiFiSecurityWPA3Personal",
         ios(16.1, 16.4), macos(13.0, 13.3), watchos(9.1, 9.4), tvos(16.1, 16.4))
     = 0x10,
 } API_AVAILABLE(ios(16.1), macos(13.0), watchos(9.1), tvos(16.1));

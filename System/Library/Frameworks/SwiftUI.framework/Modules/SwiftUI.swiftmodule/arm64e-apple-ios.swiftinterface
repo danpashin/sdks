@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -library-level api -module-name SwiftUI
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 4.4.29.3.100
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 4.4.33.1.100
 import Accessibility
 import Combine
 import Combine/*.Combine*/
@@ -2942,6 +2942,11 @@ extension SwiftUI.TimelineView : SwiftUI.View where Content : SwiftUI.View {
                 to: TimelineViewDefaultContext.self))
         }
     }
+  @available(iOS, deprecated, introduced: 15.0, message: "Use TimelineViewDefaultContext for the type of the context parameter passed into TimelineView's content closure to resolve this warning. The new version of this initializer, using TimelineViewDefaultContext, improves compilation performance by using an independent generic type signature, which helps avoid unintended cyclical type dependencies.")
+  @available(macOS, deprecated, introduced: 12.0, message: "Use TimelineViewDefaultContext for the type of the context parameter passed into TimelineView's content closure to resolve this warning. The new version of this initializer, using TimelineViewDefaultContext, improves compilation performance by using an independent generic type signature, which helps avoid unintended cyclical type dependencies.")
+  @available(watchOS, deprecated, introduced: 8.0, message: "Use TimelineViewDefaultContext for the type of the context parameter passed into TimelineView's content closure to resolve this warning. The new version of this initializer, using TimelineViewDefaultContext, improves compilation performance by using an independent generic type signature, which helps avoid unintended cyclical type dependencies.")
+  @available(tvOS, deprecated, introduced: 15.0, message: "Use TimelineViewDefaultContext for the type of the context parameter passed into TimelineView's content closure to resolve this warning. The new version of this initializer, using TimelineViewDefaultContext, improves compilation performance by using an independent generic type signature, which helps avoid unintended cyclical type dependencies.")
+  @_disfavoredOverload public init(_ schedule: Schedule, @SwiftUI.ViewBuilder content: @escaping (SwiftUI.TimelineView<Schedule, Content>.Context) -> Content)
   public static func _makeView(view: SwiftUI._GraphValue<SwiftUI.TimelineView<Schedule, Content>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
 }
 @available(iOS 14.0, *)
@@ -13738,7 +13743,7 @@ public struct UIHostingConfiguration<Content, Background> : UIKit.UIContentConfi
   public func minSize(width: CoreFoundation.CGFloat? = nil, height: CoreFoundation.CGFloat? = nil) -> SwiftUI.UIHostingConfiguration<Content, Background>
   @available(*, deprecated, message: "Please pass one or more parameters.")
   @_alwaysEmitIntoClient public func minSize() -> SwiftUI.UIHostingConfiguration<Content, Background> { self }
-  public func makeContentView() -> any UIKit.UIView & UIKit.UIContentView
+  @_Concurrency.MainActor public func makeContentView() -> any UIKit.UIView & UIKit.UIContentView
   public func updated(for state: any UIKit.UIConfigurationState) -> SwiftUI.UIHostingConfiguration<Content, Background>
 }
 @available(iOS 16.0, tvOS 16.0, *)
@@ -16038,9 +16043,6 @@ extension SwiftUI.Color {
   public static var _mainNamedBundle: Foundation.Bundle?
 }
 extension SwiftUI.TimelineView where Content : SwiftUI.View {
-  @available(iOS 15.0, macOS 12.0, watchOS 8.0, tvOS 15.0, *)
-  @usableFromInline
-  internal init(_ schedule: Schedule, @SwiftUI.ViewBuilder content: @escaping (SwiftUI.TimelineView<Schedule, Content>.Context) -> Content)
   @available(iOS 16.4, macOS 13.3, watchOS 9.4, tvOS 16.4, *)
   @usableFromInline
   @_disfavoredOverload internal init(_ schedule: Schedule, @SwiftUI.ViewBuilder content: @escaping (SwiftUI.TimelineView<SwiftUI.PeriodicTimelineSchedule, Swift.Never>.Context) -> Content)

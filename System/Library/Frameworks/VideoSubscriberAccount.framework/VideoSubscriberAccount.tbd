@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount'
-current-version: 453.40.31
+current-version: 453.40.35
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -48,12 +48,16 @@ exports:
                        '_$s22VideoSubscriberAccount06VSUserC0V10sourceTypeAC06SourceF0Ovg', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10sourceTypeAC06SourceF0OvpMV', 
                        '_$s22VideoSubscriberAccount06VSUserC0V10sourceTypeAC06SourceF0Ovs', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V11accountType9updateURL19requiresSystemTrust7deleted17fromCurrentDeviceA2C0cF0O_10Foundation0H0VSgS3btcfC', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11accountType9updateURL19requiresSystemTrust9signedOut17fromCurrentDeviceA2C0cF0O_10Foundation0H0VSgS3btcfC', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountType9updateURLA2C0cF0O_10Foundation0H0VSgtcfC', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0OvM', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0Ovg', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0OvpMV', 
                        '_$s22VideoSubscriberAccount06VSUserC0V11accountTypeAC0cF0Ovs', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11isSignedOutSbvM', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11isSignedOutSbvg', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11isSignedOutSbvpMV', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V11isSignedOutSbvs', 
                        '_$s22VideoSubscriberAccount06VSUserC0V14deviceCategoryAC017OriginatingDeviceF0Ovg', 
                        '_$s22VideoSubscriberAccount06VSUserC0V14deviceCategoryAC017OriginatingDeviceF0OvpMV', 
                        '_$s22VideoSubscriberAccount06VSUserC0V15tierIdentifiersSaySSGSgvM', 
@@ -110,9 +114,7 @@ exports:
                        '_$s22VideoSubscriberAccount06VSUserC0V31subscriptionBillingCycleEndDate10Foundation0I0VSgvs', 
                        '_$s22VideoSubscriberAccount06VSUserC0V4hash4intoys6HasherVz_tF', 
                        '_$s22VideoSubscriberAccount06VSUserC0V9hashValueSivg', '_$s22VideoSubscriberAccount06VSUserC0V9hashValueSivpMV', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V9isDeletedSbvM', '_$s22VideoSubscriberAccount06VSUserC0V9isDeletedSbvg', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V9isDeletedSbvpMV', 
-                       '_$s22VideoSubscriberAccount06VSUserC0V9isDeletedSbvs', '_$s22VideoSubscriberAccount06VSUserC0V9updateURL10Foundation0F0VSgvM', 
+                       '_$s22VideoSubscriberAccount06VSUserC0V9updateURL10Foundation0F0VSgvM', 
                        '_$s22VideoSubscriberAccount06VSUserC0V9updateURL10Foundation0F0VSgvg', 
                        '_$s22VideoSubscriberAccount06VSUserC0V9updateURL10Foundation0F0VSgvpMV', 
                        '_$s22VideoSubscriberAccount06VSUserC0V9updateURL10Foundation0F0VSgvs', 
@@ -168,14 +170,15 @@ exports:
                        _VSIdentityProviderInfoDidChangeNotification, _VSInvalidVerificationTokenError, 
                        _VSJSAppErrorDomain, _VSJSAppObjectName, _VSJSErrorDomain, 
                        _VSJSONDataValueTransformerName, _VSLoadInterfaceFramework, 
-                       _VSMainConcurrencyBindingOptions, _VSMainThreadOperationWithBlock, 
-                       _VSMetricBaseFieldHasSetTopBoxProfile, _VSMetricBaseFieldSelectedProvider, 
-                       _VSMetricBaseFieldSelectedProviderProfile, _VSMetricBaseFieldSignedInProvider, 
-                       _VSMetricBaseFieldValueSelectedProviderNone, _VSMetricBaseFieldValueSelectedProviderSTB, 
-                       _VSMetricBaseFieldValueSelectedProviderSupported, _VSMetricBaseFieldValueSelectedProviderUnsupported, 
-                       _VSMetricClickTargetContinue, _VSMetricClickTargetFindMoreApps, 
-                       _VSMetricClickTargetIdentityProvider, _VSMetricClickTargetInstallApp, 
-                       _VSMetricClickTargetNotNow, _VSMetricClickTargetOpenApp, _VSMetricClickTargetSTBOptOut, 
+                       _VSLoadWatchListKitFramework, _VSMainConcurrencyBindingOptions, 
+                       _VSMainThreadOperationWithBlock, _VSMetricBaseFieldHasSetTopBoxProfile, 
+                       _VSMetricBaseFieldSelectedProvider, _VSMetricBaseFieldSelectedProviderProfile, 
+                       _VSMetricBaseFieldSignedInProvider, _VSMetricBaseFieldValueSelectedProviderNone, 
+                       _VSMetricBaseFieldValueSelectedProviderSTB, _VSMetricBaseFieldValueSelectedProviderSupported, 
+                       _VSMetricBaseFieldValueSelectedProviderUnsupported, _VSMetricClickTargetContinue, 
+                       _VSMetricClickTargetFindMoreApps, _VSMetricClickTargetIdentityProvider, 
+                       _VSMetricClickTargetInstallApp, _VSMetricClickTargetNotNow, 
+                       _VSMetricClickTargetOpenApp, _VSMetricClickTargetSTBOptOut, 
                        _VSMetricClickTargetSignIn, _VSMetricClickTargetSignOut, _VSMetricClickTargetUpdateApp, 
                        _VSMetricFlexibleFieldBundleID, _VSMetricFlexibleFieldErrorCode, 
                        _VSMetricFlexibleFieldErrorType, _VSMetricFlexibleFieldErrorsUnderlying, 
@@ -210,7 +213,7 @@ exports:
                        _VSValueTypeCopyWithZone, _VSValueTypeDescription, _VSValueTypeEncodeWithCoder, 
                        _VSValueTypeHash, _VSValueTypeInit, _VSValueTypeInitWithCoder, 
                        _VSValueTypeIsEqual ]
-    objc-classes:    [ VSAMSBagLoadOperation, VSAMSRequest, VSAMSRequestOperation, 
+    objc-classes:    [ VSACAccount, VSAMSBagLoadOperation, VSAMSRequest, VSAMSRequestOperation, 
                        VSAccount, VSAccountApplicationProvider, VSAccountChannels, 
                        VSAccountChannelsCenter, VSAccountChannelsSaveOperation, VSAccountManager, 
                        VSAccountManagerResult, VSAccountMetadata, VSAccountMetadataRequest, 

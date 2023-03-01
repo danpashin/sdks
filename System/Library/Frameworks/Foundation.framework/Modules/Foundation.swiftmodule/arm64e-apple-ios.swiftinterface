@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFoundation -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -module-name Foundation
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1968.2
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1970
 import Combine
 import CoreFoundation
 import Darwin
@@ -2787,17 +2787,17 @@ extension Foundation.NSKeyedArchiver {
 extension Foundation.NSKeyedUnarchiver {
   @available(macOS 10.11, iOS 9.0, *)
   @available(swift, obsoleted: 4)
-  @available(macOS, introduced: 10.11, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(iOS, introduced: 9.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(tvOS, introduced: 9.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(watchOS, introduced: 2.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(macOS, introduced: 10.11, deprecated: 10.14, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(iOS, introduced: 9.0, deprecated: 12.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(tvOS, introduced: 9.0, deprecated: 12.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(watchOS, introduced: 2.0, deprecated: 5.0, message: "Use unarchivedObject(ofClass:from:) instead")
   @nonobjc public class func unarchiveTopLevelObjectWithData(_ data: Foundation.NSData) throws -> Swift.AnyObject?
   @available(swift 4)
   @available(macOS 10.11, iOS 9.0, *)
-  @available(macOS, introduced: 10.11, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(iOS, introduced: 9.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(tvOS, introduced: 9.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
-  @available(watchOS, introduced: 2.0, deprecated: 100000.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(macOS, introduced: 10.11, deprecated: 10.14, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(iOS, introduced: 9.0, deprecated: 12.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(tvOS, introduced: 9.0, deprecated: 12.0, message: "Use unarchivedObject(ofClass:from:) instead")
+  @available(watchOS, introduced: 2.0, deprecated: 5.0, message: "Use unarchivedObject(ofClass:from:) instead")
   @nonobjc public class func unarchiveTopLevelObjectWithData(_ data: Foundation.Data) throws -> Any?
   @available(macOS 10.13, iOS 11.0, watchOS 4.0, tvOS 11.0, *)
   @nonobjc public static func unarchivedObject<DecodedObjectType>(ofClass cls: DecodedObjectType.Type, from data: Foundation.Data) throws -> DecodedObjectType? where DecodedObjectType : ObjectiveC.NSObject, DecodedObjectType : Foundation.NSCoding

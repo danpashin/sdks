@@ -66,6 +66,12 @@ SR_EXTERN API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos
 
 @property (readonly) SRTextInputSessionType sessionType;
 
+/*!
+ * @property sessionIdentifier
+ *
+ * @brief Unique identifier of keyboard session
+ */
+@property (readonly) NSString *sessionIdentifier API_AVAILABLE(ios(16.4)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos, macos);
 @end
 
 SR_EXTERN API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos, macos)
@@ -108,6 +114,17 @@ SR_EXTERN API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos
  * Additional categories that describe this app
  */
 @property (nonatomic, readonly, copy) NSArray<SRSupplementalCategory *> *supplementalCategories API_AVAILABLE(ios(16.4)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos, macos);
+
+/*!
+ * @property relativeStartTime
+ *
+ * @brief App start time relative to the first app start time in the report interval
+ *
+ * @discussion
+ * relativeStartTime value for the very first app in the report interval is equal to 0, N seconds for the seccond app and so on.
+ * This will allow to order app uses and determine the time between app uses.
+ */
+@property (readonly, nonatomic) NSTimeInterval relativeStartTime API_AVAILABLE(ios(16.4)) API_UNAVAILABLE(watchos) API_UNAVAILABLE(tvos, macos);
 @end
 
 typedef NS_ENUM(NSInteger, SRNotificationEvent) {

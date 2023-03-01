@@ -72,7 +72,7 @@ API_AVAILABLE(macos(13.3), ios(16.4)) API_UNAVAILABLE(tvos, watchos);
 /// can be used to create a copy with `isEssential == false` that can be re-queued with `BADownloadManager`.
 - (instancetype)copyAsNonEssential
 API_AVAILABLE(macos(13.3), ios(16.4)) API_UNAVAILABLE(tvos, watchos)
-NS_SWIFT_NAME(asNonEssential());
+NS_SWIFT_NAME(removingEssential());
 
 - (instancetype)init
 NS_UNAVAILABLE;

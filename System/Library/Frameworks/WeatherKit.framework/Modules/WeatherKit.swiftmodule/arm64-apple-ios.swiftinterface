@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WeatherKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 343.1
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 346
 import CoreLocation
 import Foundation
 import Swift
@@ -16,6 +16,7 @@ public struct WeatherAvailability {
     case available
     case temporarilyUnavailable
     case unsupported
+    case unknown
     public init?(rawValue: Swift.String)
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
@@ -53,6 +54,20 @@ public struct DayWeather {
   public var lowTemperature: Foundation.Measurement<Foundation.UnitTemperature>
   public var precipitation: WeatherKit.Precipitation
   public var precipitationChance: Swift.Double
+  @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+  @_backDeploy(before: iOS 16.4)
+  @_backDeploy(before: macOS 13.3)
+  @_backDeploy(before: tvOS 16.4)
+  @_backDeploy(before: watchOS 9.4)
+  public var precipitationAmount: Foundation.Measurement<Foundation.UnitLength> {
+    get {
+        return rainfallAmount
+    }
+  }
+  @available(iOS, introduced: 16.0, deprecated: 16.4, renamed: "precipitationAmount")
+  @available(macOS, introduced: 13.0, deprecated: 13.3, renamed: "precipitationAmount")
+  @available(tvOS, introduced: 16.0, deprecated: 16.4, renamed: "precipitationAmount")
+  @available(watchOS, introduced: 9.0, deprecated: 9.4, renamed: "precipitationAmount")
   public var rainfallAmount: Foundation.Measurement<Foundation.UnitLength>
   public var snowfallAmount: Foundation.Measurement<Foundation.UnitLength>
   public var sun: WeatherKit.SunEvents
@@ -237,6 +252,10 @@ public struct WeatherAttribution {
   public var squareMarkURL: Foundation.URL
   public var combinedMarkDarkURL: Foundation.URL
   public var combinedMarkLightURL: Foundation.URL
+  @available(iOS 16.4, macOS 13.3, tvOS 16.4, watchOS 9.4, *)
+  public var legalAttributionText: Swift.String {
+    get
+  }
 }
 extension WeatherKit.WeatherAttribution : Swift.Equatable {
   public static func == (a: WeatherKit.WeatherAttribution, b: WeatherKit.WeatherAttribution) -> Swift.Bool

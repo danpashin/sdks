@@ -40,7 +40,7 @@ API_AVAILABLE(macos(11.0), ios(14.0))
 /// stops playing video.
 ///
 /// - Important: Set this value to `NO` prior to changing
-/// ``STWebpageController/URL`` if the new webpage at that URL stops currently
+/// ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL stops currently
 /// playing media and won’t immediately start playing new media.
 @property (nonatomic) BOOL URLIsPlayingVideo NS_SWIFT_NAME(urlIsPlayingVideo);
 
@@ -51,7 +51,7 @@ API_AVAILABLE(macos(11.0), ios(14.0))
 /// stops displaying a Picture in Picture window.
 ///
 /// - Important: Set this value to `NO` prior to changing
-/// ``STWebpageController/URL`` if the new webpage at that URL ends all
+/// ``ScreenTime/STWebpageController/URL`` if the new webpage at that URL ends all
 /// currently displayed Picture in Picture windows, and won’t immediately
 /// display a new one.
 @property (nonatomic) BOOL URLIsPictureInPicture NS_SWIFT_NAME(urlIsPictureInPicture);

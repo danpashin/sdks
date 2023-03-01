@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name AppIntents
-// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 136.100.10.2
+// swift-module-flags-ignorable: -target-min-inlining-version min -enable-bare-slash-regex -user-module-version 136.100.13
 @_exported import AppIntents
 import CoreGraphics
 import CoreLocation
@@ -1446,6 +1446,10 @@ extension AppIntents.IntentResult {
 extension AppIntents.IntentResult {
   public static func result<Value, OpensAppIntent>(value: Value, opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog) -> Self where Self == AppIntents.IntentResultContainer<Value, OpensAppIntent, Swift.Never, AppIntents.IntentDialog>, Value : AppIntents._IntentValue, OpensAppIntent : AppIntents.AppIntent
 }
+@available(macOS 13.3, iOS 16.4, watchOS 9.4, tvOS 16.4, *)
+extension AppIntents.IntentResult {
+  public static func result<OpensAppIntent>(opensIntent: OpensAppIntent, dialog: AppIntents.IntentDialog) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, OpensAppIntent, Swift.Never, AppIntents.IntentDialog>, OpensAppIntent : AppIntents.AppIntent
+}
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension AppIntents.IntentResult {
   public static func result<Intent>(actionButtonIntent: Intent) -> Self where Self == AppIntents.IntentResultContainer<Swift.Never, Swift.Never, Swift.Never, Swift.Never>, Intent : AppIntents.AppIntent
@@ -2125,6 +2129,8 @@ extension AppIntents.SetFocusFilterIntent {
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 public enum SetFocusFilterIntentError : Foundation.LocalizedError, Swift.Equatable {
   case notFound
+  @available(macOS 13.3, iOS 16.4, watchOS 9.4, tvOS 16.4, *)
+  case missingParameterValue
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: AppIntents.SetFocusFilterIntentError, b: AppIntents.SetFocusFilterIntentError) -> Swift.Bool
   public var hashValue: Swift.Int {

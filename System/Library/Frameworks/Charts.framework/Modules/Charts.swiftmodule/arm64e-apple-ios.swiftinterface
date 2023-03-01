@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name Charts
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.4.9
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1.4.11
 import Darwin.C
 import Darwin
 import Foundation
@@ -525,6 +525,22 @@ public struct ChartProxy {
   public func value<P>(atY position: CoreFoundation.CGFloat, as: P.Type = P.self) -> P? where P : Charts.Plottable
   public func value<X, Y>(at position: CoreFoundation.CGPoint, as: (X, Y).Type = (X, Y).self) -> (X, Y)? where X : Charts.Plottable, Y : Charts.Plottable
 }
+@available(iOS 16.4, macOS 13.3, tvOS 16.4, watchOS 9.4, *)
+extension Charts.ChartProxy {
+  public func foregroundStyle<P>(for value: P) -> SwiftUI.AnyShapeStyle? where P : Charts.Plottable
+  public func lineStyle<P>(for value: P) -> SwiftUI.StrokeStyle? where P : Charts.Plottable
+  public func symbol<P>(for value: P) -> Charts.AnyChartSymbolShape? where P : Charts.Plottable
+  public func symbolSize<P>(for value: P) -> CoreFoundation.CGFloat? where P : Charts.Plottable
+}
+@available(iOS 16.4, macOS 13.3, tvOS 16.4, watchOS 9.4, *)
+extension Charts.ChartProxy {
+  public func xDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+  public func yDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+  public func foregroundStyleDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+  public func symbolDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+  public func symbolSizeDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+  public func lineStyleDomain<P>(dataType: P.Type) -> [P] where P : Charts.Plottable
+}
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension SwiftUI.View {
   public func chartOverlay<V>(alignment: SwiftUI.Alignment = .center, @SwiftUI.ViewBuilder content: @escaping (Charts.ChartProxy) -> V) -> some SwiftUI.View where V : SwiftUI.View
@@ -803,9 +819,12 @@ extension Charts.ChartContent {
         return .init(storage: .falseContent(second))
     }
   @_alwaysEmitIntoClient public static func buildLimitedAvailability<Content>(_ content: Content) -> some Charts.ChartContent where Content : Charts.ChartContent {
-        return content
+        content
     }
   
+  @_alwaysEmitIntoClient public static func buildExpression<Content>(_ content: Content) -> Content where Content : Charts.ChartContent {
+        content
+    }
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension Swift.Never : Charts.ChartContent {
@@ -1047,6 +1066,9 @@ extension SwiftUI.ForEach where Content : Charts.ChartContent {
         return AnyAxisMark(content)
     }
   
+  @_alwaysEmitIntoClient public static func buildExpression<Content>(_ content: Content) -> Content where Content : Charts.AxisMark {
+        content
+    }
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 extension Charts.BuilderPair : Charts.AxisContent where T0 : Charts.AxisContent, T1 : Charts.AxisContent {
@@ -1185,6 +1207,9 @@ extension Charts.ChartSymbolShape where Self == Charts.BasicChartSymbolShape {
         AnyAxisContent(content)
     }
   
+  @_alwaysEmitIntoClient public static func buildExpression<Content>(_ content: Content) -> Content where Content : Charts.AxisContent {
+        content
+    }
 }
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 public struct PointMark {
