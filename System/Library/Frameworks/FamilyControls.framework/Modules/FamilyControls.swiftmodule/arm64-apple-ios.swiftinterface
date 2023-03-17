@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name FamilyControls
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1065
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1066
 import Combine
 import CoreServices
 import Foundation
@@ -29,11 +29,19 @@ public enum FamilyControlsError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
-  public static func == (a: FamilyControls.FamilyControlsError, b: FamilyControls.FamilyControlsError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+}
+@available(iOS 16.4, macOS 13.3, *)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension FamilyControls.FamilyControlsError : Swift.RawRepresentable, Foundation.CustomNSError {
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
     get
   }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public typealias RawValue = Swift.Int
 }
 @available(iOS 15.0, *)
 @available(macOS, unavailable)

@@ -21,7 +21,7 @@ API_AVAILABLE(macos(12.0), ios(15.0)) API_UNAVAILABLE(watchos, tvos)
 
 @end
 
-API_AVAILABLE(macos(13.3))
+API_AVAILABLE(macos(13.3)) API_UNAVAILABLE(ios, watchos, tvos)
 @interface ASAuthorizationPlatformPublicKeyCredentialAssertionRequest () <ASAuthorizationWebBrowserExternallyAuthenticatableRequest>
 @end
 

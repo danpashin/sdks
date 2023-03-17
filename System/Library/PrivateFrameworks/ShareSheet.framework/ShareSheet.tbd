@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet
-current-version:       1879
+current-version:       1885
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -86,8 +86,9 @@ exports:
                             __UIActivityGetBuiltinActivities,
                             __UIActivityGetOrderedBuiltinActivitiesFromActivities,
                             __UIActivityGetPrintingBasedActivities,
-                            __UIActivityHasAtMoreThan, __UIActivityIsAirdrop,
-                            __UIActivityItemCountOfType,
+                            __UIActivityHasAtMoreThan,
+                            __UIActivityHelperActivityItemsIncludeICloudDriveURL,
+                            __UIActivityIsAirdrop, __UIActivityItemCountOfType,
                             __UIActivityItemIsLivePhoto, __UIActivityItemTypes,
                             __UIActivityItemTypesSet,
                             __UIActivityItemsGetAttachments,
@@ -110,7 +111,6 @@ exports:
                             __UIApplicationCanOpenInPlaceByCopyingFromOriginalFile,
                             __UIApplicationCanOpenInPlaceByReferenceOriginalFile,
                             __UIApplicationExtensionAttributeIsFPSpecific,
-                            __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs,
                             __UIApplicationExtensionIdentifierAddToiCloudDrive,
                             __UIApplicationExtensionIdentifierBoxManage,
                             __UIApplicationExtensionPointServices,

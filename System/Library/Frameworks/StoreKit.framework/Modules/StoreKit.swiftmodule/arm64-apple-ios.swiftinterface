@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -library-level api -module-name StoreKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 812.0.25
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 812.0.27
 import CoreFoundation
 import CryptoKit
 import CryptoKit/*.P256*/
@@ -413,6 +413,9 @@ extension StoreKit.BackingValue {
 }
 extension StoreKit.Product {
   @available(iOS 16.4, *)
+  @available(macOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
   public struct PromotionInfo : Swift.Equatable {
     public enum Visibility : Swift.Int, Swift.Equatable, Swift.Hashable {
       case appStoreConnectDefault
@@ -1499,6 +1502,10 @@ extension StoreKit.ExternalPurchase : Swift.Sendable {
 @available(watchOS, unavailable)
 @available(tvOS, unavailable)
 public struct PaymentMethodBinding : Swift.Sendable, Swift.Hashable, Swift.Identifiable {
+  @available(iOS 16.4, *)
+  @available(macOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
   public enum PaymentMethodBindingError : Foundation.LocalizedError {
     case notEligible
     case invalidPinningID
@@ -1623,6 +1630,9 @@ extension StoreKit.VerificationResult where SignedType == StoreKit.Product.Subsc
   }
 }
 @available(iOS 16.4, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
 extension StoreKit.Product.PromotionInfo.Visibility : Swift.RawRepresentable {}
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 extension StoreKit.VerificationResult.VerificationError : Swift.Equatable {}

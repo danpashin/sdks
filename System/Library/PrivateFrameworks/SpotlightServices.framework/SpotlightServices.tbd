@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
-current-version:       2230.12
+current-version:       2230.19
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -89,6 +89,8 @@ exports:
                             _PRSRankingEmailAddressesInVIP,
                             _PRSRankingEscapedWords, _PRSRankingExactCount,
                             _PRSRankingExactMultiFieldsTCNearMatch,
+                            _PRSRankingFileProviderFilesBundleString,
+                            _PRSRankingFileProviderManagedFilesBundleString,
                             _PRSRankingFilesBundleString,
                             _PRSRankingFindMyBundleString, _PRSRankingIsFlagged,
                             _PRSRankingItemRankerAddJunkFilter,
@@ -337,6 +339,8 @@ exports:
                             _SSQueryParserStripKindFromString,
                             _SSResultBuilderTextSeparator,
                             _SSResultBundleIdContact, _SSResultBundleIdDocument,
+                            _SSResultBundleIdFileProviderDocument,
+                            _SSResultBundleIdFileProviderManagedDocument,
                             _SSResultBundleIdPeople,
                             _SSResultBundleIdSuggestionContact,
                             _SSResultBundleIdSuggestionEntity,
@@ -400,8 +404,8 @@ exports:
                             _comparatorForPastDateRecency, _comparatorWithBlock,
                             _compareApplications, _compareBestLocalResults,
                             _comparePreferences, _compareSafariResults,
-                            _compareSameDatePreferences, _compareShortcuts,
-                            _compareShortcutsNames, _countsArrayComparator,
+                            _compareShortcuts, _compareShortcutsNames,
+                            _countsArrayComparator,
                             _createConsonantsStringForKorean,
                             _defaultValueForCrossAttributeFeature,
                             _defaultValueForResultSetSnippetFeature,

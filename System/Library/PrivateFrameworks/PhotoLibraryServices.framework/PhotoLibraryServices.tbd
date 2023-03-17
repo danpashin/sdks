@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
-current-version:       540.0.250
+current-version:       542.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -50,6 +50,7 @@ exports:
                             _PLAnalysisStateUpdateLibraryName,
                             _PLAppPrivateDataBackgroundActionKeyPath,
                             _PLAppPrivateDataDuplicateProcessingLibraryInterruptMarkerKey,
+                            _PLAppPrivateDataDuplicateSharedLibraryCPLConfigurationFeatureVersionKey,
                             _PLAppPrivateDataDuplicateSharedLibraryEnabledMarkerKey,
                             _PLArrayFromEnumeration,
                             _PLAssertMinimumCoreDataVersion,
@@ -261,6 +262,8 @@ exports:
                             _PLDuplicateProcessingBatchSize,
                             _PLDuplicateProcessorFeatureVersion,
                             _PLDuplicateProcessorFeatureVersionConfigurationKey,
+                            _PLDuplicateProcessorSharedLibraryEnabledFeatureVersion,
+                            _PLDuplicateProcessorSharedLibraryEnabledFeatureVersionConfigurationKey,
                             _PLEmptyContainerDescription,
                             _PLEnumerateAnalysisWorkerType,
                             _PLExclusiveCategoriesIsSupersetOfSearchedCategories,
@@ -540,6 +543,7 @@ exports:
                             _PLOrientationTransformImageRect,
                             _PLOrientationTransformImageSize,
                             _PLOriginalResolutionScoreWeight,
+                            _PLOrphanedSceneClassificationsCountGlobalValueKey,
                             _PLPTPHostCharacteristicMake_Apple,
                             _PLPTPHostCharacteristicMake_Microsoft,
                             _PLPTPHostCharacteristicOS_Windows,
@@ -1416,6 +1420,7 @@ exports:
                             _PLStringWithValidatedFormatAndLocale,
                             _PLSuppressImportDefaultsKey, _PLSyncChangeMarker,
                             _PLSyndicatedDisplayNameForAppBundle,
+                            _PLSyndicationAllEquivalentFileProviderLocalAndCloudBundleIDs,
                             _PLSyndicationAssetRequiresBlastDoorToAccessOriginals,
                             _PLSyndicationCSProvideOptionsFromRequestOptions,
                             _PLSyndicationCheckQueryWithDates,
@@ -1480,8 +1485,11 @@ exports:
                             _PLXPCStoreDeniedEntityNames,
                             _PLXPCStoreRestrictedDataEntitlement,
                             _PLYearGroupingRuleTimeIntervalForNeighbors,
-                            _PLZeroPlayableVideosErrorKey, _PSITokenizerCreate,
-                            _PSITokenizerDelete, _PSITokenizerTokenize,
+                            _PLZeroPlayableVideosErrorKey,
+                            _PLiCloudDriveFileProviderBundleID,
+                            _PLiCloudDriveFileProviderManagedBundleID,
+                            _PSITokenizerCreate, _PSITokenizerDelete,
+                            _PSITokenizerTokenize,
                             _PhotoLibraryPauseNotification,
                             _PhotoLibraryUserPauseNotification,
                             _PhotosMemoriesBestContentDuration,
@@ -1890,7 +1898,11 @@ exports:
                             PLDistributedNotificationHandler, PLDupeManager,
                             PLDuplicateAlbum, PLDuplicateAsset,
                             PLDuplicateDetector, PLDuplicateDetectorExactPixel,
-                            PLDuplicateDetectorMetadata, PLDuplicateGroup,
+                            PLDuplicateDetectorLivePhotoContext,
+                            PLDuplicateDetectorLivePhotoContextData,
+                            PLDuplicateDetectorMetadata,
+                            PLDuplicateDetectorPostProcessing,
+                            PLDuplicateDetectorSortKey, PLDuplicateGroup,
                             PLDuplicateMerge, PLDuplicateMergeCrashRecovery,
                             PLDuplicateProcessor, PLEditSource,
                             PLEditedIPTCAttributes, PLEmailAddressManager,

@@ -9,6 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _kApplicationEnumMap, _kApplicationIdentifierMap,
+                            _kApplicationIdentifierToUriPrefixMap,
                             _kKTApplicationIdentifierCloudKit,
                             _kKTApplicationIdentifierIDS,
                             _kKTApplicationIdentifierIDSFaceTime,
@@ -16,7 +17,8 @@ exports:
                             _kKTApplicationIdentifierTLT,
                             _kKTAuthenticationLifetime,
                             _kKTBAACertTTLMaxTTLOffsetInMinutes,
-                            _kKTExpiryGracePeriod, _kKTMaxBAACertTTLInMinutes,
+                            _kKTEscrowExpiryPeriod, _kKTExpiryGracePeriod,
+                            _kKTMaxBAACertTTLInMinutes,
                             _kKTMaximumCompletedRequestLifetime,
                             _kKTMaximumMergeDelayMs,
                             _kKTMaximumPendingRequestLifetime,
@@ -24,6 +26,7 @@ exports:
                             _kKTMaximumSTHLifetime, _kKTMaximumSTHProofDelay,
                             _kKTPublicKeysResponseRefresh,
                             _kKTPublicKeysResponseRefreshInvalidRequest,
+                            _kKTSelfValidationTicketExpiry,
                             _kTransparencyAnalyticsEnvironmentKey,
                             _kTransparencyAnalyticsEventError,
                             _kTransparencyAnalyticsFailedEntry,

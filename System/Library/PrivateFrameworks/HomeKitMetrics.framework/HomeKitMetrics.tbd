@@ -3,15 +3,18 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeKitMetrics.framework/HomeKitMetrics
-current-version:       982.1
+current-version:       983.5.13
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _HMDTaggedLoggingCreateDictionary,
+                            _HMMLogTagActivityWithError,
+                            _HMMLogTagActivityWithErrorAndField,
+                            _HMMLogTagWithError, _HMMLogTagWithErrorAndField,
                             _HMMSafeHomeUUIDFromLogEvent, _HMM_ERROR_CODE,
                             _HMM_ERROR_DOMAIN, _HMM_UNDERLYING_ERROR_CODE,
-                            _HMM_UNDERLYING_ERROR_DOMAIN, _tagActivityWithError ]
+                            _HMM_UNDERLYING_ERROR_DOMAIN ]
     objc-classes:         [ HMMHomeLogEvent, HMMInterval, HMMIntervalMapper,
                             HMMLogEvent, HMMLogEventDispatcher,
                             HMMLogEventTagProcessor, HMMStateData, HMMStateTracker,

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFoundation -swift-version 5 -enforce-exclusivity=unchecked -O -library-level api -module-name Foundation
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1970
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1971
 import Combine
 import CoreFoundation
 import Darwin
@@ -587,14 +587,14 @@ extension Foundation.Locale {
     public static let unavailable: Foundation.Locale.LanguageCode
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.LanguageCode, rhs: Foundation.Locale.LanguageCode) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Script : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -610,14 +610,14 @@ extension Foundation.Locale {
     public static let unknown: Foundation.Locale.Script
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Script, rhs: Foundation.Locale.Script) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Region : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -645,14 +645,14 @@ extension Foundation.Locale {
     }
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Region, rhs: Foundation.Locale.Region) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Collation : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -670,14 +670,14 @@ extension Foundation.Locale {
     public static func availableCollations(for language: Foundation.Locale.Language) -> [Foundation.Locale.Collation]
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Collation, rhs: Foundation.Locale.Collation) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Currency : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -696,14 +696,14 @@ extension Foundation.Locale {
     }
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Currency, rhs: Foundation.Locale.Currency) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct NumberingSystem : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -718,14 +718,14 @@ extension Foundation.Locale {
     }
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.NumberingSystem, rhs: Foundation.Locale.NumberingSystem) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public enum Weekday : Swift.String, Swift.Codable, Swift.Hashable, Swift.Sendable {
@@ -770,14 +770,14 @@ extension Foundation.Locale {
     }
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.MeasurementSystem, rhs: Foundation.Locale.MeasurementSystem) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Subdivision : Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -790,14 +790,14 @@ extension Foundation.Locale {
     public static func subdivision(for region: Foundation.Locale.Region) -> Foundation.Locale.Subdivision
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Subdivision, rhs: Foundation.Locale.Subdivision) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
   @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)
   public struct Variant : Swift.Codable, Swift.Hashable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
@@ -810,14 +810,14 @@ extension Foundation.Locale {
     public static let posix: Foundation.Locale.Variant
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (lhs: Foundation.Locale.Variant, rhs: Foundation.Locale.Variant) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
     public typealias ExtendedGraphemeClusterLiteralType = Swift.String
     public typealias StringLiteralType = Swift.String
     public typealias UnicodeScalarLiteralType = Swift.String
-    public func encode(to encoder: any Swift.Encoder) throws
     public var hashValue: Swift.Int {
       get
     }
-    public init(from decoder: any Swift.Decoder) throws
   }
 }
 @available(macOS 13, iOS 16, tvOS 16, watchOS 9, *)

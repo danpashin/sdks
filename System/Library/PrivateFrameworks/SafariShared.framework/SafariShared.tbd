@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
-current-version:       615.1.21
+current-version:       615.1.26
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -21,6 +21,10 @@ exports:
                             _TRIAL_disableLocalPhantomTophits,
                             _TRIAL_enableCompletionListHistoryDeduplication,
                             _TRIAL_enableDedupeThroughAlternativeURLs,
+                            _TRIAL_enableMoreSearchProviderSuggestions,
+                            _TRIAL_enableReflectUserIntentInSearch,
+                            _TRIAL_enableResponsiveCompletionList,
+                            _TRIAL_enableStreamlinedCompletionList,
                             _TRIAL_matchingWordsInTitleThreshold,
                             _TRIAL_maxBookmarksAndHistoryItems,
                             _TRIAL_normalizedTopSitesScoreAndVisitCountMultiplier,
@@ -512,6 +516,7 @@ exports:
                             _WBSPrivacyProxyAvailabilitySubscriberTier,
                             _WBSPrivacyProxyAvailabilitySubscriberTierAvailableInUserCountry,
                             _WBSPrivacyProxyAvailabilityTraffic,
+                            _WBSPrivacyReportStartPageNumberOfTrackersPreferenceKey,
                             _WBSQuickWebsiteSearchControllerDidFinishLoadingNotification,
                             _WBSQuickWebsiteSearchControllerDidUpdateProviderNotification,
                             _WBSQuickWebsiteSearchProviderKey,
@@ -567,7 +572,6 @@ exports:
                             _WBSSafariExtensionWasEnabledRemotelyNotification,
                             _WBSSafariSandboxBrokerInterface,
                             _WBSSafariSandboxBrokerInterfaceWithProtocol,
-                            _WBSSafariSettingsDefaultSearchProviderChangedNotificationName,
                             _WBSSafariSettingsDidChangeMobileStartPageVisibilityNotificationName,
                             _WBSSafariSettingsDidDismissStartPageCustomizationToggleNotificationName,
                             _WBSSafariSettingsStartPageBackgroundImageVisibilityKey,
@@ -952,7 +956,7 @@ exports:
                             __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch24placeholderForEmptyTitleEv,
                             __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch4dataEv,
                             __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch5titleEv,
-                            __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch7compareEPS0_,
+                            __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch7compareEPS0_b,
                             __ZTVN12SafariShared12JSControllerE,
                             __ZTVN12SafariShared13FrameMetadataE,
                             __ZTVN12SafariShared18ReaderJSControllerE,

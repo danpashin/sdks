@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       615.1.21
+current-version:       615.1.26
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -98,7 +98,6 @@ exports:
                             _WBSOpenLinksInFocusedTabGroupKey,
                             _WBSOperatingSystemVersionsEqual,
                             _WBSParseOperatingSystemVersion,
-                            _WBSParsecEnabledDidChangeNotification,
                             _WBSPasskeyCredentialCreationDateKey,
                             _WBSPasskeyCredentialIDKey,
                             _WBSPasskeyCredentialIsSynchronizableKey,
@@ -170,6 +169,7 @@ exports:
                             _WBSSafariBookmarksSyncAgentTabGroupTitleKey,
                             _WBSSafariBookmarksSyncAgentTabGroupUUIDKey,
                             _WBSSafariPlatformSupportHelperIdentifier,
+                            _WBSSafariSettingsDefaultSearchProviderChangedNotificationName,
                             _WBSSafariTechnologyPreviewSyncServiceName,
                             _WBSSafariViewServiceBundleIdentifier,
                             _WBSSavedAccountMaxNotesCharacterCount,
@@ -332,7 +332,8 @@ exports:
                             WBSSavedAccountStore, WBSSavedAccountTreeMatch,
                             WBSSavedPassword, WBSSavedPasswordAuditor,
                             WBSSavedPasswordChangeRequest, WBSSavedPasswordStore,
-                            WBSScopeExitHandler, WBSTOTPGenerator,
+                            WBSScopeExitHandler,
+                            WBSSearchEnginePreferenceObserver, WBSTOTPGenerator,
                             WBSURLCredentialCache,
                             WBSUnifiedBarAnalyticsRecorder,
                             WBSUserDefaultObservation, WBSWebBrowserPasskey,

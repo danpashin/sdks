@@ -54,7 +54,7 @@ WK_EXTERN API_AVAILABLE(macos(10.10), ios(8.0))
 /*! @abstract A Boolean value indicating whether the web view should include backgrounds when printing.
  @discussion The default value is `NO`.
  */
-@property (nonatomic) BOOL shouldPrintBackgrounds API_AVAILABLE(macos(13.0), ios(16.0));
+@property (nonatomic) BOOL shouldPrintBackgrounds API_AVAILABLE(macos(13.3), ios(16.4));
 
 #if !TARGET_OS_IPHONE
 /*!

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesEditor.framework/NotesEditor
-current-version:       2234
+current-version:       2240
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -724,7 +724,11 @@ exports:
                             _kICHashtagAutoCompleteTableOffset,
                             _kICMentionAutoCompleteTableOffset,
                             _kICMergeDelayLongTimeOut, _kICMergeDelayTimeOut,
-                            _kICNoteBaseUserActivityStateUpdateDelay ]
+                            _kICNoteBaseUserActivityStateUpdateDelay,
+                            _kViewOnlyPopoverArrowVerticalPadding,
+                            _kViewOnlyPopoverPreferredWidth,
+                            _kViewOnlyPopoverTextHorizontalPadding,
+                            _kViewOnlyPopoverTextVerticalPadding ]
     objc-classes:         [ ICAbstractAttachmentViewController,
                             ICAccessibilityCustomRotorController,
                             ICActionSheetAlertAction, ICActivityStreamDockView,
@@ -820,7 +824,9 @@ exports:
                             ICTodoButtonProxyElement,
                             ICTrackedParagraphImageInfo,
                             ICTrackedParagraphTreeNode, ICUITextSuggestion,
-                            ICUnsupportedNoteView, ICVisualAssetImportController,
+                            ICUnsupportedNoteView,
+                            ICViewOnlyPopoverViewController,
+                            ICVisualAssetImportController,
                             ICiOSTableAccessibilityElement,
                             ICiOSTableAttachmentView,
                             ICiOSTableAttachmentViewController,

@@ -9,7 +9,7 @@
 #import <UIKit/UIKitCore.h>
 
 // UITextInputContext provides a way to indicate Scribble, dictation, and hardware keyboard input.
-API_AVAILABLE(ios(17.0), macos(14.0))
+UIKIT_EXTERN API_AVAILABLE(ios(16.4))
 @interface UITextInputContext : NSObject
 
 @property (nonatomic, readwrite, getter=isPencilInputExpected) BOOL pencilInputExpected;

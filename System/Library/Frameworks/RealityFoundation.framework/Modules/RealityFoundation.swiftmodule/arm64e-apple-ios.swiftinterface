@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-library-evolution -enable-experimental-concurrency -module-name RealityFoundation
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 225.404
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 225.405.1
 import AVFAudio
 import AVFoundation
 import Accessibility
@@ -6595,7 +6595,6 @@ public struct __EntityInfoComponent : Component, Codable {
   public func encode(to encoder: Encoder) throws
   @_Concurrency.MainActor(unsafe) public static func __addIntrospectionData(_ builder: OpaquePointer?)
   public static func __free(to buffer: UnsafeMutableRawPointer, offset: Int)
-  @available(macOS 13.0, iOS 16.0, macCatalyst 16.0, *)
   public static func __load(from buffer: UnsafeRawPointer, offset: Int) -> Component
 }
 @available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)

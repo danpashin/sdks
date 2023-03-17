@@ -29,6 +29,10 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,tvos,watchos)
 /// are expected to satisfy. This method is to be used for ViewThrough ads.
 - (BOOL)validateImpression:(SKAdImpression *)impression publicKey:(NSString *)publicKey error:(NSError *__autoreleasing  _Nullable *)error API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 
+/// Use this method to validate an impression against the requirements that SKAdNetwork impressions
+/// are expected to satisfy. This method is to be used for Web ads.
+- (BOOL)validateWebAdImpressionPayload:(NSData *)impressionData publicKey:(NSString *)publicKey error:(NSError *__autoreleasing  _Nullable *)error API_AVAILABLE(ios(16.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
+
 /// Use this method to set postbacks to interact with later.
 - (BOOL)setPostbacks:(NSArray <SKAdTestPostback *> *)postbacks error:(NSError *__autoreleasing  _Nullable *)error NS_SWIFT_NAME(setPostbacks(_:)) API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 

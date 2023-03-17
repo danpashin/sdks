@@ -57,6 +57,8 @@ typedef NS_ERROR_ENUM(SKAdTestErrorDomain, SKAdTestErrorCode) {
     SKAdTestErrorCodeConflictingSource NS_ENUM_AVAILABLE_IOS(16_4)                  = 28,
     SKAdTestErrorCodeInvalidSourceAppAdamId NS_ENUM_AVAILABLE_IOS(16_4)             = 29,
     SKAdTestErrorCodeInvalidSourceDomain NS_ENUM_AVAILABLE_IOS(16_4)                = 30,
+    SKAdTestErrorCodeInvalidImpressionId NS_ENUM_AVAILABLE_IOS(16_4)                = 31,
+    SKAdTestErrorCodeSignatureMissingSourceDomain NS_ENUM_AVAILABLE_IOS(16_4)       = 32,
 } API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 
 NS_ASSUME_NONNULL_END

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-current-version:       1553.100.255
+current-version:       1553.102.6
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -11,6 +11,7 @@ exports:
     symbols:              [ _BRAccountDidCompleteFirstSyncDownKey,
                             _BRAccountIsDatabaseFromTheFutureKey,
                             _BRAccountIsServiceEnabledKey,
+                            _BRAccountIsSessionLoaded,
                             _BRAccountIsSynchronizingDesktop,
                             _BRAccountIsSynchronizingDocuments,
                             _BRAccountMigrationStatusKey,
@@ -39,7 +40,6 @@ exports:
                             _BRCUbiquitousPagesContainerID,
                             _BRCUbiquitousSchoolworkContainerID,
                             _BRCXPCBRItemServiceProtocolInterface,
-                            _BRCXPCBRRootServiceProtocolInterface,
                             _BRCXPCInterface, _BRCXPCSharingOperationInterface,
                             _BRCXPCTokenInterface,
                             _BRCanForceConflictEntitlement,
@@ -179,8 +179,8 @@ exports:
                             _BRRegisterInitialSyncHandlerForContainer,
                             _BRRemoveItemAtURL,
                             _BRRemoveNetworkReachabilityObserver,
-                            _BRRootServiceName, _BRSaveExternalDocumentReference,
-                            _BRSetLastUsedDate, _BRSetMigrationStatusForDSID,
+                            _BRSaveExternalDocumentReference, _BRSetLastUsedDate,
+                            _BRSetMigrationStatusForDSID,
                             _BRSetMigrationStatusForDSIDAndUpdateAccount,
                             _BRSetMigrationStatusForDSIDInPref,
                             _BRShareOperationServiceName, _BRSharedByMeURLsKey,

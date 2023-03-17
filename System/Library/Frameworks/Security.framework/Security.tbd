@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/Frameworks/Security.framework/Security'
-current-version: 60420.100.255
+current-version: 60420.102.1
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _DERDecodeItem, _DEROidCompare, _SOSAccountPeerGotInSync, 
@@ -557,11 +557,12 @@ exports:
                        _SecFDHKAppendCompactPublicSerialization, _SecFDHKAppendPublicSerialization, 
                        _SecFDHKAppendSerialization, _SecFDHKGetHash, _SecFDHKNewKey, 
                        _SecFrameworkCopyIPAddressData, _SecFrameworkCopyLocalizedString, 
-                       _SecFrameworkIsDNSName, _SecFrameworkIsIPAddress, _SecGenerateCertificateRequest, 
-                       _SecGenerateCertificateRequestSubject, _SecGenerateCertificateRequestWithParameters, 
-                       _SecGenerateSelfSignedCertificate, _SecGetCurrentServerLoggingInfo, 
-                       _SecIdentityCopyCertificate, _SecIdentityCopyPrivateKey, _SecIdentityCreate, 
-                       _SecIdentityGetTypeID, _SecIdentitySignCertificate, _SecIdentitySignCertificateWithAlgorithm, 
+                       _SecFrameworkIsDNSName, _SecFrameworkIsIPAddress, _SecFrameworkIsRunningInXcode, 
+                       _SecGenerateCertificateRequest, _SecGenerateCertificateRequestSubject, 
+                       _SecGenerateCertificateRequestWithParameters, _SecGenerateSelfSignedCertificate, 
+                       _SecGetCurrentServerLoggingInfo, _SecIdentityCopyCertificate, 
+                       _SecIdentityCopyPrivateKey, _SecIdentityCreate, _SecIdentityGetTypeID, 
+                       _SecIdentitySignCertificate, _SecIdentitySignCertificateWithAlgorithm, 
                        _SecIdentitySignCertificateWithParameters, _SecIsInternalRelease, 
                        _SecItemAdd, _SecItemBackupCreateManifest, _SecItemBackupRestore, 
                        _SecItemBackupSetConfirmedManifest, _SecItemBackupWithChanges, 

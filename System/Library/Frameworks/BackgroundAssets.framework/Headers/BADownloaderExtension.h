@@ -63,7 +63,9 @@ NS_REFINED_FOR_SWIFT
 /// This callback provides a last chance to tidy up state before process termination.
 /// @warning This method is advisory only, there will be instances where the extension is terminated before this method is invoked.
 /// Do not rely on this method being invoked before the extension is terminated.
-- (void)extensionWillTerminate;
+- (void)extensionWillTerminate
+API_DEPRECATED("extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.", ios(16.1, 16.4), macos(13.0, 13.3))
+API_UNAVAILABLE(tvos, watchos);
 
 @end
 

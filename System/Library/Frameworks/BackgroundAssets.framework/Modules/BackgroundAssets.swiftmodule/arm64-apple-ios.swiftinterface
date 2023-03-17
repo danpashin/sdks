@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.6 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
 // swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name BackgroundAssets
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 141
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 144.100.1
 @_exported import BackgroundAssets
 import ExtensionFoundation
 import Foundation
@@ -16,6 +16,8 @@ public protocol BADownloaderExtension : ExtensionFoundation.AppExtension {
   #endif
   func backgroundDownload(_ failedDownload: BackgroundAssets.BADownload, failedWithError error: any Swift.Error)
   func backgroundDownload(_ finishedDownload: BackgroundAssets.BADownload, finishedWithFileURL fileURL: Foundation.URL)
+  @available(iOS, introduced: 16.1, deprecated: 16.4, message: "extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.")
+  @available(macOS, introduced: 13.0, deprecated: 13.3, message: "extensionWillTerminate will not be invoked in all applicable circumstances and should not be relied upon.")
   func extensionWillTerminate()
 }
 @available(iOS 16.1, macOS 13.0, *)

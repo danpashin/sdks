@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DialogEngine.framework/DialogEngine
-current-version:       3204.17.1
+current-version:       3204.20.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -922,6 +922,8 @@ exports:
                             __ZN4siri12dialogengine13DialogPercent13roundToTenthsEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine13DialogPercent17roundToHundredthsEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine13DialogPercent8toStringEPNS0_7ContextEPKNS0_14VariableObjectE,
+                            __ZN4siri12dialogengine13DialogPronoun6genderEPNS0_7ContextEPKNS0_14VariableObjectE,
+                            __ZN4siri12dialogengine13DialogPronoun8toStringEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine13EndXmlElementEP14_xmlTextWriterb,
                             __ZN4siri12dialogengine13EndsWithVowelEPNS0_7ContextERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE,
                             __ZN4siri12dialogengine13FileInfoCache10FileExistsERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE,
@@ -946,6 +948,7 @@ exports:
                             __ZN4siri12dialogengine13GroundingInfoC2EmRKNSt3__16vectorIdNS2_9allocatorIdEEEERKNS2_12basic_stringIcNS2_11char_traitsIcEENS4_IcEEEE,
                             __ZN4siri12dialogengine13GroundingInfoC2Ev,
                             __ZN4siri12dialogengine13IS_UP_TO_DATEE,
+                            __ZN4siri12dialogengine13InflectDialogEPNS0_7ContextERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS3_9allocatorIS5_EEEERNS0_15SpeakableStringENS0_11ConceptTypeE,
                             __ZN4siri12dialogengine13InflectStringEPNS0_7ContextERKNS0_15SpeakableStringERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS6_9allocatorIS8_EEEENS0_15DefaultBehaviorE,
                             __ZN4siri12dialogengine13IsBuiltinTypeERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
                             __ZN4siri12dialogengine13IsDisplayModeENS0_12ResponseModeE,
@@ -1304,6 +1307,7 @@ exports:
                             __ZN4siri12dialogengine14GrammarFeatureC2ENS1_4TypeERKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEERKNS3_3setIS9_NS3_4lessIS9_EENS7_IS9_EEEEb,
                             __ZN4siri12dialogengine14InflectConceptEPNS0_7ContextEPN7morphun6dialog26SemanticFeatureConceptBaseERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS7_9allocatorIS9_EEEE,
                             __ZN4siri12dialogengine14InflectConceptEPNS0_7ContextEPN7morphun6dialog26SemanticFeatureConceptBaseERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS7_9allocatorIS9_EEEENS0_13SpeakableModeE,
+                            __ZN4siri12dialogengine14InflectPronounEPNS0_7ContextERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS3_9allocatorIS5_EEEERKNS0_15SpeakableStringEPNS3_3mapIN7morphun6dialog15SemanticFeatureENS3_12basic_stringIDsNS3_11char_traitsIDsEENS6_IDsEEEENS3_4lessISH_EENS6_INS3_4pairIKSH_SM_EEEEEE,
                             __ZN4siri12dialogengine14IsValidHolidayERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
                             __ZN4siri12dialogengine14LineNumberBase11SetFullPathERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE,
                             __ZN4siri12dialogengine14LineNumberBase13SetLineNumberEm,
@@ -1713,6 +1717,7 @@ exports:
                             __ZN4siri12dialogengine18SiriKitDeviceState17isVoiceGenderMaleEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine18SiriKitDeviceState19isVoiceGenderFemaleEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine18SiriKitDeviceState20isVoiceGenderUnknownEPNS0_7ContextEPKNS0_14VariableObjectE,
+                            __ZN4siri12dialogengine18SiriKitDeviceState7pronounEPNS0_7ContextEPKNS0_14VariableObjectE,
                             __ZN4siri12dialogengine18TransformTextLowerERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_,
                             __ZN4siri12dialogengine18TransformTextMatchERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_S9_,
                             __ZN4siri12dialogengine18ValidateInflectionEPNS0_7ContextERKNSt3__16vectorINS0_25SemanticFeatureConstraintENS3_9allocatorIS5_EEEE,

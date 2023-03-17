@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUCompiler.framework/Libraries/libGPUCompilerImpl.dylib
-current-version:       31001.255
+current-version:       31001.255.3
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -77,6 +77,12 @@ exports:
                             __ZN10llvm_utils24MCMachObjectTargetWriter29getSectionNameForFunctionTypeEh,
                             __ZN10llvm_utils28getIntrinsicInfoTableEntriesEjRN4llvm15SmallVectorImplINS0_9Intrinsic13IITDescriptorEEENS0_8ArrayRefIjEENS6_IhEE,
                             __ZN10llvm_utils3sys14DynamicLibrary9preflightEPKcPNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
+                            __ZN10llvm_utils3sys16MaybeLazyLibrary25findInExplicitLoadedImageEPKc,
+                            __ZN10llvm_utils3sys16MaybeLazyLibrary26findInImplicitLoadedImagesEPKc,
+                            __ZN10llvm_utils3sys16MaybeLazyLibraryC1EPKvPKc,
+                            __ZN10llvm_utils3sys16MaybeLazyLibraryC2EPKvPKc,
+                            __ZN10llvm_utils3sys16MaybeLazyLibraryD1Ev,
+                            __ZN10llvm_utils3sys16MaybeLazyLibraryD2Ev,
                             __ZN10llvm_utils6Module15getMetalVersionERKN4llvm6ModuleE,
                             __ZN19BindMetadataBuilder27buildIndirectStructMetadataEPN4llvm3air16AIStructTypeInfoERj,
                             __ZN4llvm10Tracepoint13replaceBaseIDEPNS_11ConstantIntE,
@@ -402,7 +408,7 @@ exports:
                             __ZN4llvm3air16NativeTargetInfoD2Ev,
                             __ZN4llvm3air16getGPUFamilyNameENS0_9GPUFamilyE,
                             __ZN4llvm3air16upgradeAIRModuleERNS_6ModuleENS_12VersionTupleE,
-                            __ZN4llvm3air17AIInterpolantType7getImplERNS_11LLVMContextEjjNS_24MDTupleTypedArrayWrapperINS0_10AITypeQualEEEbPNS0_13AIBuiltinTypeENS_8Metadata11StorageTypeEb,
+                            __ZN4llvm3air17AIInterpolantType7getImplERNS_11LLVMContextEjjNS_24MDTupleTypedArrayWrapperINS0_10AITypeQualEEEbPNS0_6AITypeENS_8Metadata11StorageTypeEb,
                             __ZN4llvm3air17AILanguageVersion7classofEPKNS_8MetadataE,
                             __ZN4llvm3air17AILanguageVersion7getImplERNS_11LLVMContextENS0_10AILanguageEjjjNS_8Metadata11StorageTypeEb,
                             __ZN4llvm3air17AIPointerLikeType7classofEPKNS_8MetadataE,
@@ -714,6 +720,7 @@ exports:
                             __ZN4llvm3airlsERNS_11raw_ostreamENS0_8AIRCoordE,
                             __ZN4llvm3airlsERNS_11raw_ostreamENS0_9AIRFilterE,
                             __ZN4llvm3airlsERNS_11raw_ostreamERKNS0_4BindE,
+                            __ZN4llvm40createADSViewerInstrumentationLegacyPassEv,
                             __ZN4llvm40initializeAIRFixupMetadataLegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm41initializeAIRMetadataPrunerLegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm42createTracepointMetadataStripperLegacyPassEv,
@@ -733,6 +740,7 @@ exports:
                             __ZN4llvm47initializeAIRIntersectionQueryDCELegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm47initializeLifetimeMarkerSizeFixupLegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm47initializeResourceInstrumentationLegacyPassPassERNS_12PassRegistryE,
+                            __ZN4llvm48initializeADSViewerInstrumentationLegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm48initializeAIRDeviceLoweringConfigWrapperPassPassERNS_12PassRegistryE,
                             __ZN4llvm48initializeAIRWorkaroundRelaxedMathLegacyPassPassERNS_12PassRegistryE,
                             __ZN4llvm4wrapENS_5airnt14ExtensionPointE,
@@ -877,6 +885,7 @@ exports:
                             __ZN7metalfe11GPUArchiver13buildToBufferERN4llvm11raw_ostreamE,
                             __ZN7metalfe11GPUArchiver14setInstallNameEN4llvm9StringRefERNS1_11raw_ostreamE,
                             __ZN7metalfe11GPUArchiver16createWriterImplENS_22GPUArchiverProductKindEN4llvm9StringRefEmb,
+                            __ZN7metalfe11GPUArchiver17setActivePlatformENS_25GPUArchiverActivePlatformERN4llvm11raw_ostreamE,
                             __ZN7metalfe11GPUArchiver17setUnitReflectionENS_16GPUArchiverIndexEPKN4llvm12MemoryBufferES5_RNS2_11raw_ostreamE,
                             __ZN7metalfe11GPUArchiver18createWriterWithIdENS_22GPUArchiverProductKindEN4llvm9StringRefERNS2_11raw_ostreamEmb,
                             __ZN7metalfe11GPUArchiver23updateImageUnitMappingsEP7MDB_txnN10llvm_utils5MachO12ArchitectureEN4llvm9StringRefERKNS6_8DenseMapIjNSt3__15arrayIhLm32EEENS6_12DenseMapInfoIjEENS6_6detail12DenseMapPairIjSB_EEEE,
@@ -911,6 +920,7 @@ exports:
                             __ZN7metalfe12METADatabase11VERBOSE_KEYE,
                             __ZN7metalfe12METADatabase16INSTALL_NAME_KEYE,
                             __ZN7metalfe12METADatabase16PRODUCT_KIND_KEYE,
+                            __ZN7metalfe12METADatabase19ACTIVE_PLATFORM_KEYE,
                             __ZNK4llvm10Tracepoint13getRelativeIDEv,
                             __ZNK4llvm10Tracepoint14getBaseIDValueEv,
                             __ZNK4llvm10Tracepoint17getBaseIDVariableEv,
