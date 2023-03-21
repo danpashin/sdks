@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64 ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/HardwareSupport.framework/HardwareSupport
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64 ]
+    symbols:              [ _HSDomain, _HSErrorDomain, _HSLogHandle,
+                            _HSRequestConcreteImplementation,
+                            _HardwareSupportVersionNumber,
+                            _HardwareSupportVersionString,
+                            ___HSDescribeFigDeviceStatus ]
+    objc-classes:         [ HSCMBaseObject, HSFigCaptureDevice, HSFigCaptureStream,
+                            HSFigCaptureSyncStreamsGroup, HSHIDManager,
+                            HSIORChannelDescription, HSIORSample, HSIOReport,
+                            HSIOReportSnapshot, HSISPCapturePlugIn ]
+...

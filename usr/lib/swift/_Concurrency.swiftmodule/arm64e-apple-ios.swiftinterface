@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
 // swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64e-apple-ios15.4 -enable-objc-interop -enable-library-evolution -module-link-name swift_Concurrency -parse-stdlib -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -enable-experimental-concurrency -module-name _Concurrency -disable-availability-checking
-// swift-module-flags-ignorable: -user-module-version 5.8.0.117.54 -enable-lexical-lifetimes=false -target-min-inlining-version min
+// swift-module-flags-ignorable: -user-module-version 5.8.0.117.59 -enable-lexical-lifetimes=false -target-min-inlining-version min
 import Swift
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 @_marker public protocol AnyActor : AnyObject, Swift.Sendable {
@@ -2051,9 +2051,14 @@ internal func _reportUnexpectedExecutor(_ _filenameStart: Builtin.RawPointer, _ 
   // unconditionally add the cancellation record to the task.
   // if the task was already cancelled, it will be executed right away.
   let record = _taskAddCancellationHandler(handler: handler)
-  defer { _taskRemoveCancellationHandler(record: record) }
-
-  return try await operation()
+  do {
+    let result = try await operation()
+    _taskRemoveCancellationHandler(record: record)
+    return result
+  } catch {
+    _taskRemoveCancellationHandler(record: record)
+    throw error
+  }
 }
 #else
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
@@ -2065,9 +2070,14 @@ public func withTaskCancellationHandler<T>(operation: () async throws -> T, onCa
   // unconditionally add the cancellation record to the task.
   // if the task was already cancelled, it will be executed right away.
   let record = _taskAddCancellationHandler(handler: handler)
-  defer { _taskRemoveCancellationHandler(record: record) }
-
-  return try await operation()
+  do {
+    let result = try await operation()
+    _taskRemoveCancellationHandler(record: record)
+    return result
+  } catch {
+    _taskRemoveCancellationHandler(record: record)
+    throw error
+  }
 }
 #endif
 #endif
@@ -2443,14 +2453,19 @@ internal func _taskGroupAddPendingTask(group: Builtin.RawPointer, unconditionall
   @_backDeploy(before: iOS 16.4)
   @_backDeploy(before: watchOS 9.4)
   @_backDeploy(before: tvOS 16.4)
-  @inlinable @_unsafeInheritExecutor final public func withValue<R>(_ valueDuringOperation: Value, operation: () async throws -> R, file: Swift.String = #fileID, line: Swift.UInt = #line) async rethrows -> R {
+  @_unsafeInheritExecutor final public func withValue<R>(_ valueDuringOperation: Value, operation: () async throws -> R, file: Swift.String = #fileID, line: Swift.UInt = #line) async rethrows -> R {
     // check if we're not trying to bind a value from an illegal context; this may crash
     _checkIllegalTaskLocalBindingWithinWithTaskGroup(file: file, line: line)
 
     _taskLocalValuePush(key: key, value: valueDuringOperation)
-    defer { _taskLocalValuePop() }
-
-    return try await operation()
+    do {
+      let result = try await operation()
+      _taskLocalValuePop()
+      return result
+    } catch {
+      _taskLocalValuePop()
+      throw error
+    }
   }
   #else
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
@@ -2459,14 +2474,19 @@ internal func _taskGroupAddPendingTask(group: Builtin.RawPointer, unconditionall
   @_backDeploy(before: iOS 16.4)
   @_backDeploy(before: watchOS 9.4)
   @_backDeploy(before: tvOS 16.4)
-  @inlinable final public func withValue<R>(_ valueDuringOperation: Value, operation: () async throws -> R, file: Swift.String = #fileID, line: Swift.UInt = #line) async rethrows -> R {
+  final public func withValue<R>(_ valueDuringOperation: Value, operation: () async throws -> R, file: Swift.String = #fileID, line: Swift.UInt = #line) async rethrows -> R {
     // check if we're not trying to bind a value from an illegal context; this may crash
     _checkIllegalTaskLocalBindingWithinWithTaskGroup(file: file, line: line)
 
     _taskLocalValuePush(key: key, value: valueDuringOperation)
-    defer { _taskLocalValuePop() }
-
-    return try await operation()
+    do {
+      let result = try await operation()
+      _taskLocalValuePop()
+      return result
+    } catch {
+      _taskLocalValuePop()
+      throw error
+    }
   }
   #endif
   #endif

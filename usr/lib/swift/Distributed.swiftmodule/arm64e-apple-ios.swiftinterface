@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.54 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
 // swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -module-link-name swiftDistributed -parse-stdlib -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -module-name Distributed
-// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.8.0.117.54
+// swift-module-flags-ignorable: -enable-lexical-lifetimes=false -target-min-inlining-version min -user-module-version 5.8.0.117.59
 import Darwin
 import Swift
 import _Concurrency
@@ -168,7 +168,7 @@ final public class LocalTestingDistributedActorSystem : Distributed.DistributedA
   public typealias InvocationDecoder = Distributed.LocalTestingInvocationDecoder
   public typealias SerializationRequirement = Swift.Codable
   public init()
-  final public func resolve<Act>(id: Distributed.LocalTestingDistributedActorSystem.ActorID, as actorType: Act.Type) throws -> Act? where Act : Distributed.DistributedActor, Act.ID == Distributed.LocalTestingActorID
+  final public func resolve<Act>(id: Distributed.LocalTestingDistributedActorSystem.ActorID, as actorType: Act.Type) throws -> Act? where Act : Distributed.DistributedActor
   final public func assignID<Act>(_ actorType: Act.Type) -> Distributed.LocalTestingDistributedActorSystem.ActorID where Act : Distributed.DistributedActor
   final public func actorReady<Act>(_ actor: Act) where Act : Distributed.DistributedActor, Act.ID == Distributed.LocalTestingActorID
   final public func resignID(_ id: Distributed.LocalTestingDistributedActorSystem.ActorID)
