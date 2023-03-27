@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ReminderKit.framework/ReminderKit
-current-version:       845
+current-version:       861
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -50,8 +50,9 @@ exports:
                             _REMACAccountPropertyDidFinishMigration,
                             _REMAccountTypeMaskContainsType,
                             _REMAppBundleIdentifier,
-                            _REMAppGroupBundleIdentifier, _REMBundleGet,
-                            _REMCFTypeCast, _REMChangeErrorDomain,
+                            _REMAppGroupBundleIdentifier,
+                            _REMAppStoreCreatedOrCompletedRemindersLastMonthCountFetchResultKey,
+                            _REMBundleGet, _REMCFTypeCast, _REMChangeErrorDomain,
                             _REMCheckedDynamicCast, _REMCheckedProtocolCast,
                             _REMClassAndProtocolCast,
                             _REMDA_kCalDAVMobileAccountDelegatePrincipalPath,
@@ -243,6 +244,10 @@ exports:
                             REMAlarm, REMAlarmContactTrigger, REMAlarmDateTrigger,
                             REMAlarmLocationTrigger, REMAlarmTimeIntervalTrigger,
                             REMAlarmTrigger, REMAlarmVehicleTrigger,
+                            REMAppStoreDataView,
+                            REMAppStoreDataViewConfigurationsInvocationResult,
+                            REMAppStoreDataViewInvocation_fetchCreatedOrCompletedRemindersCount,
+                            REMAppStoreDataViewInvocation_fetchICCloudConfigurationProperties,
                             REMAppleAccountUtilities, REMAssignment,
                             REMAssignmentsDataViewInvocationResult,
                             REMAssignmentsDataViewInvocation_fetchByObjectID,
@@ -278,6 +283,9 @@ exports:
                             REMFetchResultToken, REMFileAttachment, REMHashtag,
                             REMHashtagLabel, REMHashtagsDataViewInvocationResult,
                             REMHashtagsDataViewInvocation_fetchByObjectID,
+                            REMICloudIsOffDataView,
+                            REMICloudIsOffDataViewConfigurationsInvocationResult,
+                            REMICloudIsOffDataViewInvocation_fetchICCloudConfigurationProperties,
                             REMImageAttachment, REMList, REMListAppearanceContext,
                             REMListAppearanceContextChangeItem, REMListBadge,
                             REMListCalDAVNotificationContext,
@@ -400,10 +408,13 @@ exports:
                             TTMergeableAttributedString,
                             TTMergeableStringVersionedDocument, TTParagraphStyle,
                             TTREMHashtag, TTVectorTimestamp,
-                            TTVectorTimestampElement, _REMChangeTrackingClientID,
-                            _REMChangeUniversalToken, _REMChangedObjectIDStorage,
+                            TTVectorTimestampElement,
+                            _REMAppStoreReviewCloudConfigurationStorage,
+                            _REMChangeTrackingClientID, _REMChangeUniversalToken,
+                            _REMChangedObjectIDStorage,
                             _REMDACalDAVSyncReplicaManagerProvider,
                             _REMDefaultReplicaManagerProvider, _REMFetchExecutor,
+                            _REMICloudIsOffCloudConfigurationStorage,
                             _REMInProgressSaveRequestsContainer,
                             _REMNSPersistentHistoryChangeStorage,
                             _REMNSPersistentHistoryTransactionStorage ]

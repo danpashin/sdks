@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
-current-version:       1193.8.6
+current-version:       1193.26
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -552,6 +552,7 @@ exports:
                             _kJSOutputPOIFiltersKey,
                             _kLastLimitCheckedForTopSGMISaliency,
                             _kLastMailboxCheckedForTopSGMISaliency,
+                            _kLastSGMIFollowUpStatsAndSettingReportingDate,
                             _kLastSGMIModelGroundTruthVersion,
                             _kLastSGMIModelInferenceVersion,
                             _kLastSGMINicknameProcessingDate,
@@ -860,10 +861,10 @@ exports:
                             SGMISaliencyModel, SGMISaliencyModelConfig,
                             SGMISaliencyModelConfigRule,
                             SGMISaliencyModelFeatureProvider,
-                            SGMISaliencyModelOutput, SGMISpotlightUtility,
-                            SGMIStagedLogRecord, SGMISubmodelsAccumulator,
-                            SGMISubmodelsManager, SGMITokenCounts,
-                            SGMITrialClientWrapper,
+                            SGMISaliencyModelOutput, SGMISimpleEngagementStats,
+                            SGMISpotlightUtility, SGMIStagedLogRecord,
+                            SGMISubmodelsAccumulator, SGMISubmodelsManager,
+                            SGMITokenCounts, SGMITrialClientWrapper,
                             SGMITrialClientWrapperGuardedData,
                             SGMIWarningsConfig, SGMIWarningsDetectionRegex,
                             SGMIWarningsDetectionRegexMatch,
@@ -978,6 +979,7 @@ exports:
                             SGDomainWhitelistCheckerGuardedData._trie,
                             SGEntityStoreToFeatureStoreLockGuardedData._sgmiFeatureStore,
                             SGHistorySharedData.cachedSalt,
+                            SGHistorySharedData.cachedSaltLegacyManatee,
                             SGHistorySharedData.confirmedEventFieldHashes,
                             SGHistorySharedData.confirmedEventHashes,
                             SGHistorySharedData.confirmedEventWithoutTimestampFieldHashes,
@@ -985,6 +987,9 @@ exports:
                             SGHistorySharedData.confirmedReminderHashes,
                             SGHistorySharedData.contactHashes,
                             SGHistorySharedData.dontUpdate,
+                            SGHistorySharedData.isMigrating,
+                            SGHistorySharedData.lastMigrationAttempt,
+                            SGHistorySharedData.migrateFromStore,
                             SGHistorySharedData.observers,
                             SGHistorySharedData.rejectedEventHashes,
                             SGHistorySharedData.rejectedReminderHashes,

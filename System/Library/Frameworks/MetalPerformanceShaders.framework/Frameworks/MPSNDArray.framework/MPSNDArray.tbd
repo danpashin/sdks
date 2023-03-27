@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       126.1.1
+current-version:       126.3.5
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -36,6 +36,9 @@ exports:
                             MPSNDArrayConvolution2DDescriptor,
                             MPSNDArrayConvolution2DGradientWithInput,
                             MPSNDArrayConvolution2DGradientWithWeights,
+                            MPSNDArrayConvolution3D,
+                            MPSNDArrayConvolution3DGradientWithInput,
+                            MPSNDArrayConvolution3DGradientWithWeights,
                             MPSNDArrayCos, MPSNDArrayCosGradient, MPSNDArrayCosh,
                             MPSNDArrayCoshGradient, MPSNDArrayCropResize,
                             MPSNDArrayDecompositionLU, MPSNDArrayDecompositionQR,
@@ -182,5 +185,7 @@ exports:
                             MPSNDArrayGatherGradientState._axis,
                             MPSNDArrayGradientState._provenance,
                             MPSNDArrayGradientState._srcCount,
-                            MPSNDArrayGradientState._srcInfo ]
+                            MPSNDArrayGradientState._srcInfo,
+                            MPSNDArrayMatrixMultiplication._autoTuningParams,
+                            MPSNDArrayMatrixMultiplication._autoTuningTarget ]
 ...

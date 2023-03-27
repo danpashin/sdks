@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppAnalytics.framework/AppAnalytics
-current-version:       218.1
+current-version:       228
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -1588,6 +1588,7 @@ exports:
                             _$s12AppAnalytics7TrackerC14explicitSubmit_10submitTime10completionyxm_10Foundation4DateVyAA05EventE6ResultOyxGcSgtAA0K4TypeRzlF,
                             _$s12AppAnalytics7TrackerC15onSessionChange5blockAA0E8ObserverCyAA06AccessC0C_AA0eF0Otc_tF,
                             _$s12AppAnalytics7TrackerC18dynamicTransaction10identifier5blockySS_yAA06AccessC0CctF,
+                            _$s12AppAnalytics7TrackerC21checkForActiveSession10completionyySbc_tF,
                             _$s12AppAnalytics7TrackerC22removeSessionObservers9forObjectyyXl_tF,
                             _$s12AppAnalytics7TrackerC3pop4typeyxm_tAA13DataEventTypeRzlF,
                             _$s12AppAnalytics7TrackerC4copy4type4from6traits12popIfMissingyxm_ACSayAA14DataEventTraitOGSbtAA0kL4TypeRzlF,
@@ -1705,12 +1706,13 @@ exports:
                             _AppAnalyticsVersionNumber,
                             _AppAnalyticsVersionString ]
     objc-classes:         [ AAAccessQueue, AAAccessSessionManager, AAAccessTracker,
-                            AAAppSessionManager, AAClient, AADataEventTraits,
-                            AADelayedToken, AAEndpoint, AAEventData, AAEventProperty,
-                            AAFlushManager, AAGroup, AAJSON, AALoggingEventProcessor,
-                            AAPrivacyValidation, AAPrivacyValidationProvider,
-                            AAProcessEvent, AAProcessorManager, AARawDataEvent,
-                            AARawEvent, AARawEventProperty, AASession, AASessionData,
+                            AAAppSessionManager, AABridgedMescalSigner, AAClient,
+                            AADataEventTraits, AADelayedToken, AAEndpoint,
+                            AAEventData, AAEventProperty, AAFlushManager, AAGroup,
+                            AAJSON, AALoggingEventProcessor, AAPrivacyValidation,
+                            AAPrivacyValidationProvider, AAProcessEvent,
+                            AAProcessorManager, AARawDataEvent, AARawEvent,
+                            AARawEventProperty, AASession, AASessionData,
                             AASessionGroup, AASessionManager, AASessionObserver,
                             AATimedData, AATimestampGranularityFactory,
                             AATimestampJitter, AATracker, AATrackingConsent,

@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           7E3717CD-E4FC-3ABE-AA22-6FF17D5463F1
-  - target:          armv7s-ios
-    value:           C2DC1842-B5E4-357B-B435-82DE9A0855F7
-  - target:          arm64-ios
-    value:           668ACAC5-1C44-31FB-B43B-03C7F386BBFF
-  - target:          arm64e-ios
-    value:           E02A6C6D-8CC0-3A79-B9FA-A42A03A97F72
 install-name:    '/usr/lib/libETLDMCDynamic.dylib'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -103,12 +94,9 @@ exports:
                        _ETLLOGDisable, _ETLLOGEquipIDAsString, _ETLLOGGetCode, _ETLLOGGetIDs, 
                        _ETLLOGGetItemIDAndEquipIDFromCode, _ETLLOGParseLog, _ETLLOGParseLogHeader, 
                        _ETLLOGParseLogRecord, _ETLLOGSetMask, _ETLLOGSetMaskWithRetry, 
-                       _ETLMESSAGEClearDropCount, _ETLMESSAGECreateFromQSR, _ETLMESSAGECreateFromQSR4, 
-                       _ETLMESSAGEGetDropCount, _ETLMESSAGEGetSubsystemIDRanges, 
-                       _ETLMESSAGEGetSubsystemMasksWithRetry, _ETLMESSAGEGetSubsystemRangeSize, 
-                       _ETLMESSAGEParseMessage, _ETLMESSAGESetAllSubsystemRunTimeMasks, 
+                       _ETLMESSAGEGetSubsystemIDRanges, _ETLMESSAGEGetSubsystemMasksWithRetry, 
+                       _ETLMESSAGEGetSubsystemRangeSize, _ETLMESSAGESetAllSubsystemRunTimeMasks, 
                        _ETLMESSAGESetEnabled, _ETLMESSAGESetFlags, _ETLMESSAGESetSubsystemRuntimeMasksWithRetry, 
-                       _ETLParseLogEventOrMessage, _ETLParseLogEventOrMessageExt, 
                        _ETLQtraceClearSend, _ETLQtraceSend, _ETLTimestampFromTimeval, 
                        _ETLTimestampGetHoursMinutesSeconds, _ETLTimestampGetTimeval, 
                        _ETLTimestampsEqual, __ETLDMCAllocate, __ETLDMCGetView, __Z20ETLDMCDebugGetEventsP17__ETLDMCHandleTag10ETLDMCView, 

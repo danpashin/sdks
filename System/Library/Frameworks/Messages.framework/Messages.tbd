@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           E54C76B3-3C44-32D4-A3BC-32E1B3537F68
-  - target:          armv7s-ios
-    value:           65AB4119-CBED-3744-83EF-7F17284B5865
-  - target:          arm64-ios
-    value:           280DEB76-7388-3A0C-B6E5-6595067FC637
-  - target:          arm64e-ios
-    value:           DC9B0A1A-D03B-3E5F-BBC6-05415C779966
 install-name:    '/System/Library/Frameworks/Messages.framework/Messages'
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
@@ -30,12 +21,13 @@ exports:
                        __MSExtensionContextIsPrimary, __MSExtensionItemConversationStateKey, 
                        __MSExtensionItemHostViewBoundsKey, __MSExtensionItemWantsLiveViewKey, 
                        _ms_defaultLog, _ms_traceLog ]
-    objc-classes:    [ MSConversation, MSMessage, MSMessageLayout, MSMessageLiveLayout, 
-                       MSMessageRichLinkLayout, MSMessageTemplateLayout, MSMessagesAppViewController, 
-                       MSRichLink, MSSession, MSSticker, MSStickerBrowserView, MSStickerBrowserViewController, 
-                       MSStickerView, _MSConversationState, _MSMessageAppBundleContext, 
-                       _MSMessageAppBundleHostContext, _MSMessageAppContext, _MSMessageAppExtensionContext, 
-                       _MSMessageAppExtensionHostContext, _MSMessageExtensionRemoteViewController, 
-                       _MSMessageMediaPayload, _MSPresentationState, _MSStickerPackCollectionViewDataSource, 
+    objc-classes:    [ MSBrowserViewController, MSConversation, MSMessage, MSMessageLayout, 
+                       MSMessageLiveLayout, MSMessageRichLinkLayout, MSMessageTemplateLayout, 
+                       MSMessagesAppViewController, MSRichLink, MSSession, MSSticker, 
+                       MSStickerBrowserView, MSStickerBrowserViewController, MSStickerView, 
+                       _MSConversationState, _MSMessageAppBundleContext, _MSMessageAppBundleHostContext, 
+                       _MSMessageAppContext, _MSMessageAppExtensionContext, _MSMessageAppExtensionHostContext, 
+                       _MSMessageExtensionRemoteViewController, _MSMessageMediaPayload, 
+                       _MSPresentationState, _MSStickerPackCollectionViewDataSource, 
                        _MSStickerSendManager, _MSTempFileManager, _MSTempURL ]
 ...

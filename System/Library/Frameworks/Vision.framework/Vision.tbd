@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           995B01B6-79A6-3758-BFA1-264B140B6AE1
-  - target:          arm64e-ios
-    value:           3F98D3EC-6924-37D6-928A-E1A5D62FC107
 install-name:    '/System/Library/Frameworks/Vision.framework/Vision'
-current-version: 6.0.48
+current-version: 6.0.51
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _CCRectLowLevel, _VN0af6454e97767772ce64a19ddaf61f0c, _VN1HsiXmKrxTsH8TYOuN5s7G3uHSP75iYS, 
@@ -74,8 +65,8 @@ exports:
                        _VNBodyLandmarkKeyRoot, _VNBodyLandmarkRegionKeyFace, _VNBodyLandmarkRegionKeyLeftArm, 
                        _VNBodyLandmarkRegionKeyLeftLeg, _VNBodyLandmarkRegionKeyRightArm, 
                        _VNBodyLandmarkRegionKeyRightLeg, _VNBodyLandmarkRegionKeyTorso, 
-                       _VNCleanupLevel_Complete, _VNCleanupLevel_Partial, _VNCleanupPurgeAll, 
-                       _VNClusteringAlgorithm_Greedy, _VNClusteringAlgorithm_GreedyWithTorso, 
+                       _VNCheckRatioMismatch, _VNCleanupLevel_Complete, _VNCleanupLevel_Partial, 
+                       _VNCleanupPurgeAll, _VNClusteringAlgorithm_Greedy, _VNClusteringAlgorithm_GreedyWithTorso, 
                        _VNCropAndScaleFromURLToPixelBuffers, _VNCropAndScalePixelBufferToPixelBuffers, 
                        _VNDGCsUiwnQwGz0qSSQPGGd177EyoSaoGN, _VNDebugBoundingBoxColor, 
                        _VNDebugColorFromValues, _VNDebugContrastOutlineColor, _VNDebugFallbackSizeWhenImagesizeIsUnknown, 

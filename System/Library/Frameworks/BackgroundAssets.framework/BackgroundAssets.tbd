@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           B24C77E0-40BF-3FDF-A1E3-33BF4966B9AF
-  - target:          arm64e-ios
-    value:           CC44306F-992E-3981-8925-6E6AA6836FF4
 install-name:    '/System/Library/Frameworks/BackgroundAssets.framework/BackgroundAssets'
 swift-abi-version: 7
 reexported-libraries:
@@ -43,24 +34,19 @@ exports:
                        '_$s16BackgroundAssets34BADownloaderExtensionConfigurationTL', 
                        '_$sSo18BAAppExtensionInfoC16BackgroundAssetsE31restrictedDownloadSizeRemainingSiSgvg', 
                        '_$sSo18BAAppExtensionInfoC16BackgroundAssetsE31restrictedDownloadSizeRemainingSiSgvpMV', 
-                       _BAAppStoreClientErrorDomain, _BABackgroundDownloaderExtensionLabel, 
-                       _BADownloaderExtensionMetadataKeyApplicationCacheLocationURL, 
-                       _BADownloaderExtensionMetadataKeyApplicationIdentifier, _BADownloaderExtensionMetadataKeyApplicationLocationURL, 
-                       _BADownloaderExtensionMetadataKeyLocalizedApplicationName, 
-                       _BADownloaderPriorityDefault, _BADownloaderPriorityManifest, 
-                       _BADownloaderPriorityMax, _BADownloaderPriorityMin, _BAErrorDomain, 
+                       '_$sSo18BAAppExtensionInfoC16BackgroundAssetsE40restrictedEssentialDownloadSizeRemainingSiSgvg', 
+                       '_$sSo18BAAppExtensionInfoC16BackgroundAssetsE40restrictedEssentialDownloadSizeRemainingSiSgvpMV', 
+                       _BAAppStoreClientErrorDomain, _BAAppStoreProgressObserverStateString, 
+                       _BABackgroundDownloaderExtensionLabel, _BAContentRequestToString, 
+                       _BADownloadNecessityToString, _BADownloaderPriorityDefault, 
+                       _BADownloaderPriorityMax, _BADownloaderPriorityMin, _BAEssentialMaxInstallSize, 
                        _BAInitialRestrictionsDomainAllowList, _BAInitialRestrictionsDownloadAllowance, 
-                       _BAInitialRestrictionsKey, _BAManifestURL, _BAMaxInstallSize, 
-                       _NSErrorWithBAErrorCode, _NSErrorWithBAErrorCodeUnderlying, 
-                       _kBackgroundAssetsAgentMachServiceName, _kBackgroundAssetsAgentSPIMachServiceName, 
-                       _kBackgroundAssetsAppInfoAllowedDomain, _kBackgroundAssetsAppInfoAmountDownloadAllowance, 
-                       _kBackgroundAssetsAppInfoAmountDownloadedKey, _kBackgroundAssetsAppInfoAppIdentifierKey, 
-                       _kBackgroundAssetsAppInfoAppTeamIdentifierKey, _kBackgroundAssetsAppInfoDeliveredAppDidInstall, 
-                       _kBackgroundAssetsAppInfoDeliveredAppHasLaunched, _kBackgroundAssetsAppInfoInitialBackgroundCellularPolicy, 
-                       _kBackgroundAssetsAppInfoLastApplicationLaunchTime, _kBackgroundAssetsAppInfoLastTimeCheckKey, 
-                       _kBackgroundAssetsAppInfoManifestURL, _kBackgroundAssetsAppInfoPermittedForInitialBackgroundActivity, 
-                       _kBackgroundAssetsAppInfoUserForceQuitApp, _kBackgroundAssetsDeveloperTeamIdentifierEntitlement ]
+                       _BAInitialRestrictionsEssentialDownloadAllowance, _BAInitialRestrictionsKey, 
+                       _BAInitialRestrictionsOptionalDownloadAllowance, _BAManifestURL, 
+                       _BAMaxInstallSize, _BAOptionalMaxInstallSize ]
     objc-classes:    [ BAAgentSystemProxy, BAAppExtensionInfo, BAAppStoreClient, 
-                       BAAppStoreGrantDescriptor, BACloudKitDownload, BADownload, 
+                       BAAppStoreEventDescriptor, BAAppStorePrepareDescriptor, BAAppStoreProgressConfiguration, 
+                       BAAppStoreProgressInfoDescriptor, BAAppStoreProgressObserver, 
+                       BAApplicationConfigurationOverrides, BACloudKitDownload, BADownload, 
                        BADownloadManager, BAURLDownload ]
 ...

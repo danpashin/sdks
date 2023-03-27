@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/AuthenticationServicesCore
-current-version:       614.3.7
+current-version:       615.1.26
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -98,6 +98,7 @@ exports:
                             _ASFIDOAuthenticatorAttachmentCrossPlatform,
                             _ASFIDOAuthenticatorAttachmentPlatform,
                             _ASKeychainSyncStatusMayHaveChangedNotification,
+                            _ASPasskeyTCCService,
                             _ASViewServiceClientEntitlement,
                             _ASViewServiceProcess,
                             _ascCredentialRequestTypesAllPasskey,
@@ -125,8 +126,9 @@ exports:
                             ASCViewServiceInterface,
                             ASCWebAuthenticationExtensionsClientInputs,
                             ASCWebKitSPISupport, ASFeatureManager,
-                            ASGlobalFrameIdentifier, _ASCABLEPowerLogger,
-                            _ASDevice,
+                            ASGlobalFrameIdentifier,
+                            ASPublicKeyCredentialOperationTestDelegate,
+                            _ASCABLEPowerLogger, _ASDevice,
                             _TtC26AuthenticationServicesCore13ASCABLEClient,
                             _TtC26AuthenticationServicesCore20ASCABLEAuthenticator,
                             _TtC26AuthenticationServicesCore23_ASCABLEQRCodeUtilities ]

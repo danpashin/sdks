@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           8DDA8965-F7EC-3AC8-A7C8-DA395D155FA4
-  - target:          arm64e-ios
-    value:           0336E94A-BAA6-3BED-8D50-0F06DDE27CB1
 install-name:    '/System/Library/Frameworks/AVFAudio.framework/AVFAudio'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -99,6 +90,8 @@ exports:
                        _AVSampleRateConverterAudioQualityKey, _AVSampleRateKey, _AVSpeechSynthesisIPANotationAttribute, 
                        _AVSpeechSynthesisVoiceIdentifierAlex, _AVSpeechUtteranceDefaultSpeechRate, 
                        _AVSpeechUtteranceMaximumSpeechRate, _AVSpeechUtteranceMinimumSpeechRate, 
+                       _AVVCCurrentInputDeviceLatencyKey, _AVVCCurrentInputSafetyOffsetKey, 
+                       _AVVCCurrentOutputDeviceLatencyKey, _AVVCCurrentOutputSafetyOffsetKey, 
                        _AVVCGetInputChannelInfo_DSPCountKey, _AVVCGetInputChannelInfo_MicCountKey, 
                        _AVVCGetInputChannelInfo_SpeakerReferenceCountKey, _AVVCGetInputChannelInfo_UndifferentiatedCountKey, 
                        _AVVCStreamHandle_BuiltInStream, _AVVCStreamHandle_ExternalInputHALStream, 

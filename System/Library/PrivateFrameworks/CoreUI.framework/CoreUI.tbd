@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
-current-version:       802
+current-version:       804.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -52,7 +52,9 @@ exports:
                             _CUIGetRGBAImageBuffer, _CUIGetSVGAttributeUnitScale,
                             _CUIImageCompressedWithColorQuantization,
                             _CUIImageIsMonochrome, _CUIImageIsWideGamut,
-                            _CUIKeyFormatToArrayString, _CUILogLogToStderr,
+                            _CUIKeyFormatToArrayString,
+                            _CUILogEnableRenditionLog, _CUILogHandle,
+                            _CUILogLogToStderr, _CUILogRenditionLogEnabled,
                             _CUIMaxDimensionForVectorGlyph,
                             _CUIMaxScaleForTargetPlatform,
                             _CUIMinDimensionForVectorGlyph,

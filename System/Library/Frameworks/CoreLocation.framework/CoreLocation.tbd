@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           DBB6CD3A-5F63-3225-92B7-9E959CBB0A10
-  - target:          armv7s-ios
-    value:           12DCCB52-E6EB-3F76-9D84-01A50EAE830A
-  - target:          arm64-ios
-    value:           878775B4-A5BD-3048-A065-92354BE8F007
-  - target:          arm64e-ios
-    value:           8AC4D68D-05AC-3F43-8809-B5C9D6D85C7E
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/CoreLocation'
-current-version: 2780.0.27
+current-version: 2785.1.32
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CLClientClearNvramData, _CLClientCreate, _CLClientEnableNmeaOutput, 
@@ -88,9 +79,9 @@ exports:
                        _UTDegradationReasonWifiOffKey, _UTDisableReasonAirplaneModeOnKey, 
                        _UTDisableReasonBTOffKey, _UTDisableReasonFindMyDeletedKey, 
                        _UTDisableReasonLocationServicesOffKey, _UTDisableReasonTrackingNotificationsDisallowedKey, 
-                       _UTEnablementStatusKey, __CLLinkedOnOrAfter, _kCLClientDistanceFilterNone, 
-                       _kCLClientHeadingFilterNone, _kCLCommonLocationAlwaysAndWhenInUseUsageDescriptionKey, 
-                       _kCLCommonLocationAlwaysUsageDescriptionKey, _kCLCommonLocationAuthorizationPurposeDescriptionDictionaryKey, 
+                       _UTEnablementStatusKey, _kCLClientDistanceFilterNone, _kCLClientHeadingFilterNone, 
+                       _kCLCommonLocationAlwaysAndWhenInUseUsageDescriptionKey, _kCLCommonLocationAlwaysUsageDescriptionKey, 
+                       _kCLCommonLocationAuthorizationPurposeDescriptionDictionaryKey, 
                        _kCLCommonLocationDefaultAccuracyReducedKey, _kCLCommonLocationInterestZonesKey, 
                        _kCLCommonLocationTemporaryUsageDescriptionDictionaryKey, 
                        _kCLCommonLocationUsageDescriptionKey, _kCLCommonLocationWhenInUseUsageDescriptionKey, 
@@ -120,12 +111,13 @@ exports:
                        CLFindMyAccessoryFirmwareUpdateManager, CLFindMyAccessoryFirmwareVersion, 
                        CLFindMyAccessoryManager, CLFindMyAccessoryRangingManager, 
                        CLFindMyAccessorySoundSequence, CLFindMyAccessoryWildConfiguration, 
-                       CLFloor, CLGeocoder, CLGnssDisablementAssertion, CLHarvester, 
-                       CLHeading, CLInUseAssertion, CLLocation, CLLocationGnssOdometerInfo, 
-                       CLLocationIndependenceAssertion, CLLocationManager, CLLocationManagerRoutine, 
-                       CLLocationMatchInfo, CLLocationSmoother, CLLocationSourceInformation, 
-                       CLLocationTrackRunInfo, CLPair, CLPlacemark, CLPlatformInfoPrivate, 
-                       CLRacingRouteManager, CLRacingRouteParameters, CLRacingRoutePerformanceResults, 
+                       CLFloor, CLGatheringBleAdvertisement, CLGeocoder, CLGnssDisablementAssertion, 
+                       CLHarvester, CLHeading, CLInUseAssertion, CLLocation, CLLocationGnssOdometerInfo, 
+                       CLLocationIndependenceAssertion, CLLocationManager, CLLocationManagerGathering, 
+                       CLLocationManagerRoutine, CLLocationMatchInfo, CLLocationSmoother, 
+                       CLLocationSourceInformation, CLLocationTrackRunInfo, CLPair, 
+                       CLPlacemark, CLPlatformInfoPrivate, CLRacingRouteManager, 
+                       CLRacingRouteParameters, CLRacingRoutePerformanceResults, 
                        CLRacingRouteState, CLRacingRouteVariables, CLReductiveFilterOptions, 
                        CLReductiveFilterSuite, CLRegion, CLRegulatoryConfig, CLRouteBoundingBox, 
                        CLRoutePoint, CLSimulationManager, CLStateTracker, CLVehicleHeading, 

@@ -1,20 +1,25 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           2971F6BB-FB3B-3CFD-B93D-1B64EF78CC5E
-  - target:          arm64e-ios
-    value:           29E0F4E2-16A2-309D-8559-CA5429FA1E4D
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices'
-current-version: 614.3.6
+current-version: 615.1.26
+swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _ASAuthorizationAllSupportedPublicKeyCredentialDescriptorTransports, 
+    symbols:         [ '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV10userHandle10Foundation4DataVvg', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV10userHandle10Foundation4DataVvpMV', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV12credentialID10Foundation4DataVvg', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV12credentialID10Foundation4DataVvpMV', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV12relyingPartySSvg', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV12relyingPartySSvpMV', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV4nameSSvg', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialV4nameSSvpMV', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialVMa', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialVMn', 
+                       '_$s22AuthenticationServices52ASAuthorizationWebBrowserPlatformPublicKeyCredentialVN', 
+                       '_$sSo51ASAuthorizationWebBrowserPublicKeyCredentialManagerC22AuthenticationServicesE19platformCredentials15forRelyingPartySayAC0abc8PlatformdeF0VGSS_tYaF', 
+                       '_$sSo51ASAuthorizationWebBrowserPublicKeyCredentialManagerC22AuthenticationServicesE19platformCredentials15forRelyingPartySayAC0abc8PlatformdeF0VGSS_tYaFTu', 
+                       _ASAuthorizationAllSupportedPublicKeyCredentialDescriptorTransports, 
                        _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
                        _ASAuthorizationErrorDomain, _ASAuthorizationOperationImplicit, 
                        _ASAuthorizationOperationLogin, _ASAuthorizationOperationLogout, 
@@ -59,9 +64,9 @@ exports:
                        ASCredentialProviderExtensionContext, ASCredentialProviderViewController, 
                        ASCredentialServiceIdentifier, ASPasswordCredential, ASPasswordCredentialIdentity, 
                        ASWebAuthenticationSession, _ASAccountAuthenticationModificationExtensionManager, 
-                       _ASAccountAuthenticationModificationHostViewController, _ASCredentialListViewController, 
-                       _ASCredentialProviderExtensionConfigurationViewController, 
+                       _ASAccountAuthenticationModificationHostViewController, _ASAccountManagerTipContent, 
+                       _ASAccountManagerTipManager, _ASCredentialAuthenticationViewController, 
+                       _ASCredentialListViewController, _ASCredentialProviderExtensionConfigurationViewController, 
                        _ASExtensionViewController, _ASIncomingCallObserver, _ASPasskeysLearnMoreContent, 
-                       _ASPasskeysLearnMoreContentViewController, _ASPasswordCredentialAuthenticationViewController, 
-                       _ASPasswordManagerDeleteAlertConfiguration ]
+                       _ASPasskeysLearnMoreContentViewController, _ASPasswordManagerDeleteAlertConfiguration ]
 ...

@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LinkServices.framework/LinkServices
-current-version:       130.100.6
+current-version:       136.100.13
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -987,9 +987,11 @@ exports:
                             _LNAppIntentsExtensionPointIdentifier,
                             _LNAppShortcutsChangedNotification,
                             _LNAppShortcutsChangedNotificationAppBundleIdentifierKey,
+                            _LNAppShortcutsChangedNotificationAppBundleIdentifiersKey,
                             _LNAvailabilityResultAvailable,
                             _LNAvailabilityResultDeprecated,
                             _LNAvailabilityResultUnavailable,
+                            _LNBackgroundAssertionAttributeName,
                             _LNConnectionClientXPCInterface,
                             _LNConnectionErrorDescriptionWithCode,
                             _LNConnectionErrorDomain, _LNConnectionErrorWithCode,
@@ -1013,6 +1015,7 @@ exports:
                             _LNEUIDForAuditToken,
                             _LNEnvironmentDefaultLocaleIdentifier,
                             _LNEqualAuditTokens, _LNFetchMetadataErrorDomain,
+                            _LNForegroundAssertionAttributeName,
                             _LNInteractionModeAsString, _LNIsLinkEnabled,
                             _LNMetadataChangedNotification,
                             _LNMetadataChangedNotificationBundlesKey,
@@ -1065,9 +1068,10 @@ exports:
                             LNConfirmationRequest, LNConfirmationResponse,
                             LNConnection, LNConnectionAction,
                             LNConnectionActionResponse, LNConnectionOptions,
-                            LNConnectionPolicy, LNCorpus, LNDeallocationHandler,
-                            LNDebouncer, LNDisambiguationRequest,
-                            LNDisambiguationResponse,
+                            LNConnectionPolicy, LNContinueInAppRequest,
+                            LNContinueInAppResponse, LNCorpus,
+                            LNDeallocationHandler, LNDebouncer,
+                            LNDisambiguationRequest, LNDisambiguationResponse,
                             LNDisplayRepresentationFetchResult, LNDynamicOption,
                             LNDynamicOptionsResult, LNDynamicOptionsSection,
                             LNDynamicTerm, LNEntitlementsValidator,

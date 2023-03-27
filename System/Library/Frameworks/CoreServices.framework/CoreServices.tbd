@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           4636FCB5-169E-3216-9D0D-3D9C812BE325
-  - target:          arm64e-ios
-    value:           ADEC296D-4357-351E-91AC-C858A5805A35
 install-name:    '/System/Library/Frameworks/CoreServices.framework/CoreServices'
 current-version: 1228
 exports:
@@ -108,8 +99,8 @@ exports:
                        __CSCopyLocalHostnameForComputerName, __CSCopySecIdentityForAppleID, 
                        __CSCreateAppleIDIdentityWithCertificate, __CSCreateAppleIDIdentityWithCertificateChain, 
                        __CSCreateAppleIDIdentityWithNameAndAccountIdentifier, __CSCreatePosixNameFromString, 
-                       __CSDeviceSupportsAirDrop, __CSDisassociateWireless, __CSEnableWirelessP2P, 
-                       __CSGetAppleIDIdentityAuthority, __CSIdentityAuthenticateUsingCertificate, 
+                       __CSDefaultLog, __CSDeviceSupportsAirDrop, __CSDisassociateWireless, 
+                       __CSEnableWirelessP2P, __CSGetAppleIDIdentityAuthority, __CSIdentityAuthenticateUsingCertificate, 
                        __CSIdentityAuthenticateUsingCertificateChain, __CSIdentityAuthorityCopyIdentityWithName, 
                        __CSIdentityUpdateLinkedIdentityProvisioning, __CSIsComputerToComputerEnabled, 
                        __CSIsWirelessAccessPointEnabled, __CSIsWirelessP2PEnabled, 

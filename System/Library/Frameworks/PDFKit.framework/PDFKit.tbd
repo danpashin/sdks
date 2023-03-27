@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           EA0EBD6E-0DDC-3486-B833-F96FBF0DAB1C
-  - target:          arm64e-ios
-    value:           D2432FBF-A368-35F5-A98D-7976AFD7CD6A
 install-name:    '/System/Library/Frameworks/PDFKit.framework/PDFKit'
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -61,30 +52,30 @@ exports:
                        _PDFDocumentDidEndWriteNotification, _PDFDocumentDidFindMatchNotification, 
                        _PDFDocumentDidUnlockNotification, _PDFDocumentFoundSelectionKey, 
                        _PDFDocumentKeywordsAttribute, _PDFDocumentModificationDateAttribute, 
-                       _PDFDocumentOwnerPasswordOption, _PDFDocumentPageIndexKey, 
-                       _PDFDocumentProducerAttribute, _PDFDocumentSaveTextFromOCROption, 
-                       _PDFDocumentSubjectAttribute, _PDFDocumentTitleAttribute, 
-                       _PDFDocumentUserPasswordOption, _PDFPageAnnotationAddedNotification, 
-                       _PDFPageAnnotationRemovedNotification, _PDFPageBackgroundCompleteNotification, 
-                       _PDFPageChangedBoundsForBoxNotification, _PDFPageDrawWithBoxOption_DrawAnnotations, 
-                       _PDFPageDrawWithBoxOption_DrawBookmark, _PDFPageDrawWithBoxOption_DrawProgressCallback, 
-                       _PDFPageDrawWithBoxOption_WithRotation, _PDFPageDrawingCompleteNotification, 
-                       _PDFPageImageInitializationOptionCompressionQuality, _PDFPageImageInitializationOptionMediaBox, 
-                       _PDFPageImageInitializationOptionPerformOCR, _PDFPageImageInitializationOptionRotation, 
-                       _PDFPageImageInitializationOptionUpscaleIfSmaller, _PDFPageImageProperty_BackgroundColor, 
-                       _PDFPageImageProperty_ColorSpace, _PDFPageImageProperty_DrawAnnotations, 
-                       _PDFPageImageProperty_DrawBookmark, _PDFPageImageProperty_DrawProgressCallback, 
-                       _PDFPageImageProperty_WithRotation, _PDFPointEqualToPoint, 
-                       _PDFPointFromCGPoint, _PDFPointMake, _PDFPointToCGPoint, _PDFPrintAutoRotateKey, 
-                       _PDFPrintRotateRightKey, _PDFPrintScalingModeKey, _PDFRectContainsPoint, 
-                       _PDFRectContainsRect, _PDFRectEqualToRect, _PDFRectFromCGRect, 
-                       _PDFRectGetMaxX, _PDFRectGetMaxY, _PDFRectGetMidX, _PDFRectGetMidY, 
-                       _PDFRectGetMinX, _PDFRectGetMinY, _PDFRectInset, _PDFRectIntegral, 
-                       _PDFRectIntersection, _PDFRectIntersectsRect, _PDFRectIsEmpty, 
-                       _PDFRectMake, _PDFRectOffset, _PDFRectToCGRect, _PDFRectUnion, 
-                       _PDFScrollViewPageMayHaveChangedNotification, _PDFScrollViewWillBeginDraggingNotification, 
-                       _PDFSelectionChangedColorNotification, _PDFSizeFromCGSize, 
-                       _PDFSizeMake, _PDFSizeToCGSize, _PDFTextSelectionMenuDidChangeScrollPosition, 
+                       _PDFDocumentOptimizeImagesForScreenOption, _PDFDocumentOwnerPasswordOption, 
+                       _PDFDocumentPageIndexKey, _PDFDocumentProducerAttribute, _PDFDocumentSaveImagesAsJPEGOption, 
+                       _PDFDocumentSaveTextFromOCROption, _PDFDocumentSubjectAttribute, 
+                       _PDFDocumentTitleAttribute, _PDFDocumentUserPasswordOption, 
+                       _PDFPageAnnotationAddedNotification, _PDFPageAnnotationRemovedNotification, 
+                       _PDFPageBackgroundCompleteNotification, _PDFPageChangedBoundsForBoxNotification, 
+                       _PDFPageDrawWithBoxOption_DrawAnnotations, _PDFPageDrawWithBoxOption_DrawBookmark, 
+                       _PDFPageDrawWithBoxOption_DrawProgressCallback, _PDFPageDrawWithBoxOption_WithRotation, 
+                       _PDFPageDrawingCompleteNotification, _PDFPageImageInitializationOptionCompressionQuality, 
+                       _PDFPageImageInitializationOptionMediaBox, _PDFPageImageInitializationOptionPerformOCR, 
+                       _PDFPageImageInitializationOptionRotation, _PDFPageImageInitializationOptionUpscaleIfSmaller, 
+                       _PDFPageImageProperty_BackgroundColor, _PDFPageImageProperty_ColorSpace, 
+                       _PDFPageImageProperty_DrawAnnotations, _PDFPageImageProperty_DrawBookmark, 
+                       _PDFPageImageProperty_DrawProgressCallback, _PDFPageImageProperty_WithRotation, 
+                       _PDFPointEqualToPoint, _PDFPointFromCGPoint, _PDFPointMake, 
+                       _PDFPointToCGPoint, _PDFPrintAutoRotateKey, _PDFPrintRotateRightKey, 
+                       _PDFPrintScalingModeKey, _PDFRectContainsPoint, _PDFRectContainsRect, 
+                       _PDFRectEqualToRect, _PDFRectFromCGRect, _PDFRectGetMaxX, 
+                       _PDFRectGetMaxY, _PDFRectGetMidX, _PDFRectGetMidY, _PDFRectGetMinX, 
+                       _PDFRectGetMinY, _PDFRectInset, _PDFRectIntegral, _PDFRectIntersection, 
+                       _PDFRectIntersectsRect, _PDFRectIsEmpty, _PDFRectMake, _PDFRectOffset, 
+                       _PDFRectToCGRect, _PDFRectUnion, _PDFScrollViewPageMayHaveChangedNotification, 
+                       _PDFScrollViewWillBeginDraggingNotification, _PDFSelectionChangedColorNotification, 
+                       _PDFSizeFromCGSize, _PDFSizeMake, _PDFSizeToCGSize, _PDFTextSelectionMenuDidChangeScrollPosition, 
                        _PDFTextSelectionMenuWillChangeScrollPosition, _PDFTextSelectionMenuWillChangeZoomFactor, 
                        _PDFThumbnailViewDocumentEditedNotification, _PDFViewAnnotationHitNotification, 
                        _PDFViewAnnotationWillHitNotification, _PDFViewAnnotationsDidChangeNotification, 
@@ -99,9 +90,9 @@ exports:
                        _kPDFDocumentWriteOption_SaveWithCorePDFLayout, _kPDFDocumentWriteOption_SaveWithTaggedLayout, 
                        _kPDFDocumentWriteOption_UseAppendMode ]
     objc-classes:    [ PDFAction, PDFActionGoTo, PDFActionNamed, PDFActionRemoteGoTo, 
-                       PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAppearanceCharacteristics, 
-                       PDFBorder, PDFDestination, PDFDocument, PDFExtensionContext, 
-                       PDFExtensionViewController, PDFHostExtensionContext, PDFHostViewController, 
-                       PDFOutline, PDFPage, PDFPageEvaluator, PDFSelection, PDFThumbnailView, 
-                       PDFView, PDFViewLayout, XPCExtensionInterface ]
+                       PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAnnotationPKDrawing, 
+                       PDFAppearanceCharacteristics, PDFBorder, PDFDestination, PDFDocument, 
+                       PDFExtensionContext, PDFExtensionViewController, PDFHostExtensionContext, 
+                       PDFHostViewController, PDFOutline, PDFPage, PDFPageEvaluator, 
+                       PDFSelection, PDFThumbnailView, PDFView, PDFViewLayout, XPCExtensionInterface ]
 ...

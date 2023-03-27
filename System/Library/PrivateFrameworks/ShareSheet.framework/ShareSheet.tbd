@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet
-current-version:       1853
+current-version:       1885
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -28,6 +28,7 @@ exports:
                             _UIActivityContentHelperCopyButtonAction,
                             _UIActivityContentHelperOptionsButtonAction,
                             _UIActivityContentHelperOptionsButtonText,
+                            _UIActivityTypeAddToHomeScreen,
                             _UIActivityTypeAddToReadingList,
                             _UIActivityTypeAirDrop,
                             _UIActivityTypeAssignToContact,
@@ -72,8 +73,8 @@ exports:
                             __ShareSheetCurrentDeviceClass,
                             __ShareSheetDeviceScreenScale,
                             __ShareSheetImageAnalysisAllowed,
-                            __ShareSheetIsAppleApp, __ShareSheetIsCamera,
-                            __ShareSheetIsSafari,
+                            __ShareSheetIsAppleApp, __ShareSheetIsBrowser,
+                            __ShareSheetIsCamera, __ShareSheetIsSafari,
                             __ShareSheetIsSupportedPrintActivity,
                             __ShareSheetPlatformPrefersPopover,
                             __ShareSheetSupportsSharePlayStartFromApp,
@@ -85,8 +86,9 @@ exports:
                             __UIActivityGetBuiltinActivities,
                             __UIActivityGetOrderedBuiltinActivitiesFromActivities,
                             __UIActivityGetPrintingBasedActivities,
-                            __UIActivityHasAtMoreThan, __UIActivityIsAirdrop,
-                            __UIActivityItemCountOfType,
+                            __UIActivityHasAtMoreThan,
+                            __UIActivityHelperActivityItemsIncludeICloudDriveURL,
+                            __UIActivityIsAirdrop, __UIActivityItemCountOfType,
                             __UIActivityItemIsLivePhoto, __UIActivityItemTypes,
                             __UIActivityItemTypesSet,
                             __UIActivityItemsGetAttachments,
@@ -109,7 +111,6 @@ exports:
                             __UIApplicationCanOpenInPlaceByCopyingFromOriginalFile,
                             __UIApplicationCanOpenInPlaceByReferenceOriginalFile,
                             __UIApplicationExtensionAttributeIsFPSpecific,
-                            __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs,
                             __UIApplicationExtensionIdentifierAddToiCloudDrive,
                             __UIApplicationExtensionIdentifierBoxManage,
                             __UIApplicationExtensionPointServices,
@@ -161,8 +162,7 @@ exports:
                             SHSheetContentDataSourceState,
                             SHSheetContentLayoutContext,
                             SHSheetContentLayoutProvider,
-                            SHSheetContentLayoutSpec,
-                            SHSheetContentViewController, SHSheetContext,
+                            SHSheetContentLayoutSpec, SHSheetContext,
                             SHSheetFactory, SHSheetGroupActivity,
                             SHSheetGroupActivitySharingController,
                             SHSheetImageIdentificationUtilities,
@@ -188,8 +188,9 @@ exports:
                             UIActivityHeroActionCell,
                             UIActivityItemCustomization, UIActivityItemImageRep,
                             UIActivityItemProvider, UIActivityItemURLRep,
-                            UIActivityViewController, UIAddToReadingListActivity,
-                            UIAirDropActivity, UIAirDropExtensionItemDataSource,
+                            UIActivityViewController, UIAddToHomeScreenActivity,
+                            UIAddToReadingListActivity, UIAirDropActivity,
+                            UIAirDropExtensionItemDataSource,
                             UIAirDropGroupActivityCell, UIAirDropNode,
                             UIApplicationExtensionActivity,
                             UIApplicationExtensionViewControllerHost,

@@ -1,17 +1,8 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           C7271700-2EFA-3BB2-B0A2-E83973C2CC4B
-  - target:          armv7s-ios
-    value:           051E7C48-9770-3297-BDB0-966423C90399
-  - target:          arm64-ios
-    value:           23312CCE-4DEC-3B24-8C25-10D6AB70C41D
-  - target:          arm64e-ios
-    value:           3BF2921C-CDEB-379D-8348-F96A25300AE4
 install-name:    '/System/Library/Frameworks/EventKit.framework/EventKit'
-current-version: 1833.3.2
+current-version: 1833.4.5
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ _CurrentLocaleExpectsMultipleFamilyNames, _CurrentLocaleExpectsSurnameFirst, 
@@ -92,9 +83,8 @@ exports:
                        _EKPreferences_Notification_SelectedCalendarIdentifiers, _EKPreferences_Notification_UnselectedCalendarIdentifiersForFocusMode, 
                        _EKPriorityPropertyId, _EKRecurrenceRulesPropertyId, _EKRedaction, 
                        _EKReminderModifiedNotification, _EKSharedCalendarNotificationsDisabledKey, 
-                       _EKStorageUsageAttachmentsKey, _EKStorageUsageEventsKey, _EKTimeToLeaveEnabledKey, 
-                       _EKTimeToLeaveEnabledNotification, _EKTitlePropertyId, _EKTravelEngineLogHandle, 
-                       _EKTravelEngineLogInitialize, _EKTravelEngineThrottleLogHandle, 
+                       _EKStorageUsageAttachmentsKey, _EKStorageUsageEventsKey, _EKTitlePropertyId, 
+                       _EKTravelEngineLogHandle, _EKTravelEngineLogInitialize, _EKTravelEngineThrottleLogHandle, 
                        _EKTravelLookupErrorDomain, _EKUUIDPropertyId, _EKUtils_AdjustedAttendeeAddress, 
                        _EKViewModelAccountDisplayOrderKey, _EKViewModelChangedNotification, 
                        _EKViewModelDisabledCalendarsKey, _EKVirtualConferenceErrorResultKey, 

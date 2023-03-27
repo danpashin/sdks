@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GameControllerFoundation.framework/GameControllerFoundation
-current-version:       10.3.5
+current-version:       10.5.10
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -74,6 +74,8 @@ exports:
                             GCGenericDeviceDataMultiplyExpressionModelBuilder,
                             GCGenericDeviceDataProcessorExpressionModel,
                             GCGenericDeviceDataProcessorExpressionModelBuilder,
+                            GCGenericDeviceDataRumbleMotorValueExpressionModel,
+                            GCGenericDeviceDataRumbleMotorValueExpressionModelBuilder,
                             GCGenericDeviceDataSDLHatFunctionExpressionModel,
                             GCGenericDeviceDataSDLHatFunctionExpressionModelBuilder,
                             GCGenericDeviceDriverModel,
@@ -93,9 +95,16 @@ exports:
                             GCGenericDevicePhysicalInputElementModelBuilder,
                             GCGenericDevicePhysicalInputModel,
                             GCGenericDevicePhysicalInputModelBuilder,
-                            GCHIDDevice, GCHIDDeviceInput, GCHIDDeviceSnapshot,
+                            GCGenericDeviceRumbleActuatorModel,
+                            GCGenericDeviceRumbleActuatorModelBuilder,
+                            GCGenericDeviceRumbleModel,
+                            GCGenericDeviceRumbleModelBuilder,
+                            GCGenericDeviceRumbleOutputFieldModel,
+                            GCGenericDeviceRumbleOutputFieldModelBuilder,
+                            GCGenericDeviceRumbleOutputModel,
+                            GCGenericDeviceRumbleOutputModelBuilder, GCHIDDevice,
+                            GCHIDDeviceInput, GCHIDDeviceSnapshot,
                             GCHIDElementSnapshot, GCHIDInputElement,
-                            GCHIDKernelDeviceSnapshot, GCHIDUserDeviceSnapshot,
                             GCIPCRemoteConnection, GCIPCRemoteIncomingConnection,
                             GCIPCRemoteOutgoingConnection, GCOperation, GCPromise,
                             GCVersion, _GCDeviceConfiguration,

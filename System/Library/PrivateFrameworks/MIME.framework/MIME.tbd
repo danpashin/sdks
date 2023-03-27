@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MIME.framework/MIME
-current-version:       3731.255.101
+current-version:       3731.255.231
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -27,6 +27,7 @@ exports:
                             _H_YAHOO_MESSAGE_ID, _MFCanUseSoftBankCodePoints,
                             _MFCharsetForEncoding, _MFCreateDataWithString,
                             _MFCreateStringWithBytes, _MFCreateStringWithData,
+                            _MFDataConsumerAppendDispatchData,
                             _MFDataConsumerConsumeCompleteData,
                             _MFDataGetDataPath, _MFDecodingAsHTMLKey,
                             _MFDecodingCollectRFC822DecodedMessageBodyKey,
@@ -64,8 +65,7 @@ exports:
                             ___threadLockRelations,
                             ___threadLockRelationsControl,
                             ___threadLockRelationsLock, __mfEnableLockTesting,
-                            __mfLockEncounteredError, _findEntity,
-                            _mf_parseHTMLEntity ]
+                            __mfLockEncounteredError ]
     objc-classes:         [ MFArrayDiff, MFBase64Decoder, MFBase64Encoder,
                             MFBaseFilterDataConsumer, MFBlockDataConsumer,
                             MFBufferedDataConsumer, MFConditionLock,

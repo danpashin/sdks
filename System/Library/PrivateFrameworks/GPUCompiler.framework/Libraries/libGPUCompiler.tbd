@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUCompiler.framework/Libraries/libGPUCompiler.dylib
-current-version:       31001.255.2
+current-version:       31001.255.3
 compatibility-version: 1
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
@@ -35,6 +35,7 @@ exports:
                             _MTLGPUArchiverDumpStateToBuffer,
                             _MTLGPUArchiverFlush, _MTLGPUArchiverFromId,
                             _MTLGPUArchiverPackUnits,
+                            _MTLGPUArchiverSetActivePlatform,
                             _MTLGPUArchiverSetInstallName,
                             _MTLGPUArchiverSetUnitHash,
                             _MTLGPUArchiverSetUnitReflection,
@@ -55,7 +56,8 @@ exports:
                             _MTLGPUCompilerEnableResourcePatchingInstrumentation,
                             _MTLGPUCompilerEnableResourceUsageInstrumentation,
                             _MTLGPUCompilerEnableTLSEmulation,
-                            _MTLGPUCompilerLink, _MTLGPUCompilerLinkToBuffer,
+                            _MTLGPUCompilerHandleSPIs, _MTLGPUCompilerLink,
+                            _MTLGPUCompilerLinkToBuffer,
                             _MTLGPUCompilerLoadModules,
                             _MTLGPUCompilerLoadModulesToBuffer,
                             _MTLGPUCompilerLowerModule,
@@ -67,6 +69,8 @@ exports:
                             _MTLGPUCompilerSetMeshEmulationUsedFragmentInputs,
                             _MTLGPUCompilerSetRaytracingEmulationIndirectAccelerationStructures,
                             _MTLGPUCompilerSetStitcherScript,
+                            _MTLGPUCompilerSpecializeDynamicLibrary,
+                            _MTLGPUCompilerSpecializeDynamicLibraryToBuffer,
                             _MTLGPUCompilerSpecializeFunction,
                             _MTLGPUCompilerSpecializeFunctionToBuffer,
                             _MTLGPUCompilerStitchFunctions,
@@ -91,7 +95,8 @@ exports:
                             _MTLMetalLibGetFunctionsCount,
                             _MTLMetalLibGetImportedSymbolNo,
                             _MTLMetalLibGetImportedSymbolsCount,
-                            _MTLMetalLibGetInstallName,
+                            _MTLMetalLibGetInstallName, _MTLMetalLibGetModuleNo,
+                            _MTLMetalLibGetModulesCount,
                             _MTLMetalLibGetVariableNo,
                             _MTLMetalLibGetVariablesCount,
                             _MTLMetalLibInsertFunction,

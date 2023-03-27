@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/RemoteServiceDiscovery
-current-version:       95.62.1
+current-version:       103.100.10
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -85,6 +85,10 @@ exports:
                             _remote_service_listen,
                             _remote_service_listen_with_device,
                             _remote_service_set_connect_timeout,
+                            _remote_service_set_keepalive,
+                            _remote_service_set_keepalive_time,
+                            _remote_service_set_keepcount,
+                            _remote_service_set_keepinterval,
                             _remote_service_supports_feature,
                             _remote_socket_create_connected_ipv6_pair,
                             _remote_socket_poll_connect_async,
@@ -95,6 +99,10 @@ exports:
                             OS_remote_device.device_name,
                             OS_remote_service.connect_timeout,
                             OS_remote_service.connection,
-                            OS_remote_service.device, OS_remote_service.name,
-                            OS_remote_service.properties ]
+                            OS_remote_service.device,
+                            OS_remote_service.keepalive,
+                            OS_remote_service.keepalive_time,
+                            OS_remote_service.keepcount,
+                            OS_remote_service.keepinterval,
+                            OS_remote_service.name, OS_remote_service.properties ]
 ...

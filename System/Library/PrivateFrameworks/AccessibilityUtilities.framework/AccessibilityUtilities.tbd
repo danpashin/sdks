@@ -9,9 +9,7 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     re-exports:           [ /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities ]
-    symbols:              [ _$s22AccessibilityUtilities19_axUnwrapSwiftValueyypSgyXlF,
-                            _$s22AccessibilityUtilities27_validateSwiftIntrospection3obj0F4Type3key8hasField11typeMatched08expectedG0yyXl_ypXpSSS2bypXpSgtF,
-                            _AXASTCustomGesturePrefixName,
+    symbols:              [ _AXASTCustomGesturePrefixName,
                             _AXASTSiriShortcutPrefixName,
                             _AXAirPodsB494LocalizedStringForKey,
                             _AXAirPodsB698LocalizedStringForKey,
@@ -213,6 +211,7 @@ exports:
                             _AXDeviceSupportsManyTouches,
                             _AXDeviceSupportsPencil,
                             _AXDeviceSupportsPencilHover,
+                            _AXDeviceSupportsPhotosensitiveMitigation,
                             _AXDeviceSupportsQuickNote,
                             _AXDeviceSupportsSecureDoubleClick,
                             _AXDeviceSupportsSideApp,
@@ -687,7 +686,7 @@ exports:
                             _MSHGetMachPortFromSource,
                             _MSHMIGSourceSetNoSendersCallback,
                             _MSHMIGSourceSetSendOnceCallback,
-                            _ModifySpeechJobsLock,
+                            _ModifySpeechJobsLock, _PSESettingsFooterText,
                             _SCATATVRemoteDeviceMatchingDictionary,
                             _SCATATVRemoteSwitchActions, _SCATActionDescription,
                             _SCATAddOrUpdateCameraSwitchToSettings,
@@ -1054,8 +1053,7 @@ exports:
                             AXMouseEventListener, AXMutableReplayableGesture,
                             AXNamedReplayableGesture, AXOrator, AXOutputAction,
                             AXOutputRequest, AXPageTurningReplayableGesture,
-                            AXPasscodeAccessor, AXPathWrapper,
-                            AXPerformanceTestReportingServer,
+                            AXPasscodeAccessor, AXPerformanceTestReportingServer,
                             AXPostConnectionTask, AXPredictiveTypingModel,
                             AXRedirectedEventDetector, AXReplayableGesture,
                             AXReplayer, AXResourceLoader, AXSBImageExplorerData,

@@ -472,7 +472,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  @abstract Query device for BC Texture format support
  @return BOOL value. If YES, the device supports compressed BC Texture formats. If NO, the device does not.
  */
- @property (readonly) BOOL supportsBCTextureCompression API_AVAILABLE(macos(11.0)) API_UNAVAILABLE(ios);
+ @property (readonly) BOOL supportsBCTextureCompression API_AVAILABLE(macos(11.0), ios(16.4));
 
 /*!
  @property supportsPullModelInterpolation

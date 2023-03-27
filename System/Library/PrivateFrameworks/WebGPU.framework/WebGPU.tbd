@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebGPU.framework/WebGPU
-current-version:       614.3.7
+current-version:       615.1.26
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -17,10 +17,10 @@ exports:
                             _wgpuBindGroupLayoutSetLabel, _wgpuBindGroupRelease,
                             _wgpuBindGroupSetLabel, _wgpuBufferDestroy,
                             _wgpuBufferGetConstMappedRange,
-                            _wgpuBufferGetMappedRange, _wgpuBufferMapAsync,
-                            _wgpuBufferMapAsyncWithBlock, _wgpuBufferRelease,
-                            _wgpuBufferSetLabel, _wgpuBufferUnmap,
-                            _wgpuCommandBufferRelease,
+                            _wgpuBufferGetMappedRange, _wgpuBufferGetSize,
+                            _wgpuBufferMapAsync, _wgpuBufferMapAsyncWithBlock,
+                            _wgpuBufferRelease, _wgpuBufferSetLabel,
+                            _wgpuBufferUnmap, _wgpuCommandBufferRelease,
                             _wgpuCommandBufferSetLabel,
                             _wgpuCommandEncoderBeginComputePass,
                             _wgpuCommandEncoderBeginRenderPass,
@@ -134,6 +134,8 @@ exports:
                             _wgpuShaderModuleGetCompilationInfo,
                             _wgpuShaderModuleGetCompilationInfoWithBlock,
                             _wgpuShaderModuleRelease, _wgpuShaderModuleSetLabel,
+                            _wgpuSurfaceCocoaCustomSurfaceGetDisplayBuffer,
+                            _wgpuSurfaceCocoaCustomSurfaceGetDrawingBuffer,
                             _wgpuSurfaceGetPreferredFormat, _wgpuSurfaceRelease,
                             _wgpuSwapChainGetCurrentTextureView,
                             _wgpuSwapChainPresent, _wgpuSwapChainRelease,

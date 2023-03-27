@@ -1,15 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           E1809BE7-DC5D-37CB-9610-2AFCFBBE458B
-  - target:          arm64e-ios
-    value:           21E430E2-1A23-35C3-8E02-0EEF328BAC97
 install-name:    '/System/Library/Frameworks/ShazamKit.framework/ShazamKit'
 reexported-libraries:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -21,10 +12,13 @@ exports:
                        _SHEventSignalIdentifierMusicRecognitionRecognitionActivated, 
                        _SHMaximumSignatureDuration, _SHMediaItemAlbumName, _SHMediaItemAppleMusicID, 
                        _SHMediaItemAppleMusicURL, _SHMediaItemArtist, _SHMediaItemArtworkURL, 
-                       _SHMediaItemAudioStartDate, _SHMediaItemExplicitContent, _SHMediaItemFrequencySkew, 
-                       _SHMediaItemFrequencySkewRanges, _SHMediaItemFrequencySkewRangesSwift, 
-                       _SHMediaItemGenres, _SHMediaItemISRC, _SHMediaItemLyricsSnippet, 
-                       _SHMediaItemMatchOffset, _SHMediaItemReleaseDate, _SHMediaItemShazamID, 
+                       _SHMediaItemAudioStartDate, _SHMediaItemCreationDate, _SHMediaItemExplicitContent, 
+                       _SHMediaItemFrequencySkew, _SHMediaItemFrequencySkewRanges, 
+                       _SHMediaItemFrequencySkewRangesSwift, _SHMediaItemGenres, 
+                       _SHMediaItemISRC, _SHMediaItemLyricsSnippet, _SHMediaItemMatchOffset, 
+                       _SHMediaItemPresentationSettingOpenResultInBrowserOnFailure, 
+                       _SHMediaItemQueryMatchOffsetRanges, _SHMediaItemReferenceMatchOffsetRanges, 
+                       _SHMediaItemReleaseDate, _SHMediaItemShazamCount, _SHMediaItemShazamID, 
                        _SHMediaItemSpeedSkew, _SHMediaItemStaticLyricLines, _SHMediaItemSubtitle, 
                        _SHMediaItemSyncedLyricsSnippet, _SHMediaItemTimeRanges, _SHMediaItemTimeRangesSwift, 
                        _SHMediaItemTitle, _SHMediaItemVideoURL, _SHMediaItemWebURL, 
@@ -36,34 +30,28 @@ exports:
                        _SHShazamKitClientInterface, _SHShazamKitServiceInterface, 
                        _SHShazamKitServiceName, _SHShazamKitUIClientInterface, _SHShazamKitUIServiceInterface, 
                        _SHShazamKitUIServiceName ]
-    objc-classes:    [ SHAttribution, SHCatalog, SHCustomCatalog, SHError, SHEventSignaller, 
-                       SHLyricLine, SHManagedSession, SHMatch, SHMatchedMediaItem, 
-                       SHMatcherResponse, SHMediaItem, SHMediaItemPropertyUtilities, 
+    objc-classes:    [ SHAttribution, SHCatalog, SHCatalogConfiguration, SHCustomCatalog, 
+                       SHCustomCatalogConfiguration, SHError, SHEventSignaller, SHLyricLine, 
+                       SHManagedSession, SHMatch, SHMatchedMediaItem, SHMatcherResponse, 
+                       SHMediaItem, SHMediaItemPresentationSettings, SHMediaItemPropertyUtilities, 
                        SHMediaLibrary, SHMediaLibraryChange, SHMediaLibraryGroup, 
                        SHMediaLibraryInfo, SHMediaLibraryItemMetadata, SHMediaLibraryLabel, 
                        SHMediaLibraryQueryParameters, SHMediaLibrarySnapshot, SHMediaLibraryTrack, 
                        SHMediaLibraryTrackBuilder, SHMediaLibraryTrackUpdate, SHMutableSignature, 
                        SHRange, SHSession, SHShazamKey, SHShazamKitServiceInterfaces, 
-                       SHShazamKitUIServiceInterfaces, SHSignature, SHSignatureGenerator, 
-                       SHSyncedLyrics ]
+                       SHShazamKitUIServiceInterfaces, SHSignature, SHSignatureBuffer, 
+                       SHSignatureGenerator, SHStreamingSessionDriver, SHSyncedLyrics ]
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-uuids:
-  - target:          armv7-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          armv7s-ios
-    value:           00000000-0000-0000-0000-000000000000
-  - target:          arm64-ios
-    value:           05C7CC3D-9649-32A9-9515-31D2D5830F8C
-  - target:          arm64e-ios
-    value:           A8976C36-CE4E-3EB2-8E17-4D9FD9C487DB
 install-name:    '/System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore'
-current-version: 195.10
+current-version: 207.5
 compatibility-version: 0
+swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _SHAnalyticsActionAppleMusic, _SHAnalyticsActionNotificationTap, 
+    symbols:         [ '_$sSD10ShazamCoreE7mapKeysySDyqd__q_Gqd__xKXEKSHRd__lF', 
+                       _SHAnalyticsActionAppleMusic, _SHAnalyticsActionNotificationTap, 
                        _SHAnalyticsEventMusicRecognitionAlert, _SHAnalyticsEventMusicRecognitionEnabled, 
                        _SHAnalyticsEventMusicRecognitionHistory, _SHAnalyticsEventMusicRecognitionList, 
                        _SHAnalyticsEventMusicRecognitionResult, _SHAnalyticsEventMusicRecognitionResultAction, 
@@ -80,6 +68,6 @@ exports:
     objc-classes:    [ SHAnalytics, SHBagContract, SHCampaignTokens, SHCompression, 
                        SHCoreError, SHDefaultConfigurationValues, SHEndpoints, SHEntitlements, 
                        SHFeatureFlags, SHHost, SHJSONLFileReader, SHJSONLFileWriter, 
-                       SHLocalization, SHMusicSubscriptionStatus, SHRemoteConfiguration, 
-                       SHService, SHStorefront, SHTokenizedURL ]
+                       SHLocalization, SHMusicSubscriptionStatus, SHOffers, SHRemoteConfiguration, 
+                       SHStorefront, SHTokenizedURL ]
 ...

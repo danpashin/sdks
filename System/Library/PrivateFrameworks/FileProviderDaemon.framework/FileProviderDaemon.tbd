@@ -9,7 +9,9 @@ objc-constraint:       retain_release
 exports:
   - archs:                [ armv7, armv7s, arm64 ]
     symbols:              [ _FPDAppStoreServiceName,
-                            _FPDAppStoreServiceXPCInterface ]
+                            _FPDAppStoreServiceXPCInterface,
+                            _defaultsKeyForErrorInjectionCategory,
+                            _errorInjectionCategoryByName ]
     objc-classes:         [ FPDAccessControlStore, FPDActionOperation,
                             FPDActionOperationQueue, FPDAppMonitor,
                             FPDConfigurationStore, FPDDomain,
@@ -21,5 +23,5 @@ exports:
                             FPDProcessMonitor, FPDProvider, FPDProviderDescriptor,
                             FPDRTCReportingSession,
                             FPDRTCReportingSessionManager, FPDRequest, FPDServer,
-                            FPDSharedScheduler ]
+                            FPDSharedScheduler, FPDVolume, FPDVolumeManager ]
 ...

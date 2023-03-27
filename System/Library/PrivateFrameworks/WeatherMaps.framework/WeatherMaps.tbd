@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WeatherMaps.framework/WeatherMaps
-current-version:       327
+current-version:       348
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -27,6 +27,7 @@ exports:
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V22useMergedPrecipitationAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V23resetLocalStoragePresetAA0H0CvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V27forceSeparateRadarEndpointsAA7SettingCySbGvgZ,
+                            _$s11TeaSettings0B0C11WeatherMapsE0D0V29disableMapOverlaySonificationAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V30resetTransparentOverlaysPresetAA0H0CvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V36interactiveMapRefreshIntervalMinutesAA7SettingCySiGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V37disableMapLocationAccessibilityModelsAA7SettingCySbGvgZ,
@@ -138,6 +139,7 @@ exports:
                             _$s11WeatherMaps0A17MapViewControllerC26didRequestCurrentZoomLevely12CoreGraphics7CGFloatVSgAA0aciE4Type_pF,
                             _$s11WeatherMaps0A17MapViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfC,
                             _$s11WeatherMaps0A17MapViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc,
+                            _$s11WeatherMaps0A17MapViewControllerC8willMove8toParentySo06UIViewE0CSg_tF,
                             _$s11WeatherMaps0A17MapViewControllerCAA0ac4ZoomE8DelegateAAMc,
                             _$s11WeatherMaps0A17MapViewControllerCAA0ac4ZoomE8DelegateAAWP,
                             _$s11WeatherMaps0A17MapViewControllerCMa,
@@ -267,7 +269,7 @@ exports:
                             _$s11WeatherMaps0A3MapV11CoordinatorCN,
                             _$s11WeatherMaps0A3MapV11CoordinatorCfD,
                             _$s11WeatherMaps0A3MapV11CoordinatorCfd,
-                            _$s11WeatherMaps0A3MapV11displayMode9locations11overlayKind18selectedLocationId11weatherData7options15cacheIdentifier28isPreferredForCachedInstance05debugP020supplementaryOverlayAcA0ac7DisplayE0O_Say0A4Core0J0VG7SwiftUI7BindingVyAA0acxH0OGAVySSSgGSDySS0A3Kit0aM5ModelVGSgSayAC7OptionsOGAZSbSSxyctcAT4ViewRzlufC,
+                            _$s11WeatherMaps0A3MapV11displayMode9locations11overlayKind18selectedLocationId11weatherData7options15cacheIdentifier28isPreferredForCachedInstance05debugP020supplementaryOverlay19contentStatusBannerAcA0ac7DisplayE0O_Say0A4Core0J0VG7SwiftUI7BindingVyAA0acxH0OGAWySSSgGSDySS0A3Kit0aM5ModelVGSgSayAC7OptionsOGA_SbSSxycq_yctcAU4ViewRzSHR_AUA9_R_r0_lufC,
                             _$s11WeatherMaps0A3MapV11displayMode9locations11overlayKind18selectedLocationId11weatherData7options15cacheIdentifier28isPreferredForCachedInstance05debugP0AcA0ac7DisplayE0O_Say0A4Core0J0VG7SwiftUI7BindingVyAA0ac7OverlayH0OGAUySSSgGSDySS0A3Kit0aM5ModelVGSgSayAC7OptionsOGAYSbSStcfC,
                             _$s11WeatherMaps0A3MapV11displayModeAA0ac7DisplayE0OvM,
                             _$s11WeatherMaps0A3MapV11displayModeAA0ac7DisplayE0Ovg,
@@ -286,6 +288,7 @@ exports:
                             _$s11WeatherMaps0A3MapV14LocationActionO04viewD0yAE0A4Core0D0VcAEmFWC,
                             _$s11WeatherMaps0A3MapV14LocationActionO11descriptionSSvg,
                             _$s11WeatherMaps0A3MapV14LocationActionO11descriptionSSvpMV,
+                            _$s11WeatherMaps0A3MapV14LocationActionO4noneyA2EmFWC,
                             _$s11WeatherMaps0A3MapV14LocationActionOMa,
                             _$s11WeatherMaps0A3MapV14LocationActionOMn,
                             _$s11WeatherMaps0A3MapV14LocationActionON,
@@ -533,6 +536,7 @@ exports:
                             _$s2os6LoggerV11WeatherMapsE15mapNetworkDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE16mapSnapshotDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE20dynamicOverlaysDebugACSgvgZ,
+                            _$s2os6LoggerV11WeatherMapsE21mapAccessibilityDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE3mapACvgZ,
                             _$s2os6LoggerV11WeatherMapsE7mapDataACvgZ,
                             _$s2os6LoggerV11WeatherMapsE9mapRenderACvgZ,
@@ -557,10 +561,6 @@ exports:
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE22canViewLocationHandlerSb0E4Core0I0VcSgvg,
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE22canViewLocationHandlerSb0E4Core0I0VcSgvpMV,
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE22canViewLocationHandlerSb0E4Core0I0VcSgvs,
-                            _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE36mapLocationAccessibilityModelManagerAD03MaphijK4Type_pSgvM,
-                            _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE36mapLocationAccessibilityModelManagerAD03MaphijK4Type_pSgvg,
-                            _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE36mapLocationAccessibilityModelManagerAD03MaphijK4Type_pSgvpMV,
-                            _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE36mapLocationAccessibilityModelManagerAD03MaphijK4Type_pSgvs,
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE7buttonsSDyAD0E14MapDisplayModeOSayAD11ButtonGroupVGGvM,
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE7buttonsSDyAD0E14MapDisplayModeOSayAD11ButtonGroupVGGvg,
                             _$s7SwiftUI17EnvironmentValuesV11WeatherMapsE7buttonsSDyAD0E14MapDisplayModeOSayAD11ButtonGroupVGGvpMV,
@@ -577,8 +577,6 @@ exports:
                             _$s7SwiftUI4ViewP11WeatherMapsE21locationActionHandleryQryAD0D3MapV08LocationG0OcFQOMQ,
                             _$s7SwiftUI4ViewP11WeatherMapsE25performanceTestConditionsyQrAD0d14MapPerformancegH0VSgF,
                             _$s7SwiftUI4ViewP11WeatherMapsE25performanceTestConditionsyQrAD0d14MapPerformancegH0VSgFQOMQ,
-                            _$s7SwiftUI4ViewP11WeatherMapsE36mapLocationAccessibilityModelManageryQrAD03MapghiJ4Type_pSgF,
-                            _$s7SwiftUI4ViewP11WeatherMapsE36mapLocationAccessibilityModelManageryQrAD03MapghiJ4Type_pSgFQOMQ,
                             _$s7SwiftUI4ViewP11WeatherMapsE7buttons_AEQrAD0D14MapDisplayModeO_SayAD11ButtonGroupVGyXEtF,
                             _$s7SwiftUI4ViewP11WeatherMapsE7buttons_AEQrAD0D14MapDisplayModeO_SayAD11ButtonGroupVGyXEtFQOMQ,
                             _$sSa11WeatherMapsAA0A3MapV7OptionsORszlE9hideScale17controlsLoadDelay0G12FadeOnResize0G6Hidden18forceOverlayPaused24isUserInteractionEnabledSayAEGSbSg_SdSgA4MtcfC,
@@ -598,7 +596,9 @@ exports:
                             _$sSo20UIUserInterfaceStyleVs23CustomStringConvertible11WeatherMapsMc,
                             _$sSo9MKMapRecta11WeatherMapsE16shortDescription13TeaFoundation05ShortF4Type_pvg,
                             _$sSo9MKMapRecta11WeatherMapsE16shortDescription13TeaFoundation05ShortF4Type_pvpMV,
+                            _$sSo9MKMapRecta11WeatherMapsE2eeoiySbAB_ABtFZ,
                             _$sSo9MKMapRecta13TeaFoundation16ShortDescribable11WeatherMapsMc,
+                            _$sSo9MKMapRectaSQ11WeatherMapsMc,
                             _$sSo9MKMapRectas23CustomStringConvertible11WeatherMapsMc,
                             _$sSo9MKMapSizea11WeatherMapsE16shortDescription13TeaFoundation05ShortF4Type_pvg,
                             _$sSo9MKMapSizea11WeatherMapsE16shortDescription13TeaFoundation05ShortF4Type_pvpMV,

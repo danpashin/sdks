@@ -3,7 +3,7 @@ archs:                 [ armv7, armv7s, arm64 ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmailCore.framework/EmailCore
-current-version:       3731.255.101
+current-version:       3731.255.231
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -33,7 +33,7 @@ exports:
                             _ECDefaultNumberOfDaysToKeepTrash,
                             _ECEmailAddressAttributedStringKey,
                             _ECEncodingIsASCIISuperset,
-                            _ECEndDisallowingNetworkActivity,
+                            _ECEndDisallowingNetworkActivity, _ECFindHTMLEntity,
                             _ECGetNextHeaderFromData,
                             _ECGetNextHeaderFromDataInRange, _ECGmailLabelDrafts,
                             _ECGmailLabelImportant, _ECGmailLabelInbox,
@@ -138,6 +138,7 @@ exports:
                             _ECMailDataclassPropertyShouldUseGmailLabelStores,
                             _ECMailDataclassPropertyToDosMailboxName,
                             _ECMailDataclassPropertyTrashMailboxName,
+                            _ECMessageBodyHTMLParserErrorDomain,
                             _ECMessageHeaderKeyAttachments,
                             _ECMessageHeaderKeyAuthenticationResults,
                             _ECMessageHeaderKeyAutoSubmitted,
@@ -205,6 +206,7 @@ exports:
                             __ECIsNetworkActivityAllowed,
                             __ef_log_ECDKIMCryptoUtil, __ef_log_ECDKIMVerifier,
                             __ef_log_ECHeaderAuthenticationResults,
+                            __ef_log_ECMessageBodyParser,
                             __ef_log_ECTaggedHeaderParser ]
     objc-classes:         [ ECAPOPAuthScheme, ECAccount, ECAccountFactory,
                             ECAccountsObserver, ECAngleBracketIDHash,
@@ -232,14 +234,20 @@ exports:
                             ECIMAPFlagChangeUndownloadedActionReplayer,
                             ECLabelChangeMessageAction, ECLocalActionReplayer,
                             ECLocalMessageAction, ECLocalMessageActionResults,
-                            ECMessageFlagChange, ECMessageFlags, ECNTLMAuthScheme,
-                            ECNWActivity, ECNWConnectionWrapper,
-                            ECOAuth2AuthScheme, ECPOPAccount, ECPlainAuthScheme,
-                            ECRawMessageHeader, ECRawMessageHeaders,
-                            ECSASLAuthenticator, ECSASLClient, ECSMTPAccount,
-                            ECSecureMIMETrustEvaluation, ECServerMessage,
-                            ECSubject, ECSubjectFormatter, ECSubjectParser,
-                            ECTaggedHeaderParser, ECTransferActionIMAPReplayer,
+                            ECMessageBodyElement, ECMessageBodyHTMLParser,
+                            ECMessageBodyOriginalTextSubparser,
+                            ECMessageBodyParser, ECMessageBodyParserObject,
+                            ECMessageBodyParsingUtils,
+                            ECMessageBodyStringAccumulator,
+                            ECMessageBodySubparser, ECMessageFlagChange,
+                            ECMessageFlags, ECNTLMAuthScheme, ECNWActivity,
+                            ECNWConnectionWrapper, ECOAuth2AuthScheme,
+                            ECPOPAccount, ECPlainAuthScheme, ECRawMessageHeader,
+                            ECRawMessageHeaders, ECSASLAuthenticator, ECSASLClient,
+                            ECSMTPAccount, ECSecureMIMETrustEvaluation,
+                            ECServerMessage, ECSubject, ECSubjectFormatter,
+                            ECSubjectParser, ECTaggedHeaderParser,
+                            ECTransferActionIMAPReplayer,
                             ECTransferActionReplayer, ECTransferMessageAction,
                             ECTransferMessageActionItem,
                             ECTransferMessageActionResults,
@@ -247,5 +255,28 @@ exports:
                             ECTransferUndownloadedMessageAction,
                             _ECBIMIHeaderParser,
                             _ECHeaderAuthenticationResultsParser,
+                            _ECMessageBodyConsumableNewline,
+                            _ECMessageBodyHTMLElement, _ECParsedHTMLNode,
+                            _ECParsedHTMLTag, _ECParsedHTMLText,
                             _ECSVGProfileExtractor, _ECSubjectFormatterContext ]
+    objc-ivars:           [ ECMessageBodyElement._attributes,
+                            ECMessageBodyElement._externalRetainCount,
+                            ECMessageBodyElement._nodes,
+                            ECMessageBodyElement._parser,
+                            ECMessageBodyElement._quoteLevel,
+                            ECMessageBodyElement._validAttributes,
+                            ECMessageBodyParser._nodesLevelCache,
+                            ECMessageBodyParser._nodesQuoteLevelCache,
+                            ECMessageBodyParser._nodesStackCache,
+                            ECMessageBodyParser._parserError,
+                            ECMessageBodyParserObject._didTimeout,
+                            ECMessageBodyParserObject._shouldAbort,
+                            ECMessageBodyParserObject._timeoutTime,
+                            _ECParsedHTMLNode._childNodes,
+                            _ECParsedHTMLNode._endLocation,
+                            _ECParsedHTMLNode._htmlString,
+                            _ECParsedHTMLNode._nextSibling,
+                            _ECParsedHTMLNode._parentNode,
+                            _ECParsedHTMLNode._startLocation,
+                            _ECParsedHTMLTag._tagName ]
 ...

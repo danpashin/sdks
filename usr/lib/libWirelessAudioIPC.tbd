@@ -1,11 +1,6 @@
 --- !tapi-tbd
 tbd-version:     4
 targets:         [ arm64-ios, arm64e-ios ]
-uuids:
-  - target:          arm64-ios
-    value:           6D8C9199-56FD-3431-B3DE-30C35BBDABFD
-  - target:          arm64e-ios
-    value:           92AF0544-445F-32FC-9CCE-D53D93605FAF
 install-name:    '/usr/lib/libWirelessAudioIPC.dylib'
 exports:
   - targets:         [ arm64-ios, arm64e-ios ]
@@ -25,6 +20,7 @@ exports:
                        __ZN5waipc8timesync15BasebandService20addTimestampObserverENS0_16BasebandProvider11timestampIdEU13block_pointerFvydyE, 
                        __ZN5waipc8timesync15BasebandService21addConnectionObserverEU13block_pointerFvbPK10__CFStringE, 
                        __ZN5waipc8timesync15BasebandService22addMeasurementObserverEU13block_pointerFvPKNS0_16BasebandProvider19timesyncMeasurementEmE, 
+                       __ZN5waipc8timesync15BasebandService28setTimestampRequiredForReadyENS0_16BasebandProvider11timestampIdEb, 
                        __ZN5waipc8timesync15BasebandService6createERKNS1_6configEP19dispatch_workloop_s, 
                        __ZN5waipc8timesync15BasebandService9mapBufferENS0_16BasebandProvider8bufferIdERKNSt3__110shared_ptrIvEEm, 
                        __ZN5waipc8timesync15BasebandServiceD1Ev, __ZN5waipc8timesync15BasebandServiceD2Ev, 
