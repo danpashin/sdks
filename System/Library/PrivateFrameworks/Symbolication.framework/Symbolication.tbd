@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64559.91.1
+current-version:       64561.91.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _VMUBacktraceIsExcludedMarker,
                             _VMUCreateRootNodeMarkingMap,
                             _VMUDirectedGraphCompatibilityVersionNumberInGraphKey,
@@ -35,7 +35,8 @@ exports:
                             _VMUScanningMaskForAllReferences,
                             _VMUScanningMaskForOwningReferences,
                             _VMUSimplifyCPlusPlusSymbolName,
-                            _VMUSortIndexForLibraryPath, _VMUUnionRange,
+                            _VMUSortIndexForLibraryPath,
+                            _VMUTask_foreach_malloc_zone, _VMUUnionRange,
                             _VMUVMRegionShareModeName,
                             _VMUWithRootNodeMarkingMap, _VMUmallocMetadataLabel,
                             _VMUmappedFileLabel, _VMUunusedSharedLibDataLabel,
@@ -45,6 +46,7 @@ exports:
                             __VMUEnumerateMarkedObjects, _dispositionDescription,
                             _kVMUAutoreleasePoolBoundaryClassName,
                             _kVMUAutoreleasePoolThreadSpecificDataKeyString,
+                            _kVMUMallocEnumerationFailedErrorDomain,
                             _kVMUPrintArchivingTiming, _kVMURootRetainCycle,
                             _kVMUThreadSpecificDataKeyString, _pidFromHint,
                             _psName, _task_enumerate_malloc_blocks,
@@ -62,7 +64,8 @@ exports:
                             _vmu_print_backtrace_uniquing_table,
                             _vmu_ptrSized_stack_frames_for_uniqued_stack,
                             _vmu_remove_stack_from_backtrace_uniquing_table,
-                            _vmu_stack_frames_for_uniqued_stack ]
+                            _vmu_stack_frames_for_uniqued_stack,
+                            _withPeekFunctionForVMUTask ]
     objc-classes:         [ VMUArchitecture, VMUBacktrace, VMUCallTreeNode,
                             VMUCallTreeRoot, VMUCallTreeRootWithBacktrace,
                             VMUClassInfo, VMUClassInfoMap, VMUClassPatternMatcher,
@@ -72,7 +75,9 @@ exports:
                             VMUFieldInfo, VMUFlattenGraphEnumerator,
                             VMUGraphEnumerator, VMUGraphStackLogReader, VMUGroupBy,
                             VMUGroupByNode, VMUGroupType,
-                            VMUInverseDepthGraphEnumerator, VMULeakDetector,
+                            VMUIOSurfaceDebugDescription,
+                            VMUInverseDepthGraphEnumerator,
+                            VMUKernelCoreMemoryScanner, VMULeakDetector,
                             VMUMutableClassInfo, VMUMutableFieldInfo, VMUNodeGroup,
                             VMUNodeToStringMap, VMUNonOverlappingRangeArray,
                             VMUObjectGraph, VMUObjectIdentifier,
@@ -82,7 +87,7 @@ exports:
                             VMUProgressBar, VMURangeArray, VMURangeToStringMap,
                             VMUReverseGraphEnumerator, VMUSampler, VMUScanOverlay,
                             VMUStackLogConsolidator, VMUStackLogReaderBase,
-                            VMUSwiftRuntimeInfo, VMUSymbolStore,
+                            VMUSwiftRuntimeInfo, VMUSymbolStore, VMUTask,
                             VMUTaskMemoryCache, VMUTaskMemoryScanner,
                             VMUTaskStackLogReader, VMUTaskThreadStates,
                             VMUTerminalColorizer, VMUVMRegion,
@@ -111,6 +116,7 @@ exports:
                             VMUStackLogReaderBase._regionTracker,
                             VMUStackLogReaderBase._symbolicator,
                             VMUStackLogReaderBase._task,
+                            VMUStackLogReaderBase._usesCoreFile,
                             VMUStackLogReaderBase._usesLiteMode,
                             VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerMask,
                             VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerValue,

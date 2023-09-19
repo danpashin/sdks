@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
@@ -7,19 +7,17 @@ current-version:       390
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SCRCAddInformationToCrashTracerLog,
                             _SCRCArgumentParserRunWithClassName,
+                            _SCRCAttributedStringForVariables,
                             _SCRCCGFloatAlmostEqual,
                             _SCRCCopyStringToUChar32Array,
                             _SCRCCopyStringToUniCharArray, _SCRCDebugPrint,
                             _SCRCDebugPrintToFile, _SCRCDoubleAlmostEqual,
                             _SCRCEnableProcessKeepAlive,
                             _SCRCFileHandleForTempFile, _SCRCFloatAlmostEqual,
-                            _SCRCFormatFloat, _SCRCFormatFloatWithPercentage,
-                            _SCRCFormatInteger, _SCRCFormatNumber,
-                            _SCRCFormatUnsignedInteger, _SCRCFormattedString,
-                            _SCRCGestureStateToString,
+                            _SCRCFormattedString, _SCRCGestureStateToString,
                             _SCRCIsConsoleSessionEnabled, _SCRCIsInt32BitSafe,
                             _SCRCIsUInt32BitSafe,
                             _SCRCLinkRelationshipStringForType,

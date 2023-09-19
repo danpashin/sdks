@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s18ContactsFoundation11SecKeyErrorO03addE0yACSScACmFWC,
                             _$s18ContactsFoundation11SecKeyErrorO04typeE0yA2CmFWC,
                             _$s18ContactsFoundation11SecKeyErrorO06deleteE0yACSScACmFWC,
@@ -17,6 +17,8 @@ exports:
                             _$s18ContactsFoundation11SecKeyErrorOMn,
                             _$s18ContactsFoundation11SecKeyErrorON,
                             _$s18ContactsFoundation11SecKeyErrorOs0E0AAMc,
+                            _$s18ContactsFoundation13CNDataEncoderC6decodey0B013TermOfAddressVSgAE4DataVFZ,
+                            _$s18ContactsFoundation13CNDataEncoderC6encodey0B04DataVSgAE13TermOfAddressVFZ,
                             _$s18ContactsFoundation13CNDataEncoderCACycfC,
                             _$s18ContactsFoundation13CNDataEncoderCACycfc,
                             _$s18ContactsFoundation13CNDataEncoderCMa,
@@ -96,6 +98,7 @@ exports:
                             _CNCacheMissPolicyNewMutableArray,
                             _CNCancelableCancel,
                             _CNComparatorForSortingByAuxiliaryValues,
+                            _CNContactsFoundationBundle,
                             _CNContactsFoundationErrorDomain,
                             _CNCopyUserLanguage,
                             _CNCoreDelegateInfoFromACAccount,
@@ -117,7 +120,7 @@ exports:
                             _CNEmailAddressNormalize,
                             _CNEmailAddressSafeUserVisible,
                             _CNEmailAddressSanitize, _CNEmptyRangeDescription,
-                            _CNEmptyStringIfNil,
+                            _CNEmptyStringIfNil, _CNEncryptionKeyPronounsLabel,
                             _CNEntitlementNameAvatarStoreAccess,
                             _CNEntitlementNameContactsDatabaseForceOOP,
                             _CNEntitlementNameContactsDatabaseInProcess,
@@ -128,6 +131,7 @@ exports:
                             _CNEntitlementNameCoreDataDatabaseInProcess,
                             _CNEntitlementNameCoreDuetAccess,
                             _CNEntitlementNameDisableRemoteDatabaseAccess,
+                            _CNEntitlementNameFindMyLocateFriendshipService,
                             _CNEntitlementNameGeminiInProcess,
                             _CNEntitlementNameLaunchServicesAccess,
                             _CNEntitlementNameTCCAllow,
@@ -159,7 +163,8 @@ exports:
                             _CNGreenTeaDiagnosticsForProcessName,
                             _CNGreenTeaDiagnosticsLogFaultForEventCount,
                             _CNIdentity, _CNInitializerUnavailableException,
-                            _CNIntFromUVersionInfo, _CNIsArrayEmpty,
+                            _CNIntFromUVersionInfo, _CNIsAddressingGrammarEmpty,
+                            _CNIsArabicString, _CNIsArrayEmpty,
                             _CNIsChineseJapaneseKoreanString, _CNIsChineseString,
                             _CNIsDataEmpty, _CNIsDictionaryEmpty,
                             _CNIsIndexSetEmpty, _CNIsNotNull, _CNIsNull,
@@ -203,7 +208,8 @@ exports:
                             _CNResultWithAutoreleasePool, _CNResultWithLock,
                             _CNResultWithLocks, _CNRunWithLock,
                             _CNRunWithLockCatching, _CNRunWithLocks,
-                            _CNSenderProcessIDKey, _CNSenderProcessNameKey,
+                            _CNRunWithQueueName, _CNSenderProcessIDKey,
+                            _CNSenderProcessNameKey,
                             _CNSocialProfileEquivalentValues,
                             _CNSocialProfileIsStandardServiceName,
                             _CNSocialProfileServiceFacebook,
@@ -288,7 +294,7 @@ exports:
                             CNEntitlementVerifier,
                             CNEntitlementVerifierTestDouble,
                             CNEnumerateObjectsUsingBlockCancelationToken,
-                            CNEnvironment, CNEnvironmentBase,
+                            CNEnumerator, CNEnvironment, CNEnvironmentBase,
                             CNEnvironmentTestDouble, CNEqualsBuilder,
                             CNFamilyCircle, CNFamilyCircleAccountSource,
                             CNFamilyCircleConfigurationUpdateTask,
@@ -328,8 +334,8 @@ exports:
                             CNObservableWithFutureCancelationToken,
                             CNObservableWithResultCancelationToken,
                             CNObserveOnCancelationToken,
-                            CNObservedCompletionResult, CNObservedFailureResult,
-                            CNObservedResult, CNObserver,
+                            CNObserveOnInnerObserver, CNObservedCompletionResult,
+                            CNObservedFailureResult, CNObservedResult, CNObserver,
                             CNOperationQueueSchedulerCancelationToken,
                             CNOrderedDictionary, CNPair, CNPhoneNumberHelper,
                             CNPostalAddressFormats,
@@ -356,7 +362,7 @@ exports:
                             CNTimeProfilingSchedulerDecorator, CNTimeProvider,
                             CNTimeoutAfterDelayCancelationToken, CNTimestamped,
                             CNTracedLog, CNTracedLogger, CNURL, CNURLSessionFactory,
-                            CNUnfairLock, CNUsageReporting, CNUserDefaults,
+                            CNUUID, CNUnfairLock, CNUsageReporting, CNUserDefaults,
                             CNVirtualFileManager, CNVirtualReaderWriterScheduler,
                             CNVirtualScheduler, CNVirtualSchedulerJob, CNWeakProxy,
                             CNWrappedDictionary, CNWrappingCancelableToken, CNXPC,
@@ -375,7 +381,8 @@ exports:
                             _CNCombineLatestObservable,
                             _CNCombineLatestObservableCancelationToken,
                             _CNCombinedBufferingStrategy,
-                            _CNConcatenatingObservable, _CNConstantFutureImpl,
+                            _CNCompactMapEnumerator, _CNConcatenatingObservable,
+                            _CNConstantFutureImpl,
                             _CNDataDetectorsHandleStringClassificationStrategy,
                             _CNDataURLSessionTaskAdapter,
                             _CNDefaultQueueingStrategy, _CNDistinctObservable,
@@ -383,7 +390,7 @@ exports:
                             _CNDistinctUntilChangedObservableCancelationToken,
                             _CNEmptyObservable,
                             _CNEmptyObservableCancelationToken,
-                            _CNFailedFutureImpl,
+                            _CNFailedFutureImpl, _CNFlatMapEnumerator,
                             _CNFlatMapInnerSubscriptionContext,
                             _CNFlatMapObservable, _CNFlatMapSubscriptionContext,
                             _CNForkJoinObservable,
@@ -537,8 +544,6 @@ exports:
                             _CNBlockTask._block,
                             _CNBoundedQueueingStrategy._capacity,
                             _CNBoundedQueueingStrategy._overflowHandler,
-                            _CNBufferedObserver._observer,
-                            _CNBufferedObserver._observerScheduler,
                             _CNCombinedBufferingStrategy._strategies,
                             _CNConstantFutureImpl._result,
                             _CNDistinctObservable._observable,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MCUIForPairedDevice, _MCUIIsInternalDevice,
                             _MCUIIsiPad, _MCUIIsiPhone, _MCUILocalizedString,
                             _MCUILocalizedStringByDevice,
@@ -54,7 +54,8 @@ exports:
                             MCUIAppSignerUninstallerUtilities,
                             MCUIAppSignerViewController, MCUIApplicationCell,
                             MCUIApplicationTrustCell,
-                            MCUIBlockedAppViewController,
+                            MCUIBlockedAppViewController, MCUIBridgeDataProvider,
+                            MCUIBridgeRMConfigurationsDataProvider,
                             MCUIBridgeSpecifierProvider, MCUIBundleController,
                             MCUIConcreteAppSignerUninstaller, MCUIDataManager,
                             MCUIDataManagerLite,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DropIn.framework/DropIn
@@ -7,10 +7,8 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s10Foundation14LocalizedErrorP6DropInSYRzSS8RawValueSYRtzrlE16errorDescriptionSSSgvg,
-                            _$s10Foundation14LocalizedErrorP6DropInSYRzSS8RawValueSYRtzrlE16errorDescriptionSSSgvpMV,
-                            _$s6DropIn04dropB12UserDefaultsSo06NSUserE0CSgvg,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s6DropIn04dropB12UserDefaultsSo06NSUserE0CSgvg,
                             _$s6DropIn10XPCManagerC08addCheckB8ObserveryyAA0cebF0_pFTj,
                             _$s6DropIn10XPCManagerC08addCheckB8ObserveryyAA0cebF0_pFTq,
                             _$s6DropIn10XPCManagerC10connectionSo15NSXPCConnectionCvgTj,
@@ -37,7 +35,6 @@ exports:
                             _$s6DropIn10XPCManagerCMa, _$s6DropIn10XPCManagerCMn,
                             _$s6DropIn10XPCManagerCMo, _$s6DropIn10XPCManagerCMu,
                             _$s6DropIn10XPCManagerCN, _$s6DropIn10XPCManagerCfD,
-                            _$s6DropIn11nanosecondsys6UInt64VxSBRzlF,
                             _$s6DropIn12OneshotTimerC06cancelD0yyFTj,
                             _$s6DropIn12OneshotTimerC06cancelD0yyFTq,
                             _$s6DropIn12OneshotTimerC12timeInterval5queue10identifier5label17timerFiredHandlerACSd_So012OS_dispatch_G0CSg10Foundation4UUIDVSSySS_ANSdtctcfC,
@@ -194,6 +191,20 @@ exports:
                             _$s6DropIn26DecodableUserDefaultsValueMp,
                             _$s6DropIn26DecodableUserDefaultsValuePSeTb,
                             _$s6DropIn26DecodableUserDefaultsValueTL,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC20throttleTimeIntervalACSd_tcfC,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC20throttleTimeIntervalACSd_tcfCTj,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC20throttleTimeIntervalACSd_tcfCTq,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC20throttleTimeIntervalACSd_tcfc,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC6handle5state6reason7handlerySo08DIDeviceD0V_SSyAI_SSSbtctFTj,
+                            _$s6DropIn26DeviceStateUpdateThrottlerC6handle5state6reason7handlerySo08DIDeviceD0V_SSyAI_SSSbtctFTq,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCACycfC,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCACycfc,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCMa,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCMn,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCMo,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCMu,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCN,
+                            _$s6DropIn26DeviceStateUpdateThrottlerCfD,
                             _$s6DropIn26EncodableUserDefaultsValueMp,
                             _$s6DropIn26EncodableUserDefaultsValuePSETb,
                             _$s6DropIn26EncodableUserDefaultsValueTL,
@@ -225,7 +236,6 @@ exports:
                             _$s6DropIn7FeatureOMa, _$s6DropIn7FeatureOMn,
                             _$s6DropIn7FeatureON, _$s6DropIn7FeatureOSHAAMc,
                             _$s6DropIn7FeatureOSQAAMc,
-                            _$s6DropIn7seconds4daysSdx_tSBRzlF,
                             _$s6DropIn8DefaultsO04dropB14AnytimeEnabledAA7DefaultVySbGvgZ,
                             _$s6DropIn8DefaultsO04dropB18SessionMaxDurationAA7DefaultVySdGvgZ,
                             _$s6DropIn8DefaultsO04dropB19SessionStartTimeoutAA7DefaultVySdGvgZ,
@@ -306,7 +316,8 @@ exports:
                             _DropInVersionString ]
     objc-classes:         [ DIAudioPowerController, DIAudioSystemController,
                             DIClientContext, DIDevice, DIDeviceManager,
-                            DIDropInCenter, DIDropInRequest, DIDropInSession,
+                            DIDeviceStateUpdateThrottler, DIDropInCenter,
+                            DIDropInRequest, DIDropInSession,
                             DIDropInSessionManager, DIHandle, DIOneshotTimer,
                             DIUtilities, DIXPCConnectionManager, DIXPCDispatcher,
                             DIXPCManager ]

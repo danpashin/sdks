@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriVideoIntents.framework/SiriVideoIntents
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s11SiriKitFlow11DisplayHintV0A12VideoIntentsE11descriptionSSvg,
                             _$s11SiriKitFlow11DisplayHintV0A12VideoIntentsE11descriptionSSvpMV,
                             _$s11SiriKitFlow11DisplayHintVs23CustomStringConvertible0A12VideoIntentsMc,
@@ -136,6 +136,8 @@ exports:
                             _$s16SiriVideoIntents04PlayB6IntentC15utsSearchParamsSayAA03UtsG5ParamCGSgvpMV,
                             _$s16SiriVideoIntents04PlayB6IntentC16suggestedContentSayAA0G0CGSgvpMV,
                             _$s16SiriVideoIntents04PlayB6IntentC17isRemoteExecutionSo8NSNumberCSgvpMV,
+                            _$s16SiriVideoIntents04PlayB6IntentC4typeAA07ContentE4TypeOvg,
+                            _$s16SiriVideoIntents04PlayB6IntentC4typeAA07ContentE4TypeOvpMV,
                             _$s16SiriVideoIntents04PlayB6IntentC5coderACSgSo7NSCoderC_tcfC,
                             _$s16SiriVideoIntents04PlayB6IntentC5coderACSgSo7NSCoderC_tcfc,
                             _$s16SiriVideoIntents04PlayB6IntentC6domain4verb16parametersByNameACSS_SSSDySSypGSgtcfC,
@@ -357,6 +359,15 @@ exports:
                             _$s16SiriVideoIntents16SearchAttributesCMn,
                             _$s16SiriVideoIntents16SearchAttributesCN,
                             _$s16SiriVideoIntents16SearchAttributesCfD,
+                            _$s16SiriVideoIntents17ContentIntentTypeO21__derived_enum_equalsySbAC_ACtFZ,
+                            _$s16SiriVideoIntents17ContentIntentTypeO4hash4intoys6HasherVz_tF,
+                            _$s16SiriVideoIntents17ContentIntentTypeO9hashValueSivg,
+                            _$s16SiriVideoIntents17ContentIntentTypeO9hashValueSivpMV,
+                            _$s16SiriVideoIntents17ContentIntentTypeOMa,
+                            _$s16SiriVideoIntents17ContentIntentTypeOMn,
+                            _$s16SiriVideoIntents17ContentIntentTypeON,
+                            _$s16SiriVideoIntents17ContentIntentTypeOSHAAMc,
+                            _$s16SiriVideoIntents17ContentIntentTypeOSQAAMc,
                             _$s16SiriVideoIntents18DisambiguationItemV0E4TypeO8rawValueAESgSi_tcfC,
                             _$s16SiriVideoIntents18DisambiguationItemV0E4TypeO8rawValueSivg,
                             _$s16SiriVideoIntents18DisambiguationItemV0E4TypeO8rawValueSivpMV,
@@ -452,6 +463,8 @@ exports:
                             _$s16SiriVideoIntents20AddToWatchListIntentC10identifier12backingStoreACSSSg_So9PBCodableCSgtcfC,
                             _$s16SiriVideoIntents20AddToWatchListIntentC10identifier12backingStoreACSSSg_So9PBCodableCSgtcfc,
                             _$s16SiriVideoIntents20AddToWatchListIntentC13contentSearchAA07ContentJ0CSgvpMV,
+                            _$s16SiriVideoIntents20AddToWatchListIntentC4typeAA07ContentH4TypeOvg,
+                            _$s16SiriVideoIntents20AddToWatchListIntentC4typeAA07ContentH4TypeOvpMV,
                             _$s16SiriVideoIntents20AddToWatchListIntentC5coderACSgSo7NSCoderC_tcfC,
                             _$s16SiriVideoIntents20AddToWatchListIntentC5coderACSgSo7NSCoderC_tcfc,
                             _$s16SiriVideoIntents20AddToWatchListIntentC6domain4verb16parametersByNameACSS_SSSDySSypGSgtcfC,
@@ -571,6 +584,8 @@ exports:
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC10identifier12backingStoreACSSSg_So9PBCodableCSgtcfC,
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC10identifier12backingStoreACSSSg_So9PBCodableCSgtcfc,
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC13contentSearchAA07ContentJ0CSgvpMV,
+                            _$s16SiriVideoIntents25RemoveFromWatchListIntentC4typeAA07ContentH4TypeOvg,
+                            _$s16SiriVideoIntents25RemoveFromWatchListIntentC4typeAA07ContentH4TypeOvpMV,
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC5coderACSgSo7NSCoderC_tcfC,
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC5coderACSgSo7NSCoderC_tcfc,
                             _$s16SiriVideoIntents25RemoveFromWatchListIntentC6domain4verb16parametersByNameACSS_SSSDySSypGSgtcfC,
@@ -731,6 +746,18 @@ exports:
                             _$s16SiriVideoIntents29PlayLiveServiceIntentResponseCMn,
                             _$s16SiriVideoIntents29PlayLiveServiceIntentResponseCN,
                             _$s16SiriVideoIntents29PlayLiveServiceIntentResponseCfD,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC6handle6intentAA0defG8ResponseCAA0defG0C_tYaF,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC6handle6intentAA0defG8ResponseCAA0defG0C_tYaFTq,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC6handle6intentAA0defG8ResponseCAA0defG0C_tYaFTu,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC7confirm6intentAA0defG8ResponseCAA0defG0C_tYaF,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC7confirm6intentAA0defG8ResponseCAA0defG0C_tYaFTq,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerC7confirm6intentAA0defG8ResponseCAA0defG0C_tYaFTu,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCACycfC,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCACycfc,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCMa,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCMn,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCN,
+                            _$s16SiriVideoIntents29WatchSportsEventIntentHandlerCfD,
                             _$s16SiriVideoIntents30UtsSearchParamResolutionResultC14JSONDictionary6intentACSgSDySSypG_So8INIntentCtcfC,
                             _$s16SiriVideoIntents30UtsSearchParamResolutionResultC14JSONDictionary6intentACSgSDySSypG_So8INIntentCtcfc,
                             _$s16SiriVideoIntents30UtsSearchParamResolutionResultC14disambiguation4withACXDSayAA0deF0CG_tFZ,
@@ -986,6 +1013,13 @@ exports:
                             _$sSo19SKIDirectInvocationC16SiriVideoIntentsE0D0OSQACMc,
                             _$sSo19SKIDirectInvocationC16SiriVideoIntentsE0D0OSYACMc,
                             _$sSo19SKIDirectInvocationC16SiriVideoIntentsE0D0Os12CaseIterableACMc,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadV4fromAEs7Decoder_p_tKcfC,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadV6encode2toys7Encoder_p_tKF,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadVMa,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadVMn,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadVN,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadVSEACMc,
+                            _$sSo19SKIDirectInvocationC16SiriVideoIntentsE31ReformSearchToThirdPartyPayloadVSeACMc,
                             _SiriVideoIntentsVersionNumber,
                             _SiriVideoIntentsVersionString ]
     objc-classes:         [ AddToWatchListContentResolutionResult,
@@ -1015,5 +1049,6 @@ exports:
                             _TtC16SiriVideoIntents22PlayVideoIntentHandler,
                             _TtC16SiriVideoIntents27AddToWatchListIntentHandler,
                             _TtC16SiriVideoIntents28PlayLiveServiceIntentHandler,
+                            _TtC16SiriVideoIntents29WatchSportsEventIntentHandler,
                             _TtC16SiriVideoIntents32RemoveFromWatchListIntentHandler ]
 ...

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/MPSCore
-current-version:       126.3.5
+current-version:       127.0.19
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IsPluginDisabled, _MPSConvertFloatToHalf,
                             _MPSConvertHalfToFloat,
                             _MPSCopyToFromNetworkByteOrder16,
@@ -52,11 +52,12 @@ exports:
                             __Z21MPSDecrementReadCountP8MPSImage,
                             __Z21MPSDecrementReadCountP8MPSState,
                             __Z24_MPSUseInt64Calculationsv,
+                            __Z25MPSConvertBfloat16ToFloatPK10bfloat16x1Pfm,
+                            __Z25MPSConvertFloatToBfloat16PKfP10bfloat16x1m,
                             __Z25MPSGetEffectiveClipRegion7MTLSize9MPSRegion,
                             __Z25MPSGetEffectiveClipRegion7MTLSize9MTLRegion,
                             __Z26_MPSNewSpecializedFunctionPU21objcproto10MTLLibrary11objc_objectP8NSStringP25MTLFunctionConstantValuesRK33MPSFunctionConstructorExtraParamsPP7NSError,
                             __ZN10BaseTensor14GetNumElementsEv,
-                            __ZN10BaseTensor16GetAccessPatternEP7NSArrayIP10MPSNDArrayES4_,
                             __ZN10BaseTensorC1ERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN10BaseTensorC2ERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN10BaseTensorD1Ev, __ZN10BaseTensorD2Ev,
@@ -121,6 +122,7 @@ exports:
                             __ZN12MPSKernelDAG12isInfiniteOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG12isNotEqualOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG12reciprocalOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
+                            __ZN12MPSKernelDAG12senaryCoreOpEP10BaseTensorS1_S1_S1_S1_S1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG12shiftData4OpEP10BaseTensorDv4_iRKNSt3__16vectorIlNS3_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG12squareRootOpEP10BaseTensorRKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG12strideGradOpEP10BaseTensorDv4_iRKNSt3__16vectorIlNS3_9allocatorIlEEEE11MPSDataTypePKc,
@@ -130,6 +132,7 @@ exports:
                             __ZN12MPSKernelDAG13nullaryCoreOpERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG13placeholderOpERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG13placeholderOpERKNSt3__16vectorIlNS0_9allocatorIlEEEE11MPSDataTypejPKc,
+                            __ZN12MPSKernelDAG13quinaryCoreOpEP10BaseTensorS1_S1_S1_S1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG13subtractionOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG13ternaryCoreOpEP10BaseTensorS1_S1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
                             __ZN12MPSKernelDAG14complexScaleOpEP10BaseTensorS1_RKNSt3__16vectorIlNS2_9allocatorIlEEEE11MPSDataTypePKc,
@@ -235,7 +238,7 @@ exports:
                             __ZN9BaseGraphD0Ev, __ZN9BaseGraphD1Ev,
                             __ZN9BaseGraphD2Ev,
                             __ZN9MPSDevice10GetLibraryEPK14MPSLibraryInfo,
-                            __ZN9MPSDevice10GetSamplerE16MPSImageEdgeMode21MPSFilterSamplingMode23MPSFilterCoordinateMode,
+                            __ZN9MPSDevice10GetSamplerE16MPSImageEdgeMode21MPSFilterSamplingMode23MPSFilterCoordinateMode27MPSFilterMipmapSamplingMode,
                             __ZN9MPSDevice11DeleteQueueEPU26objcproto15MTLCommandQueue11objc_object,
                             __ZN9MPSDevice12GetHeapBlockEmy,
                             __ZN9MPSDevice12GetMPSDeviceEPU19objcproto9MTLDevice11objc_object,
@@ -248,6 +251,7 @@ exports:
                             __ZN9MPSDeviceC2EPU19objcproto9MTLDevice11objc_object,
                             __ZN9MPSDeviceD0Ev, __ZN9MPSDeviceD1Ev,
                             __ZN9MPSDeviceD2Ev,
+                            __ZNK10BaseTensor16GetAccessPatternEP7NSArrayIP10MPSNDArrayES4_,
                             __ZNK10BaseTensor16GetDimensionSizeEj,
                             __ZNK12MPSKernelDAG21GetCoreOpInputAtIndexEj,
                             __ZNK12MPSKernelDAG22GetCoreOpOutputAtIndexEj,
@@ -327,7 +331,8 @@ exports:
                             MPSNDArray._library, MPSNDArray._numberOfDimensions,
                             MPSNDArray._offset, MPSNDArray._parent,
                             MPSNDArray._rowBytes, MPSNDArray._sliceLengths,
-                            MPSNDArray._sliceOffsets,
+                            MPSNDArray._sliceOffsets, MPSNDArray._strideBytes,
+                            MPSNDArray._strideElements,
                             MPSNDArrayDescriptor._child,
                             MPSNDArrayDescriptor._dataType,
                             MPSNDArrayDescriptor._dimensionLengths,

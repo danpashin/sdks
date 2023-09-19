@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/StocksKit.framework/StocksKit
-current-version:       1166
+current-version:       1262.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s9StocksKit10ChartRangeO10yearToDateyA2CmFWC,
                             _$s9StocksKit10ChartRangeO11threeMonthsyA2CmFWC,
                             _$s9StocksKit10ChartRangeO12defaultCasesSayACGvgZ,
@@ -219,19 +219,15 @@ exports:
                             _$s9StocksKit12StockServiceC06searchA03for11cachePolicyAA0C12SearchResultVSS_AC05CacheH0OtYaKFTu,
                             _$s9StocksKit12StockServiceC11CachePolicyO06ignoreE0yA2EmFWC,
                             _$s9StocksKit12StockServiceC11CachePolicyO06preferE0yA2EmFWC,
+                            _$s9StocksKit12StockServiceC11CachePolicyO06preferE6MaxAgeyAEs8DurationVcAEmFWC,
                             _$s9StocksKit12StockServiceC11CachePolicyO10cachedOnlyyA2EmFWC,
                             _$s9StocksKit12StockServiceC11CachePolicyO11descriptionSSvg,
                             _$s9StocksKit12StockServiceC11CachePolicyO11descriptionSSvpMV,
-                            _$s9StocksKit12StockServiceC11CachePolicyO2eeoiySbAE_AEtFZ,
-                            _$s9StocksKit12StockServiceC11CachePolicyO4hash4intoys6HasherVz_tF,
+                            _$s9StocksKit12StockServiceC11CachePolicyO16cachedOnlyMaxAgeyAEs8DurationVcAEmFWC,
                             _$s9StocksKit12StockServiceC11CachePolicyO7defaultyA2EmFWC,
-                            _$s9StocksKit12StockServiceC11CachePolicyO9hashValueSivg,
-                            _$s9StocksKit12StockServiceC11CachePolicyO9hashValueSivpMV,
                             _$s9StocksKit12StockServiceC11CachePolicyOMa,
                             _$s9StocksKit12StockServiceC11CachePolicyOMn,
                             _$s9StocksKit12StockServiceC11CachePolicyON,
-                            _$s9StocksKit12StockServiceC11CachePolicyOSHAAMc,
-                            _$s9StocksKit12StockServiceC11CachePolicyOSQAAMc,
                             _$s9StocksKit12StockServiceC11CachePolicyOs23CustomStringConvertibleAAMc,
                             _$s9StocksKit12StockServiceC11fetchQuotes3for11cachePolicy14networkSession10completionySaySSG_AC05CacheI0OAC07NetworkK0Oys6ResultOyAA05QuoteO0VAC6ErrorsOGctF,
                             _$s9StocksKit12StockServiceC11fetchQuotes3for11cachePolicy14networkSessionAA11QuoteResultVSaySSG_AC05CacheI0OAC07NetworkK0OtYaKF,

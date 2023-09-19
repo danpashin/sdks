@@ -7,29 +7,30 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(uint64_t, SHComponentType) {
-        SHComponentTypeBattery = 0,
-        SHComponentTypeDisplay = 1,
-        SHComponentTypeCamera = 2,
-        SHComponentTypeWifi = 3,
-        SHComponentTypeSpeaker = 4,
-        SHComponentTypeBluetooth = 5,
-        SHComponentTypeCellular = 6,
-        SHComponentTypeNFC = 7,
-        SHComponentTypeUWB = 8,
-        SHComponentTypeTrueDepthIR = 9,
-        SHComponentTypeRCameraFail = 10,
-        SHComponentTypeAudioCodec = 11,
-        // Add new components above
-        SHComponentAlertType_Count,
+    SHComponentTypeBattery = 0,
+    SHComponentTypeDisplay = 1,
+    SHComponentTypeCamera = 2,
+    SHComponentTypeWifi = 3,
+    SHComponentTypeSpeaker = 4,
+    SHComponentTypeBluetooth = 5,
+    SHComponentTypeCellular = 6,
+    SHComponentTypeNFC = 7,
+    SHComponentTypeUWB = 8,
+    SHComponentTypeTrueDepthIR = 9,
+    SHComponentTypeRCameraFail = 10,
+    SHComponentTypeAudioCodec = 11,
+    SHComponentTypeTouchID = 12,
+    // Add new components above
+    SHComponentAlertType_Count,
 };
 
 typedef NS_ENUM(uint64_t, SHComponentStatus) {
-        SHComponentStatusNotAvailable = 0,
-        SHComponentStatusHardwarePass = 1,
-        SHComponentStatusHardwareFail = 2,
+    SHComponentStatusNotAvailable = 0,
+    SHComponentStatusHardwarePass = 1,
+    SHComponentStatusHardwareFail = 2,
 
-        // Add new status above
-        SHComponentStatus_Count,
+    // Add new status above
+    SHComponentStatus_Count,
 };
 
 @interface SystemHealthManager : NSObject

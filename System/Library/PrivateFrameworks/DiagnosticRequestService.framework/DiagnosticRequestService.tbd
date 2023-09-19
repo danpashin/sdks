@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticRequestService.framework/DiagnosticRequestService
@@ -7,7 +7,7 @@ current-version:       4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s24DiagnosticRequestService018RapidCloudFunctionC10ConnectionV11EnvironmentO8rawValueAESgSi_tcfC,
                             _$s24DiagnosticRequestService018RapidCloudFunctionC10ConnectionV11EnvironmentO8rawValueSivg,
                             _$s24DiagnosticRequestService018RapidCloudFunctionC10ConnectionV11EnvironmentO8rawValueSivpMV,
@@ -378,8 +378,11 @@ exports:
                             _DRSRequestDBFilePath,
                             _DRSRequestDSDecisionStringForDecision,
                             _DRSRequestExpectedLogStateForState,
+                            _DRSRequestModelForVersion,
                             _DRSRequestOutcomeForState,
                             _DRSRequestPersistentContainer,
+                            _DRSRequestPersistentContainerForVersion,
+                            _DRSRequestRemoveDB,
                             _DRSRequestStateForDampeningOutcome,
                             _DRSRequestStateIsClientFacingError,
                             _DRSRequestStateIsErrorOrRejected,
@@ -407,6 +410,7 @@ exports:
                             _kDRSCloudKitDecisionServerName,
                             _kDRSConfigPersistedStore_NoFetchLimit,
                             _kDRSDMAcceptAll, _kDRSDMAcceptanceRateKey,
+                            _kDRSDMAutoBugCaptureTeamID,
                             _kDRSDMCoreAnimationHitchesCategory,
                             _kDRSDMCoreAnimationTeamID,
                             _kDRSDMCoreAudioOverloadIssueCategory,
@@ -441,7 +445,9 @@ exports:
                             _kDRSDMSentryMacOsAppLaunchIssueCategory,
                             _kDRSDMSentryTeamID,
                             _kDRSDMSpindumpSlowHIDIssueCategory,
-                            _kDRSDMSpindumpTeamID, _kDRSDMWatchdogdTeamID,
+                            _kDRSDMSpindumpTeamID,
+                            _kDRSDMSpindumpWorkflowResponsivenessCategory,
+                            _kDRSDMWatchdogdTeamID,
                             _kDRSEnableDataQueryNoFetchLimit,
                             _kDRSPopulationPingMessageCurrentVersion,
                             _kDRSRequestDBFileName, _kDRSRequestDBFileShmName,
@@ -451,7 +457,7 @@ exports:
                             _kDRSRequestResourceTailspin,
                             _kDRSRequestTerminalPurgeableUrgency,
                             _kDRSTaskingDBFileName, _kDRSTaskingDBFileShmName,
-                            _kDRSTaskingDBFileWalName,
+                            _kDRSTaskingDBFileWalName, _kDRSTaskingDataModelName,
                             _kDRSTaskingMessageCurrentVersion,
                             _kDRSTaskingMessage_TeamTaskingsKey,
                             _kDRSTaskingSystemMessage_DateBroadcastKey,
@@ -474,7 +480,7 @@ exports:
                             DRSConfigPersistedStore, DRSDampeningConfiguration,
                             DRSDampeningEnforcementSettings, DRSDampeningManager,
                             DRSDecisionServerRequestReply,
-                            DRSEnableDataGatheringQuery,
+                            DRSEnableDataGatheringQuery, DRSLog,
                             DRSPopulationPingMessage, DRSRapidCloudKitHelper,
                             DRSRequest, DRSRequestAllStats, DRSRequestBuildStats,
                             DRSRequestIssueCategoryStats,
@@ -483,10 +489,10 @@ exports:
                             DRSRequestTeamIDStats, DRSSamplingParameters,
                             DRSService, DRSSubmitLogRequest,
                             DRSSubmitLogToCKContainerRequest,
-                            DRSSubmitRapidLogRequest, DRSSystemProfile,
-                            DRSTailspinRequest, DRSTaskingCloudKitHelper,
-                            DRSTaskingDecisionMaker, DRSTaskingEventPublisher,
-                            DRSTaskingEventSubscriber,
+                            DRSSubmitRapidLogRequest, DRSSubmittedLogInfo,
+                            DRSSystemProfile, DRSTailspinRequest,
+                            DRSTaskingCloudKitHelper, DRSTaskingDecisionMaker,
+                            DRSTaskingEventPublisher, DRSTaskingEventSubscriber,
                             DRSTaskingLimitingParameters, DRSTaskingManager,
                             DRSTaskingMessage, DRSTaskingMessageChannel,
                             DRSTaskingService, DRSTaskingSystemMessage,

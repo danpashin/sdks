@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MMCS.framework/MMCS
-current-version:       2050.13.1
+current-version:       2100.139
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _C3BaseRelease, _C3BaseRetain,
                             _MMCSComputeSignatureAndRegisterItemWithDescriptor,
                             _MMCSEngineCancelRequests,
@@ -16,7 +16,7 @@ exports:
                             _MMCSEngineDestroy, _MMCSEngineGetRequestMetrics,
                             _MMCSEngineIsActive, _MMCSEngineRelease,
                             _MMCSEngineRetain, _MMCSEngineSetMetricsEnabled,
-                            _MMCSFlattenError, _MMCSGetCacheBlobFd,
+                            _MMCSFlattenError, _MMCSGetCacheBlobFd, _MMCSGetChunks,
                             _MMCSGetItemStateIsDeterminant, _MMCSGetItems,
                             _MMCSGetItemsWithSection,
                             _MMCSGetMaxChunkCountForSection,
@@ -25,7 +25,9 @@ exports:
                             _MMCSICloudRequestHeadersCopy,
                             _MMCSIsEngineInitialized,
                             _MMCSItemReaderWriterCreate,
+                            _MMCSItemReaderWriterCreateWithData,
                             _MMCSItemReaderWriterCreateWithFileDescriptor,
+                            _MMCSItemReaderWriterCreateWithMutableData,
                             _MMCSItemReaderWriterEquals,
                             _MMCSItemReaderWriterHash,
                             _MMCSMetricsRequestCopyDescription,
@@ -52,6 +54,7 @@ exports:
                             _MMCSSignatureCreateWithData,
                             _MMCSSignatureCreateWithString,
                             _MMCSSignatureGeneratorCreate,
+                            _MMCSSignatureGeneratorCreateWithBoundaryKey,
                             _MMCSSignatureGeneratorFinish,
                             _MMCSSignatureGeneratorUpdate, _MMCSSignatureIsValid,
                             _MMCSSignatureIsValidV2, _MMCSSignatureSize,
@@ -59,8 +62,10 @@ exports:
                             _MMCSUnregisterFiles,
                             _MMCSUpdateItemStateIsDeterminant, _MMCSUpdateItems,
                             _MMCSWarm, __getCStringFromCFStringSafely,
-                            _kMMCSAuthorizationToken, _kMMCSBoundaryKey,
-                            _kMMCSChunkCount,
+                            _kMMCSAuthorizationToken,
+                            _kMMCSAuthorizeSimulcastResponse,
+                            _kMMCSAuthorizeSimulcastResponseSignature,
+                            _kMMCSBoundaryKey, _kMMCSChunkCount,
                             _kMMCSChunkerAllowItemChunkLengthServerConfigurationOverride,
                             _kMMCSDefaultReaderWriterSparseAware,
                             _kMMCSDerivativeAssetDownloadURL,
@@ -144,10 +149,13 @@ exports:
                             _kMMCSRequestOptionMetaserverAllowedSchemesOverride,
                             _kMMCSRequestOptionMetaserverCheckDisabled,
                             _kMMCSRequestOptionMetricOptions,
+                            _kMMCSRequestOptionMmeDataClass,
                             _kMMCSRequestOptionNetworkServiceType,
                             _kMMCSRequestOptionNetworkingDelegate,
                             _kMMCSRequestOptionPreauthorization,
+                            _kMMCSRequestOptionPreauthorizationSignature,
                             _kMMCSRequestOptionPriority,
+                            _kMMCSRequestOptionPrivacyProxyFailClosedOverride,
                             _kMMCSRequestOptionProxyDown, _kMMCSRequestOptionQoS,
                             _kMMCSRequestOptionReaderWriterCallbackForDownloads,
                             _kMMCSRequestOptionRequireInlineComplete,
@@ -158,6 +166,7 @@ exports:
                             _kMMCSRequestOptionReturnPreauthorizationRequestObject,
                             _kMMCSRequestOptionReturnRegisteredChunks,
                             _kMMCSRequestOptionServerProtocolVersion,
+                            _kMMCSRequestOptionSimulcast,
                             _kMMCSRequestOptionSourceApplicationBundleIdentifier,
                             _kMMCSRequestOptionSourceApplicationSecondaryBundleIdentifier,
                             _kMMCSRequestOptionStreamOptions,
@@ -166,11 +175,17 @@ exports:
                             _kMMCSRequestOptionUseFORD,
                             _kMMCSRequestOptionUseProxy,
                             _kMMCSRequestOptionUseRegistryForDownloads,
+                            _kMMCSRequestReturnDownloadAuthorization,
                             _kMMCSRequestTimeoutPeriod,
                             _kMMCSRequestUrlExpiryDuration,
                             _kMMCSRequestValidateFileContents,
-                            _kMMCSRequestVendorHintValue, _kMMCSResultError,
-                            _kMMCSResults, _kMMCSSignature, _kMMCSUnwrappingState,
+                            _kMMCSRequestVendorHintValue,
+                            _kMMCSRequestedFileOffset,
+                            _kMMCSRequestedLengthAtFileOffset,
+                            _kMMCSResultDownloadAuthorization, _kMMCSResultError,
+                            _kMMCSResultFileOffset,
+                            _kMMCSResultLengthAtFileOffset, _kMMCSResults,
+                            _kMMCSSignature, _kMMCSUnwrappingState,
                             _kMMCSWarmContainerState, _kMMCSWrappingState,
                             _kMME_CLIENT_INFO_HEADER_KEY,
                             _mmcs_chunk_key_copy_wraptured_scheme_and_key,

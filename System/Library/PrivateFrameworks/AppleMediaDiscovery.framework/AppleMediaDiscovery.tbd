@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleMediaDiscovery.framework/AppleMediaDiscovery
@@ -7,11 +7,13 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AMD_APP_SEGMENT_ACTIVE, _AMD_APP_SEGMENT_LAPSED,
-                            _AMD_APP_SEGMENT_NEW, _AMD_CLIENT_CLEAR_USER_DATA,
-                            _AMD_CLIENT_CUSTOM_AGG, _AMD_CLIENT_DATA,
-                            _AMD_CLIENT_ERROR, _AMD_CLIENT_FETCH_INAPP_SEG,
+                            _AMD_APP_SEGMENT_NEW, _AMD_CIPHERML_CALL_HANDLE,
+                            _AMD_CIPHERML_REQUEST_ERROR,
+                            _AMD_CLIENT_CLEAR_USER_DATA, _AMD_CLIENT_CUSTOM_AGG,
+                            _AMD_CLIENT_DATA, _AMD_CLIENT_ERROR,
+                            _AMD_CLIENT_FETCH_INAPP_SEG,
                             _AMD_CLIENT_FETCH_MODEL_PATH, _AMD_CLIENT_STATUS,
                             _AMD_CLIENT_STATUS_EXECUTION_ERROR,
                             _AMD_CLIENT_STATUS_INVALID_DESCRIPTOR,
@@ -26,7 +28,9 @@ exports:
                             _AMD_JS_SEGMENT_METADATA, _AMD_OPT_ARG_ARGUMENTS,
                             _AMD_OPT_ARG_DEFAULT_VALUE, _AMD_OPT_ARG_HELP_TEXT,
                             _AMD_OPT_ARG_IS_BOOL, _AMD_OPT_ARG_SHORT_NAME,
-                            _AMD_PIR_CALL_HANDLE, _AMD_PIR_DATA, _AMD_PIR_KEYWORD,
+                            _AMD_PEC_SIMILARITY_SCORES_ARRAY,
+                            _AMD_PIR_DATA_ARRAY, _AMD_PIR_KEYWORD_ARRAY,
+                            _AMD_PIR_MISSING_KEYWORD_ARRAY,
                             _AMD_USECASE_WORKFLOW_COLDSTART_MODEL_ID,
                             _AMD_USECASE_WORKFLOW_END_TIMESTAMP,
                             _AMD_USECASE_WORKFLOW_INPUT_DEFINITIONS,
@@ -52,18 +56,20 @@ exports:
                             AMDFeatureProvider, AMDFetchAppSegmentsResponse,
                             AMDFetchDescriptor, AMDHealthKitWorkoutEvent,
                             AMDInputBuilder, AMDJSAppStoreEventHandler,
-                            AMDJSConfigProcessor, AMDJSCustomAggregator,
-                            AMDJSDebugDataSync, AMDJSDebugHandler,
-                            AMDJSDebugTestSQLite, AMDJSEngagementEventHandler,
-                            AMDJSGetSegments, AMDJSInference, AMDJSONLoader,
-                            AMDJSPIRResponseHandler, AMDJSRequestHandler,
-                            AMDJSSync, AMDKVStore, AMDListFeature, AMDMapFeature,
-                            AMDMinHeap, AMDMiscHelpers, AMDModel, AMDModelAssets,
-                            AMDModelAssetsMetadata, AMDModelDownloader,
-                            AMDModelInputMetadata, AMDModelMetadata,
-                            AMDModelOutputMetadata, AMDMultiArrayFeature,
-                            AMDOnDeviceTester, AMDOptArgParser, AMDOutputBuilder,
-                            AMDPair, AMDPerf, AMDSQLite, AMDSQLiteColumnSpec,
+                            AMDJSCipherMLQueryHandler, AMDJSConfigProcessor,
+                            AMDJSCustomAggregator, AMDJSDebugDataSync,
+                            AMDJSDebugHandler, AMDJSDebugTestSQLite,
+                            AMDJSEngagementEventHandler, AMDJSGetSegments,
+                            AMDJSInference, AMDJSONLoader, AMDJSPIRResponseHandler,
+                            AMDJSRequestHandler, AMDJSSync, AMDKVStore,
+                            AMDListFeature, AMDMapFeature, AMDMegadomeIntegration,
+                            AMDMegadomeTest, AMDMinHeap, AMDMiscHelpers, AMDModel,
+                            AMDModelAssets, AMDModelAssetsMetadata,
+                            AMDModelDownloader, AMDModelInputMetadata,
+                            AMDModelMetadata, AMDModelOutputMetadata,
+                            AMDMultiArrayFeature, AMDOnDeviceTester,
+                            AMDOptArgParser, AMDOutputBuilder, AMDPair, AMDPerf,
+                            AMDPirTest, AMDSQLite, AMDSQLiteColumnSpec,
                             AMDSQLiteSchema, AMDSQLiteTableSchema,
                             AMDScalarFeature, AMDSimpleHash, AMDStorage,
                             AMDTasteProfile, AMDTestDataCommon, AMDUseCaseWorkflow,

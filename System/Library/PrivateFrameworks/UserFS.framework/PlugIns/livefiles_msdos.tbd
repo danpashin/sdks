@@ -1,42 +1,40 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserFS.framework/PlugIns/livefiles_msdos.dylib
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CONV_ConvertToFSM, _CONV_DuplicateName,
                             _CONV_GetCurrentTime,
                             _CONV_LabelUTF8ToUTF16LocalEncoding,
                             _CONV_UTF8ToLowerCase, _CONV_UTF8ToUnistr255,
                             _CONV_Unistr255ToLowerCase, _CONV_Unistr255ToUTF8,
+                            _DIROPS_AllocateDirBlockBuffer,
                             _DIROPS_CreateHTForDirectory, _DIROPS_CreateNewEntry,
-                            _DIROPS_DeInitDirClusterDataCache,
-                            _DIROPS_DeInitDirEntryLockList,
-                            _DIROPS_DeReferenceDirCluster,
-                            _DIROPS_DereferenceDirEntrlyLockListEntry,
                             _DIROPS_DestroyHTForDirectory,
-                            _DIROPS_FlushEntrySector, _DIROPS_GetDirCluster,
+                            _DIROPS_FlushEntrySector, _DIROPS_FreeDirBlockBuffer,
+                            _DIROPS_GetDirBlockAbsolute,
+                            _DIROPS_GetDirBlockRelative,
                             _DIROPS_GetFileDirEntryDataByOffset,
                             _DIROPS_GetMD5Digest, _DIROPS_GetRecordId,
                             _DIROPS_GetStartCluster,
                             _DIROPS_HandleLongNameCharacter,
-                            _DIROPS_InitDirClusterDataCache,
-                            _DIROPS_InitDirEntryLockList,
-                            _DIROPS_InitDirEntryLockListEntry,
                             _DIROPS_IsDotOrDotDotName, _DIROPS_LookForDirEntry,
                             _DIROPS_LookForDirEntryByName,
                             _DIROPS_LookupInternal,
                             _DIROPS_MarkNodeDirEntriesAsDeleted,
+                            _DIROPS_PurgeNodeMetaBlocksFromCache,
                             _DIROPS_ReleaseHTForDirectory,
-                            _DIROPS_SetParentDirClusterCacheLock,
                             _DIROPS_SetStartCluster,
                             _DIROPS_UpdateDirLastModifiedTime,
                             _DIROPS_UpdateDirectoryEntry,
                             _DIROPS_VerifyIfLinkAndGetLinkLength,
-                            _DIROPS_VolumeOffsetForCluster, _DIROPS_isDirEmpty,
+                            _DIROPS_VolumeOffsetForCluster,
+                            _DIROPS_VolumeOffsetForDirBlock, _DIROPS_isDirEmpty,
                             _FATMOD_FlushAllCacheEntries,
                             _FATMOD_SetDriveDirtyBit,
                             _FAT_Access_M_AllocateClusters,
@@ -88,10 +86,11 @@ exports:
                             _ZeroFill_FillClusterSuffixWithZeros, _ZeroFill_Init,
                             _gbIsLoggerInit, _gpeMsDosToOsLevel, _gpsMsDosLog,
                             _guMaxLRU, _hexdigits, _ht_AllocateHashTable,
-                            _ht_DeAllocateHashTable, _ht_LookupByEntry,
-                            _ht_LookupByName, _ht_free_all, _ht_insert,
-                            _ht_reached_low_bound, _ht_reached_max_bound,
-                            _ht_remove, _ht_set_incomplete, _livefiles_plugin_init,
+                            _ht_DeAllocateHashTable, _ht_LookupByName,
+                            _ht_free_all, _ht_insert, _ht_reached_low_bound,
+                            _ht_reached_max_bound, _ht_remove, _ht_set_incomplete,
+                            _livefiles_plugin_init, _metaClear, _metaFlush,
+                            _metaPurge, _metaRead, _metaWrite,
                             _msdosfs_apply_generation_to_short_name,
                             _msdosfs_dos2unicodefn, _msdosfs_dos2unixtime,
                             _msdosfs_getunicodefn, _msdosfs_unicode2dos,

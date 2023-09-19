@@ -1,14 +1,14 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriIntentEvents.framework/SiriIntentEvents
-current-version:       0
-compatibility-version: 0
+current-version:       1
+compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s16SiriIntentEvents0B10EventStoreV04findC08intentId9eventType9startDate03endL05limitSayAA0bD0CGSSSg_AA0bdJ0OSg10Foundation0L0VSgATSiSgtF,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s16SiriIntentEvents0B10EventStoreV04findC08intentId9eventType9startDate03endL05limit8reversedSayAA0bD0CGSSSg_AA0bdJ0OSg10Foundation0L0VSgAUSiSgSbtF,
                             _$s16SiriIntentEvents0B10EventStoreV3log5eventyAA0bD0C_tF,
                             _$s16SiriIntentEvents0B10EventStoreV9temporaryACyFZ,
                             _$s16SiriIntentEvents0B10EventStoreVACycfC,
@@ -103,16 +103,10 @@ exports:
                             _$s16SiriIntentEvents0B5EventCN,
                             _$s16SiriIntentEvents0B5EventCfD,
                             _$s16SiriIntentEvents0B5EventCfd,
-                            _$s16SiriIntentEvents0B5StartC10intentData10Foundation0F0Vvg,
-                            _$s16SiriIntentEvents0B5StartC10intentData10Foundation0F0VvpMV,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E09timestampACSS_So8INIntentC10Foundation4DateVtKcfC,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E09timestampACSS_So8INIntentC10Foundation4DateVtKcfCTj,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E09timestampACSS_So8INIntentC10Foundation4DateVtKcfCTq,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E09timestampACSS_So8INIntentC10Foundation4DateVtKcfc,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E0ACSS_So8INIntentCtKcfC,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E0ACSS_So8INIntentCtKcfCTj,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E0ACSS_So8INIntentCtKcfCTq,
-                            _$s16SiriIntentEvents0B5StartC10intentType0E0ACSS_So8INIntentCtKcfc,
+                            _$s16SiriIntentEvents0B5StartC10intentType9timestampACSS_10Foundation4DateVtcfC,
+                            _$s16SiriIntentEvents0B5StartC10intentType9timestampACSS_10Foundation4DateVtcfCTj,
+                            _$s16SiriIntentEvents0B5StartC10intentType9timestampACSS_10Foundation4DateVtcfCTq,
+                            _$s16SiriIntentEvents0B5StartC10intentType9timestampACSS_10Foundation4DateVtcfc,
                             _$s16SiriIntentEvents0B5StartC10intentTypeSSvg,
                             _$s16SiriIntentEvents0B5StartC10intentTypeSSvpMV,
                             _$s16SiriIntentEvents0B5StartC11descriptionSSvgTj,

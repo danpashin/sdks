@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HoverTextUI.framework/HoverTextUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s11HoverTextUI0aB11CoordinatorC04stopaB0yyYaF,
                             _$s11HoverTextUI0aB11CoordinatorC04stopaB0yyYaFTu,
                             _$s11HoverTextUI0aB11CoordinatorC05startaB0yyYaF,
@@ -199,8 +199,14 @@ exports:
                             _$s11HoverTextUI0aB5StoreC15backgroundColor05SwiftC00F0Vvg,
                             _$s11HoverTextUI0aB5StoreC15backgroundColor05SwiftC00F0VvpMV,
                             _$s11HoverTextUI0aB5StoreC15backgroundColor05SwiftC00F0VvpfP,
+                            _$s11HoverTextUI0aB5StoreC15eventFromStylusSbvg,
+                            _$s11HoverTextUI0aB5StoreC15eventFromStylusSbvpMV,
+                            _$s11HoverTextUI0aB5StoreC15eventFromStylusSbvpfP,
                             _$s11HoverTextUI0aB5StoreC16$backgroundColor7Combine9PublishedV9PublisherVy05SwiftC00F0V_Gvg,
                             _$s11HoverTextUI0aB5StoreC16$backgroundColor7Combine9PublishedV9PublisherVy05SwiftC00F0V_GvpMV,
+                            _$s11HoverTextUI0aB5StoreC16$eventFromStylus7Combine9PublishedV9PublisherVySb_Gvg,
+                            _$s11HoverTextUI0aB5StoreC16$eventFromStylus7Combine9PublishedV9PublisherVySb_GvpMV,
+                            _$s11HoverTextUI0aB5StoreC16_eventFromStylus33_A4FF9127AA701C8EE90329B870719E6FLL7Combine9PublishedVySbGvpfi,
                             _$s11HoverTextUI0aB5StoreC17marqueeStartDelaySdvg,
                             _$s11HoverTextUI0aB5StoreC17marqueeStartDelaySdvpMV,
                             _$s11HoverTextUI0aB5StoreC17stylusAzimuthSigns013FloatingPointG0OSgvg,
@@ -219,6 +225,7 @@ exports:
                             _$s11HoverTextUI0aB5StoreC20toggleActivationLockyyF,
                             _$s11HoverTextUI0aB5StoreC20updateStylusLocation7atPointySo7CGPointV_tF,
                             _$s11HoverTextUI0aB5StoreC21isActivationKeyPrssed33_A4FF9127AA701C8EE90329B870719E6FLLSbvpfi,
+                            _$s11HoverTextUI0aB5StoreC21updateEventFromStylusyySbF,
                             _$s11HoverTextUI0aB5StoreC23handlePresentationEventyyAA0abfG0VF,
                             _$s11HoverTextUI0aB5StoreC23isActivationLockEnabledSbvg,
                             _$s11HoverTextUI0aB5StoreC23isActivationLockEnabledSbvpMV,
@@ -349,8 +356,6 @@ exports:
                             _$s11HoverTextUI27AnimationCompletionModifierVyxG05SwiftC0010AnimatableF0AAMc,
                             _$s11HoverTextUI27AnimationCompletionModifierVyxG05SwiftC004ViewF0AAMc,
                             _$s11HoverTextUI27AnimationCompletionModifierVyxG05SwiftC010AnimatableAAMc,
-                            _$s7SwiftUI4ViewP09HoverTextB0E13onSizeChangedyQrySo6CGSizeVcF,
-                            _$s7SwiftUI4ViewP09HoverTextB0E13onSizeChangedyQrySo6CGSizeVcFQOMQ,
                             _$s7SwiftUI4ViewP09HoverTextB0E21onAnimationCompletion3for10completionAA15ModifiedContentVyxAD0gH8ModifierVyqd__GGqd___yyctAA16VectorArithmeticRd__lF,
                             _$s7SwiftUI4ViewP09HoverTextB0E2if_9transformQrSbyXK_qd__xXEtAaBRd__lF,
                             _$s7SwiftUI4ViewP09HoverTextB0E2if_9transformQrSbyXK_qd__xXEtAaBRd__lFQOMQ,

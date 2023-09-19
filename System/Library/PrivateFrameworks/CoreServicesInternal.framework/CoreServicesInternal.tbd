@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreServicesInternal.framework/CoreServicesInternal
-current-version:       483
+current-version:       505
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __CFURLBookmarkDataCopyDescription,
                             __CFURLBookmarkToAliasHandle,
                             __CFURLCompareBookmarkData,
@@ -35,12 +35,15 @@ exports:
                             __FSURLCreateFileReferenceURLFromFSRef,
                             __FSURLCreateStandardError,
                             __FSURLEndResourcePropertyCacheAccess,
+                            __FSURLGetCacheAutoFlushingEnabled,
                             __FSURLGetCatalogInfo, __FSURLGetFSRef,
                             __FSURLGetObjectInformationNoIO,
                             __FSURLGetResourcePropertyFlags,
                             __FSURLGetVolumePropertyFlags,
                             __FSURLNoteSecurityScopedResourceMoved,
+                            __FSURLNoteSecurityScopedResourceMovedWithFileIdentifier,
                             __FSURLResourceIsReachable,
+                            __FSURLSetCacheAutoFlushingEnabled,
                             __FSURLSetPermanentResourcePropertyForKey,
                             __FSURLSetResourcePropertiesForKeys,
                             __FSURLSetResourcePropertyForKey,

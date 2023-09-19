@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SecureTransactionService.framework/SecureTransactionService
@@ -7,56 +7,41 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NFECP20TerminalTypeToSTS,
-                            _NFExpressModeStateToSTSExpressModeState,
-                            _NFFieldToSTS,
-                            _NFHceTerminalModeToSTSVASTerminalMode,
-                            _NFTechnologyToSTS, _NFTerminalTypeToSTS,
-                            _NFVasModeToSTSTerminalMode, _PTA_CCC_AID,
-                            _PTA_HYDRA_CORPORATE_AID, _PTA_HYDRA_HOME_AID,
-                            _PTA_SURF_AID, _STSAuxiliaryCredentialKeyType,
-                            _STSAuxiliaryTransactionKeyCredential,
-                            _STSAuxiliaryTransactionKeyError,
-                            _STSVASCredentialKeyData,
-                            _STSVASCredentialKeyMerchantId,
-                            _STSVASCredentialKeyMobileToken,
-                            _STSVASCredentialKeyUserInterventionRequired,
-                            _STSVASTransactionKeyMerchantId,
-                            _STSVASTransactionKeySignupUrl,
-                            _STSVASTransactionKeyTerminalAppVersion,
-                            _STSVASTransactionKeyTerminalMode,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$sSo9STSReaderC24SecureTransactionServiceE10StateEventO10tnepFailedyAEs5Error_pcAEmFWC,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventO11invalidatedyAEs5Error_pSgcAEmFWC,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventO13tnepCompletedyA2EmFWC,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventO27alternativeCarrierConnectedyA2EmFWC,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventOMa,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventOMn,
+                            _$sSo9STSReaderC24SecureTransactionServiceE10StateEventON,
+                            _$sSo9STSReaderC24SecureTransactionServiceE12StateChangesV17makeAsyncIteratorScS0I0VyAbCE0E5EventO_GyF,
+                            _$sSo9STSReaderC24SecureTransactionServiceE12StateChangesVMa,
+                            _$sSo9STSReaderC24SecureTransactionServiceE12StateChangesVMn,
+                            _$sSo9STSReaderC24SecureTransactionServiceE12StateChangesVN,
+                            _$sSo9STSReaderC24SecureTransactionServiceE12StateChangesVSciACMc,
+                            _$sSo9STSReaderC24SecureTransactionServiceE5start13configurationAbCE12StateChangesVSo26STSEngagementConfigurationC_tYaKF,
+                            _$sSo9STSReaderC24SecureTransactionServiceE5start13configurationAbCE12StateChangesVSo26STSEngagementConfigurationC_tYaKFTu,
+                            _NFCD_XPCHELPER_ERROR_DOMAIN,
                             _STSXPCHelperErrorDescriptions,
                             _STS_XCPHELPER_ERROR_BT_SUBDOMAIN,
                             _STS_XCPHELPER_ERROR_DOMAIN,
-                            _STS_XCPHELPER_ERROR_WIFI_SUBDOMAIN,
-                            _SecureTransactionServiceVersionNumber,
-                            _SecureTransactionServiceVersionString, _StsLogFunc,
-                            _StsLogFunc_C, _StsLogFunc_Obj, _StsLogInternal,
-                            _StsSignpostLog ]
-    objc-classes:         [ DigitalCarKeyHandler, ISO18013Handler,
-                            ISO18013ReaderAuthInfo, ISO18013RequestElement,
-                            PaymentHandler, STS18013ReaderAuthInfo,
-                            STS18013RequestElement, STSAuxiliaryCredential,
-                            STSAuxiliaryTransaction, STSCredential,
-                            STSCredentialRequest, STSCredentialSelect,
-                            STSDCKAssertion, STSEntitlementChecker,
-                            STSExpressEventInfo, STSExpressEventInfoWithDetail,
+                            _STS_XCPHELPER_ERROR_WIFI_SUBDOMAIN ]
+    objc-classes:         [ STS18013ReaderAuthInfo, STS18013RequestElement,
+                            STSAuxiliaryCredential, STSAuxiliaryTransaction,
+                            STSCredential, STSDCKAssertion,
+                            STSEngagementConfiguration, STSExpressEventInfo,
+                            STSExpressEventInfoWithDetail,
                             STSExpressEventInfoWithIdentifiers, STSField,
-                            STSFieldNFC, STSHandler, STSHardwareManagerWrapper,
-                            STSISO18013CredRequest, STSInAppPaymentRequest,
+                            STSFieldNFC, STSInAppPaymentRequest,
                             STSInAppPaymentResponse, STSListener,
                             STSMerchantPaymentRequest,
                             STSMerchantPaymentResponse, STSPaymentRequestBase,
                             STSPaymentResponseBase, STSPeerPaymentRequest,
                             STSPeerPaymentResponse,
-                            STSPeerPaymentTransferRequest, STSSession,
+                            STSPeerPaymentTransferRequest, STSReader, STSSession,
                             STSSessionBase, STSSigningSession, STSTestReader,
-                            STSTimer, STSTransaction18013Request,
-                            STSTransactionEndEvent, STSTransactionHandler,
+                            STSTransaction18013Request, STSTransactionEndEvent,
                             STSTransactionStartEvent, STSVASCredential,
-                            STSVASTransaction, STSVehicleReport,
-                            STSXPCClientNotificationListener,
-                            SignMerchantPaymentHandler, SignPeerPaymentHandler,
-                            UnifiedAccessHandler ]
+                            STSVASTransaction, STSVehicleReport ]
 ...

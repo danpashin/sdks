@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-current-version:       857.8
+current-version:       906.1.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NSAccessibilitySpellingStateAttributeName,
                             _NSAllRomanInputSourcesLocaleIdentifier,
                             _NSAppearanceDocumentAttribute,
@@ -35,6 +35,7 @@ exports:
                             _NSDataDetectionAttributeName,
                             _NSDefaultAttributesDocumentAttribute,
                             _NSDefaultAttributesDocumentOption, _NSDefaultFont,
+                            _NSDefaultFontExcludedDocumentAttribute,
                             _NSDefaultTabIntervalDocumentAttribute,
                             _NSDisplayNameDocumentAttribute,
                             _NSDocFormatTextDocumentType,
@@ -66,6 +67,7 @@ exports:
                             _NSMacSimpleTextDocumentType,
                             _NSManagerDocumentAttribute,
                             _NSMarkedClauseSegmentAttributeName,
+                            _NSMarkedTextSelectionAttributeName,
                             _NSMarkedTextStyleAttributeName,
                             _NSModificationTimeDocumentAttribute,
                             _NSNoIndexDocumentAttribute,
@@ -108,6 +110,7 @@ exports:
                             _NSTextAlternativesSelectedAlternativeStringNotification,
                             _NSTextCheckedAttributeName,
                             _NSTextContentManagerUnsupportedAttributeNotification,
+                            _NSTextContentStorageBreakOnEnumerateWhileEditing,
                             _NSTextContentStorageUnsupportedAttributeAddedNotification,
                             _NSTextCorrectionAttributeName, _NSTextDrawingTrace,
                             _NSTextEditedAttributeName,
@@ -115,9 +118,11 @@ exports:
                             _NSTextEffectLetterpressStyle,
                             _NSTextEncodingNameDocumentAttribute,
                             _NSTextEncodingNameDocumentOption, _NSTextKeyTrace,
+                            _NSTextLayoutManagerBreakOnNilContentManager,
                             _NSTextLayoutSectionOrientation,
                             _NSTextLayoutSectionRange,
-                            _NSTextLayoutSectionsAttribute, _NSTextListMarkerBox,
+                            _NSTextLayoutSectionsAttribute,
+                            _NSTextListMarkerAttachment, _NSTextListMarkerBox,
                             _NSTextListMarkerCheck, _NSTextListMarkerCircle,
                             _NSTextListMarkerDecimal, _NSTextListMarkerDiamond,
                             _NSTextListMarkerDisc, _NSTextListMarkerHyphen,
@@ -132,6 +137,7 @@ exports:
                             _NSTextListMarkerUppercaseRoman,
                             _NSTextLocationTypeCountable, _NSTextMouseTrace,
                             _NSTextRevertedAttributeName,
+                            _NSTextScaleAttributeName, _NSTextScaleSecondary,
                             _NSTextScalingDocumentAttribute,
                             _NSTextScalingOverrideDocumentReadingOption,
                             _NSTextSizeMultiplierDocumentOption,
@@ -229,6 +235,9 @@ exports:
                             __NSReadAttributedStringFromData,
                             __NSReadAttributedStringFromURL,
                             __NSReadAttributedStringFromURLOrData,
+                            __NSReadAttributedStringFromURLOrDataAgent,
+                            __NSReadAttributedStringFromURLOrDataAsync,
+                            __NSReadAttributedStringFromURLOrDataSync,
                             __NSStringDrawingCore,
                             __NSStringHasRightToLeftBaseWritingDirectionAtIndex,
                             __NSStringHasRightToLeftCharactersInRange,
@@ -239,7 +248,6 @@ exports:
                             __UISystemFontName, ___CTFontGetExtraData,
                             ___NSHTMLReaderDelegateDocumentOption,
                             ___NSLineBreakStrategyStandardActualOptions,
-                            ___NSTextLayoutManagerLinearLayoutFragmentsDump,
                             ___NSTokenizerLanguageSet,
                             _kUIFoundationUIFoundationVersionNumber,
                             _kUIFoundationUIFoundationVersionString,
@@ -258,12 +266,12 @@ exports:
                             NSLayoutManager, NSLayoutManagerTextBlockHelper,
                             NSLayoutManagerTextBlockRowArrayCache,
                             NSLineFragmentRenderingContext,
-                            NSMutableParagraphStyle, NSParagraphArbitrator,
-                            NSParagraphStyle, NSParagraphStyleExtraData,
-                            NSRTFReader, NSRTFReaderTableState, NSRTFWriter,
-                            NSRunStorage, NSShadow, NSSingleLineTypesetter,
-                            NSStorage, NSStringDrawingContext,
-                            NSStringDrawingTextStorage,
+                            NSMutableParagraphStyle, NSNotATextLocation,
+                            NSParagraphArbitrator, NSParagraphStyle,
+                            NSParagraphStyleExtraData, NSRTFReader,
+                            NSRTFReaderTableState, NSRTFWriter, NSRunStorage,
+                            NSShadow, NSSingleLineTypesetter, NSStorage,
+                            NSStringDrawingContext, NSStringDrawingTextStorage,
                             NSStringDrawingTextStorageSettings,
                             NSSubstituteWebResource, NSTempAttributeDictionary,
                             NSTextAlternatives, NSTextAttachment,
@@ -281,7 +289,8 @@ exports:
                             UIFont, UIFontDescriptor, UINibCoderValue, UINibDecoder,
                             UINibEncoder, UINibStringIDTable, UIPointFIFO,
                             UIQuadCurvePointFIFO, _NSATSTypesetterGuts,
-                            _NSAttributeRun, _NSAttributedStringIntentResolver,
+                            _NSAttributeRun, _NSAttributedStringAsyncReadReply,
+                            _NSAttributedStringIntentResolver,
                             _NSAttributedStringWithResolvedIntents,
                             _NSAttributes, _NSCachedAttributedString,
                             _NSOptimalLineBreaker, _NSTextStorageSideData,
@@ -368,6 +377,7 @@ exports:
                             NSRTFWriter._curUnderlineStyle,
                             NSRTFWriter._docAttrs, NSRTFWriter._document,
                             NSRTFWriter._fontNames, NSRTFWriter._fontObjects,
+                            NSRTFWriter._indexedColors,
                             NSRTFWriter._layoutSections, NSRTFWriter._listRanges,
                             NSRTFWriter._output, NSRTFWriter._rightMargin,
                             NSRTFWriter._rwFlags,

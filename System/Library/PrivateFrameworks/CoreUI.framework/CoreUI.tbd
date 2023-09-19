@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
-current-version:       804.3
+current-version:       865
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CSIEqualMetrics, _CSIIllegalMetrics,
                             _CUIAccumulateSVGShapesIntoJoinedPath,
                             _CUIAccumulateSVGShapesIntoPath,
@@ -34,7 +34,9 @@ exports:
                             _CUICreateSDFEdgeTexturePixelFormat,
                             _CUICreateSDFGradientTextureFromImage,
                             _CUICreateSDFGradientTexturePixelFormat,
-                            _CUICurrentPlatform, _CUIDeallocateRGBAImageBuffer,
+                            _CUICreateSubpathArrayFromCGPath,
+                            _CUICreateSubpathsFromSVGNode, _CUICurrentPlatform,
+                            _CUIDeallocateRGBAImageBuffer,
                             _CUIDefaultThemeRenditionKeyFormat,
                             _CUIDrawExtrudedImageInContext,
                             _CUIEdgeInsetsEqualToEdgeInsets,
@@ -143,5 +145,7 @@ exports:
                             CUIThemeSchemaRendition,
                             CUIThemeSchemaRenditionGroup,
                             CUIVectorGlyphGraphicVariantOptions,
-                            CUIVectorGlyphMutator, CoreUI ]
+                            CUIVectorGlyphHierarchicalLayer, CUIVectorGlyphLayer,
+                            CUIVectorGlyphMulticolorLayer, CUIVectorGlyphMutator,
+                            CoreUI ]
 ...

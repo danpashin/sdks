@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-SK_EXTERN NSString * const SKANErrorDomain API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
+SK_EXTERN NSString * const SKANErrorDomain API_AVAILABLE(ios(15.4), visionos(1.0)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 
 typedef NS_ERROR_ENUM(SKANErrorDomain, SKANError) {
     SKANErrorImpressionMissingRequiredValue = 0,
@@ -26,6 +26,6 @@ typedef NS_ERROR_ENUM(SKANErrorDomain, SKANError) {
     SKANErrorInvalidVersion                 = 9,
     SKANErrorUnknown                        = 10,
     SKANErrorImpressionTooShort             = 11,
-} API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
+} API_AVAILABLE(ios(15.4), visionos(1.0)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 
 NS_ASSUME_NONNULL_END

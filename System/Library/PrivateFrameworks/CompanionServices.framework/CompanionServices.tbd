@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/CompanionServices.framework/CompanionServices
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CPSCancellationReasonErrorKey,
+                            _CPSCustomAuthenticationMethodErrorKey,
+                            _CPSCustomAuthenticationMethodOther,
+                            _CPSCustomAuthenticationMethodRestorePurchase,
+                            _CPSCustomAuthenticationMethodVideoSubscriberAccount,
+                            _CPSCustomSharingMethodAirDrop,
+                            _CPSCustomSharingMethodSaveToPhotoLibrary,
+                            _CPSErrorDomain, _CPSErrorGetCancellationReason,
+                            _CPSErrorGetCustomAuthenticationMethod,
+                            _CPSErrorMake, _CPSErrorMultipleUnderlyingMake,
+                            _CPSErrorUnderlyingMake,
+                            _CPSMetricsSessionResultWithCustomMethod,
+                            _CompanionServicesVersionNumber,
+                            _CompanionServicesVersionString, _cps_daemon_log,
+                            _cps_service_connection_log,
+                            _cps_service_listener_log, _cps_service_log,
+                            _cps_session_log ]
+    objc-classes:         [ CASPasswordCredential, CPSAppSignInRequest,
+                            CPSAppSignInResponse, CPSAuthenticationRequest,
+                            CPSAuthenticationResponse,
+                            CPSAuthenticationServiceInterface,
+                            CPSAuthenticationSession, CPSDevice,
+                            CPSLearnMoreRequest, CPSMetrics,
+                            CPSRestrictedAccessRequest,
+                            CPSRestrictedAccessResponse, CPSSharingRequest,
+                            CPSSharingResponse, CPSStoreAuthenticationRequest,
+                            CPSStoreAuthenticationResponse,
+                            CPSStorePurchaseRequest, CPSStorePurchaseResponse,
+                            CPSSystemAuthenticationRequest,
+                            CPSSystemAuthenticationResponse,
+                            CPSTVProviderButtonHandlingInterface,
+                            CPSTVProviderRequest, CPSViewServiceInterface,
+                            CPSViewServicePresentationContext,
+                            CPSWatchAlertPresentationContext, CPSWebRequest ]
+...

@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ZN26SystemDeterminationManager10initializeEN8dispatch13group_sessionE,
                             __ZN26SystemDeterminationManager12cleanup_syncERKN8dispatch13group_sessionE,
                             __ZN26SystemDeterminationManager12clearBackOffEN10subscriber7SimSlotE,
@@ -58,7 +58,7 @@ exports:
                             __ZN26SystemDeterminationManager28handleNewServingNetwork_syncEN10subscriber7SimSlotE,
                             __ZN26SystemDeterminationManager28handleRFBandTypeChanged_syncEN10subscriber7SimSlotE10RFBandType,
                             __ZN26SystemDeterminationManager28handleVoWiFiProvChanged_syncERK13PersonalityIDRK22VoWiFiConfigurationSrcS5_,
-                            __ZN26SystemDeterminationManager28resetFatalActivationBlockersEN10subscriber7SimSlotEPKcb,
+                            __ZN26SystemDeterminationManager28resetFatalActivationBlockersEN10subscriber7SimSlotEPKcbNSt3__16vectorI15DataContextTypeNS4_9allocatorIS6_EEEE,
                             __ZN26SystemDeterminationManager29handleCallWaitingStatusUpdateERK13PersonalityIDb,
                             __ZN26SystemDeterminationManager29handlePersonalityEnabled_syncERK13PersonalityID,
                             __ZN26SystemDeterminationManager29handlePersonalityRemoved_syncERK13PersonalityID,
@@ -201,9 +201,9 @@ exports:
                             __ZN2sd23IMSSubscriberController17handleMobike_syncEv,
                             __ZN2sd23IMSSubscriberController17handlePcscfUpdateEb,
                             __ZN2sd23IMSSubscriberController17resetServiceMasksEv,
-                            __ZN2sd23IMSSubscriberController17saveAttempedStateEv,
                             __ZN2sd23IMSSubscriberController18handleAuthenticateERKN3ims3aka7RequestE,
                             __ZN2sd23IMSSubscriberController18handleImsPref_syncERK11ImsPrefData,
+                            __ZN2sd23IMSSubscriberController18saveAttemptedStateEv,
                             __ZN2sd23IMSSubscriberController18sendXcapConfigInfoEv,
                             __ZN2sd23IMSSubscriberController18updateSSPTransportEb,
                             __ZN2sd23IMSSubscriberController19handleUninitializedEj,
@@ -251,6 +251,7 @@ exports:
                             __ZN2sd23IMSSubscriberController26handleDataModeChanged_syncE8DataMode,
                             __ZN2sd23IMSSubscriberController26handleDeviceIdChanged_syncERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
                             __ZN2sd23IMSSubscriberController26isQualifiedToBringUpImsPdnEv,
+                            __ZN2sd23IMSSubscriberController26resetImsEstablishmentTimerEv,
                             __ZN2sd23IMSSubscriberController26startImsEstablishmentTimerEj,
                             __ZN2sd23IMSSubscriberController27handleConnectivityDown_syncEv,
                             __ZN2sd23IMSSubscriberController27handleEmergencyAuthenticateENSt3__110shared_ptrIN3ims15EmergencyClientEEERKNS3_3aka7RequestE,
@@ -325,10 +326,12 @@ exports:
                             __ZNK26SystemDeterminationManager19getIMSInterfaceListERK13PersonalityIDRKNSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEE,
                             __ZNK26SystemDeterminationManager20handleDumpState_syncEv,
                             __ZNK26SystemDeterminationManager21getApplicationId_syncERK13PersonalityID,
+                            __ZNK26SystemDeterminationManager21isIMSAudioOnAPEnabledEN10subscriber7SimSlotE,
                             __ZNK26SystemDeterminationManager22getCellAccessTypeFieldERK13PersonalityID,
                             __ZNK26SystemDeterminationManager22getCellAccessTypeFieldEv,
                             __ZNK26SystemDeterminationManager22getIMSNetworkInterfaceERK13PersonalityID,
                             __ZNK26SystemDeterminationManager22getIMSNetworkInterfaceEv,
+                            __ZNK26SystemDeterminationManager22getInHomeCountryStatusEN10subscriber7SimSlotENSt3__18functionIFv7CTErrorbEEE,
                             __ZNK26SystemDeterminationManager22getWifiAccessTypeFieldEv,
                             __ZNK26SystemDeterminationManager22isRoamingDefinite_syncEN10subscriber7SimSlotE,
                             __ZNK26SystemDeterminationManager22publicIdentityFromImsiERK13PersonalityID,
@@ -425,7 +428,7 @@ exports:
                             __ZNK2sd18IMSSubscriberModel7getNameEv,
                             __ZNK2sd18IMSSubscriberModel9dumpStateEv,
                             __ZNK2sd18IMSSubscriberModel9getUEInfoEv,
-                            __ZNK2sd19IMSSubscriberConfig12isAPOnlyModeEv,
+                            __ZNK2sd19IMSSubscriberConfig12isAPOnlyModeEb,
                             __ZNK2sd19IMSSubscriberConfig12isDCNAllowedEv,
                             __ZNK2sd19IMSSubscriberConfig13CopyIMSConfigEbb,
                             __ZNK2sd19IMSSubscriberConfig13getRFBandTypeEv,
@@ -587,8 +590,8 @@ exports:
                             __ZThn48_N2sd23IMSSubscriberController13resetCallModeEv,
                             __ZThn48_N2sd23IMSSubscriberController16reportPdnFailureEb,
                             __ZThn48_N2sd23IMSSubscriberController17handleImsPco_syncERK10ImsPcoData,
-                            __ZThn48_N2sd23IMSSubscriberController17saveAttempedStateEv,
                             __ZThn48_N2sd23IMSSubscriberController18handleImsPref_syncERK11ImsPrefData,
+                            __ZThn48_N2sd23IMSSubscriberController18saveAttemptedStateEv,
                             __ZThn48_N2sd23IMSSubscriberController23handleImsPdpActive_syncEb15DataContextType,
                             __ZThn48_N2sd23IMSSubscriberController23handleImsRegMaskUp_syncEPKcNS_7RegMaskE,
                             __ZThn48_N2sd23IMSSubscriberController25handleConnectivityUp_syncEv,
@@ -606,6 +609,7 @@ exports:
                             __ZThn48_N2sd23IMSSubscriberControllerD1Ev,
                             __ZThn48_NK26SystemDeterminationManager20handleDumpState_syncEv,
                             __ZThn48_NK2sd23IMSSubscriberController12isCallActiveEv,
+                            __ZThn48_NK2sd23IMSSubscriberController15isIMSRegisteredERbRyS1_R15DataContextTypeb,
                             __ZThn48_NK2sd23IMSSubscriberController18getPersonalityInfoEv,
                             __ZThn56_N26SystemDeterminationManager12submitMetricERKNSt3__110shared_ptrIN2sd27IMSSubscriberModelInterfaceEEENS2_13AwdNoticeTypeEb,
                             __ZThn56_N26SystemDeterminationManager15handleStateDumpERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,

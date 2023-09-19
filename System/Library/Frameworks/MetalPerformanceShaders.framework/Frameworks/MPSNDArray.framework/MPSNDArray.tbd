@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       126.3.5
+current-version:       127.0.19
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MPSSetResourcesOnCommandEncoder ]
     objc-classes:         [ MPSExternalNDArrayBinary,
                             MPSExternalNDArrayBinaryGradient, MPSNDArrayACos,
@@ -24,6 +24,7 @@ exports:
                             MPSNDArrayAbsoluteGradient, MPSNDArrayAddition,
                             MPSNDArrayAdditionPrimaryGradient,
                             MPSNDArrayAdditionSecondaryGradient,
+                            MPSNDArrayAffineQuantizationDescriptor,
                             MPSNDArrayArgSort, MPSNDArrayBandPart,
                             MPSNDArrayBinaryKernel,
                             MPSNDArrayBinaryPrimaryGradientKernel,
@@ -32,7 +33,7 @@ exports:
                             MPSNDArrayClamp, MPSNDArrayClampPrimaryGradient,
                             MPSNDArrayClampSecondaryGradient,
                             MPSNDArrayClampTertiaryGradient,
-                            MPSNDArrayConvolution2D,
+                            MPSNDArrayCol2imKernel, MPSNDArrayConvolution2D,
                             MPSNDArrayConvolution2DDescriptor,
                             MPSNDArrayConvolution2DGradientWithInput,
                             MPSNDArrayConvolution2DGradientWithWeights,
@@ -40,7 +41,8 @@ exports:
                             MPSNDArrayConvolution3DGradientWithInput,
                             MPSNDArrayConvolution3DGradientWithWeights,
                             MPSNDArrayCos, MPSNDArrayCosGradient, MPSNDArrayCosh,
-                            MPSNDArrayCoshGradient, MPSNDArrayCropResize,
+                            MPSNDArrayCoshGradient, MPSNDArrayCostVolume,
+                            MPSNDArrayCostVolumeDescriptor, MPSNDArrayCropResize,
                             MPSNDArrayDecompositionLU, MPSNDArrayDecompositionQR,
                             MPSNDArrayDepthwiseConvolution2DDescriptor,
                             MPSNDArrayDepthwiseConvolutionKernel,
@@ -55,8 +57,8 @@ exports:
                             MPSNDArrayExponentBase2,
                             MPSNDArrayExponentBase2Gradient,
                             MPSNDArrayExponentGradient, MPSNDArrayFloor,
-                            MPSNDArrayFloorGradient, MPSNDArrayGather,
-                            MPSNDArrayGatherGradient,
+                            MPSNDArrayFloorGradient, MPSNDArrayFourierTransform,
+                            MPSNDArrayGather, MPSNDArrayGatherGradient,
                             MPSNDArrayGatherGradientState, MPSNDArrayGatherND,
                             MPSNDArrayGatherNDGradient, MPSNDArrayGradientState,
                             MPSNDArrayGreaterThan,
@@ -67,6 +69,7 @@ exports:
                             MPSNDArrayGreaterThanSecondaryGradient,
                             MPSNDArrayGridSample,
                             MPSNDArrayHammingDistanceKernel, MPSNDArrayIdentity,
+                            MPSNDArrayIm2colDescriptor, MPSNDArrayIm2colKernel,
                             MPSNDArrayInitialization,
                             MPSNDArrayInitializationConstant,
                             MPSNDArrayInitializationGlorotNormal,
@@ -117,8 +120,8 @@ exports:
                             MPSNDArrayMultiplicationPrimaryGradient,
                             MPSNDArrayMultiplicationSecondaryGradient,
                             MPSNDArrayNAND, MPSNDArrayNANDPrimaryGradient,
-                            MPSNDArrayNANDSecondaryGradient, MPSNDArrayNOR,
-                            MPSNDArrayNORPrimaryGradient,
+                            MPSNDArrayNANDSecondaryGradient, MPSNDArrayNMS,
+                            MPSNDArrayNOR, MPSNDArrayNORPrimaryGradient,
                             MPSNDArrayNORSecondaryGradient, MPSNDArrayNOT,
                             MPSNDArrayNOTGradient, MPSNDArrayNegative,
                             MPSNDArrayNegativeGradient, MPSNDArrayNeuronGeLU,
@@ -134,6 +137,9 @@ exports:
                             MPSNDArrayPoolingMultiDestinationKernel,
                             MPSNDArrayPower, MPSNDArrayPowerPrimaryGradient,
                             MPSNDArrayPowerSecondaryGradient, MPSNDArrayPrune,
+                            MPSNDArrayQuantizationDescriptor,
+                            MPSNDArrayQuantizedConvolution,
+                            MPSNDArrayQuantizedMatrixMultiplication,
                             MPSNDArrayRandom, MPSNDArrayRandomNormal,
                             MPSNDArrayRandomState,
                             MPSNDArrayRandomStateDescriptor,

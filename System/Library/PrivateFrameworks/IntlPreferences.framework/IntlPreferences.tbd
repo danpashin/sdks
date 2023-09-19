@@ -1,14 +1,17 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
-current-version:       398.60
+current-version:       435.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _IPAppleLanguagesSchemaVersionCurrent,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$sSo8NSLocaleC15IntlPreferencesE17_sameLocalizationySbSS_SStFZ,
+                            _$sSo8NSLocaleC15IntlPreferencesE32_localeIdentifierForRegionChange4from2toSS10Foundation6LocaleV_SStFZ,
+                            _IPAppleLanguagesSchemaVersionCurrent,
+                            _IPAppleLanguagesSchemaVersionDawnburstA,
                             _IPAppleLanguagesSchemaVersionGoldzulA,
                             _IPAppleLanguagesSchemaVersionJazzkonA,
                             _IPAppleLanguagesSchemaVersionJazzkonA_1,
@@ -17,6 +20,7 @@ exports:
                             _IPBackstopRegion, _IPCustomDateFormatStrings,
                             _IPFormatOptionCustom, _IPFormatOptionLanguage,
                             _IPFormatOptionLocale, _IPNumberFormatSampleNumber,
+                            _MigrationLogger,
                             _NSPersonNameDefaultDisplayNameOrderKey,
                             _NSPersonNameDefaultNamePreferencesDomain,
                             _NSPersonNameDefaultShortNameEnabledKey,
@@ -30,6 +34,7 @@ exports:
                             IPSettingsUtilities, IPWatchLocaleController,
                             IP_HK_MO_yue_Hant_migrator, IP_Zawgyi_migrator,
                             IP_advancedSettings_migrator,
+                            IP_emptyPreferences_migrator,
                             IP_pa_Arab_to_pa_Aran_migrator,
                             IP_unsupportedVariantsAddedByKeyboards_migrator,
                             ISMigrator, ISRootMigrator, IntlUtility,

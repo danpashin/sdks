@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
-// swift-module-flags: -target arm64e-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name _PassKit_SwiftUI
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1505.15
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
+// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name _PassKit_SwiftUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1543.6
 import Foundation
 @_exported import PassKit
 import Swift
@@ -9,6 +9,7 @@ import Swift
 import _Concurrency
 @_exported import _PassKit_SwiftUI
 import _StringProcessing
+import _SwiftConcurrencyShims
 @available(iOS 16.0, *)
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
@@ -174,6 +175,53 @@ extension SwiftUI.View {
   public func onApplePayCouponCodeChange(perform action: @escaping (Swift.String) async -> PassKit.PKPaymentRequestCouponCodeUpdate) -> some SwiftUI.View
   
   #endif
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PayLaterView<FallbackView> : SwiftUI.View where FallbackView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s16_PassKit_SwiftUI12PayLaterViewV4bodyQrvp", 0) __<FallbackView>
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension _PassKit_SwiftUI.PayLaterView where FallbackView == SwiftUI.EmptyView {
+  public init(amount: Foundation.Decimal, currency: Foundation.Locale.Currency)
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PayLaterViewAction : Swift.Sendable, Swift.Equatable {
+  public static let learnMore: _PassKit_SwiftUI.PayLaterViewAction
+  public static let calculator: _PassKit_SwiftUI.PayLaterViewAction
+  public static func == (a: _PassKit_SwiftUI.PayLaterViewAction, b: _PassKit_SwiftUI.PayLaterViewAction) -> Swift.Bool
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+public struct PayLaterViewDisplayStyle : Swift.Sendable, Swift.Equatable {
+  public static let standard: _PassKit_SwiftUI.PayLaterViewDisplayStyle
+  public static let badge: _PassKit_SwiftUI.PayLaterViewDisplayStyle
+  public static let checkout: _PassKit_SwiftUI.PayLaterViewDisplayStyle
+  public static let price: _PassKit_SwiftUI.PayLaterViewDisplayStyle
+  public static func == (a: _PassKit_SwiftUI.PayLaterViewDisplayStyle, b: _PassKit_SwiftUI.PayLaterViewDisplayStyle) -> Swift.Bool
+}
+@available(iOS 17.0, *)
+@available(macOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+extension SwiftUI.View {
+  public func payLaterViewAction(_ action: _PassKit_SwiftUI.PayLaterViewAction) -> some SwiftUI.View
+  
+  public func payLaterViewDisplayStyle(_ displayStyle: _PassKit_SwiftUI.PayLaterViewDisplayStyle) -> some SwiftUI.View
+  
 }
 @available(iOS 16.0, *)
 @available(macOS, unavailable)

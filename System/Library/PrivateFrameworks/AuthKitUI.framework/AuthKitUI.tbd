@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AKAppleIDButtonDefaultCornerRadius,
                             _AKContentAlignmentCentered, _AKContentAlignmentMake,
                             _AKCreateAppleIDButtonImage,
@@ -61,9 +61,12 @@ exports:
                             _kAKCASatoriVerificationResults, _kAKCATeamID,
                             _kAKCAUnderlyingErrorCode,
                             _kAKCAUnderlyingErrorDomain, _kAKCAUseAnonymous,
+                            _kActivityIndicatorPadding,
+                            _kOptionTableViewCellIdentifier,
+                            _timeToPauseAfterShowingDotCloud,
                             _urlWithQueryParametersFormatString,
                             _urlWithoutQueryParametersFormatString ]
-    objc-classes:         [ AKASAuthorizationProvider,
+    objc-classes:         [ AKASAuthorizationProvider, AKAccountTelemetryHook,
                             AKAppleIDAuthenticationInAppContext,
                             AKAppleIDAuthenticationInAppExtensionContext,
                             AKAppleIDAuthenticationPurpleBuddyContext,
@@ -71,10 +74,12 @@ exports:
                             AKAppleIDAuthenticationWatchBuddyContext,
                             AKAppleIDFollowUpServerUIPresenter,
                             AKAppleIDObjectModelFieldExtractor,
+                            AKAppleIDProximityAuthenticationContext,
                             AKAppleIDServerUIContextController,
                             AKAppleIDServerUIDataHarvester,
                             AKAppleIDServerUIEventHandlerImp,
-                            AKAuthHandlerUIImpl, AKAuthorizationAppearance,
+                            AKAppleLogoMicaView, AKAuthHandlerUIImpl,
+                            AKAuthorizationAppearance,
                             AKAuthorizationAppleIDButton,
                             AKAuthorizationBiometricImage,
                             AKAuthorizationBulletPointSubPane,
@@ -112,7 +117,8 @@ exports:
                             AKBasicLoginOptionsViewController,
                             AKBasicLoginSecondFactorActions,
                             AKBasicLoginTableViewCell,
-                            AKBasicLoginViewController, AKCAPiggybackReporter,
+                            AKBasicLoginViewController,
+                            AKBringDeviceCloseMicaView, AKCAPiggybackReporter,
                             AKCAReporter, AKCASatoriReporter,
                             AKCATiburonAuthorizationUIReporter,
                             AKCATiburonInputUIReporter,
@@ -125,10 +131,16 @@ exports:
                             AKInAppAuthenticationRemoteUIProvider,
                             AKInlineSignInViewController,
                             AKLoginFieldsViewController, AKLoginRowData,
-                            AKModalSignInViewController, AKRoundedButton,
+                            AKModalSignInViewController,
+                            AKParentalApprovalRequestViewController,
+                            AKPasswordGeneratorHook, AKPasswordResetAppearance,
+                            AKPasswordResetViewController,
+                            AKProximityAuthViewController,
+                            AKProximityMessageViewModel, AKRoundedButton,
                             AKRoundedPath,
                             AKSecondFactorCodeEntryContentViewController,
                             AKSizing, AKTapToSignInViewController, AKTextField,
-                            AKTextualLinkButton, AKURLRequestApprover,
-                            _AKInsetTextField ]
+                            AKTextualLinkButton,
+                            AKUIAlertControllerImageProvider, AKUIMicaPlayer,
+                            AKURLRequestApprover, _AKInsetTextField ]
 ...

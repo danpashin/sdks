@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
@@ -7,11 +7,15 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CCUIAffineTransformBetweenInterfaceOrientations,
                             _CCUIAlertCompactPresentationMargin,
                             _CCUIAlertCompactPresentationTopMarginForOrientation,
                             _CCUIAppLaunchOriginControlCenter,
+                            _CCUIBaseSliderViewAutomaticDimension,
+                            _CCUIBaseSliderViewControlEventIndirectInputDidBegin,
+                            _CCUIBaseSliderViewControlEventIndirectInputDidEnd,
+                            _CCUIBaseSliderViewControlEventPresentationValueChanged,
                             _CCUICompactModuleColumns,
                             _CCUICompactModuleContinuousCornerRadius,
                             _CCUICoreSpeechBundleIdentifier,
@@ -41,6 +45,7 @@ exports:
                             _CCUIWalletBundleIdentifier,
                             _ControlCenterUIKitVersionNumber,
                             _ControlCenterUIKitVersionString,
+                            _NSStringFromCCUIBaseSliderViewBehaviorIdentifier,
                             _kCCUIGlyphPackageViewStateDefault ]
     objc-classes:         [ CCUIAppLauncherModule, CCUIAppLauncherViewController,
                             CCUIAppShortcutMenuModuleItem, CCUIBaseSliderView,
@@ -60,19 +65,13 @@ exports:
                             CCUILabeledRoundButtonViewController,
                             CCUIMenuModuleItem, CCUIMenuModuleItemView,
                             CCUIMenuModuleStackView,
-                            CCUIMenuModuleViewController, CCUIModuleSliderView,
-                            CCUIRoundButton, CCUISensorActivityData,
-                            CCUISensorAttributionEntity,
+                            CCUIMenuModuleViewController, CCUIRoundButton,
+                            CCUISensorActivityData, CCUISensorAttributionEntity,
                             CCUISliderModuleBackgroundViewController,
                             CCUIStatusUpdate, CCUISteppedSliderView,
-                            CCUIToggleModule, CCUIToggleViewController ]
+                            CCUIToggleModule, CCUIToggleViewController,
+                            _CCUIBaseSliderContentView ]
     objc-ivars:           [ CCUIAppLauncherViewController._assetProvider,
                             CCUIAppLauncherViewController._fetchedMenuItems,
-                            CCUIAppLauncherViewController._menuItemsFetchQueue,
-                            CCUIToggleViewController._glyphImage,
-                            CCUIToggleViewController._glyphImageView,
-                            CCUIToggleViewController._glyphPackageDescription,
-                            CCUIToggleViewController._glyphState,
-                            CCUIToggleViewController._selectedColor,
-                            CCUIToggleViewController._selectedGlyphImage ]
+                            CCUIAppLauncherViewController._menuItemsFetchQueue ]
 ...

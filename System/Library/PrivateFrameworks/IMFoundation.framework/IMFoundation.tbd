@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
@@ -7,7 +7,7 @@ current-version:       800
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ExtractURLQueries, _FZAVErrorDomain,
                             _FZRelayParameter_ConnectionID,
                             _FZRelayParameter_PeerBlob, _FZRelayParameter_PeerID,
@@ -282,6 +282,7 @@ exports:
                             _IMRemoveAppValueForKey, _IMRemoveKeychainAuthToken,
                             _IMRemoveKeychainData, _IMRemoveKeychainPassword,
                             _IMRemoveTemporaryKeychainPassword,
+                            _IMReportAutoBugCapture,
                             _IMResetCachedCarrierSettings,
                             _IMResetCachedUserSettings, _IMSMSEnabled,
                             _IMSMSFallbackEnabled, _IMSMSMaxRecipients,
@@ -316,7 +317,8 @@ exports:
                             _IMStringIsEmpty, _IMStringIsHardwareID,
                             _IMStringIsInHardcodedEmergencyNumberSet,
                             _IMStringIsPhoneNumber, _IMStringIsPseudonymID,
-                            _IMStringIsStewie, _IMStringIsTemporaryID,
+                            _IMStringIsStewie, _IMStringIsStewieEmergency,
+                            _IMStringIsStewieRoadside, _IMStringIsTemporaryID,
                             _IMStripFormattingFromAddress, _IMStripLoginID,
                             _IMSubmitSimpleAWDMetric,
                             _IMSubmitSimpleAggegateMetric,
@@ -661,9 +663,9 @@ exports:
                             _kIMDeviceTypeNameAppleTV,
                             _kIMDeviceTypeNameAudioAccessory,
                             _kIMDeviceTypeNameBrowser, _kIMDeviceTypeNameMac,
-                            _kIMDeviceTypeNameUnknown, _kIMDeviceTypeNameWatch,
-                            _kIMDeviceTypeNameiPad, _kIMDeviceTypeNameiPhone,
-                            _kIMDeviceTypeNameiPod,
+                            _kIMDeviceTypeNameReality, _kIMDeviceTypeNameUnknown,
+                            _kIMDeviceTypeNameWatch, _kIMDeviceTypeNameiPad,
+                            _kIMDeviceTypeNameiPhone, _kIMDeviceTypeNameiPod,
                             _kIMURLConnectionXPCAlwaysForceCellularKey,
                             _kIMURLConnectionXPCConcurrentConnectionsKey,
                             _kIMURLConnectionXPCDataUsageBundleIdentifier,

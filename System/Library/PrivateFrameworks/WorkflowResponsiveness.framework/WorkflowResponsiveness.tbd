@@ -1,0 +1,46 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/WorkflowResponsiveness.framework/WorkflowResponsiveness
+current-version:       341
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _WRSignpostCategoryKey,
+                            _WRSignpostDiagnosticsThresholdCountKey,
+                            _WRSignpostDiagnosticsThresholdIntervalKey,
+                            _WRSignpostEnvironmentFieldNamesKey,
+                            _WRSignpostEventEndGroupKey, _WRSignpostEventEndKey,
+                            _WRSignpostEventOverallIntervalKey,
+                            _WRSignpostEventStartKey,
+                            _WRSignpostIndividuationFieldNameKey,
+                            _WRSignpostNameKey, _WRSignpostSubsystemKey,
+                            _WRWorkflowEndMachContTimeNSKey,
+                            _WRWorkflowEndSignpostKey, _WRWorkflowEndThreadIDKey,
+                            _WRWorkflowEnvironmentKey, _WRWorkflowNameKey,
+                            _WRWorkflowSignpostCountKey,
+                            _WRWorkflowSignpostDurationSecondsKey,
+                            _WRWorkflowSignpostEmitMachContTimeNSKey,
+                            _WRWorkflowSignpostEmitThreadIDKey,
+                            _WRWorkflowSignpostEmitsListKey,
+                            _WRWorkflowSignpostIntervalBeginMachContTimeNSKey,
+                            _WRWorkflowSignpostIntervalBeginThreadIDKey,
+                            _WRWorkflowSignpostIntervalEndMachContTimeNSKey,
+                            _WRWorkflowSignpostIntervalEndThreadIDKey,
+                            _WRWorkflowSignpostIntervalsListKey,
+                            _WRWorkflowSignpostListKey,
+                            _WRWorkflowSignpostNameKey,
+                            _WRWorkflowSignpostSecondsUntilFirstSignpostKey,
+                            _WRWorkflowSignpostThresholdCountKey,
+                            _WRWorkflowSignpostThresholdDurationSecondsKey,
+                            _WRWorkflowSignpostsKey,
+                            _WRWorkflowStartMachContTimeNSKey,
+                            _WRWorkflowStartSignpostKey,
+                            _WRWorkflowStartThreadIDKey,
+                            _WRWorkflowThresholdDurationSecondsKey ]
+    objc-classes:         [ WRIntervalAndThreads, WRSignpost, WRSignpostTracker,
+                            WRTimestampAndThread, WRWorkflow,
+                            WRWorkflowEventTracker, WRWorkflowProvider ]
+...

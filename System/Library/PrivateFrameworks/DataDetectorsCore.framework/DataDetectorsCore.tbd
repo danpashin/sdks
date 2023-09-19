@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
-current-version:       727
+current-version:       755
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DDAddressResultCanBeMergedWith, _DDApplyOptions,
                             _DDBinderAIMOrEmailKey,
                             _DDBinderAddressBookContactNameKey,
@@ -24,9 +24,9 @@ exports:
                             _DDBinderContactTitleKey, _DDBinderCountryKey,
                             _DDBinderDataKey, _DDBinderDateDurationKey,
                             _DDBinderDateKey, _DDBinderDateTimeKey,
-                            _DDBinderDurationKey, _DDBinderEmailKey,
-                            _DDBinderExtensionKey, _DDBinderFileURLKey,
-                            _DDBinderFlightInformationKey,
+                            _DDBinderDepartmentNameKey, _DDBinderDurationKey,
+                            _DDBinderEmailKey, _DDBinderExtensionKey,
+                            _DDBinderFileURLKey, _DDBinderFlightInformationKey,
                             _DDBinderFlightNumberKey, _DDBinderFullAddressKey,
                             _DDBinderGameCenterSourceKey, _DDBinderGenericTagKey,
                             _DDBinderGenericURLKey, _DDBinderHttpURLKey,
@@ -34,9 +34,10 @@ exports:
                             _DDBinderJabberOrEmailKey, _DDBinderJobTitleKey,
                             _DDBinderLabelKey, _DDBinderLocationKey,
                             _DDBinderMailURLKey, _DDBinderMapsURLKey,
-                            _DDBinderMoneyKey, _DDBinderNoResultKey,
-                            _DDBinderPOBoxKey, _DDBinderParsecSourceKey,
-                            _DDBinderPhoneNumberKey, _DDBinderPhysicalAmountKey,
+                            _DDBinderMoneyKey, _DDBinderNLPContactNameKey,
+                            _DDBinderNoResultKey, _DDBinderPOBoxKey,
+                            _DDBinderParsecSourceKey, _DDBinderPhoneNumberKey,
+                            _DDBinderPhysicalAmountKey,
                             _DDBinderQuotedShortPhoneNumberKey,
                             _DDBinderSignatureBlockKey,
                             _DDBinderSpecialDateTimeKey, _DDBinderStateKey,
@@ -71,7 +72,7 @@ exports:
                             _DDDateResultIsPartial, _DDError,
                             _DDFastIntegerExtraction,
                             _DDForce24HrsFormatProcessWideForExtraction,
-                            _DDInitialSetup,
+                            _DDInconclusiveLanguageDetection, _DDInitialSetup,
                             _DDInternalURLStringForResultIdentifier, _DDLog,
                             _DDLogAssertionFailure, _DDLogErrD, _DDLogHandle,
                             _DDLogv, _DDPushUserDebugData, _DDResultAddSubresult,
@@ -98,8 +99,8 @@ exports:
                             _DDResultDateExtractionDependsOnContextTense,
                             _DDResultDisableURLSchemeChecking,
                             _DDResultExtractDayAndMonthWithSpecialDayIdentifierInYear,
-                            _DDResultGetCFTypeID, _DDResultGetCategory,
-                            _DDResultGetContextualData,
+                            _DDResultExtractGregorianYear, _DDResultGetCFTypeID,
+                            _DDResultGetCategory, _DDResultGetContextualData,
                             _DDResultGetContextualDataForKey,
                             _DDResultGetContextualFloat, _DDResultGetCountryCode,
                             _DDResultGetMatchedString,
@@ -152,17 +153,19 @@ exports:
                             _DDScannerCopyResultsWithOptions, _DDScannerCreate,
                             _DDScannerCreateFromCache,
                             _DDScannerCreateWithCacheFile,
-                            _DDScannerCreateWithLocale, _DDScannerCreateWithType,
-                            _DDScannerDefaultTimeout,
+                            _DDScannerCreateWithLocale,
+                            _DDScannerCreateWithLocaleHint,
+                            _DDScannerCreateWithType, _DDScannerDefaultTimeout,
                             _DDScannerEnableDPReporting,
-                            _DDScannerEnableOptionalSource,
+                            _DDScannerEnableOptionalSource, _DDScannerGetLocale,
                             _DDScannerGetMemoryUsed, _DDScannerGetOptions,
                             _DDScannerHasCapabilities, _DDScannerLargeTimeout,
                             _DDScannerLoaderGetIdentifierStringForScannerType,
                             _DDScannerLoaderScannerGetTypeWithIdentifierString,
-                            _DDScannerNoTimeout, _DDScannerPurgeCaches,
-                            _DDScannerReset, _DDScannerScanQuery,
-                            _DDScannerScanString,
+                            _DDScannerNoTimeout,
+                            _DDScannerOverrideTokensForNextScan,
+                            _DDScannerPurgeCaches, _DDScannerReset,
+                            _DDScannerScanQuery, _DDScannerScanString,
                             _DDScannerScanStringFromConversation,
                             _DDScannerScanStringWithContextOffset,
                             _DDScannerScanStringWithRange,

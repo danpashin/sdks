@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iWorkImport.framework/Frameworks/TSCharts.framework/TSCharts
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s8TSCharts20TSCHKnobsDisplayModeO8rawValueACSgSi_tcfC,
                             _$s8TSCharts20TSCHKnobsDisplayModeO8rawValueSivg,
                             _$s8TSCharts20TSCHKnobsDisplayModeO8rawValueSivpMV,
@@ -29,6 +29,7 @@ exports:
                             _$sSo13TSCHChartTypeC8TSChartsE5radarABvgZ,
                             _$sSo15TSCHChartLayoutC8TSChartsE13normalizeRect_05outerE0So6CGRectVAG_AGtFZ,
                             _$sSo15TSCHChartLayoutC8TSChartsE9outerRect3forSo6CGRectVSayAGG_tFZ,
+                            _$sSo19TSCHChartLayoutItemC8TSChartsE09radarAreabC0yXlXpvgZ,
                             _$sSo19TSCHChartLayoutItemC8TSChartsE31halfProtrusionForRegularPolygon9withSides11strokeWidth12CoreGraphics7CGFloatVSi_AItFZ,
                             _TSCH3DPlatformSettingsLog,
                             _TSCH3DPlatformSettingsLog_init_token,
@@ -597,6 +598,7 @@ exports:
                             __ZN4TSCH36PropertyValueStorageContainerArchiveD0Ev,
                             __ZN4TSCH36PropertyValueStorageContainerArchiveD1Ev,
                             __ZN4TSCH36PropertyValueStorageContainerArchiveD2Ev,
+                            __ZN4TSCH36chart_supports_series_summary_labelsE,
                             __ZN4TSCH36series_supports_custom_number_formatE,
                             __ZN4TSCH37ChartPresetReferenceLineStylesArchive12InternalSwapEPS0_,
                             __ZN4TSCH37ChartPresetReferenceLineStylesArchive14_InternalParseEPKcPN6google8protobuf8internal12ParseContextE,
@@ -671,6 +673,24 @@ exports:
                             __ZN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapD0Ev,
                             __ZN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapD1Ev,
                             __ZN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapD2Ev,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive12InternalSwapEPS0_,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive14_InternalParseEPKcPN6google8protobuf8internal12ParseContextE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive16default_instanceEv,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive31supports_stacked_summary_labelsE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive40kSupportsStackedSummaryLabelsFieldNumberE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive5ClearEv,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive8CopyFromERKN6google8protobuf7MessageE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive8CopyFromERKS0_,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive9ArenaDtorEPv,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive9MergeFromERKN6google8protobuf7MessageE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchive9MergeFromERKS0_,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveC1EPN6google8protobuf5ArenaE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveC1ERKS0_,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveC2EPN6google8protobuf5ArenaE,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveC2ERKS0_,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveD0Ev,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveD1Ev,
+                            __ZN4TSCH40ChartSupportsStackedSummaryLabelsArchiveD2Ev,
                             __ZN4TSCH40CollaboratorCDECursorSubselectionArchive12InternalSwapEPS0_,
                             __ZN4TSCH40CollaboratorCDECursorSubselectionArchive14_InternalParseEPKcPN6google8protobuf8internal12ParseContextE,
                             __ZN4TSCH40CollaboratorCDECursorSubselectionArchive16default_instanceEv,
@@ -818,6 +838,7 @@ exports:
                             __ZN4TSCH57_ChartAxisReferenceLineNonStylesArchive_default_instance_E,
                             __ZN4TSCH58_ChartPreserveAppearanceForPresetArchive_default_instance_E,
                             __ZN4TSCH59_ChartGridArchive_ChartGridRowColumnIdMap_default_instance_E,
+                            __ZN4TSCH59_ChartSupportsStackedSummaryLabelsArchive_default_instance_E,
                             __ZN4TSCH59_CollaboratorCDECursorSubselectionArchive_default_instance_E,
                             __ZN4TSCH60_ChartSupportsSeriesPropertySpacingArchive_default_instance_E,
                             __ZN4TSCH63_ChartAxisReferenceLineSparseNonStylesArchive_default_instance_E,
@@ -855,6 +876,7 @@ exports:
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH38ChartAxisReferenceLineNonStylesArchiveEJEEEPT_PS1_DpOT0_,
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH39ChartPreserveAppearanceForPresetArchiveEJEEEPT_PS1_DpOT0_,
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapEJEEEPT_PS1_DpOT0_,
+                            __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH40ChartSupportsStackedSummaryLabelsArchiveEJEEEPT_PS1_DpOT0_,
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH40CollaboratorCDECursorSubselectionArchiveEJEEEPT_PS1_DpOT0_,
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH41ChartSupportsSeriesPropertySpacingArchiveEJEEEPT_PS1_DpOT0_,
                             __ZN6google8protobuf5Arena18CreateMaybeMessageIN4TSCH44ChartAxisReferenceLineSparseNonStylesArchiveEJEEEPT_PS1_DpOT0_,
@@ -1014,6 +1036,11 @@ exports:
                             __ZNK4TSCH40ChartGridArchive_ChartGridRowColumnIdMap13IsInitializedEv,
                             __ZNK4TSCH40ChartGridArchive_ChartGridRowColumnIdMap13SetCachedSizeEi,
                             __ZNK4TSCH40ChartGridArchive_ChartGridRowColumnIdMap18_InternalSerializeEPhPN6google8protobuf2io19EpsCopyOutputStreamE,
+                            __ZNK4TSCH40ChartSupportsStackedSummaryLabelsArchive11GetMetadataEv,
+                            __ZNK4TSCH40ChartSupportsStackedSummaryLabelsArchive12ByteSizeLongEv,
+                            __ZNK4TSCH40ChartSupportsStackedSummaryLabelsArchive13IsInitializedEv,
+                            __ZNK4TSCH40ChartSupportsStackedSummaryLabelsArchive13SetCachedSizeEi,
+                            __ZNK4TSCH40ChartSupportsStackedSummaryLabelsArchive18_InternalSerializeEPhPN6google8protobuf2io19EpsCopyOutputStreamE,
                             __ZNK4TSCH40CollaboratorCDECursorSubselectionArchive11GetMetadataEv,
                             __ZNK4TSCH40CollaboratorCDECursorSubselectionArchive12ByteSizeLongEv,
                             __ZNK4TSCH40CollaboratorCDECursorSubselectionArchive13IsInitializedEv,
@@ -1080,6 +1107,7 @@ exports:
                             __ZTIN4TSCH38ChartAxisReferenceLineNonStylesArchiveE,
                             __ZTIN4TSCH39ChartPreserveAppearanceForPresetArchiveE,
                             __ZTIN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapE,
+                            __ZTIN4TSCH40ChartSupportsStackedSummaryLabelsArchiveE,
                             __ZTIN4TSCH40CollaboratorCDECursorSubselectionArchiveE,
                             __ZTIN4TSCH41ChartSupportsSeriesPropertySpacingArchiveE,
                             __ZTIN4TSCH44ChartAxisReferenceLineSparseNonStylesArchiveE,
@@ -1117,6 +1145,7 @@ exports:
                             __ZTSN4TSCH38ChartAxisReferenceLineNonStylesArchiveE,
                             __ZTSN4TSCH39ChartPreserveAppearanceForPresetArchiveE,
                             __ZTSN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapE,
+                            __ZTSN4TSCH40ChartSupportsStackedSummaryLabelsArchiveE,
                             __ZTSN4TSCH40CollaboratorCDECursorSubselectionArchiveE,
                             __ZTSN4TSCH41ChartSupportsSeriesPropertySpacingArchiveE,
                             __ZTSN4TSCH44ChartAxisReferenceLineSparseNonStylesArchiveE,
@@ -1154,6 +1183,7 @@ exports:
                             __ZTVN4TSCH38ChartAxisReferenceLineNonStylesArchiveE,
                             __ZTVN4TSCH39ChartPreserveAppearanceForPresetArchiveE,
                             __ZTVN4TSCH40ChartGridArchive_ChartGridRowColumnIdMapE,
+                            __ZTVN4TSCH40ChartSupportsStackedSummaryLabelsArchiveE,
                             __ZTVN4TSCH40CollaboratorCDECursorSubselectionArchiveE,
                             __ZTVN4TSCH41ChartSupportsSeriesPropertySpacingArchiveE,
                             __ZTVN4TSCH44ChartAxisReferenceLineSparseNonStylesArchiveE,
@@ -1192,6 +1222,7 @@ exports:
                             _scc_info_ChartSupportsProportionalBendedCalloutLinesArchive_TSCHArchives_2eproto,
                             _scc_info_ChartSupportsRoundedCornersArchive_TSCHArchives_2eproto,
                             _scc_info_ChartSupportsSeriesPropertySpacingArchive_TSCHArchives_2eproto,
+                            _scc_info_ChartSupportsStackedSummaryLabelsArchive_TSCHArchives_2eproto,
                             _scc_info_ChartUIStateMultiDataIndexUpgrade_TSCHArchives_2eproto,
                             _scc_info_ChartUIState_TSCHArchives_2eproto,
                             _scc_info_CollaboratorCDECursorSubselectionArchive_TSCHArchives_2eproto,

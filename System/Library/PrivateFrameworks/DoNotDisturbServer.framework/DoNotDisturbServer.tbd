@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BMUserFocusComputedModeUpdateReasonForStateUpdateReason,
                             _BMUserFocusComputedModeUpdateSourceForStateUpdateSource,
                             _DNDGrantedUserNotificationsAuthorizationForBundleIdentifier,
@@ -99,6 +99,7 @@ exports:
                             _DoNotDisturbServerVersionString,
                             __DNDSContainingBundleIdentifier,
                             __DNDSPrimaryBundleIdentifier, __DNDSRequestRadar,
+                            _currentDevicePlatformString,
                             _kDNDModeAssertionScheduleLifetimeBehaviorRecordExpireWhenNextScheduleEndsValue,
                             _kDNDModeAssertionScheduleLifetimeBehaviorRecordMatchScheduleValue,
                             _kDNDSIDSSyncEngineActionAck,
@@ -278,6 +279,7 @@ exports:
                             DNDSApplicationConfigurationRecord._minimumBreakthroughUrgency,
                             DNDSBackingStoreDictionaryContext._applicationIdentifierMapper,
                             DNDSBackingStoreDictionaryContext._contactProvider,
+                            DNDSBackingStoreDictionaryContext._currentRecord,
                             DNDSBackingStoreDictionaryContext._destination,
                             DNDSBackingStoreDictionaryContext._partitionType,
                             DNDSBackingStoreDictionaryContext._redactSensitiveData,
@@ -300,6 +302,7 @@ exports:
                             DNDSConfigurationRecord._hideApplicationBadges,
                             DNDSConfigurationRecord._minimumBreakthroughUrgency,
                             DNDSConfigurationRecord._senderConfigurationType,
+                            DNDSConfigurationRecord._suppressionMode,
                             DNDSConfigurationRecord._suppressionType,
                             DNDSConfigurationSecureRecord._allowedApplications,
                             DNDSConfigurationSecureRecord._allowedWebApplications,
@@ -372,6 +375,7 @@ exports:
                             DNDSModeConfigurationsRecord._modeConfigurationsByModeIdentifier,
                             DNDSModeRecord._identifier,
                             DNDSModeRecord._modeIdentifier, DNDSModeRecord._name,
+                            DNDSModeRecord._placeholderExcludedPlatforms,
                             DNDSModeRecord._semanticType,
                             DNDSModeRecord._symbolImageName,
                             DNDSModeRecord._tintColorName,

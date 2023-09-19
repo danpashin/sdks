@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AirPlayReceiver.framework/AirPlayReceiver
@@ -7,10 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _APAdvertiserCopyNANWifiStats, _APAdvertiserCreate,
-                            _APAdvertiserDebugShow, _APAdvertiserGetTypeID,
-                            _APAdvertiserInfoCopy,
+                            _APAdvertiserDebugShow,
+                            _APAdvertiserFlushBonjourRecords,
+                            _APAdvertiserGetTypeID, _APAdvertiserInfoCopy,
                             _APAdvertiserInfoCopyAirPlayData,
                             _APAdvertiserInfoCopyAirPlayDataWithNANServiceType,
                             _APAdvertiserInfoCopyAirPlayP2PData,
@@ -29,10 +30,9 @@ exports:
                             _APAdvertiserInfoDebugShow,
                             _APAdvertiserInfoGetTypeID,
                             _APAdvertiserInfoSetProperty,
-                            _APAdvertiserInvalidate, _APAdvertiserPreWarmNAN,
-                            _APAdvertiserReportNANIssue,
+                            _APAdvertiserInvalidate, _APAdvertiserReportNANIssue,
                             _APAdvertiserSetProperty, _APAdvertiserStart,
-                            _APAdvertiserStop,
+                            _APAdvertiserStop, _APAdvertiserUpdateNANLinkStatus,
                             _APNetworkClockNTPClientLegacyCreate,
                             _APPairingServicesCoreUtilsCreate,
                             _APPairingServicesCoreUtilsHandleAddPeer,
@@ -108,6 +108,8 @@ exports:
                             _AirPlayReceiverSessionSendMediaRemoteCommand,
                             _AirPlayReceiverSessionSetDelegate,
                             _AirPlayReceiverSessionSetProperty,
+                            _kAPAdvertiserBTLEManagerProperty_AccessControlType,
+                            _kAPAdvertiserBTLEManagerProperty_ReceiverPort,
                             _kAPAdvertiserBTLEManagerProperty_RequireAltBrowser,
                             _kAPAdvertiserBTLEManagerProperty_isP2PAllow,
                             _kAPAdvertiserCreationOption_AllowLegacyAdvertising,
@@ -124,6 +126,7 @@ exports:
                             _kAPAdvertiserInfoProperty_BluetoothAddress,
                             _kAPAdvertiserInfoProperty_CompressionTypes,
                             _kAPAdvertiserInfoProperty_DeviceCompany,
+                            _kAPAdvertiserInfoProperty_DeviceEnclosureColor,
                             _kAPAdvertiserInfoProperty_DeviceID,
                             _kAPAdvertiserInfoProperty_DeviceManufacturer,
                             _kAPAdvertiserInfoProperty_DeviceModel,
@@ -181,6 +184,7 @@ exports:
                             _kAPReceiverAudioSessionOption_DisableRetransmits,
                             _kAPReceiverAudioSessionOption_EncryptionKey,
                             _kAPReceiverAudioSessionOption_FramesPerPacket,
+                            _kAPReceiverAudioSessionOption_HTFTIsActive,
                             _kAPReceiverAudioSessionOption_IsMedia,
                             _kAPReceiverAudioSessionOption_MediaDataControl,
                             _kAPReceiverAudioSessionOption_NetworkClock,
@@ -295,6 +299,7 @@ exports:
                             _kAirPlayReceiverServerOption_DisplayHDRMode,
                             _kAirPlayReceiverServerOption_DisplaySize,
                             _kAirPlayReceiverServerOption_DisplaySizeMax,
+                            _kAirPlayReceiverServerOption_EnableMixingMediaAudio,
                             _kAirPlayReceiverServerOption_ForcedDisabledFeaturesMask,
                             _kAirPlayReceiverServerOption_InterfaceName,
                             _kAirPlayReceiverServerOption_MaxNumSessions,

@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUCompiler.framework/Libraries/libGPUCompiler.dylib
-current-version:       31001.255.3
+current-version:       32023.34.1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _LLVMExtraCreateBinary, _LLVMExtraDisposeBinary,
                             _LLVMExtraDisposeSharedModule,
                             _LLVMExtraGetSymbolImplAddress,
@@ -25,6 +25,7 @@ exports:
                             _MTLGPUArchiverAddDescriptor,
                             _MTLGPUArchiverAddPipeline, _MTLGPUArchiverAddTool,
                             _MTLGPUArchiverAddUnit, _MTLGPUArchiverBuildToBuffer,
+                            _MTLGPUArchiverBuildToFD,
                             _MTLGPUArchiverCreateCoreImageWriter,
                             _MTLGPUArchiverCreateCoreImageWriterWithId,
                             _MTLGPUArchiverCreateDynamicLibraryWriter,
@@ -33,21 +34,26 @@ exports:
                             _MTLGPUArchiverCreateExecutableWriterWithId,
                             _MTLGPUArchiverDestroy,
                             _MTLGPUArchiverDumpStateToBuffer,
-                            _MTLGPUArchiverFlush, _MTLGPUArchiverFromId,
-                            _MTLGPUArchiverPackUnits,
+                            _MTLGPUArchiverDumpStateToFD, _MTLGPUArchiverFlush,
+                            _MTLGPUArchiverFromId, _MTLGPUArchiverPackUnits,
                             _MTLGPUArchiverSetActivePlatform,
                             _MTLGPUArchiverSetInstallName,
-                            _MTLGPUArchiverSetUnitHash,
+                            _MTLGPUArchiverSetTarget, _MTLGPUArchiverSetUnitHash,
                             _MTLGPUArchiverSetUnitReflection,
                             _MTLGPUArchiverToId, _MTLGPUCompilerBuildFromSource,
                             _MTLGPUCompilerBuildFromSourceToBuffer,
+                            _MTLGPUCompilerBuildFromSourceToFD,
                             _MTLGPUCompilerCompileFromSource,
                             _MTLGPUCompilerCompileFromSourceToBuffer,
+                            _MTLGPUCompilerCompileFromSourceToFD,
                             _MTLGPUCompilerCreate, _MTLGPUCompilerDestroy,
                             _MTLGPUCompilerDisableMeshEmulation,
                             _MTLGPUCompilerEnable16BitTextureCoordinateEmulation,
+                            _MTLGPUCompilerEnableBFloatEmulation,
                             _MTLGPUCompilerEnableDegenerateVertexAmplificationEmulation,
                             _MTLGPUCompilerEnableExternallyInitializedVariableSupport,
+                            _MTLGPUCompilerEnableGlobalBindingInDylibSupport,
+                            _MTLGPUCompilerEnableGlobalBuiltinInDylibSupport,
                             _MTLGPUCompilerEnableMeshFragmentEmulation,
                             _MTLGPUCompilerEnableMeshKernelEmulation,
                             _MTLGPUCompilerEnableMeshVertexEmulation,
@@ -57,9 +63,10 @@ exports:
                             _MTLGPUCompilerEnableResourceUsageInstrumentation,
                             _MTLGPUCompilerEnableTLSEmulation,
                             _MTLGPUCompilerHandleSPIs, _MTLGPUCompilerLink,
-                            _MTLGPUCompilerLinkToBuffer,
+                            _MTLGPUCompilerLinkToBuffer, _MTLGPUCompilerLinkToFD,
                             _MTLGPUCompilerLoadModules,
                             _MTLGPUCompilerLoadModulesToBuffer,
+                            _MTLGPUCompilerLoadModulesToFD,
                             _MTLGPUCompilerLowerModule,
                             _MTLGPUCompilerLowerModuleToBuffer,
                             _MTLGPUCompilerSetFunctionGroups,
@@ -68,13 +75,17 @@ exports:
                             _MTLGPUCompilerSetLoweringRuntimes,
                             _MTLGPUCompilerSetMeshEmulationUsedFragmentInputs,
                             _MTLGPUCompilerSetRaytracingEmulationIndirectAccelerationStructures,
+                            _MTLGPUCompilerSetRaytracingEmulationMaxAccelerationStructureTraversalDepth,
                             _MTLGPUCompilerSetStitcherScript,
                             _MTLGPUCompilerSpecializeDynamicLibrary,
                             _MTLGPUCompilerSpecializeDynamicLibraryToBuffer,
+                            _MTLGPUCompilerSpecializeDynamicLibraryToFD,
                             _MTLGPUCompilerSpecializeFunction,
                             _MTLGPUCompilerSpecializeFunctionToBuffer,
+                            _MTLGPUCompilerSpecializeFunctionToFD,
                             _MTLGPUCompilerStitchFunctions,
                             _MTLGPUCompilerStitchFunctionsToBuffer,
+                            _MTLGPUCompilerStitchFunctionsToFD,
                             _MTLMetalDynamicLibraryGetInstallName,
                             _MTLMetalFunctionCreate, _MTLMetalFunctionDestroy,
                             _MTLMetalFunctionGetAIRVersion,

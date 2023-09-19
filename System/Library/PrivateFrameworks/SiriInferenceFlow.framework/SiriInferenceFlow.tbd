@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriInferenceFlow.framework/SiriInferenceFlow
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s13SiriInference8LocationV0aB4FlowE18formattedPlaceNameSSSgvg,
                             _$s13SiriInference8LocationV0aB4FlowE18formattedPlaceNameSSSgvpMV,
                             _$s16SiriDialogEngine17PhonemeDataParserO0A13InferenceFlowE5parse4fromAA0dE0VSgSo9CNContactC_tFZ,
@@ -61,6 +61,7 @@ exports:
                             _$s17SiriInferenceFlow07ContactB6SourceOSHAAMc,
                             _$s17SiriInferenceFlow07ContactB6SourceOSQAAMc,
                             _$s17SiriInferenceFlow07ContactB6SourceOSYAAMc,
+                            _$s17SiriInferenceFlow21ContactResolutionVerbO13addToFacetimeyA2CmFWC,
                             _$s17SiriInferenceFlow21ContactResolutionVerbO14locationSearchyA2CmFWC,
                             _$s17SiriInferenceFlow21ContactResolutionVerbO24phoneCallOrFacetimeAudioyA2CmFWC,
                             _$s17SiriInferenceFlow21ContactResolutionVerbO5otheryA2CmFWC,
@@ -76,6 +77,7 @@ exports:
                             _$s17SiriInferenceFlow21ContactResolutionVerbOSHAAMc,
                             _$s17SiriInferenceFlow21ContactResolutionVerbOSQAAMc,
                             _$s17SiriInferenceFlow21ContactResolutionVerbOSYAAMc,
+                            _$s17SiriInferenceFlow23ContactResolutionHelperO015nullHandleLabelF08contactsSb19needsAuthentication_AA0dE9PatternIDO9patternIdtSaySo8INPersonCG_tFZ,
                             _$s17SiriInferenceFlow23ContactResolutionHelperO28sortINPersonBySearchProvider9inpersonsSaySo0H0CGAH_tFZ,
                             _$s17SiriInferenceFlow23ContactResolutionHelperOMa,
                             _$s17SiriInferenceFlow23ContactResolutionHelperOMn,
@@ -186,6 +188,8 @@ exports:
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC030generateDetailedDisambiguationD5Names8contacts31contactPickerDirectInvocationID0m9SelectionopQ028windowedPaginationParameters7globalsSo0F15ExecutionResultCSaySo8INPersonCG_S2S0a3KitC008WindowedtU0VSg0A12DialogEngine10CATGlobalsCtYaKFZTu,
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC030generateDetailedDisambiguationD5Names8contacts31contactPickerDirectInvocationID0m9SelectionopQ028windowedPaginationParametersSo0F15ExecutionResultCSaySo8INPersonCG_S2S0a3KitC008WindowedtU0VSgtYaKF,
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC030generateDetailedDisambiguationD5Names8contacts31contactPickerDirectInvocationID0m9SelectionopQ028windowedPaginationParametersSo0F15ExecutionResultCSaySo8INPersonCG_S2S0a3KitC008WindowedtU0VSgtYaKFTu,
+                            _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC030generateDetailedDisambiguationD5Names8contacts34contactSelectionDirectInvocationID28windowedPaginationParametersSo0F15ExecutionResultCSaySo8INPersonCG_SS0a3KitC008WindowedsT0VSgtYaKF,
+                            _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC030generateDetailedDisambiguationD5Names8contacts34contactSelectionDirectInvocationID28windowedPaginationParametersSo0F15ExecutionResultCSaySo8INPersonCG_SS0a3KitC008WindowedsT0VSgtYaKFTu,
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC11appBundleId7globals11deviceStateACSS_0A12DialogEngine10CATGlobalsC0a3KitC006DeviceM0_ptcfC,
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC11appBundleId7globals11deviceStateACSS_0A12DialogEngine10CATGlobalsC0a3KitC006DeviceM0_ptcfCTj,
                             _$s17SiriInferenceFlow33ContactResolutionPatternGeneratorC11appBundleId7globals11deviceStateACSS_0A12DialogEngine10CATGlobalsC0a3KitC006DeviceM0_ptcfCTq,

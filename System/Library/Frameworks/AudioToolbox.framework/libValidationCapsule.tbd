@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/AudioToolbox.framework/libValidationCapsule.dylib
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CAShowAudioChannelLayout, _Synchronously,
                             _Synchronously_ServicingMainRunLoop,
                             __Z26CAShowComponentDescriptionPK25AudioComponentDescription,
@@ -81,6 +81,7 @@ exports:
                             __ZN14CAAUChanHelperD2Ev,
                             __ZN14CAAUChanHelperaSERKS_,
                             __ZN19AUValidationCapsule10FatalErrorEPKci,
+                            __ZN19AUValidationCapsule10getVersionEv,
                             __ZN19AUValidationCapsule11CheckFormatEjjbb,
                             __ZN19AUValidationCapsule11PrintLayoutERK20CAAudioChannelLayout,
                             __ZN19AUValidationCapsule11ProfileOpenEv,
@@ -150,8 +151,8 @@ exports:
                             __ZN19AUValidationCapsule9BreakLineEb,
                             __ZN19AUValidationCapsule9GetAUTypeEj,
                             __ZN19AUValidationCapsule9PrintDescERK24CAStreamBasicDescription,
-                            __ZN19AUValidationCapsuleC1E25AudioComponentDescriptionbbbbbbdbbbb,
-                            __ZN19AUValidationCapsuleC2E25AudioComponentDescriptionbbbbbbdbbbb,
+                            __ZN19AUValidationCapsuleC1E25AudioComponentDescriptionbbbbbbdbbb,
+                            __ZN19AUValidationCapsuleC2E25AudioComponentDescriptionbbbbbbdbbb,
                             __ZN19AUValidationCapsuleD1Ev,
                             __ZN19AUValidationCapsuleD2Ev,
                             __ZN20CAAudioChannelLayout10SetWithTagEj,
@@ -240,5 +241,6 @@ exports:
                             __ZTVN19AUValidationCapsule32AUValidationCapsuleResultHandlerE,
                             __ZTv0_n24_N11CAExceptionD0Ev,
                             __ZTv0_n24_N11CAExceptionD1Ev, _validate,
-                            _validateWithParametersAsync ]
+                            _validateWithParametersAsync,
+                            _validationCapsuleVersion ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClipServices.framework/ClipServices
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CPSAMSRestrictionsCodeOverride,
                             _CPSAccountPolicyOverride,
                             _CPSAppClipBundleIdentifierPrefix,
@@ -54,6 +54,7 @@ exports:
                             _CPSClipMetadataKeyStoreClipCaption,
                             _CPSClipMetadataKeyStoreClipHeroImage,
                             _CPSClipMetadataKeyStoreClipName,
+                            _CPSClipMetadataKeyThinnedSize,
                             _CPSClipMetadataKeyWebClipID,
                             _CPSClipShouldStallProgressKey,
                             _CPSClipURLIsEnabledPreferenceKey,
@@ -73,8 +74,10 @@ exports:
                             _CPSSessionAvailabilityOptionsKeySourceBundleID,
                             _CPSSessionLaunchReasonAnalyticsAppReferral,
                             _CPSSessionLaunchReasonAnalyticsWebReferral,
+                            _CPSSessionLaunchReasonAppClipCode,
                             _CPSSessionLaunchReasonClipTester,
                             _CPSSessionLaunchReasonDeveloperTools,
+                            _CPSSessionLaunchReasonInApp,
                             _CPSSessionLaunchReasonLocationBased,
                             _CPSSessionLaunchReasonMail,
                             _CPSSessionLaunchReasonMaps,
@@ -88,6 +91,7 @@ exports:
                             _CPSSessionLaunchReasonSpotlight,
                             _CPSSessionLaunchReasonSpringBoard,
                             _CPSShouldValidateAssociatedDomains,
+                            _CPSSimulateLargeSizeAppClipForTesting,
                             _CPSSingleWhiteSpaceString,
                             _CPSSkipValidatingAssociatedDomainsKey,
                             _CPSUsesDemoProgressFill,

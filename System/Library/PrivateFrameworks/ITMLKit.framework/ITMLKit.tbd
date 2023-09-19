@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IKAMSContractBagShimProfile,
                             _IKAMSContractBagShimProfileVersion,
                             _IKAppCacheErrorDomain,
@@ -318,15 +318,15 @@ exports:
                             __IKStringHash ]
     objc-classes:         [ IKActivityIndicatorElement, IKAppBrowserBridge,
                             IKAppCache, IKAppContext, IKAppDataStorage,
-                            IKAppDocument, IKAppKeyboard, IKAppKeyboardHint,
-                            IKAppMediaItemBridge, IKAppMenuBarDocument,
-                            IKAppPlayerBridge, IKAppPlaylistBridge,
-                            IKAppReloadContext, IKAppTabBar, IKAppUserDefaults,
-                            IKArray, IKAssetElement, IKAudioElement,
-                            IKBackgroundElement, IKBadgeElement, IKButtonElement,
-                            IKCSSAtMediaRule, IKCSSAtParseRule, IKCSSDeclaration,
-                            IKCSSDeclarationColor, IKCSSDeclarationDouble,
-                            IKCSSDeclarationEdgeInsets,
+                            IKAppDocument, IKAppDynamicUIResult, IKAppKeyboard,
+                            IKAppKeyboardHint, IKAppMediaItemBridge,
+                            IKAppMenuBarDocument, IKAppPlayerBridge,
+                            IKAppPlaylistBridge, IKAppReloadContext, IKAppTabBar,
+                            IKAppUserDefaults, IKArray, IKAssetElement,
+                            IKAudioElement, IKBackgroundElement, IKBadgeElement,
+                            IKButtonElement, IKCSSAtMediaRule, IKCSSAtParseRule,
+                            IKCSSDeclaration, IKCSSDeclarationColor,
+                            IKCSSDeclarationDouble, IKCSSDeclarationEdgeInsets,
                             IKCSSDeclarationFourTuple, IKCSSDeclarationInteger,
                             IKCSSDeclarationList, IKCSSDeclarationPoint,
                             IKCSSDeclarationShadow, IKCSSDeclarationString,

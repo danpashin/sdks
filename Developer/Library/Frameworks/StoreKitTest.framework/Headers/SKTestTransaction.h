@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0)) NS_SWIFT_SENDABLE
+SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0), visionos(1.0)) NS_SWIFT_SENDABLE
 @interface SKTestTransaction : NSObject
 
 @property(nonatomic, readonly) BOOL autoRenewingEnabled;
@@ -33,7 +33,7 @@ SK_EXTERN_CLASS API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0)) 
 
 @property(nonatomic, readonly) SKPaymentTransactionState state;
 
-@property(nonatomic, readonly) BOOL pendingPriceIncreaseConsent API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5)) NS_SWIFT_NAME(isPendingPriceIncreaseConsent);
+@property(nonatomic, readonly) BOOL pendingPriceIncreaseConsent API_AVAILABLE(ios(15.4), macos(12.3), tvos(15.4), watchos(8.5), visionos(1.0)) NS_SWIFT_NAME(isPendingPriceIncreaseConsent);
 
 @end
 

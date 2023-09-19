@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
@@ -7,8 +7,14 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _PSUILogForCategory,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s13PreferencesUI21PSUIStaccatoPreloaderC15preloadStaccatoyyFZ,
+                            _$s13PreferencesUI21PSUIStaccatoPreloaderC15preloadStaccatoyyFZTq,
+                            _$s13PreferencesUI21PSUIStaccatoPreloaderCMa,
+                            _$s13PreferencesUI21PSUIStaccatoPreloaderCMn,
+                            _$s13PreferencesUI21PSUIStaccatoPreloaderCN,
+                            _$s13PreferencesUI21PSUIStaccatoPreloaderCfD,
+                            _PSUILogForCategory, _PSUISimIsMissing,
                             _PSUI_BundleForPreferencesUIFramework,
                             _PSUI_LocalizedStringForLockdownMode,
                             _PSUI_LocalizedStringForPasscodeLock,
@@ -19,7 +25,8 @@ exports:
                             PSEnrollContainerViewController,
                             PSEnrollmentNavigationController,
                             PSUIBiometricController, PSUIPasscodeLockController,
-                            PSUIPrefsListController, PSUIPrefsRootController ]
+                            PSUIPrefsListController, PSUIPrefsRootController,
+                            _TtC13PreferencesUI21PSUIStaccatoPreloader ]
     objc-ivars:           [ PSUIPasscodeLockController._policyDictatedMaxFailedAttempts,
                             PSUIPasscodeLockController._voiceDialGroupSpecifier,
                             PSUIPasscodeLockController._voiceDialSpecifier,

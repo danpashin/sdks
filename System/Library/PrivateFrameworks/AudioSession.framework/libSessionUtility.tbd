@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ZN11CAExceptionD0Ev, __ZN11CAExceptionD1Ev,
                             __ZN11CAExceptionD2Ev,
                             __ZN12CAXException15sWarningHandlerE,
@@ -959,9 +959,9 @@ exports:
                             __ZTVN2as6server8HWStreamE,
                             __ZTv0_n24_N11CAExceptionD0Ev,
                             __ZTv0_n24_N11CAExceptionD1Ev,
-                            _kAudioSessionNotification_ConnectedPorts,
-                            _kAudioSessionNotification_ConnectedPortsKey_InputAvailable,
+                            _kAudioSessionInterruptionNotification,
                             _kAudioSessionNotification_InterruptionInfoKey_InterruptionReason,
+                            _kAudioSessionNotification_InterruptionInfoKey_InterruptorBundleID,
                             _kAudioSessionNotification_InterruptionInfoKey_InterruptorName,
                             _kAudioSessionNotification_InterruptionInfoKey_State,
                             _kAudioSessionNotification_InterruptionInfoKey_Type,

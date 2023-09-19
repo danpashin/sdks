@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AWDDEDBugSessionCreatedReadFrom,
                             _AWDDEDBugSessionEndedReadFrom,
                             _AWDDEDDaemonStartedReadFrom,
@@ -66,16 +66,10 @@ exports:
                             _DEDDevicePlatform, _DEDDevicePlatformHomePod,
                             _DEDDevicePlatformMac, _DEDDevicePlatformTV,
                             _DEDDevicePlatformUnspecified,
-                            _DEDDevicePlatformWatch, _DEDDevicePlatformiOS,
-                            _DEDEncryptorCaseIDKey, _DEDEncryptorChannelKey,
-                            _DEDEncryptorDefaultChannelValue,
-                            _DEDEncryptorDefaultPayloadTypeValue,
-                            _DEDEncryptorEnvironmentStagingKey,
+                            _DEDDevicePlatformVisionOS, _DEDDevicePlatformWatch,
+                            _DEDDevicePlatformXROS, _DEDDevicePlatformiOS,
                             _DEDEncryptorHKCertValue,
-                            _DEDEncryptorHKStagingCertValue,
-                            _DEDEncryptorPayloadTypeKey,
-                            _DEDEncryptorPublicKeyKey, _DEDEncryptorStudyIDKey,
-                            _DEDEncryptorUniqueIDKey, _DEDErrorDomain,
+                            _DEDEncryptorHKStagingCertValue, _DEDErrorDomain,
                             _DEDFBKFeedbackUploadsKey,
                             _DEDFeedbackGroupContainerName,
                             _DEDHealthWrapCertificateFromString,
@@ -128,8 +122,8 @@ exports:
                             AWDDEDDaemonStarted, AWDDEDDeferredCheckIn,
                             AWDDEDExtensionCompleted, AWDDEDExtensionScheduled,
                             AWDDEDExtensionStarted, AWDDEDFinisherEnded,
-                            AWDDEDFinisherStarted, DEDActivity, DEDAnalytics,
-                            DEDAttachmentGroup, DEDAttachmentHandler,
+                            AWDDEDFinisherStarted, DEDAEAEncryptor, DEDActivity,
+                            DEDAnalytics, DEDAttachmentGroup, DEDAttachmentHandler,
                             DEDAttachmentItem, DEDBugSession,
                             DEDBugSessionConfiguration, DEDBugSessionOperation,
                             DEDCapability, DEDClientConnection,

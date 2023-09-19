@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CarKit.framework/CarKit
@@ -7,8 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CARAllEventTypes,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CARAirPlayCarSentStatistics,
+                            _CARAirPlayConnectionTimeInfo,
+                            _CARAirPlayEndpointSelected,
                             _CARAutomaticDNDAutoReplyAudienceChangedNotification,
                             _CARAutomaticDNDCarPlayActivationChangedNotification,
                             _CARAutomaticDNDDisabledNotification,
@@ -49,6 +51,7 @@ exports:
                             _CARMaximumRidesForReminder,
                             _CARNavigationOwnerRequestedNotificationName,
                             _CARSessionAccessoryUpdatedNotification,
+                            _CARSessionCarCapabilitiesReadyNotification,
                             _CARSessionCarCapabilitiesUpdatedNotification,
                             _CARSessionCarHasMainAudioNotification,
                             _CARSessionElectronicTollCollectionStateChangedNotification,
@@ -59,10 +62,15 @@ exports:
                             _CARSessionScreenBecameAvailableNotification,
                             _CARSessionScreenBecameUnavailableNotification,
                             _CARSessionUpdateClusterURLsKey,
+                            _CARSessionVoiceTriggerModeChangedNotification,
                             _CARSessioniOSHasMainAudioNotification,
                             _CARSignpostLogForCategory,
+                            _CARWiFiBasicAssociationCompleted,
+                            _CARWiFiDHCPCompleted, _CARWiFiWPAHSCompleted,
                             _CARaccessorydAccessoryAuthenticationFinished,
                             _CARaccessorydAccessoryAuthenticationStarted,
+                            _CARiAPAuthComplete, _CARiAPAuthStarted,
+                            _CARiAPConnectionStart, _CARiAPNCMStart,
                             _CARmDNSResponderiPhoneAdvertisingBonjourRecord,
                             _CARmediaserverdAirPlaySessionStartRequest,
                             _CARmediaserverdBonjourRecordFound,
@@ -76,9 +84,12 @@ exports:
                             _CRAutomaticDNDLocationServicesStatus,
                             _CRBluetoothIndicatesInCar, _CRBuildNumberForDevice,
                             _CRCapabilitiesDefaultVersion,
+                            _CRCapabilitiesUserInfoKey,
                             _CRCarPlayAppDenylistPreferenceKey,
                             _CRCarPlayAppPolicyChangedNotification,
                             _CRCarPlayCapabilitiesIdentifierKey,
+                            _CRCarPlayNavigationOwnerClientInterface,
+                            _CRCarPlayNavigationOwnersServiceInterface,
                             _CRCluster3xPixelPhysicalSizeThreshold,
                             _CRCollectCarPlayDiagnostics,
                             _CRCollectCarPlayDiagnosticsWithAttachments,
@@ -156,9 +167,8 @@ exports:
                             CARLayerPropertyMarshal, CARManufacturerIcon,
                             CARNavigationOwnershipManager, CAROEMPunchThrough,
                             CARObserverHashTable, CARPrototypeBoolPref,
-                            CARPrototypePref, CARRouteGuidanceiAPSession,
-                            CARScreenInfo, CARScreenViewArea, CARSession,
-                            CARSessionChannel, CARSessionConfiguration,
+                            CARPrototypePref, CARScreenInfo, CARScreenViewArea,
+                            CARSession, CARSessionChannel, CARSessionConfiguration,
                             CARSessionRequestAgent, CARSessionRequestClient,
                             CARSessionRequestHost, CARSessionStatus, CARStreamInfo,
                             CARWirelessPairingSession, CRCarPlayAppDeclaration,

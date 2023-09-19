@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LearnedFeatures.framework/LearnedFeatures
-current-version:       5.54.29
-compatibility-version: 5.54.29
+current-version:       6.31.6
+compatibility-version: 6.31.6
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _LFComputeDescriptors,
                             _LFComputeLocalGlobalDescriptors,
                             _LFDescriptorModelVersion,
@@ -33,8 +33,8 @@ exports:
                             _LFV2FeaturesGetLocalDescriptors,
                             _LFV2FeaturesRelease, _LFV2FeaturesRetain,
                             _LFV2HandleCreate, _LFV2HandleRelease,
-                            _LFV2KeypointsAppend, _LFV2KeypointsCreate,
-                            _LFV2KeypointsGetData, _LFV2KeypointsGetSize,
-                            _LFV2KeypointsRelease, _LFV2KeypointsRetain,
-                            _LearnedFeaturesGetVersion ]
+                            _LFV2HandleSupported, _LFV2KeypointsAppend,
+                            _LFV2KeypointsCreate, _LFV2KeypointsGetData,
+                            _LFV2KeypointsGetSize, _LFV2KeypointsRelease,
+                            _LFV2KeypointsRetain, _LearnedFeaturesGetVersion ]
 ...

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
-// swift-module-flags: -target arm64-apple-ios16.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MatterSupport
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 983.5.13.1.5
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
+// swift-module-flags: -target arm64-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name MatterSupport
+// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 1054.1.7.1.4
 import Darwin
 import Foundation
 import Matter
@@ -10,9 +10,9 @@ import Network
 import Swift
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 import Darwin.os
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
@@ -30,11 +30,14 @@ extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 public struct MatterAddDeviceRequest {
+  @available(iOS 17, *)
+  public static var isSupported: Swift.Bool {
+    get
+  }
   public var topology: MatterSupport.MatterAddDeviceRequest.Topology
   public var setupPayload: Matter.MTRSetupPayload?
   public var showDeviceCriteria: MatterSupport.MatterAddDeviceRequest.DeviceCriteria
@@ -47,8 +50,7 @@ public struct MatterAddDeviceRequest {
   public func perform() async throws
   #endif
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest : Swift.Hashable {
@@ -58,22 +60,19 @@ extension MatterSupport.MatterAddDeviceRequest : Swift.Hashable {
     get
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest : @unchecked Swift.Sendable {
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest {
@@ -89,8 +88,7 @@ extension MatterSupport.MatterAddDeviceRequest {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
@@ -113,8 +111,7 @@ extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest {
@@ -131,8 +128,7 @@ extension MatterSupport.MatterAddDeviceRequest {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest {
@@ -155,8 +151,7 @@ extension MatterSupport.MatterAddDeviceRequest {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
@@ -174,8 +169,7 @@ extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
@@ -187,8 +181,7 @@ extension MatterSupport.MatterAddDeviceExtensionRequestHandler {
     public init(ssid: Foundation.Data, rssi: Swift.Int8, security: Matter.MTRNetworkCommissioningWiFiSecurity, band: Matter.MTRNetworkCommissioningWiFiBand)
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiScanResult : Swift.Hashable {
@@ -198,22 +191,19 @@ extension MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiScanResult : 
     get
   }
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiScanResult : Swift.Sendable {
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler.WiFiScanResult : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceRequest {
@@ -229,8 +219,7 @@ extension MatterSupport.MatterAddDeviceRequest {
     public init(from decoder: any Swift.Decoder) throws
   }
 }
-@objc @_inheritsConvenienceInitializers @available(iOS 16.1, *)
-@available(macOS, unavailable)
+@objc @_inheritsConvenienceInitializers @available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 open class MatterAddDeviceExtensionRequestHandler : ObjectiveC.NSObject {
@@ -255,16 +244,8 @@ open class MatterAddDeviceExtensionRequestHandler : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
 }
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
-@available(tvOS, unavailable)
-@available(watchOS, unavailable)
-extension MatterSupport.MatterAddDeviceExtensionRequestHandler : Foundation.NSExtensionRequestHandling {
-  @objc final public func beginRequest(with context: Foundation.NSExtensionContext)
-}
 prefix operator >>
-@available(iOS 16.1, *)
-@available(macOS, unavailable)
+@available(iOS 16.1, macOS 14, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 extension MatterSupport.MatterAddDeviceExtensionRequestHandler {

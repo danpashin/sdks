@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
-current-version:       306.1
+current-version:       333.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/AvatarPersistence.framework/AvatarPersistence ]
     symbols:              [ _AVTAvatarEditorPlaceholderSilhouette,
                             _AVTAvatarEditorSplashVideo,
@@ -23,8 +23,8 @@ exports:
                             _AVTFlatSilhouetteImageForTraitCollection,
                             _AVTFlattenImageWithColor,
                             _AVTIsRunningInStickersExtension,
-                            _AVTMemojiAssetUsedKey, _AVTMoreButtonImage,
-                            _AVTOutfitGroupEnabled, _AVTPlusButtonImage,
+                            _AVTIsStickersStripEnabled, _AVTMemojiAssetUsedKey,
+                            _AVTMoreButtonImage, _AVTPlusButtonImage,
                             _AVTPrereleaseCategoriesEnabled,
                             _AVTPresetSettingKind,
                             _AVTRenderingScopeFramingModeKey,
@@ -306,6 +306,7 @@ exports:
                             AVTSimpleAvatarPicker,
                             AVTSimpleAvatarPickerCollectionViewCell,
                             AVTSimpleAvatarPickerHeaderView,
+                            AVTSimpleAvatarPickerSwiftProvider,
                             AVTSingleAvatarController,
                             AVTSplashScreenConfiguration, AVTSplashScreenLayout,
                             AVTSplashScreenViewController,
@@ -315,19 +316,22 @@ exports:
                             AVTStickerPagingCollectionViewCell,
                             AVTStickerPagingController,
                             AVTStickerRecentsButtonCollectionViewCell,
-                            AVTStickerRecentsButtonItem, AVTStickerRecentsLayout,
-                            AVTStickerRecentsMigrator,
+                            AVTStickerRecentsButtonItem,
+                            AVTStickerRecentsExclusionRule,
+                            AVTStickerRecentsLayout, AVTStickerRecentsMigrator,
                             AVTStickerRecentsOverlayView,
                             AVTStickerRecentsOverlayViewLayout,
                             AVTStickerRecentsPlaceholderItem,
                             AVTStickerRecentsPresetsProvider,
                             AVTStickerRecentsStickerCollectionViewCell,
                             AVTStickerRecentsStickerItem,
+                            AVTStickerRecentsSwiftProvider,
                             AVTStickerRecentsViewController, AVTStickerResource,
                             AVTStickerSheetCollectionView,
-                            AVTStickerSheetController, AVTStickerSheetModel,
-                            AVTStickerTask, AVTStickerTaskScheduler,
-                            AVTStickerViewController,
+                            AVTStickerSheetController,
+                            AVTStickerSheetControllerSwiftProvider,
+                            AVTStickerSheetModel, AVTStickerTask,
+                            AVTStickerTaskScheduler, AVTStickerViewController,
                             AVTSynchronousTransitionScheduler, AVTToolBar,
                             AVTToolbarButton, AVTTouchDownGestureRecognizer,
                             AVTTransition, AVTTransitionCoordinator,
@@ -338,8 +342,7 @@ exports:
                             AVTUIControllerPresentation, AVTUIEnvironment,
                             AVTUIFontRepository, AVTUIImageRenderService,
                             AVTUIImageUtilities, AVTUINSURL,
-                            AVTUIRaiseGestureManager, AVTUIStickerGeneratorPool,
-                            AVTUIStickerItem,
+                            AVTUIStickerGeneratorPool, AVTUIStickerItem,
                             AVTUIStickerPlaceholderProviderFactory,
                             AVTUIStickerRenderer, AVTUIStyle,
                             AVTUITraitCollectionHelper, AVTUsageTracker,

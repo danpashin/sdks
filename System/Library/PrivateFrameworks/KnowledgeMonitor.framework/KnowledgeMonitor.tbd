@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/KnowledgeMonitor.framework/KnowledgeMonitor
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BiomeLibraryInternalNodeBridge,
                             _KnowledgeMonitorVersionNumber,
                             _KnowledgeMonitorVersionString, __DKMotionStateAny,
@@ -17,26 +17,30 @@ exports:
                             __DKMotionStateStationary, __DKMotionStateWalking,
                             _kDominantActivityInterval, _kMotionStateBuffer ]
     objc-classes:         [ _DKAirplaneModeMonitor, _DKAppInstallMonitor,
-                            _DKApplicationMonitor, _DKApplicationUsageMonitor,
+                            _DKApplicationMonitor, _DKApplicationMonitorBase,
+                            _DKApplicationUsageMonitor,
                             _DKAssertionsPreventingRestartMonitor,
                             _DKAudioInputMonitor, _DKAudioOutputMonitor,
                             _DKBacklightMonitor, _DKBatteryMonitor,
                             _DKBluetoothMonitor, _DKCPUUsageMonitor,
                             _DKCalendarMonitor, _DKCellNetworkingQualityMonitor,
+                            _DKComplicationMonitor,
                             _DKDeviceActivityLevelMonitor,
-                            _DKDoNotDisturbMonitor, _DKInCarMonitor,
-                            _DKLocationCoordinatesMonitor, _DKLocationMonitor,
-                            _DKLowPowerModeMonitor, _DKMDCSWorkoutMonitor,
-                            _DKMonitor, _DKMotionMonitor, _DKNavigationMonitor,
-                            _DKNetworkQualityMonitor,
+                            _DKDoNotDisturbMonitor, _DKForegroundServicesMonitor,
+                            _DKInCarMonitor, _DKLocationCoordinatesMonitor,
+                            _DKLocationMonitor, _DKLowPowerModeMonitor,
+                            _DKMDCSWorkoutMonitor, _DKMonitor, _DKMotionMonitor,
+                            _DKNavigationMonitor, _DKNetworkQualityMonitor,
                             _DKNotificationKeybagLockMonitor,
                             _DKNotificationScreenLockImputedMonitor,
                             _DKNotificationScreenLockMonitor,
+                            _DKNotificationTimeZoneChangeMonitor,
                             _DKNotificationWatchNearbyMonitor,
-                            _DKNowPlayingMonitor, _DKOrientationMonitor, _DKPeriod,
-                            _DKPluggedInMonitor, _DKScreenSharingMonitor,
-                            _DKStarkMonitor, _DKSunriseSunsetMonitor,
-                            _DKTemporalNumericState, _DKThermalPressureMonitor,
+                            _DKNowPlayingMonitor, _DKOrientationMonitor,
+                            _DKPluggedInMonitor, _DKProcessContext,
+                            _DKScreenSharingMonitor, _DKStarkMonitor,
+                            _DKSunriseSunsetMonitor, _DKTemporalNumericState,
+                            _DKThermalPressureMonitor,
                             _DKUserIsFirstBacklightOnAfterWakeupMonitor,
                             _DKWakeRequestMonitor, _DKWiFiConnectionMonitor,
                             _DKWifiNetworkQualityMonitor,

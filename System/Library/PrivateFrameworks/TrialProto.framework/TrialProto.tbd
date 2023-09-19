@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TrialProto.framework/TrialProto
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SetTRIPBApi_Syntax_RawValue,
                             _SetTRIPBEnum_Syntax_RawValue,
                             _SetTRIPBField_Cardinality_RawValue,
@@ -231,6 +231,7 @@ exports:
                             _TRIShadowEvaluation_ClearTypeOneOfCase,
                             _TRISubjectReadFrom, _TRISystemDimensionsReadFrom,
                             _TRITrialAssetPurgeFieldsReadFrom,
+                            _TRITrialBMLTFieldsReadFrom,
                             _TRITrialCloudKitContainerOriginFieldsReadFrom,
                             _TRITrialDownloadSettingsFieldsReadFrom,
                             _TRITrialDownloadStatusFieldsReadFrom,
@@ -246,7 +247,8 @@ exports:
                             _TrialProtoVersionNumber, _TrialProtoVersionString ]
     objc-classes:         [ TRIAsset, TRIAssignment,
                             TRIBackgroundMLTaskAssignmentLanguage,
-                            TRIClientBackgroundMLTask, TRIClientExperiment,
+                            TRIBmltDeploymentId, TRIClientBackgroundMLTask,
+                            TRIClientBmltCatalog, TRIClientExperiment,
                             TRIClientFactorPack, TRIClientRollout,
                             TRIClientSelectedNamespace, TRIClientTreatment,
                             TRICloudKitSupport, TRICoreMLAssignmentLanguage,
@@ -349,7 +351,7 @@ exports:
                             TRIRolloutAssignmentLanguage,
                             TRIRolloutDeploymentPushNotification,
                             TRIShadowEvaluation, TRISubject, TRISystemDimensions,
-                            TRITrialAssetPurgeFields,
+                            TRITrialAssetPurgeFields, TRITrialBMLTFields,
                             TRITrialCloudKitContainerOriginFields,
                             TRITrialDownloadSettingsFields,
                             TRITrialDownloadStatusFields,
@@ -414,6 +416,7 @@ exports:
                             TRISystemDimensions._deviceClass,
                             TRISystemDimensions._experimentOptOutStatus,
                             TRISystemDimensions._has,
+                            TRISystemDimensions._isAutomatedTestDevice,
                             TRISystemDimensions._isBetaUser,
                             TRISystemDimensions._isInternalBuild,
                             TRISystemDimensions._osBuild,
@@ -425,6 +428,10 @@ exports:
                             TRISystemDimensions._versionTag,
                             TRITrialAssetPurgeFields._has,
                             TRITrialAssetPurgeFields._purgeabilityLevel,
+                            TRITrialBMLTFields._clientBmltFactorPackSetId,
+                            TRITrialBMLTFields._clientBmltId,
+                            TRITrialBMLTFields._clientBmltTargetingRuleGroupOrdinal,
+                            TRITrialBMLTFields._has,
                             TRITrialCloudKitContainerOriginFields._ckContainer,
                             TRITrialCloudKitContainerOriginFields._ckEnvironment,
                             TRITrialCloudKitContainerOriginFields._has,
@@ -448,6 +455,7 @@ exports:
                             TRITrialRolloutFields._clientTargetingRuleGroupOrdinal,
                             TRITrialRolloutFields._has,
                             TRITrialSystemTelemetry._assetPurgeFields,
+                            TRITrialSystemTelemetry._bmltFields,
                             TRITrialSystemTelemetry._clientDeploymentEnv,
                             TRITrialSystemTelemetry._clientDeploymentId,
                             TRITrialSystemTelemetry._clientProjectId,

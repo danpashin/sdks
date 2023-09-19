@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
-current-version:       3474.5
+current-version:       3496.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CNContactsUIErrorDialRequestKey,
                             _CNContactsUIErrorDomain, _CNContactsUIErrorURLKey,
                             _CNContactsUIErrorUserActivityKey,
@@ -28,10 +28,12 @@ exports:
                             _CNUICircularImageCreate,
                             _CNUIClipContextWithCircleInRect,
                             _CNUIClipContextWithRoundedRectInRect,
-                            _CNUIClipPathInRect, _CNUIDrawCircularImagesInRects,
+                            _CNUIClipPathInRect, _CNUIContactBackgroundColorsKey,
+                            _CNUIDrawCircularImagesInRects,
                             _CNUIDrawImagesInRects,
                             _CNUIDrawLikenessPlatterInContext,
                             _CNUIDrawRoundedRectImagesInRects,
+                            _CNUIEmptyPixelImageGet,
                             _CNUIFamilyMemberContainerIdenifier,
                             _CNUIIntentIdentifierCreateContact,
                             _CNUILikenessResolverMaxContacts,
@@ -43,6 +45,7 @@ exports:
                             _CNUIUserActionRecentsDateKey,
                             _CNUIUserActionRecentsDomain,
                             _DrawSilhouetteInContext, ___CNUISmartCeiling,
+                            _contactsBackgroundColorServiceInterface,
                             _imageFromImageRef, _imageRefFromImage,
                             _kCNUICoreContactToIdentifier ]
     objc-classes:         [ CNAvatarCacheChangeAnalysis,
@@ -62,6 +65,7 @@ exports:
                             CNUIApplicationLaunchOptions,
                             CNUIAvatarLayoutItemConfiguration,
                             CNUIAvatarLayoutLayerItem, CNUIAvatarLayoutManager,
+                            CNUIBackgroundColors, CNUIColorSerialization,
                             CNUIContactPropertyIDSHandle,
                             CNUIContactPropertyRanker,
                             CNUICoreContactAggregateValueFilter,
@@ -92,6 +96,7 @@ exports:
                             CNUICoreFamilyMemberContactsStore,
                             CNUICoreFamilyMemberSaveRequestFactory,
                             CNUICoreFamilyMemberWhitelistedContactsController,
+                            CNUICoreImageDerivedColorGenerator,
                             CNUICoreInMemoryWhitelistedContactsDataSourceDecorator,
                             CNUICoreLogProvider,
                             CNUICoreMainWhitelistedContactsController,
@@ -112,8 +117,10 @@ exports:
                             CNUIIDSAvailabilityProvider,
                             CNUIIDSContactPropertyResolver,
                             CNUIIDSIDQueryControllerWrapper, CNUIIDSRequest,
-                            CNUIImageProvider, CNUIInteractionDonor,
-                            CNUILibraryFolderDiscovery, CNUILikenessFingerprint,
+                            CNUIImageProvider,
+                            CNUIImageRemoteBackgroundColorAnalyzer,
+                            CNUIInteractionDonor, CNUILibraryFolderDiscovery,
+                            CNUILikenessFingerprint,
                             CNUILikenessMediaContextBadge, CNUILikenessRenderer,
                             CNUILikenessRenderingScope,
                             CNUILikenessSystemImageBadge,
@@ -152,13 +159,16 @@ exports:
                             CNUIUserActivityManager, CNUIUserActivityRestorer,
                             TestCNUIIDSHandleAvailability,
                             _CNUICachingLikenessRenderer,
+                            _CNUIComponentBasedColorSerialization,
                             _CNUIDefaultUserActionRecorderEventFactory,
                             _CNUIDirectoryServicesPhotoFuture,
                             _CNUIGravatarPhotoFuture, _CNUIIDSHandleAvailability,
+                            _CNUILikenessCache,
                             _CNUILikenessFingerprintGroupImpl,
                             _CNUILikenessFingerprintNonpersistedContactImpl,
                             _CNUILikenessFingerprintPersistedContactImpl,
-                            _CNUILikenessRenderer, _CNUIRTTUtilities,
+                            _CNUILikenessImageCache, _CNUILikenessRenderer,
+                            _CNUIRTTUtilities,
                             _CNUIUserActionCallProviderVideoTarget,
                             _CNUIUserActionCallProviderVoiceTarget,
                             _CNUIUserActionCurator,

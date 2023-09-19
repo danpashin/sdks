@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SessionPushNotifications.framework/SessionPushNotifications
@@ -7,8 +7,12 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s24SessionPushNotifications0B10ConnectionMp,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s24SessionPushNotifications04MockB7ServingMp,
+                            _$s24SessionPushNotifications04MockB7ServingP10connection18forEnvironmentNameAA0B10Connection_pSgSS_tFTj,
+                            _$s24SessionPushNotifications04MockB7ServingP10connection18forEnvironmentNameAA0B10Connection_pSgSS_tFTq,
+                            _$s24SessionPushNotifications04MockB7ServingTL,
+                            _$s24SessionPushNotifications0B10ConnectionMp,
                             _$s24SessionPushNotifications0B10ConnectionP11unsubscribe4from8forTopicySS_SStFTj,
                             _$s24SessionPushNotifications0B10ConnectionP11unsubscribe4from8forTopicySS_SStFTq,
                             _$s24SessionPushNotifications0B10ConnectionP12requestToken3foryAA03AppF4InfoV_tFTj,
@@ -269,6 +273,7 @@ exports:
                             _$s24SessionPushNotifications0B6ServerC0D5ErrorOSHAAMc,
                             _$s24SessionPushNotifications0B6ServerC0D5ErrorOSQAAMc,
                             _$s24SessionPushNotifications0B6ServerC0D5ErrorOs0E0AAMc,
+                            _$s24SessionPushNotifications0B6ServerC10connection18forEnvironmentNameAA0B10Connection_pSgSS_tF,
                             _$s24SessionPushNotifications0B6ServerC10connection_10didReceiveyAA0B10Connection_p_AA15IncomingMessageVtF,
                             _$s24SessionPushNotifications0B6ServerC10connection_15didReceiveToken3foryAA0B10Connection_p_10Foundation4DataVAA03AppH4InfoVtF,
                             _$s24SessionPushNotifications0B6ServerC10connection_21didReceivePublicTokenyAA0B10Connection_p_10Foundation4DataVtF,
@@ -308,6 +313,8 @@ exports:
                             _$s24SessionPushNotifications0B6ServerC5token18activityIdentifierAA0B5TokenVSgSS_tFTq,
                             _$s24SessionPushNotifications0B6ServerC9subscribe12subscription17createIfNecessaryyAA0B12SubscriptionV_SbtFTj,
                             _$s24SessionPushNotifications0B6ServerC9subscribe12subscription17createIfNecessaryyAA0B12SubscriptionV_SbtFTq,
+                            _$s24SessionPushNotifications0B6ServerCAA04MockB7ServingAAMc,
+                            _$s24SessionPushNotifications0B6ServerCAA04MockB7ServingAAWP,
                             _$s24SessionPushNotifications0B6ServerCAA0B18ConnectionDelegateAAMc,
                             _$s24SessionPushNotifications0B6ServerCAA0B18ConnectionDelegateAAWP,
                             _$s24SessionPushNotifications0B6ServerCAA0B7ServingAAMc,
@@ -429,6 +436,7 @@ exports:
                             _$s24SessionPushNotifications17APSPushConnectionC15environmentName17namedDelegatePort5queue8delegateACSS_SSSo012OS_dispatch_K0CAA0beI0_ptcfc,
                             _$s24SessionPushNotifications17APSPushConnectionC15invalidateToken8forTopic10identifierySS_SStF,
                             _$s24SessionPushNotifications17APSPushConnectionC16setEnabledTopics_07ignoredH0013opportunisticH009nonWakingH0ySaySSG_A3HtF,
+                            _$s24SessionPushNotifications17APSPushConnectionC21createIncomingMessage4from5topic8priority5token9channelIDAA0gH0VSDySSypG_AA5TopicVAA8PriorityO10Foundation4DataVSgSSSgtKFZ,
                             _$s24SessionPushNotifications17APSPushConnectionC9subscribe2to8forTopicySS_SStF,
                             _$s24SessionPushNotifications17APSPushConnectionCAA0bE0AAMc,
                             _$s24SessionPushNotifications17APSPushConnectionCAA0bE0AAWP,

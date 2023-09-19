@@ -5,14 +5,16 @@
 //  Copyright (c) 2015 Apple. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <HealthKit/HealthKit.h>
+#import <os/availability.h>
 #import <UIKit/UIKit.h>
-#import <HealthKit/HKDefines.h>
 
 @class HKActivitySummary;
 
 NS_ASSUME_NONNULL_BEGIN
 
-HK_EXTERN API_AVAILABLE(ios(9.3), watchos(2.2), macCatalyst(13.0), macos(13.0))
+HK_EXTERN API_AVAILABLE(ios(9.3), macCatalyst(13.0), macos(13.0)) API_UNAVAILABLE(watchos)
 @interface HKActivityRingView : UIView
 
 /**

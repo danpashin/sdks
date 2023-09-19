@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CHDescriptionForCorrectionResultType,
                             _CHPKCopyAsTextUsedKey, _CHPKDataDetectorUsedKey,
                             _CHPKInsertSpaceUsedKey, _CHPKSmartSelectionUsedKey,
@@ -17,6 +17,7 @@ exports:
                             _CHRecognitionOptionDrawingAnchorPoint,
                             _CHRecognitionOptionFrameContext,
                             _CHRecognitionOptionInferenceCache,
+                            _CHRecognitionOptionIsPreviousResultCharacterLevel,
                             _CHRecognitionOptionIsRunningSecondaryLocale,
                             _CHRecognitionOptionMinSizeForReliableRescaling,
                             _CHRecognitionOptionPrecedingSpaceBehavior,
@@ -30,7 +31,8 @@ exports:
                             CHDataDetectorQueryItem, CHDrawing,
                             CHEncodedStrokeIdentifier,
                             CHFastStrokeGroupingStrategy,
-                            CHIndexableContentQuery, CHLanguageUtilities,
+                            CHIndexableContentQuery,
+                            CHInputContextLexiconManager, CHLanguageUtilities,
                             CHMultiLocaleResultProcessor,
                             CHMutableTextInputTargetContentInfo,
                             CHMutableTokenizedTextResultColumn,
@@ -43,8 +45,8 @@ exports:
                             CHRecognitionSessionResult, CHRecognizer,
                             CHRecognizerConfiguration,
                             CHRecognizerInferenceCache, CHRecognizerOptions,
-                            CHRecognizerResultCache, CHRemoteRecognizer,
-                            CHSearchQuery, CHSearchQueryItem,
+                            CHRecognizerResultCache, CHRemoteRecognitionRequest,
+                            CHRemoteRecognizer, CHSearchQuery, CHSearchQueryItem,
                             CHStrokeClassificationModel,
                             CHStrokeClassificationResult, CHStrokeClassifier,
                             CHStrokeClutterFilter, CHStrokeGroup,
@@ -56,18 +58,20 @@ exports:
                             CHTextCorrectionResult, CHTextInputProtoSettings,
                             CHTextInputQuery, CHTextInputQueryItem,
                             CHTextInputTarget, CHTextInputTargetContentInfo,
-                            CHTextLineStraightener,
-                            CHTextStrokeTransformationQuery, CHTitleQuery,
+                            CHTextStrokeTransformationQuery,
+                            CHTextTransformations, CHTitleQuery,
                             CHTokenizedStrokeResult, CHTokenizedTextResult,
                             CHTokenizedTextResultColumn,
                             CHTokenizedTextResultToken,
                             CHTopDownStrokeGroupingStrategy,
                             CHTranscriptionQuery, CHVisualizationManager ]
-    objc-ivars:           [ CHNonTextCandidateStroke._support,
+    objc-ivars:           [ CHNonTextCandidateStroke._fallbackClassification,
+                            CHNonTextCandidateStroke._support,
                             CHNonTextCandidateStroke._supportByStrokeIdentifier,
                             CHTextInputTargetContentInfo._activePreviewRange,
                             CHTextInputTargetContentInfo._autoCapitalizationMode,
                             CHTextInputTargetContentInfo._autoCorrectionMode,
+                            CHTextInputTargetContentInfo._baseWritingDirection,
                             CHTextInputTargetContentInfo._characterRectsInReferenceSubstring,
                             CHTextInputTargetContentInfo._containsCommittedStrokes,
                             CHTextInputTargetContentInfo._contentType,
@@ -82,6 +86,7 @@ exports:
                             CHTextInputTargetContentInfo._supportsAutoLineBreaks,
                             CHTextInputTargetContentInfo._textContentLength,
                             CHTextInputTargetContentInfo._textInputTarget,
+                            CHTokenizedTextResult._baseWritingDirection,
                             CHTokenizedTextResult._changeableCount,
                             CHTokenizedTextResult._precedingLineBreaks,
                             CHTokenizedTextResult._recognizerGenerationIdentifier,
@@ -92,8 +97,10 @@ exports:
                             CHTokenizedTextResultToken._alignmentScore,
                             CHTokenizedTextResultToken._bounds,
                             CHTokenizedTextResultToken._combinedScore,
+                            CHTokenizedTextResultToken._inputSources,
                             CHTokenizedTextResultToken._properties,
                             CHTokenizedTextResultToken._recognitionScore,
+                            CHTokenizedTextResultToken._recognizerSourceLocale,
                             CHTokenizedTextResultToken._string,
                             CHTokenizedTextResultToken._strokeIndexes,
                             CHTokenizedTextResultToken._substrokeCount,

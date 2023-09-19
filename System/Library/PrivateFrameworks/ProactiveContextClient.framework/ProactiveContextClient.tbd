@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveContextClient.framework/ProactiveContextClient
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ATXActivityTypeToBMInferredModeType,
                             _ATXActivityTypeToModeSemanticType,
                             _ATXActivityTypeToString, _ATXDeserializeTriggers,
@@ -41,6 +41,7 @@ exports:
                             _BMInferredModeTypeFromBMUserFocusComputedModeSemanticType,
                             _BMInferredModeTypeFromString,
                             _BMInferredModeTypeToActivity,
+                            _BMUserFocusInferredModeTypeToActivity,
                             _DNDModeSemanticTypeToATXActivityType,
                             _ProactiveContextClientVersionNumber,
                             _ProactiveContextClientVersionString,
@@ -97,10 +98,9 @@ exports:
                             ATXModeGameControllerFeaturizer,
                             ATXModeGamingFeaturizer, ATXModeGymFeaturizer,
                             ATXModeHeuristicClassifier,
-                            ATXModeHeuristicClassifierGuardedData,
-                            ATXModeIsSleepingBasedOnBacklightDataFeaturizer,
-                            ATXModeLogger, ATXModeMicrolocationFeaturizer,
-                            ATXModePBEvent, ATXModePBLogWrapper, ATXModePBRecord,
+                            ATXModeHeuristicClassifierGuardedData, ATXModeLogger,
+                            ATXModeMicrolocationFeaturizer, ATXModePBEvent,
+                            ATXModePBLogWrapper, ATXModePBRecord,
                             ATXModeReadingFeaturizer, ATXModeRoutineFeaturizer,
                             ATXModeScheduler, ATXModeScreenRecordingFeaturizer,
                             ATXModeScreenShareFeaturizer, ATXMotion,
@@ -112,7 +112,7 @@ exports:
                             ATXPOICategoryVisitEvent, ATXScreenRecordingTrigger,
                             ATXScreenShareTrigger, ATXSleepScheduleUtilities,
                             ATXSmartTrigger, ATXTimeTrigger,
-                            ATXWatchWorkoutTrigger,
+                            ATXUserFocusComputedMode, ATXWatchWorkoutTrigger,
                             ATXWiredAudioConnectedTrigger,
                             ATXWiredAudioDisconnectedTrigger,
                             ATXWorkCalendarEventTrigger ]

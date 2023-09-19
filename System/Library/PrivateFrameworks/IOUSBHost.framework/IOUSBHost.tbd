@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IOUSBHost.framework/IOUSBHost
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IOFindNameForValue, _IOUSBGetBillboardDescriptor,
                             _IOUSBGetConfigurationMaxPowerMilliAmps,
                             _IOUSBGetContainerIDDescriptor,
@@ -20,7 +20,8 @@ exports:
                             _IOUSBGetEndpointMaxStreams,
                             _IOUSBGetEndpointMaxStreamsEncoded,
                             _IOUSBGetEndpointMult, _IOUSBGetEndpointNumber,
-                            _IOUSBGetEndpointType,
+                            _IOUSBGetEndpointSynchronizationType,
+                            _IOUSBGetEndpointType, _IOUSBGetEndpointUsageType,
                             _IOUSBGetNextAssociatedDescriptor,
                             _IOUSBGetNextAssociatedDescriptorWithType,
                             _IOUSBGetNextCapabilityDescriptor,
@@ -31,6 +32,7 @@ exports:
                             _IOUSBGetNextInterfaceAssociationDescriptor,
                             _IOUSBGetNextInterfaceDescriptor,
                             _IOUSBGetPlatformCapabilityDescriptor,
+                            _IOUSBGetPlatformCapabilityDescriptorWithUUID,
                             _IOUSBGetSuperSpeedDeviceCapabilityDescriptor,
                             _IOUSBGetSuperSpeedPlusDeviceCapabilityDescriptor,
                             _IOUSBGetUSB20ExtensionDeviceCapabilityDescriptor,

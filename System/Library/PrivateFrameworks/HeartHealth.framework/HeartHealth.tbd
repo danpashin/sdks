@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HeartHealth.framework/HeartHealth
@@ -7,14 +7,15 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _HDHRCardioFitnessStorePluginServerInterface,
-                            _HKCardioFitnessFeatureSettingsKeyBackgroundDelivered,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HKCardioFitnessFeatureSettingsKeyBackgroundDelivered,
                             _HKCardioFitnessFeatureSettingsKeyNotificationDetailsEntered,
                             _HKFeatureAvailabilityContextAFibBurdenAnalysis,
                             _HKFeatureAvailabilityContextAFibBurdenLifeFactorPlatterGeneration,
+                            _HKFeatureAvailabilityContextAFibBurdenPDFGeneration,
                             _HKFeatureAvailabilityContextIrregularRhythmNotificationsUsagePendingOnboarding,
                             _HKHRAFibBurdenAnalysisPercentageOverride,
+                            _HKHRAFibBurdenAnalysisPercentageOverrideKey,
                             _HKHRAFibBurdenAnalyticsAnalysisEventName,
                             _HKHRAFibBurdenAnalyticsDailyEventName,
                             _HKHRAFibBurdenAnalyticsNotificationEventName,
@@ -23,7 +24,9 @@ exports:
                             _HKHRAFibBurdenControlServerIdentifier,
                             _HKHRAFibBurdenControlServerInterface,
                             _HKHRAFibBurdenDayOfWeekHistogramOverride,
+                            _HKHRAFibBurdenDayOfWeekHistogramOverrideKey,
                             _HKHRAFibBurdenDefaultsDomain,
+                            _HKHRAFibBurdenDefaultsOverrideKeys,
                             _HKHRAFibBurdenDetailRoomBaseLink,
                             _HKHRAFibBurdenDetermineIsFocusModeOn,
                             _HKHRAFibBurdenLastAnalsysisCompletedDateDidChangeNotification,
@@ -55,13 +58,18 @@ exports:
                             _HKHRAFibBurdenSevenDayAnalysisDetermineStartingWeekday,
                             _HKHRAFibBurdenSevenDayAnalysisDetermineStartingWeekdayWithDefaults,
                             _HKHRAFibBurdenSevenDayAnalysisMaximumXPCDelay,
+                            _HKHRAFibBurdenSevenDayAnalysisMaximumXPCDelayKey,
+                            _HKHRAFibBurdenSevenDayAnalysisMetadataWithTimeZoneAndWasClamped,
                             _HKHRAFibBurdenSevenDayAnalysisNotificationEndWeekdayToFire,
+                            _HKHRAFibBurdenSevenDayAnalysisNotificationEndWeekdayToFireKey,
                             _HKHRAFibBurdenSevenDayAnalysisStartingHourKey,
                             _HKHRAFibBurdenSevenDayAnalysisStartingMinuteKey,
                             _HKHRAFibBurdenSevenDayAnalysisStartingSecondKey,
                             _HKHRAFibBurdenSevenDayAnalysisStartingWeekdayKey,
                             _HKHRAFibBurdenSevenDayAnalysisUnavailabilityReasonOverride,
+                            _HKHRAFibBurdenSevenDayAnalysisUnavailabilityReasonOverrideKey,
                             _HKHRAFibBurdenTimeOfDayHistogramOverride,
+                            _HKHRAFibBurdenTimeOfDayHistogramOverrideKey,
                             _HKHRAFibHistoryLocalizedString,
                             _HKHRAnalyticsAgeBinFromAgeInYears,
                             _HKHRCardioFitnessAgeThreshold,
@@ -72,21 +80,23 @@ exports:
                             _HKHRCardioFitnessDetailRoomBaseLink,
                             _HKHRCardioFitnessEventOnboardingDeepLink,
                             _HKHRCardioFitnessFeatureStatusManagerClientInterface,
-                            _HKHRCardioFitnessFeatureStatusManagerServerIdentifier,
                             _HKHRCardioFitnessFeatureStatusManagerServerInterface,
                             _HKHRCardioFitnessLocalFeatureAttributes,
                             _HKHRCardioFitnessShouldSkipHardwareCheck,
                             _HKHRCardioFitnessShouldSkipLocationCheck,
-                            _HKHRCardioFitnessStoreInterface,
-                            _HKHRCardioFitnessStoreServerIdentifier,
+                            _HKHRCardioFitnessStoreClientInterface,
+                            _HKHRCardioFitnessStoreServerInterface,
                             _HKHRFeatureSettingsKeyAFibBurdenWeeklyNotificationEnabled,
                             _HKHRHeartHealthBundle,
                             _HKHRIrregularRhythmNotificationsBridgeSettingsWithFeatureStatus,
                             _HKHRIrregularRhythmNotificationsRequirementsWithFeatureIdentifier,
+                            _HKHRPrettyPrintedAFibBurdenSevenDayAnalysisBreadcrumbs,
                             _HKHRSubmitNotificationsEnabledSignal,
                             _HKHeartPluginIdentifier,
                             _HKHeartRateAppBundleIdentifier,
                             _HKHeartRateLocalizedString,
+                            _HKHeartRateWidgetExtensionBundleID,
+                            _HKHeartRateWidgetExtensionKind,
                             _HKHeartbeatSeriesFeatureStatusManagerClientInterface,
                             _HKHeartbeatSeriesFeatureStatusManagerServerInterface,
                             _NSStringFromHKHRAnalyticsAgeBin,
@@ -105,8 +115,11 @@ exports:
                             HKHRAFibBurdenFooter, HKHRAFibBurdenHeader,
                             HKHRAFibBurdenHistogramQuery,
                             HKHRAFibBurdenHistogramResult,
+                            HKHRAFibBurdenNotificationMode,
                             HKHRAFibBurdenNotificationSettingsFactory,
+                            HKHRAFibBurdenSevenDayAnalysisBreadcrumbs,
                             HKHRAFibBurdenSevenDayAnalysisResults,
+                            HKHRAFibBurdenSevenDaySampleProperties,
                             HKHRAFibBurdenTimeOfDayHistogram,
                             HKHRAFibBurdenWatchSettings,
                             HKHRCardioFitnessAnalyticsClientSignalSource,
@@ -132,5 +145,8 @@ exports:
                             HKHRSampleClassificationCollection,
                             HKHRSampleClassificationCollectionCollection,
                             HKHeartbeatSeriesFeatureStatusManager,
+                            HLCinnamonWaveform, HLHeartRateManager,
+                            HRAIrregularRhythmAnalyzer, HRAIrregularRhythmResult,
+                            HRAWaveformProcessor, HRAWaveformResult,
                             _HKHeartSettingsUtilities ]
 ...

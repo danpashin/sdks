@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
-current-version:       339.100.1
+current-version:       358
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _GSAdditionCreationDisplayNameKey,
                             _GSAdditionCreationKeepFileIDKey,
                             _GSAdditionCreationNameKey,
@@ -17,6 +17,7 @@ exports:
                             _GSAdditionCreationPOSIXNameKey,
                             _GSAdditionCreationUserInfoKey,
                             _GSDocumentVersionsNameSpace,
+                            _GSFileProviderConflictsNameSpace,
                             _GSGenerationalStorageErrorDomain,
                             _GSLibraryAddGenerationWithOptionsByCopyingFile,
                             _GSLibraryAddGenerationWithOptionsByMovingFile,

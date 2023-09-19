@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MigrationKit.framework/MigrationKit
@@ -7,47 +7,12 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _MKApplicationIdentifier, _MKCryptoErrorDomain,
-                            _MKIdentifier, _MKLocalizedString,
-                            _MKSecurityErrorDomain, _MigrationKitVersionNumber,
-                            _MigrationKitVersionString,
-                            __ZN12migrationkit10signatures4sigsE,
-                            __ZN12migrationkit9signature14get_identifierEPKhm,
-                            __ZN12migrationkit9signature18is_signature_validEv,
-                            __ZN12migrationkit9signature24get_max_signature_lengthEv ]
-    objc-classes:         [ MKAPIServer, MKAPIServerDaemon, MKAccessibility,
-                            MKAccessibilitySettingMigrator, MKAccount,
-                            MKAccountMigrator, MKAnalytics, MKApp,
-                            MKAppSearchRequest, MKApplicationAnalytics,
-                            MKApplicationDatabase, MKApplicationMigrator,
-                            MKBookmark, MKBookmarkMigrator, MKCalendarMigrator,
-                            MKCertificate, MKClient, MKConnection, MKContactMigrator,
-                            MKContainerMigrator, MKContext, MKCrypto,
-                            MKDELETEPlaceholderRouter, MKDataClassMetrics,
-                            MKDevice, MKDiagnosticsMigrator, MKDisplay,
-                            MKDisplaySettingMigrator, MKError, MKFeaturePayload,
-                            MKFileDecoder, MKFileMigrator, MKFileProvider,
-                            MKGETCertificateRouter, MKGETPlaceholderRouter,
-                            MKGETSRPRouter, MKGETSecuredStatusRouter,
-                            MKGETStatusRouter, MKHTTPContentDisposition,
-                            MKHTTPContentPayload, MKHTTPContentRange,
-                            MKHTTPHeaders, MKHTTPParameters, MKHTTPParser,
-                            MKHTTPProxyAuthorization, MKHTTPRequest,
-                            MKHTTPResponse, MKHTTPServer, MKHTTPStatusText, MKHex,
-                            MKImageDecoder, MKImportAnalytics, MKImportContext,
-                            MKInternal, MKListener, MKLog, MKMessage,
-                            MKMessageAttachment, MKMessageGroup, MKMessageMigrator,
-                            MKMessagePhoneNumber, MKMigrator,
-                            MKPOSTCertificateRouter, MKPOSTClientRouter,
-                            MKPOSTProgressRouter, MKPOSTSRPRouter, MKPUTRouter,
-                            MKPayload, MKPerformanceData, MKPerformanceTable,
-                            MKPhotoLibrary, MKPhotoLibraryAlbumMigrator,
-                            MKPhotoLibraryAsset, MKPhotoLibraryAssetDatabase,
-                            MKPhotoLibraryMigrator, MKPlaceholder,
-                            MKPlaceholderMigrator, MKPowerAssertion, MKProgress,
-                            MKSRPServer, MKSignature, MKStorage, MKTable, MKTableCell,
-                            MKTableColumn, MKTableRow, MKTableSeparatorRow,
-                            MKTableTitleRow, MKTimeFormatter, MKUtility,
-                            MKVideoDecoder ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _MigrationKitBundleApplicationNameKey,
+                            _MigrationKitBundleIconName,
+                            _MigrationKitVersionNumber,
+                            _MigrationKitVersionString ]
+    objc-classes:         [ MKAPIServer, MKAPIServerDaemon, MKApplicationMigrator,
+                            MKBundle, MKClient, MKContext, MKImportContext, MKMigrator,
+                            MKPlaceholder ]
 ...

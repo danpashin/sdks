@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __DASActivityDurationInterminable,
                             __DASActivityDurationLong,
                             __DASActivityDurationModerate,
@@ -22,7 +22,9 @@ exports:
                             __DASActivityTransferSizeVeryLarge,
                             __DASActivityTransferSizeVerySmall,
                             __DASActivityTransferSizeZero, __DASActivityTypeKey,
-                            __DASBudgetDictionaryKey, __DASCTSBackloggedKey,
+                            __DASBudgetDictionaryKey,
+                            __DASCKRateLimitConfigurationName,
+                            __DASCTSBackloggedKey,
                             __DASCTSBeforeApplicationLaunchKey,
                             __DASCTSBlockRebootActivitiesForSUKey,
                             __DASCTSBypassBatteryAgingProtectionKey,
@@ -38,6 +40,7 @@ exports:
                             __DASClientNameNSURLSession,
                             __DASClientNameXPCActivity, __DASDaemonServiceName,
                             __DASDefaultGroupName, __DASDefaultNetworkGroupName,
+                            __DASDefaultRemoteGroupName,
                             __DASExtensionLaunchReasonMLCompute,
                             __DASLaunchOptionsNSURLSession,
                             __DASLaunchOptionsSignificantLocationChange,
@@ -48,6 +51,7 @@ exports:
                             __DASLaunchReasonBackgroundRefresh,
                             __DASLaunchReasonBackgroundRemoteNotification,
                             __DASLaunchReasonHealthKit,
+                            __DASLaunchReasonHealthResearch,
                             __DASLaunchReasonNSURLSessionAuthorizationRequired,
                             __DASLaunchReasonNSURLSessionComplete,
                             __DASLaunchReasonSignificantLocationChange,
@@ -59,6 +63,8 @@ exports:
                             __DASMotionStateStationary, __DASMotionStateWalking,
                             __DASNonRateLimitedLaunchKey,
                             __DASOverrideRateLimitingKey,
+                            __DASRateLimitConfigurationKey,
+                            __DASRemoteDeviceIDKey,
                             __DASRemoteNotificationPayloadKey,
                             __DASRequiresSignificantUserInactivityKey,
                             __DASSchedulingPriorityBackground,
@@ -112,15 +118,16 @@ exports:
                             _kDASWidgetViewMetadataViewID,
                             _kDASWidgetViewStreamName, _kNWEndpointKey,
                             _kNWParametersKey ]
-    objc-classes:         [ _DASActivity, _DASActivityGroup, _DASExtension,
+    objc-classes:         [ _DASActivity, _DASActivityGroup, _DASActivityRateLimit,
+                            _DASActivityRateLimitConfiguration, _DASExtension,
                             _DASExtensionRemoteContext, _DASFileProtection,
                             _DASPairedSystemContext, _DASPriorityQueue,
                             _DASScheduler, _DASStrings, _DASSubmissionRateLimiter,
                             _DASSystemContext, _DASWidgetBudget,
                             _DASWidgetBudgetMigrationHelper,
                             _DASWidgetBudgetParameters, _DASWidgetInfo,
-                            _DASWidgetRefresh, _DASWidgetRefreshScheduler,
-                            _DASWidgetView,
+                            _DASWidgetRefresh, _DASWidgetRefreshParameters,
+                            _DASWidgetRefreshScheduler, _DASWidgetView,
                             _DASWigetBudgetDecrementRequestResult,
                             _OSPrewarmScheduler ]
 ...

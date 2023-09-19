@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Proximity.framework/Proximity
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PRCollectLogs, _PRDebugConfigArgAccessoryState,
                             _PRDebugConfigArgDebugLevel,
                             _PRDebugConfigArgIsoCountry,
@@ -15,7 +15,6 @@ exports:
                             _PRDebugConfigArgMcc,
                             _PRDebugConfigArgNAccessSlotsMax,
                             _PRDebugConfigArgNAccessSlotsMin,
-                            _PRDebugConfigArgRFChannel,
                             _PRDebugConfigArgRangingIntervalMax,
                             _PRDebugConfigArgRangingIntervalMin,
                             _PRDebugConfigArgRxAntennaMask2,
@@ -25,11 +24,13 @@ exports:
                             _PRDebugConfigArgSolutionVariant,
                             _PRDebugConfigArgTxAntennaMask2,
                             _PRDebugConfigArgTxMiniSlotSize,
+                            _PRDebugConfigArgUWBChannel,
                             _PRDebugConfigMultiSessionDevIndex, _PRErrorDomain,
                             _PRErrorWithCodeAndUserInfo, _PRGetChipInfo,
-                            _PRGetChipPowerState, _PRGetPowerStatsWithTimeout,
-                            _PRGetPreflightInfo, _PRP2PArgsDualRangingMode,
-                            _PRP2PArgsIsTestTool,
+                            _PRGetChipPowerState, _PRGetChipPublicKey,
+                            _PRGetChipType, _PRGetDeepSleepState,
+                            _PRGetPowerStatsWithTimeout, _PRGetPreflightInfo,
+                            _PRP2PArgsDualRangingMode, _PRP2PArgsIsTestTool,
                             _PRP2PArgsListeningWindowSizeUsec,
                             _PRP2PArgsRangingInterval, _PRP2PArgsRangingRole,
                             _PRP2PArgsRoseDebugFlags, _PRP2PArgsRxAntennaMask,
@@ -43,7 +44,7 @@ exports:
                             _PRRangingServiceStateToString,
                             _PRRequestPowerChange, _PRRoseHasFailedUpdate,
                             _PRSendHelloWithTimeout, _PRSetAccessoryState,
-                            _PRSetIsoCountry, _PRSetMcc,
+                            _PRSetIsoCountry, _PRSetMcc, _PRSetNarrowbandSARState,
                             _PRSetRoseGlobalConfigParams ]
     objc-classes:         [ PRAngleMeasurement, PRBTRSSI,
                             PRBTRangingClientExportedObject, PRBTRangingSession,

@@ -1,17 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterAWDMetrics.dylib
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ZN3awd7configs22ComponentConfigurationC1Ev,
                             __ZN3awd7configs22ComponentConfigurationD1Ev,
                             __ZN3awd7metrics14AWDNetworkTimeC1Ev,
                             __ZN3awd7metrics15CommCenterStartC1Ev,
-                            __ZN3awd7metrics15MetricCCStwExitC1Ev,
                             __ZN3awd7metrics15RatType_IsValidEi,
                             __ZN3awd7metrics16CommCenterBundleC1Ev,
                             __ZN3awd7metrics17Call_Type_IsValidEi,
@@ -22,7 +21,6 @@ exports:
                             __ZN3awd7metrics18CommCenterNrSwitchC1Ev,
                             __ZN3awd7metrics18MetricCCMMSSendEndC1Ev,
                             __ZN3awd7metrics18MetricCCSMSSendEndC1Ev,
-                            __ZN3awd7metrics18MetricCCStwRequestC1Ev,
                             __ZN3awd7metrics18SignalBarHistogramC1Ev,
                             __ZN3awd7metrics18SoundUMB_REGUPDATEC1Ev,
                             __ZN3awd7metrics18operator_info_3GPPC1Ev,
@@ -64,17 +62,13 @@ exports:
                             __ZN3awd7metrics22CommCenterVoLTESwitch2C1Ev,
                             __ZN3awd7metrics22DistortionType_IsValidEi,
                             __ZN3awd7metrics22switch_state_t_IsValidEi,
-                            __ZN3awd7metrics23CCStwExitReason_IsValidEi,
                             __ZN3awd7metrics23CommCenterAudioStatsIndC1Ev,
                             __ZN3awd7metrics23CommCenterBundleDetailsC1Ev,
                             __ZN3awd7metrics23CommCenterManageAccountC1Ev,
                             __ZN3awd7metrics23CommCenterOperatingModeC1Ev,
                             __ZN3awd7metrics23CommCenterSTKSelectItemC1Ev,
                             __ZN3awd7metrics23CommCenterThumperSwitchC1Ev,
-                            __ZN3awd7metrics23MetricCCStwProvisioningC1Ev,
-                            __ZN3awd7metrics23MetricCCStwSuspendStateC1Ev,
                             __ZN3awd7metrics23SpringBoardScreenChangeC1Ev,
-                            __ZN3awd7metrics24CCStwMessageType_IsValidEi,
                             __ZN3awd7metrics24CallDirectionInd_IsValidEi,
                             __ZN3awd7metrics24CommCenterDataUsageResetC1Ev,
                             __ZN3awd7metrics24CommCenterIPSetupFailureC1Ev,
@@ -105,9 +99,6 @@ exports:
                             __ZN3awd7metrics25MetricCCSignalStrengthGSMC1Ev,
                             __ZN3awd7metrics25SoundUMB_ATM_REG_DurationC1Ev,
                             __ZN3awd7metrics26AssistedCellSearchNrRecordC1Ev,
-                            __ZN3awd7metrics26CCStwRequestReason_IsValidEi,
-                            __ZN3awd7metrics26CCStwSuspendReason_IsValidEi,
-                            __ZN3awd7metrics26CCStwTransportType_IsValidEi,
                             __ZN3awd7metrics26CommCenterBasebandFilePushC1Ev,
                             __ZN3awd7metrics26CommCenterBundleUpdateInfoC1Ev,
                             __ZN3awd7metrics26CommCenterFileType_IsValidEi,
@@ -116,8 +107,6 @@ exports:
                             __ZN3awd7metrics26CommCenterPNRSMSSendResultC1Ev,
                             __ZN3awd7metrics26DataSentOnInternetCtxCountC1Ev,
                             __ZN3awd7metrics26MetricCCPDPContextActStartC1Ev,
-                            __ZN3awd7metrics26MetricCCStwMessageIncomingC1Ev,
-                            __ZN3awd7metrics26MetricCCStwMessageOutgoingC1Ev,
                             __ZN3awd7metrics26SpringBoardLockStateChangeC1Ev,
                             __ZN3awd7metrics27AssistedCellSearchLteRecordC1Ev,
                             __ZN3awd7metrics27CommCenterBundleUpdateCheckC1Ev,
@@ -147,7 +136,6 @@ exports:
                             __ZN3awd7metrics28MetricCCPDPContextDeactivateC1Ev,
                             __ZN3awd7metrics28RemotePlanSignupFlow_IsValidEi,
                             __ZN3awd7metrics29AssistedCellSearchUMTSSuccessC1Ev,
-                            __ZN3awd7metrics29CCStwCongestionStatus_IsValidEi,
                             __ZN3awd7metrics29CommCenterAudioDistortionInfoC1Ev,
                             __ZN3awd7metrics29CommCenterBasebandBoot_InputsC1Ev,
                             __ZN3awd7metrics29CommCenterCellularPlanFailureC1Ev,
@@ -208,7 +196,6 @@ exports:
                             __ZN3awd7metrics36RemotePlanSubscriptionStatus_IsValidEi,
                             __ZN3awd7metrics37CommCenterCellBroadcastConfigurationsC1Ev,
                             __ZN3awd7metrics37CommCenterDataUsageAccessBlockedAlertC1Ev,
-                            __ZN3awd7metrics38CCStwPreconditionsStatusReason_IsValidEi,
                             __ZN3awd7metrics38CommCenterCellularPlanPurchaseCompleteC1Ev,
                             __ZN3awd7metrics38CommCenterRemoteCellularPlanSignUpFlowC1Ev,
                             __ZN3awd7metrics38CommCenterShortDeadPeerDetectionReportC1Ev,
@@ -251,6 +238,7 @@ exports:
                             __ZN3awd7metrics44CommCenter_Instruments_CellularServiceStatusD1Ev,
                             __ZN3awd7metrics44CommCenter_Instruments_CellularWcdmaRrcStateC1Ev,
                             __ZN3awd7metrics44CommCenter_Instruments_CellularWcdmaRrcStateD1Ev,
+                            __ZN3awd7metrics45CommCenterCellularPlanMonitorModeType_IsValidEi,
                             __ZN3awd7metrics45CommCenter_Instruments_CellularLteRrcMsgEventC1Ev,
                             __ZN3awd7metrics45CommCenter_Instruments_CellularLteRrcMsgEventD1Ev,
                             __ZN3awd7metrics46CommCenterSubscriptionImeiChangeReason_IsValidEi,

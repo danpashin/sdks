@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MagnifierSupport.framework/MagnifierSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV16MagnifierSupportE7isImageSbvg,
                             _$s10Foundation3URLV16MagnifierSupportE7isImageSbvpMV,
                             _$s16MagnifierSupport0A14CommandManagerC11keyCommandsSaySo05UIKeyC0CGSgvg,
@@ -63,6 +63,10 @@ exports:
                             _$s16MagnifierSupport12InjectSharedVMa,
                             _$s16MagnifierSupport12InjectSharedVMn,
                             _$s16MagnifierSupport12InjectSharedVyACyxGSScfC,
+                            _$s16MagnifierSupport13MFEnvironmentV23setCardPositionToBottomyyFZ,
+                            _$s16MagnifierSupport13MFEnvironmentVMa,
+                            _$s16MagnifierSupport13MFEnvironmentVMn,
+                            _$s16MagnifierSupport13MFEnvironmentVN,
                             _$s16MagnifierSupport14CommandManagerMp,
                             _$s16MagnifierSupport14CommandManagerP21nextResponderResolverSo11UIResponderCSgycSgvMTj,
                             _$s16MagnifierSupport14CommandManagerP21nextResponderResolverSo11UIResponderCSgycSgvMTq,
@@ -318,6 +322,10 @@ exports:
                             _$s16MagnifierSupport24MAGARSessionViewDelegateP14startRecordingyyFTj,
                             _$s16MagnifierSupport24MAGARSessionViewDelegateP14startRecordingyyFTq,
                             _$s16MagnifierSupport24MAGARSessionViewDelegateTL,
+                            _$s16MagnifierSupport38DetectionModeViewNavigationBarDelegateMp,
+                            _$s16MagnifierSupport38DetectionModeViewNavigationBarDelegateP21toggleControlsDisplayyySbFTj,
+                            _$s16MagnifierSupport38DetectionModeViewNavigationBarDelegateP21toggleControlsDisplayyySbFTq,
+                            _$s16MagnifierSupport38DetectionModeViewNavigationBarDelegateTL,
                             _$sSa16MagnifierSupportSBRzlE6argmaxSiyF,
                             _$sSo12MLMultiArrayC16MagnifierSupportE10floatValueySfSaySiGF,
                             _$sSo12MLMultiArrayC16MagnifierSupportEySo8NSNumberCSaySiGcig,

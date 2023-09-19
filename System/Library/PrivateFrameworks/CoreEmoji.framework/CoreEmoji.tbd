@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreEmoji.framework/CoreEmoji
@@ -7,7 +7,7 @@ current-version:       167
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CEMCopyEmojiTokens, _CEMCreateEmojiCharacterSet,
                             _CEMCreateEmojiLocaleData,
                             _CEMCreateStringByStrippingEmojiCharacters,
@@ -15,9 +15,13 @@ exports:
                             _CEMEMFSearchEngineIsLocaleSupported,
                             _CEMEmojiLocaleDataCopyCommonEmojiTokens,
                             _CEMEmojiLocaleDataCreateEmojiTokensForString,
+                            _CEMEmojiLocaleDataEnableAdaptation,
                             _CEMEmojiLocaleDataEnumerateSearchResultsInStringWithBlock,
                             _CEMEmojiLocaleDataEnumerateSearchResultsIncludingSubstringsInStringWithBlock,
                             _CEMEmojiLocaleDataGetLocaleIdentifier,
+                            _CEMEmojiLocaleDataGetMecabraFlags,
+                            _CEMEmojiLocaleDataRecordEmojiEngagement,
+                            _CEMEmojiLocaleDataResetAdaptationDatabase,
                             _CEMEmojiTokenCopyName,
                             _CEMEmojiTokenCopyNameWithCount,
                             _CEMEmojiTokenCopyRelatedEmoji,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthMenstrualCycles.framework/HealthMenstrualCycles
@@ -7,15 +7,20 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _HAMenstrualAlgorithmsFlowFromHKMCMenstrualFlow,
                             _HAMenstrualAlgorithmsOvulationTestResultFromHKMCOvulationTestResult,
                             _HAMenstrualAlgorithmsPhaseFromHKMCCycleFactor,
                             _HDMenstrualCyclesDiagnosticsServerInterface,
                             _HDMenstrualCyclesPluginServerInterface,
                             _HKCategoryTypeFromDeviationType,
+                            _HKFeatureSettingsKeyFertileWindowProjectionsEnabled,
+                            _HKFeatureSettingsKeyForDeviationDetectionTypeEnabled,
+                            _HKFeatureSettingsKeyForIsLoggingHiddenForDisplayTypeIdentifier,
+                            _HKFeatureSettingsKeyMenstruationProjectionsEnabled,
+                            _HKHAMenstrualAlgorithmsDayStreamProcessorAlgorithmVersion,
                             _HKMCActiveWatchPairedProductType,
-                            _HKMCAlgorithmSuppressPeriodPredictionsFromCycleFactor,
+                            _HKMCAlgorithmSuppressPeriodPredictionsFromCycleFactorSamples,
                             _HKMCAllDeviationTypes,
                             _HKMCAllDisplayTypeIdentifiers,
                             _HKMCAllNotificationCategories,
@@ -32,6 +37,8 @@ exports:
                             _HKMCCategoryValuePregnancyTestResultFromPregnancyTestResult,
                             _HKMCCategoryValueProgesteroneTestResultFromProgesteroneTestResult,
                             _HKMCCervicalMucusQualityFromCategoryValueCervicalMucusQuality,
+                            _HKMCCycleChartMainTypes,
+                            _HKMCCycleChartsHiddenRowsDomain,
                             _HKMCCycleFactorFromHAMenstrualAlgorithmsCycleFactor,
                             _HKMCCycleFactorsEligibilityStateKey,
                             _HKMCCycleFactorsLastReviewedDateKey,
@@ -62,12 +69,13 @@ exports:
                             _HKMCDisplayTypeIdentifierSexualActivity,
                             _HKMCDisplayTypeIdentifierSymptoms,
                             _HKMCFertileWindowNotificationCategories,
-                            _HKMCForceDisableFertileWindowPredictionsFromCycleFactor,
-                            _HKMCForceDisablePeriodPredictionsFromCycleFactor,
+                            _HKMCForceDisableFertileWindowProjectionsFromCycleFactorSamples,
+                            _HKMCForceDisablePeriodProjectionsFromCycleFactorSamples,
                             _HKMCHeartRateContextIsSedentary,
                             _HKMCInfrequentDeviationDetectedDayIndicesKey,
                             _HKMCIrregularDeviationDetectedDayIndicesKey,
                             _HKMCIsAlgorithmsVersionSameOnPairedDevice,
+                            _HKMCLastLoggedInCycleTrackingDateKey,
                             _HKMCLastMenstrualPeriodDismissalDayIndexKey,
                             _HKMCLegacyOnboardingCompletedVersionKey,
                             _HKMCLegacyOnboardingFirstCompletedDateKey,
@@ -80,10 +88,11 @@ exports:
                             _HKMCLoggedDataMethodTimelineIOS,
                             _HKMCLoggedDataMethodTimelineWatchOS,
                             _HKMCMenstrualCyclesDefaultsDomain,
-                            _HKMCMenstrualCyclesOvulationConfirmationNotificationStateDomain,
-                            _HKMCMenstrualCyclesUnconfirmedDeviationNotificationStateDomain,
                             _HKMCMenstrualFlowFromCategoryValueMenstrualFlow,
                             _HKMCMenstrualSymptomFromDataTypeCode,
+                            _HKMCNanoMenstrualCyclesWidgetContainerBundleID,
+                            _HKMCNanoMenstrualCyclesWidgetExtensionBundleID,
+                            _HKMCNanoMenstrualCyclesWidgetExtensionKind,
                             _HKMCNotificationActionIdentifierOpenAddPeriodCalendar,
                             _HKMCNotificationActionIdentifierPeriodNotEnded,
                             _HKMCNotificationActionIdentifierPeriodNotStarted,
@@ -116,7 +125,11 @@ exports:
                             _HKMCNotificationIdentifierPeriod,
                             _HKMCNotificationIdentifierPrefix,
                             _HKMCNotificationIdentifierUnconfirmedDeviation,
+                            _HKMCOnboardingTileLastDismissedDateKey,
                             _HKMCOvulationConfirmationFailureDismissalDayIndexKey,
+                            _HKMCOvulationConfirmationHelpTileLastDismissalDateKey,
+                            _HKMCOvulationConfirmationHelpTileLastLearnMoreInteractionDateKey,
+                            _HKMCOvulationConfirmationHelpTileLastSleepConfigurationInteractionDateKey,
                             _HKMCOvulationTestResultFromCategoryValueOvulationTestResult,
                             _HKMCPeriodNotificationCategories,
                             _HKMCPluginIdentifier, _HKMCPluginServerIdentifier,
@@ -129,6 +142,7 @@ exports:
                             _HKMCSymptomSampleTypes, _HKMCTodayIndex,
                             _HKMCUnconfirmedDeviationDismissalDayIndexKey,
                             _HKMCUnconfirmedDeviationSubmissionDayIndexKey,
+                            _HKMCUpdatedFertileWindowNotificationFireDateKey,
                             _HKMenstrualCyclesDiagnosticsInterface,
                             _HKMenstrualCyclesStoreInterface,
                             _NSStringFromCycleFactor, _NSStringFromCycleFactors,
@@ -150,7 +164,7 @@ exports:
                             HKMCNotificationSentAnalytics,
                             HKMCOnboardingCompletionInfo, HKMCOnboardingManager,
                             HKMCProjection, HKMCProjectionAccuracyAnalytics,
-                            HKMCRecentBasalBodyTemperature,
+                            HKMCRecentBasalBodyTemperature, HKMCSampleInfo,
                             HKMCScheduledAnalysisAnalytics, HKMCSettingsManager,
                             HKMCStatistics, HKMCUnconfirmedDeviation,
                             HKMCUserCharacteristicsNotificationObserver,

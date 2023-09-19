@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriExpanseInternal.framework/SiriExpanseInternal
@@ -7,8 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s19SiriExpanseInternal0B12FlowProviderV04findD3For5parse0a3KitD00D12SearchResultVAF5ParseO_tF,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s12SiriOntology31UsoEntity_common_AttachmentTypeC13DefinedValuesO0A15ExpanseInternalE11descriptionSSvg,
+                            _$s12SiriOntology31UsoEntity_common_AttachmentTypeC13DefinedValuesO0A15ExpanseInternalE11descriptionSSvpMV,
+                            _$s12SiriOntology31UsoEntity_common_AttachmentTypeC13DefinedValuesOs23CustomStringConvertible0A15ExpanseInternalMc,
+                            _$s19SiriExpanseInternal0B12FlowProviderV04findD3For5parse0a3KitD00D12SearchResultVAF5ParseO_tF,
                             _$s19SiriExpanseInternal0B12FlowProviderVAA0bD9ProvidingAAMc,
                             _$s19SiriExpanseInternal0B12FlowProviderVAA0bD9ProvidingAAWP,
                             _$s19SiriExpanseInternal0B12FlowProviderVACycfC,
@@ -52,8 +55,7 @@ exports:
                             _$s19SiriExpanseInternal15ScreenShareTypeOSHAAMc,
                             _$s19SiriExpanseInternal15ScreenShareTypeOSQAAMc,
                             _$s19SiriExpanseInternal15ScreenShareTypeOs23CustomStringConvertibleAAMc,
-                            _$s19SiriExpanseInternal24ScreenSharingCallManagerV02isde7EnabledF6ActiveSbyF,
-                            _$s19SiriExpanseInternal24ScreenSharingCallManagerV09getRemoteF18ParticipantHandlesShySSGyF,
+                            _$s19SiriExpanseInternal24ScreenSharingCallManagerV02isd15ShareSupportingF7SalientSbyF,
                             _$s19SiriExpanseInternal24ScreenSharingCallManagerV18currentShareStatusAA0iJ0OSgvg,
                             _$s19SiriExpanseInternal24ScreenSharingCallManagerV18currentShareStatusAA0iJ0OSgvpMV,
                             _$s19SiriExpanseInternal24ScreenSharingCallManagerVAA0deF8ManagingAAMc,
@@ -64,6 +66,9 @@ exports:
                             _$s19SiriExpanseInternal24ScreenSharingCallManagerVN,
                             _$s19SiriExpanseInternal25ScreenSharingCallManagingMp,
                             _$s19SiriExpanseInternal25ScreenSharingCallManagingTL,
+                            _$sSo12TUCallStatusV19SiriExpanseInternalE11descriptionSSvg,
+                            _$sSo12TUCallStatusV19SiriExpanseInternalE11descriptionSSvpMV,
+                            _$sSo12TUCallStatusVs23CustomStringConvertible19SiriExpanseInternalMc,
                             _$sSo17OS_dispatch_queueC19SiriExpanseInternalE13executeOnMainyxxyclFZ,
                             _$sSq19SiriExpanseInternalE11descriptionSSvg,
                             _$sSq19SiriExpanseInternalE11descriptionSSvpMV,

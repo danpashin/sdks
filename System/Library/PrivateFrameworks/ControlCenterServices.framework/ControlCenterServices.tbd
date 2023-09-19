@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CCSControlCenterServicesErrorDomain,
                             _CCSIsInternalInstall, _CCSLogModuleSettings,
                             _CCSLogRemoteService,
@@ -19,7 +19,7 @@ exports:
                             _CCSVisibilityPreferenceForBundleInfoDictionary,
                             _CCSVisibilityPreferenceForBundleRecord,
                             _ControlCenterServicesVersionNumber,
-                            _ControlCenterServicesVersionString, _kVersionNumber ]
+                            _ControlCenterServicesVersionString ]
     objc-classes:         [ CCSControlCenterDefaults, CCSControlCenterService,
                             CCSModuleMetadata, CCSModulePresentationOptions,
                             CCSModuleRepository, CCSModuleSettingsProvider,

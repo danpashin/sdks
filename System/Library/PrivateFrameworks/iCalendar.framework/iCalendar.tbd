@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
-current-version:       1136.4.3
+current-version:       1158
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ICSAppendEmoji, _ICSDecodeBase64, _ICSDefaultPRODID,
                             _ICSEncodeBase64, _ICSRedactBytes, _ICSRedactString,
                             _ICSRedactionSetTestModeEnabled,
@@ -31,6 +31,8 @@ exports:
                             _kICSSTR_XAPPLE_bookmark,
                             _kICSSTR_XAPPLE_calendar_color_prop,
                             _kICSSTR_XAPPLE_contact_identifiers,
+                            _kICSSTR_XAPPLE_creator_identity_prop,
+                            _kICSSTR_XAPPLE_creator_team_identity_prop,
                             _kICSSTR_XAPPLE_default_alarm,
                             _kICSSTR_XAPPLE_dontschedule_prop,
                             _kICSSTR_XAPPLE_dropbox_prop,

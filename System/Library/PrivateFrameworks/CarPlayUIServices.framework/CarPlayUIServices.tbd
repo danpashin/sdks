@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CarPlayUIServices.framework/CarPlayUIServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CRSUIBannerRevocationReasonHomeButton,
                             _CRSUIBannerRevocationReasonInvalidated,
                             _CRSUIBannerRevocationReasonTouchOutsideDismiss,
@@ -15,19 +15,20 @@ exports:
                             _CRSUICarPlayTestAppSetClusterScreenCornerMaskImage,
                             _CRSUICarPlayTestAppSetMainScreenCornerMaskImage,
                             _CRSUIDashboardWidgetWindowFocusHighlightColorDidChangeNotification,
-                            _CRSUILogForCategory, _CRSUIWallpaper2022BlueDynamic,
+                            _CRSUILogForCategory,
                             _CRSUIWallpaper2022ColorDynamic,
-                            _CRSUIWallpaper2022GrayDynamic,
-                            _CRSUIWallpaperBlackDynamic,
+                            _CRSUIWallpaper2023BlueDynamic,
+                            _CRSUIWallpaper2023GrayDynamic,
+                            _CRSUIWallpaper2023MulticolorDynamic,
+                            _CRSUIWallpaper2023RedDynamic,
                             _CRSUIWallpaperBlueGreenDynamic,
                             _CRSUIWallpaperCacheCurrentVersion,
                             _CRSUIWallpaperCacheVersionKey,
                             _CRSUIWallpaperChangedNotification,
+                            _CRSUIWallpaperCreamDynamic,
                             _CRSUIWallpaperRedBlueDynamic,
                             _CRSUIWallpaperSolidBlack,
                             _CRSUIWallpaperSolidDynamic,
-                            _CRSUIWallpaperWWDC2021BlueDynamic,
-                            _CRSUIWallpaperWWDC2021GrayDynamic,
                             _CRSUIWallpaperWWDC2021MulticolorDynamic,
                             _CRSUIWindowMapStyleChangedNotification,
                             _CarPlayUIServicesVersionNumber,
@@ -36,6 +37,9 @@ exports:
                             CRSUIApplicationSceneSettings,
                             CRSUIApplicationSceneSettingsDiffInspector,
                             CRSUIApplicationSceneSpecification,
+                            CRSUIClimateOverlaySceneClientSettings,
+                            CRSUIClimateOverlaySceneSettings,
+                            CRSUIClimateOverlaySceneSpecification,
                             CRSUIClusterWindow, CRSUIClusterZoomAction,
                             CRSUIClusterZoomBSActionsHandler,
                             CRSUIDashboardWidgetSceneSettings,
@@ -46,6 +50,8 @@ exports:
                             CRSUIInstrumentClusterSettingsDiffAction,
                             CRSUIInstrumentClusterSettingsDiffInspector,
                             CRSUIMutableApplicationSceneSettings,
+                            CRSUIMutableClimateOverlaySceneClientSettings,
+                            CRSUIMutableClimateOverlaySceneSettings,
                             CRSUIMutableDashboardWidgetSceneSettings,
                             CRSUIMutableInstrumentClusterSceneSettings,
                             CRSUIMutableProxyApplicationSceneSettings,

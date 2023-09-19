@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DistributedEvaluation.framework/DistributedEvaluation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AddRecordsForType, _AddRecordsForTypeWithUUIDs,
                             _DESAmendedRecordInfo,
                             _DESApplyAsynchronousEnumerator,
@@ -62,20 +62,9 @@ exports:
                             _DESSubmissionLogSetHandler,
                             _DESSystemTelemetryResponseReadFrom,
                             _DESTemporaryDownloadDirectoryURL,
-                            _DESTrialEvent_ActivityDeferredDuration,
-                            _DESTrialEvent_ActivityScheduled,
-                            _DESTrialEvent_ActivityScheduledWithID,
-                            _DESTrialEvent_AvailablePluginCount,
-                            _DESTrialEvent_TaskCompletedError,
                             _DESTrialEvent_TaskCompletedStatus,
-                            _DESTrialEvent_TaskCrashed,
-                            _DESTrialEvent_TaskDuration,
                             _DESTrialEvent_TaskFetchedStatus,
                             _DESTrialEvent_TaskScheduledStatus,
-                            _DESTrialEvent_TaskSchedulingError,
-                            _DESTrialEvent_TasksFetchedCount,
-                            _DESTrialEvent_TasksFetchingError,
-                            _DESTrialEvent_TrialPostedBMLActivatedEvent,
                             _DESWriteSubmissionLogData,
                             _DistributedEvaluationVersionNumber,
                             _DistributedEvaluationVersionString,
@@ -90,8 +79,15 @@ exports:
                             _MLRuntimePluginID_ExtensionXCTestRestricted,
                             _MLRuntimePluginID_LighthouseNightingalePluginBattery,
                             _MLRuntimePluginID_LighthouseNightingalePluginCharger,
+                            _MLRuntimePluginID_MediaMLPluginApp,
+                            _MLRuntimePluginID_PFLHRPeriodPredBattery,
+                            _MLRuntimePluginID_PFLHRPeriodPredCharger,
+                            _MLRuntimePluginID_PFLHRPeriodPredStaticBat,
+                            _MLRuntimePluginID_PFLWTPeriodPredBattery,
+                            _MLRuntimePluginID_PFLWTPeriodPredCharger,
                             _MLRuntimePluginID_ProactiveShareSheetLighthousePFLPlugin,
                             _MLRuntimePluginID_RepackagingPlugin,
+                            _MLRuntimePluginID_SiriCoreMetricsPlugin,
                             _MLRuntimePluginID_XCTest, _RecordDataForUUID,
                             _RecordDirPathForRecordType,
                             _RecordDirURLForRecordType, _RecordInfoForUUID,
@@ -165,19 +161,20 @@ exports:
                             DESCategoricalMetadataEncoder, DESChunk,
                             DESCoreAnalyticsEventManager, DESDPBitValueRecorder,
                             DESDPFloatValueRecorder, DESDataTransport,
-                            DESDebugRecord, DESDediscoKey, DESDediscoUploader,
-                            DESDeviceIdentifierStore, DESDodMLMMappedTaskResult,
-                            DESDodMLServer, DESDodMLTaskResultContainer,
+                            DESDebugRecord, DESDecimalEncoder, DESDediscoKey,
+                            DESDediscoUploader, DESDeviceIdentifierStore,
+                            DESDodMLMMappedTaskResult, DESDodMLServer,
+                            DESDodMLTaskResultContainer,
                             DESDodMLTaskSchedulingPolicy, DESEncryptedData,
                             DESEventManager, DESExceptionCatchingEvaluator,
                             DESFedStatsDataType, DESFedStatsRecorder,
                             DESGaussianAlgorithmParameters, DESInternalDodMLTask,
                             DESInternalDodMLTaskResult, DESJSONPredicate,
                             DESLogging, DESMMappedFile, DESMetadataSchema,
-                            DESNumericMetadataEncoder, DESPFLEncryptableBuffer,
-                            DESPFLEncryptor, DESPFLNoisable, DESRecipe,
-                            DESRecipeEvaluationSession, DESRecordSet,
-                            DESRecordStore, DESRecordStoreManager,
+                            DESNumericMetadataEncoder, DESNumericStatsRecorder,
+                            DESPFLEncryptableBuffer, DESPFLEncryptor,
+                            DESPFLNoisable, DESRecipe, DESRecipeEvaluationSession,
+                            DESRecordSet, DESRecordStore, DESRecordStoreManager,
                             DESRecordStorePolicyManager, DESSandBoxManager,
                             DESSeparatedDPParameters, DESServiceAccess,
                             DESSignatureKey, DESSparsification,

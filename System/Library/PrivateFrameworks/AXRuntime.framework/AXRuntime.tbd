@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AXAPIEnabled, _AXArrayForString,
                             _AXAttributeAllowsRequeryWhenRemoteElementFails,
                             _AXAttributeForXCAttribute, _AXAuditClippingTest,
@@ -55,10 +55,10 @@ exports:
                             _AXInteractionLocationDescriptorFixedScreenSpacePointKey,
                             _AXInteractionLocationDescriptorPointValueKey,
                             _AXInteractionLocationDescriptorViewPointerNumberKey,
-                            _AXIsAXAttributedString, _AXLabelForElements,
-                            _AXObserverAddNotification, _AXObserverCreate,
-                            _AXObserverGetRunLoopSource, _AXObserverGetTypeID,
-                            _AXObserverRemoveNotification,
+                            _AXIsAXAttributedString, _AXLabelAndValueForElements,
+                            _AXLabelForElements, _AXObserverAddNotification,
+                            _AXObserverCreate, _AXObserverGetRunLoopSource,
+                            _AXObserverGetTypeID, _AXObserverRemoveNotification,
                             _AXOverrideRequestingClientType, _AXPidSuspend,
                             _AXPidUnsuspend, _AXProcessEverWantsMLElements,
                             _AXProcessWantsMLElementsForBundle,
@@ -74,6 +74,9 @@ exports:
                             _AXSetProcessWantsMLElementForBundle,
                             _AXStringFromAXAttributedString,
                             _AXTentativePidSuspend,
+                            _AXUIAccessibilityAnnouncementPriorityDefault,
+                            _AXUIAccessibilityAnnouncementPriorityHigh,
+                            _AXUIAccessibilityAnnouncementPriorityLow,
                             _AXUIAccessibilityAssistiveTechnologyKey,
                             _AXUIAccessibilityCustomRotorLinkCount,
                             _AXUIAccessibilityCustomRotorVisibleInTouchRotorKey,
@@ -83,6 +86,7 @@ exports:
                             _AXUIAccessibilityNavigationDirection,
                             _AXUIAccessibilityShouldAlwaysScrollKey,
                             _AXUIAccessibilitySortKey,
+                            _AXUIAccessibilitySpeechAttributeAnnouncementPriority,
                             _AXUIAccessibilitySpeechAttributeLanguage,
                             _AXUIAccessibilitySpeechAttributePhonemeSubstitution,
                             _AXUIAccessibilitySpeechAttributePitch,
@@ -138,7 +142,9 @@ exports:
                             _MSHGetMachPortFromSource,
                             _MSHMIGSourceSetNoSendersCallback,
                             _MSHMIGSourceSetSendOnceCallback, _SerializeCFType,
+                            _UIAccessibilityAcceptedInlineTextCompletion,
                             _UIAccessibilityCustomRotorActionIdentifierToken,
+                            _UIAccessibilityInlineTextCompletion,
                             _UIAccessibilityPosterBoardInlineWidgetPidKey,
                             _UIAccessibilityPosterBoardInlineWidgetUUIDKey,
                             _UIAccessibilityTableIndexToken,
@@ -190,7 +196,6 @@ exports:
                             _UIAccessibilityTokenMathTreePosition,
                             _UIAccessibilityTokenMisspelled,
                             _UIAccessibilityTokenNSLanguage,
-                            _UIAccessibilityTokenNotificationInLockScreen,
                             _UIAccessibilityTokenNumber,
                             _UIAccessibilityTokenOverrideLanguage,
                             _UIAccessibilityTokenParagraphAlignment,
@@ -381,11 +386,14 @@ exports:
                             _kAXMoveToElementNotificationKeyEchoSameTouchContainer,
                             _kAXMoveToElementNotificationKeyElement,
                             _kAXMoveToElementNotificationKeyIgnoreTouchInProgress,
+                            _kAXMoveToElementNotificationKeyShouldPlayTrackingSound,
+                            _kAXMoveToElementNotificationKeyShouldRefocusIfSameElement,
                             _kAXMoveToElementNotificationKeyShouldScrollToElement,
                             _kAXMoveToElementNotificationKeySyncNativeFocus,
                             _kAXNotEnabledTrait, _kAXNotificationDataKey,
                             _kAXPageScrollFailed, _kAXPageScrollIsCrownScroll,
                             _kAXPageScrollShouldSpeakElement,
+                            _kAXParentElementKey,
                             _kAXPerformElementUpdateImmediatelyToken,
                             _kAXPickerElementTrait, _kAXPidKey,
                             _kAXPlaysSoundTrait, _kAXPopupButtonTrait,
@@ -443,6 +451,8 @@ exports:
                             _kAXValueChangeTypeDelete,
                             _kAXValueChangeTypeDictation,
                             _kAXValueChangeTypeInsert,
+                            _kAXValueChangeTypeMarkingBegan,
+                            _kAXValueChangeTypeMarkingEnded,
                             _kAXValueChangeTypeReplacement,
                             _kAXValueChangeTypeSingleInsert,
                             _kAXValueChangeUserInfoKeyChangeType,

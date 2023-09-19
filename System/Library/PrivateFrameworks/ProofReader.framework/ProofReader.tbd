@@ -1,21 +1,21 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
-current-version:       584.8
+current-version:       595
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PRAppIdentifierKey, _PRCompletionKey,
                             _PRCopyAlternativesForPinyinInputString,
                             _PRCopyCorrectionsForPinyinInputString,
                             _PRCopyModificationsForPinyinInputString,
                             _PRCopyModificationsForPinyinInputStringWithGeometryModelData,
                             _PRCopyPrefixesForPinyinInputString,
-                            _PRErrorModelKey, _PRGuessKey, _PRLetterKey,
-                            _PRParameterBundlesKey,
+                            _PRErrorModelKey, _PRGuessKey, _PRIgnoreTerminationKey,
+                            _PRLetterKey, _PRParameterBundlesKey,
                             _PRParameterNameCapitalizedWordSingleThreshold,
                             _PRParameterNameCapitalizedWordThreshold,
                             _PRParameterNameStandaloneLexiconWeight,

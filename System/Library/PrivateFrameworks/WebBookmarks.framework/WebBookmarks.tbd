@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
-current-version:       615.1.26
+current-version:       616.1.27
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BookmarksBarSpecialID,
                             _BookmarksFrequentlyVisitedSitesSpecialID,
                             _BookmarksMenuSpecialID,
@@ -15,27 +15,35 @@ exports:
                             _BookmarksReadingListSpecialID, _BookmarksRootID,
                             _BookmarksWebFilterAllowedSitesSpecialID,
                             _DidDownloadBookmarkIconsNotification,
+                            _WBAllWebsiteDataProfileIdentifier,
                             _WBBackgroundImageFileDidChangeNotification,
                             _WBBackgroundImageIdentifierUserInfoKey,
                             _WBBackgroundImageModifiedStateAttributeKey,
                             _WBBookmarkSyncModifiedAttributesForKey,
                             _WBBookmarkSyncModifiedAttributesForKeys,
+                            _WBCreationDeviceIdentifierKey,
                             _WBCurrentProcessContainerPath,
                             _WBDatabaseContainsShareRecordSyncKey,
                             _WBDatabaseLockAcquisitorDefaultTimeout,
                             _WBDefaultPositionKey,
                             _WBDescriptionForBookmarkSyncModifiedAttributes,
+                            _WBEnableSharedTabGroupsFastSyncPresencePreferenceKey,
                             _WBErrorDomain,
+                            _WBIsProfileBackgroundImageUserInfoKey,
+                            _WBIsUnnamedKey,
                             _WBKeysForBookmarkSyncModifiedAttributes,
                             _WBLocalAttributesCurrentVersion,
                             _WBLocalAttributesVersionKey, _WBLocalTitleKey,
                             _WBLocalURLKey, _WBNSStringFromCollectionStoreOwner,
                             _WBNSStringFromCollectionType, _WBPageWebArchiveName,
+                            _WBProfilesChangedNotification,
                             _WBReaderWebArchiveName,
                             _WBRecoveredBookmarksSpecialID,
                             _WBSafariContainerPath, _WBSafariDirectoryPath,
                             _WBSafariPreferencesDomain,
                             _WBSetupTabGroupSyncAgentProtocolInterface,
+                            _WBStringFromBookmarkSyncState,
+                            _WBSyncAPIVersionUnknown,
                             _WBTabGroupSyncAgentDidFinishSyncNotificationName,
                             _WBTabGroupSyncAgentErrorDomain,
                             _WBTabGroupSyncAgentSyncObserverInterface,
@@ -89,6 +97,7 @@ exports:
                             _kWebBookmarksClearAllSafariHistoryMessageName,
                             _kWebBookmarksClearCloudTabsForCurrentDeviceMessageName,
                             _kWebBookmarksClearHSTSSuperCookiesMessageName,
+                            _kWebBookmarksClearHistoryMessageName,
                             _kWebBookmarksClientBundleIDKey,
                             _kWebBookmarksDeleteAllSafariWebSecurityOriginsMessageName,
                             _kWebBookmarksDeleteSafariPersistentURLCacheStorageMessageName,
@@ -103,6 +112,9 @@ exports:
                             _kWebBookmarksTitleKey, _kWebBookmarksUUIDKey,
                             _kWebBookmarksdServiceName, _kWebDataUsageSizeKey,
                             _kWebsiteDataAllRecordsKey, _kWebsiteDataRecordKey,
+                            _kWebsiteEndDateKey, _kWebsiteOptionsKey,
+                            _kWebsiteProfileIdentifiersKey,
+                            _kWebsiteStartDateKey,
                             _thresholdForRecentlyAcceptedShare,
                             _webBookmarksMessageReceivedAcknowledgementKey,
                             _webBookmarksMetaDataDeviceUUIDKey,
@@ -116,8 +128,10 @@ exports:
                             WBBookmarkSyncData,
                             WBBookmarksDatabaseHealthInformation, WBBrowserState,
                             WBChangeRecord, WBCollectionConfiguration,
-                            WBDatabaseLockAcquisitor, WBFeatureManager,
-                            WBLocalTabAttributes, WBMutableTab, WBMutableTabGroup,
+                            WBDatabaseLockAcquisitor, WBDevice, WBFeatureManager,
+                            WBFieldChangeRecord, WBLocalTabAttributes,
+                            WBMutableProfile, WBMutableTab, WBMutableTabGroup,
+                            WBProfile, WBProfileDifference, WBProfileWindow,
                             WBReadingList, WBReadonlyTabCollection,
                             WBReusableTabManager, WBSettingsSyncEngineAccess,
                             WBSettingsTask, WBSettingsTaskHandler, WBTab,
@@ -136,7 +150,9 @@ exports:
                             WebBookmarkTabCollection,
                             WebBookmarksSettingsGateway,
                             WebBookmarksXPCConnection, WebBookmarksXPCListener ]
-    objc-ivars:           [ WBTab._added, WBTab._bookmark, WBTab._local,
+    objc-ivars:           [ WBProfile._settingsDictionary, WBProfile._tabGroups,
+                            WBProfile._titleProvider, WBTab._added,
+                            WBTab._bookmark, WBTab._inUnnamedTabGroup,
                             WBTab._modified, WBTab._moved, WBTab._privateBrowsing,
                             WBTab._shared, WBTab._tabGroupUUID,
                             WBTabGroup._bookmark,
@@ -144,6 +160,7 @@ exports:
                             WBTabGroup._deletedTabs,
                             WBTabGroup._displayTitleProvider, WBTabGroup._kind,
                             WBTabGroup._lastSelectedTabUUID,
-                            WBTabGroup._overflowRemoteTabs, WBTabGroup._tabs,
+                            WBTabGroup._overflowRemoteTabs,
+                            WBTabGroup._profileIdentifier, WBTabGroup._tabs,
                             WBTabGroup._tabsByUUID ]
 ...

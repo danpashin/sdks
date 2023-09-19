@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NetworkRelay.framework/NetworkRelay
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NRBluetoothPacketParserCancel,
                             _NRBluetoothPacketParserCreate,
                             _NRBluetoothPacketParserCreateReadContext,
@@ -26,7 +26,7 @@ exports:
                             _NRDiagnosticSaveNetworkRelayStatusToTempDirectory,
                             _NRParametersAllowedAppUUIDString,
                             _NRParametersWhitelistedAppUUIDString,
-                            _NRPreferWiFiHasRequest, _NRPreferWiFiReset,
+                            _NRPreferP2PImmediatelySet, _NRPreferP2PSet,
                             _NRPreferWiFiSet,
                             __NRCopyPolicyTrafficClassifiersDescription,
                             __NRCopySerialQueueAttr, __NRCopyTimeString,
@@ -46,11 +46,13 @@ exports:
                             _createSockaddrString, _createSockaddrStringFromData,
                             _createStringFromNRLinkSubtype,
                             _createStringFromNRLinkType,
+                            _createStringFromNRServiceClass,
                             _createStringFromNRTLVType,
                             _createStringFromNRXPCRes,
-                            _createStringFromNRXPCType, _gNRMPKLLoggingEnabled,
-                            _gNRPacketLoggingEnabled, _getDSCPFromPacket,
-                            _getESPSPIFromPacket,
+                            _createStringFromNRXPCType,
+                            _createStringFromThermalPressureLevel,
+                            _gNRMPKLLoggingEnabled, _gNRPacketLoggingEnabled,
+                            _getDSCPFromPacket, _getESPSPIFromPacket,
                             _getESPSequenceNumberFromPacket, _isPacketValidIPv6,
                             _kNRXPCCommNotificationTypeXPCommDictionary,
                             _nrCopyAccountIdentifierForNRUUID,
@@ -90,10 +92,9 @@ exports:
                             _nrXPCEntitlementRetryConnections,
                             _nrXPCEntitlementTestLinkRecommendation,
                             _nrXPCEntitlementTesting, _nrXPCEntitlementXPCComm,
-                            _nrXPCKeyAWDLAddressData, _nrXPCKeyBTLatency,
-                            _nrXPCKeyBabelRoutes, _nrXPCKeyBlockIDSTraffic,
-                            _nrXPCKeyBlockSHOESTraffic, _nrXPCKeyBluetoothUUID,
-                            _nrXPCKeyCompanionLinkCount,
+                            _nrXPCKeyBTLatency, _nrXPCKeyBabelRoutes,
+                            _nrXPCKeyBlockIDSTraffic, _nrXPCKeyBlockSHOESTraffic,
+                            _nrXPCKeyBluetoothUUID, _nrXPCKeyCompanionLinkCount,
                             _nrXPCKeyCompanionLinkEncryptionType,
                             _nrXPCKeyCompanionLinkIsEnabled,
                             _nrXPCKeyCompanionLinkStatusDumpFilePaths,
@@ -116,6 +117,7 @@ exports:
                             _nrXPCKeyDeviceMonitorStatusLinkType,
                             _nrXPCKeyDeviceMonitorStatusProxySvcIntfName,
                             _nrXPCKeyDeviceMonitorStatusResponse,
+                            _nrXPCKeyDeviceMonitorStatusThermalPressureLevel,
                             _nrXPCKeyDevicePreferencesBTLinkPreferences,
                             _nrXPCKeyDevicePreferencesIdentifier,
                             _nrXPCKeyDevicePreferencesIsDeviceSetupInProgress,
@@ -132,6 +134,7 @@ exports:
                             _nrXPCKeyOperationalPropData, _nrXPCKeyOutOfBandKey,
                             _nrXPCKeyPacketLoggingVal, _nrXPCKeyPairWithSPPLink,
                             _nrXPCKeyPairingProtocolVersion,
+                            _nrXPCKeyPeerIPAddressData,
                             _nrXPCKeyPeerNetworkRelayVersion,
                             _nrXPCKeyPingMessage, _nrXPCKeyPreferWiFiAllowed,
                             _nrXPCKeyRemoteDeviceCBIdentifier,
@@ -155,7 +158,8 @@ exports:
                             _nrXPCTestCopyBabelRoutes,
                             _nrXPCTestNRLinkDirectorMessage ]
     objc-classes:         [ NRBluetoothLinkPreferences, NRBluetoothPacketParser,
-                            NRDeviceIdentifier, NRDeviceManager, NRDeviceMonitor,
+                            NRCompanionLinkPreferences, NRDeviceIdentifier,
+                            NRDeviceManager, NRDeviceMonitor,
                             NRDeviceOperationalProperties,
                             NRDevicePairingCandidate, NRDevicePairingCriteria,
                             NRDevicePairingManager, NRDevicePairingProperties,

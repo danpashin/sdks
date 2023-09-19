@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriVirtualDeviceResolution.framework/SiriVirtualDeviceResolution
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s27SiriVirtualDeviceResolution05CrossC16CommandExecutionO13FailureReasonO10asNSNumberSo0K0Cvg,
                             _$s27SiriVirtualDeviceResolution05CrossC16CommandExecutionO13FailureReasonO10asNSNumberSo0K0CvpMV,
                             _$s27SiriVirtualDeviceResolution05CrossC16CommandExecutionO13FailureReasonO14initializationyA2EmFWC,
@@ -288,6 +288,9 @@ exports:
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC25alarmTimerIntentsHandlingAA23CapabilitySupportStatusOvgTj,
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC25alarmTimerIntentsHandlingAA23CapabilitySupportStatusOvgTq,
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC25alarmTimerIntentsHandlingAA23CapabilitySupportStatusOvpMV,
+                            _$s27SiriVirtualDeviceResolution12CapabilitiesC25customTimerIntentHandlingAA23CapabilitySupportStatusOvgTj,
+                            _$s27SiriVirtualDeviceResolution12CapabilitiesC25customTimerIntentHandlingAA23CapabilitySupportStatusOvgTq,
+                            _$s27SiriVirtualDeviceResolution12CapabilitiesC25customTimerIntentHandlingAA23CapabilitySupportStatusOvpMV,
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC3muxAA23CapabilitySupportStatusOvgTj,
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC3muxAA23CapabilitySupportStatusOvgTq,
                             _$s27SiriVirtualDeviceResolution12CapabilitiesC3muxAA23CapabilitySupportStatusOvpMV,
@@ -330,6 +333,7 @@ exports:
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO16assistantEnabledyA2CmFWC,
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO16profileSwitchingyA2CmFWC,
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO25alarmTimerIntentsHandlingyA2CmFWC,
+                            _$s27SiriVirtualDeviceResolution13CapabilityKeyO25customTimerIntentHandlingyA2CmFWC,
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO3muxyA2CmFWC,
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO7speakeryA2CmFWC,
                             _$s27SiriVirtualDeviceResolution13CapabilityKeyO8rawValueACSgSS_tcfC,
@@ -610,6 +614,10 @@ exports:
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV30speakerSupportStatusAndQualityAA010CapabilityhI0O07supportI0_Si7qualitytSgvg,
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV30speakerSupportStatusAndQualityAA010CapabilityhI0O07supportI0_Si7qualitytSgvpMV,
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV30speakerSupportStatusAndQualityAA010CapabilityhI0O07supportI0_Si7qualitytSgvs,
+                            _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV31customTimerIntentHandlingStatusAA017CapabilitySupportK0OSgvM,
+                            _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV31customTimerIntentHandlingStatusAA017CapabilitySupportK0OSgvg,
+                            _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV31customTimerIntentHandlingStatusAA017CapabilitySupportK0OSgvpMV,
+                            _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV31customTimerIntentHandlingStatusAA017CapabilitySupportK0OSgvs,
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderV5buildAA0E0CyF,
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderVACycfC,
                             _$s27SiriVirtualDeviceResolution19CapabilitiesBuilderVMa,
@@ -916,6 +924,39 @@ exports:
                             _$s27SiriVirtualDeviceResolution35AlarmTimerIntentsHandlingCapabilityCMu,
                             _$s27SiriVirtualDeviceResolution35AlarmTimerIntentsHandlingCapabilityCN,
                             _$s27SiriVirtualDeviceResolution35AlarmTimerIntentsHandlingCapabilityCfD,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC08supportsefgH0AA0I13SupportStatusOvgTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC08supportsefgH0AA0I13SupportStatusOvgTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC08supportsefgH0AA0I13SupportStatusOvpMV,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC20supportsSecureCodingSbvgZ,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvMTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvMTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvgTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvgTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvpMV,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvsTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC3keySSvsTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC42capabilityDescriptionMatchingSupportStatusyAA0iK0CAA0imN0OFZTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC42capabilityDescriptionMatchingSupportStatusyAA0iK0CAA0imN0OFZTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC5coderACSgSo7NSCoderC_tcfC,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC5coderACSgSo7NSCoderC_tcfCTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC5coderACSgSo7NSCoderC_tcfCTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC5coderACSgSo7NSCoderC_tcfc,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6encode4withySo7NSCoderC_tFTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6encode4withySo7NSCoderC_tFTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6statusAcA0I13SupportStatusO_tcfC,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6statusAcA0I13SupportStatusO_tcfCTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6statusAcA0I13SupportStatusO_tcfCTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC6statusAcA0I13SupportStatusO_tcfc,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC7matches12descriptionsSbSayAA0I11DescriptionCG_tFTj,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityC7matches12descriptionsSbSayAA0I11DescriptionCG_tFTq,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCACycfC,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCACycfc,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCMa,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCMn,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCMo,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCMu,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCN,
+                            _$s27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapabilityCfD,
                             _$s27SiriVirtualDeviceResolution9ProximityO11descriptionSSvg,
                             _$s27SiriVirtualDeviceResolution9ProximityO11descriptionSSvpMV,
                             _$s27SiriVirtualDeviceResolution9ProximityO16isCloserOrSameAsySbACF,
@@ -944,6 +985,7 @@ exports:
                             SVDAssistantEnabledCapability,
                             SVDAudioPlaybackCapability, SVDCapability,
                             SVDCapabilityDescription,
+                            SVDCustomTimerIntentHandlingCapability,
                             SVDDeviceResolutionXPCInterface, SVDDeviceUnit,
                             SVDDeviceUnitSwift, SVDDeviceUnitSwiftDeprecated,
                             SVDMUXCapability, SVDProfileSwitchingCapability,
@@ -962,5 +1004,6 @@ exports:
                             _TtC27SiriVirtualDeviceResolution24SeymourRoutingCapability,
                             _TtC27SiriVirtualDeviceResolution26AssistantEnabledCapability,
                             _TtC27SiriVirtualDeviceResolution26ProfileSwitchingCapability,
-                            _TtC27SiriVirtualDeviceResolution35AlarmTimerIntentsHandlingCapability ]
+                            _TtC27SiriVirtualDeviceResolution35AlarmTimerIntentsHandlingCapability,
+                            _TtC27SiriVirtualDeviceResolution35CustomTimerIntentHandlingCapability ]
 ...

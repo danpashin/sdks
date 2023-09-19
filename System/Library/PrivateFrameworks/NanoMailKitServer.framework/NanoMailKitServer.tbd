@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NNMKEmailAddressTokenKey,
                             _NNMKErrorAccountUsernameUserInfoKey,
                             _NNMKErrorDomain,
@@ -104,6 +104,7 @@ exports:
                             _kBBActionArchiveIdentifier,
                             _kBBActionDismissIdentifier,
                             _kBBActionFlagIdentifier, _kBBActionReadIdentifier,
+                            _kBBActionReplyAllIdentifier,
                             _kBBActionReplyIdentifier,
                             _kBBActionResendIdentifier,
                             _kBBActionTapToRadarIdentifier,
@@ -142,8 +143,9 @@ exports:
                             _kNotificationSourceKey, _kNotificationSubjectKey,
                             _kNotificationToKey, _kProtectedContentServiceName,
                             _kProtectedServiceName,
-                            _kQuoteMessageBodyCustomAttribute, _kResendCapSecs,
-                            _kResendMinimumResendIntervalSecs,
+                            _kQuoteMessageBodyCustomAttribute,
+                            _kReplyAllURLParamKey, _kReplyAllURLScheme,
+                            _kResendCapSecs, _kResendMinimumResendIntervalSecs,
                             _kResendMultiplier, _kResendObjectTypeAccount,
                             _kResendObjectTypeAccountIdentity,
                             _kResendObjectTypeInitialSync,

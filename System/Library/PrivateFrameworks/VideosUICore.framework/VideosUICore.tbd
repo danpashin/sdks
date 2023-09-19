@@ -1,16 +1,18 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
-current-version:       762.40.74
+current-version:       883.1.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CALayerKeyBounds, _CALayerKeyBoundsOrigin,
                             _CALayerKeyBoundsSize, _CALayerKeyPosition,
                             _CALayerKeyShadowPath,
+                            _VUIAccessibilityHighContrastFocusIndicatorsEnabledNotification,
+                            _VUIAccessibilityIdDisplayTypeButton,
                             _VUIAccessibilityIdDisplayTypeDocument,
                             _VUIAccessibilityReduceMotionStatusDidChangeNotification,
                             _VUIAccessibilityVoiceOverStatusDidChangeNotification,
@@ -114,7 +116,8 @@ exports:
                             VUICollectionChange, VUICollectionChangeSet,
                             VUICollectionComparator, VUIContentRating,
                             VUIContentRatingBadgeManager, VUICoreUtilities,
-                            VUIDebugDefaults, VUIDelayOperation, VUIDevice,
+                            VUIDataImageDescriptor, VUIDebugDefaults,
+                            VUIDelayOperation, VUIDevice,
                             VUIDurationValueTransformer,
                             VUIEntitiesSortedByDateValueTransformer,
                             VUIFeatureFlag, VUIFeatureManager,
@@ -130,6 +133,9 @@ exports:
                             VUIRectAnimationAction, VUIRemoteImageDescriptor,
                             VUIResourceImageDescriptor, VUIRestrictions,
                             VUISortUtilities, VUIStackedImageView, VUIStateMachine,
-                            VUITitleSortDescriptor, VUIURLImageLoader,
+                            VUITitleSortDescriptor, VUITraitBaseClass,
+                            VUITraitLegibilityWeight,
+                            VUITraitPreferredContentSizeCategory,
+                            VUITraitUserInterfaceStyle, VUIURLImageLoader,
                             VUIURLRequestOperation ]
 ...

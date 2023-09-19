@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/ProtectedCloudStorage
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PCSAccountDisableWalrus, _PCSAccountEnableWalrus,
                             _PCSAccountMigrateToiCDP, _PCSAccountSetupIdentities,
                             _PCSAllServiceKeyRollingEnabled,
@@ -132,6 +132,7 @@ exports:
                             _PCSIdentitySetAddIdentity,
                             _PCSIdentitySetAddIdentityWithError,
                             _PCSIdentitySetCompanionCircleMember,
+                            _PCSIdentitySetCopyCurrentIdentityPointer,
                             _PCSIdentitySetCopyCurrentIdentityWithError,
                             _PCSIdentitySetCopyCurrentPublicIdentityWithError,
                             _PCSIdentitySetCopyIdentities,
@@ -164,6 +165,7 @@ exports:
                             _PCSIdentitySetSetCurrentIdentity,
                             _PCSIdentitySetSetCurrentIdentityWithError,
                             _PCSIdentitySetSetPlesio, _PCSIdentitySetSetWalrus,
+                            _PCSIdentitySetUnsetCurrentIdentity,
                             _PCSIdentitySetValidate, _PCSIdentitySetup,
                             _PCSIdentityShouldRecoverHSMBackup,
                             _PCSIdentitySynchronizeKeys,
@@ -278,7 +280,7 @@ exports:
                             __PCSIdentityRequireManateeSigning,
                             __PCSIdentitySetCopyCurrentIdentityInternal,
                             __PCSIdentitySetCopyPersonaIdentifier,
-                            __PCSIdentitySetGetDSID,
+                            __PCSIdentitySetGetAltDSID, __PCSIdentitySetGetDSID,
                             __PCSIdentitySetIsCurrentIdentity,
                             __PCSIdentitySetPersistentReference,
                             __PCSIdentitySetSetPersonaIdentifier,
@@ -316,7 +318,6 @@ exports:
                             ___PCSStoreStingrayIdentity,
                             ___PCSUpdateIniCloudKeychain,
                             ___PCS_WAITING_FOR_COM_APPLE_SDB,
-                            ___crashreporter_info__,
                             _kPCSAccessibilityVOPronunciation,
                             _kPCSAccessibilityVOPronunciation2,
                             _kPCSAccessibilityVOPronunciation3, _kPCSAccount,
@@ -405,8 +406,8 @@ exports:
                             _kPCSServiceTTYCallHistory,
                             _kPCSServiceWalletPaymentServices, _kPCSServiceiAD,
                             _kPCSServiceiMessage, _kPCSSettingStingrayRoll,
-                            _kPCSSettingsSuiteName, _kPCSSetupAuthToken,
-                            _kPCSSetupBoundaryNoCreate,
+                            _kPCSSettingsSuiteName, _kPCSSetupAltDSID,
+                            _kPCSSetupAuthToken, _kPCSSetupBoundaryNoCreate,
                             _kPCSSetupCallbackKeyRegistry,
                             _kPCSSetupCallbackMarkNegative, _kPCSSetupDSID,
                             _kPCSSetupDSIDAny, _kPCSSetupDeviceIdentifier,
@@ -420,10 +421,10 @@ exports:
                             _kPCSSetupLogFacility, _kPCSSetupMTTCallback,
                             _kPCSSetupMetadata, _kPCSSetupPassword,
                             _kPCSSetupPreferLocalKeyPreference,
-                            _kPCSSetupReadwriteKeyset, _kPCSSetupRecoverMode,
-                            _kPCSSetupRegistryCleanup, _kPCSSetupRollIdentity,
-                            _kPCSSetupService, _kPCSSetupStatistics,
-                            _kPCSSetupStingray,
+                            _kPCSSetupPublicKeys, _kPCSSetupReadwriteKeyset,
+                            _kPCSSetupRecoverMode, _kPCSSetupRegistryCleanup,
+                            _kPCSSetupRollIdentity, _kPCSSetupService,
+                            _kPCSSetupStatistics, _kPCSSetupStingray,
                             _kPCSSetupStingrayLargeDataSupport,
                             _kPCSSetupStingrayUpdateSupport,
                             _kPCSSetupSyncIdentity, _kPCSSetupTimeout,
@@ -437,8 +438,9 @@ exports:
                             PCSCKKSEnsurePCSFieldsOperation,
                             PCSCKKSFetchCurrentOperation,
                             PCSCKKSItemModifyContext, PCSCKKSOperation,
-                            PCSCKKSSyncViewOperation, PCSKeybagKey, PCSMTT,
-                            PCSMTTPoint, PCSMobileBackup, PCSShareProtectionObject,
-                            PCSUtilities, UserRegistryDB, UserRegistryStats ]
+                            PCSCKKSSyncViewOperation, PCSCurrentIdentity,
+                            PCSKeybagKey, PCSMTT, PCSMTTPoint, PCSMobileBackup,
+                            PCSShareProtectionObject, PCSUtilities, UserRegistryDB,
+                            UserRegistryStats ]
     objc-ivars:           [ PCSCKKSItemModifyContext._rollAttributes ]
 ...

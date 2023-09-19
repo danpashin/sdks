@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace
@@ -7,9 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AWDGCKSubmitLinkStatusMetric,
                             _GKSSubmitAWDMetricsFromGameD,
+                            _ReportingVC_SetEventDrivenAggregationOccurredHandler,
                             _VCReporting_GetClientType,
                             _VCReporting_GetDynamicReportingModuleID,
                             _VCReporting_finalizeAggregation, _VRTraceDebugBreak,
@@ -23,9 +24,10 @@ exports:
                             _VRTraceSetErrorLogLevel,
                             _VRTraceSetErrorLogLevelForModule, _VRTraceVariable_,
                             _connectingGKLog, _createAdaptiveLearningForAgent,
-                            _gVRTraceErrorLogLevel, _gVRTraceModuleFilterEnabled,
-                            _gVRTraceOSLog, _perfTimerStart, _perfTimerStop,
-                            _processGroupSymptoms, _reportingAWDCallStart,
+                            _gVRTraceErrorLogLevel, _gVRTraceLogDebugAsInfo,
+                            _gVRTraceModuleFilterEnabled, _gVRTraceOSLog,
+                            _perfTimerStart, _perfTimerStop, _processGroupSymptoms,
+                            _reportingAWDCallStart,
                             _reportingAdaptiveLearningStats,
                             _reportingAgentGetAlgoScores,
                             _reportingAudioStreamEvent,
@@ -46,17 +48,19 @@ exports:
                             _reportingGetUploadFlag, _reportingHandoverResult,
                             _reportingInheritModuleSpecificInfoFromParent,
                             _reportingLocalAndRemoteInterface, _reportingLog,
+                            _reportingMediaRecorderEvents,
                             _reportingModeRoleTransportLog,
-                            _reportingMomentEvents, _reportingNoRemoteChanged,
-                            _reportingPerfTimes, _reportingRegisterPeriodicTask,
+                            _reportingNoRemoteChanged, _reportingPerfTimes,
+                            _reportingRegisterPeriodicTask,
                             _reportingRegisterPeriodicTaskOnQueue,
                             _reportingRegisterPeriodicTaskWeak,
                             _reportingRegisterSystemStats,
                             _reportingReleaseObject, _reportingRemoteFrameSize,
                             _reportingSetAggregatorForClientType,
-                            _reportingSetDigestKey,
+                            _reportingSetDataPath, _reportingSetDigestKey,
                             _reportingSetNWActivityReportingEnabled,
                             _reportingSetPeriodicAggregationOccuredHandler,
+                            _reportingSetReportingClientExperimentSettings,
                             _reportingSetUserInfo, _reportingStartTimer,
                             _reportingStopTimer,
                             _reportingStreamGroupFromStreamGroupID,
@@ -81,6 +85,7 @@ exports:
                             _sRTCReportingAdaptiveLearningShortTermValueWeightC,
                             _sRTCReportingAdaptiveLearningState,
                             _sRTCReportingAirPlayClientName,
+                            _sRTCReportingAnsweringMachineClientName,
                             _sRTCReportingCoreDeviceScreenSharingClientName,
                             _sRTCReportingCoreDeviceSystemAudioClientName,
                             _sRTCReportingFaceTimeClientName,
@@ -88,11 +93,14 @@ exports:
                             _sRTCReportingHomeKitClientName,
                             _sRTCReportingMultiwayConferenceClientName,
                             _sRTCReportingRemoteCameraClientName,
+                            _sRTCReportingRemoteDesktopScreenSharingClientName,
+                            _sRTCReportingRemoteDesktopSystemAudioClientName,
                             _sRTCReportingRemoteMicClientName,
                             _sRTCReportingSecondaryDisplayClientName,
+                            _sRTCReportingVideoMessagingClientName,
                             _sRTCReportingWiFiCallingClientName,
                             _selectDestinationForRTMetrics ]
-    objc-classes:         [ CallSegment, TimingCollection, VCHistogram,
+    objc-classes:         [ CallSegment, TimingCollection, VCReportingHistogram,
                             VCWeakObjectHolder ]
     objc-ivars:           [ VCWeakObjectHolder._weakObject,
                             VCWeakObjectHolder._weakObjectWithoutAutoRelease ]

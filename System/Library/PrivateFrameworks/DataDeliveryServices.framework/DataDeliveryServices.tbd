@@ -1,23 +1,23 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDeliveryServices.framework/DataDeliveryServices
-current-version:       44.3
+current-version:       50
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AggregatedDurationAnalyticKey,
                             _AllowCellularOverride,
                             _AllowExpensiveAccessOverride, _AnalyticKeyPrefix,
                             _AssetCenterQueueName, _AssetDownloadAnalytic,
                             _AssetNameAnalyticKey,
-                            _AssetUpdatedNotificationSuffix, _ClientQueueName,
+                            _AssetUpdatedNotificationSuffix, _AutoAssetLog,
                             _CompatibilityVersionAnalyticKey,
-                            _ContentVersionAnalyticKey, _DDSAssertionContentFile,
-                            _DDSAssertionContentFolder,
+                            _ContentVersionAnalyticKey,
                             _DDSAssetDataDirectoryName,
+                            _DDSAssetDownloadUIErrorDomain,
                             _DDSAssetInfoListKeyMobileAssetProperties,
                             _DDSAttributeAssetLocale, _DDSAttributeAssetType,
                             _DDSAttributeAssetVersion, _DDSAttributeCity,
@@ -30,11 +30,11 @@ exports:
                             _DDSAttributeKeyContentType,
                             _DDSAttributeKeyContents,
                             _DDSAttributeKeyInputLayout,
-                            _DDSAttributeKeyLanguage, _DDSAttributeKeyLocale,
-                            _DDSAttributeKeyLocationCity,
+                            _DDSAttributeKeyLanguage,
+                            _DDSAttributeKeyLinguisticAssetType,
+                            _DDSAttributeKeyLocale, _DDSAttributeKeyLocationCity,
                             _DDSAttributeKeyLocationCountry,
                             _DDSAttributeKeyLocationProvince,
-                            _DDSAttributeKeyNeedType,
                             _DDSAttributeKeyProactiveLocation,
                             _DDSAttributeKeyRegion, _DDSAttributeKeyScript,
                             _DDSAttributeProvince, _DDSAttributeRegion,
@@ -48,16 +48,21 @@ exports:
                             _DDSAttributeValueContentTypePhrases,
                             _DDSAttributeValueContentTypeSpellChecker,
                             _DDSAttributeValueContentTypeSpellCheckerDelta,
-                            _DDSAttributeValueNeedTypeDelta,
-                            _DDSAttributeValueNeedTypeOptional,
-                            _DDSAttributeValueNeedTypeRequired,
+                            _DDSAttributeValueLinguisticAssetTypeDelta,
+                            _DDSAttributeValueLinguisticAssetTypeOptional,
+                            _DDSAttributeValueLinguisticAssetTypePriority,
+                            _DDSAttributeValueLinguisticAssetTypeRequired,
                             _DDSAttributeValueProactiveLocationHome,
                             _DDSAttributeValueProactiveLocationWork,
                             _DDSFilterValueUnspecified,
                             _DDSGetPreferenceIntForKey,
                             _DDSGetPreferenceObjectForKey,
+                            _DDSLinguisticDataAutoAssetType,
                             _DDSLinguisticDataMobileAssetType,
-                            _DDSMachServiceName, _DDSObjectsAreEqualOrNil,
+                            _DDSLockContentReasonEmptyAutoAssetDownload,
+                            _DDSMachServiceName,
+                            _DDSMecabraDictionaryRapidUpdatesMobileAssetType,
+                            _DDSObjectsAreEqualOrNil,
                             _DDSSetPreferenceObjectForKey, _DDSTrialErrorDomain,
                             _DDSTrialErrorWithCode, _DDSTrialParameterNameAsset,
                             _DDS_BUILD_VERSION_STRING, _DDS_IS_INTERNAL_INSTALL,
@@ -69,11 +74,12 @@ exports:
                             _DesiredUpdateWindowSize, _DurationAnalyticKey,
                             _ErrorDomainv2, _ProcessAnalyticKey, _QueryLog,
                             _RetryAnalyticKey, _ServerQueueName,
-                            _SuccessAnalyticKey, _UpdateCycleAnalytic,
-                            _UpdateCycleAnalyticIdentifier, _UpdateLog,
-                            __DDSBeginMocking, __DDSBeginMockingServices,
-                            __DDSEndMocking, __DDSEndMockingServices,
-                            __DDSIsMocking, __DDSIsMockingServices,
+                            _SuccessAnalyticKey, _UpdateCatalogMetadataKey,
+                            _UpdateCycleAnalytic, _UpdateCycleAnalyticIdentifier,
+                            _UpdateLog, __DDSBeginMocking,
+                            __DDSBeginMockingServices, __DDSEndMocking,
+                            __DDSEndMockingServices, __DDSIsMocking,
+                            __DDSIsMockingServices,
                             _assetUpdatedNotificationCallback, _kContentPath,
                             _kContentType, _kLocale, _kRegion ]
     objc-classes:         [ DDSAnalytics, DDSAssertDescriptor, DDSAssertion,
@@ -84,11 +90,16 @@ exports:
                             DDSBackgroundActivityScheduler, DDSCache,
                             DDSContentItem, DDSContentItemMatcher, DDSInterface,
                             DDSLinguisticAssetQuery,
-                            DDSLinguisticAttributeFilter, DDSMAAsset, DDSManager,
+                            DDSLinguisticAttributeFilter, DDSMAAsset,
+                            DDSMAAutoAssetManager,
+                            DDSMAAutoAssetManagerDataSource,
+                            DDSMAAutoAssetProvider, DDSMAAutoAssetSelector,
+                            DDSManager, DDSManagerDataSource,
                             DDSMobileAssetv2Provider,
+                            DDSMobileAssetv2ProviderDataSource,
                             DDSMobileAssetv2QueryAdapter, DDSRemoteSyncState,
-                            DDSServer, DDSTRIClient, DDSTimedAnalytic, DDSTrialAsset,
-                            DDSTrialClient, DDSTrialExperimentIdentifiers,
-                            DDSTrialManager, DDSTrialManagerDataSource,
-                            DDSTrialQuery ]
+                            DDSServer, DDSServerConfiguration, DDSTRIClient,
+                            DDSTimedAnalytic, DDSTrialAsset, DDSTrialClient,
+                            DDSTrialExperimentIdentifiers, DDSTrialManager,
+                            DDSTrialManagerDataSource, DDSTrialQuery ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NetworkStatistics.framework/NetworkStatistics
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NStatManagerAddAllRoutes,
                             _NStatManagerAddAllRoutesWithFilter,
                             _NStatManagerAddAllTCP,
@@ -123,7 +123,52 @@ exports:
                             _kNStatSrcTCPStateLastAck, _kNStatSrcTCPStateListen,
                             _kNStatSrcTCPStateSynReceived,
                             _kNStatSrcTCPStateSynSent,
-                            _kNStatSrcTCPStateTimeWait ]
+                            _kNStatSrcTCPStateTimeWait, _kNWStatsOptimizeCPU,
+                            _kNWStatsOptimizeLatency,
+                            _kNWStatsParameterAncestralNECPClientTLV,
+                            _kNWStatsParameterDomainInfo,
+                            _kNWStatsParameterMappingAppStateMonitoring,
+                            _kNWStatsParameterMappingAvoidCoalitions,
+                            _kNWStatsParameterMappingAvoidLaunchServices,
+                            _kNWStatsParameterMappingDebugMode,
+                            _kNWStatsParameterMappingUseCoalitions,
+                            _kNWStatsParameterMappingUseNEHelper,
+                            _kNWStatsParameterMappingUseNEHelperForSet,
+                            _kNWStatsParameterMappingUseProcessPrefixForSet,
+                            _kNWStatsParameterNECPClientTLV,
+                            _kNWStatsParameterReportOpen,
+                            _kNWStatsParameterThresholds,
+                            _kNWStatsParameterTraceFD,
+                            _kNWStatsParameterTrafficDeltaAdjustmentFactor,
+                            _kNWStatsSelectAllFlows,
+                            _kNWStatsSelectAllFlowsAndSubFlows,
+                            _kNWStatsSelectConnEvents,
+                            _kNWStatsSelectDestinationDirectlyReachable,
+                            _kNWStatsSelectFlowEvents,
+                            _kNWStatsSelectFlowUsesChannels,
+                            _kNWStatsSelectFlowUsesSockets,
+                            _kNWStatsSelectHasMinimumAge,
+                            _kNWStatsSelectHasTraffic,
+                            _kNWStatsSelectHasTrafficDelta,
+                            _kNWStatsSelectInterfaceAWDL,
+                            _kNWStatsSelectInterfaceCellular,
+                            _kNWStatsSelectInterfaceCellularViaFallback,
+                            _kNWStatsSelectInterfaceCompanionLink,
+                            _kNWStatsSelectInterfaceExpensive,
+                            _kNWStatsSelectInterfaceFlowswitchValueError,
+                            _kNWStatsSelectInterfaceLoopback,
+                            _kNWStatsSelectInterfaceRouteValueError,
+                            _kNWStatsSelectInterfaceUnknown,
+                            _kNWStatsSelectInterfaceWiFi,
+                            _kNWStatsSelectInterfaceWired, _kNWStatsSelectQUIC,
+                            _kNWStatsSelectStartupConnHasNetAccess,
+                            _kNWStatsSelectTCP,
+                            _kNWStatsSelectTuneSkipNoChangeConnOnClose,
+                            _kNWStatsSelectTuneSkipNoChangeConnOnRefresh,
+                            _kNWStatsSelectTuneTargetOpimization,
+                            _kNWStatsSelectUDP, _kNWStatsSelectUDPSubFlows,
+                            _kNWStatsSelectUserlandConnections,
+                            _kNWStatsTuneMaxConsecutiveReads ]
     objc-classes:         [ NWSInterfaceSnapshot, NWSProtocolSnapshot,
                             NWSQUICSnapshot, NWSRouteSnapshot, NWSRouteSnapshotter,
                             NWSSnapshot, NWSSnapshotSource, NWSSnapshotter,
@@ -131,5 +176,9 @@ exports:
                             NWStatisticsInterfaceSource, NWStatisticsManager,
                             NWStatisticsQUICSource, NWStatisticsRouteSource,
                             NWStatisticsSource, NWStatisticsTCPSource,
-                            NWStatisticsUDPSource ]
+                            NWStatisticsUDPSource, NWStatsConnProperties,
+                            NWStatsConnSnapshot, NWStatsManager,
+                            NWStatsProtocolSnapshot, NWStatsQUICSnapshot,
+                            NWStatsSnapshot, NWStatsTCPSnapshot,
+                            NWStatsUDPSnapshot ]
 ...

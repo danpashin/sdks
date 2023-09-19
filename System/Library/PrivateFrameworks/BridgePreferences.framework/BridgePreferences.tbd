@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BPSAboutTextViewParagraphHeaderKey,
                             _BPSAboutTextViewParagraphTextKey,
                             _BPSAccessoryColor, _BPSAccessoryHighlightColor,
@@ -167,13 +167,17 @@ exports:
                             _BPSShouldOfferSiriForDeviceLanguage,
                             _BPSShowGoalMetricIsDeprecatedCapabilityKey,
                             _BPSShowOnAnyRequiredWatchAppsInstalled,
-                            _BPSShowPreviewID, _BPSSiriSettingsCapabilityKey,
-                            _BPSSquareIconName, _BPSStingCapabilityKey,
+                            _BPSShowPreviewID,
+                            _BPSSiriAnnounceWorkoutVoiceFeedback,
+                            _BPSSiriSettingsCapabilityKey, _BPSSquareIconName,
+                            _BPSStarbearDockCapabilityKey,
+                            _BPSStingCapabilityKey,
                             _BPSStockholmSupportedInGizmoRegion,
                             _BPSSupportsAllWatchComplicationsAlwaysCapabilityKey,
-                            _BPSSystemAppIsRemovable, _BPSSystemAppIsRemoved,
-                            _BPSTableDetailTextSize, _BPSTableTextSize,
-                            _BPSTestMultipleMigrationChoice, _BPSTextColor,
+                            _BPSSupportsSunflowerKey, _BPSSystemAppIsRemovable,
+                            _BPSSystemAppIsRemoved, _BPSTableDetailTextSize,
+                            _BPSTableTextSize, _BPSTestMultipleMigrationChoice,
+                            _BPSTextColor,
                             _BPSThirdPartyComplicationsCapabilityKey,
                             _BPSTinCanCapabilityKey, _BPSTinkerCapabilityKey,
                             _BPSTinkerFamilyMemberNameSet,
@@ -186,12 +190,12 @@ exports:
                             _BPSUnlocalizedNameForMaterial,
                             _BPSUrsaCapabilityKey,
                             _BPSUserControlledButtonChordKey,
-                            _BPSVariantSizeForProductType,
+                            _BPSVariantSizeForProductType, _BPSVelocityKey,
                             _BPSVerticalDockCapabilityKey, _BPSVibrationGroupID,
                             _BPSVibrationID, _BPSWatchViewStyleDescription,
                             _BPSWorkoutAllDayNFCCapabilityKey,
                             _BPSWorkoutAutoPauseCapabilityKey, _BPSWorkoutDNDKey,
-                            _BPSWorkoutDNDStateChangedNotification,
+                            _BPSWorkoutDNDStateChangedNotification, _NPSQueue,
                             _PassbookSettingsBundleID, _SkippedPanesPrefsKey,
                             __BPSIsPairingCompatible,
                             __BPSOverrideDeviceCompatibleVersions,

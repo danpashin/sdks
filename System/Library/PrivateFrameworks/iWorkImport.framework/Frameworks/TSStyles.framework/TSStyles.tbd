@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iWorkImport.framework/Frameworks/TSStyles.framework/TSStyles
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TSSCaptionTextStylePresetKind,
                             _TSSCharacterStylePresetKind,
                             _TSSChartStylePresetKind, _TSSColorFillPresetKind,
@@ -19,6 +19,7 @@ exports:
                             _TSSFullPropertyMapForStyle,
                             _TSSGradientFillPresetKind, _TSSImageFillPresetKind,
                             _TSSImageStylePresetKind,
+                            _TSSImportedSVGShapeStylePresetKind,
                             _TSSImportedTextStylePresetKind,
                             _TSSLineStylePresetKind, _TSSListStylePresetKind,
                             _TSSMotionBackgroundStylePresetKind,
@@ -115,6 +116,8 @@ exports:
                             __ZN3TSS17StylesheetArchive9_Internal15styles_for_12_1EPKS0_,
                             __ZN3TSS17StylesheetArchive9_Internal15styles_for_12_2EPKS0_,
                             __ZN3TSS17StylesheetArchive9_Internal15styles_for_13_0EPKS0_,
+                            __ZN3TSS17StylesheetArchive9_Internal15styles_for_13_1EPKS0_,
+                            __ZN3TSS17StylesheetArchive9_Internal15styles_for_13_2EPKS0_,
                             __ZN3TSS17StylesheetArchive9_Internal6parentEPKS0_,
                             __ZN3TSS17StylesheetArchiveC1EPN6google8protobuf5ArenaE,
                             __ZN3TSS17StylesheetArchiveC1ERKS0_,
@@ -899,7 +902,8 @@ exports:
     objc-classes:         [ TSSMutablePropertySet,
                             TSSPropertyCommandObjectRegistry, TSSPropertyMap,
                             TSSPropertySet, TSSPropertySetChangeDetails, TSSStyle,
-                            TSSStyleDiff, TSSStyleMapper, TSSStylesheet, TSSTheme ]
+                            TSSStyleDiff, TSSStyleMapper, TSSStylesheet,
+                            TSSStylesheetPasteboardProxy, TSSTheme ]
     objc-ivars:           [ TSSPropertySet.mIndexSet,
                             TSSPropertySetChangeDetails.mChangedProperties,
                             TSSStyle.mOverridePropertyMap,
@@ -910,7 +914,12 @@ exports:
                             TSSStyleMapper._styleMap,
                             TSSStyleMapper._targetStylesheet,
                             TSSStylesheet.mIdentifierToStyleMap,
-                            TSSStylesheet.mStyles, TSSTheme.mDocumentStylesheet,
+                            TSSStylesheet.mStyles,
+                            TSSStylesheetPasteboardProxy.mReferencedStyles,
+                            TSSStylesheetPasteboardProxy.mReferencedStylesQueue,
+                            TSSStylesheetPasteboardProxy.mSelfArchiving,
+                            TSSStylesheetPasteboardProxy.mStylesheet,
+                            TSSTheme.mDocumentStylesheet,
                             TSSTheme.mLegacyStylesheet, TSSTheme.mPresetsByKind,
                             TSSTheme.mReplacedPresetUUIDs,
                             TSSTheme.mThemeIdentifier ]

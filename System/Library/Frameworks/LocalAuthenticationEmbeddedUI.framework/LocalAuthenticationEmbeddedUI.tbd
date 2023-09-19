@@ -1,12 +1,23 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-install-name:    '/System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/LocalAuthenticationEmbeddedUI'
-current-version: 1132.100.131
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/LocalAuthenticationEmbeddedUI
+current-version:       1391.2.1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _LACustomPasswordTypeAlphanumeric, _LACustomPasswordTypeCustomDigits, 
-                       _LACustomPasswordTypeFourDigits, _LACustomPasswordTypeSixDigits ]
-    objc-classes:    [ LAContextUITrampoline, LACustomPasswordController, LACustomPasswordControllerConfiguration, 
-                       LACustomPasswordControllerStyle ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LACustomPasswordTypeAlphanumeric,
+                            _LACustomPasswordTypeCustomDigits,
+                            _LACustomPasswordTypeFourDigits,
+                            _LACustomPasswordTypeSixDigits,
+                            _LAPasscodeChangeErrorDomain,
+                            _LAPasscodeRecoveryErrorDomain ]
+    objc-classes:         [ LAContextUITrampoline, LACustomPasswordController,
+                            LACustomPasswordControllerConfiguration,
+                            LACustomPasswordControllerStyle,
+                            LAPasscodeChangeService,
+                            LAPasscodeChangeServiceOptions,
+                            LAPasscodeRecoveryService ]
 ...

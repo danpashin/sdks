@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DoNotDisturb.framework/DoNotDisturb
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DNDCompatibilityVersionStringify,
                             _DNDCompatibilityVersionToString, _DNDDayForWeekdays,
                             _DNDDefaultModeIdentifier,
@@ -54,6 +54,7 @@ exports:
                             _DNDResolvedInterruptionBehavior,
                             _DNDResolvedInterruptionBehaviorSetting,
                             _DNDResolvedInterruptionBehaviorSettingForDevice,
+                            _DNDResolvedInterruptionSuppressionMode,
                             _DNDResolvedModeAssertionInvalidationReason,
                             _DNDResolvedRepeatEventSourceBehaviorEnabledSetting,
                             _DNDResolvedRepeatEventSourceBehaviorEnabledSettingForDevice,
@@ -72,6 +73,8 @@ exports:
                             _DNDStringFromDeviceClass,
                             _DNDStringFromExceptionType,
                             _DNDStringFromInterruptionBehaviorSetting,
+                            _DNDStringFromInterruptionSuppression,
+                            _DNDStringFromInterruptionSuppressionMode,
                             _DNDStringFromInterruptionSuppressionState,
                             _DNDStringFromModeAssertionLifetimeType,
                             _DNDStringFromModeAssertionScheduleLifetimeBehavior,
@@ -79,6 +82,7 @@ exports:
                             _DNDStringFromResolutionBehavior,
                             _DNDStringFromSupportedAccountFeatures,
                             _DNDSystemClientIdentifier,
+                            _DNDSystemColorNameForModeSemanticType,
                             _DNDSystemImageNameForModeSemanticType,
                             _DNDWeekdaysEveryday, _DNDWeekdaysFromDay,
                             _DNDWeekdaysUnset, _DoNotDisturbVersionNumber,
@@ -187,6 +191,7 @@ exports:
                             DNDConfiguration._minimumBreakthroughUrgency,
                             DNDConfiguration._senderConfiguration,
                             DNDConfiguration._senderConfigurationType,
+                            DNDConfiguration._suppressionMode,
                             DNDConfiguration._suppressionType,
                             DNDContact._contactIdentifier,
                             DNDContact._emailAddresses, DNDContact._firstName,

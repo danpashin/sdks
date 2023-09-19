@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FocusUI.framework/FocusUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s7FocusUI24QuickStartViewControllerC11viewDidLoadyyF,
                             _$s7FocusUI24QuickStartViewControllerC14modeIdentifierACSS_tcfC,
                             _$s7FocusUI24QuickStartViewControllerC14modeIdentifierACSS_tcfCTq,
@@ -74,10 +74,11 @@ exports:
                             FCUIActivityListContentView, FCUIActivityListView,
                             FCUIActivityPickerEducationCardView,
                             FCUIActivityPickerViewController,
-                            FCUIAddActivityFooterView,
+                            FCUIAddActivityFooterView, FCUICAPackageView,
                             FCUIFocusEnablementIndicatorBannerManager,
                             FCUIFocusEnablementIndicatorBannerPresentable,
                             FCUIFocusEnablementIndicatorManager,
+                            FCUIFocusEnablementIndicatorSystemApertureActivityElement,
                             FCUIFocusEnablementIndicatorSystemApertureElement,
                             FCUIFocusEnablementIndicatorSystemApertureManager,
                             FCUIFocusSelectionViewController,

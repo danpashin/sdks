@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateServicesUI.framework/SoftwareUpdateServicesUI
@@ -7,14 +7,15 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SUSUICLIToolConnectionName,
                             _SUSUIControllerConnectionName,
                             _SUSUICreateInstallationKeybagWithSecret,
                             _SUSUICreateInstallationKeybagWithSecretAndHandler,
                             _SUSUIGetPasscodePolicy, _SUSUILog,
                             _SUSUILogAuthenticationUI, _SUSUILogEmergencyCallUI,
-                            _SUSUILogKeybagInterface, _SUSUILogPostUpdateAlert,
+                            _SUSUILogExtension, _SUSUILogKeybagInterface,
+                            _SUSUILogLaggardsUI, _SUSUILogPostUpdateAlert,
                             _SUSUIPasscodePolicyTypeChangedNotification,
                             _SUSUIPreferencesChangedNotification,
                             _SUSUIRequiresAlertPresentationAfterUpdate,
@@ -33,7 +34,8 @@ exports:
                             SUSUIFakeSUDescriptor, SUSUIFakeSUDownload,
                             SUSUIFakeSUDownloadMetadata,
                             SUSUIFakeSUOperationProgress,
-                            SUSUIFakeSURollbackDescriptor, SUSUIPreferences,
+                            SUSUIFakeSURollbackDescriptor,
+                            SUSUILaggardsUIAlertAction, SUSUIPreferences,
                             SUSUIRemoteEmergencyCallAlertAction,
                             SUSUISoftwareUpdateDefaults ]
 ...

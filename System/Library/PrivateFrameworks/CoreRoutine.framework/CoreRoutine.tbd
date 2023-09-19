@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
-current-version:       837.0.4
+current-version:       891.0.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _RTCommonCalculateBoundingBox,
                             _RTCommonCalculateDistance,
                             _RTCommonCalculateDistanceHighPrecision,
@@ -19,17 +19,21 @@ exports:
                             _RTCommonSafeLog, _RTCommonValidConfidence,
                             _RTConflictingItemIdentifierKey,
                             _RTDetailedErrorsKey, _RTErrorDomain,
+                            _RTLinkQualityIsConnected, _RTLinkQualityToString,
                             _RTLocationsOfInterestDidChangeNotification,
+                            _RTLocationsOfInterestDidClearNotification,
                             _RTMachServiceEvent, _RTMachServiceInternal,
-                            _RTMachServiceRegistration, _RTVisitConfidenceHigh,
-                            _RTVisitConfidenceLow, __RTMultiErrorCreate,
-                            __RTSafeArray,
+                            _RTMachServiceRegistration,
+                            _RTMapItemPOICategoryUndefined,
+                            _RTVisitConfidenceHigh, _RTVisitConfidenceLow,
+                            __RTMultiErrorCreate, __RTSafeArray,
                             _kRTEstimatedLocationAverageSpeedUnknown,
                             _kRTEstimatedLocationFallbackModelDefault,
                             _kRTEstimatedLocationTimeIntervalUnknown,
                             _kRTLocationDownsamplerErrorThresholdNotSpecified,
                             _kRTLocationDownsamplerOutputSizeNotSpecified,
                             _kRTSignalGeneratorOptionsKeyAltitude,
+                            _kRTSignalGeneratorOptionsKeyCustomizedVisits,
                             _kRTSignalGeneratorOptionsKeyEntry,
                             _kRTSignalGeneratorOptionsKeyExit,
                             _kRTSignalGeneratorOptionsKeyHorizontalUncertainty,
@@ -42,8 +46,9 @@ exports:
                             _kRTSignalGeneratorOptionsKeyWeeklyVisits,
                             _kRTStoredHintEnumerationOptionsHintLocationDefaultBoundingBoxRadius,
                             _personalizedLabelsMask ]
-    objc-classes:         [ RTAddress, RTAddressSubPremise, RTCoordinate,
-                            RTDiagnosticOptions, RTEnumerationOptions,
+    objc-classes:         [ RTAddress, RTAddressSubPremise, RTContactScore,
+                            RTCoordinate, RTDiagnosticOptions, RTDistanceInterval,
+                            RTElevation, RTEnumerationOptions,
                             RTEstimatedLocationOptions,
                             RTFamiliarityIndexOptions, RTFamiliarityIndexResult,
                             RTFetchFingerprintsOptions, RTFingerprint, RTHint,
@@ -51,12 +56,14 @@ exports:
                             RTLocationDownsamplerTree, RTLocationOfInterest,
                             RTLocationOfInterestEnumerationOptions,
                             RTLocationOfInterestTransition,
-                            RTLocationOfInterestVisit, RTMapItem,
+                            RTLocationOfInterestVisit,
+                            RTLocationsForTripSegmentFetchOptions, RTMapItem,
                             RTMapItemExtendedAttributes, RTMapServiceOptions,
-                            RTMotionActivity, RTPCountEvent, RTPair,
-                            RTPlaceInference, RTPlaceInferenceOptions, RTPolygon,
-                            RTPredictedDate, RTPredictedLocationOfInterest,
-                            RTProximityEvent, RTRoutineManager, RTScenarioTrigger,
+                            RTMotionActivity, RTPair, RTPeopleCountEvent,
+                            RTPeopleDensity, RTPlaceInference,
+                            RTPlaceInferenceOptions, RTPolygon, RTPredictedDate,
+                            RTPredictedLocationOfInterest, RTProximityEvent,
+                            RTRoutineManager, RTScenarioTrigger,
                             RTScenarioTriggerSettled, RTScenarioTriggerUnsettled,
                             RTSignalGeneratorOptions, RTSource,
                             RTSourceCoreRoutine,
@@ -67,9 +74,21 @@ exports:
                             RTSourceMapsSupportHistoryEntry,
                             RTSourceMapsSupportHistoryEntryPlaceDisplay,
                             RTSourceMapsSupportHistoryEntryRoute,
+                            RTStoredElevationEnumerationContext,
+                            RTStoredElevationEnumerationOptions,
                             RTStoredHintEnumerationOptions,
                             RTStoredLocationEnumerationContext,
                             RTStoredLocationEnumerationOptions,
-                            RTStoredVisitFetchOptions, RTTokenBucket,
-                            RTVehicleEvent, RTVisit, RTWiFiAccessPoint ]
+                            RTStoredTripSegmentFetchOptions,
+                            RTStoredVehicleFetchOptions,
+                            RTStoredVisitFetchOptions,
+                            RTSynthesizedLocationEnumerationContext,
+                            RTSynthesizedLocationEnumerationOptions,
+                            RTTokenBucket, RTTripSegment, RTTripSegmentFormOfWay,
+                            RTTripSegmentInertialDataEnumerationContext,
+                            RTTripSegmentInertialDataEnumerationOptions,
+                            RTTripSegmentLocationType, RTTripSegmentMetadata,
+                            RTTripSegmentMetadataFetchOptions,
+                            RTTripSegmentRoadClass, RTVehicle, RTVehicleEvent,
+                            RTVisit, RTWiFiAccessPoint ]
 ...

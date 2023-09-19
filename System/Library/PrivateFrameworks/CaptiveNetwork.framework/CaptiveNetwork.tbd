@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CaptiveNetwork.framework/CaptiveNetwork
@@ -7,10 +7,12 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CNAccountsAdd, _CNAccountsCopy, _CNAccountsResolve,
-                            _CNAccountsUse, _CNDebugLaunchWebsheet, _CNDumpState,
-                            _CNForgetSSID, _CNIAmTheWebsheetApp2, _CNLogoff,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CNAccountsCopy, _CNAccountsResolve, _CNAccountsUse,
+                            _CNAuthenticateUsingTokenAccount,
+                            _CNDebugLaunchWebsheet, _CNDumpState,
+                            _CNEnableWebSheetLaunch, _CNForgetSSID,
+                            _CNIAmTheWebsheetApp2, _CNLogoff,
                             _CNNetworkCopyPluginNames,
                             _CNNetworkCreateWithSSIDAndBSSID, _CNNetworkGetBSSID,
                             _CNNetworkGetInterfaceName, _CNNetworkGetPassword,
@@ -35,9 +37,12 @@ exports:
                             _CNPluginResponseSetNetwork,
                             _CNPluginResponseSetNetworkList, _CNProberCreate,
                             _CNProberCreateRunLoopSource, _CNProberGetTypeID,
+                            _CNPurgeCaptivePortalAuthenticationCredentials,
                             _CNSClientCNSClient_subsystem,
                             _CNScanListFilterStart, _CNScanListFilterStop,
-                            _CNScrapeCredentials, _CNUserInteractionIsRequired,
+                            _CNScrapeCredentials,
+                            _CNSetCaptivePortalAuthenticationCredentials,
+                            _CNUserInteractionIsRequired,
                             _CNWebsheetNotifyComplete,
                             _CNWebsheetNotifyCompleteWithOptions,
                             _CaptiveCopyWiFiLandingPageURL,

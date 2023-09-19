@@ -1,23 +1,27 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Notes.framework/Notes
-current-version:       2240
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ICHTMLIndexerDataSourceIdentifier,
                             _LegacyDeviceLocalAccountID,
                             _NoteContextChangedElsewhereNotification,
                             _NoteContextDeletedNotesNotification,
+                            _NoteContextDidSetUpCoreDataStackNotification,
+                            _NoteContextDidUnlockObjectCreationNotification,
                             _NoteContextIndexPath,
                             _NoteContextManagedObjectModelPath,
                             _NoteContextPersistentStorePath,
                             _NoteContextRootDirectoryPath,
                             _NoteContextUpdatedIndexNotification,
+                            _NoteContextWillLockObjectCreationNotification,
                             _NoteContextWillSaveNotification,
+                            _NoteContextWillSetUpCoreDataStackNotification,
                             _NoteObjectItemProviderUTI,
                             _NoteObjectMaximumImapSyncableSize,
                             _NoteObjectTitleMaximumLength,

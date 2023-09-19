@@ -38,3 +38,16 @@
 
 #define AVKIT_INIT_UNAVAILABLE	- (instancetype)init NS_UNAVAILABLE; \
 								+ (instancetype)new  NS_UNAVAILABLE;
+
+
+#if TARGET_OS_IPHONE
+#define AVKitPlatformViewClass UIView
+#else
+#define AVKitPlatformViewClass NSView
+#endif // TARGET_OS_IPHONE
+
+#if TARGET_OS_IPHONE
+#define AVKitPlatformColorClass UIColor
+#else
+#define AVKitPlatformColorClass NSColor
+#endif // TARGET_OS_IPHONE

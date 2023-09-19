@@ -71,6 +71,9 @@ PT_EXTERN API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos, macCatalyst, tvos, wat
 /// The default value for transmission mode is PTTransmissionModeHalfDuplex. If your application support one of the other transmission modes set it using this function. The system user interface will be updated to reflect the transmission mode.
 - (void)setTransmissionMode:(PTTransmissionMode)transmissionMode forChannelUUID:(NSUUID *)channelUUID completionHandler:(void (^_Nullable)(NSError * _Nullable))completionHandler NS_SWIFT_NAME(setTransmissionMode(_:channelUUID:completionHandler:));
 
+/// The default channel behavior is to map supported accessory button events to begin/end transmission actions. If your application does not wish to map these button events to transmission actions you can disable them by setting the enabled value to false.
+- (void)setAccessoryButtonEventsEnabled:(BOOL)enabled forChannelUUID:(NSUUID *)channelUUID completionHandler:(void (^_Nullable)(NSError * _Nullable))completionHandler API_AVAILABLE(ios(17.0)) API_UNAVAILABLE(macos, macCatalyst, tvos, watchos) NS_SWIFT_NAME(setAccessoryButtonEventsEnabled(_:channelUUID:completionHandler:));
+
 @end
 
 NS_ASSUME_NONNULL_END

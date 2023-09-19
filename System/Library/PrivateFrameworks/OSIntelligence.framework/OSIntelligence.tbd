@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/OSIntelligence.framework/OSIntelligence
@@ -7,56 +7,17 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _OSIntelligenceVersionNumber,
                             _OSIntelligenceVersionString,
-                            _kInvalidPredictedDuration,
-                            _kOSHighBatteryDrain12Hrs, _kOSHighBatteryDrain15Min,
-                            _kOSHighBatteryDrain1Day, _kOSHighBatteryDrain1Hr,
-                            _kOSHighBatteryDrain20Min, _kOSHighBatteryDrain3Hrs,
-                            _kOSHighBatteryDrainActivityMean,
-                            _kOSHighBatteryDrainActivityStd,
-                            _kOSHighBatteryDrainBattThreshold,
-                            _kOSHighBatteryDrainBattWeekdayPercentileMean,
-                            _kOSHighBatteryDrainBattWeekdayPercentileStd,
-                            _kOSHighBatteryDrainDistFromTotalMean,
-                            _kOSHighBatteryDrainDistFromTotalStd,
-                            _kOSHighBatteryDrainDrainSinceLastPluginMean,
-                            _kOSHighBatteryDrainDrainSinceLastPluginStd,
-                            _kOSHighBatteryDrainHour,
-                            _kOSHighBatteryDrainMaxBatt12Mean,
-                            _kOSHighBatteryDrainMaxBatt12Std,
-                            _kOSHighBatteryDrainMeanActivityMean,
-                            _kOSHighBatteryDrainMeanActivityStd,
-                            _kOSHighBatteryDrainMeanChargeDurationThreshold,
-                            _kOSHighBatteryDrainMeanDailyPluginsMean,
-                            _kOSHighBatteryDrainMeanDailyPluginsStd,
-                            _kOSHighBatteryDrainMinute,
-                            _kOSHighBatteryDrainNEventsPrior,
-                            _kOSHighBatteryDrainNEventsPriorStd,
-                            _kOSHighBatteryDrainNetDrainSinceMaxMean,
-                            _kOSHighBatteryDrainNetDrainSinceMaxStd,
-                            _kOSHighBatteryDrainRecentDrain15MinMean,
-                            _kOSHighBatteryDrainRecentDrain15MinStd,
-                            _kOSHighBatteryDrainRecentDrain1Mean,
-                            _kOSHighBatteryDrainRecentDrain1Std,
-                            _kOSHighBatteryDrainRecentDrain3Mean,
-                            _kOSHighBatteryDrainRecentDrain3Std,
-                            _kOSHighBatteryDrainSaturday,
-                            _kOSHighBatteryDrainStartTimeSecsMean,
-                            _kOSHighBatteryDrainStartTimeSecsStd,
-                            _kOSHighBatteryDrainSunday,
-                            _kOSHighBatteryDrainUserMeanDrainMean,
-                            _kOSHighBatteryDrainUserMeanDrainStd,
-                            _kOSHighBatteryDrainValueMean,
-                            _kOSHighBatteryDrainValueStd ]
-    objc-classes:         [ _OSBatteryDrainPredictor, _OSChargingPredictor,
-                            _OSChargingPredictorOutput,
-                            _OSHighBatteryDrainPredictor,
-                            _OSHighBatteryDrainUtil,
+                            _kInvalidPredictedDuration ]
+    objc-classes:         [ OSIUtilities, _OSBatteryDrainPredictor,
+                            _OSBatteryLowSOCPredictorOutput, _OSBatteryPredictor,
+                            _OSChargingPredictor, _OSChargingPredictorOutput,
                             _OSInactivityPredictionClient,
                             _OSInactivityPredictorBackupHourEntry,
                             _OSInactivityPredictorBackupHourEntry_v1,
                             _OSInactivityPredictorBackupHourEntry_v2,
+                            _OSInactivityPredictorMetadata,
                             _OSInactivityPredictorOutput, _dayDrainInfo ]
 ...

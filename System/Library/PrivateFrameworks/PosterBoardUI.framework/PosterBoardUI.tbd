@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PosterBoardUI.framework/PosterBoardUI
@@ -7,8 +7,17 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _NSStringFromPRUISwitcherLayoutMode, _PRUILogCommon,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _NSStringFromPRUISwitcherLayoutMode,
+                            _PRUIDefaultServiceQuality,
+                            _PRUIEditingServiceIdentifier, _PRUIEndpointMachName,
+                            _PRUIExternallyHostedPosterEditingServiceEntitlement,
+                            _PRUIExternallyHostedPosterEditingServiceInterface,
+                            _PRUIExternallyHostedPosterEntryPointWrapperEntryPointKey,
+                            _PRUIExternallyHostedPosterEntryPointWrapperRequestUUIDKey,
+                            _PRUIExternallyHostedPosterEntryPointWrapperTypeStringKey,
+                            _PRUILogCommon, _PRUILogRemoteEditing,
+                            _PRUIServiceDomainName,
                             _PRUISwitcherLayoutBouncingAnimationSettings,
                             _PRUISwitcherLayoutDeflationAnimationSettings,
                             _PRUISwitcherLayoutTransitionAnimationSettings,
@@ -16,8 +25,16 @@ exports:
                             _PosterBoardUILoggingSubsystem,
                             _PosterBoardUIVersionNumber,
                             _PosterBoardUIVersionString ]
-    objc-classes:         [ PRUIDidDismissSheetAction, PRUIGradientView,
+    objc-classes:         [ PRUIDidDismissSheetAction,
+                            PRUIExternallyHostedPosterEditingServer,
+                            PRUIExternallyHostedPosterEditingService,
+                            PRUIExternallyHostedPosterEntryPointWrapper,
+                            PRUIForwardExtensionAppearanceNotificationAction,
+                            PRUIGradientView,
+                            PRUIInlinePosterEditingViewController,
                             PRUIModalController,
+                            PRUIModalEntryPointAmbientEditingSwitcher,
+                            PRUIModalEntryPointAmbientEditingSwitcherWithActiveConfiguration,
                             PRUIModalEntryPointEditHomeScreen,
                             PRUIModalEntryPointEditing,
                             PRUIModalEntryPointFocusPosterSelection,
@@ -34,5 +51,6 @@ exports:
                             PRUISwitcherSceneClientSettingsDiffInspector,
                             PRUISwitcherSceneSettingsDiffInspector,
                             PRUISwitcherSceneSpecification,
-                            PRUIWillDismissSheetAction ]
+                            PRUIWillDismissSheetAction,
+                            _PRUIInlinePosterEditingPlaceholderViewController ]
 ...

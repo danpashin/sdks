@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RespiratoryHealth.framework/RespiratoryHealth
@@ -7,9 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _HKRPBloodOxygenAppBundleIdentifier,
                             _HKRPLocalizedString,
+                            _HKRPNanoOxygenSaturationWidgetExtensionBundleID,
+                            _HKRPNanoOxygenSaturationWidgetExtensionKind,
                             _HKRPOxygenSaturationFeatureAvailabilityRequirements,
                             _HKRPOxygenSaturationLocalFeatureAttributes,
                             _HKRPShouldInstallOxygenSaturationWatchAppOnPairedWatch,
@@ -18,8 +20,7 @@ exports:
                             _HKRPShouldSkipRegionCheck,
                             _HKRPStringFromHKRPOxygenSaturationSessionEndReason,
                             _HKRPUserDefaultsHasCompletedOnboardingKey,
-                            _HKRespiratoryPluginIdentifier,
-                            __HDRPOxygenSaturationSessionServerIdentifier ]
+                            _HKRespiratoryPluginIdentifier ]
     objc-classes:         [ HKRPOxygenSaturationAvailability,
                             HKRPOxygenSaturationOnboardingCache,
                             HKRPOxygenSaturationOnboardingCacher,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXSoundDetectionUI.framework/AXSoundDetectionUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AXSDKShotGatherFilesAndGenerateRadarForDetector,
                             _AXSDSoundDetectionGenerateUserNotificationForCustomDetector,
                             _AXSDSoundDetectionGenerateUserNotificationForDetectionType,
@@ -20,7 +20,7 @@ exports:
                             __accessibilitySDUISupportBundle,
                             _kShotGeneralApplianceName, _kShotHallucinatorName,
                             _kShotModelWeightsName, _modelBasePath,
-                            _modelExtension, _soundDetectionTypesForCategory ]
+                            _modelExtension ]
     objc-classes:         [ AXHARingBuffer, AXSDAudioLevelsHelper,
                             AXSDCustomDetectionController, AXSDDetectionResult,
                             AXSDDetector, AXSDDetectorManager,

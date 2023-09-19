@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PacketFilter.framework/PacketFilter
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PFCheckNATRule, _PFCheckRule,
                             _PFFindStatesByDescriptor,
                             _PFGetDescriptorStateDetails, _PFManagerAddUser,
@@ -16,6 +16,7 @@ exports:
                             _PFManagerLogOpen, _PFManagerNoticeLog,
                             _PFManagerRelease, _PFManagerReleaseUser,
                             _PFManagerSendMessage,
+                            _PFQueryGatewayAddrAndPortForDescriptor,
                             _PFStateQueryAppendTrafficDescriptor, _PFUserAddRule,
                             _PFUserBeginRules, _PFUserClearRules,
                             _PFUserClearStates, _PFUserCommitRules,

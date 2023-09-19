@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Silex.framework/Silex
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CGSizeAspectFill, _CalculateColumnWidth,
                             _CalculateMargin, _CalculateMinimumColumnWidth,
                             _NSStringFromDependencyAttribute,
@@ -129,8 +129,10 @@ exports:
                             _kSXTextComponentScrollPositionRelativeTextOffsetKey,
                             _kTrackingAdjustForUILabel ]
     objc-classes:         [ SXAXCustomRotor, SXAXCustomRotorDefinition,
-                            SXAXCustomRotorProvider, SXActionActivityGroup,
-                            SXActionActivityManager, SXActionAssembly,
+                            SXAXCustomRotorProvider,
+                            SXAccessibilityHyphenationModifier,
+                            SXActionActivityGroup, SXActionActivityManager,
+                            SXActionAssembly,
                             SXActionComponentInteractionHandler,
                             SXActionComponentInteractionHandlerFactory,
                             SXActionComponentViewPostProcessor, SXActionEngine,
@@ -276,8 +278,8 @@ exports:
                             SXConditionalResolverModifierInstructions,
                             SXConditionalSuggestedArticlesPlacementType,
                             SXConditionalTextComponent, SXConditionalTextStyle,
-                            SXConfiguredConditionValidator, SXContactsPresenter,
-                            SXContainerComponent, SXContainerComponentAssembly,
+                            SXConfiguredConditionValidator, SXContainerComponent,
+                            SXContainerComponentAssembly,
                             SXContainerComponentBlueprint,
                             SXContainerComponentClassification,
                             SXContainerComponentSizer,
@@ -562,9 +564,8 @@ exports:
                             SXPortraitComponentClassification,
                             SXPostActionHandlerManager, SXPosterFrameView,
                             SXPreferredColorSchemeConditionValidator,
-                            SXPresentableCalendarEvent, SXPresentableContact,
-                            SXPresentableMail, SXPresentableMessage,
-                            SXPresentationAttributes,
+                            SXPresentableCalendarEvent, SXPresentableMail,
+                            SXPresentableMessage, SXPresentationAttributes,
                             SXPresentationAttributesManager,
                             SXPresentationDelegateContainer, SXProductAddition,
                             SXProxyAuthenticationCredentialFactory,

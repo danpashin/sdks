@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreMaterial.framework/CoreMaterial
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CoreMaterialVersionNumber,
                             _CoreMaterialVersionString,
                             _MTAllOrdinalVisualStyles,
@@ -20,6 +20,7 @@ exports:
                             _MTCAColorMatrixIsIdentity,
                             _MTCAColorMatrixMakeWithDictionaryRepresentation,
                             _MTCAColorMatrixMakeWithVibrantShadowAttributes,
+                            _MTCAFilterCurvesInputValuesKeys,
                             _MTCGColorIsPerceivedLight,
                             _MTCGColorPerceivedLightness,
                             _MTCGImageCreateWithName,
@@ -33,6 +34,7 @@ exports:
                             _MTCoreMaterialConfigurationNone,
                             _MTCoreMaterialConfigurationPrimaryOverlay,
                             _MTCoreMaterialConfigurationSecondaryOverlay,
+                            _MTCoreMaterialRecipeAmbientCompact,
                             _MTCoreMaterialRecipeCarPlayPlatters,
                             _MTCoreMaterialRecipeCarPlayPlattersDark,
                             _MTCoreMaterialRecipeDock,
@@ -41,6 +43,7 @@ exports:
                             _MTCoreMaterialRecipeForVisualStyleFromStyleWithName,
                             _MTCoreMaterialRecipeForVisualStyleFromStyleWithNameFromBundle,
                             _MTCoreMaterialRecipeKnowledgeBackground,
+                            _MTCoreMaterialRecipeKnowledgeBackgroundDark,
                             _MTCoreMaterialRecipeKnowledgePlatters,
                             _MTCoreMaterialRecipeKnowledgePlattersDark,
                             _MTCoreMaterialRecipeKnowledgePlattersSheer,
@@ -56,7 +59,14 @@ exports:
                             _MTCoreMaterialRecipePlatformChromeLight,
                             _MTCoreMaterialRecipePlatformChromeLightReduceTransparency,
                             _MTCoreMaterialRecipePlatformContentDark,
+                            _MTCoreMaterialRecipePlatformContentDisabled,
+                            _MTCoreMaterialRecipePlatformContentGlass,
+                            _MTCoreMaterialRecipePlatformContentGlassDarker,
+                            _MTCoreMaterialRecipePlatformContentGlassLighter,
+                            _MTCoreMaterialRecipePlatformContentGlassUltraDarker,
                             _MTCoreMaterialRecipePlatformContentLight,
+                            _MTCoreMaterialRecipePlatformContentPinched,
+                            _MTCoreMaterialRecipePlatformContentSelected,
                             _MTCoreMaterialRecipePlatformContentThickDark,
                             _MTCoreMaterialRecipePlatformContentThickLight,
                             _MTCoreMaterialRecipePlatformContentThickLightShadowed,
@@ -68,6 +78,7 @@ exports:
                             _MTCoreMaterialRecipePlattersDark,
                             _MTCoreMaterialRecipePreviewBackground,
                             _MTCoreMaterialRecipeTintablePlatters,
+                            _MTCoreMaterialRecipeToolbarButtonBackground,
                             _MTCoreMaterialVisualStyleCategoryFill,
                             _MTCoreMaterialVisualStyleCategoryNone,
                             _MTCoreMaterialVisualStyleCategoryOverlay,
@@ -107,6 +118,7 @@ exports:
                             _MTSharedVisualStyleSetForRecipeAndCategory,
                             _MTSharedVisualStyleSetForStyleNameFromBundle,
                             _MTSharedVisualStyleSetGeneratedFromRecipe,
+                            _MTStylingProvidingSolidColorLayerHighlightStyleDictionary,
                             _MTStylingProvidingSolidColorLayerStyleDictionaryForPlusDAmount,
                             _MTStylingProvidingSolidColorLayerStyleDictionaryForPlusLAndWhiteTint,
                             _MTSupportsDeepColor,
@@ -119,7 +131,9 @@ exports:
                             __MTCreateDefaultLuminanceColorMap,
                             __MTCurrentProduct,
                             __MTDefaultBackdropScaleAdjustmentForWeighting,
+                            __MTGetCoreMaterialPlatformConfiguration,
                             __MTLowQualityDevicesForDynamicBlurRadius,
+                            __MTSetCoreMaterialPlatformConfiguration,
                             _kMTCAFilterPropertyNameInputAmount,
                             _kMTCAFilterPropertyNameInputBlueYellowContrast,
                             _kMTCAFilterPropertyNameInputColor0,
@@ -143,15 +157,17 @@ exports:
                             _kMTCAFilterPropertyNameInputRedGreenContrast,
                             _kMTCAFilterPropertyNameInputReversed,
                             _kMTCAFilterPropertyNameInputSaturationAdjustment,
+                            _kMTCAFilterPropertyNameInputValues,
                             _kMTCAFilterPropertyNameType,
-                            _kMTCAFilterPropertyNameinputValues,
                             _kMTCoreMaterialStyleNamePlatformColorsDark,
                             _kMTCoreMaterialStyleNamePlatformColorsLight,
                             _kMTDictionaryRepresentationOptionsBundleKey,
+                            _kMTDictionaryRepresentationOptionsFiltersRepresentationV2Key,
                             _kMTDictionaryRepresentationOptionsIncludeOptimizationsKey,
                             _kMTDictionaryRepresentationOptionsReduceTransparencyKey,
                             _kMTDictionaryRepresentationOptionsUserInterfaceLevelKey ]
-    objc-classes:         [ MTColor, MTCoreMaterialVisualStyling,
+    objc-classes:         [ MTColor, MTCoreMaterialDefaultPlatformConfiguration,
+                            MTCoreMaterialVisualStyling,
                             MTCoreMaterialVisualStylingProvider, MTMaterialLayer,
                             MTMaterialSettingsInterpolator, MTPrunePromise,
                             MTRGBColor, MTRecipeMaterialSettings,

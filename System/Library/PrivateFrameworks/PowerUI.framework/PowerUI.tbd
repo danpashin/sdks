@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PowerUI.framework/PowerUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PowerUIAudioAccessorySmartChargeDeadlineHasChangedNote,
                             _PowerUIAudioAccessorySmartChargeStatusHasChangedNote,
                             _PowerUIErrorDomain, _PowerUIMCMStatusAsNotification,
@@ -34,7 +34,9 @@ exports:
                             _kAnalyticsUnderChargeAvoidable,
                             _kAnalyticsUnderChargeTLC,
                             _kAnalyticsUnderChargeUnavoidable,
-                            _kAnalyticsVersionKey, _kContextSyncClientName,
+                            _kAnalyticsVersionKey,
+                            _kChargingIntelligenceNotificationRequestIdentifierName,
+                            _kContextSyncClientName,
                             _kControllerClientStateCECEngaged,
                             _kControllerClientStateCECNotEngaged,
                             _kControllerClientStateNotSet,
@@ -53,14 +55,17 @@ exports:
                             _kStartingRemoteLocationKey, _kTestModeKey,
                             _prepare9ByteMessage, _sessionEventCallback ]
     objc-classes:         [ PowerUIAccessoryStatus, PowerUIAlarmSignalMonitor,
+                            PowerUIAnalyticsManager,
                             PowerUIAudioAccessorySmartChargeManager,
+                            PowerUIBDCDataManager,
                             PowerUIBatteryMitigationManager,
                             PowerUIBluetoothHandler, PowerUIBluetoothHandlerFake,
                             PowerUICECGridDataManager, PowerUICECManager,
                             PowerUICECPredictedTimeManager,
                             PowerUICalendarSignalMonitor,
+                            PowerUIChargeAwarenessNotifier,
                             PowerUIChargingController, PowerUIDefines,
-                            PowerUIDesktopModePredictor,
+                            PowerUIDesktopModePredictor, PowerUIDrainAnalyzer,
                             PowerUIIntelligenceManager, PowerUILPMNotifier,
                             PowerUILocationSignalMonitor,
                             PowerUIMLAudioAccessoryModelPredictor,
@@ -69,7 +74,8 @@ exports:
                             PowerUIMLTwoStageModelPredictor,
                             PowerUIMLWatchPredictor,
                             PowerUIModelPredictionContainer,
-                            PowerUINotificationManager, PowerUIPredictorHelper,
+                            PowerUINotificationManager, PowerUIPagedArray,
+                            PowerUIPredictorHelper,
                             PowerUIRelevantDrainPredictionResult,
                             PowerUIRemoteLocationMonitor,
                             PowerUISleepBasedPredictor, PowerUISleepWakeMonitor,

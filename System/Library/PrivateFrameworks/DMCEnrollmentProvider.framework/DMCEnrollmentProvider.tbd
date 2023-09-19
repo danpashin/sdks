@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DMCEnrollmentProvider.framework/DMCEnrollmentProvider
@@ -7,19 +7,23 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DMCEnrollmentLocalizedString,
                             _DMCEnrollmentProviderVersionNumber,
                             _DMCEnrollmentProviderVersionString,
-                            _RMConfigurationInterfaceKey,
+                            _MDMManagedMediaCountKey, _MDMManagedMediaNameKey,
+                            _PSDMCHandleReauthKey,
+                            _RMConfigurationDataProviderKey,
                             _RMConfigurationViewModelKey,
                             _RMConfigurationsSpecifiersDidChangeNotification,
+                            _kDMCBridgeIconLoadedNotification,
                             _kDMCManagedAppsDidChangeKey,
                             _kDMCManagedBooksDidChangeKey,
                             _kDMCProfileDidChangeNotification,
                             _kDMCProfilesUITableViewStyle,
                             _kDMCProfilesUpdatedNotification,
-                            _kDMCTopMarginForViewController ]
+                            _kDMCTopMarginForViewController,
+                            _kEnrollmentTableViewRegularIconLength ]
     objc-classes:         [ DMCAccountCell, DMCAccountSpecifierProvider,
                             DMCActivityViewController, DMCApplicationProxy,
                             DMCBYODEnrollmentFlowUIPresenter,
@@ -42,6 +46,7 @@ exports:
                             DMCEnrollmentNameItemCell, DMCEnrollmentNameListCell,
                             DMCEnrollmentTableViewAppLockupCell,
                             DMCEnrollmentTableViewIconCell,
+                            DMCEnrollmentTableViewPlatterCell,
                             DMCEnrollmentTableViewPromotionCell,
                             DMCEnrollmentTableViewTextCell,
                             DMCEnrollmentTableViewTextFieldCell,
@@ -66,17 +71,21 @@ exports:
                             DMCProfileDetailsViewController,
                             DMCProfileInfoSection, DMCProfileInfoTextCell,
                             DMCProfileItemDetail, DMCProfileKeyValueView,
-                            DMCProfilePayloadSection, DMCProfileSummaryCell,
-                            DMCProfileTableViewController,
-                            DMCProfileTitleTextCell, DMCProfileViewController,
-                            DMCProfileViewModel, DMCRFMBDeviceEnvironment,
-                            DMCRFMBSnapshot, DMCRFMBSnapshotIdentifier,
-                            DMCRFMBSnapshotSource, DMCRFRestoreFlow,
-                            DMCRMConfigurationsViewController,
-                            DMCReauthSpecifierProvider, DMCSpecifierProvider,
+                            DMCProfilePayloadSection, DMCProfilePayloadsSummary,
+                            DMCProfileSummaryCell, DMCProfileTableViewController,
+                            DMCProfileTitleTextCell,
+                            DMCProfileUILocalDataProvider,
+                            DMCProfileViewController, DMCProfileViewModel,
+                            DMCRFMBDeviceEnvironment, DMCRFMBSnapshot,
+                            DMCRFMBSnapshotIdentifier, DMCRFMBSnapshotSource,
+                            DMCRFRestoreFlow, DMCRMConfigurationsViewController,
+                            DMCReauthSpecifierProvider,
+                            DMCReturnToServiceController,
+                            DMCSecondaryAccountViewModel, DMCSpecifierProvider,
                             DMCTableViewCell, DMCUnenrollmentFlowUIPresenter,
                             RMAccountDetailsViewController,
                             RMAccountsDataclassConfigurationViewController,
+                            RMConfigurationsLocalDataProvider,
                             RMConfigurationsSpecifierProvider, RMDeviceIDCell,
                             RMInteractiveLegacyProfilesViewController,
                             RMKeyValueViewController,

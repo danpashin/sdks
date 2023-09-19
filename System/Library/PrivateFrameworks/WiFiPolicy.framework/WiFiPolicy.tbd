@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WiFiPolicy.framework/WiFiPolicy
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MachTimeToSecs, _TBCentroidDegreesToRadians,
                             _TBCentroidRadiansToDegrees, _TBMacAddressFromString,
                             _TBMacAdressFromLong,
@@ -102,6 +102,8 @@ exports:
                             _kWiFiUsageAccessPointProfileWPSPrivacy,
                             _kWiFiUsageBeaconParsingElements,
                             _kWiFiUsageBeaconParsingExElements,
+                            _kWiFiUsageLQMWindowAnalysisReasonApsdTimedOut,
+                            _kWiFiUsageLQMWindowAnalysisReasonBrokenBackhaulLinkFailed,
                             _kWiFiUsageLQMWindowAnalysisReasonDataTriggered,
                             _kWiFiUsageLQMWindowAnalysisReasonDatapathStall,
                             _kWiFiUsageLQMWindowAnalysisReasonFaceTime,
@@ -111,6 +113,7 @@ exports:
                             _kWiFiUsageLQMWindowAnalysisReasonLinkTest,
                             _kWiFiUsageLQMWindowAnalysisReasonNetworkQuality,
                             _kWiFiUsageLQMWindowAnalysisReasonRoaming,
+                            _kWiFiUsageLQMWindowAnalysisReasonSiriTimedOut,
                             _kWiFiUsageLQMWindowAnalysisReasonSlowWiFiAP,
                             _kWiFiUsageLQMWindowAnalysisReasonSlowWiFiDUT,
                             _kWiFiUsageLQMWindowAnalysisReasonSymptomArpFail,
@@ -123,6 +126,7 @@ exports:
                             _kWiFiUsageMaxDeviceSessionDurationInSecs,
                             _kWiFiUsageMaxNamesHistory,
                             _kWiFiUsageMaxNumLinkTestFailures,
+                            _kWiFiUsagePrivacyFilterUsbVendorOther,
                             _kWiFiUsageRoamPingPongThreshold,
                             _kWiFiUsageSessionNotificationBrokenLinkDetected,
                             _kWiFiUsageSessionNotificationBrokenLinkReasonKey,
@@ -132,7 +136,7 @@ exports:
                             _kWiFiUsageSessionNotificationSessionTypeKey,
                             _kWiFiUsageTimeBetweenFaultIndicationInSecs,
                             _kWiFiUsageTimeBetweenLinkRecoveryInSecs,
-                            _kWiFiUsageTimeBetweenLinkTestInSecs, _mccIsoMap ]
+                            _kWiFiUsageTimeBetweenLinkTestInSecs ]
     objc-classes:         [ CounterObj, DataComparisonByBits,
                             DataComparisonByBytes, IntegerByBandObj,
                             ObjectComparisonByTokens, StringComparisonByChars,
@@ -176,6 +180,7 @@ exports:
                             WiFiSettlementObserver, WiFiSoftError,
                             WiFiUsageAccessPointProfile,
                             WiFiUsageAccessPointProfileConfiguration,
+                            WiFiUsageAccessPointProfileInfo,
                             WiFiUsageAppleWiFiNameBlocks,
                             WiFiUsageApplicationSession,
                             WiFiUsageBatterySaveSession,
@@ -215,7 +220,8 @@ exports:
                             WiFiUsageLQMWindowAnalysisNetworkQuality,
                             WiFiUsageLQMWindowAnalysisRoaming,
                             WiFiUsageLinkSession, WiFiUsageMonitor,
-                            WiFiUsageNetworkDetails, WiFiUsageNetworkIPv4Details,
+                            WiFiUsageMonitor_UsbDevice, WiFiUsageNetworkDetails,
+                            WiFiUsageNetworkIPv4Details,
                             WiFiUsageNetworkIPv6Details, WiFiUsageNetworkSession,
                             WiFiUsageParsedBeacon, WiFiUsagePoorLinkSession,
                             WiFiUsagePrivacyFilter, WiFiUsageRangingRttSample,

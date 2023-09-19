@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NFMFindGizmoIdentifier,
                             _NFMFindLocalDeviceEntitlementName,
                             _NFMFindLocalDeviceServerName,
@@ -21,6 +21,9 @@ exports:
                             _NFMProtoDidPlaySoundResponseReadFrom,
                             _NFMProtoPlaySoundAndFlashLEDRequestReadFrom,
                             _NFMProtoPlaySoundRequestReadFrom, _NFMProtoSend,
+                            _NFMProtoSendSharedConfigurationReadFrom,
+                            _NFMProtoSendWatchTokenReadFrom,
+                            _NFMProtoStopRangingOnPhoneReadFrom,
                             _NFMUnlockIdentifier, _count, _nfm_log ]
     objc-classes:         [ NFMIDSMessageInstance, NFMIDSServiceDelegate,
                             NFMLeashManager, NFMPlayCommands,
@@ -28,6 +31,8 @@ exports:
                             NFMProtoDidPlaySoundResponse,
                             NFMProtoPlaySoundAndFlashLEDRequest,
                             NFMProtoPlaySoundRequest,
+                            NFMProtoSendSharedConfiguration,
+                            NFMProtoSendWatchToken, NFMProtoStopRangingOnPhone,
                             NFMWhereIsMyCompanionConnection, NFMWiFiManager ]
     objc-ivars:           [ NFMLeashManager._proximityChangeHandler ]
 ...

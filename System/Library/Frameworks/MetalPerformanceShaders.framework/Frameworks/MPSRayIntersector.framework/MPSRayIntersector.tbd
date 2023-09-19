@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/MPSRayIntersector
-current-version:       126.3.5
+current-version:       127.0.19
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MPSAccelerationStructureBuilderCPU,
                             _MPSAccelerationStructureBuilderGPU,
                             _MPSAccelerationStructureGPUBuilderTypeDefault,
@@ -40,6 +40,7 @@ exports:
                             MPSCPUAccelerationStructureDescriptor,
                             MPSCPUAccelerationStructureGeometryDescriptor,
                             MPSCPUAccelerationStructureTriangleGeometryDescriptor,
+                            MPSCPUInstanceAccelerationStructureDescriptor,
                             MPSCPUPrimitiveAccelerationStructureDescriptor,
                             MPSCPURayIntersector,
                             MPSInstanceAccelerationStructure,

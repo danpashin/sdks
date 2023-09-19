@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceDiscoveryUICore.framework/DeviceDiscoveryUICore
@@ -7,8 +7,57 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _DDUIBuildLocalizedKeyForDeviceTypes,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s21DeviceDiscoveryUICore15ContactProviderMp,
+                            _$s21DeviceDiscoveryUICore15ContactProviderTL,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC13fetchNicknameyyF,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC13fetchNicknameyyFTq,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC14cachedNicknameSo10IMNicknameCSgvpfi,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC16nicknameProviderSo010IMNicknameH0Cvpfi,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC6sharedACvau,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC6sharedACvgZ,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC6sharedACvpZ,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC7contactSo9CNContactCSgyF,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityC7contactSo9CNContactCSgyFTq,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCMa,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCMm,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCMn,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCN,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCfD,
+                            _$s21DeviceDiscoveryUICore16NameDropIdentityCfd,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderV8contactsSaySo9CNContactCGyF,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVAA0eF0AAMc,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVAA0eF0AAWP,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVACycfC,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVMa,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVMn,
+                            _$s21DeviceDiscoveryUICore17MeContactProviderVN,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderV4dataAC10Foundation4DataV_tcfC,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderV8contactsSaySo9CNContactCGyF,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderVAA0eF0AAMc,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderVAA0eF0AAWP,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderVMa,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderVMn,
+                            _$s21DeviceDiscoveryUICore20vCardContactProviderVN,
+                            _$s21DeviceDiscoveryUICore23saveNameDropUserDefault6handleySS_tF,
+                            _$sSo16CNMutableContactC21DeviceDiscoveryUICoreE06saveToB5StoreyyKF,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE15avatarImageData10Foundation0G0VSgvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE15avatarImageData10Foundation0G0VSgvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE15vCardForBooping4with10Foundation4DataVSgSaySSG_tF,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopDefaultHandleSSvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopDefaultHandleSSvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopPresentedNameSSvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopPresentedNameSSvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17posterArchiveData10Foundation0G0VSgvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE17posterArchiveData10Foundation0G0VSgvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE20boopPresentedHandlesSaySSGvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE20boopPresentedHandlesSaySSGvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE22boopDefaultHandleIndexSivg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE22boopDefaultHandleIndexSivpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE24boopDefaultHandleIsEmailSbvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE24boopDefaultHandleIsEmailSbvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE28vCardForBoopingDefaultHandle10Foundation4DataVSgyF,
+                            _DDUIBuildLocalizedKeyForDeviceTypes,
                             _DDUICoreLocalizedString, _DDUICorePrimaryQueue,
                             _DDUIDeviceTypeString,
                             _DDUIEndpointPairingBrowsingTransportForOptions,
@@ -37,6 +86,8 @@ exports:
                             __DDUIApplicationServiceUsageDescription,
                             __DDUICoreLog, __DDUICoreLogSubsystem,
                             __DDUICoreRapportLog,
+                            __DDUIRapportContinuityCameraInitiatorMessageID,
+                            __DDUIRapportContinuityCameraResponseMessageID,
                             __DDUIRapportPairingInitiatorMessageID,
                             __DDUIRapportPairingMessageInfoKey,
                             __DDUIRapportPairingMessageMessageIDKey,
@@ -50,7 +101,7 @@ exports:
                             DDUIEndpointPairingListener,
                             DDUIEndpointPairingSession, DDUIInfoPlist,
                             DDUIInfoPlistService, DDUIPairCompleteMessage,
-                            DDUIPairInitiateMessage,
+                            DDUIPairInitiateMessage, DDUIRapportPeopleDiscovery,
                             _DDUIRapportPairingTransport,
                             _DDUIiOSNotificationPresenter ]
 ...

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BiomeSequence.framework/BiomeSequence
-current-version:       1
+current-version:       123.1.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s13AsyncIterator13BiomeSequence0caD0PTl,
                             _$s13BiomeSequence011AsyncFilterB0V04makeC8IteratorAC0F0Vyx_GyF,
                             _$s13BiomeSequence011AsyncFilterB0V10isIncludedySb7ElementQzYacvg,
@@ -128,6 +128,18 @@ exports:
                             _$s13BiomeSequence08AsyncMapB0V_9transformACyxq_Gx_q_7ElementQzYactcfC,
                             _$s13BiomeSequence08AsyncMapB0Vyxq_GAA0ac12BookmarkableB0AAMc,
                             _$s13BiomeSequence08AsyncMapB0Vyxq_GAA0acB0AAMc,
+                            _$s13BiomeSequence0A16ConsumptionErrorO010completionD0yACSSSgcACmFWC,
+                            _$s13BiomeSequence0A16ConsumptionErrorO08bookmarkD0yA2CmFWC,
+                            _$s13BiomeSequence0A16ConsumptionErrorO09eventTypeD0yA2CmFWC,
+                            _$s13BiomeSequence0A16ConsumptionErrorO11descriptionSSvg,
+                            _$s13BiomeSequence0A16ConsumptionErrorO11descriptionSSvpMV,
+                            _$s13BiomeSequence0A16ConsumptionErrorO2eeoiySbAC_ACtFZ,
+                            _$s13BiomeSequence0A16ConsumptionErrorOMa,
+                            _$s13BiomeSequence0A16ConsumptionErrorOMn,
+                            _$s13BiomeSequence0A16ConsumptionErrorON,
+                            _$s13BiomeSequence0A16ConsumptionErrorOSQAAMc,
+                            _$s13BiomeSequence0A16ConsumptionErrorOs0D0AAMc,
+                            _$s13BiomeSequence0A16ConsumptionErrorOs23CustomStringConvertibleAAMc,
                             _$s13BiomeSequence0A21AsyncIteratorProtocolMp,
                             _$s13BiomeSequence0A21AsyncIteratorProtocolP4next7ElementQzSgyYaKFTj,
                             _$s13BiomeSequence0A21AsyncIteratorProtocolP4next7ElementQzSgyYaKFTjTu,
@@ -169,6 +181,40 @@ exports:
                             _$s13BiomeSequence0B7AdapterVMn,
                             _$s13BiomeSequence0B7AdapterVyxGAA0a17AsyncBookmarkableB0AAMc,
                             _$s13BiomeSequence0B7AdapterVyxGAA0a5AsyncB0AAMc,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C04makeC8IteratorACyxGyFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C04makeC8IteratorACyxGyFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C12receiveInputySo9BPSDemandaypFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C12receiveInputySo9BPSDemandaypFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C17completeWithErroryys0G0_pSgFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C17completeWithErroryys0G0_pSgFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C17requestNextEventsyyFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C17requestNextEventsyyFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C4nextxSgyYaKFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C4nextxSgyYaKFTjTu,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C4nextxSgyYaKFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C6cancelyyFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C6cancelyyFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C7receiveyySo13BPSCompletionCFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C7receiveyySo13BPSCompletionCFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C7receiveyySo15BPSSubscriptionCFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C7receiveyySo15BPSSubscriptionCFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C8bookmarkSo10BMBookmark_pSgyFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C8bookmarkSo10BMBookmark_pSgyFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C9subscribe2toySo12BPSPublisher_p_tFTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C9subscribe2toySo12BPSPublisher_p_tFTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CACyxGycfC,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CACyxGycfc,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CMa,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CMn,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CMo,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CMu,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C_8bookmarkACyxGSo12BPSPublisherCyxG_So10BMBookmark_pSgtKcfC,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C_8bookmarkACyxGSo12BPSPublisherCyxG_So10BMBookmark_pSgtKcfCTj,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C_8bookmarkACyxGSo12BPSPublisherCyxG_So10BMBookmark_pSgtKcfCTq,
+                            _$s13BiomeSequence0a13AsyncThrowingB0C_8bookmarkACyxGSo12BPSPublisherCyxG_So10BMBookmark_pSgtKcfc,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CfD,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CyxGScIAAMc,
+                            _$s13BiomeSequence0a13AsyncThrowingB0CyxGSciAAMc,
                             _$s13BiomeSequence0a17AsyncBookmarkableB0Mp,
                             _$s13BiomeSequence0a17AsyncBookmarkableB0P0C8IteratorAA0acB0P_AA0acdE8ProtocolTn,
                             _$s13BiomeSequence0a17AsyncBookmarkableB0PAA0acB0Tb,
@@ -237,6 +283,11 @@ exports:
                             _$s7Element13BiomeSequence0B21AsyncIteratorProtocolPTl,
                             _$s7Element13BiomeSequence0b5AsyncC0PTl,
                             _$sST13BiomeSequenceE010biomeAsyncB0AA0B7AdapterVyxGyF,
+                            _$sSp13BiomeSequenceSo16os_unfair_lock_sVRszlE0E0yyF,
+                            _$sSp13BiomeSequenceSo16os_unfair_lock_sVRszlE11cleanupLockyyF,
+                            _$sSp13BiomeSequenceSo16os_unfair_lock_sVRszlE6unlockyyF,
+                            _$sSp13BiomeSequenceSo16os_unfair_lock_sVRszlE7trylockSbyF,
+                            _$sSp13BiomeSequenceSo16os_unfair_lock_sVRszlESpyACGycfC,
                             _BiomeSequenceVersionNumber,
                             _BiomeSequenceVersionString ]
 ...

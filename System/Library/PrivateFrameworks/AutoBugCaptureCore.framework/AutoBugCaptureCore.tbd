@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AutoBugCaptureCore.framework/AutoBugCaptureCore
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _adminLogHandle, _analyticsLogHandle,
                             _archiverLogHandle, _basicLogHandle,
                             _casemanagementLogHandle, _configurationLogHandle,
@@ -32,6 +32,7 @@ exports:
                             _kAutoBugCaptureStatusKeyAPNSEnable,
                             _kAutoBugCaptureStatusKeyAPNSEnvironment,
                             _kAutoBugCaptureStatusKeyAPNSToken,
+                            _kAutoBugCaptureStatusKeyActiveReportOutlets,
                             _kAutoBugCaptureStatusKeyAverageCasesPerDay,
                             _kAutoBugCaptureStatusKeyCloudKitCaseSummaryMaxPerSubmission,
                             _kAutoBugCaptureStatusKeyCloudKitCaseSummarySubmittedRetentionDays,
@@ -44,6 +45,8 @@ exports:
                             _kAutoBugCaptureStatusKeyCloudKitTimeoutIntervalForResource,
                             _kAutoBugCaptureStatusKeyCloudKitUploadFallbackLogCount,
                             _kAutoBugCaptureStatusKeyDailyCaseLimit,
+                            _kAutoBugCaptureStatusKeyDiagnosticPipelineSubmission,
+                            _kAutoBugCaptureStatusKeyDiagnosticPipelineSubmissionRate,
                             _kAutoBugCaptureStatusKeyHasOpenCases,
                             _kAutoBugCaptureStatusKeyServiceEnabled,
                             _kAutoBugCaptureStatusKeyServiceState,
@@ -54,9 +57,6 @@ exports:
                             _kCaseReportResultTimeout,
                             _kCrashReportOutletCaseStatusKeyClosureType,
                             _kCrashReportOutletCaseStatusKeyDampeningType,
-                            _kCrashReportOutletContentKeyAPNSEnabledState,
-                            _kCrashReportOutletContentKeyAPNSPublicTokenDev,
-                            _kCrashReportOutletContentKeyAPNSPublicTokenProd,
                             _kCrashReportOutletContentKeyAttachments,
                             _kCrashReportOutletContentKeyCaseHeader,
                             _kCrashReportOutletContentKeyCaseID,
@@ -165,12 +165,14 @@ exports:
                             _kSymptomDiagnosticDomainEnergy,
                             _kSymptomDiagnosticDomainNetworking,
                             _kSymptomDiagnosticDomainResourceNotify,
+                            _kSymptomDiagnosticErrorConfigurationIneligible,
                             _kSymptomDiagnosticErrorDailyLimitExceeded,
                             _kSymptomDiagnosticErrorDisabled,
                             _kSymptomDiagnosticErrorHourlyLimitExceeded,
                             _kSymptomDiagnosticErrorInvalidParameters,
                             _kSymptomDiagnosticErrorNone,
                             _kSymptomDiagnosticErrorNotSupported,
+                            _kSymptomDiagnosticErrorOperationallySuppressed,
                             _kSymptomDiagnosticErrorPayloadSandboxTokenError,
                             _kSymptomDiagnosticErrorRandomizedSuppression,
                             _kSymptomDiagnosticErrorRequestThrottled,
@@ -178,6 +180,7 @@ exports:
                             _kSymptomDiagnosticErrorServiceNotReady,
                             _kSymptomDiagnosticErrorServiceUnavailable,
                             _kSymptomDiagnosticErrorSessionNotFound,
+                            _kSymptomDiagnosticErrorSignatureIneligible,
                             _kSymptomDiagnosticEventResultFailure,
                             _kSymptomDiagnosticEventResultSuccess,
                             _kSymptomDiagnosticEventStatusCancelled,
@@ -264,15 +267,16 @@ exports:
                             ABCSemiDailyMaintenanceActivity,
                             ABCWeeklyMaintenanceActivity, AnalyticsAgent,
                             AnalyticsReportOutlet, AnalyticsWorkspace,
-                            ApplePushNotificationHandler,
                             AutoBugCaptureCacheDelete, CaseReportOutlet,
-                            CloudKitUploadController, CrashReportOutlet,
-                            CrossDeviceTransportCore, DiagnosticCase,
-                            DiagnosticCaseManager, DiagnosticCaseStorage,
+                            CloudKitUploadController, CoreAnalyticsReportOutlet,
+                            CrashReportOutlet, CrossDeviceTransportCore,
+                            DiagnosticCase, DiagnosticCaseManager,
+                            DiagnosticCaseStorage,
                             DiagnosticCaseStorageAnalytics,
                             DiagnosticCaseSummary,
                             DiagnosticCaseSummaryAnalytics, DiagnosticCaseUsage,
-                            DiagnosticLiaison, DiagnosticReportGenerator,
+                            DiagnosticLiaison, DiagnosticPipelineOutlet,
+                            DiagnosticReportGenerator,
                             DiagnosticStatisticsManager,
                             DiagnosticStorageManager, DiagnosticsController,
                             IDSCrossDeviceTransport, NetDiagnosticsShim,

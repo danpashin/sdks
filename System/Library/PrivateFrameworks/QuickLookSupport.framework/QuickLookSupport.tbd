@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/QuickLookSupport.framework/QuickLookSupport
@@ -7,15 +7,20 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _QLAdaptSizeInSize, _QLAdaptSizeInSizeWithRounding,
                             _QLAdaptSizeOutSize, _QLAdaptSizeOutSizeWithRounding,
                             _QLAdaptSizeToRect, _QLAdaptSizeToRectWithRounding,
-                            _QLAdjustRectInRect,
+                            _QLAdaptSizeToRectWithRounding2, _QLAdjustRectInRect,
+                            _QLContextSetGrayFillColor,
                             _QLCreateMallocedBitmapContextWithSize,
                             _QLCreateMallocedBitmapContextWithSizeAndColorSpace,
-                            _QLDrawPDFPageWithMinimumDimension,
-                            _QLFrameworkBundle, _QLGetPDFDrawRect,
+                            _QLDrawLockIcon, _QLDrawPDFPageWithMinimumDimension,
+                            _QLExtensionGracePeriodDelay, _QLFrameworkBundle,
+                            _QLGetCGPDFPageProxyRect, _QLGetCGPDFPageRect,
+                            _QLGetDrawRectAndTransformWithMinimumDimension,
+                            _QLGetDrawRectFromPageRectWithMinimumDimension,
+                            _QLGetPDFDrawRect,
                             _QLGetPDFDrawRectWithMinimumDimension,
                             _QLGuessEncodingForTextFileAtURL,
                             _QLGuessEncodingForTextFileFromData,
@@ -51,6 +56,9 @@ exports:
                             __QLMachPortKeyCallbacks,
                             __QLMachRegisterForNoSenders,
                             __QLMachUnregisterForNoSenders,
+                            __QLSAppPreferencesBooleanValueForKey,
+                            __QLSAppPreferencesCFIndexValueForKey,
+                            __QLSAppPreferencesIntValueForKey,
                             __QLSDictionaryBooleanValueForKey,
                             __QLSDictionaryGetPointValueForKey,
                             __QLSDictionaryGetRectValueForKey,
@@ -59,6 +67,7 @@ exports:
                             __QLSDictionarySetPointValueForKey,
                             __QLSDictionarySetRectValueForKey,
                             __QLSDictionarySetSizeValueForKey,
+                            __QLSGlobalQuickLookPreferencesBooleanValueForKey,
                             __QLThumbnailComputeBaselineFromData, __qlsLogHandle,
                             _kQLExtensionFrameworkPath,
                             _kQLExtensionIsDataBasedPreview,
@@ -70,7 +79,9 @@ exports:
                             _kQLExtensionSupportsSearchableItemsKey,
                             _kQLExtensionWantsExternalResourcesEntitlement,
                             _kQLPreviewAttachmentMagic, _kQLPreviewMagic,
-                            _kQLPreviewScheme, _kQLSThumbnailOptionIconModeKey,
+                            _kQLPreviewScheme,
+                            _kQLSThumbnailOptionAllowsProfessionalWorkflowFormatReadersKey,
+                            _kQLSThumbnailOptionIconModeKey,
                             _kQLSThumbnailOptionScaleFactorKey ]
     objc-classes:         [ QLCoreSpotlightExtensionPreview, QLExtension,
                             QLExtensionManager, QLExtensionManagerCache,

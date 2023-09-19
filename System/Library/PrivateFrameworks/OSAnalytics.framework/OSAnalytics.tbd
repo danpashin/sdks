@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/OSAnalytics.framework/OSAnalytics
@@ -7,12 +7,14 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _OSACPUTypeToString, _OSADateFormat,
+                            _OSADaysSinceEpoch, _OSAIsACDCDevice,
                             _OSAIsDebugEnabledForRSD, _OSAIsRSDDevice,
                             _OSAIsRSDDisplay, _OSAIsRSDHost, _OSANSDateFormat,
-                            _OSARTCIsProcessOfInterest, _OSASafeCreateDirectory,
-                            _OSASafeMoveItem, _OSASafeMoveItemAtURL, _OSASafeOpen,
+                            _OSARTCIsProcessOfInterest, _OSARandomSelection,
+                            _OSASafeCreateDirectory, _OSASafeMoveItem,
+                            _OSASafeMoveItemAtURL, _OSASafeOpen,
                             _OSASafeOpenReadOnly, _OSASafeOpenWriteOnly,
                             _OSASafeRemoveFile, _OSASafeRemoveFileAtURL,
                             _OSASandboxConsumeExtension,
@@ -21,8 +23,31 @@ exports:
                             _OSASanitizeOptionKeepFilename,
                             _OSASanitizeOptionMountedVolume,
                             _OSASanitizeOptionNetworkVolume, _OSASanitizePath,
-                            _OSASetOwnership, _OSAStateMonitorEventCALogWritten,
+                            _OSASetOwnership,
+                            _OSAStateMonitorEventCA2HrHeartbeat,
+                            _OSAStateMonitorEventCA2HrHeartbeatStartTimestampKey,
+                            _OSAStateMonitorEventCALogRetired,
+                            _OSAStateMonitorEventCALogRetiredLogPathKey,
+                            _OSAStateMonitorEventCALogRetiredReasonKey,
+                            _OSAStateMonitorEventCALogWritten,
+                            _OSAStateMonitorEventCALogWrittenDeprecated,
+                            _OSAStateMonitorEventCALogWrittenEndTimestampKey,
+                            _OSAStateMonitorEventCALogWrittenLogPathKey,
+                            _OSAStateMonitorEventCALogWrittenStartTimestampKey,
+                            _OSAStateMonitorEventCALogWrittenTotalHeartbeatCountKey,
                             _OSAStateMonitorEventSubmission,
+                            _OSAStateMonitorEventSubmissionCompleted,
+                            _OSAStateMonitorEventSubmissionErrorDescriptionKey,
+                            _OSAStateMonitorEventSubmissionErrorHTTPPostError,
+                            _OSAStateMonitorEventSubmissionErrorPowerAssertionExpired,
+                            _OSAStateMonitorEventSubmissionFoundLogs,
+                            _OSAStateMonitorEventSubmissionFoundLogsLogsKey,
+                            _OSAStateMonitorEventSubmissionHTTPPostStarted,
+                            _OSAStateMonitorEventSubmissionHTTPPostStartedContentLength,
+                            _OSAStateMonitorEventSubmissionHTTPPostStartedIncludedLogsKey,
+                            _OSAStateMonitorEventSubmissionLogsAddedToArchive,
+                            _OSAStateMonitorEventSubmissionLogsAddedToArchiveLogsKey,
+                            _OSAStateMonitorEventSubmissionStarted,
                             _OSASyncCrashReporter, _OSATimeIntervalApproximate,
                             _OSATransformOptionFullReport,
                             _OSATransformOptionMetadata,
@@ -62,8 +87,10 @@ exports:
                             _kOSALogOptionAppDescription,
                             _kOSALogOptionCaptureTime, _kOSALogOptionCountKey,
                             _kOSALogOptionCreateTmpFile,
+                            _kOSALogOptionDataVaultPath,
                             _kOSALogOptionDialogDisplayed,
-                            _kOSALogOptionFileOwner, _kOSALogOptionFileOwnerUID,
+                            _kOSALogOptionDisplayName, _kOSALogOptionFileOwner,
+                            _kOSALogOptionFileOwnerUID,
                             _kOSALogOptionMoveSourceFile,
                             _kOSALogOptionObserverInfo,
                             _kOSALogOptionOverrideCountLimit,
@@ -93,12 +120,14 @@ exports:
                             _symbolicateSpeedTracer, _xpc2ns ]
     objc-classes:         [ KCContainer, OSABinaryImageCatalog,
                             OSABinaryImageSegment, OSABridgeLinkProxy,
-                            OSACrackShotReport, OSADefaults,
+                            OSACrackShotReport, OSADateCounter, OSADefaults,
                             OSADiagnosticsReporterSupport, OSALegacyXform, OSALog,
-                            OSALogCounterObject, OSAProxyConfiguration, OSAReport,
-                            OSASafeCreateDirectoryOptions, OSAStackShotReport,
-                            OSAStateMonitor, OSASymbolInfo, OSASystemConfiguration,
-                            OSASystemWatchdogCrashReport, OSATasking ]
+                            OSALogTrackerObject, OSAOsLogPackParser,
+                            OSAParsedOsLogPart, OSAProxyConfiguration, OSAReport,
+                            OSASafeCreateDirectoryOptions, OSASharedCacheEntry,
+                            OSAStackShotReport, OSAStateMonitor, OSASymbolInfo,
+                            OSASystemConfiguration, OSASystemWatchdogCrashReport,
+                            OSATasking ]
     objc-ivars:           [ OSABinaryImageCatalog._absolute_segment,
                             OSABinaryImageCatalog._kernel_cache_segment,
                             OSABinaryImageCatalog._kernel_segments,

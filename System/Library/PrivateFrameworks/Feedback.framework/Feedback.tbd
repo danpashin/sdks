@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Feedback.framework/Feedback
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s8Feedback13FBKDraftErrorO03_nsC6DomainSSvgZ,
                             _$s8Feedback13FBKDraftErrorO10Foundation021_ObjectiveCBridgeableC0AAMc,
                             _$s8Feedback13FBKDraftErrorO10Foundation15_BridgedNSErrorAAMc,
@@ -32,6 +32,7 @@ exports:
                             _$s8Feedback15FBKFeedbackFormC04plugC3IdsSaySuGSgvpMV,
                             _$s8Feedback15FBKFeedbackFormC04plugC3IdsSaySuGSgvsTj,
                             _$s8Feedback15FBKFeedbackFormC04plugC3IdsSaySuGSgvsTq,
+                            _$s8Feedback15FBKFeedbackFormC07serviceC0AC0A7Service8FBKSFormC_tcfC,
                             _$s8Feedback15FBKFeedbackFormC10identifierACSS_tcfC,
                             _$s8Feedback15FBKFeedbackFormC10identifierACSS_tcfCTj,
                             _$s8Feedback15FBKFeedbackFormC10identifierACSS_tcfCTq,
@@ -53,6 +54,8 @@ exports:
                             _$s8Feedback15FBKFeedbackFormC11environmentSo14FBKEnvironmentVSgvpMV,
                             _$s8Feedback15FBKFeedbackFormC11environmentSo14FBKEnvironmentVSgvsTj,
                             _$s8Feedback15FBKFeedbackFormC11environmentSo14FBKEnvironmentVSgvsTq,
+                            _$s8Feedback15FBKFeedbackFormC13addAttachment3url20localizedDescriptiony10Foundation3URLV_SSSgtFTj,
+                            _$s8Feedback15FBKFeedbackFormC13addAttachment3url20localizedDescriptiony10Foundation3URLV_SSSgtFTq,
                             _$s8Feedback15FBKFeedbackFormC14answersSummarySSvg,
                             _$s8Feedback15FBKFeedbackFormC14answersSummarySSvpMV,
                             _$s8Feedback15FBKFeedbackFormC18prefilledQuestionsSDyAC8QuestionOSaySSGGvgTj,
@@ -78,6 +81,8 @@ exports:
                             _$s8Feedback15FBKFeedbackFormC20authenticationMethodAC014AuthenticationE0OvsTj,
                             _$s8Feedback15FBKFeedbackFormC20authenticationMethodAC014AuthenticationE0OvsTq,
                             _$s8Feedback15FBKFeedbackFormC20supportsSecureCodingSbvgZ,
+                            _$s8Feedback15FBKFeedbackFormC22setDiagnosticExtension20localizedDescription010diagnosticF10IdentifierySS_SStFTj,
+                            _$s8Feedback15FBKFeedbackFormC22setDiagnosticExtension20localizedDescription010diagnosticF10IdentifierySS_SStFTq,
                             _$s8Feedback15FBKFeedbackFormC25addSandboxExtensionToURLsSayAA8URLErrorVGyF,
                             _$s8Feedback15FBKFeedbackFormC28localizedAttachmentLegalTextSSSgvMTj,
                             _$s8Feedback15FBKFeedbackFormC28localizedAttachmentLegalTextSSSgvMTq,
@@ -195,6 +200,35 @@ exports:
                             _$s8Feedback18FBKSubmissionErrorCN,
                             _$s8Feedback18FBKSubmissionErrorCfD,
                             _$s8Feedback18FBKSubmissionErrorCs0C0AAMc,
+                            _$s8Feedback20AgreementConsentViewV07pendingC0So011FBKSPendingC0CvM,
+                            _$s8Feedback20AgreementConsentViewV07pendingC0So011FBKSPendingC0Cvg,
+                            _$s8Feedback20AgreementConsentViewV07pendingC0So011FBKSPendingC0CvpMV,
+                            _$s8Feedback20AgreementConsentViewV07pendingC0So011FBKSPendingC0Cvs,
+                            _$s8Feedback20AgreementConsentViewV08$pendingC07SwiftUI14ObservedObjectV7WrapperVySo011FBKSPendingC0C_AK7Combine010ObservableI00A7ServiceyHCg_Gvg,
+                            _$s8Feedback20AgreementConsentViewV08$pendingC07SwiftUI14ObservedObjectV7WrapperVySo011FBKSPendingC0C_AK7Combine010ObservableI00A7ServiceyHCg_GvpMV,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO2eeoiySbAE_AEtFZ,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO4hash4intoys6HasherVz_tF,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO8acceptedyA2EmFWC,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO8declinedyA2EmFWC,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO9hashValueSivg,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultO9hashValueSivpMV,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultOMa,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultOMn,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultON,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultOSHAAMc,
+                            _$s8Feedback20AgreementConsentViewV0C6ResultOSQAAMc,
+                            _$s8Feedback20AgreementConsentViewV10completionyAC0C6ResultOcSgvM,
+                            _$s8Feedback20AgreementConsentViewV10completionyAC0C6ResultOcSgvg,
+                            _$s8Feedback20AgreementConsentViewV10completionyAC0C6ResultOcSgvpMV,
+                            _$s8Feedback20AgreementConsentViewV10completionyAC0C6ResultOcSgvs,
+                            _$s8Feedback20AgreementConsentViewV4bodyQrvg,
+                            _$s8Feedback20AgreementConsentViewV4bodyQrvpMV,
+                            _$s8Feedback20AgreementConsentViewV4bodyQrvpQOMQ,
+                            _$s8Feedback20AgreementConsentViewV7SwiftUI0D0AAMc,
+                            _$s8Feedback20AgreementConsentViewV7consent10completionACSo011FBKSPendingC0C_yAC0C6ResultOcSgtcfC,
+                            _$s8Feedback20AgreementConsentViewVMa,
+                            _$s8Feedback20AgreementConsentViewVMn,
+                            _$s8Feedback20AgreementConsentViewVN,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC010didRequestD9Dismissal5savedySb_tF,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC12ResponseTypeO11descriptionSSvg,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC12ResponseTypeO11descriptionSSvpMV,
@@ -212,6 +246,7 @@ exports:
                             _$s8Feedback30FBKFeedbackDraftViewControllerC12feedbackFormAcA0bG0C_tcfCTj,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC12feedbackFormAcA0bG0C_tcfCTq,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC12feedbackFormAcA0bG0C_tcfc,
+                            _$s8Feedback30FBKFeedbackDraftViewControllerC13didFailToHostyyF,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC15didBeginHostingyyF,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC17didFailSubmission5erroryAA18FBKSubmissionErrorC_tF,
                             _$s8Feedback30FBKFeedbackDraftViewControllerC19feedbackDidComplete12responseType0I2ID13completedFormyAC08ResponseJ0O_SSAA0bM0CtF,

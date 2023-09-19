@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileInstallation.framework/MobileInstallation
@@ -7,11 +7,12 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/InstalledContentLibrary.framework/InstalledContentLibrary ]
     symbols:              [ _MIAcquireReferenceForInstalledAppWithError,
                             _MICreateSerializedPlaceholderForInstalledApplication,
                             _MIFinalizeReferenceForInstalledAppWithError,
+                            _MIGetReferencesForBundleWithIdentifier,
                             _MIInvalidateReferenceForInstalledAppWithError,
                             _MIPurgeExpendableAppsAndDataForRestore,
                             _MobileInstallationAppLaunchEnabled,
@@ -24,6 +25,7 @@ exports:
                             _MobileInstallationCopyFrameworkInfoForLaunchServices,
                             _MobileInstallationCopyInstalledDeveloperAppsForLaunchServices,
                             _MobileInstallationCopySafeHarbors,
+                            _MobileInstallationCopySafeHarborsForContainerClass,
                             _MobileInstallationCopySafeHarborsForContainerType,
                             _MobileInstallationEndTestMode,
                             _MobileInstallationEnumerateAllInstalledItemDictionaries,
@@ -43,8 +45,10 @@ exports:
                             _MobileInstallationRegisterContentsForDiskImageAtURL,
                             _MobileInstallationRegisterPlaceholderForReference,
                             _MobileInstallationRegisterSafeHarbor,
+                            _MobileInstallationRegisterSafeHarborForContainerClassWithIdentity,
                             _MobileInstallationRegisterSafeHarborForContainerType,
                             _MobileInstallationRemoveSafeHarbor,
+                            _MobileInstallationRemoveSafeHarborForContainerClassWithIdentity,
                             _MobileInstallationRemoveSafeHarborForContainerType,
                             _MobileInstallationRevertApplicationWithIdentityWithError,
                             _MobileInstallationRevertForInstallCoordinationWithError,
@@ -65,7 +69,6 @@ exports:
                             _MobileInstallationWaitForSystemAppMigrationWithCompletion,
                             _MobileInstallationWatchKitInstallerSnapshotWKApp,
                             __MILogTransactionStep ]
-    objc-classes:         [ AITransactionLog, MIAppIdentity, MIAppReference,
-                            MIBOMWrapper, MIInstallOptions,
-                            MIPlaceholderConstructor ]
+    objc-classes:         [ AITransactionLog, MIAppReference, MIBOMWrapper,
+                            MIInstallOptions, MIPlaceholderConstructor ]
 ...

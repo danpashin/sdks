@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriGeo.framework/SiriGeo
@@ -7,13 +7,30 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10PegasusAPI026Apple_Parsec_Siri_V2alpha_E14CommandBuilderV06OneOf_egH6ParamsO0E3GeoE11descriptionSSvg,
                             _$s10PegasusAPI026Apple_Parsec_Siri_V2alpha_E14CommandBuilderV06OneOf_egH6ParamsO0E3GeoE11descriptionSSvpMV,
                             _$s10PegasusAPI026Apple_Parsec_Siri_V2alpha_E14CommandBuilderV06OneOf_egH6ParamsOs23CustomStringConvertible0E3GeoMc,
                             _$s10PegasusAPI48Apple_Parsec_Siri_V2alpha_PerResultLayoutDetailsV13OneOf_SnippetO0E3GeoE11descriptionSSvg,
                             _$s10PegasusAPI48Apple_Parsec_Siri_V2alpha_PerResultLayoutDetailsV13OneOf_SnippetO0E3GeoE11descriptionSSvpMV,
                             _$s10PegasusAPI48Apple_Parsec_Siri_V2alpha_PerResultLayoutDetailsV13OneOf_SnippetOs23CustomStringConvertible0E3GeoMc,
+                            _$s12SiriNLUTypes0A27_Nlu_External_SystemOfferedV0A3GeoE4fromyAcA0a1_c1_D20_UserWantedToProceedVFZ,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE4fromyAC0A8Ontology14UsoTaskBuilderCFZ,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE4fromyAC0A8Ontology5GraphCFZ,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE7usoTask0A8Ontology03UsoJ0CSgvg,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE7usoTask0A8Ontology03UsoJ0CSgvpMV,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE9contactIdSSSgvg,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoE9contactIdSSSgvpMV,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoEyAcA0a1_c1_d1_E10StatedTaskVcfC,
+                            _$s12SiriNLUTypes0A27_Nlu_External_UserDialogActV0A3GeoEyAcA0a1_c1_d1_E15WantedToProceedVcfC,
+                            _$s12SiriNLUTypes0A28_Nlu_External_SystemPromptedV0A3GeoE4fromyAC0A8Ontology14UsoTaskBuilderCFZ,
+                            _$s12SiriNLUTypes0A28_Nlu_External_UserStatedTaskV0A3GeoE4fromyAC0A8Ontology03UsoG7BuilderCFZ,
+                            _$s12SiriNLUTypes0A28_Nlu_External_UserStatedTaskV0A3GeoEyAcA0a1_c1_D9_UsoGraphVSgcfC,
+                            _$s12SiriNLUTypes0A29_Nlu_External_SystemDialogActV0A3GeoE11gaveOptionsAcA0a1_c1_d1_e4GaveJ0V_tcfC,
+                            _$s12SiriNLUTypes0A29_Nlu_External_SystemDialogActV0A3GeoE13systemOfferedAcA0a1_c1_d1_eJ0V_tcfC,
+                            _$s12SiriNLUTypes0A29_Nlu_External_SystemDialogActV0A3GeoE14systemPromptedAcA0a1_c1_d1_eJ0V_tcfC,
+                            _$s12SiriNLUTypes0A31_Nlu_External_SystemGaveOptionsV0A3GeoE7choicesACSayAA0a1_c1_D14_UserDialogActVG_tcfC,
+                            _$s12SiriNLUTypes0A33_Nlu_External_UserWantedToProceedV0A3GeoE4fromyAC0A8Ontology14UsoTaskBuilderCFZ,
                             _$s7SiriGeo0aB16CommandConverterO02isC13TypeSupported07commandF0Sb10PegasusAPI013Apple_Parsec_a9_V2alpha_aC7BuilderV06OneOf_acN6ParamsO_tFZ,
                             _$s7SiriGeo0aB16CommandConverterO09convertToA7Snippet7snippetSo020SALocalSearchMapItemG0CSg10PegasusAPI013Apple_Parsec_A31_V2alpha_PerResultLayoutDetailsV06OneOf_G0O_tFZ,
                             _$s7SiriGeo0aB16CommandConverterO09convertToaC07commandSaySo017SABaseClientBoundC0CG10PegasusAPI013Apple_Parsec_a9_V2alpha_aC7BuilderV_tFZ,
@@ -21,6 +38,10 @@ exports:
                             _$s7SiriGeo0aB16CommandConverterOMa,
                             _$s7SiriGeo0aB16CommandConverterOMn,
                             _$s7SiriGeo0aB16CommandConverterON,
+                            _$s7SiriGeo10UsoRequestO31makeSDAForPromptForContactValue0A8NLUTypes0A29_Nlu_External_SystemDialogActVyFZ,
+                            _$s7SiriGeo10UsoRequestOMa,
+                            _$s7SiriGeo10UsoRequestOMn,
+                            _$s7SiriGeo10UsoRequestON,
                             _$s7SiriGeo11MapsServiceC17fetchCapabilities3for_ySaySSG_ySayAA28EnhancedMSPSharedTripContactVGSg_s5Error_pSgtctF,
                             _$s7SiriGeo11MapsServiceC17fetchCapabilities3for_ySaySSG_ySayAA28EnhancedMSPSharedTripContactVGSg_s5Error_pSgtctFTq,
                             _$s7SiriGeo11MapsServiceC25CapabilityFetcherObserverC05levelF0So013MSPSharedTripe5LevelF0Cvg,
@@ -173,6 +194,24 @@ exports:
                             _$s7SiriGeo22ParkingLocationServiceVMa,
                             _$s7SiriGeo22ParkingLocationServiceVMn,
                             _$s7SiriGeo22ParkingLocationServiceVN,
+                            _$s7SiriGeo22UsoIdentifierAppBundleO8rawValueACSgSS_tcfC,
+                            _$s7SiriGeo22UsoIdentifierAppBundleO8rawValueSSvg,
+                            _$s7SiriGeo22UsoIdentifierAppBundleO8rawValueSSvpMV,
+                            _$s7SiriGeo22UsoIdentifierAppBundleOMa,
+                            _$s7SiriGeo22UsoIdentifierAppBundleOMn,
+                            _$s7SiriGeo22UsoIdentifierAppBundleON,
+                            _$s7SiriGeo22UsoIdentifierAppBundleOSHAAMc,
+                            _$s7SiriGeo22UsoIdentifierAppBundleOSQAAMc,
+                            _$s7SiriGeo22UsoIdentifierAppBundleOSYAAMc,
+                            _$s7SiriGeo22UsoIdentifierNamespaceO8rawValueACSgSS_tcfC,
+                            _$s7SiriGeo22UsoIdentifierNamespaceO8rawValueSSvg,
+                            _$s7SiriGeo22UsoIdentifierNamespaceO8rawValueSSvpMV,
+                            _$s7SiriGeo22UsoIdentifierNamespaceOMa,
+                            _$s7SiriGeo22UsoIdentifierNamespaceOMn,
+                            _$s7SiriGeo22UsoIdentifierNamespaceON,
+                            _$s7SiriGeo22UsoIdentifierNamespaceOSHAAMc,
+                            _$s7SiriGeo22UsoIdentifierNamespaceOSQAAMc,
+                            _$s7SiriGeo22UsoIdentifierNamespaceOSYAAMc,
                             _$s7SiriGeo23INShareETAIntentHandlerC14contactService33_73890AA4F3C712AED7434AA5E49C1938LLAA07ContactG0Cvpfi,
                             _$s7SiriGeo23INShareETAIntentHandlerC14handleShareETA33_73890AA4F3C712AED7434AA5E49C1938LL6intent10completionySo0cD0C_ySo0cD8ResponseCctF,
                             _$s7SiriGeo23INShareETAIntentHandlerC17resolveRecipients3for4withySo0cD0C_ySaySo0C28ETARecipientResolutionResultCGctF,

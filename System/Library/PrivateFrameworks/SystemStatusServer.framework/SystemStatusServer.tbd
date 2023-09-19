@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SystemStatusServer.framework/SystemStatusServer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _STEntitledDomainsForEntitlementValue,
                             _STStatusDomainNameForEntitlementValue,
                             _STSystemStatusLogEntityResolving,
@@ -17,25 +17,30 @@ exports:
                             _STTelephonyDataConnectionTypeDebugName,
                             _STTelephonyRegistrationStatusDebugName,
                             _SystemStatusServerVersionNumber,
-                            _SystemStatusServerVersionString ]
+                            _SystemStatusServerVersionString,
+                            __STStatusItemIdentifierAskToAirDropCallToAction,
+                            __STStatusItemIdentifierMediaRemoteCallToActionAudioRoute,
+                            __STStatusItemIdentifierMediaRemoteCallToActionVideoRoute ]
     objc-classes:         [ STAttributedEntityResolutionSession,
                             STAttributedEntityResolver,
+                            STBackgroundActivitiesStatusDomainVisualDescriptorTransformer,
                             STExecutableIdentityResolutionSession,
-                            STExecutableIdentityResolver,
+                            STExecutableIdentityResolver, STLocalStatusServer,
                             STLocationStatusDomainDisplayNameTransformer,
+                            STLocationStatusDomainDisplayNameTransformerProvider,
                             STMediaStatusDomainDisplayNameTransformer,
+                            STMediaStatusDomainDisplayNameTransformerProvider,
                             STMutableTelephonyCarrierBundleInfo,
                             STMutableTelephonyMobileEquipmentInfo,
                             STMutableTelephonySubscriptionInfo,
-                            STReferenceCountedCache, STStatusDomainDataChangeLog,
-                            STStatusDomainDataChangeRecord,
-                            STStatusDomainDataChangeRecordDataEntry,
-                            STStatusDomainDataChangeRecordDiffEntry,
+                            STReferenceCountedCache,
                             STStatusDomainPublisherXPCClientHandle,
                             STStatusDomainPublisherXPCClientListener,
                             STStatusDomainXPCClientHandle,
-                            STStatusDomainXPCClientListener, STStatusServer,
-                            STTelephonyCarrierBundleInfo,
+                            STStatusDomainXPCClientListener,
+                            STStatusItemsBundleRecord, STStatusItemsManager,
+                            STStatusItemsStatusDomainVisualDescriptorTransformer,
+                            STStatusServer, STTelephonyCarrierBundleInfo,
                             STTelephonyMobileEquipmentInfo,
                             STTelephonyStateProvider,
                             STTelephonyStatusDomainDataProvider,
@@ -59,6 +64,7 @@ exports:
                             STTelephonySubscriptionInfo._callForwardingIndicator,
                             STTelephonySubscriptionInfo._cellularRegistrationStatus,
                             STTelephonySubscriptionInfo._dataConnectionType,
+                            STTelephonySubscriptionInfo._hiddenSIM,
                             STTelephonySubscriptionInfo._identifier,
                             STTelephonySubscriptionInfo._lastKnownNetworkCountryCode,
                             STTelephonySubscriptionInfo._maxSignalStrengthBars,

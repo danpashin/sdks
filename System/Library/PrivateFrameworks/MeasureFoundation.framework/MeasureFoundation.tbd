@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MeasureFoundation.framework/MeasureFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s12CoreGraphics7CGFloatV17MeasureFoundationE13degree2RadianACvau,
                             _$s12CoreGraphics7CGFloatV17MeasureFoundationE13degree2RadianACvgZ,
                             _$s12CoreGraphics7CGFloatV17MeasureFoundationE13degree2RadianACvpZ,
@@ -3898,6 +3898,8 @@ exports:
                             _$sSo8ARCameraC17MeasureFoundationE18gravityOffsetAngleSfvpMV,
                             _$sSo8ARCameraC5ARKitE13TrackingStateO17MeasureFoundationE11descriptionSSvg,
                             _$sSo8ARCameraC5ARKitE13TrackingStateO17MeasureFoundationE11descriptionSSvpMV,
+                            _$sSo8ARCameraC5ARKitE13TrackingStateO17MeasureFoundationE20analyticsDescriptionSSvg,
+                            _$sSo8ARCameraC5ARKitE13TrackingStateO17MeasureFoundationE20analyticsDescriptionSSvpMV,
                             _$sSo8ARCameraC5ARKitE13TrackingStateOs23CustomStringConvertible17MeasureFoundationMc,
                             _$sSo8NSThreadC17MeasureFoundationE20prettyPrintCallStack7toDepthSSSiSg_tFZ,
                             _$sSo8UIDeviceC17MeasureFoundationE10identifierSSvau,

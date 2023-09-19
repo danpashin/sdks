@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EmojiFoundation.framework/EmojiFoundation
-current-version:       117
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _EMFEmojiCategoryActivity, _EMFEmojiCategoryFlags,
                             _EMFEmojiCategoryFoodAndDrink,
                             _EMFEmojiCategoryNature, _EMFEmojiCategoryObjects,
@@ -28,11 +28,14 @@ exports:
                             _EMFSkinToneSpecifierTypeFitzpatrick6,
                             _EMFSkinToneSpecifierTypeFitzpatrickNone,
                             _EMFSkinToneSpecifierTypeFitzpatrickSilhouette,
-                            _SN_close_env, _SN_create_env, _SN_set_current,
+                            _EmojiFoundationVersionNumber,
+                            _EmojiFoundationVersionString, _SN_close_env,
+                            _SN_create_env, _SN_set_current,
                             __compareEmojiGendersUsingDefaultSortCollation,
                             __compareEmojiGendersUsingSortCollation,
                             __compareEmojiStringsUsingDefaultSortCollation,
                             __compareEmojiTokensUsingDefaultSortCollation,
+                            __compareEmojiTokensUsingGenderInclusiveSortCollation,
                             __createNormalizedString,
                             __createStemmedTokensForTokenArray,
                             __createStrippedFallbackLocaleIdentifierForLocale,
@@ -101,9 +104,11 @@ exports:
                             _turkish_UTF_8_close_env, _turkish_UTF_8_create_env,
                             _turkish_UTF_8_stem ]
     objc-classes:         [ EMFAbstractIndexStrategy,
+                            EMFAnchoredSearchAnchorCollection,
+                            EMFAnchoredSearchAnchorsCache,
                             EMFAnchoredSearchAnchorsLoader,
-                            EMFAnchoredSearchManager, EMFContextBuilder,
-                            EMFContextBuilderLeftHand,
+                            EMFAnchoredSearchManager, EMFBiomeEmojiUsageRecorder,
+                            EMFContextBuilder, EMFContextBuilderLeftHand,
                             EMFContextBuilderRightHand, EMFDPEmojiUsageRecorder,
                             EMFDPEventDispatcher, EMFDPRecorder, EMFDPReporterMock,
                             EMFDefaultAutocompleteCandidateProvider,

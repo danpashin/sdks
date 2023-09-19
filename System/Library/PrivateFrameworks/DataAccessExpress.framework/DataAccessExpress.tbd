@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ASClientAccountDumpStatusNotification,
                             _ASPolicyErrorCodeKey, _ASPolicyErrorKey, _ASPolicyKey,
                             _ASPolicyKeyChangedNotification,
@@ -30,9 +30,10 @@ exports:
                             _DADCalendarDirectorySearchRecordType_Resources,
                             _DADCalendarDirectorySearchRecordType_Users,
                             _DAECalendarAvailabilityTypeAsString, _DAErrorDomain,
-                            _DAGreenTeaLogger, _DALogSimulateCrashReport,
-                            _DALoggingwithCategory, _DAMigrateLogsIfNeeded,
-                            _DAShouldLogPassword, _DAUnderlyingStatusCodeKey,
+                            _DAGreenTeaLog, _DAGreenTeaLogger,
+                            _DALogSimulateCrashReport, _DALoggingwithCategory,
+                            _DAMigrateLogsIfNeeded, _DAShouldLogPassword,
+                            _DAUnderlyingStatusCodeKey,
                             _DataAccessDaemonShutdownRequestNoteName,
                             _DataAccessMonitoredFolderUpdated,
                             _DataAccessMonitoringConnectionFailed,
@@ -246,7 +247,9 @@ exports:
                             _kMessageSearchTruncationSize,
                             _kSearchRangeLengthKey, _kSearchRangeLocKey,
                             _kSearchResultsDataKey, _kSearchStringKey,
-                            _kSearchTimeLimitKey, _kSubCalRefreshTaskErrorDomain,
+                            _kSearchTimeLimitKey,
+                            _kSubCalICSDataActorErrorDomain,
+                            _kSubCalRefreshTaskErrorDomain,
                             _kSubCalURLRequestErrorDomain,
                             _kSubCalValidationTaskErrorDomain, _setDALogLevel,
                             _setDALogOutputLevel, _shouldDALogAtLevel ]

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
@@ -7,25 +7,11 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ECGAppInstructionsForUseGlobalFilename,
-                            _HRElectrocardiogramOnboardingCompletedNotificationName,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HRElectrocardiogramOnboardingCompletedNotificationName,
                             _HRElectrocardiogramUpdateGeneratedUserDefaultKey,
                             _HRElectrocardiogramUpdateViewedUserDefaultKey,
-                            _HRFRPUElectrocardiogramMajorVersion,
-                            _HRFRPUElectrocardiogramMajorVersionTwo,
                             _HRHeartRhythmUIFrameworkBundle,
-                            _HRIFUHelpTopicIdECG2China,
-                            _HRIFUHelpTopicIdECG2Global,
-                            _HRIFUHelpTopicIdECG2Japan,
-                            _HRIFUHelpTopicIdECG2Taiwan,
-                            _HRIFUHelpTopicIdElectrocardiogramChina,
-                            _HRIFUHelpTopicIdElectrocardiogramGlobal,
-                            _HRIFUHelpTopicIdElectrocardiogramJapan,
-                            _HRIFUHelpTopicIdElectrocardiogramTaiwan,
-                            _HRIFUUtilitiesElectrocardiogramAlgorithmVersion,
-                            _HRIFUUtilitiesElectrocardiogramAlgorithmVersionTwo,
-                            _HRIFUUtilitiesFeatureNameElectrocardiogramRecording,
                             _HROnboardingAtrialFibrillationCountryCodeKey,
                             _HROnboardingAtrialFibrillationEnableNotificationsKey,
                             _HROnboardingElectrocardiogramAlgorithmVersionKey,
@@ -47,26 +33,14 @@ exports:
                             HRElectrocardiogramEducationSection,
                             HRElectrocardiogramEducationViewController,
                             HRElectrocardiogramOnboardingManager,
-                            HRElectrocardiogramRegulatoryInstructionItem,
-                            HRElectrocardiogramRegulatoryPanelViewController,
                             HRElectrocardiogramReportGenerator,
                             HRElectrocardiogramResultViewItem,
                             HRElectrocardiogramSessionScreenView,
                             HRElectrocardiogramSessionSimulationView,
                             HRElectrocardiogramWatchAppInstallability,
                             HRExpandedContentItem,
-                            HRExpandedContentItemLearnMore,
-                            HRFeatureAttributesDisclosureItem,
-                            HRFeatureAttributesItem,
-                            HRFeatureRegulatoryAddressItem,
-                            HRFeatureRegulatoryContactAppleItem,
-                            HRFeatureRegulatoryNameItem,
-                            HRFeatureRegulatoryPanelUtilities,
-                            HRFeatureRegulatoryPanelViewController,
-                            HRFeatureRegulatoryReenableFeatureItem,
-                            HRIFUViewController, HRImageLabel,
-                            HRInstructionsForUseUtilities, HRLinkTextView,
-                            HRMetadataEducationTableViewCell,
+                            HRExpandedContentItemLearnMore, HRImageLabel,
+                            HRLinkTextView, HRMetadataEducationTableViewCell,
                             HRMiniTilePlatterView,
                             HROnboardingAtrialFibrillationEnableViewController,
                             HROnboardingAtrialFibrillationGateViewController,
@@ -87,12 +61,10 @@ exports:
                             HROnboardingElectrocardiogramUpdateCompleteViewController,
                             HROnboardingHeroExplanationViewController,
                             HROnboardingInlineExpandedContentView,
-                            HROnboardingWristImageView, HRPDFViewController,
-                            HRPaddingLabel, HRParagraphTableViewCell,
+                            HROnboardingWristImageView, HRPaddingLabel,
+                            HRParagraphTableViewCell,
                             HRSimulatedAtrialFibrillationNotificationView,
                             HRSpeedBumpBubble, HRSpeedBumpItem,
                             HRSpeedBumpViewController, HRStackedButtonView,
-                            HRStringValueViewController,
-                            HRTextContentViewController, HRUIAnalyticsManager,
-                            HRVideoPlayerView, HRWebViewController ]
+                            HRUIAnalyticsManager, HRVideoPlayerView ]
 ...

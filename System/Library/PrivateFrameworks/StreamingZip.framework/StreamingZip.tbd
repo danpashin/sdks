@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/StreamingZip.framework/StreamingZip
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SZArchiverConvertZipArchiveToStreamable,
                             _SZArchiverCopyStatsDescriptions,
                             _SZArchiverCopyStatsKeys,
@@ -15,6 +15,7 @@ exports:
                             _SZArchiverExtractFile,
                             _SZExtractorActualHashValueErrorKey,
                             _SZExtractorCompressionLibErrorKey,
+                            _SZExtractorEntitlementPrivileged,
                             _SZExtractorErrorDomain,
                             _SZExtractorFileOffsetErrorKey,
                             _SZExtractorFunctionNameErrorKey,
@@ -29,6 +30,8 @@ exports:
                             _SZExtractorOptionsHashType,
                             _SZExtractorOptionsHashedChunkSize,
                             _SZExtractorOptionsHashesArray,
+                            _SZExtractorOptionsOwnerGroupID,
+                            _SZExtractorOptionsOwnerUserID,
                             _SZExtractorOptionsPerformCachedWrites,
                             _SZExtractorOptionsQuarantineInfo,
                             _SZExtractorSourceFileLineErrorKey,
@@ -50,6 +53,7 @@ exports:
                             _kSZArchiverOptionCompressionOptions,
                             _kSZArchiverOptionCustomPathOrdering,
                             _kSZArchiverOptionExecutableUUID,
+                            _kSZArchiverOptionFollowAllSymlinks,
                             _kSZArchiverOptionHashType,
                             _kSZArchiverOptionHashedChunkSize,
                             _kSZArchiverOptionIncludeContainingDirectory,

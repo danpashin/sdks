@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
@@ -7,9 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AFUIBulletinReadoutResultGetName,
                             _AFUICreateAssistantResourcesDirectoryURL,
+                            _AFUICreateBugReportPresentingWithDelegate,
                             _AFUICreateDebugController,
                             _AFUICreateInternalDebugController,
                             _AFUIDebugErrorDomain, _AFUIDebugOverrideDictionary,
@@ -27,11 +28,9 @@ exports:
                             _AFUIGuideCacheManagerCacheDurationMax,
                             _AFUIHasUnlockedSinceBoot,
                             _AFUIIsDeviceLiveActivitiesSupported,
+                            _AFUIIsDeviceSystemApertureEnabled,
                             _AFUILanguageCodeDidChangeNotification,
                             _AFUIPathForDebugOverridePlist,
-                            _AFUIPreferencesASRSettingBeforeTrialExperiment,
-                            _AFUIPreferencesDefaultDomain,
-                            _AFUIPreferencesDeviceEnrolledInASRSettingTrialExperiment,
                             _AFUIPresentationPropertiesRequestSourceKey,
                             _AFUIPresentationPropertiesShouldSuppressErrorTTSKey,
                             _AFUIPreviousConversationIdentifier,
@@ -45,26 +44,10 @@ exports:
                             _AFUIStarkAnimationDuration,
                             _AFUIStarkBackgroundViewModeGetName,
                             _AFUIStarkCornerRadius,
-                            _AFUITapToRadarMaximumAttachmentSize,
                             _AFUIWillLeaveEmergencyCallViewNotification,
                             _AssistantUIBundle, _MobileSMSBundleID, _PhoneBundleID,
-                            _kAFUITTRBackButtonTitle, _kAFUITTRControllerTitle,
-                            _kAFUITTRHorizontalPadding, _kAFUITTRLabelFontSize,
-                            _kAFUITTRNoButtonTitle,
-                            _kAFUITTRNotRequestSpecificTitle,
-                            _kAFUITTRProgressFormat, _kAFUITTRQuestion,
-                            _kAFUITTRSkipToTTRTitle, _kAFUITTRSpacerHeight,
-                            _kAFUITTRStackViewSpacing,
-                            _kAFUITTRTableViewCellIdentifier,
-                            _kAFUITTRVerticalPadding, _kAFUITTRYesButtonTitle,
-                            _kActualASRTranscriptText, _kActualDomainText,
-                            _kAsrText, _kAudioRecordingText, _kBadText,
-                            _kColonFormat, _kCompactOrbSize, _kDomainText,
-                            _kGoodText, _kHeaderText, _kTimestamp, _kTimestampFormat,
-                            _kUserSuggestedAsrTranscriptText,
-                            _kUserSuggestedDomainText ]
+                            _kCompactOrbSize ]
     objc-classes:         [ AFUIAudioMessagePlayer, AFUIAudioPlayer,
-                            AFUIBugReportPresenter,
                             AFUICloudStorageViewController, AFUIDebugError,
                             AFUIDebugLog, AFUIDebugLogManager,
                             AFUIDelayedActionCommandCache,
@@ -74,7 +57,7 @@ exports:
                             AFUIMutableSceneClientSettings,
                             AFUINetworkAvailabilityStateMachine,
                             AFUIPasscodeBlurView, AFUIPasscodeContainerView,
-                            AFUIPasscodeViewFactory, AFUIPreferences,
+                            AFUIPasscodeViewFactory,
                             AFUIRemoteImageRepresentation,
                             AFUISceneClientSettings, AFUISceneConfiguration,
                             AFUISceneController, AFUISceneHostingViewController,
@@ -89,11 +72,7 @@ exports:
                             AFUISiriTapPanDismissalPolicyManager, AFUISiriView,
                             AFUISiriViewBuilder, AFUISiriViewController,
                             AFUIStarkSceneSpecification, AFUIStarkUtilities,
-                            AFUIStateMachine, AFUITTRASRViewController,
-                            AFUITTRBaseViewController,
-                            AFUITTRNavigationController, AFUITTRReport,
-                            AFUITTRUtteranceSelectionTableViewController,
-                            AFUITapToRadarManager, AFUITestInput,
+                            AFUIStateMachine, AFUITestInput, AFUITouchInputView,
                             AFUITouchPassThroughView, AFUIUtilities,
                             AFUIVoicemailPlayer,
                             _AFUIAssertingDelayedActionCommand,

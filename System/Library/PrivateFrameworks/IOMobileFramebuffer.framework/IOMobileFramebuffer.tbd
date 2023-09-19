@@ -1,16 +1,17 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/IOMobileFramebuffer
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IOMFBGainEncoderCreate, _IOMFBGainEncoderDestroy,
                             _IOMFBGainEncoderEmitEmptyRows,
                             _IOMFBGainEncoderEmitRun,
                             _IOMFBGainEncoderFinishEncoding,
+                            _IOMFBGainEncoderRepeatPreviousRow,
                             _IOMFBGainEncoderStartRow, _IOMFBGainMapRelease,
                             _IOMFBGainMapRetain, _IOMFBgainencoder_count,
                             _IOMFBgainencoder_emit_empty_rows,
@@ -18,7 +19,9 @@ exports:
                             _IOMFBgainencoder_free, _IOMFBgainencoder_get_origin,
                             _IOMFBgainencoder_get_size, _IOMFBgainencoder_map,
                             _IOMFBgainencoder_map_size, _IOMFBgainencoder_new,
+                            _IOMFBgainencoder_repeat_row,
                             _IOMFBgainencoder_row_1_coded,
+                            _IOMFBgainencoder_set_map_version,
                             _IOMFBgainencoder_set_origin,
                             _IOMFBgainencoder_start_row,
                             _IOMobileFrameBufferEnableDebugTracing,
@@ -30,6 +33,8 @@ exports:
                             _IOMobileFrameBufferSwapSetContrastEnhancerStrength,
                             _IOMobileFrameBufferSwapSetUserLuminanceAdjustment,
                             _IOMobileFrameBufferprintDisplayRegs,
+                            _IOMobileFramebufferCalibrationBegin,
+                            _IOMobileFramebufferCalibrationToolboxCommand,
                             _IOMobileFramebufferChangeFrameInfo,
                             _IOMobileFramebufferCopyLayerDisplayedSurface,
                             _IOMobileFramebufferCopyProperty,
@@ -49,6 +54,7 @@ exports:
                             _IOMobileFramebufferEnableVSyncNotifications,
                             _IOMobileFramebufferFactoryPortal,
                             _IOMobileFramebufferFrameInfo,
+                            _IOMobileFramebufferGetBandwidth,
                             _IOMobileFramebufferGetBlock,
                             _IOMobileFramebufferGetBrightnessControlCapabilities,
                             _IOMobileFramebufferGetBrightnessControlInfo,
@@ -97,6 +103,7 @@ exports:
                             _IOMobileFramebufferSPLCGetBrightness,
                             _IOMobileFramebufferSPLCSetBrightness,
                             _IOMobileFramebufferScheduleWithDispatchQueue,
+                            _IOMobileFramebufferSetAmmoliteStrength,
                             _IOMobileFramebufferSetBlock,
                             _IOMobileFramebufferSetBrightnessControlCallback,
                             _IOMobileFramebufferSetBrightnessCorrection,
@@ -110,6 +117,7 @@ exports:
                             _IOMobileFramebufferSetFlags,
                             _IOMobileFramebufferSetGammaTable,
                             _IOMobileFramebufferSetIdleBuffer,
+                            _IOMobileFramebufferSetIdleBufferEvent,
                             _IOMobileFramebufferSetLine21Data,
                             _IOMobileFramebufferSetMatrix,
                             _IOMobileFramebufferSetMirrorContentRegion,
@@ -141,6 +149,9 @@ exports:
                             _IOMobileFramebufferSwapSetColorRemapMode,
                             _IOMobileFramebufferSwapSetDisplayEdr,
                             _IOMobileFramebufferSwapSetDisplayEdrHeadroom,
+                            _IOMobileFramebufferSwapSetEventSignal,
+                            _IOMobileFramebufferSwapSetEventSignalOnGlass,
+                            _IOMobileFramebufferSwapSetEventWait,
                             _IOMobileFramebufferSwapSetGainMap,
                             _IOMobileFramebufferSwapSetGammaTable,
                             _IOMobileFramebufferSwapSetICCCurve,
@@ -149,6 +160,7 @@ exports:
                             _IOMobileFramebufferSwapSetParams,
                             _IOMobileFramebufferSwapSetTimestamp,
                             _IOMobileFramebufferSwapSetTimestamps,
+                            _IOMobileFramebufferSwapSetToneMapConfig,
                             _IOMobileFramebufferSwapSetUISubRegion,
                             _IOMobileFramebufferSwapSetVideoDestEdgeAlpha,
                             _IOMobileFramebufferSwapSignal,

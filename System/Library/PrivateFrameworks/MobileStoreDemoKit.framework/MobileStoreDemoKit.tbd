@@ -1,19 +1,59 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileStoreDemoKit.framework/MobileStoreDemoKit
-current-version:       1054.100.41
+current-version:       1246.2.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MobileStoreDemoKitVersionNumber,
                             _MobileStoreDemoKitVersionString,
+                            _appContainerDoNotExtractList, _contentRootList,
+                            _doNotExtractList,
+                            _generateCustomDomainsPlistForSecurityRulesCheck,
                             _kMMSDPropertyClaimBodyKey,
                             _kMMSDPropertyClaimLinkKey,
                             _kMMSDPropertyClaimTitleKey,
                             _kMSDKDefaultComputerType,
+                            _kMSDKPeerDemoAppPropertyIdentifier,
+                            _kMSDKPeerDemoAppPropertyLocalizedName,
+                            _kMSDKPeerDemoDevicePropertyActiveEnvironment,
+                            _kMSDKPeerDemoDevicePropertyAirPlayAssistedReady,
+                            _kMSDKPeerDemoDevicePropertyAudioVideoVolume,
+                            _kMSDKPeerDemoDevicePropertyAuthenticated,
+                            _kMSDKPeerDemoDevicePropertyBatteryCapacity,
+                            _kMSDKPeerDemoDevicePropertyContentFrozen,
+                            _kMSDKPeerDemoDevicePropertyDevice,
+                            _kMSDKPeerDemoDevicePropertyDeviceName,
+                            _kMSDKPeerDemoDevicePropertyEnvironmentVolume,
+                            _kMSDKPeerDemoDevicePropertyIdentifier,
+                            _kMSDKPeerDemoDevicePropertyIsInBubble,
+                            _kMSDKPeerDemoDevicePropertyMainVolume,
+                            _kMSDKPeerDemoDevicePropertyOSVersion,
+                            _kMSDKPeerDemoDevicePropertyPairingMode,
+                            _kMSDKPeerDemoDevicePropertyPhoneCallVolume,
+                            _kMSDKPeerDemoDevicePropertyProductType,
+                            _kMSDKPeerDemoDevicePropertySerialNumber,
+                            _kMSDKPeerDemoDevicePropertyThermalMitigationNeeded,
+                            _kMSDKPeerDemoDevicePropertyWiFiNetworkName,
+                            _kMSDKPeerDemoDevicePropertyWiFiSignalStrength,
+                            _kMSDKPeerDemoDevicePropertyiCloudAccountName,
+                            _kMSDKPeerDemoEnvironmentIdentifierNone,
+                            _kMSDKPeerDemoEnvironmentPropertyDisplayName,
+                            _kMSDKPeerDemoEnvironmentPropertyIdentifier,
+                            _kMSDKPeerDemoGKDataPropertyDataValid,
+                            _kMSDKPeerDemoGKDataPropertyReliefBoxSpaceMM,
+                            _kMSDKPeerDemoGKDataPropertyReliefOffsetFromToleranceX,
+                            _kMSDKPeerDemoGKDataPropertyReliefOffsetFromToleranceY,
+                            _kMSDKPeerDemoGKDataPropertyReliefOffsetFromToleranceZ,
+                            _kMSDKPeerDemoGKDataPropertyReliefTotalBoxSpaceMM,
+                            _kMSDKPeerDemoGKMetricsPropertyGKDataList,
+                            _kMSDKPeerDemoGKResultsPropertyEnrollmentResult,
+                            _kMSDKPeerDemoGKResultsPropertyResidualErrors,
+                            _kMSDKPeerDemoTestScriptPropertyName,
+                            _kMSDKPeerDemoTestScriptPropertyTestMethods,
                             _kMSDKPrepareOptionsPreferredStoreID,
                             _kMSDKPrepareOptionsWiFiPassword,
                             _kMSDKPrepareOptionsWiFiSSID, _kMSDKProperClaimKey,
@@ -30,6 +70,17 @@ exports:
                             _kMSDNetworkInfoEmbeddedSIMInstalled,
                             _kMSDNetworkInfoPersistentWiFiSSID, _safeAssignError,
                             _safeAssignErrorNoOverwrite,
-                            _safeAssignErrorWithReason ]
-    objc-classes:         [ MSDKDemoState, MSDKManagedDevice, MSDTestPreferences ]
+                            _safeAssignErrorWithReason,
+                            _systemContainerDoNotExtractList,
+                            _systemContainerShouldRestoreList ]
+    objc-classes:         [ MSDDemoManifestCheck, MSDDomainsPlistPatcher,
+                            MSDKCacheManager, MSDKDemoState, MSDKManagedDevice,
+                            MSDKManifestComponent, MSDKManifestDataItem,
+                            MSDKManifestFileItem, MSDKManifestInstallableItem,
+                            MSDKManifestItem, MSDKPeerDemoApp, MSDKPeerDemoDevice,
+                            MSDKPeerDemoDeviceManager, MSDKPeerDemoEnvironment,
+                            MSDKPeerDemoGKData, MSDKPeerDemoGKMetrics,
+                            MSDKPeerDemoGKResults, MSDKPeerDemoTestScript,
+                            MSDKSignedManifest, MSDPlatform, MSDTestPreferences,
+                            WhitelistChecker ]
 ...

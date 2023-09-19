@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CarPlaySupport.framework/CarPlaySupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CPSAssistantCellActionPlayMedia,
                             _CPSAssistantCellActionStartCall,
                             _CPSAudioManagerDidThrottleUpdateNotification,
@@ -17,8 +17,9 @@ exports:
                             _CPSFormattedDistanceSepartedShortUnit,
                             _CPSFormattedDistanceWithMediumUnit,
                             _CPSFrameworkBundle,
+                            _CPSICCardLayoutSafeAreaMinimumCenterWidth,
+                            _CPSICCardLayoutSafeAreaMinimumHeightForETAWithTurnCard,
                             _CPSImageNamedWithTraitCollection,
-                            _CPSInstrumentClusterCardLayoutSafeAreaMinimumCenterWidth,
                             _CPSIsInternalInstall, _CPSLabelColorForAlertAction,
                             _CPSLocalizedStringForKey,
                             _CPSManeuverChangeAnimationDuration,
@@ -31,6 +32,7 @@ exports:
                             _CPSRequesterIdentifierForBundleIdentifier,
                             _CPSSizeForAttributedText, _CPSSizeForText,
                             _CPSTraitCollectionSupportsFocus,
+                            _CarPlayFrameworkACCNavLogging,
                             _CarPlayFrameworkGeneralLogging,
                             _CarPlaySupportGeneralLogging,
                             _CarPlaySupportVersionNumber,
@@ -87,7 +89,8 @@ exports:
                             CPSManeuversCardView, CPSMapButton,
                             CPSMapTemplateViewController, CPSMessageCell,
                             CPSMultilineLabel, CPSMultilineLabelConfig,
-                            CPSNameViewController, CPSNavigationAlertFocusButton,
+                            CPSNameStackView, CPSNameViewController,
+                            CPSNavigationAlertFocusButton,
                             CPSNavigationAlertProgressView,
                             CPSNavigationAlertQueue, CPSNavigationAlertView,
                             CPSNavigationBar, CPSNavigationCardViewController,

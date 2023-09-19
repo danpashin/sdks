@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserFS.framework/PlugIns/livefiles_hfs.dylib
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AddFileExtent, _AllocateNode, _BTClosePath,
                             _BTDeleteRecord, _BTFlushPath, _BTGetInformation,
                             _BTGetLastSync, _BTGetUserData, _BTHasContiguousNodes,
@@ -70,8 +70,11 @@ exports:
                             _gLatinCaseFold, _gLowerCaseTable, _gbIsLoggerInit,
                             _get_btree_nodesize, _gpeHFSToOsLevel, _gpsHFSLog,
                             _hashDeinit, _hashinit, _hexdigits, _hfsUnmount,
-                            _hfs_CollectBtreeStats, _hfs_GetInfoByID,
-                            _hfs_MountHFSPlusVolume, _hfs_ScanVolGetVolName,
+                            _hfs_CollectBtreeStats, _hfs_ConvertHFSUUIDToUUID,
+                            _hfs_GetInfoByID,
+                            _hfs_GetNameFromHFSPlusVolumeStartingAt,
+                            _hfs_GetVolumeUUIDRaw, _hfs_MountHFSPlusVolume,
+                            _hfs_ScanVolGetVolName,
                             _hfs_ValidateHFSPlusVolumeHeader, _hfs_apendixcmp,
                             _hfs_attrdatafilename, _hfs_attrkeycompare,
                             _hfs_attrname, _hfs_block_alloc, _hfs_buildattrkey,

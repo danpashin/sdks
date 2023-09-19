@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SoftwareUpdateCoreSupport.framework/SoftwareUpdateCoreSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _kSUCoreActionKey,
                             _kSUCoreConfigKeyAllowLiveAssetServerFallback,
                             _kSUCoreConfigKeyAlternateAssetAudienceUUID,
@@ -21,6 +21,7 @@ exports:
                             _kSUCoreConfigKeyRestrictToProductVersionExtra,
                             _kSUCoreConfigKeySoftwareUpdateScanInterval,
                             _kSUCoreConfigKeyTestIndication,
+                            _kSUCoreConfigKeyVerboseLogging,
                             _kSUCoreConfigProjectMobileAsset,
                             _kSUCoreConfigProjectSUTestTool,
                             _kSUCoreConfigProjectSoftwareUpdateController,
@@ -42,6 +43,7 @@ exports:
                             _kSUCoreControllerCommandLineKey,
                             _kSUCoreControllerControllerStatusKey,
                             _kSUCoreControllerControllerVersionKey,
+                            _kSUCoreControllerDDMKey,
                             _kSUCoreControllerDelayPeriodKey,
                             _kSUCoreControllerDownloadNotReady,
                             _kSUCoreControllerEventOTAAbandoned,
@@ -109,7 +111,7 @@ exports:
                             _kSUCoreDiagStatsFailureCountKey,
                             _kSUCoreDiagStatsFaultCountKey,
                             _kSUCoreDomainDefault, _kSUCoreDomainInstanceShared,
-                            _kSUCoreErrorDomain,
+                            _kSUCoreErrorDomain, _kSUCoreEventAssetTypeKey,
                             _kSUCoreEventBatteryIsChargingKey,
                             _kSUCoreEventBatteryLevelKey,
                             _kSUCoreEventContextKey,
@@ -126,6 +128,9 @@ exports:
                             _kSUCoreEventDiagHistoryKey,
                             _kSUCoreEventDiagReasonKey,
                             _kSUCoreEventDiagStatsKey,
+                            _kSUCoreEventDownloadErrorNameKey,
+                            _kSUCoreEventDownloadResultCodeKey,
+                            _kSUCoreEventDownloadSizeKey,
                             _kSUCoreEventErrorCountKey,
                             _kSUCoreEventEventTimeKey,
                             _kSUCoreEventFailureReasonKey, _kSUCoreEventFalse,
@@ -138,10 +143,13 @@ exports:
                             _kSUCoreEventReporterRecordsDir,
                             _kSUCoreEventResultKey, _kSUCoreEventResultSuccess,
                             _kSUCoreEventRollbackKey,
+                            _kSUCoreEventSUCoreOTADownloadFinished,
+                            _kSUCoreEventSUCoreOTADownloadStarted,
                             _kSUCoreEventSameErrorSignatureKey,
                             _kSUCoreEventStorageCapacityKey,
                             _kSUCoreEventSystemFsCapacityKey,
-                            _kSUCoreEventSystemFsFreeKey, _kSUCoreEventTrue,
+                            _kSUCoreEventSystemFsFreeKey,
+                            _kSUCoreEventTargetOSVersionKey, _kSUCoreEventTrue,
                             _kSUCoreEventUUIDKey, _kSUCoreEventUnknownData,
                             _kSUCoreFSMActionNoOp, _kSUCoreFSMEventNotValid,
                             _kSUCoreFSMEventTeardown, _kSUCoreFSMStateDead,
@@ -153,6 +161,7 @@ exports:
                             _kSUCoreSimulateModuleNotSpecified,
                             _kSUCoreSplunkServerBaseURL,
                             _kSUCoreSplunkServerDefaultURL, _kSUCoreVersion,
+                            _kSUProgressPhaseApplying,
                             _kSUProgressPhaseDownloading,
                             _kSUProgressPhaseLoadingBrain, _kSUProgressPhaseNone,
                             _kSUProgressPhasePreparing,

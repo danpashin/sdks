@@ -15,7 +15,8 @@ API_AVAILABLE_BEGIN(ios(12.0), watchos(5.0))
 typedef NS_ENUM(NSUInteger, CTCellularPlanProvisioningAddPlanResult) {
 	CTCellularPlanProvisioningAddPlanResultUnknown,
 	CTCellularPlanProvisioningAddPlanResultFail,
-	CTCellularPlanProvisioningAddPlanResultSuccess
+	CTCellularPlanProvisioningAddPlanResultSuccess,
+	CTCellularPlanProvisioningAddPlanResultCancel API_AVAILABLE(ios(17.0))
 };
 
 CORETELEPHONY_EXTERN_CLASS 

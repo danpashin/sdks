@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssetViewer.framework/AssetViewer
-current-version:       284.52
+current-version:       450
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10RealityKit14CollisionGroupV11AssetViewerE012arqlFallbackD0s6UInt32VvgZ,
                             _$s10RealityKit14CollisionGroupV11AssetViewerE16arqlFallbackMasks6UInt32VvgZ,
                             _$s10RealityKit15CollisionFilterV11AssetViewerE022calculateARQLCollisionD04fromAcA6EntityC_tFZ,
@@ -95,6 +95,10 @@ exports:
                             _$s11AssetViewer0A6LoaderV16SceneInformationV11anchorTypesSay10RealityKit18AnchoringComponentV6TargetOGvg,
                             _$s11AssetViewer0A6LoaderV16SceneInformationV11anchorTypesSay10RealityKit18AnchoringComponentV6TargetOGvpMV,
                             _$s11AssetViewer0A6LoaderV16SceneInformationV11anchorTypesSay10RealityKit18AnchoringComponentV6TargetOGvs,
+                            _$s11AssetViewer0A6LoaderV16SceneInformationV20hasLookatOrProximitySbvM,
+                            _$s11AssetViewer0A6LoaderV16SceneInformationV20hasLookatOrProximitySbvg,
+                            _$s11AssetViewer0A6LoaderV16SceneInformationV20hasLookatOrProximitySbvpMV,
+                            _$s11AssetViewer0A6LoaderV16SceneInformationV20hasLookatOrProximitySbvs,
                             _$s11AssetViewer0A6LoaderV16SceneInformationV4urlsSay10Foundation3URLVGvM,
                             _$s11AssetViewer0A6LoaderV16SceneInformationV4urlsSay10Foundation3URLVGvg,
                             _$s11AssetViewer0A6LoaderV16SceneInformationV4urlsSay10Foundation3URLVGvpMV,
@@ -124,12 +128,13 @@ exports:
                             _$s11AssetViewer0A6LoaderVMa,
                             _$s11AssetViewer0A6LoaderVMn,
                             _$s11AssetViewer0A6LoaderVN,
+                            _$s11AssetViewer10PointerStrySSyXlF,
                             _$s11AssetViewer12ARQLRendererC12snapshotSync4file9iosurface11contentSizey10Foundation3URLV_So9IOSurfaceCSo6CGSizeVtKFTj,
                             _$s11AssetViewer12ARQLRendererC12snapshotSync4file9iosurface11contentSizey10Foundation3URLV_So9IOSurfaceCSo6CGSizeVtKFTq,
-                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefixACSb_SStcfC,
-                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefixACSb_SStcfCTj,
-                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefixACSb_SStcfCTq,
-                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefixACSb_SStcfc,
+                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefix06opaqueE0ACSb_SSSbtcfC,
+                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefix06opaqueE0ACSb_SSSbtcfCTj,
+                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefix06opaqueE0ACSb_SSSbtcfCTq,
+                            _$s11AssetViewer12ARQLRendererC22showBackgroundGradient15assetPathPrefix06opaqueE0ACSb_SSSbtcfc,
                             _$s11AssetViewer12ARQLRendererCMa,
                             _$s11AssetViewer12ARQLRendererCMm,
                             _$s11AssetViewer12ARQLRendererCMn,
@@ -154,6 +159,8 @@ exports:
                             _$s11AssetViewer17OverlayPreferenceVMa,
                             _$s11AssetViewer17OverlayPreferenceVMn,
                             _$s11AssetViewer17OverlayPreferenceVN,
+                            _$s11AssetViewer20ARQLAnimationManagerC12addAnimation8duration5delay7execute10completionySd_SdySd_SftcySdcSgtFTj,
+                            _$s11AssetViewer20ARQLAnimationManagerC12addAnimation8duration5delay7execute10completionySd_SdySd_SftcySdcSgtFTq,
                             _$s11AssetViewer20ARQLAnimationManagerC12addAnimation8duration7execute10completionSiSd_ySd_SftcySdcSgtFTj,
                             _$s11AssetViewer20ARQLAnimationManagerC12addAnimation8duration7execute10completionSiSd_ySd_SftcySdcSgtFTq,
                             _$s11AssetViewer20ARQLAnimationManagerC12addAnimation8duration7executeSiSd_ySd_SftctFTj,
@@ -420,6 +427,7 @@ exports:
                             _ASVInlinePreviewRuntimePitchKey,
                             _ASVInlinePreviewRuntimeScaleKey,
                             _ASVInlinePreviewRuntimeYawKey, _ASVPositionIsValid,
+                            _ASVQLPreviewControllerDelegateShouldDisplayEditingControls,
                             _ASVRunInMainThread,
                             _ASVSetting2DControlsFadeAnimationDuration,
                             _ASVSetting2DControlsFadeOutDelay,
@@ -519,6 +527,7 @@ exports:
                             _ASVSettingWorldTwoFingerTranslationThreshold,
                             _ASVSettingWorldTwoFingerTranslationThresholdHarder,
                             _ASVThumbnailViewLetterBoxHexValueColor,
+                            _ASVWarningOptionalDescriptionUsed,
                             _AssetViewerLogHandleForCategory, ___queryDeviceGPU,
                             __asvLogHandle, _arql_memory_snapshot,
                             _arql_print_memory_snapshot, _checkGPUClass,

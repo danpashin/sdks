@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WatchQuickActionsServices.framework/WatchQuickActionsServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _WQADefaultBannerBorderWidth, _WQADefaultOpacity,
                             _WQADefaultShapeLineWidth, _WQADefaultTintColor,
                             _WQAErrorForErrorCode, _WQAPayloadActionDataKey,
@@ -27,6 +27,7 @@ exports:
                             _wqa_client_log, _wqa_dump_call_stack,
                             _wqa_feedback_log, _wqa_input_log, _wqa_overlay_log,
                             _wqa_server_log, _wqa_services_log ]
-    objc-classes:         [ WQAOverlayCoordinator, WQAShapeLayer, WatchQuickAction,
+    objc-classes:         [ WQAOverlayCoordinator, WQAShapeLayer,
+                            WatchCrownPressQuickAction, WatchQuickAction,
                             WatchQuickActionsServices, _WQA_HostDeallocNotifier ]
 ...

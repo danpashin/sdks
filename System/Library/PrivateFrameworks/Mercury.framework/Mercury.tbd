@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Mercury.framework/Mercury
-current-version:       41
+current-version:       45
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10Foundation10POSIXErrorV7MercuryE13uncheckedCode8userInfoACs5Int32V_SDySSypGtcfC,
                             _$s10Foundation10POSIXErrorV7MercuryE7current2orACs5Int32V_tFZ,
                             _$s10Foundation10POSIXErrorV7MercuryE7currentACSgvgZ,
@@ -561,9 +561,30 @@ exports:
                             _$s7Mercury17XPCFileDescriptorC4fromACs7Decoder_p_tKcfCTq,
                             _$s7Mercury17XPCFileDescriptorC4fromACs7Decoder_p_tKcfc,
                             _$s7Mercury17XPCFileDescriptorC4read4into7pollingSiSgSw_SbtKF,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvMTj,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvMTq,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvgTj,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvgTq,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvpMV,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvsTj,
+                            _$s7Mercury17XPCFileDescriptorC5_pollys5Int32VSpySo6pollfdVGSg_s6UInt32VAFtcvsTq,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvMTj,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvMTq,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvgTj,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvgTq,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvpMV,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvsTj,
+                            _$s7Mercury17XPCFileDescriptorC5_readySis5Int32V_SvSgSitcvsTq,
                             _$s7Mercury17XPCFileDescriptorC5closeyyKFTj,
                             _$s7Mercury17XPCFileDescriptorC5closeyyKFTq,
                             _$s7Mercury17XPCFileDescriptorC5write4from7pollingSiSgSW_SbtKF,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvMTj,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvMTq,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvgTj,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvgTq,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvpMV,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvsTj,
+                            _$s7Mercury17XPCFileDescriptorC6_writeySis5Int32V_SVSgSitcvsTq,
                             _$s7Mercury17XPCFileDescriptorC6encode2toys7Encoder_p_tKFTj,
                             _$s7Mercury17XPCFileDescriptorC6encode2toys7Encoder_p_tKFTq,
                             _$s7Mercury17XPCFileDescriptorC6splice4from2to2on22reportingProgressUsing10completionyAC_ACSo17OS_dispatch_queueCSgys6UInt64V_SbztcSgyAN_s5Error_pSgtctFZ,

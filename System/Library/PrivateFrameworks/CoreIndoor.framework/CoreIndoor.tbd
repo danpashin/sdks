@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ZN5boost10filesystem16filesystem_error14get_empty_pathEv,
                             __ZN5boost10filesystem16filesystem_errorC1EPKcNS_6system10error_codeE,
                             __ZN5boost10filesystem16filesystem_errorC1EPKcRKNS0_4pathENS_6system10error_codeE,
@@ -50,9 +50,10 @@ exports:
                             CLIndoorCommonHooks, CLIndoorLocation,
                             CLIndoorMaintenance, CLIndoorPositionProvider,
                             CLIndoorSettings, CLLocationContextUtil,
-                            CLLocationGroup, CLPrefetchFloorRequest,
-                            CLVisionNotification, ECEFCoordinate, ENUCoordinate,
-                            GeographicCoordinate ]
+                            CLLocationGroup,
+                            CLPOutdoorEstimatorLogEntryNotification,
+                            CLPrefetchFloorRequest, CLVisionNotification,
+                            ECEFCoordinate, ENUCoordinate, GeographicCoordinate ]
     weak-def-symbols:     [ __ZN5boost6system6detail17system_cat_holderIvE8instanceE,
                             __ZN5boost6system6detail18generic_cat_holderIvE8instanceE ]
 ...

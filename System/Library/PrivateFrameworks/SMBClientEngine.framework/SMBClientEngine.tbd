@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SMBClientEngine.framework/SMBClientEngine
@@ -7,9 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ContextFlags2int, _DIFF1970TO1601,
-                            _SMBClientEngineVersionNumber,
+                            _HUNDRED_NSEC_PER_SEC, _SMBClientEngineVersionNumber,
                             _SMBClientEngineVersionString, _asn1_ContextFlags,
                             _asn1_ContextFlags_tag__2, _asn1_MechType,
                             _asn1_MechTypeList, _asn1_MechTypeList_tag__1,
@@ -112,8 +112,13 @@ exports:
                             _smb2fs_fullpath, _smb2fs_smb_check_copyfile,
                             _smb2fs_smb_file_id_check, _smb2fs_smb_listxattrs,
                             _smb2fs_smb_set_delete, _smb2fs_smb_set_eof,
-                            _smb2fs_smb_setfattrNT, _smb3_msg_decrypt,
-                            _smb3_rq_encrypt, _smb_convert_network_to_path,
+                            _smb2fs_smb_setfattrNT,
+                            _smb311_pre_auth_integrity_hash_init,
+                            _smb311_pre_auth_integrity_hash_print,
+                            _smb311_pre_auth_integrity_hash_update,
+                            _smb3_msg_decrypt, _smb3_rq_encrypt,
+                            _smb3_verify_session_setup,
+                            _smb_convert_network_to_path,
                             _smb_convert_path_to_network, _smb_get_cstring_len,
                             _smb_mbuf_get, _smb_put_dmem, _smb_reset_sig,
                             _smb_rq_bend, _smb_rq_bend32, _smb_rq_bstart,

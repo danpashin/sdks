@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AccessoryComponentAuth.framework/AccessoryComponentAuth
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ACAInitForHID, _ACASignTouchControllerChallenge,
                             _ACASignVeridianChallenge, _ACAVerifyBatteryMatch,
                             _AccessoryComponentAuthVersionNumber,
@@ -111,6 +111,7 @@ exports:
                             _Img4DecodeCopyPayloadPropertiesDigest,
                             _Img4DecodeDigestFinal, _Img4DecodeDigestInit,
                             _Img4DecodeDigestReturnHash, _Img4DecodeDigestUpdate,
+                            _Img4DecodeEvaluateCertificateChain,
                             _Img4DecodeEvaluateCertificateProperties,
                             _Img4DecodeEvaluateDictionaryProperties,
                             _Img4DecodeEvaluateManifestProperties,
@@ -177,6 +178,8 @@ exports:
                             _ROOT_CA_CERTIFICATE, _ROOT_CA_CERTIFICATE_SIZE,
                             _RSA3K_SHA384_ROOT_CA_CERTIFICATE,
                             _RSA3K_SHA384_ROOT_CA_CERTIFICATE_SIZE,
+                            _RSA4K_SHA384_AVP_ROOT_CA_CERTIFICATE,
+                            _RSA4K_SHA384_AVP_ROOT_CA_CERTIFICATE_SIZE,
                             _RSA4K_SHA384_DDI_FAKE_GLOBAL_ROOT_CA_CERTIFICATE,
                             _RSA4K_SHA384_DDI_FAKE_GLOBAL_ROOT_CA_CERTIFICATE_SIZE,
                             _RSA4K_SHA384_DDI_FAKE_ROOT_CA_CERTIFICATE,
@@ -214,6 +217,7 @@ exports:
                             _kImg4DecodeSecureBootRsa1kSha1,
                             _kImg4DecodeSecureBootRsa3kSha384,
                             _kImg4DecodeSecureBootRsa4kSha384,
+                            _kImg4DecodeSecureBootRsa4kSha384AVP,
                             _kImg4DecodeSecureBootRsa4kSha384AWG1,
                             _kImg4DecodeSecureBootRsa4kSha384DDI,
                             _kImg4DecodeSecureBootRsa4kSha384DDIFake,
@@ -278,6 +282,8 @@ exports:
                             _oidAppleSecureBootTicketCertSpec,
                             _oidAppleTVOSApplicationSigningProd,
                             _oidAppleTVOSApplicationSigningProdQA,
+                            _oidAppleXROSApplicationSigningProd,
+                            _oidAppleXROSApplicationSigningProdQA,
                             _oidAuthorityInfoAccess, _oidAuthorityKeyIdentifier,
                             _oidBasicConstraints, _oidCertificatePolicies,
                             _oidCollectiveOrganizationName,
@@ -287,8 +293,9 @@ exports:
                             _oidContentType, _oidCountryName,
                             _oidCrlDistributionPoints, _oidDescription,
                             _oidEcPrime192v1, _oidEcPrime256v1, _oidEcPubKey,
-                            _oidEmailAddress, _oidEntrustVersInfo,
-                            _oidExtendedKeyUsage, _oidExtendedKeyUsageClientAuth,
+                            _oidEd25519, _oidEd448, _oidEmailAddress,
+                            _oidEntrustVersInfo, _oidExtendedKeyUsage,
+                            _oidExtendedKeyUsageClientAuth,
                             _oidExtendedKeyUsageCodeSigning,
                             _oidExtendedKeyUsageEmailProtection,
                             _oidExtendedKeyUsageIPSec,
@@ -312,10 +319,10 @@ exports:
                             _oidOrganizationName, _oidOrganizationalUnitName,
                             _oidPSSRsa, _oidPkcs7SignedData, _oidPolicyConstraints,
                             _oidPolicyMappings, _oidPrivateKeyUsagePeriod,
-                            _oidQtCps, _oidQtUNotice, _oidRsa, _oidSha1, _oidSha1Dsa,
-                            _oidSha1DsaCommonOIW, _oidSha1DsaOIW, _oidSha1Ecdsa,
-                            _oidSha1Fee, _oidSha1Rsa, _oidSha1RsaOIW, _oidSha224,
-                            _oidSha224Ecdsa, _oidSha224Rsa, _oidSha256,
+                            _oidQtCps, _oidQtUNotice, _oidRsa, _oidSHAKE256, _oidSha1,
+                            _oidSha1Dsa, _oidSha1DsaCommonOIW, _oidSha1DsaOIW,
+                            _oidSha1Ecdsa, _oidSha1Fee, _oidSha1Rsa, _oidSha1RsaOIW,
+                            _oidSha224, _oidSha224Ecdsa, _oidSha224Rsa, _oidSha256,
                             _oidSha256Ecdsa, _oidSha256Rsa, _oidSha384,
                             _oidSha384Ecdsa, _oidSha384Rsa, _oidSha512,
                             _oidSha512Ecdsa, _oidSha512Rsa,
@@ -324,7 +331,18 @@ exports:
                             _oidSubjectKeyIdentifier, _oidUserId, _sha1_digest,
                             _sha1_digest_info, _sha256_digest_info,
                             _sha384_digest_info, _sha512_digest_info,
-                            _verify_chain_img4_ddi, _verify_chain_img4_ddi_fake,
+                            _systemInfo_copyDeviceClass,
+                            _systemInfo_copyProductType,
+                            _systemInfo_copyProductVersion,
+                            _systemInfo_copyRegionCode,
+                            _systemInfo_getCurrentUnixTime,
+                            _systemInfo_getCurrentUnixTimeMS,
+                            _systemInfo_isDeveloperBuild, _systemInfo_isHomePod,
+                            _systemInfo_isInternalBuild,
+                            _systemInfo_systemSupportsPearl,
+                            _systemInfo_systemSupportsWAPI,
+                            _verify_chain_img4_avp, _verify_chain_img4_ddi,
+                            _verify_chain_img4_ddi_fake,
                             _verify_chain_img4_ddi_fake_global,
                             _verify_chain_img4_ddi_global,
                             _verify_chain_img4_ec_v1,

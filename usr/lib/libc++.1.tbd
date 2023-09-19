@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/usr/lib/libc++.1.dylib'
-current-version: 1500.65
+current-version: 1600.151
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZNKSt3__18messagesIcE6do_getEiiiRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
@@ -1106,7 +1106,11 @@ exports:
     symbols:         [ __ZNKSt12bad_any_cast4whatEv, __ZNKSt12experimental15fundamentals_v112bad_any_cast4whatEv, 
                        __ZNKSt18bad_variant_access4whatEv, __ZNKSt19bad_optional_access4whatEv, 
                        __ZNKSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE3strEv, 
-                       __ZNKSt3__14__fs10filesystem18directory_iterator13__dereferenceEv, 
+                       __ZNKSt3__13pmr26synchronized_pool_resource11do_is_equalERKNS0_15memory_resourceE, 
+                       __ZNKSt3__13pmr28unsynchronized_pool_resource12__pool_indexEmm, 
+                       __ZNKSt3__13pmr28unsynchronized_pool_resource17__pool_block_sizeEi, 
+                       __ZNKSt3__13pmr28unsynchronized_pool_resource22__log2_pool_block_sizeEi, 
+                       __ZNKSt3__13pmr28unsynchronized_pool_resource7optionsEv, __ZNKSt3__14__fs10filesystem18directory_iterator13__dereferenceEv, 
                        __ZNKSt3__14__fs10filesystem28recursive_directory_iterator13__dereferenceEv, 
                        __ZNKSt3__14__fs10filesystem28recursive_directory_iterator5depthEv, 
                        __ZNKSt3__14__fs10filesystem28recursive_directory_iterator7optionsEv, 
@@ -1213,7 +1217,21 @@ exports:
                        __ZNSt3__123__cxx_atomic_notify_oneEPVKv, __ZNSt3__123__libcpp_atomic_monitorEPVKNS_17__cxx_atomic_implIxNS_22__cxx_atomic_base_implIxEEEE, 
                        __ZNSt3__123__libcpp_atomic_monitorEPVKv, __ZNSt3__131__arrive_barrier_algorithm_baseEPNS_24__barrier_algorithm_baseEh, 
                        __ZNSt3__132__destroy_barrier_algorithm_baseEPNS_24__barrier_algorithm_baseE, 
-                       __ZNSt3__134__construct_barrier_algorithm_baseERl, __ZNSt3__14__fs10filesystem10__absoluteERKNS1_4pathEPNS_10error_codeE, 
+                       __ZNSt3__134__construct_barrier_algorithm_baseERl, __ZNSt3__13pmr15memory_resourceD0Ev, 
+                       __ZNSt3__13pmr15memory_resourceD1Ev, __ZNSt3__13pmr15memory_resourceD2Ev, 
+                       __ZNSt3__13pmr19new_delete_resourceEv, __ZNSt3__13pmr20get_default_resourceEv, 
+                       __ZNSt3__13pmr20null_memory_resourceEv, __ZNSt3__13pmr20set_default_resourceEPNS0_15memory_resourceE, 
+                       __ZNSt3__13pmr25monotonic_buffer_resource11do_allocateEmm, 
+                       __ZNSt3__13pmr25monotonic_buffer_resource14__chunk_footer25__try_allocate_from_chunkEmm, 
+                       __ZNSt3__13pmr25monotonic_buffer_resource20__initial_descriptor25__try_allocate_from_chunkEmm, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource11do_allocateEmm, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource12__adhoc_pool13__do_allocateEPNS0_15memory_resourceEmm, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource12__adhoc_pool13__release_ptrEPNS0_15memory_resourceE, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource12__adhoc_pool15__do_deallocateEPNS0_15memory_resourceEPvmm, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource13do_deallocateEPvmm, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resource7releaseEv, __ZNSt3__13pmr28unsynchronized_pool_resourceC1ERKNS0_12pool_optionsEPNS0_15memory_resourceE, 
+                       __ZNSt3__13pmr28unsynchronized_pool_resourceC2ERKNS0_12pool_optionsEPNS0_15memory_resourceE, 
+                       __ZNSt3__14__fs10filesystem10__absoluteERKNS1_4pathEPNS_10error_codeE, 
                        __ZNSt3__14__fs10filesystem10hash_valueERKNS1_4pathE, __ZNSt3__14__fs10filesystem11__canonicalERKNS1_4pathEPNS_10error_codeE, 
                        __ZNSt3__14__fs10filesystem11__copy_fileERKNS1_4pathES4_NS1_12copy_optionsEPNS_10error_codeE, 
                        __ZNSt3__14__fs10filesystem11__file_sizeERKNS1_4pathEPNS_10error_codeE, 
@@ -1285,6 +1303,8 @@ exports:
                        __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTINSt3__13pmr15memory_resourceE, __ZTINSt3__13pmr25monotonic_buffer_resourceE, 
+                       __ZTINSt3__13pmr26synchronized_pool_resourceE, __ZTINSt3__13pmr28unsynchronized_pool_resourceE, 
                        __ZTINSt3__14__fs10filesystem16filesystem_errorE, __ZTINSt3__17codecvtIDiDu11__mbstate_tEE, 
                        __ZTINSt3__17codecvtIDsDu11__mbstate_tEE, __ZTISt12bad_any_cast, 
                        __ZTISt18bad_variant_access, __ZTISt19bad_optional_access, 
@@ -1294,6 +1314,8 @@ exports:
                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTSNSt3__13pmr15memory_resourceE, __ZTSNSt3__13pmr25monotonic_buffer_resourceE, 
+                       __ZTSNSt3__13pmr26synchronized_pool_resourceE, __ZTSNSt3__13pmr28unsynchronized_pool_resourceE, 
                        __ZTSNSt3__14__fs10filesystem16filesystem_errorE, __ZTSNSt3__17codecvtIDiDu11__mbstate_tEE, 
                        __ZTSNSt3__17codecvtIDsDu11__mbstate_tEE, __ZTSSt12bad_any_cast, 
                        __ZTSSt18bad_variant_access, __ZTSSt19bad_optional_access, 
@@ -1308,6 +1330,8 @@ exports:
                        __ZTVNSt3__117bad_function_callE, __ZTVNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTVNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __ZTVNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                       __ZTVNSt3__13pmr15memory_resourceE, __ZTVNSt3__13pmr25monotonic_buffer_resourceE, 
+                       __ZTVNSt3__13pmr26synchronized_pool_resourceE, __ZTVNSt3__13pmr28unsynchronized_pool_resourceE, 
                        __ZTVNSt3__14__fs10filesystem16filesystem_errorE, __ZTVNSt3__17codecvtIDiDu11__mbstate_tEE, 
                        __ZTVNSt3__17codecvtIDsDu11__mbstate_tEE, __ZTVSt12bad_any_cast, 
                        __ZTVSt18bad_variant_access, __ZTVSt19bad_optional_access, 
@@ -1416,5 +1440,6 @@ reexports:
     weak-symbols:    [ __ZdaPvSt11align_val_t, __ZdaPvSt11align_val_tRKSt9nothrow_t, 
                        __ZdaPvmSt11align_val_t, __ZdlPvSt11align_val_t, __ZdlPvSt11align_val_tRKSt9nothrow_t, 
                        __ZdlPvmSt11align_val_t, __ZnamSt11align_val_t, __ZnamSt11align_val_tRKSt9nothrow_t, 
-                       __ZnwmSt11align_val_t, __ZnwmSt11align_val_tRKSt9nothrow_t ]
+                       __ZnamSt19__type_descriptor_t, __ZnwmSt11align_val_t, __ZnwmSt11align_val_tRKSt9nothrow_t, 
+                       __ZnwmSt19__type_descriptor_t ]
 ...

@@ -11,10 +11,13 @@
 
 #ifdef __OBJC__
 #import <Foundation/Foundation.h>
+#endif
+
 #import <QuartzCore/CAAnimation.h>
 #import <QuartzCore/CADisplayLink.h>
 #import <QuartzCore/CAEAGLLayer.h>
 #import <QuartzCore/CAMetalLayer.h>
+#import <QuartzCore/CAMetalDisplayLink.h>
 #import <QuartzCore/CAEmitterCell.h>
 #import <QuartzCore/CAEmitterLayer.h>
 #import <QuartzCore/CAFrameRateRange.h>
@@ -33,6 +36,5 @@
 #import <QuartzCore/CATransformLayer.h>
 #import <QuartzCore/CAValueFunction.h>
 #import <QuartzCore/CAEDRMetadata.h>
-#endif
 
 #endif /* COREANIMATION_H */

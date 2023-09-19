@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PowerLog.framework/PowerLog
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PLBatchDropMessages, _PLBatteryGaugeGetSnapshot,
                             _PLBatteryGaugePauseTracingForBundleId,
                             _PLBatteryGaugePauseTracingForPid,
@@ -43,6 +43,7 @@ exports:
                             _PLBuildUsageSnapshot, _PLCalculateEndOfDay,
                             _PLCalculateEndOfDayWithDate, _PLCalculateEndOfHour,
                             _PLCalculateEndOfHourWithDate,
+                            _PLConfigureBUIQueryNoteworthyInformation,
                             _PLCopyBatteryUIPlists,
                             _PLCopyExtendedPersistenceLog, _PLCopyPowerlog,
                             _PLCrashMoverCopyPowerlog, _PLForceBatching,
@@ -52,18 +53,26 @@ exports:
                             _PLLogRegisteredEventFilterByInterval,
                             _PLLogTimeSensitiveRegisteredEvent,
                             _PLMovePowerlogsToCR, _PLQueryRegistered,
-                            _PLShouldLogEvent, _PLShouldLogRegisteredEvent,
+                            _PLRunBUIQuery, _PLShouldLogEvent,
+                            _PLShouldLogRegisteredEvent,
                             _PLSysdiagnoseCopyBatteryUILogs,
                             _PLSysdiagnoseCopyExtendedPersistenceLog,
-                            _PLSysdiagnoseCopyPowerlog, _PLTalkToPowerlogHelper,
+                            _PLSysdiagnoseCopyPowerlog,
+                            _PLSysdiagnoseTimeSensitivePhase,
+                            _PLTalkToPowerlogHelper,
+                            _PPSCreateTelemetryIdentifier, _PPSSendTelemetry,
                             _PerfPowerTelemetryCreateIdentifier,
                             _PerfPowerTelemetrySendEvent,
+                            _batteryUIHasNoteworthyInformation,
                             _perfpowertelemetry_create_identifier,
-                            _perfpowertelemetry_send_event ]
-    objc-classes:         [ PLCoreDuetEvent, PLCoreDuetEventInterval,
+                            _perfpowertelemetry_send_event,
+                            _pps_create_telemetry_identifier,
+                            _pps_send_telemetry ]
+    objc-classes:         [ PLBatteryUIExternalData, PLCoreDuetEvent,
+                            PLCoreDuetEventInterval,
                             PLDiscretionaryEnergyMonitor,
                             PLDiscretionaryIntervalManager,
                             PLDuetActivitySchedulerUsageSnapshot, PLEnergyBucket,
-                            PLModelingUtilities, PLNetworkEnergyModel,
-                            PLUsageSnapshot ]
+                            PLHUDControl, PLModelingUtilities,
+                            PLNetworkEnergyModel, PLUsageSnapshot ]
 ...

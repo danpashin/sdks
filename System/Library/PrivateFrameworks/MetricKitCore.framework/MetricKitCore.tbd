@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MetricKitCore.framework/MetricKitCore
@@ -7,8 +7,14 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MetricKitCoreVersionNumber,
                             _MetricKitCoreVersionString ]
-    objc-classes:         [ MXCore, MXCorePayloadConstructor, MXSource ]
+    objc-classes:         [ MXBundleUtil, MXCleanUtil, MXClientUtil, MXCore,
+                            MXCoreHandler, MXCorePayloadConstructor, MXDateUtil,
+                            MXDeliveryDataCacher, MXDeliveryPathUtil,
+                            MXDependencyFactory, MXDiagnosticServices,
+                            MXMetricServices, MXPayloadValidator, MXSource,
+                            MXSourceDataCacher, MXSourceHandler, MXSourcePathUtil,
+                            MXStorageUtil ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AIMLInstrumentationStreams.framework/AIMLInstrumentationStreams
@@ -7,10 +7,8 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s10Foundation4UUIDV26AIMLInstrumentationStreamsE1loiySbAC_ACtFZ,
-                            _$s10Foundation4UUIDVSL26AIMLInstrumentationStreamsMc,
-                            _$s11BiomePubSub17PublisherProtocolP26AIMLInstrumentationStreamsE10toSequenceSay6OutputQzGyYaKF,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s11BiomePubSub17PublisherProtocolP26AIMLInstrumentationStreamsE10toSequenceSay6OutputQzGyYaKF,
                             _$s11BiomePubSub17PublisherProtocolP26AIMLInstrumentationStreamsE10toSequenceSay6OutputQzGyYaKFTu,
                             _$s11BiomePubSub17PublisherProtocolP26AIMLInstrumentationStreamsE15toAsyncSequenceAD0aiJ0VyxGyF,
                             _$s19SiriInstrumentation12OrderedEventC26AIMLInstrumentationStreams010FilterableD0ADMc,
@@ -329,6 +327,20 @@ exports:
                             _$s26AIMLInstrumentationStreams20ComponentGroupBridgeCMu,
                             _$s26AIMLInstrumentationStreams20ComponentGroupBridgeCN,
                             _$s26AIMLInstrumentationStreams20ComponentGroupBridgeCfD,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC21bookmarkableUpstreamsSaySo12BPSPublisherCyyXlGGvpMV,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC6events12windowLengthACSo12BPSPublisherCyAA018TimestampedOrderedC0CG_SdtcfC,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC6events12windowLengthACSo12BPSPublisherCyAA018TimestampedOrderedC0CG_SdtcfCTj,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC6events12windowLengthACSo12BPSPublisherCyAA018TimestampedOrderedC0CG_SdtcfCTq,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC6events12windowLengthACSo12BPSPublisherCyAA018TimestampedOrderedC0CG_Sdtcfc,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherC9publisher4with9upstreams13bookmarkStateSo014BMBookmarkableE0_So12BPSPublisherCyyXlGXcSgSoAH_AKXc_SayAKGSo10BMBookmark_pSgtFZ,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCACycfC,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCACycfc,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCMa,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCMn,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCMo,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCMu,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCN,
+                            _$s26AIMLInstrumentationStreams20EventGraphsPublisherCfD,
                             _$s26AIMLInstrumentationStreams22TimestampedEventBridgeC07orderedD0So09SIOrderedD0Cvg,
                             _$s26AIMLInstrumentationStreams22TimestampedEventBridgeC07orderedD0So09SIOrderedD0CvpMV,
                             _$s26AIMLInstrumentationStreams22TimestampedEventBridgeC24dictionaryRepresentationSDys11AnyHashableVypGyFTj,
@@ -442,5 +454,6 @@ exports:
                             ISEventGraph, ISSiriConversation, ISSiriTurn,
                             ISStreamsFactory, ISStreamsProvider,
                             ISTimestampedEvent,
+                            _TtC26AIMLInstrumentationStreams20EventGraphsPublisher,
                             _TtC26AIMLInstrumentationStreams29InstrumentationStreamsFactory ]
 ...

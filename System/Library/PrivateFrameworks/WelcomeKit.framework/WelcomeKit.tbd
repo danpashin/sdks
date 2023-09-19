@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WelcomeKit.framework/WelcomeKit
@@ -7,11 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _WLDaemonExportedInterface,
                             _WLDataMigrationDelegateInterface,
                             _WLDataMigratorInterface, _WLDefaultsApplicationID,
-                            _WLDefaultsChangedNotification,
                             _WLDefaultsStartedNetworkSSIDKey,
                             _WLDefaultsUseInfrastructureWiFiKey,
                             _WLErrorContentTypeKey, _WLErrorDomain,
@@ -25,10 +24,11 @@ exports:
                             __WLLog ]
     objc-classes:         [ WLContext, WLDaemonConnection, WLDaemonController,
                             WLDataMigrationController,
-                            WLDataMigrationControllerSurrogate, WLFeaturePayload,
-                            WLImportContext, WLInternal, WLLogController,
-                            WLMigrationKitController, WLPayload, WLPreferences,
-                            WLSettings, WLSourceDevice, WLSourceDevicesController,
-                            WLSourceDevicesControllerSurrogate, WLTelemetry,
-                            WLUtilities ]
+                            WLDataMigrationControllerSurrogate,
+                            WLDeviceAuthentication, WLFeaturePayload,
+                            WLImportContext, WLInternal, WLInternalSettings,
+                            WLLogController, WLMigrationKitController, WLPayload,
+                            WLPreferences, WLSourceDevice,
+                            WLSourceDevicesController,
+                            WLSourceDevicesControllerSurrogate, WLTelemetry ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s16AXMediaUtilities11AXModelTypeO8rawValueACSgSi_tcfC,
                             _$s16AXMediaUtilities11AXModelTypeO8rawValueSivg,
                             _$s16AXMediaUtilities11AXModelTypeO8rawValueSivpMV,
@@ -317,6 +317,11 @@ exports:
                             _AXMLabelForNSStringElements, _AXMLogPixelBufferInfo,
                             _AXMMakeError_, _AXMMaximumResultsDefault,
                             _AXMMaximumResultsMaximum, _AXMMaximumResultsMinimum,
+                            _AXMMediaAnalysisFeatureCodingKeyFaceDetectionResult,
+                            _AXMMediaAnalysisFeatureCodingKeyFaceID,
+                            _AXMMediaAnalysisFeatureCodingKeyImageCaption,
+                            _AXMMediaAnalysisFeatureCodingKeyImageCaptionConfidence,
+                            _AXMMediaAnalysisFeatureCodingKeyTranslatedImageCaption,
                             _AXMMinimumConfidenceToleranceDefault,
                             _AXMMinimumConfidenceToleranceMaximum,
                             _AXMMinimumConfidenceToleranceMinimum,
@@ -347,6 +352,8 @@ exports:
                             _AXMRectNotApplicable,
                             _AXMScreenGrabOptionIgnoredLayerContextIDs,
                             _AXMScreenGrabOptionIncludedLayerContextIDs,
+                            _AXMScreenGrabOptionSnapshotContextID,
+                            _AXMScreenGrabOptionSnapshotLayerID,
                             _AXMScreenGrabOptionUsePreferredModelInputSizeForDetectors,
                             _AXMSecureCodingClasses, _AXMSelfTaskHasEntitlement,
                             _AXMSemanticTextCustomPatternUSCurrency,
@@ -474,6 +481,7 @@ exports:
                             _AXMVisionNativeVideoPixelBufferFormat,
                             _AXMVisionPipelineContextInputKeyCIImage,
                             _AXMVisionPipelineContextInputKeyInputType,
+                            _AXMVisionPipelineContextInputKeyPHAssetLocalIdentifier,
                             _AXMVisionPipelineContextInputKeyPhotoLibraryURL,
                             _AXMVisionPipelineContextInputKeyPixelBufferOrientation,
                             _AXMVisionPipelineContextKeyDiagnosticsEnabled,
@@ -643,18 +651,24 @@ exports:
                             AXMImageCaptionModelAssetManager, AXMImageNode,
                             AXMImageRegistrationNode, AXMLElementCoagulation,
                             AXMLTabButtonGroup, AXMLanguageTranslator,
-                            AXMLiveContinuousTone, AXMLocSupport,
-                            AXMMLElementGroup, AXMMobileAssetEvaluationNode,
-                            AXMModelDetectorNode, AXMNSFWDetectorNode,
-                            AXMNumericDataAxisDescriptor, AXMNumericScale,
-                            AXMObjectDetectorNode, AXMOneShotSoundOutputAction,
-                            AXMOutputAction, AXMOutputActionHandle,
-                            AXMOutputComponent, AXMOutputManager,
-                            AXMOutputManagerConfiguration, AXMOutputRequest,
-                            AXMOutputRequestHandle, AXMPhotoAssetData,
-                            AXMPhotoVisionSupport, AXMPipelineContextInput,
-                            AXMPixelBufferWrapper, AXMPoint,
-                            AXMProminentObjectsDetectorNode,
+                            AXMLiveContinuousTone, AXMLocSupport, AXMMADSService,
+                            AXMMLElementGroup,
+                            AXMMediaAnalysisCaptionDetectorNode,
+                            AXMMediaAnalysisCaptions,
+                            AXMMediaAnalysisCaptionsResult,
+                            AXMMediaAnalysisFaceDetectorNode,
+                            AXMMediaAnalysisSceneDetectorNode,
+                            AXMMediaAnalysisTextDetectorNode,
+                            AXMMobileAssetEvaluationNode, AXMModelDetectorNode,
+                            AXMNSFWDetectorNode, AXMNumericDataAxisDescriptor,
+                            AXMNumericScale, AXMObjectDetectorNode,
+                            AXMOneShotSoundOutputAction, AXMOutputAction,
+                            AXMOutputActionHandle, AXMOutputComponent,
+                            AXMOutputManager, AXMOutputManagerConfiguration,
+                            AXMOutputRequest, AXMOutputRequestHandle,
+                            AXMPhotoAssetData, AXMPhotoVisionSupport,
+                            AXMPipelineContextInput, AXMPixelBufferWrapper,
+                            AXMPoint, AXMProminentObjectsDetectorNode,
                             AXMRectangleDetectorNode, AXMScale,
                             AXMSceneDetectorNode, AXMSceneprintBasedNode,
                             AXMScreenCaptureNode, AXMScreenGrabber,

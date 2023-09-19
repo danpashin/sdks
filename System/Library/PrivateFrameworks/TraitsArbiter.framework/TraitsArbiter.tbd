@@ -1,0 +1,47 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/TraitsArbiter.framework/TraitsArbiter
+current-version:       11
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _TRAArbiterUnknownRoleException,
+                            _TRABSInterfaceOrientationMaskForBSInterfaceOrientation,
+                            _TRALogCommon, _TRALoggingSubsystem,
+                            _TRAStringForBSDeviceOrientation,
+                            _TRAStringForBSInterfaceOrientation,
+                            _TRAStringForBSInterfaceOrientationMask,
+                            _TRAStringFromTraitsPreferencesType ]
+    objc-classes:         [ TRAArbiter, TRAArbiterUpdateContext,
+                            TRAArbiterUpdateOrientationResolutionPolicySpecifier,
+                            TRAArbitrationAmbientPresentationInputs,
+                            TRAArbitrationDeviceOrientationInputs,
+                            TRAArbitrationInputs,
+                            TRAArbitrationInputsValidationStage,
+                            TRAArbitrationInterfaceIdiomInputs,
+                            TRAArbitrationKeyboardInputs,
+                            TRAArbitrationPreferencesResolutionStage,
+                            TRAArbitrationUserInterfaceStyleInputs,
+                            TRAInputsValidationContext,
+                            TRAMutablePreferencesOrientation,
+                            TRAMutablePreferencesZOrderLevel, TRAMutableSettings,
+                            TRAMutableSettingsAmbientPresentation,
+                            TRAMutableSettingsOrientation,
+                            TRAMutableSettingsUserInterfaceStyle,
+                            TRAMutableSettingsZOrderLevel,
+                            TRAOrientationResolutionPolicyInfo, TRAParticipant,
+                            TRAPreferencesOrientation,
+                            TRAPreferencesResolutionContext, TRAPreferencesTree,
+                            TRAPreferencesTreeNode,
+                            TRAPreferencesTreeNodeSpecification,
+                            TRAPreferencesZOrderLevel, TRASettings,
+                            TRASettingsActuationContext,
+                            TRASettingsAmbientPresentation,
+                            TRASettingsOrientation,
+                            TRASettingsUserInterfaceStyle, TRASettingsValidator,
+                            TRASettingsZOrderLevel,
+                            TRAUserInterfaceStyleResolutionPolicyInfo ]
+...

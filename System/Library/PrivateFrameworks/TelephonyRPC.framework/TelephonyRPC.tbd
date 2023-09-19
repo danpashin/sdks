@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
@@ -7,10 +7,25 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CTSUServerConnectionRef, _CTSUServerQueue,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s12TelephonyRPC3LogV10identifier031_D14C08F3273B8E9CC989AADE30C2A0M0LLSSvpfi,
+                            _$s12TelephonyRPC3LogV4info8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogV5debug8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogV5error8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogV5fault8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogV7default8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogV7warning8category7message3argys23CustomStringConvertible_p_s06StaticI0Vs7CVarArg_pSgtF,
+                            _$s12TelephonyRPC3LogVMa, _$s12TelephonyRPC3LogVMn,
+                            _$s12TelephonyRPC3LogVN,
+                            _$s20FaceTimeMessageStore0C0C12TelephonyRPCE2id10Foundation4UUIDVvg,
+                            _$s20FaceTimeMessageStore0C0C12TelephonyRPCE2id10Foundation4UUIDVvpMV,
+                            _$s20FaceTimeMessageStore0C0Cs12Identifiable12TelephonyRPCMc,
+                            _$sSo13os_log_type_ta12TelephonyRPCE11descriptionSSvg,
+                            _$sSo13os_log_type_ta12TelephonyRPCE11descriptionSSvpMV,
+                            _$sSo13os_log_type_tas23CustomStringConvertible12TelephonyRPCMc,
+                            _CTSUServerConnectionRef, _CTSUServerQueue,
                             _ListOfVoicemailsToSyncWithManager,
-                            _NANOPHONE_APPLICATION_BUNDLE_ID,
+                            _MaxVoicemailCount, _NANOPHONE_APPLICATION_BUNDLE_ID,
                             _NPHDeriveProgramName, _NPHDeviceHasBaseband,
                             _NPHDeviceOSIsInternalInstall, _NPHIsDebugBuild,
                             _NPHIsWalkaboutEnabled, _NPHSetTmpDirPrefix,
@@ -32,19 +47,19 @@ exports:
                             __TUReplyWithMessageStoreReplyArrayKey,
                             _define_nph_log, _isTrashToInboxForVMDNotification,
                             _kCarrierInfoIsVisualVoicemailServiceSubscribedKey,
+                            _kHasCarrierVoicemailAccountsKey,
                             _kNPHIsVisualVoicemailServiceSubscribedDidChangeNotification,
                             _mach_time_elapsed_to_seconds,
                             _nph_ensure_on_main_queue, _nph_general_log,
                             _nph_sos_general_log, _nph_sos_newton_log,
                             _syncOperationForVMDNotification ]
     objc-classes:         [ NPHCarrierInfoCompanionReplication,
-                            NPHCountryCodeCompanionReplication,
+                            NPHCountryCodeCompanionReplication, NPHFeatureFlags,
                             NPHNanoRespondWithTextStore,
                             NPHNanoRespondWithTextStoreCompanionReplication,
                             NPHSYObjectWrapper, NPHSharedUtilities,
-                            NPHVMSyncSessionManager, NPHVoicemailManager,
-                            NanoPhoneVoicemailBody, NanoPhoneVoicemailMeta,
-                            NanoPhoneVoicemailTranscript,
+                            NPHVMSyncSessionManager, NanoPhoneVoicemailBody,
+                            NanoPhoneVoicemailMeta, NanoPhoneVoicemailTranscript,
                             VoicemailCompanionReplication ]
     objc-ivars:           [ NanoPhoneVoicemailBody._voicemailNumber,
                             NanoPhoneVoicemailBody._voicemailRecording,
@@ -56,6 +71,7 @@ exports:
                             NanoPhoneVoicemailMeta._has,
                             NanoPhoneVoicemailMeta._identifier,
                             NanoPhoneVoicemailMeta._nphReceiverISOCountryCode,
+                            NanoPhoneVoicemailMeta._providerID,
                             NanoPhoneVoicemailMeta._receiverDestinationID,
                             NanoPhoneVoicemailMeta._remoteUID,
                             NanoPhoneVoicemailMeta._sender,

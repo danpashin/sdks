@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BatteryCenter.framework/BatteryCenter
@@ -7,16 +7,14 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BCLogDeviceController, _BCLogPowerSourceController,
                             _BCLogSubsystem, _BCLogWidget,
                             _BCRegisterUserNotificationsLogging,
                             _BCStringFromParts, _BatteryCenterVersionNumber,
                             _BatteryCenterVersionString,
-                            _kBCBatteryDeviceA111ProductIdentifier,
                             _kBCBatteryDeviceA125ProductIdentifier,
                             _kBCBatteryDeviceA149ProductIdentifier,
-                            _kBCBatteryDeviceA211ProductIdentifier,
                             _kBCBatteryDeviceB188ProductIdentifier,
                             _kBCBatteryDeviceB222ProductIdentifier,
                             _kBCBatteryDeviceB244ProductIdentifier,
@@ -30,6 +28,7 @@ exports:
                             _kBCBatteryDeviceB419ProductIdentifier,
                             _kBCBatteryDeviceB443ProductIdentifier,
                             _kBCBatteryDeviceB444ProductIdentifier,
+                            _kBCBatteryDeviceB453ProductIdentifier,
                             _kBCBatteryDeviceB494ProductIdentifier,
                             _kBCBatteryDeviceB507ProductIdentifier,
                             _kBCBatteryDeviceB515ProductIdentifier,

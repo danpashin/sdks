@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VisionKitCore.framework/VisionKitCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _VKAnalysisDidUpdateNotification,
                             _VKAnalysisUpdatedTypesKey, _VKCDistanceSquared,
                             _VKCFlipPoint,
@@ -26,7 +26,9 @@ exports:
                             _VKFeedbackMetadataKeyComponentVersion,
                             _VKMMininumQuadSideLength,
                             _VKMMultiplyQuadSideLengthScaler,
-                            _VKMNearlyEqualVKQuads,
+                            _VKMNearlyEqualVKQuads, _VKStickerInfoKeyProgress,
+                            _VKStickerInfoKeyStickerIDs,
+                            _VKStickerInfoKeyStickerScore, _VKStickerInfoKeyType,
                             _vk_cgImagePropertyOrientationFromVKOrientation,
                             _vk_cgImageRemoveBackground,
                             _vk_cgImageRemoveBackgroundIsValidSize,
@@ -34,6 +36,7 @@ exports:
                             _vk_clockwiseRotationsFromUpToMatchOrientation,
                             _vk_counterClockwiseRotationsFromUpToMatchOrientation,
                             _vk_imageOrientationFromTransform,
+                            _vk_orientationApplyToRectAtPoint,
                             _vk_orientationByRotatingLeft,
                             _vk_orientationByRotatingRight,
                             _vk_orientationFromCGImagePropertyOrientation,
@@ -49,19 +52,18 @@ exports:
                             VKAnalyticsTextEvent, VKAnalyticsVisualSearchEvent,
                             VKBarcodeFrameProcessor,
                             VKBarcodeFrameProcessorConfiguration,
+                            VKCExternalQuickActionsResult, VKCFormRegion,
                             VKCImageAnalysis, VKCImageAnalysisInteraction,
                             VKCImageAnalysisTranslation, VKCImageAnalyzer,
                             VKCImageAnalyzerRequest, VKCRemoveBackgroundRequest,
                             VKCRemoveBackgroundRequestHandler,
-                            VKCRemoveBackgroundResult, VKCTextRecognitionResult,
-                            VKCTranslatedParagraph, VKCaptureTextAnalysisRequest,
-                            VKCaptureTextAnalyzer, VKCaptureTextDetectionResult,
+                            VKCRemoveBackgroundResult, VKCStickerEffect,
+                            VKCStickerEffectView, VKCTextRecognitionResult,
+                            VKCTranslatedParagraph, VKCVisualSearchResultInfo,
+                            VKCaptureTextAnalysisRequest, VKCaptureTextAnalyzer,
+                            VKCaptureTextDetectionResult,
                             VKCaptureTextFeedbackAssetProvider,
-                            VKCaptureVideoPreviewView,
-                            VKCaptureVideoPreviewViewController,
-                            VKDataScannerViewController,
                             VKDataScannerViewControllerBridge,
-                            VKDataScannerViewControllerConfiguration,
                             VKFeedbackAttachment, VKFeedbackProvider, VKFrame,
                             VKFrameInfo, VKFrameProcessor, VKFrameProcessorResult,
                             VKFrameProvider, VKFrameProviderConfiguration,
@@ -80,7 +82,7 @@ exports:
                             VKRecognizedText, VKSelectableBarButtonItem,
                             VKTextFrameProcessor,
                             VKTextFrameProcessorConfiguration, VKTextLiftingView,
-                            VKVideoTextRecognizer, VKVideoTextRecognizerItem,
+                            VKTextWithTrackingFrameProcessor,
                             VKVisualSearchActivity, VKVisualSearchViewController,
                             VKWKDataDetectorInfo, VKWKLineInfo, VKWKTextInfo ]
 ...

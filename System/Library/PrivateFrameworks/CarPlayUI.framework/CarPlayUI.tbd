@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CarPlayUI.framework/CarPlayUI
@@ -7,8 +7,27 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CARNextPreviousButtonSize, _CARPlayPauseButtonSize,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s9CarPlayUI21ArtworkBackgroundViewC05metalF0So7MTKViewCSgvpfi,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC09MediaCoreC016BackdropObserverAAMc,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC14didChangeState8renderery09MediaCoreC08BackdropO17CompositeRendererC_tF,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC14didChangeState8renderery09MediaCoreC08BackdropO17CompositeRendererC_tFTq,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC19animationPauseTimer33_C8A5CCF2D8B5A0CBD17C49DC40810118LLSo7NSTimerCSgvpfi,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC27scheduleAnimationPauseTimeryyF,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC27scheduleAnimationPauseTimeryyFTq,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC6update5image8animatedySo7UIImageCSg_SbtF,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC6update5image8animatedySo7UIImageCSg_SbtFTq,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC8isPausedSbvg,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC8isPausedSbvgTq,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC8isPausedSbvpMV,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC8renderer09MediaCoreC08BackdropO17CompositeRendererCSgvpfi,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC9setPausedyySbF,
+                            _$s9CarPlayUI21ArtworkBackgroundViewC9setPausedyySbFTq,
+                            _$s9CarPlayUI21ArtworkBackgroundViewCMa,
+                            _$s9CarPlayUI21ArtworkBackgroundViewCMn,
+                            _$s9CarPlayUI21ArtworkBackgroundViewCN,
+                            _$s9CarPlayUI21ArtworkBackgroundViewCfD,
+                            _CARNextPreviousButtonSize, _CARPlayPauseButtonSize,
                             _CPUIAddGlyph, _CPUIAudiobooksBundleIdentifier,
                             _CPUIBackGlyph, _CPUIChevronRightGlyph,
                             _CPUIDescriptionForUserInterfaceStyle,
@@ -42,6 +61,7 @@ exports:
                             _CPUIPlayModeControlViewHeight,
                             _CPUIPlaybackProgressCompleteGlyphWithSize,
                             _CPUIPodcastsBundleIdentifier,
+                            _CPUIQuestionmarkGlyph,
                             _CPUIRectByApplyingUserInterfaceLayoutDirectionInRect,
                             _CPUIRepeatGlyph, _CPUIRepeatOneGlyph,
                             _CPUIScrollBarAlignmentHorizontalPadding,
@@ -58,7 +78,8 @@ exports:
                             __CPUIGlyphFactoryWithTraitCollection,
                             __CPUISiriGlyph, __nonCapturedPressType,
                             _kCPUIBannerTransitionAnimationStyleKey ]
-    objc-classes:         [ CPSTableViewHeaderFooterView, CPUIAssistantCell,
+    objc-classes:         [ CPSTableViewHeaderFooterView,
+                            CPUIArtworkBackgroundView, CPUIAssistantCell,
                             CPUIAssistantCellConfiguration,
                             CPUIBannerTransitionAnimator,
                             CPUIBannerTransitionFadeAnimator,
@@ -68,7 +89,8 @@ exports:
                             CPUIImageRowCellConfiguration, CPUILabelButton,
                             CPUIListSectionHeaderView, CPUIMediaButton,
                             CPUIMessageCell, CPUIMessageCellConfiguration,
-                            CPUINowPlayingButton, CPUINowPlayingButtonView,
+                            CPUIModernButton, CPUINowPlayingButton,
+                            CPUINowPlayingButtonView,
                             CPUINowPlayingButtonWrapperView,
                             CPUINowPlayingLayoutLeftArtwork,
                             CPUINowPlayingLayoutRightArtwork,
@@ -82,5 +104,7 @@ exports:
                             CPUISongDetailsView, CPUITableCell,
                             CPUITableCellAccessory, CPUITableCellConfiguration,
                             CPUIThrottle, CPUITitleView, CPUITransportControlView,
-                            _CPUIBaseTableCell, _CPUINowPlayingLayout ]
+                            _CPUIAlbumContainer, _CPUIBaseTableCell,
+                            _CPUILiveTrackView, _CPUINowPlayingBackButton,
+                            _CPUINowPlayingLayout ]
 ...

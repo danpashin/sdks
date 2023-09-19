@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TVRemoteUI.framework/TVRemoteUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TVRAlertViewPreferredWidth,
                             _TVRUISiriManagerSiriActivated,
                             _TVRUISiriManagerSiriDeactivated,
@@ -20,11 +20,12 @@ exports:
                             _TVRViewServiceWillDisappearNotificationName,
                             _TVRemoteBundleIdentifier, _TVRemoteUIVersionNumber,
                             _TVRemoteUIVersionString, __TVRUIButtonLog,
-                            __TVRUIDeviceHintsLog, __TVRUIDeviceInfoLog,
-                            __TVRUIDeviceTipsLog, __TVRUIGeneralLog,
-                            __TVRUIInstrumentationLog, __TVRUIIntentManagerLog,
-                            __TVRUIKeyboardLog, __TVRUINetworkObserverLog,
-                            __TVRUISiriManagerLog, __TVRUIViewServiceLog ]
+                            __TVRUIDeviceInfoLog, __TVRUIDevicePickerLog,
+                            __TVRUIDeviceQueryLog, __TVRUIHintsLog, __TVRUIIRLog,
+                            __TVRUIIntentManagerLog, __TVRUIKeyboardLog,
+                            __TVRUINetworkObserverLog, __TVRUIPrewarmLog,
+                            __TVRUISignpostLog, __TVRUISiriLog, __TVRUITipsLog,
+                            __TVRUIViewControllerLog, __TVRUIViewServiceLog ]
     objc-classes:         [ LaunchApplicationIntent,
                             LaunchApplicationIntentResponse, LaunchRemoteIntent,
                             LaunchRemoteIntentResponse, LaunchScreenSaverIntent,
@@ -51,9 +52,9 @@ exports:
                             TVRTouchpadView, TVRUIAlertAnimationController,
                             TVRUIAlertFadeAnimationController, TVRUIButton,
                             TVRUIButtonEvent, TVRUIButtonPanelView,
-                            TVRUICaptionsButton, TVRUIControlPanelViewController,
-                            TVRUICoreDevice, TVRUICoreDeviceQuery,
-                            TVRUICubicSpringAnimator,
+                            TVRUICaptionsButton, TVRUIChannelButton,
+                            TVRUIControlPanelViewController, TVRUICoreDevice,
+                            TVRUICoreDeviceQuery, TVRUICubicSpringAnimator,
                             TVRUICubicSpringTimingParameters,
                             TVRUIDarkStyleProvider, TVRUIDevice,
                             TVRUIDeviceHardwareInfo, TVRUIDeviceInfo,
@@ -64,12 +65,13 @@ exports:
                             TVRUIHintsViewController,
                             TVRUIHintsVolumeButtonsView, TVRUIIntentManager,
                             TVRUIMediaControlsViewController,
-                            TVRUINetworkObserver, TVRUIPagingButton,
-                            TVRUIRemoteViewController, TVRUISiriManager,
-                            TVRUIStandardTouchProcessor,
-                            TVRUITopButtonPanelViewController, TVRUITouchEvent,
-                            TVRUITouchpadView, TVRUITouchpadViewController,
-                            TVRUserAccount, TVRUserAccountResolutionResult,
+                            TVRUINetworkObserver, TVRUIOldDeviceListCell,
+                            TVRUIPagingButton, TVRUIRemoteViewController,
+                            TVRUISiriManager, TVRUIStandardTouchProcessor,
+                            TVRUITitleView, TVRUITopButtonPanelViewController,
+                            TVRUITouchEvent, TVRUITouchpadView,
+                            TVRUITouchpadViewController, TVRUserAccount,
+                            TVRUserAccountResolutionResult,
                             TVRViewServiceConfigContext, TVRViewServiceManager,
                             TVRemoteAlertVisualStyleProviding,
                             ToggleCaptionsIntent, ToggleCaptionsIntentResponse,

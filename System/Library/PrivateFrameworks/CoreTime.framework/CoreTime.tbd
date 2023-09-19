@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreTime.framework/CoreTime
-current-version:       311.0.1
+current-version:       325
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TMBBTimeActiveNotification, _TMConfirmTimeZone,
                             _TMConvertTicksToSeconds, _TMCopyComputedTimeZone,
                             _TMFetchNTP, _TMGetBAFinderTime,
@@ -18,7 +18,7 @@ exports:
                             _TMIsTimeZoneConfirmed,
                             _TMLocationTimeZoneActiveNotification,
                             _TMProvideBBTime, _TMProvideCellularTimeZone,
-                            _TMRTCResetNotification,
+                            _TMRTCResetNotification, _TMResetToFirstLaunch,
                             _TMSetAuthenticatedSourceTime,
                             _TMSetAutomaticTimeEnabled,
                             _TMSetAutomaticTimeZoneEnabled, _TMSetManualTime,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/PhotosImagingFoundation
-current-version:       542.0.140
+current-version:       608.1.119
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CGAffineTransformDeterminant, _CGAffineTransformDot,
                             _CGAffineTransformFixedPoint,
                             _CGAffineTransformForMappingFromRectToRect,
@@ -88,6 +88,7 @@ exports:
                             _IPAPhotoAdjustmentFormatVersion_1_0,
                             _IPAPhotoAdjustmentFormatVersion_1_1,
                             _IPAPhotoAdjustmentFormatVersion_1_10,
+                            _IPAPhotoAdjustmentFormatVersion_1_11,
                             _IPAPhotoAdjustmentFormatVersion_1_2,
                             _IPAPhotoAdjustmentFormatVersion_1_3,
                             _IPAPhotoAdjustmentFormatVersion_1_4,
@@ -114,6 +115,7 @@ exports:
                             _IPAPhotoAdjustment_Crop_Version_Current,
                             _IPAPhotoAdjustment_DepthEffect_Aperture,
                             _IPAPhotoAdjustment_DepthEffect_DepthInfo,
+                            _IPAPhotoAdjustment_DepthEffect_FocusRect,
                             _IPAPhotoAdjustment_DepthEffect_GlassesMatteAllowed,
                             _IPAPhotoAdjustment_DepthEffect_Identifier,
                             _IPAPhotoAdjustment_Effect_Identifier,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeAI.framework/HomeAI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _HMIAnalysisQOS, _HMIAspectRatioEqualToAspectRatio,
                             _HMIAspectRatioIsValid, _HMIAspectRatioMake,
                             _HMICGPointClampWithSize, _HMICGRectArea,
@@ -111,7 +111,9 @@ exports:
                             _HMIMP4ParseMFHD,
                             _HMIMaxAnalysisFPSOverridePreference,
                             _HMIMaxConcurrentAnalyzersOverridePreference,
-                            _HMIModelUUID, _HMIMotionDetectorPreference,
+                            _HMIMaxH264EncodersPreference,
+                            _HMIMaxH265EncodersPreference, _HMIModelUUID,
+                            _HMIMotionDetectorPreference,
                             _HMINSTimeIntervalDescription, _HMIOpenCVAddPoints,
                             _HMIOpenCVEcho,
                             _HMIOpticalFlowBackgroundProcessingPreference,
@@ -196,6 +198,8 @@ exports:
                             _kHMISignificantActivityFcosInputSize,
                             _kHMISystemPreferenceDomain,
                             _kHMITorsoprintInputSize,
+                            _kHMIVIPEquivalencyFaceprintDistanceThreshold,
+                            _kHMIVIPEquivalencyPercentOfMatchesThreshold,
                             _kHMIVideoAnalyzerEventDefaultConfidenceThresholdPackageMedium,
                             _kHMIVideoAnalyzerEventDefaultConfidenceThresholdPersonMedium,
                             _kHMIVideoAnalyzerEventDefaultConfidenceThresholdPetMedium,

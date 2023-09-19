@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
@@ -7,21 +7,19 @@ current-version:       2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CHCallInteractionsDidChangeDarwinNotification,
                             _CHCallerIdAvailabilityAsString, _CHHash,
-                            _DeserializeTransactions,
+                            _CHSchemaGetCurrentVersion, _DeserializeTransactions,
                             _HandleInteractionsForDeserializedTransactions,
                             _createBackgroundTaskAssertion,
-                            _createDirectoryAtPath, _createLogDirectoryAtPath,
-                            _dumpLogs, _getAppSupportDir,
+                            _createDirectoryAtPath, _getAppSupportDir,
                             _getAppSupportDirSandboxed, _getBoolAsString,
                             _getCHNotifyDataStoreChangeReasonAsString,
-                            _getCurrentLocale, _getDBDirCreateOptions,
-                            _getDBLErrorCodeAsString, _getDBMErrorCodeAsString,
-                            _getLoggedInUserName, _getMobileUserDirectoryPath,
+                            _getDBDirCreateOptions, _getDBLErrorCodeAsString,
+                            _getDBMErrorCodeAsString, _getLoggedInUserName,
+                            _getMobileUserDirectoryPath,
                             _getMobileUserLibraryDirectoryPath,
-                            _getMobileUserLogDirectoryPath,
                             _getOperatingSystemVersion, _isCarrierBuild,
                             _isInternalBuild, _kCHCallCategoryAudio,
                             _kCHCallCategoryTTYDirect, _kCHCallCategoryTTYRelay,
@@ -71,6 +69,7 @@ exports:
                             _kCallHistoryTimersChangedNotification,
                             _kCallRecordEntity, _kCallUpdatePropertyBytesUsed,
                             _kCallUpdatePropertyCallStatus,
+                            _kCallUpdatePropertyHasMessage,
                             _kCallUpdatePropertyOutgoingLocalParticipantUUID,
                             _kCallUpdatePropertyRead,
                             _kCallUpdatePropertyUniqueId, _kMobileUser,
@@ -85,8 +84,8 @@ exports:
     objc-classes:         [ CHCallInteractionManager, CHConfiguration,
                             CHConfigurationAggregator, CHContactProvider,
                             CHDelegateController, CHDelegateManager,
-                            CHDeviceDataSource, CHDeviceObserver, CHHandle,
-                            CHLocalization, CHLogServer, CHLogger, CHManager,
+                            CHDeviceDataSource, CHDeviceObserver, CHFeatureFlags,
+                            CHHandle, CHLocalization, CHLogServer, CHLogger, CHManager,
                             CHPhoneNumber, CHPluginHelper, CHRecentCall,
                             CHSynchronizable, CHSynchronizedLoggable,
                             CHTransaction, CHUserConfiguration, CallDBManager,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AcousticMaterials.framework/AcousticMaterials
-current-version:       17
+current-version:       22
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AMAcousticParameterTypeAbsorption,
                             _AMAcousticParameterTypeScattering,
                             _AMAcousticParameterTypeSoundReductionIndex,
@@ -18,14 +18,13 @@ exports:
                             _AMSemanticTypeVisualMaterial,
                             _AMSemanticTypeVisualMaterialARMeshMaterialID,
                             _AcousticMaterialsVersionNumber,
-                            _AcousticMaterialsVersionString,
-                            _SemanticsTableCached,
-                            __Z17DBIOCloseDatabasePP20OpaqueSQLiteDatabasePU15__autoreleasingP7NSError,
-                            __Z23DBIOOpenDatabaseFromURLP5NSURLPU15__autoreleasingP7NSError,
-                            __Z24DBIOFetchDatabaseResultsP20OpaqueSQLiteDatabaseP8NSStringPU15__autoreleasingP7NSError,
-                            __Z27DBIOFetchDatabaseResultsExtP20OpaqueSQLiteDatabaseP8NSStringPU15__autoreleasingP7NSError,
-                            __Z33DBIODatabaseValidatedWithoutErrorP20OpaqueSQLiteDatabasePU15__autoreleasingP7NSError,
-                            __ZeqRK13semantic_pairS1_, __dbPtr, _clampArrayValues,
+                            _AcousticMaterialsVersionString, _DBIOCloseDatabase,
+                            _DBIODatabaseValidatedWithoutError,
+                            _DBIOFetchDatabaseResults,
+                            _DBIOFetchDatabaseResultsExt,
+                            _DBIOOpenDatabaseFromURL, _SemanticsTableCached,
+                            __ZeqRK13semantic_pairS1_, __dbPtr, __defaultMaterial,
+                            __parameterFilter, _clampArrayValues,
                             _decimalValuesFromCSV, _integerValuesFromCSV,
                             _valueIsBetween ]
     objc-classes:         [ AMAbsorption, AMDatabase, AMScattering,

@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiskArbitration.framework/DiskArbitration
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DAApprovalSessionGetTypeID, _DADiskClaim,
                             _DADiskClaimWithBlock, _DADiskCopyDescription,
                             _DADiskCopyIOMedia, _DADiskCopyWholeDisk,
@@ -27,9 +27,15 @@ exports:
                             _DARegisterDiskDescriptionChangedCallbackBlock,
                             _DARegisterDiskDisappearedCallback,
                             _DARegisterDiskDisappearedCallbackBlock,
+                            _DARegisterDiskEjectApprovalCallback,
+                            _DARegisterDiskEjectApprovalCallbackBlock,
                             _DARegisterDiskListCompleteCallback,
+                            _DARegisterDiskMountApprovalCallback,
+                            _DARegisterDiskMountApprovalCallbackBlock,
                             _DARegisterDiskPeekCallback,
                             _DARegisterDiskPeekCallbackBlock,
+                            _DARegisterDiskUnmountApprovalCallback,
+                            _DARegisterDiskUnmountApprovalCallbackBlock,
                             _DARegisterIdleCallback,
                             _DARegisterIdleCallbackWithBlock, _DASessionCreate,
                             _DASessionGetTypeID, _DASessionKeepAlive,

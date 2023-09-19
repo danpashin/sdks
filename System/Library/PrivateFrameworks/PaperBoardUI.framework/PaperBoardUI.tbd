@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PaperBoardUI.framework/PaperBoardUI
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BundlePathForWallpaperIdentifier,
                             _PBUIApplyParallaxSettingsToView,
                             _PBUIApplyParallaxSettingsToViewWithFactor,
@@ -17,15 +17,17 @@ exports:
                             _PBUICalculateContrastFromColorBoxes,
                             _PBUICreateIOSurfaceForImage,
                             _PBUICurrentDeviceWallpaperSizeType,
-                            _PBUICurrentParallaxDeviceType, _PBUIErrorDomain,
+                            _PBUICurrentParallaxDeviceType,
+                            _PBUIDynamicRotationIsActive, _PBUIErrorDomain,
                             _PBUIExtensionIdentifierForPosterWallpaperMigrationProvider,
-                            _PBUIGetProceduralWallpaper,
+                            _PBUIFeatureEnabled, _PBUIGetProceduralWallpaper,
                             _PBUIHomeScreenLegibilityMaterialRecipeBundle,
                             _PBUIHomeScreenLegibilityMaterialRecipeName,
                             _PBUIHomeScreenLegibilityMaterialRecipeScaleAdjustment,
                             _PBUIHomeScreenLegibilityMaterialShouldAdjustAlphaForWeighting,
                             _PBUIIOSurfaceFromCGImage,
                             _PBUIImageEncoderErrorDomain,
+                            _PBUIImageOrientationForImageCapturedInInterfaceOrientationToBeDisplayedInInterfaceOrientation,
                             _PBUIImagePropertyKeyCreationMechanism,
                             _PBUIImagePropertyKeySceneID,
                             _PBUIIrisPlayerStateDescription,
@@ -40,12 +42,15 @@ exports:
                             _PBUIMagicWallpaperOptionsDictionary,
                             _PBUIMagicWallpaperRepresentativeThumbnailForClass,
                             _PBUIMagicWallpaperThumbnail,
+                            _PBUIMaterialsIsLowQualityDevice,
                             _PBUIPostExternalWallpaperChangeNotificationAsSystemShell,
                             _PBUIPosterPresentationModeRequiresPosterContent,
                             _PBUIRegisterForExternalWallpaperChangeNotificationWithHandler,
                             _PBUIRegisterForWallpaperExternalChangeNotification,
                             _PBUIRendererErrorDomain,
                             _PBUIRendererServiceErrorDomain,
+                            _PBUIRenderingLogFenceReason,
+                            _PBUIRenderingLogImageUtilities,
                             _PBUIRenderingLogLocalRenderer,
                             _PBUIRenderingLogRendererService,
                             _PBUIRenderingLoggingSubsystem,
@@ -63,6 +68,7 @@ exports:
                             _PBUIStringForWallpaperTransformOptions,
                             _PBUIStringForWallpaperType,
                             _PBUIStringForWallpaperVariant,
+                            _PBUIURLBackedSnapshotSourceFileAttributes,
                             _PBUIWallpaperAccessEntitlement,
                             _PBUIWallpaperBackdropGroupName,
                             _PBUIWallpaperBackdropParametersMake,
@@ -100,6 +106,8 @@ exports:
                             __BackdropRenderingHintForWallpaperAverageColor,
                             __NSStringFromUIUserInterfaceStyle,
                             __PBUIMagicWallpaperEnsure,
+                            __PBUIPosterViewControllerUpdateReasonsNecessitateFencedUpdate,
+                            __PRCollectionsPosterDescriptorNeedsSnapshotReplacement,
                             __PRNeedsWallpaperCaptureView,
                             __WallpaperBackdropParametersForStyleAndAverageColor,
                             __WallpaperMinimumZoomScale,
@@ -115,6 +123,7 @@ exports:
                             ___wallpaperOriginalVideoFilename,
                             ___wallpaperThumbnailFilename,
                             ___wallpaperVideoFilename,
+                            __testPBUIImageOrientationForImageCapturedInInterfaceOrientationToBeDisplayedInInterfaceOrientation,
                             _kPBUIImageDestinationMaxPixelCGSizeKey,
                             _kPBUIMagicWallpaper360VRSectionKey,
                             _kPBUIMagicWallpaperBundlePathKey,
@@ -126,7 +135,11 @@ exports:
                             _kPBUIMagicWallpaperSmallThumbnailDataKey,
                             _kPBUIMagicWallpaperThumbnailNameKey,
                             _kPBUIMagicWallpaperThumbnailPathKey,
-                            _kPBUIReplicaDebugModeDefaultKey ]
+                            _kPBUIReplicaDebugModeDefaultKey,
+                            _kPaperboardIOSurfaceDeviceOrientationPropertiesKey,
+                            _kPaperboardIOSurfaceDeviceScalePropertiesKey,
+                            _kPaperboardIOSurfaceInterfaceOrientationPropertiesKey,
+                            _kPaperboardIOSurfaceSnapshotVersionPropertiesKey ]
     objc-classes:         [ PBUIAccessibilityTintView, PBUIBackdropCompositor,
                             PBUIBakedEffectSnapshotSource, PBUIBokehColorArbiter,
                             PBUIBokehImageArbiter, PBUIBokehWallpaperCircle,

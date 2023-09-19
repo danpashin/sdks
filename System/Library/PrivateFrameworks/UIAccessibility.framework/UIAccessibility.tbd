@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AXAddNotificationCallback,
                             _AXApplyAttributedLocalizedStringToCopy,
                             _AXAssignNativeFocusToElementNotificationDidSucceedUserInfoKey,
@@ -28,7 +28,9 @@ exports:
                             _AXDidAssignNativeFocusToElementNotification,
                             _AXRemoveNotificationCallback,
                             _AXSSTextualContextFromUITextualContext,
+                            _AXSelectionModeVoiceOverSelectionMovement,
                             _AXServerCache, _AXServerCacheSetEnabled,
+                            _AXSetSelectionModeVoiceOverSelectionMovement,
                             _AXUIAutomationHandleKeyComplete,
                             _AXUIKeyboardEntryNotificationBlockTimer,
                             _AXUIUnblockKeyboardEntryNotifications,
@@ -39,7 +41,8 @@ exports:
                             _UIAXCurrentLanguage, _UIAXFormatFloat,
                             _UIAXFormatFloatWithPercentage, _UIAXFormatInteger,
                             _UIAXFrameForElements, _UIAXHasPurpleBuddyCompleted,
-                            _UIAXKeyboardIsOnScreen, _UIAXLabelForElements,
+                            _UIAXKeyboardIsOnScreen,
+                            _UIAXLabelAndValueForElements, _UIAXLabelForElements,
                             _UIAXLocalizedStringForKnownAXIdentifier,
                             _UIAXMidPoint, _UIAXPriceRangeDescription,
                             _UIAXPriceRangeRating, _UIAXPrivateLocalizedString,
@@ -295,9 +298,13 @@ exports:
                             UIAccessibilityElementSuperCategory,
                             UIAccessibilityElementTraversalOptions,
                             UIAccessibilityElementWeakDelegateContainer,
+                            UIAccessibilityGameController,
+                            UIAccessibilityGamepadEventSource,
+                            UIAccessibilityGamepadProductInfo,
                             UIAccessibilityHierarchyDecoder,
                             UIAccessibilityHierarchyDescription,
                             UIAccessibilityHierarchyEncoder,
+                            UIAccessibilityHitTestOptions,
                             UIAccessibilityInMemoryStringBasedTreeLogger,
                             UIAccessibilityInformationLoader,
                             UIAccessibilityLegacyCustomAction,

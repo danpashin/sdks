@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FontServices.framework/FontServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FSFontCopyFontNamesForFamily, _FSFontCopyFonts,
                             _FSFontIsHidden, _FSFontPickerSupportDone,
                             _FSFontPickerSupportFontChangeNotification,
@@ -23,7 +23,7 @@ exports:
                             _FSGetMaxSupportedFontAssetCompatibilityVersion,
                             _FSLog, _FSLog_Debug, _FSLog_Error,
                             _FSWebKitHostSupportCreateEndpoint,
-                            _FSWebKitProcessSupport,
+                            _FSWebKitProcessSupport, _FontAssetDirectoryPath,
                             _FontProviderDidChangeDistributedNotification,
                             _FontProviderErrorDomain,
                             _FontProviderErrorIdentifierKey,
@@ -52,14 +52,15 @@ exports:
                             __kCTFontNameAttribute,
                             __kCTFontRegistrationUserInfo, __kCTFontURLAttribute,
                             _kFSFontAssetType, _kFSLogFSUserFontManager,
-                            _kFSLogFontProvider, _kFSLogFontProviderLoader,
+                            _kFSLogFontPickerSupport, _kFSLogFontProvider,
+                            _kFSLogFontProviderLoader,
                             _kFSLogFontProviderManager, _kFSLogFontServices,
                             _kFSLogFontServicesDaemon,
                             _kFSLogFontServicesDaemonManager,
                             _kFSLogUserFontManager,
                             _kFSWebKitSupportParamLocallyActivatedFontsKey,
                             _kFSWebKitSupportParamUserInstalledFontsKey,
-                            _kFontAssetPathPrefix, _kFontAssetType,
+                            _kFontAssetType,
                             _kFontProviderErrorUserInfoFontInfoParameterIndexesKey,
                             _kFontProviderInfoParameterIndexesKey,
                             _kFontProviderSandboxExtension,
@@ -69,6 +70,7 @@ exports:
                             FSWebKitHostSupportManager,
                             FSWebKitProcessSupportHandler,
                             FSWebKitProcessSupportManager,
+                            FontPickerClientFontContext,
                             FontPickerSupportHandler, FontPickerSupporter,
                             FontProviderManager, FontServicesDaemonManager ]
 ...

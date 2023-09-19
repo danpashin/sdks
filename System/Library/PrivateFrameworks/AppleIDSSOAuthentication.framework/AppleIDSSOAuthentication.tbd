@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/AppleIDSSOAuthentication
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AIDAAccountPropertyAltDSID,
                             _AIDAAccountPropertyDSID, _AIDACoderErrorKey,
                             _AIDACoderSuccessKey, _AIDACoderTypeKey,
@@ -30,7 +30,8 @@ exports:
     objc-classes:         [ AIDAAccountManager, AIDAMutableServiceContext,
                             AIDAServiceContext, AIDAServiceOperationResult,
                             AIDAServiceOwnersManager ]
-    objc-ivars:           [ AIDAServiceContext._aaSignInFlowControllerDelegate,
+    objc-ivars:           [ AIDAServiceContext.__telemetryTimeSeries,
+                            AIDAServiceContext._aaSignInFlowControllerDelegate,
                             AIDAServiceContext._aaSignOutFlowControllerDelegate,
                             AIDAServiceContext._authenticationResults,
                             AIDAServiceContext._cdpUiProvider,

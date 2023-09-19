@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Announce.framework/Announce
@@ -7,8 +7,41 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ANAnnounceErrorDomain, _ANAnnounceIDSServiceName,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvgTj,
+                            _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvgTq,
+                            _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvpMV,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvMTj,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvMTq,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvgTj,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvgTq,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvpMV,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvsTj,
+                            _$s8Announce10XPCManagerC15checkInProviderAA0b5CheckdE0_pSgvsTq,
+                            _$s8Announce10XPCManagerC15machServiceName21remoteObjectInterface08exportedH00iG0ACSS_So14NSXPCInterfaceCAIyXlSgtcfC,
+                            _$s8Announce10XPCManagerC15machServiceName21remoteObjectInterface08exportedH00iG0ACSS_So14NSXPCInterfaceCAIyXlSgtcfCTj,
+                            _$s8Announce10XPCManagerC15machServiceName21remoteObjectInterface08exportedH00iG0ACSS_So14NSXPCInterfaceCAIyXlSgtcfCTq,
+                            _$s8Announce10XPCManagerC15machServiceName21remoteObjectInterface08exportedH00iG0ACSS_So14NSXPCInterfaceCAIyXlSgtcfc,
+                            _$s8Announce10XPCManagerC18addCheckInObserveryyAA0bdeF0_pFTj,
+                            _$s8Announce10XPCManagerC18addCheckInObserveryyAA0bdeF0_pFTq,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvMTj,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvMTq,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvgTj,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvgTq,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvpMV,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvsTj,
+                            _$s8Announce10XPCManagerC8delegateAA0B8Delegate_pSgvsTq,
+                            _$s8Announce10XPCManagerCACycfC,
+                            _$s8Announce10XPCManagerCACycfc,
+                            _$s8Announce10XPCManagerCMa,
+                            _$s8Announce10XPCManagerCMn,
+                            _$s8Announce10XPCManagerCMo,
+                            _$s8Announce10XPCManagerCMu,
+                            _$s8Announce10XPCManagerCN,
+                            _$s8Announce10XPCManagerCfD,
+                            _$sSo13NSProcessInfoC8AnnounceE21isAutoPlaybackProcessSbvg,
+                            _$sSo13NSProcessInfoC8AnnounceE21isAutoPlaybackProcessSbvpMV,
+                            _ANAnnounceErrorDomain, _ANAnnounceIDSServiceName,
                             _ANAnnounceRapportServiceType, _ANAnnouncementIDKey,
                             _ANAnnouncementInfoAnnouncementIDKey,
                             _ANAnnouncementInfoPlaybackFinishedCMTimeKey,
@@ -21,7 +54,7 @@ exports:
                             _ANAnnouncerIDKey, _ANAnnouncerIsAccessoryKey,
                             _ANAnnouncerNameKey, _ANAnnouncerUserIDKey,
                             _ANAnnouncerUserUniqueIDKey, _ANAudioFileDurationKey,
-                            _ANAudioFilePathKey, _ANAudioFileURLKey,
+                            _ANAudioFilePathKey, _ANAudioFileURLKey, _ANDaemonUp,
                             _ANDefaultAccessorySettingsRefreshInterval,
                             _ANDefaultAllowAnnouncementToAccessoryPhysicallyInAnnouncementTargetHome,
                             _ANDefaultAnalyticsDailyBackgroundActivity,
@@ -39,6 +72,7 @@ exports:
                             _ANDefaultAnnouncementTransitionToneTrim,
                             _ANDefaultAnnouncementUserNotificationExpiration,
                             _ANDefaultAudioAccessoryDBBoost,
+                            _ANDefaultAudioSessionActivationRetryDelay,
                             _ANDefaultAudioSessionDeactivationTimeout,
                             _ANDefaultAudioSessionResumeAfterInterruptionDelay,
                             _ANDefaultAudioSessionWaitForCallEndTimeout,
@@ -84,6 +118,9 @@ exports:
                             _ANFileExtensionCaf, _ANFileExtensionNone,
                             _ANFileExtensionWav, _ANGroupIDKey, _ANHomeIDKey,
                             _ANHomeNameKey, _ANIndexKey, _ANLocalDeviceUUIDString,
+                            _ANLocalizedString,
+                            _ANLocalizedStringWithDefaultValue,
+                            _ANLocalizedStringWithFormat,
                             _ANLogBuildCategoryName, _ANLogWithCategory,
                             _ANMAchServiceNameTonePlayer,
                             _ANMachServiceNameAnnounce,
@@ -92,9 +129,6 @@ exports:
                             _ANMachServiceNameRemotePlaybackSession,
                             _ANPlayedKey, _ANProductTypeKey,
                             _ANProductTypeOverrideKey, _ANRoomsKey,
-                            _ANSensitiveLocalizedString,
-                            _ANSensitiveLocalizedStringWithDefaultValue,
-                            _ANSensitiveLocalizedStringWithFormat,
                             _ANServiceTypeKey, _ANSubtitleKey,
                             _ANTranscriptionTextKey,
                             _ANUserInfoFailedDeliveryAnnouncementKey,
@@ -166,6 +200,6 @@ exports:
                             ANRemotePlaybackSessionServiceClientInterfaceProxy,
                             ANSender, ANSpeechUtil, ANTimer, ANTonePlayerService,
                             ANTransactionInfo, ANUtils, ANVolumeController,
-                            ANVolumeUtils, ANXPCTransactionManager,
+                            ANVolumeUtils, ANXPCManager, ANXPCTransactionManager,
                             _ANBundleHelper ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
@@ -7,10 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _APSAlert, _APSBundleIdentifier, _APSCachedIPKey,
                             _APSCarrierNameKey,
                             _APSClientIdentityUpdatedNotification,
+                            _APSConnectionDefaultDebugStyle,
                             _APSConnectionInitiateEntitlement,
                             _APSConnectionOverrideNamedDelegatePort,
                             _APSConnectionSystemProcessEntitlement,
@@ -18,7 +19,7 @@ exports:
                             _APSCreateXPCObjectFromDictionary,
                             _APSCriticalWakeEntitlement, _APSDarkWakeEntitlement,
                             _APSDataForPropertyList, _APSDecodeDictionary,
-                            _APSDefaultTokenName, _APSDefaultUserID,
+                            _APSDefaultUserID, _APSDefaultUserName,
                             _APSDemoHostsKey, _APSEncodeDictionary,
                             _APSEnvironmentDemo, _APSEnvironmentDevelopment,
                             _APSEnvironmentProduction, _APSEnvironmentQA2,
@@ -30,7 +31,6 @@ exports:
                             _APSGetNonWakingTopicsFromXPCDictionary,
                             _APSGetOpportunisticTopicsFromXPCDictionary,
                             _APSGetTrackActivityPresence,
-                            _APSGetUsesAppLaunchStats,
                             _APSGetXPCArrayFromDictionary,
                             _APSGetXPCBoolFromDictionary,
                             _APSGetXPCConnectionContext,
@@ -59,24 +59,23 @@ exports:
                             _APSLaunchdJobLabel, _APSNSDataFromHexString,
                             _APSPerAppTokenAppIdsKey, _APSPersistentTopicsKey,
                             _APSPowerLog, _APSPrettyPrintCollection,
-                            _APSPropertyListFromNSData, _APSPubSubError,
-                            _APSPubSubErrorDomain, _APSPushWakeEntitlement,
-                            _APSSafeArrayOfStrings, _APSSetXPCConnectionContext,
-                            _APSSystemUsersKey, _APSTokenInfosKey,
-                            _APSTrustAllHosts, _APSURLTokenError,
-                            _APSURLTokenErrorDomain, _APSUnderlyingError,
-                            _APSUsesAppLaunchStatsKey,
-                            _APSXPCConfigureConnection,
+                            _APSPrettyPrintObject, _APSPropertyListFromNSData,
+                            _APSPubSubError, _APSPubSubErrorDomain,
+                            _APSPushWakeEntitlement, _APSSafeArrayOfStrings,
+                            _APSSetXPCConnectionContext, _APSSystemUsersKey,
+                            _APSTokenInfosKey, _APSTrustAllHosts,
+                            _APSURLTokenError, _APSURLTokenErrorDomain,
+                            _APSUnderlyingError, _APSXPCConfigureConnection,
                             _APSXPCConnectionSetEventHandlers,
                             _APSXPCCreateConnectionForService,
                             _APSXPCCreateConnectionForServiceWithQueue,
                             _APSXPCCreateServerConnection, _APSXPCMessageTypeKey,
                             _kAPSTaskClientServiceName ]
-    objc-classes:         [ APSAccessCheck, APSAppTokenInfo,
-                            APSChannelSubscriptionFailure, APSConnection,
-                            APSDNSRequest, APSDNSResponse, APSIncomingMessage,
-                            APSLog, APSMessage, APSOutgoingMessage, APSTaskClient,
-                            APSURLToken, APSURLTokenInfo ]
+    objc-classes:         [ APSAppTokenInfo, APSChannelSubscriptionFailure,
+                            APSConnection, APSDNSRequest, APSDNSResponse,
+                            APSIncomingMessage, APSLog, APSMessage,
+                            APSOutgoingMessage, APSTaskClient, APSURLToken,
+                            APSURLTokenInfo ]
     objc-ivars:           [ APSDNSRequest._environment, APSDNSRequest._flags,
                             APSDNSRequest._hostname,
                             APSDNSRequest._requestStartTime,

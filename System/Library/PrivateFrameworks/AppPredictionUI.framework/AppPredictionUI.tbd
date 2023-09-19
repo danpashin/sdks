@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
@@ -7,22 +7,17 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _APUIAppIconImageLoaderIconSize,
-                            _APUIAppIconImageLoaderProtocol,
-                            _APUIDeviceSupportsForceTouch, _APUIIsDeviceLocked,
-                            _APUIIsIntentFromSystemApp, _APUIIsInternalBuild,
-                            _APUIPointImageOfColor,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _APUIIsIntentFromSystemApp, _APUIPointImageOfColor,
                             _APUIRegisterCardKitProvidersIfNeeded,
                             _APUIRegisterCardServicesIfNeeded,
                             _AppPredictionUIVersionNumber,
                             _AppPredictionUIVersionString,
                             _kAPUICardServiceIdentifier ]
     objc-classes:         [ APUIActionCardRequest, APUIActionCardUtils,
-                            APUIActionCardViewConfig, APUIAppIconImageLoader,
-                            APUIBoldTrayButton,
+                            APUIActionCardViewConfig,
                             APUICardRequestSatisfactionCriteria, APUICardService,
-                            APUITrayButton, _APUIActionCardInfo,
+                            _APUIActionCardInfo,
                             _APUICardRequestCompactSatisfactionCriteria,
                             _APUICardRequestCustomIntentSatisfactionCriteria ]
 ...

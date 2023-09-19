@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
@@ -7,23 +7,25 @@ current-version:       390
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SCROBrailleCreateTranslatePrintBrailleToBrailleCode,
                             _SCROBrailleDisplayHistoryIsHistoryString,
                             _SCROBrailleDisplayHistoryIsStringUnread,
-                            _SCROSerializeWrapper, _SCROUnserializeWrapper,
-                            __SCROD_BRAILLE_LOG, __SCROD_LOG,
-                            __updateNewlyActiveDisplay, _kSCROAlertAttribute,
-                            _kSCROAlertPriorityAttribute,
+                            _SCROJapaneseBrailleSelected, _SCROSerializeWrapper,
+                            _SCROUnserializeWrapper, __SCROD_BRAILLE_LOG,
+                            __SCROD_LOG, __updateNewlyActiveDisplay,
+                            _kSCROAlertAttribute, _kSCROAlertPriorityAttribute,
                             _kSCROAlertTimeoutAttribute, _kSCROAppTokenAttribute,
                             _kSCROBoldTextAttribute,
                             _kSCROBrailleCallbackReplaceTextRange_CursorKey,
                             _kSCROBrailleCallbackReplaceTextRange_RangeKey,
                             _kSCROBrailleCallbackReplaceTextRange_StringKey,
+                            _kSCROBrailleCallbackSpeechFeedback_LanguageKey,
                             _kSCROBrailleCallbackSpeechFeedback_SpeakLiterallyKey,
                             _kSCROBrailleCallbackSpeechFeedback_SpokenTextKey,
                             _kSCROBrailleDisplayBluetoothAddress,
                             _kSCROBrailleDisplayBluetoothName,
+                            _kSCROBrailleDisplayBoldRangesAttribute,
                             _kSCROBrailleDisplayBrailleInputMode,
                             _kSCROBrailleDisplayBrailleManufacturerName,
                             _kSCROBrailleDisplayBrailleProductName,
@@ -32,6 +34,7 @@ exports:
                             _kSCROBrailleDisplayConnectedNotification,
                             _kSCROBrailleDisplayDriverIdentifier,
                             _kSCROBrailleDisplayIsPrimary,
+                            _kSCROBrailleDisplayItalicRangesAttribute,
                             _kSCROBrailleDisplayMainSize,
                             _kSCROBrailleDisplayModeAttribute,
                             _kSCROBrailleDisplayModelIdentifier,
@@ -40,6 +43,7 @@ exports:
                             _kSCROBrailleDisplayStatusSize,
                             _kSCROBrailleDisplayToken,
                             _kSCROBrailleDisplayTransport,
+                            _kSCROBrailleDisplayUnderlineRangesAttribute,
                             _kSCROBrailleDriverAutoDetectDictionaries,
                             _kSCROBrailleDriverBluetoothConnectionIsIncoming,
                             _kSCROBrailleDriverBluetoothDeviceNameRegexPatterns,
@@ -76,10 +80,12 @@ exports:
                             _kSCROBrailleUnicodeCharacterDot78,
                             _kSCROBrailleUnicodeCharacterDot8,
                             _kSCROBrailleUnicodeCharacterSpace,
-                            _kSCROCursorAttribute, _kSCROEditableTextAttribute,
+                            _kSCROCandidateTextAttribute, _kSCROCursorAttribute,
+                            _kSCROEditableTextAttribute,
                             _kSCROEditableTextPaddingAttribute,
-                            _kSCROFocusedAttribute, _kSCROItalicTextAttribute,
-                            _kSCROLanguageAttribute, _kSCROLineFocusAttribute,
+                            _kSCROFocusedAttribute, _kSCROHistoryAttribute,
+                            _kSCROItalicTextAttribute, _kSCROLanguageAttribute,
+                            _kSCROLineFocusAttribute,
                             _kSCROPlaceholderTextAttribute,
                             _kSCROSelectionAttribute, _kSCROSerializeDefaultSize,
                             _kSCROServerTimeoutNotification,
@@ -87,8 +93,10 @@ exports:
                             _kSCROStatusAttributeCellIndex,
                             _kSCROStatusAttributeCellTitle,
                             _kSCROStatusAttributeDotText,
+                            _kSCROSuggestionTextAttribute,
                             _kSCROTechnicalContextAttribute,
-                            _kSCROTokenAttribute, _kSCROUnderlineTextAttribute ]
+                            _kSCROTerminalOutputAttribute, _kSCROTokenAttribute,
+                            _kSCROUnderlineTextAttribute, _kSCROUnreadAttribute ]
     objc-classes:         [ SCRO2DBrailleCanvas, SCRO2DBrailleCanvasDescriptor,
                             SCROBrailleClient, SCROBrailleDisplay,
                             SCROBrailleDisplayAutoDetector,
@@ -271,6 +279,7 @@ exports:
                             SCROBrailleLine._statusData,
                             SCROBrailleLine._statusFilter,
                             SCROBrailleLine._statusSize,
+                            SCROBrailleLine._suggestionRange,
                             SCROBrailleLine._virtualStatus,
                             SCROBrailleStealthDriver._isDriverLoaded,
                             SCROBrailleStealthDriver._mainSize,

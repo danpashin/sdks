@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) SHComponentType componentType;
 
-- (instancetype) init __attribute__((unavailable( "Please use initWithComponentType" )));
+- (instancetype) init __attribute__((unavailable("Please use initWithComponentType")));
 - (instancetype) initWithComponentType:(SHComponentType) component;
 
 - (SHComponentStatus) getComponentStatusWithError:(NSError **) error;

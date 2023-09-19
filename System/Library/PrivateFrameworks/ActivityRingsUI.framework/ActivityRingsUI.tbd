@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivityRingsUI.framework/ActivityRingsUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s15ActivityRingsUI15SpringAnimationC11advanceWith9deltaTimeSbSd_tFTj,
                             _$s15ActivityRingsUI15SpringAnimationC11advanceWith9deltaTimeSbSd_tFTq,
                             _$s15ActivityRingsUI15SpringAnimationC12initialValue5delayAC12CoreGraphics7CGFloatV_SdtcfC,
@@ -54,11 +54,11 @@ exports:
                             ___vfx_get_effect_class_Sparks ]
     objc-classes:         [ ARUIAnimatableObject,
                             ARUIAnimatableObjectPropertyAnimation,
-                            ARUIAnimatableProperty, ARUICGPointPropertyAnimation,
-                            ARUICelebration, ARUICelebrationFactory,
-                            ARUICountdownAnimator, ARUICountdownDefaultTimeline,
-                            ARUICountdownTimeline, ARUICountdownView,
-                            ARUIFloatPropertyAnimation,
+                            ARUIAnimatableProperty, ARUIAnimationKeyCoordinator,
+                            ARUICGPointPropertyAnimation, ARUICelebration,
+                            ARUICelebrationFactory, ARUICountdownAnimator,
+                            ARUICountdownDefaultTimeline, ARUICountdownTimeline,
+                            ARUICountdownView, ARUIFloatPropertyAnimation,
                             ARUIManualAnimationSequencer, ARUIMetricColors,
                             ARUIRenderContext, ARUIRenderer, ARUIRing, ARUIRingGroup,
                             ARUIRingGroupAnimationState, ARUIRingGroupController,

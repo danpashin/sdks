@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/SharedUtils
-current-version:       1132.100.131
+current-version:       1391.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ACMContextAddCredential,
                             _ACMContextAddCredentialWithScope,
                             _ACMContextContainsCredentialType,
@@ -114,9 +114,11 @@ exports:
                             _LibCall_ACMRequirementGetPropertyData,
                             _LibCall_ACMRequirementGetState,
                             _LibCall_ACMRequirementGetType,
+                            _LibCall_ACMSecContextGetUnlockSecret,
                             _LibCall_ACMSecContextProcessAcl,
                             _LibCall_ACMSecContextProcessAclAndCopyAuthMethod,
                             _LibCall_ACMSecContextVerifyAclConstraintAndCopyRequirement,
+                            _LibCall_ACMSecCredentialProviderEnrollmentStateChangedForUser,
                             _LibCall_ACMSecSetBiometryAvailability,
                             _LibCall_ACMSecSetBuiltinBiometry,
                             _LibCall_ACMSetEnvironmentVariable,
@@ -132,6 +134,12 @@ exports:
                             _LibSer_GetAclAuthMethod_Deserialize,
                             _LibSer_GetAclAuthMethod_GetSize,
                             _LibSer_GetAclAuthMethod_Serialize,
+                            _LibSer_GetUnlockSecretResponse_Deserialize,
+                            _LibSer_GetUnlockSecretResponse_GetSize,
+                            _LibSer_GetUnlockSecretResponse_Serialize,
+                            _LibSer_GetUnlockSecret_Deserialize,
+                            _LibSer_GetUnlockSecret_GetSize,
+                            _LibSer_GetUnlockSecret_Serialize,
                             _LibSer_GlobalContextCredentialGetProperty_Deserialize,
                             _LibSer_GlobalContextCredentialGetProperty_GetSize,
                             _LibSer_GlobalContextCredentialGetProperty_Serialize,
@@ -145,6 +153,7 @@ exports:
                             _LibSer_StorageSetData_Deserialize,
                             _LibSer_StorageSetData_GetSize,
                             _LibSer_StorageSetData_Serialize,
+                            _NSStringFromLAPasscodeType,
                             _NSStringFromMechanismEvent, _SerializeAddCredential,
                             _SerializeCredential, _SerializeCredentialList,
                             _SerializeGetContextProperty, _SerializeProcessAcl,
@@ -168,10 +177,13 @@ exports:
                             LABaseServiceManager, LACachedExternalizedContext,
                             LADecriptionBuilder, LADefaultServiceSession,
                             LAErrorHelper, LAErrorRedactor, LAInstanceIDGenerator,
-                            LAInternalProtocols, LAManagedACMParameters,
-                            LAMobileGestalt, LAParamChecker, LAPasscodeHelper,
-                            LASecureData, LASerialSchedulerInternal, LAUtils,
-                            LAWeakBox ]
+                            LAInternalProtocols, LALocalBackoffCounter,
+                            LAManagedACMParameters, LAMobileGestalt,
+                            LAParamChecker, LAPasscodeHelper,
+                            LAPasscodeHelperPasscodeStateManagedSettings,
+                            LAPasscodeHelperPasscodeStateRepository,
+                            LAPasscodeHelperPasscodeStateSimulator, LASecureData,
+                            LASerialSchedulerInternal, LAUtils, LAWeakBox ]
     objc-ivars:           [ LABaseService._clients, LABaseService._listener,
                             LABaseService._terminating,
                             LABaseServiceManager._sessions ]

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SKUIAllowsLandscapePhone,
                             _SKUIAppearanceStyleBarButtonItem,
                             _SKUIAppearanceStyleNavigationBar,
@@ -142,9 +142,6 @@ exports:
                             _SKUIProtocolKeyStorePlatformData,
                             _SKUIProtocolKeyStorePlatformPrewarmData,
                             _SKUIProtocolKeyTitle, _SKUIProtocolKeyURL,
-                            _SKUIRadioEntityTypeStationString,
-                            _SKUIRadioStationEntityUniqueIdentifierKeyStationHash,
-                            _SKUIRadioStationEntityUniqueIdentifierKeyStationID,
                             _SKUIRangesForFormatString,
                             _SKUIRectByApplyingStoreUserInterfaceLayoutDirectionInRect,
                             _SKUIRectByApplyingUserInterfaceLayoutDirectionInRect,
@@ -387,8 +384,6 @@ exports:
                             SKUIProductPageOverlayController,
                             SKUIPropertyPredicateViewElement,
                             SKUIProxyScrollView, SKUIQuicklinksPageComponent,
-                            SKUIRadioEntityProviderViewElement,
-                            SKUIRadioStationEntityValueProvider,
                             SKUIRatingStarsCache, SKUIRedeemCameraViewController,
                             SKUIRedeemStepViewController,
                             SKUIRedeemViewController,

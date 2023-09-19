@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CVNLP.framework/CVNLP
@@ -7,7 +7,7 @@ current-version:       119
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CVNLPBeamEndToken, _CVNLPBeamScore,
                             _CVNLPBeamSearchBeamID,
                             _CVNLPBeamSearchBlacklistRules,
@@ -44,28 +44,15 @@ exports:
                             _CVNLPCaptionScaleMethodCGInterpolationNone,
                             _CVNLPCaptionScaleMethodvImage,
                             _CVNLPCaptionTrackPerformance, _CVNLPCaptions,
-                            _CVNLPCationErrorDomain,
-                            _CVNLPCommSafetyEnableAllClasses,
-                            _CVNLPCommSafetyErrorDomain,
-                            _CVNLPCommSafetyHandlerImageClassificationScores,
-                            _CVNLPCommSafetyImageScaleMethod,
-                            _CVNLPCommSafetyImageScaleMethodCGInterpolationHigh,
-                            _CVNLPCommSafetyImageScaleMethodCGInterpolationLow,
-                            _CVNLPCommSafetyImageScaleMethodCGInterpolationMedium,
-                            _CVNLPCommSafetyImageScaleMethodCGInterpolationNone,
-                            _CVNLPCommSafetyImageScaleMethodvImage,
-                            _CVNLPCommSafetyImageSensitivity,
-                            _CVNLPCommSafetyImageSensitivityScore,
-                            _CVNLPCommSafetyUseANE,
-                            _CVNLPCommSafetyUseAnyAvailableDevice,
-                            _CVNLPCommSafetyUseCPU, _CVNLPCommSafetyUseGPU,
-                            _CVNLPCommSafetyUseImageAnalyzer,
-                            _CVNLPCommSafetyUseMTLDevice,
-                            _CVNLPCommSafetyUseTextAnalyzer, _CVNLPErrorDomain,
-                            _CVNLPGeneratedCaption,
+                            _CVNLPCationErrorDomain, _CVNLPCodepointToScriptCode,
+                            _CVNLPErrorDomain, _CVNLPGeneratedCaption,
                             _CVNLPGeneratedCaptionConfidenceLow,
                             _CVNLPGeneratedCaptionScore,
                             _CVNLPImageClassificationIdentifiers,
+                            _CVNLPIsDigitCharLMCodepoint,
+                            _CVNLPIsLatinCyrillicMixedScript,
+                            _CVNLPIsWhitespaceCharLMCodepoint,
+                            _CVNLPIsWordSeparatorForLexicon,
                             _CVNLPLanguageModelConditionalProbability,
                             _CVNLPLanguageModelConditionalProbabilityForTokenID,
                             _CVNLPLanguageModelConditionalProbabilityForTokenString,
@@ -90,6 +77,9 @@ exports:
                             _CVNLPLanguageModelWithStateReset,
                             _CVNLPLanguageModelWithStateUpdateWithContext,
                             _CVNLPLanguageModelWithStateUpdateWithContextIDs,
+                            _CVNLPNormalizeCodepointForCharLM,
+                            _CVNLPShouldIgnoreScriptForLatinCyrillic,
+                            _CVNLPShouldUseLexiconContextLogProb,
                             _CVNLPVideoCaptioningModelBeamSearchBeamWidth,
                             _CVNLPVideoCaptioningModelBeamSearchLengthNormalizationAlpha,
                             _CVNLPVideoCaptioningModelBeamSearchMaxSteps,
@@ -97,6 +87,8 @@ exports:
                             _CVNLPVideoCaptioningModelErrorDomain,
                             _CVNLPVideoCaptioningModelEspressoEngine,
                             _CVNLPVideoCaptioningModelURL,
+                            _CVNLPWordTokenIDsForString,
+                            _convertToCVNLPTextDecodingResult,
                             _kCVNLPLanguageModelArchitectureKey,
                             _kCVNLPLanguageModelLocaleKey,
                             _kCVNLPLanguageModelSamplingBeamSizeKey,
@@ -109,9 +101,6 @@ exports:
                             _kCVNLPLanguageModelURLKey ]
     objc-classes:         [ CVNLPActivationMatrix, CVNLPCLIPEmbedding,
                             CVNLPCLIPModel, CVNLPCTCTextDecoder,
-                            CVNLPCommSafetyHandler,
-                            CVNLPCommSafetyTextClassification,
-                            CVNLPCommSafetyTextItem, CVNLPCommSafetyTextProvider,
                             CVNLPDecodingLanguageModel, CVNLPDecodingLexicon,
                             CVNLPDecodingLexicons, CVNLPInformationStream,
                             CVNLPLanguageResourceBundle, CVNLPTextDecoder,

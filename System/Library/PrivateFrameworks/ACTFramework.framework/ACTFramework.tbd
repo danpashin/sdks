@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ACTFramework.framework/ACTFramework
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ABRegComputeShift, _ABRegDisposeContext,
                             _ABRegInitContext, _ABRegRegisterSlices,
                             _ABRegRegisterSlicesRobust,
@@ -252,6 +252,7 @@ exports:
                             _boxFilter_uint8_init, _closePanoArchive,
                             _computeIntegralImages, _convertCoordLKTToMetal,
                             _convertCoordMetalToLKT, _copyDebugDescrioption,
+                            _correctTxTyWithIspData,
                             _createACTNoiseReductionContext,
                             _createACTRegistrationContext,
                             _createBandPassNoiseReductionContext,
@@ -274,6 +275,7 @@ exports:
                             _getACTRegistrationCSVLogBuffer,
                             _getACTRegistrationCSVLogLevel,
                             _getACTRegistrationCumulativeTransform,
+                            _getACTRegistrationCurTxTy,
                             _getACTRegistrationDirection,
                             _getACTRegistrationForceMaxComputation,
                             _getACTRegistrationInvokeFallback,
@@ -282,11 +284,12 @@ exports:
                             _getACTRegistrationMethod,
                             _getACTRegistrationMethodDescription,
                             _getACTRegistrationMethodUsed,
+                            _getACTRegistrationPrevTxTy,
                             _getACTRegistrationSyslogLevel,
                             _getACTRegistrationUsePrediction,
                             _getBlackPointOfChannel, _getCFPreferenceFloat,
                             _getCFPreferenceNumber, _getCroppingArea,
-                            _getDefaultPowerBlurTuning, _getHostTime,
+                            _getDefaultPowerBlurTuning, _getHostTime, _getIspTxTy,
                             _getPointersFromGeometry, _getPrevMultipleOf16,
                             _getSNR, _getSNR_v2, _getTargetContext,
                             _getThreadgroupSizeForShader,
@@ -356,6 +359,7 @@ exports:
                             _kAtlasTranslationShiftHighThreshold,
                             _kAtlasTranslationShiftLowThreshold,
                             _kEnableTranslationCorrection,
+                            _kFigCaptureSampleBufferAttachmentKey_ClientSpecifiedMetadata,
                             _kFigCaptureSampleBufferAttachmentKey_MetadataDictionary,
                             _kMovingAverageFilterSize, _kPano_SkipFrame,
                             _kPano_SliceHomography, _kPano_SliceNumber,
@@ -380,6 +384,7 @@ exports:
                             _setACTPredictionMethod,
                             _setACTRegistrationCSVLogLevel,
                             _setACTRegistrationCumulativeTransform,
+                            _setACTRegistrationCurTxTy,
                             _setACTRegistrationDirection,
                             _setACTRegistrationForceMaxComputation,
                             _setACTRegistrationInvokeFallback,
@@ -387,6 +392,7 @@ exports:
                             _setACTRegistrationMFDriftCorrectorFlag,
                             _setACTRegistrationMethod,
                             _setACTRegistrationMethodUsed,
+                            _setACTRegistrationPrevTxTy,
                             _setACTRegistrationSyslogLevel,
                             _setACTRegistrationUsePrediction,
                             _setBlendingContextOptions,

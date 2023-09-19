@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _VTUIEnrollmentlanguageOptionsViewDefaultLanguageCode,
                             _VTUILogContextFacility, _VTUILogInitIfNeeded,
                             _VTUILoggingSubsystem,
@@ -17,7 +17,9 @@ exports:
                             _VTUIVoiceSelectedVoiceNameKey,
                             _VTUIVoiceTableViewCornerRadius,
                             _VoiceTriggerUIVersionNumber,
-                            _VoiceTriggerUIVersionString, _aboutViewShownKey,
+                            _VoiceTriggerUIVersionString,
+                            __VTUIVoiceTriggerDomainKey,
+                            __VTUIVoiceTriggerPhraseKey, _aboutViewShownKey,
                             _asrErrorKey, _event, _introViewShownKey,
                             _kVTUILoggingContextFramework, _languageCodeKey,
                             _setupModeKey, _skippedFromIntroAOPKey,
@@ -37,6 +39,7 @@ exports:
                             VTUIEnrollmentLanguageOptionsView,
                             VTUIEnrollmentPageEligibilityProvider,
                             VTUIEnrollmentSetupIntroView,
+                            VTUIEnrollmentSetupIntroViewController,
                             VTUIEnrollmentSuccessView, VTUIPagedLabel,
                             VTUIProximityContainerView,
                             VTUIProximityDataSharingOptInView,

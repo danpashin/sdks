@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
@@ -7,8 +7,19 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CNFAccountRegistarStateChangedNotification,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListC15fullDataSharingACSb_tcfC,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListC15fullDataSharingACSb_tcfCTq,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListC15fullDataSharingACSb_tcfc,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListC7getViewSo16UIViewControllerCyF,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListC7getViewSo16UIViewControllerCyFTq,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCACycfC,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCACycfc,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCMa,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCMn,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCN,
+                            _$s21CommunicationsSetupUI28CKSettingsCheckInDevicesListCfD,
+                            _CNFAccountRegistarStateChangedNotification,
                             _CNFAssert, _CNFCopyAppStringForKey,
                             _CNFCopyBacktraceToDepth, _CNFCopyDomainStringForKey,
                             _CNFCopySharedStringForKey, _CNFDumpRegistrationLogs,
@@ -49,15 +60,17 @@ exports:
                             _CNFStringKeyForProduct, _CNFSyncDomainPreferences,
                             _CNFSyncPreferences, _CNFSyncSharedPreferences,
                             _CNFiMessageLogLevel, _CommunicationsSetupUIBundle ]
-    objc-classes:         [ CNFAccountRegistrar,
+    objc-classes:         [ CNFAccountRegistrar, CNFFaceTimeSettingsController,
                             CNFInternalAccountListViewController,
                             CNFInternalSettingsUtilities, CNFRegController,
                             CNFRegListController, CNFRegSettingsController,
                             CNFRegSigninLearnMoreView, CNFRegTableFooterLabel,
                             CNFRegTableHeaderLabel, CNFRegTableLabel,
-                            CNFRegWizardController, CSUISettingsBundleController,
+                            CNFRegWizardController, CNFSettingsViewController,
+                            CSUISettingsBundleController,
                             FTRegAccountServiceDelegate,
-                            FTRegAppleIDSetupManager, FTRegConnectionHandler ]
+                            FTRegAppleIDSetupManager, FTRegConnectionHandler,
+                            _TtC21CommunicationsSetupUI28CKSettingsCheckInDevicesList ]
     objc-ivars:           [ CNFInternalAccountListViewController._connectionHandler,
                             CNFInternalAccountListViewController._service,
                             CNFRegTableLabel._URLTarget,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/QuickLookThumbnailingDaemon.framework/QuickLookThumbnailingDaemon
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _QLCacheInDebugMode, _QLCacheThreadInstance,
                             _QLServerThreadInstance ]
     objc-classes:         [ QLCacheBlobInfo, QLCacheDeleteHandler, QLCacheFileInfo,
@@ -94,13 +94,15 @@ exports:
                             QLServerThread._queue,
                             QLServerThread._queuedDownloadRequests,
                             QLServerThread._thumbnailDownloadsInFlight,
-                            QLSqliteDatabase._db, QLSqliteDatabase._isCorrupted,
+                            QLServerThread._watchdogTimer, QLSqliteDatabase._db,
+                            QLSqliteDatabase._isCorrupted,
                             QLSqliteDatabase._path, QLSqliteDatabase._queue,
                             QLSqliteDatabase._statementCache,
                             QLSqliteDatabase._statementsInUseTable,
                             QLSqliteDatabase.transactionCount,
                             QLThumbnailAdditionIndex._db,
                             QLThumbnailAdditionIndex._dbWatcher,
+                            QLThumbnailAdditionIndex._exitsOnCorruption,
                             QLThumbnailAdditionIndex._url,
                             _QLCacheThread._cleanUpDatabaseThread,
                             _QLCacheThread._cleanupBlocks,

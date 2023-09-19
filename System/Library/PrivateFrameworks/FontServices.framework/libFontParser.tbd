@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib
@@ -7,13 +7,14 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FPFontCanCreatePostScriptSubset,
                             _FPFontCopyAdditionalPostScriptNames,
                             _FPFontCopyAllNames, _FPFontCopyCharacterSet,
                             _FPFontCopyFamilyName, _FPFontCopyFullName,
                             _FPFontCopyGlyphBitmap, _FPFontCopyGlyphNameForGlyph,
-                            _FPFontCopyGlyphPath, _FPFontCopyMetadata,
+                            _FPFontCopyGlyphPath, _FPFontCopyHintedGlyphPath,
+                            _FPFontCopyMetadata,
                             _FPFontCopyNameTablePostScriptName, _FPFontCopyNames,
                             _FPFontCopyOriginalGlyphPath, _FPFontCopyPath,
                             _FPFontCopyPostScriptName,
@@ -29,7 +30,8 @@ exports:
                             _FPFontCreatePostScriptSubset,
                             _FPFontCreateVariationFromPostScriptNameSuffix,
                             _FPFontCreateWithData, _FPFontCreateWithDataAndExtra,
-                            _FPFontCreateWithPathAndName, _FPFontGetAscent,
+                            _FPFontCreateWithPathAndName,
+                            _FPFontEnumerateNamedInstances, _FPFontGetAscent,
                             _FPFontGetAverageAdvance, _FPFontGetBoundingBox,
                             _FPFontGetCIDsForGlyphs, _FPFontGetCapHeight,
                             _FPFontGetControlPoints, _FPFontGetDefaultInstance,
@@ -55,14 +57,20 @@ exports:
                             _FPFontGetGlyphsXo, _FPFontGetInstanceNameID,
                             _FPFontGetItalicAngle, _FPFontGetLineGap,
                             _FPFontGetLongGlyphsForCharacterRange,
+                            _FPFontGetLongGlyphsForCharacters,
                             _FPFontGetMaximumAdvance,
                             _FPFontGetMinimumLeftSideBearing,
                             _FPFontGetMinimumRightSideBearing,
-                            _FPFontGetNumberOfGlyphs, _FPFontGetOS2UnicodeRanges,
-                            _FPFontGetPostScriptName, _FPFontGetProtectionInfo,
-                            _FPFontGetStemH, _FPFontGetStemV,
+                            _FPFontGetNumberOfGlyphs,
+                            _FPFontGetNumberOfLongGlyphs,
+                            _FPFontGetOS2UnicodeRanges, _FPFontGetPostScriptName,
+                            _FPFontGetProtectionInfo, _FPFontGetStemH,
+                            _FPFontGetStemV, _FPFontGetStems, _FPFontGetStrikeout,
+                            _FPFontGetSubscriptX, _FPFontGetSubscriptY,
+                            _FPFontGetSuperscriptX, _FPFontGetSuperscriptY,
                             _FPFontGetTrueTypeEncoding, _FPFontGetTupleCount,
-                            _FPFontGetType1Encoding, _FPFontGetUnderlinePosition,
+                            _FPFontGetType1Encoding, _FPFontGetTypoMetrics,
+                            _FPFontGetUnderlinePosition,
                             _FPFontGetUnderlineThickness,
                             _FPFontGetUnicharsForGlyph, _FPFontGetUnitsPerEm,
                             _FPFontGetVMetrics, _FPFontGetVariation,
@@ -72,7 +80,7 @@ exports:
                             _FPFontGetVariationScalar,
                             _FPFontGetVariationScalars,
                             _FPFontGetVariationValues, _FPFontGetVersion,
-                            _FPFontGetXHeight,
+                            _FPFontGetWinMetrics, _FPFontGetXHeight,
                             _FPFontHasNamedInstanceWithOpticalSize,
                             _FPFontIsBitmapOnly, _FPFontIsItalic,
                             _FPFontIsMonospaced, _FPFontIsNamedInstance,
@@ -86,12 +94,12 @@ exports:
                             __ZN10MCacheDataD2Ev, __ZN10TExceptionD0Ev,
                             __ZN10TExceptionD1Ev, __ZN10TExceptionD2Ev,
                             __ZN11TCharString8CharDataEv,
-                            __ZN11TCharStringC1EtRK14TDataReference,
-                            __ZN11TCharStringC1EtRK14TDataReferencem,
-                            __ZN11TCharStringC1EtmPKv, __ZN11TCharStringC1Ev,
-                            __ZN11TCharStringC2EtRK14TDataReference,
-                            __ZN11TCharStringC2EtRK14TDataReferencem,
-                            __ZN11TCharStringC2EtmPKv, __ZN11TCharStringC2Ev,
+                            __ZN11TCharStringC1EjRK14TDataReference,
+                            __ZN11TCharStringC1EjRK14TDataReferencem,
+                            __ZN11TCharStringC1EjmPKv, __ZN11TCharStringC1Ev,
+                            __ZN11TCharStringC2EjRK14TDataReference,
+                            __ZN11TCharStringC2EjRK14TDataReferencem,
+                            __ZN11TCharStringC2EjmPKv, __ZN11TCharStringC2Ev,
                             __ZN11TCharStringD0Ev, __ZN11TCharStringD1Ev,
                             __ZN11TCharStringD2Ev, __ZN12MScalerCacheD0Ev,
                             __ZN12MScalerCacheD1Ev, __ZN12MScalerCacheD2Ev,

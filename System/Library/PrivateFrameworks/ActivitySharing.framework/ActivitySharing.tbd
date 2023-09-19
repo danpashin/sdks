@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivitySharing.framework/ActivitySharing
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ASAchievementDictionaryByIndex,
                             _ASAchievementFromRichMessagePayload,
                             _ASAchievementLocalizationPathForTemplate,
@@ -17,6 +17,7 @@ exports:
                             _ASActivityAppLaunchURLForMeOnDate,
                             _ASActivityAppLaunchURLForSharingFriendList,
                             _ASActivityAppLaunchURLForSharingInbox,
+                            _ASActivitySharingDaemonEnabled,
                             _ASAllGoalsMetForSnapshot,
                             _ASAnalyticsReportCompetitionRequestAccept,
                             _ASAnalyticsReportCompetitionRequestIgnore,
@@ -25,6 +26,7 @@ exports:
                             _ASAnalyticsReportSmackTalk,
                             _ASAnalyticsUpdateWithFriends,
                             _ASBestCompetitionVictoryBadgeStyleForPreferredStyles,
+                            _ASBuildFriendAchievementsToShare,
                             _ASCacheIndexForLocalDate, _ASCleanSnapshotForUpload,
                             _ASClientTaskIdentifier,
                             _ASCloudKitAchievementRecordType,
@@ -160,7 +162,7 @@ exports:
                             _ASNumberOfCompetitionVictoryBadgeModels,
                             _ASNumberOfCompetitionVictoryColorsForBadgeModel,
                             _ASNumberOfNewFriendsAllowedForFriends,
-                            _ASObjectsAreEqual,
+                            _ASObjectsAreEqual, _ASObjectsAreEqualOrNil,
                             _ASPairedDeviceSupportsCompetitions,
                             _ASPreferredCompetitionVictoryBadgeStylesForFriend,
                             _ASRecipientAddressFromRichMessagePayload,
@@ -174,6 +176,8 @@ exports:
                             _ASSanitizedContactDestination,
                             _ASSanitizedContactDestinations,
                             _ASSecureUnarchiveClassWithData,
+                            _ASSecureUnarchiveClassWithDataAndStrictness,
+                            _ASSecureUnarchiveClassesWithData,
                             _ASSendRichMessagePayloadToDestination,
                             _ASServerInterface,
                             _ASShortNameForContactStoreContact, _ASShuffledArray,
@@ -193,11 +197,13 @@ exports:
                             _ASWorkoutNotificationRecordIDForType,
                             _ASWorkoutRecordIDForUUID,
                             _ASWorkoutsFromCodableWorkouts,
-                            _ActivitySharingBundle,
+                            _ActivitySharingBundle, _NSStringFromASCloudType,
                             __ASCreateActivityDataRootRecordWithID,
                             __ASCreateRecordsFromCloudKitCodablesAndRecordZoneID,
                             _kASAchievementLocalizedPlaceholderCompetitionEndDayKey,
                             _kASAchievementLocalizedPlaceholderFriendNameKey,
+                            _kASActivitySharingCompetitionsDidUpdateNotification,
+                            _kASActivitySharingFriendListDidUpdateNotification,
                             _kASActivitySharingHostFriendDetail,
                             _kASActivitySharingHostFriendList,
                             _kASActivitySharingHostInbox,
@@ -240,8 +246,11 @@ exports:
                             _kASNotificationsEnabledKey,
                             _kASNumberOfBucketsCompanion,
                             _kASNumberOfBucketsWatch, _kASPluginIdentifier,
+                            _kASProtectedDataAvailabilityDidChangeNotification,
+                            _kASProtectedDataIsAvailableUserInfoKey,
                             _kASPushServiceMachPort,
                             _kASSubsectionIdentifierBulletinContextKey,
+                            _kASXPCDaemonEntitlement, _kASXPCMachServiceName,
                             _kASZoneChangeTokenCacheDefaultsKey,
                             _kASiCloudServiceIdentifier,
                             _kASiMessageServiceIdentifier ]
@@ -340,6 +349,7 @@ exports:
                             ASCodableCloudKitNotificationEvent._type,
                             ASCodableCloudKitRelationship._addresses,
                             ASCodableCloudKitRelationship._cloudKitAddress,
+                            ASCodableCloudKitRelationship._cloudType,
                             ASCodableCloudKitRelationship._eventCount,
                             ASCodableCloudKitRelationship._events,
                             ASCodableCloudKitRelationship._has,
@@ -378,6 +388,8 @@ exports:
                             ASCodableContact._destinations,
                             ASCodableContact._fullName,
                             ASCodableContact._linkedContactStoreIdentifier,
+                            ASCodableContact._pendingActivityDataShareItems,
+                            ASCodableContact._pendingRelationshipShareItem,
                             ASCodableContact._relationshipContainer,
                             ASCodableContact._remoteRelationshipContainer,
                             ASCodableContact._shortName,
@@ -416,11 +428,14 @@ exports:
                             ASCodableInviteResponse._inviteeShareLocations,
                             ASCodableInviteResponse._inviteeVersion,
                             ASCodableInviteResponse._responseCode,
+                            ASCodableRelationshipContainer._activityDataShareIDByZoneName,
                             ASCodableRelationshipContainer._has,
                             ASCodableRelationshipContainer._relationship,
                             ASCodableRelationshipContainer._relationshipShareID,
+                            ASCodableRelationshipContainer._relationshipZoneShareID,
                             ASCodableRelationshipContainer._remoteActivityShareID,
                             ASCodableRelationshipContainer._remoteRelationshipShareID,
+                            ASCodableRelationshipContainer._remoteRelationshipZoneShareID,
                             ASCodableRelationshipContainer._systemFieldsOnlyRecord,
                             ASCodableRelationshipContainer._version,
                             ASCodableShareLocations._activityShareURL,

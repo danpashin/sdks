@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivityAwardsServices.framework/ActivityAwardsServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s22ActivityAwardsServices10ProxyErrorO07unknownE0yA2CmFWC,
                             _$s22ActivityAwardsServices10ProxyErrorO09incorrectD4TypeyA2CmFWC,
                             _$s22ActivityAwardsServices10ProxyErrorO12noConnectionyA2CmFWC,
@@ -198,6 +198,12 @@ exports:
                             _$sSo29ACHCodableEarnedInstanceArrayC22ActivityAwardsServices21TransportSerializableACMc,
                             _$sSo29ACHCodableEarnedInstanceArrayC22ActivityAwardsServices21TransportSerializableACWP,
                             _$sSo29ACHCodableEarnedInstanceArrayC22ActivityAwardsServicesE10serialized10Foundation4DataVSgyKF,
+                            _$sSo35ACHCodableAchievementProgressUpdateC22ActivityAwardsServices21TransportSerializableACMc,
+                            _$sSo35ACHCodableAchievementProgressUpdateC22ActivityAwardsServices21TransportSerializableACWP,
+                            _$sSo35ACHCodableAchievementProgressUpdateC22ActivityAwardsServicesE10serialized10Foundation4DataVSgyKF,
+                            _$sSo40ACHCodableAchievementProgressUpdateArrayC22ActivityAwardsServices21TransportSerializableACMc,
+                            _$sSo40ACHCodableAchievementProgressUpdateArrayC22ActivityAwardsServices21TransportSerializableACWP,
+                            _$sSo40ACHCodableAchievementProgressUpdateArrayC22ActivityAwardsServicesE10serialized10Foundation4DataVSgyKF,
                             _$sSq22ActivityAwardsServicesAA21TransportSerializableRzSeRzSERzlE10serialized10Foundation4DataVSgyKF,
                             _$sSq22ActivityAwardsServicesAA21TransportSerializableRzSeRzSERzlE14serializedDataxSgSg10Foundation0G0VSg_tKcfC,
                             _$ss5ErrorP22ActivityAwardsServicesE9logOutputSSvg,

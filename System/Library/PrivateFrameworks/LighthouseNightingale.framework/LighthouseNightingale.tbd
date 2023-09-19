@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LighthouseNightingale.framework/LighthouseNightingale
@@ -7,43 +7,47 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _LighthouseNightingaleVersionNumber,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LighthouseNightingalePluginLogContextPlugin,
+                            _LighthouseNightingalePluginLoggingCategoryPlugin,
+                            _LighthouseNightingalePluginLoggingInit,
+                            _LighthouseNightingalePluginLoggingSubsystem,
+                            _LighthouseNightingaleVersionNumber,
                             _LighthouseNightingaleVersionString,
                             _customErrorDomain,
                             _dateOfPseudoDeviceIDGenerationKey,
                             _defaultAdditionalDayCount,
                             _defaultCadenceNumberOfDays, _defaultMaxCycleLength,
                             _defaultMinCycleLength, _defaultRunWithDropOut,
-                            _pseudoDeviceIDKey,
+                            _defaultSimulateCrashOnTimeout, _pseudoDeviceIDKey,
                             _reachCheckpointStringCheckedImproveHealthAndPrivacyAllowed,
                             _reachCheckpointStringCheckedPluginNotRunRecently,
                             _reachCheckpointStringCheckedUserOnboardedToCycles,
-                            _reachCheckpointStringGotConsolidatedSleepHours,
+                            _reachCheckpointStringFinishedAllPredictions,
+                            _reachCheckpointStringFinishedDayInputsQuery,
+                            _reachCheckpointStringFusedAllData,
+                            _reachCheckpointStringGotAllData,
                             _reachCheckpointStringGotDateOfBirth,
                             _reachCheckpointStringGotDayInputs,
                             _reachCheckpointStringGotDayProcessorConfig,
-                            _reachCheckpointStringGotDaySummaryInputs,
-                            _reachCheckpointStringGotHeartInputs,
                             _reachCheckpointStringGotHeartRateStats,
                             _reachCheckpointStringGotHistoricalCycles,
-                            _reachCheckpointStringGotMenstrualFlowStats,
                             _reachCheckpointStringGotMenstruationPredictions,
-                            _reachCheckpointStringGotOvulationTestStats,
                             _reachCheckpointStringGotSelfReportedMenstrualCycleLength,
                             _reachCheckpointStringGotSelfReportedMenstrualCycleLengthUpdateDate,
                             _reachCheckpointStringGotSelfReportedMenstruationLength,
                             _reachCheckpointStringGotSelfReportedMenstruationLengthUpdateDate,
-                            _reachCheckpointStringGotSpottingStats,
-                            _reachCheckpointStringGotWristTemperatureInputs,
                             _reachCheckpointStringPluginFinished,
                             _reachCheckpointStringPluginStarted,
                             _recipeAdditionalDayCountKey, _recipeCadenceKey,
                             _recipeMaxCycleLengthKey, _recipeMinCycleLengthKey,
-                            _recipeRunWithDropOutKey, _trialModelsKey,
+                            _recipeRunWithDropOutKey,
+                            _recipeSimulateCrashOnTimeoutKey, _trialModelsKey,
                             _trialNamespace, _trialRecipeKey,
                             _userDefaultsLastRunDeploymentIdKey,
                             _userDefaultsLastRunJulianDayKey ]
     objc-classes:         [ DateUtils, EnumConversionUtils, HealthKitDataUtils,
-                            MetricsUtils, ParityChecks, TelemetryUtils ]
+                            LighthouseNightingalePlugin, MetricsUtils,
+                            NightingaleTelemetryIdentifiers, ParityChecks,
+                            TelemetryUtils ]
 ...

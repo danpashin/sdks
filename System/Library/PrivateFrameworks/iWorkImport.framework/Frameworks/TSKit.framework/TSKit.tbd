@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iWorkImport.framework/Frameworks/TSKit.framework/TSKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10Foundation6LocaleV5TSKitE25tsk_minimumGroupingDigitsSivg,
                             _$s10Foundation6LocaleV5TSKitE25tsk_minimumGroupingDigitsSivpMV,
                             _$s5TSKit19TSKAutoInvalidatingV12wrappedValueACyxGx_tcfC,
@@ -3406,6 +3406,7 @@ exports:
                             _kTSKOperationPropertyDEPRECATEDTSWPFontColorProperty,
                             _kTSKOperationPropertyDEPRECATEDTSWPOutlineColorProperty,
                             _kTSKOperationPropertyDEPRECATEDTSWPOutlineProperty,
+                            _kTSKOperationPropertyDEPRECATEDTSWPParagraphBordersProperty,
                             _kTSKOperationPropertyDEPRECATEDTSWPShowInTOCProperty,
                             _kTSKOperationPropertyDEPRECATEDTSWPTOCEntryStyleIdentifierProperty,
                             _kTSKOperationPropertyDictationAndAutocorrection,
@@ -3734,6 +3735,8 @@ exports:
                             _kTSKOperationPropertyTRWorkspaceTopMarginProperty,
                             _kTSKOperationPropertyTRWorkspaceUsePrinterMarginsProperty,
                             _kTSKOperationPropertyTRWorkspaceUseStartPageNumberProperty,
+                            _kTSKOperationPropertyTSAObjectThreeDPlaysAnimationsProperty,
+                            _kTSKOperationPropertyTSAObjectThreeDPoseProperty,
                             _kTSKOperationPropertyTSCHChartAxisCategoryHorizontalSpacing,
                             _kTSKOperationPropertyTSCHChartAxisCategoryLabelParagraphStyleIndex,
                             _kTSKOperationPropertyTSCHChartAxisCategoryLabelsOrientation,
@@ -3929,6 +3932,14 @@ exports:
                             _kTSKOperationPropertyTSCHChartInfoDefaultShowLegend,
                             _kTSKOperationPropertyTSCHChartInfoDefaultShowTitle,
                             _kTSKOperationPropertyTSCHChartInfoDefaultSkipHiddenData,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelDateFormat,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelDurationFormat,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelNumberFormat,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelNumberFormatType,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelOffset,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelParagraphStyleIndex,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelShowLabels,
+                            _kTSKOperationPropertyTSCHChartInfoDefaultSummaryLabelValueLabelSpacing,
                             _kTSKOperationPropertyTSCHChartInfoDefaultThreeDBarShape,
                             _kTSKOperationPropertyTSCHChartInfoDefaultThreeDBevelEdges,
                             _kTSKOperationPropertyTSCHChartInfoDefaultThreeDChartOpacity,
@@ -3970,6 +3981,14 @@ exports:
                             _kTSKOperationPropertyTSCHChartInfoSkipHiddenData,
                             _kTSKOperationPropertyTSCHChartInfoStackedAreaCalloutLineType,
                             _kTSKOperationPropertyTSCHChartInfoStackedBarCalloutLineType,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelDateFormat,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelDurationFormat,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelNumberFormat,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelNumberFormatType,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelOffset,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelParagraphStyleIndex,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelShowLabels,
+                            _kTSKOperationPropertyTSCHChartInfoSummaryLabelValueLabelSpacing,
                             _kTSKOperationPropertyTSCHChartInfoThreeDBarShape,
                             _kTSKOperationPropertyTSCHChartInfoThreeDBevelEdges,
                             _kTSKOperationPropertyTSCHChartInfoThreeDChartOpacity,
@@ -4501,8 +4520,9 @@ exports:
                             _kTSKOperationPropertyTSWPOutlineStyleTypeProperty,
                             _kTSKOperationPropertyTSWPPaddingProperty,
                             _kTSKOperationPropertyTSWPPageBreakBeforeProperty,
-                            _kTSKOperationPropertyTSWPParagraphBordersProperty,
+                            _kTSKOperationPropertyTSWPParagraphBorderPositionsProperty,
                             _kTSKOperationPropertyTSWPParagraphFillProperty,
+                            _kTSKOperationPropertyTSWPParagraphRoundedCornersProperty,
                             _kTSKOperationPropertyTSWPParagraphRuleOffsetProperty,
                             _kTSKOperationPropertyTSWPParagraphRuleWidthProperty,
                             _kTSKOperationPropertyTSWPParagraphStrokeProperty,

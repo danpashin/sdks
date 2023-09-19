@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ExchangeSync.framework/ExchangeSync
@@ -7,19 +7,13 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ESIsRunningInExchangeSyncD,
-                            _kDAAccountDidDiscoverHost,
-                            _kDAAccountDidDiscoverOAuthURI,
-                            _kDAAccountDiscoveredHost,
+                            _kASBundleIdForSharedTraffic,
                             _kDAClientNameForChangeInsertion,
-                            _kDAExchangeDiscoveredOAuthURI,
-                            _kDAExchangeOAuthJWKSData,
-                            _kDAExchangeOAuthJWKSDataCachMaxTimeInterval,
-                            _kDAExchangeOAuthJWKSDataCacheDate,
-                            _kDAExchangeOAuthJWKSURI,
-                            _kDAExchangeOAuthTokenIssuer,
-                            _kDAExchangeOAuthVersion,
+                            _kESAccountDidDiscoverHost,
+                            _kESAccountDidDiscoverOAuthURI,
+                            _kESAccountDiscoveredHost, _kESEASEndPointFQDN,
                             _kESExchangeBasicAccountMigrationActivityInterval,
                             _kESExchangeBasicAccountMigrationActivityInterval_Override,
                             _kESExchangeBasicAccountMigrationActivityTolerance,
@@ -28,9 +22,17 @@ exports:
                             _kESExchangeBasicAccountMigrationRetryInterval,
                             _kESExchangeBasicAccountMigrationRetryInterval_Override,
                             _kESExchangeBasicAccountMigrationStatus,
+                            _kESExchangeDiscoveredOAuthURI,
+                            _kESExchangeOAuthJWKSData,
+                            _kESExchangeOAuthJWKSDataCachMaxTimeInterval,
+                            _kESExchangeOAuthJWKSDataCacheDate,
+                            _kESExchangeOAuthJWKSURI, _kESExchangeOAuthOnPremKey,
+                            _kESExchangeOAuthSupportedKey,
+                            _kESExchangeOAuthTokenIssuer, _kESExchangeOAuthURI,
+                            _kESExchangeOAuthVersion,
                             _kESExchangePasswordPromptDate,
                             _kESExchangePendingClaimsChallenge,
-                            _kGenericDAAccountType,
+                            _kESExchangeTokenRequestURI, _kGenericDAAccountType,
                             _kGenericDAAccountWithLoggingType,
                             _kSubCalCalendarStoreExternalId,
                             _setESIsRunningInExchangeSyncD ]

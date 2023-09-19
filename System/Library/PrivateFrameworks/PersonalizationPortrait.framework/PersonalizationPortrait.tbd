@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/PersonalizationPortrait
-current-version:       1193.26
+current-version:       1226.0.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PETPortraitFeatureId, _PPCollapseWhitespaceAndStrip,
                             _PPCreateCalendarColorWithDecoder,
                             _PPEncodeCalendarColor, _PPErrorDomain,
@@ -33,17 +33,18 @@ exports:
                             _kPPAppIdMacOSSafari, _kPPAppIdMacOSTV, _kPPAppIdMaps,
                             _kPPAppIdMusic, _kPPAppIdNews, _kPPAppIdPhotos,
                             _kPPAppIdPodcasts, _kPPAppIdSafari, _kPPAppIdShareBear,
-                            _kPPAppIdTV, _kPPAppIdTVOSTV, _kPPBundleIdCalendar,
-                            _kPPBundleIdCamera, _kPPBundleIdContacts,
-                            _kPPBundleIdCoreRoutine, _kPPBundleIdFaceTime,
-                            _kPPBundleIdFitness, _kPPBundleIdHealth,
-                            _kPPBundleIdHome, _kPPBundleIdIOSCalendar,
-                            _kPPBundleIdIOSContacts, _kPPBundleIdIOSFaceTime,
-                            _kPPBundleIdIOSMail, _kPPBundleIdIOSMessages,
+                            _kPPAppIdTV, _kPPAppIdTVOSTV,
+                            _kPPAppIdToPlatformVariationsMapping,
+                            _kPPBundleIdCalendar, _kPPBundleIdCamera,
+                            _kPPBundleIdContacts, _kPPBundleIdCoreRoutine,
+                            _kPPBundleIdFaceTime, _kPPBundleIdFitness,
+                            _kPPBundleIdHealth, _kPPBundleIdHome,
+                            _kPPBundleIdIOSCalendar, _kPPBundleIdIOSContacts,
+                            _kPPBundleIdIOSFaceTime, _kPPBundleIdIOSMail,
                             _kPPBundleIdIOSNotes, _kPPBundleIdIOSPhotos,
                             _kPPBundleIdIOSSafari, _kPPBundleIdMacOSCalendar,
                             _kPPBundleIdMacOSContacts, _kPPBundleIdMacOSFaceTime,
-                            _kPPBundleIdMacOSMail, _kPPBundleIdMacOSMessages,
+                            _kPPBundleIdMacOSMail,
                             _kPPBundleIdMacOSMessagesLegacy,
                             _kPPBundleIdMacOSNotes, _kPPBundleIdMacOSPhotos,
                             _kPPBundleIdMacOSSafari, _kPPBundleIdMail,
@@ -55,7 +56,9 @@ exports:
                             _kPPBundleIdSafari, _kPPBundleIdSiri,
                             _kPPBundleIdSiriAssistantService,
                             _kPPBundleIdSpringBoard, _kPPBundleIdTVApp,
-                            _kPPBundleIdTVRemote, _kPPBundleIdWallet,
+                            _kPPBundleIdTVRemote,
+                            _kPPBundleIdToPlatformVariationsMapping,
+                            _kPPBundleIdWallet,
                             _kPPCoderKeyCalendarColorSpaceData,
                             _kPPCoderKeyCalendarColor_0,
                             _kPPCoderKeyCalendarColor_1,
@@ -160,11 +163,15 @@ exports:
                             PPXPCClientHelper,
                             PPXPCClientPipelinedBatchQueryContext,
                             PPXPCClientPipelinedBatchQueryManager,
-                            PPXPCNamedEntityStore, PPXPCTopicStore ]
+                            PPXPCNamedEntityStore,
+                            PPXPCNamedEntityStoreQueryMonitorSession,
+                            PPXPCTopicStore ]
     objc-ivars:           [ PPAdaptiveCoalescerPendingKeyState._dates,
                             PPAdaptiveCoalescerPendingKeyState._handlers,
                             PPAdaptiveCoalescerPendingKeyState._key,
-                            PPAttendee._urlString, PPLocationRecord._algorithm,
+                            PPAttendee._backingPlists,
+                            PPAttendee._indexInBackingPlists,
+                            PPLocationRecord._algorithm,
                             PPLocationRecord._bucketizedSentimentScore,
                             PPLocationRecord._contextualNamedEntities,
                             PPLocationRecord._decayRate,

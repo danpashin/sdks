@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BBSectionIconFromBLTPBSectionIcon,
                             _BBSectionInfoFromBLTPBSectionInfo,
                             _BBSectionsChanged, _BLTAggdGizmoBuildUIAttempt,
@@ -175,11 +175,10 @@ exports:
                             BLTDebugObserverHolder, BLTGizmoLegacyMap,
                             BLTGizmoLegacyMapSectionInfo, BLTHashCache,
                             BLTHashCacheItem, BLTIDSDevice, BLTIDSService,
-                            BLTLightsAndSirensReplyInfo,
+                            BLTImageAttachmentInfo, BLTLightsAndSirensReplyInfo,
                             BLTLightsAndSirensReplyInfoCache,
                             BLTLocalPingSubscriberService, BLTMessageDigest,
-                            BLTMuteSync, BLTObjectCache, BLTObjectCacheItem,
-                            BLTObjectSerializer, BLTObjectStore,
+                            BLTMuteSync, BLTObjectSerializer, BLTObjectStore,
                             BLTPBAckInitialSequenceNumberRequest, BLTPBAction,
                             BLTPBActionFactory, BLTPBActionFactoryVersion1,
                             BLTPBActionInformation, BLTPBAddBulletinRequest,

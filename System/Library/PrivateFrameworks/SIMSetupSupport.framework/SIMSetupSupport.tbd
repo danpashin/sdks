@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SIMSetupSupport.framework/SIMSetupSupport
@@ -7,17 +7,22 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CTCellularPlanLocalInfoError,
                             _SIMSetupSupportVersionNumber,
                             _SIMSetupSupportVersionString,
                             _TSFlowTypeActivationPolicyMismatch,
-                            _TSFlowTypeProximityTransfer, _TSFlowTypeQRCode,
+                            _TSFlowTypeProximityTransfer, _TSIsLocalConvertKey,
                             _TSNotificationESIMInstallFromWebSheetFlowStarted,
                             _TSNotificationESIMInstallStateChanged,
                             _TSNotificationTransferConsentOnSource,
-                            _TSNotificationTransferFailed, _TSPlanIconESIM,
-                            _TSPlanIconPSIM, _TSUserInfoCarrierNameKey,
+                            _TSNotificationTransferFailed,
+                            _TSNotificationUserCanceled,
+                            _TSNotificationUserCanceledReason_HomeButtonEvent,
+                            _TSNotificationUserCanceledReason_ScreenLockEvent,
+                            _TSNotificationUserCanceledReason_SwapOutEvent,
+                            _TSPlanIconESIM, _TSPlanIconPSIM,
+                            _TSUserInfoCarrierNameKey,
                             _TSUserInfoConfirmationCodeRequiredKey,
                             _TSUserInfoDelayStartActivatingTimerKey,
                             _TSUserInfoEidKey, _TSUserInfoEsimInstallStateKey,
@@ -46,7 +51,10 @@ exports:
                             _TSUserInfoWebsheetRequestTypeKey,
                             _TSUserInfoWebsheetURLKey, __TSLogDomain,
                             __isInternalInstall, _isValidNSString, _kRadioIconKey ]
-    objc-classes:         [ SSOBBoldTrayButton, SSProximityDevice, SSSpinner,
+    objc-classes:         [ MapsEdgeConstraints,
+                            SSCellularPlanCarrierAppsViewController,
+                            SSOBBoldTrayButton, SSProximityDevice,
+                            SSRecommendedCarrierAppCell, SSSpinner,
                             SSUITableViewController, SSUIViewController,
                             TSActivationFlowWithSimSetupFlow,
                             TSActivationPolicyMismatchFlow,
@@ -55,6 +63,7 @@ exports:
                             TSCarrierSignupFlow, TSCellularPlanActivatingFlow,
                             TSCellularPlanCardInfoViewController,
                             TSCellularPlanConfirmationCodeViewController,
+                            TSCellularPlanCrossPlatformViewController,
                             TSCellularPlanIntroViewController,
                             TSCellularPlanItemCell,
                             TSCellularPlanLabelPickerTableViewController,
@@ -77,7 +86,8 @@ exports:
                             TSCellularSetupLoadingViewController,
                             TSCellularSetupTimeoutFailureViewController,
                             TSCoreTelephonyClientCache, TSFlowHelper,
-                            TSIDSSubscriptionSelector,
+                            TSIDSSimTransferringViewController,
+                            TSIDSSubscriptionSelector, TSIDSTransferFlow,
                             TSManagedDeviceInstallFlow,
                             TSMidOperationFailureViewController,
                             TSMultiPlanIntermediateViewController,
@@ -94,15 +104,14 @@ exports:
                             TSProximitySourceTransferFlow,
                             TSProximityTargetTransferFlow,
                             TSProximityWaitingViewController, TSQRCodeScanFlow,
-                            TSRemotePlanSignUpFlow, TSRemotePlanWebsheetContext,
-                            TSRemoteUIStyle, TSSIMSetupFlow,
-                            TSSIMSetupPublicApiInstallFlow,
+                            TSRecommendedCarrierAppsFlow, TSRemotePlanSignUpFlow,
+                            TSRemotePlanWebsheetContext, TSRemoteUIStyle,
+                            TSSIMSetupFlow, TSSIMSetupPublicApiInstallFlow,
                             TSSecureIntentGestureViewController,
                             TSSetupAssistantSIMSetupFlow,
                             TSSinglePlanTransferViewController,
                             TSSpinnerNavigationBarItem, TSSubFlowViewController,
                             TSTransferCloudFlow, TSTransferCloudFlowModel,
-                            TSTransferConfirmationOnSourceViewController,
                             TSTransferFlow, TSTransferFlowModel,
                             TSTransferListViewController, TSTransferQRCodeFlow,
                             TSTransferQRCodeViewController,

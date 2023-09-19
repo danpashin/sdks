@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreAnalytics.framework/CoreAnalytics
@@ -7,8 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _AnalyticsIsEventUsed, _AnalyticsRolloverEvents,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _AnalyticsDisableAllTransformSampling,
+                            _AnalyticsIsEventUsed,
+                            _AnalyticsReenableAllTransformSampling,
+                            _AnalyticsRolloverEvents,
                             _AnalyticsRolloverWithOptions, _AnalyticsSendEvent,
                             _AnalyticsSendEventLazy,
                             _AnalyticsSendEventLazyHighPriority,
@@ -25,7 +28,7 @@ exports:
                             __Z26analytics_tool_config_infov,
                             __Z26analytics_tool_config_listv,
                             __Z26analytics_tool_query_clearNSt3__18optionalINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEE,
-                            __Z26analytics_tool_query_stateNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN10applesauce3xpc6objectES5_,
+                            __Z26analytics_tool_query_stateNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEN10applesauce3xpc6objectE,
                             __Z28analytics_tool_config_reloadv,
                             __Z29analytics_tool_app_usage_syncv,
                             __Z29analytics_tool_get_cache_listv,
@@ -74,7 +77,10 @@ exports:
                             __ZTSN13CoreAnalytics21ConfigurationObserverE,
                             __ZTVN13CoreAnalytics13EventObserverE,
                             __ZTVN13CoreAnalytics21ConfigurationObserverE,
-                            _ad_addScalarForKey, _analytics_is_event_used,
+                            _ad_addScalarForKey,
+                            _analytics_disable_all_transform_sampling,
+                            _analytics_is_event_used,
+                            _analytics_reenable_all_transform_sampling,
                             _analytics_rollover_events,
                             _analytics_rollover_with_options,
                             _analytics_send_event, _analytics_send_event_lazy,

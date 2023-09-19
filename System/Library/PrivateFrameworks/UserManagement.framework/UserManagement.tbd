@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _UMCurrentSyncBubbleSessionID,
                             _UMErrorPasscodeBackOffInterval,
                             _UMForegroundUserSessionID,
@@ -32,6 +32,7 @@ exports:
                             _kUMEducationNumberOfUsersKey,
                             _kUMEducationUserSizeKey,
                             _kUMForegroundUserChangedNotificationToken,
+                            _kUMForegroundUserWillChangeNotificationToken,
                             _kUMUserPersonaBundleIDsKey,
                             _kUMUserPersonaDisabledKey,
                             _kUMUserPersonaDisplayNameKey, _kUMUserPersonaIDKey,
@@ -44,7 +45,7 @@ exports:
                             _kUMUserSessionAPFSConvertedVolume,
                             _kUMUserSessionAPFSNativeVolume,
                             _kUMUserSessionAPNSIDKey,
-                            _kUMUserSessionAlternateUUIDKey,
+                            _kUMUserSessionAlternateDSIDKey,
                             _kUMUserSessionAuditorKey,
                             _kUMUserSessionCFHasSyncBagKey,
                             _kUMUserSessionCFNeedsMountKey,
@@ -65,6 +66,7 @@ exports:
                             _kUMUserSessionHFSPlusVolume,
                             _kUMUserSessionHasSyncBagKey,
                             _kUMUserSessionHomeDirKey, _kUMUserSessionIDKey,
+                            _kUMUserSessionKeybagOpaqueDataKey,
                             _kUMUserSessionLanguageKey,
                             _kUMUserSessionLastNameKey,
                             _kUMUserSessionLibinfoHomeDirKey,
@@ -73,6 +75,7 @@ exports:
                             _kUMUserSessionLogoutEndTimeKey,
                             _kUMUserSessionLogoutStartTimeKey,
                             _kUMUserSessionManagedDevice, _kUMUserSessionNameKey,
+                            _kUMUserSessionNeedsCryptoSetupKey,
                             _kUMUserSessionNeedsMountKey,
                             _kUMUserSessionOpaqueDataKey, _kUMUserSessionOther,
                             _kUMUserSessionPreviousLoggedinIDKey,

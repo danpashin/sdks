@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IDS.framework/IDS
@@ -7,7 +7,7 @@ current-version:       800
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation ]
     symbols:              [ _ACAccountForIDSAccount,
                             _IDSActivityMonitorErrorDomain,
@@ -86,9 +86,10 @@ exports:
                             _IDSDeletePairedDeviceWithCompletion,
                             _IDSDeletePairedDeviceWithCompletionBlock,
                             _IDSDropAllMessagesWithoutAnyAllowedTrafficClassifier,
-                            _IDSErrorDomain, _IDSFZIDTypeFromIDSIDType,
-                            _IDSGameCenterModify, _IDSGameCenterSignIn,
-                            _IDSGameCenterSignOut,
+                            _IDSErrorDomain,
+                            _IDSEstimateAdditionalOverheadForDatagramOptions,
+                            _IDSFZIDTypeFromIDSIDType, _IDSGameCenterModify,
+                            _IDSGameCenterSignIn, _IDSGameCenterSignOut,
                             _IDSGetAdminAccessTokensWithCompletionBlock,
                             _IDSGetAllowedTrafficClassifiersForDevice,
                             _IDSGetConsentTokensWithCompletionBlock,
@@ -141,6 +142,8 @@ exports:
                             _IDSLocalSetupStop, _IDSLocalSetupUnpair,
                             _IDSLocalSetupUnpairStart, _IDSLog,
                             _IDSOSVersionCompare, _IDSOSVersionFromString,
+                            _IDSPeerIDManagerErrorDomain,
+                            _IDSPeerIDManagerFromIdentityUserInfoKey,
                             _IDSPhoneCertificateVendorErrorDomain,
                             _IDSPhoneSubscriptionSelectorErrorDomain,
                             _IDSReRegister,
@@ -159,14 +162,14 @@ exports:
                             _IDSSendMessageOptionActivityContinuationKey,
                             _IDSSendMessageOptionAllowCloudDeliveryKey,
                             _IDSSendMessageOptionAlternateCallbackIdentifierKey,
+                            _IDSSendMessageOptionAlwaysIncludeSelfKey,
                             _IDSSendMessageOptionAlwaysSkipSelfKey,
                             _IDSSendMessageOptionBypassDuetKey,
                             _IDSSendMessageOptionCommandKey,
                             _IDSSendMessageOptionCompressPayloadKey,
                             _IDSSendMessageOptionDataToEncryptKey,
-                            _IDSSendMessageOptionDeliveryMinimumTimeKey,
+                            _IDSSendMessageOptionDeliveryMinimumTimeDelayKey,
                             _IDSSendMessageOptionDeliveryStatusContextKey,
-                            _IDSSendMessageOptionDeliveryTimeKey,
                             _IDSSendMessageOptionDirectMessaging,
                             _IDSSendMessageOptionDisableAliasValidationKey,
                             _IDSSendMessageOptionDropMessageIndicatorKey,
@@ -218,9 +221,9 @@ exports:
                             _IDSServiceAvailabilityDidChangeNotification,
                             _IDSServiceAvailabilityServiceTypeKey,
                             _IDSServiceCalculatedPseudonymChanges,
+                            _IDSServiceNameAirDropWalkAway,
                             _IDSServiceNameCalling, _IDSServiceNameFaceTime,
-                            _IDSServiceNameFaceTimeMulti,
-                            _IDSServiceNameFaceTimeMultiway, _IDSServiceNameMaps,
+                            _IDSServiceNameFaceTimeMulti, _IDSServiceNameMaps,
                             _IDSServiceNameMultiplex1,
                             _IDSServiceNamePhotoStream,
                             _IDSServiceNameQuickRelayFaceTime,
@@ -237,7 +240,9 @@ exports:
                             _IDSSubscriptionSlotFromCTSIMSlot,
                             _IDSTransactionLogErrorDomain,
                             _IDSTriggerFinalDeregister, _IDSTypeForID,
-                            _IDSUpdateUser, _IDSWarn, _IDSXPCConnectionErrorDomain,
+                            _IDSUpdateUser, _IDSWarn,
+                            _IDSWorstCaseOverheadForDatagramOptions,
+                            _IDSXPCConnectionErrorDomain,
                             _IDSXPCDaemonControllerDefaultTimeout,
                             _IDSXPCDaemonMachServiceName, _IDSiCloudModify,
                             _IDSiCloudSignIn, _IDSiCloudSignInHack,
@@ -250,7 +255,8 @@ exports:
                             IDSBatchIDQueryController, IDSCarrierToken,
                             IDSCarrierTokenRequestParameters, IDSConnection,
                             IDSContinuity, IDSDaemonController, IDSDaemonListener,
-                            IDSDataChannelLinkContext, IDSDatagramChannel,
+                            IDSDataChannelLinkContext,
+                            IDSDataChannelsDirectConnections, IDSDatagramChannel,
                             IDSDevice, IDSDeviceConnection,
                             IDSDictionaryInvitationContext, IDSFamilyService,
                             IDSFirewall, IDSFirewallEntry, IDSGroupSession,
@@ -297,7 +303,9 @@ exports:
                             IDSXPCPairingInterface, IDSXPCRegistrationInterface,
                             IDSXPCReunionSyncInterface,
                             IDSXPCServerMessagingInterface,
-                            _IDSActivityMonitorXPCConnector, _IDSPasswordManager,
+                            _IDSActivityMonitorXPCConnector,
+                            _IDSDataChannelLinkConnection,
+                            _IDSDataChannelLinkConnections, _IDSPasswordManager,
                             _IDSXPCCheckinManager ]
     objc-ivars:           [ IDSDaemonListener._accountToActiveDeviceUniqueID,
                             IDSDaemonListener._accountToDevices,
@@ -308,6 +316,7 @@ exports:
                             IDSDaemonListener._hidingDisconnect,
                             IDSDaemonListener._internalQueueController,
                             IDSDaemonListener._ivarQueue,
+                            IDSDaemonListener._latestPrivateLoggingSalt,
                             IDSDaemonListener._postedSetupComplete,
                             IDSDaemonListener._protocol,
                             IDSDaemonListener._serviceToActiveDeviceUniqueID,
@@ -324,8 +333,8 @@ exports:
                             IDSDataChannelLinkContext._internal,
                             IDSDatagramChannel._internal,
                             IDSDatagramChannel._statsTimer,
-                            IDSInvitation._context, IDSInvitation._senderMergeID,
-                            IDSInvitation._state,
+                            IDSInvitation._context, IDSInvitation._selfHandle,
+                            IDSInvitation._senderMergeID, IDSInvitation._state,
                             IDSPairedDeviceManager._allowedTrafficClassifiers,
                             IDSPairedDeviceManager._deleteCompletion,
                             IDSPairedDeviceManager._deliveryStatsCompletion,

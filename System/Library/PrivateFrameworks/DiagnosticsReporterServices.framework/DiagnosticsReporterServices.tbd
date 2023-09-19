@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticsReporterServices.framework/DiagnosticsReporterServices
@@ -7,8 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _$s10Foundation3URLV27DiagnosticsReporterServicesE20setExtendedAttribute4name5valueySS_AA4DataVtKF,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _$s10Foundation3URLV27DiagnosticsReporterServicesE17extendedAttributeySSSgSSF,
+                            _$s10Foundation3URLV27DiagnosticsReporterServicesE20setExtendedAttribute4name5valueySS_AA4DataVtKF,
                             _$s10Foundation3URLV27DiagnosticsReporterServicesE22ExtendedAttributeErrorO6failedyAFSi_tcAFmFWC,
                             _$s10Foundation3URLV27DiagnosticsReporterServicesE22ExtendedAttributeErrorOMa,
                             _$s10Foundation3URLV27DiagnosticsReporterServicesE22ExtendedAttributeErrorOMn,

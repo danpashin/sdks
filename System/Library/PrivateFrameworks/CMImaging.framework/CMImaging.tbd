@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CMImaging.framework/CMImaging
@@ -7,9 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/CMCaptureCore.framework/CMCaptureCore ]
-    symbols:              [ _CopyPixelBuffer, _Create420PixelBufferFromPGMFiles,
+    symbols:              [ _CMILSCOISAdaptation_convertV2LSCTableToV1LSCTable,
+                            _CMILSCOISAdaptation_convertV2LSCTableToV1LSCTableWithOISOffset,
+                            _CopyPixelBuffer, _Create420PixelBufferFromPGMFiles,
                             _CreatePixelBuffer, _CreatePixelBufferExtended,
                             _CreatePixelBufferExtendedFromFile,
                             _CreatePixelBufferFromCFData,
@@ -20,6 +22,7 @@ exports:
                             _CreateSampleBuffer,
                             _DeriveImageWidthHeightFromFilesize,
                             _DerivePixelFormatTypeFromFilename, _FigMetalDecRef,
+                            _FigMetalDetachFromAllocator, _FigMetalGetRefCount,
                             _FigMetalIncRef, _FigMetalIsValid,
                             _FillPixelBufferWithRandomData,
                             _GetPixelBlockSizeInBytes, _GuessWidth,
@@ -27,11 +30,67 @@ exports:
                             _Write420PixelBufferChannelToPGMFile,
                             _WriteFloat16PixelBufferChannelToPGMFile,
                             _WriteOneComponent8PixelBufferToPGMFile,
-                            _WritePixelBufferToFile ]
-    objc-classes:         [ CMIBareMetalTexture, CMIDistortionModel,
+                            _WritePixelBufferToFile, _bfpn_apply_weights,
+                            _bfpn_bias_fitting_calculate,
+                            _bfpn_bias_fitting_update_stats,
+                            _bfpn_bilateral_weights,
+                            _bfpn_calc_deinterleaved_residual,
+                            _bfpn_calc_window_shading_score,
+                            _bfpn_calculate_hf_filtered,
+                            _bfpn_calculate_hf_stats, _bfpn_calculate_lf_stats,
+                            _bfpn_channel_mean, _bfpn_clear_clipped_pixels,
+                            _bfpn_convert_uint8_to_float,
+                            _bfpn_correction_create_dict_from_metadata,
+                            _bfpn_create_correction_model_from_fdr,
+                            _bfpn_deinterleave_bayer, _bfpn_downsample2x,
+                            _bfpn_generate_hfmodel, _bfpn_generate_lfmodel,
+                            _bfpn_normalize, _bfpn_quadra_to_bayer_binning,
+                            _bfpn_sampler_fetchRow, _bfpn_sampler_free,
+                            _bfpn_sampler_init, _bfpn_spatial_mean,
+                            _bfpn_spatial_median,
+                            _bfpn_spatial_minimum_and_maximum,
+                            _bfpn_subtract_bias_shading,
+                            _bfpn_temporal_mean_and_variance,
+                            _bfpn_temporal_robust_mean_and_variance,
+                            _bfpn_update_clipping_mask,
+                            _bfpn_update_running_stats, _bfpn_upsample2x,
+                            _bfpn_upsample2x_and_combine,
+                            _bfpn_upsample2x_and_interleave,
+                            _dataTypeForPixelFormat, _determineFirstPixel,
+                            _determineFirstPixelForCVPixelFormat,
+                            _determineFirstPixelForVersatileCVPixelBuffer,
+                            _determineMTLPixelFormatsForCVPixelFormat, _isQuadra,
+                            _isVersatilePixelFormat,
+                            _offsetForPixelComponentWithFirstPixel,
+                            _packHomographyToNSArray,
+                            _unpackHomographyFromNSArray ]
+    objc-classes:         [ CMIBareMetalTexture,
+                            CMIBlackLevelShadingCorrectionThumbnails,
+                            CMIDeferredObject, CMIDistortionModel,
                             CMIExternalMemoryConfiguration,
                             CMIExternalMemoryDescriptor,
-                            CMIExternalMemoryResource, CMISharpnessScore,
+                            CMIExternalMemoryResource, CMIGuidedFilter,
+                            CMIModuleCalibration, CMINoiseModels,
+                            CMIRangeAllocator, CMIResourceMetalTexture,
+                            CMIResourceMetalTextureBiPlanarYUV,
+                            CMIResourceMetalTextureDescriptor,
+                            CMIShadingFPNCorrectionImage, CMISharpnessScore,
+                            CMISharpnessScoreResult, CMIStatistics,
+                            CMIStatisticsResult, CMIStyleEngineApplyStyle,
+                            CMIStyleEngineConfiguration,
+                            CMIStyleEngineCreateLinearSystem,
+                            CMIStyleEngineCreateSpotlights,
+                            CMIStyleEngineCreateWeightPlanes,
+                            CMIStyleEngineIntegrateCoefficients,
+                            CMIStyleEngineProcessor,
+                            CMIStyleEngineProcessorUtilities,
+                            CMIStyleEngineSolveLinearSystem,
+                            CMIStyleEngineSolveLinearSystemAccelerate,
+                            CMIStyleEngineSolveLinearSystemMPS,
+                            CMITiledInferenceProcessor,
+                            CMITiledInferenceProcessorConfig,
+                            CMITiledInferenceProcessorNetworkConfig,
+                            CMITiledInferenceProcessorTilePipelineStage,
                             CMIVNRPrepareDescriptor, CMIVNRProcessor, CMIWarpStage,
                             CMImagingShaderPrecompilation, FigM2MController,
                             FigMetalAllocator, FigMetalAllocatorBackend,
@@ -41,5 +100,6 @@ exports:
                             FigMetalExecutionStatus, FigMetalTextureDescriptor,
                             FigRegToolboxGPU, FigRegWarpPPGPU,
                             FigRegWarpPPGPUShared, GDCTransform, RegWarpPP,
-                            STFIBPProvider, VISProvider ]
+                            SSCHistogram, SSCHistogramResult, STFIBPProvider,
+                            VISProvider ]
 ...

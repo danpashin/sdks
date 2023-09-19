@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TypistFramework.framework/TypistFramework
@@ -7,13 +7,15 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _TYLog, _TYLogFramework, _TYLoggingSubsystem, _TYLogl,
+                            _TYMakeArabicCharacter,
                             _TypistFrameworkVersionNumber,
                             _TypistFrameworkVersionString, __TYLogl, __choose,
                             _assertion ]
-    objc-classes:         [ TYLogger, TYRecapCommand, TYUsagePairs,
-                            TypistCandidateBar, TypistCandidateBarFavonious,
+    objc-classes:         [ TYLogger, TYRecapCommand, TYTextDirectionAnnotation,
+                            TYUsagePairs, TypistArabicSyllable, TypistCandidateBar,
+                            TypistCandidateBarFavonious,
                             TypistCandidateBarMecabra, TypistHWKeyboard,
                             TypistHWKeyboard_Deprecated, TypistKeyboard,
                             TypistKeyboardAmharic, TypistKeyboardBurmese,

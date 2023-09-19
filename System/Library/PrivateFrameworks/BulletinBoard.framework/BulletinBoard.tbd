@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BBActionToTitleMapBlock, _BBAllowPublication,
                             _BBAllowedClasses,
                             _BBAnnounceSettingForSpokenNotificationSetting,
@@ -51,33 +51,33 @@ exports:
                             _BBLogBehavior, _BBLogBulletinDelivery,
                             _BBLogBulletinLife, _BBLogConnection,
                             _BBLogDataProvider, _BBLogExpiration, _BBLogGateway,
-                            _BBLogGeneral, _BBLogMigration, _BBLogSectionUpdates,
-                            _BBLogSettings, _BBLogSubsystem, _BBLogSync,
-                            _BBNoteMigrationComplete, _BBObserverConnectionName,
-                            _BBObserverEntitlement, _BBObserverFeedStrings,
-                            _BBObserverGatewayLocalName,
+                            _BBLogGeneral, _BBLogMigration, _BBLogPersistence,
+                            _BBLogSectionUpdates, _BBLogSettings, _BBLogSubsystem,
+                            _BBLogSync, _BBNoteMigrationComplete,
+                            _BBObserverConnectionName, _BBObserverEntitlement,
+                            _BBObserverFeedStrings, _BBObserverGatewayLocalName,
                             _BBPowerLogBulletinBoardPublishEvent,
                             _BBPreferencesDomain, _BBPrepareQueueForSafeSync,
                             _BBPublisherDestinationForObserverFeed,
                             _BBPublisherDestinationStrings,
-                            _BBPushSettingsDescription,
+                            _BBPushSettingsDescription, _BBRefactorEnabled,
                             _BBRegisterBulletinBoardLogging,
                             _BBRemoveSavedChronologicalSectionInfo,
                             _BBSavedChronologicalSectionOrder,
-                            _BBSavedSectionInfo, _BBSectionInfoVersionNumber,
+                            _BBSavedSectionInfo, _BBSectionInfoKey,
+                            _BBSectionInfoVersionNumber,
+                            _BBSectionInfoVersionNumberKey,
                             _BBServerAllowsPublication,
                             _BBServerConduitConnectionName,
                             _BBServerConduitEntitlement,
                             _BBServerListeningForConnections,
                             _BBServerListeningForConnectionsKey, _BBServerRun,
-                            _BBServerSectionCategoryChronologicalKey,
-                            _BBServerSectionCategoryDefaultKey,
                             _BBServerSetAllowsPublication,
                             _BBServerSetDefaultExpirationComponents,
                             _BBSettingsConnectionName, _BBSettingsEntitlement,
+                            _BBSettingsPersistenceConnectionName,
                             _BBShouldAlwaysSpeakLockScreenNotifications,
                             _BBShouldPerformMigration,
-                            _BBShouldSyncUseUrgentPriority,
                             _BBSpokenNotificationSettingForAnnounceSetting,
                             _BBStringFromBBAnnounceCarPlaySetting,
                             _BBStringFromBBAnnounceSetting,
@@ -137,15 +137,20 @@ exports:
                             BBObserverGatewayEnumerator, BBObserverGatewayHolder,
                             BBObserverServerProxy,
                             BBParentSectionDataProviderFactory,
+                            BBPersistentStore, BBPersistentStoreMigrator,
                             BBRemoteDataProvider, BBRemoteDataProviderConnection,
                             BBRemoteDataProviderConnectionResolver, BBResponse,
                             BBSectionAuthorizationManager, BBSectionIcon,
                             BBSectionIconVariant, BBSectionInfo,
-                            BBSectionInfoSettings, BBSectionMuteAssertion,
-                            BBSectionParameters, BBSectionSubtypeParameters,
-                            BBServer, BBServerConduit, BBSettingsGateway, BBSound,
-                            BBSyncDelayedDismissal, BBSyncService,
-                            BBThreadsMuteAssertion, BBThumbnailSizeConstraints ]
+                            BBSectionInfoSettings, BBSectionInfoStore,
+                            BBSectionMuteAssertion, BBSectionParameters,
+                            BBSectionSubtypeParameters, BBServer, BBServerConduit,
+                            BBSettingsGateway,
+                            BBSettingsRemotePersistenceService, BBSound,
+                            BBSyncService, BBSyncServiceXPC,
+                            BBThreadsMuteAssertion, BBThumbnailSizeConstraints,
+                            BBXPCPersistentStore, BBXPCSectionInfoStore,
+                            BBXPCSyncService ]
     objc-ivars:           [ BBAttachmentMetadata._URL,
                             BBAttachmentMetadata._hiddenFromDefaultExpandedView,
                             BBAttachmentMetadata._identifier,
@@ -154,6 +159,7 @@ exports:
                             BBAttachmentMetadata._type,
                             BBAttachmentMetadata._uniformType,
                             BBCommunicationContext._associatedObjectUri,
+                            BBCommunicationContext._businessCorrespondence,
                             BBCommunicationContext._capabilities,
                             BBCommunicationContext._contentURL,
                             BBCommunicationContext._displayName,

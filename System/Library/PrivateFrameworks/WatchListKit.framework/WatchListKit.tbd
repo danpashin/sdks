@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _WLKAPIVersion, _WLKAPIVersionOverride,
                             _WLKAccountMonitorAccountDidChange,
                             _WLKAccountMontiorStoreFrontDidChange,
@@ -51,6 +51,7 @@ exports:
                             _WLKChannelDetailsKeyRateLimitRateKey,
                             _WLKChannelUtilitiesChannelIDiTunes,
                             _WLKChannelsRequestOperationEndpoint,
+                            _WLKCheckAuthentication,
                             _WLKConfigurationDidChangeNotification,
                             _WLKConfigurationStorageKeyActiveUser,
                             _WLKConfigurationStorageKeyRRKVP,
@@ -100,6 +101,11 @@ exports:
                             _WLKMovieClipAssetFlavorVideoHD720p,
                             _WLKMovieClipAssetFlavorVideoSD,
                             _WLKMovieClipAssetFlavorVideoSD480p,
+                            _WLKMySportsCacheFavoritesKey,
+                            _WLKMySportsCacheFavoritesLastModifiedDateKey,
+                            _WLKMySportsCacheOnboardingStatusKey,
+                            _WLKMySportsCacheOnboardingStatusLastModifiedDateKey,
+                            _WLKNetworkRequestOptionsBypassTVGDPRForFavoritesForNews,
                             _WLKNetworkRequestOptionsUseSharedCache,
                             _WLKNetworkSignpostLogObject,
                             _WLKNetworkingLogObject, _WLKNewsAppBundleID,
@@ -156,6 +162,7 @@ exports:
                             _WLKRestrictionsDidChangeNotification,
                             _WLKRestrictionsMaximumEffectiveMovieRanking,
                             _WLKRestrictionsMaximumEffectiveTVShowRanking,
+                            _WLKRetryOnBackgroundTimeOutJSOverride,
                             _WLKSearchWatchListRequestContentTypeEpisode,
                             _WLKSearchWatchListRequestContentTypeMovie,
                             _WLKSearchWatchListRequestContentTypeSeason,
@@ -177,7 +184,6 @@ exports:
                             _WLKServerConfigurationResponseKeyPlayActivityURL,
                             _WLKServerConfigurationResponseKeyRequiredKVPDefault,
                             _WLKServerConfigurationResponseKeyRequiredKVPURL,
-                            _WLKServerConfigurationResponseKeyRequiredKVPWithoutUTSK,
                             _WLKServerConfigurationResponseKeyRequiredKeyValuePairs,
                             _WLKServerConfigurationResponseKeyRequiredParamsType,
                             _WLKServerConfigurationResponseKeyRequiredRequestKVPMap,
@@ -223,7 +229,11 @@ exports:
                             _WLKSportsFavoriteSyncCompletionNotification,
                             _WLKSportsFavoriteSyncCompletionNotificationErrorKey,
                             _WLKSportsFavoriteSyncCompletionNotificationFavoritesKey,
+                            _WLKSportsFavoriteSyncCompletionNotificationLastModifiedDateKey,
                             _WLKSportsFavoriteSyncSettingChangedNotification,
+                            _WLKSportsFavoriteSyncSettingChangedNotificationErrorKey,
+                            _WLKSportsFavoriteSyncSettingChangedNotificationLastModifiedDateKey,
+                            _WLKSportsFavoriteSyncSettingChangedNotificationOnboardingStatusKey,
                             _WLKSportsFavoritesNewsAppCallerID,
                             _WLKStartupSignpostLogObject,
                             _WLKStoreOfferPeriodTypeDay,
@@ -244,9 +254,10 @@ exports:
                             _WLKSubscriptionStoreSubscriptionDataDidChange,
                             _WLKSubscriptionSyncLogObject, _WLKSystemLogObject,
                             _WLKTVAppBundleID, _WLKTVAppEnabledOverride,
-                            _WLKTVDomain, _WLKViewServiceAccountNameKey,
+                            _WLKTVAppGroupSharedContainer, _WLKTVDomain,
+                            _WLKViewServiceAccountNameKey,
                             _WLKViewServiceAppBundlesKey,
-                            _WLKXPCSafeErrorFromError,
+                            _WLKXPCSafeErrorFromError, _WLKshouldRetryError,
                             _WatchListKitVersionNumber,
                             _WatchListKitVersionString,
                             __CoderKeyBackingDictionary, __DeltaKeyChanges,
@@ -258,14 +269,8 @@ exports:
                             __WLKChannelUtilitesDataShouldRefreshInternal,
                             __WLKOfferPeriodKeyDuration, __WLKOfferPeriodKeyType,
                             __WLKSmootEntitlementKey,
-                            __WLKSportsFavoriteCacheLastModifiedKey,
                             __WLKSportsFavoriteCacheSyncNotification,
-                            __WLKSportsFavoriteCacheSyncingAvailableOverrideKey,
-                            __WLKSportsFavoriteCacheSyncingEnabledKey,
-                            __WLKSportsFavoriteCacheSyncingEnabledLastModifiedKey,
-                            __WLKSportsFavoriteCacheSyncingEnabledOverrideKey,
                             __WLKSportsFavoriteOptInStatusChangedNotification,
-                            __WLKSportsFavoritesCacheKey,
                             __WLKSubscriptionStoreSubscriptionDataDidChangeInternal,
                             __WLKSupportsTVInfoPlistKey,
                             __WLKSystemSubscriptionPID,
@@ -322,7 +327,7 @@ exports:
                             WLKBasicEpisodeMetadata, WLKBasicMovieMetadata,
                             WLKBasicSeasonMetadata, WLKBasicShowMetadata,
                             WLKBasicSportingEventMetadata, WLKBrowseItem, WLKCache,
-                            WLKCanonicalContainerRequest,
+                            WLKCachedBagManager, WLKCanonicalContainerRequest,
                             WLKCanonicalContainerRequestOperation,
                             WLKCanonicalContainerResponse,
                             WLKCanonicalPlayablesRequest,

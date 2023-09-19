@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WiFiPeerToPeer.framework/WiFiPeerToPeer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AWDLTrafficRegistrationServiceAVConference,
                             _AWDLTrafficRegistrationServiceActiveWiFiCall,
                             _AWDLTrafficRegistrationServiceAirDrop,
@@ -21,6 +21,7 @@ exports:
                             _AWDLTrafficRegistrationServiceCarPlay,
                             _AWDLTrafficRegistrationServiceCentralizedAirTimeSchedulerPolicy,
                             _AWDLTrafficRegistrationServiceDeviceToDeviceMigration,
+                            _AWDLTrafficRegistrationServiceEdgeKit,
                             _AWDLTrafficRegistrationServiceEnsemble,
                             _AWDLTrafficRegistrationServiceFaceTime,
                             _AWDLTrafficRegistrationServiceMPRemoteCamera,
@@ -29,6 +30,7 @@ exports:
                             _AWDLTrafficRegistrationServiceRealTimeMode,
                             _AWDLTrafficRegistrationServiceRemoteCamera,
                             _AWDLTrafficRegistrationServiceSidecar,
+                            _AWDLTrafficRegistrationServiceTVRemoteCamera,
                             _AWDLTrafficRegistrationServiceTimeSync,
                             _AWDLTrafficRegistrationServiceTimesync,
                             _AWDLTrafficRegistrationServiceUniversalControl,

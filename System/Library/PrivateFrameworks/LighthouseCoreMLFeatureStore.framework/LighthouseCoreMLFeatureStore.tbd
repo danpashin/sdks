@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LighthouseCoreMLFeatureStore.framework/LighthouseCoreMLFeatureStore
@@ -7,21 +7,38 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _LCFLogContextBiomeManager,
+                            _LCFLogDatabaseColumnConnection,
                             _LCFLogDatabaseConnection, _LCFLogFeatureStore,
                             _LCFLoggingUtilsInit,
                             _LRRLoggingCategoryBiomeManager,
+                            _LRRLoggingCategoryDatabaseColumnConnection,
                             _LRRLoggingCategoryDatabaseConnection,
                             _LRRLoggingCategoryFeatureStore,
                             _LRRLoggingSubsystem,
                             _LighthouseCoreMLFeatureStoreVersionNumber,
                             _LighthouseCoreMLFeatureStoreVersionString,
-                            _doubleSort, _kFeatureVersion, _kItemIdentifier,
-                            _kTimestamp, _onceTokenBiomeSource ]
+                            _doubleSort, _kFeatureName_configurationInfo,
+                            _kFeatureName_isPositiveLabeled,
+                            _kFeatureName_labelingEvidence,
+                            _kFeatureName_labelingPolicyVersion,
+                            _kFeatureName_sharingEventUID, _kFeatureVersion,
+                            _kItemIdentifier, _kTimestamp, _onceTokenBiomeSource ]
     objc-classes:         [ LCFBiomeManager, LCFCoreMLBatchProvider,
                             LCFCoreMLFeatureProvider,
                             LCFCoreMLFeatureProviderUtils, LCFDatabaseColumn,
-                            LCFDatabaseConnection, LCFFeatureConverter,
-                            LCFFeatureSet, LCFFeatureStore, LCFFeatureValue ]
+                            LCFDatabaseColumnConnection, LCFDatabaseConnection,
+                            LCFELBatchProviderInfo,
+                            LCFELChangePointDetectionEvent,
+                            LCFELChangepointDetectionAnalysisResult,
+                            LCFELCoreAnalyticsHandler, LCFELEventLogging,
+                            LCFELFeatureImportanceAnalysisResult,
+                            LCFELFeatureImportanceEvent,
+                            LCFELFeatureValueStatistic, LCFELModelTrainingEvent,
+                            LCFELShadowEvaluationEvent,
+                            LCFELShadowEvaluationPrediction, LCFFeatureConverter,
+                            LCFFeatureSet, LCFFeatureStore,
+                            LCFFeatureStoreContextId, LCFFeatureValue,
+                            LCFFetureValueNameType ]
 ...

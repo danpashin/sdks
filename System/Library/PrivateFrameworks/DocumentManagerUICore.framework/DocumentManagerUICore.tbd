@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerUICore.framework/DocumentManagerUICore
-current-version:       280.5.15
+current-version:       305.1.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DOCConstraintWithPriority,
                             _DOCConstraintsToResizeViewsWithSuperview,
                             _DOCConstraintsToResizeWithReferenceView,
@@ -22,27 +22,20 @@ exports:
                             _DOCIntentLocationTypeRecents,
                             _DOCIntentLocationTypeShared,
                             _DOCIntentLocationTypeTag,
-                            _DOCNewThumbnailFittingImageView,
-                            _DOCShareInfoThumbnailForFPItem,
-                            _DOCShareInfoThumbnailSizeForSizeClass,
-                            _DOCSkipConstraint,
+                            _DOCNewThumbnailFittingImageView, _DOCSkipConstraint,
                             _DocumentManagerUICoreVersionNumber,
-                            _DocumentManagerUICoreVersionString,
-                            _createICQBannerView,
-                            _shouldShowICQBannerViewForOffer ]
+                            _DocumentManagerUICoreVersionString ]
     objc-classes:         [ DOCBorderedFittingImageView, DOCDateFormatter,
                             DOCDateParser, DOCDeprecatedUIMenuController,
-                            DOCDeterminateProgressRingView,
-                            DOCDownloadProgressView,
-                            DOCFileProviderDomainMonitor, DOCFittingImageView,
-                            DOCGhostRingView, DOCICloudQuotaInAppAction,
+                            DOCFittingImageView,
+                            DOCFixedRadiusRoundedRectShapeProvider,
+                            DOCICloudQuotaInAppAction,
                             DOCICloudQuotaInAppMessage,
                             DOCICloudQuotaInAppMessaging, DOCIconPromise,
-                            DOCIconThumbnailRequest,
-                            DOCIndeterminateProgressRingView, DOCIntentLocation,
+                            DOCIconThumbnailRequest, DOCIntentLocation,
                             DOCIntentLocationResolutionResult,
-                            DOCItemActionResolver, DOCItemDecorationImageLoader,
-                            DOCLabel, DOCNodeThumbnail, DOCNodeThumbnailBatchEntry,
+                            DOCItemDecorationImageLoader, DOCLabel,
+                            DOCNodeThumbnail, DOCNodeThumbnailBatchEntry,
                             DOCOpenLocationIntent, DOCOpenLocationIntentResponse,
                             DOCPlainFolderThumbnailRequest,
                             DOCRegularNodeThumbnailRequest, DOCSeparatorView,
@@ -52,5 +45,5 @@ exports:
                             DOCThumbnailDescriptor, DOCThumbnailFittingImageView,
                             DOCThumbnailFolderIcon, DOCThumbnailGenerator,
                             DOCThumbnailKey, DOCThumbnailRequest,
-                            DOCVisualEffectLabel ]
+                            DOCVolumeThumbnailRequest ]
 ...

@@ -1,18 +1,25 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraEditKit.framework/CameraEditKit
-current-version:       3942.0.150
+current-version:       4002.113.5
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CEKClamp, _CEKDiscreteSliderContentTopInset,
                             _CEKDisplayStringForSemanticStyleMakerPreset,
                             _CEKEdgeInsetsEqualToInsets,
                             _CEKExpandNormalizedPoint, _CEKExpandNormalizedRect,
-                            _CEKExpandNormalizedSize, _CEKFontOfSizeAndStyle,
+                            _CEKExpandNormalizedSize,
+                            _CEKExpandingSliderExpansionDuration,
+                            _CEKExpandingSliderMainTickHeight,
+                            _CEKExpandingSliderMainTickStride,
+                            _CEKExpandingSliderNumberOfTicks,
+                            _CEKExpandingSliderSecondaryTickHeight,
+                            _CEKExpandingSliderTickSpacing,
+                            _CEKExpandingSliderTickWidth, _CEKFontOfSizeAndStyle,
                             _CEKFontOfSizeWeightStyle, _CEKFrameworkBundle,
                             _CEKHapticsAllowed, _CEKInterpolate,
                             _CEKInterpolateClamped,
@@ -25,25 +32,27 @@ exports:
                             _CEKNormalizePoint, _CEKNormalizeRect,
                             _CEKNormalizeSize, _CEKPixelWidthForView,
                             _CEKPortraitOrientedSize, _CEKProgress,
-                            _CEKProgressClamped, _CEKRectWithSize,
-                            _CEKScrollableDistanceInScrollView, _CEKSizeAdd,
-                            _CEKSizeInvert, _CEKSizeSubtract,
-                            _CEKSliderHorizontalContentPadding,
+                            _CEKProgressClamped, _CEKRectInsetsInRect,
+                            _CEKRectWithSize, _CEKScrollableDistanceInScrollView,
+                            _CEKSizeAdd, _CEKSizeCeilToScale, _CEKSizeInvert,
+                            _CEKSizeMax, _CEKSizeMin, _CEKSizeScale,
+                            _CEKSizeSubtract, _CEKSliderHorizontalContentPadding,
                             _CEKSliderLabelHeight, _CEKSliderLabelPadding,
                             _CEKSliderMarkedValueNone, _CEKSliderValueLabelWidth,
                             _CEKSliderVerticalContentPadding,
-                            _CameraEditKitVersionNumber,
-                            _CameraEditKitVersionString,
                             _CubeColorCreateInterpolated,
                             _CubeGradientCreateCopyWithAlpha,
                             _CubeGradientCreateInterpolated,
-                            __CEKSFCameraFontOfSizeAndWeight,
-                            __CEKSFCameraFontURLForWeight ]
-    objc-classes:         [ CEKAnimationGenerator,
+                            __CEKSFCameraFontNameForWeight,
+                            __CEKSFCameraFontOfSizeAndWeight ]
+    objc-classes:         [ CAMAdditiveAnimation, CEKAdditiveAnimator,
+                            CEKAnimationGenerator,
                             CEKAnimationGeneratorAnimation, CEKApertureButton,
-                            CEKApertureSlider, CEKBadgeTextView, CEKBadgeView,
-                            CEKCinematicSubjectIndicatorView, CEKDiscreteSlider,
-                            CEKEdgeGradientView, CEKLightingControl,
+                            CEKApertureSlider, CEKApertureStops, CEKBadgeTextView,
+                            CEKBadgeView, CEKCinematicSubjectIndicatorView,
+                            CEKDiscreteSlider, CEKDisplayLinkTarget,
+                            CEKEdgeGradientView, CEKExpandingSlider,
+                            CEKExpandingTickMarksView, CEKLightingControl,
                             CEKLightingControlItem, CEKLightingCube,
                             CEKLightingCubeAppearance,
                             CEKLightingCubeMutableAppearance,

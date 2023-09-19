@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriVOX.framework/SiriVOX
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SVXActivationContextKey,
                             _SVXActivationSourceGetFromName,
                             _SVXActivationSourceGetIsValid,
@@ -41,13 +41,6 @@ exports:
                             _SVXDeactivationSourceKey, _SVXDeviceSetupContextKey,
                             _SVXDeviceSetupCreateOptionsArray,
                             _SVXDeviceSetupCreateSpeechSynthesisRequestForSceneWithID,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForSiriCapabilitiesScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForSiriIntroScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForSiriOutroScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForTryHeySiriCapabilitiesScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForTryHeySiriMusicScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForTryHeySiriNewsScene,
-                            _SVXDeviceSetupCreateSpeechSynthesisRequestForTryHeySiriWeatherScene,
                             _SVXDeviceSetupFlowDisplayKeyFrameIDGetFromName,
                             _SVXDeviceSetupFlowDisplayKeyFrameIDGetIsValid,
                             _SVXDeviceSetupFlowDisplayKeyFrameIDGetIsValidAndSpecified,
@@ -59,18 +52,10 @@ exports:
                             _SVXDeviceSetupFlowSceneIDGetIsValidAndSpecified,
                             _SVXDeviceSetupFlowSceneIDGetName,
                             _SVXDeviceSetupFlowSceneKey,
-                            _SVXDeviceSetupFlowSiriCapabilitiesHintKey,
-                            _SVXDeviceSetupFlowSiriCapabilitiesStyleGetFromName,
-                            _SVXDeviceSetupFlowSiriCapabilitiesStyleGetIsValid,
-                            _SVXDeviceSetupFlowSiriCapabilitiesStyleGetIsValidAndSpecified,
-                            _SVXDeviceSetupFlowSiriCapabilitiesStyleGetName,
-                            _SVXDeviceSetupGetLocalizationLanguageCodeOverride,
                             _SVXDeviceSetupOptionsKey,
                             _SVXLocalizationGetAllKeys,
                             _SVXLocalizationGetAllTables,
                             _SVXLocalizationGetKeysInTable,
-                            _SVXLocalizationGetLocalizedKey,
-                            _SVXLocalizationGetLocalizedOOBString,
                             _SVXLocalizationGetLocalizedString,
                             _SVXLocalizationKeyAudioPasscodeInstruction,
                             _SVXLocalizationKeyDeviceProblemNetwork0,
@@ -173,7 +158,6 @@ exports:
                             SVXDeviceSetupFlowDisplayKeyFrame,
                             SVXDeviceSetupFlowScene,
                             SVXDeviceSetupFlowSceneBuilder,
-                            SVXDeviceSetupFlowSiriCapabilitiesHint,
                             SVXDeviceSetupOptions, SVXMyriadDeviceManager,
                             SVXMyriadHostDevice, SVXMyriadWiFiAssertion,
                             SVXPlatformDependency, SVXQueuePerformer,
@@ -183,7 +167,6 @@ exports:
                             SVXSpeechSynthesisUtteranceInfo,
                             SVXSpeechSynthesisWordTiming, SVXStoreDemo,
                             SVXSystemEvent, SVXTaskContext,
-                            SVXUnderstandingOnDeviceAssetsStateObserver,
                             _SVXAddViewsExpressionParser,
                             _SVXRemoteExpressionParsingService ]
 ...

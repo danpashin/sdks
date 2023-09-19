@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MIME.framework/MIME
-current-version:       3731.255.231
+current-version:       3774.100.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _H_APPLEDOUBLE, _H_APPLEFILE, _H_ATTACHMENTS,
                             _H_AUTO_SUBMITTED, _H_CONTENT_BASE,
                             _H_CONTENT_DESCRIPTION, _H_CONTENT_DISPOSITION,
@@ -66,13 +66,13 @@ exports:
                             ___threadLockRelationsControl,
                             ___threadLockRelationsLock, __mfEnableLockTesting,
                             __mfLockEncounteredError ]
-    objc-classes:         [ MFArrayDiff, MFBase64Decoder, MFBase64Encoder,
+    objc-classes:         [ MFBase64Decoder, MFBase64Encoder,
                             MFBaseFilterDataConsumer, MFBlockDataConsumer,
                             MFBufferedDataConsumer, MFConditionLock,
                             MFCountingDataConsumer, MFData, MFDataHolder,
-                            MFDataMessageStore, MFDiagnostics, MFEmailSet,
-                            MFHTMLParser, MFLineEndingConverterFilter, MFLock,
-                            MFMessage, MFMessageBody, MFMessageDataContainer,
+                            MFDataMessageStore, MFDiagnostics, MFHTMLParser,
+                            MFLineEndingConverterFilter, MFLock, MFMessage,
+                            MFMessageBody, MFMessageDataContainer,
                             MFMessageFileWrapper, MFMessageHeaders, MFMessageStore,
                             MFMessageStoreObjectCache, MFMessageTextAttachment,
                             MFMimeBody, MFMimeCharset, MFMimePart,
@@ -84,11 +84,9 @@ exports:
                             MFProgressFilterDataConsumer,
                             MFQuotedPrintableDecoder, MFQuotedPrintableEncoder,
                             MFRangedDataFilter, MFRecursiveLock, MFStringTransform,
-                            MFTypeInfo, MFUUDecoderFilter, MFWeakProxy,
-                            MFWeakReferenceHolder, MFWeakSet,
-                            MFZeroCopyDataConsumer,
-                            _MFCoreTelephonySubscriptionChangeListener,
-                            _MFEmailSetEmail, _MFEmailSetEnumerator ]
+                            MFTypeInfo, MFUUDecoderFilter, MFWeakReferenceHolder,
+                            MFWeakSet, MFZeroCopyDataConsumer,
+                            _MFCoreTelephonySubscriptionChangeListener ]
     objc-ivars:           [ MFBase64Decoder._bound, MFBase64Decoder._decodedBits,
                             MFBase64Decoder._equalCount,
                             MFBase64Decoder._leftovers, MFBase64Decoder._table,
@@ -171,8 +169,5 @@ exports:
                             MFZeroCopyDataConsumer._dataHolder,
                             MFZeroCopyDataConsumer._done,
                             _MFCoreTelephonySubscriptionChangeListener._client,
-                            _MFCoreTelephonySubscriptionChangeListener._telephonyQueue,
-                            _MFEmailSetEmail._comment,
-                            _MFEmailSetEmail._encodedAddress,
-                            _MFEmailSetEmail._hash ]
+                            _MFCoreTelephonySubscriptionChangeListener._telephonyQueue ]
 ...

@@ -1,13 +1,22 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Lexicon.framework/Lexicon
-current-version:       105.4
+current-version:       134
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _LXCompileStemSuffixTokenIDConversionMap,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LXAnalyzerCandidateCopySurface,
+                            _LXAnalyzerCandidateEnumerateMorphemeLexiconEntries,
+                            _LXAnalyzerCandidateGetFlags,
+                            _LXAnalyzerCandidateGetLinguisticScore,
+                            _LXAnalyzerCandidateGetMorphemeCount,
+                            _LXAnalyzerCandidateGetNodeScore,
+                            _LXAnalyzerCandidateGetScore, _LXAnalyzerCreate,
+                            _LXAnalyzerEnumerateCandidates,
+                            _LXAnalyzerEnumerateCandidatesWithLattice,
+                            _LXCompileStemSuffixTokenIDConversionMap,
                             _LXCompileUnigramsFile,
                             _LXCompileUnigramsFileWithError,
                             _LXCursorConditionalProbability,
@@ -31,12 +40,15 @@ exports:
                             _LXEntryCopyStoredString, _LXEntryCopyString,
                             _LXEntryCreateMutable, _LXEntryCreateMutableCopy,
                             _LXEntryGetAffixData, _LXEntryGetCategoryFlags,
+                            _LXEntryGetEmissionCost, _LXEntryGetHeadAndTailPos,
                             _LXEntryGetMetaFlags, _LXEntryGetPartialProbability,
                             _LXEntryGetPenaltyCount, _LXEntryGetProbability,
                             _LXEntryGetTimestamp, _LXEntryGetTokenID,
                             _LXEntryGetUsageCount, _LXEntryGetUserBitfield,
+                            _LXLatticeAddNode, _LXLatticeCreateMutable,
                             _LXLexiconAdd, _LXLexiconAddEntryWithTokenID,
-                            _LXLexiconClear, _LXLexiconCompareStrings,
+                            _LXLexiconAddWithCreationTime, _LXLexiconClear,
+                            _LXLexiconCompareStrings,
                             _LXLexiconCopyEntryForTokenID, _LXLexiconCopyName,
                             _LXLexiconCreate, _LXLexiconCreateMutable,
                             _LXLexiconCreateRootCursor,
@@ -57,6 +69,22 @@ exports:
                             _LXMutableEntrySetMetaFlags,
                             _LXMutableEntryUpdateUsageCount,
                             _LXUnigramsCompilerCopyVersion,
+                            _LXUnigramsCompilerGetSupportedTries,
+                            _LXVulgarWordUsageDatabaseCanAutocorrect,
+                            _LXVulgarWordUsageDatabaseCanAutocorrectSomewhere,
+                            _LXVulgarWordUsageDatabaseCreate,
+                            _LXVulgarWordUsageDatabaseDecrementUsageCount,
+                            _LXVulgarWordUsageDatabaseIncrementUsageCount,
+                            _LXVulgarWordUsageDatabasePerformMaintenance,
+                            _LXVulgarWordUsageDatabaseReset,
+                            _kLXAnalyzerCorrectionMatchPenaltyWeightKey,
+                            _kLXAnalyzerDeletionDistanceKey,
+                            _kLXAnalyzerEditDistanceMaxKey,
+                            _kLXAnalyzerInsertionDistanceKey,
+                            _kLXAnalyzerLocaleKey,
+                            _kLXAnalyzerMorphemeDataFileKey,
+                            _kLXAnalyzerSubstitutionDistanceKey,
+                            _kLXAnalyzerTranspositionDistanceKey,
                             _kLXLexiconDataFileKey, _kLXLexiconDeltaFilesKey,
                             _kLXLexiconEnableInternalStemSuffixKey,
                             _kLXLexiconLocaleKey,
@@ -66,5 +94,9 @@ exports:
                             _kLXLexiconTypeValuePhrases,
                             _kLXLexiconTypeValueUnigrams,
                             _kLXMaximumStringLength, _kLXMinimumLogProbability,
-                            _kLXMinimumStringLength ]
+                            _kLXMinimumStringLength, _kLXOOVPosID,
+                            _kLXVulgarWordUsageDatabaseErrorDomain,
+                            _kLXVulgarWordUsageDatabaseErrorMessageKey,
+                            _kLXVulgarWordUsageDatabaseWordLocale,
+                            _kLXVulgarWordUsageDatabaseWordReading ]
 ...

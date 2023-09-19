@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CinematicFraming.framework/CinematicFraming
@@ -7,9 +7,14 @@ current-version:       1
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _defaultCalibrationDictionaryForPennsylvania,
+                            _defaultCalibrationDictionaryForPictou ]
     objc-classes:         [ CinematicFramingSession,
                             CinematicFramingSessionFramingParameters,
                             CinematicFramingSessionInputMetadata,
-                            CinematicFramingSessionOptions, Detection ]
+                            CinematicFramingSessionOptions, DeskCamSession,
+                            DeskCamSessionInputMetadata, DeskCamSessionOptions,
+                            Detection, SubjectSelectionSession, VCCamera,
+                            VCProcessor, VCTuningParameters ]
 ...

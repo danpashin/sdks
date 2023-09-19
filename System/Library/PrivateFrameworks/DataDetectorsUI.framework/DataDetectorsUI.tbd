@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
-current-version:       486.6
+current-version:       521
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DDBackupAttributeName, _DDClientActionURLScheme,
                             _DDContextAttributeName,
                             _DDDetectionControllerDidDismissActionNotification,
@@ -26,6 +26,7 @@ exports:
                             _DDWebSearchURLFromQuery,
                             _DataDetectorsUIVersionNumber,
                             _DataDetectorsUIVersionString,
+                            __DDUICalendarIsTitleGenerationUsed,
                             __ddui_parsec_xpcInterface,
                             _beginDateOfEventResultsRespectingSpecificEndDates,
                             _dd_isDeviceLocked,
@@ -46,10 +47,14 @@ exports:
                             _kDataDetectorsCoreRecentsMetadataDictionaryKey,
                             _kDataDetectorsCoreSpotlightUniqueIdentifier,
                             _kDataDetectorsCustomActionRangesKey,
+                            _kDataDetectorsDocumentLanguageKey,
                             _kDataDetectorsEventComponentsKey,
                             _kDataDetectorsEventTitleKey,
-                            _kDataDetectorsGestureKey, _kDataDetectorsICSKey,
-                            _kDataDetectorsIncludeMoney,
+                            _kDataDetectorsGestureKey,
+                            _kDataDetectorsGroupAllResultsKey,
+                            _kDataDetectorsGroupCategoryKey,
+                            _kDataDetectorsGroupTranscriptKey,
+                            _kDataDetectorsICSKey, _kDataDetectorsIncludeMoney,
                             _kDataDetectorsIsAccountManagedKey,
                             _kDataDetectorsLeadingText,
                             _kDataDetectorsMiddleText,

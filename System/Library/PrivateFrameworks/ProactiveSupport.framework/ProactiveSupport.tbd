@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveSupport.framework/ProactiveSupport
-current-version:       365.9
+current-version:       388
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s16ProactiveSupport14AsyncFIFOQueueC15unownedExecutorScevg,
                             _$s16ProactiveSupport14AsyncFIFOQueueC15unownedExecutorScevpMV,
                             _$s16ProactiveSupport14AsyncFIFOQueueC5asyncyyyyYaYbcFTj,
@@ -116,6 +116,8 @@ exports:
                             __PAS_sqlite3_column_nsdata,
                             __PAS_sqlite3_column_nssecurecoding,
                             __PAS_sqlite3_column_nsstring,
+                            __pas_calculateDefaultGeoHash,
+                            __pas_calculateGeoHash,
                             __pas_registerSqliteCollections,
                             _kPASDatabaseMigratorLatestVersion ]
     objc-classes:         [ _PASArgOption, _PASArgParser, _PASArgSubcommand,
@@ -133,9 +135,10 @@ exports:
                             _PASDatabaseMigrationContext, _PASDatabaseMigrator,
                             _PASDeviceIdentifier, _PASDeviceInfo, _PASDeviceState,
                             _PASDispatch, _PASDomainSelection, _PASEntitlement,
-                            _PASFileUtils, _PASImmutableDomainSelection,
-                            _PASInternPool, _PASKVOHandler, _PASKVOHandlerTask,
-                            _PASLPArray, _PASLPArrayContext, _PASLPDictionary,
+                            _PASFileUtils, _PASHistogramData,
+                            _PASImmutableDomainSelection, _PASInternPool,
+                            _PASKVOHandler, _PASKVOHandlerTask, _PASLPArray,
+                            _PASLPArrayContext, _PASLPDictionary,
                             _PASLPDictionaryContext, _PASLPDictionaryEnumerator,
                             _PASLPReaderBinaryPlist, _PASLPReaderV1,
                             _PASLPWriterV1, _PASLRUCache, _PASLRUCacheData,
@@ -145,7 +148,10 @@ exports:
                             _PASLazyPlist, _PASLazyPlistCorruptException,
                             _PASLazyPlistWithBPlistSupport,
                             _PASLazyPurgeableResult, _PASLazyResult,
-                            _PASLevenshtein, _PASLock, _PASMutableDomainSelection,
+                            _PASLevenshtein, _PASLock,
+                            _PASLowValueCardinalityMutableDictionary,
+                            _PASLowValueCardinalityMutableDictionaryEnumerator,
+                            _PASMutableDomainSelection,
                             _PASNotificationDescriptor, _PASNotificationToken,
                             _PASNotificationTracker, _PASPosixDataCollector,
                             _PASPosixPipeContext, _PASPosixUtils,
@@ -199,6 +205,8 @@ exports:
                             _PASLanguageDetectionNLLanguageIdentifierWrapper._languageIdentifier,
                             _PASLazyResult._block, _PASLazyResult._data,
                             _PASLazyResult._lock,
+                            _PASLowValueCardinalityMutableDictionary._count,
+                            _PASLowValueCardinalityMutableDictionary._objectsAndKeys,
                             _PASNotificationDescriptor.isCanceled,
                             _PASPosixPipeContext._queue,
                             _PASPosixPipeContext._readChannel,
@@ -212,6 +220,6 @@ exports:
                             _PASSqliteDatabase._lock,
                             _PASSqliteDatabase._preparedForFirstQuery,
                             _PASSqliteDatabase._statementCache,
-                            _PASSqliteDatabase._statementsToFinalizeAsync,
+                            _PASSqliteDatabase._waitingForLock,
                             _PASUnlockBlock.block, _PASUnlockBlock.qos ]
 ...

@@ -3,6 +3,8 @@
    Copyright (c) 2007-2022, Apple Inc.
    All rights reserved. */
 
+#ifdef __OBJC__
+
 #import <QuartzCore/CALayer.h>
 #import <OpenGLES/EAGLDrawable.h>
 
@@ -38,3 +40,5 @@ API_AVAILABLE(ios(2.0), watchos(2.0), tvos(9.0)) API_UNAVAILABLE(macos)
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

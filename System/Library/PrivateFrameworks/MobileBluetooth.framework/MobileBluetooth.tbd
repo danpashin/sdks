@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileBluetooth.framework/MobileBluetooth
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BTAccessoryManagerAddCallbacks,
                             _BTAccessoryManagerCancelRequestPeriodically,
                             _BTAccessoryManagerDeregisterCustomMessageClient,
@@ -18,7 +18,9 @@ exports:
                             _BTAccessoryManagerGetAnnounceCallsSupport,
                             _BTAccessoryManagerGetAnnounceMessagesSupport,
                             _BTAccessoryManagerGetCallManagementConfig,
+                            _BTAccessoryManagerGetCallManagementConfigHelper,
                             _BTAccessoryManagerGetCaseSerialNumbersForAppleProductId,
+                            _BTAccessoryManagerGetCaseSerialNumbersForAppleProductIds,
                             _BTAccessoryManagerGetControlCommand,
                             _BTAccessoryManagerGetDefault,
                             _BTAccessoryManagerGetDeviceBatteryLevel,
@@ -33,7 +35,9 @@ exports:
                             _BTAccessoryManagerGetDoubleTapActionEx,
                             _BTAccessoryManagerGetDoubleTapCapability,
                             _BTAccessoryManagerGetFeatureCapability,
+                            _BTAccessoryManagerGetFeatureProxCardStatus,
                             _BTAccessoryManagerGetGyroInformation,
+                            _BTAccessoryManagerGetHeadphoneFeatureValue,
                             _BTAccessoryManagerGetInEarDetectionEnable,
                             _BTAccessoryManagerGetInEarStatus,
                             _BTAccessoryManagerGetMicMode,
@@ -48,6 +52,7 @@ exports:
                             _BTAccessoryManagerGetSpatialAudioPlatformSupport,
                             _BTAccessoryManagerGetStereoHFPSupport,
                             _BTAccessoryManagerGetTimeSyncId,
+                            _BTAccessoryManagerGetWirelessSharingSpatial,
                             _BTAccessoryManagerIsAccessory,
                             _BTAccessoryManagerIsGenuineAirPods,
                             _BTAccessoryManagerPlugInDevice,
@@ -56,6 +61,7 @@ exports:
                             _BTAccessoryManagerRegisterDevice,
                             _BTAccessoryManagerRemoteTimeSyncEnable,
                             _BTAccessoryManagerRemoveCallbacks,
+                            _BTAccessoryManagerSendAdaptiveVolumeMessage,
                             _BTAccessoryManagerSendControlCommand,
                             _BTAccessoryManagerSendCustomMessage,
                             _BTAccessoryManagerSendRelayMsg,
@@ -65,6 +71,8 @@ exports:
                             _BTAccessoryManagerSetDeviceStateOnPeerSrc,
                             _BTAccessoryManagerSetDoubleTapAction,
                             _BTAccessoryManagerSetDoubleTapActionEx,
+                            _BTAccessoryManagerSetFeatureProxCardStatus,
+                            _BTAccessoryManagerSetHeadphoneFeatureValue,
                             _BTAccessoryManagerSetInEarDetectionEnable,
                             _BTAccessoryManagerSetIsHidden,
                             _BTAccessoryManagerSetLinkKeyEx,
@@ -160,6 +168,7 @@ exports:
                             _BTLocalDeviceRegisterForPowerUpdates,
                             _BTLocalDeviceRemoveCallbacks,
                             _BTLocalDeviceRemoveData, _BTLocalDeviceSetAFHMap,
+                            _BTLocalDeviceSetCallScreening,
                             _BTLocalDeviceSetConnectable,
                             _BTLocalDeviceSetDelayedWake,
                             _BTLocalDeviceSetDenylistEnabled,
@@ -190,10 +199,10 @@ exports:
                             __localBTAccessoryManagerCallbacksRegistered,
                             __localBTAccessoryManagerCustomCallbacksRegistered,
                             __localBTAccessoryManagerGetCallbacks,
-                            __localBTAccessoryManagerGetCallbakcsCBID,
+                            __localBTAccessoryManagerGetCallbacksCBID,
                             __localBTAccessoryManagerGetCustomCallbackMsgType,
                             __localBTAccessoryManagerGetCustomCallbacks,
-                            __localBTAccessoryManagerGetCustomCallbakcsCBID,
+                            __localBTAccessoryManagerGetCustomCallbacksCBID,
                             __localBTAccessoryManagerGetUserData,
                             __localBTAccessoryManagerRemoveAllCallbacksByXpcConnection,
                             __localBTAccessoryManagerRemoveCallbacks,

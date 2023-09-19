@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SetupKit.framework/SetupKit
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SKFrameworkBundle, _SKLocalizedString,
                             _SKOptionTimeoutSeconds ]
     objc-classes:         [ SKAuthenticationPresentEvent,
@@ -25,8 +25,9 @@ exports:
                             SKSetupSIMTransferServer, SKSetupServer,
                             SKStepBasicConfigClient, SKStepBasicConfigServer,
                             SKStepWiFiPreflight, SKStepWiFiSetupClient,
-                            SKStepWiFiSetupServer ]
+                            SKStepWiFiSetupServer, SKStepWiFiSetupServerCW ]
     objc-ivars:           [ SKSetupBase._activateCalled,
+                            SKSetupBase._authTagOverride,
                             SKSetupBase._bluetoothUseCase,
                             SKSetupBase._controlFlags,
                             SKSetupBase._dispatchQueue,

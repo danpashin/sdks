@@ -35,9 +35,9 @@ extern "C" {
     @abstract   OpenGLES texture based image buffer
 
 */
-typedef CVImageBufferRef CVOpenGLESTextureRef;
+typedef CVImageBufferRef CVOpenGLESTextureRef CV_SWIFT_NONSENDABLE;
 	
-CV_EXPORT CFTypeID CVOpenGLESTextureGetTypeID(void) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED;
+CV_EXPORT CFTypeID CVOpenGLESTextureGetTypeID(void) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) API_UNAVAILABLE(visionos) __WATCHOS_PROHIBITED;
 
 /*!
     @function   CVOpenGLESTextureGetTarget
@@ -46,7 +46,7 @@ CV_EXPORT CFTypeID CVOpenGLESTextureGetTypeID(void) COREVIDEO_GL_DEPRECATED(ios,
     @result     OpenGLES texture target
 */
 	
-CV_EXPORT GLenum CVOpenGLESTextureGetTarget( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) __WATCHOS_PROHIBITED;
+CV_EXPORT GLenum CVOpenGLESTextureGetTarget( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) API_UNAVAILABLE(visionos) __WATCHOS_PROHIBITED;
 
 /*!
     @function   CVOpenGLESTextureGetName
@@ -54,7 +54,7 @@ CV_EXPORT GLenum CVOpenGLESTextureGetTarget( CVOpenGLESTextureRef CV_NONNULL ima
     @param      image Target CVOpenGLESTexture
     @result     OpenGLES texture target name
 */
-CV_EXPORT GLuint CVOpenGLESTextureGetName( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) __WATCHOS_PROHIBITED;
+CV_EXPORT GLuint CVOpenGLESTextureGetName( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) API_UNAVAILABLE(visionos) __WATCHOS_PROHIBITED;
 
 /*!
     @function   CVOpenGLESTextureIsFlipped
@@ -62,7 +62,7 @@ CV_EXPORT GLuint CVOpenGLESTextureGetName( CVOpenGLESTextureRef CV_NONNULL image
     @param      image Target CVOpenGLESTexture
     @result     True if 0,0 in the texture is upper left, false if 0,0 is lower left
 */
-CV_EXPORT Boolean CVOpenGLESTextureIsFlipped( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) __WATCHOS_PROHIBITED;
+CV_EXPORT Boolean CVOpenGLESTextureIsFlipped( CVOpenGLESTextureRef CV_NONNULL image ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macosx) API_UNAVAILABLE(visionos) __WATCHOS_PROHIBITED;
 
 /*!
     @function   CVOpenGLESTextureGetCleanTexCoords 
@@ -78,7 +78,7 @@ CV_EXPORT void CVOpenGLESTextureGetCleanTexCoords( CVOpenGLESTextureRef CV_NONNU
                                                    GLfloat lowerLeft[CV_NONNULL 2],
                                                    GLfloat lowerRight[CV_NONNULL 2],
                                                    GLfloat upperRight[CV_NONNULL 2],
-                                                  GLfloat upperLeft[CV_NONNULL 2] ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) __WATCHOS_PROHIBITED;
+                                                  GLfloat upperLeft[CV_NONNULL 2] ) COREVIDEO_GL_DEPRECATED(ios, 5.0, 12.0) COREVIDEO_GL_DEPRECATED(tvos, 9.0, 12.0) API_UNAVAILABLE(macos) API_UNAVAILABLE(visionos) __WATCHOS_PROHIBITED;
 
 #if defined(__cplusplus)
 }

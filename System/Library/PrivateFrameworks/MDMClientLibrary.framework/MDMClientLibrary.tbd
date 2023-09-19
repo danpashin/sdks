@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MDMClientLibrary.framework/MDMClientLibrary
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/DEPClientLibrary.framework/DEPClientLibrary ]
     symbols:              [ _HTTPResponseKeyBody, _HTTPResponseKeyDownloadURL,
                             _HTTPResponseKeyHeaders, _HTTPResponseKeyStatusCode,
@@ -15,6 +15,7 @@ exports:
                             _MDMAuthenticatorWebAuthScheme,
                             _MDMBearerAuthTokensToken,
                             _MDMBearerTokenAuthParamURLName,
+                            _MDMCleanupMigrationFinishedNotification,
                             _MDMClientLibraryVersionNumber,
                             _MDMClientLibraryVersionString,
                             _MDMESSODetailsKeyName,
@@ -44,15 +45,33 @@ exports:
                             _kMDMAccountManagingOwnerIdentifier,
                             _kMDMActivityLastResponseWasNotNow,
                             _kMDMActivityStatus, _kMDMActivityTokenUpdate,
+                            _kMDMAnalyticsCommandName, _kMDMAnalyticsErrorCode,
+                            _kMDMAnalyticsErrorDomain,
+                            _kMDMAnalyticsEventCommandKey,
+                            _kMDMAnalyticsEventEnrollmentKey,
+                            _kMDMAnalyticsEventPushKey,
+                            _kMDMAnalyticsIsAccountDrivenEnrollment,
+                            _kMDMAnalyticsIsDEP, _kMDMAnalyticsIsDataSeparated,
+                            _kMDMAnalyticsIsMDMEnrolled,
+                            _kMDMAnalyticsIsReturnToService,
+                            _kMDMAnalyticsIsSharediPad,
+                            _kMDMAnalyticsIsSupervised,
+                            _kMDMAnalyticsIsUserChannel,
+                            _kMDMAnalyticsIsUserEnrollment,
+                            _kMDMAnalyticsNoCommand, _kMDMAnalyticsNoError,
+                            _kMDMAnalyticsPushStatus,
+                            _kMDMAnalyticsRequiresNetworkTethering,
                             _kMDMAppleIDShortLivedTokenKey,
                             _kMDMAssignedManagedAppleIDKey,
+                            _kMDMAttestationMaximumNonceDataBytes,
+                            _kMDMCanRequestSoftwareUpdateKey,
                             _kMDMCheckInPinningCertPersistentRefsKey,
                             _kMDMCheckInPinningCertUUIDsKey, _kMDMCheckInURLKey,
                             _kMDMCheckOutWhenRemovedKey, _kMDMContentTypeCheckin,
                             _kMDMContentTypeMDM, _kMDMDataKey,
                             _kMDMEASEnrollmentIDKey, _kMDMEndpointKey,
-                            _kMDMEnrollmentIDKey, _kMDMEnrollmentModeBYOD,
-                            _kMDMEnrollmentModeKey,
+                            _kMDMEnrollmentIDKey, _kMDMEnrollmentModeADDE,
+                            _kMDMEnrollmentModeBYOD, _kMDMEnrollmentModeKey,
                             _kMDMEnrollmentModeORGODevice,
                             _kMDMEnrollmentModeORGOUser,
                             _kMDMEnrollmentModeUAORGO, _kMDMEscrowDataAccountKey,
@@ -69,8 +88,10 @@ exports:
                             _kMDMLastPushTokenHash, _kMDMLockManagedProfilesKey,
                             _kMDMManagedAppAttributeAssociatedDomains,
                             _kMDMManagedAppAttributeAssociatedDomainsEnableDirectDownloads,
+                            _kMDMManagedAppAttributeCellularSliceUUID,
                             _kMDMManagedAppAttributeContentFilterUUID,
                             _kMDMManagedAppAttributeDNSProxyUUID,
+                            _kMDMManagedAppAttributeRelayUUID,
                             _kMDMManagedAppAttributeRemovable,
                             _kMDMManagedAppAttributeTapToPayScreenLock,
                             _kMDMManagedAppAttributeVPNUUID,
@@ -89,9 +110,10 @@ exports:
                             _kMDMMessageTopicKey, _kMDMMessageTypeAuthenticate,
                             _kMDMMessageTypeCheckOut,
                             _kMDMMessageTypeDeclarativeManagement,
-                            _kMDMMessageTypeKey, _kMDMMessageTypeTokenUpdate,
-                            _kMDMMessageUDIDKey, _kMDMMessageUnlockTokenKey,
-                            _kMDMMessageUserIDKey, _kMDMMessageUserShortNameKey,
+                            _kMDMMessageTypeGetToken, _kMDMMessageTypeKey,
+                            _kMDMMessageTypeTokenUpdate, _kMDMMessageUDIDKey,
+                            _kMDMMessageUnlockTokenKey, _kMDMMessageUserIDKey,
+                            _kMDMMessageUserShortNameKey,
                             _kMDMNonStoreBooksManifestBooksKey,
                             _kMDMNotBackedUpPreferencesDomain,
                             _kMDMOldEscrowSecretAccountKey,
@@ -181,6 +203,7 @@ exports:
                             _kMDMPushServiceBootstrapNameProd,
                             _kMDMRMAccountIDKey, _kMDMReauthChangedNotification,
                             _kMDMRemoveManagedProfilesOnRemovalKey,
+                            _kMDMRequestResponseTokenDataKey,
                             _kMDMRequiredAppIDForMDMKey,
                             _kMDMServerCapabilitiesKey,
                             _kMDMServerPinningCertPersistentRefsKey,
@@ -194,7 +217,14 @@ exports:
                             _kMDMSettingsURLManagedAccountSignout,
                             _kMDMSettingsURLManagedAccountSignoutHeader,
                             _kMDMSignMessageKey, _kMDMStoreBooksManifestBooksKey,
-                            _kMDMTemporarySessionUsername, _kMDMTopicKey,
+                            _kMDMTemporarySessionUsername, _kMDMTokenCapability,
+                            _kMDMTokenParametersKey,
+                            _kMDMTokenParametersPhoneUDIDKey,
+                            _kMDMTokenParametersSecurityTokenKey,
+                            _kMDMTokenParametersWatchUDIDKey,
+                            _kMDMTokenServiceMAID, _kMDMTokenServiceTypeKey,
+                            _kMDMTokenServiceWatchPairing, _kMDMTopicKey,
+                            _kMDMUprootedNotification,
                             _kMDMUseDevelopmentAPNSKey, _kMDMUserAgent,
                             _kMDMUserAssertionUserID, _kMDMUserChannelCapability,
                             _kMDMUserEnrollmentKey,
@@ -203,7 +233,8 @@ exports:
                             _kMDMUserServiceBootstrapName, _kMDMVersion1,
                             _kMDMVersion2, _kMDMiCloudEnrollmentIDKey ]
     objc-classes:         [ MDMAccountUtilities, MDMAuthenticationHelper,
-                            MDMBearerTokenAuthenticator, MDMBook, MDMClient,
+                            MDMBearerTokenAuthenticator, MDMBook,
+                            MDMCheckInRequest, MDMClient,
                             MDMClientConcreteDataProvider, MDMClientCore,
                             MDMCloudConfiguration, MDMConfiguration,
                             MDMDeclarativeManagement, MDMDeviceQueryUtilities,
@@ -211,5 +242,6 @@ exports:
                             MDMMAIDAuthenticator,
                             MDMMAIDBearerTokenAuthenticator,
                             MDMManagedMediaReader, MDMOAuth2Authenticator,
-                            MDMOptionsUtilities, MDMUserClient ]
+                            MDMOptionsUtilities, MDMSharedDefinitions,
+                            MDMUserClient ]
 ...

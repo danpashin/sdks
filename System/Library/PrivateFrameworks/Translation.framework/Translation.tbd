@@ -1,48 +1,61 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Translation.framework/Translation
-current-version:       218.7
+current-version:       249.2
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __LTBuildVersion, __LTDeviceName,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __LTDisambiguationTypeDescription,
+                            __LTFeedbackCategoryString, __LTIsEqual,
                             __LTIsInternalInstall, __LTIsSeedInstall,
                             __LTLanguageCodeToSupportedLocale,
-                            __LTLocaleMappedForTTS, __LTObjectMappedForKey,
-                            __LTProductName, __LTProductType, __LTProductVersion,
+                            __LTLocaleMappedForTTS, __LTLoggingRequestClasses,
+                            __LTObjectMappedForKey, __LTOfflineStateString,
                             __LTTextTranslationServiceXPCInterface,
                             __LTTranslationErrorDomain,
                             __LTTranslationModelTaskString,
                             __LTTranslationServiceDelegateXPCInterface,
                             __LTTranslationServiceXPCInterface,
+                            _kLTDebugForceLowWordConfidenceASRKey,
+                            _kLTDebugUseQuickSessionTimeoutKey,
+                            _kLTRateLimitingMaximumDynamicContentRequestsKey,
+                            _kLTRateLimitingMaximumPageLoadRequestsKey,
                             _kLTUnknownLanguageCode ]
-    objc-classes:         [ _LTASRStateEventLog, _LTActivityLogger, _LTAlignment,
-                            _LTBatchEventLog, _LTBatchTextTranslationRequest,
-                            _LTCombinedEngine,
+    objc-classes:         [ _LTAlignment, _LTAssetProgress,
+                            _LTBatchTextTranslationRequest,
                             _LTCombinedRouteParagraphTranslationRequest,
-                            _LTDaemon, _LTInstallRequest,
-                            _LTInvocationEventContext, _LTInvocationEventLog,
-                            _LTLanguageDetectionResult, _LTLanguageDetector,
-                            _LTLanguageDetectorFeatureCombinationModel,
-                            _LTLanguageInstallationStatus, _LTLanguageManager,
+                            _LTCombinedTranslationResult, _LTDirectedEdge,
+                            _LTDisambiguableResult, _LTDisambiguableSentence,
+                            _LTDisambiguationChangeManager,
+                            _LTDisambiguationChangeSet,
+                            _LTDisambiguationLinkConfiguration,
+                            _LTDisambiguationNode,
+                            _LTDisambiguationUserSelection, _LTInstallRequest,
+                            _LTLanguageAssetModel, _LTLanguageAssetRequest,
+                            _LTLanguageDetectionResult,
+                            _LTLanguageInstallationStatus,
                             _LTLanguagePairOfflineAvailability, _LTLocalePair,
                             _LTParagraphTranslationRequest,
-                            _LTSafariLatencyLoggingRequest, _LTSpeakRequest,
+                            _LTSELFLoggingEventData, _LTSELFLoggingInvocation,
+                            _LTSELFLoggingInvocationOptions,
+                            _LTSELFLoggingInvocationProvider,
+                            _LTSELFLoggingTranslateAppContext,
+                            _LTSafariLatencyLoggingRequest,
+                            _LTServerEndpointerFeatures, _LTSpeakRequest,
                             _LTSpeechLIDLoggingRequest, _LTSpeechRecognitionBin,
                             _LTSpeechRecognitionResult,
                             _LTSpeechRecognitionSausage,
                             _LTSpeechRecognitionTokensAlternative,
                             _LTSpeechTranscription, _LTSpeechTranslationRequest,
-                            _LTTextLanguageDetectionResult,
-                            _LTTextLanguageDetector,
+                            _LTTaskContext, _LTTextLanguageDetectionResult,
+                            _LTTextStreamingConfiguration,
+                            _LTTextToSpeechSanitizer,
                             _LTTextToSpeechTranslationRequest,
-                            _LTTextTranslationRequest,
-                            _LTTranslateSettingsController,
-                            _LTTranslationCandidate, _LTTranslationContext,
-                            _LTTranslationFeedback,
+                            _LTTextTranslationRequest, _LTTranslationCandidate,
+                            _LTTranslationContext, _LTTranslationFeedback,
                             _LTTranslationGenderAlternative,
                             _LTTranslationParagraph, _LTTranslationRange,
                             _LTTranslationRequest, _LTTranslationResult,
@@ -50,5 +63,6 @@ exports:
                             _LTTranslationSensesLoggingRequest,
                             _LTTranslationSession, _LTTranslationSpan,
                             _LTTranslationStatistics, _LTTranslationToken,
-                            _LTTranslator, _LTWordTimingInfo ]
+                            _LTTranslator, _LTUnvalidatedEdgeInfo,
+                            _LTWordTimingInfo ]
 ...

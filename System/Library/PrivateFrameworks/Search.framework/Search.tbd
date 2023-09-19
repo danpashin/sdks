@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Search.framework/Search
-current-version:       1
+current-version:       2268.1.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DisableCategoryPromotion, _DisableCoreDuet,
                             _DisableParsec, _DisableParsecInfluence,
                             _DisableShortcut, _DisableTextMatch,
@@ -86,9 +86,9 @@ exports:
                             _SearchRankingDisablePolicy,
                             _SearchRankingUseCreationDateL2,
                             _SiriSuggestionPrefChangeNotification,
-                            _SpotlightUIPrefsDomain, __SPLog,
-                            _gSPLogDebugAsDefault, _gSPLogInfoAsDefault,
-                            _gSPLogLevel,
+                            _SpotlightUIPrefsDomain, __SPLog, _enabledForPref,
+                            _enabledNumberForPref, _gSPLogDebugAsDefault,
+                            _gSPLogInfoAsDefault, _gSPLogLevel,
                             _kSPSearchInternetDomainsChangedNotification ]
     objc-classes:         [ SFMutableResultSection, SFSearchResult_Compatibility,
                             SFSearchResult_SpotlightExtras, SPApplication,

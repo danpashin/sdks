@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
-current-version:       542.0.140
+current-version:       608.1.119
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ISCircularEaseOut, _ISCubicEaseOut,
                             _ISQuadraticEaseOut, _ISQuarticEaseOut,
                             _ISQuinticEaseOut, _ISSineEaseOut,
@@ -15,15 +15,15 @@ exports:
                             _ISStringFromPlayerItemLoadingTarget,
                             _PhotosPlayerErrorDomain ]
     objc-classes:         [ ISAVPlayer, ISAVPlayerLayer, ISAnimatedImage,
-                            ISAnimatedImagePlayer, ISAnimatedImageView, ISAsset,
-                            ISBasePlayer, ISBasePlayerUIView,
-                            ISLivePhotoPlaybackFilter, ISLivePhotoPlayer,
-                            ISLivePhotoUIView, ISLiveWallpaperPlayer,
-                            ISLiveWallpaperUIView, ISObservable, ISPlayerContent,
-                            ISPlayerItem, ISPlayerItemChef, ISPlayerOutputContent,
-                            ISPlayerView, ISRootSettings,
-                            ISScrollViewVitalityController, ISSettings,
-                            ISTouchLivePhotoPlaybackFilter,
+                            ISAnimatedImagePlayer, ISAnimatedImageTimer,
+                            ISAnimatedImageView, ISAsset, ISBasePlayer,
+                            ISBasePlayerUIView, ISLivePhotoPlaybackFilter,
+                            ISLivePhotoPlayer, ISLivePhotoUIView,
+                            ISLiveWallpaperPlayer, ISLiveWallpaperUIView,
+                            ISObservable, ISPlayerContent, ISPlayerItem,
+                            ISPlayerItemChef, ISPlayerOutputContent, ISPlayerView,
+                            ISRootSettings, ISScrollViewVitalityController,
+                            ISSettings, ISTouchLivePhotoPlaybackFilter,
                             ISTouchingGestureRecognizer,
                             ISUIScrollViewVitalityController,
                             ISUIVisibilityOffsetHelper, ISVideoPlayerUIView,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/ContactsAutocompleteUI
-current-version:       696.3
+current-version:       718.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CNAUIEllipsesCharacterSet,
                             _CNAUILocalizedAddressSeparator,
                             _CNAutocompleteContactKeyForRecentsKind,
@@ -22,6 +22,8 @@ exports:
                             _CNAutocompleteSearchControllerSharePlayServiceBundleIdentifier,
                             _CNAutocompleteSharedContactStore,
                             _CNAutocompleteSharedLocalOnlyContactStore,
+                            _CNAutocompleteSiriBundleIdentifier,
+                            _CNAutocompleteSpotlightBundleIdentifier,
                             _CNComposeApplicationPreferredContentSizeIsLargerThanLarge,
                             _CNComposeFirstIndexInRangePassingTest,
                             _CNComposeFontMetricCacheInvalidationNotification,
@@ -44,7 +46,8 @@ exports:
                             _CreateSuggestionsFetchDebounceDispatchTimer,
                             _getSimulateAutocompleteResultsInternalSetting,
                             _kCNPasteboardTypeComposeRecipient ]
-    objc-classes:         [ CNAtomCenteredTextAttachment, CNAtomIcon,
+    objc-classes:         [ CNAUIMessagesImagesFacade,
+                            CNAtomCenteredTextAttachment, CNAtomIcon,
                             CNAtomTextView, CNAtomView,
                             CNAutocompleteContactsSearchTaskContext,
                             CNAutocompleteDisambiguatingTableViewCell,
@@ -55,11 +58,14 @@ exports:
                             CNAutocompleteResultsTableViewController,
                             CNAutocompleteResultsViewController,
                             CNAutocompleteSearchController,
+                            CNAutocompleteSearchControllerOptions,
                             CNAutocompleteSearchControllerSafeDelegateWrapper,
                             CNAutocompleteSearchManager,
                             CNAutocompleteSearchOperation,
                             CNAutocompleteSuggestionsCell,
+                            CNAutocompleteSuggestionsImageView,
                             CNAutocompleteSuggestionsViewController,
+                            CNAutocompleteSuggestionsViewControllerOptions,
                             CNAutocompleteSuggestionsViewSectionHeader,
                             CNAutocompleteSupplementalGroup,
                             CNAutocompleteSupplementalGroupMember,
@@ -81,7 +87,8 @@ exports:
                             CNModernAtomBackgroundView, CNModernAtomIconView,
                             CNRecentComposeRecipient,
                             CNRecentComposeRecipientGroup,
-                            CNSuggestedRecipientItem, CNUnifiedComposeRecipient,
+                            CNSuggestedRecipientItem, CNUIImage,
+                            CNUnifiedComposeRecipient,
                             _CNAUICRRecentContactCNContext, _CNAtomAttachment,
                             _CNAtomFieldEditor, _CNAtomLayoutView,
                             _CNAtomTextAttachment, _CNAtomTextSelectionRect,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileMailUI.framework/MobileMailUI
-current-version:       3731.255.231
+current-version:       3774.100.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AccountKey, _AuthSchemeKey,
                             _CollapseReadConversationMessagesKey,
                             _ConversationViewExcludesRelatedMessagesKey,
@@ -18,13 +18,11 @@ exports:
                             _IncludeAttachmentRepliesKey,
                             _IncludeAttachmentRepliesNever,
                             _IncludeAttachmentRepliesWhenAdding,
-                            _LeftSwipeActionKey, _LinesOfPreviewKey,
-                            _MFActivityTypeMailQuicklook,
+                            _LeftSwipeActionKey, _MFActivityTypeMailQuicklook,
                             _MFActivityTypeMarkupDocument,
                             _MFActivityTypeQuicklook,
                             _MFActivityTypeSaveAllAttachments,
                             _MFActivityTypeSaveToCameraRoll,
-                            _MFAddressListsFormatterDidInvalidateCache,
                             _MFCombinedMailboxAllArchive,
                             _MFCombinedMailboxAllDrafts,
                             _MFCombinedMailboxAllInbox,
@@ -78,9 +76,7 @@ exports:
                             _SwipeActionAlternateDestructiveAction,
                             _SwipeActionArchive, _SwipeActionFlag,
                             _SwipeActionMove, _SwipeActionNone, _SwipeActionRead,
-                            _SwipeActionTrash, _UseRichLinksKey,
-                            _UseRichLinksKeyChangedNotification,
-                            _kAttachmentViewSupportSource,
+                            _SwipeActionTrash, _kAttachmentViewSupportSource,
                             _kAttachmentViewSupportSourceLength,
                             _kMFConversationSearchOverlayAnimationDuration,
                             _kMessageContentViewSource,
@@ -90,16 +86,16 @@ exports:
     objc-classes:         [ ContentItemMarkupGenerator,
                             ConversationFooterViewDisplayMetrics,
                             ConversationSearchOverlayView,
-                            MFAddressAtomStatusManager, MFAddressListFormatter,
-                            MFBannerView, MFBlockedSenderBannerView, MFCardAction,
+                            MFActionCardHeaderMetrics,
+                            MFAddressAtomStatusManager, MFBannerView,
+                            MFBlockedSenderBannerView, MFCardAction,
                             MFConversationItemFooterView, MFFlagColorCardAction,
                             MFHasMoreContentBannerView, MFHideMyEmailBannerView,
                             MFInternalSettingsCache,
                             MFLoadBlockedContentBannerView,
                             MFLoadFailedProxyContentBannerView,
-                            MFLocalizationListFormatter, MFMailDropBannerView,
-                            MFMessageContentURLProtocol, MFMessageContentView,
-                            MFMessageDisplayMetrics,
+                            MFMailDropBannerView, MFMessageContentURLProtocol,
+                            MFMessageContentView, MFMessageDisplayMetrics,
                             MFMessageDisplayMetricsCompact,
                             MFMessageDisplayMetricsRegular, MFMessageHeaderView,
                             MFMessageHeaderViewBlock, MFQuotedContentAttribution,
@@ -107,15 +103,13 @@ exports:
                             MFSuggestionBannerView, MFUserProfileProvider_iOS,
                             MFUserScriptLibrary, MFWKWebViewFactory,
                             MFWebViewDictionary, MFWebViewLoadingController,
-                            MFWidgetController, MailQLAttachmentContext,
-                            MailQLItemDataProvider,
-                            MessageActivityViewController,
+                            MFWidgetController, MessageActivityViewController,
                             MessageAttachmentActionGenerator,
                             MessageContentItemRepresentationTask,
                             MessageContentItemsHelper,
                             MessageContentRepresentationRequest,
                             MessageContentRepresentationRequestDelegate,
-                            MessageHeaderViewModel, MessageItemViewModel,
+                            MessageHeaderViewModel,
                             MessageMarkupDocumentActivity,
                             MessagePrintQuicklookableAttachmentActivity,
                             MessageQuicklookImageAttachmentsActivity,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/StocksUI.framework/StocksUI
-current-version:       1166
+current-version:       1262.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV8StocksUIE5ParamO15collapseSidebaryA2FmFWC,
                             _$s10Foundation3URLV8StocksUIE5ParamO16disableAnimationyA2FmFWC,
                             _$s10Foundation3URLV8StocksUIE5ParamO8rawValueAFSgSS_tcfC,
@@ -23,8 +23,12 @@ exports:
                             _$s10StocksCore10ChartRangeO0A2UIE10identifierSSvpMV,
                             _$s10StocksCore10ChartRangeO0A2UIE18accessibilityLabelSSvg,
                             _$s10StocksCore10ChartRangeO0A2UIE18accessibilityLabelSSvpMV,
+                            _$s10StocksCore10ChartRangeO0A2UIE18supportsAfterHoursSbvg,
+                            _$s10StocksCore10ChartRangeO0A2UIE18supportsAfterHoursSbvpMV,
                             _$s10StocksCore10ChartRangeO0A2UIE5labelSSvg,
                             _$s10StocksCore10ChartRangeO0A2UIE5labelSSvpMV,
+                            _$s10StocksCore10ChartRangeO0A2UIE9longLabelSSvg,
+                            _$s10StocksCore10ChartRangeO0A2UIE9longLabelSSvpMV,
                             _$s10StocksCore10ChartRangeO13TeaFoundation12Identifiable0A2UIMc,
                             _$s10StocksCore10ChartRangeO5TeaUI27SegmentedControlSegmentType0aF0Mc,
                             _$s10StocksCore5StockV0A2UIE015joinedSymbolAndC4NameSSvg,
@@ -33,11 +37,11 @@ exports:
                             _$s10StocksCore5StockV0A2UIE16accessibleSymbolSo18NSAttributedStringCvg,
                             _$s10StocksCore5StockV0A2UIE16accessibleSymbolSo18NSAttributedStringCvpMV,
                             _$s10StocksCore5StockV0A2UIE16accessibleSymbolSo18NSAttributedStringCvs,
-                            _$s10StocksCore5StockV0A2UIE16universalLinkURL10Foundation0G0Vvg,
-                            _$s10StocksCore5StockV0A2UIE16universalLinkURL10Foundation0G0VvpMV,
                             _$s10StocksCore8HeadlineO0A2UIE8dragItem03TeaD004DragF0VSgvg,
                             _$s10StocksCore8HeadlineO0A2UIE8dragItem03TeaD004DragF0VSgvpMV,
                             _$s10StocksCore8HeadlineO5TeaUI9Draggable0aE0Mc,
+                            _$s10StocksCore9StockTypeO0A2UIE24shouldShowCurrencySymbolSbvg,
+                            _$s10StocksCore9StockTypeO0A2UIE24shouldShowCurrencySymbolSbvpMV,
                             _$s11TeaSettings0B0C8StocksUIE10RefreshingV10MarketDataV15overrideEnabledAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C8StocksUIE10RefreshingV10MarketDataV16overrideIntervalAA7SettingCySdGvgZ,
                             _$s11TeaSettings0B0C8StocksUIE10RefreshingV10MarketDataVMa,
@@ -286,6 +290,7 @@ exports:
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV4CardVMa,
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV4CardVMn,
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV4CardVN,
+                            _$s11TeaSettings0B0C8StocksUIE9StockFeedV6LayoutV027overrideVerticalQuoteDetailG0AA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV6LayoutV8ChunkingV15overrideEnabledAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV6LayoutV8ChunkingV17overrideChunkSizeAA7SettingCySiGvgZ,
                             _$s11TeaSettings0B0C8StocksUIE9StockFeedV6LayoutV8ChunkingVMa,
@@ -316,6 +321,7 @@ exports:
                             _$s13TeaFoundation16StartupTaskGroupV8StocksUIE7prewarmACvgZ,
                             _$s2os6LoggerV8StocksUIE10engagementACvgZ,
                             _$s2os6LoggerV8StocksUIE10onboardingACvgZ,
+                            _$s2os6LoggerV8StocksUIE13widgetRefreshACvgZ,
                             _$s2os6LoggerV8StocksUIE9appReviewACvgZ,
                             _$s5TeaUI14RadarComponentV06StocksB0E6stocksACvgZ,
                             _$s5TeaUI15ContextMenuItemC06StocksB0E12openInNewTab8headlineACSo19FCHeadlineProviding_p_tFZ,
@@ -605,6 +611,14 @@ exports:
                             _$s8StocksUI14BaseStylerTypeP13negativeColorSo7UIColorCvgTq,
                             _$s8StocksUI14BaseStylerTypeP13positiveColorSo7UIColorCvgTj,
                             _$s8StocksUI14BaseStylerTypeP13positiveColorSo7UIColorCvgTq,
+                            _$s8StocksUI14BaseStylerTypeP25negativeColorAgainstBlackSo7UIColorCvgTj,
+                            _$s8StocksUI14BaseStylerTypeP25negativeColorAgainstBlackSo7UIColorCvgTq,
+                            _$s8StocksUI14BaseStylerTypeP25negativeColorAgainstWhiteSo7UIColorCvgTj,
+                            _$s8StocksUI14BaseStylerTypeP25negativeColorAgainstWhiteSo7UIColorCvgTq,
+                            _$s8StocksUI14BaseStylerTypeP25positiveColorAgainstBlackSo7UIColorCvgTj,
+                            _$s8StocksUI14BaseStylerTypeP25positiveColorAgainstBlackSo7UIColorCvgTq,
+                            _$s8StocksUI14BaseStylerTypeP25positiveColorAgainstWhiteSo7UIColorCvgTj,
+                            _$s8StocksUI14BaseStylerTypeP25positiveColorAgainstWhiteSo7UIColorCvgTq,
                             _$s8StocksUI14BaseStylerTypeP5style11toolbarItemySo011UIBarButtonH0C_tFTj,
                             _$s8StocksUI14BaseStylerTypeP5style11toolbarItemySo011UIBarButtonH0C_tFTq,
                             _$s8StocksUI14BaseStylerTypeP5style16sidebarSearchBar15traitCollectionySo08UISearchI0C_So07UITraitK0CSgtFTj,
@@ -1344,8 +1358,6 @@ exports:
                             _$s8StocksUI7ThemingP17paletteLightGreenSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP17redChartFillColorSo7UIColorCvgTj,
                             _$s8StocksUI7ThemingP17redChartFillColorSo7UIColorCvgTq,
-                            _$s8StocksUI7ThemingP17redSparklineColorSo7UIColorCvgTj,
-                            _$s8StocksUI7ThemingP17redSparklineColorSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP17separatorBarColorSo7UIColorCvgTj,
                             _$s8StocksUI7ThemingP17separatorBarColorSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP17sidebarAppearanceAA07SidebarE0OvgTj,
@@ -1370,8 +1382,6 @@ exports:
                             _$s8StocksUI7ThemingP19chartHighlightStyleAA010StockCharteF0OvgTq,
                             _$s8StocksUI7ThemingP19greenChartFillColorSo7UIColorCvgTj,
                             _$s8StocksUI7ThemingP19greenChartFillColorSo7UIColorCvgTq,
-                            _$s8StocksUI7ThemingP19greenSparklineColorSo7UIColorCvgTj,
-                            _$s8StocksUI7ThemingP19greenSparklineColorSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP19redChartStrokeColorSo7UIColorCvgTj,
                             _$s8StocksUI7ThemingP19redChartStrokeColorSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP19secondaryLabelColorSo7UIColorCvgTj,
@@ -1412,6 +1422,14 @@ exports:
                             _$s8StocksUI7ThemingP31cellSelectionSecondaryTextColorSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP33addToCalendarButtonHighlightColorSo7UIColorCvgTj,
                             _$s8StocksUI7ThemingP33addToCalendarButtonHighlightColorSo7UIColorCvgTq,
+                            _$s8StocksUI7ThemingP38paletteRedForContrastAgainstDarkColorsSo7UIColorCvgTj,
+                            _$s8StocksUI7ThemingP38paletteRedForContrastAgainstDarkColorsSo7UIColorCvgTq,
+                            _$s8StocksUI7ThemingP39paletteRedForContrastAgainstLightColorsSo7UIColorCvgTj,
+                            _$s8StocksUI7ThemingP39paletteRedForContrastAgainstLightColorsSo7UIColorCvgTq,
+                            _$s8StocksUI7ThemingP40paletteGreenForContrastAgainstDarkColorsSo7UIColorCvgTj,
+                            _$s8StocksUI7ThemingP40paletteGreenForContrastAgainstDarkColorsSo7UIColorCvgTq,
+                            _$s8StocksUI7ThemingP41paletteGreenForContrastAgainstLightColorsSo7UIColorCvgTj,
+                            _$s8StocksUI7ThemingP41paletteGreenForContrastAgainstLightColorsSo7UIColorCvgTq,
                             _$s8StocksUI7ThemingP5styleAA0C5StyleOvgTj,
                             _$s8StocksUI7ThemingP5styleAA0C5StyleOvgTq,
                             _$s8StocksUI7ThemingP8keyColorSo7UIColorCvgTj,
@@ -1452,7 +1470,7 @@ exports:
                             _$sSo14UIActivityTypea8StocksUIE8copyLinkABvgZ,
                             _$sSo15FCFeedGroupTypeV8StocksUIE05groupC00D9Analytics0bC0OyF,
                             _$sSo18NSAttributedStringC8StocksUIE41appendingAccessibilityDWCPriceChangeArrow14pointingUpward8withFont0L5ColorABSb_So6UIFontCSo7UIColorCtF,
-                            _$sSo19FCHeadlineProvidingP8StocksUIE20referringArticleData0C9Analytics09ReferringfG0VyF,
+                            _$sSo19FCHeadlineProvidingP8StocksUIE21referringArticleData20C9Analytics09ReferringF4DataVyF,
                             _$sSo23UIActivityIndicatorViewC5TeaUI8Editable06StocksE0Mc,
                             _$sSo23UIActivityIndicatorViewC5TeaUI8Reusable06StocksE0Mc,
                             _$sSo23UIActivityIndicatorViewC8StocksUIE15prepareForReuseyyF,

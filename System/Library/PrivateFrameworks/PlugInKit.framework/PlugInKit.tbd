@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _PKAllowedPlugInsEntitlement,
                             _PKAnnotationBootInstanceKey,
                             _PKAnnotationElectionKey, _PKAnnotationExtensionKey,
@@ -32,9 +32,9 @@ exports:
                             _PKDMatchRequest, _PKDMatchesKey, _PKDOneShotUUIDsKey,
                             _PKDPathsKey, _PKDPidArrayKey,
                             _PKDPreferredLanguagesKey, _PKDReadyRequest,
-                            _PKDReceiptRequest, _PKDRemoveRequest, _PKDRequestKey,
-                            _PKDRulesKey, _PKDSandboxOverrideKey, _PKDUUIDKey,
-                            _PKDVersionKey, _PKDataAnnotationsKey, _PKDataProtocol,
+                            _PKDRemoveRequest, _PKDRequestKey, _PKDRulesKey,
+                            _PKDSandboxOverrideKey, _PKDUUIDKey, _PKDVersionKey,
+                            _PKDataAnnotationsKey, _PKDataProtocol,
                             _PKDedicatedInfoKey, _PKDelegateInfoKey,
                             _PKDiscoveryInstanceUUIDFormKey,
                             _PKEmbeddedCodeInfoKey, _PKEmbeddedProtocolInfoKey,
@@ -92,14 +92,13 @@ exports:
                             _pkIsServiceAccount,
                             _pkIssueSandboxExtensionForMachService,
                             _pkIssueSandboxExtensionForURL,
-                            _pkRunningboardManaged, _pkSafeDataFromRelativeURL,
-                            _pkUseInternalDiagnostics,
+                            _pkRunningboardManaged, _pkUseInternalDiagnostics,
                             _pklog_get_persona_type_and_name,
                             _pklog_handle_for_category ]
     objc-classes:         [ PKApplicationProxy, PKApplicationWorkspaceProxy,
                             PKBundle, PKBundleProxy, PKDaemonClient, PKHost,
                             PKLaunchRequest, PKManager, PKPlugInCore, PKPlugInProxy,
-                            PKProxyFactory, PKService ]
+                            PKPlugInRecordProxy, PKProxyFactory, PKService ]
     objc-ivars:           [ PKPlugInCore._annotations,
                             PKPlugInCore._bundleInfoDictionary,
                             PKPlugInCore._cdhash,

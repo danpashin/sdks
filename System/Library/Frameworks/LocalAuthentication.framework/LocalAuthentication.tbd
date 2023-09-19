@@ -1,25 +1,43 @@
---- !tapi-tbd
-tbd-version:     4
-targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication'
-current-version: 1132.100.131
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication
+current-version:       1391.2.1
+compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - targets:         [ armv7-ios, armv7s-ios ]
-    symbols:         [ _LAContextCreate, _LAContextGetTypeID, _LACopyACMContext, 
-                       _LACreateNewContextWithACMContext, _LAEvaluateACL, _LAEvaluateAndUpdateACL, 
-                       _LAEvaluatePolicy, _LAFingerDatabaseHash, _LAIsCredentialSet, 
-                       _LASetCredential, _LAUpdateAccessControlAfterEvaluation, _LocalAuthenticationVersionNumber, 
-                       _LocalAuthenticationVersionString, _cStringFromCFString, _coreauthd_create_message, 
-                       _coreauthd_message_no_error, _coreauthd_message_with_reply_sync, 
-                       _coreauthd_send_sync_and_do, _makeCFError, _makeCFErrorWithUserInfo ]
-    objc-classes:    [ LAClient ]
-  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    symbols:         [ _LAAvailableMechanisms, _LABiometryDatabaseHash, _LACopyExternalizedContext, 
-                       _LAErrorDomain, _LAErrorInfoBiometryType, _LAErrorInfoTCCServerPrompt, 
-                       _LAErrorInfoTCCService, _LAErrorSubcodeKey, _LAPasswordRetryTime, 
-                       _LAStorageErrorDomain, _LATouchIDAuthenticationMaximumAllowableReuseDuration ]
-    objc-classes:    [ LAAuthenticationRequirement, LABiometryFallbackRequirement, 
-                       LAContext, LANotification, LANotificationOfBooleanState, LANotificationUIAppearance, 
-                       LANotificationUIBannerAppearance, LAPersistedRight, LAPrivateKey, 
-                       LAPublicKey, LARight, LARightStore, LASecret, LAStorage ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _LAAvailableMechanisms, _LABiometryDatabaseHash,
+                            _LACopyExternalizedContext, _LAErrorDomain,
+                            _LAErrorInfoBiometryType,
+                            _LAErrorInfoTCCServerPrompt, _LAErrorInfoTCCService,
+                            _LAErrorSubcodeKey, _LAPasswordRetryTime,
+                            _LAStorageErrorDomain,
+                            _LATouchIDAuthenticationMaximumAllowableReuseDuration,
+                            __LAMKBDeviceLockAssertion,
+                            __LAMKBDeviceUnlockedSinceBoot,
+                            __LAMKBEventsRegister, __LAMKBEventsUnregister,
+                            __LAMKBGetDeviceConfigurations,
+                            __LAMKBGetDeviceLockState,
+                            __LAMKBGetDeviceLockStateInfo,
+                            __LAMKBKeyBagKeyStashCommit,
+                            __LAMKBKeyBagKeyStashCreateWithOpts,
+                            __LAMKBKeyBagKeyStashVerify,
+                            __LAMKBKeyBagPerformRecovery, __LAMKBLockDevice,
+                            __LAMKBPrewarmSPS, __LAMKBUnlockDevice ]
+    objc-classes:         [ LAAuthenticationBiometricMethod,
+                            LAAuthenticationBiometricMethodConfiguration,
+                            LAAuthenticationBiometricMethodState,
+                            LAAuthenticationMethod,
+                            LAAuthenticationMethodConfiguration,
+                            LAAuthenticationMethodResult,
+                            LAAuthenticationMethodState,
+                            LAAuthenticationRequirement,
+                            LABiometryFallbackRequirement, LAContext,
+                            LANotification, LANotificationOfBooleanState,
+                            LANotificationUIAppearance,
+                            LANotificationUIBannerAppearance, LAPersistedRight,
+                            LAPrivateKey, LAPublicKey, LARight, LARightStore, LASecret,
+                            LAStorage ]
 ...

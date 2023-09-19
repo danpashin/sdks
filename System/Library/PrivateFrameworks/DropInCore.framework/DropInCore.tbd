@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DropInCore.framework/DropInCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10DropInCore0abC7ServiceC19homeManagerProviderACSo07DICHomeF9Providing_pSg_tcfC,
                             _$s10DropInCore0abC7ServiceC19homeManagerProviderACSo07DICHomeF9Providing_pSg_tcfCTj,
                             _$s10DropInCore0abC7ServiceC19homeManagerProviderACSo07DICHomeF9Providing_pSg_tcfCTq,
@@ -69,7 +69,6 @@ exports:
                             _$s10DropInCore11HomeManagerCMu,
                             _$s10DropInCore11HomeManagerCN,
                             _$s10DropInCore11HomeManagerCfD,
-                            _$s10DropInCore11nanosecondsys6UInt64VxSBRzlF,
                             _$s10DropInCore12OneshotTimerC06cancelE0yyFTj,
                             _$s10DropInCore12OneshotTimerC06cancelE0yyFTq,
                             _$s10DropInCore12OneshotTimerC12timeInterval5queue10identifier5label17timerFiredHandlerACSd_So012OS_dispatch_H0CSg10Foundation4UUIDVSSySS_ANSdtctcfC,
@@ -94,16 +93,10 @@ exports:
                             _$s10DropInCore15InternalDefaultVMn,
                             _$s10DropInCore15InternalDefaultVyxG0aB022UserDefaultsAccessibleAAMc,
                             _$s10DropInCore15InternalDefaultVyxGs23CustomStringConvertibleAAMc,
-                            _$s10DropInCore7seconds4daysSdx_tSBRzlF,
-                            _$s10Foundation14LocalizedErrorP10DropInCoreSYRzSS8RawValueSYRtzrlE16errorDescriptionSSSgvg,
-                            _$s10Foundation14LocalizedErrorP10DropInCoreSYRzSS8RawValueSYRtzrlE16errorDescriptionSSSgvpMV,
                             _$s6DropIn9ConstantsO0aB4CoreE7RapportO04dropB11ServiceTypeSSvgZ,
                             _$s6DropIn9ConstantsO0aB4CoreE7RapportOMa,
                             _$s6DropIn9ConstantsO0aB4CoreE7RapportOMn,
                             _$s6DropIn9ConstantsO0aB4CoreE7RapportON,
-                            _$sScP10DropInCoreE11descriptionSSvg,
-                            _$sScP10DropInCoreE11descriptionSSvpMV,
-                            _$sScPs23CustomStringConvertible10DropInCoreMc,
                             _$sSo10IDSServiceC10DropInCoreE11descriptionSSvg,
                             _$sSo11HMAccessoryC10DropInCoreE11descriptionSSvg,
                             _$sSo14NSXPCInterfaceC10DropInCoreE10setClasses_3for13argumentIndex7ofReplyySaySo8NSObjectCmG_10ObjectiveC8SelectorVSiSbtF,

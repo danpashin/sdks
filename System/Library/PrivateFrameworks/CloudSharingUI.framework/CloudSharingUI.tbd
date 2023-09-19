@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudSharingUI.framework/CloudSharingUI
-current-version:       106
+current-version:       151
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV14CloudSharingUIE26evictionSafeResourceValues7forKeysAA011URLResourceI0VShySo16NSURLResourceKeyaG_tKF,
                             _$s14CloudSharingUI0B11OptionsViewV05SwiftC00E0AAMc,
                             _$s14CloudSharingUI0B11OptionsViewV10$viewModel05SwiftC014ObservedObjectV7WrapperVyAA0bdeG0C_Gvg,
@@ -78,6 +78,15 @@ exports:
                             _$s14CloudSharingUI0B16OptionsViewModelC12$contentSize7Combine9PublishedV9PublisherVySo6CGSizeV_GvpMV,
                             _$s14CloudSharingUI0B16OptionsViewModelC12$contentSize7Combine9PublishedV9PublisherVySo6CGSizeV_GvsTj,
                             _$s14CloudSharingUI0B16OptionsViewModelC12$contentSize7Combine9PublishedV9PublisherVySo6CGSizeV_GvsTq,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvMTj,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvMTq,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvgTj,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvgTq,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvpMV,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvsTj,
+                            _$s14CloudSharingUI0B16OptionsViewModelC17sourceAppBundleIDSSSgvsTq,
+                            _$s14CloudSharingUI0B16OptionsViewModelC20setSourceAppBundleIDyySSFTj,
+                            _$s14CloudSharingUI0B16OptionsViewModelC20setSourceAppBundleIDyySSFTq,
                             _$s14CloudSharingUI0B16OptionsViewModelC7Combine16ObservableObjectAAMc,
                             _$s14CloudSharingUI0B16OptionsViewModelCMa,
                             _$s14CloudSharingUI0B16OptionsViewModelCMm,
@@ -87,8 +96,8 @@ exports:
                             _$s14CloudSharingUI0B16OptionsViewModelCN,
                             _$s14CloudSharingUI0B16OptionsViewModelCfD,
                             _$s14CloudSharingUI0B16OptionsViewModelCfd,
-                            _$s14CloudSharingUI0B18OptionsViewFactoryC024createCollaborationSharedE0_13layoutMargins19userDidChangeOption011contentSizemN0So16UIViewControllerCSo016_SWCollaborationiD0CSg_So23NSDirectionalEdgeInsetsVySS_SSSbALtcySo6CGSizeVctFZ,
-                            _$s14CloudSharingUI0B18OptionsViewFactoryC06createbdE0_19userDidChangeOptionSo16UIViewControllerCSaySo016_SWCollaborationD5GroupCG_ySS_SSSbAJtctFZ,
+                            _$s14CloudSharingUI0B18OptionsViewFactoryC024createCollaborationSharedE0_13layoutMargins19userDidChangeOption011contentSizemN0AA32HostingControllerAndModelUpdatesCSo016_SWCollaborationiD0CSg_So23NSDirectionalEdgeInsetsVySS_SSSbALtcySo6CGSizeVctFZ,
+                            _$s14CloudSharingUI0B18OptionsViewFactoryC06createbdE0_19userDidChangeOptionAA32HostingControllerAndModelUpdatesCSaySo016_SWCollaborationD5GroupCG_ySS_SSSbAJtctFZ,
                             _$s14CloudSharingUI0B18OptionsViewFactoryCACycfC,
                             _$s14CloudSharingUI0B18OptionsViewFactoryCACycfc,
                             _$s14CloudSharingUI0B18OptionsViewFactoryCMa,
@@ -240,6 +249,23 @@ exports:
                             _$s14CloudSharingUI19AddressingViewModelC20$secondaryButtonText7Combine9PublishedV9PublisherVySS_GvpMV,
                             _$s14CloudSharingUI19AddressingViewModelC20$secondaryButtonText7Combine9PublishedV9PublisherVySS_GvsTj,
                             _$s14CloudSharingUI19AddressingViewModelC20$secondaryButtonText7Combine9PublishedV9PublisherVySS_GvsTq,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvMTj,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvMTq,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvgTj,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvgTq,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvpMV,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvsTj,
+                            _$s14CloudSharingUI19AddressingViewModelC22hideInnerNavigationBarSbvsTq,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvMTj,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvMTq,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvgTj,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvgTq,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvpMV,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvsTj,
+                            _$s14CloudSharingUI19AddressingViewModelC23$hideInnerNavigationBar7Combine9PublishedV9PublisherVySb_GvsTq,
+                            _$s14CloudSharingUI19AddressingViewModelC23primaryButtonIsDisabledSbvgTj,
+                            _$s14CloudSharingUI19AddressingViewModelC23primaryButtonIsDisabledSbvgTq,
+                            _$s14CloudSharingUI19AddressingViewModelC23primaryButtonIsDisabledSbvpMV,
                             _$s14CloudSharingUI19AddressingViewModelC6update15headerImageData0H5Title11loadingText013supplementaryM008userInfoM0013primaryButtonM009secondaryrM0y10Foundation0J0VSg_SSSgA5PtFTj,
                             _$s14CloudSharingUI19AddressingViewModelC6update15headerImageData0H5Title11loadingText013supplementaryM008userInfoM0013primaryButtonM009secondaryrM0y10Foundation0J0VSg_SSSgA5PtFTq,
                             _$s14CloudSharingUI19AddressingViewModelC7Combine16ObservableObjectAAMc,
@@ -283,6 +309,22 @@ exports:
                             _$s14CloudSharingUI21AddressingViewFactoryCMu,
                             _$s14CloudSharingUI21AddressingViewFactoryCN,
                             _$s14CloudSharingUI21AddressingViewFactoryCfD,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE031sourceAppBundleIDDidChangeBlockACSo06UIViewE0C_ySSctcfC,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE031sourceAppBundleIDDidChangeBlockACSo06UIViewE0C_ySSctcfCTj,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE031sourceAppBundleIDDidChangeBlockACSo06UIViewE0C_ySSctcfCTq,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE031sourceAppBundleIDDidChangeBlockACSo06UIViewE0C_ySSctcfc,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE0So06UIViewE0Cvg,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC04viewE0So06UIViewE0CvpMV,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC31sourceAppBundleIDDidChangeBlockyySScvg,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesC31sourceAppBundleIDDidChangeBlockyySScvpMV,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCACycfC,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCACycfc,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCMa,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCMn,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCMo,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCMu,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCN,
+                            _$s14CloudSharingUI32HostingControllerAndModelUpdatesCfD,
                             _CSCKSharingSummaryStringFromOptionsGroups,
                             _CSCNAutocompleteSearchControllerHeaderView,
                             _CSSetCNAutocompleteSearchControllerHeaderView,
@@ -293,5 +335,7 @@ exports:
                             CSAddressingViewController, CSAddressingViewModel,
                             CSSharingOptionsViewController,
                             _TtC14CloudSharingUI21AddressingViewFactory,
-                            _TtC14CloudSharingUI25SharingOptionsViewFactory ]
+                            _TtC14CloudSharingUI25SharingOptionsViewFactory,
+                            _TtC14CloudSharingUI32HostingControllerAndModelUpdates ]
+    objc-ivars:           [ CSSharingOptionsViewController._sourceAppBundleIDDidChangeBlock ]
 ...

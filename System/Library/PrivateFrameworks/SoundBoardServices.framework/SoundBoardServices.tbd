@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SoundBoardServices.framework/SoundBoardServices
@@ -7,10 +7,11 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$sSo12SBUIToneTypeV18SoundBoardServicesE11descriptionSSvg,
                             _$sSo12SBUIToneTypeV18SoundBoardServicesE11descriptionSSvpMV,
                             _$sSo12SBUIToneTypeVs23CustomStringConvertible18SoundBoardServicesMc,
+                            _SBSProximityHandoffTypeDescription,
                             _SBSUserDefaultsArrayKey, _SBSUserDefaultsInfoKey,
                             _SBSUserDefaultsModKey, _SBSUserDefaultsValueKey,
                             _SoundBoardServicesVersionNumber,
@@ -50,6 +51,9 @@ exports:
                             _kSBSProfilesRemoveProfileByIdentifier,
                             _kSBSProximityHandoffUICancelKey,
                             _kSBSProximityHandoffUICompleteKey,
+                            _kSBSProximityHandoffUIRequestArtworkColorsKey,
+                            _kSBSProximityHandoffUIRequestHandoffTypeKey,
+                            _kSBSProximityHandoffUIRequestIntensityKey,
                             _kSBSProximityHandoffUIStartKey,
                             _kSBSProximityHandoffUIStartWithArtworkColorsKey,
                             _kSBSProximityHandoffUIUpdateIntensityKey,
@@ -60,11 +64,12 @@ exports:
                             _kSBSSystemObliterate, _kSBSSystemReboot,
                             _kSBSSystemRequestDeferredReboot,
                             _kSBSSystemRequestFetchAlarmsAndTimers ]
-    objc-classes:         [ SBSCaptiveNetwork, SBSClient, SBSColor, SBSColorGroup,
-                            SBSDebugInterface, SBSDefaultInfo, SBSDispatch,
-                            SBSFeatureFlag, SBSHomePodControlsInterface,
-                            SBSPowerMonitor, SBSProfiles, SBSProximityHandoffUI,
+    objc-classes:         [ SBSClient, SBSColor, SBSColorGroup, SBSDebugInterface,
+                            SBSDefaultInfo, SBSDispatch, SBSFeatureFlag,
+                            SBSHomePodControlsInterface, SBSPowerMonitor,
+                            SBSProfiles, SBSProximityHandoffUI,
                             SBSRemoteDeviceReceiver, SBSRemoteDeviceSender,
                             SBSServer, SBSStereoLeaderInterface,
-                            SBSSysdiagnoseInterface, SBSSystemInterface, SBSUtils ]
+                            SBSSysdiagnoseInterface, SBSSystemInterface, SBSUtils,
+                            SBSVolumeEventMonitor ]
 ...

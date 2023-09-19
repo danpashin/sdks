@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/EnhancedLoggingState.framework/EnhancedLoggingState
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ELSDefaultConsent, _ELSDefaultConsentData,
                             _ELSDefaultConsentHandles, _ELSDefaultDates,
                             _ELSDefaultFollowUpOptions,
@@ -56,7 +56,8 @@ exports:
                             _ELSMetadataUserAppleID, _ELSParameterCommand,
                             _ELSParameterEncryption, _ELSParameterPayload,
                             _ELSParameterPayloadsDict, _ELSParameterRetries,
-                            _ELSPlatformIOS, _ELSPlatformWatchOS,
+                            _ELSPlatformIOS, _ELSPlatformMacOS,
+                            _ELSPlatformVisionOS, _ELSPlatformWatchOS,
                             _ELSSubDefaultConsentHandleEntryHandle,
                             _ELSSubDefaultDatesEnd, _ELSSubDefaultDatesStart,
                             _ELSSubDefaultQueueEntryExecuteAfterDuration,
@@ -66,7 +67,7 @@ exports:
                             _ELSSubDefaultQueueEntryRetry,
                             _ELSSubDefaultQueueEntryType, _ELSUserInfoKey,
                             _kELSClientEntitlement ]
-    objc-classes:         [ ELSDocumentHelper, ELSEntitlementUtilities, ELSEvent,
-                            ELSManager, ELSQueueEntry, ELSSnapshot, ELSWhitelist,
-                            ELSWhitelistEntry ]
+    objc-classes:         [ ELSDocumentHelper, ELSEntitlementUtilities,
+                            ELSEnvironment, ELSEvent, ELSManager, ELSQueueEntry,
+                            ELSSnapshot, ELSWhitelist, ELSWhitelistEntry ]
 ...

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsML.framework/CoreSuggestionsML
-current-version:       1193.26
+current-version:       1226.0.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CoreSuggestionsMLVersionNumber,
                             _CoreSuggestionsMLVersionString,
                             _SGNormalizeEmojisInString,
@@ -18,7 +18,12 @@ exports:
                             SGDeduperML, SGDefaultAssets, SGLanguageDetection,
                             SGLazyInit, SGLexiconML, SGMessagePair,
                             SGMessagePairIterator, SGModelAsset, SGModelFeatures,
-                            SGModelHyperparameters, SGModelSampler, SGModelSource,
+                            SGModelHead, SGModelHyperparameters, SGModelSampler,
+                            SGModelSource, SGMultiHeadEspressoModel,
+                            SGMultiHeadEspressoModelCache,
+                            SGMultiHeadEspressoModelCached,
+                            SGMultiHeadEspressoModelWrapper,
+                            SGMultiHeadInference, SGMultiHeadPredictionItem,
                             SGMultiLabelEspressoClassifierCache,
                             SGMultiLabelEspressoClassifierCached,
                             SGMultiLabelEspressoClassifierWrapper, SGNestedArray,

@@ -1,26 +1,25 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IOSurfaceAccelerator.framework/IOSurfaceAccelerator
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _IOSurfaceAcceleratorAbortCaptures,
                             _IOSurfaceAcceleratorAbortTransfers,
                             _IOSurfaceAcceleratorBlitSurface,
                             _IOSurfaceAcceleratorBlitSurfaceWithSwap,
                             _IOSurfaceAcceleratorCaptureSurface,
                             _IOSurfaceAcceleratorConditionalTransferSurfaceWithSwap,
-                            _IOSurfaceAcceleratorConfigurePerformanceStats,
                             _IOSurfaceAcceleratorCreate,
+                            _IOSurfaceAcceleratorGetDiag,
                             _IOSurfaceAcceleratorGetFrameworkInfo,
                             _IOSurfaceAcceleratorGetHistogram,
                             _IOSurfaceAcceleratorGetID,
                             _IOSurfaceAcceleratorGetRunLoopSource,
                             _IOSurfaceAcceleratorGetServiceObject,
-                            _IOSurfaceAcceleratorGetStatistics,
                             _IOSurfaceAcceleratorGetTypeID,
                             _IOSurfaceAcceleratorKernelTests,
                             _IOSurfaceAcceleratorSetCustomFilter,
@@ -61,12 +60,19 @@ exports:
                             _kIOSurfaceAcceleratorHistogramWidth,
                             _kIOSurfaceAcceleratorHtpcLargeHeaders,
                             _kIOSurfaceAcceleratorLockInScaler,
+                            _kIOSurfaceAcceleratorNoCoalesceAsyncIOFenceWrites,
                             _kIOSurfaceAcceleratorNoPowerEarlyBail,
                             _kIOSurfaceAcceleratorNoiseEstimationEnable,
                             _kIOSurfaceAcceleratorOptOutBlitClip,
                             _kIOSurfaceAcceleratorPixelAveraging,
                             _kIOSurfaceAcceleratorReadOnly,
                             _kIOSurfaceAcceleratorReducedPrecisionFractionalOffsets,
+                            _kIOSurfaceAcceleratorSharedEventDstRef,
+                            _kIOSurfaceAcceleratorSharedEventDstSignal,
+                            _kIOSurfaceAcceleratorSharedEventDstWait,
+                            _kIOSurfaceAcceleratorSharedEventSrcRef,
+                            _kIOSurfaceAcceleratorSharedEventSrcSignal,
+                            _kIOSurfaceAcceleratorSharedEventSrcWait,
                             _kIOSurfaceAcceleratorSharpener,
                             _kIOSurfaceAcceleratorSharpenerMode,
                             _kIOSurfaceAcceleratorSharpenerMode_Dynamic,

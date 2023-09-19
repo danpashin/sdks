@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CPMS.framework/CPMS
@@ -7,15 +7,19 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CPMSErrorDomain, _CPMSVersionNumber,
                             _CPMSVersionString, _kCPMSPowerTimeScale100ms,
                             _kCPMSPowerTimeScale1s,
                             _kCPMSPowerTimeScaleInstantaneous,
                             _kCPMSPowerTimeScaleThermal,
+                            _kPPMBatteryModelStepBaseDurationStr,
                             _kPPMBatteryModelStepBaseStr,
+                            _kPPMBatteryModelStepPulseDurationStr,
                             _kPPMBatteryModelStepPulseStr,
+                            _kPPMBatteryModelStepSpikeDurationStr,
                             _kPPMBatteryModelStepSpikeStr,
+                            _kPPMBatteryModelStepUVLODurationStr,
                             _kPPMBatteryModelStepUVLOStr, _suppressAssert ]
     objc-classes:         [ CPMSAgent, CPMSClientDescription, CPMSStateReader ]
 ...

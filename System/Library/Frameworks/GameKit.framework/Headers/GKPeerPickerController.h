@@ -1,9 +1,8 @@
-//
-//  GKPeerPickerController.h
-//  Game Center
-//
-//  Copyright 2010-2023 Apple Inc. All rights reserved.
-//
+// Copyright © Apple Inc. All rights reserved.
+
+#import <TargetConditionals.h>
+
+#if !TARGET_OS_OSX && !TARGET_OS_TV && !TARGET_OS_WATCH
 
 /*
  This API provides a system-supplied user interface for selecting and connecting to another device for a multiplayer game.  The API introduces GKPeerPickerController for this purpose, and should be used in conjunction with the GKSession API.
@@ -28,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* callbacks to the GKPeerPickerController delegate
  */
-NS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the MultipeerConnectivity framework") 
+API_DEPRECATED("Use MCBrowserViewController along with MCBrowserViewControllerDelegate from the MultipeerConnectivity framework.", ios(3.0,7.0)) __TVOS_UNAVAILABLE
 @protocol GKPeerPickerControllerDelegate <NSObject>
 
 @optional
@@ -37,23 +36,23 @@ NS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController along with MCBrowserVie
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 /* Notifies delegate that a connection type was chosen by the user.
  */
-- (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type ;
+- (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type __TVOS_UNAVAILABLE;
 
 /* Notifies delegate that the connection type is requesting a GKSession object.
  
  You should return a valid GKSession object for use by the picker. If this method is not implemented or returns 'nil', a default GKSession is created on the delegate's behalf.
  */
 
-- (GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnectionType:(GKPeerPickerConnectionType)type ;
+- (GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnectionType:(GKPeerPickerConnectionType)type __TVOS_UNAVAILABLE;
 
 /* Notifies delegate that the peer was connected to a GKSession.
  */
-- (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session ;
+- (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session __TVOS_UNAVAILABLE;
 #pragma clang diagnostic pop
 
 /* Notifies delegate that the user cancelled the picker.
  */
-- (void)peerPickerControllerDidCancel:(GKPeerPickerController *)picker ;
+- (void)peerPickerControllerDidCancel:(GKPeerPickerController *)picker __TVOS_UNAVAILABLE;
 
 @end
 
@@ -64,7 +63,7 @@ NS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController along with MCBrowserVie
  
  You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class. After the user interface starts, this class notifies your delegate of the user’s actions.
  */
-NS_CLASS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController from the MultipeerConnectivity framework") 
+API_DEPRECATED("Use MCBrowserViewController from the MultipeerConnectivity framework.", ios(3.0,7.0)) __TVOS_UNAVAILABLE
 @interface GKPeerPickerController : NSObject
 
 /* An integer bit mask that determines what connection types are supported by the application, and displays system-supplied UI as appropriate. 
@@ -75,7 +74,7 @@ NS_CLASS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController from the Multipee
 
 /* The delegate receives notifications when the user interacts with the picker interface. If this property is nil, the picker is dismissed immediately if you try to show it.
  */
-@property(nonatomic, nullable, weak) id<GKPeerPickerControllerDelegate> delegate NS_DEPRECATED_IOS(3_0, 7_0) ;
+@property(nonatomic, nullable, weak) id<GKPeerPickerControllerDelegate> delegate NS_DEPRECATED_IOS(3_0, 7_0) __TVOS_UNAVAILABLE;
 
 /* Show the picker.
  */
@@ -90,3 +89,5 @@ NS_CLASS_DEPRECATED_IOS(3_0, 7_0, "Use MCBrowserViewController from the Multipee
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

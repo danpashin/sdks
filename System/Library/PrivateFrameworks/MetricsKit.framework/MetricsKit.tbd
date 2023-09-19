@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AMPIDServiceMachServiceName,
                             _IDSecretRecordExpirationField,
                             _IDSecretRecordKeyField,
@@ -141,8 +141,9 @@ exports:
                             _MTIDNamespacesKey, _MTIDOptionAppBundleIdentifier,
                             _MTIDOptionCachePolicy, _MTIDOptionDSID,
                             _MTIDOptionDate, _MTIDOptionExistingOnly,
-                            _MTIDOptionIDType, _MTIDOptionReset,
-                            _MTIDOptionSyncWaitTime, _MTIDSchemeOptionContainer,
+                            _MTIDOptionIDType, _MTIDOptionITunesUserRequired,
+                            _MTIDOptionReset, _MTIDOptionSyncWaitTime,
+                            _MTIDSchemeOptionContainer,
                             _MTIDSchemeOptionCorrelations,
                             _MTIDSchemeOptionDefault, _MTIDSchemeOptionLifespan,
                             _MTIDSchemeOptionNamespace,
@@ -248,10 +249,10 @@ exports:
                             MTFrozenBag, MTHLSItem, MTHLSRollItem,
                             MTHLSVideoPlaylist, MTHashAction, MTIDCache,
                             MTIDCloudKitLocalDB, MTIDCloudKitPromiseManager,
-                            MTIDCloudKitStore, MTIDCompositeSecretStore,
-                            MTIDConfig, MTIDInfo, MTIDScheme, MTIDSecret, MTIDSpan,
-                            MTIDSyncEngine, MTIDXPCSecretStore,
-                            MTImpressionableEventHandler,
+                            MTIDCloudKitStore, MTIDCommon,
+                            MTIDCompositeSecretStore, MTIDConfig, MTIDInfo,
+                            MTIDScheme, MTIDSecret, MTIDSpan, MTIDSyncEngine,
+                            MTIDXPCSecretStore, MTImpressionableEventHandler,
                             MTImpressionsEventHandler,
                             MTInterprocessChangeNotifier, MTJSContextEventFilter,
                             MTLoadUrlEventHandler, MTLoadUrlMeasurement,

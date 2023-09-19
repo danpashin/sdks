@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SecurityFoundation.framework/SecurityFoundation
@@ -7,9 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SFAccessibilityMakeWithMode,
                             _SFCoreCryptoErrorDomain,
+                            _SFCryptoServicesErrorBadType,
                             _SFCryptoServicesErrorDecryptionFailed,
                             _SFCryptoServicesErrorDeserializationFailed,
                             _SFCryptoServicesErrorDigest,
@@ -38,7 +39,6 @@ exports:
                             _SFKeychainErrorSaveFailed,
                             _SFKeychainErrorSecureDecodeFailed,
                             _SFKeychainErrorUnknownKeyType,
-                            _SFKeychainServerXPCInterface,
                             _SecurityFoundationVersionNumber,
                             _SecurityFoundationVersionString,
                             __defaultDigestOperation,
@@ -51,9 +51,7 @@ exports:
                             SFCMACOperation, SFCMACOperation_Ivars,
                             SFCertificate_Ivars, SFCiphertext_Ivars, SFCoder,
                             SFCoder_Ivars, SFCodingOptions, SFCodingOptions_Ivars,
-                            SFCredentialSearchFilter,
-                            SFCredentialSearchFilter_Ivars, SFDecoder,
-                            SFDecoder_Ivars, SFECDHKeySource_Ivars,
+                            SFDecoder, SFDecoder_Ivars, SFECDHKeySource_Ivars,
                             SFECDHOperation_Ivars, SFECKeySpecifier_Ivars,
                             SFEC_X962SigningOperation_Ivars, SFHMACOperation,
                             SFHMACOperation_Ivars, SFHMACPseudoRandomFunction,
@@ -64,10 +62,7 @@ exports:
                             SFIdentity_Ivars, SFIncrementingIVGenerator,
                             SFIncrementingIVGenerator_Ivars, SFKeyPair_Ivars,
                             SFKeySearchFilter, SFKeySearchFilter_Ivars,
-                            SFKey_Ivars, SFKeychainData, SFKeychainDataAttributes,
-                            SFKeychainDataAttributes_Ivars,
-                            SFKeychainDataFetchResult, SFKeychainData_Ivars,
-                            SFKeychainFetchResult_Ivars,
+                            SFKey_Ivars, SFKeychainFetchResult_Ivars,
                             SFMD5DigestOperation_Ivars,
                             SFMaskGenerationFunction1,
                             SFMaskGenerationFunction1_Ivars,
@@ -92,8 +87,7 @@ exports:
                             SFSHA512DigestOperation_Ivars,
                             SFSSLClientTrustPolicy, SFSSLClientTrustPolicy_Ivars,
                             SFSSLServerTrustPolicy, SFSSLServerTrustPolicy_Ivars,
-                            SFServiceIdentifier_Ivars, SFSignedData_Ivars,
-                            SFSymmetricEncryptionOperation,
+                            SFSignedData_Ivars, SFSymmetricEncryptionOperation,
                             SFSymmetricEncryptionOperation_Ivars,
                             SFSymmetricKeyAttributes,
                             SFSymmetricKeyAttributes_Ivars, SFSymmetricKey_Ivars,
@@ -109,19 +103,17 @@ exports:
                             _SFAsymmetricKeySpecifier,
                             _SFAuthenticatedCiphertext,
                             _SFAuthenticatedEncryptionOperation, _SFCertificate,
-                            _SFCiphertext, _SFCredential, _SFCredentialStore,
-                            _SFECDHKeySource, _SFECDHOperation, _SFECKeyPair,
-                            _SFECKeySpecifier, _SFECPublicKey,
+                            _SFCiphertext, _SFECDHKeySource, _SFECDHOperation,
+                            _SFECKeyPair, _SFECKeySpecifier, _SFECPublicKey,
                             _SFEC_X962SigningOperation, _SFIESCiphertext,
                             _SFIESOperation, _SFIdentity, _SFKey, _SFKeyPair,
                             _SFKeySpecifier, _SFKeychainFetchResult,
                             _SFKeychainIdentityFetchResult,
                             _SFKeychainKeyFetchResult, _SFKeychainManager,
-                            _SFMD5DigestOperation, _SFPasswordCredential,
-                            _SFPublicKey, _SFRSAKeySpecifier,
-                            _SFSHA1DigestOperation, _SFSHA224DigestOperation,
-                            _SFSHA256DigestOperation, _SFSHA384DigestOperation,
-                            _SFSHA512DigestOperation, _SFServiceIdentifier,
+                            _SFMD5DigestOperation, _SFPublicKey,
+                            _SFRSAKeySpecifier, _SFSHA1DigestOperation,
+                            _SFSHA224DigestOperation, _SFSHA256DigestOperation,
+                            _SFSHA384DigestOperation, _SFSHA512DigestOperation,
                             _SFSignedData, _SFSymmetricKey,
                             _SFSymmetricKeySpecifier, _SFTripleDESKeySpecifier ]
     objc-ivars:           [ SFAESEncryptionOperation._aesEncryptionOperationInternal,
@@ -129,15 +121,12 @@ exports:
                             SFCMACOperation._cmacOperationInternal,
                             SFCoder._coderInternal,
                             SFCodingOptions._codingOptionsInternal,
-                            SFCredentialSearchFilter._credentialSearchFilterInternal,
                             SFDecoder._decoderInternal,
                             SFHMACOperation._hmacOperationInternal,
                             SFHMACPseudoRandomFunction._hmacPseudoRandomFunctionInternal,
                             SFIdentityAttributes._identityAttributesInternal,
                             SFIdentitySearchFilter._identitySearchFilterInternal,
                             SFIncrementingIVGenerator._incrementingIVGeneratorInternal,
-                            SFKeychainDataAttributes._keychainDataAttributesInternal,
-                            SFKeychainDataFetchResult._dataFetchResult,
                             SFMaskGenerationFunction1._mgf1OperationInternal,
                             SFMessageAuthenticationCodeOperation._messageAuthenticationCodeOperationInternal,
                             SFPBKDF2Operation._pbkdf2OperationInternal,

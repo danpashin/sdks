@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MessageSupport.framework/MessageSupport
-current-version:       3731.255.231
+current-version:       3774.100.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MFAccountsLog, _MFAutoFetchLog, _MFComposeLog,
                             _MFCompositionServiceDomain,
                             _MFDeviceSupportsForceTouch,
@@ -29,6 +29,7 @@ exports:
                             _MFMailActivityHandoffComposeKeyMessageData,
                             _MFMailActivityHandoffComposeKeyMessageObjectIDRepresentation,
                             _MFMailActivityHandoffComposeKeyPartialMessageID,
+                            _MFMailActivityHandoffComposeKeyPreferredSendingEmailAddress,
                             _MFMailActivityHandoffComposeKeySubject,
                             _MFMailActivityHandoffDebugKeyComposeDataPath,
                             _MFMailActivityHandoffDebugKeySimulateFailureBool,
@@ -56,6 +57,10 @@ exports:
                             _MFMailQuickLookActivityKeyContentURL,
                             _MFMailQuickLookActivityKeyEditBehavior,
                             _MFMailQuickLookActivityKeyIsContentManaged,
+                            _MFMailQuickLookActivityKeySenderDisplayName,
+                            _MFMailQuickLookActivityKeyShouldShowReplyAll,
+                            _MFMailReturnToSenderActivityType,
+                            _MFMessageComposeLoadingSignpostLog,
                             _MFMessageLoadingSignpostLog,
                             _MFMessagePreferencesDomain,
                             _MFMessageSelectionLifecycleSignpostLog,

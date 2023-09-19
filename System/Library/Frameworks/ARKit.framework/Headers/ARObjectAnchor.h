@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ARReferenceObject;
 
-
 /**
  An anchor representing an object in the world.
  */
@@ -23,7 +22,6 @@ API_AVAILABLE(ios(12.0))
  Reference to the detected object.
  */
 @property (nonatomic, strong, readonly) ARReferenceObject *referenceObject;
-
 
 /** Unavailable */
 - (instancetype)initWithTransform:(simd_float4x4)transform NS_UNAVAILABLE;

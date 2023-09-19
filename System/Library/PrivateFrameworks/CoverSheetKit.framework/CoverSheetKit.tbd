@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoverSheetKit.framework/CoverSheetKit
@@ -7,9 +7,14 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CSDisplayMetrics, _CSEffectiveArtworkSubtype,
-                            _CSFrameworkBundle, _CoverSheetKitVersionNumber,
+                            _CSFrameworkBundle, _CSTimeNumberingSystemArabic,
+                            _CSTimeNumberingSystemArabicIndic,
+                            _CSTimeNumberingSystemBurmese,
+                            _CSTimeNumberingSystemDevanagari,
+                            _CSTimeNumberingSystemKhmer,
+                            _CoverSheetKitVersionNumber,
                             _CoverSheetKitVersionString,
                             __CS_Private_BaseIsN84OrSimilarDevice,
                             __CS_Private_MainScreenClass,
@@ -26,5 +31,6 @@ exports:
                             CSProminentLabeledElementView,
                             CSProminentLayoutController,
                             CSProminentSubtitleDateView, CSProminentSubtitleView,
-                            CSProminentTextElementView, CSProminentTimeView ]
+                            CSProminentTextElementView, CSProminentTimeView,
+                            _CSProminentDisplayBackgroundWrapperView ]
 ...

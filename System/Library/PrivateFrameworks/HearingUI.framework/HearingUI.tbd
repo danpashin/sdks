@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HearingUI.framework/HearingUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s9HearingUI14SoundMeterDataC14thresholdLevelSo013HCEDThresholdG0VvpfP,
                             _$s9HearingUI14SoundMeterDataC15_thresholdLevel33_AE524457F2425871DED461A1FD2CB01CLL7Combine9PublishedVySo013HCEDThresholdG0VGvpfi,
                             _$s9HearingUI14SoundMeterDataC7Combine16ObservableObjectAAMc,
@@ -46,26 +46,37 @@ exports:
                             _$s9HearingUI27SoundMeterConfigurationTypeOSQAAMc,
                             _$s9HearingUI27SoundMeterConfigurationTypeOSYAAMc,
                             _AXHAHearingDevicesIconImage, _AXHARoundToPixel,
-                            _HUICCFooterHeight, _HUIReferenceScreenBounds,
+                            _HUICCBackgroundMaterialView,
+                            _HUICCBackgroundVisualStylingProviderForCategory,
+                            _HUICCButtonVCWithSystemImageName,
+                            _HUICCFooterHeight, _HUICCImageViewWithImage,
+                            _HUICCLargeTextEnabled, _HUICCMenuTextLabel,
+                            _HUICCViewTagForModule, _HUIReferenceScreenBounds,
                             _HearingUIVersionNumber, _HearingUIVersionString,
                             _accessibilityHearingAidImageNamed,
                             _accessibilityHearingUIBundle,
                             _attributedStringWithFeatureSettings,
                             _attributedStringWithImage, _colorForThreshold,
                             _kSafeSymbolName, _kWarningSymbolName ]
-    objc-classes:         [ HACCBatteryGroupView, HACCBatteryView, HACCConstants,
-                            HACCContentViewController, HACCLiveListenButton,
-                            HACCLiveListenLevelGroup,
+    objc-classes:         [ HACCBatteryGroupView, HACCBatteryView,
+                            HACCCapsuleDarkBackground, HACCCapsuleTitleView,
+                            HACCConstants, HACCContentViewController,
+                            HACCLiveListenButton, HACCLiveListenLevelGroup,
                             HACCMenuModuleViewController, HACCPMEToggle,
-                            HACCPSESettings,
+                            HACCPSESettings, HACCSSLButton,
                             HACCShortcutViewBackgroundController,
                             HACCShortcutViewController, HACCSlider, HACCStackView,
-                            HACCStatusView, HUICCOptionsButton,
-                            HUICCPSEBeamformerButton, HUICCToggleButton,
-                            HUIHeadphoneLevelGroup, HUIHeadphoneLevelView,
-                            HUISoundMeterListener, HUISoundMeterViewInterface,
+                            HACCStatusView, HUICCBackgroundSoundsButton,
+                            HUICCCapsuleButton, HUICCFooterView,
+                            HUICCMenuCheckmarkView, HUICCMenuItemCheckmarkView,
+                            HUICCMenuTextView, HUIHeadphoneLevelGroup,
+                            HUIHeadphoneLevelView, HUILiveListenLevelIndicator,
+                            HUISliderConfig, HUISoundMeterListener,
+                            HUISoundMeterViewInterface,
                             HUISoundMeterViewInterfaceInternal, HUIStepSlider,
-                            HUITitleValueSlider, _HUIUtilitiesPlaceholder ]
+                            HUITitleDarkStepSliderView, HUITitleValueSlider,
+                            _HUIDarkStepSliderView, _HUIDarkTextView,
+                            _HUIUtilitiesPlaceholder ]
     objc-ivars:           [ HACCBatteryView._batteryView,
                             HACCBatteryView._numberFormatter,
                             HACCBatteryView._sideLabel,

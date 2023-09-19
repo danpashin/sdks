@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RunningBoard.framework/RunningBoard
-current-version:       803.100.24
+current-version:       858.0.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _RBAttributePrimitiveEntitlement,
                             _RBBackBoardClientEntitlement,
                             _RBBackgroundViewServicesEntitlement,
@@ -60,6 +60,7 @@ exports:
                             RBDomainRestriction, RBEntitlementManager,
                             RBEntitlementPredicate, RBEntitlements, RBEventQueue,
                             RBEventQueueEvent, RBExtensionDataProvider,
+                            RBHistoricalStatistics,
                             RBIgnoreAllEntitlementsManager,
                             RBInheritanceCollection, RBJetsamPropertyManager,
                             RBLSBundleProperties, RBLaunchManager, RBLaunchTracker,

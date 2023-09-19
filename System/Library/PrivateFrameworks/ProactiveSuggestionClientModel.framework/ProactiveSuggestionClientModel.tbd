@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ProactiveSuggestionClientModel.framework/ProactiveSuggestionClientModel
@@ -7,8 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _ATXInfoSuggestionXPCInterface,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ATXCreateProactiveSuggestionClientModelXPCInterface,
+                            _ATXInfoSuggestionXPCInterface,
                             _ATXMPBBlendingClientModelEngagementClientCacheAgeTrackerReadFrom,
                             _ATXMPBBlendingClientModelEngagementTrackerReadFrom,
                             _ATXMPBBlendingClientModelEngagementUICacheAgeTrackerReadFrom,
@@ -36,11 +37,11 @@ exports:
                             _ATXPBShortcutsEditorEventMetadataReadFrom,
                             _ATXPBShortcutsEditorEventReadFrom,
                             _ATXPBSpotlightSuggestionLayoutReadFrom,
+                            _ATXPBSpotlightUIEventReadFrom,
                             _ATXPBSuggestionCollectionReadFrom,
                             _ATXPBSuggestionLayoutListReadFrom,
                             _ATXPBSuggestionLayoutReadFrom,
                             _ATXPBUIFeedbackPriorContextReadFrom,
-                            _ATXProactiveSuggestionClientModelXPCInterface,
                             _ATXProactiveSuggestionRealTimeProviderXPCInterface,
                             _ATXSuggestionPredictionReasonEnumerateReasonCodes,
                             _ProactiveSuggestionClientModelVersionNumber,
@@ -84,6 +85,7 @@ exports:
                             ATXClientModelCacheManagerGuardedData,
                             ATXClientModelCacheUpdate,
                             ATXClientModelNotificationManager,
+                            ATXContextActionIdentifier,
                             ATXContextualActionSuggestionRequest,
                             ATXCustomIntentDescription,
                             ATXHomeScreenCachedSuggestions, ATXInfoSuggestion,
@@ -121,8 +123,8 @@ exports:
                             ATXPBShortcutsEditorEvent,
                             ATXPBShortcutsEditorEventMetadata,
                             ATXPBSpotlightSuggestionLayout,
-                            ATXPBSuggestionCollection, ATXPBSuggestionLayout,
-                            ATXPBSuggestionLayoutList,
+                            ATXPBSpotlightUIEvent, ATXPBSuggestionCollection,
+                            ATXPBSuggestionLayout, ATXPBSuggestionLayoutList,
                             ATXPBUIFeedbackPriorContext,
                             ATXProactiveCardSuggestionClient,
                             ATXProactiveSuggestion,
@@ -159,6 +161,7 @@ exports:
                             ATXShortcutsEditorSessionMetadata,
                             ATXSpotlightSuggestionCollection,
                             ATXSpotlightSuggestionLayout,
+                            ATXSpotlightUIBiomeStream, ATXSpotlightUIEvent,
                             ATXStackConfigStatistics,
                             ATXStackConfigStatisticsBuilder, ATXSuggestionLayout,
                             ATXSuggestionReceiverPendingRefreshTracker,
@@ -309,6 +312,8 @@ exports:
                             ATXPBProactiveSuggestionUISpecification._allowedOnHomeScreen,
                             ATXPBProactiveSuggestionUISpecification._allowedOnLockscreen,
                             ATXPBProactiveSuggestionUISpecification._allowedOnSpotlight,
+                            ATXPBProactiveSuggestionUISpecification._contextEndDate,
+                            ATXPBProactiveSuggestionUISpecification._contextStartDate,
                             ATXPBProactiveSuggestionUISpecification._has,
                             ATXPBProactiveSuggestionUISpecification._predictionReasons,
                             ATXPBProactiveSuggestionUISpecification._preferredLayoutConfigs,
@@ -359,6 +364,12 @@ exports:
                             ATXPBSpotlightSuggestionLayout._collections,
                             ATXPBSpotlightSuggestionLayout._scores,
                             ATXPBSpotlightSuggestionLayout._uuidString,
+                            ATXPBSpotlightUIEvent._eventType,
+                            ATXPBSpotlightUIEvent._has,
+                            ATXPBSpotlightUIEvent._suggestionContext,
+                            ATXPBSpotlightUIEvent._suggestionSubtype,
+                            ATXPBSpotlightUIEvent._suggestionType,
+                            ATXPBSpotlightUIEvent._suggestionUniqueId,
                             ATXPBSuggestionCollection._contextTitle,
                             ATXPBSuggestionCollection._sectionIdentifier,
                             ATXPBSuggestionCollection._suggestions,

@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
-current-version:       3290.2
+current-version:       3422.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FCConsumedArticleFilterMethodForReadArticlesFilterMethod,
                             _FCConsumedArticleFilterMethodForSeenArticlesFilterMethod,
+                            _FCForYouSectionConfigJSONDictionary,
                             _NNCreateHeadlineSyncableHeadline,
                             _NNHeadlineSyncableResultFromHeadline,
                             _NNHeadlineSyncableResultFromResult,
@@ -17,6 +18,10 @@ exports:
                             _NNNanoSoloLog, _NNSetupCompanionSyncLog,
                             _NTArticleIDsRequestWithArticles, _NTAssetFileURL,
                             _NTAssetFileURLWithData, _NTAssetFileURLWithFile,
+                            _NTCKRecordFromArticleJSONDictionary,
+                            _NTCKRecordFromArticleListJSONDictionary,
+                            _NTCKRecordFromJSONDictionary,
+                            _NTCKRecordFromTagJSONDictionary,
                             _NTDefaultModuleIdentifier, _NTDeleteOnDiskAssets,
                             _NTDesiredHeadlineFieldAssetOptionsWithAssetSizes,
                             _NTDesiredHeadlineFieldOptionsWithAssetOptions,
@@ -28,7 +33,22 @@ exports:
                             _NTHeadlineSourceNameImageMaskAssetHandleFromFCHeadline,
                             _NTHeadlineThumbnailFromFCHeadline,
                             _NTHeadlineThumbnailLengthFromThumbnailSizePreset,
-                            _NTIsUserInExperiment, _NTNewsSourceIdentifier,
+                            _NTIsUserInExperiment,
+                            _NTJSONArticleListArticleIDsKey,
+                            _NTJSONArticleScoreTopicTagIDsKey,
+                            _NTJSONChangeTagKey, _NTJSONIdentifierKey,
+                            _NTJSONLastModifiedKey,
+                            _NTJSONTagPublisherPaidDescriptionStringsKey,
+                            _NTNewsEdgeArticleDateFields,
+                            _NTNewsEdgeArticleEncodedFields,
+                            _NTNewsEdgeArticleListRecordOverrideKeys,
+                            _NTNewsEdgeArticleRecordOverrideKeys,
+                            _NTNewsEdgeTagEncodedFields,
+                            _NTNewsEdgeTagRecordOverrideKeys,
+                            _NTNewsSourceIdentifier,
+                            _NTPBTodaySectionConfigGenerateArticle,
+                            _NTPBTodaySectionConfigGenerateArticles,
+                            _NTPBTodaySectionConfigGenerateItems,
                             _NTParsecSourceIdentifier,
                             _NTPossiblySimulateCrashWithError,
                             _NTSectionFeedItemsLimit, _NTSharedLog,
@@ -55,6 +75,7 @@ exports:
                             NTHeadlinePersonalizationMetadata,
                             NTItemAggregationResult,
                             NTItemsSectionFetchDescriptor,
+                            NTLegacyFeedPersonalizerFactory,
                             NTLocalNewsPromotionTransformation,
                             NTNewsModuleDescriptorsOperation,
                             NTNewsModuleDescriptorsOperationPrefetchedContent,
@@ -87,9 +108,12 @@ exports:
                             NTSectionPresencePersonalizationOperation,
                             NTSectionPresencePersonalizationRelativeRequest,
                             NTSourceAvailabilityManager,
-                            NTTagSectionFetchDescriptor, NTTodayContext,
+                            NTTagSectionFetchDescriptor,
+                            NTTodayConfigConversionOperation,
+                            NTTodayConfigOperation, NTTodayContext,
                             NTTodayHeadlineProtoitem, NTTodayItemOperation,
                             NTTodayModuleDescriptorsOperation,
                             NTTodayResultOperation, NTTodayResults,
-                            NTTodayResultsSource, NTTodayWebEmbedProtoitem ]
+                            NTTodayResultsSource, NTTodayWebEmbedProtoitem,
+                            NTWidgetConfigDataOperation ]
 ...

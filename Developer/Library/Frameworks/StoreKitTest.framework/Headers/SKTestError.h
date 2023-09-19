@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-SK_EXTERN NSErrorDomain const SKTestErrorDomain API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0));
+SK_EXTERN NSErrorDomain const SKTestErrorDomain API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0), visionos(1.0));
 
 SK_EXTERN NSErrorDomain const SKAdTestErrorDomain API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
 
@@ -23,7 +23,7 @@ typedef NS_ERROR_ENUM(SKTestErrorDomain, SKTestErrorCode) {
     SKTestErrorCodeNoSubscriptionFound      = 5,
     SKTestErrorCodeNoTransactionFound       = 6,
     SKTestErrorCodeInvalidAction            = 7
-} API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0));
+} API_AVAILABLE(ios(14.0), macos(11.0), tvos(14.0), watchos(7.0), visionos(1.0));
 
 typedef NS_ERROR_ENUM(SKAdTestErrorDomain, SKAdTestErrorCode) {
     SKAdTestErrorCodeSignatureMissingAdNetworkId                                    = 0,
@@ -59,6 +59,6 @@ typedef NS_ERROR_ENUM(SKAdTestErrorDomain, SKAdTestErrorCode) {
     SKAdTestErrorCodeInvalidSourceDomain NS_ENUM_AVAILABLE_IOS(16_4)                = 30,
     SKAdTestErrorCodeInvalidImpressionId NS_ENUM_AVAILABLE_IOS(16_4)                = 31,
     SKAdTestErrorCodeSignatureMissingSourceDomain NS_ENUM_AVAILABLE_IOS(16_4)       = 32,
-} API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos) __TVOS_PROHIBITED;
+} API_AVAILABLE(ios(15.4)) API_UNAVAILABLE(macos,watchos,visionos) __TVOS_PROHIBITED;
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MetalTools.framework/MetalTools
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MTLToolsGetAssociatedObject,
                             _MTLToolsSetAssociatedObject, __Z14MTLGPUDebugLogv,
                             __Z19emitKernelTelemetryP18MTLTelemetryDevice,
@@ -29,7 +29,9 @@ exports:
                             __Z29emitCommandBufferDistributionP18MTLTelemetryDeviceP34MTLTelemetryCommandBufferCounttRec,
                             __Z31MTLGPUDebugBufferHandleToOffsety,
                             __Z37MTLGPUDebugSetBufferForResourceHandleP17MTLGPUDebugDeviceyP17MTLGPUDebugBuffer,
+                            __Z38MTLAccelerationStructureStringFromType28MTLAccelerationStructureType,
                             __Z38emitParallellRenderEncoderDistributionP18MTLTelemetryDevice26MTLTelemetryStatisticUIRec,
+                            __Z42MTLAccelerationStructureTypeFromDescriptorP34MTLAccelerationStructureDescriptor,
                             __ZN11MetalBuffer12getMTLBufferEv,
                             __ZN11MetalBuffer4freeEv,
                             __ZN11MetalBufferC1EP15MetalBufferHeapj,
@@ -93,6 +95,7 @@ exports:
                             MTLDebugVisibleFunctionTable,
                             MTLGPUDebugAccelerationStructure,
                             MTLGPUDebugAccelerationStructureCommandEncoder,
+                            MTLGPUDebugAccelerationStructureErrorLog,
                             MTLGPUDebugArgumentEncoder, MTLGPUDebugBinaryArchive,
                             MTLGPUDebugBlitCommandEncoder, MTLGPUDebugBuffer,
                             MTLGPUDebugBufferErrorLog, MTLGPUDebugCommandBuffer,
@@ -142,6 +145,7 @@ exports:
                             MTLToolsIntersectionFunctionTable,
                             MTLToolsLateEvalEvent, MTLToolsLibrary, MTLToolsObject,
                             MTLToolsParallelRenderCommandEncoder,
+                            MTLToolsPerformanceStateAssertion,
                             MTLToolsPipelineLibrary,
                             MTLToolsRasterizationRateMap,
                             MTLToolsRenderCommandEncoder,
@@ -164,6 +168,7 @@ exports:
                             MTLGPUDebugDevice.deviceOptions,
                             MTLGPUDebugDevice.globalBufferHeap,
                             MTLGPUDebugDevice.globalICBBufferResidentList,
+                            MTLGPUDebugDevice.uncheckedBuffer,
                             MTLTelemetryCommandBuffer.anisoClippedCounts,
                             MTLTelemetryCommandBuffer.attachmentCount,
                             MTLTelemetryCommandBuffer.blitEncoderBlitDistribution,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthMobilityUI.framework/HealthMobilityUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s16HealthExperience0A22AppNotificationManagerC0A10MobilityUI0d10PermissionE0ADMc,
                             _$s16HealthExperience0A22AppNotificationManagerC0A10MobilityUI0d10PermissionE0ADWP,
                             _$s16HealthExperience0A22AppNotificationManagerC0A10MobilityUIE03getD13Authorization7Combine6FutureCySo21UNAuthorizationStatusVs5NeverOGyF,
@@ -468,6 +468,8 @@ exports:
                             _$s16HealthMobilityUI24ConfirmDetailsDataSourceCMu,
                             _$s16HealthMobilityUI24ConfirmDetailsDataSourceCfD,
                             _$s16HealthMobilityUI24ConfirmDetailsDataSourceCfd,
+                            _$s16HealthMobilityUI24ConfirmDetailsDataSourceCyACSaySay0A10Experience09SectionedfG4Item_pGGcfC,
+                            _$s16HealthMobilityUI24ConfirmDetailsDataSourceCyACSaySay0A10Experience09SectionedfG4Item_pGGcfc,
                             _$s16HealthMobilityUI24HeightPickerItemDelegateMp,
                             _$s16HealthMobilityUI24HeightPickerItemDelegateP06heighteF0_09didSelectD0yAA0deF0C_So10HKQuantityCtFTj,
                             _$s16HealthMobilityUI24HeightPickerItemDelegateP06heighteF0_09didSelectD0yAA0deF0C_So10HKQuantityCtFTq,
@@ -953,13 +955,15 @@ exports:
                             _$sSo38HKAppleWalkingSteadinessClassificationV16HealthMobilityUIE16uniqueIdentifierSSvg,
                             _$sSo38HKAppleWalkingSteadinessClassificationV16HealthMobilityUIE16uniqueIdentifierSSvpMV,
                             _$sSo38HKAppleWalkingSteadinessClassificationV18HealthExperienceUI36TableViewCellSelectionStyleProviding0e8MobilityG0Mc,
-                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE04makedE9PublisherAbCE0deK0VyF,
+                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE04makedE9Publisher5queueAbCE0deK0VSo012OS_dispatch_L0C_tF,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V010onboardingE0So0abc10OnboardingE0Cvg,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V010onboardingE0So0abc10OnboardingE0CvpMV,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V012notificationE0So0abc12NotificationE0Cvg,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V012notificationE0So0abc12NotificationE0CvpMV,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V11isOnboardedSbvg,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V11isOnboardedSbvpMV,
+                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V17isDeviceSupportedSbvg,
+                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V17isDeviceSupportedSbvpMV,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V23isNotificationAvailableSbvg,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V23isNotificationAvailableSbvpMV,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE0V24isFitnessTrackingEnabledSbvg,
@@ -970,7 +974,7 @@ exports:
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherV07featureeF0ABvg,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherV07featureeF0ABvpMV,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherV7Combine0J0ACMc,
-                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherV7receive10subscriberyx_t7Combine10SubscriberRzs5NeverO7FailureRtzAbCE0dE0V5InputRtzlF,
+                            _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherV7receive10subscriberyx_t7Combine10SubscriberRzs5Error_p7FailureRtzAbCE0dE0V5InputRtzlF,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherVMa,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherVMn,
                             _$sSo47HKMobilityWalkingSteadinessFeatureStatusManagerC16HealthMobilityUIE0dE9PublisherVN,

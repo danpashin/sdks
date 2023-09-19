@@ -1,0 +1,71 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/InputAnalytics.framework/InputAnalytics
+current-version:       30
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _IAMacDefaultsKeyboardAutocorrectionEnabled,
+                            _IATextInputActionsAnalyticsEventFullName,
+                            _IATextInputActionsBundleIdKey,
+                            _IATextInputActionsInputActionCountKey,
+                            _IATextInputActionsInputModeDelimiter,
+                            _IATextInputActionsIsEmojiSearchKey,
+                            _IATextInputActionsIsEmojiSearchSet,
+                            _IATextInputActionsIsMarkedTextKey,
+                            _IATextInputActionsIsMarkedTextSet,
+                            _IATextInputActionsKeyboardLayoutKey,
+                            _IATextInputActionsKeyboardTypeKey,
+                            _IATextInputActionsKeyboardVariantKey,
+                            _IATextInputActionsLanguageKey,
+                            _IATextInputActionsLog,
+                            _IATextInputActionsNetCharactersKey,
+                            _IATextInputActionsNetEmojiCharactersKey,
+                            _IATextInputActionsRegionKey,
+                            _IATextInputActionsSessionActionsEnumValueFromSource,
+                            _IATextInputActionsSessionActionsEnumValueFromSourceAndType,
+                            _IATextInputActionsSessionActionsKey,
+                            _IATextInputActionsSessionActionsStringFromEnumValue,
+                            _IATextInputActionsSessionIsModelessKey,
+                            _IATextInputActionsSourceKey,
+                            _IATextInputActionsSourceString,
+                            _IATextInputActionsTextInputBundleIdKey,
+                            _IATextInputActionsTypeKey,
+                            _IATextInputActionsTypeString,
+                            _IATextInputActionsUserRemovedCharactersKey,
+                            _IATextInputActionsUserRemovedEmojiCharactersKey,
+                            _IATextInputUserPreferenceNameAutocorrectionEnablement,
+                            _IATextInputUserPreferenceStateCurrentValueKey,
+                            _IATextInputUserPreferenceStateEventFullName,
+                            _IATextInputUserPreferenceStatePreferenceNameKey,
+                            _IATextInputUserPreferenceTypeStringFromEnumValue,
+                            _InputAnalyticsVersionNumber,
+                            _InputAnalyticsVersionString ]
+    objc-classes:         [ IAEventDispatcher, IAStringDetails,
+                            IATextInputActionsAccumulator,
+                            IATextInputActionsAccumulatorEntry,
+                            IATextInputActionsAnalytics, IATextInputActionsEvent,
+                            IATextInputActionsServer,
+                            IATextInputActionsSessionAction,
+                            IATextInputActionsSessionBeganAction,
+                            IATextInputActionsSessionCopyAction,
+                            IATextInputActionsSessionCutAction,
+                            IATextInputActionsSessionDeletionAction,
+                            IATextInputActionsSessionDictationBeganAction,
+                            IATextInputActionsSessionDictationEndedAction,
+                            IATextInputActionsSessionEndAction,
+                            IATextInputActionsSessionInsertionAction,
+                            IATextInputActionsSessionPasteAction,
+                            IATextInputActionsSessionRedoAction,
+                            IATextInputActionsSessionReplaceTextAction,
+                            IATextInputActionsSessionSelectionAction,
+                            IATextInputActionsSessionUndoAction,
+                            IATextInputActionsUtils,
+                            IATextInputUserPreferenceAnalytics,
+                            IATextInputUserPreferenceServer,
+                            IATextInputUserPreferenceServerUtils,
+                            IATextInputUserPreferenceStateEvent ]
+...

@@ -1,14 +1,15 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeKitEventRouter.framework/HomeKitEventRouter
-current-version:       1
+current-version:       1.2.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _HMEErrorDomain, _HMEProtoEventInfoReadFrom,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _HMEErrorDomain, _HMEEventComponentsFromTopic,
+                            _HMEProtoEventInfoReadFrom,
                             _HMEProtoEventMetadataReadFrom,
                             _HMEProtoEventReadFrom ]
     objc-classes:         [ HMEDelegatingEventRouter, HMEEvent, HMEEventInfo,

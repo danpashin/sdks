@@ -1,14 +1,15 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoverSheet.framework/CoverSheet
-current-version:       1
+current-version:       4416.11.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CSAdjustTargetContentOffset,
+                            _CSAutobahnEnabledForPlatform,
                             _CSBackgroundStyleIsDarkAffectingLegibility,
                             _CSBatteryChargingMagSafeAuxiliaryPillToSilhouetteBottom,
                             _CSBatteryChargingMagSafeAuxiliaryRingToSilhouetteBottom,
@@ -88,6 +89,7 @@ exports:
                             _NSStringFromCoverSheetTransitionContext,
                             _NSStringFromCoverSheetTransitionType,
                             _NSStringFromTransitionModifiers,
+                            _NSStringFromWidgetPresentationMode,
                             _SBFMagSafeSilhouetteBottomOffset,
                             _SBFMagSafeSilhouetteCornerRadius,
                             _SBFMagSafeSilhouetteHeight,
@@ -100,7 +102,7 @@ exports:
                             _SBLockScreenLogoutButtonGlyphImageName,
                             _SBSecurityResearchDeviceLegalDeclaration ]
     objc-classes:         [ CSAction, CSActivityItemContentView,
-                            CSActivityItemViewController,
+                            CSActivityItemViewController, CSActivityManager,
                             CSActivityPickerViewController, CSAdjunctItemView,
                             CSAdjunctListActionManager, CSAdjunctListItem,
                             CSAdjunctListModel, CSAlwaysOnHomeAffordancePillView,
@@ -117,6 +119,8 @@ exports:
                             CSComplicationContainerComponent,
                             CSComplicationContainerViewController,
                             CSComplicationDescriptor, CSComplicationManager,
+                            CSComplicationPresentationState,
+                            CSComplicationSidebarComponent,
                             CSComplicationWrapperViewController, CSComponent,
                             CSContentActionInterpreter, CSContentComponent,
                             CSContentCutoutBoundsCalculator,
@@ -136,6 +140,12 @@ exports:
                             CSDashBoardScrollModifierSettings,
                             CSDateViewComponent, CSDeviceBlockView,
                             CSDeviceBlockViewController,
+                            CSDevicePasscodeRecoveryService,
+                            CSDeviceUnblockPolicy,
+                            CSDeviceUnblockPolicyEnvironment,
+                            CSDeviceUnblockPolicyEnvironmentBuilder,
+                            CSDeviceUnblockViewController,
+                            CSDeviceUnblockViewModel, CSDimmingLayerComponent,
                             CSDiscoveryItemExplorePostersPlatterView,
                             CSDiscoveryItemExplorePostersViewController,
                             CSDiscoveryItemPlatterSleepMigration,
@@ -145,13 +155,15 @@ exports:
                             CSEmbeddedContentActionManager,
                             CSEnhancedModalButton,
                             CSEraseDeviceAuthViewController,
-                            CSEraseDeviceViewController, CSEvent,
+                            CSEraseDeviceUnblockViewModel, CSEvent,
                             CSFaceOcclusionMonitor, CSFixedFooterView,
                             CSFixedFooterViewController,
                             CSFocusActivityIndicator, CSFocusActivityManager,
                             CSFocusActivityView, CSFocusActivityViewController,
                             CSFocusSettings, CSFooterCallToActionLabelComponent,
                             CSFooterStatusLabelComponent,
+                            CSForgotDevicePasscodeUnblockViewModel,
+                            CSFullBleedContentComponent,
                             CSFullscreenNotificationView,
                             CSFullscreenNotificationViewController,
                             CSHomeAffordanceComponent, CSHomeAffordanceView,
@@ -161,9 +173,8 @@ exports:
                             CSHorizontalScrollFailureRecognizer,
                             CSHorizontalScrollFailureRecognizerSettings,
                             CSInterstitialTransitionSource, CSLayoutStrategy,
-                            CSListItem, CSListItemActivityProvider,
-                            CSListItemDiscoveryProvider, CSListItemManager,
-                            CSListItemSection,
+                            CSListItem, CSListItemDiscoveryProvider,
+                            CSListItemManager, CSListItemSection,
                             CSLockScreenBiometricFailureSettings,
                             CSLockScreenChargingSettings, CSLockScreenDomain,
                             CSLockScreenIdleTimerSettings,
@@ -239,7 +250,7 @@ exports:
                             CSVibrancyUtility, CSVibrantWallpaperButton,
                             CSWallpaperComponent,
                             CSWallpaperFloatingLayerComponent,
-                            CSWhitePointComponent,
+                            CSWhitePointComponent, CSWidgetGridViewController,
                             SBHorizontalScrollFailureTriangleView,
                             _CSActivityPickerAnimator,
                             _CSDoubleBatteryChargingView,

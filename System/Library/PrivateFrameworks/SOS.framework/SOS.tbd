@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SOS.framework/SOS
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SOSAutomaticCallCountdownEnabledKey,
                             _SOSButtonPressStateChangedNotification,
                             _SOSCallWithSideButtonPressesKey,
@@ -15,6 +15,11 @@ exports:
                             _SOSContactsChangedNotification,
                             _SOSD_CONNECTION_REQUEST_NOTIFICATION_NAME,
                             _SOSDismissSOSNotification,
+                            _SOSEventNotificationCinnamon,
+                            _SOSEventNotificationKappa,
+                            _SOSEventNotificationMandrake,
+                            _SOSEventNotificationNewton,
+                            _SOSEventNotificationTrigger,
                             _SOSFlowWillStartNotification,
                             _SOSFriendsChangedNotification,
                             _SOSHasActiveTriggerChangedNotification,
@@ -26,6 +31,7 @@ exports:
                             _SOSLegacyContactsChangedNotification,
                             _SOSMachService, _SOSManagerErrorDomain,
                             _SOSMandrakeStateChangedNotification,
+                            _SOSMessagesUrgentAlertingStateChangedNotification,
                             _SOSMostRecentLocationSentChangedNotification,
                             _SOSNewtonStateChangedNotification,
                             _SOSPlayAudioDuringCountdownKey,
@@ -59,5 +65,5 @@ exports:
                             SOSFlowManager, SOSInCallUILauncher, SOSKappaManager,
                             SOSKappaStatus, SOSLegacyContactsManager, SOSManager,
                             SOSNewtonManager, SOSPersistentTimerLocationManager,
-                            SOSStatus, SOSStatusReporter, SOSUtilities ]
+                            SOSRecipient, SOSStatus, SOSStatusReporter, SOSUtilities ]
 ...

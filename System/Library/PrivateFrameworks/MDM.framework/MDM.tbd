@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MDM.framework/MDM
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MDMAnalyticsSendCommandEvent,
                             _MDMAnalyticsSendPushEvent,
                             _MDMKeybagCreateMDMEscrowWithPasscode,
@@ -119,6 +119,7 @@ exports:
                             _kMDMPRequestTypeShutDownDevice,
                             _kMDMPRequestTypeStopMirroring,
                             _kMDMPRequestTypeTriggerDiagnostics,
+                            _kMDMPRequestTypeUserConfigured,
                             _kMDMPRequestTypeUserList,
                             _kMDMPRequestTypeValidateApplications,
                             _kMDMPSettingsAccessibility,

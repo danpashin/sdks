@@ -8,6 +8,8 @@
 
 #import <ARKit/ARAnchor.h>
 
+#define AR_APPCLIPCODE_ANCHOR_PROTOCOLS <ARTrackable>
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -29,7 +31,7 @@ typedef NS_ENUM(NSInteger, ARAppClipCodeURLDecodingState) {
  An anchor representing an app clip code in the world.
  */
 API_AVAILABLE(ios(14.3))
-@interface ARAppClipCodeAnchor : ARAnchor <ARTrackable>
+@interface ARAppClipCodeAnchor : ARAnchor AR_APPCLIPCODE_ANCHOR_PROTOCOLS
 
 
 /**

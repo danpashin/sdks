@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
-current-version:       1
+current-version:       4416.11.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NSStringFromLockScreenCapabilities,
                             _NSStringFromLockScreenElement,
                             _NSStringFromLockScreenEvent,
@@ -51,7 +51,9 @@ exports:
                             _SBNetworkTetheringStateChangedNotification,
                             _SBOrientationLockChangedNotification,
                             _SBProximityDidChangeNotification,
+                            _SBRingerButtonDownNotification,
                             _SBRingerChangedNotification,
+                            _SBRingerSwitchChangedNotification,
                             _SBStringFromAlertItemDeactivateReason,
                             _SBTelephonyDaemonRestartNotification,
                             _SBTelephonyManagerAirplaneModeDidChangeNotification,
@@ -64,7 +66,7 @@ exports:
                             _SBUIFlashlightLevelDefault, _SBUIFrameworkBundleID,
                             _SBUIGetBackdropSettingsForBackgroundStyle,
                             _SBUIGetUserAgent, _SBUIHasBlurForBackgroundStyle,
-                            _SBUIHasHIDRingerSwitch,
+                            _SBUIHasHIDRingerButton, _SBUIHasHIDRingerSwitch,
                             _SBUILaunchOptionKeyAllowUnlock,
                             _SBUILaunchOptionKeyPNGLess,
                             _SBUIPluginActivationSettingsDidChangeNotification,
@@ -72,18 +74,14 @@ exports:
                             _SBUIPluginContextOptionSupportsCarFullScreen,
                             _SBUIPluginStringForActivationEvent,
                             _SBUIPluginVisibilityDidChangeNotification,
-                            _SBUIPrewarmKeyboard,
-                            _SBUIRingerSwitchBehaviorDidChangeNotification,
-                            _SBUIUnlockSourceIsUserAction,
-                            _SBUIUseHIDRingerAsOrientationLock,
-                            _SBUserEventOccurredNotification,
+                            _SBUIPrewarmKeyboard, _SBUIUnlockSourceIsUserAction,
+                            _SBVolumeButtonPressedNotification,
                             _SBVolumeChangedNotification,
                             _SBWiFiDeviceAttachedNotification,
                             _SBWifiManagerCurrentDeviceDidChangeNotification,
                             _SBWifiManagerDevicePresenceDidChangeNotification,
                             _SBWifiManagerPowerStateDidChangeNotification,
                             _SpringBoardUIBundle,
-                            __SBNotificationListInsetMarginHorizontal,
                             _kSBNotificationKeyAnimationDuration,
                             _kSBNotificationKeyBundleIdentifier,
                             _kSBNotificationKeyDeviceLockState,
@@ -109,7 +107,6 @@ exports:
                             SBLockScreenPluginPresentation,
                             SBLockScreenTimerDialView,
                             SBMutableLockScreenPluginPresentation,
-                            SBOrientationTransformWrapperView,
                             SBOrientationTransformWrapperViewController,
                             SBSceneHandle, SBSceneHandleBlockObserver, SBSceneView,
                             SBSystemApertureSceneElementAccessoryPortalView,
@@ -120,14 +117,12 @@ exports:
                             SBUIActionViewLabel, SBUIBackgroundView,
                             SBUIChevronView, SBUICoronaAnimationController,
                             SBUIExpandedNotificationContainerViewProvider,
-                            SBUIFlashlightController, SBUILiveActivityMetrics,
+                            SBUIFlashlightController,
                             SBUILockScreenDisableAssertion,
                             SBUIPluginActivationContext,
                             SBUIPluginAppearanceContext, SBUIPluginController,
-                            SBUISearchUtilities, SBUISound,
-                            SBUIViewFloatSpringProperty, SpringBoardUI,
+                            SBUISound, SBUIViewFloatSpringProperty, SpringBoardUI,
                             _SBAlertController, _SBAlertItemHeaderViewController,
-                            _SBOrientationTransformedContentView,
                             _SBSceneHandleObserverBehavior,
                             _SBSceneHandleObserverToken ]
     objc-ivars:           [ SBUIPluginController._host,

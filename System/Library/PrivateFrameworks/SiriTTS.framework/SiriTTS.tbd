@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriTTS.framework/SiriTTS
@@ -7,18 +7,21 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ __ZN10Observable15remove_observerENSt3__110shared_ptrI8ObserverEE,
                             __ZN10Observable4emitEPKcPKv,
                             __ZN10Observable8on_eventEPKcNSt3__18functionIFvPKvEEE,
+                            __ZN14NeuralTTSUtils13stress_markerENSt3__110shared_ptrI16SharedObjectPoolEERNS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERb,
                             __ZN14NeuralTTSUtils15is_h12_platformEv,
                             __ZN14NeuralTTSUtils16is_amx_availableEv,
                             __ZN14NeuralTTSUtils16is_ane_availableEv,
                             __ZN14NeuralTTSUtils16is_gpu_availableEv,
                             __ZN14NeuralTTSUtils17compile_ane_modelEPKc,
                             __ZN14NeuralTTSUtils17has_ota_ane_modelEPKc,
+                            __ZN14NeuralTTSUtils17is_watch_platformEv,
                             __ZN14NeuralTTSUtils18disable_neural_ttsE,
                             __ZN14NeuralTTSUtils18neural_sample_rateENSt3__110shared_ptrI16SharedObjectPoolEE,
+                            __ZN14NeuralTTSUtils19check_thermal_limitEi,
                             __ZN14NeuralTTSUtils20is_ane_only_platformEv,
                             __ZN14NeuralTTSUtils21is_ane_model_compiledEPKc,
                             __ZN14NeuralTTSUtils21is_neural_voice_readyEPKc,
@@ -55,6 +58,7 @@ exports:
                             __ZN14TTSSynthesizer21synthesize_text_asyncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEENS0_8functionIFiNS_15CallbackMessageEEEE,
                             __ZN14TTSSynthesizer22get_engine_descriptionEv,
                             __ZN14TTSSynthesizer22using_gryphon_frontendEv,
+                            __ZN14TTSSynthesizer27preprocess_for_vendor_voiceERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE,
                             __ZN14TTSSynthesizer34synthesize_text_with_markers_asyncERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERNS0_6vectorIhNS4_IhEEEERNS9_INS_6MarkerENS4_ISD_EEEENS0_8functionIFiNS_15CallbackMessageEEEE,
                             __ZN14TTSSynthesizer7preheatEv,
                             __ZN14TTSSynthesizerC1Ev, __ZN14TTSSynthesizerC2Ev,

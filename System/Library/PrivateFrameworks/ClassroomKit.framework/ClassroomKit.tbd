@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement ]
     symbols:              [ _CRKActiveInstructorIdentifiersUserInfoKey,
                             _CRKActiveInstructorsDidChangeNotificationName,
@@ -59,6 +59,7 @@ exports:
                             _CRKDeviceInstructorImageIdentifierKey,
                             _CRKDeviceInterfaceOrientationKey,
                             _CRKDeviceLockStateKey, _CRKDeviceLoginStateKey,
+                            _CRKDeviceLowBatteryKey,
                             _CRKDeviceManagementLockPasscodeKey,
                             _CRKDeviceModelKey, _CRKDeviceMutedKey,
                             _CRKDeviceNameKey, _CRKDevicePasscodeEnabledKey,
@@ -96,8 +97,9 @@ exports:
                             _CRKEDUProfileErrorValueKey, _CRKErrorDomain,
                             _CRKErrorWithCodeAndUserInfo, _CRKEventRecordingKey,
                             _CRKFinderBundleIdentifier, _CRKFoundationClasses,
-                            _CRKHalfYearInterval, _CRKIdentityServiceName,
-                            _CRKIdleStateKey, _CRKInstructordBundleIdentifier,
+                            _CRKHalfYearInterval, _CRKHourInterval,
+                            _CRKIdentityServiceName, _CRKIdleStateKey,
+                            _CRKInstructordBundleIdentifier,
                             _CRKInstructordMacOSBundleIdentifier,
                             _CRKInstructordiOSBundleIdentifier,
                             _CRKIntegerCompare,
@@ -117,6 +119,7 @@ exports:
                             _CRKIsSimulator, _CRKIsiOS, _CRKLogAddStateHandler,
                             _CRKLogEventsDidChangeNotificationName,
                             _CRKLogRemoveStateHandler,
+                            _CRKMAIDSignInHistoryDidChangeNotificationName,
                             _CRKOpenAppsDidChangeEventBundleIdentifiersUserInfoKey,
                             _CRKOpenAppsDidChangeEventName,
                             _CRKOpenAppsDidChangeEventPlatformUserInfoKey,
@@ -251,8 +254,8 @@ exports:
                             CRKASMCredentialHousekeeper,
                             CRKASMCredentialManifest,
                             CRKASMCredentialManifestEntry, CRKASMCredentialStore,
-                            CRKASMCredentialStoreFactory, CRKASMIdentityPicker,
-                            CRKASMIdentityVendor,
+                            CRKASMCredentialStoreFactory, CRKASMHasher,
+                            CRKASMIdentityPicker, CRKASMIdentityVendor,
                             CRKASMNetworkCheckingRosterProvider,
                             CRKASMPreemptiveIDSMessagingRosterProvider,
                             CRKASMRosterBackedAppleIDProvider,
@@ -274,13 +277,14 @@ exports:
                             CRKApplicationDescriptor, CRKApplicationInfo,
                             CRKApplicationInfoServiceProxy,
                             CRKArrayDifferenceEngine, CRKAssignUserRequest,
-                            CRKBLBookItem, CRKBlockOperation, CRKBook, CRKBookmark,
-                            CRKBooksServiceProxy, CRKBoundedGrowthFunction,
+                            CRKBLBookItem, CRKBlockCancelable, CRKBlockOperation,
+                            CRKBook, CRKBookmark, CRKBooksServiceProxy,
+                            CRKBoundedGrowthFunction,
                             CRKBrowseForCourseInvitationsRequest,
                             CRKBrowseForNearbyDevicesRequest,
                             CRKBrowseForShareTargetsRequest,
                             CRKCancelableBackedCatalystIDSSubscription,
-                            CRKCatalystIDSPrimitives,
+                            CRKCancelableServer, CRKCatalystIDSPrimitives,
                             CRKCatalystNetworkPowerAssertion,
                             CRKCatalystNetworkPowerPrimitives,
                             CRKCertificateExchangeBroadcastHandler,
@@ -300,7 +304,9 @@ exports:
                             CRKClassroomConfiguration, CRKClassroomInstallation,
                             CRKClassroomLockScreenMonitorProvider,
                             CRKClassroomLockScreenMonitor_iOS,
-                            CRKClearASMCredentialsRequest, CRKCloudTuple,
+                            CRKClearASMCredentialsRequest,
+                            CRKClearSignInHistoryRequest,
+                            CRKClearSignInHistoryResultObject, CRKCloudTuple,
                             CRKComparator, CRKConcreteAirPlayPrimitives,
                             CRKConcreteCertificate, CRKConcreteClassKitFacade,
                             CRKConcreteClassKitRosterRequirements,
@@ -434,6 +440,8 @@ exports:
                             CRKFetchSafariBookmarksResultObject,
                             CRKFetchScreenshotRequest,
                             CRKFetchScreenshotResultObject,
+                            CRKFetchSignInHistoryRequest,
+                            CRKFetchSignInHistoryResultObject,
                             CRKFetchStagedAdHocIdentityCertificateRequest,
                             CRKFetchStagedAdHocIdentityCertificateResultObject,
                             CRKFetchStudentDaemonStateRequest,
@@ -489,7 +497,7 @@ exports:
                             CRKMockSettingsUIVisibilityProvider,
                             CRKMonitorExpiredCoursesInteraction,
                             CRKMutableURLResources, CRKNetworkPowerAssertion,
-                            CRKNonCatalystStudentDaemonProxy,
+                            CRKNoOpKeychain, CRKNonCatalystStudentDaemonProxy,
                             CRKNotificationObservation,
                             CRKNotifyingConfigurationSource,
                             CRKOPFPackageContents,
@@ -531,6 +539,8 @@ exports:
                             CRKRestrictions, CRKRestrictionsObserver,
                             CRKRightPaddingTableEntry,
                             CRKSandboxPrimitivesProvider,
+                            CRKSaveSignInHistoryRequest,
+                            CRKSaveSignInHistoryResultObject,
                             CRKScreenObservationMonitor,
                             CRKScreenshotServiceProxy,
                             CRKSecureCodedUserDefaultsObject,
@@ -550,7 +560,7 @@ exports:
                             CRKShareRequest, CRKShareTarget, CRKShareTargetBrowser,
                             CRKShareTargetBrowserTransportFactory,
                             CRKShareTargetCollector, CRKShowOpenDialogOperation,
-                            CRKSimulateRequest,
+                            CRKSignInHistoryItem, CRKSimulateRequest,
                             CRKSingleConnectionAttemptStudentDaemonProxy,
                             CRKStartAppLockRequest, CRKStopAppLockRequest,
                             CRKStudentConnectionPrimitivesProvider,

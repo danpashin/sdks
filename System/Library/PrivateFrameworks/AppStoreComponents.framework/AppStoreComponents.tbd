@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppStoreComponents.framework/AppStoreComponents
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s18AppStoreComponents14ASCLayoutProxyC020lockupMediaPreferredG4Size7fitting3for4with3and2inSo6CGSizeVAK_So16ASCLockupContextaSgSo14ASCScreenshotsCSgSo11ASCTrailersCSgSo18UITraitEnvironment_ptFZ,
                             _$s18AppStoreComponents14ASCLayoutProxyC11descriptionSSvg,
                             _$s18AppStoreComponents14ASCLayoutProxyC12lockupLayout6ofSize15traitCollection11artworkView11headingText05titleO008subtitleO005offerO00R6ButtonACSo09ASCLockupmI0a_So07UITraitK0CSo6UIViewCSo7UILabelCSgA2tuRtFZ,
@@ -118,6 +118,7 @@ exports:
                             _ASCLockupViewSizeMini, _ASCLockupViewSizeSmall,
                             _ASCLockupViewSizeSmallOfferButton,
                             _ASCMetricsActivityKeyHostApp,
+                            _ASCMetricsActivityKeyPageContext,
                             _ASCMetricsActivityKeyRedirectURL,
                             _ASCMetricsActivityKeyRedirectURLParameters,
                             _ASCMetricsActivityKeyReferrerApp,
@@ -152,15 +153,15 @@ exports:
                             __ASCLockupKeyTitle ]
     objc-classes:         [ ASCAdLockupView, ASCAdamID, ASCAppLaunchTrampoline,
                             ASCAppLaunchTrampolineURL, ASCArtwork,
-                            ASCCollectionRequest, ASCContentSkeleton,
-                            ASCLocalOffer, ASCLockup, ASCLockupProductDetails,
+                            ASCCollectionRequest, ASCLocalOffer, ASCLockup,
+                            ASCLockupProductDetails,
                             ASCLockupProductDetailsPresentationContext,
                             ASCLockupRequest, ASCLockupView, ASCLockupViewGroup,
                             ASCMetrics, ASCMetricsActivity, ASCMetricsData,
                             ASCOfferButtonBackgroundImageView, ASCOfferMetadata,
                             ASCOfferTheme, ASCOverlaySettings, ASCScreenshots,
                             ASCSignpostPredicate, ASCSignpostSpan, ASCTrailers,
-                            ASCURLOffer, ASCVideo, ASCViewMetrics,
-                            ASCViewMetricsInstruction, ASCViewRender, ASCWatchApps,
-                            _ASCLockupResponse, __ASCLayoutProxy ]
+                            ASCVideo, ASCViewMetrics, ASCViewMetricsInstruction,
+                            ASCViewRender, ASCWatchApps, _ASCLockupResponse,
+                            __ASCLayoutProxy ]
 ...

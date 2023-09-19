@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleMobileFileIntegrity.framework/AppleMobileFileIntegrity
@@ -7,13 +7,20 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AMFICopySwiftPlaygroundsSigningKey,
                             _AMFIExecutionPreflight, _AMFIIsDeveloperModeEnabled,
                             _AMFIShouldShowDeveloperModeSettings,
                             _AMFIShowOverridePath,
                             _AppleMobileFileIntegrityVersionNumber,
                             _AppleMobileFileIntegrityVersionString,
+                            _LWCRTypeVerificationBackend_errorStringForCode,
+                            _LWCRTypeVerificationBackend_verifyLWCR,
+                            _LWCRTypeVerificationBackend_verifyRequirements,
+                            _LWCRTypeVerificationNSDictionary,
+                            _LWCRTypeVerificationNSDictionary_RequirementsOnly,
+                            _LWCRTypeVerificationXPCDictionary,
+                            _LWCRTypeVerificationXPCDictionary_RequirementsOnly,
                             _allowedInChroot, _amfi_developer_mode_resolved,
                             _amfi_developer_mode_status,
                             _amfi_interface_authorize_local_signing,
@@ -22,10 +29,12 @@ exports:
                             _amfi_interface_get_local_signing_public_key,
                             _amfi_interface_query_bootarg_state,
                             _amfi_interface_set_local_signing_public_key,
+                            _amfi_launch_constraint_matches_process,
                             _amfi_launch_constraint_set_spawnattr,
                             _appSandboxEntitlements, _developerModeEntitlements,
                             _entitlementsThatForceHardening,
                             _errorCodeForMISError, _errorStringForAMFIErrorCode,
+                            _forceRuntimeAndLVEntitlements,
                             _hardenedRuntimeEntitlements,
                             _hardenedRuntimeJITEntitlement, _hexStringForData,
                             _kAMFILockdownErrHasPasscode, _kAMFILockdownErrKey,
@@ -34,6 +43,15 @@ exports:
                             _kAMFIPreflightOptionsCpuType,
                             _kAMFIPreflightOptionsFlags,
                             _kAMFIPreflightOptionsSliceOffset,
+                            _kKnownBooleanOperators, _kKnownBooleanOperatorsSize,
+                            _kKnownFacts, _kKnownFactsSize,
+                            _kKnownMultiUseFactOperators,
+                            _kKnownMultiUseFactOperatorsSize,
+                            _kKnownNumericOnlyOperators,
+                            _kKnownNumericOnlyOperatorsSize,
+                            _kKnownOperatorArrayOperators,
+                            _kKnownOperatorArrayOperatorsSize, _kKnownQueryFacts,
+                            _kKnownQueryFactsSize,
                             _kLocalSigningKeychainAccessGroup,
                             _kLocalSigningKeychainLabel, _matchIn,
                             _restrictionExemptEntitlements,
@@ -41,7 +59,8 @@ exports:
                             _systemExtensionEntitlements,
                             _systemExtensionEntitlementsThatAllowJit,
                             _unrestrictedEntitlements ]
-    objc-classes:         [ AMFIError, AMFIFMKLog, AMFIPathValidator_ios ]
+    objc-classes:         [ AMFIError, AMFIFMKLog, AMFIPathValidator_ios,
+                            LWCRTypeErrorContext ]
     objc-ivars:           [ AMFIPathValidator_ios._areEntitlementsValidated,
                             AMFIPathValidator_ios._bootargs,
                             AMFIPathValidator_ios._cdhash,

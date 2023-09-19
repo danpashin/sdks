@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClockKitUI.framework/ClockKitUI
@@ -7,10 +7,15 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CLKCreateImageFromBytes,
                             _CLKGenerateNormalMapFromImageInRGBA8,
                             _CLKGetBytesFromImage,
+                            _CLKUIAnalogHandsDefaultPreferredFramesPerSecondForDevice,
+                            _CLKUIAnalogHandsDurationForHoursAnimation,
+                            _CLKUIAnalogHandsDurationForMinutesAnimation,
+                            _CLKUIAnalogHandsDurationForSecondsAnimation,
+                            _CLKUIAnalogHandsTimeAnimationUpdateInterval,
                             _CLKUIAssetBundleSuffixesForSizeClass,
                             _CLKUIAssociatedAccentStyle,
                             _CLKUIAssociatedDesaturatedType,
@@ -37,12 +42,14 @@ exports:
                             _CLKUIConvertToRGBfFromSRGB8_fast,
                             _CLKUIConvertToRGBfFromSRGBf_fast,
                             _CLKUIConvertToRGBfFromUIColor,
+                            _CLKUIConvertToRGBfFromUIColor_dynamic,
                             _CLKUIConvertToRGBfFromUIColor_fast,
                             _CLKUIConvertToRGBfFromXRSRGBf,
                             _CLKUIConvertToSRGB8FromRGBf_fast,
                             _CLKUIConvertToSRGBFromRGB_fast,
                             _CLKUIConvertToSRGBfFromRGBf_fast,
                             _CLKUIConvertToUIColorFromRGBf,
+                            _CLKUIConvertToUIColorFromRGBf_dynamic,
                             _CLKUIConvertToUIColorFromRGBf_fast,
                             _CLKUIConvertToXRSRGBfFromRGBf,
                             _CLKUIConvertUIImageToMTLTexture,
@@ -70,12 +77,15 @@ exports:
                             _CLKUILegibilityLabelShadowBlur,
                             _CLKUILightnessForColor, _CLKUILocalizedString,
                             _CLKUIMetalAtlasPrewarmStateDescription,
+                            _CLKUIMetalElapsedTimeCategoryDescription,
                             _CLKUIMonochromeFiltersForStyle,
                             _CLKUIMonochromeFiltersForStyleWithTintedBackground,
                             _CLKUINativeToAPLCoeff,
                             _CLKUIOrderedSuffixesForDevice,
-                            _CLKUIPrimaryGamutMatrix, _CLKUIShadowImage,
-                            _CLKUIShadowImageFromView,
+                            _CLKUIPrimaryGamutMatrix,
+                            _CLKUIScrubbingAnimationDuration,
+                            _CLKUIScrubbingAnimationObscuredContentReappearanceDelay,
+                            _CLKUIShadowImage, _CLKUIShadowImageFromView,
                             _CLKUITextureFormatGetASTCBlockSize,
                             _CLKUITextureMaxDimension, _CLKUITritiumMaxAPL,
                             _ClockKitUIVersionNumber, _ClockKitUIVersionString,
@@ -110,24 +120,32 @@ exports:
                             __Z31_CLKIntensityForPixelAtPositionPhmmll,
                             __Z9_CLKClamplm, __angleForPositionInWidth,
                             __centerInBounds, __linearizeAndComputeAPL,
+                            _elapsedDurationLogThreshold,
                             _filterNamesToIndicesMap,
                             _interpolate_identity_to_color, _isDateBetweenDates,
-                            _sRGBtoNative, _source_over_for_color,
+                            _kHandFactoryCachedBuildKey, _sRGBtoNative,
+                            _source_over_for_color,
                             _startAndEndOfDayForDateInTimeZone ]
-    objc-classes:         [ CLKUIAlmanacTransitInfo, CLKUIAtlas, CLKUIAtlasBacking,
-                            CLKUIChronoButton, CLKUIClockTimerLink,
-                            CLKUIColoringImageView, CLKUIColoringLabel,
-                            CLKUIColoringView, CLKUICurvedColoringLabel,
-                            CLKUICurvedLabel, CLKUICurvedLayoutManager,
-                            CLKUIDisplayLink, CLKUILayerHostView,
+    objc-classes:         [ CLKUIAlmanacTransitInfo,
+                            CLKUIAnalogHandConfiguration, CLKUIAnalogHandFactory,
+                            CLKUIAnalogHandFactoryCache, CLKUIAnalogHandsView,
+                            CLKUIAtlas, CLKUIAtlasBacking, CLKUIChronoButton,
+                            CLKUIClockTimerLink, CLKUIColoringImageView,
+                            CLKUIColoringLabel, CLKUIColoringView,
+                            CLKUICurvedColoringLabel, CLKUICurvedLabel,
+                            CLKUICurvedLayoutManager, CLKUIDisplayLink,
+                            CLKUIHandView, CLKUILayerHostView,
                             CLKUILegibilityLabel, CLKUIMetalAtlas,
-                            CLKUIMetalQuadView, CLKUIMetalResourceManager,
-                            CLKUIMetalResourcePool, CLKUIMmapFile, CLKUIQuad,
-                            CLKUIQuadView, CLKUIQuadViewRenderCoordinator,
+                            CLKUIMetalBinaryArchive, CLKUIMetalQuadView,
+                            CLKUIMetalResourceManager, CLKUIMetalResourcePool,
+                            CLKUIMmapFile, CLKUIQuad, CLKUIQuadView,
+                            CLKUIQuadViewRenderCoordinator,
                             CLKUIRenderFrequencyLink, CLKUIResourceManager,
                             CLKUIResourceProvider, CLKUIResourceProviderKey,
                             CLKUITexture, CLKUITimeLabel, CLKUITimeLabelStyle,
-                            CLKUIWheelsOfTimeButton, _CLKUIBasicTimeLabelManager,
+                            CLKUIWheelsOfTimeButton,
+                            _CLKAnalogHandFactoryCachePathProvider,
+                            _CLKUIBasicTimeLabelManager,
                             _CLKUIBlinkingTimeLabelManager, _CLKUIColorManager ]
     objc-ivars:           [ CLKUIColoringLabel._snapshot ]
 ...

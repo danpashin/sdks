@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SetupAssistantSupport.framework/SetupAssistantSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SASExpressSettingsPrivacyBundleReadFrom,
                             _SASExpressSettingsReadFrom,
                             _SASProximityActionTypeKey,
@@ -51,6 +51,7 @@ exports:
                             _kSASProximityInformationDeviceNameKey,
                             _kSASProximityInformationDeviceTermsIdentifierKey,
                             _kSASProximityInformationDeviceToDeviceMigrationVersionKey,
+                            _kSASProximityInformationExpressSettings,
                             _kSASProximityInformationFindMyDeviceKey,
                             _kSASProximityInformationHasHomeButtonKey,
                             _kSASProximityInformationHasInexpensiveCellularNetwork,

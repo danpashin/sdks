@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/SpeechRecognitionCore
@@ -7,16 +7,19 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _RXAdLibCreate, _RXEngineTypeForLocaleIdentifier,
                             _RXGetAssetFallbackLocaleIdentifier,
                             _RXGetAssetFallbackLocales,
                             _RXGetSupportedNashvilleLocaleIdentifiers,
                             _RXGetSupportedQuasarLocaleIdentifiers,
                             _RXGlobalSetDownloadProgressCallback,
+                            _RXIsKeywordSpotterEnabled,
+                            _RXIsLocaleSupportingKeywordSpotter,
+                            _RXIsLocaleSupportingOndeviceSpeechDetection,
                             _RXIsLocaleWithNoSpaceInPostITN,
                             _RXIsLocaleWithSpecialHyphenHandling,
-                            _RXLanguageModelCreate,
+                            _RXIsSpeechDetectorEnabled, _RXLanguageModelCreate,
                             _RXLanguageModelCreateWithURL,
                             _RXLanguageModelWriteToURL,
                             _RXLanguageObjectAddObject,
@@ -35,6 +38,7 @@ exports:
                             _RXRecognitionSystemAddLeadingContext,
                             _RXRecognitionSystemAddOtherContext,
                             _RXRecognitionSystemAddTraining,
+                            _RXRecognitionSystemCopyPhoneticNeighborsForText,
                             _RXRecognitionSystemCreate,
                             _RXRecognitionSystemGetTypeID,
                             _RXRecognitionSystemReset,

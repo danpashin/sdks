@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenshotServices.framework/ScreenshotServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SSAlertServiceViewControllerClassName,
                             _SSApplyDebuggingCustomizationsToViewIfAppropriate,
                             _SSAspectRatioFromSize,
@@ -41,18 +41,21 @@ exports:
                             __SSEnableContinuousScreenCaptureForBugFiling,
                             __SSEnableVellumExport,
                             __SSGetAnnotationModePreference,
+                            __SSGetLastUsedFullPageScreenshotShareAsOption,
                             __SSIsRemoteViewControllerDebuggingEnabled,
                             __SSIsScreenshotManagerDebuggingEnabled,
                             __SSIsViewSnapshotDebuggingEnabled,
-                            __SSLinksInPhotosEnabled, __SSNocturneEnabled,
-                            __SSQuickActionsEnabled, __SSRemoveBackgroundEnabled,
+                            __SSLinksInPhotosEnabled, __SSQuickActionsEnabled,
+                            __SSRemoveBackgroundEnabled,
                             __SSScreenshotsInQuickNoteEnabled,
                             __SSSetAnnotationModePreference,
+                            __SSSetLastUsedFullPageScreenshotShareAsOption,
                             __SSShouldHomeButtonDismiss,
                             __SSShouldIgnoreAbilityCheck, __SSSignpostLog,
                             __SSUserDefaults,
                             __SSUserDefaultsBooleanForKeyWithNODefault,
-                            __SSUserDefaultsCGFloatForKeyWith0Default ]
+                            __SSUserDefaultsCGFloatForKeyWith0Default,
+                            __SSUserDefaultsNSIntegerForKeyWith0Default ]
     objc-classes:         [ SSActiveInterfaceOrientationObserver,
                             SSApplicationScreenshotSupplementalDataCapturer,
                             SSBlurView, SSBlurringFlashView, SSChromeHelper,
@@ -67,8 +70,6 @@ exports:
                             SSEnvironmentElementMetadataUpdate, SSFlashView,
                             SSHarvestedApplicationDocument,
                             SSHarvestedApplicationMetadata,
-                            SSHarvestedDeviceMetadata,
-                            SSHarvestedLocalizationMetadata,
                             SSImageIdentifierAction, SSImageIdentifierUpdate,
                             SSImageSurface, SSMainScreenSnapshotter, SSMaterial,
                             SSMetadataUpdateAction, SSOtherScreenSnapshotter,

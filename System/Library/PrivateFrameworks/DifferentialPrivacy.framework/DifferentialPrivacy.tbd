@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s19DifferentialPrivacy27_DPDediscoPrioPiRapporShareC03getdG010Foundation4DataVyF,
                             _$s19DifferentialPrivacy27_DPDediscoPrioPiRapporShareC03getdG010Foundation4DataVyFTq,
                             _$s19DifferentialPrivacy27_DPDediscoPrioPiRapporShareC03geteF8OtherPhi10Foundation4DataVyF,
@@ -88,8 +88,8 @@ exports:
                             _kDPKPNoiseDistribution, _kDPKPPrivacyParameter,
                             _kDPKPPrivatizationAlgorithm,
                             _kDPKPServerAlgorithmString,
-                            _kDPKPSubmissionPriority, _kDPKPTransport,
-                            _kDPKPValueMaximumPossible,
+                            _kDPKPSubmissionPriority, _kDPKPTelemetryAllowed,
+                            _kDPKPTransport, _kDPKPValueMaximumPossible,
                             _kDPKPValueMaximumTrimmed,
                             _kDPKPValueMinimumPossible,
                             _kDPKPValueMinimumTrimmed,
@@ -196,9 +196,9 @@ exports:
                             _DPHuffmanTable_Reminders_Title_en_US,
                             _DPHuffmanTable_Test, _DPInputHelper,
                             _DPJSONOutputHelper, _DPJSONSegment, _DPKeyNames,
-                            _DPKeyProperties, _DPLaplaceNoiseGenerator, _DPLog,
-                            _DPModelInfoRecord, _DPModelInfoRecordMO,
-                            _DPModelInfoRecordMOConverter,
+                            _DPKeyProperties, _DPLHBitacoraLogger,
+                            _DPLaplaceNoiseGenerator, _DPLog, _DPModelInfoRecord,
+                            _DPModelInfoRecordMO, _DPModelInfoRecordMOConverter,
                             _DPNamespaceParameters, _DPNumberRandomizer,
                             _DPNumericDataRecord, _DPNumericDataRecordMO,
                             _DPNumericDataRecordMOConverter,

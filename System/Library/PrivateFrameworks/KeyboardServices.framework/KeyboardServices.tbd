@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
@@ -7,8 +7,9 @@ current-version:       153
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _KSCKErrorDomain, _KSCloudKitAccountDidChange,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _KSCKErrorDomain, _KSCategory,
+                            _KSCloudKitAccountDidChange,
                             _KSCloudKitAccountDidChangeAccountChangedKey,
                             _KSCloudKitAccountDidChangeDeviceToDeviceKey,
                             _KSCloudKitAccountDidChangeStatusKey,
@@ -20,6 +21,8 @@ exports:
                             _KeyboardServicesVersionNumber,
                             _KeyboardServicesVersionString,
                             __KSDevicesMigrationStateDidChange, __KSGetSetting,
+                            __KSSharedAcrossLanguagesNegativeLearning,
+                            __KSSharedAcrossLanguagesVulgarWordUsage,
                             __KSTIBuddySetupDidFinishNotification_Private,
                             __KSTRCKStoreDidReceiveChangesNotification,
                             __KSTRLegacyStoreDidImportChangesNotification,
@@ -49,7 +52,9 @@ exports:
                             _ksDefaultSaveDynamicData,
                             _ksDefaultSaveLanguageModel, _ksDefaultSizeNormalise,
                             _ksDefaultSortDynamicData,
-                            _ksDefaultSortLanguageModel ]
+                            _ksDefaultSortLanguageModel,
+                            _ksDefaultSortNegativeLearning,
+                            _ksDefaultSortVulgarWordUsageDatabase ]
     objc-classes:         [ ArraySlice, ArraySlicer, _KSAggdLogger,
                             _KSCKSyncStateManagedObject, _KSCloudKitManager,
                             _KSControlFileController, _KSDeviceInfo,

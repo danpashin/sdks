@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
@@ -7,13 +7,11 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices ]
     symbols:              [ _FBAnalyticsLogHangTracerEvent,
                             _FBAnalyticsLogWatchdogEvent,
                             _FBApplicationBadgeValueAccessEntitlement,
-                            _FBApplicationDataStoreRepositoryServerMessageReceivedNotification,
-                            _FBApplicationDataStoreRepositoryServerMessageReceivedNotificationUserInfoKeyMessageType,
                             _FBApplicationProcessHandleEntitlement,
                             _FBApplicationStoreRepositoryChangeApp,
                             _FBApplicationStoreRepositoryChangeKey,
@@ -25,8 +23,7 @@ exports:
                             _FBDebugApplicationsEntitlementLegacy,
                             _FBDebugApplicationsEntitlementLegacyLegacy,
                             _FBDisplayLayoutDidUpdateNotification,
-                            _FBFrameworkBundle, _FBFrontBoardVersionNumber,
-                            _FBFrontBoardVersionString, _FBGetFencingProvider,
+                            _FBFrameworkBundle, _FBGetFencingProvider,
                             _FBLaunchApplicationsEntitlement,
                             _FBLaunchApplicationsEntitlementLegacy,
                             _FBLaunchApplicationsEntitlementLegacyLegacy,
@@ -64,6 +61,7 @@ exports:
                             _FBWorkspaceLogSnapshot, _FBWorkspaceLogTransaction,
                             _FBWorkspaceLogTransactionVerbose,
                             _FBWorkspaceLoggingSubsystem,
+                            _FBWorkspaceTestsDomain,
                             _NSStringFromFBProcessExitReason,
                             _NSStringFromFBProcessTaskState,
                             _NSStringFromFBProcessVisibility,
@@ -78,16 +76,12 @@ exports:
                             __FBSceneActionToString,
                             ___FB_REPORT_MAIN_THREAD_VIOLATION__ ]
     objc-classes:         [ FBApplicationDataStoreInProcessRepositoryClient,
-                            FBApplicationDataStoreInProcessRepositoryClientInvalidationSentinel,
                             FBApplicationDataStoreRepositoryManager,
                             FBApplicationDataStoreRepositoryServer,
                             FBApplicationDataStoreRepositoryServerClientContext,
                             FBApplicationProcess,
-                            FBApplicationProcessExitContext,
                             FBApplicationProcessLaunchTransaction,
                             FBApplicationProcessWatchdogPolicy,
-                            FBApplicationTerminationAssertion,
-                            FBApplicationTerminationAssertionService,
                             FBApplicationUpdateScenesTransaction,
                             FBAsynchronousShutdownTask, FBDisplayLayoutElement,
                             FBDisplayLayoutTransition, FBDisplayManager,
@@ -100,13 +94,14 @@ exports:
                             FBMutableWorkspaceConnectionsState,
                             FBPlistApplicationDataStoreRepository, FBPreferences,
                             FBProcess, FBProcessCPUStatistics,
-                            FBProcessExecutionContext, FBProcessExitContext,
-                            FBProcessManager, FBProcessObserver, FBProcessState,
-                            FBProcessWatchdog, FBProcessWatchdogEventContext,
-                            FBScene, FBSceneClientHandle, FBSceneClientHandshake,
+                            FBProcessExecutableSlice, FBProcessExecutionContext,
+                            FBProcessExitContext, FBProcessManager,
+                            FBProcessObserver, FBProcessState, FBProcessWatchdog,
+                            FBProcessWatchdogEventContext, FBScene,
+                            FBSceneClientHandle, FBSceneClientHandshake,
                             FBSceneClientProviderInvalidationAction,
-                            FBSceneEventQueue, FBSceneLayer, FBSceneLayerManager,
-                            FBSceneManager, FBSceneManagerObserver, FBSceneMonitor,
+                            FBSceneLayer, FBSceneLayerManager, FBSceneManager,
+                            FBSceneManagerObserver, FBSceneMonitor,
                             FBSceneMonitorBehaviors, FBSceneObserver,
                             FBSceneRemnant, FBSceneSnapshot, FBSceneSnapshotAction,
                             FBSceneSnapshotContext, FBSceneUpdateContext,
@@ -129,9 +124,10 @@ exports:
                             FBWorkspaceEvent, FBWorkspaceEventDispatcher,
                             FBWorkspaceEventDispatcherSource,
                             FBWorkspaceEventQueue, FBWorkspaceEventQueueLock,
-                            FBWorkspaceScene, _FBDarkBootHelper,
-                            _FBServiceFacilityServerPendingConnection,
-                            _FBSystemAppSceneInfo, _UIKitFencingProvider ]
+                            FBWorkspaceRegistration, FBWorkspaceScene,
+                            FBWorkspaceSceneRequest,
+                            FBWorkspaceServiceDispatchingQueue,
+                            _FBDarkBootHelper, _FBSceneClientProcess ]
     objc-ivars:           [ FBProcess._auditToken, FBProcess._bundleIdentifier,
                             FBProcess._executablePath,
                             FBProcess._executionContext, FBProcess._handle,

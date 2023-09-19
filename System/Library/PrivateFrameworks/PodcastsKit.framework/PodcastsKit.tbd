@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PodcastsKit.framework/PodcastsKit
@@ -7,7 +7,7 @@ current-version:       4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s11PodcastsKit11ShowStoreIdC5valueACSgSS_tcfC,
                             _$s11PodcastsKit11ShowStoreIdC5valueACSgSS_tcfc,
                             _$s11PodcastsKit11ShowStoreIdC5valueACSgSo8NSNumberC_tcfC,
@@ -146,6 +146,14 @@ exports:
                             _$s11PodcastsKit18SubscriptionResultOSHAAMc,
                             _$s11PodcastsKit18SubscriptionResultOSQAAMc,
                             _$s11PodcastsKit18SubscriptionResultOSYAAMc,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryC16platformInstanceAA0cD0_pyFZ,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCACycfC,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCACycfc,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCMa,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCMn,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCMo,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCN,
+                            _$s11PodcastsKit29SubscriptionControllerFactoryCfD,
                             _$s11PodcastsKit33MediaRemoteSubscriptionControllerC14sharedInstanceACvgZ,
                             _$s11PodcastsKit33MediaRemoteSubscriptionControllerC9subscribe2to10completiony10Foundation3URLV_yAA0E6ResultOctFTj,
                             _$s11PodcastsKit33MediaRemoteSubscriptionControllerC9subscribe2to10completiony10Foundation3URLV_yAA0E6ResultOctFTq,
@@ -254,6 +262,6 @@ exports:
                             PKLibraryPreview, PKOpenPodcastsUtil, PKPlayerManifest,
                             PKProvider, PKSearchResult, PKShow, PKShowPreview,
                             PKShowStoreId, PKSiriContext, PKStationPreview,
-                            PKStoreId,
+                            PKStoreId, PKSubscriptionControllerFactory,
                             _TtC11PodcastsKit33MediaRemoteSubscriptionController ]
 ...

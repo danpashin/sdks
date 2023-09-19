@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FitnessCoachingCore.framework/FitnessCoachingCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FCCAchievementNotificationContentProtobufReadFrom,
                             _FCCAlmostThereConfigurationProtobufReadFrom,
                             _FCCAtypicalDayConfigurationProtobufReadFrom,
@@ -25,6 +25,15 @@ exports:
                             _FCCFirstGlanceHealthKeyValueDomainName,
                             _FCCFirstGlanceMostRecentAlertDateKey,
                             _FCCFitnessAppBundleID,
+                            _FCCFitnessPlusPlanEveningNotificationMostRecentAlertDateKey,
+                            _FCCFitnessPlusPlanEveningNotificationScheduledAlertDateKey,
+                            _FCCFitnessPlusPlanHealthKeyValueDomainName,
+                            _FCCFitnessPlusPlanMorningNotificationMostRecentAlertDateKey,
+                            _FCCFitnessPlusPlanMorningNotificationScheduledAlertDateKey,
+                            _FCCFitnessPlusPlanNotificationCatalogWorkoutIdentifier,
+                            _FCCFitnessPlusPlanNotificationCategoryIdentifier,
+                            _FCCFitnessPlusPlanPostNotificationRequestProtobufReadFrom,
+                            _FCCFitnessPlusPlanStateProtobufReadFrom,
                             _FCCGoalCompletionProtobufReadFrom,
                             _FCCGoalProgressAlmostThereEventIdentifier,
                             _FCCGoalProgressConfigurationProtobufReadFrom,
@@ -51,6 +60,11 @@ exports:
                             FCCCompletionOffTrackConfiguration,
                             FCCCompletionOffTrackConfigurationProtobuf,
                             FCCDailyGoalLocalizer, FCCDateProvider,
+                            FCCFitnessPlusPlanClient,
+                            FCCFitnessPlusPlanPostNotificationRequest,
+                            FCCFitnessPlusPlanPostNotificationRequestProtobuf,
+                            FCCFitnessPlusPlanState,
+                            FCCFitnessPlusPlanStateProtobuf,
                             FCCGoalCompletionClient, FCCGoalCompletionContent,
                             FCCGoalCompletionProtobuf, FCCGoalProgressClient,
                             FCCGoalProgressConfiguration,
@@ -91,6 +105,10 @@ exports:
                             FCCCompletionOffTrackConfigurationProtobuf._has,
                             FCCCompletionOffTrackConfigurationProtobuf._identifier,
                             FCCCompletionOffTrackConfigurationProtobuf._percentageOfDayRule,
+                            FCCFitnessPlusPlanPostNotificationRequestProtobuf._force,
+                            FCCFitnessPlusPlanPostNotificationRequestProtobuf._has,
+                            FCCFitnessPlusPlanPostNotificationRequestProtobuf._type,
+                            FCCFitnessPlusPlanStateProtobuf._hasWorkoutScheduledToday,
                             FCCGoalCompletionProtobuf._activitySummaryIndex,
                             FCCGoalCompletionProtobuf._completedGoalTypes,
                             FCCGoalCompletionProtobuf._has,

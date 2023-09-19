@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Coordination.framework/Coordination
@@ -7,8 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _COAlarmManagerAlarmFired,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _COAccessoryDispatchabilityKey,
+                            _COAlarmManagerAlarmFired,
                             _COAlarmManagerAlarmsAdded,
                             _COAlarmManagerAlarmsChanged,
                             _COAlarmManagerAlarmsRemoved,
@@ -19,11 +20,12 @@ exports:
                             _COAlarmManagerServiceName,
                             _COAlarmManagerStateReset,
                             _COAlarmSiriContextTargetReferenceForAccessory,
+                            _COAlarmSiriContextTargetReferenceForMemento,
                             _COAlarmSiriContextTargetReferenceKey,
                             _COClusterActivityGroup, _COClusterDynamicGroup,
-                            _COClusterGroup, _COClusterHome, _COClusterPair,
-                            _COClusterRoleMonitorServiceName, _COClusterRoom,
-                            _COClusterZone, _COCoordinationErrorDomain,
+                            _COClusterHome, _COClusterPair,
+                            _COClusterRoleMonitorServiceName,
+                            _COCoordinationErrorDomain,
                             _COMessageChannelDuplicateSessionConsumerKey,
                             _COMessageChannelDuplicateSessionProducerKey,
                             _COMessageChannelErrorDomain,
@@ -68,14 +70,15 @@ exports:
                             _COTimerManagerTimersRemoved,
                             _COTimerManagerTimersUpdated,
                             _COTimerSiriContextTargetReferenceForAccessory,
+                            _COTimerSiriContextTargetReferenceForMemento,
                             _COTimerSiriContextTargetReferenceKey ]
     objc-classes:         [ COAlarmManager, COCapabilityManager, COCluster,
                             COClusterConfiguration, COClusterMember,
                             COClusterMemberRoleSnapshot, COClusterRealm,
                             COClusterRole, COClusterRoleMonitor, COFeatureStatus,
-                            COKeyPath, COMessageChannel, COMessageChannelRequest,
-                            COMessageChannelResponse, COMessageSession,
-                            COMessageSessionConsumer,
+                            COHomeKitAccessoryMemento, COKeyPath, COMessageChannel,
+                            COMessageChannelRequest, COMessageChannelResponse,
+                            COMessageSession, COMessageSessionConsumer,
                             COMessageSessionManagementRequest,
                             COMessageSessionManagementResponse,
                             COMessageSessionNotice, COMessageSessionProducer,

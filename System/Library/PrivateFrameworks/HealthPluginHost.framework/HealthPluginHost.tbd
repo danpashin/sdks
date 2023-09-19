@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthPluginHost.framework/HealthPluginHost
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s16HealthPluginHost0A24WelcomeFlowSignalManagerC011determineIfadE23ShouldShowOnNextAppOpen10completionyyycSg_tFTj,
                             _$s16HealthPluginHost0A24WelcomeFlowSignalManagerC011determineIfadE23ShouldShowOnNextAppOpen10completionyyycSg_tFTq,
                             _$s16HealthPluginHost0A24WelcomeFlowSignalManagerC019advertisableFeatureG7Factory06healthdeF8Provider019currentOSUpdateDateL00mO9GeneratorAcA0ab12AdvertisableiG9Providing_p_AA0adefR0_p0A10Experience016CurrentOSVersionR0_p10Foundation0O0VycSgtcfC,
@@ -200,6 +200,22 @@ exports:
                             _$s16HealthPluginHost0abC10ConnectionCN,
                             _$s16HealthPluginHost0abC10ConnectionCfD,
                             _$s16HealthPluginHost0abC10ConnectionCfd,
+                            _$s16HealthPluginHost0abC18NotificationBufferC05storeD0yy10Foundation0D0VFTj,
+                            _$s16HealthPluginHost0abC18NotificationBufferC05storeD0yy10Foundation0D0VFTq,
+                            _$s16HealthPluginHost0abC18NotificationBufferC12notification8withName10Foundation0D0VSgSo014NSNotificationH0a_tFTj,
+                            _$s16HealthPluginHost0abC18NotificationBufferC12notification8withName10Foundation0D0VSgSo014NSNotificationH0a_tFTq,
+                            _$s16HealthPluginHost0abC18NotificationBufferC5clearyyFTj,
+                            _$s16HealthPluginHost0abC18NotificationBufferC5clearyyFTq,
+                            _$s16HealthPluginHost0abC18NotificationBufferC6sharedACvgZ,
+                            _$s16HealthPluginHost0abC18NotificationBufferCMa,
+                            _$s16HealthPluginHost0abC18NotificationBufferCMm,
+                            _$s16HealthPluginHost0abC18NotificationBufferCMn,
+                            _$s16HealthPluginHost0abC18NotificationBufferCMo,
+                            _$s16HealthPluginHost0abC18NotificationBufferCMu,
+                            _$s16HealthPluginHost0abC18NotificationBufferCN,
+                            _$s16HealthPluginHost0abC18NotificationBufferCfD,
+                            _$s16HealthPluginHost0abC18NotificationBufferCfd,
+                            _$s16HealthPluginHost0abC33BufferPostNotificationUserInfoKeySSvg,
                             _$s16HealthPluginHost0abC9OperationC10connectionAA0abC10ConnectionCvMTj,
                             _$s16HealthPluginHost0abC9OperationC10connectionAA0abC10ConnectionCvMTq,
                             _$s16HealthPluginHost0abC9OperationC10connectionAA0abC10ConnectionCvgTj,
@@ -215,10 +231,10 @@ exports:
                             _$s16HealthPluginHost0abC9OperationCMs,
                             _$s16HealthPluginHost0abC9OperationCMu,
                             _$s16HealthPluginHost0abC9OperationCfD,
-                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo08HKMobiledgH0Cyc_tcfC,
-                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo08HKMobiledgH0Cyc_tcfCTj,
-                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo08HKMobiledgH0Cyc_tcfCTq,
-                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo08HKMobiledgH0Cyc_tcfc,
+                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo018HKRegulatoryDomainI0_pyc_tcfC,
+                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo018HKRegulatoryDomainI0_pyc_tcfCTj,
+                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo018HKRegulatoryDomainI0_pyc_tcfCTq,
+                            _$s16HealthPluginHost13CountryOracleC06mobileD19CodeManagerProviderACSo018HKRegulatoryDomainI0_pyc_tcfc,
                             _$s16HealthPluginHost13CountryOracleC07currentD0s6ResultOy0A8Platform0D15RetrievalRecordVAG0dI5ErrorOGyFTj,
                             _$s16HealthPluginHost13CountryOracleC07currentD0s6ResultOy0A8Platform0D15RetrievalRecordVAG0dI5ErrorOGyFTq,
                             _$s16HealthPluginHost13CountryOracleC0A10Experience0b19AdvertisableFeatureD8ProviderAAMc,
@@ -470,6 +486,21 @@ exports:
                             _$s16HealthPluginHost38InteractiveFeedItemGenerationOperationCMs,
                             _$s16HealthPluginHost38InteractiveFeedItemGenerationOperationCMu,
                             _$s16HealthPluginHost38InteractiveFeedItemGenerationOperationCfD,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvMTj,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvMTq,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvgTj,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvgTq,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvpMV,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvsTj,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationC7logURLsSay10Foundation3URLVGSgvsTq,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCACycfC,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCACycfc,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCMa,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCMn,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCMo,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCMs,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCMu,
+                            _$s16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperationCfD,
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationC21healthExperienceStore8listenerAC0A12PlatformCore0ajK0_p_AF0eF8Listener_ptcfC,
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationC21healthExperienceStore8listenerAC0A12PlatformCore0ajK0_p_AF0eF8Listener_ptcfCTj,
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationC21healthExperienceStore8listenerAC0A12PlatformCore0ajK0_p_AF0eF8Listener_ptcfCTq,
@@ -481,24 +512,7 @@ exports:
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationCMo,
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationCMs,
                             _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationCMu,
-                            _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationCfD,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvMTj,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvMTq,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvgTj,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvgTq,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvpMV,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvsTj,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationC7logURLsSay10Foundation3URLVGSgvsTq,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCACycfC,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCACycfc,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCMa,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCMn,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCMo,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCMs,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCMu,
-                            _$s16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperationCfD,
-                            _HealthPluginHostVersionNumber,
-                            _HealthPluginHostVersionString ]
+                            _$s16HealthPluginHost42ForegroundFeedPopulationListeningOperationCfD ]
     objc-classes:         [ _TtC16HealthPluginHost19DeleteFeedOperation,
                             _TtC16HealthPluginHost23SubmitTrainingOperation,
                             _TtC16HealthPluginHost24UpdateFavoritesOperation,
@@ -509,6 +523,6 @@ exports:
                             _TtC16HealthPluginHost29PopulateDiscoverFeedOperation,
                             _TtC16HealthPluginHost36GeneratorPipelineGenerationOperation,
                             _TtC16HealthPluginHost38InteractiveFeedItemGenerationOperation,
-                            _TtC16HealthPluginHost42ForegroundFeedPopulationListeningOperation,
-                            _TtC16HealthPluginHost44CollectFeedPopulationDiagnosticLogsOperation ]
+                            _TtC16HealthPluginHost40CollectFeedItemCacheDiagnosticsOperation,
+                            _TtC16HealthPluginHost42ForegroundFeedPopulationListeningOperation ]
 ...

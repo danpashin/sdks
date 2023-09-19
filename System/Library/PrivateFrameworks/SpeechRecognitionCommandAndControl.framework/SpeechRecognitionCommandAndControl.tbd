@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpeechRecognitionCommandAndControl.framework/SpeechRecognitionCommandAndControl
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AXCACCommandEditorPasteboardKey,
                             _AXCACCommandEditorShortcutWorkflowKey,
                             _CACAdaptiveBackdropContrastedGroupName,
@@ -77,6 +77,7 @@ exports:
                             _kCACCommandContextPreventDuringAnyPresentation,
                             _kCACCommandContextPreventDuringLockScreen,
                             _kCACCommandContextPreventShowingCommand,
+                            _kCACCommandContextPreventWithAppleVision,
                             _kCACCommandContextPreventWithVoiceOver,
                             _kCACCommandContextRequires3DTouchGesture,
                             _kCACCommandContextRequires3DTouchHardware,
@@ -85,6 +86,7 @@ exports:
                             _kCACCommandContextRequiresAnyNumberedOverlay,
                             _kCACCommandContextRequiresAnyOverlay,
                             _kCACCommandContextRequiresApplePay,
+                            _kCACCommandContextRequiresAppleVision,
                             _kCACCommandContextRequiresDragGesture,
                             _kCACCommandContextRequiresElementNamesOverlay,
                             _kCACCommandContextRequiresFocusedEditableText,
@@ -267,7 +269,8 @@ exports:
                             CACUserAttentionSignalProviderFactory,
                             CACUserHintsManager, CACUtilityToolServer,
                             CACVocabularyImportExportUtilities,
-                            CACVoiceOverAnnouncement, CACVoiceOverAnnouncer,
+                            CACVoiceControlServer, CACVoiceOverAnnouncement,
+                            CACVoiceOverAnnouncer,
                             CACVoiceOverItemShortDescriptionPair,
                             CACVoiceOverShortDescriptionGenerator,
                             CACZWLensChromeView, CACZoomController,
@@ -309,7 +312,6 @@ exports:
                             CACSpokenCommandManager._commandExecutionDispatchQueue,
                             CACSpokenCommandManager._commandRecognitionLogPath,
                             CACSpokenCommandManager._currentNextPreviousResolverSpokenCommand,
-                            CACSpokenCommandManager._currentRecognitionResetMode,
                             CACSpokenCommandManager._currentRepeatingSpokenCommand,
                             CACSpokenCommandManager._dictationRecognizerMode,
                             CACSpokenCommandManager._disambiguationHandler,
@@ -323,6 +325,7 @@ exports:
                             CACSpokenCommandManager._lastSyncdInteractionLevel,
                             CACSpokenCommandManager._nextResolverRelationships,
                             CACSpokenCommandManager._oldRXLangaugeObjects,
+                            CACSpokenCommandManager._pendingCommandToExecute,
                             CACSpokenCommandManager._presentationElements,
                             CACSpokenCommandManager._previousLeadingTextString,
                             CACSpokenCommandManager._previousResolverRelationships,
@@ -339,6 +342,7 @@ exports:
                             CACSpokenCommandManager._topLevelElements,
                             CACSpokenCommandManager._transientOverlayType,
                             CACSpokenCommandManager._userIsTouching,
+                            CACSpokenCommandManager._usingAutomationMode,
                             CACSpokenCommandNounSpecifier._items,
                             CACSpokenCommandNounSpecifier._type,
                             CACSpokenCommandPresentation._additionalCommandInfo,

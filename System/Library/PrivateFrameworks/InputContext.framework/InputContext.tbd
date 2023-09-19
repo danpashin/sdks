@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/InputContext.framework/InputContext
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ICLXEntryGetEntities, _ICLXEntryGetTransientLexicon,
                             _InputContextVersionNumber,
                             _InputContextVersionString,
@@ -15,7 +15,8 @@ exports:
                             __ICPersContactOSLogFacility,
                             __ICPersNamedEntityOSLogFacility,
                             __ICProactiveQuickTypeOSLogFacility,
-                            _isPqt1ForContactAutofillEnabled, _isPqt2Enabled ]
+                            _isPqt1ForContactAutofillEnabled, _isPqt2Enabled,
+                            _isTransientLexiconIngestionV2Enabled ]
     objc-classes:         [ _ICContact, _ICContactRecord, _ICInputContextFactory,
                             _ICInputContextManager,
                             _ICInputSuggesterPredictionSource, _ICInternalSource,

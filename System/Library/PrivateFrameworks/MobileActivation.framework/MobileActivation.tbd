@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
@@ -7,10 +7,10 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MAEActivateDeviceWithError,
                             _MAECopyActivationRecordWithError,
-                            _MAECopyDCRTWithError,
+                            _MAECopyDCRTWithError, _MAECopyDCRTWithOptions,
                             _MAECopyLegacyDeviceIdentityWithError,
                             _MAECopyPCRTToken, _MAECopyUCRTToken,
                             _MAECreateActivationInfo,
@@ -25,6 +25,7 @@ exports:
                             _MAEGetActivationURLFromStorebag,
                             _MAEGetActivationURLFromStorebagWithError,
                             _MAEGetBrickState, _MAEGetDCRTStateWithError,
+                            _MAEGetDCRTStateWithOptions,
                             _MAEGetUCRTOSVersionInfoWithError,
                             _MAEHandleActivationInfo, _MAEInFieldCollected,
                             _MAEIssueClientCertificate,
@@ -59,6 +60,7 @@ exports:
                             _kMAOptionsIgnoreExistingUCRT,
                             _kMAOptionsNetworkTimeoutInterval,
                             _kMAOptionsPromptForCredentials,
+                            _kMAOptionsSDCRTAttestation,
                             _kMAOptionsSOCKSProxyHost, _kMAOptionsSOCKSProxyPort,
                             _kMAOptionsUseCellularBootstrapConnection,
                             _kMAOptionsUseCellularOTAConnection,

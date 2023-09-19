@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VirtualGarage.framework/VirtualGarage
@@ -7,14 +7,17 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _GEOEvChargingConnectorTypeFromVGConnectorType,
                             _IsVirtualGarageEnabled,
                             _NSStringFromVGChargingConnectorTypeOptions,
                             _VGChargingConnectorTypeOptionsList,
                             _VGChargingConnectorTypeOptionsPacked,
                             _VGChargingConnectorTypeOptionsUnpacked,
-                            _VGGetAssertLog, _VGGetDataCoordinatorLog,
+                            _VGChargingNetworkStorageFromVGChargingNetwork,
+                            _VGChargingNetworkStorageReadFrom,
+                            _VGChargingNetworksStorageReadFrom, _VGGetAssertLog,
+                            _VGGetChargingNetworksLog, _VGGetDataCoordinatorLog,
                             _VGGetExternalAccessoryLog,
                             _VGGetExternalAccessoryModelFilterLog,
                             _VGGetOEMApplicationLog, _VGGetPersistingLog,
@@ -42,6 +45,7 @@ exports:
                             _VirtualGarageConfig_EVRoutingManifestKeyNameForSiriBundleID,
                             _VirtualGarageConfig_EVRoutingOEMAppPullInterval,
                             _VirtualGarageConfig_EVRoutingResourceNameForAllowAndDenylists,
+                            _VirtualGarageConfig_EVRoutingResourceNameForPreferredNetworksList,
                             _VirtualGarageConfig_EVRoutingStreamUpdatesDuringNav,
                             _VirtualGarageConfig_EVRoutingSynchronousVehicleStateUpdate,
                             _VirtualGarageConfig_EVRoutingUseCarDisplaySimIdentifier,
@@ -50,7 +54,10 @@ exports:
                             _VirtualGarageConfig_TimeThresholdForVehicleStateComparison,
                             _startHostingVirtualGarageServiceWithPersister,
                             _stopHostingVirtualGarageService ]
-    objc-classes:         [ VGDataCoordinator, VGOEMApplication,
+    objc-classes:         [ VGChargingNetwork,
+                            VGChargingNetworkAvailabilityProvider,
+                            VGChargingNetworkStorage, VGChargingNetworksStorage,
+                            VGDataCoordinator, VGOEMApplication,
                             VGOEMApplicationFinder, VGVehicle, VGVehicleDeduper,
                             VGVehicleState, VGVehicleStateStorage, VGVirtualGarage,
                             VGVirtualGarageService ]

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
-current-version:       1845.34.9
+current-version:       1899.30.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _GEOMapRectEnclosingCameraProperties,
                             _GEOPDCameraPathFrameFromVKCameraFrame,
                             _VKAnimationCurveCubicEaseOut,
@@ -26,7 +26,7 @@ exports:
                             _VKCameraPropertiesForRect,
                             _VKCameraPropertiesForStoreFrontView,
                             _VKDisablePerformanceHUD, _VKEnablePerformanceHUD,
-                            _VKExpandedPerformanceHUD,
+                            _VKExpandedPerformanceHUD, _VKFaultNotification,
                             _VKLineDrawWithOuterStroke,
                             _VKLocationCoordinate2DForVKPoint,
                             _VKLocationCoordinate2DIsValid,
@@ -127,7 +127,9 @@ exports:
                             _VectorKitDebugConfig_ARDebugMinimapShowBuildingTileSelection,
                             _VectorKitDebugConfig_ARDebugMinimapShowBuildings,
                             _VectorKitDebugConfig_ARDebugMinimapShowTileSelection,
+                            _VectorKitDebugConfig_AllowAsyncRender,
                             _VectorKitDebugConfig_AllowNonSupportedDeviceAdvancedMap,
+                            _VectorKitDebugConfig_ContourLinesDisplayEnabled,
                             _VectorKitDebugConfig_DecodeStyleNames,
                             _VectorKitDebugConfig_DisableAllAssets,
                             _VectorKitDebugConfig_DisableMSAA,
@@ -136,9 +138,26 @@ exports:
                             _VectorKitDebugConfig_DisabledAssetList,
                             _VectorKitDebugConfig_DisplayAllLabelsInARDebugString,
                             _VectorKitDebugConfig_EnableEnhancedCommandBufferErrors,
+                            _VectorKitDebugConfig_EnableRTEVChargerInfo,
+                            _VectorKitDebugConfig_EnableShadowMapCache,
                             _VectorKitDebugConfig_EnableVerboseEntityLogging,
                             _VectorKitDebugConfig_EnableVerboseLayoutReasonLogging,
+                            _VectorKitDebugConfig_HikingDisplayEnabled,
+                            _VectorKitDebugConfig_LockWatchFpsTo30hz,
+                            _VectorKitDebugConfig_MaritimeAndHikingOverrideEnabled,
+                            _VectorKitDebugConfig_MaritimeDisplayEnabled,
+                            _VectorKitDebugConfig_NavCameraEnableAttributes,
+                            _VectorKitDebugConfig_NavCameraEnableConsole,
+                            _VectorKitDebugConfig_NavCameraEnableLegend,
+                            _VectorKitDebugConfig_NavCameraEnableOverlay,
+                            _VectorKitDebugConfig_NavCameraEnableProperties,
                             _VectorKitDebugConfig_OverrideMSAASampleCount,
+                            _VectorKitDebugConfig_PolygonStrokeMaskingEnabled,
+                            _VectorKitDebugConfig_SSAODemoButtonEnabled,
+                            _VectorKitDebugConfig_VariableLogicUpdateFrequencyEnabled,
+                            _VectorKitDebugConfig_ZoomBounceSpringFriction,
+                            _VectorKitDebugConfig_ZoomBounceSpringTension,
+                            _VectorKitDebugConfig_ZoomRubberBandMaxAmount,
                             _dynamicValueAnimation,
                             _dynamicValueAnimationDuration,
                             _dynamicValueAnimationTimingFunction,
@@ -161,8 +180,9 @@ exports:
                             VKLabelMarker, VKLabelMarkerShield, VKLogicDebugInfo,
                             VKMapSnapshot, VKMapSnapshotCreator, VKMapView,
                             VKMapViewDescriptor, VKMarker, VKMarkerFeatureHandle,
-                            VKMuninJunction, VKMuninMarker, VKMuninRoad,
-                            VKNavContext, VKNavigationPuck,
+                            VKMetrics, VKMetricsDescriptor, VKMuninJunction,
+                            VKMuninMarker, VKMuninRoad, VKNavContext,
+                            VKNavigationPuck,
                             VKNavigationPuckLocationTracingEvent,
                             VKObjectBoundsContext, VKOverlay, VKPlatform,
                             VKPolylineGroupOverlay, VKPolylineOverlay,
@@ -170,12 +190,15 @@ exports:
                             VKResourceManager, VKRouteAnnotation, VKRouteContext,
                             VKRouteEtaDescription, VKRouteInfo,
                             VKRouteRangeAnnotationInfo, VKRouteWaypointInfo,
-                            VKSceneConfiguration, VKTimedAnimation, VKTimer,
-                            VKTrafficCameraFeature, VKTrafficFeature,
-                            VKTrafficIncidentFeature, VKTransitLineMarker,
-                            VKUserReportedTrafficIncident, VKVectorOverlayCircle,
-                            VKVectorOverlayData, VKVectorOverlayPolygon,
-                            VKVectorOverlayPolygonGroup, VKVectorOverlayPolyline,
+                            VKSceneConfiguration, VKScreenLabelFeature,
+                            VKSharedLocationRouteWaypoint, VKSpringAnimation,
+                            VKTimedAnimation, VKTimer, VKTrafficCameraFeature,
+                            VKTrafficFeature, VKTrafficIncidentFeature,
+                            VKTransitLineMarker, VKUserReportedTrafficIncident,
+                            VKVectorOverlayCircle, VKVectorOverlayData,
+                            VKVectorOverlayMaskingPolygonGroup,
+                            VKVectorOverlayPolygon, VKVectorOverlayPolygonGroup,
+                            VKVectorOverlayPolyline,
                             VKVectorOverlayPolylineGroup,
                             VKVenueBuildingFeatureMarker, VKVenueFeatureMarker ]
     objc-ivars:           [ VKAnimation._completionHandler,
@@ -196,8 +219,8 @@ exports:
                             VKMapSnapshotCreator._mapType,
                             VKMapSnapshotCreator._pointsOfInterestFilter,
                             VKOverlay._canProvideVectorGeometry,
-                            VKOverlay._delegate, VKOverlay._level,
-                            VKOverlay._replaceMapContentInRect,
+                            VKOverlay._delegate, VKOverlay._fallbackable,
+                            VKOverlay._level, VKOverlay._replaceMapContentInRect,
                             VKOverlay.identifier, VKPlatform._isMac,
                             VKPlatform._memSize, VKPlatform._numCPUs,
                             VKTimedAnimation._duration,

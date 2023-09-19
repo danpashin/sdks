@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXWatchRemoteScreenUI.framework/AXWatchRemoteScreenUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s21AXWatchRemoteScreenUI23AXTwiceWatchCrownButtonC5coderACSgSo7NSCoderC_tcfC,
                             _$s21AXWatchRemoteScreenUI23AXTwiceWatchCrownButtonC5coderACSgSo7NSCoderC_tcfc,
                             _$s21AXWatchRemoteScreenUI23AXTwiceWatchCrownButtonC5frameACSo6CGRectV_tcfC,
@@ -148,6 +148,14 @@ exports:
                             _$s21AXWatchRemoteScreenUI28AXTwiceCompanionRendererViewCMu,
                             _$s21AXWatchRemoteScreenUI28AXTwiceCompanionRendererViewCN,
                             _$s21AXWatchRemoteScreenUI28AXTwiceCompanionRendererViewCfD,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolMp,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP18prepareToDisappear10completionyyycSg_tFTj,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP18prepareToDisappear10completionyyycSg_tFTq,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP22axuiserverWasRestartedyyFTj,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP22axuiserverWasRestartedyyFTq,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP41connectionWithClientServiceWasInterruptedyyFTj,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolP41connectionWithClientServiceWasInterruptedyyFTq,
+                            _$s21AXWatchRemoteScreenUI33AXTwiceRootViewControllerProtocolTL,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionMainViewControllerC011watchDeviceH0AA0ef5WatchH0CvMTj,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionMainViewControllerC011watchDeviceH0AA0ef5WatchH0CvMTq,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionMainViewControllerC011watchDeviceH0AA0ef5WatchH0CvgTj,
@@ -212,12 +220,15 @@ exports:
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC22stingButtonLongPressedyyF,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC23airplayDidStopStreamingyyF,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC24airplayDidStartStreaming18withMirroringLayerySo7CALayerC_tF,
+                            _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC24doubleCrownButtonPressedyyF,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC24tripleCrownButtonPressedyyF,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC41connectionWithClientServiceWasInterruptedyyF,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC5coderACSgSo7NSCoderC_tcfC,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC5coderACSgSo7NSCoderC_tcfc,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfC,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc,
+                            _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerCAA0eghI8ProtocolAAMc,
+                            _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerCAA0eghI8ProtocolAAWP,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerCMa,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerCMn,
                             _$s21AXWatchRemoteScreenUI34AXTwiceCompanionRootViewControllerCMo,

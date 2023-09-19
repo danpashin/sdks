@@ -1,13 +1,14 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LACC.framework/LACC
-current-version:       5.54.26
-compatibility-version: 5.54.26
+current-version:       6.19.1
+compatibility-version: 6.19.1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ __ZN13lacc_hardware12LaccHardware9supportedEv,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ __ZN13lacc_hardware12LaccHardware12arch_versionEv,
+                            __ZN13lacc_hardware12LaccHardware9supportedEv,
                             __ZN13lacc_hardware12LaccHardwareC1Ev,
                             __ZN13lacc_hardware12LaccHardwareC2Ev,
                             __ZN13lacc_hardware12LaccHardwarecvRN4lacc13CallInterfaceEEv,
@@ -91,6 +92,7 @@ exports:
                             __ZN4lacc9ELFLoader8dma_readERNS_13ProgramLoaderEymPh,
                             __ZN4lacc9ELFLoader9dma_writeERNS_13ProgramLoaderEymPKh,
                             __ZNK4lacc9ELFLoader11lookup_sizeENSt3__117basic_string_viewIcNS1_11char_traitsIcEEEE,
+                            __ZNK4lacc9ELFLoader12arch_versionEv,
                             __ZNK4lacc9ELFLoader21get_text_segment_sizeEv,
                             __ZNK4lacc9ELFLoader5flagsEv,
                             __ZNK4lacc9ELFLoader5startEv,

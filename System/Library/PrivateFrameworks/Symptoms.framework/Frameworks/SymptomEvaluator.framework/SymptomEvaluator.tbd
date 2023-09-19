@@ -1,18 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1732.100.12
+current-version:       1848.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AlgosPackScore, _AlgosUnpackScore,
-                            _CLIPS_BASEBAND_BEDF_MODULE,
                             _CLIPS_BASEBAND_MAV_MODULE, _CLIPS_BASEBAND_MODULE,
-                            _CLIPS_BLUETOOTH_MODULE, _CLIPS_COMMON_MODULE,
-                            _CLIPS_HOMEKIT_MODULE, _CLIPS_MAIN_MODULE,
+                            _CLIPS_COMMON_MODULE, _CLIPS_MAIN_MODULE,
                             _CLIPS_MODULES_MODULE,
                             _CLIPS_MODULE_BASE_VERSION_KEY,
                             _CLIPS_MODULE_CONSTRUCTS_KEY,
@@ -21,7 +19,7 @@ exports:
                             _CLIPS_MODULE_OTA_SERIAL_NUMBER_KEY,
                             _CLIPS_MODULE_REQUIRED_MODULES_KEY,
                             _CLIPS_NETWORKING_MODULE, _CLIPS_SYMPTOMS_MODULE,
-                            _CLIPS_WIFI_MODULE, _CTShimSubscriberLastUpdateTime,
+                            _CTShimSubscriberLastUpdateTime,
                             _CTShimSubscriberMDN, _CTShimSubscriberSlotID,
                             _CTShimSubscriberTag, _CTShimSubscriberTagCounter,
                             _CTShimSubscriptionCurrentRATSelection,
@@ -63,8 +61,9 @@ exports:
                             _hexStringForData, _init_analytics_portal_listening,
                             _init_managed_event_listening,
                             _init_symptom_evaluator_listening,
-                            _isDateWithinScope, _kAWDCLIPSTemplateKey,
-                            _kAWDCLIPSTemplateModuleKey, _kCellularMaskedID,
+                            _isDateWithinScope, _kAnalyticsCLIPSTemplateKey,
+                            _kAnalyticsCLIPSTemplateModuleKey,
+                            _kCellularMaskedID,
                             _kConfigurationParamsRestoreDefaults,
                             _kDarwinNotificationHasAlternateAdvice,
                             _kDarwinNotificationMaterialLinkQualityChange,
@@ -129,7 +128,6 @@ exports:
                             _kNotificationNewConnectivityEpochWired,
                             _kNotificationNewModelGenerated,
                             _kNotificationNewPrimaryInterface,
-                            _kNotificationNewTraffic,
                             _kNotificationOfFlowDisruptingEvent,
                             _kNotificationOfTetheringState,
                             _kNotificationRecommendationDetail,
@@ -150,6 +148,7 @@ exports:
                             _kSymptomActivityBitmapEndTime,
                             _kSymptomActivityBitmapEthernetInterface,
                             _kSymptomActivityBitmapIPSecInterface,
+                            _kSymptomActivityBitmapShowExtensions,
                             _kSymptomActivityBitmapStartTime,
                             _kSymptomActivityBitmapWiFiInterface,
                             _kSymptomActivityBitmapsActualStartTimeKey,
@@ -216,6 +215,7 @@ exports:
                             _kSymptomAnalyticsServiceDomainTrackingXRefSwitchStateSinceKey,
                             _kSymptomAnalyticsServiceDomainTrackingXRefSwitchStateValueKey,
                             _kSymptomAnalyticsServiceEndpoint,
+                            _kSymptomAnalyticsServiceExtensionUsage,
                             _kSymptomAnalyticsServiceFetchLimit,
                             _kSymptomAnalyticsServiceFetchOffset,
                             _kSymptomAnalyticsServiceFlowCurrent,
@@ -297,10 +297,11 @@ exports:
                             _traceCallout, _traceEntry, _traceItem, _uptime_secs ]
     objc-classes:         [ AlgosScoreHandler, AnalyticsEngineCore,
                             AppHistoryScreener, AppHistoryScreenerEpisode,
-                            ApparentTimeHandler, CLIPSShim, COSMEventSummary,
-                            COSMStateSummary, CTServerConnection,
+                            ApparentTimeHandler, AutoLinkUpgradeHandler, CLIPSShim,
+                            COSMEventSummary, COSMStateSummary, CTServerConnection,
                             CellFallbackHandler, CellOutrankController,
                             CellOutrankHandler, CellOutrankHandlerSTM,
+                            CellOutrankTrialExperimentHandler,
                             CellularStateRelay, ConfigurationParams,
                             CoreTelephonyShim, CountDown, DailyMaintenanceActivity,
                             DateRounder, DecisionDetails, Evaluation,
@@ -318,10 +319,13 @@ exports:
                             NetworkAnalyticsQueueStatistics,
                             NetworkAnalyticsQueueStatisticsSlotEntry,
                             NetworkAnalyticsStateRelay, NetworkDomainsUtility,
-                            NoBackhaulHandler, PeriodicMaintenanceActivity,
-                            SFActivityBitmaps, SFActivityFullBitmaps, SFCache,
-                            SFEntitlements, SemiDailyMaintenanceActivity,
-                            ServiceImpl, StateWatcher, StopWatch, SymptomEvaluator,
+                            NetworkExtensionStateRelay, NoBackhaulHandler,
+                            PeriodicMaintenanceActivity, SFAOVPNConnSession,
+                            SFActivityBitmaps, SFCache, SFContentFilterSession,
+                            SFDNSProxySession, SFEntitlements,
+                            SFNetworkExtensionSessionMonitor, SFVPNConnSession,
+                            SemiDailyMaintenanceActivity, ServiceImpl,
+                            StateWatcher, StopWatch, SymptomEvaluator,
                             SymptomExpertSystemHandler, SystemProperties,
                             SystemSettingsRelay, TCPProgressProbe, TraceRecorder,
                             WeeklyMaintenanceActivity, WiFiStateRelay ]

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ICActiveUserIdentityDidChangeNotification,
                             _ICAgeVerificationStateDidChangeNotification,
                             _ICArtworkInfoKeyArtworkDictionary,
@@ -60,6 +60,7 @@ exports:
                             _ICCloudServiceStatusStorefrontCountryCodeDidChangeNotification,
                             _ICCloudServiceStatusStorefrontIdentifierDidChangeNotification,
                             _ICCreateLoggableValueForDSID,
+                            _ICCurrentApplicationIsSystemApp,
                             _ICDAAPUtilitiesCreateData,
                             _ICDAAPUtilitiesCreateDataForContainer,
                             _ICDAAPUtilitiesCreateDataForItemKindContainer,
@@ -160,6 +161,7 @@ exports:
                             _ICLiveLinkParticipantsDidChangeNotification,
                             _ICLiveLinkServerErrorDomain,
                             _ICMediaUserStateCenterEntitlementSiri,
+                            _ICMediaUserStateCenterServerStateUpdatedNotification,
                             _ICMediaUserStateCenterUserStatesDidChangeNotification,
                             _ICMediaUserStateErrorDomain,
                             _ICMusicAccountNotificationsSettingsSwitchArtistsAndShows,
@@ -176,6 +178,9 @@ exports:
                             _ICMusicSubscriptionStatusDidChangeNotification,
                             _ICMusicSubscriptionStatusReasonTypeGetDescription,
                             _ICMusicSubscriptionStatusTypeGetDescription,
+                            _ICMusicUserStateGroupSessionCapabilityChangedNotification,
+                            _ICNSStringForICMediaContentTaste,
+                            _ICNSStringForICMediaContentTasteItem,
                             _ICNewStatusForMusicSubscriptionStatusDidChangeKey,
                             _ICOldStatusForMusicSubscriptionStatusDidChangeKey,
                             _ICPlayInfoRequestSubscriptionPlaybackTypeRenew,
@@ -400,6 +405,7 @@ exports:
                             _ICURLBagKeyLanguageTag,
                             _ICURLBagKeyLibraryAuthServiceTokenURL,
                             _ICURLBagKeyLibraryDAAP,
+                            _ICURLBagKeyLibraryMatchRules,
                             _ICURLBagKeyLyricsOnByDefaultDisabled,
                             _ICURLBagKeyMDDomains,
                             _ICURLBagKeyMachineDataFinishProvisioningURL_1_0,
@@ -424,6 +430,7 @@ exports:
                             _ICURLBagKeyMobileNetworkConstraints,
                             _ICURLBagKeyModifyAccount, _ICURLBagKeyMusicCommon,
                             _ICURLBagKeyMusicConnect, _ICURLBagKeyMusicFriends,
+                            _ICURLBagKeyMusicMediaAPIHost,
                             _ICURLBagKeyMusicSubscription,
                             _ICURLBagKeyMusicSubscriptionOffersForStorefront,
                             _ICURLBagKeyMusicTabs, _ICURLBagKeyMusicUserToken,
@@ -457,6 +464,7 @@ exports:
                             _ICURLBagKeyRevokeMusicSDKAuthorizationSrv,
                             _ICURLBagKeyRevokeMusicUserTokenURL,
                             _ICURLBagKeySetParentalControl,
+                            _ICURLBagKeySharedControls,
                             _ICURLBagKeySignSAPRequest,
                             _ICURLBagKeySignSAPResponse,
                             _ICURLBagKeySignedActions,
@@ -524,6 +532,7 @@ exports:
                             ICBuyProductRequest, ICClientInfo, ICCloudAddReferral,
                             ICCloudAvailabilityController, ICCloudClient,
                             ICCloudClientAvailabilityService,
+                            ICCloudClientCollaborationEditParams,
                             ICCloudContentTasteRequestListener,
                             ICCloudItemIDList, ICCloudServiceStatusMonitor,
                             ICCloudServiceStatusRemoteMonitoring,
@@ -600,6 +609,7 @@ exports:
                             ICMusicLibraryAuthToken,
                             ICMusicLibraryAuthTokenStatus, ICMusicRestoreRequest,
                             ICMusicRestoreRequestParameters,
+                            ICMusicSocialProfile,
                             ICMusicSubscriptionAccountlessPlaybackRequest,
                             ICMusicSubscriptionFairPlayController,
                             ICMusicSubscriptionFairPlayKeyStatus,
@@ -618,8 +628,8 @@ exports:
                             ICMusicSubscriptionStatusRequest,
                             ICMusicSubscriptionStatusRequestOperation,
                             ICMusicSubscriptionStatusResponse,
-                            ICMusicSubscriptionStatusTerms, ICMusicUserState,
-                            ICMusicUserStateCookies,
+                            ICMusicSubscriptionStatusTerms, ICMusicUserProfile,
+                            ICMusicUserState, ICMusicUserStateCookies,
                             ICMusicUserTokenFetchRequest, ICMutableClientInfo,
                             ICMutableLocalStoreAccountProperties,
                             ICMutableNetworkConstraints,

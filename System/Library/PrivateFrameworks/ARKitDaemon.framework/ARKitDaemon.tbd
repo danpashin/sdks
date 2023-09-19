@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ARKitDaemon.framework/ARKitDaemon
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ARDaemonControlPowerControlEntitlement,
+                            _ARDaemonControlPowerControlEntitlementString,
+                            _ARKitDaemonVersionNumber, _ARKitDaemonVersionString,
+                            _ARStatusLoggingTypeInterval,
+                            _ARStatusLoggingTypeUpdate,
+                            _ARWorldSensingModificationEntitlement,
+                            _NSStringFromARMemoryPressureCondition,
+                            _NSStringFromARProcessDebugState,
+                            _NSStringFromARProcessTaskState ]
+    objc-classes:         [ ARControlListener, ARDaemon, ARDaemonControl,
+                            ARDaemonReplayBlockDelegate, ARDaemonService,
+                            ARDaemonServiceListener, ARExecutionManager,
+                            ARGeoTrackingTechniqueService, ARJasperData,
+                            ARLocationSensorService, ARMemoryPressureMonitor,
+                            ARProcessMonitor, ARProcessMonitorStateUpdate,
+                            ARReplayGraphScheduler, ARSensorService, ARServer,
+                            ARServiceUpdateParameters, ARSystemTimeSnapshot,
+                            ARTechniqueService, ARUserProfile, ARWatchdogMonitor ]
+...

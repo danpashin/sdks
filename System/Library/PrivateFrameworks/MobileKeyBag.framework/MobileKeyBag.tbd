@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileKeyBag.framework/MobileKeyBag
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MKBBackupActualFileSize, _MKBBackupClose,
                             _MKBBackupCopyBackupBagUUIDForBag,
                             _MKBBackupCopyBackupBagUUIDForVolume,
@@ -41,14 +41,17 @@ exports:
                             _MKBGetDeviceLockStateInfo, _MKBKeyBagChangeSecret,
                             _MKBKeyBagChangeSystemGeneration,
                             _MKBKeyBagChangeSystemSecret,
+                            _MKBKeyBagChangeSystemSecretOpts,
                             _MKBKeyBagChangeSystemSecretWithEscrow,
-                            _MKBKeyBagCopyData, _MKBKeyBagCopySytemSecretBlob,
-                            _MKBKeyBagCopyUUID, _MKBKeyBagCreateBackup,
-                            _MKBKeyBagCreateEscrow,
+                            _MKBKeyBagCleanupAfterMigration, _MKBKeyBagCopyData,
+                            _MKBKeyBagCopySystemOpaqueBlob,
+                            _MKBKeyBagCopySytemSecretBlob, _MKBKeyBagCopyUUID,
+                            _MKBKeyBagCreateBackup, _MKBKeyBagCreateEscrow,
                             _MKBKeyBagCreateEscrowWithAuth,
                             _MKBKeyBagCreateOTABackup, _MKBKeyBagCreateSystem,
                             _MKBKeyBagCreateSystemUnwrapped,
-                            _MKBKeyBagCreateWithData, _MKBKeyBagGetAKSHandle,
+                            _MKBKeyBagCreateWithData,
+                            _MKBKeyBagEffaceMementoBlob, _MKBKeyBagGetAKSHandle,
                             _MKBKeyBagGetSystemGeneration,
                             _MKBKeyBagIsKeyRolling, _MKBKeyBagKeyStashCommit,
                             _MKBKeyBagKeyStashCommitWithOpts,
@@ -66,18 +69,20 @@ exports:
                             _MKBKeyBagKeyStashSetManifest,
                             _MKBKeyBagKeyStashSupport, _MKBKeyBagKeyStashVerify,
                             _MKBKeyBagKeyStashVerifyWithOpts, _MKBKeyBagLock,
-                            _MKBKeyBagMigrateFS, _MKBKeyBagPerformRecovery,
+                            _MKBKeyBagMementoGetBlobState,
+                            _MKBKeyBagMementoIsSupported, _MKBKeyBagMigrateFS,
+                            _MKBKeyBagPerformRecovery,
                             _MKBKeyBagRegisterOTABackup, _MKBKeyBagRelease,
-                            _MKBKeyBagUnload, _MKBKeyBagUnlock, _MKBLockDevice,
-                            _MKBLockDeviceNow, _MKBNotifyStateIsSet,
-                            _MKBNotifyStateSet, _MKBOTABackupBagClose,
-                            _MKBOTABackupBagCopyUUID, _MKBOTABackupBagIsKernel,
-                            _MKBOTABackupBagOpen, _MKBOTABackupDecryptInPlace,
-                            _MKBOTABackupKeyBag, _MKBOTABackupStart,
-                            _MKBOTABackupStartForVolume, _MKBOTABackupStop,
-                            _MKBOTABackupStopForVolume, _MKBPrewarmSPS,
-                            _MKBSeshatDebug, _MKBSetDeviceConfigurations,
-                            _MKBSetLogFunction, _MKBUnlockDevice,
+                            _MKBKeyBagSetSystemSecretBlob, _MKBKeyBagUnload,
+                            _MKBKeyBagUnlock, _MKBLockDevice, _MKBLockDeviceNow,
+                            _MKBOTABackupBagClose, _MKBOTABackupBagCopyUUID,
+                            _MKBOTABackupBagIsKernel, _MKBOTABackupBagOpen,
+                            _MKBOTABackupDecryptInPlace, _MKBOTABackupKeyBag,
+                            _MKBOTABackupStart, _MKBOTABackupStartForVolume,
+                            _MKBOTABackupStop, _MKBOTABackupStopForVolume,
+                            _MKBPrewarmSPS, _MKBSeshatDebug,
+                            _MKBSetDeviceConfigurations, _MKBSetLogFunction,
+                            _MKBSetSpacedRepetitionMode, _MKBUnlockDevice,
                             _MKBUserSessionConfigureLoginWindow,
                             _MKBUserSessionCreateKeybagForUser,
                             _MKBUserSessionCreatePersonaKeyForUser,

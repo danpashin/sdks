@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:                 [ armv7, armv7s, arm64, arm64e ]
+platform:              (null)
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/ActionButtonSelector.framework/ActionButtonSelector
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _ABApertureBladeCountParamKey,
+                            _ABCameraFStopParamKey, _ABDampingParamKey,
+                            _ABDampingSmoothParamKey,
+                            _ABDefaultZoomedInSceneParams,
+                            _ABDefaultZoomedOutSceneParams,
+                            _ABFocalLengthParamKey, _ABFocusDistanceParamKey,
+                            _ABInitialZoomedOutSceneParams,
+                            _ABLightingIntensityParamKey,
+                            _ABLoadResourcesWithCompletion, _ABOffsetXParamKey,
+                            _ABOffsetYParamKey, _ABOffsetZParamKey,
+                            _ABReleaseResources, _ABResponseParamKey,
+                            _ABResponseSmoothParamKey, _ABRotationParamKey,
+                            _ABScaleParamKey, _ABScrollDraggingStateParams,
+                            _ABStateParamLimits, _ABTimeFactorParamKey,
+                            _ABZoomInProgressParamKey ]
+    objc-classes:         [ ABActionSelectorViewController, ABParameterLimits ]
+...

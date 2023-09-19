@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ASAttributeAutomaticUpdateDisabled,
                             _ASAttributeCompatibilityVersion,
                             _ASAttributeContentVersion, _ASAttributeDownloadSize,
@@ -55,9 +55,10 @@ exports:
                             _MAPurgeCatalogs, _MAPurgeCatalogsWithPurpose,
                             _MAPushServiceInterface, _MAReportingRequest,
                             _MASendRepairState, _MAServiceClientInterface,
-                            _MASetDawTokenPath, _MASetPallasAudience,
-                            _MASetPallasAudienceForType, _MASetPallasEnabled,
-                            _MASetPallasUrl, _MASetPallasUrlForType,
+                            _MASetDawTokenPath, _MASetDawTokenValue,
+                            _MASetPallasAudience, _MASetPallasAudienceForType,
+                            _MASetPallasEnabled, _MASetPallasUrl,
+                            _MASetPallasUrlForType,
                             _MASetServerUrlFallbackDefault,
                             _MASetServerUrlOverride,
                             _MASoftwareLookupCancelDownload,
@@ -79,7 +80,7 @@ exports:
                             __MABrainGetInfo, __MABrainUpdate,
                             __MACleanV1Repository, __MAClientSendRepairState,
                             __MAMigrateAssets, __MASendDataMigrator,
-                            __MASetDawTokenPath, __MAclientSendCoverageDump,
+                            __MASetDawTokenPath, __MASetDawTokenValue,
                             __MAclientSendDataMigrator,
                             __MAclientSendEnsureDataVault,
                             __MAclientSendGetNonUserInitiatedDownloadsAllowed,
@@ -94,10 +95,10 @@ exports:
                             __MAsendDownloadMetaData, __MAsendDumpClientAccess,
                             __MAsendDumpClientAccessWithPurpose,
                             __MAsendGarbageCollect, __MAsendGetPallasAudience,
-                            __MAsendGetPallasEnabled, __MAsendPurgeAsset,
-                            __MAsendQueryMetaData, __MAsendSetPallasAudience,
-                            __MAsendSetPallasEnabled, __MAsendSetPallasUrl,
-                            __MAsendSetPallasUrlForType,
+                            __MAsendGetPallasEnabled, __MAsendInstallAsset,
+                            __MAsendPurgeAsset, __MAsendQueryMetaData,
+                            __MAsendSetPallasAudience, __MAsendSetPallasEnabled,
+                            __MAsendSetPallasUrl, __MAsendSetPallasUrlForType,
                             __MAsendUpdateClientAccessGetPathSync,
                             __MAsendUpdateClientAccessGetPathWithPurposeSync,
                             __MobileAssetFault, __MobileAssetLog,
@@ -117,7 +118,17 @@ exports:
                             MAAutoAssetNotifications, MAAutoAssetPolicy,
                             MAAutoAssetProgress, MAAutoAssetPushNotification,
                             MAAutoAssetPushNotificationHistory,
-                            MAAutoAssetSelector, MAAutoAssetStatus,
+                            MAAutoAssetSelector, MAAutoAssetSet,
+                            MAAutoAssetSetAtomicEntry, MAAutoAssetSetControl,
+                            MAAutoAssetSetEntry, MAAutoAssetSetInfoControl,
+                            MAAutoAssetSetInfoDesire, MAAutoAssetSetInfoEnd,
+                            MAAutoAssetSetInfoFound, MAAutoAssetSetInfoInstance,
+                            MAAutoAssetSetInstanceDescriptor, MAAutoAssetSetLock,
+                            MAAutoAssetSetLockTracker,
+                            MAAutoAssetSetNotifications, MAAutoAssetSetOverview,
+                            MAAutoAssetSetPolicy, MAAutoAssetSetProgress,
+                            MAAutoAssetSetStatus, MAAutoAssetSetSummary,
+                            MAAutoAssetSetTarget, MAAutoAssetStatus,
                             MAAutoAssetSummary, MAAutoAssetUpdatePolicy,
                             MADownloadConfig, MADownloadOptions,
                             MAMsuDownloadOptions, MAProgressHandler,

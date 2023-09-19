@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriIdentityInternal.framework/SiriIdentityInternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s13IntentHandler20SiriIdentityInternal25InProcessHandlingStrategyPTl,
                             _$s13SiriUtilities0A11EnvironmentC0A16IdentityInternalE07getUserD00A7KitFlow0gD8ProviderCSgyFZ,
                             _$s20SiriIdentityInternal012UserIdentifyB16ResolutionResultC11unsupported9forReasonACXDAA0deb11UnsupportedJ0O_tFZ,
@@ -83,7 +83,6 @@ exports:
                             _$s20SiriIdentityInternal0B16ResolutionResultCMn,
                             _$s20SiriIdentityInternal0B16ResolutionResultCN,
                             _$s20SiriIdentityInternal0B16ResolutionResultCfD,
-                            _$s20SiriIdentityInternal0B20FeatureFlagsProviderV02isA8XEnabledSbyF,
                             _$s20SiriIdentityInternal0B20FeatureFlagsProviderV22isSwitchProfileEnabledSbyF,
                             _$s20SiriIdentityInternal0B20FeatureFlagsProviderV33isCrossDeviceSwitchProfileEnabledSbyF,
                             _$s20SiriIdentityInternal0B20FeatureFlagsProviderV6sharedACvau,
@@ -215,6 +214,8 @@ exports:
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerC7confirm6intentAA0edF8ResponseCAA0edF0C_tYaF,
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerC7confirm6intentAA0edF8ResponseCAA0edF0C_tYaFTq,
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerC7confirm6intentAA0edF8ResponseCAA0edF0C_tYaFTu,
+                            _$s20SiriIdentityInternal25IdentifyUserIntentHandlerCACycfC,
+                            _$s20SiriIdentityInternal25IdentifyUserIntentHandlerCACycfc,
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerCMa,
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerCMn,
                             _$s20SiriIdentityInternal25IdentifyUserIntentHandlerCN,

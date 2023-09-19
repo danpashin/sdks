@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileInBoxUpdate.framework/MobileInBoxUpdate
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ACRTRootPublicKey, _AppleRootCA, _AppleRootCAG2,
                             _AppleRootCAG3, _AppleRootCASPKI, _AppleRootG2SPKI,
                             _AppleRootG3SPKI, _AppleRoots, _BAARoots, _BASystemRoot,
@@ -29,7 +29,7 @@ exports:
                             _CTEvaluateBAASystemTestRoot,
                             _CTEvaluateBAASystemWithId, _CTEvaluateBAAUser,
                             _CTEvaluateBAAUserTestRoot,
-                            _CTEvaluateCertsForPolicy,
+                            _CTEvaluateCertsForPolicy, _CTEvaluateDAK,
                             _CTEvaluateKDLSignatureCMS,
                             _CTEvaluatePragueSignatureCMS,
                             _CTEvaluateProvisioningProfile, _CTEvaluateSatori,
@@ -49,9 +49,10 @@ exports:
                             _CTOidAppleDeviceAttestationIdentity,
                             _CTOidAppleDeviceAttestationKeyUsageProperties,
                             _CTOidAppleDeviceAttestationNonce,
-                            _CTOidAppleExtensionArc, _CTOidAppleGenericSSLMarker,
-                            _CTOidAppleHashAgility, _CTOidAppleHashAgilityV2,
-                            _CTOidAppleHaven, _CTOidAppleImg4Manifest,
+                            _CTOidAppleExtensionArc, _CTOidAppleFDRIdentity,
+                            _CTOidAppleGenericSSLMarker, _CTOidAppleHashAgility,
+                            _CTOidAppleHashAgilityV2, _CTOidAppleHaven,
+                            _CTOidAppleImg4Manifest,
                             _CTOidAppleKextDenyListSigning,
                             _CTOidAppleMFI4Properties, _CTOidAppleMFIAuthv3,
                             _CTOidAppleMFISWAuth, _CTOidAppleMacAppStore,
@@ -67,7 +68,9 @@ exports:
                             _CTOidAppleTVOSAppStoreProd,
                             _CTOidAppleTestFlightDev, _CTOidAppleTestFlightProd,
                             _CTOidAppleUniqueDeviceIdentifiers,
-                            _CTOidAppleWWDRCA, _CTOidAppleiPhoneAppStoreDev,
+                            _CTOidAppleWWDRCA, _CTOidAppleXROSAppStoreDev,
+                            _CTOidAppleXROSAppStoreProd,
+                            _CTOidAppleiPhoneAppStoreDev,
                             _CTOidAppleiPhoneAppStoreProd, _CTOidAppleiPhoneCA,
                             _CTOidAppleiPhoneDeveloper,
                             _CTOidAppleiPhoneDistribution,

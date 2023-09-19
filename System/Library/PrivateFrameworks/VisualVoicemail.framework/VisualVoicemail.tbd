@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _VMAudioMessageReadFrom,
                             _VMBundleIdentifierVoicemailDaemon,
                             _VMBundleIdentifierVoicemailFramework,
@@ -48,9 +48,8 @@ exports:
                             _kVVDefaultsDomain, _kVVErrorDomain,
                             _kVVLastWarnedUsageDefault,
                             _kVVPDPActivationErrorDomain,
-                            _kVVReloadServiceNotification, _vm_default_log,
-                            _vm_imap_log, _vm_ui_log, _vm_vmd_log, _vm_vmtool_log,
-                            _xx_TUFormattedPhoneNumber ]
+                            _kVVReloadServiceNotification, _vm_framework_log,
+                            _vm_ui_log, _xx_TUFormattedPhoneNumber ]
     objc-classes:         [ VMAccount, VMAudioMessage, VMClientWrapper,
                             VMConfiguration, VMHandle, VMLegacyAccount,
                             VMMutableAccount, VMMutableVoicemail, VMOperation,
@@ -77,5 +76,6 @@ exports:
                             VMVoicemailMessage._remoteUID,
                             VMVoicemailMessage._senderDestinationID,
                             VMVoicemailMessage._transcript,
-                            VMVoicemailMessage._transcriptionURL ]
+                            VMVoicemailMessage._transcriptionURL,
+                            VMVoicemailMessage._uuid ]
 ...

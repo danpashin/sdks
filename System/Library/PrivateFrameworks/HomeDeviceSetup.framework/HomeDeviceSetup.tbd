@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeDeviceSetup.framework/HomeDeviceSetup
@@ -7,13 +7,13 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _FrontBoardOpenURLOptions, _HDSDeviceLocked,
                             _HDSDispatchTimerSet, _HDSIsDevicePhone,
                             _HDSIsGreenTeaDevice, _HDSLocalizedStringForKey,
                             _HDSMetricsLog, _HomeDeviceSetupVersionNumber,
                             _HomeDeviceSetupVersionString,
-                            _SFTestFlagsFromString,
+                            _SFNormalizeEmailAddress, _SFTestFlagsFromString,
                             _SVSAddSuffixForCurrentDeviceClass,
                             _SVSAddSuffixForCurrentDeviceClassAndProductName,
                             _SVSAddSuffixForDeviceClass,
@@ -23,9 +23,11 @@ exports:
                             _SVSLocalizedStringV, __fileTransferSession,
                             __invalidateCalled, _gLogCategory_CLISetupInteractor,
                             _gLogCategory_HDSBonjourTest,
-                            _gLogCategory_HDSCaptiveNetworkController,
                             _gLogCategory_HDSDeviceActivation,
+                            _gLogCategory_HDSDeviceOperationHomeKitSetup,
                             _gLogCategory_HDSFileTransfer,
+                            _gLogCategory_HDSPSGHelper,
+                            _gLogCategory_HDSSetupClient,
                             _gLogCategory_HDSSetupService,
                             _gLogCategory_HDSSetupSession, _gLogCategory_Metrics,
                             _kActivationRequestKeyActivationResult,
@@ -35,7 +37,9 @@ exports:
                             _kActivationRequestKeyURLRequest,
                             _kDeviceActivationErrorDomain, _testSideloadTargetId ]
     objc-classes:         [ CLISetupInteractor, HDSBonjourTest,
-                            HDSBonjourTestHandler, HDSCaptiveNetworkController,
-                            HDSDeviceActivation, HDSDeviceActivationOperation,
-                            HDSFileTransfer, HDSSetupService, HDSSetupSession ]
+                            HDSBonjourTestHandler, HDSDeviceActivation,
+                            HDSDeviceActivationOperation,
+                            HDSDeviceOperationHomeKitSetup, HDSFileTransfer,
+                            HDSPSGHelper, HDSSetupClient, HDSSetupService,
+                            HDSSetupSession ]
 ...

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MessageProtection.framework/MessageProtection
-current-version:       264.100.16
+current-version:       317
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s17MessageProtection16SymmetricRatchetV11messageKeysSDys6UInt64V9CryptoKit0C3KeyVGvpfi,
                             _$s17MessageProtection16SymmetricRatchetV14serializedData10Foundation0F0VyF,
                             _$s17MessageProtection16SymmetricRatchetVMa,
@@ -34,6 +34,17 @@ exports:
                             _$s17MessageProtection4HKDFCMn,
                             _$s17MessageProtection4HKDFCN,
                             _$s17MessageProtection4HKDFCfD,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVV4data10Foundation4DataVyF,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVV9blockSizeSivpfi,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVVAeF10Foundation4DataV_tKcfC,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVVMa,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVVMn,
+                            _$s9CryptoKit3AESO17MessageProtectionE2IVVN,
+                            _$s9CryptoKit3AESO17MessageProtectionE3CTRO7decrypt3key10ciphertext2IV10Foundation4DataVAA12SymmetricKeyV_AmcDEAJVtKFZ,
+                            _$s9CryptoKit3AESO17MessageProtectionE3CTRO7encrypt3key7message2IV10Foundation4DataVAA12SymmetricKeyV_AmcDEAJVtKFZ,
+                            _$s9CryptoKit3AESO17MessageProtectionE3CTROMa,
+                            _$s9CryptoKit3AESO17MessageProtectionE3CTROMn,
+                            _$s9CryptoKit3AESO17MessageProtectionE3CTRON,
                             _NGMEncryptedAttributeKTGossipData, _SecExposeStream,
                             _SecMPComputePaddingForStorage,
                             _SecMPCopyProtectedMsgHash,
@@ -61,7 +72,7 @@ exports:
                             GLTKeyDiversification, MPStatusKitIncomingRatchet,
                             MPStatusKitMessage, MPStatusKitOutgoingRatchet,
                             MPStatusKitSubscriptionKeys, NGMFullDeviceIdentity,
-                            NGMKeyRollingTicket, NGMMessageHasher,
+                            NGMFullPrekey, NGMKeyRollingTicket, NGMMessageHasher,
                             NGMProtocolVersion, NGMPublicDeviceIdentity,
                             NGMReplayManager, NGMRollingBitmaskBuffer,
                             NGMTimeBasedEvaluations,

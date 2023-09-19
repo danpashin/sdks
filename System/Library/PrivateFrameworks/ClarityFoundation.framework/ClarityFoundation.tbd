@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClarityFoundation.framework/ClarityFoundation
@@ -7,19 +7,30 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _CLFCameraSettingsBundleName,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _CLFAppIconURLForBundleIdentifier,
+                            _CLFAppIconsDirectory, _CLFCameraSettingsBundleName,
+                            _CLFClarityDisplayNameKey,
                             _CLFCommunicationLimitContacts,
-                            _CLFCommunicationLimitEveryone, _CLFListLayoutGrid,
+                            _CLFCommunicationLimitEveryone,
+                            _CLFCommunicationLimitSelectedContacts,
+                            _CLFLegacyAppIconsDirectory, _CLFListLayoutGrid,
                             _CLFListLayoutStack, _CLFMessagesSettingsBundleName,
-                            _CLFMusicSettingsBundleName,
+                            _CLFMusicSettingsBundleName, _CLFNeedsRetryKey,
                             _CLFPhoneSettingsBundleName,
                             _CLFPhotosSettingsBundleName,
+                            _CLFPrivacyCallbackIdentifier,
+                            _CLFPrivacyLinkBundleIdentifier,
                             _CLFSupportsClarityUIKey,
+                            _CLFSupportsFullScreenInAssistiveAccessKey,
+                            _CLFUpdateAppIconsMessageIdentifier,
+                            _CLFUpdatedBundleIdentifiersKey,
+                            _CLFWallpaperDirectory, _CLFWallpaperURL,
                             _ClarityFoundationVersionNumber,
                             _ClarityFoundationVersionString ]
     objc-classes:         [ CLFBaseSettings, CLFCameraSettings, CLFLog,
                             CLFMessagesSettings, CLFMusicSettings,
-                            CLFPhoneFaceTimeSettings, CLFSettings,
+                            CLFPhoneFaceTimeSettings, CLFPhotosSettings,
+                            CLFPrivacyDisclosureChecker, CLFSettings,
                             CLFSystemShellSwitcher, _CLFSettingsObserver ]
 ...

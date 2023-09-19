@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BacklightServicesHost.framework/BacklightServicesHost
@@ -7,18 +7,23 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BLSBacklightFactorFromCBDisplayMode,
                             _BLSHAlwaysOnPresentationEngineStateIsFlipbook,
                             _BLSHAlwaysOnPresentationEngineStateIsPredictiveFlipbook,
+                            _BLSHBacklightCoreBrightnessCallbackSleepImminentWatchdogTimeout,
+                            _BLSHBacklightCoreBrightnessCallbackWatchdogTimeout,
                             _BLSHBacklightDisplayStateMachineWatchdogTimeout,
                             _BLSHBacklightTransitionStateMachineWatchdogTimeout,
+                            _BLSHWaitingPastFireForCompletionTimeout,
                             _BacklightServicesHostVersionNumber,
                             _BacklightServicesHostVersionString,
                             _CanRenderFlipbookForBLSBacklightDisplayMode,
                             _IsActiveOnBrightnessForBLSBacklightDisplayMode,
                             _IsAlwaysOnBrightnessForBLSBacklightDisplayMode,
                             _IsBlankedForBLSBacklightDisplayMode,
+                            _IsDisplayModeTransitionToActiveOn,
+                            _IsDisplayModeTransitionToAlwaysOn,
                             _IsOffForBLSBacklightDisplayMode,
                             _NSStringFromBLSBacklightBrightnessCurve,
                             _NSStringFromBLSBacklightDisplayMode,
@@ -74,9 +79,11 @@ exports:
                             BLSHLocalAssertionService,
                             BLSHLocalCountingAssertionAttributeHandler,
                             BLSHLocalCountingSceneAssertionAttributeHandler,
+                            BLSHLocalOnlyServiceConfiguration,
                             BLSHNullBacklightSceneHostEnvironment,
                             BLSHNullInactiveBudgetPolicy,
                             BLSHOnSystemSleepAction,
+                            BLSHPauseOnSystemSleepAttributeHandler,
                             BLSHPauseWhenSceneBackgroundAttributeHandler,
                             BLSHPendingDirectRampDisplayMode,
                             BLSHPendingEnvironmentUpdateOperation,
@@ -93,6 +100,7 @@ exports:
                             BLSHService, BLSHSuppressionEvent,
                             BLSHTransparentFlipbookAttributeHandler,
                             BLSHValidWhenBacklightInactiveAttributeHandler,
+                            BLSHWatchdogProvider,
                             BLSHXPCAssertionServiceHostServer,
                             BLSHXPCBacklightProxyHostServer ]
 ...

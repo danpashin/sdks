@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BBAnnounceCarPlaySettingFromUNNotificationAnnouncementCarPlaySetting,
                             _BBAnnounceSettingFromUNNotificationSetting,
                             _BBBulletinGroupingSettingFromUNNotificationGroupingSetting,
@@ -44,7 +44,6 @@ exports:
                             _UNSDictionaryToNotificationRecord,
                             _UNSDictionaryToNotificationTopicRecord,
                             _UNSDictionaryToUNSNotificationSchedule,
-                            _UNSDictionaryToUNSPushRegistration,
                             _UNSExampleUserNotificationCenterRegister,
                             _UNSKeyedObservableUniversalKey,
                             _UNSLocalizedFormatStringForKey,
@@ -56,13 +55,7 @@ exports:
                             _UNSNotificationRecordToDictionary,
                             _UNSNotificationRecordToUNNotificationTrigger,
                             _UNSNotificationScheduleToDictionary,
-                            _UNSNotificationServiceExtensionPointIdentifier,
                             _UNSNotificationTopicRecordToDictionary,
-                            _UNSPowerLogUserNotificationDefaultTriggerEvent,
-                            _UNSPowerLogUserNotificationExtendedTriggerEvent,
-                            _UNSPowerLogUserNotificationRequestEvent,
-                            _UNSPowerLogUserNotificationTriggerEvent,
-                            _UNSPushRegistrationToDictionary,
                             _UNSShowAuthorizationAlert,
                             _UNSShowCriticalAlertAuthorizationAlert,
                             _UNSShowDeliveryAuthorizationAlert,
@@ -72,8 +65,6 @@ exports:
                             _UNSUserNotificationServerRun,
                             _UNShowPreviewsSettingFromBBContentPreviewSetting,
                             _UNSupportedAuthorizationOptionsForPushSettings,
-                            __UNSAPSTopicListDebugString,
-                            __UNSBKSApplicationStateDebugString,
                             _kUNNotificationActionTypeDefault,
                             _kUNNotificationActionTypeTextInput,
                             _kUNNotificationTriggerTypeCalendar,
@@ -91,8 +82,7 @@ exports:
                             UNSAtomicDataContentProtectionStrategy,
                             UNSAttachmentRecord, UNSAttachmentsRepository,
                             UNSAttachmentsService,
-                            UNSAuthorizationAlertController, UNSBlueListMonitor,
-                            UNSBundleLibrarian, UNSContactRecord,
+                            UNSAuthorizationAlertController, UNSContactRecord,
                             UNSContentProtectionManager,
                             UNSCriticalAlertAuthorizationAlertController,
                             UNSDaemonLauncher, UNSDataStoreReceipt,
@@ -102,8 +92,7 @@ exports:
                             UNSFileHandleContentProtectionStrategy,
                             UNSFileHandleWrapper,
                             UNSHybridContentProtectionStrategy,
-                            UNSKeyedDataStoreRepository,
-                            UNSKeyedDictionaryRepository, UNSKeyedObservable,
+                            UNSKeyedDataStoreRepository, UNSKeyedObservable,
                             UNSLocalNotificationClient, UNSLocalizationService,
                             UNSLocationMonitor, UNSNotificationActionRecord,
                             UNSNotificationAuthorizationAlertController,
@@ -121,18 +110,13 @@ exports:
                             UNSNotificationRepository, UNSNotificationSchedule,
                             UNSNotificationScheduleRepository,
                             UNSNotificationSchedulingService,
-                            UNSNotificationServiceExtension,
-                            UNSNotificationServiceExtensionManager,
                             UNSNotificationSettingsService,
                             UNSNotificationSourceDescription,
                             UNSNotificationSourceSettingsDescription,
                             UNSNotificationTopicRecord,
                             UNSNotificationTopicRecordMapper,
                             UNSNotificationTopicRepository,
-                            UNSPendingNotificationRepository,
-                            UNSPushRegistration, UNSPushRegistrationRepository,
-                            UNSRemoteNotificationClient,
-                            UNSRemoteNotificationServer, UNSSettingsGateway,
+                            UNSPendingNotificationRepository, UNSSettingsGateway,
                             UNSUserNotificationServer,
                             UNSUserNotificationServerConnectionListener,
                             UNSUserNotificationServerDomain,

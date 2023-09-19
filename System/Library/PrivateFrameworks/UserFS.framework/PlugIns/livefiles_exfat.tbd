@@ -1,37 +1,36 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserFS.framework/PlugIns/livefiles_exfat.dylib
 current-version:       1
 compatibility-version: 1
+objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CONV_DuplicateName, _CONV_GetCurrentTime,
                             _CONV_UTF8ToUnistr255, _CONV_Unistr255ToUTF8,
                             _CONV_Unistr255ToUpperCase,
-                            _CONV_UnistrUTF8ToUpperCase, _DIROPS_ChecksumFileSet,
+                            _CONV_UnistrUTF8ToUpperCase,
+                            _DIROPS_AllocateDirBlockBuffer,
+                            _DIROPS_ChecksumFileSet,
                             _DIROPS_CreateHTForDirectory, _DIROPS_CreateNewEntry,
-                            _DIROPS_DeInitDirClusterDataCache,
-                            _DIROPS_DeInitDirEntryLockList,
-                            _DIROPS_DeReferenceDirCluster,
-                            _DIROPS_DereferenceDirEntrlyLockListEntry,
-                            _DIROPS_DestroyHTForDirectory, _DIROPS_GetDirCluster,
+                            _DIROPS_DestroyHTForDirectory,
+                            _DIROPS_FreeDirBlockBuffer,
+                            _DIROPS_GetDirBlockAbsolute,
+                            _DIROPS_GetDirBlockRelative,
                             _DIROPS_GetFileDirEntryDataByOffset,
                             _DIROPS_GetMD5Digest, _DIROPS_GetRecordId,
-                            _DIROPS_GetStartCluster,
-                            _DIROPS_InitDirClusterDataCache,
-                            _DIROPS_InitDirEntryLockList,
-                            _DIROPS_InitDirEntryLockListEntry,
-                            _DIROPS_LookForDirEntry,
+                            _DIROPS_GetStartCluster, _DIROPS_LookForDirEntry,
                             _DIROPS_LookForDirEntryByName,
                             _DIROPS_LookupInternal,
                             _DIROPS_MarkNodeDirEntriesAsDeleted,
+                            _DIROPS_PurgeNodeMetaBlocksFromCache,
                             _DIROPS_ReleaseHTForDirectory,
-                            _DIROPS_SetParentDirClusterCacheLock,
                             _DIROPS_UpdateDirectoryEntries,
                             _DIROPS_VerifyIfLinkAndGetLinkLength,
                             _DIROPS_VolumeOffsetForCluster,
+                            _DIROPS_VolumeOffsetForDirBlock,
                             _DIROPS_WriteVolumeLableEntry, _DIROPS_isDirEmpty,
                             _EXFAT_BeginBlockmap, _EXFAT_Create,
                             _EXFAT_EndBlockmap, _EXFAT_GetAttr, _EXFAT_Link,
@@ -54,7 +53,10 @@ exports:
                             _FAT_Access_M_TruncateLastClusters,
                             _FILEOPS_FlushDirEntryIfNeeded,
                             _FILEOPS_FreeUnusedPreAllocatedClusters,
-                            _FILEOPS_GetAtrrFromDirEntry, _FILEOPS_GetFileID,
+                            _FILEOPS_GetAtrrFromDirEntry,
+                            _FILEOPS_GetFileAllocatedSize,
+                            _FILEOPS_GetFileDataSize, _FILEOPS_GetFileID,
+                            _FILEOPS_GetFileValidDataSize,
                             _FILEOPS_PreAllocateClusters,
                             _FILERECORD_AllocateRecord,
                             _FILERECORD_DeInitChainCache,
@@ -82,9 +84,10 @@ exports:
                             _exfat_timezone_diff_01_01_1980, _gbIsLoggerInit,
                             _gpeExfatToOsLevel, _gpsExFatLog, _guMaxLRU, _hexdigits,
                             _ht_AllocateHashTable, _ht_DeAllocateHashTable,
-                            _ht_LookupByEntry, _ht_LookupByName, _ht_free_all,
-                            _ht_insert, _ht_reached_low_bound,
-                            _ht_reached_max_bound, _ht_remove, _ht_set_incomplete,
-                            _leap_months, _livefiles_plugin_init, _non_leap_months,
+                            _ht_LookupByName, _ht_free_all, _ht_insert,
+                            _ht_reached_low_bound, _ht_reached_max_bound,
+                            _ht_remove, _ht_set_incomplete, _leap_months,
+                            _livefiles_plugin_init, _metaClear, _metaFlush,
+                            _metaPurge, _metaRead, _metaWrite, _non_leap_months,
                             _puRecordId2FaType, _utf_extrabytes ]
 ...

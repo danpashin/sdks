@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSVG.framework/CoreSVG
-current-version:       232.5.1
+current-version:       324
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CGContextDrawSVGDocument,
                             _CGContextDrawSVGDocumentWithOptions,
                             _CGContextDrawSVGNode,
@@ -76,7 +76,10 @@ exports:
                             _CGSVGDocumentCreateFromDataProvider,
                             _CGSVGDocumentCreateFromURL,
                             _CGSVGDocumentCreateOptionVariablesKey,
-                            _CGSVGDocumentGetCanvas, _CGSVGDocumentGetCanvasSize,
+                            _CGSVGDocumentDefsAddNode,
+                            _CGSVGDocumentDefsEnumerate,
+                            _CGSVGDocumentDefsGetNode, _CGSVGDocumentGetCanvas,
+                            _CGSVGDocumentGetCanvasSize,
                             _CGSVGDocumentGetNamedStyle,
                             _CGSVGDocumentGetRootNode, _CGSVGDocumentGetTypeID,
                             _CGSVGDocumentIsMonochrome,
@@ -98,6 +101,7 @@ exports:
                             _CGSVGGradientGetGradientTransform,
                             _CGSVGGradientGetNumberOfStops,
                             _CGSVGGradientGetRadius, _CGSVGGradientGetSpread,
+                            _CGSVGGradientGetSpreadMethod,
                             _CGSVGGradientGetStart, _CGSVGGradientGetStop,
                             _CGSVGGradientGetType, _CGSVGGradientGetTypeID,
                             _CGSVGGradientRelease, _CGSVGGradientRetain,
@@ -105,6 +109,7 @@ exports:
                             _CGSVGGradientSetFocal,
                             _CGSVGGradientSetGradientTransform,
                             _CGSVGGradientSetRadius, _CGSVGGradientSetSpread,
+                            _CGSVGGradientSetSpreadMethod,
                             _CGSVGGradientSetStart,
                             _CGSVGGradientStopCreateWithColor,
                             _CGSVGGradientStopGetColor,
@@ -203,5 +208,6 @@ exports:
                             _CGSVGViewBoxNodeSetAspectRatioMeetOrSlice,
                             _CGSVGViewBoxNodeSetSize,
                             _CGSVGViewBoxNodeSetViewbox, _CoreSVGVersionNumber,
-                            _CoreSVGVersionString, _kCGSVGPacked ]
+                            _CoreSVGVersionString, _kCGSVGOmitHeaders,
+                            _kCGSVGPacked ]
 ...

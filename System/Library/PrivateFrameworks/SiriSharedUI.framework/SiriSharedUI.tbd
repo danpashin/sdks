@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriSharedUI.framework/SiriSharedUI
@@ -7,8 +7,13 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _SiriSharedUICompactAdditionalRightPaddingForNonCompactPad,
+                            _SiriSharedUICompactAmbientAdditionalBottomContentInsetForScrollView,
+                            _SiriSharedUICompactAmbientContentScaleAmount,
+                            _SiriSharedUICompactAmbientContentScaleAmountForInteractivity,
+                            _SiriSharedUICompactAmbientHorizontalPaddingForViewStackContainer,
+                            _SiriSharedUICompactAmbientVerticalPaddingForViewStackContainer,
                             _SiriSharedUICompactContentMaxWidth,
                             _SiriSharedUICompactConversationMaxIntrinsicContentHeight,
                             _SiriSharedUICompactConversationViewAlphaAppearanceAnimationDuration,
@@ -32,13 +37,22 @@ exports:
                             _SiriSharedUICompactConversationViewMaxHeightBeforeAllowingExpandableGesture,
                             _SiriSharedUICompactConversationViewScrollViewExtraPadding,
                             _SiriSharedUICompactConversationViewSnippetCornerRadius,
+                            _SiriSharedUICompactDefaultSnippetHorizontalMargin,
+                            _SiriSharedUICompactDefaultSnippetVerticalMargin,
                             _SiriSharedUICompactLeftPaddingForShadowOutsetsiPad,
                             _SiriSharedUICompactMaxContentWidthOnCompactPad,
                             _SiriSharedUICompactMaxContentWidthOnPad,
+                            _SiriSharedUICompactPlatterAmbientHorizontalPadding,
                             _SiriSharedUICompactPlatterCornerRadius,
                             _SiriSharedUICompactPlatterHorizontalPadding,
                             _SiriSharedUICompactRightPaddingForTrailingMarginOnPad,
                             _SiriSharedUICompactSlideOverContentSpacingOnPad,
+                            _SiriSharedUICompactSnippetAmbientInsertDamping,
+                            _SiriSharedUICompactSnippetAmbientInsertMass,
+                            _SiriSharedUICompactSnippetAmbientInsertStiffness,
+                            _SiriSharedUICompactSnippetAmbientTranslationDamping,
+                            _SiriSharedUICompactSnippetAmbientTranslationMass,
+                            _SiriSharedUICompactSnippetAmbientTranslationStiffness,
                             _SiriSharedUICompactSnippetInsertDamping,
                             _SiriSharedUICompactSnippetInsertDuration,
                             _SiriSharedUICompactSnippetInsertMass,
@@ -55,6 +69,8 @@ exports:
                             _SiriSharedUIDeviceIsMac, _SiriSharedUIDeviceIsPad,
                             _SiriSharedUIEffectsFocusRectSize,
                             _SiriSharedUIFontSizeSubtitle,
+                            _SiriSharedUIGaussianBlurFilterInputRadiusKeyPath,
+                            _SiriSharedUIIsTextInputEnabled,
                             _SiriSharedUILanguageIsRTL,
                             _SiriSharedUILanguageSemanticContentAttribute,
                             _SiriSharedUIPlatterKeyLineColor,
@@ -73,6 +89,8 @@ exports:
     objc-classes:         [ SiriSharedUIAdaptiveGrabberView,
                             SiriSharedUIAnimationContext,
                             SiriSharedUIAnimationUtilities,
+                            SiriSharedUICAFiltering,
+                            SiriSharedUICompactAdditionalContentView,
                             SiriSharedUICompactConversationSnippetVibrancyView,
                             SiriSharedUICompactConversationView,
                             SiriSharedUICompactHostingInstrumentationSupplement,
@@ -91,6 +109,7 @@ exports:
                             SiriSharedUIContentPlatterSeparatorView,
                             SiriSharedUIContentPlatterView,
                             SiriSharedUIContentPlatterViewController,
+                            SiriSharedUIContentScaleFactorUtility,
                             SiriSharedUIDeviceMotionEffectView,
                             SiriSharedUIExpandablePlatterPanGestureRecognizer,
                             SiriSharedUIPanDismissalGestureRecognizer,

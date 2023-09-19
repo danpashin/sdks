@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.117.59 clang-1403.0.22.8.50)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
 // swift-module-flags: -disable-objc-attr-requires-foundation-module -target arm64e-apple-ios15.4 -enable-objc-interop -enable-library-evolution -module-link-name swiftCore -parse-stdlib -swift-version 5 -O -library-level api -enforce-exclusivity=unchecked -enable-experimental-concise-pound-file -module-name Swift
-// swift-module-flags-ignorable: -user-module-version 5.8.0.117.59 -enable-lexical-lifetimes=false -target-min-inlining-version min
+// swift-module-flags-ignorable: -enable-experimental-feature Macros -enable-experimental-feature FreestandingMacros -user-module-version 5.9.0.123.204 -enable-lexical-lifetimes=false -target-min-inlining-version min
 import SwiftShims
 @inlinable public func min<T>(_ x: T, _ y: T) -> T where T : Swift.Comparable {
   // In case `x == y` we pick `x`.
@@ -2281,8 +2281,7 @@ extension Swift.Unicode.ASCII.Parser : Swift.Unicode.Parser {
   // 2: Fast
   return Int32(Builtin.assert_configuration()) == 0
 }
-@usableFromInline
-@_transparent internal func _isReleaseAssertConfiguration() -> Swift.Bool {
+@_transparent public func _isReleaseAssertConfiguration() -> Swift.Bool {
   // The values for the assert_configuration call are:
   // 0: Debug
   // 1: Release
@@ -2358,6 +2357,12 @@ public func _undefined<T>(_ message: @autoclosure () -> Swift.String = String(),
 @inline(never) internal func _diagnoseUnexpectedEnumCaseValue<SwitchedValue, RawValue>(type: SwitchedValue.Type, rawValue: RawValue) -> Swift.Never
 @usableFromInline
 @inline(never) internal func _diagnoseUnexpectedEnumCase<SwitchedValue>(type: SwitchedValue.Type) -> Swift.Never
+@_backDeploy(before: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0)
+@usableFromInline
+@inline(never) @_semantics("unavailable_code_reached") internal func _diagnoseUnavailableCodeReached() -> Swift.Never {
+  _assertionFailure(
+    "Fatal error", "Unavailable code reached", flags: _fatalErrorFlags())
+}
 #if compiler(>=5.3) && $PrimaryAssociatedTypes2
 public protocol BidirectionalCollection<Element> : Swift.Collection where Self.Indices : Swift.BidirectionalCollection, Self.SubSequence : Swift.BidirectionalCollection {
   override associatedtype Element
@@ -3145,7 +3150,7 @@ extension Swift.UnsafeRawPointer {
 @_transparent internal func != (lhs: Builtin.RawPointer, rhs: Builtin.RawPointer) -> Swift.Bool {
   return !(lhs == rhs)
 }
-@inlinable public func == (t0: (any Any.Type)?, t1: (any Any.Type)?) -> Swift.Bool {
+@inlinable @_transparent public func == (t0: (any Any.Type)?, t1: (any Any.Type)?) -> Swift.Bool {
   switch (t0, t1) {
   case (.none, .none): return true
   case let (.some(ty0), .some(ty1)):
@@ -3153,7 +3158,7 @@ extension Swift.UnsafeRawPointer {
   default: return false
   }
 }
-@inlinable public func != (t0: (any Any.Type)?, t1: (any Any.Type)?) -> Swift.Bool {
+@inlinable @_transparent public func != (t0: (any Any.Type)?, t1: (any Any.Type)?) -> Swift.Bool {
   return !(t0 == t1)
 }
 @usableFromInline
@@ -6893,7 +6898,7 @@ extension Swift.Dictionary {
   }
 }
 extension Swift.Dictionary : Swift.ExpressibleByDictionaryLiteral {
-  @inlinable @_effects(readonly) @_semantics("optimize.sil.specialize.generic.size.never") public init(dictionaryLiteral elements: (Key, Value)...) {
+  @inlinable @_semantics("optimize.sil.specialize.generic.size.never") public init(dictionaryLiteral elements: (Key, Value)...) {
     let native = _NativeDictionary<Key, Value>(capacity: elements.count)
     for (key, value) in elements {
       let (bucket, found) = native.find(key)
@@ -10601,13 +10606,13 @@ extension Swift.Hasher {
   }
   @inlinable internal static var _executionSeed: (Swift.UInt64, Swift.UInt64) {
     @inline(__always) get {
+      let params = _swift_stdlib_Hashing_parameters
+
       // The seed itself is defined in C++ code so that it is initialized during
       // static construction.  Almost every Swift program uses hash tables, so
       // initializing the seed during the startup seems to be the right
       // trade-off.
-      return (
-        _swift_stdlib_Hashing_parameters.seed0,
-        _swift_stdlib_Hashing_parameters.seed1)
+      return (params.seed0, params.seed1)
     }
   }
   @inlinable @inline(__always) public mutating func combine<H>(_ value: H) where H : Swift.Hashable {
@@ -11370,72 +11375,51 @@ extension Swift.BinaryInteger {
 }
 extension Swift.BinaryInteger {
   @_transparent public static func == <Other>(lhs: Self, rhs: Other) -> Swift.Bool where Other : Swift.BinaryInteger {
-    let lhsNegative = Self.isSigned && lhs < (0 as Self)
-    let rhsNegative = Other.isSigned && rhs < (0 as Other)
-
-    if lhsNegative != rhsNegative { return false }
-
-    // Here we know the values are of the same sign.
-    //
-    // There are a few possible scenarios from here:
-    //
-    // 1. Both values are negative
-    //  - If one value is strictly wider than the other, then it is safe to
-    //    convert to the wider type.
-    //  - If the values are of the same width, it does not matter which type we
-    //    choose to convert to as the values are already negative, and thus
-    //    include the sign bit if two's complement representation already.
-    // 2. Both values are non-negative
-    //  - If one value is strictly wider than the other, then it is safe to
-    //    convert to the wider type.
-    //  - If the values are of the same width, than signedness matters, as not
-    //    unsigned types are 'wider' in a sense they don't need to 'waste' the
-    //    sign bit. Therefore it is safe to convert to the unsigned type.
-
-    if lhs.bitWidth < rhs.bitWidth {
-      return Other(truncatingIfNeeded: lhs) == rhs
+    // Use bit pattern conversion to widen the comparand with smaller bit width.
+    if Self.isSigned == Other.isSigned {
+      return lhs.bitWidth >= rhs.bitWidth ?
+        lhs == Self(truncatingIfNeeded: rhs) :
+        Other(truncatingIfNeeded: lhs) == rhs
     }
-    if lhs.bitWidth > rhs.bitWidth {
-      return lhs == Self(truncatingIfNeeded: rhs)
+    // If `Self` is signed but `Other` is unsigned, then we have to
+    // be a little more careful about widening, since:
+    // (1) a fixed-width signed type can't represent the largest values of
+    //     a fixed-width unsigned type of equal bit width; and
+    // (2) an unsigned type (obviously) can't represent a negative value.
+    if Self.isSigned {    
+      return lhs.bitWidth > rhs.bitWidth ? // (1)
+        lhs == Self(truncatingIfNeeded: rhs) :
+        (lhs >= (0 as Self) && Other(truncatingIfNeeded: lhs) == rhs) // (2)
     }
-
-    if Self.isSigned {
-      return Other(truncatingIfNeeded: lhs) == rhs
-    }
-    return lhs == Self(truncatingIfNeeded: rhs)
+    // Analogous reasoning applies if `Other` is signed but `Self` is not.
+    return lhs.bitWidth < rhs.bitWidth ?
+      Other(truncatingIfNeeded: lhs) == rhs :
+      (rhs >= (0 as Other) && lhs == Self(truncatingIfNeeded: rhs))
   }
   @_transparent public static func != <Other>(lhs: Self, rhs: Other) -> Swift.Bool where Other : Swift.BinaryInteger {
     return !(lhs == rhs)
   }
   @_transparent public static func < <Other>(lhs: Self, rhs: Other) -> Swift.Bool where Other : Swift.BinaryInteger {
-    let lhsNegative = Self.isSigned && lhs < (0 as Self)
-    let rhsNegative = Other.isSigned && rhs < (0 as Other)
-    if lhsNegative != rhsNegative { return lhsNegative }
-
-    if lhs == (0 as Self) && rhs == (0 as Other) { return false }
-
-    // if we get here, lhs and rhs have the same sign. If they're negative,
-    // then Self and Other are both signed types, and one of them can represent
-    // values of the other type. Otherwise, lhs and rhs are positive, and one
-    // of Self, Other may be signed and the other unsigned.
-
-    let rhsAsSelf = Self(truncatingIfNeeded: rhs)
-    let rhsAsSelfNegative = rhsAsSelf < (0 as Self)
-
-
-    // Can we round-trip rhs through Other?
-    if Other(truncatingIfNeeded: rhsAsSelf) == rhs &&
-      // This additional check covers the `Int8.max < (128 as UInt8)` case.
-      // Since the types are of the same width, init(truncatingIfNeeded:)
-      // will result in a simple bitcast, so that rhsAsSelf would be -128, and
-      // `lhs < rhsAsSelf` will return false.
-      // We basically guard against that bitcast by requiring rhs and rhsAsSelf
-      // to be the same sign.
-      rhsNegative == rhsAsSelfNegative {
-      return lhs < rhsAsSelf
+    // Use bit pattern conversion to widen the comparand with smaller bit width.
+    if Self.isSigned == Other.isSigned {
+      return lhs.bitWidth >= rhs.bitWidth ?
+        lhs < Self(truncatingIfNeeded: rhs) :
+        Other(truncatingIfNeeded: lhs) < rhs
     }
-
-    return Other(truncatingIfNeeded: lhs) < rhs
+    // If `Self` is signed but `Other` is unsigned, then we have to
+    // be a little more careful about widening, since:
+    // (1) a fixed-width signed type can't represent the largest values of
+    //     a fixed-width unsigned type of equal bit width; and
+    // (2) an unsigned type (obviously) can't represent a negative value.
+    if Self.isSigned {
+      return lhs.bitWidth > rhs.bitWidth ? // (1)
+        lhs < Self(truncatingIfNeeded: rhs) :
+        (lhs < (0 as Self) || Other(truncatingIfNeeded: lhs) < rhs) // (2)
+    }
+    // Analogous reasoning applies if `Other` is signed but `Self` is not.
+    return lhs.bitWidth < rhs.bitWidth ?
+      Other(truncatingIfNeeded: lhs) < rhs :
+      (rhs > (0 as Other) && lhs < Self(truncatingIfNeeded: rhs))
   }
   @_transparent public static func <= <Other>(lhs: Self, rhs: Other) -> Swift.Bool where Other : Swift.BinaryInteger {
     return !(rhs < lhs)
@@ -12165,6 +12149,8 @@ internal func _tryToAppendKeyPaths<Result>(root: Swift.AnyKeyPath, leaf: Swift.A
 internal func _appendingKeyPaths<Root, Value, AppendedValue, Result>(root: Swift.KeyPath<Root, Value>, leaf: Swift.KeyPath<Value, AppendedValue>) -> Result where Result : Swift.KeyPath<Root, AppendedValue>
 @_cdecl("swift_getKeyPathImpl")
 public func _swift_getKeyPath(pattern: Swift.UnsafeMutableRawPointer, arguments: Swift.UnsafeRawPointer) -> Swift.UnsafeRawPointer
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+public func _createOffsetBasedKeyPath(root: any Any.Type, value: any Any.Type, offset: Swift.Int) -> Swift.AnyKeyPath
 @available(macOS 13.3, iOS 16.4, watchOS 9.4, tvOS 16.4, *)
 extension Swift.AnyKeyPath : Swift.CustomDebugStringConvertible {
   @available(macOS 13.3, iOS 16.4, watchOS 9.4, tvOS 16.4, *)
@@ -12444,6 +12430,36 @@ extension Swift.String {
     value
   #endif
 }
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro externalMacro<T>(module: Swift.String, type: Swift.String) -> T = Builtin.ExternalMacro
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro fileID<T>() -> T = Builtin.FileIDMacro where T : Swift.ExpressibleByStringLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro filePath<T>() -> T = Builtin.FilePathMacro where T : Swift.ExpressibleByStringLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro file<T>() -> T = Builtin.FileMacro where T : Swift.ExpressibleByStringLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro function<T>() -> T = Builtin.FunctionMacro where T : Swift.ExpressibleByStringLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro line<T>() -> T = Builtin.LineMacro where T : Swift.ExpressibleByIntegerLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro column<T>() -> T = Builtin.ColumnMacro where T : Swift.ExpressibleByIntegerLiteral
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingExpressionMacros
+@freestanding(expression) public macro dsohandle() -> Swift.UnsafeRawPointer = Builtin.DSOHandleMacro
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingMacros
+@freestanding(declaration) public macro warning(_ message: Swift.String) = Builtin.WarningMacro
+#endif
+#if compiler(>=5.3) && $Macros && $FreestandingMacros
+@freestanding(declaration) public macro error(_ message: Swift.String) = Builtin.ErrorMacro
+#endif
 @usableFromInline
 internal typealias _HeapObject = SwiftShims.HeapObject
 @usableFromInline
@@ -13263,6 +13279,9 @@ public func _getTypeByMangledNameInEnvironment(_ name: Swift.UnsafePointer<Swift
 public func _getTypeByMangledNameInContext(_ name: Swift.UnsafePointer<Swift.UInt8>, _ nameLength: Swift.UInt, genericContext: Swift.UnsafeRawPointer?, genericArguments: Swift.UnsafeRawPointer?) -> (any Any.Type)?
 @_alwaysEmitIntoClient @_semantics("no_performance_analysis") public func _unsafePerformance<T>(_ c: () -> T) -> T {
   return c()
+}
+@available(*, unavailable)
+@_marker public protocol _Copyable {
 }
 #if compiler(>=5.3) && $PrimaryAssociatedTypes2
 public protocol MutableCollection<Element> : Swift.Collection where Self.SubSequence : Swift.MutableCollection {
@@ -15055,6 +15074,16 @@ extension Swift.Never : Swift.Identifiable {
   }
   public typealias ID = Swift.Never
 }
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Swift.Never : Swift.Encodable {
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Swift.Never : Swift.Decodable {
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  public init(from decoder: any Swift.Decoder) throws
+}
 public typealias Void = ()
 public typealias Float32 = Swift.Float
 public typealias Float64 = Swift.Double
@@ -15399,15 +15428,63 @@ internal func _prespecialize()
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__endMutation()
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _endMutation(), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__endMutation()
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__endMutation()
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _createNewBuffer(bufferIsUnique:minimumCapacity:growForAppend:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__makeUniqueAndReserveCapacityIfNotUnique()
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _makeUniqueAndReserveCapacityIfNotUnique(), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__makeUniqueAndReserveCapacityIfNotUnique()
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__makeUniqueAndReserveCapacityIfNotUnique()
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _appendElementAssumeUniqueAndCapacity(_:newElement:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize_append(_: __owned Element)
@@ -15425,6 +15502,18 @@ internal func _prespecialize()
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal func __specialize__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<Element>
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _consumeAndCreateNew(bufferIsUnique:minimumCapacity:growForAppend:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal func __specialize_class__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<Element>
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal func __specialize_class__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ArrayBuffer<Element>
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize_isMutableAndUniquelyReferenced() -> Swift.Bool
@@ -15449,20 +15538,102 @@ internal func _prespecialize()
   internal var __specialize_immutableCount: Swift.Int {
     get
   }
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _copyContents(initializing:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal __consuming func __specialize_class__copyContents(initializing buffer: Swift.UnsafeMutableBufferPointer<Element>) -> (Swift._ArrayBuffer<Element>.Iterator, Swift.UnsafeMutableBufferPointer<Element>.Index)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal __consuming func __specialize_class__copyContents(initializing buffer: Swift.UnsafeMutableBufferPointer<Element>) -> (Swift._ArrayBuffer<Element>.Iterator, Swift.UnsafeMutableBufferPointer<Element>.Index)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _copyContents(subRange:initializing:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal __consuming func __specialize_class__copyContents(subRange: Swift.Range<Swift.Int>, initializing: Swift.UnsafeMutablePointer<Element>) -> Swift.UnsafeMutablePointer<Element>
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal __consuming func __specialize_class__copyContents(subRange: Swift.Range<Swift.Int>, initializing: Swift.UnsafeMutablePointer<Element>) -> Swift.UnsafeMutablePointer<Element>
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _getElementSlowPath(_:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  internal func __specialize_class__getElementSlowPath(_ i: Swift.Int) -> Swift.AnyObject
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  internal func __specialize_class__getElementSlowPath(_ i: Swift.Int) -> Swift.AnyObject
+  #endif
+  #endif
 }
 @_specializeExtension extension Swift.ContiguousArray {
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__endMutation()
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _endMutation(), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__endMutation()
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__endMutation()
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _createNewBuffer(bufferIsUnique:minimumCapacity:growForAppend:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__createNewBuffer(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__makeUniqueAndReserveCapacityIfNotUnique()
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _makeUniqueAndReserveCapacityIfNotUnique(), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__makeUniqueAndReserveCapacityIfNotUnique()
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__makeUniqueAndReserveCapacityIfNotUnique()
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _appendElementAssumeUniqueAndCapacity(_:newElement:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__appendElementAssumeUniqueAndCapacity(_: Swift.Int, newElement: __owned Element)
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize_append(_: __owned Element)
@@ -15472,11 +15643,59 @@ internal func _prespecialize()
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize__reserveCapacityImpl(minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _reserveCapacityImpl(minimumCapacity:growForAppend:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacityImpl(minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacityImpl(minimumCapacity: Swift.Int, growForAppend: Swift.Bool)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _reserveCapacityAssumingUniqueBuffer(oldCount:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacityAssumingUniqueBuffer(oldCount: Swift.Int)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacityAssumingUniqueBuffer(oldCount: Swift.Int)
+  #endif
+  #endif
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: reserveCapacity(_:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacity(_ minimumCapacity: Swift.Int)
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal mutating func __specialize_class__reserveCapacity(_ minimumCapacity: Swift.Int)
+  #endif
+  #endif
 }
 @_specializeExtension extension Swift._ContiguousArrayBuffer {
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal func __specialize__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<Element>
+  #if compiler(>=5.3) && $LayoutPrespecialization
+  #if $SpecializeAttributeWithAvailability
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @_specialize(exported: true, kind: full, target: _consumeAndCreateNew(bufferIsUnique:minimumCapacity:growForAppend:), availability: macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *; where @_noMetadata Element : _Class)
+  @usableFromInline
+  internal func __specialize_class__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<Element>
+  #else
+  @available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+  @usableFromInline
+  internal func __specialize_class__consumeAndCreateNew(bufferIsUnique: Swift.Bool, minimumCapacity: Swift.Int, growForAppend: Swift.Bool) -> Swift._ContiguousArrayBuffer<Element>
+  #endif
+  #endif
   @available(macOS 12.0, iOS 15.0, watchOS 8.0, tvOS 15.0, *)
   @usableFromInline
   internal mutating func __specialize_isMutableAndUniquelyReferenced() -> Swift.Bool
@@ -16066,7 +16285,6 @@ extension Swift.RangeReplaceableCollection {
     insert(newElement, at: endIndex)
   }
   @inlinable public mutating func append<S>(contentsOf newElements: __owned S) where S : Swift.Sequence, Self.Element == S.Element {
-
     let approximateCapacity = self.count + newElements.underestimatedCount
     self.reserveCapacity(approximateCapacity)
     for element in newElements {
@@ -16529,8 +16747,11 @@ extension Swift.BidirectionalCollection {
 }
 @discardableResult
 @_transparent public func _stdlib_atomicInitializeARCRef(object target: Swift.UnsafeMutablePointer<Swift.AnyObject?>, desired: Swift.AnyObject) -> Swift.Bool {
+  // Note: this assumes that AnyObject? is layout-compatible with a RawPointer
+  // that simply points to the same memory.
   var expected: UnsafeRawPointer?
-  let desiredPtr = Unmanaged.passRetained(desired).toOpaque()
+  let unmanaged = Unmanaged.passRetained(desired)
+  let desiredPtr = unmanaged.toOpaque()
   let rawTarget = UnsafeMutableRawPointer(target).assumingMemoryBound(
     to: Optional<UnsafeRawPointer>.self)
   let wonRace = _stdlib_atomicCompareExchangeStrongPtr(
@@ -16538,7 +16759,7 @@ extension Swift.BidirectionalCollection {
   if !wonRace {
     // Some other thread initialized the value.  Balance the retain that we
     // performed on 'desired'.
-    Unmanaged.passUnretained(desired).release()
+    unmanaged.release()
   }
   return wonRace
 }
@@ -16548,6 +16769,33 @@ extension Swift.BidirectionalCollection {
     return Unmanaged<AnyObject>.fromOpaque(unwrapped).takeUnretainedValue()
   }
   return nil
+}
+@discardableResult
+@_transparent @_alwaysEmitIntoClient public func _stdlib_atomicAcquiringInitializeARCRef<T>(object target: Swift.UnsafeMutablePointer<T?>, desired: __owned T) -> Swift.Unmanaged<T> where T : AnyObject {
+  // Note: this assumes that AnyObject? is layout-compatible with a RawPointer
+  // that simply points to the same memory, and that `nil` is represented by an
+  // all-zero bit pattern.
+  let unmanaged = Unmanaged.passRetained(desired)
+  let desiredPtr = unmanaged.toOpaque()
+
+  let (value, won) = Builtin.cmpxchg_acqrel_acquire_Word(
+    target._rawValue,
+    0._builtinWordValue,
+    Builtin.ptrtoint_Word(desiredPtr._rawValue))
+
+  if Bool(won) { return unmanaged }
+
+  // Some other thread initialized the value before us. Balance the retain that
+  // we performed on 'desired', and return what we loaded.
+  unmanaged.release()
+  let ptr = UnsafeRawPointer(Builtin.inttoptr_Word(value))
+  return Unmanaged<T>.fromOpaque(ptr)
+}
+@_alwaysEmitIntoClient @_transparent public func _stdlib_atomicAcquiringLoadARCRef<T>(object target: Swift.UnsafeMutablePointer<T?>) -> Swift.Unmanaged<T>? where T : AnyObject {
+  let value = Builtin.atomicload_acquire_Word(target._rawValue)
+  if Int(value) == 0 { return nil }
+  let opaque = UnsafeRawPointer(Builtin.inttoptr_Word(value))
+  return Unmanaged<T>.fromOpaque(opaque)
 }
 public func _uint64ToString(_ value: Swift.UInt64, radix: Swift.Int64 = 10, uppercase: Swift.Bool = false) -> Swift.String
 @inlinable internal func _rawPointerToString(_ value: Builtin.RawPointer) -> Swift.String {
@@ -19634,6 +19882,11 @@ extension Swift.String {
   public func _dump()
 }
 extension Swift.String {
+  @_alwaysEmitIntoClient public func _isIdentical(to other: Swift.String) -> Swift.Bool {
+    self._guts.rawBits == other._guts.rawBits
+  }
+}
+extension Swift.String {
   @_alwaysEmitIntoClient @inline(never) private static func _fromNonContiguousUnsafeBitcastUTF8Repairing<C>(_ input: C) -> (result: Swift.String, repairsMade: Swift.Bool) where C : Swift.Collection {
     _internalInvariant(C.Element.self == UInt8.self)
     return Array(input).withUnsafeBufferPointer {
@@ -20259,6 +20512,9 @@ extension Swift._StringGuts {
     return CountAndFlags(rawUnchecked: _countAndFlagsBits)
   }
   }
+  @_alwaysEmitIntoClient internal mutating func _setCountAndFlags(to value: Swift._StringObject.CountAndFlags) {
+    self._countAndFlagsBits = value._storage
+  }
 }
 extension Swift._StringObject {
   @usableFromInline
@@ -20559,6 +20815,12 @@ extension Swift._StringObject {
       discriminatedObjectRawBits & Nibbles.largeAddressMask)
   }
   }
+  @inline(__always) @_alwaysEmitIntoClient internal var largeAddress: Swift.UnsafeRawPointer {
+    get {
+    UnsafeRawPointer(bitPattern: largeAddressBits)
+      ._unsafelyUnwrappedUnchecked
+  }
+  }
   @inlinable @inline(__always) internal var nativeUTF8Start: Swift.UnsafePointer<Swift.UInt8> {
     get {
     _internalInvariant(largeFastIsTailAllocated)
@@ -20582,7 +20844,8 @@ extension Swift._StringObject {
   @_alwaysEmitIntoClient @inlinable @inline(__always) internal var owner: Swift.AnyObject? {
     get {
     guard self.isMortal else { return nil }
-    return Builtin.reinterpretCast(largeAddressBits)
+    let unmanaged = Unmanaged<AnyObject>.fromOpaque(largeAddress)
+    return unmanaged.takeUnretainedValue()
   }
   }
 }
@@ -21855,7 +22118,7 @@ extension Swift.String.UTF8View : Swift.BidirectionalCollection {
       }
       _precondition(result >= 0 && result <= _guts.count,
         "String index is out of bounds")
-      return Index(_encodedOffset: result)
+      return Index(_encodedOffset: result)._knownUTF8
     }
 
     return _foreignIndex(i, offsetBy: n, limitedBy: limit)
@@ -22562,16 +22825,7 @@ extension Swift.Substring {
   let byteCount = _byteCountForTemporaryAllocation(of: type, capacity: capacity)
 
   guard _isStackAllocationSafe(byteCount: byteCount, alignment: alignment) else {
-    // Fall back to the heap. This may still be optimizable if escape analysis
-    // shows that the allocated pointer does not escape.
-    let buffer = UnsafeMutableRawPointer.allocate(
-      byteCount: byteCount,
-      alignment: alignment
-    )
-    defer {
-      buffer.deallocate()
-    }
-    return try body(buffer._rawValue)
+    return try _fallBackToHeapAllocation(byteCount: byteCount, alignment: alignment, body)
   }
 
   // This declaration must come BEFORE Builtin.stackAlloc() or
@@ -22602,6 +22856,56 @@ extension Swift.Substring {
   fatalError("unsupported compiler")
 #endif
 }
+@_alwaysEmitIntoClient @_transparent internal func _withUnprotectedUnsafeTemporaryAllocation<T, R>(of type: T.Type, capacity: Swift.Int, alignment: Swift.Int, _ body: (Builtin.RawPointer) throws -> R) rethrows -> R {
+  // How many bytes do we need to allocate?
+  let byteCount = _byteCountForTemporaryAllocation(of: type, capacity: capacity)
+
+  guard _isStackAllocationSafe(byteCount: byteCount, alignment: alignment) else {
+    return try _fallBackToHeapAllocation(byteCount: byteCount, alignment: alignment, body)
+  }
+
+  // This declaration must come BEFORE Builtin.unprotectedStackAlloc() or
+  // Builtin.stackDealloc() will end up blowing it away (and the verifier will
+  // notice and complain.)
+  let result: R
+
+#if $BuiltinUnprotectedStackAlloc
+  let stackAddress = Builtin.unprotectedStackAlloc(
+    capacity._builtinWordValue,
+    MemoryLayout<T>.stride._builtinWordValue,
+    alignment._builtinWordValue
+  )
+#else
+  let stackAddress = Builtin.stackAlloc(
+    capacity._builtinWordValue,
+    MemoryLayout<T>.stride._builtinWordValue,
+    alignment._builtinWordValue
+  )
+#endif
+
+  // The multiple calls to Builtin.stackDealloc() are because defer { } produces
+  // a child function at the SIL layer and that conflicts with the verifier's
+  // idea of a stack allocation's lifetime.
+  do {
+    result = try body(stackAddress)
+    Builtin.stackDealloc(stackAddress)
+    return result
+
+  } catch {
+    Builtin.stackDealloc(stackAddress)
+    throw error
+  }
+}
+@_alwaysEmitIntoClient @_transparent internal func _fallBackToHeapAllocation<R>(byteCount: Swift.Int, alignment: Swift.Int, _ body: (Builtin.RawPointer) throws -> R) rethrows -> R {
+  let buffer = UnsafeMutableRawPointer.allocate(
+    byteCount: byteCount,
+    alignment: alignment
+  )
+  defer {
+    buffer.deallocate()
+  }
+  return try body(buffer._rawValue)
+}
 @_alwaysEmitIntoClient @_transparent public func withUnsafeTemporaryAllocation<R>(byteCount: Swift.Int, alignment: Swift.Int, _ body: (Swift.UnsafeMutableRawBufferPointer) throws -> R) rethrows -> R {
   return try _withUnsafeTemporaryAllocation(
     of: Int8.self,
@@ -22615,8 +22919,35 @@ extension Swift.Substring {
     return try body(buffer)
   }
 }
+@_alwaysEmitIntoClient @_transparent public func _withUnprotectedUnsafeTemporaryAllocation<R>(byteCount: Swift.Int, alignment: Swift.Int, _ body: (Swift.UnsafeMutableRawBufferPointer) throws -> R) rethrows -> R {
+  return try _withUnprotectedUnsafeTemporaryAllocation(
+    of: Int8.self,
+    capacity: byteCount,
+    alignment: alignment
+  ) { pointer in
+    let buffer = UnsafeMutableRawBufferPointer(
+      start: .init(pointer),
+      count: byteCount
+    )
+    return try body(buffer)
+  }
+}
 @_alwaysEmitIntoClient @_transparent public func withUnsafeTemporaryAllocation<T, R>(of type: T.Type, capacity: Swift.Int, _ body: (Swift.UnsafeMutableBufferPointer<T>) throws -> R) rethrows -> R {
   return try _withUnsafeTemporaryAllocation(
+    of: type,
+    capacity: capacity,
+    alignment: MemoryLayout<T>.alignment
+  ) { pointer in
+    Builtin.bindMemory(pointer, capacity._builtinWordValue, type)
+    let buffer = UnsafeMutableBufferPointer<T>(
+      start: .init(pointer),
+      count: capacity
+    )
+    return try body(buffer)
+  }
+}
+@_alwaysEmitIntoClient @_transparent public func _withUnprotectedUnsafeTemporaryAllocation<T, R>(of type: T.Type, capacity: Swift.Int, _ body: (Swift.UnsafeMutableBufferPointer<T>) throws -> R) rethrows -> R {
+  return try _withUnprotectedUnsafeTemporaryAllocation(
     of: type,
     capacity: capacity,
     alignment: MemoryLayout<T>.alignment
@@ -23440,7 +23771,9 @@ extension Swift.Character {
     return unsafeBitCast(_value, to: UnsafeMutableRawPointer.self)
   }
   @_transparent public static func passRetained(_ value: Instance) -> Swift.Unmanaged<Instance> {
-    return Unmanaged(_private: value).retain()
+    // Retain 'value' before it becomes unmanaged. This may be its last use.
+    Builtin.retain(value)
+    return Unmanaged(_private: value)
   }
   @_transparent public static func passUnretained(_ value: Instance) -> Swift.Unmanaged<Instance> {
     return Unmanaged(_private: value)
@@ -23848,7 +24181,7 @@ extension Swift.Unmanaged : Swift.Sendable where Instance : Swift.Sendable {
   }
   @inlinable @_alwaysEmitIntoClient public func loadUnaligned<T>(fromByteOffset offset: Swift.Int = 0, as type: T.Type) -> T {
     _debugPrecondition(_isPOD(T.self))
-    return withUnsafeTemporaryAllocation(of: T.self, capacity: 1) {
+    return _withUnprotectedUnsafeTemporaryAllocation(of: T.self, capacity: 1) {
       let temporary = $0.baseAddress._unsafelyUnwrappedUnchecked
       Builtin.int_memcpy_RawPointer_RawPointer_Int64(
         temporary._rawValue,
@@ -24056,7 +24389,7 @@ extension Swift.UnsafeRawPointer {
   }
   @inlinable @_alwaysEmitIntoClient public func loadUnaligned<T>(fromByteOffset offset: Swift.Int = 0, as type: T.Type) -> T {
     _debugPrecondition(_isPOD(T.self))
-    return withUnsafeTemporaryAllocation(of: T.self, capacity: 1) {
+    return _withUnprotectedUnsafeTemporaryAllocation(of: T.self, capacity: 1) {
       let temporary = $0.baseAddress._unsafelyUnwrappedUnchecked
       Builtin.int_memcpy_RawPointer_RawPointer_Int64(
         temporary._rawValue,
@@ -24901,11 +25234,21 @@ extension Swift._StringGuts {
 }
 extension Swift.Unicode {
   @available(macOS 13.3, iOS 16.4, watchOS 9.4, tvOS 16.4, *)
-  public struct _CharacterRecognizer {
+  public struct _CharacterRecognizer : Swift.Sendable {
     @_effects(releasenone) public static func quickBreak(between scalar1: Swift.Unicode.Scalar, and scalar2: Swift.Unicode.Scalar) -> Swift.Bool?
     public init()
     @_effects(releasenone) public mutating func hasBreak(before next: Swift.Unicode.Scalar) -> Swift.Bool
     @_effects(releasenone) public mutating func _firstBreak(inUncheckedUnsafeUTF8Buffer buffer: Swift.UnsafeBufferPointer<Swift.UInt8>, startingAt start: Swift.Int = 0) -> Swift.Range<Swift.Int>?
+  }
+}
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Swift.Unicode._CharacterRecognizer : Swift.Equatable {
+  public static func == (left: Swift.Unicode._CharacterRecognizer, right: Swift.Unicode._CharacterRecognizer) -> Swift.Bool
+}
+@available(macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0, *)
+extension Swift.Unicode._CharacterRecognizer : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
   }
 }
 @frozen public struct _ValidUTF8Buffer {
@@ -25467,6 +25810,9 @@ extension SwiftShims._SwiftStdlibVersion {
   }
   @_alwaysEmitIntoClient public static var v5_8_0: SwiftShims._SwiftStdlibVersion {
     get { Self(_value: 0x050800) }
+  }
+  @_alwaysEmitIntoClient public static var v5_9_0: SwiftShims._SwiftStdlibVersion {
+    get { Self(_value: 0x050900) }
   }
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
   public static var current: SwiftShims._SwiftStdlibVersion {
@@ -26894,6 +27240,10 @@ extension Swift.Zip2Sequence : Swift.Sequence {
     )
   }
   }
+}
+extension Swift.Zip2Sequence : Swift.Sendable where Sequence1 : Swift.Sendable, Sequence2 : Swift.Sendable {
+}
+extension Swift.Zip2Sequence.Iterator : Swift.Sendable where Sequence1.Iterator : Swift.Sendable, Sequence2.Iterator : Swift.Sendable {
 }
 infix operator .== : ComparisonPrecedence
 infix operator .!= : ComparisonPrecedence
@@ -35656,8 +36006,21 @@ extension Swift.UnsafeRawBufferPointer.Iterator : Swift.IteratorProtocol, Swift.
   @inlinable public mutating func next() -> Swift.UInt8? {
     if _position == _end { return nil }
 
-    let result = _position!.load(as: UInt8.self)
-    _position! += 1
+    // We can do an unchecked unwrap here by borrowing invariants from the pointer.
+    // For a validly constructed buffer pointer, the only way _position can be nil is
+    // if _end is also nil. We checked that case above. Thus, we can safely do an
+    // unchecked unwrap here.
+    //
+    // Additionally, validly constructed buffer pointers also have an _end that is
+    // strictly greater than or equal to _position, and so we do not need to do checked
+    // arithmetic here as we cannot possibly overflow.
+    //
+    // We check these invariants in debug builds to defend against invalidly constructed
+    // pointers.
+    _debugPrecondition(_position! < _end!)
+    let position = _position._unsafelyUnwrappedUnchecked
+    let result = position.load(as: UInt8.self)
+    _position = position + 1
     return result
   }
   public typealias Element = Swift.UInt8

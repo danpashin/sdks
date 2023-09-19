@@ -1,14 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightUIInternal.framework/SpotlightUIInternal
-current-version:       42.5.4
+current-version:       73.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
-    symbols:              [ _SPUIExtendedLaunchConstant,
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
+    symbols:              [ _SPUIBringingUpKB,
+                            _SPUIExtendedEdgesDimensionConstant,
+                            _SPUIExtendedLaunchConstant,
                             _SPUIPlatterViewCornerRadius, _SPUIPreferencesDomain,
                             _SPUISuiteName, _SPUIZKWExpandedPreference,
                             _SpotlightScrollSearchResults,
@@ -35,27 +37,35 @@ exports:
                             ___PPTSpotlightQueryToTopHitsLatency,
                             ___PPTSpotlightScrollCardsFPS,
                             ___PPTSpotlightScrollResultsFPS,
-                            _averageTimePerCharacter,
-                            _spacingBetweenPlaceholderAndLeftView,
-                            _timeToWindowExpansion ]
+                            _averageTimePerCharacter, _restorationCurrentState,
+                            _spacingBetweenPlaceholderAndLeftView, _suiteName,
+                            _timeToWindowExpansion, _zkwExpandedPreference ]
     objc-classes:         [ SPUIAppCompletion, SPUIBorderedVisualEffectView,
                             SPUIBoxView, SPUICalculatorCompletion, SPUICompletion,
                             SPUICompletionStringModel, SPUICompletionStringView,
                             SPUIContactViewController, SPUIDictationButton,
+                            SPUIDynamicKeyboardVisualEffectView,
                             SPUIFeedbackManager, SPUIGradientMaskView,
-                            SPUIHeaderBlurView, SPUILocalSuggestionCompletion,
+                            SPUIHeaderBlurView, SPUIHomeScreenIconUtility,
+                            SPUIKeyboardGaussianBlurView,
+                            SPUIKeyboardGradientView,
+                            SPUILocalSuggestionCompletion,
                             SPUILockScreenFooterView, SPUIMaskedLabelsStackView,
                             SPUINavigationBar, SPUINavigationController,
                             SPUINavigationSwipeRecognizerDelegate,
                             SPUIPPTTypingHelper,
                             SPUIPlatterContainerViewController,
-                            SPUIPlatterShadowView, SPUIResilientView,
-                            SPUIResultCompletion, SPUIResultsViewController,
+                            SPUIPlatterShadowView,
+                            SPUIProactiveResultsViewController,
+                            SPUIResilientView, SPUIResultCompletion,
+                            SPUIResultsViewController,
+                            SPUIResultsViewStateRestorationContext,
                             SPUISearchFirstTimeViewController, SPUISearchHeader,
                             SPUISearchModel, SPUISearchModelGeneral,
-                            SPUISearchModelZKW, SPUISearchViewController,
-                            SPUIShowMoreCompletion, SPUITapToRadarView,
-                            SPUITestingHelper, SPUITextField,
+                            SPUISearchModelZKW,
+                            SPUISearchStateRestorationContext,
+                            SPUISearchViewController, SPUIShowMoreCompletion,
+                            SPUITapToRadarView, SPUITestingHelper, SPUITextField,
                             SPUIUnifiedFieldViewController, SPUIViewController,
                             SPUIWebCompletion ]
     objc-ivars:           [ SPUISearchModel._updatesDisabled ]

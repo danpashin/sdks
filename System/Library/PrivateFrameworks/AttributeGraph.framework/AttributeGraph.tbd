@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AttributeGraph.framework/AttributeGraph
-current-version:       1
+current-version:       5.0.77
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s14AttributeGraph011AnyOptionalA0V10identifierSo11AGAttributeavM,
                             _$s14AttributeGraph011AnyOptionalA0V10identifierSo11AGAttributeavg,
                             _$s14AttributeGraph011AnyOptionalA0V10identifierSo11AGAttributeavpMV,
@@ -270,6 +270,7 @@ exports:
                             _$s14AttributeGraph12StatefulRuleP12initialValue0F0QzSgvgZTj,
                             _$s14AttributeGraph12StatefulRuleP12initialValue0F0QzSgvgZTq,
                             _$s14AttributeGraph12StatefulRulePAA01_A4BodyTb,
+                            _$s14AttributeGraph12StatefulRulePAAE11bodyChangedSbvpMV,
                             _$s14AttributeGraph12StatefulRulePAAE12initialValue0F0QzSgvgZ,
                             _$s14AttributeGraph12StatefulRulePAAE14_updateDefaultyySvFZ,
                             _$s14AttributeGraph12StatefulRulePAAE5value5ValueQzvM,
@@ -349,6 +350,7 @@ exports:
                             _$s14AttributeGraph4RuleP5value5ValueQzvgTj,
                             _$s14AttributeGraph4RuleP5value5ValueQzvgTq,
                             _$s14AttributeGraph4RulePAA01_A4BodyTb,
+                            _$s14AttributeGraph4RulePAAE11bodyChangedSbvpMV,
                             _$s14AttributeGraph4RulePAAE12initialValue0E0QzSgvgZ,
                             _$s14AttributeGraph4RulePAAE14_updateDefaultyySvFZ,
                             _$s14AttributeGraph4RulePAAE7_update_9attributeySv_So11AGAttributeatFZ,
@@ -402,6 +404,8 @@ exports:
                             _$sSo10AGGraphRefa14AttributeGraphE11markProfile4nameySPys4Int8VG_tFZ,
                             _$sSo10AGGraphRefa14AttributeGraphE12resetProfileyyFZ,
                             _$sSo10AGGraphRefa14AttributeGraphE12withDeadlineyxs6UInt64V_xyXEtlF,
+                            _$sSo10AGGraphRefa14AttributeGraphE13addTraceEvent_5valueySPys4Int8VG_xtlF,
+                            _$sSo10AGGraphRefa14AttributeGraphE13addTraceEvent_7contextySPys4Int8VG_SPyxGtlF,
                             _$sSo10AGGraphRefa14AttributeGraphE13stopProfilingyyFZ,
                             _$sSo10AGGraphRefa14AttributeGraphE13withoutUpdateyxxyXElFZ,
                             _$sSo10AGGraphRefa14AttributeGraphE14onInvalidationyyySo11AGAttributeacF,
@@ -546,7 +550,8 @@ exports:
                             _AGDebugServerStop, _AGDescriptionFormat,
                             _AGDescriptionIncludeValues, _AGDescriptionMaxFrames,
                             _AGDescriptionTruncationLimit, _AGGraphAddInput,
-                            _AGGraphAddTrace, _AGGraphAnyInputsChanged,
+                            _AGGraphAddNamedTraceEvent, _AGGraphAddTrace,
+                            _AGGraphAddTraceEvent, _AGGraphAnyInputsChanged,
                             _AGGraphArchiveJSON,
                             _AGGraphBeginDeferringSubgraphInvalidation,
                             _AGGraphBeginProfileEvent, _AGGraphClearUpdate,
@@ -556,6 +561,7 @@ exports:
                             _AGGraphCreateIndirectAttribute2,
                             _AGGraphCreateOffsetAttribute,
                             _AGGraphCreateOffsetAttribute2, _AGGraphCreateShared,
+                            _AGGraphCurrentAttributeWasModified,
                             _AGGraphDescription,
                             _AGGraphEndDeferringSubgraphInvalidation,
                             _AGGraphEndProfileEvent, _AGGraphGetAttributeGraph,
@@ -566,17 +572,20 @@ exports:
                             _AGGraphGetGraphContext,
                             _AGGraphGetIndirectAttribute,
                             _AGGraphGetIndirectDependency, _AGGraphGetInputValue,
-                            _AGGraphGetOutputValue, _AGGraphGetTypeID,
+                            _AGGraphGetOutputValue, _AGGraphGetTraceEventName,
+                            _AGGraphGetTraceEventSubsystem, _AGGraphGetTypeID,
                             _AGGraphGetValue, _AGGraphGetValueState,
-                            _AGGraphHasDeadlinePassed, _AGGraphHasValue,
-                            _AGGraphInternAttributeType, _AGGraphInvalidate,
-                            _AGGraphInvalidateAllValues, _AGGraphInvalidateValue,
-                            _AGGraphIsProfilingEnabled, _AGGraphMarkProfile,
+                            _AGGraphGetWeakValue, _AGGraphHasDeadlinePassed,
+                            _AGGraphHasValue, _AGGraphInternAttributeType,
+                            _AGGraphInvalidate, _AGGraphInvalidateAllValues,
+                            _AGGraphInvalidateValue, _AGGraphIsProfilingEnabled,
+                            _AGGraphIsTracingActive, _AGGraphMarkProfile,
                             _AGGraphMutateAttribute, _AGGraphPrefetchValue,
                             _AGGraphPrepareTrace, _AGGraphReadCachedAttribute,
                             _AGGraphReadCachedAttributeIfExists,
-                            _AGGraphRemoveTrace, _AGGraphResetProfile,
-                            _AGGraphResetTrace, _AGGraphSearch, _AGGraphSetContext,
+                            _AGGraphRegisterNamedTraceEvent, _AGGraphRemoveTrace,
+                            _AGGraphResetProfile, _AGGraphResetTrace,
+                            _AGGraphSearch, _AGGraphSetContext,
                             _AGGraphSetDeadline, _AGGraphSetFlags,
                             _AGGraphSetIndirectAttribute,
                             _AGGraphSetIndirectDependency,
@@ -585,11 +594,15 @@ exports:
                             _AGGraphSetTrace, _AGGraphSetUpdate,
                             _AGGraphSetUpdateCallback, _AGGraphSetValue,
                             _AGGraphStartProfiling, _AGGraphStartTracing,
-                            _AGGraphStopProfiling, _AGGraphStopTracing,
-                            _AGGraphSyncTracing, _AGGraphUpdateValue,
-                            _AGGraphVerifyType, _AGGraphWithMainThreadHandler,
-                            _AGGraphWithUpdate, _AGGraphWithoutUpdate,
-                            _AGMakeUniqueID, _AGNewTupleType, _AGReleaseClosure,
+                            _AGGraphStartTracing2, _AGGraphStopProfiling,
+                            _AGGraphStopTracing, _AGGraphSyncTracing,
+                            _AGGraphTraceEventEnabled, _AGGraphUpdateValue,
+                            _AGGraphVMRegionBaseAddress, _AGGraphVerifyType,
+                            _AGGraphWithMainThreadHandler, _AGGraphWithUpdate,
+                            _AGGraphWithoutUpdate, _AGMakeUniqueID,
+                            _AGNewTupleType,
+                            _AGOverrideComparisonForTypeDescriptor,
+                            _AGPrefetchCompareValues, _AGReleaseClosure,
                             _AGRetainClosure, _AGSubgraphAddChild,
                             _AGSubgraphAddObserver, _AGSubgraphAddTreeValue,
                             _AGSubgraphApply, _AGSubgraphBeginTreeElement,
@@ -622,7 +635,8 @@ exports:
                             _AGTupleWithBuffer, _AGTypeApplyEnumData,
                             _AGTypeApplyFields, _AGTypeApplyFields2,
                             _AGTypeApplyMutableEnumData, _AGTypeDescription,
-                            _AGTypeGetEnumTag, _AGTypeGetKind, _AGTypeGetSignature,
+                            _AGTypeGetDescriptor, _AGTypeGetEnumTag,
+                            _AGTypeGetKind, _AGTypeGetSignature,
                             _AGTypeInjectEnumTag, _AGTypeNominalDescriptor,
                             _AGTypeNominalDescriptorName, _AGTypeProjectEnumData,
                             _AGVersion, _AGWeakAttributeGetAttribute ]

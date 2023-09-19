@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssistantSettingsSupport.framework/AssistantSettingsSupport
@@ -7,11 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _ASTDisabledLockScreenBundles,
                             _ASTSetLockScreenEnabled,
                             _AssistantControllerHardwareButtonSpecifierIdentifier,
-                            _NSStringFromAssistantAssetsState,
                             _SiriSettingsAppDisabledKey,
                             _SiriSettingsBundleDisabledKey,
                             _SiriSettingsDomainDisabledKey,
@@ -27,14 +26,12 @@ exports:
                             _SiriSettingsSuggestionsPrefsChangedNotification,
                             _SiriSettingsSuggestionsPrefsDomain,
                             _SiriSideButtonActivation,
-                            _kASTCSSpotlightPreferencesChangedNotification,
-                            _kByteCountInMegabytes ]
+                            _kASTCSSpotlightPreferencesChangedNotification ]
     objc-classes:         [ ASTLockScreenSuggestionSpecifier,
                             ASTLockScreenSuggestionsDetailListController,
                             ASTLockScreenSuggestionsGlobalController,
                             ASTNetworkReachability,
                             AssistantAppClipSettingsController,
-                            AssistantAssetsUtilities,
                             AssistantAudioFeedbackController, AssistantCell,
                             AssistantController, AssistantDetailController,
                             AssistantHistoryViewController,
@@ -42,18 +39,20 @@ exports:
                             AssistantLanguageController, AssistantMetrics,
                             AssistantPseudoHeaderHyperlinkView,
                             AssistantSettingsSignalEmitter,
+                            AssistantSiriInCallController,
                             AssistantThinFooterView, AssistantUtilities,
+                            AssistantVoiceActivationController,
                             AssistantVoiceController,
                             AssistantVoiceControllerVoiceSettings,
                             AssistantVoiceDownloadingCell,
                             AssistantVoiceDownloadingView, AssistantVoiceMetrics,
-                            AssistantVoiceTriggerDuringPhoneCallController,
-                            AssistantVoiceViewModel, IntentsApp, IntentsUtilities,
+                            AssistantVoiceViewModel, CallHangUpSettingConfig,
+                            IntentsApp, IntentsUtilities,
                             PSVoiceTriggerRootController,
                             SiriAboutAssistantModalViewController,
                             SiriAboutSearchSuggestionsModalViewController,
                             SiriAppsFooterView, SiriFooterView,
-                            SiriModalTextViewController ]
+                            SiriInCallSettingConfig, SiriModalTextViewController ]
     objc-ivars:           [ AssistantController._assistantSettings,
                             AssistantController._settingsConnection ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceIdentity.framework/DeviceIdentity
@@ -7,11 +7,14 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DeviceIdentityCopyAttestationDictionary,
+                            _DeviceIdentityCopyCertificateProperties,
                             _DeviceIdentityCreateClientCertificateRequest,
+                            _DeviceIdentityCreateHostSignature,
                             _DeviceIdentityIsSupported,
                             _DeviceIdentityIssueClientCertificateWithCompletion,
+                            _DeviceIdentityProcessVMRequest,
                             _DeviceIdentityUCRTAttestationSupported,
                             _MobileActivationErrorDomain,
                             _MobileActivationFunctionNameErrorKey,
@@ -22,6 +25,7 @@ exports:
                             _kMAOptionsBAACertTypeBAA, _kMAOptionsBAACertTypeMFi,
                             _kMAOptionsBAAClientAttestationData,
                             _kMAOptionsBAAClientAttestationPublicKey,
+                            _kMAOptionsBAAClientDirectAttestationCertificate,
                             _kMAOptionsBAADeleteDuplicateKeychainItems,
                             _kMAOptionsBAADeleteExistingKeysAndCerts,
                             _kMAOptionsBAAIgnoreExistingKeychainItems,
@@ -42,11 +46,17 @@ exports:
                             _kMAOptionsBAAOIDDeviceIdentifiers,
                             _kMAOptionsBAAOIDDeviceIntent,
                             _kMAOptionsBAAOIDDeviceOSInformation,
+                            _kMAOptionsBAAOIDEDAAttestationPublicKey,
                             _kMAOptionsBAAOIDEDAFirmwareVersion,
+                            _kMAOptionsBAAOIDEDAMDMManaged,
                             _kMAOptionsBAAOIDEDANonce,
                             _kMAOptionsBAAOIDEDAOSVersion,
+                            _kMAOptionsBAAOIDEDAProductType,
                             _kMAOptionsBAAOIDEDASEPOSVersion,
+                            _kMAOptionsBAAOIDEDASIPDisabled,
+                            _kMAOptionsBAAOIDEDASecureBootStatus,
                             _kMAOptionsBAAOIDEDASerialNumber,
+                            _kMAOptionsBAAOIDEDAThirdPartyKextsAllowed,
                             _kMAOptionsBAAOIDEDAUDID,
                             _kMAOptionsBAAOIDHardwareProperties,
                             _kMAOptionsBAAOIDIMG4Manifest,

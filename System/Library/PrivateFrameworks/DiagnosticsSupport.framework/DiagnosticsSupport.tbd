@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticsSupport.framework/DiagnosticsSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _DALogFileName, _DAMobileLogPath, _DARootLogPath,
                             _DSArchiveClose, _DSArchiveOpen, _DSArchiveWrite,
                             _DiagnosticLogHandleForCategory, _IOReturnName,
@@ -20,20 +20,6 @@ exports:
                             _kDSFirmwareRevisionResultKey,
                             _kDSHardwareButtonEntitlement,
                             _kDSHardwareRevisionResultKey,
-                            _kDSIODeviceApplePencil_1stGen,
-                            _kDSIODeviceApplePencil_2ndGen,
-                            _kDSIODeviceMagSafeBatteryPack,
-                            _kDSIODeviceMagicKeyboard10_9inch_2022,
-                            _kDSIODeviceSmartBatteryCase,
-                            _kDSIODeviceSmartBatteryCase_2018,
-                            _kDSIODeviceSmartKeyboard10_5inch,
-                            _kDSIODeviceSmartKeyboard11inch_2018,
-                            _kDSIODeviceSmartKeyboard11inch_2019,
-                            _kDSIODeviceSmartKeyboard12_9inch,
-                            _kDSIODeviceSmartKeyboard12_9inch_2018,
-                            _kDSIODeviceSmartKeyboard12_9inch_2019,
-                            _kDSIODeviceSmartKeyboard12_9inch_2021,
-                            _kDSIODeviceSmartKeyboard9_7inch,
                             _kDSMACAddressResultKey, _kDSModelNumberResultKey,
                             _kDSNameResultKey, _kDSSerialNumberResultKey,
                             _returnEnumForDataTypeStr, _smckSMCMakeUInt32Key,
@@ -43,8 +29,8 @@ exports:
                             DSEADevice, DSEntitlementUtilities,
                             DSGeneralLogCollector, DSGeneralLogFile,
                             DSHardwareButtonEventHandler,
-                            DSHardwareButtonEventMonitor, DSIOHIDDevice,
-                            DSIOPSDevice, DSLogLine, DSMutableArchive, DSShapeView,
-                            DSTestAutomation, DSTextFile, DSThermalLogLine,
-                            DSUsageLogLine ]
+                            DSHardwareButtonEventMonitor, DSIODeviceIdentifier,
+                            DSIOHIDDevice, DSIOPSDevice, DSLogLine, DSMutableArchive,
+                            DSShapeView, DSTestAutomation, DSTextFile,
+                            DSThermalLogLine, DSUsageLogLine ]
 ...

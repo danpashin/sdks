@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NFDeviceHasExtendedColorDisplay, _NFDeviceIsA7,
                             _NFDeviceIsA8, _NFDeviceModelString,
                             _NFDeviceOSVersion, _NFDevicePlatform,
@@ -16,8 +16,8 @@ exports:
                             _NFStateMachineErrorDomain, _NFStoreDemoMode,
                             _NewsFoundationVersionNumber,
                             _NewsFoundationVersionString, __UIValueCGRectValue,
-                            _kNFPromiseSealingErrorCode,
-                            _kNFPromiseSealingErrorName,
+                            _kNFPromiseErrorDomain, _kNFPromiseSealingErrorCode,
+                            _kNFPromiseTimeoutErrorCode,
                             _kNFReachabilityChangedNotification, _zalgo,
                             _zalgoIfMain ]
     objc-classes:         [ NFArchiver, NFEventManager, NFEventTrigger, NFLazy,

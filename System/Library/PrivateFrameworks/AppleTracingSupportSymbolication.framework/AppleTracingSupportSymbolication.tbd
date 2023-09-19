@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleTracingSupportSymbolication.framework/AppleTracingSupportSymbolication
-current-version:       25.1
+current-version:       38
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _AppleTracingSupportSymbolicationVersionNumber,
                             _AppleTracingSupportSymbolicationVersionString,
                             __Z26ats_symbolication_log_initv,
@@ -77,6 +77,7 @@ exports:
                             __ZN19SharedCacheMetadataC1E10_CSTypeRefRKNSt3__110shared_ptrI10StringPoolEE,
                             __ZN19SharedCacheMetadataC2E10_CSTypeRef,
                             __ZN19SharedCacheMetadataC2E10_CSTypeRefRKNSt3__110shared_ptrI10StringPoolEE,
+                            __ZN20SymbolicationSession12updateConfigEP24ats_symbolication_config,
                             __ZN20SymbolicationSession14parseStackshotE11kcdata_iter,
                             __ZN20SymbolicationSession15handleInterruptEP7ProcessPK11trace_point,
                             __ZN20SymbolicationSession15handleInterruptEPK11trace_point,
@@ -89,13 +90,16 @@ exports:
                             __ZN20SymbolicationSession18addNeededAddressesERKNSt3__16vectorI11trace_pointNS0_9allocatorIS2_EEEE,
                             __ZN20SymbolicationSession18forEachSymbolChunkENSt3__18functionIFvPK8__CFDataEEE,
                             __ZN20SymbolicationSession20processPointerForPidEi,
+                            __ZN20SymbolicationSession22createProcessMapsChunkEP11ktrace_file,
                             __ZN20SymbolicationSession22parseDyldKdebugEntriesERKNSt3__16vectorI11trace_pointNS0_9allocatorIS2_EEEE,
                             __ZN20SymbolicationSession23registerKtraceCallbacksEv,
                             __ZN20SymbolicationSession23updateKdebugLibraryViewEv,
                             __ZN20SymbolicationSession25collectAvailableDsymPathsEv,
+                            __ZN20SymbolicationSession25isConfiguredToSaveSymbolsEv,
                             __ZN20SymbolicationSession26sharedCacheWithDescriptionE22SharedCacheDescription,
                             __ZN20SymbolicationSession27writeSymbolDataToKtraceFileEP11ktrace_file,
                             __ZN20SymbolicationSession28sharedLibraryWithUUIDAndPathE4UUIDNSt3__117basic_string_viewIcNS1_11char_traitsIcEEEE,
+                            __ZN20SymbolicationSession28writeProcessMapsToKtraceFileEP11ktrace_file,
                             __ZN20SymbolicationSession30aotSymbolicatorWithDescriptionE25AOTSharedCacheDescription,
                             __ZN20SymbolicationSession30sharedLibraryWithCSSymbolOwnerE10_CSTypeRef,
                             __ZN20SymbolicationSession32forEachResymbolicatedSymbolChunkENSt3__18functionIFvPK8__CFDataEEE,
@@ -176,6 +180,7 @@ exports:
                             __ZN7Process21findLibraryForAddressEy,
                             __ZN7Process27addAddressAndTryTranslationEy,
                             __ZN7Process29addAddressesAndTryTranslationERKNSt3__16vectorIyNS0_9allocatorIyEEEE,
+                            __ZN7Process50createTransientProcessSymbolicatorFromDescriptionsEv,
                             __ZN7ProcessC1EiNSt3__16vectorI14ProcessLibraryNS0_9allocatorIS2_EEEE,
                             __ZN7ProcessC2EiNSt3__16vectorI14ProcessLibraryNS0_9allocatorIS2_EEEE,
                             __ZN7Section23initializeWithCSSectionE10_CSTypeRef,
@@ -195,8 +200,10 @@ exports:
                             __ZNK10SourceInfo12columnNumberEv,
                             __ZNK10SourceInfo4pathEv,
                             __ZNK11SharedCache11baseAddressEv,
+                            __ZNK11SharedCache11loadAddressEv,
                             __ZNK11SharedCache12symbolicatorEv,
                             __ZNK11SharedCache19libraryDescriptionsEv,
+                            __ZNK11SharedCache4uuidEv,
                             __ZNK12InlineSymbol11symbolFlagsEv,
                             __ZNK12InlineSymbol14symbolContentsEv,
                             __ZNK12InlineSymbol16symbolSourceTypeEv,
@@ -219,6 +226,9 @@ exports:
                             __ZNK14AOTSharedCache26translateFromNativeAddressEPvy,
                             __ZNK14ProcessLibrary11loadAddressEv,
                             __ZNK14ProcessLibrary12architectureEv,
+                            __ZNK14ProcessLibrary40segmentCountCheckAfterPostprocessingDoneEv,
+                            __ZNK14ProcessLibrary43isInSharedCacheCheckAfterPostprocessingDoneEv,
+                            __ZNK14ProcessLibrary47isPrimaryExecutableCheckAfterPostprocessingDoneEv,
                             __ZNK14ProcessLibrary4pathEv,
                             __ZNK14ProcessLibrary4uuidEv,
                             __ZNK14ProcessLibrary5slideEv,
@@ -288,6 +298,7 @@ exports:
                             _ats_configure_postprocessing_with_config,
                             _ats_create_symbolication_config,
                             _ats_destroy_symbolication_config,
-                            _ats_postprocessing_complete, _ats_symbolication_log,
-                            _ats_will_start_tracing ]
+                            _ats_postprocessing_complete,
+                            _ats_postprocessing_complete_write_processmaps,
+                            _ats_symbolication_log, _ats_will_start_tracing ]
 ...

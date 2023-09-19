@@ -26,7 +26,7 @@ extern "C" {
 
 /// General API support available. Allows compile-time conditionalization of code.
 #ifndef EN_FEATURE_GENERAL
-	#if TARGET_OS_IOS
+	#if TARGET_OS_IOS && !TARGET_OS_VISION
 		#define EN_FEATURE_GENERAL		1
 	#else
 		#define EN_FEATURE_GENERAL		0

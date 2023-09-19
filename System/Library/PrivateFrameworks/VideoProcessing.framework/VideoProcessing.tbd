@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BilinearFilterH_chroma_vperm2_neon64,
                             _BilinearFilterH_chroma_vperm2_neon64_h264,
                             _BilinearFilterH_swift_chroma_neon,
@@ -251,6 +251,7 @@ exports:
                             _VCPCaptureAnalysisTurboModePropertyKey,
                             _VCPCaptureAnalysisVoiceResultsKey,
                             _VCPCodecGetProperties, _VCPCodecGetProperty,
+                            _VCPCompressFLS, _VCPCompressionAllocateDPB,
                             _VCPCompressionSessionCompleteFrames,
                             _VCPCompressionSessionCopyProperty,
                             _VCPCompressionSessionCopySupportedPropertyDictionary,
@@ -260,7 +261,8 @@ exports:
                             _VCPCompressionSessionGetTypeID,
                             _VCPCompressionSessionInvalidate,
                             _VCPCompressionSessionSetProperty,
-                            _VCPCreateUserDataPrefixSEINALU,
+                            _VCPCreateNegotiatedFLB, _VCPCreateNegotiatedFLS,
+                            _VCPCreateUserDataPrefixSEINALU, _VCPDecompressFLS,
                             _VCPDecompressionSessionCheckIfLastSubFrame,
                             _VCPDecompressionSessionCopyBlackPixelBuffer,
                             _VCPDecompressionSessionCopyProperty,
@@ -293,11 +295,6 @@ exports:
                             _VCPMediaAnalysisServicePersonPromoterAdvancedStatusKey,
                             _VCPMediaAnalysisServicePersonPromoterRequestAdvancedStatusKey,
                             _VCPMediaAnalysisServicePersonPromoterStatusKey,
-                            _VCPMediaAnalysisServicePersonSuggestionConfirmedKey,
-                            _VCPMediaAnalysisServicePersonSuggestionKeyFaceClusterSequenceNumberKey,
-                            _VCPMediaAnalysisServicePersonSuggestionKeyFaceIdentifierKey,
-                            _VCPMediaAnalysisServicePersonSuggestionPersonFaceCountKey,
-                            _VCPMediaAnalysisServicePersonSuggestionPersonIdentifierKey,
                             _VCPMediaAnalysisServiceRebuildPersonWithLocalIdentifierKey,
                             _VCPMediaAnalyzerOption_AllowOnDemand,
                             _VCPMediaAnalyzerOption_AllowOnDemandGyro,
@@ -329,9 +326,10 @@ exports:
                             _VCPRateControlSessionCreate,
                             _VCPRateControlSessionInvalidate,
                             _VCPRateControlSessionSetProperty,
+                            _VCPReactionObserverCreate,
                             _VCPReadCodecConfigParams, _VCPReadFrameSliceHeader,
-                            _VCPReadHEVCSliceHeader, _VCPRegisterDecoders,
-                            _VCPRequestForceCPUPropertyKey,
+                            _VCPReadHEVCFrameInfoType, _VCPReadHEVCSliceHeader,
+                            _VCPRegisterDecoders, _VCPRequestForceCPUPropertyKey,
                             _VCPRequestFrameHeightPropertyKey,
                             _VCPRequestFrameWidthPropertyKey,
                             _VCPRequestHumanActionWinSizePropertyKey,

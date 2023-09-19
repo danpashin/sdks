@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MOVStreamIO.framework/MOVStreamIO
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _MIOCVCreatePixelBuffer,
                             _MIOCVPixelBufferGetBytesPerPixel,
                             _MIOCVPixelBufferGetBytesPerPixelOfPlane,
@@ -70,7 +70,7 @@ exports:
                             CompandedRawBayerPreProcessor, DefaultPostProcessor,
                             DefaultPreProcessor, L008ToNonPlanarPostProcessor,
                             L016Raw14PostProcessor, L016Raw14PreProcessor, MIOLog,
-                            MIOPixelBufferPool, MOVStreamEncoderConfig,
+                            MIOPixelBufferPool, MIOVersion, MOVStreamEncoderConfig,
                             MOVStreamFrame, MOVStreamFrameConverter,
                             MOVStreamFrameTransform, MOVStreamIOUtility,
                             MOVStreamOptions, MOVStreamOutputSettings,
@@ -96,6 +96,6 @@ exports:
                             RawBayerToYUVPreProcessor,
                             RawBayerToy416PreProcessor, SampleBufferAndMetadata,
                             SampleTimeBuffer, SampleTimeList,
-                            SampleTimeRangeBuffer, SampleTimeRangeList, Version,
+                            SampleTimeRangeBuffer, SampleTimeRangeList,
                             VideoEncoderInterface, y416ToRawBayerPostProcessor ]
 ...

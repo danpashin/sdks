@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _NMSAccountInfoActiveAccountDidChangeNotification,
                             _NMSActiveAccountDidChangeNotification,
                             _NMSFeedURLKey,
@@ -31,9 +31,6 @@ exports:
                             _NMSMusicRecommendationArtworkDidUpdateNotification,
                             _NMSMusicRecommendationsDidUpdateNotification,
                             _NMSNotificationUserInfoKeyIsInProcessNotification,
-                            _NMSPinningStatusIsPinned,
-                            _NMSPinningStatusIsRecentMusicPinned,
-                            _NMSPodcastSizeCacheDidUpdateNotification,
                             _NMSPodcastsAutomaticNumberOfEpisodes,
                             _NMSPodcastsAutomaticNumberOfEpisodesForUpNext,
                             _NMSRecommendationRecentMusicIdentifier,
@@ -47,9 +44,7 @@ exports:
                             _NMSyncDefaultsPodcastsPinningSelectionsDidChangeNotification,
                             _NMSyncDefaultsPodcastsSavedEpisodesDownloadSettingsKey,
                             _NMSyncDefaultsPodcastsShowDownloadSettingsKey,
-                            _NMSyncDefaultsPodcastsSizeInfoDidChangeNotification,
                             _NMSyncDefaultsPodcastsStationDownloadSettingsKey,
-                            _NMSyncDefaultsPodcastsSubscriptionMetadataDidChangeNotification,
                             _NMSyncDefaultsPodcastsUpNextDownloadSettingsKey,
                             _NMSyncDefaultsRecommendationLibraryContentsDidChangeNotification,
                             _NMSyncDefaultsRecommendationSelectionsDidChangeNotification,
@@ -64,10 +59,9 @@ exports:
                             _kNMSMediaSyncInfoUpNextIdentifier ]
     objc-classes:         [ NMSAccountInfo, NMSAlternatingMediaItemGroupIterator,
                             NMSAppActivityStatus, NMSDaemonPlugin,
-                            NMSDownloadableItem, NMSEpisodeSizeInfo,
-                            NMSGreenTeaStreamingDefaults, NMSKeepLocalRequest,
-                            NMSKeepLocalRequestLocal, NMSKeepLocalRequestOptions,
-                            NMSKeepLocalRequestProxy,
+                            NMSDownloadableItem, NMSGreenTeaStreamingDefaults,
+                            NMSKeepLocalRequest, NMSKeepLocalRequestLocal,
+                            NMSKeepLocalRequestOptions, NMSKeepLocalRequestProxy,
                             NMSKeepLocalRequestValidator,
                             NMSMediaContainerQuotaData, NMSMediaDownloadInfo,
                             NMSMediaItemGroup, NMSMediaItemGroupIterator,
@@ -79,9 +73,8 @@ exports:
                             NMSModelRecommendationsLibraryRequest,
                             NMSMusicRecommendation,
                             NMSMusicRecommendationManager,
-                            NMSMutableMediaSyncInfo, NMSMutablePodcastSizeCache,
-                            NMSPartialDownloadableItem, NMSPathUtil,
-                            NMSPodcastIdentifierSet, NMSPodcastSizeCache,
+                            NMSMutableMediaSyncInfo, NMSPartialDownloadableItem,
+                            NMSPathUtil, NMSPodcastIdentifierSet,
                             NMSPodcastSizeEstimation, NMSPodcastSizeInfo,
                             NMSPodcastsDownloadSettings,
                             NMSPodcastsFetchRequests,

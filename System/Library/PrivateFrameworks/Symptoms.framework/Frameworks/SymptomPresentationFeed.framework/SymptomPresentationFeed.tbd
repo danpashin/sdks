@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/SymptomPresentationFeed
-current-version:       1732.100.12
+current-version:       1848.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _advisoryToString,
                             _kDarwinNotificationHasAlternateAdvice,
                             _kDarwinNotificationMaterialLinkQualityChange,
@@ -118,7 +118,8 @@ exports:
                             _kUsageNetworkWiredOutBytes_mean,
                             _kUsageNetworkWiredOutBytes_var,
                             _kUsageNetworkWiredSampleCount,
-                            _kUsageProcessBundleName, _kUsageProcessProcName,
+                            _kUsageProcessBundleName,
+                            _kUsageProcessExtensionName, _kUsageProcessProcName,
                             _kUsageSinceTime ]
     objc-classes:         [ NWAppAdvice, NWNetworkAdviceUpdate,
                             NWNetworkOfInterest, NWNetworkOfInterestManager,

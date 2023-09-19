@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXWatchRemoteScreenServices.framework/AXWatchRemoteScreenServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _$s27AXWatchRemoteScreenServices010AXLogTwicebC02os6LoggerVvg,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV10systemLockSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV10touchEventSSvgZ,
@@ -21,6 +21,7 @@ exports:
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV7failureSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV7requestSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV8axStatusSSvgZ,
+                            _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV9jumpstartSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV9streamingSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyVMa,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyVMn,
@@ -146,6 +147,7 @@ exports:
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO07gestureH0yAESo19AXReplayableGestureC_tcAEmFWC,
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO08axActionH0yAESo8AXActiona_ypSgAItcAEmFWC,
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO13internalErroryAeA0e8InternalJ0O_tcAEmFWC,
+                            _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO14gizmoJumpStartyA2EmFWC,
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO14receivedAXTreeyAE10Foundation4DataV_tcAEmFWC,
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO14updateAXStatusyA2EmFWC,
                             _$s27AXWatchRemoteScreenServices21AXTwiceCompanionStateO0eF5EventO17stringDescriptionSSvg,

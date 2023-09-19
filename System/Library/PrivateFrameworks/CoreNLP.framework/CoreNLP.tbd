@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreNLP.framework/CoreNLP
-current-version:       304
+current-version:       313
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _CoreLMClear, _CoreLMCopyBatchingConfig,
                             _CoreLMCopyConditionalProbabilities,
                             _CoreLMCopyConditionalProbabilitiesOverVocabulary,
@@ -19,11 +19,16 @@ exports:
                             _CoreLMGetConditionalProbabilitiesOverVocabulary,
                             _CoreLMGetProbabilitiesForSequences,
                             _CoreLMGetSpecialTokenId, _CoreLMReset,
-                            _CoreLMSetTemperature, _CoreLMUpdateWithContext,
+                            _CoreLMSetTemperature,
+                            _CoreLMTerminationProbabilityForText,
+                            _CoreLMUpdateWithContext,
                             _NLCNNModelCopyFeatureRepresentation,
                             _NLCNNModelCopyFeatureRepresentationLayers,
                             _NLCNNModelCreateCharacterBasedModel,
                             _NLCNNModelCreateWordBasedModel,
+                            _NLDependencyParserCopyNounPhrasesFromSentence,
+                            _NLDependencyParserCopyParseFromSentence,
+                            _NLDependencyParserCreateWithOptions,
                             _NLEmbeddingCopyAllWordVectors,
                             _NLEmbeddingCopyNeighbors,
                             _NLEmbeddingCopyNeighborsWithDistances,
@@ -91,12 +96,16 @@ exports:
                             _NLNamedEntityPersonalName, _NLNamedEntityPlaceName,
                             _NLStringEmbeddingCopyAllWordVectors,
                             _NLStringEmbeddingCopyCurrentVersion,
+                            _NLStringEmbeddingCopyData,
+                            _NLStringEmbeddingCopyDataForTokenizedBatch,
                             _NLStringEmbeddingCopyModelLocale,
                             _NLStringEmbeddingCopyNeighbors,
                             _NLStringEmbeddingCopyNeighborsForVector,
                             _NLStringEmbeddingCopyNeighborsForVectorWithDistances,
                             _NLStringEmbeddingCopyNeighborsWithDistances,
                             _NLStringEmbeddingCopySupportedVersions,
+                            _NLStringEmbeddingCopyTextForTokenIDs,
+                            _NLStringEmbeddingCopyTokenIDsForText,
                             _NLStringEmbeddingCopyVector,
                             _NLStringEmbeddingCopyVersion,
                             _NLStringEmbeddingCopyWordClusterIDs,
@@ -205,6 +214,9 @@ exports:
                             _kNLModelSampleDataRangeLengthArrayKey,
                             _kNLModelSampleDataRangeLocationArrayKey,
                             _kNLModelSampleDataTextKey,
+                            _kNLModelTrainerEmbeddingArchitectureELMo,
+                            _kNLModelTrainerEmbeddingArchitectureKey,
+                            _kNLModelTrainerEmbeddingArchitectureMultilingualBERT,
                             _kNLModelTrainerFeatureCategoryKey,
                             _kNLModelTrainerLanguageKey,
                             _kNLModelTrainerMaxIterationNumberKey,
@@ -214,6 +226,7 @@ exports:
                             _kNLModelTrainerModelMetadataKey,
                             _kNLModelTrainerModelMethodTypeKey,
                             _kNLModelTrainerModelParamsKey,
+                            _kNLModelTrainerMultilingualEmbeddingLocaleIdentifierKey,
                             _kNLModelTrainerRegularizationCoefficientKey,
                             _kNLModelTrainingSentenceIdsKey,
                             _kNLModelTrainingSentencesKey,
@@ -224,7 +237,13 @@ exports:
                             _kNLModelValidationSentencesKey,
                             _kNLModelValidationTokenLengthsKey,
                             _kNLModelValidationTokenLocationsKey,
-                            _kNLModelVersionStringKey,
+                            _kNLModelVersionStringKey, _kNLStringEmbeddingBERT,
+                            _kNLStringEmbeddingBERTPlusGECS2S,
+                            _kNLStringEmbeddingBERTPlusGECTagger,
+                            _kNLStringEmbeddingBERTPlusParser,
+                            _kNLStringEmbeddingContextualModelArchitecture,
+                            _kNLStringEmbeddingELMo,
+                            _kNLStringEmbeddingErrorDomain,
                             _kNLStringEmbeddingModelData,
                             _kNLStringEmbeddingModelLocale,
                             _kNLStringEmbeddingModelPath,
@@ -232,9 +251,14 @@ exports:
                             _kNLStringEmbeddingModelTypeCompressedWordEmbedding,
                             _kNLStringEmbeddingModelTypeContextualWordEmbedding,
                             _kNLStringEmbeddingModelTypeSentenceEmbedding,
+                            _kNLStringEmbeddingModelUseANE,
                             _kNLStringEmbeddingModelVersion,
+                            _kNLStringEmbeddingMultilingualBERT,
                             _kNLStringEmbeddingNumberOfTrees,
+                            _kNLStringEmbeddingPadEncoderInput,
                             _kNLStringEmbeddingSubDimension,
+                            _kNLStringEmbeddingTokenizedBatchComponentRanges,
+                            _kNLStringEmbeddingTokenizedBatchComponentsCount,
                             _kNLTagSchemeDerivedSubToken, _kNLTagSchemeEmotion,
                             _kNLTagSchemeInternalClass, _kNLTagSchemeLanguage,
                             _kNLTagSchemeLemma, _kNLTagSchemeLexicalClass,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64 ]
+archs:                 [ armv7, armv7s, arm64, arm64e ]
 platform:              (null)
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BookCoverUtility.framework/BookCoverUtility
-current-version:       883
+current-version:       969
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64 ]
+  - archs:                [ armv7, armv7s, arm64, arm64e ]
     symbols:              [ _BCUCoverEffectsFilterInfoAlternativeAppearanceKey,
                             _BCUCoverEffectsFilterInfoContentRTLKey,
                             _BCUCoverEffectsFilterInfoCoverEffectStyleKey,
@@ -37,7 +37,9 @@ exports:
                             _BCUCoverEffectsIdentifierPDFNightWithShadow,
                             _BCUCoverEffectsIdentifierPDFShadowOnly,
                             _BCUCoverEffectsIdentifierPDFWithShadow,
-                            _BCUCoverEffectsIdentifierSeriesStack,
+                            _BCUCoverEffectsIdentifierSeriesStackDiagonal,
+                            _BCUCoverEffectsIdentifierSeriesStackHorizontal,
+                            _BCUCoverEffectsIdentifierSeriesStackHorizontalRTL,
                             _BCUInsetsZero, _BCUPriorityDefault, _BCUPriorityHigh,
                             _BCUPriorityLow, _BCUPriorityUndefined,
                             _BCUPriorityVeryHigh, _BCUPriorityVeryLow,
