@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AZLexiLower, _AZLexiUpper, _CSeqList, _CharsetCount,
                             _CharsetIdMap, _ClassifierTableInitialized,
                             _CreateDefaultUnikeyOptions,
@@ -235,6 +235,7 @@ exports:
                             _TI_SET_USING_TOUCAN_LM,
                             _UIKeyboardDynamicDictionaryFile,
                             _UIKeyboardLanguageFromDynamicDictionaryPath,
+                            _UIKeyboardOTADictionaryPathForContentType,
                             _UIKeyboardStaticUnigramsFile,
                             _UIKeyboardUserDirectory, _UkcMap, _UnicodeComposite,
                             _UnicodeTable, _UnikeyBackspacePress,
@@ -1886,7 +1887,7 @@ exports:
                             __ZNK14TIInputManager37is_first_character_explicitly_shiftedEv,
                             __ZNK14TIInputManager38should_correct_explicitly_shifted_wordEv,
                             __ZNK14TIInputManager41apply_policy_decisions_inline_completionsERN2KB19CandidateCollectionERKNS0_6StringERKNS0_20LanguageModelContextEP10__CFString,
-                            __ZNK14TIInputManager44should_accept_candidate_for_mixed_case_inputERKN2KB9CandidateERKNS0_4WordERKNS0_6StringERKNSt3__16vectorIjNSA_9allocatorIjEEEE,
+                            __ZNK14TIInputManager44should_accept_candidate_for_mixed_case_inputERKN2KB9CandidateERKNS0_4WordERKNS0_6StringERKNSt3__16vectorIjNSA_9allocatorIjEEEEb,
                             __ZNK14TIInputManager45should_promote_case_variants_of_top_candidateEv,
                             __ZNK14TIInputManager47register_inline_completion_acceptance_rejectionERKN2KB6StringES3_S3_41TIInlineCompletionAcceptanceRejectionType,
                             __ZNK14TIInputManager48single_character_completions_for_shortcut_prefixERKN2KB6StringE,
@@ -1927,7 +1928,7 @@ exports:
                             __ZNK20TIFitAffineMLLMatrixmlEd,
                             __ZNK20TIFitAffineMLLMatrixplERKS_,
                             __ZNK23TIInputManager_translit30create_custom_candidate_filterEN2KB10LookupTypeE,
-                            __ZNK24TIInlineCompletionsCache16cached_candidateERKN2KB20LanguageModelContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE,
+                            __ZNK24TIInlineCompletionsCache16cached_candidateERKN2KB20LanguageModelContextERKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEEm,
                             __ZNK24TIInlineCompletionsCache5emptyEv,
                             __ZNK2KB10ByteString11starts_withERKS0_,
                             __ZNK2KB10ByteString7compareERKS0_,
@@ -2171,6 +2172,7 @@ exports:
                             __ZNK2KB22LanguageModelContainer22primary_language_modelEv,
                             __ZNK2KB22LanguageModelContainer23static_words_for_stringERKNS_6StringERKN3WTF6RefPtrINS_19DictionaryContainerEEERKNS_20LanguageModelContextEbb,
                             __ZNK2KB22LanguageModelContainer24does_provide_completionsEv,
+                            __ZNK2KB22LanguageModelContainer24get_autocorrection_queueEj,
                             __ZNK2KB22LanguageModelContainer24is_string_based_lm_modelEv,
                             __ZNK2KB22LanguageModelContainer25lexicon_prior_probabilityEj,
                             __ZNK2KB22LanguageModelContainer25should_adapt_to_paragraphEPK10__CFString,
@@ -3599,6 +3601,7 @@ exports:
                             TIKeyboardInputManagerLoaderSyncHelper,
                             TIKeyboardInputManagerLogger,
                             TIKeyboardInputManagerPolymorph,
+                            TIKeyboardInputManagerStickerTask,
                             TIKeyboardInputManagerTransliteration,
                             TIKeyboardInputManagerTransliterationBase,
                             TIKeyboardInputManagerWrapper,
@@ -3673,11 +3676,11 @@ exports:
                             TIStatusBarStyleOverrideLoggingCapture,
                             TIStickerCandidateGenerator,
                             TIStreamingCandidateHandler,
-                            TISupplementalLexiconController, TITextChecker,
-                            TITextCheckerExemptions, TITextCheckerExemptionsImpl,
-                            TITextInputCore, TITokenizationRevision,
-                            TITransientLexiconManager, TITrialManager,
-                            TITrialManagerProxy, TITypingAssertion,
+                            TISupplementalLexiconController, TITaxonomyQuery,
+                            TITextChecker, TITextCheckerExemptions,
+                            TITextCheckerExemptionsImpl, TITextInputCore,
+                            TITokenizationRevision, TITransientLexiconManager,
+                            TITrialManager, TITrialManagerProxy, TITypingAssertion,
                             TITypingDESRecordWriter, TITypingEffortAnalyzer,
                             TITypingSession, TITypingSessionAligned,
                             TITypingSessionAlignmentConfidenceAnalyzer,

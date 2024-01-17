@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
@@ -7,10 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _TUActionRecentsOpenAppStore,
-                            _TUActionSOSSettingsLearnMore,
-                            _TUActionVoicemailLearnMore, _TUActiveCountryCode,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _TUActionLiveVoicemailSettings,
+                            _TUActionRecentsOpenAppStore,
+                            _TUActionSOSSettingsLearnMore, _TUActiveCountryCode,
                             _TUAddDarwinObserver, _TUAddLocalNSObserver,
                             _TUAddTelephonyCenterObserver,
                             _TUAllowCallsDuringScreenSharing,
@@ -70,6 +70,7 @@ exports:
                             _TUBundleIdentifierLivePhotoXPCService,
                             _TUBundleIdentifierMessagesApplication,
                             _TUBundleIdentifierMobilePhoneApplication,
+                            _TUBundleIdentifierNameAndPhotoUtilities,
                             _TUBundleIdentifierNanoPhoneApplication,
                             _TUBundleIdentifierPhoneApplication,
                             _TUBundleIdentifierSafariApplication,
@@ -332,8 +333,9 @@ exports:
                             _TUIsCallHandoffActivityType, _TUIsEmergencyNumber,
                             _TUIsEmergencyNumberOrIsWhiteListed,
                             _TUIsIDSAvailableForFaceTime, _TUIsMMIOrUSSDNumber,
-                            _TUIsPersonaAvailable, _TUKickMemberTimeout,
-                            _TULockdownModeEnabled, _TULoggableStringForHandle,
+                            _TUIsPersonaAvailable, _TUIsStoreDemoModeEnabled,
+                            _TUKickMemberTimeout, _TULockdownModeEnabled,
+                            _TULoggableStringForHandle,
                             _TULoggableStringForHandles,
                             _TULoggableStringForObject,
                             _TUMakeNeighborhoodConduitError,
@@ -501,8 +503,7 @@ exports:
                             _kTUReplyWithMessageBulletinBoardMessageName,
                             _kTUReplyWithMessageBulletinBoardMessagePersonIDKey,
                             _kTUReplyWithMessageBulletinBoardMessageRecipientKey ]
-    objc-classes:         [ TUAbstractScreenTimeObserver, TUAdhocResult,
-                            TUAnswerRequest, TUAudioController,
+    objc-classes:         [ TUAdhocResult, TUAnswerRequest, TUAudioController,
                             TUAudioDeviceController, TUAudioFrequencyController,
                             TUAudioRoute, TUAudioRouteCollectionKey,
                             TUAudioSystemController, TUBusinessCallerItem,
@@ -530,10 +531,10 @@ exports:
                             TUContactsDataProvider,
                             TUContactsDataProviderAppleCareHandles,
                             TUContactsDataProviderFetchRequest,
-                            TUContactsDataProviderResult,
-                            TUContinuityHandleAnonym, TUContinuitySessionContact,
-                            TUContinuitySessionInfo, TUConversation,
-                            TUConversationActivity,
+                            TUContactsDataProviderResult, TUContinuityCall,
+                            TUContinuityConversation, TUContinuityHandleAnonym,
+                            TUContinuitySessionContact, TUContinuitySessionInfo,
+                            TUConversation, TUConversationActivity,
                             TUConversationActivityContext,
                             TUConversationActivityCreateSessionRequest,
                             TUConversationActivityEvent,
@@ -570,15 +571,18 @@ exports:
                             TUGeoLocationMetadataCacheDataProvider, TUGroupTitle,
                             TUHandle, TUHardwareControlsBroadcaster,
                             TUICFInterface, TUICFQueryResult, TUIDSLookupManager,
-                            TUIntentController, TUJoinConversationRequest,
-                            TULabeledHandle, TULinkShareItem, TULocalNicknameInfo,
-                            TULocked, TULogging, TUMapsMetadataCacheDataProvider,
+                            TUIntentController,
+                            TUJoinContinuityConversationRequest,
+                            TUJoinConversationRequest, TULabeledHandle,
+                            TULinkShareItem, TULocalNicknameInfo, TULocked,
+                            TULogging, TUMapsMetadataCacheDataProvider,
                             TUMetadataCache, TUMetadataCacheDataProvider,
                             TUMetadataClientController, TUMetadataDestinationID,
                             TUMetadataItem, TUMomentDescriptor,
                             TUMomentsCapabilities, TUMomentsController,
                             TUMomentsControllerXPCClient,
-                            TUMomentsMessageDescriptor, TUMomentsProvider,
+                            TUMomentsMessageDescriptor,
+                            TUMomentsMessageSendRequest, TUMomentsProvider,
                             TUMomentsRawVideoMessageDescriptor,
                             TUMutableCallContainer, TUMutableCallDisplayContext,
                             TUMutableConversation,
@@ -588,7 +592,7 @@ exports:
                             TUMutableConversationParticipant,
                             TUMutableConversationParticipantCapabilities,
                             TUMutableParticipant, TUMutableRoute,
-                            TUNearbyDeviceHandle,
+                            TUNearbyConversationInfo, TUNearbyDeviceHandle,
                             TUNearbyDeviceHandleCapabilities, TUNearbySuggestion,
                             TUNearbySuggestionAdvertisement,
                             TUNearbySuggestionResult,
@@ -603,8 +607,7 @@ exports:
                             TURepeatingActor, TUReplyWithMessageStore,
                             TUReportingControllerXPCClient, TUResultGroup, TURoute,
                             TURouteController, TUSandboxExtendedURL,
-                            TUScreenShareAttributes, TUScreenTimeDataSource,
-                            TUScreenTimeObserver, TUScreeningRequest,
+                            TUScreenShareAttributes, TUScreeningRequest,
                             TUSearchController, TUSearchModuleManager,
                             TUSearchResults, TUSenderIdentity,
                             TUSenderIdentityCapabilities,

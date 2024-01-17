@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ComplicationDisplay.framework/ComplicationDisplay
@@ -7,8 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _$s19ComplicationDisplay01_A7HostingC14filterProviderSo019CLKMonochromeFilterE0_pSgvMTj,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s19ComplicationDisplay01_A7HostingC12sizeThatFitsySo6CGSizeVAFFTj,
+                            _$s19ComplicationDisplay01_A7HostingC12sizeThatFitsySo6CGSizeVAFFTq,
+                            _$s19ComplicationDisplay01_A7HostingC14filterProviderSo019CLKMonochromeFilterE0_pSgvMTj,
                             _$s19ComplicationDisplay01_A7HostingC14filterProviderSo019CLKMonochromeFilterE0_pSgvMTq,
                             _$s19ComplicationDisplay01_A7HostingC14filterProviderSo019CLKMonochromeFilterE0_pSgvgTj,
                             _$s19ComplicationDisplay01_A7HostingC14filterProviderSo019CLKMonochromeFilterE0_pSgvgTq,
@@ -52,8 +54,6 @@ exports:
                             _$s19ComplicationDisplay01_A7HostingC5frame5asyncACSo6CGRectV_SbtcfCTj,
                             _$s19ComplicationDisplay01_A7HostingC5frame5asyncACSo6CGRectV_SbtcfCTq,
                             _$s19ComplicationDisplay01_A7HostingC5frame5asyncACSo6CGRectV_Sbtcfc,
-                            _$s19ComplicationDisplay01_A7HostingC5frameACSo6CGRectV_tcfC,
-                            _$s19ComplicationDisplay01_A7HostingC5frameACSo6CGRectV_tcfc,
                             _$s19ComplicationDisplay01_A7HostingC6pausedSbvMTj,
                             _$s19ComplicationDisplay01_A7HostingC6pausedSbvMTq,
                             _$s19ComplicationDisplay01_A7HostingC6pausedSbvgTj,

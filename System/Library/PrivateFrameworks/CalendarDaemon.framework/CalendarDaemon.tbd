@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CalendarDaemon.framework/CalendarDaemon
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CADAccountActionDescription,
                             _CADAccountManagementFromSource,
                             _CADAccountManagementFromTarget,
@@ -76,19 +76,20 @@ exports:
                             CADRespondedEventsPredicate, CADRouteHypothesis,
                             CADSequenceToken, CADServer, CADSpotlightIndexer,
                             CADSpotlightServerModule, CADStatCollectionContext,
-                            CADStatCollector, CADStatsCalendars, CADStatsCallback,
-                            CADStatsEvents, CADStatsOccurrences,
-                            CADStatsPreferences, CADStatsStores,
-                            CADSubscribedCalendarEventsPredicate,
+                            CADStatCollector, CADStateDumpModule,
+                            CADStatsCalendars, CADStatsCallback, CADStatsEvents,
+                            CADStatsOccurrences, CADStatsPreferences,
+                            CADStatsStores, CADSubscribedCalendarEventsPredicate,
                             CADSyntheticRouteHypothesizerCache,
                             CADTravelEventsPredicate,
                             CADUnacknowledgedEventsPredicate,
                             CADUnalertedEventsPredicate,
                             CADUpNextEventsPredicate, CADUpcomingEventsPredicate,
                             CADXPCImplementation, CADXPCProxyHelper,
-                            CalDAVLogScrubber, ClientConnection, ClientIdentity,
-                            EKAlarmOccurrence, EKMasterEventsPredicate,
-                            EKPredicate, EKScheduleAgentClientEventsPredicate ]
+                            CalDAVTrafficLogScrubber, ClientConnection,
+                            ClientIdentity, EKAlarmOccurrence,
+                            EKMasterEventsPredicate, EKPredicate,
+                            EKScheduleAgentClientEventsPredicate ]
     objc-ivars:           [ CADXPCImplementation._conn, EKPredicate._timeZone,
                             EKPredicate._uuid ]
 ...

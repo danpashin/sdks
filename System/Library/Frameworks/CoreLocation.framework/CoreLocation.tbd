@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreLocation.framework/CoreLocation
-current-version:       2886.1.7
+current-version:       2890.4.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CLAppResetChangedNotification,
                             _CLAppStatusChangedNotification,
                             _CLApplyArchivedAuthorizationDecisions,
@@ -88,6 +88,7 @@ exports:
                             _CLLocationCoordinate2DGetDistanceFrom,
                             _CLLocationCoordinate2DIsValid,
                             _CLLocationCoordinate2DMake, _CLLocationDistanceMax,
+                            _CLLocationManagerGatheringBufferedDevicesReceived,
                             _CLLocationPushServiceErrorDomain,
                             _CLPassKitNotifyPayment, _CLPingDaemon,
                             _CLSetClientTransientAuthorizationInfo,
@@ -178,8 +179,8 @@ exports:
                             CLLocationMatchInfo, CLLocationSmoother,
                             CLLocationSourceInformation, CLLocationTrackRunInfo,
                             CLLocationUpdater, CLMiLoConnection,
-                            CLMiLoConnectionStatus, CLMiLoDebugResponse,
-                            CLMiLoExportDatabaseTableResult,
+                            CLMiLoConnectionStatus, CLMiLoCustomLoiConfiguration,
+                            CLMiLoDebugResponse, CLMiLoExportDatabaseTableResult,
                             CLMiLoFingerprintError, CLMiLoFingerprintMetaInfo,
                             CLMiLoGenericEventResponse, CLMiLoLocationType,
                             CLMiLoPlace, CLMiLoPlaceConfidenceReason,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/QuickLookSupport.framework/QuickLookSupport
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _QLAdaptSizeInSize, _QLAdaptSizeInSizeWithRounding,
                             _QLAdaptSizeOutSize, _QLAdaptSizeOutSizeWithRounding,
                             _QLAdaptSizeToRect, _QLAdaptSizeToRectWithRounding,
@@ -32,6 +32,7 @@ exports:
                             _QLSThumbnailSizeIsSufficientForLowQuality,
                             _QLScaledImageFromImageURL,
                             _QLScaledPlatformImageFromImageSource,
+                            _QLScaledPlatformImageFromImageSourceWithOptions,
                             _QLThumbnailingImageIOCreateImageSourceFromData,
                             _QLThumbnailingImageIOCreateThumbnailFromData,
                             _QLThumbnailingImageIOCreateThumbnailOfMinimumSizeWithImageSource,

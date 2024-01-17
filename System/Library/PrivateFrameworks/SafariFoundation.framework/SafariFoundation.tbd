@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
-current-version:       616.1.27
+current-version:       617.1.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _SFAccountModificationExtensionPointIdentifier,
                             _SFAccountModificationExtensionSupportsStrongPasswordChange,
                             _SFAccountModificationExtensionSupportsUpgradeToSignInWithApple,
@@ -54,7 +54,5 @@ exports:
                             SFSharablePassword, SFSharablePasswordReceiver,
                             SFSharedWebCredentialsDatabaseEntry,
                             SFStrongPasswordGenerator, SFSuggestedUser,
-                            SFSuggestedUserProvider, TOTPGeneratorSnapshot,
-                            _SFCredentialIdentityTypeMatcher,
-                            _SFSharablePasswordEncryptionInformation ]
+                            SFSuggestedUserProvider ]
 ...

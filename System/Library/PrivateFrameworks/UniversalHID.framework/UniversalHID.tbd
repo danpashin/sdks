@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UniversalHID.framework/UniversalHID
-current-version:       15
+current-version:       15.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12UniversalHID0A12ControlUsageV12usageMaximumSivgZ,
                             _$s12UniversalHID0A12ControlUsageV12usageMinimumSivgZ,
                             _$s12UniversalHID0A12ControlUsageV13keyboardStateACvgZ,
@@ -58,7 +58,7 @@ exports:
                             _$s12UniversalHID10ScaleEventV1zSdvpMV,
                             _$s12UniversalHID10ScaleEventV1zSdvs,
                             _$s12UniversalHID10ScaleEventV4time5point5flagsAcA7HIDTimeV_AA8HIDPointVAA13HIDEventFlagsVtcfC,
-                            _$s12UniversalHID10ScaleEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0C6ReportV_tFZ,
+                            _$s12UniversalHID10ScaleEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0C6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID10ScaleEventV9eventTypeAA08HIDEventF0VvgZ,
                             _$s12UniversalHID10ScaleEventVAA13_HIDEventImplAAMc,
                             _$s12UniversalHID10ScaleEventVAA13_HIDEventImplAAWP,
@@ -731,7 +731,7 @@ exports:
                             _$s12UniversalHID13RotationEventV1zSdvpMV,
                             _$s12UniversalHID13RotationEventV1zSdvs,
                             _$s12UniversalHID13RotationEventV4time5point5flagsAcA7HIDTimeV_AA8HIDPointVAA13HIDEventFlagsVtcfC,
-                            _$s12UniversalHID13RotationEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0C6ReportV_tFZ,
+                            _$s12UniversalHID13RotationEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0C6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID13RotationEventV8rotationSdvM,
                             _$s12UniversalHID13RotationEventV8rotationSdvg,
                             _$s12UniversalHID13RotationEventV8rotationSdvpMV,
@@ -922,7 +922,7 @@ exports:
                             _$s12UniversalHID14DockSwipeEventV6flavors6UInt16Vvg,
                             _$s12UniversalHID14DockSwipeEventV6flavors6UInt16VvpMV,
                             _$s12UniversalHID14DockSwipeEventV6flavors6UInt16Vvs,
-                            _$s12UniversalHID14DockSwipeEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0cD6ReportV_tFZ,
+                            _$s12UniversalHID14DockSwipeEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0cD6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID14DockSwipeEventV8progressSdvM,
                             _$s12UniversalHID14DockSwipeEventV8progressSdvg,
                             _$s12UniversalHID14DockSwipeEventV8progressSdvpMV,
@@ -1169,10 +1169,13 @@ exports:
                             _$s12UniversalHID15GestureProtocolP8dispatch6reportSayAA08HIDEventD0_pG6ReportQz_tFTq,
                             _$s12UniversalHID15GestureProtocolTL,
                             _$s12UniversalHID15KeyboardGestureC6loggerAC2os6LoggerVSg_tcfC,
-                            _$s12UniversalHID15KeyboardGestureC6loggerAC2os6LoggerVSg_tcfCTj,
-                            _$s12UniversalHID15KeyboardGestureC6loggerAC2os6LoggerVSg_tcfCTq,
-                            _$s12UniversalHID15KeyboardGestureC6loggerAC2os6LoggerVSg_tcfc,
                             _$s12UniversalHID15KeyboardGestureC8dispatch14keyboardReport18localCapsLockStateSayAA16HIDEventProtocol_pG_SbtAA0cG0V_SbtF,
+                            _$s12UniversalHID15KeyboardGestureC8platform6loggerAcA8PlatformO_2os6LoggerVSgtcfC,
+                            _$s12UniversalHID15KeyboardGestureC8platform6loggerAcA8PlatformO_2os6LoggerVSgtcfCTj,
+                            _$s12UniversalHID15KeyboardGestureC8platform6loggerAcA8PlatformO_2os6LoggerVSgtcfCTq,
+                            _$s12UniversalHID15KeyboardGestureC8platform6loggerAcA8PlatformO_2os6LoggerVSgtcfc,
+                            _$s12UniversalHID15KeyboardGestureC8platformAA8PlatformOvg,
+                            _$s12UniversalHID15KeyboardGestureC8platformAA8PlatformOvpMV,
                             _$s12UniversalHID15KeyboardGestureCACycfC,
                             _$s12UniversalHID15KeyboardGestureCACycfc,
                             _$s12UniversalHID15KeyboardGestureCMa,
@@ -1541,7 +1544,7 @@ exports:
                             _$s12UniversalHID16TranslationEventV1zSdvpMV,
                             _$s12UniversalHID16TranslationEventV1zSdvs,
                             _$s12UniversalHID16TranslationEventV4time5delta5flagsAcA7HIDTimeV_AA8HIDPointVAA13HIDEventFlagsVtcfC,
-                            _$s12UniversalHID16TranslationEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0C6ReportV_tFZ,
+                            _$s12UniversalHID16TranslationEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0C6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID16TranslationEventV9eventTypeAA08HIDEventF0VvgZ,
                             _$s12UniversalHID16TranslationEventVAA13_HIDEventImplAAMc,
                             _$s12UniversalHID16TranslationEventVAA13_HIDEventImplAAWP,
@@ -2369,6 +2372,10 @@ exports:
                             _$s12UniversalHID20HIDServicePropertiesV23scrollAccelerationTable10Foundation4DataVSgvg,
                             _$s12UniversalHID20HIDServicePropertiesV23scrollAccelerationTable10Foundation4DataVSgvpMV,
                             _$s12UniversalHID20HIDServicePropertiesV23scrollAccelerationTable10Foundation4DataVSgvs,
+                            _$s12UniversalHID20HIDServicePropertiesV23universalControlBuiltInSbSgvM,
+                            _$s12UniversalHID20HIDServicePropertiesV23universalControlBuiltInSbSgvg,
+                            _$s12UniversalHID20HIDServicePropertiesV23universalControlBuiltInSbSgvpMV,
+                            _$s12UniversalHID20HIDServicePropertiesV23universalControlBuiltInSbSgvs,
                             _$s12UniversalHID20HIDServicePropertiesV24dictionaryRepresentationSDySSypGvg,
                             _$s12UniversalHID20HIDServicePropertiesV24dictionaryRepresentationSDySSypGvpMV,
                             _$s12UniversalHID20HIDServicePropertiesV24pointerAccelerationTable10Foundation4DataVSgvM,
@@ -2550,7 +2557,7 @@ exports:
                             _$s12UniversalHID20NavigationSwipeEventV6flavors6UInt16Vvg,
                             _$s12UniversalHID20NavigationSwipeEventV6flavors6UInt16VvpMV,
                             _$s12UniversalHID20NavigationSwipeEventV6flavors6UInt16Vvs,
-                            _$s12UniversalHID20NavigationSwipeEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0cD6ReportV_tFZ,
+                            _$s12UniversalHID20NavigationSwipeEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0cD6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID20NavigationSwipeEventV8progressSdvM,
                             _$s12UniversalHID20NavigationSwipeEventV8progressSdvg,
                             _$s12UniversalHID20NavigationSwipeEventV8progressSdvpMV,
@@ -2651,6 +2658,7 @@ exports:
                             _$s12UniversalHID21HIDServicePropertyKeyV23mouseScrollAccelerationACvgZ,
                             _$s12UniversalHID21HIDServicePropertyKeyV23pointerAccelerationTypeACvgZ,
                             _$s12UniversalHID21HIDServicePropertyKeyV23scrollAccelerationTableACvgZ,
+                            _$s12UniversalHID21HIDServicePropertyKeyV23universalControlBuiltInACvgZ,
                             _$s12UniversalHID21HIDServicePropertyKeyV24pointerAccelerationTableACvgZ,
                             _$s12UniversalHID21HIDServicePropertyKeyV24supportsGestureScrollingACvgZ,
                             _$s12UniversalHID21HIDServicePropertyKeyV24userDeviceCreateInactiveACvgZ,
@@ -2829,7 +2837,7 @@ exports:
                             _$s12UniversalHID22FluidTouchGestureEventV6flavors6UInt16Vvg,
                             _$s12UniversalHID22FluidTouchGestureEventV6flavors6UInt16VvpMV,
                             _$s12UniversalHID22FluidTouchGestureEventV6flavors6UInt16Vvs,
-                            _$s12UniversalHID22FluidTouchGestureEventV8dispatch6reportSayAA16HIDEventProtocol_pGAA0cdE6ReportV_tFZ,
+                            _$s12UniversalHID22FluidTouchGestureEventV8dispatch6report8platformSayAA16HIDEventProtocol_pGAA0cdE6ReportV_AA8PlatformOtFZ,
                             _$s12UniversalHID22FluidTouchGestureEventV8progressSdvM,
                             _$s12UniversalHID22FluidTouchGestureEventV8progressSdvg,
                             _$s12UniversalHID22FluidTouchGestureEventV8progressSdvpMV,
@@ -3126,6 +3134,7 @@ exports:
                             _$s12UniversalHID29EventReportDispatcherProtocolPAAE04sendD0_4fromyAA08ConsumerD0V_AA0cD8SenderIDVtF,
                             _$s12UniversalHID29EventReportDispatcherProtocolPAAE04sendD0_4fromyAA08KeyboardD0V_AA0cD8SenderIDVtF,
                             _$s12UniversalHID29EventReportDispatcherProtocolTL,
+                            _$s12UniversalHID29HIDUniversalControlBuiltInKeySSvg,
                             _$s12UniversalHID30HIDVirtualEventServiceProtocolMp,
                             _$s12UniversalHID30HIDVirtualEventServiceProtocolP08dispatchD0ySbSo8HIDEventCFTj,
                             _$s12UniversalHID30HIDVirtualEventServiceProtocolP08dispatchD0ySbSo8HIDEventCFTq,

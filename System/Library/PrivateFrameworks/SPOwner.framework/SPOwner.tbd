@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SPOwner.framework/SPOwner
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s7SPOwner15ObjCSwiftBridgeC9bootstrap7contextySS_tYaKFZ,
                             _$s7SPOwner15ObjCSwiftBridgeC9bootstrap7contextySS_tYaKFZTu,
                             _$s7SPOwner15ObjCSwiftBridgeCACycfC,
@@ -40,6 +40,7 @@ exports:
                             _$s7SPOwner18LocalBeaconKeyInfoVs23CustomStringConvertibleAAMc,
                             _SPAccessoryDidPairNotification,
                             _SPAccessoryDiscoveryAndPairingSessionErrorDomain,
+                            _SPAccountRemovedNotification,
                             _SPBTFindingSessionErrorDomain,
                             _SPBeaconLocationSourceConnection,
                             _SPBeaconLocationSourceConnectionMaintenance,

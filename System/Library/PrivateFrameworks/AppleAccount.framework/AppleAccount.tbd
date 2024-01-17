@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AAAbsintheSignerDefaultTimeout,
                             _AAAccountClassBasic, _AAAccountClassFull,
                             _AAAccountClassPrimary,
@@ -33,6 +33,7 @@ exports:
                             _AAFollowUpActionDismiss, _AAFollowUpActionPrimary,
                             _AAFollowUpClientIdentifier,
                             _AAFollowUpExtensionIdentifier,
+                            _AAFollowUpIdentifierADPUserMissingHealthyCustodian,
                             _AAFollowUpIdentifierBeneficiaryIneligible,
                             _AAFollowUpIdentifierBeneficiaryRemoved,
                             _AAFollowUpIdentifierCustodianEmbargo,
@@ -55,6 +56,7 @@ exports:
                             _AAFollowUpOpenPrefPaneActionCustodianRecovery,
                             _AAFollowUpOpenPrefPaneActionFollowUpIdentifier,
                             _AAFollowUpOpenPrefPaneActionKey,
+                            _AAFollowUpOpenPrefPaneActionPresentAccountRecovery,
                             _AAFollowUpOpenPrefPaneActionRecoveryKeyMismatchOtherOption,
                             _AAFollowUpOpenPrefPaneActionRenewAuth,
                             _AAFollowUpOpenPrefPaneActionShowAppleIDLogin,
@@ -76,6 +78,7 @@ exports:
                             _AAFollowUpUserInfoCFUType,
                             _AAFollowUpUserInfoClientName,
                             _AAFollowUpUserInfoCustodianSessionID,
+                            _AAFollowUpUserInfoHasMultipleRecoveryContacts,
                             _AAFollowUpUserInfoHasRecoveryContact,
                             _AAFollowUpUserInfoHasWalrusEnabled,
                             _AAFollowUpUserInfoNotificationAltButtonTitle,
@@ -250,8 +253,15 @@ exports:
                             _kAAAccountUbiquityPropertyiCloudHome,
                             _kAAAccountUsesCloudDocs, _kAAAccountWarmingUp,
                             _kAAActionNameKey, _kAAAltDSIDKey,
+                            _kAAAnalyticsAdvancedDataProtectionState,
+                            _kAAAnalyticsCdpStatus,
+                            _kAAAnalyticsCircleSyncingStatus,
+                            _kAAAnalyticsCliqueStatus,
+                            _kAAAnalyticsEventiCloudAccountAdd,
                             _kAAAnalyticsEventiCloudAuthLoginAndUpdate,
                             _kAAAnalyticsEventiCloudAuthPreflightSave,
+                            _kAAAnalyticsSecurityLevel,
+                            _kAAAnalyticsTotalViableEscrowRecords,
                             _kAACountryCodeKey, _kAADeviceProvisioningMachineId,
                             _kAADeviceProvisioningOneTimePassword,
                             _kAAErrorDetailsActionButtonTitleKey,
@@ -403,14 +413,13 @@ exports:
                             _kAAProtocolPrefCustomHealthCheckVersion,
                             _kAAProtocolPrefCustomIdentityTaskIntervalEnabled,
                             _kAAProtocolPrefCustomIdentityTaskIntervalMinutes,
-                            _kAAProtocolPrefDisableCustodianPreflightKey,
                             _kAAProtocolPrefDisableHealthCheckTTRKey,
-                            _kAAProtocolPrefEnableCustodianPreflightTTRKey,
                             _kAAProtocolPrefExperimentalModeKey,
                             _kAAProtocolPrefMultipleFullAccounts,
                             _kAAProtocolPrefNeverSkipCustodianCheckKey,
                             _kAAProtocolPrefSendInternalDevHeaderKey,
                             _kAAProtocolPrefShowAccountContactsKey,
+                            _kAAProtocolPrefSimulate2FAFAKey,
                             _kAAProtocolPrefSimulateUnhealthyCustodianKey,
                             _kAAProtocolPrefSkipIdMSFinalizeCustodianKey,
                             _kAAProtocolPrefSkipIdMSKeyUpdateKey,
@@ -469,6 +478,7 @@ exports:
                             _kAATermsFieldFormat, _kAATermsFieldName,
                             _kAATermsFieldTerms, _kAATermsVersionKey,
                             _kAATrueString, _kAAiCloudVersionKey,
+                            _kAppleIDHealthCheckEventName,
                             _kAppleIDMigratedAccountIdentifier,
                             _kLegacyAAAccountAppleIDAliasesKey,
                             _kLegacyAAAccountAuthTokenKey,
@@ -483,8 +493,7 @@ exports:
                             _kLegacyAAAccountPrimaryAccountKey,
                             _kLegacyAAAccountPrimaryEmailKey,
                             _kLegacyAAAccountPrimaryEmailVerifiedKey,
-                            _kLegacyAAAccountProtocolVersionKey,
-                            _markedForSignOutAccountKey ]
+                            _kLegacyAAAccountProtocolVersionKey ]
     objc-classes:         [ AAAbsintheContext, AAAbsintheSigner,
                             AAAbsintheSignerContextCache,
                             AAAcceptedTermsController, AAAccount,
@@ -601,15 +610,13 @@ exports:
                             AASetupAssistantUpgradeStatusRequest,
                             AASetupAssistantUpgradeStatusResponse,
                             AASignInFlowController, AASignInOperationHelper,
-                            AASignOutFlowController, AASignOutManager,
-                            AASigningSession, AASigningSessionRequest,
-                            AASigningSessionResponse,
-                            AASilentSignOutFlowControllerDelegate,
+                            AASignOutFlowController, AASigningSession,
+                            AASigningSessionRequest, AASigningSessionResponse,
                             AASpyglassSpecifierModel, AAStorableLoginContext,
                             AASuspensionInfo, AATermsReportUserActionRequest,
                             AATermsReportUserActionResponse,
-                            AATermsUserActionReporter, AATrustedContact,
-                            AATrustedContactDetailsViewModel,
+                            AATermsStringsProvider, AATermsUserActionReporter,
+                            AATrustedContact, AATrustedContactDetailsViewModel,
                             AATrustedContactDetailsViewModelFactory,
                             AATrustedContactFlowPresenter,
                             AATrustedContactHealthInfo,

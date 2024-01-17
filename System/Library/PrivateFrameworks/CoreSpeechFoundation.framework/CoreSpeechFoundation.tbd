@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSpeechFoundation.framework/CoreSpeechFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CSAudioPowerServiceGetXPCInterface,
                             _CSAudioPowerServiceName, _CSErrorDomain, _CSHasAOP,
                             _CSInternalPreferencesSynchronize, _CSIsASMacWithAOP,
@@ -17,8 +17,9 @@ exports:
                             _CSIsHorsemanLiveOn, _CSIsIOS, _CSIsIPad, _CSIsIPhone,
                             _CSIsInternalBuild, _CSIsMac, _CSIsOSX, _CSIsSimulator,
                             _CSIsTV, _CSIsTorpedo, _CSIsVirtualMachine, _CSIsWatch,
-                            _CSLogContextFacilityCoreSpeech, _CSLogInitIfNeeded,
-                            _CSLogInsightsContext, _CSLoggingSubsystem,
+                            _CSIsXR, _CSLogContextFacilityCoreSpeech,
+                            _CSLogInitIfNeeded, _CSLogInsightsContext,
+                            _CSLoggingSubsystem,
                             _CSMachAbsoluteTimeAddTimeInterval,
                             _CSMachAbsoluteTimeGetTimeInterval,
                             _CSMachAbsoluteTimeSubtractTimeInterval,
@@ -96,8 +97,12 @@ exports:
                             _kCSDiagnosticReporterAudioStreamDeallocDuringStreaming,
                             _kCSDiagnosticReporterAudioTypeKey,
                             _kCSDiagnosticReporterConsectiveFalseFirstPassTriggers,
+                            _kCSDiagnosticReporterCorespeechdCrash,
                             _kCSDiagnosticReporterDomainKey,
+                            _kCSDiagnosticReporterEndpointDelayNegative,
+                            _kCSDiagnosticReporterEndpointDelayTooHigh,
                             _kCSDiagnosticReporterEndpointerModelVersionIsNil,
+                            _kCSDiagnosticReporterEndpointerProxyMissingFirstAudioSampleHostTime,
                             _kCSDiagnosticReporterEndpointerSnapshotTime,
                             _kCSDiagnosticReporterEndpointerTypeKey,
                             _kCSDiagnosticReporterFirstPassFailuresSnapshotTime,
@@ -105,6 +110,7 @@ exports:
                             _kCSDiagnosticReporterHardwareRemoved,
                             _kCSDiagnosticReporterMHUserSpeakingContextEndedMissingWithMedocEnabled,
                             _kCSDiagnosticReporterMHVoiceTriggerContextMHIdMissing,
+                            _kCSDiagnosticReporterMediaserverdCrash,
                             _kCSDiagnosticReporterMixedAudioSessionInterrupted,
                             _kCSDiagnosticReporterNoHardwareError,
                             _kCSDiagnosticReporterNoRouteAvailable,
@@ -141,6 +147,7 @@ exports:
                             _kCSDiagnosticReporterVoiceIdUnrecognizedMetaData,
                             _kCSDiagnosticReporterVoiceTriggerAPLeak,
                             _kCSDiagnosticReporterVoiceTriggerAPStuckInTransition,
+                            _kCSDiagnosticReporterVoiceTriggerLaunchDelayTooHigh,
                             _kCSDiagnosticReporterVoiceTriggerLaunchSlow,
                             _kCSDiagnosticReporterVoiceTriggerSecondPassCompleteWatchDogFire,
                             _kCSDiagnosticReporterVoiceTriggerSnapshotTime,
@@ -188,10 +195,9 @@ exports:
                             CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDAPIResult,
                             CSKeywordAnalyzerNDEAPI,
                             CSKeywordAnalyzerNDEAPIResult,
-                            CSKeywordAnalyzerQuasar, CSMil2BnnsUtils,
-                            CSMobileAssetVersions, CSNDEObjectFactory,
-                            CSNovDetector, CSNovDetectorResult, CSOSTransaction,
-                            CSOSTransactionStat, CSOnDeviceCompilationHandler,
+                            CSKeywordAnalyzerQuasar, CSMobileAssetVersions,
+                            CSNDEObjectFactory, CSNovDetector, CSNovDetectorResult,
+                            CSOSTransaction, CSOSTransactionStat,
                             CSOnDeviceCompilationUtils, CSPhraseDetector,
                             CSPhraseDetectorInfo, CSPlainAudioFileWriter, CSPolicy,
                             CSPowerAssertionAccessory, CSPowerLogger,

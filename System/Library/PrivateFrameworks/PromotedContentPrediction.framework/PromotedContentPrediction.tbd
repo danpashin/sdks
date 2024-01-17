@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PromotedContentPrediction.framework/PromotedContentPrediction
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ADFeatureReadFrom, _ADOdmlDefaultsBundleID,
                             _ADOdmlResponseV2ReadFrom, _APOdmlSimulateCrash,
                             _ODML_VERSION, _OdmlLogForCategory,
@@ -200,6 +200,7 @@ exports:
                             _kAPOdmlFeatureTypeAppDownloadVectorKey,
                             _kAPOdmlFeatureTypeAppUsageVectorKey,
                             _kAPOdmlFeatureTypeAppVectorKey,
+                            _kAPOdmlFeatureTypeAppVectorODMLKey,
                             _kAPOdmlFeatureTypeCAStorefront,
                             _kAPOdmlFeatureTypeCHStorefront,
                             _kAPOdmlFeatureTypeDEStorefront,
@@ -221,8 +222,10 @@ exports:
                             _kAPOdmlFeatureTypeNZStorefront,
                             _kAPOdmlFeatureTypePTTRKey,
                             _kAPOdmlFeatureTypePTTRLogitKey,
+                            _kAPOdmlFeatureTypeQueryVectorKey,
                             _kAPOdmlFeatureTypeStorefrontNull,
                             _kAPOdmlFeatureTypeUSStorefront,
+                            _kAPOdmlFeatureTypeUserQueryVectorKey,
                             _kAPOdmlFeatureTypeUserRatingKey,
                             _kAPOdmlFeatureTypeUserRatingValueNull,
                             _kAPOdmlFeatureTypeUserRatingValueOff,
@@ -242,6 +245,8 @@ exports:
                             _kAPOdmlPredictionModelOutputMaxExceeded,
                             _kAPOdmlPredictionModelOutputMinExceeded,
                             _kAPOdmlPredictionModelOutputSentinelError,
+                            _kAPOdmlPredictionQueryVectorCalculationFailureError,
+                            _kAPOdmlPredictionQueryVectorRetrievalFailureError,
                             _kAPOdmlQueryTypeKey, _kAPOdmlRankableResponseKey,
                             _kAPOdmlRerankingBatchPredictionSuccess,
                             _kAPOdmlRerankingDisabledWithServer,

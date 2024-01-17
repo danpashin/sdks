@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoiceOverServices.framework/VoiceOverServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AXHandGestureEventFirst, _AXHandGestureEventLast,
                             _AXHandGestureEventUsageNone,
                             _AXSettingsLocalizedStringForKey,
@@ -21,6 +21,7 @@ exports:
                             _VOSBluetoothAvailabilityChangedNotification,
                             _VOSBluetoothConnectabilityChangedNotification,
                             _VOSBluetoothConnectionStatusChangedNotification,
+                            _VOSBluetoothCoreBluetoothManagerReadyNotification,
                             _VOSBluetoothDeviceConnectFailedNotification,
                             _VOSBluetoothDeviceConnectSuccessNotification,
                             _VOSBluetoothDeviceDisconnectFailedNotification,
@@ -357,14 +358,4 @@ exports:
                             _VOSProfileCommand, _VOSProfileGesture,
                             _VOSProfileKeyChord, _VOSProfileMode,
                             _VOSProfileSecondaryCommand ]
-    objc-ivars:           [ VOSBluetoothManager._audioConnected,
-                            VOSBluetoothManager._authorizedServices,
-                            VOSBluetoothManager._available,
-                            VOSBluetoothManager._btAddrDict,
-                            VOSBluetoothManager._btDeviceDict,
-                            VOSBluetoothManager._discoveryAgent,
-                            VOSBluetoothManager._localDevice,
-                            VOSBluetoothManager._pairingAgent,
-                            VOSBluetoothManager._scanningEnabled,
-                            VOSBluetoothManager._session ]
 ...

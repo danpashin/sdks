@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TeaDB.framework/TeaDB
-current-version:       804
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV5TeaDB10ColumnTypeADMc,
                             _$s10Foundation4DataV5TeaDB10ColumnTypeADWP,
                             _$s10Foundation4DataV5TeaDB14QueryValueTypeADMc,
@@ -99,6 +99,18 @@ exports:
                             _$s5TeaDB10FastEntityCMn, _$s5TeaDB10FastEntityCMo,
                             _$s5TeaDB10FastEntityCMu, _$s5TeaDB10FastEntityCN,
                             _$s5TeaDB10FastEntityCfD, _$s5TeaDB10FastEntityCfd,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GAEyq12_GtcAA0E4TypeRzAaUR_AaUR0_AaUR1_AaUR2_AaUR3_AaUR4_AaUR5_AaUR6_AaUR7_AaUR8_AaUR9_AaUR10_AaUR11_AaUR12_r13_lufC,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GAEyq12_GtcAA0E4TypeRzAaUR_AaUR0_AaUR1_AaUR2_AaUR3_AaUR4_AaUR5_AaUR6_AaUR7_AaUR8_AaUR9_AaUR10_AaUR11_AaUR12_r13_lufCTj,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GAEyq12_GtcAA0E4TypeRzAaUR_AaUR0_AaUR1_AaUR2_AaUR3_AaUR4_AaUR5_AaUR6_AaUR7_AaUR8_AaUR9_AaUR10_AaUR11_AaUR12_r13_lufCTq,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GAEyq12_GtcAA0E4TypeRzAaUR_AaUR0_AaUR1_AaUR2_AaUR3_AaUR4_AaUR5_AaUR6_AaUR7_AaUR8_AaUR9_AaUR10_AaUR11_AaUR12_r13_lufc,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GtcAA0E4TypeRzAaTR_AaTR0_AaTR1_AaTR2_AaTR3_AaTR4_AaTR5_AaTR6_AaTR7_AaTR8_AaTR9_AaTR10_AaTR11_r12_lufC,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GtcAA0E4TypeRzAaTR_AaTR0_AaTR1_AaTR2_AaTR3_AaTR4_AaTR5_AaTR6_AaTR7_AaTR8_AaTR9_AaTR10_AaTR11_r12_lufCTj,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GtcAA0E4TypeRzAaTR_AaTR0_AaTR1_AaTR2_AaTR3_AaTR4_AaTR5_AaTR6_AaTR7_AaTR8_AaTR9_AaTR10_AaTR11_r12_lufCTq,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GAEyq11_GtcAA0E4TypeRzAaTR_AaTR0_AaTR1_AaTR2_AaTR3_AaTR4_AaTR5_AaTR6_AaTR7_AaTR8_AaTR9_AaTR10_AaTR11_r12_lufc,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GtcAA0E4TypeRzAaSR_AaSR0_AaSR1_AaSR2_AaSR3_AaSR4_AaSR5_AaSR6_AaSR7_AaSR8_AaSR9_AaSR10_r11_lufC,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GtcAA0E4TypeRzAaSR_AaSR0_AaSR1_AaSR2_AaSR3_AaSR4_AaSR5_AaSR6_AaSR7_AaSR8_AaSR9_AaSR10_r11_lufCTj,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GtcAA0E4TypeRzAaSR_AaSR0_AaSR1_AaSR2_AaSR3_AaSR4_AaSR5_AaSR6_AaSR7_AaSR8_AaSR9_AaSR10_r11_lufCTq,
+                            _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GAEyq10_GtcAA0E4TypeRzAaSR_AaSR0_AaSR1_AaSR2_AaSR3_AaSR4_AaSR5_AaSR6_AaSR7_AaSR8_AaSR9_AaSR10_r11_lufc,
                             _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GtcAA0E4TypeRzAaRR_AaRR0_AaRR1_AaRR2_AaRR3_AaRR4_AaRR5_AaRR6_AaRR7_AaRR8_AaRR9_r10_lufC,
                             _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GtcAA0E4TypeRzAaRR_AaRR0_AaRR1_AaRR2_AaRR3_AaRR4_AaRR5_AaRR6_AaRR7_AaRR8_AaRR9_r10_lufCTj,
                             _$s5TeaDB10FastEntityCyAcA0C6ColumnCyxG_AEyq_GAEyq0_GAEyq1_GAEyq2_GAEyq3_GAEyq4_GAEyq5_GAEyq6_GAEyq7_GAEyq8_GAEyq9_GtcAA0E4TypeRzAaRR_AaRR0_AaRR1_AaRR2_AaRR3_AaRR4_AaRR5_AaRR6_AaRR7_AaRR8_AaRR9_r10_lufCTq,

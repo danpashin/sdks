@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
@@ -7,7 +7,7 @@ current-version:       14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _GSColorCreateColorWithDeviceRGBA,
                             _GSColorCreateColorWithDeviceRGBAInfo,
                             _GSColorCreateWithDeviceWhite,
@@ -83,6 +83,7 @@ exports:
                             _GSKeyboardCreateWithCountryCode,
                             _GSKeyboardGetHWKeyboardType,
                             _GSKeyboardGetKeyCodeForChar, _GSKeyboardGetLayout,
+                            _GSKeyboardGetLayoutContext,
                             _GSKeyboardGetLiveModifierState,
                             _GSKeyboardGetLocale, _GSKeyboardGetModifierState,
                             _GSKeyboardGetStickyLockModifierState,
@@ -93,7 +94,7 @@ exports:
                             _GSKeyboardIsGlobeKeyUsagePair, _GSKeyboardRelease,
                             _GSKeyboardReset,
                             _GSKeyboardSetHardwareKeyboardAttached,
-                            _GSKeyboardSetLayout,
+                            _GSKeyboardSetLayout, _GSKeyboardSetLayoutContext,
                             _GSKeyboardSetTranslationOptions,
                             _GSKeyboardTranslateKey,
                             _GSKeyboardTranslateKeyExtended,

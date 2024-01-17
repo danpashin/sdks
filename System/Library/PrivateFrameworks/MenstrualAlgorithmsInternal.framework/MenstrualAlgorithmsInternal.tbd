@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MenstrualAlgorithmsInternal.framework/MenstrualAlgorithmsInternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _MAIAnalysisWindowAgeKey,
                             _MAIDeviationTrueBeforeRulesKey,
                             _MAIInfrequentBleedingKey, _MAIIrregularBleedingKey,
@@ -67,7 +67,11 @@ exports:
                             __ZN11Nightingale11FWEstimator25setFWForReturnLucyFwEndDLERNS_28fwEstimate1st_inOut_internalE,
                             __ZN11Nightingale11FWEstimator26getCASignalAtFwEndEstimateEf,
                             __ZN11Nightingale11FWEstimator26print_vcaliBestQualityPickENSt3__16vectorINS_19caliBestQualityPickENS1_9allocatorIS3_EEEENS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEE,
+                            __ZN11Nightingale11FWEstimator27all_inDL_vec_has_min_lengthERKNS_13structDLIn_hrEj,
+                            __ZN11Nightingale11FWEstimator27getDaysPassedEPAvailabilityERKNS_20extractCaliInputsRtnEi,
+                            __ZN11Nightingale11FWEstimator27getDaysWristTempInPassNDaysENSt3__16vectorIiNS1_9allocatorIiEEEERKNS_20extractCaliInputsRtnERNS_26coreAnalyticsFWEstimator_tE,
                             __ZN11Nightingale11FWEstimator27updateAFW_eligibleTotalCntsERNS_25FWEstimatorHistOut_ACycleEiib,
+                            __ZN11Nightingale11FWEstimator28all_inDL_vec_has_same_lengthERKNS_13structDLIn_hrE,
                             __ZN11Nightingale11FWEstimator28passedMissingRateAtDetectionEiNSt3__16vectorIfNS1_9allocatorIfEEEEf,
                             __ZN11Nightingale11FWEstimator28updateAFW_cycleFactorCAItemsERNS_25FWEstimatorHistOut_ACycleERKNS_9cycleInfoERNSt3__14pairINS6_6vectorIiNS6_9allocatorIiEEEENS8_INS_8PhaseSetENS9_ISC_EEEEEEb,
                             __ZN11Nightingale11FWEstimator29combineEPandDL_failureReasonsERKNS_32FwEndConfirmationFailureReason_tES3_,
@@ -76,6 +80,7 @@ exports:
                             __ZN11Nightingale11FWEstimator31suppressHistFWOverCycleBoundaryEiNSt3__18optionalIiEERNS_25FWEstimatorHistOut_ACycleE,
                             __ZN11Nightingale11FWEstimator34print_fwEstimate1st_inOut_internalERKNS_28fwEstimate1st_inOut_internalENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEESA_SA_,
                             __ZN11Nightingale11FWEstimator34updateLucyFwEndLSTM_failureReasonsERNS_32FwEndConfirmationFailureReason_tERNS_29extractedLucyDayStreamSlice_tEbbb,
+                            __ZN11Nightingale11FWEstimator39getNumWristTempAvailRegardlessOf1stTempERKNSt3__16vectorINS2_IfNS1_9allocatorIfEEEENS3_IS5_EEEEii,
                             __ZN11Nightingale11FWEstimator41getLucyCA_caliDay2DayNoiseAnchoredByTodayERKNSt3__16vectorINS_12ngt_DayInputENS1_9allocatorIS3_EEEENS1_4pairIiiEE,
                             __ZN11Nightingale11FWEstimatorC1ERNS_10ngt_ConfigE,
                             __ZN11Nightingale11FWEstimatorC1Ev,
@@ -177,6 +182,7 @@ exports:
                             __ZN11Nightingale14uiLogProcessor32get_jDay1stOPKAftLastPeriodStartERKNSt3__16vectorINS_12ngt_DayInputENS1_9allocatorIS3_EEEERNS2_INS_9cycleInfoENS4_IS9_EEEE,
                             __ZN11Nightingale14uiLogProcessor32get_jDayLastOPKPosBfr1stPeriodStEiRKNSt3__16vectorINS_12ngt_DayInputENS1_9allocatorIS3_EEEE,
                             __ZN11Nightingale14uiLogProcessor33getLastFewCyclePeriodSlideMeanStdERNS_5uiLogERKNS_10ngt_ConfigEi,
+                            __ZN11Nightingale14uiLogProcessor33get_cycle_start_with_mean_std_1stERNSt3__16vectorINS_9cycleInfoENS1_9allocatorIS3_EEEE,
                             __ZN11Nightingale14uiLogProcessor36get_jDayLastNoFlowAftLastPeriodStartERKNSt3__16vectorINS_12ngt_DayInputENS1_9allocatorIS3_EEEERNS2_INS_9cycleInfoENS4_IS9_EEEE,
                             __ZN11Nightingale14uiLogProcessor38getAvgCycleLenForSomeCycleReproductiveERNSt3__16vectorINS_9cycleInfoENS1_9allocatorIS3_EEEEii,
                             __ZN11Nightingale14uiLogProcessor7processERKNSt3__16vectorINS_12ngt_DayInputENS1_9allocatorIS3_EEEERNS1_4pairINS2_IiNS4_IiEEEENS2_INS_8PhaseSetENS4_ISC_EEEEEE,
@@ -349,6 +355,8 @@ exports:
                             __ZN11Nightingale22ngt_HistoricalAnalyzerC2Ev,
                             __ZN11Nightingale22ngt_HistoricalAnalyzerD1Ev,
                             __ZN11Nightingale22ngt_HistoricalAnalyzerD2Ev,
+                            __ZN11Nightingale24coreAnalyticsDayStream_t18getFromFWEstimatorERNS_26coreAnalyticsFWEstimator_tE,
+                            __ZN11Nightingale24coreAnalyticsDayStream_t24getCABoundedNumberOfDaysEi,
                             __ZN11Nightingale24ngt_dnn_period_predict_t22ngt_dnn_process_periodERKNS_13ngt_hr_DLin_tERNSt3__16vectorIfNS4_9allocatorIfEEEE,
                             __ZN11Nightingale24ngt_dnn_period_predict_tC1Ev,
                             __ZN11Nightingale24ngt_dnn_period_predict_tC2Ev,

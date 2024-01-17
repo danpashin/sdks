@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
-current-version:       1130
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CMTimeRangeFromRCTimeRange,
                             _NSStringFromRCDurationFormattingStyle,
                             _NSStringFromRCTimeRange, _OSLogForCategory,
@@ -29,10 +29,9 @@ exports:
                             _RCCloudRecording_UniqueID,
                             _RCCloudRecordingsDatabaseFileName,
                             _RCCloudRecordingsStoreURL, _RCComputeFileDigest,
-                            _RCDebugAODOverlay, _RCDebugAssertsDisabled,
-                            _RCDebugForceEncryptedMessagingUI,
-                            _RCDebugForceIncompatibleDevices,
-                            _RCDebugNotification, _RCDebugStringForTimeInterval,
+                            _RCCurrentMediaTime, _RCDebugAODOverlay,
+                            _RCDebugAssertsDisabled, _RCDebugNotification,
+                            _RCDebugStringForTimeInterval,
                             _RCDeviceUnlockedSinceBoot, _RCDiskCacheDirectory,
                             _RCDispatchNoSoonerThan, _RCDisplayStringForString,
                             _RCEqualFloatsWithTolerance,
@@ -84,7 +83,6 @@ exports:
                             _RCSSavedRecordingServiceKeyEncryptedAccountStatus,
                             _RCSSavedRecordingServiceKeyEncryptedFieldsStatus,
                             _RCSSavedRecordingServiceKeyFirstImportIsComplete,
-                            _RCSSavedRecordingServiceKeyShouldShowEncryptedMessaging,
                             _RCSSavedRecordingServiceMachServiceName,
                             _RCSavedRecordingServiceCompositionAVURLsBeingExportedDidChangeNotification,
                             _RCSavedRecordingServiceCompositionAVURLsBeingModifiedDidChangeNotification,
@@ -97,9 +95,7 @@ exports:
                             _RCSavedRecordingsModelDidFailToCreateDatabaseNotification,
                             _RCSavedRecordingsModelNewIndexPathUserInfoKey,
                             _RCScalarDecibelValue, _RCSearchableItemForRecording,
-                            _RCShouldAssertWarnings,
-                            _RCShouldShowEncryptedMessagingNotificationName,
-                            _RCStockRecordingsURL,
+                            _RCShouldAssertWarnings, _RCStockRecordingsURL,
                             _RCSupportDirectoryForDatabase,
                             _RCSupportsDebugAODLogs, _RCSupportsDebugAODOverlay,
                             _RCTestAlwaysShowLockScreenPlugin,
@@ -132,13 +128,13 @@ exports:
                             _RCUseDevelopmentContainer, _RCVoiceMemosBundleID,
                             _RCVoiceMemosErrorDomain,
                             _RCVoxInitiatedMigrationNotificationName,
-                            _isNotNullAndNotNSNull, _kCMDefaultTimeScale,
-                            _kCloudStoreXPCServiceName, _kDefaultFetchBatchSize,
-                            _kRCBackgroundContextName, _kRCViewContextName,
-                            _kVMLogCategoryDefault, _kVMLogCategoryLockScreen,
-                            _kVMLogCategoryOrphan, _kVMLogCategoryRoute,
-                            _kVMLogCategoryService, _kVMLogCategorySync,
-                            _kVMLogCategoryWatchOS ]
+                            _VMAudioWriteDelay, _isNotNullAndNotNSNull,
+                            _kCMDefaultTimeScale, _kCloudStoreXPCServiceName,
+                            _kDefaultFetchBatchSize, _kRCBackgroundContextName,
+                            _kRCViewContextName, _kVMLogCategoryDefault,
+                            _kVMLogCategoryLockScreen, _kVMLogCategoryOrphan,
+                            _kVMLogCategoryRoute, _kVMLogCategoryService,
+                            _kVMLogCategorySync, _kVMLogCategoryWatchOS ]
     objc-classes:         [ PlaybackVoiceMemoIntent,
                             PlaybackVoiceMemoIntentResponse,
                             RCAnalyticsUtilities, RCAssetWriter, RCBlockScheduler,

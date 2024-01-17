@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriStates.framework/SiriStates
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10SiriStates10CallClientC04stopD0yyFTj,
                             _$s10SiriStates10CallClientC04stopD0yyFTq,
                             _$s10SiriStates10CallClientC12currentStateAA0cF0CSgvMTj,
@@ -424,6 +424,12 @@ exports:
                             _$s10SiriStates22InstrumentationManagerC24currentSessionIdentifier10Foundation4UUIDVvpMV,
                             _$s10SiriStates22InstrumentationManagerC24currentSessionIdentifier10Foundation4UUIDVvsTj,
                             _$s10SiriStates22InstrumentationManagerC24currentSessionIdentifier10Foundation4UUIDVvsTq,
+                            _$s10SiriStates22InstrumentationManagerC30kSRUIFPreferencesDefaultDomainSSvau,
+                            _$s10SiriStates22InstrumentationManagerC30kSRUIFPreferencesDefaultDomainSSvgZ,
+                            _$s10SiriStates22InstrumentationManagerC30kSRUIFPreferencesDefaultDomainSSvpZ,
+                            _$s10SiriStates22InstrumentationManagerC34kSRUIFLastStoredUUIDTurnIdentifierSSvau,
+                            _$s10SiriStates22InstrumentationManagerC34kSRUIFLastStoredUUIDTurnIdentifierSSvgZ,
+                            _$s10SiriStates22InstrumentationManagerC34kSRUIFLastStoredUUIDTurnIdentifierSSvpZ,
                             _$s10SiriStates22InstrumentationManagerC6streamSo0A22AnalyticsMessageStream_pvg,
                             _$s10SiriStates22InstrumentationManagerC6streamSo0A22AnalyticsMessageStream_pvpMV,
                             _$s10SiriStates22InstrumentationManagerCMa,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WiFiPolicy.framework/WiFiPolicy
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _MachTimeToSecs, _TBCentroidDegreesToRadians,
                             _TBCentroidRadiansToDegrees, _TBMacAddressFromString,
                             _TBMacAdressFromLong,
@@ -15,9 +15,11 @@ exports:
                             _TBPersistenceRemoteStoreServerServiceNameCache,
                             _WCAErrorDomain, _WFLoggerTimerTmoCallBack,
                             _WFMeasureResult_PropertyToBinMethod,
+                            _WiFiFaultHandlingLimitsStringMap,
                             _WiFiPolicyVersionNumber, _WiFiPolicyVersionString,
                             _WiFiUsageAccessPointVersionStrings,
                             _WiFiUsageConnectionQualityRecordConvertDisconnectReasonToGEOReason,
+                            _WiFiUsageFaultReasonStringMap,
                             _WiFiUsageLQMFieldNameToFeatureMethod,
                             _WiFiUsageLQMFieldNameToRoundMethod,
                             _WiFiWalletSignedDataForRawPass,
@@ -139,11 +141,11 @@ exports:
                             _kWiFiUsageTimeBetweenLinkTestInSecs ]
     objc-classes:         [ CounterObj, DataComparisonByBits,
                             DataComparisonByBytes, IntegerByBandObj,
-                            ObjectComparisonByTokens, StringComparisonByChars,
-                            TBAccessPointMO, TBAnalytics, TBCacheAnalyticsEvent,
-                            TBCentroidCalculator, TBCoreDataSource,
-                            TBCoreDataStoreDescriptor, TBDataSource,
-                            TBDataSourceMediator, TBDefaults, TBError,
+                            ObjectComparisonByTokens, SiriNWConnection,
+                            StringComparisonByChars, TBAccessPointMO, TBAnalytics,
+                            TBCacheAnalyticsEvent, TBCentroidCalculator,
+                            TBCoreDataSource, TBCoreDataStoreDescriptor,
+                            TBDataSource, TBDataSourceMediator, TBDefaults, TBError,
                             TBErrorFetchResponse, TBFetchAnalyticsEvent,
                             TBFetchedTile, TBGloriaTile, TBJoinAnalyticsEvent,
                             TBLocalFetchRequestDescriptor, TBLocalFetchResponse,
@@ -176,6 +178,8 @@ exports:
                             WiFi3BarsTileCacheObserver, WiFi3BarsTileFetcher,
                             WiFiAvailabilityEngine, WiFiAvailabilityMatch,
                             WiFiLexicon, WiFiLocaleManager, WiFiLocationManager,
+                            WiFiPolicyNetworkActivity,
+                            WiFiPolicyNetworkActivityTracing,
                             WiFiSettlementConfiguration, WiFiSettlementContext,
                             WiFiSettlementObserver, WiFiSoftError,
                             WiFiUsageAccessPointProfile,

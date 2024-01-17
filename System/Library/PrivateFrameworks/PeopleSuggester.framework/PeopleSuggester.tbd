@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PeopleSuggester.framework/PeopleSuggester
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _Adaptable, _All,
                             _CAPContactFillerContactEventReadFrom,
                             _CAPContactFillerContactFillerEventForShareReadFrom,
@@ -46,9 +46,11 @@ exports:
                             __PSShareSheetSiriSettingsDomain_Feedback,
                             __PSShareSheetSuggestionBundleIDMapping,
                             __PSShareSheetSuggestionBundleIDs, __PSSuggestionKey,
-                            __Z16_PSUnarchiverZipPKvmP5NSURL, _cacheUpdateTime,
-                            _comparisonResult, _conversationIdentifierPrefix,
-                            _fetchLimit, _kPSBiomeFeedbackSubpath,
+                            __Z16_PSUnarchiverZipPKvmP5NSURL,
+                            __uncachedPSShareSheetSuggestionBundleIDMapping,
+                            _cacheUpdateTime, _comparisonResult,
+                            _conversationIdentifierPrefix, _fetchLimit,
+                            _kPSBiomeFeedbackSubpath,
                             _kPSCNAutocompleteFeedbackDataVersion,
                             _kPSCNAutocompleteFeedbackStreamID,
                             _kPSIncomingInteractionAccount,
@@ -119,8 +121,8 @@ exports:
                             _PSCandidate, _PSCluster, _PSClusterPoint,
                             _PSClustersArchive, _PSConfidenceModel,
                             _PSConfidenceModelArchive, _PSConfidenceModelDriver,
-                            _PSConfidenceModelForSharing, _PSConstants, _PSContact,
-                            _PSContactCache, _PSContactEmbedding,
+                            _PSConfidenceModelForSharing, _PSConfig, _PSConstants,
+                            _PSContact, _PSContactCache, _PSContactEmbedding,
                             _PSContactEmbeddingDataCollectionUtilities,
                             _PSContactEmbeddingFeatureExtractor,
                             _PSContactEmbeddingUtilities,
@@ -298,6 +300,6 @@ exports:
                             CoreBehaviorAnalysisPETCoreBehaviorAnalysisEvent._utiTypeOverlap,
                             _PSFTZKWTrialUpdateGuardedData._updated,
                             _PSFeatureDictionary._count,
-                            _PSFeatureDictionary._otherValues,
-                            _PSFeatureDictionary._timeBuckets ]
+                            _PSFeatureDictionary._timeBuckets,
+                            _PSFeatureDictionary._unoptimizedValues ]
 ...

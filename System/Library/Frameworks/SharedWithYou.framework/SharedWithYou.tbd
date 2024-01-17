@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/SharedWithYou.framework/SharedWithYou
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/Frameworks/SharedWithYouCore.framework/SharedWithYouCore ]
     symbols:              [ _$s13SharedWithYou24_CollaborationDetailViewV12itemProvider11listContentACyxGSo06NSItemH0C_xyXEtcfC,
                             _$s13SharedWithYou24_CollaborationDetailViewV12itemProvider12contentTitle13collaborators11listContentACyxGSo06NSItemH0C_SSSaySo8SWPersonCGSgxyXEtcfC,

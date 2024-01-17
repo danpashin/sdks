@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ __ZN11CAExceptionD0Ev, __ZN11CAExceptionD1Ev,
                             __ZN11CAExceptionD2Ev,
                             __ZN12CAXException15sWarningHandlerE,
@@ -146,6 +146,7 @@ exports:
                             __ZN2as28GetServerXPCListenerEndpointEv,
                             __ZN2as28IsStandardMXNotificationNameEP8NSString,
                             __ZN2as28SetServerXPCListenerEndpointEP21NSXPCListenerEndpoint,
+                            __ZN2as29GetSpecialMXNotificationNamesEv,
                             __ZN2as6client11StreamPrefs16default_instanceEv,
                             __ZN2as6client11StreamPrefs17clearStreamFormatEv,
                             __ZN2as6client11StreamPrefs19mutableStreamFormatEv,
@@ -970,4 +971,5 @@ exports:
                             _kAudioSessionNotification_SpatialPreferencesChanged,
                             _sessionManagerXPCCallbackInterface,
                             _sessionManagerXPCInterface ]
+    objc-classes:         [ AVAudioApplicationSpecification ]
 ...

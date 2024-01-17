@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AWDDEDBugSessionCreatedReadFrom,
                             _AWDDEDBugSessionEndedReadFrom,
                             _AWDDEDDaemonStartedReadFrom,
@@ -19,6 +19,7 @@ exports:
                             _AWDDEDFinisherStartedReadFrom,
                             _DEDAddressForIDSDevice,
                             _DEDAnalyticsLoggingSubsystem,
+                            _DEDBugSessionDidCommit,
                             _DEDBugSessionKeyClientAddress,
                             _DEDBugSessionKeyClientTransportType,
                             _DEDBugSessionKeyConfiguration,
@@ -109,8 +110,9 @@ exports:
                             _DEDSeedingClientErrorDomain,
                             _DEDSeedingFileClerkFilename,
                             _DEDSeedingFilerErrorDomain, _DEDSessionCleanupLog,
-                            _DEDSessionStartLog, _DEDTimeElapsed,
-                            _DEDTimeIntervalNotAvailable, _DEDUnknown,
+                            _DEDSessionStartLog, _DEDSessionStateLog,
+                            _DEDTimeElapsed, _DEDTimeIntervalNotAvailable,
+                            _DEDUnknown,
                             _DiagnosticExtensionsDaemonVersionNumber,
                             _DiagnosticExtensionsDaemonVersionString, _Log,
                             _ResourceLoaderErrorDomain,

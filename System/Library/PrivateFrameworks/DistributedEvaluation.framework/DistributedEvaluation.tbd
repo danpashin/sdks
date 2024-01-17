@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DistributedEvaluation.framework/DistributedEvaluation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AddRecordsForType, _AddRecordsForTypeWithUUIDs,
                             _DESAmendedRecordInfo,
                             _DESApplyAsynchronousEnumerator,
@@ -85,7 +85,6 @@ exports:
                             _MLRuntimePluginID_PFLHRPeriodPredStaticBat,
                             _MLRuntimePluginID_PFLWTPeriodPredBattery,
                             _MLRuntimePluginID_PFLWTPeriodPredCharger,
-                            _MLRuntimePluginID_ProactiveShareSheetLighthousePFLPlugin,
                             _MLRuntimePluginID_RepackagingPlugin,
                             _MLRuntimePluginID_SiriCoreMetricsPlugin,
                             _MLRuntimePluginID_XCTest, _RecordDataForUUID,
@@ -97,7 +96,7 @@ exports:
                             _almostEqualWithAccuracy, _binaryGCD,
                             _calculateSigmaFromEpsilonAndDeltaForUnitL2Norm,
                             _kClippingBoundKey, _kClippingIndicatorScaleKey,
-                            _kCoreEventMaxLimit,
+                            _kCoreEventMaxLimit, _kCurrentModelVersionKey,
                             _kDESDistributedEvaluationErrorDomain,
                             _kDESDodMLPolicy_DefaultPeriod,
                             _kDESDodMLPolicy_DefaultRecipeCountLimit,
@@ -105,11 +104,14 @@ exports:
                             _kDESDodMLPolicy_MaxTimeLimit,
                             _kDebugInfoDescriptionKey, _kDebugInfoResultKey,
                             _kDebugInfoTimestampKey, _kDediscoMessageLimitBytes,
+                            _kDownScalingOrderKey,
                             _kEncodedCategoricalMetadataKey,
                             _kEncodedNumericMetadataKey, _kFedStatsDataTypeKey,
+                            _kFederatedBufferContextKey,
                             _kHighMemoryExtensionPointName,
-                            _kICloudAggServiceKey, _kL2NormBoundKey,
-                            _kLowMemoryExtensionPointName, _kMaxNormKey,
+                            _kICloudAggServiceKey, _kIterationStartTimeKey,
+                            _kL2NormBoundKey, _kLowMemoryExtensionPointName,
+                            _kMaxNormKey, _kMaximumStalenessKey,
                             _kMetadataAlgoParamClippingBound,
                             _kMetadataAlgoParamCohortSigma,
                             _kMetadataAlgoParamCurrentCohortSize,
@@ -138,7 +140,8 @@ exports:
                             _kMetadataSchemaDictionaryRangeKey,
                             _kMetadataSchemaTypeKey, _kNormBinCountKey,
                             _kPrivacyIdentifierExtensionKey,
-                            _kPrivacyIdentifierKey, _kRecipeDPParametersDeltaKey,
+                            _kPrivacyIdentifierKey, _kRamsayRecipeIDKey,
+                            _kRecipeDPParametersDeltaKey,
                             _kRecipeDPParametersEpsilonKey,
                             _kRecipeDPParametersKey,
                             _kRecipeDPParametersMechanismGaussian,
@@ -147,8 +150,8 @@ exports:
                             _kRecipeLocalDPParametersKey, _kRecipeMaxNormKey,
                             _kRecordRetentionDaysToExpiration,
                             _kRecordRetentionMaxRecordCount,
-                            _kRestrictedExtensionPointName,
-                            _sDESCoreDuetEventLimitKey,
+                            _kRestrictedExtensionPointName, _kStalenessBiasKey,
+                            _kStalenessScaleKey, _sDESCoreDuetEventLimitKey,
                             _sDESCoreDuetEventPredicateKey,
                             _sDESCoreDuetSupportedEventStreamNamesKey,
                             _sDESDaysToExpirationOfRecordsKey,
@@ -168,13 +171,14 @@ exports:
                             DESDodMLTaskSchedulingPolicy, DESEncryptedData,
                             DESEventManager, DESExceptionCatchingEvaluator,
                             DESFedStatsDataType, DESFedStatsRecorder,
-                            DESGaussianAlgorithmParameters, DESInternalDodMLTask,
-                            DESInternalDodMLTaskResult, DESJSONPredicate,
-                            DESLogging, DESMMappedFile, DESMetadataSchema,
-                            DESNumericMetadataEncoder, DESNumericStatsRecorder,
-                            DESPFLEncryptableBuffer, DESPFLEncryptor,
-                            DESPFLNoisable, DESRecipe, DESRecipeEvaluationSession,
-                            DESRecordSet, DESRecordStore, DESRecordStoreManager,
+                            DESFederatedBuffer, DESGaussianAlgorithmParameters,
+                            DESInternalDodMLTask, DESInternalDodMLTaskResult,
+                            DESJSONPredicate, DESLogging, DESMMappedFile,
+                            DESMetadataSchema, DESNumericMetadataEncoder,
+                            DESNumericStatsRecorder, DESPFLEncryptableBuffer,
+                            DESPFLEncryptor, DESPFLNoisable, DESRecipe,
+                            DESRecipeEvaluationSession, DESRecordSet,
+                            DESRecordStore, DESRecordStoreManager,
                             DESRecordStorePolicyManager, DESSandBoxManager,
                             DESSeparatedDPParameters, DESServiceAccess,
                             DESSignatureKey, DESSparsification,

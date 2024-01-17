@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CDPAccountPropertyEscrowRepairNeededKey,
                             _CDPAccountPropertyLastModifiedDateKey,
                             _CDPAccountPropertyValueKey,
@@ -48,6 +48,7 @@ exports:
                             _cdp_dispatch_after_with_qos,
                             _cdp_dispatch_async_with_qos,
                             _kCDPAccountRpdProbationFirstSeenDateKey,
+                            _kCDPAnalyticsAccountType,
                             _kCDPAnalyticsAdvancedDataProtectionState,
                             _kCDPAnalyticsCDPEnablement,
                             _kCDPAnalyticsCDPFinishEvent,
@@ -61,6 +62,7 @@ exports:
                             _kCDPAnalyticsContextType,
                             _kCDPAnalyticsCustodianRecoveryEvent,
                             _kCDPAnalyticsDeviceListPickerEvent,
+                            _kCDPAnalyticsDevicePosture,
                             _kCDPAnalyticsDidSucceed,
                             _kCDPAnalyticsDoesSingleICSCHasRandomSecret,
                             _kCDPAnalyticsEscapeOffer,
@@ -70,8 +72,10 @@ exports:
                             _kCDPAnalyticsEscrowRecordCreationEvent,
                             _kCDPAnalyticsEscrowRecordDeletionEvent,
                             _kCDPAnalyticsEscrowRecordDeletionRequestDeleteAll,
+                            _kCDPAnalyticsEscrowRecordFetchSource,
                             _kCDPAnalyticsEscrowWalrusStatus,
                             _kCDPAnalyticsEventCDPEntry,
+                            _kCDPAnalyticsFetchEscrowRecordsEvent,
                             _kCDPAnalyticsHardLimitEvent,
                             _kCDPAnalyticsHasNumericSecret,
                             _kCDPAnalyticsIdMSRecovery,
@@ -94,12 +98,14 @@ exports:
                             _kCDPAnalyticsRKEscapeOffer, _kCDPAnalyticsRKInput,
                             _kCDPAnalyticsRKRecovery,
                             _kCDPAnalyticsRPDConfirmationUIOfferedEvent,
+                            _kCDPAnalyticsRPDProbationEvent,
                             _kCDPAnalyticsRecoveryContactCodeEntryLandingEvent,
                             _kCDPAnalyticsRecoveryContactGetCodeLandingEvent,
                             _kCDPAnalyticsRecoveryContactRecoveryLandingPresentedEvent,
                             _kCDPAnalyticsRecoveryKeyAvailable,
                             _kCDPAnalyticsRecoveryKeyVerifyEvent,
                             _kCDPAnalyticsRemainingAttempts,
+                            _kCDPAnalyticsRemainingProbationTime,
                             _kCDPAnalyticsRemoteApprovalCompletedEvent,
                             _kCDPAnalyticsRemoteApprovalStartedEvent,
                             _kCDPAnalyticsRemoteSecretInputEvent,
@@ -109,6 +115,7 @@ exports:
                             _kCDPAnalyticsSecureChannelCompletionEvent,
                             _kCDPAnalyticsSecureChannelContextInitEvent,
                             _kCDPAnalyticsSecureChannelInitEvent,
+                            _kCDPAnalyticsSecureChannelProcessApprovalEvent,
                             _kCDPAnalyticsSecureChannelProcessEvent,
                             _kCDPAnalyticsSecureChannelSendEvent,
                             _kCDPAnalyticsSecureChannelType,
@@ -122,6 +129,7 @@ exports:
                             _kCDPAnalyticsTargetWalrusStatus,
                             _kCDPAnalyticsTotalEscrowRecords,
                             _kCDPAnalyticsTotalViableEscrowRecords,
+                            _kCDPAnalyticsWaitForPriorityViewKeychainDataRecovery,
                             _kCDPAnalyticsWalrusNativeConsentEvent,
                             _kCDPAnalyticsWalrusStatusChangeEvent,
                             _kCDPCADomainForDomainNotInAllowlist,

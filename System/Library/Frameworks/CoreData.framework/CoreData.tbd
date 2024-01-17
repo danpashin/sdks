@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreData.framework/CoreData
-current-version:       1327
+current-version:       1338
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation10CocoaErrorV4CodeV8CoreDataE018managedObjectMergeC0AEvgZ,
                             _$s10Foundation10CocoaErrorV4CodeV8CoreDataE018migrationCancelledC0AEvgZ,
                             _$s10Foundation10CocoaErrorV4CodeV8CoreDataE019persistentStoreOpenC0AEvgZ,
@@ -523,6 +523,7 @@ exports:
                             NSMappingModel, NSMergeConflict, NSMergePolicy,
                             NSMigrationManager, NSMigrationStage,
                             NSPersistentCloudKitContainer,
+                            NSPersistentCloudKitContainerActivityVoucher,
                             NSPersistentCloudKitContainerEvent,
                             NSPersistentCloudKitContainerEventRequest,
                             NSPersistentCloudKitContainerEventResult,

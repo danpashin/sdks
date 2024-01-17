@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Photos.framework/Photos
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$sSo14PHPhotoLibraryC6PhotosE23cloudIdentifierMappings19forLocalIdentifiersSDySSs6ResultOySo07PHCloudE0Cs5Error_pGGSaySSG_tF,
                             _$sSo14PHPhotoLibraryC6PhotosE23localIdentifierMappings3forSDySo07PHCloudE0Cs6ResultOySSs5Error_pGGSayAGG_tF,
                             _$sSo29PHPersistentChangeFetchResultC6PhotosE12makeIteratorAbCE0G0CyF,
@@ -266,6 +266,7 @@ exports:
                             _PHDescriptionForSharingFilter,
                             _PHDescriptionsForResourceTypes,
                             _PHDeviceSupportsRAW, _PHErrorFromPLError,
+                            _PHErrorIsGenerateAdjustmentFileNotFound,
                             _PHErrorIsImageRequestRetryableError,
                             _PHErrorIsMediaServerDisconnected,
                             _PHErrorIsXPCConnectionInvalidOrInterrupted,
@@ -386,6 +387,7 @@ exports:
                             _PHMomentAggregationScoreFromAggregationScoreType,
                             _PHMomentDescriptionForProcessedLocationType,
                             _PHNetworkAccessAllowedRequiredError,
+                            _PHNextImageAndAssetResourceManagerID,
                             _PHObjectReferenceType,
                             _PHOriginalChoiceDebugDescription,
                             _PHPerformanceLogsDisabledUserDefaultsKey,
@@ -585,7 +587,6 @@ exports:
                             _PHSuggestionStringWithType,
                             _PHSuggestionSubtypeForCPLSuggestionSubtype,
                             _PHSuggestionTypeForCPLSuggestionType,
-                            _PHSuggestionWallpaperShuffleMaximumCountPerDay,
                             _PHUniformTypeConformsToResourceType,
                             _PHUniformTypesForResourceType,
                             _PHUpdatedLocalIdentifiersKey, _PHUserFeedbackDomain,
@@ -692,9 +693,8 @@ exports:
                             PHAssetCreationDateProperties,
                             PHAssetCreationDerivativeContext,
                             PHAssetCreationMetadataCopyOptions,
-                            PHAssetCreationOptions,
-                            PHAssetCreationPhotoStreamPublishingRequest,
-                            PHAssetCreationRequest, PHAssetCreationRequestBridge,
+                            PHAssetCreationOptions, PHAssetCreationRequest,
+                            PHAssetCreationRequestBridge,
                             PHAssetCreationRequestPlaceholderSupport,
                             PHAssetCreationRequestPlaceholderSupportCrashRecovery,
                             PHAssetCurationProperties, PHAssetDeleteOptions,
@@ -868,7 +868,6 @@ exports:
                             PHSuggestionChangeRequest, PHSuggestionDeleteRequest,
                             PHSuggestionMessageContext,
                             PHSuggestionMessageMatchingResult,
-                            PHSuggestionWallpaperShuffleUtilities,
                             PHSynchronousPhotoLibraryExecutionContext,
                             PHTextFeature, PHTextFeatureDecoder,
                             PHTextFeatureEncoder, PHThumbnailAsset,

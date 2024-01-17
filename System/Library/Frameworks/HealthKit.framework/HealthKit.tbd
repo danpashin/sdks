@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/HealthKit.framework/HealthKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s6Output9HealthKit12HKAsyncQueryPTl,
                             _$s8Sequence9HealthKit07HKAsyncA5QueryPTl,
                             _$s9Coherence9CRContextC9HealthKitE06sharedA7ContextACvgZ,
@@ -1336,7 +1336,6 @@ exports:
                             _HKFeatureAvailabilityStoreClientInterface,
                             _HKFeatureAvailabilityStoreServerInterface,
                             _HKFeatureFlagBloodOxygenSaturationEnabled,
-                            _HKFeatureFlagClinicalNotesEnabled,
                             _HKFeatureFlagHFDInSQLiteEnabled,
                             _HKFeatureFlagWorkoutSeriesAggregation,
                             _HKFeatureIdentifierAFibBurden,
@@ -1848,7 +1847,9 @@ exports:
                             _HKProductTypePrefixAppleWatchSeries3,
                             _HKProductTypePrefixAppleWatchSeries4,
                             _HKProductTypePrefixAppleWatchSeries5,
-                            _HKProductTypePrefixPhone, _HKProductTypePrefixiPad,
+                            _HKProductTypePrefixPhone,
+                            _HKProductTypePrefixVisionPro,
+                            _HKProductTypePrefixiPad,
                             _HKProfileStoreClientInterface,
                             _HKProfileStoreServerInterface,
                             _HKPromptForLegacyPerObjectAuthorizationDuringQueries,
@@ -2523,7 +2524,7 @@ exports:
                             _kHKBTLEServerBundleIdentifier, _kHKBaselineMETs,
                             _kHKCardioFitnessAgeGatingAge,
                             _kHKCloudSyncRebaseDeadlineTriggerThreshold,
-                            _kHKComAppleKbdDomain,
+                            _kHKComAppleKbdDomain, _kHKComAppleMomentsdBundleId,
                             _kHKConnectedGymBundleIdentifier,
                             _kHKConnectedGymPreferencesChangedNotificationKey,
                             _kHKConnectedGymPreferencesDefaultNFCAlwaysOn,
@@ -2834,7 +2835,8 @@ exports:
                             HKMedicalCodingConceptSelection,
                             HKMedicalCodingSystem, HKMedicalDate,
                             HKMedicalDateInterval, HKMedicalIDStore,
-                            HKMedicalRecord, HKMedicalRecordOriginIdentifier,
+                            HKMedicalIDSyncRequest, HKMedicalRecord,
+                            HKMedicalRecordOriginIdentifier,
                             HKMedicalRecordsStore, HKMedicalType,
                             HKMedicalUserDomainConcept,
                             HKMedicalUserDomainConceptSemanticIdentifier,
@@ -2932,9 +2934,10 @@ exports:
                             HKStatisticsCollectionCacheSettings,
                             HKStatisticsCollectionQuery, HKStatisticsQuery,
                             HKStringCache, HKSummarySharingEntry,
-                            HKSummarySharingEntryStore, HKSynchronousObserverSet,
-                            HKTableFormatter, HKTaskConfiguration,
-                            HKTaskServerProxyProvider,
+                            HKSummarySharingEntryStore,
+                            HKSummarySharingSyncRequest,
+                            HKSynchronousObserverSet, HKTableFormatter,
+                            HKTaskConfiguration, HKTaskServerProxyProvider,
                             HKUCUMUnitDisplayConverter, HKUnit, HKUnknownRecord,
                             HKUnknownRecordType, HKUserDefaultsDataSource,
                             HKUserDomainConcept,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MapsSuggestions.framework/MapsSuggestions
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s15MapsSuggestions0aB10FinanceKitC10uniqueNameSSvM,
                             _$s15MapsSuggestions0aB10FinanceKitC10uniqueNameSSvMTq,
                             _$s15MapsSuggestions0aB10FinanceKitC10uniqueNameSSvg,
@@ -778,6 +778,7 @@ exports:
                             _GEOConfigMapsSuggestionsUseFlightLookupGate,
                             _GEOConfigMapsSuggestionsUseFlightLookupTerminal,
                             _GEOConfigMapsSuggestionsUserPreferenceTypeIsTransitWeight,
+                            _GEOConfigMapsSuggestionsVehicleBluetoothFeelerEnabled,
                             _GEOConfigMapsSuggestionsVehicleSetupResumeRouteDeduperEnabled,
                             _GEOConfigMapsSuggestionsVerboseLogging,
                             _GEOConfigMapsSuggestionsVirtualGarageExpirationOverflowInSeconds,

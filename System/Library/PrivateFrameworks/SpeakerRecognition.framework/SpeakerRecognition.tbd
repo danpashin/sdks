@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpeakerRecognition.framework/SpeakerRecognition
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18SpeakerRecognition27CSVTUIKeywordDetectorHelperC15keywordAnalyzerSo016SSRTriggerPhraseD5NDAPICSgvpfi,
                             _$s18SpeakerRecognition27CSVTUIKeywordDetectorHelperC18triggeredUtterance21voiceTriggerEventInfo10Foundation4DataVSo12NSDictionaryC_tF,
                             _$s18SpeakerRecognition27CSVTUIKeywordDetectorHelperC18triggeredUtterance21voiceTriggerEventInfo10Foundation4DataVSo12NSDictionaryC_tFTq,
@@ -306,7 +306,7 @@ exports:
                             _kSSRVoiceProfileUserName,
                             _kVTUIRemoteRecordGibraltarDeviceId ]
     objc-classes:         [ CSFAudioStreamBasicDescriptionFactory,
-                            CSMil2BnnsUtils, CSOnDeviceCompilationHandler,
+                            CSOnDeviceCompilationHandler,
                             CSOnDeviceCompilationUtils, CSVTUIASRGrammars,
                             CSVTUIAudioRecorder,
                             CSVTUIAudioRecorderRemoteDeviceContext,
@@ -375,5 +375,6 @@ exports:
                             CSVTUITrainingSession._status,
                             CSVTUITrainingSession._trainingCompletion,
                             CSVTUITrainingSession._trainingCompletionWithResult,
-                            CSVTUITrainingSession._utteranceId ]
+                            CSVTUITrainingSession._utteranceId,
+                            CSVTUITrainingSession._vtAssetConfigVersion ]
 ...

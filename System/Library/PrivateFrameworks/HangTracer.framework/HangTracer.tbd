@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HangTracer.framework/HangTracer
-current-version:       275
+current-version:       281
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _EPL_STATE_CHANGED_NOTIFICATION, _HANGTRACER_DOMAIN,
                             _HANGTRACER_OTA_TASKING_DOMAIN,
                             _HANGTRACER_PREF_CHANGED_NOTIFICATION,
@@ -107,7 +107,9 @@ exports:
                             _kHTCoreAnalyticsHangDuration,
                             _kHTCoreAnalyticsHangType,
                             _kHTCoreAnalyticsLaunchOverlap,
-                            _kHTCoreAnalyticsMode, _kHTDebuggerAttachedHang,
+                            _kHTCoreAnalyticsMode,
+                            _kHTCoreAnalyticsReportGenerated,
+                            _kHTDebuggerAttachedHang,
                             _kHTDidSaveTailspinNotification,
                             _kHTDisplayDataDisplayOnIntervalsKey,
                             _kHTDisplayDataDisplayOnPercentKey,

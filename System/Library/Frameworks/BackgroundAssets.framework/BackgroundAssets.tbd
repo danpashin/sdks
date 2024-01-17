@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/BackgroundAssets.framework/BackgroundAssets
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/Frameworks/CloudKit.framework/CloudKit ]
     symbols:              [ _$s16BackgroundAssets21BADownloaderExtensionMp,
                             _$s16BackgroundAssets21BADownloaderExtensionP0D10Foundation03AppD0Tb,

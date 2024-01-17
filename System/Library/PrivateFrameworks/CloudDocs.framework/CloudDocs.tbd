@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-current-version:       2461.2.1
+current-version:       2461.62.1
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _BRAccountDidCompleteFirstSyncDownKey,
                             _BRAccountIsDatabaseFromTheFutureKey,
                             _BRAccountIsMigratingToFPFS,
@@ -88,7 +88,8 @@ exports:
                             _BRDaemonBundleID, _BRDaemonConnectionInvalidate,
                             _BRDefaultsDomain,
                             _BRDidUpdateLastSyncStatusDistributedNotification,
-                            _BRDomainDSIDKey, _BRDumpDatabaseToFileHandle,
+                            _BRDomainDSIDKey, _BRDomainDatabaseIDKey,
+                            _BRDomainMigrationIDKey, _BRDumpDatabaseToFileHandle,
                             _BREnableCiconiaContext,
                             _BREntitledApplicationIdentifier,
                             _BREntitledContainerIdentifiers,
@@ -326,7 +327,8 @@ exports:
                             BRCFPreferencesWrapper, BRCTermDumper,
                             BRCloudDocsHelperProvider, BRContainer,
                             BRContainerCache, BRContainersMonitor, BRDSIDString,
-                            BRDaemonConnection, BRDbRowObjectID, BRDocObjectID,
+                            BRDaemonConnection, BRDbRowObjectID,
+                            BRDeviceConfiguration, BRDocObjectID,
                             BRDownloadAllFilesForLogOutOperation,
                             BRDownloadAndUploadAllFilesForLogOutOperation,
                             BRFetchQuotaOperation, BRFileObjectID,
@@ -334,9 +336,10 @@ exports:
                             BRGetPausedFileListUpdater, BRInodeObjectID,
                             BRListNonLocalVersionsOperation, BRMangledID,
                             BRNonLocalVersion, BRNotificationQueue, BROperation,
-                            BRPair, BRProcessMonitor, BRProgressUpdate, BRQueryItem,
-                            BRReachabilityMonitor, BRRemoteUserDefaults,
-                            BRServerMetrics, BRShareAcceptOperation,
+                            BRPair, BRPosixOperationsWrapper, BRProcessMonitor,
+                            BRProgressUpdate, BRQueryItem, BRReachabilityMonitor,
+                            BRRemoteUserDefaults, BRServerMetrics,
+                            BRShareAcceptOperation,
                             BRShareCopyAccessTokenOperation,
                             BRShareCopyDocumentURLForRecordID,
                             BRShareCopyOperation, BRShareCopyShareURLOperation,
@@ -349,8 +352,8 @@ exports:
                             BRSharingCopyShareInfoOperation,
                             BRSharingCopyShareTokenOperation,
                             BRSharingCopyShortTokenOperation,
-                            BRSharingModifyRecordAccessOperation, BRTask,
-                            BRTransfersStatusManager, BRTrashItem,
+                            BRSharingModifyRecordAccessOperation, BRStopwatch,
+                            BRTask, BRTransfersStatusManager, BRTrashItem,
                             BRUploadAllFilesForLogOutOperation,
                             BRUploadAllFilesOperation, BRXPCClientUtils,
                             BRXPCSyncProxy, BRZombie,
@@ -380,6 +383,7 @@ exports:
                             BRQueryItem._conflictingVersions,
                             BRQueryItem._contentPolicy,
                             BRQueryItem._contentVersion, BRQueryItem._diffs,
+                            BRQueryItem._equivalentContentVersions,
                             BRQueryItem._favoriteRank, BRQueryItem._fileObjectID,
                             BRQueryItem._flags,
                             BRQueryItem._lastEditorDeviceName,

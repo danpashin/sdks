@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenReaderBrailleDriver.framework/ScreenReaderBrailleDriver
@@ -7,7 +7,7 @@ current-version:       390
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _SCRDAdvanceBufferToPacketStart,
                             _SCRDAlva6SeriesAppendKeyEvent,
                             _SCRDAppendFullKeystrokeFromEvent,
@@ -177,7 +177,12 @@ exports:
                             _kSCRDOrbitReader40DeviceIdentifier,
                             _kSCRDSeikaNotetakerBluetoothNameRegExPattern,
                             _kSCRDUSBDeviceDisconnectNotification,
-                            _kSCRODBaumVario340DeviceIdentifier ]
+                            _kSCRODBaumVario340DeviceIdentifier,
+                            _kSCRODBaumVario424DeviceIdentifier,
+                            _kSCRODBaumVario432DeviceIdentifier,
+                            _kSCRODBaumVario440DeviceIdentifier,
+                            _kSCRODBaumVario464DeviceIdentifier,
+                            _kSCRODBaumVario480DeviceIdentifier ]
     objc-classes:         [ SCRDFileReader, SCRDUSBDevice ]
     objc-ivars:           [ SCRDFileReader._delegate, SCRDFileReader._fileHandle,
                             SCRDFileReader._readerThread,

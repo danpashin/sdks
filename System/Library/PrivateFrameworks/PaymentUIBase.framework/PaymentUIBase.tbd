@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PaymentUIBase.framework/PaymentUIBase
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s13PaymentUIBase0A11DetailSheetO015automaticReloadA7RequestyA2CmFWC,
                             _$s13PaymentUIBase0A11DetailSheetO05setupA6MethodyA2CmFWC,
                             _$s13PaymentUIBase0A11DetailSheetO08deferredA7RequestyA2CmFWC,
@@ -682,6 +682,8 @@ exports:
                             _$s13PaymentUIBase26AuthorizationStateProtocolP15didResignActiveyyFTq,
                             _$s13PaymentUIBase26AuthorizationStateProtocolP18authenticatorModel012AuthenticateG0QzvgTj,
                             _$s13PaymentUIBase26AuthorizationStateProtocolP18authenticatorModel012AuthenticateG0QzvgTq,
+                            _$s13PaymentUIBase26AuthorizationStateProtocolP22sidecarDidBecomeActiveyyFTj,
+                            _$s13PaymentUIBase26AuthorizationStateProtocolP22sidecarDidBecomeActiveyyFTq,
                             _$s13PaymentUIBase26AuthorizationStateProtocolP28startAuthenticatorEvaluationyyFTj,
                             _$s13PaymentUIBase26AuthorizationStateProtocolP28startAuthenticatorEvaluationyyFTq,
                             _$s13PaymentUIBase26AuthorizationStateProtocolP31didEncounterAuthenticationEventyyAA0hI0OFTj,

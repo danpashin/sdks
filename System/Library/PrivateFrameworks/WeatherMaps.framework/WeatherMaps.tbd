@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WeatherMaps.framework/WeatherMaps
-current-version:       469.4
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10WeatherKit0A9DataModelV0A4MapsE15rainExpectationAD04RainG0Ovg,
                             _$s10WeatherKit0A9DataModelV0A4MapsE15rainExpectationAD04RainG0OvpMV,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V15WindOverlayHintC3key12defaultValue6accessAHSSSg_SbAA6AccessOtcfC,
@@ -21,6 +21,7 @@ exports:
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V15WindOverlayHintCfd,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V15disableBlendingAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V16showDebugConsoleAA7SettingCySbGvgZ,
+                            _$s11TeaSettings0B0C11WeatherMapsE0D0V19clientSideUpscalingAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V20ScrubberForecastHintC3key12defaultValue6accessAHSSSg_SbAA6AccessOtcfC,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V20ScrubberForecastHintC3key12defaultValue6accessAHSSSg_SbAA6AccessOtcfc,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V20ScrubberForecastHintCMa,
@@ -35,6 +36,7 @@ exports:
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V22disableMetadataCachingAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V22useMergedPrecipitationAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V23resetLocalStoragePresetAA0H0CvgZ,
+                            _$s11TeaSettings0B0C11WeatherMapsE0D0V24useMetalSnapshotPipelineAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V27forceSeparateRadarEndpointsAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V29disableMapOverlaySonificationAA7SettingCySbGvgZ,
                             _$s11TeaSettings0B0C11WeatherMapsE0D0V30resetTransparentOverlaysPresetAA0H0CvgZ,
@@ -609,8 +611,10 @@ exports:
                             _$s2os6LoggerV11WeatherMapsE15dynamicOverlaysACvgZ,
                             _$s2os6LoggerV11WeatherMapsE15mapNetworkDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE16mapSnapshotDebugACSgvgZ,
+                            _$s2os6LoggerV11WeatherMapsE16mapSnapshotMetalACvgZ,
                             _$s2os6LoggerV11WeatherMapsE20dynamicOverlaysDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE21mapAccessibilityDebugACSgvgZ,
+                            _$s2os6LoggerV11WeatherMapsE21mapSnapshotMetalDebugACSgvgZ,
                             _$s2os6LoggerV11WeatherMapsE3mapACvgZ,
                             _$s2os6LoggerV11WeatherMapsE7mapDataACvgZ,
                             _$s2os6LoggerV11WeatherMapsE7mapWindACvgZ,
@@ -632,6 +636,12 @@ exports:
                             _$s7SwiftUI4ViewP11WeatherMapsE8delegateyQrAD0D11MapDelegate_pFQOMQ,
                             _$sSS11WeatherMapsE18frameBasedSonifierSSvgZ,
                             _$sSS11WeatherMapsE18pixelBasedSonifierSSvgZ,
+                            _$sSS11WeatherMapsE25metalBasedSnapshotManagerSSvgZ,
+                            _$sSS11WeatherMapsE28softwareBasedSnapshotManagerSSvgZ,
+                            _$sSS11WeatherMapsE30metalBasedSnapshotTileRendererSSvgZ,
+                            _$sSS11WeatherMapsE33metalBasedSnapshotOverlayComposerSSvgZ,
+                            _$sSS11WeatherMapsE33softwareBasedSnapshotTileRendererSSvgZ,
+                            _$sSS11WeatherMapsE36softwareBasedSnapshotOverlayComposerSSvgZ,
                             _$sSa11WeatherMapsAA0A3MapV7OptionsORszlE9hideScale17controlsLoadDelay0G12FadeOnResize0G6Hidden18forceOverlayPaused24isUserInteractionEnabledSayAEGSbSg_SdSgA4MtcfC,
                             _$sSd11WeatherMapsE9normalize5rangeSdSnySdG_tF,
                             _$sSl11WeatherMapsSd_So7UIColorCt7ElementRtzrlE9normalize5rangeSaySd_ACtGSnySdG_tF,

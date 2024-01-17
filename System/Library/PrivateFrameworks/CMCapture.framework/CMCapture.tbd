@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CMCapture.framework/CMCapture
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/CMCaptureCore.framework/CMCaptureCore ]
     symbols:              [ _BWAttachedMediaKey_Depth,
                             _BWAttachedMediaKey_DepthData_DX,
@@ -160,6 +160,7 @@ exports:
                             _FigCapturePixelFormatWithLeastAverageBandwidth,
                             _FigCapturePixelFormatsByAddingCompressedVariants,
                             _FigCapturePlatformChipRevisionIdentifier,
+                            _FigCapturePlatformChipRevisionIdentifierString,
                             _FigCapturePlatformGetVariant,
                             _FigCapturePlatformIOSurfaceWiringAssertionEnabled,
                             _FigCapturePlatformIdentifier,
@@ -564,6 +565,7 @@ exports:
                             _kFigCaptureDeferredPhotoProcessorUnfinishedPhotoIdentifierKey_TimeZone,
                             _kFigCaptureDepthDataDeliveryConfigurationsKey_CapturePipeliningSupported,
                             _kFigCaptureDepthDataDeliveryConfigurationsKey_DCProcessingSupported,
+                            _kFigCaptureDepthDataDeliveryConfigurationsKey_DeepFusionSupported,
                             _kFigCaptureDepthDataDeliveryConfigurationsKey_DemosaicedRawConfigurationSupported,
                             _kFigCaptureDepthDataDeliveryConfigurationsKey_FastModeSwitchingSupported,
                             _kFigCaptureDepthDataDeliveryConfigurationsKey_StillImageGGMSupported,
@@ -571,6 +573,7 @@ exports:
                             _kFigCaptureDeviceNotificationPayloadKey_ErrorStatus,
                             _kFigCaptureDeviceNotificationPayloadKey_UniqueID,
                             _kFigCaptureDeviceNotificationPayloadKey_Value,
+                            _kFigCaptureDeviceNotification_CMIODeviceTrackingActiveChanged,
                             _kFigCaptureDeviceNotification_DeviceNoLongerAvailable,
                             _kFigCaptureDeviceNotification_HiddenStateChanged,
                             _kFigCaptureDeviceNotification_PixelsInvalidated,
@@ -591,6 +594,7 @@ exports:
                             _kFigCaptureFlatDictionaryAppleMakerNote_AETarget,
                             _kFigCaptureFlatDictionaryAppleMakerNote_AFExternalOffset,
                             _kFigCaptureFlatDictionaryAppleMakerNote_AFPerformance,
+                            _kFigCaptureFlatDictionaryAppleMakerNote_AFSphereFaultStatus,
                             _kFigCaptureFlatDictionaryAppleMakerNote_AFStable,
                             _kFigCaptureFlatDictionaryAppleMakerNote_ARKitPhoto,
                             _kFigCaptureFlatDictionaryAppleMakerNote_ApsMode,
@@ -633,6 +637,7 @@ exports:
                             _kFigCaptureFlatDictionaryAppleMakerNote_PhotosRenderOriginatingSignature,
                             _kFigCaptureFlatDictionaryAppleMakerNote_QRMOutputType,
                             _kFigCaptureFlatDictionaryAppleMakerNote_SISMethod,
+                            _kFigCaptureFlatDictionaryAppleMakerNote_SensorBlackLevelResidual,
                             _kFigCaptureFlatDictionaryAppleMakerNote_SensorTemperature,
                             _kFigCaptureFlatDictionaryAppleMakerNote_SpatialOverCaptureGroupIdentifier,
                             _kFigCaptureFlatDictionaryAppleMakerNote_SpatialOverCaptureImageType,
@@ -1043,6 +1048,7 @@ exports:
                             _kFigCaptureSourceNotification_ShallowDepthOfFieldStatusChanged,
                             _kFigCaptureSourceNotification_SourceDeactivated,
                             _kFigCaptureSourceNotification_SourceInfoArrayChanged,
+                            _kFigCaptureSourceNotification_StereoVideoCaptureStatusChanged,
                             _kFigCaptureSourceNotification_StillImageSceneChanged,
                             _kFigCaptureSourceNotification_SubjectAreaChanged,
                             _kFigCaptureSourceNotification_VideoZoomRampUpdate,
@@ -1426,7 +1432,11 @@ exports:
                             BWSlaveFrameSynchronizerNode, BWSourceNode,
                             BWSphereModeSelector, BWSpringSimulation,
                             BWStartupCalibrationAnalyticsPayload, BWStats,
-                            BWStereoFusionNode, BWStillImageBravoDisparityNode,
+                            BWStereoFusionNode,
+                            BWStereoVideoCaptureAnalyticsPayload,
+                            BWStereoVideoMetadataNode,
+                            BWStillImageAnalyticsPayloadCommon,
+                            BWStillImageBravoDisparityNode,
                             BWStillImageBufferRouterNode,
                             BWStillImageCameraCalibrationDataNode,
                             BWStillImageCaptureAnalyticsPayload,
@@ -1443,6 +1453,7 @@ exports:
                             BWStillImageCoordinatorNode,
                             BWStillImageDisparitySplitterNode,
                             BWStillImageDualPhotoFacePropagatorNode,
+                            BWStillImageErrorAnalyticsPayload,
                             BWStillImageFilterNode,
                             BWStillImageFocusPixelBlurScoreResult,
                             BWStillImageFocusPixelDisparityNode,

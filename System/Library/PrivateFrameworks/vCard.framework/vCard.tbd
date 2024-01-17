@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/vCard.framework/vCard
-current-version:       3616.1
+current-version:       3630
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s5vCard19CNVCardTagInclusionC6policy4tagsAA0bcD6Policy_pSaySSGSg_tFZTj,
                             _$s5vCard19CNVCardTagInclusionC6policy4tagsAA0bcD6Policy_pSaySSGSg_tFZTq,
                             _$s5vCard19CNVCardTagInclusionCACycfC,
@@ -115,6 +115,7 @@ exports:
                             _CNVCardKeyPronunciationFirstName,
                             _CNVCardKeyPronunciationLastName,
                             _CNVCardKeyRelatedNames,
+                            _CNVCardKeySensitiveContentConfiguration,
                             _CNVCardKeySharedPhotoDisplayPreference,
                             _CNVCardKeySocialProfile,
                             _CNVCardKeyThumbnailImageData, _CNVCardKeyUID,
@@ -348,51 +349,7 @@ exports:
                             CNVCardParser._socialProfiles,
                             CNVCardParser._startingPositionOfCurrentProperty,
                             CNVCardParser._uid, CNVCardParser._unknowns,
-                            CNVCardParser._urls, CNVCardPerson._activityAlerts,
-                            CNVCardPerson._addressingGrammars,
-                            CNVCardPerson._alternateBirthdayComponents,
-                            CNVCardPerson._birthdayComponents,
-                            CNVCardPerson._calendarURIs,
-                            CNVCardPerson._cardDAVUID, CNVCardPerson._department,
-                            CNVCardPerson._downtimeWhitelistAuthorization,
-                            CNVCardPerson._emailAddresses,
-                            CNVCardPerson._firstName,
-                            CNVCardPerson._imageBackgroundColorsData,
-                            CNVCardPerson._imageCropRects,
-                            CNVCardPerson._imageData, CNVCardPerson._imageHash,
-                            CNVCardPerson._imageReferences,
-                            CNVCardPerson._imageType,
-                            CNVCardPerson._instantMessagingAddresses,
-                            CNVCardPerson._isCompany, CNVCardPerson._isMe,
-                            CNVCardPerson._jobTitle,
-                            CNVCardPerson._largeImageCropRects,
-                            CNVCardPerson._largeImageData,
-                            CNVCardPerson._lastName, CNVCardPerson._maidenName,
-                            CNVCardPerson._memojiMetadata,
-                            CNVCardPerson._middleName, CNVCardPerson._nameOrder,
-                            CNVCardPerson._namesOfParentGroups,
-                            CNVCardPerson._nickname, CNVCardPerson._note,
-                            CNVCardPerson._organization,
-                            CNVCardPerson._otherDateComponents,
-                            CNVCardPerson._phoneNumbers,
-                            CNVCardPerson._phonemeData,
-                            CNVCardPerson._phoneticFirstName,
-                            CNVCardPerson._phoneticLastName,
-                            CNVCardPerson._phoneticMiddleName,
-                            CNVCardPerson._phoneticOrganization,
-                            CNVCardPerson._postalAddresses,
-                            CNVCardPerson._preferredApplePersonaIdentifier,
-                            CNVCardPerson._preferredLikenessSource,
-                            CNVCardPerson._pronunciationFirstName,
-                            CNVCardPerson._pronunciationLastName,
-                            CNVCardPerson._relatedNames,
-                            CNVCardPerson._sharedPhotoDisplayPreference,
-                            CNVCardPerson._socialProfiles, CNVCardPerson._suffix,
-                            CNVCardPerson._title, CNVCardPerson._uid,
-                            CNVCardPerson._unknownProperties,
-                            CNVCardPerson._urls, CNVCardPerson._wallpaper,
-                            CNVCardPerson._watchWallpaperImageData,
-                            CNVCardPropertyItem._identifier,
+                            CNVCardParser._urls, CNVCardPropertyItem._identifier,
                             CNVCardPropertyItem._label,
                             CNVCardPropertyItem._value,
                             CNVCardSelectorMap._selectors,

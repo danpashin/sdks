@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _TVPAVMetadataItemUndeterminedLanguageTag,
                             _TVPDownloadSessionDidFinishEventsForBackgroundURLSessionNotification,
                             _TVPDurationIndefinite, _TVPDurationUnknown,
@@ -95,6 +95,7 @@ exports:
                             _TVPMediaItemMetadataKeyBagPathFileURL,
                             _TVPMediaItemMetadataLaunchPlaybackURL,
                             _TVPMediaItemMetadataLiveStreamServiceID,
+                            _TVPMediaItemMetadataLocalizedScheduledTimeString,
                             _TVPMediaItemMetadataLongDescription,
                             _TVPMediaItemMetadataMPArtworkCatalog,
                             _TVPMediaItemMetadataMPNowPlayingContentItem,
@@ -227,7 +228,6 @@ exports:
                             _TVPMediaItemTraitKeepVideoLayersAttachedWhileSuspended,
                             _TVPMediaItemTraitMinimizeNetworkUsageWhilePaused,
                             _TVPMediaItemTraitOptimizeForHighLatency,
-                            _TVPMediaItemTraitOptimizeForLinearPlayback,
                             _TVPMediaItemTraitPreventSpeculativeLoading,
                             _TVPMediaItemTraitRequiresAppToRunIfBackgroundedDuringPlayback,
                             _TVPMediaItemTraitStopWhenAppIsBackgrounded,
@@ -376,9 +376,10 @@ exports:
                             TVPInterstitial, TVPInterstitialCollection,
                             TVPMediaItemAdvisoryInfo,
                             TVPMediaItemProductPlacementInfo,
-                            TVPMediaItemRollInfo, TVPMediaItemSkipInfo,
-                            TVPMutableChapter, TVPMutableChapterCollection,
-                            TVPMutableInterstitial, TVPOffSubtitleOption,
+                            TVPMediaItemPromoInfo, TVPMediaItemRollInfo,
+                            TVPMediaItemSkipInfo, TVPMutableChapter,
+                            TVPMutableChapterCollection, TVPMutableInterstitial,
+                            TVPOffSubtitleOption,
                             TVPPlaybackReportingEventCollection,
                             TVPPlaybackState, TVPPlaybackUtilities, TVPPlayer,
                             TVPPlayerItem, TVPPlaylist, TVPReachabilityMonitor,

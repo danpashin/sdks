@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreDataDefines.h>
 
-#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST || TARGET_OS_VISION)
 
 @class NSManagedObjectContext;
 @class NSPersistentStoreCoordinator;

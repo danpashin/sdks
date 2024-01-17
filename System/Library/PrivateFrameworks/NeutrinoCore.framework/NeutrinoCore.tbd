@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NeutrinoCore.framework/NeutrinoCore
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CGAffineTransformDeterminant, _CGAffineTransformDot,
                             _CGAffineTransformFixedPoint,
                             _CGAffineTransformForMappingFromRectToRect,
@@ -104,7 +104,8 @@ exports:
                             _NUPixelPointToCGPoint, _NUPixelPointZero,
                             _NUPixelRectAspectConstrain,
                             _NUPixelRectConstrainToRect,
-                            _NUPixelRectContainingPoints, _NUPixelRectDilate,
+                            _NUPixelRectContainingPoints,
+                            _NUPixelRectDenormalize, _NUPixelRectDilate,
                             _NUPixelRectEnforceMinimumSize,
                             _NUPixelRectEnforceMinimumSizeAndAspectRatio,
                             _NUPixelRectEqualToRect, _NUPixelRectErode,
@@ -112,23 +113,23 @@ exports:
                             _NUPixelRectFromCGRect, _NUPixelRectInset,
                             _NUPixelRectIntersection, _NUPixelRectIntersectsRect,
                             _NUPixelRectIsEmpty, _NUPixelRectIsNull,
-                            _NUPixelRectMaxCenteredInRect, _NUPixelRectNull,
-                            _NUPixelRectOffset, _NUPixelRectResizeToFitInRect,
-                            _NUPixelRectScale, _NUPixelRectScaleRational,
-                            _NUPixelRectSetOrigin, _NUPixelRectToCGRect,
-                            _NUPixelRectUnion, _NUPixelRectVectexOpposite,
-                            _NUPixelRectVertex, _NUPixelRectZero,
-                            _NUPixelSizeAlignToGrid, _NUPixelSizeEqualToSize,
-                            _NUPixelSizeFromCGSize, _NUPixelSizeGreaterThanSize,
-                            _NUPixelSizeIsEmpty, _NUPixelSizeLargestDimension,
-                            _NUPixelSizeToCGRect, _NUPixelSizeToCGSize,
-                            _NUPixelSizeZero, _NUPlatform_OSX, _NUPlatform_iOS,
-                            _NUPriorityLevelName, _NUPriorityLevelToDispatchQOS,
-                            _NURadianToDegree, _NURecomposeAffineTransform,
-                            _NURectDenormalize, _NURectFlipYOrigin,
-                            _NURectNormalize, _NURelatedObjectKey,
-                            _NURelativePointInRect, _NURescaleRectRelative,
-                            _NURescaleRectRelativeXY,
+                            _NUPixelRectMaxCenteredInRect, _NUPixelRectNormalize,
+                            _NUPixelRectNull, _NUPixelRectOffset,
+                            _NUPixelRectResizeToFitInRect, _NUPixelRectScale,
+                            _NUPixelRectScaleRational, _NUPixelRectSetOrigin,
+                            _NUPixelRectToCGRect, _NUPixelRectUnion,
+                            _NUPixelRectVectexOpposite, _NUPixelRectVertex,
+                            _NUPixelRectZero, _NUPixelSizeAlignToGrid,
+                            _NUPixelSizeEqualToSize, _NUPixelSizeFromCGSize,
+                            _NUPixelSizeGreaterThanSize, _NUPixelSizeIsEmpty,
+                            _NUPixelSizeLargestDimension, _NUPixelSizeToCGRect,
+                            _NUPixelSizeToCGSize, _NUPixelSizeZero,
+                            _NUPlatform_OSX, _NUPlatform_iOS, _NUPriorityLevelName,
+                            _NUPriorityLevelToDispatchQOS, _NURadianToDegree,
+                            _NURecomposeAffineTransform, _NURectDenormalize,
+                            _NURectFlipYOrigin, _NURectNormalize,
+                            _NURelatedObjectKey, _NURelativePointInRect,
+                            _NURescaleRectRelative, _NURescaleRectRelativeXY,
                             _NUResizeRectByMovingRelativePoint,
                             _NUResizeRectRelative, _NUSampleModeFromString,
                             _NUSampleModeIsValid, _NUSampleModeToString,
@@ -340,8 +341,7 @@ exports:
                             NULivePhotoRenderClient, NULivePhotoRenderRequest,
                             NULivePhotoSourceContainerNode,
                             NULivePhotoSourceDefinition, NUMemoryCacheNode,
-                            NUMetalRenderer, NUMeteorGainMapFilter,
-                            NUMeteorGainMapNode, NUModel,
+                            NUMetalRenderer, NUModel,
                             NUMultipleSourceContainerNode,
                             NUMultipleSourceDefinition, NUMutableBrushStroke,
                             NUMutableBufferAdapter, NUMutableBufferImageAdapter,
@@ -356,7 +356,8 @@ exports:
                             NUPlaceholderNode, NUPlatform, NUPlatform_iOS,
                             NUPriority, NUPurgeableImageAccessGuard,
                             NUPurgeableStorageFactory, NUPurgeableStoragePool,
-                            NURAWDemosaicNode, NURAWGeometryResetNode,
+                            NURAWDemosaicNode, NURAWGainMapFilter,
+                            NURAWGainMapNode, NURAWGeometryResetNode,
                             NURAWImageSourceNode, NURawFilterNode,
                             NURedEyeDetectionJob, NURedEyeDetectionRequest,
                             NURegion, NURenderClient, NURenderContext, NURenderJob,

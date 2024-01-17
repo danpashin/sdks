@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PaperBoardUI.framework/PaperBoardUI
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _BundlePathForWallpaperIdentifier,
                             _PBUIApplyParallaxSettingsToView,
                             _PBUIApplyParallaxSettingsToViewWithFactor,
@@ -34,7 +34,7 @@ exports:
                             _PBUIIrisWallpaperPlaybackStateDescription,
                             _PBUIIrisWallpaperPlaybackStateForISPlaybackState,
                             _PBUIIrisWallpaperViewModeDescription,
-                            _PBUILogCommon,
+                            _PBUILogCaching, _PBUILogCommon,
                             _PBUIMagicWallpaperClassForIdentifier,
                             _PBUIMagicWallpaperDictionariesForClass,
                             _PBUIMagicWallpaperDictionary,
@@ -83,6 +83,7 @@ exports:
                             _PBUIWallpaperLocationsForString,
                             _PBUIWallpaperModeForString,
                             _PBUIWallpaperSceneSessionRoleWallpaper,
+                            _PBUIWallpaperSharedDirectoryDataStoreSharedDirectoryURL,
                             _PBUIWallpaperStyleDescription,
                             _PBUIWallpaperStyleInvalid,
                             _PBUIWallpaperStyleIsHidden,
@@ -118,6 +119,7 @@ exports:
                             __WallpaperStyleHasTint,
                             __WallpaperStyleUpdatesWithUserInterfaceStyle,
                             ___hasEnoughFreeSpaceToSetWallpaper,
+                            ___possibleWallpaperFileNames,
                             ___wallpaperImageFilename,
                             ___wallpaperOriginalImageFilename,
                             ___wallpaperOriginalVideoFilename,
@@ -135,6 +137,7 @@ exports:
                             _kPBUIMagicWallpaperSmallThumbnailDataKey,
                             _kPBUIMagicWallpaperThumbnailNameKey,
                             _kPBUIMagicWallpaperThumbnailPathKey,
+                            _kPBUIMappedImageCacheManagerDefaultNumberOfManagedCaches,
                             _kPBUIReplicaDebugModeDefaultKey,
                             _kPaperboardIOSurfaceDeviceOrientationPropertiesKey,
                             _kPaperboardIOSurfaceDeviceScalePropertiesKey,
@@ -160,7 +163,8 @@ exports:
                             PBUILivePhotoPlayerLivePhotoView,
                             PBUILivePhotoPlayerLiveWallpaperView,
                             PBUILivePhotoPlayerView, PBUIMagnifyMode,
-                            PBUIMaterialCompositor, PBUIMaterialTreatment,
+                            PBUIMappedImageCacheManager, PBUIMaterialCompositor,
+                            PBUIMaterialTreatment,
                             PBUIMutableWallpaperWindowSceneClientSettings,
                             PBUIMutableWallpaperWindowSceneSettings,
                             PBUIParallaxSettings, PBUIPathProvider,
@@ -233,6 +237,7 @@ exports:
                             PBUIWallpaperWindowSceneStyleTransitionState,
                             PBUIWallpaperWindowSceneTwoCurveTransitionContext,
                             PBUIWallpaperWindowSceneVariantSettingsDiffAction,
+                            _BSUIMappedImageCacheCanary,
                             _PBUIImageSlotRepositoryEntry,
                             _PBUIWallpaperRemoteViewControllerSceneModeAssertion,
                             _PBUIWallpaperViewControllerAssertion,
@@ -245,5 +250,6 @@ exports:
                             PBUIPosterVariantViewController._scene,
                             PBUIPosterVariantViewController._sceneView,
                             PBUIPosterVariantViewController._snapshotSource,
+                            PBUIPosterVariantViewController._snapshotView,
                             PBUIWallpaperView._wallpaperSettings ]
 ...

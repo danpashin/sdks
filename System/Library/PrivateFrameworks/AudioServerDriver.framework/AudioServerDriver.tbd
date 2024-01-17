@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioServerDriver.framework/AudioServerDriver
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ASDStereoPanControlCenter,
                             _ASDStereoPanControlFullLeft,
                             _ASDStereoPanControlFullRight,
@@ -124,6 +124,7 @@ exports:
                             __ZN18ASDDSPStreamHelper13processOutputEjPK28AudioServerPlugInIOCycleInfoPvS3_j,
                             __ZN18ASDDSPStreamHelper16resumeProcessingEv,
                             __ZN18ASDDSPStreamHelper17suspendProcessingEv,
+                            __ZN18ASDDSPStreamHelper18setBypassGraphModeEb,
                             __ZN18ASDDSPStreamHelper18validateGraphAudioEP17ASDDSPGraphHelperPK24CAStreamBasicDescriptionS4_,
                             __ZN18ASDDSPStreamHelper26allocateStreamingResourcesEj,
                             __ZN18ASDDSPStreamHelper27setGraphAudioValidationModeE36ASDDSPStreamGraphAudioValidationMode,

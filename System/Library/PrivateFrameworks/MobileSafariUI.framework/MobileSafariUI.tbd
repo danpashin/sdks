@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileSafariUI.framework/MobileSafariUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ActionCellAccessoryReservedLayoutWidth,
                             _BrowserRootViewControllerDidTransitionSizeNotification,
                             _CollectionTypeSharedWithYou,
@@ -45,8 +45,6 @@ exports:
                             _lastBookmarksDatabaseHealthReportDateKey,
                             _lockedPrivateBrowsingStateDidChangeNotification,
                             _lowTabCapacityLimit,
-                            _preferredHeaderModeForSnapshot,
-                            _resolvedContentSizeCategoryForTraitCollection,
                             _searchStateCacheInvalidParsecQueryID,
                             _snapshotSizeByAddingBorderOptions,
                             _snapshotSizeForSuggestedSize,
@@ -92,6 +90,7 @@ exports:
                             QuickWebsiteSearchQuery, ReadingListLeadImageCache,
                             ReadingListMetadataFetcher, ReadingListTableViewCell,
                             SFLockedPrivateBrowsingView,
+                            SFTabOverviewItemContentView,
                             SearchQueryRestorationCompletionItem,
                             SearchStateCache, SearchSuggestion,
                             SearchSuggestionProvider, SetChange,
@@ -103,9 +102,9 @@ exports:
                             TabGroupLibrarySectionController, TabHoverPreview,
                             TabMenuProvider, TabOverview,
                             TabOverviewInterpolatedLocation, TabOverviewItem,
-                            TabOverviewItemView, TabSnapshotCache,
-                            TabSnapshotGenerator, TabSnapshotImageView,
-                            TabSnapshotRequest, URLCompletionMatchBookmarkData,
+                            TabSnapshotCache, TabSnapshotGenerator,
+                            TabSnapshotImageView, TabSnapshotRequest,
+                            URLCompletionMatchBookmarkData,
                             URLCompletionProvider, UnifiedField, UnifiedTabBar,
                             UnifiedTabBarItem, UniversalSearchCompletionProvider,
                             UniversalSearchCompositeResultCompletionItem,

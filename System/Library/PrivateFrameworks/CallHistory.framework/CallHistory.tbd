@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
@@ -7,7 +7,7 @@ current-version:       2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CHCallInteractionsDidChangeDarwinNotification,
                             _CHCallerIdAvailabilityAsString, _CHHash,
                             _CHSchemaGetCurrentVersion, _DeserializeTransactions,
@@ -56,6 +56,7 @@ exports:
                             _kCHServiceProviderTelephony, _kCHTimerIncomingKey,
                             _kCHTimerLifetimeKey, _kCHTimerOutgoingKey,
                             _kCallDBDirName, _kCallDBMLogDomain,
+                            _kCallDBManagerDataStoreType,
                             _kCallDBPropertiesEntity, _kCallDBSharedUtilDomain,
                             _kCallHistoryCallRecordInsertedNotification,
                             _kCallHistoryDBName, _kCallHistoryDataStoreExtension,
@@ -86,14 +87,13 @@ exports:
                             CHDelegateController, CHDelegateManager,
                             CHDeviceDataSource, CHDeviceObserver, CHFeatureFlags,
                             CHHandle, CHLocalization, CHLogServer, CHLogger, CHManager,
-                            CHPhoneNumber, CHPluginHelper, CHRecentCall,
-                            CHSynchronizable, CHSynchronizedLoggable,
+                            CHPersistentContainer, CHPhoneNumber, CHPluginHelper,
+                            CHRecentCall, CHSynchronizable, CHSynchronizedLoggable,
                             CHTransaction, CHUserConfiguration, CallDBManager,
                             CallDBManagerServer, CallHistoryDBClientHandle,
                             CallHistoryDBHandle, DBManager, DBMigrationResult,
                             DeserializedTransaction ]
     objc-ivars:           [ CallHistoryDBClientHandle._observerCallTimersRef,
-                            CallHistoryDBClientHandle.dbStoreHandle,
                             CallHistoryDBHandle._dataStoreAddedRef,
                             CallHistoryDBHandle._moveCallRecordsFromTempStoreRef,
                             CallHistoryDBHandle._observerCallDBPropRef,

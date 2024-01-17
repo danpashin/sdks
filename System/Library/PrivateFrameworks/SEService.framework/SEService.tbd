@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SEService.framework/SEService
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9SEService10MemoryInfoV4fromACs7Decoder_p_tKcfC,
                             _$s9SEService10MemoryInfoV6encode2toys7Encoder_p_tKF,
                             _$s9SEService10MemoryInfoVMa,
@@ -32,8 +32,13 @@ exports:
                             _$s9SEService10SESnapshotC16debugDescriptionSSvg,
                             _$s9SEService10SESnapshotC17clearReservationsyyYaKF,
                             _$s9SEService10SESnapshotC17clearReservationsyyYaKFTu,
+                            _$s9SEService10SESnapshotC17globalCredentialsSDyAA14CredentialTypeOSiGvM,
+                            _$s9SEService10SESnapshotC17globalCredentialsSDyAA14CredentialTypeOSiGvg,
+                            _$s9SEService10SESnapshotC17globalCredentialsSDyAA14CredentialTypeOSiGvpMV,
+                            _$s9SEService10SESnapshotC17globalCredentialsSDyAA14CredentialTypeOSiGvs,
                             _$s9SEService10SESnapshotC17removeReservation4uuidy10Foundation4UUIDV_tYaKF,
                             _$s9SEService10SESnapshotC17removeReservation4uuidy10Foundation4UUIDV_tYaKFTu,
+                            _$s9SEService10SESnapshotC17seFreeSpaceMarginSivgZ,
                             _$s9SEService10SESnapshotC18getCurrentSnapshot4with4seid17stateInfoProviderACSo29NFSecureElementManagerSessionC_SSAA07SEStateiJ0_pSgtYaKFZ,
                             _$s9SEService10SESnapshotC18getCurrentSnapshot4with4seid17stateInfoProviderACSo29NFSecureElementManagerSessionC_SSAA07SEStateiJ0_pSgtYaKFZTu,
                             _$s9SEService10SESnapshotC18getCurrentSnapshot4with4seidACSo29NFSecureElementManagerSessionC_SStYaKFZ,
@@ -70,13 +75,6 @@ exports:
                             _$s9SEService11AppletStateOSQAAMc,
                             _$s9SEService11AppletStateOSYAAMc,
                             _$s9SEService11AppletStateOSeAAMc,
-                            _$s9SEService11MIDNameInfoV4fromACs7Decoder_p_tKcfC,
-                            _$s9SEService11MIDNameInfoV6encode2toys7Encoder_p_tKF,
-                            _$s9SEService11MIDNameInfoVMa,
-                            _$s9SEService11MIDNameInfoVMn,
-                            _$s9SEService11MIDNameInfoVN,
-                            _$s9SEService11MIDNameInfoVSEAAMc,
-                            _$s9SEService11MIDNameInfoVSeAAMc,
                             _$s9SEService11MemoryUsageC20supportsSecureCodingSbvMZ,
                             _$s9SEService11MemoryUsageC20supportsSecureCodingSbvgZ,
                             _$s9SEService11MemoryUsageC20supportsSecureCodingSbvsZ,
@@ -171,8 +169,16 @@ exports:
                             _$s9SEService12AppletPolicyOSQAAMc,
                             _$s9SEService12AppletPolicyOSYAAMc,
                             _$s9SEService12AppletPolicyOSeAAMc,
-                            _$s9SEService13SERDataSourceV11getNameInfo4type3forSaySSGSgAA14CredentialTypeO_SStF,
+                            _$s9SEService12MIDContainerV4fromACs7Decoder_p_tKcfC,
+                            _$s9SEService12MIDContainerV6encode2toys7Encoder_p_tKF,
+                            _$s9SEService12MIDContainerVMa,
+                            _$s9SEService12MIDContainerVMn,
+                            _$s9SEService12MIDContainerVN,
+                            _$s9SEService12MIDContainerVSEAAMc,
+                            _$s9SEService12MIDContainerVSeAAMc,
+                            _$s9SEService13SERDataSourceV11getNameInfo4type3forSaySSGSgAA14CredentialTypeO_s7KeyPathCyAA12MIDContainerVAGGtF,
                             _$s9SEService13SERDataSourceV13getMemoryInfo4type6seTypeAA06AppleteF0CSgAA010CredentialI0O_AA6SETypeOtF,
+                            _$s9SEService13SERDataSourceV14isSystemApplet9moduleAIDSbSS_tF,
                             _$s9SEService13SERDataSourceVACyKcfC,
                             _$s9SEService13SERDataSourceVMa,
                             _$s9SEService13SERDataSourceVMn,
@@ -384,6 +390,12 @@ exports:
                             _$s9SEService7SEStateCSEAAMc,
                             _$s9SEService7SEStateCSeAAMc,
                             _$s9SEService7SEStateCfD,
+                            _$s9SEService8NameInfoV4fromACs7Decoder_p_tKcfC,
+                            _$s9SEService8NameInfoV6encode2toys7Encoder_p_tKF,
+                            _$s9SEService8NameInfoVMa, _$s9SEService8NameInfoVMn,
+                            _$s9SEService8NameInfoVN,
+                            _$s9SEService8NameInfoVSEAAMc,
+                            _$s9SEService8NameInfoVSeAAMc,
                             _$s9SEService8SEAppletC11descriptionSSvg,
                             _$s9SEService8SEAppletC20supportsSecureCodingSbvMZ,
                             _$s9SEService8SEAppletC20supportsSecureCodingSbvgZ,
@@ -456,6 +468,7 @@ exports:
                             _SESEndPointCreateForAlishaWithSession,
                             _SESEndPointCreateForHomeWithSession,
                             _SESEndPointCreateForHydraWithSession,
+                            _SESEndPointCreateForLyonWithSession,
                             _SESEndPointCreateKeyPair, _SESEndPointCreateNew,
                             _SESEndPointCreateWithSession, _SESEndPointDelete,
                             _SESEndPointDeleteAuthorizationID,

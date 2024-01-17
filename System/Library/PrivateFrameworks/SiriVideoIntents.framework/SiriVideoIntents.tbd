@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriVideoIntents.framework/SiriVideoIntents
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11SiriKitFlow11DisplayHintV0A12VideoIntentsE11descriptionSSvg,
                             _$s11SiriKitFlow11DisplayHintV0A12VideoIntentsE11descriptionSSvpMV,
                             _$s11SiriKitFlow11DisplayHintVs23CustomStringConvertible0A12VideoIntentsMc,
@@ -248,7 +248,6 @@ exports:
                             _$s16SiriVideoIntents11LiveServiceC10identifier7display17pronunciationHintACSSSg_SSAGtcfC,
                             _$s16SiriVideoIntents11LiveServiceC10identifier7display17pronunciationHintACSSSg_SSAGtcfc,
                             _$s16SiriVideoIntents11LiveServiceC11appStoreUrlSSSgvpMV,
-                            _$s16SiriVideoIntents11LiveServiceC11channelNameSSSgvpMV,
                             _$s16SiriVideoIntents11LiveServiceC11isInstalledSo8NSNumberCSgvpMV,
                             _$s16SiriVideoIntents11LiveServiceC12isSubscribedSo8NSNumberCSgvpMV,
                             _$s16SiriVideoIntents11LiveServiceC14isRemoteResultSo8NSNumberCSgvpMV,
@@ -279,9 +278,13 @@ exports:
                             _$s16SiriVideoIntents12ContentImageCMn,
                             _$s16SiriVideoIntents12ContentImageCN,
                             _$s16SiriVideoIntents12ContentImageCfD,
+                            _$s16SiriVideoIntents12InstalledAppV03appC16FindSearchScopesSay0eC006StringH5ScopeOGvg,
+                            _$s16SiriVideoIntents12InstalledAppV03appC16FindSearchScopesSay0eC006StringH5ScopeOGvpMV,
+                            _$s16SiriVideoIntents12InstalledAppV03appC16PlaySearchScopesSay0eC00B8CategoryOGvg,
+                            _$s16SiriVideoIntents12InstalledAppV03appC16PlaySearchScopesSay0eC00B8CategoryOGvpMV,
                             _$s16SiriVideoIntents12InstalledAppV09supportedC0SaySSGvg,
                             _$s16SiriVideoIntents12InstalledAppV09supportedC0SaySSGvpMV,
-                            _$s16SiriVideoIntents12InstalledAppV16bundleIdentifier24supportedMediaCategories0hC0ACSS_SaySSGAGtcfC,
+                            _$s16SiriVideoIntents12InstalledAppV16bundleIdentifier24supportedMediaCategories0hC003appC16FindSearchScopes0kc4PlaymN0ACSS_SaySSGAISay0eC006StringM5ScopeOGSayAJ0B8CategoryOGtcfC,
                             _$s16SiriVideoIntents12InstalledAppV16bundleIdentifierSSvg,
                             _$s16SiriVideoIntents12InstalledAppV16bundleIdentifierSSvpMV,
                             _$s16SiriVideoIntents12InstalledAppV24supportedMediaCategoriesSaySSGvg,

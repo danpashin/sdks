@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/AppleMediaServicesUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s1M20AppleMediaServicesUI19DynamicViewProviderPTl,
                             _$s1M20AppleMediaServicesUI21MessagingViewProviderPTl,
                             _$s1T20AppleMediaServicesUI25ViewRepresentableProviderPTl,
@@ -1067,6 +1067,18 @@ exports:
                             _$s20AppleMediaServicesUI22AMSExpressCheckoutViewCMo,
                             _$s20AppleMediaServicesUI22AMSExpressCheckoutViewCN,
                             _$s20AppleMediaServicesUI22AMSExpressCheckoutViewCfD,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemC12presentingVC9debugInfo5frameACSo16UIViewControllerC_SaySDys11AnyHashableVypGGSo6CGRectVtcfC,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemC12presentingVC9debugInfo5frameACSo16UIViewControllerC_SaySDys11AnyHashableVypGGSo6CGRectVtcfCTj,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemC12presentingVC9debugInfo5frameACSo16UIViewControllerC_SaySDys11AnyHashableVypGGSo6CGRectVtcfCTq,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemC12presentingVC9debugInfo5frameACSo16UIViewControllerC_SaySDys11AnyHashableVypGGSo6CGRectVtcfc,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCACycfC,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCACycfc,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCMa,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCMn,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCMo,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCMu,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCN,
+                            _$s20AppleMediaServicesUI22DebugMenuBarButtonItemCfD,
                             _$s20AppleMediaServicesUI23EngagementContentRecordC015isURLEngagementF03urlSb10Foundation3URLV_tFZ,
                             _$s20AppleMediaServicesUI23EngagementContentRecordC11fallbackURL10Foundation0I0VSgvg,
                             _$s20AppleMediaServicesUI23EngagementContentRecordC11fallbackURL10Foundation0I0VSgvpMV,
@@ -1334,6 +1346,14 @@ exports:
                             _$s20AppleMediaServicesUI8WebModelCN,
                             _$s20AppleMediaServicesUI8WebModelCfD,
                             _$s20AppleMediaServicesUI8WebModelCfd,
+                            _$s20AppleMediaServicesUI9DebugMenuC07presenteF012presentingVC9debugInfoySo16UIViewControllerC_SaySDys11AnyHashableVypGGSgtFZ,
+                            _$s20AppleMediaServicesUI9DebugMenuCACycfC,
+                            _$s20AppleMediaServicesUI9DebugMenuCACycfc,
+                            _$s20AppleMediaServicesUI9DebugMenuCMa,
+                            _$s20AppleMediaServicesUI9DebugMenuCMn,
+                            _$s20AppleMediaServicesUI9DebugMenuCMo,
+                            _$s20AppleMediaServicesUI9DebugMenuCN,
+                            _$s20AppleMediaServicesUI9DebugMenuCfD,
                             _$s7SwiftUI4ViewP018AppleMediaServicesB0E14engagementTask7request7options9onSuccess0K5ErrorQrAA7BindingVySo20AMSEngagementRequestCSgG_AD017PresentEngagementH7OptionsVySo0O6ResultCcSgys0M0_pcSgtF,
                             _$s7SwiftUI4ViewP018AppleMediaServicesB0E14engagementTask7request7options9onSuccess0K5ErrorQrAA7BindingVySo20AMSEngagementRequestCSgG_AD017PresentEngagementH7OptionsVySo0O6ResultCcSgys0M0_pcSgtFQOMQ,
                             _$s7SwiftUI4ViewP018AppleMediaServicesB0E15alertDialogTask7request9onSuccess0K5ErrorQrAA7BindingVySo16AMSDialogRequestCSgG_ySo0O6ResultCcSgys0M0_pcSgtF,
@@ -1374,6 +1394,7 @@ exports:
                             AMSUIAgeVerificationTask, AMSUIAlertDialogTask,
                             AMSUIAppearance, AMSUIAssetLoader,
                             AMSUIAuthKitUpdateTask, AMSUIAuthenticateTask,
+                            AMSUIAuthenticateTaskCoordinator,
                             AMSUIAutomaticDownloadKindsSetTask,
                             AMSUIBannerAppearance,
                             AMSUIBannerMessageViewController,
@@ -1391,7 +1412,7 @@ exports:
                             AMSUICommonView, AMSUICommonViewController,
                             AMSUICommonVisualEffectView,
                             AMSUIDashboardMessageAppearance,
-                            AMSUIDashboardMessageViewController,
+                            AMSUIDashboardMessageViewController, AMSUIDebugMenu,
                             AMSUIDelegateTokenTask, AMSUIDynamicImpressionItem,
                             AMSUIDynamicImpressionMetrics,
                             AMSUIDynamicImpressionMetricsIdentifier,
@@ -1424,5 +1445,6 @@ exports:
                             AMSUIWebAppearance, AMSUIWebViewController,
                             AMSUIWindowRequest,
                             _TtC20AppleMediaServicesUI22AMSExpressCheckoutView,
+                            _TtC20AppleMediaServicesUI22DebugMenuBarButtonItem,
                             _TtCV20AppleMediaServicesUI7WebView11Coordinator ]
 ...

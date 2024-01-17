@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ASAttributeAutomaticUpdateDisabled,
                             _ASAttributeCompatibilityVersion,
                             _ASAttributeContentVersion, _ASAttributeDownloadSize,
@@ -28,6 +28,7 @@ exports:
                             _ASDownloadPriorityHigh, _ASDownloadPriorityLow,
                             _ASDownloadPriorityNormal, _ASEnsureDataVault,
                             _ASErrorDomain, _ASNonUserInitiatedDownloadsAllowed,
+                            _ASNonUserInitiatedDownloadsAllowedForAssetType,
                             _ASOperationCompleted, _ASOperationDownloadPaused,
                             _ASOperationDownloadQueued,
                             _ASOperationDownloadingAsset, _ASOperationStalled,
@@ -49,8 +50,10 @@ exports:
                             _MAIsWellFormedAssetId, _MAIsWellFormedAssetType,
                             _MAIsWellFormedPurpose, _MALogClientWithNSLogOSLog,
                             _MALogClientWithNSLogOSLogStdOut, _MAMigrateAssets,
-                            _MANonUserInitiatedDownloadsAllowed, _MAPurgeAll,
-                            _MAPurgeAllExceptGivenIds, _MAPurgeAllWithPurpose,
+                            _MANonUserInitiatedDownloadsAllowed,
+                            _MANonUserInitiatedDownloadsAllowedForAssetType,
+                            _MAPurgeAll, _MAPurgeAllExceptGivenIds,
+                            _MAPurgeAllWithPurpose,
                             _MAPurgeAllWithPurposeExceptGivenIds,
                             _MAPurgeCatalogs, _MAPurgeCatalogsWithPurpose,
                             _MAPushServiceInterface, _MAReportingRequest,
@@ -84,6 +87,7 @@ exports:
                             __MAclientSendDataMigrator,
                             __MAclientSendEnsureDataVault,
                             __MAclientSendGetNonUserInitiatedDownloadsAllowed,
+                            __MAclientSendGetNonUserInitiatedDownloadsAllowedForAssetType,
                             __MAclientSendGetServerUrl,
                             __MAclientSendQueryNSUrlState,
                             __MAclientSendRepairStateSync,

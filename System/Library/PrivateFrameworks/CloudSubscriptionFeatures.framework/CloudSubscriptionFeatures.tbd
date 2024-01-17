@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudSubscriptionFeatures.framework/CloudSubscriptionFeatures
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s25CloudSubscriptionFeatures0A7FeatureC05cloudD6ObjectSo0adF0Cvg,
                             _$s25CloudSubscriptionFeatures0A7FeatureC05cloudD6ObjectSo0adF0CvpMV,
                             _$s25CloudSubscriptionFeatures0A7FeatureC11accessTokenSSSgvg,
@@ -151,6 +151,7 @@ exports:
                             _$sSo13FeatureStatusVSe25CloudSubscriptionFeaturesMc,
                             _$sSo13FeatureStatusVs23CustomStringConvertible25CloudSubscriptionFeaturesMc,
                             _$sSo17CSFFeatureManagerC25CloudSubscriptionFeaturesE02isC10SubscriberSbyFZ,
+                            _$sSo17CSFFeatureManagerC25CloudSubscriptionFeaturesE11expireCache8defaults6domainySo14NSUserDefaultsC_SStFZ,
                             _$sSo17CSFFeatureManagerC25CloudSubscriptionFeaturesE14requestFeature2id10completionySS_ySo0cG6ObjectCSg_s5Error_pSgtctFZ,
                             _$sSo17CSFFeatureManagerC25CloudSubscriptionFeaturesE14requestFeature2id10completionySS_ys6ResultOyAC0cG0Cs5Error_pGctFZ,
                             _$sSo17CSFFeatureManagerC25CloudSubscriptionFeaturesE21getFeatureEligibility03forG6WithId06bundleK010completionySS_SSySb_s5Error_pSgtctFZ,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DisembarkUI.framework/DisembarkUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/Disembark.framework/Disembark ]
     symbols:              [ _DisembarkUIVersionNumber, _DisembarkUIVersionString,
                             __DKIsInternalInstall, __DKLogSystem ]
@@ -27,6 +27,7 @@ exports:
                             DKNotableUserDataWalletCardView, DKPasscodeProvider,
                             DKPasscodeViewController, DKPresenter,
                             DKPromptCloudUploadViewController,
+                            DKRestrictionsProvider,
                             DKScreenTimePasscodeViewController,
                             DKSpinnerController, DKStorageProvider,
                             DKTelephonyProvider,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteManagementModel.framework/RemoteManagementModel
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _RMModelACMECredentialDeclaration_KeyType_RSA,
                             _RMModelACMECredentialDeclaration_KeyType_ecsecPrimeRandom,
                             _RMModelAccountLDAPDeclaration_SearchSettingsItem_Scope_base,
@@ -25,8 +25,10 @@ exports:
                             _RMModelAccountMailDeclaration_OutgoingServer_AuthenticationMethod_NTLM,
                             _RMModelAccountMailDeclaration_OutgoingServer_AuthenticationMethod_none,
                             _RMModelAccountMailDeclaration_OutgoingServer_AuthenticationMethod_password,
-                            _RMModelAppManagedDeclaration_InstallBehavior_Install_immediately,
-                            _RMModelAppManagedDeclaration_InstallBehavior_Install_onDemand,
+                            _RMModelAppManagedDeclaration_InstallBehaviorLicense_VPPType_device,
+                            _RMModelAppManagedDeclaration_InstallBehaviorLicense_VPPType_user,
+                            _RMModelAppManagedDeclaration_InstallBehavior_Install_optional,
+                            _RMModelAppManagedDeclaration_InstallBehavior_Install_required,
                             _RMModelAssetBaseAuthentication_Type_MDM,
                             _RMModelAssetBaseAuthentication_Type_none,
                             _RMModelAssetCredentialACMEDeclaration_Accessible_afterFirstUnlock,
@@ -69,27 +71,21 @@ exports:
                             _RMModelNetworkWiFiDeclaration_Proxy_Type_none,
                             _RMModelScreenSharingConnectionDeclaration_DisplayConfiguration_DisplayType_virtual1,
                             _RMModelScreenSharingConnectionDeclaration_DisplayConfiguration_DisplayType_virtual2,
+                            _RMModelStatusAppManagedList_State_downloading,
                             _RMModelStatusAppManagedList_State_failed,
                             _RMModelStatusAppManagedList_State_installing,
                             _RMModelStatusAppManagedList_State_managed,
                             _RMModelStatusAppManagedList_State_managedButUninstalled,
-                            _RMModelStatusAppManagedList_State_managementRejected,
-                            _RMModelStatusAppManagedList_State_needsRedemption,
                             _RMModelStatusAppManagedList_State_optional,
-                            _RMModelStatusAppManagedList_State_prompting,
+                            _RMModelStatusAppManagedList_State_promptingForConsent,
                             _RMModelStatusAppManagedList_State_promptingForLogin,
                             _RMModelStatusAppManagedList_State_promptingForManagement,
-                            _RMModelStatusAppManagedList_State_promptingForUpdate,
-                            _RMModelStatusAppManagedList_State_promptingForUpdateLogin,
                             _RMModelStatusAppManagedList_State_queued,
-                            _RMModelStatusAppManagedList_State_redeeming,
-                            _RMModelStatusAppManagedList_State_unknown,
-                            _RMModelStatusAppManagedList_State_updateRejected,
-                            _RMModelStatusAppManagedList_State_updating,
-                            _RMModelStatusAppManagedList_State_userInstalledApp,
-                            _RMModelStatusAppManagedList_State_userRejected,
-                            _RMModelStatusAppManagedList_State_validatingPurchase,
-                            _RMModelStatusAppManagedList_State_validatingUpdate,
+                            _RMModelStatusAppManagedList_UpdateState_available,
+                            _RMModelStatusAppManagedList_UpdateState_failed,
+                            _RMModelStatusAppManagedList_UpdateState_promptingForUpdate,
+                            _RMModelStatusAppManagedList_UpdateState_promptingForUpdateLogin,
+                            _RMModelStatusAppManagedList_UpdateState_updating,
                             _RMModelStatusDeviceBatteryHealth_DevicePowerBatteryHealth_nonGenuine,
                             _RMModelStatusDeviceBatteryHealth_DevicePowerBatteryHealth_normal,
                             _RMModelStatusDeviceBatteryHealth_DevicePowerBatteryHealth_serviceRecommended,
@@ -124,6 +120,7 @@ exports:
                             _RMModelStatusItemManagementPushToken,
                             _RMModelStatusItemPasscodeCompliance,
                             _RMModelStatusItemPasscodeIsPresent,
+                            _RMModelStatusItemScreenSharingConnectionGroupUnresolvedConnections,
                             _RMModelStatusItemSecurityCertificateList,
                             _RMModelStatusItemServicesBackgroundTask,
                             _RMModelStatusItemSoftwareUpdateFailureReason,
@@ -199,7 +196,7 @@ exports:
                             RMModelAppManagedDeclaration,
                             RMModelAppManagedDeclaration_Attributes,
                             RMModelAppManagedDeclaration_InstallBehavior,
-                            RMModelAppManagedDeclaration_RemoveBehavior,
+                            RMModelAppManagedDeclaration_InstallBehaviorLicense,
                             RMModelAssetBase, RMModelAssetBaseAuthentication,
                             RMModelAssetBaseReference,
                             RMModelAssetCredentialACMEDeclaration,
@@ -280,6 +277,7 @@ exports:
                             RMModelStatusManagementPushToken,
                             RMModelStatusPasscodeCompliance,
                             RMModelStatusPasscodeIsPresent, RMModelStatusReason,
+                            RMModelStatusScreenSharingConnectionGroupUnresolvedConnections,
                             RMModelStatusSecurityCertificateList,
                             RMModelStatusServicesBackgroundTask,
                             RMModelStatusServicesBackgroundTask_Launchd,

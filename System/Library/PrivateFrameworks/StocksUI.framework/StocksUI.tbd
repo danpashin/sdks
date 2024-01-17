@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/StocksUI.framework/StocksUI
-current-version:       1262.1
+current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV8StocksUIE5ParamO15collapseSidebaryA2FmFWC,
                             _$s10Foundation3URLV8StocksUIE5ParamO16disableAnimationyA2FmFWC,
                             _$s10Foundation3URLV8StocksUIE5ParamO8rawValueAFSgSS_tcfC,
@@ -326,6 +326,7 @@ exports:
                             _$s5TeaUI14RadarComponentV06StocksB0E6stocksACvgZ,
                             _$s5TeaUI15ContextMenuItemC06StocksB0E12openInNewTab8headlineACSo19FCHeadlineProviding_p_tFZ,
                             _$s5TeaUI15ContextMenuItemC06StocksB0E15openInNewWindow8headlineACSgSo19FCHeadlineProviding_p_tFZ,
+                            _$s5TeaUI15ContextMenuItemC06StocksB0E15provideFeedbackACyFZ,
                             _$s5TeaUI15ContextMenuItemC06StocksB0E8copyLink5stockAC0F4Core5StockV_tFZ,
                             _$s5TeaUI24CommandCenterWithTrackerCAA0cF006StocksB0Mc,
                             _$s5TeaUI24OnboardingViewControllerC06StocksB0E09cardSplitD12Presentation3forAA04CardhdI0OAA0khD5StateO_tF,
@@ -437,12 +438,14 @@ exports:
                             _$s8StocksUI0A8ActivityO10identifierSSvg,
                             _$s8StocksUI0A8ActivityO10identifierSSvpMV,
                             _$s8StocksUI0A8ActivityO10onboardingyAcA20OnboardingRouteModelVcACmFWC,
+                            _$s8StocksUI0A8ActivityO10preBuyFlowyAcA03PreeF10RouteModelVcACmFWC,
                             _$s8StocksUI0A8ActivityO10symbolFeedyA2C05StockE0OcACmFWC,
                             _$s8StocksUI0A8ActivityO12symbolSearchyACSS_tcACmFWC,
                             _$s8StocksUI0A8ActivityO13eligibilitiesShy03TeaB00C17EligibilityOptionOGvg,
                             _$s8StocksUI0A8ActivityO13eligibilitiesShy03TeaB00C17EligibilityOptionOGvpMV,
                             _$s8StocksUI0A8ActivityO15collapseSidebarSbvg,
                             _$s8StocksUI0A8ActivityO15collapseSidebarSbvpMV,
+                            _$s8StocksUI0A8ActivityO15provideFeedbackyA2CmFWC,
                             _$s8StocksUI0A8ActivityO16disableAnimationSbvg,
                             _$s8StocksUI0A8ActivityO16disableAnimationSbvpMV,
                             _$s8StocksUI0A8ActivityO16manageWatchlistsyAC0A4Core5StockVSg_03TeaB022CommandExecutionSourceCSgtcACmFWC,
@@ -869,6 +872,7 @@ exports:
                             _$s8StocksUI19CampaignRouteTargetOMn,
                             _$s8StocksUI19CampaignRouteTargetON,
                             _$s8StocksUI19ForYouDateFormatterV04dateF0So06NSDateF0CSgvgZ,
+                            _$s8StocksUI19ForYouDateFormatterV05shorteF0So06NSDateF0CSgvgZ,
                             _$s8StocksUI19ForYouDateFormatterVMa,
                             _$s8StocksUI19ForYouDateFormatterVMn,
                             _$s8StocksUI19ForYouDateFormatterVN,
@@ -910,6 +914,12 @@ exports:
                             _$s8StocksUI20OnboardingRouteModelVMa,
                             _$s8StocksUI20OnboardingRouteModelVMn,
                             _$s8StocksUI20OnboardingRouteModelVN,
+                            _$s8StocksUI20PreBuyFlowRouteModelV10identifierSSvg,
+                            _$s8StocksUI20PreBuyFlowRouteModelV10identifierSSvpMV,
+                            _$s8StocksUI20PreBuyFlowRouteModelV13TeaFoundation12IdentifiableAAMc,
+                            _$s8StocksUI20PreBuyFlowRouteModelVMa,
+                            _$s8StocksUI20PreBuyFlowRouteModelVMn,
+                            _$s8StocksUI20PreBuyFlowRouteModelVN,
                             _$s8StocksUI20SidebarConfigurationV014shouldCollapseC0SbvM,
                             _$s8StocksUI20SidebarConfigurationV014shouldCollapseC0Sbvg,
                             _$s8StocksUI20SidebarConfigurationV014shouldCollapseC0SbvpMV,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioSession.framework/AudioSession
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AVAudioApplicationInputMuteStateChangeNotification,
                             _AVAudioApplicationMuteStateKey,
                             _AVAudioSessionActivationAccessibilityPreferenceKey,
@@ -41,6 +41,8 @@ exports:
                             _AVAudioSessionCategoryVoiceMail,
                             _AVAudioSessionCategoryVoiceOver,
                             _AVAudioSessionCategoryWaterEjection,
+                            _AVAudioSessionConcurrentAirPlayAudioPreferenceChangeNotification,
+                            _AVAudioSessionConcurrentAirPlayAudioPreferredKey,
                             _AVAudioSessionInterruptionNotification,
                             _AVAudioSessionInterruptionOptionKey,
                             _AVAudioSessionInterruptionReasonKey,
@@ -109,6 +111,9 @@ exports:
                             _AVAudioSessionPortThunderbolt,
                             _AVAudioSessionPortUSBAudio,
                             _AVAudioSessionPortVirtual,
+                            _AVAudioSessionRenderingCapabilitiesChangeNotification,
+                            _AVAudioSessionRenderingModeChangeNotification,
+                            _AVAudioSessionRenderingModeNewRenderingModeKey,
                             _AVAudioSessionRouteChangeNotification,
                             _AVAudioSessionRouteChangePreviousRouteKey,
                             _AVAudioSessionRouteChangeReasonKey,

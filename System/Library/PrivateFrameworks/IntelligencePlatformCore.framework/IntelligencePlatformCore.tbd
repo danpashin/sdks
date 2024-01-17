@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/IntelligencePlatformCore.framework/IntelligencePlatformCore
-current-version:       75.0.3
+current-version:       75.3.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation11JSONDecoderC24IntelligencePlatformCoreE6decode_7fromURLxSgxm_AA0H0VtSeRzSERzlF,
                             _$s10Foundation4DateV24IntelligencePlatformCoreE24dateComponentsJSONString8isAllDay8calendarSSSb_AA8CalendarVtF,
                             _$s12GRDBInternal13DatabaseValueV24IntelligencePlatformCoreE05emptyC07forTypeAA0bC11Convertible_pAA0B0C06ColumnI0V_tFZ,
@@ -1197,6 +1197,8 @@ exports:
                             _$s24IntelligencePlatformCore13ConfigurationV12isKTSEnabledSbvg,
                             _$s24IntelligencePlatformCore13ConfigurationV12isKTSEnabledSbvpMV,
                             _$s24IntelligencePlatformCore13ConfigurationV13isFlagEnabledySbAA17OptionConvertible_pF,
+                            _$s24IntelligencePlatformCore13ConfigurationV17isPowerLogEnabledSbvg,
+                            _$s24IntelligencePlatformCore13ConfigurationV17isPowerLogEnabledSbvpMV,
                             _$s24IntelligencePlatformCore13ConfigurationV19isAllSourcesEnabledSbvg,
                             _$s24IntelligencePlatformCore13ConfigurationV19isAllSourcesEnabledSbvpMV,
                             _$s24IntelligencePlatformCore13ConfigurationV21intelligenceplatformdACvgZ,
@@ -4526,6 +4528,7 @@ exports:
                             _$s24IntelligencePlatformCore7OptionsV28enableGlobalKnowledgeServiceACvgZ,
                             _$s24IntelligencePlatformCore7OptionsV29assetRegistryBackendInProcessACvgZ,
                             _$s24IntelligencePlatformCore7OptionsV29enableLifeEventAllDataSourcesACvgZ,
+                            _$s24IntelligencePlatformCore7OptionsV29enablePowerLogInstrumentationACvgZ,
                             _$s24IntelligencePlatformCore7OptionsV31enableGlobalKnowledgePrototypesACvgZ,
                             _$s24IntelligencePlatformCore7OptionsV32enableLongitudinalDataCollectionACvgZ,
                             _$s24IntelligencePlatformCore7OptionsV32inferenceSupportBackendInProcessACvgZ,
@@ -4597,6 +4600,7 @@ exports:
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO7features12StaticStringVvpMV,
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8allCasesSayAEGvgZ,
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8asOptionAA7OptionsVyF,
+                            _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8powerLogyA2EmFWC,
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8rawValueAESgSS_tcfC,
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8rawValueSSvg,
                             _$s24IntelligencePlatformCore8FeaturesO11FeatureFlagO8rawValueSSvpMV,
@@ -4624,6 +4628,14 @@ exports:
                             _$s24IntelligencePlatformCore8PipelineC11StatusStoreVN,
                             _$s24IntelligencePlatformCore8PipelineC14runDeltaUpdate6reason6sourceySo23GDPipelineRunningReasonV_AA6SourceVtYaKF,
                             _$s24IntelligencePlatformCore8PipelineC14runDeltaUpdate6reason6sourceySo23GDPipelineRunningReasonV_AA6SourceVtYaKFTu,
+                            _$s24IntelligencePlatformCore8PipelineC17runCNContactDelta6reasonySo23GDPipelineRunningReasonV_tYaKF,
+                            _$s24IntelligencePlatformCore8PipelineC17runCNContactDelta6reasonySo23GDPipelineRunningReasonV_tYaKFTu,
+                            _$s24IntelligencePlatformCore8PipelineC18runAppleMusicDelta6reasonySo23GDPipelineRunningReasonV_tYaKF,
+                            _$s24IntelligencePlatformCore8PipelineC18runAppleMusicDelta6reasonySo23GDPipelineRunningReasonV_tYaKFTu,
+                            _$s24IntelligencePlatformCore8PipelineC18runLifeEventsDelta6reasonySo23GDPipelineRunningReasonV_tYaKF,
+                            _$s24IntelligencePlatformCore8PipelineC18runLifeEventsDelta6reasonySo23GDPipelineRunningReasonV_tYaKFTu,
+                            _$s24IntelligencePlatformCore8PipelineC21runEntityTaggingDelta6reasonySo23GDPipelineRunningReasonV_tYaKF,
+                            _$s24IntelligencePlatformCore8PipelineC21runEntityTaggingDelta6reasonySo23GDPipelineRunningReasonV_tYaKFTu,
                             _$s24IntelligencePlatformCore8PipelineCMa,
                             _$s24IntelligencePlatformCore8PipelineCMm,
                             _$s24IntelligencePlatformCore8PipelineCMn,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WorkoutUI.framework/WorkoutUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11SeymourCore12DependenciesC9WorkoutUIE7workout24wheelchairStatusProvider5queueAcD22WheelchairUseProviding_p_So012OS_dispatch_J0CtFZ,
                             _$s11SeymourCore12PortableEnumO9WorkoutUIAA16CatalogMediaTypeORszrlE15bridgedRawValueSo8NSNumberCSgyF,
                             _$s11SeymourCore14CatalogWorkoutV0D2UIE8narratorAA11ContributorVSgvg,
@@ -129,6 +129,8 @@ exports:
                             _$s7SwiftUI17EnvironmentValuesV07WorkoutB0E21workoutAnimationStyleAD0egH0Ovg,
                             _$s7SwiftUI17EnvironmentValuesV07WorkoutB0E21workoutAnimationStyleAD0egH0OvpMV,
                             _$s7SwiftUI17EnvironmentValuesV07WorkoutB0E21workoutAnimationStyleAD0egH0Ovs,
+                            _$s7SwiftUI4FontV07WorkoutB0E29withVerticallyCenteredSlashesACyF,
+                            _$s7SwiftUI4FontV07WorkoutB0E2if_9transformACSb_A2CXEtF,
                             _$s7SwiftUI4ViewP07WorkoutB0E07workoutC5StyleyQrAD0dcF0OF,
                             _$s7SwiftUI4ViewP07WorkoutB0E07workoutC5StyleyQrAD0dcF0OFQOMQ,
                             _$s7SwiftUI4ViewP07WorkoutB0E12cornerRadius_7cornersQr12CoreGraphics7CGFloatV_So12UIRectCornerVtF,
@@ -139,8 +141,8 @@ exports:
                             _$s7SwiftUI4ViewP07WorkoutB0E14metricUnitFontQryFQOMQ,
                             _$s7SwiftUI4ViewP07WorkoutB0E15bodyHyphenationQryF,
                             _$s7SwiftUI4ViewP07WorkoutB0E15bodyHyphenationQryFQOMQ,
-                            _$s7SwiftUI4ViewP07WorkoutB0E15metricValueFontQryF,
-                            _$s7SwiftUI4ViewP07WorkoutB0E15metricValueFontQryFQOMQ,
+                            _$s7SwiftUI4ViewP07WorkoutB0E15metricValueFont15includesSlashesQrSb_tF,
+                            _$s7SwiftUI4ViewP07WorkoutB0E15metricValueFont15includesSlashesQrSb_tFQOMQ,
                             _$s7SwiftUI4ViewP07WorkoutB0E17headerHyphenationQryF,
                             _$s7SwiftUI4ViewP07WorkoutB0E17headerHyphenationQryFQOMQ,
                             _$s7SwiftUI4ViewP07WorkoutB0E17pickerTextPaddingQryF,
@@ -420,7 +422,7 @@ exports:
                             _$s9WorkoutUI0A16TimeProvidedViewVMn,
                             _$s9WorkoutUI0A16TimeProvidedViewVyxG05SwiftB00E0AAMc,
                             _$s9WorkoutUI0A17ConfigurationViewV05SwiftB00D0AAMc,
-                            _$s9WorkoutUI0A17ConfigurationViewV07workoutC017formattingManager13showAddButton0h5StartaJ0012overrideSaveA6Action05startaN00l7DismissN0AC0A4Core0aC0C_So014FIUIFormattingG0CS2byycSgyAMcSgAPtcfC,
+                            _$s9WorkoutUI0A17ConfigurationViewV07workoutC017formattingManager13showAddButton0h5StartaJ0012overrideSaveA6Action05startaN00l7DismissN0AC0A4Core0aC0C_So014FIUIFormattingG0CS2byAMcSgAPyycSgtcfC,
                             _$s9WorkoutUI0A17ConfigurationViewV4bodyQrvg,
                             _$s9WorkoutUI0A17ConfigurationViewV4bodyQrvpMV,
                             _$s9WorkoutUI0A17ConfigurationViewV4bodyQrvpQOMQ,
@@ -551,7 +553,7 @@ exports:
                             _$s9WorkoutUI10MetricTextV4bodyQrvg,
                             _$s9WorkoutUI10MetricTextV4bodyQrvpMV,
                             _$s9WorkoutUI10MetricTextV4bodyQrvpQOMQ,
-                            _$s9WorkoutUI10MetricTextV5value4unit11description5staleACSS_SSSgAHSbtcfC,
+                            _$s9WorkoutUI10MetricTextV5value4unit11description5stale15includesSlashesACSS_SSSgAIS2btcfC,
                             _$s9WorkoutUI10MetricTextVMa,
                             _$s9WorkoutUI10MetricTextVMn,
                             _$s9WorkoutUI10MetricTextVN,
@@ -724,9 +726,9 @@ exports:
                             _$s9WorkoutUI15LayoutUtilitiesVN,
                             _$s9WorkoutUI15MetricValueFontV05SwiftB012ViewModifierAAMc,
                             _$s9WorkoutUI15MetricValueFontV13fontPointSize16workoutViewStyle12CoreGraphics7CGFloatVAA0ajK0O_tFZ,
+                            _$s9WorkoutUI15MetricValueFontV15includesSlashesACSb_tcfC,
                             _$s9WorkoutUI15MetricValueFontV4body7contentQr05SwiftB021_ViewModifier_ContentVyACG_tF,
                             _$s9WorkoutUI15MetricValueFontV4body7contentQr05SwiftB021_ViewModifier_ContentVyACG_tFQOMQ,
-                            _$s9WorkoutUI15MetricValueFontVACycfC,
                             _$s9WorkoutUI15MetricValueFontVMa,
                             _$s9WorkoutUI15MetricValueFontVMn,
                             _$s9WorkoutUI15MetricValueFontVN,
@@ -1048,6 +1050,25 @@ exports:
                             _$s9WorkoutUI22CatalogMediaTypeBridgeOSHAAMc,
                             _$s9WorkoutUI22CatalogMediaTypeBridgeOSQAAMc,
                             _$s9WorkoutUI22CatalogMediaTypeBridgeOSYAAMc,
+                            _$s9WorkoutUI22LocationDisambiguationV05SwiftB04ViewAAMc,
+                            _$s9WorkoutUI22LocationDisambiguationV20workoutConfiguration6intent02onD8CompleteAC0A4Core0aF0C_AC6IntentOyAIcSgtcfC,
+                            _$s9WorkoutUI22LocationDisambiguationV4bodyQrvg,
+                            _$s9WorkoutUI22LocationDisambiguationV4bodyQrvpMV,
+                            _$s9WorkoutUI22LocationDisambiguationV4bodyQrvpQOMQ,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO03addA0yA2EmFWC,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO05startA0yA2EmFWC,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO2eeoiySbAE_AEtFZ,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO4hash4intoys6HasherVz_tF,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO9hashValueSivg,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentO9hashValueSivpMV,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentOMa,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentOMn,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentON,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentOSHAAMc,
+                            _$s9WorkoutUI22LocationDisambiguationV6IntentOSQAAMc,
+                            _$s9WorkoutUI22LocationDisambiguationVMa,
+                            _$s9WorkoutUI22LocationDisambiguationVMn,
+                            _$s9WorkoutUI22LocationDisambiguationVN,
                             _$s9WorkoutUI22MetricPlatterConstantsV08standardcD7SpacingSdvg,
                             _$s9WorkoutUI22MetricPlatterConstantsV08standardcD7SpacingSdvpMV,
                             _$s9WorkoutUI22MetricPlatterConstantsV15metricMaxHeight12CoreGraphics7CGFloatVvg,
@@ -1495,6 +1516,7 @@ exports:
                             _$sSd9WorkoutUIE18smoothedForDisplaySdvg,
                             _$sSd9WorkoutUIE18smoothedForDisplaySdvpMV,
                             _$sSo16FIUIDistanceUnitV9WorkoutUIE02hkB0ABSo6HKUnitC_tcfC,
+                            _$sSo16UIViewControllerC9WorkoutUIE32setNavigationItemForegroundColoryySo7UIColorCF,
                             _$sSo18NSNotificationNamea9WorkoutUIE19SeymourCatalogResetABvgZ,
                             _$sSo18_HKWorkoutGoalTypeV9WorkoutUIE10symbolNameSSvg,
                             _$sSo18_HKWorkoutGoalTypeV9WorkoutUIE10symbolNameSSvpMV,
@@ -1515,6 +1537,8 @@ exports:
                             _$sSo23FIUIWorkoutActivityTypeC9WorkoutUIE10symbolNameSSSgvg,
                             _$sSo23FIUIWorkoutActivityTypeC9WorkoutUIE10symbolNameSSSgvpMV,
                             _$sSo6UIFontC9WorkoutUIE10systemFont6ofSize6weight6design14symbolicTraitsAB12CoreGraphics7CGFloatV_So0A6WeightaSo0A22DescriptorSystemDesignaSo0ap8SymbolicK0VtFZ,
+                            _$sSo8UIDeviceC9WorkoutUIE25isLargeDisplayZoomEnabledSbvg,
+                            _$sSo8UIDeviceC9WorkoutUIE25isLargeDisplayZoomEnabledSbvpMV,
                             _WKUISessionFakeSummaryEnabled,
                             _WKUISessionFakeSummaryWorkout,
                             _WorkoutUIVersionNumber, _WorkoutUIVersionString ]

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
-current-version:       2268.1.8
+current-version:       2274.8.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _APPLICATION_ALTERNATENAME_DISCOUNT_WEIGHT,
                             _APPLICATION_ALTERNATENAME_DISCOUNT_WEIGHT_CJK,
                             _APPLICATION_KEYWORD_DISCOUNT_WEIGHT,
@@ -32,7 +32,7 @@ exports:
                             _LONG_QUERY_THRESHOLD, _LOW_ENGAGEMENT_THRESHOLD,
                             _MAX_KEYWORDS_TO_CHECK,
                             _MDItemAppStoreHasMetadataPlist,
-                            _MDItemTextContentConfidenceHigh,
+                            _MDItemTextContentConfidenceHigh, _PASSBOOK_ORDER,
                             _PASSBOOK_TRANSACTION, _PHOTOS_L2_SCORE_THRESHOLD,
                             _PRSDirectivesManagerDescriptorsForModelInputScore,
                             _PRSLogCategoryDefault, _PRSModelErrorDomain,
@@ -377,7 +377,8 @@ exports:
                             _SSEscapedStringForSearchQuery,
                             _SSExtensionIdentifiersForSections,
                             _SSExtraApplicationKeywords,
-                            _SSExtraApplicationVersion, _SSGeneralLog,
+                            _SSExtraApplicationVersion,
+                            _SSFaceTimeBundleIdentifier, _SSGeneralLog,
                             _SSGetCurrentLocale,
                             _SSIgnoreMaxCountForSingleSuggestionsType,
                             _SSInitLogging, _SSIsCounterFactual,
@@ -396,7 +397,8 @@ exports:
                             _SSNotificationNameRefreshZKW,
                             _SSNumbersBundleIdentifier, _SSPagesBundleIdentifier,
                             _SSParseResultsForTopHitQueryWithString,
-                            _SSPeopleBundleIdentifier, _SSPhotosBundleIdentifier,
+                            _SSPeopleBundleIdentifier, _SSPhoneBundleIdentifier,
+                            _SSPhotosBundleIdentifier,
                             _SSPhraseQueryEscapeString,
                             _SSPhraseQueryUnquoteString,
                             _SSPommesctlBundleIdentifier,
@@ -408,6 +410,7 @@ exports:
                             _SSQueryParseResultsForQueryString,
                             _SSQueryParserCooldown, _SSQueryParserPreheat,
                             _SSQueryParserStripKindFromString,
+                            _SSRankingManagerPommesLocalTopHitThreshold,
                             _SSRankingManagerTopHitThreshold,
                             _SSRearrangeDuplicatesInSection, _SSRecentResultsLog,
                             _SSRedactString, _SSRedactSuggestionIdentifier,

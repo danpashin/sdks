@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Stickers.framework/Stickers
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s8Stickers06RemoteA3APIV12xpcInterfaceSo14NSXPCInterfaceCvgZ,
                             _$s8Stickers06RemoteA3APIVMa,
                             _$s8Stickers06RemoteA3APIVMn,
@@ -109,6 +109,8 @@ exports:
                             _$s8Stickers12StickerStoreC15PersistenceTypeOMn,
                             _$s8Stickers12StickerStoreC15PersistenceTypeON,
                             _$s8Stickers12StickerStoreC17stickersDidChangeSo18NSNotificationNameavgZ,
+                            _$s8Stickers12StickerStoreC38_internal_only_touchStickSpotlightItemyyAA0B0CKFTj,
+                            _$s8Stickers12StickerStoreC38_internal_only_touchStickSpotlightItemyyAA0B0CKFTq,
                             _$s8Stickers12StickerStoreC5count3forSiAA0B0C12FetchRequestV_tKFTj,
                             _$s8Stickers12StickerStoreC5count3forSiAA0B0C12FetchRequestV_tKFTq,
                             _$s8Stickers12StickerStoreC5count4typeSiAA0B0C0B4TypeO_tKFTj,
@@ -151,6 +153,8 @@ exports:
                             _$s8Stickers13XPCDataMapperC10addStickeryAA0E0CAFKFTq,
                             _$s8Stickers13XPCDataMapperC13updateStickeryyAA0E0CKFTj,
                             _$s8Stickers13XPCDataMapperC13updateStickeryyAA0E0CKFTq,
+                            _$s8Stickers13XPCDataMapperC18touchSpotlightItemyyAA7StickerCKFTj,
+                            _$s8Stickers13XPCDataMapperC18touchSpotlightItemyyAA7StickerCKFTq,
                             _$s8Stickers13XPCDataMapperC5count3forSiAA7StickerC12FetchRequestV_tKFTj,
                             _$s8Stickers13XPCDataMapperC5count3forSiAA7StickerC12FetchRequestV_tKFTq,
                             _$s8Stickers13XPCDataMapperC5fetchySayAA7StickerCGAF12FetchRequestVKFTj,
@@ -418,6 +422,8 @@ exports:
                             _$s8Stickers22StickerStoreDataMapperP06removeA011identifiersySay10Foundation4UUIDVG_tKFTq,
                             _$s8Stickers22StickerStoreDataMapperP06updateB0yyAA0B0CKFTj,
                             _$s8Stickers22StickerStoreDataMapperP06updateB0yyAA0B0CKFTq,
+                            _$s8Stickers22StickerStoreDataMapperP18touchSpotlightItemyyAA0B0CKFTj,
+                            _$s8Stickers22StickerStoreDataMapperP18touchSpotlightItemyyAA0B0CKFTq,
                             _$s8Stickers22StickerStoreDataMapperP5count3forSiAA0B0C12FetchRequestV_tKFTj,
                             _$s8Stickers22StickerStoreDataMapperP5count3forSiAA0B0C12FetchRequestV_tKFTq,
                             _$s8Stickers22StickerStoreDataMapperP5fetchySayAA0B0CGAF12FetchRequestVKFTj,
@@ -499,6 +505,8 @@ exports:
                             _$s8Stickers28StickerStoreProtocolInternalP021_internal_only_removeA011identifiersySay10Foundation4UUIDVG_tKFTq,
                             _$s8Stickers28StickerStoreProtocolInternalP021_internal_only_updateB0yyAA0B0CKFTj,
                             _$s8Stickers28StickerStoreProtocolInternalP021_internal_only_updateB0yyAA0B0CKFTq,
+                            _$s8Stickers28StickerStoreProtocolInternalP38_internal_only_touchStickSpotlightItemyyAA0B0CKFTj,
+                            _$s8Stickers28StickerStoreProtocolInternalP38_internal_only_touchStickSpotlightItemyyAA0B0CKFTq,
                             _$s8Stickers28StickerStoreProtocolInternalTL,
                             _$s8Stickers28_STKTextInputObjCStoreFacadeC018representationsForA011identifiers5rolesSayAA25_STKStickerRepresentationCGSay10Foundation4UUIDVG_SaySSGSgtKFTj,
                             _$s8Stickers28_STKTextInputObjCStoreFacadeC018representationsForA011identifiers5rolesSayAA25_STKStickerRepresentationCGSay10Foundation4UUIDVG_SaySSGSgtKFTq,

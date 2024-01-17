@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/DesktopServicesPriv
-current-version:       1626
+current-version:       1631.2.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _DSArchiveServiceErrorDomain,
                             _DSArchiveServiceStreamingXPCInterface,
                             _DSArchiveServiceXPCInterface,
@@ -1286,7 +1286,6 @@ exports:
                             __ZN7TAtomic9DecrementEPi, __ZN7TAtomic9IncrementEPi,
                             __ZN7TFSInfo10CreateFileERK7TStringS2_P16__CFFileSecuritybRS0_,
                             __ZN7TFSInfo10FileSchemeEv,
-                            __ZN7TFSInfo10GetURLTypeERK7TString,
                             __ZN7TFSInfo10InitializeEP6FPItem,
                             __ZN7TFSInfo10InitializeEPKS_RK7TString,
                             __ZN7TFSInfo10InitializeEPKc,
@@ -1350,6 +1349,7 @@ exports:
                             __ZN7TFSInfo19SynchronizeVersionsERKNSt3__110shared_ptrIS_EERNS0_3setI8PropertyNS0_4lessIS6_EENS0_9allocatorIS6_EEEE,
                             __ZN7TFSInfo20ComputeFlagsFromItemEP14NSMetadataItem,
                             __ZN7TFSInfo20FetchCollaborationIDEv,
+                            __ZN7TFSInfo20FileTypeForURLSchemeE7TString,
                             __ZN7TFSInfo20GetSizerPropertyKeysEv,
                             __ZN7TFSInfo20HasLocationExtensionERK7TString,
                             __ZN7TFSInfo20IsDisconnectedDomainEP16FPProviderDomain,
@@ -1383,11 +1383,10 @@ exports:
                             __ZN7TFSInfo26GetBladeRunnerPropertyKeysEv,
                             __ZN7TFSInfo26SetNetworkNearbyBrowserRefEP11__SFBrowser,
                             __ZN7TFSInfo26SetTemporaryOriginatorInfoEP20SYDocumentAttributes,
-                            __ZN7TFSInfo27AddClippingExtensionForTypeERK7TStringjRS0_,
                             __ZN7TFSInfo27CopyNetworkNearbyBrowserRefEv,
-                            __ZN7TFSInfo27GetClippingExtensionForTypeEj,
                             __ZN7TFSInfo27SetLocalizedTypeDescriptionERK7TStringb,
                             __ZN7TFSInfo27SynchronizeFPItemPropertiesERKNSt3__110shared_ptrIS_EERNS0_3setI8PropertyNS0_4lessIS6_EENS0_9allocatorIS6_EEEE,
+                            __ZN7TFSInfo28ClippingExtensionForFileTypeEj,
                             __ZN7TFSInfo28CopyNetworkSidebarBrowserRefEv,
                             __ZN7TFSInfo28gNetworkRemoteDiskBrowserRefE,
                             __ZN7TFSInfo29ResetContainerIncompleteStateEv,
@@ -2008,6 +2007,7 @@ exports:
                             __ZNK7TFSInfo28GetKindWithoutPlatformStringER18TPropertyReferenceRKNSt3__110shared_ptrI13TFSVolumeInfoEE18NodeRequestOptionsRb,
                             __ZNK7TFSInfo28IsSystemRestrictionEffectiveER18TPropertyReferenceRKNSt3__110shared_ptrI13TFSVolumeInfoEE18NodeRequestOptionsRb,
                             __ZNK7TFSInfo28IsSystemRestrictionEffectiveEv,
+                            __ZNK7TFSInfo29ValidAppContainerFPCollectionEv,
                             __ZNK7TFSInfo35GetWritableDataVolumeMountpointInfoEv,
                             __ZNK7TFSInfo4NameEv,
                             __ZNK7TFSInfo4OpenE9OpenFlagsP16__CFFileSecuritybbb,
@@ -2145,7 +2145,8 @@ exports:
                             FIDSNode, FIFolderSize, FINode, FINodeEvent,
                             FINodeIterator, FINodeIteratorWithExtraChildren,
                             FINodeObserver, FINodeTask, FINode_AllCloudLibraries,
-                            FINode_ICloudAppLibrary, FIReplicaNode, _FIProxyNode ]
+                            FINode_ICloudAppLibrary, FIReplicaNode,
+                            _FINullObserver, _FIProxyNode ]
     objc-ivars:           [ DSNSURLBatchEnumerator._batchSize,
                             DSNSURLBatchEnumerator._index,
                             DSNSURLBatchEnumerator._targetNames,

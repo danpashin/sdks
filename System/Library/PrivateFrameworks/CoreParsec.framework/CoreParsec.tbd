@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10CoreParsec10ClientNameC07extractcD10FromStringySSSgAEFZ,
                             _$s10CoreParsec10ClientNameC07extractcD13FromUserAgent_17allowAbbreviationSSSgAF_SbtFZ,
                             _$s10CoreParsec10ClientNameCACycfC,
@@ -214,6 +214,8 @@ exports:
                             _$s10PegasusAPI36Apple_Parsec_Spotlight_V1alpha_TopicV04CoreD0E05queryG0So07SFQueryG0CvpMV,
                             _$sSo10PARSessionC10CoreParsecE4load_7contextSo7SFImageCAG_So0F7ContextCSgtYaKF,
                             _$sSo10PARSessionC10CoreParsecE4load_7contextSo7SFImageCAG_So0F7ContextCSgtYaKFTu,
+                            _$sSo11PARResponseC10CoreParsecE5reply7factory12responseDataABSgSo8PARReplyC_So16PARResultFactory_p10Foundation0G0VtcfC,
+                            _$sSo11PARResponseC10CoreParsecE5reply7factory12responseDataABSgSo8PARReplyC_So16PARResultFactory_p10Foundation0G0Vtcfc,
                             _$sSo11PARResponseC10CoreParsecE5reply7factory7dataZKWABSgSo8PARReplyC_So16PARResultFactory_p10Foundation4DataVtcfC,
                             _$sSo11PARResponseC10CoreParsecE5reply7factory7dataZKWABSgSo8PARReplyC_So16PARResultFactory_p10Foundation4DataVtcfc,
                             _$sSo12NSURLSessionC10CoreParsec24URLDataSourceConvertibleACMc,
@@ -342,13 +344,14 @@ exports:
     objc-classes:         [ PARAsyncCard, PARAsyncMoreResults, PARBag,
                             PARCardRequest, PARCloudSubscriptionChannel,
                             PARDefaultFactory, PAREngagedCompletionCache,
-                            PAREngagedResult, PARFlightResponse,
-                            PARFlightSearchRequest, PARHashtagImagesVisibility,
-                            PARLookupRequest, PARMoreResultsRequest,
-                            PARNewsVisibility, PARQueryTopicContext, PARReply,
-                            PARRequest, PARResponse, PARSearchReplayRequest,
-                            PARSearchRequest, PARSession, PARSessionConfiguration,
-                            PARSessionSwiftInternal, PARSmartSearchV1Parameters,
+                            PAREngagedResult, PAREngagementResponse,
+                            PARFlightResponse, PARFlightSearchRequest,
+                            PARHashtagImagesVisibility, PARLookupRequest,
+                            PARMoreResultsRequest, PARNewsVisibility,
+                            PARQueryTopicContext, PARReply, PARRequest, PARResponse,
+                            PARSearchReplayRequest, PARSearchRequest, PARSession,
+                            PARSessionConfiguration, PARSessionSwiftInternal,
+                            PARSmartSearchV1Parameters,
                             PARSmartSearchV2Parameters, PARSubscriptionChannel,
                             PARSubscriptionStatus, PARSyncCard, PARTask,
                             PARTopicRequest, PARTopicResponse,

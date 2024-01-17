@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BiomeStreams.framework/BiomeStreams
-current-version:       123.1.9
+current-version:       123.2.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV12BiomeStreamsE1loiySbAC_ACtFZ,
                             _$s10Foundation4DataVSL12BiomeStreamsMc,
                             _$s12BiomeStreams0B0O11StoreStreamV5innerSo07BMStoreD0CyxGvM,
@@ -127,6 +127,8 @@ exports:
                             _$s12BiomeStreams15ReadWriteStreamPAA06SourceE0Tb,
                             _$s12BiomeStreams15ReadWriteStreamTL,
                             _$s12BiomeStreams16DatabaseResourceMp,
+                            _$s12BiomeStreams16DatabaseResourceP03sqlC07useCaseSo13BMSQLDatabaseCSS_tKFZTj,
+                            _$s12BiomeStreams16DatabaseResourceP03sqlC07useCaseSo13BMSQLDatabaseCSS_tKFZTq,
                             _$s12BiomeStreams16DatabaseResourceP27materializedViewDefinitionsSayAA012MaterializedF10DefinitionVGvgZTj,
                             _$s12BiomeStreams16DatabaseResourceP27materializedViewDefinitionsSayAA012MaterializedF10DefinitionVGvgZTq,
                             _$s12BiomeStreams16DatabaseResourceP8database7useCaseAA11SQLDatabaseVSS_tKFZTj,
@@ -134,6 +136,7 @@ exports:
                             _$s12BiomeStreams16DatabaseResourceP9attribute2to5blockySS_yyKXEtKFZTj,
                             _$s12BiomeStreams16DatabaseResourceP9attribute2to5blockySS_yyKXEtKFZTq,
                             _$s12BiomeStreams16DatabaseResourcePAA04DataD0Tb,
+                            _$s12BiomeStreams16DatabaseResourcePAAE03sqlC07useCaseSo13BMSQLDatabaseCSS_tKFZ,
                             _$s12BiomeStreams16DatabaseResourcePAAE8database7useCaseAA11SQLDatabaseVSS_tKFZ,
                             _$s12BiomeStreams16DatabaseResourceTL,
                             _$s12BiomeStreams16SQLDatabaseErrorO11descriptionSSvg,

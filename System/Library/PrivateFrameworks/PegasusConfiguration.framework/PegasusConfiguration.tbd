@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PegasusConfiguration.framework/PegasusConfiguration
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV20PegasusConfigurationE20aggregationSchemaUrl14forMessageNameACSS_tF,
                             _$s20PegasusConfiguration0A10ClientNameO0A3KityA2CmFWC,
                             _$s20PegasusConfiguration0A10ClientNameO10DuetExpertyA2CmFWC,
@@ -67,6 +67,14 @@ exports:
                             _$s20PegasusConfiguration0A14ConfigDelegateP26shouldThrottleFetchRequestAA06ShouldfcG6ResultOSgvgTj,
                             _$s20PegasusConfiguration0A14ConfigDelegateP26shouldThrottleFetchRequestAA06ShouldfcG6ResultOSgvgTq,
                             _$s20PegasusConfiguration0A14ConfigDelegateTL,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorO05emptyD5FoundyA2CmFWC,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorO12pathNotFoundyACSS_tcACmFWC,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorO18singleResultFailedyACSS_tcACmFWC,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorO19queryCreationFailedyA2CmFWC,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorOMa,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorOMn,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorON,
+                            _$s20PegasusConfiguration0A15ConfigPathErrorOs0E0AAMc,
                             _$s20PegasusConfiguration0A25ConfigControllerInternalsV05cleanC7OfNullsySDySSypGSgAEFZ,
                             _$s20PegasusConfiguration0A25ConfigControllerInternalsVMa,
                             _$s20PegasusConfiguration0A25ConfigControllerInternalsVMn,
@@ -435,6 +443,10 @@ exports:
                             _$s20PegasusConfiguration31ShouldThrottleConfigFetchResultOMn,
                             _$s20PegasusConfiguration31ShouldThrottleConfigFetchResultON,
                             _$s20PegasusConfiguration31ShouldThrottleConfigFetchResultOSQAAMc,
+                            _$s20PegasusConfiguration33PrimaryPersonaContainerPathLookupV4path3forS2S_tKFZ,
+                            _$s20PegasusConfiguration33PrimaryPersonaContainerPathLookupVMa,
+                            _$s20PegasusConfiguration33PrimaryPersonaContainerPathLookupVMn,
+                            _$s20PegasusConfiguration33PrimaryPersonaContainerPathLookupVN,
                             _$s20PegasusConfiguration37ShouldThrottleConfigFetchResultReasonO03mineF21TimeIntervalNotPassedyA2CmFWC,
                             _$s20PegasusConfiguration37ShouldThrottleConfigFetchResultReasonO10noAssemblyyA2CmFWC,
                             _$s20PegasusConfiguration37ShouldThrottleConfigFetchResultReasonO29termsAndConditionsNotAcceptedyA2CmFWC,

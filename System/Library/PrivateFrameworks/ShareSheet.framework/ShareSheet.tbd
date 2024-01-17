@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShareSheet.framework/ShareSheet
-current-version:       1936.10.1
+current-version:       1936.30.51
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _SHSheetCollaborationModeTitle,
                             _SHSheetCollaborativeItemNotSupportedAlertController,
                             _SHSheetContentAppsSectionIdentifier,
@@ -86,7 +86,8 @@ exports:
                             __ShareSheetHostCanRenderInProcess,
                             __ShareSheetImageAnalysisAllowed,
                             __ShareSheetIsAppleApp, __ShareSheetIsBrowser,
-                            __ShareSheetIsCamera, __ShareSheetIsSafari,
+                            __ShareSheetIsCamera, __ShareSheetIsRealityLauncher,
+                            __ShareSheetIsSafari,
                             __ShareSheetIsSupportedPrintActivity,
                             __ShareSheetPlatformPrefersPopover,
                             __ShareSheetPopoverSize,
@@ -98,7 +99,6 @@ exports:
                             __UIActivityCanDisplayActivityForApplicationProxy,
                             __UIActivityCanDisplayActivityForApplicationWithBundleID,
                             __UIActivityDefaultOpenApplicationLaunchServiceOptions,
-                            __UIActivityFormattedAppIconImage,
                             __UIActivityGetBuiltinActivities,
                             __UIActivityGetOrderedBuiltinActivitiesFromActivities,
                             __UIActivityGetPrintingBasedActivities,
@@ -181,17 +181,18 @@ exports:
                             SHSheetContentLayoutContext,
                             SHSheetContentLayoutProvider,
                             SHSheetContentLayoutSpec, SHSheetContentReloadAction,
-                            SHSheetContentUpdateNotification, SHSheetContext,
-                            SHSheetCustomSceneViewController,
+                            SHSheetContext, SHSheetCustomSceneViewController,
                             SHSheetDraggingAction, SHSheetDraggingEvent,
                             SHSheetFactory, SHSheetGroupActivity,
                             SHSheetGroupActivitySharingController,
                             SHSheetHostAction,
                             SHSheetImageIdentificationUtilities,
                             SHSheetInteractor, SHSheetMetadataChangedAction,
+                            SHSheetMetadataUpdateAction,
                             SHSheetMutableSceneClientSettings,
                             SHSheetMutableSceneSettings,
                             SHSheetOptionsViewContext,
+                            SHSheetPresentationBlockingRootView,
                             SHSheetPresentationBlockingViewController,
                             SHSheetPresenter, SHSheetPulsingAction,
                             SHSheetPulsingEvent, SHSheetRemoteConnectionContext,
@@ -205,7 +206,7 @@ exports:
                             SHSheetTestActivity, SHSheetUIServiceClient,
                             SHSheetUIServiceClientContext,
                             SHSheetUserDefaultsContext, SHSheetViewModel,
-                            SUIHostActivityProxy,
+                            SHSheetWindowScene, SUIHostActivityProxy,
                             SUIHostActivityProxy_ActionCategory,
                             SUIHostActivityProxy_ShareCategory, SUIShareActivity,
                             UIActivity, UIActivityActionCell,

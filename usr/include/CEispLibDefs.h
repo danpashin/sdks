@@ -26,7 +26,7 @@ extern "C" {
  */
 #pragma pack(push,4)
 
-#define   EISPLIBVERS   "Eisp-80.0.20"
+#define   EISPLIBVERS   "Eisp-81.0.21.1"
 /**
  * Debug Info Definition version number
   */

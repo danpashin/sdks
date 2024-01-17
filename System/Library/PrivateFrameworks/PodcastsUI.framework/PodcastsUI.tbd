@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PodcastsUI.framework/PodcastsUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV10PodcastsUIE20iOSGlobalPreferencesACSgvgZ,
                             _$s10Foundation3URLV10PodcastsUIE35iOSAutomaticallyDownloadPreferencesACSgvgZ,
                             _$s10Foundation9IndexPathV10PodcastsUIE11safeSectionSiSgvg,
@@ -1908,7 +1908,7 @@ exports:
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingP6adamID0A10Foundation6AdamIdVSgvgTq,
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE015supportsEpisodeE0Sbvg,
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE015supportsEpisodeE0SbvpMV,
-                            _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE018shouldShowMetadataE02atSbSd_tF,
+                            _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE018shouldShowMetadataE02at07chapterE8ProviderSbSd_AaB_pSgtF,
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE20supportsShowPageTallSbvg,
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE20supportsShowPageTallSbvpMV,
                             _$s10PodcastsUI30NowPlayingArtworkDataProvidingPAAE4data3for2atAA0cdE0O0F0OSgAH0E4TypeO_SdtF,
@@ -2268,26 +2268,8 @@ exports:
                             _$s10PodcastsUI5GlyphVN,
                             _$s10PodcastsUI5GlyphVSHAAMc,
                             _$s10PodcastsUI5GlyphVSQAAMc,
-                            _$s10PodcastsUI5IssueO21entireLibraryDataLossyA2CmFWC,
-                            _$s10PodcastsUI5IssueO8rawValueACSgSS_tcfC,
-                            _$s10PodcastsUI5IssueO8rawValueSSvg,
-                            _$s10PodcastsUI5IssueO8rawValueSSvpMV,
-                            _$s10PodcastsUI5IssueOMa, _$s10PodcastsUI5IssueOMn,
-                            _$s10PodcastsUI5IssueON,
-                            _$s10PodcastsUI5IssueOSHAAMc,
-                            _$s10PodcastsUI5IssueOSQAAMc,
-                            _$s10PodcastsUI5IssueOSYAAMc,
                             _$s10PodcastsUI6LegacyOMa, _$s10PodcastsUI6LegacyOMn,
                             _$s10PodcastsUI6LegacyON,
-                            _$s10PodcastsUI7FileBugC23presentAlertIfSupported3foryAA5IssueO_tFZ,
-                            _$s10PodcastsUI7FileBugC39presentAlertIfSupportedForIssueWithNameyySSFZ,
-                            _$s10PodcastsUI7FileBugCACycfC,
-                            _$s10PodcastsUI7FileBugCACycfc,
-                            _$s10PodcastsUI7FileBugCMa,
-                            _$s10PodcastsUI7FileBugCMn,
-                            _$s10PodcastsUI7FileBugCMo,
-                            _$s10PodcastsUI7FileBugCN,
-                            _$s10PodcastsUI7FileBugCfD,
                             _$s10PodcastsUI8CropCodeO10upsellTallyA2CmFWC,
                             _$s10PodcastsUI8CropCodeO10upsellWideyA2CmFWC,
                             _$s10PodcastsUI8CropCodeO11boundingBoxyA2CmFWC,
@@ -2513,6 +2495,12 @@ exports:
                             _$s9JetEngine15JSONTypeClusterP10PodcastsUISH4KindRpzSYAFRQSSAE_8RawValueSYRTzrlE13makeInstances15byDeserializing5usingSay4BaseQzGAA9JSONArrayV_AA11JSONContextVtKF,
                             _$s9JetEngine15JSONTypeClusterP10PodcastsUISH4KindRpzSYAFRQSSAE_8RawValueSYRTzrlE17tryToMakeInstance15byDeserializing5using4BaseQzSgAA10JSONObjectV_AA11JSONContextVtF,
                             _$s9JetEngine15JSONTypeClusterP10PodcastsUISH4KindRpzSYAFRQSSAE_8RawValueSYRTzrlE18tryToMakeInstances15byDeserializing5usingSay4BaseQzGAA9JSONArrayV_AA11JSONContextVtF,
+                            _$s9JetEngine17ImpressionMetricsV10PodcastsUIE12withParentIDyACSSSgF,
+                            _$s9JetEngine17ImpressionMetricsV10PodcastsUIE12withParentIdyACSSSgF,
+                            _$s9JetEngine17ImpressionMetricsV10PodcastsUIE9withIndexyACSiF,
+                            _$s9JetEngine17ImpressionMetricsV2IDV10PodcastsUIE10withParentyAESSSgF,
+                            _$s9JetEngine17ImpressionMetricsV2IDV10PodcastsUIE12withParentIdyAESSSgF,
+                            _$s9JetEngine17ImpressionMetricsV2IDV10PodcastsUIE9withIndexyAESiF,
                             _$s9JetEngine7PromiseC10PodcastsUIE17optionalPublisher7Combine6FutureCyxSgs5NeverOGvg,
                             _$s9JetEngine7PromiseC10PodcastsUIE17optionalPublisher7Combine6FutureCyxSgs5NeverOGvpMV,
                             _$s9JetEngine7PromiseC10PodcastsUIE4then9getResult2onyys0H0Oyxs5Error_pGc_AA13TaskScheduler_ptF,
@@ -2551,6 +2539,7 @@ exports:
                             _$sSo12MTImageStoreC10PodcastsUIE13imageInMemory6forKey4size0E4BlurSo7UIImageCSgSS_So6CGSizeVAC05ImageK0OSgtF,
                             _$sSo12MTImageStoreC10PodcastsUIE5image6forKey4size0E4BlurSo7UIImageCSgSS_So6CGSizeVAC05ImageI0OSgtF,
                             _$sSo12MTImageStoreC10PodcastsUIE7hasItem6forKey4size9imageBlurSbSS_So6CGSizeVAC05ImageK0OSgtF,
+                            _$sSo12UIEdgeInsetsV10PodcastsUIE11subtracting5otherA2B_tF,
                             _$sSo12UIEdgeInsetsV10PodcastsUIE3top7leading6bottom8trailing15layoutDirectionAB12CoreGraphics7CGFloatV_A3KSo021UIUserInterfaceLayoutJ0VtcfC,
                             _$sSo12UIEdgeInsetsV10PodcastsUIE8allSidesAB12CoreGraphics7CGFloatV_tcfC,
                             _$sSo12UIEdgeInsetsV10PodcastsUIE9topBottom5sidesAB12CoreGraphics7CGFloatV_AHtcfC,
@@ -2617,6 +2606,8 @@ exports:
                             _$sSo21MTPodcastSkipDurationV10PodcastsUIE4text05SwiftE04TextVvpMV,
                             _$sSo22UINavigationControllerC10PodcastsUIE26clearBottomPaletteIfNeededyyF,
                             _$sSo23AMPCFStringInlineBuffera10PodcastsUIE9character2ats7UnicodeO6ScalarVSg5utf32_Si9utf16UsedtSi_tF,
+                            _$sSo23NSDirectionalEdgeInsetsV10PodcastsUIE8allSidesAB12CoreGraphics7CGFloatV_tcfC,
+                            _$sSo23NSDirectionalEdgeInsetsV10PodcastsUIE9topBottom5sidesAB12CoreGraphics7CGFloatV_AHtcfC,
                             _$sSo25NSMutableAttributedStringC10PodcastsUIE46convertWritingDirectionToBidiControlCharactersyyF,
                             _$sSo30UIUserInterfaceLayoutDirectionV10PodcastsUIE13textAlignment15whenLeftToRight05rightkJ0So06NSTextH0VAH_AHtF,
                             _$sSo6CGRectV10PodcastsUI22ApproximatelyEquatableACMc,
@@ -2972,9 +2963,7 @@ exports:
                             _isTellurideOrEarlier, _isTellurideOrLater, _isTouch,
                             _isUIKitClassKey, _isWhitetail, _isWhitetailOrEarlier,
                             _isWhitetailOrLater, _isWildcat, _isWildcatOrEarlier,
-                            _isWildcatOrLater,
-                            _kFileBugIssueEntireLibraryDataLoss,
-                            _kIMAVPlayerArtworkSize,
+                            _isWildcatOrLater, _kIMAVPlayerArtworkSize,
                             _kMTCollectionViewInterItemSpacing,
                             _kMTCollectionViewInterLineSpacing,
                             _kMTCollectionViewVerticalSectionInset,
@@ -3022,7 +3011,7 @@ exports:
                             _TtC10PodcastsUI23UIStoreResponseDelegate,
                             _TtC10PodcastsUI24ExtendedLaunchController,
                             _TtC10PodcastsUI30FairPlayDebugHostingController,
-                            _TtC10PodcastsUI7FileBug, _TtC10PodcastsUI9SheetView ]
+                            _TtC10PodcastsUI9SheetView ]
     objc-ivars:           [ MTMPUFontDescriptor._customFontPointSizeLayoutInterpolator,
                             MTMPUFontDescriptor._defaultFont,
                             MTMPUFontDescriptor._defaultFontMetrics,

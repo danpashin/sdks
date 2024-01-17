@@ -1,23 +1,88 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/LocalAuthenticationEmbeddedUI
-current-version:       1391.2.1
+current-version:       1394.62.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _LACustomPasswordTypeAlphanumeric,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _LAAuthenticatorServiceConfigurationRequirementInvalid,
+                            _LACustomPasswordTypeAlphanumeric,
                             _LACustomPasswordTypeCustomDigits,
                             _LACustomPasswordTypeFourDigits,
                             _LACustomPasswordTypeSixDigits,
+                            _LALogCategoryForOptions, _LALogCategoryForPolicy,
+                            _LALogForCategory, _LALogForPolicy,
+                            _LALogSetProcessCategory, _LALogTypeForInternalError,
+                            _LAPSBackOffTimeoutErrorKey, _LAPSErrorDomain,
+                            _LAPSFailedAttemptsErrorKey,
+                            _LAPSPasscodePersistenceErrorDomain,
+                            _LAPSPasscodeTypeVariableLength,
                             _LAPasscodeChangeErrorDomain,
-                            _LAPasscodeRecoveryErrorDomain ]
-    objc-classes:         [ LAContextUITrampoline, LACustomPasswordController,
+                            _LAPasscodeRecoveryErrorDomain,
+                            _LAViewControllerForPresentationContext,
+                            _NSStringFromLAAuthenticatorServiceConfigurationRequirement,
+                            _NSStringFromLAAuthorizationViewMode,
+                            _NSStringFromLAAuthorizationViewStyle,
+                            _NSStringFromLAPSPasscodeTypeIdentifier ]
+    objc-classes:         [ LAAuthenticatorServiceConfiguration,
+                            LAAuthenticatorServiceConfigurationRequirementBuilder,
+                            LAAuthorizationViewController,
+                            LAAvailableMechanismsWrapper, LACapsuleLabel,
+                            LAContainerViewController, LAContextUIHelper,
+                            LAContextUITrampoline, LACustomPasswordController,
                             LACustomPasswordControllerConfiguration,
-                            LACustomPasswordControllerStyle,
+                            LACustomPasswordControllerStyle, LADecriptionBuilder,
+                            LALocalizedString, LAPSCurrentPasscodeService,
+                            LAPSErrorBuilder, LAPSFetchNewPasscodeRequest,
+                            LAPSFetchNewPasscodeResult,
+                            LAPSFetchNewPasscodeViewController,
+                            LAPSFetchNewPasscodeViewControllerInput,
+                            LAPSFetchNewPasscodeViewControllerOutput,
+                            LAPSFetchOldPasscodeRequest,
+                            LAPSFetchOldPasscodeResult,
+                            LAPSFetchOldPasscodeViewController,
+                            LAPSFetchOldPasscodeViewControllerInput,
+                            LAPSFetchOldPasscodeViewControllerOutput,
+                            LAPSNewPasscodeService, LAPSPasscode,
+                            LAPSPasscodeBackoffTimerController,
+                            LAPSPasscodeChangeController,
+                            LAPSPasscodeChangePreflightController,
+                            LAPSPasscodeChangeSystemAdapter,
+                            LAPSPasscodeChangeSystemBuilder,
+                            LAPSPasscodeChangeSystemDispatchAdapter,
+                            LAPSPasscodeChangeSystemRecoveryAdapter,
+                            LAPSPasscodeChangeSystemStubbedAdapter,
+                            LAPSPasscodeChangeUIAdapter,
+                            LAPSPasscodeChangeUIAdapterOptions,
+                            LAPSPasscodeChangeUIPresentationController,
+                            LAPSPasscodeKeyboardLayoutGuide,
+                            LAPSPasscodeOptionsAlertViewController,
+                            LAPSPasscodeOptionsPresentationController,
+                            LAPSPasscodeOptionsPresentationRequest,
+                            LAPSPasscodeOptionsSheetViewController,
+                            LAPSPasscodeOptionsViewControllerConfiguration,
+                            LAPSPasscodePersistenceAdapter,
+                            LAPSPasscodePersistenceCDPAdapter,
+                            LAPSPasscodePersistenceErrorBuilder,
+                            LAPSPasscodePersistenceMCAdapter,
+                            LAPSPasscodePersistenceMKBAdapter,
+                            LAPSPasscodePersistenceSecAdapter, LAPSPasscodeType,
+                            LAPSPasscodeTypeCollection,
+                            LAPSPasscodeViewController,
+                            LAPSPasscodeViewControllerConfiguration,
+                            LAPSRecoveryPasscodeService,
+                            LAPasscodeChangeEnvironment,
+                            LAPasscodeChangeEnvironmentConfig,
+                            LAPasscodeChangeErrorBuilder,
                             LAPasscodeChangeService,
-                            LAPasscodeChangeServiceOptions,
-                            LAPasscodeRecoveryService ]
+                            LAPasscodeChangeServiceOptions, LAPasscodeField,
+                            LAPasscodeRecoveryEnvironment,
+                            LAPasscodeRecoveryEnvironmentConfig,
+                            LAPasscodeRecoveryErrorBuilder,
+                            LAPasscodeRecoveryService,
+                            LARemoteViewControllerParameters, LAUITextField,
+                            LAView, _AuthorizationRemoteViewControllerHost ]
 ...

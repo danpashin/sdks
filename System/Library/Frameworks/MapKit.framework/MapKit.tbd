@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MapKit.framework/MapKit
@@ -7,7 +7,7 @@ current-version:       14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CLLocationCoordinatesFromNSData,
                             _DetailTextsForAdvisoryItem, _ImageForArtwork,
                             _ImageForArtworkDataSource,
@@ -349,6 +349,7 @@ exports:
                             _MapKitConfig_PlaceLayoutDebugEnabled,
                             _MapKitConfig_PlaceLayoutLogEnabled,
                             _MapKitConfig_PlaceShowGEOID,
+                            _MapKitConfig_RAPFlowReportSomethingMissing,
                             _MapKitConfig_RAPForceOverrideServerConfig,
                             _MapKitConfig_RAPForceShowSuggestAnEditButton,
                             _MapKitConfig_ReportAProblemIsDisabled,
@@ -455,7 +456,8 @@ exports:
                             MKHapticEngine, MKHybridMapConfiguration,
                             MKIconManager, MKIconStyle, MKImageryMapConfiguration,
                             MKIncidentsViewController, MKInfoCardThemeManager,
-                            MKJunction, MKLayoutCardViewController,
+                            MKJunction, MKLabelSelectionFilter,
+                            MKLayoutCardViewController,
                             MKLocalPointsOfInterestRequest, MKLocalSearch,
                             MKLocalSearchCompleter, MKLocalSearchCompletion,
                             MKLocalSearchKeypressMetrics, MKLocalSearchRequest,
@@ -554,6 +556,7 @@ exports:
                             MKUserTrackingBarButtonItem, MKUserTrackingButton,
                             MKVariableDelayTapRecognizer, MKVibrantHairlineView,
                             MKVibrantLabel, MKVibrantView, MKViewWithHairline,
+                            MKWalletMerchantLookupBankMerchantInfo,
                             MKWalletMerchantLookupRequest,
                             MKWalletMerchantResponse,
                             MKWalletMerchantStylingInfo, MKWalletRAPReport,

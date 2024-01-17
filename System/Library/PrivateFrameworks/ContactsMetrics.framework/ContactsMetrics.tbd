@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsMetrics.framework/ContactsMetrics
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CNMetricsKeyApplication,
                             _CNMetricsKeyAverageProperties,
                             _CNMetricsKeyCompanyContactFraction,
@@ -89,6 +89,14 @@ exports:
                             _CNMetricsKeyPostalDefaultLabelFraction,
                             _CNMetricsKeyPostalFraction,
                             _CNMetricsKeyPostalMaxCount,
+                            _CNMetricsKeyPosterCount,
+                            _CNMetricsKeyPosterFractionAutoUpdating,
+                            _CNMetricsKeyPosterFractionCustom,
+                            _CNMetricsKeyPosterFractionMemoji,
+                            _CNMetricsKeyPosterFractionMonogram,
+                            _CNMetricsKeyPosterFractionPhoto,
+                            _CNMetricsKeyPosterFractionWithAny,
+                            _CNMetricsKeyPosterMeCardType,
                             _CNMetricsKeyRelationsAverageCount,
                             _CNMetricsKeyRelationsFraction,
                             _CNMetricsKeyRelationsMaxCount,

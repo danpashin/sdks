@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12CoreGraphics7CGFloatV9FitnessUIE17ceilToScreenScaleACyF,
                             _$s12CoreGraphics7CGFloatV9FitnessUIE18floorToScreenScaleACyF,
                             _$s12CoreGraphics7CGFloatV9FitnessUIE18roundToScreenScaleACyF,
@@ -66,6 +66,7 @@ exports:
                             _$s9FitnessUI27MindfulnessSessionViewModelCN,
                             _$s9FitnessUI27MindfulnessSessionViewModelCfD,
                             _$s9FitnessUI29FIUIRelativeDateTimeFormatterV15localizedString3for10relativeToSS10Foundation0D0V_AItF,
+                            _$s9FitnessUI29FIUIRelativeDateTimeFormatterV18localizedDayString3forSS10Foundation0D0V_tF,
                             _$s9FitnessUI29FIUIRelativeDateTimeFormatterV8calendarAC10Foundation8CalendarV_tcfC,
                             _$s9FitnessUI29FIUIRelativeDateTimeFormatterVMa,
                             _$s9FitnessUI29FIUIRelativeDateTimeFormatterVMn,
@@ -391,6 +392,7 @@ exports:
                             _FIUISetWorkoutKickboxingConfigurationMigrated,
                             _FIUISetWorkoutNFCAllDayEnabled,
                             _FIUISetWorkoutSiriAnnounceEnabled,
+                            _FIUIShouldConfirmEndingWorkout,
                             _FIUIShowAveragePace,
                             _FIUISpeedForDurationOverDistance,
                             _FIUISplitsForMeasuringSystemIdentifier,
@@ -482,6 +484,7 @@ exports:
                             _kNLSessionTrackerAppForegroundedNotification,
                             _kNLSessionTrackerAppInternalPreferencesDidChangeNotification,
                             _kNLSessionTrackerAppKeyCadenceTargetZonesByActivityType,
+                            _kNLSessionTrackerAppKeyConfirmEndingWorkout,
                             _kNLSessionTrackerAppKeyDistanceSplitsByActivityType,
                             _kNLSessionTrackerAppKeyEnableAutoPause,
                             _kNLSessionTrackerAppKeyEnableAutoPauseCycling,

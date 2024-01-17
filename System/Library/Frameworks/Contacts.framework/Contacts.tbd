@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Contacts.framework/Contacts
-current-version:       3616.1
+current-version:       3630
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s19ExtensionFoundation04_AppA8IdentityV8ContactsE03appA16BundleIdentifierSSvg,
                             _$s19ExtensionFoundation04_AppA8IdentityV8ContactsE03appA16BundleIdentifierSSvpMV,
                             _$s19ExtensionFoundation04_AppA8IdentityV8ContactsE14appDisplayNameSSvg,
@@ -593,6 +593,7 @@ exports:
                             _CNContactExternalModificationTagKey,
                             _CNContactExternalRepresentationKey,
                             _CNContactExternalUUIDKey, _CNContactFamilyNameKey,
+                            _CNContactFetchRequestAPIMisuseExceptionName,
                             _CNContactFullscreenImageDataKey,
                             _CNContactGivenNameKey,
                             _CNContactIOSLegacyIdentifierInvalid,
@@ -637,6 +638,7 @@ exports:
                             _CNContactPhoneticOrganizationNameKey,
                             _CNContactPostalAddressesKey,
                             _CNContactPosterAttributeNameContactIdentifier,
+                            _CNContactPosterAttributeNameContentIsSensitive,
                             _CNContactPosterAttributeNameIdentifier,
                             _CNContactPosterAttributeNameIgnoredForRevert,
                             _CNContactPosterAttributeNameLastUsedDate,
@@ -656,6 +658,7 @@ exports:
                             _CNContactSearchIndexKey,
                             _CNContactSectionForSortingByFamilyNameKey,
                             _CNContactSectionForSortingByGivenNameKey,
+                            _CNContactSensitiveContentConfigurationKey,
                             _CNContactSharedPhotoDisplayPreferenceKey,
                             _CNContactSocialProfilesKey,
                             _CNContactSortingFamilyNameKey,
@@ -667,6 +670,7 @@ exports:
                             _CNContactToIdentifier, _CNContactTypeKey,
                             _CNContactUrlAddressesKey, _CNContactWallpaperKey,
                             _CNContactWallpaperMetadataKey,
+                            _CNContactWallpaperURIKey,
                             _CNContactWatchWallpaperImageDataKey,
                             _CNContactisUsingSharedPhotoKey,
                             _CNContactsProviderSynchronizationReasonAppContainerHasChanges,
@@ -719,6 +723,7 @@ exports:
                             _CNGroupIdentifierKey, _CNGroupModificationDateKey,
                             _CNGroupNameKey, _CNGroupSnapshotKey, _CNHomeLabel,
                             _CNHomePageLabel,
+                            _CNImageUtilsCreateMmappedBitmapContext,
                             _CNImageUtilsCroppedImageDataFromFullSizeImageData,
                             _CNInstantMessageAddressBundleIdentifiersKey,
                             _CNInstantMessageAddressServiceKey,
@@ -1102,6 +1107,7 @@ exports:
                             CNContactStoreConfiguration,
                             CNContactSubsetCalculator, CNContactSuggestionMatch,
                             CNContactTypeDescription,
+                            CNContactUnificationOptions,
                             CNContactVCardSerialization, CNContactVCardSummary,
                             CNContactsEnvironment, CNContactsLoggerProvider,
                             CNContactsProvider, CNContactsProviderDataMapper,
@@ -1137,8 +1143,8 @@ exports:
                             CNImageBackgroundColorsDataDescription,
                             CNImageDataAvailableDescription,
                             CNImageDataDescription, CNImageHashDescription,
-                            CNImageTypeDescription, CNIndexRequestHandler,
-                            CNInstantMessageAddress,
+                            CNImageTypeDescription, CNImageUtilsBitmapFormat,
+                            CNIndexRequestHandler, CNInstantMessageAddress,
                             CNInstantMessageAddressesDescription,
                             CNInternalIdentifierDescription,
                             CNJobTitleDescription, CNLabeledValue,
@@ -1186,7 +1192,9 @@ exports:
                             CNReputationStore, CNSaveRequest,
                             CNSectionForSortingByFamilyNameDescription,
                             CNSectionForSortingByGivenNameDescription,
-                            CNSeedCardProvider, CNSerializedPoseConfiguration,
+                            CNSeedCardProvider, CNSensitiveContentConfiguration,
+                            CNSensitiveContentConfigurationDescription,
+                            CNSerializedPoseConfiguration,
                             CNSharedPhotoDisplayPreferenceDescription,
                             CNSharedProfile, CNSharedProfileStateOracle,
                             CNSharedProfileStateOracleTestDouble,
@@ -1202,6 +1210,7 @@ exports:
                             CNVisualFingerprint, CNVisualSimilarity, CNWallpaper,
                             CNWallpaperDescription, CNWallpaperMetadata,
                             CNWallpaperMetadataDescription,
+                            CNWallpaperURIDescription,
                             CNWatchWallpaperImageDataDescription,
                             CNXPCDataMapper, CNXPCDataMapperProgressiveHandler,
                             CNiOSAddressBook, CNiOSAddressBookDataMapper,

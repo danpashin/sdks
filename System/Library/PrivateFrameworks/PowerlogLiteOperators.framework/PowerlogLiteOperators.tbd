@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ARSessionDidPauseDarwinNotification,
                             _ARSessionDidRunDarwinNotification,
                             _ASP_GetIndirectionTableStatistics,
@@ -334,6 +334,7 @@ exports:
                             _kPLApplicationAgentEventForwardNameHomeScreenConfiguration,
                             _kPLApplicationAgentEventForwardNameHomeScreenPresentation,
                             _kPLApplicationAgentEventForwardNameLiveActivityStats,
+                            _kPLApplicationAgentEventForwardNameMotionToWake,
                             _kPLApplicationAgentEventForwardNameSystemAperture,
                             _kPLApplicationAgentEventPointNameAppDocking,
                             _kPLApplicationAgentEventPointNameAppPrewarm,
@@ -845,9 +846,16 @@ exports:
                             _kPLBluetoothAgentEventPointMagnetOperation,
                             _kPLBluetoothAgentScanCount,
                             _kPLBluetoothAgentScanDuration,
+                            _kPLButtonAgentActionButtonAction,
+                            _kPLButtonAgentActionButtonType,
+                            _kPLButtonAgentButtonInteractionTypeLongPressed,
+                            _kPLButtonAgentButtonInteractionTypePressed,
+                            _kPLButtonAgentButtonInteractionTypeSuppressed,
                             _kPLButtonAgentEventBackwardTrackpadPowerState,
                             _kPLButtonAgentEventBackwardTrackpadPowerStateActiveDurationMs,
                             _kPLButtonAgentEventBackwardTrackpadPowerStateReadyDurationMs,
+                            _kPLButtonAgentEventForwardActionButtonInteraction,
+                            _kPLButtonAgentEventForwardActionButtonSelection,
                             _kPLButtonAgentEventForwardCoverState,
                             _kPLButtonAgentEventPointButton, _kPLCDMA2K,
                             _kPLCFDeviceBootTime,
@@ -1095,9 +1103,11 @@ exports:
                             _kPLIOReportAgentEventBackwardNameNVMeTimeweightedthrottlestatistics,
                             _kPLIOReportAgentEventBackwardNameOpticalInterfaceStats,
                             _kPLIOReportAgentEventBackwardNamePMPDCS,
-                            _kPLIOReportAgentEventBackwardNamePMPDRAMBWAMCC,
+                            _kPLIOReportAgentEventBackwardNamePMPDRAMBW,
+                            _kPLIOReportAgentEventBackwardNamePMPDRAMState,
                             _kPLIOReportAgentEventBackwardNamePMPEnergyCounters,
                             _kPLIOReportAgentEventBackwardNamePMPFAB,
+                            _kPLIOReportAgentEventBackwardNamePMPFabricBW,
                             _kPLIOReportAgentEventBackwardNamePMPPerfDrivers,
                             _kPLIOReportAgentEventBackwardNamePMPSOC,
                             _kPLIOReportAgentEventBackwardNamePMPSOC0,
@@ -1160,7 +1170,14 @@ exports:
                             _kPLLocaleAgentEventForwardNameTimeZone,
                             _kPLLocationAgentAddProcessesOfInterestNotificationName,
                             _kPLLocationAgentEventForwardGPSSubscription,
+                            _kPLLocationAgentEventForwardGnssSession,
+                            _kPLLocationAgentEventForwardNameSuppressionManagerClient,
+                            _kPLLocationAgentEventForwardNameViewObstructed,
                             _kPLLocationAgentEventForwardOdometry,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientEventKey,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientNumbersKey,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientTypeKey,
+                            _kPLLocationAgentEventForwardViewObstructedVOEventKey,
                             _kPLLocationAgentEventIntervalNameMapsBusyness,
                             _kPLLocationAgentEventIntervalNameSeparationAlert,
                             _kPLLocationAgentEventIntervalPDR,
@@ -1534,6 +1551,7 @@ exports:
                             _kPLXPCAgentEventForwardNameAccessory,
                             _kPLXPCAgentEventForwardNameAccessoryMotion,
                             _kPLXPCAgentEventForwardNameAirDrop,
+                            _kPLXPCAgentEventForwardNameAirDropSession,
                             _kPLXPCAgentEventForwardNameAppAccessory,
                             _kPLXPCAgentEventForwardNameCallScreeningEnabled,
                             _kPLXPCAgentEventForwardNameCarPlay,

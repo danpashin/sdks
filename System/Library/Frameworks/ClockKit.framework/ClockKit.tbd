@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/ClockKit.framework/ClockKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12CoreGraphics7CGFloatV8ClockKit14InterpolatableADMc,
                             _$s12CoreGraphics7CGFloatV8ClockKit14InterpolatableADWP,
                             _$s12CoreGraphics7CGFloatV8ClockKitE11interpolate5start3end8fractionA2C_A2CtFZ,
@@ -308,6 +308,8 @@ exports:
                             __CLKDeviceDescriptorNRDeviceUUIDKey,
                             __CLKFormatTimeIntervalSeconds,
                             __CLKGenerateSimulatedCrash,
+                            __CLKIntentReferenceIndexingHashKey,
+                            __CLKIntentReferenceIntentDataKey,
                             __CLKNoMinutesTimeFormatTemplate,
                             __CLKStandardTimeFormatTemplate, __StylisticSet,
                             __SwiftUIBottomLabelDataKey, __SwiftUIBottomLabelKey,
@@ -448,7 +450,7 @@ exports:
                             CLKDeviceMetrics, CLKFallbackTextProvider, CLKFont,
                             CLKFullColorImageProvider,
                             CLKFullColorSymbolImageProvider, CLKGaugeProvider,
-                            CLKGaugeSegment, CLKImageProvider,
+                            CLKGaugeSegment, CLKImageProvider, CLKIntentReference,
                             CLKKeyedHashingEncoder,
                             CLKLocalizableCompoundTextProvider,
                             CLKLocalizableSimpleTextProvider, CLKMediaAsset,

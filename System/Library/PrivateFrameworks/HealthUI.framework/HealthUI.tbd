@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation16AttributedStringV8HealthUIE6ranges2of7options6localeSaySnyAC5IndexVGGx_So22NSStringCompareOptionsVAA6LocaleVSgtSyRzlF,
                             _$s10Foundation6LocaleV8HealthUIE14isIn24HourTimeSbvg,
                             _$s10Foundation6LocaleV8HealthUIE14isIn24HourTimeSbvpMV,
@@ -686,6 +686,22 @@ exports:
                             _$s8HealthUI35AudiogramCurrentValueViewDataSourceCMu,
                             _$s8HealthUI35AudiogramCurrentValueViewDataSourceCN,
                             _$s8HealthUI35AudiogramCurrentValueViewDataSourceCfD,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE09isLeftEarACSd_SbtcfC,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE09isLeftEarACSd_SbtcfCTj,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE09isLeftEarACSd_SbtcfCTq,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE09isLeftEarACSd_Sbtcfc,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE0Sdvg,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC07averageE0SdvpMV,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC9isLeftEarSbvg,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataC9isLeftEarSbvpMV,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCACycfC,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCACycfc,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCMa,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCMn,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCMo,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCMu,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCN,
+                            _$s8HealthUI36AudiogramAverageSensitivityChartDataCfD,
                             _$s8HealthUI36AudiogramLineSeriesPresentationStyleC04lineefG0So06HKLineefG0CyFTj,
                             _$s8HealthUI36AudiogramLineSeriesPresentationStyleC04lineefG0So06HKLineefG0CyFTq,
                             _$s8HealthUI36AudiogramLineSeriesPresentationStyleC9seriesEar08selectedI022disableConnectionLinesACSo011HKAudiogramI0V_AHSbtcfC,
@@ -1289,6 +1305,7 @@ exports:
                             _HKTimePeriodStringWithFonts,
                             _HKTodayDayFormatterNeeded,
                             _HKUIAFibBurdenLocalizedString,
+                            _HKUIAddDefaultSampleDetailValuesToSection,
                             _HKUIApplicationContentSizeCategoryIsLargerThanSizeCategory,
                             _HKUIApplicationContentSizeCategoryIsSmallerThanSizeCategory,
                             _HKUIApplicationIsUsingAccessibilityContentSizeCategory,
@@ -1383,6 +1400,7 @@ exports:
                             __WDLocalizedDisplayStringForActivityQuantity,
                             __WeekendDaysInCalendar,
                             __createPrivateSecKeyRefFromP12,
+                            __doubleValueIfCompatibleForQuantity,
                             __drawHollowCircleInContext,
                             __drawSolidCircleInContext,
                             __enumeratorForCurrentLocale,
@@ -1417,7 +1435,6 @@ exports:
                             HKAudioExposureDevicesDataSource,
                             HKAudiogramAnnotationViewDataSource,
                             HKAudiogramAverageLevelSeries,
-                            HKAudiogramAverageSensitivityChartFormatter,
                             HKAudiogramAverageSensitivityDataSource,
                             HKAudiogramChartData, HKAudiogramChartPoint,
                             HKAudiogramChartViewController,
@@ -2171,8 +2188,10 @@ exports:
                             _TtC8HealthUI29StateOfMindSampleCountContext,
                             _TtC8HealthUI30TitledWeekdayHeaderPaletteView,
                             _TtC8HealthUI33StateOfMindCalendarViewController,
+                            _TtC8HealthUI36AudiogramAverageSensitivityChartData,
                             _TtC8HealthUI36InternalSettingsTapGestureRecognizer,
                             _TtC8HealthUI37StateOfMindTimelinePresentingCalendar,
+                            _TtC8HealthUI41AudiogramAverageSensitivityChartFormatter,
                             _TtC8HealthUI43HKInteractiveChartInteractionAnalyticsEvent,
                             _TtC8HealthUI45HKInteractiveChartInteractionAnalyticsManager,
                             _TtC8HealthUI46DefaultPairedDeviceFeatureAttributesDataSource,

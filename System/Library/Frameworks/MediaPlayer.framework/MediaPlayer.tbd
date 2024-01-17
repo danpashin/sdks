@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$sSo27MPMusicPlayerPlayParametersC05MediaB0E4fromABs7Decoder_p_tKcfC,
                             _$sSo27MPMusicPlayerPlayParametersC05MediaB0E6encode2toys7Encoder_p_tKF,
                             _$sSo27MPMusicPlayerPlayParametersCSE05MediaB0Mc,
@@ -107,6 +107,7 @@ exports:
                             _MPCloudControllerCanShowCloudDownloadButtonsDidChangeNotification,
                             _MPCloudControllerCanShowCloudTracksDidChangeNotification,
                             _MPCloudControllerCloudAddToPlaylistBehaviorDidChangeNotification,
+                            _MPCloudControllerCloudFavoriteSongAddToLibraryBehaviorDidChangeNotification,
                             _MPCloudControllerCloudLibraryFailureDidChangeNotification,
                             _MPCloudControllerEnableCloudLibraryOptionMergeWithCloudLibrary,
                             _MPCloudControllerEnableCloudLibraryOptionStartInitialImport,
@@ -440,6 +441,8 @@ exports:
                             _MPMediaLibraryStatusDidChangeNotification,
                             _MPMediaLibrarySyncGenerationDidChangeNotification,
                             _MPMediaPlaybackIsPreparedToPlayDidChangeNotification,
+                            _MPMediaPlaylistEntryPropertyPositionUniversalIdentifier,
+                            _MPMediaPlaylistEntryPropertyUniversalIdentifier,
                             _MPMediaPlaylistPropertyAuthorDisplayName,
                             _MPMediaPlaylistPropertyCloudAuthorDisplayName,
                             _MPMediaPlaylistPropertyCloudAuthorStoreID,
@@ -574,6 +577,7 @@ exports:
                             _MPModelPropertyArtistHasSocialPosts,
                             _MPModelPropertyArtistIsDisliked,
                             _MPModelPropertyArtistIsFavorite,
+                            _MPModelPropertyArtistLibraryAdded,
                             _MPModelPropertyArtistLibraryAddedDate,
                             _MPModelPropertyArtistName,
                             _MPModelPropertyArtistSongCount,
@@ -657,6 +661,7 @@ exports:
                             _MPModelPropertyPlaylistCollaborationMode,
                             _MPModelPropertyPlaylistCollaborationSharingMode,
                             _MPModelPropertyPlaylistCollaboratorPermissions,
+                            _MPModelPropertyPlaylistCollaboratorStatus,
                             _MPModelPropertyPlaylistCoverArtworkRecipe,
                             _MPModelPropertyPlaylistCuratorPlaylist,
                             _MPModelPropertyPlaylistDateFavorited,
@@ -768,6 +773,7 @@ exports:
                             _MPModelPropertySocialPersonArtwork,
                             _MPModelPropertySocialPersonBiography,
                             _MPModelPropertySocialPersonHandle,
+                            _MPModelPropertySocialPersonHasLightweightProfile,
                             _MPModelPropertySocialPersonIsPrivate,
                             _MPModelPropertySocialPersonIsVerified,
                             _MPModelPropertySocialPersonName,
@@ -1048,7 +1054,7 @@ exports:
                             _MPNowPlayingContentItemDeviceUserInfoKeyStoreAssetEndpointType,
                             _MPNowPlayingContentItemDeviceUserInfoKeyUniversalLibraryID,
                             _MPNowPlayingContentItemDeviceUserInfoKeyUserRating,
-                            _MPNowPlayingContentItemRemoteArtworkFormatStoreURLTemplate,
+                            _MPNowPlayingContentItemRemoteArtworkFormatStandard,
                             _MPNowPlayingContentItemUserInfoKeyContainerUniqueID,
                             _MPNowPlayingContentItemUserInfoKeyDisableJumpToItem,
                             _MPNowPlayingContentItemUserInfoKeyEndTime,
@@ -1063,6 +1069,8 @@ exports:
                             _MPNowPlayingContentItemUserInfoKeyIsPlaceholder,
                             _MPNowPlayingContentItemUserInfoKeyIsSharedListeningItem,
                             _MPNowPlayingContentItemUserInfoKeyLastChangeDirection,
+                            _MPNowPlayingContentItemUserInfoKeyPlaylistCollaboratorStatus,
+                            _MPNowPlayingContentItemUserInfoKeyPlaylistIsCollaborative,
                             _MPNowPlayingContentItemUserInfoKeyPodcastArtworkInfo,
                             _MPNowPlayingContentItemUserInfoKeyPodcastEpisodeShareURL,
                             _MPNowPlayingContentItemUserInfoKeyPodcastEpisodeStreamURL,
@@ -1558,10 +1566,12 @@ exports:
                             MPModelGroupKind, MPModelHomeSharingAsset, MPModelKind,
                             MPModelLibraryAddToPlaylistChangeRequest,
                             MPModelLibraryAlbumAppDataChangeRequest,
+                            MPModelLibraryChangeRequest,
                             MPModelLibraryDefaultSectionedCollectionDataSource,
                             MPModelLibraryDeleteEntityChangeRequest,
                             MPModelLibraryDownloadQueueRequest,
                             MPModelLibraryDownloadQueueResponse,
+                            MPModelLibraryDuplicatePlaylistChangeRequest,
                             MPModelLibraryEndCollaborationChangeRequest,
                             MPModelLibraryFavoriteEntityChangeRequest,
                             MPModelLibraryFavoriteEntityRequestAction,
@@ -1571,7 +1581,9 @@ exports:
                             MPModelLibraryKeepLocalChangeRequest,
                             MPModelLibraryPlaylistEditChangeRequest,
                             MPModelLibraryPlaylistEditController,
+                            MPModelLibraryPlaylistEntryReactionChangeRequest,
                             MPModelLibraryRemoveCollaboratorsChangeRequest,
+                            MPModelLibraryRemoveFromPlaylistChangeRequest,
                             MPModelLibraryRequest, MPModelLibraryResponse,
                             MPModelLibrarySDKAddToPlaylistChangeRequest,
                             MPModelLibrarySearchRequest,
@@ -1658,7 +1670,7 @@ exports:
                             MPNowPlayingInfoLyricsItem,
                             MPNowPlayingInfoLyricsItemToken,
                             MPNowPlayingInfoTransportableSessionResponse,
-                            MPNowPlayingParticipantItem, MPNowPlayingSession,
+                            MPNowPlayingParticipant, MPNowPlayingSession,
                             MPPlaceholderAVItem, MPPlaceholderArtwork,
                             MPPlayableContentManager,
                             MPPlayableContentManagerContext, MPPlaybackArchive,
@@ -1684,10 +1696,10 @@ exports:
                             MPRemoteCommandCenter, MPRemoteCommandEvent,
                             MPRemoteCommandHandlerDialog,
                             MPRemoteCommandHandlerDialogAction,
-                            MPRemoteCommandStatus, MPRemoteCommandUserIdentity,
-                            MPRemotePlaybackQueue, MPRemoteRadioController,
-                            MPReorderQueueCommand, MPReorderQueueCommandEvent,
-                            MPRequest, MPRequestResponseController, MPResponse,
+                            MPRemoteCommandStatus, MPRemotePlaybackQueue,
+                            MPRemoteRadioController, MPReorderQueueCommand,
+                            MPReorderQueueCommandEvent, MPRequest,
+                            MPRequestResponseController, MPResponse,
                             MPRestrictionsMonitor, MPRouteButton, MPRouteLabel,
                             MPSectionedCollection, MPSectionedIdentifierList,
                             MPSectionedIdentifierListPosition,

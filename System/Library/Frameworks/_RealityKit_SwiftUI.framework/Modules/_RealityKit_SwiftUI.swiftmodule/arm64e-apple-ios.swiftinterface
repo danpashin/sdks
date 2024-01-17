@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
-// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-concurrency -module-name _RealityKit_SwiftUI
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-concurrency -module-name _RealityKit_SwiftUI
 // swift-module-flags-ignorable: -enable-experimental-feature ModuleInterfaceExportAs -enable-bare-slash-regex -user-module-version 225.613.1
 import ARKit
 import AVFAudio
@@ -28,7 +28,7 @@ import simd
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 public struct ObjectCaptureView<Overlay> : SwiftUI.View where Overlay : SwiftUI.View {
   public init(session: _RealityKit_SwiftUI.ObjectCaptureSession) where Overlay == SwiftUI.EmptyView
   public init(session: _RealityKit_SwiftUI.ObjectCaptureSession, @SwiftUI.ViewBuilder cameraFeedOverlay: () -> Overlay)
@@ -42,7 +42,7 @@ public struct ObjectCaptureView<Overlay> : SwiftUI.View where Overlay : SwiftUI.
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 @_Concurrency.MainActor public class ObjectCaptureSession : Swift.Identifiable {
   #if compiler(>=5.3) && $RethrowsProtocol
   public struct Updates<Element> : _Concurrency.AsyncSequence, Swift.Sendable where Element : Swift.Sendable {
@@ -198,7 +198,7 @@ public struct ObjectCaptureView<Overlay> : SwiftUI.View where Overlay : SwiftUI.
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCaptureSession : Observation.Observable {
 }
 @available(iOS 17.0, *)
@@ -206,7 +206,7 @@ extension _RealityKit_SwiftUI.ObjectCaptureSession : Observation.Observable {
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 @_Concurrency.MainActor public struct ObjectCapturePointCloudView : SwiftUI.View {
   @_Concurrency.MainActor public init(session: _RealityKit_SwiftUI.ObjectCaptureSession)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
@@ -390,35 +390,35 @@ extension Swift.SIMD4 where Scalar == Swift.Float {
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCaptureSession : Swift.Sendable {}
 @available(iOS 17.0, *)
 @available(watchOS, unavailable)
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCaptureSession.Feedback : Swift.Hashable {}
 @available(iOS 17.0, *)
 @available(watchOS, unavailable)
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason : Swift.Equatable {}
 @available(iOS 17.0, *)
 @available(watchOS, unavailable)
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCaptureSession.Tracking.Reason : Swift.Hashable {}
 @available(iOS 17.0, *)
 @available(watchOS, unavailable)
 @available(macOS, unavailable)
 @available(macCatalyst, unavailable)
 @available(tvOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension _RealityKit_SwiftUI.ObjectCapturePointCloudView : Swift.Sendable {}
 @available(macOS 10.15, iOS 13.0, macCatalyst 13.0, *)
 @_originallyDefinedIn(module: "RealityKit", macOS 12.0)

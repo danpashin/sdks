@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AudioInjectionXPCGetInterface,
                             _BenchmarkXPCGetInterface,
                             _CSAnalyticsContextCreateWithRecordingInfo,
@@ -147,7 +147,9 @@ exports:
                             __overlapFactor, __sampleRate, _countZeroCrossings,
                             _createFloatArray, _defaultMadviseChunkSize,
                             _entitlementPrefix, _entitlementPrefixOSX,
-                            _fftEnergies, _imageFileWritten,
+                            _fftEnergies, _getOSDInferenceBatchSize,
+                            _getPhsInferenceBatchSize,
+                            _getSeconPassInferenceBatchSize, _imageFileWritten,
                             _kAFPreferencesDidChangeDarwinNotification,
                             _kAFSiriInternalUserClassification,
                             _kAssistantPreferencesDomain,
@@ -231,7 +233,9 @@ exports:
                             _kSSVCAUserFarLabel, _kSSVCAUserMidLabel,
                             _kSSVCAUserNearLabel, _kSSVDebugLogPathKey,
                             _kSupportsAlwaysOnAccelerometer,
-                            _kSupportsJustSiriKey, _kXPCEncodeKeyIsRemoteDevice,
+                            _kSupportsJustSiriKey,
+                            _kVoiceTriggerLaunchDelayThresholdForDiagnosticsInSecs,
+                            _kXPCEncodeKeyIsRemoteDevice,
                             _kXPCEncodeKeyPlaybackDeviceType,
                             _kXPCEncodeKeyPlaybackRoute,
                             _kXPCEncodeKeyRecordDeviceInfo,
@@ -239,8 +243,8 @@ exports:
                             _kXPCEncodeKeyRemoteDeviceUID,
                             _kXPCEncodeKeyRemoteDeviceUIDString,
                             _kXPCEncodeKeyRoute, _msnExceptionAnnounceMessage,
-                            _numSamplesFromFirstPassToVoiceTrigger, _sumsegment,
-                            _vecsqrt ]
+                            _numSamplesFromFirstPassToVoiceTrigger, _readJson,
+                            _sumsegment, _vecsqrt ]
     objc-classes:         [ CSAVCallConnectedMonitor,
                             CSAVVCRecordingClientMonitor,
                             CSAVVoiceTriggerClientManager,
@@ -352,8 +356,9 @@ exports:
                             CSMXRingtoneMonitor, CSMXSessionMonitor,
                             CSMacWakeSleepMonitor, CSManualDuckingHandler,
                             CSMediaPlayingMonitor, CSMicUsageReporter,
-                            CSMil2BnnsUtils, CSMyriadNotifier, CSMyriadPHash,
-                            CSMyriadPHashFactors, CSMyriadSelfTriggerCoordinator,
+                            CSMil2BnnsUtils, CSModelBenchmarker, CSMyriadNotifier,
+                            CSMyriadPHash, CSMyriadPHashFactors,
+                            CSMyriadSelfTriggerCoordinator,
                             CSNNVADEndpointAnalyzer,
                             CSNetworkAvailabilityMonitor,
                             CSOnDeviceCachedIrPurgingHandler,

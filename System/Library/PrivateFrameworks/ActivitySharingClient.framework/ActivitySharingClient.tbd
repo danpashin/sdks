@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivitySharingClient.framework/ActivitySharingClient
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV21ActivitySharingClient21TransportSerializableADMc,
                             _$s10Foundation4DataV21ActivitySharingClient21TransportSerializableADWP,
                             _$s21ActivitySharingClient03SetA24DataVisibleTransportItemV02isaeF010friendUUIDACSb_SStcfC,
@@ -113,6 +113,7 @@ exports:
                             _$s21ActivitySharingClient13ASXPCListenerC16transportRequesty10Foundation4DataVSgAA13TransportItemOYaKFTu,
                             _$s21ActivitySharingClient13ASXPCListenerC24transportDispatchServiceAA09TransportfG0Cvg,
                             _$s21ActivitySharingClient13ASXPCListenerC24transportDispatchServiceAA09TransportfG0CvpMV,
+                            _$s21ActivitySharingClient13ASXPCListenerC6launchyyF,
                             _$s21ActivitySharingClient13ASXPCListenerC8activateyyFTj,
                             _$s21ActivitySharingClient13ASXPCListenerC8activateyyFTq,
                             _$s21ActivitySharingClient13ASXPCListenerC8listener_25shouldAcceptNewConnectionSbSo13NSXPCListenerC_So15NSXPCConnectionCtF,
@@ -159,6 +160,7 @@ exports:
                             _$s21ActivitySharingClient14LocalTransportC5proxyAA0E9Interface_pSgvpMV,
                             _$s21ActivitySharingClient14LocalTransportC5proxyAA0E9Interface_pSgvsTj,
                             _$s21ActivitySharingClient14LocalTransportC5proxyAA0E9Interface_pSgvsTq,
+                            _$s21ActivitySharingClient14LocalTransportC6launchyyF,
                             _$s21ActivitySharingClient14LocalTransportC8activateyyYaF,
                             _$s21ActivitySharingClient14LocalTransportC8activateyyYaFTu,
                             _$s21ActivitySharingClient14LocalTransportC8sendItem_7payloadq_AA0eG0O_xSgtYaKAA0E12SerializableRzAaIR_r0_lF,

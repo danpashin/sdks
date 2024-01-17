@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AXAPIEnabled, _AXArrayForString,
                             _AXAttributeAllowsRequeryWhenRemoteElementFails,
                             _AXAttributeForXCAttribute, _AXAuditClippingTest,
@@ -60,7 +60,9 @@ exports:
                             _AXObserverCreate, _AXObserverGetRunLoopSource,
                             _AXObserverGetTypeID, _AXObserverRemoveNotification,
                             _AXOverrideRequestingClientType, _AXPidSuspend,
-                            _AXPidUnsuspend, _AXProcessEverWantsMLElements,
+                            _AXPidUnsuspend,
+                            _AXProcessCanContactSystemWideServer,
+                            _AXProcessEverWantsMLElements,
                             _AXProcessWantsMLElementsForBundle,
                             _AXProcessesWantMLElements,
                             _AXPushNotificationToSystemForBroadcast,
@@ -90,9 +92,6 @@ exports:
                             _AXUIAccessibilitySpeechAttributeLanguage,
                             _AXUIAccessibilitySpeechAttributePhonemeSubstitution,
                             _AXUIAccessibilitySpeechAttributePitch,
-                            _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelp,
-                            _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelpForMacintalk,
-                            _AXUIAccessibilitySpeechAttributePoorMansPronunciationHelpForNashville,
                             _AXUIAccessibilitySpeechAttributePunctuation,
                             _AXUIAccessibilitySpeechAttributeQueueAnnouncement,
                             _AXUIAccessibilitySpeechAttributeSpellOut,
@@ -212,6 +211,7 @@ exports:
                             _UIAccessibilityTokenReplaceWithCellularName,
                             _UIAccessibilityTokenReplaceWithWiFiSSID,
                             _UIAccessibilityTokenRequiresEditingStyleResolution,
+                            _UIAccessibilityTokenResolveMisspelledLocally,
                             _UIAccessibilityTokenScreenDimmed,
                             _UIAccessibilityTokenSecure,
                             _UIAccessibilityTokenShareSheetTextSlot,
@@ -222,6 +222,7 @@ exports:
                             _UIAccessibilityTokenSpeakLiteralPunctuation,
                             _UIAccessibilityTokenSpeakNoPunctuation,
                             _UIAccessibilityTokenSpeakPunctuationCounts,
+                            _UIAccessibilityTokenSpeakValuePartOnDifference,
                             _UIAccessibilityTokenStrikethrough,
                             _UIAccessibilityTokenStyleName,
                             _UIAccessibilityTokenSuppressBrailleOutput,

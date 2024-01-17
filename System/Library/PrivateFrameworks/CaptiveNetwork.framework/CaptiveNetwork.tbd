@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CaptiveNetwork.framework/CaptiveNetwork
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CNAccountsCopy, _CNAccountsResolve, _CNAccountsUse,
                             _CNAuthenticateUsingTokenAccount,
                             _CNDebugLaunchWebsheet, _CNDumpState,
@@ -77,7 +77,8 @@ exports:
                             _kCNSWhitelistedCaptiveNetworkProbeDateProperty,
                             _kCNStateAPIState, _kCNStateAuthReply, _kCNStateBusy,
                             _kCNStateDisabled, _kCNStateKey, _kCNStateRedirect,
-                            _kCNStateStage, _kCNStateURL, _kCNStateWaitingOnUI,
+                            _kCNStateStage, _kCNStateTokenAuthResult, _kCNStateURL,
+                            _kCNStateWaitingOnUI,
                             _kCNUserInteractionRequirementNotifyKey,
                             _kCNWebSheetOptionsRedirectURLType ]
 ...

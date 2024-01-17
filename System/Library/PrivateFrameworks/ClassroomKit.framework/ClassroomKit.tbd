@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement ]
     symbols:              [ _CRKActiveInstructorIdentifiersUserInfoKey,
                             _CRKActiveInstructorsDidChangeNotificationName,
@@ -254,7 +254,8 @@ exports:
                             CRKASMCredentialHousekeeper,
                             CRKASMCredentialManifest,
                             CRKASMCredentialManifestEntry, CRKASMCredentialStore,
-                            CRKASMCredentialStoreFactory, CRKASMHasher,
+                            CRKASMCredentialStoreFactory,
+                            CRKASMEasyMAIDSignInRosterProvider, CRKASMHasher,
                             CRKASMIdentityPicker, CRKASMIdentityVendor,
                             CRKASMNetworkCheckingRosterProvider,
                             CRKASMPreemptiveIDSMessagingRosterProvider,
@@ -416,6 +417,8 @@ exports:
                             CRKFetchDevicePropertiesRequest,
                             CRKFetchDevicePropertiesResultObject,
                             CRKFetchDevicesRequest, CRKFetchDevicesResultObject,
+                            CRKFetchEasyMAIDSignInEligibilityRequest,
+                            CRKFetchEasyMAIDSignInEligibilityResultObject,
                             CRKFetchIdentitiesRequest,
                             CRKFetchIdentitiesTaskResultObject,
                             CRKFetchInstructorEndpointRequest,
@@ -530,6 +533,7 @@ exports:
                             CRKRemoteConnectionResultObject,
                             CRKRemoteDeviceRequest, CRKRemoteEndpoint,
                             CRKRemoveASMClassOperation,
+                            CRKRemoveSignInHistoryEntriesRequest,
                             CRKRenewAppleIDCredentialsRequest,
                             CRKRepeatedCharacterTableEntry,
                             CRKRequestCertificatesIDSMessage,

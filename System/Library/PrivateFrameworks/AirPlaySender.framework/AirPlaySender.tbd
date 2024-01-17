@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AirPlaySender.framework/AirPlaySender
@@ -7,8 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _APAudioEngineBufferedCreate,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _APAccTransportClientConnectionGetTypeID,
+                            _APAccTransportClientEndpointGetTypeID,
+                            _APAudioEngineBufferedCreate,
                             _APAudioEngineGetCMBaseObject,
                             _APAudioEngineVendorCreate,
                             _APAudioEngineVendorGetTypeID,
@@ -117,7 +119,7 @@ exports:
                             _APEndpointIsHALMuteForUser, _APEndpointLocalCreate,
                             _APEndpointLocalCreateWithEndpointDescription,
                             _APEndpointManagerCarPlayCreate,
-                            _APEndpointManagerCreate,
+                            _APEndpointManagerCreate, _APEndpointManagerCreateEx,
                             _APEndpointManagerGetShared, _APEndpointRecordEvent,
                             _APEndpointRemoteControlSessionAirPlayCreate,
                             _APEndpointStreamAggregateAudioCreate,
@@ -170,15 +172,19 @@ exports:
                             _APMetadataSourceCreateWithNowPlayingAppPID,
                             _APMetadataSourceCreateWithRoutingContextUUID,
                             _APMetadataSourceSetMetadata,
+                            _APPairingClientCoreUtilsCopyGroupInfo,
                             _APPairingClientCoreUtilsCreate,
+                            _APPairingClientCoreUtilsCreateCombinedPairingGroupInfo,
+                            _APPairingClientCoreUtilsCreatePatchedPairedPeerWithPeerInfo,
+                            _APPairingClientCoreUtilsCreateUnpairedPeersFromGroupInfo,
+                            _APPairingClientCoreUtilsIsValidPairingGroupInfo,
                             _APPairingClientCoreUtilsPairedPeerDescriptionHasWoLInfo,
-                            _APPairingClientCoreUtilsPatchPairedPeerDescriptionWithWoLInfo,
                             _APPairingClientCoreUtilsPerformAddPairing,
                             _APPairingClientCoreUtilsPerformListPairings,
                             _APPairingClientCoreUtilsPerformRemovePairing,
+                            _APPairingClientCoreUtilsUpdateGroupInfo,
                             _APPairingClientGetCMBaseObject,
                             _APPairingClientLegacyCreate,
-                            _APPairingClientMFi4Create,
                             _APSRTPPacketHandlerComposeRTPPacketWithBBuf,
                             _APSRTPPacketHandlerCreate,
                             _APSRTPPacketHandlerDecryptCurrentMessage,
@@ -234,6 +240,8 @@ exports:
                             _SPHubbedDevicesProviderPropertyCreate,
                             _SidePlayManagerStart,
                             _UpdateFeaturesRequestGetTypeID,
+                            _gLogCategory_APAccTransportClientConnection,
+                            _gLogCategory_APAccTransportClientEndpoint,
                             _gLogCategory_APAudioEngineBuffered,
                             _gLogCategory_APAudioEngineCarPlay,
                             _gLogCategory_APAudioEngineRealTime,
@@ -303,7 +311,6 @@ exports:
                             _gLogCategory_APMetadataSource,
                             _gLogCategory_APPairingClientCoreUtils,
                             _gLogCategory_APPairingClientLegacy,
-                            _gLogCategory_APPairingClientMFi4,
                             _gLogCategory_APReceiverNTPClient,
                             _gLogCategory_APSRTPPacketHandler,
                             _gLogCategory_APSenderSession,
@@ -323,6 +330,7 @@ exports:
                             _gLogCategory_SPEndpointManagerFactory,
                             _gLogCategory_SPHubbedDevicesProviderDefaults,
                             _gLogCategory_SPHubbedDevicesProviderProperty,
+                            _kAPAccTransportClientConnectionCreationOption_AuthenticationCertificateSerial,
                             _kAPAudioCompressionSourcePropertyCodecQualityMode_High,
                             _kAPAudioCompressionSourcePropertyCodecQualityMode_Low,
                             _kAPAudioCompressionSourcePropertyCodecQualityMode_Max,
@@ -562,6 +570,7 @@ exports:
                             _kAPEndpointDescriptionProperty_SupportsBufferedPKDDecryption,
                             _kAPEndpointDescriptionProperty_SupportsCBCSEncryption,
                             _kAPEndpointDescriptionProperty_SupportsCoreUtilsPairingAndEncryption,
+                            _kAPEndpointDescriptionProperty_SupportsDCXForSpatialAudio,
                             _kAPEndpointDescriptionProperty_SupportsDedicatedRemoteControlSocket,
                             _kAPEndpointDescriptionProperty_SupportsExtendedWHA,
                             _kAPEndpointDescriptionProperty_SupportsHKPairingAndAccessControl,
@@ -645,6 +654,7 @@ exports:
                             _kAPEndpointDisplay_ViewAreaTransitionControl,
                             _kAPEndpointLocalCreationOption_IsSystemVolumeEnabled,
                             _kAPEndpointLocalProperty_IsEndpointInfoComplete,
+                            _kAPEndpointManagerCreationOption_SkipsRemoteHALPluginLoading,
                             _kAPEndpointManagerNotificationPayloadKey_TightSyncUUID,
                             _kAPEndpointManagerNotification_ClearEndpointWithEndpointID,
                             _kAPEndpointManagerNotification_CreateEndpointWithEndpointInfo,
@@ -846,6 +856,7 @@ exports:
                             _kAPEndpointStreamAudioEngineProperty_AudioLatencyMs,
                             _kAPEndpointStreamAudioEngineProperty_CurrentRTPTime,
                             _kAPEndpointStreamAudioEngineProperty_OutputLatency,
+                            _kAPEndpointStreamAudioEngineTimedInfoDictKey_ContentType,
                             _kAPEndpointStreamAudioHoseAggregateCreationOption_BBufBackingProvider,
                             _kAPEndpointStreamAudioHoseAggregateProperty_PrimaryPacketDropCount,
                             _kAPEndpointStreamBufferedAudioCreationOption_EventRecorder,
@@ -926,6 +937,7 @@ exports:
                             _kAPEndpointStreamResumeOption_AudioSessionMode,
                             _kAPEndpointStreamResumeOption_AudioStreamInfoRTC,
                             _kAPEndpointStreamResumeOption_BBufBackingProvider,
+                            _kAPEndpointStreamResumeOption_ClientAuditToken,
                             _kAPEndpointStreamResumeOption_ClientPID,
                             _kAPEndpointStreamResumeOption_EncryptionKey,
                             _kAPEndpointStreamResumeOption_FramesPerPacket,
@@ -985,6 +997,7 @@ exports:
                             _kAPSenderSessionFactoryOption_EndpointRef,
                             _kAPSenderSessionKey_AudioMode,
                             _kAPSenderSessionKey_MuteForStream,
+                            _kAPSenderSessionKey_SoundCheckMediaKind,
                             _kAPSenderSessionNotificationKey_SessionState,
                             _kAPSenderSessionNotificationKey_Status,
                             _kAPSenderSessionNotificationKey_Streams,
@@ -1042,6 +1055,7 @@ exports:
                             _kAPSenderSessionStreamKey_NetworkPortControl,
                             _kAPSenderSessionStreamKey_NetworkPortData,
                             _kAPSenderSessionStreamKey_PKDDeviceContext,
+                            _kAPSenderSessionStreamKey_PacketFormatAPAP,
                             _kAPSenderSessionStreamKey_PrimaryPacketDropCount,
                             _kAPSenderSessionStreamKey_RedundantAudio,
                             _kAPSenderSessionStreamKey_SampleRate,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CTActivationPolicyCarrierLockAsString,
                             _CTCAConnectionCongestionStatusAsString,
                             _CTCAConnectionRegistrationStatusAsString,
@@ -355,12 +355,14 @@ exports:
                             __CTServerConnectionGetAllowedRadioMode,
                             __CTServerConnectionGetAttachAPNSettings,
                             __CTServerConnectionGetAudioLoggingEnabled,
+                            __CTServerConnectionGetAutoReadOutSetting,
                             __CTServerConnectionGetCDMAInternationalRoaming,
                             __CTServerConnectionGetCDRXWithLTEState,
                             __CTServerConnectionGetCapabilityStatus,
                             __CTServerConnectionGetCapabilityStatusExtended,
                             __CTServerConnectionGetCarrierEntitlements,
                             __CTServerConnectionGetCarrierSpaceUpdates,
+                            __CTServerConnectionGetCellBroadcastConfig,
                             __CTServerConnectionGetCellBroadcastCustomPrefForAlertType,
                             __CTServerConnectionGetCellBroadcastOverrideAccessibilityVibrationSetting,
                             __CTServerConnectionGetCellBroadcastSettingForAlertType,
@@ -511,6 +513,7 @@ exports:
                             __CTServerConnectionSetActiveAudioSystemConfiguration,
                             __CTServerConnectionSetAudioLoggingEnabled,
                             __CTServerConnectionSetAudioPath,
+                            __CTServerConnectionSetAutoReadOutSetting,
                             __CTServerConnectionSetBandInfo,
                             __CTServerConnectionSetBasebandSettings,
                             __CTServerConnectionSetCDMAInternationalRoaming,
@@ -761,6 +764,8 @@ exports:
                             _kAppleSafetyAlert_CmamLongText_Key,
                             _kAppleSafetyAlert_CmamText_Key,
                             _kAppleSafetyAlert_Description_Key,
+                            _kAppleSafetyAlert_Earthquake_Info_Key,
+                            _kAppleSafetyAlert_Earthquake_UniqueID_Key,
                             _kAppleSafetyAlert_EffectiveTimestamp_Key,
                             _kAppleSafetyAlert_EventCode_Key,
                             _kAppleSafetyAlert_ExpiryTimestamp_Key,
@@ -777,6 +782,7 @@ exports:
                             _kAppleSafetyAlert_SessionID_Key,
                             _kAppleSafetyAlert_Severity_Key,
                             _kAppleSafetyAlert_Status_Key,
+                            _kAppleSafetyAlert_Trigger_Earthquake_Key,
                             _kAppleSafetyAlert_Trigger_Wea_Key,
                             _kAppleSafetyAlert_UniqueID_Key,
                             _kAppleSafetyAlert_Urgency_Key,
@@ -1747,12 +1753,15 @@ exports:
                             _kCTSIMToolkitTimeout, _kCTSMSAppleSafetyAlertData,
                             _kCTSMSAppleSafetyAlertMissingForHash,
                             _kCTSMSAppleSafetyAlertSupport,
+                            _kCTSMSAutoReadOutAlertLanguage,
                             _kCTSMSCellBroadcastAlertConfiguration,
                             _kCTSMSCellBroadcastAlertType,
                             _kCTSMSCellBroadcastBundleIdentifier,
+                            _kCTSMSCellBroadcastConfigChangedNotification,
                             _kCTSMSCellBroadcastEmergencyUserAlert,
                             _kCTSMSCellBroadcastString,
                             _kCTSMSCellBroadcastStringReceivedNotification,
+                            _kCTSMSCellBroadcastTelemetryNotification,
                             _kCTSMSCellBroadcastTranslatedSound,
                             _kCTSMSCellBroadcastTranslatedText,
                             _kCTSMSCellBroadcastTranslatedTitle,

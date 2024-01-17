@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppStoreKit.framework/AppStoreKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation12CharacterSetV11AppStoreKitE16excessiveLeadingACvgZ,
                             _$s10Foundation12CharacterSetV11AppStoreKitE25legacyExcessiveLineHeightACvgZ,
                             _$s11AppStoreKit10BorderViewC11borderColorSo7UIColorCSgvM,
@@ -313,10 +313,10 @@ exports:
                             _$s11AppStoreKit16DynamicTypeLabelC5coderACSgSo7NSCoderC_tcfc,
                             _$s11AppStoreKit16DynamicTypeLabelC5frameACSo6CGRectV_tcfC,
                             _$s11AppStoreKit16DynamicTypeLabelC5frameACSo6CGRectV_tcfc,
-                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgAA011DirectionalpQ0OSo09UIContentsT0aAScSgtcfC,
-                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgAA011DirectionalpQ0OSo09UIContentsT0aAScSgtcfCTj,
-                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgAA011DirectionalpQ0OSo09UIContentsT0aAScSgtcfCTq,
-                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgAA011DirectionalpQ0OSo09UIContentsT0aAScSgtcfc,
+                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24isUserInteractionEnabled24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgSbAA011DirectionaltU0OSo09UIContentwX0aATcSgtcfC,
+                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24isUserInteractionEnabled24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgSbAA011DirectionaltU0OSo09UIContentwX0aATcSgtcfCTj,
+                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24isUserInteractionEnabled24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgSbAA011DirectionaltU0OSo09UIContentwX0aATcSgtcfCTq,
+                            _$s11AppStoreKit16DynamicTypeLabelC7useCase13numberOfLines13lineBreakMode24isUserInteractionEnabled24directionalTextAlignment26contentSizeCategoryMappingAC5JetUI07FontUseH0OSg_SiSo06NSLinemN0VSgSbAA011DirectionaltU0OSo09UIContentwX0aATcSgtcfc,
                             _$s11AppStoreKit16DynamicTypeLabelCMa,
                             _$s11AppStoreKit16DynamicTypeLabelCMn,
                             _$s11AppStoreKit16DynamicTypeLabelCMo,
@@ -799,13 +799,6 @@ exports:
                             _$s11AppStoreKit6ButtonC27imageWantsBaselineAlignmentSbvpMV,
                             _$s11AppStoreKit6ButtonC27imageWantsBaselineAlignmentSbvsTj,
                             _$s11AppStoreKit6ButtonC27imageWantsBaselineAlignmentSbvsTq,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvMTj,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvMTq,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvgTj,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvgTq,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvpMV,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvsTj,
-                            _$s11AppStoreKit6ButtonC55imageWantsBaselineAlignmentWithBottomContentInsetOffsetSbvsTq,
                             _$s11AppStoreKit6ButtonC5coderACSgSo7NSCoderC_tcfC,
                             _$s11AppStoreKit6ButtonC5coderACSgSo7NSCoderC_tcfc,
                             _$s11AppStoreKit6ButtonC5frameACSo6CGRectV_tcfC,
@@ -1060,6 +1053,7 @@ exports:
                             _$s9JetEngine10JSONObjectV11AppStoreKitE03appE5ColorSo7UIColorCSgvpMV,
                             _$sSa11AppStoreKitE10isNotEmptySbvg,
                             _$sSa11AppStoreKitE10isNotEmptySbvpMV,
+                            _$sSo11UIImageViewC11AppStoreKitE22lastBaselineFromBottom12CoreGraphics7CGFloatVvg,
                             _$sSo12UIRectCornerV11AppStoreKitE02caB4MaskABSo08CACornerG0V_tcfC,
                             _$sSo12UIRectCornerV11AppStoreKitE02caB4MaskSo08CACornerG0Vvg,
                             _$sSo12UIRectCornerV11AppStoreKitE02caB4MaskSo08CACornerG0VvpMV,

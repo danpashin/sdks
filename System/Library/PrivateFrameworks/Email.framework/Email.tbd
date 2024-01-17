@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Email.framework/Email
-current-version:       3774.100.2
+current-version:       3774.255.61
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _EMAccountSchemeDataAccess, _EMAccountSchemeEWS,
                             _EMAccountSchemeIMAP, _EMAccountSchemeLocal,
                             _EMAccountSchemePOP, _EMAccountsChangedNotification,
@@ -179,6 +179,7 @@ exports:
                             _EMUserDefaultDisableFollowUp,
                             _EMUserDefaultDisableIndexing,
                             _EMUserDefaultDisableInitialMessageSelection,
+                            _EMUserDefaultDisableQueryLogSubmission,
                             _EMUserDefaultDisableServerSideSearch,
                             _EMUserDefaultDisableSnapshotInvalidation,
                             _EMUserDefaultDisableStateRestoration,
@@ -360,7 +361,7 @@ exports:
                             EMUnsubscribeAction, EMUserProfileProvider, EMVIP,
                             EMVIPManager, EMWebViewScriptHandler,
                             EMWelcomeOnboarding, _EMAttachmentContentItem,
-                            _EMComparisionQueryGenerator,
+                            _EMBlockedSenderState, _EMComparisionQueryGenerator,
                             _EMCompoundQueryGenerator, _EMContactsCache,
                             _EMMessageRepositoryMailboxPredictionObserver,
                             _EMRemoteContentDataTaskInfo, _EMSpecialMailboxScope,

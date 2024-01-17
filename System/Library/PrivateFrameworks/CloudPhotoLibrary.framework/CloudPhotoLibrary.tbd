@@ -1,18 +1,19 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CPLAccountFlagsReadFrom,
                             _CPLAllowsInactiveSharedLibraryScope,
                             _CPLAnalysisReferenceUnadjustedFingerprint,
                             _CPLConfigurationDirectClientIntervalKey,
                             _CPLConfigurationDirectClientMinInterval,
+                            _CPLConfigurationMinimumIntervalBetweenOverQuotaRechecksKey,
                             _CPLConfigurationPickerMitigationDictionaryKey,
                             _CPLConfigurationPrefetchDictionaryKey,
                             _CPLConfigurationWallpaperDownloadDictionaryKey,
@@ -151,7 +152,8 @@ exports:
                             _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionTotalSessionsCountKey,
                             _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionUIVisibleBlockedCountKey,
                             _PLCoreAnalyticsLibrarySummaryiCPLSyncSessionUnknownReasonBlockedCountKey,
-                            __CPLAbort, __CPLConfigurationDidChangeNotification,
+                            __CPLAbort, __CPLBaseRecordViewFailure,
+                            __CPLConfigurationDidChangeNotification,
                             __CPLDefaultValueBOOLNO, __CPLDefaultValueNSINTEGER0,
                             __CPLDefaultValueObjectNil,
                             __CPLDontDelayChangeSessionUpdate, __CPLExit,

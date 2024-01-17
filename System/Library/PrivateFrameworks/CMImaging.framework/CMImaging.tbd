@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CMImaging.framework/CMImaging
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/CMCaptureCore.framework/CMCaptureCore ]
     symbols:              [ _CMILSCOISAdaptation_convertV2LSCTableToV1LSCTable,
                             _CMILSCOISAdaptation_convertV2LSCTableToV1LSCTableWithOISOffset,
@@ -39,7 +39,7 @@ exports:
                             _bfpn_calculate_hf_filtered,
                             _bfpn_calculate_hf_stats, _bfpn_calculate_lf_stats,
                             _bfpn_channel_mean, _bfpn_clear_clipped_pixels,
-                            _bfpn_convert_uint8_to_float,
+                            _bfpn_convert_uint8_to_float, _bfpn_correct_nuhm,
                             _bfpn_correction_create_dict_from_metadata,
                             _bfpn_create_correction_model_from_fdr,
                             _bfpn_deinterleave_bayer, _bfpn_downsample2x,
@@ -60,7 +60,7 @@ exports:
                             _determineFirstPixelForCVPixelFormat,
                             _determineFirstPixelForVersatileCVPixelBuffer,
                             _determineMTLPixelFormatsForCVPixelFormat, _isQuadra,
-                            _isVersatilePixelFormat,
+                            _isVersatilePixelFormat, _kCMINotification_GPUError,
                             _offsetForPixelComponentWithFirstPixel,
                             _packHomographyToNSArray,
                             _unpackHomographyFromNSArray ]
@@ -99,7 +99,7 @@ exports:
                             FigMetalBufferDescriptor, FigMetalContext,
                             FigMetalExecutionStatus, FigMetalTextureDescriptor,
                             FigRegToolboxGPU, FigRegWarpPPGPU,
-                            FigRegWarpPPGPUShared, GDCTransform, RegWarpPP,
-                            SSCHistogram, SSCHistogramResult, STFIBPProvider,
-                            VISProvider ]
+                            FigRegWarpPPGPUShared, FigRegWarpPPGPUTuningParams,
+                            GDCTransform, RegWarpPP, SSCHistogram,
+                            SSCHistogramResult, STFIBPProvider, VISProvider ]
 ...

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DepthCore.framework/DepthCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9DepthCore05WaterA0O014isExceedingMaxA0Sbvg,
                             _$s9DepthCore05WaterA0O014isExceedingMaxA0SbvpMV,
                             _$s9DepthCore05WaterA0O10depthValueAA0aE0VSgvg,
@@ -186,6 +186,10 @@ exports:
                             _$s9DepthCore0A9FormatterC017formatDiveHistoryE8DurationySSSdFTq,
                             _$s9DepthCore0A9FormatterC06formatA0_9withUnits19strippingWhitespace15allowFractionalSSAA05WaterA0O_S3btF,
                             _$s9DepthCore0A9FormatterC06formatA0_9withUnits19strippingWhitespace15allowFractionalSSAA05WaterA0O_S3btFTq,
+                            _$s9DepthCore0A9FormatterC06formatA0_9withUnits19strippingWhitespace15allowFractionalSSAA0A5ValueV_S3btF,
+                            _$s9DepthCore0A9FormatterC06formatA0_9withUnits19strippingWhitespace15allowFractionalSSAA0A5ValueV_S3btFTq,
+                            _$s9DepthCore0A9FormatterC06formatA25ValueForComplicationsOnlyySSAA05WaterA0OF,
+                            _$s9DepthCore0A9FormatterC06formatA25ValueForComplicationsOnlyySSAA05WaterA0OFTq,
                             _$s9DepthCore0A9FormatterC09beyondMaxA6StringSSvg,
                             _$s9DepthCore0A9FormatterC09beyondMaxA6StringSSvgTq,
                             _$s9DepthCore0A9FormatterC09beyondMaxA6StringSSvpMV,
@@ -215,8 +219,10 @@ exports:
                             _$s9DepthCore0A9FormatterC24submergeToContinueStringSSvg,
                             _$s9DepthCore0A9FormatterC24submergeToContinueStringSSvgTq,
                             _$s9DepthCore0A9FormatterC24submergeToContinueStringSSvpMV,
-                            _$s9DepthCore0A9FormatterC25formatUnderwaterTimeRange014fromUnderWaterF0SSAA0eF0O_tF,
-                            _$s9DepthCore0A9FormatterC25formatUnderwaterTimeRange014fromUnderWaterF0SSAA0eF0O_tFTq,
+                            _$s9DepthCore0A9FormatterC28formatUnderwaterDateIntervalySS10Foundation0fG0VF,
+                            _$s9DepthCore0A9FormatterC28formatUnderwaterDateIntervalySS10Foundation0fG0VFTq,
+                            _$s9DepthCore0A9FormatterC28formatVoiceoverDiveStartDateySS10Foundation0H0VF,
+                            _$s9DepthCore0A9FormatterC28formatVoiceoverDiveStartDateySS10Foundation0H0VFTq,
                             _$s9DepthCore0A9FormatterC29formatTemperatureRangeAndUnitySS_SStAA0eF0OF,
                             _$s9DepthCore0A9FormatterC29formatTemperatureRangeAndUnitySS_SStAA0eF0OFTq,
                             _$s9DepthCore0A9FormatterC35temperatureUnitWithDegreeSignStringSSvg,

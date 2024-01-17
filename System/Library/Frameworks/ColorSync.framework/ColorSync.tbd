@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/ColorSync.framework/ColorSync
-current-version:       3730
+current-version:       3735
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ColorSyncCodeFragmentGetMD5,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _ColorSyncAPIVersion, _ColorSyncCodeFragmentGetMD5,
                             _ColorSyncConvertDoubleXYZFromD50,
                             _ColorSyncConvertDoubleXYZToD50,
                             _ColorSyncConvertXYZToXYZWithChromaticAdaptationMatrix,
@@ -30,6 +30,7 @@ exports:
                             _ColorSyncNxMGetInputRange, _ColorSyncNxMGetOptions,
                             _ColorSyncNxMGetOutputRange,
                             _ColorSyncNxMGetProperties, _ColorSyncNxMGetTypeID,
+                            _ColorSyncPrivateAPIVersion,
                             _ColorSyncProfileContainsSupportedCICP,
                             _ColorSyncProfileContainsTag,
                             _ColorSyncProfileCopyASCIIDescriptionString,

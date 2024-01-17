@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TextToSpeechVoiceBankingSupport.framework/TextToSpeechVoiceBankingSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s31TextToSpeechVoiceBankingSupport010TTSVBCloudD11ModelFileMOC10apiVersions5Int16VvpMV,
                             _$s31TextToSpeechVoiceBankingSupport010TTSVBCloudD11ModelFileMOC10fileFutureSo013_NSFileBackedL0_pSgvpMV,
                             _$s31TextToSpeechVoiceBankingSupport010TTSVBCloudD11ModelFileMOC12fetchRequestSo07NSFetchL0CyACGyFZTj,
@@ -614,6 +614,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O06phraseA3KeySSvgZ,
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O16cloudPrefsDomainSSvgZ,
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O16localPrefsDomainSSvgZ,
+                            _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O16phraseInputIDKeySSvgZ,
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O17phraseShortcutKeySSvgZ,
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O18favoritePhrasesKeySSvgZ,
                             _$s31TextToSpeechVoiceBankingSupport09TTSVBLivecF0O29localPrefsDidChangeNotifyNameSSvgZ,
@@ -656,6 +657,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO16downloadTimedOutyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO16fileDoesNotExistyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO17audioSessionErroryA2EmFWC,
+                            _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO17inputNotAvailableyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO18couldNotCreateFileyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO18couldNotDeleteItemyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO19couldNotDecodeValueyA2EmFWC,
@@ -669,6 +671,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO21directoryDoesNotExistyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO21noRecordingInProgressyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO22asrAssetDownloadFailedyA2EmFWC,
+                            _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO22inputNodeFormatInvalidyAESd_s6UInt32VtcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO23couldNotCreateAudioFileyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO23couldNotCreateDirectoryyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO23voiceWithIDDoesNotExistyAE10Foundation4UUIDVcAEmFWC,
@@ -690,6 +693,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO31couldNotListContentsOfDirectoryyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO31couldNotSetFileAttributesOnItemyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO31couldNotStartDaemonTrainingTaskyA2EmFWC,
+                            _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO31siriTTSMetaDataFileDoesNotExistyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO33couldNotOpenAVAudioFileForReadingyAE10Foundation3URLVcAEmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO33noAudioBuffersAvailableForWritingyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV6ReasonO33speechRecognitionSilenceThresholdyA2EmFWC,
@@ -731,6 +735,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO22couldNotLoadDataStoresyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO22couldNotSaveDataStoresyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO23couldNotCreateAudioFileyA2EmFWC,
+                            _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO23couldNotInstallAudioTapyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO23couldNotMoveDataArchiveyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO24couldNotEndAudioPlaybackyA2EmFWC,
                             _$s31TextToSpeechVoiceBankingSupport10TTSVBErrorV7ProblemO24couldNotStartAudioEngineyA2EmFWC,
@@ -1859,6 +1864,7 @@ exports:
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO10voiceModelyAcA010TTSVBVoiceI0VcACmFWC,
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO15stagedTrainingsyA2CmFWC,
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO24markAsExcludedFromBackupyyKF,
+                            _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO24requireGroupContainerURL10Foundation0K0VyKFZ,
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO3url10Foundation3URLVvg,
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO3url10Foundation3URLVvpMV,
                             _$s31TextToSpeechVoiceBankingSupport9TTSVBPathO4rootyA2CmFWC,

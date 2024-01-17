@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/PhotosUI.framework/PhotosUI
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s8PhotosUI12PHPickerModeV2eeoiySbAC_ACtFZ,
                             _$s8PhotosUI12PHPickerModeV4hash4intoys6HasherVz_tF,
                             _$s8PhotosUI12PHPickerModeV7compactACvMZ,
@@ -423,7 +423,11 @@ exports:
                             _PUPhotoPickerResizeTargetMaxDimension,
                             _PUPhotoPickerSavingOptions,
                             _PUPickerFilterAvailableClasses,
+                            _PUPickerItemProviderUserInfoAcceptableCropRectKey,
                             _PUPickerItemProviderUserInfoLocalIdentifierKey,
+                            _PUPickerItemProviderUserInfoNormalizedFaceAreaRectKey,
+                            _PUPickerItemProviderUserInfoPixelSizeKey,
+                            _PUPickerItemProviderUserInfoPreferredCropRectKey,
                             __PHPickerSourceTypeMax, __PHPickerSourceTypeMin,
                             __swift_FORCE_LOAD_$_swiftPhotosUI ]
     objc-classes:         [ PHEditingExtensionContext, PHLimitedLibraryPicker,
@@ -452,5 +456,5 @@ exports:
                             PUPickerUnavailableViewController,
                             PUPickerWallpaperSuggestion,
                             _PHPickerCollectionConfiguration,
-                            _PHPickerSuggestionGroup ]
+                            _PHPickerResultMetadata, _PHPickerSuggestionGroup ]
 ...

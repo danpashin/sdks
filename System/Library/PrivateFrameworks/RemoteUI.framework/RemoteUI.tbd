@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV8RemoteUIE10xmlElementAD3RUIC3XMLC0F0CyKF,
                             _$s7SwiftUI17EnvironmentValuesV06RemoteB0E14ruiObjectModelSo09RUIObjectH0CSgvM,
                             _$s7SwiftUI17EnvironmentValuesV06RemoteB0E14ruiObjectModelSo09RUIObjectH0CSgvg,
@@ -77,6 +77,16 @@ exports:
                             _$s8RemoteUI19AttributeReadingKeyMp,
                             _$s8RemoteUI19AttributeReadingKeyPs06CodingE0Tb,
                             _$s8RemoteUI19AttributeReadingKeyTL,
+                            _$s8RemoteUI19RUICustomContentRowC10attributes6parentACSgSDys11AnyHashableVypGSg_So10RUIElementCSgtcfC,
+                            _$s8RemoteUI19RUICustomContentRowC10attributes6parentACSgSDys11AnyHashableVypGSg_So10RUIElementCSgtcfc,
+                            _$s8RemoteUI19RUICustomContentRowCACycfC,
+                            _$s8RemoteUI19RUICustomContentRowCACycfc,
+                            _$s8RemoteUI19RUICustomContentRowCMa,
+                            _$s8RemoteUI19RUICustomContentRowCMn,
+                            _$s8RemoteUI19RUICustomContentRowCMo,
+                            _$s8RemoteUI19RUICustomContentRowCMu,
+                            _$s8RemoteUI19RUICustomContentRowCN,
+                            _$s8RemoteUI19RUICustomContentRowCfD,
                             _$s8RemoteUI22RUISwiftUITableViewRowC10attributes6parentACSgSDys11AnyHashableVypGSg_So10RUIElementCSgtcfC,
                             _$s8RemoteUI22RUISwiftUITableViewRowC10attributes6parentACSgSDys11AnyHashableVypGSg_So10RUIElementCSgtcfc,
                             _$s8RemoteUI22RUISwiftUITableViewRowC10xmlElementAA3RUIC3XMLC0H0CSgvMTj,
@@ -309,9 +319,11 @@ exports:
                             _RemoteUINavHeaderFont, _RemoteUINavHeaderTextColor,
                             _RemoteUINavSubHeaderFont,
                             _RemoteUINavSubHeaderTextColor,
+                            _RemoteUIPreferredContentSize,
                             _RemoteUISubheaderFont, _RemoteUISubheaderTextColor,
                             _UIResolvedNaturalAlignment, __RUILoggingFacility,
-                            __isInternalInstall, _buttonClass, _datePickerClass,
+                            __isInternalInstall, _buttonClass, _customContentClass,
+                            _customContentRowTag, _datePickerClass,
                             _editableTextClass, _htmlButtonClass, _htmlClassPrefix,
                             _htmlLabelClass, _htmlLinkClass,
                             _kRUISetFieldValueReentrancyDepth, _labelClass,
@@ -356,6 +368,7 @@ exports:
                             _RUILoaderSessionDelegateAdapter,
                             _RUIUIAlertController,
                             _TtC8RemoteUI18RUIContentRegistry,
+                            _TtC8RemoteUI19RUICustomContentRow,
                             _TtC8RemoteUI22RUISwiftUITableViewRow,
                             _TtC8RemoteUI26RUISwiftUIContainerElement,
                             _TtC8RemoteUI28RUITextActivityIndicatorView,

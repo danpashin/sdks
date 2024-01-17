@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s13PhotoAnalysis0A14KitChangeTokenC010persistentdE0ACSo012PHPersistentdE0C_tcfC,
                             _$s13PhotoAnalysis0A14KitChangeTokenC010persistentdE0ACSo012PHPersistentdE0C_tcfCTq,
                             _$s13PhotoAnalysis0A14KitChangeTokenC010persistentdE0ACSo012PHPersistentdE0C_tcfc,
@@ -418,6 +418,7 @@ exports:
                             _PHASuggestionControllerDefaultNumberOfSingleAssetSuggestionsPerRequest,
                             _PHASuggestionControllerDefaultNumberOfSuggestionsForWidgetPerRequest,
                             _PHATaskDailyPeriodValue, _PHATaskIgnorePeriodValue,
+                            _PHAWallpaperSuggestionGenerationWeeklyTaskHasEnoughPeopleShuffleSuggestions,
                             _PHAWallpaperSuggestionGenerationWeeklyTaskLibraryIsProcessedEnough,
                             _PHAWallpaperSuggestionShuffleMaxPerson,
                             _PHAWallpaperSuggestionShuffleMinimumSuggestionRequired,

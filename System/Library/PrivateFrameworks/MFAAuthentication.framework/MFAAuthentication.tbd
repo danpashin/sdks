@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MFAAuthentication.framework/MFAAuthentication
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ACCUserDefaultsDomain, _ACCUserDefaultsIapdDomain,
                             _ACCUserDefaultsIapdKey_ChargingPowerBehavior,
                             _ACCUserDefaultsIapdKey_ChargingPowerOverride,
@@ -20,7 +20,6 @@ exports:
                             _ACCUserDefaultsKey_ACCAuthProtocolRoleSupport,
                             _ACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport,
                             _ACCUserDefaultsKey_AllowMFi4DevCertsOnProdDevice,
-                            _ACCUserDefaultsKey_AllowMPPAuthOnAllDevices,
                             _ACCUserDefaultsKey_AllowNFCColorOverride,
                             _ACCUserDefaultsKey_AuthCPStartDelayMs,
                             _ACCUserDefaultsKey_AuthTTRForAllTransports,
@@ -64,6 +63,7 @@ exports:
                             _ACCUserDefaultsKey_PowerSourceUpdateBehavior,
                             _ACCUserDefaultsKey_ProductVersion,
                             _ACCUserDefaultsKey_ShowHiddenAccessories,
+                            _ACCUserDefaultsKey_SysdiagnoseInsteadOfAuthTTR,
                             _ACCUserDefaultsKey_TreatAuthCPDEVNAsV3,
                             _ACCUserDefaultsKey_USBHiAPEnable,
                             _ACCUserDefaultsKey_UseCertDataPropertyForAuth,
@@ -358,7 +358,6 @@ exports:
                             _kCFACCUserDefaultsKey_ACCAuthProtocolRoleSupport,
                             _kCFACCUserDefaultsKey_AllowACCAuthProtocolOnAllTransport,
                             _kCFACCUserDefaultsKey_AllowMFi4DevCertsOnProdDevice,
-                            _kCFACCUserDefaultsKey_AllowMPPAuthOnAllDevices,
                             _kCFACCUserDefaultsKey_AllowNFCColorOverride,
                             _kCFACCUserDefaultsKey_AuthCPStartDelayMs,
                             _kCFACCUserDefaultsKey_AuthTTRForAllTransports,
@@ -400,6 +399,7 @@ exports:
                             _kCFACCUserDefaultsKey_NFCSecondaryColorOverride,
                             _kCFACCUserDefaultsKey_OverrideCanReceiveInductivePowerOID,
                             _kCFACCUserDefaultsKey_PowerSourceUpdateBehavior,
+                            _kCFACCUserDefaultsKey_SysdiagnoseInsteadOfAuthTTR,
                             _kCFACCUserDefaultsKey_TreatAuthCPDEVNAsV3,
                             _kCFACCUserDefaultsKey_USBHiAPEnable,
                             _kCFACCUserDefaultsKey_UseCertDataPropertyForAuth,

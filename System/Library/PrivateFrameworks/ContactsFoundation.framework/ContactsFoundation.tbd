@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18ContactsFoundation11SecKeyErrorO03addE0yACSScACmFWC,
                             _$s18ContactsFoundation11SecKeyErrorO04typeE0yA2CmFWC,
                             _$s18ContactsFoundation11SecKeyErrorO06deleteE0yACSScACmFWC,
@@ -100,6 +100,7 @@ exports:
                             _CNComparatorForSortingByAuxiliaryValues,
                             _CNContactsFoundationBundle,
                             _CNContactsFoundationErrorDomain,
+                            _CNContactsFoundationUnderlyingExceptionKey,
                             _CNCopyUserLanguage,
                             _CNCoreDelegateInfoFromACAccount,
                             _CNCoreDelegateInfoFromFamilyMember,
@@ -164,7 +165,7 @@ exports:
                             _CNGreenTeaDiagnosticsLogFaultForEventCount,
                             _CNIdentity, _CNInitializerUnavailableException,
                             _CNIntFromUVersionInfo, _CNIsAddressingGrammarEmpty,
-                            _CNIsArabicString, _CNIsArrayEmpty,
+                            _CNIsArabicString, _CNIsArrayEmpty, _CNIsArrayNonEmpty,
                             _CNIsChineseJapaneseKoreanString, _CNIsChineseString,
                             _CNIsDataEmpty, _CNIsDictionaryEmpty,
                             _CNIsIndexSetEmpty, _CNIsNotNull, _CNIsNull,
@@ -347,11 +348,11 @@ exports:
                             CNQueueSchedulerCancelationToken,
                             CNReaderWriterScheduler, CNRegulatoryLogger,
                             CNRelativeTimestamped, CNReplaySubject,
-                            CNReplaySubjectCacheEntry, CNResult, CNScheduler,
-                            CNSchedulerProvider, CNSimulatedCrashReporter,
-                            CNSocialProfileURLParser, CNStack, CNString,
-                            CNStringRangeFinder, CNStringTokenizer,
-                            CNSuspendableSchedulerDecorator,
+                            CNReplaySubjectCacheEntry, CNResult, CNRetry,
+                            CNScheduler, CNSchedulerProvider,
+                            CNSimulatedCrashReporter, CNSocialProfileURLParser,
+                            CNStack, CNString, CNStringRangeFinder,
+                            CNStringTokenizer, CNSuspendableSchedulerDecorator,
                             CNSwitchWithSchedulerProviderCancelationToken,
                             CNSwitchWithSchedulerProviderOuterCancelationToken,
                             CNSwitchWithSchedulerProviderSwitchedCancelationToken,

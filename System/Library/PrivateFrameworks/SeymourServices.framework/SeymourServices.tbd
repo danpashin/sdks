@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SeymourServices.framework/SeymourServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11SeymourCore10AssetEntryV0A8ServicesE21representativeSamplesSayACGyFZ,
                             _$s11SeymourCore10AssetEntryVAA20RepresentativeSample0A8ServicesMc,
                             _$s11SeymourCore10MusicGenreV0A8ServicesE21representativeSamplesSayACGyFZ,
@@ -512,6 +512,18 @@ exports:
                             _$s15SeymourServices14SQLiteDatabaseON,
                             _$s15SeymourServices14SQLiteDatabaseOSHAAMc,
                             _$s15SeymourServices14SQLiteDatabaseOSQAAMc,
+                            _$s15SeymourServices14SetCoverStatusO2eeoiySbAC_ACtFZ,
+                            _$s15SeymourServices14SetCoverStatusO4hash4intoys6HasherVz_tF,
+                            _$s15SeymourServices14SetCoverStatusO4noneyA2CmFWC,
+                            _$s15SeymourServices14SetCoverStatusO8completeyA2CmFWC,
+                            _$s15SeymourServices14SetCoverStatusO9hashValueSivg,
+                            _$s15SeymourServices14SetCoverStatusO9hashValueSivpMV,
+                            _$s15SeymourServices14SetCoverStatusO9increasesyA2CmFWC,
+                            _$s15SeymourServices14SetCoverStatusOMa,
+                            _$s15SeymourServices14SetCoverStatusOMn,
+                            _$s15SeymourServices14SetCoverStatusON,
+                            _$s15SeymourServices14SetCoverStatusOSHAAMc,
+                            _$s15SeymourServices14SetCoverStatusOSQAAMc,
                             _$s15SeymourServices15ManagedBookmarkC12fetchRequestSo07NSFetchF0CyACGyFZ,
                             _$s15SeymourServices15ManagedBookmarkC13referenceTypeSSSgvpMV,
                             _$s15SeymourServices15ManagedBookmarkC14dateBookmarked10Foundation4DateVSgvpMV,
@@ -2398,8 +2410,6 @@ exports:
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE14modalityCountsSDy0A4Core12PortableEnumOyAE19CatalogModalityKindOGSiGvg,
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE14modalityCountsSDy0A4Core12PortableEnumOyAE19CatalogModalityKindOGSiGvpMV,
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE15withBodyFocuses_11forModalitySayACGSay0A4Core07CatalogI5FocusOG_AG12PortableEnumOyAG0nL4KindOGtF,
-                            _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE18numberOfModalitiesSivg,
-                            _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE18numberOfModalitiesSivpMV,
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE22hasDuplicateCategories12usingMappingSbSDy0A4Core12PortableEnumOyAF19CatalogModalityKindOGAHyAF0pQ8CategoryOGG_tF,
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE24numberOfUniqueModalitiesSivg,
                             _$sSa15SeymourServicesAA34WorkoutPlanGenerationScheduledItemVRszlE24numberOfUniqueModalitiesSivpMV,

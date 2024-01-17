@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices
-current-version:       616.1.27
+current-version:       617.1.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s22AuthenticationServices31ASPublicKeyCredentialClientDataV11crossOriginAC05CrossI5ValueOSgvM,
                             _$s22AuthenticationServices31ASPublicKeyCredentialClientDataV11crossOriginAC05CrossI5ValueOSgvg,
                             _$s22AuthenticationServices31ASPublicKeyCredentialClientDataV11crossOriginAC05CrossI5ValueOSgvpMV,
@@ -210,18 +210,40 @@ exports:
                             ASAuthorizationWebBrowserPlatformPublicKeyCredential,
                             ASCredentialIdentityStore,
                             ASCredentialIdentityStoreState,
+                            ASCredentialPickerPaneViewController,
                             ASCredentialProviderExtensionContext,
                             ASCredentialProviderViewController,
+                            ASCredentialRequestBasicPaneViewController,
+                            ASCredentialRequestButton,
+                            ASCredentialRequestButtonContinue,
+                            ASCredentialRequestCABLEClientViewController,
+                            ASCredentialRequestCABLEConnectingViewController,
+                            ASCredentialRequestCABLEConsentViewController,
+                            ASCredentialRequestConfirmButtonSubPane,
+                            ASCredentialRequestContainerViewController,
+                            ASCredentialRequestEnableBluetoothViewController,
+                            ASCredentialRequestEnableICloudKeychainViewController,
+                            ASCredentialRequestIconGenerator,
+                            ASCredentialRequestImageSubPane,
+                            ASCredentialRequestInfoLabelSubPane,
+                            ASCredentialRequestLoginChoiceCell,
+                            ASCredentialRequestPaneContext,
+                            ASCredentialRequestPaneViewController,
+                            ASCredentialRequestSecondaryButton,
+                            ASCredentialRequestSecurityKeyStringUtilities,
+                            ASCredentialRequestSubPane,
                             ASCredentialServiceIdentifier,
-                            ASPasskeyAssertionCredential,
+                            ASNavigationController, ASPasskeyAssertionCredential,
                             ASPasskeyCredentialIdentity,
                             ASPasskeyCredentialRequest,
                             ASPasskeyCredentialRequestParameters,
                             ASPasskeyRegistrationCredential,
+                            ASPasswordAuthenticationPaneViewController,
                             ASPasswordCredential, ASPasswordCredentialIdentity,
                             ASPasswordCredentialRequest,
                             ASPublicKeyCredentialClientData,
                             ASPublicKeyCredentialManager, ASSettingsHelper,
+                            ASViewServiceInterfaceUtilities,
                             ASWebAuthenticationSession,
                             _ASAccountAuthenticationModificationExtensionManager,
                             _ASAccountAuthenticationModificationHostViewController,

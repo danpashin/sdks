@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9WiFiKitUI14NetworkListRowC15prepareForReuseyyF,
                             _$s9WiFiKitUI14NetworkListRowC5coderACSgSo7NSCoderC_tcfC,
                             _$s9WiFiKitUI14NetworkListRowC5coderACSgSo7NSCoderC_tcfc,
@@ -136,13 +136,13 @@ exports:
                             _kWFDNSChangesKey, _kWFEnterpriseNetworkArchivePath,
                             _kWFForgetCellIdentifier, _kWFIPv4ChangesKey,
                             _kWFIPv6ChangesKey, _kWFImageBlueCheckmark,
-                            _kWFImageCellularBars0, _kWFImageCellularBars1,
-                            _kWFImageCellularBars2, _kWFImageCellularBars3,
-                            _kWFImageCellularBars4, _kWFImageLock,
-                            _kWFImagePersonalHotspot, _kWFImageWiFiBars,
-                            _kWFImageWiFiBarsError, _kWFImageWiFiHeroImage,
-                            _kWFJoinCellIdentifier, _kWFJoinEnterprisePath,
-                            _kWFManageCellIdentifier,
+                            _kWFImageCellularBars, _kWFImageCellularBars0,
+                            _kWFImageCellularBars1, _kWFImageCellularBars2,
+                            _kWFImageCellularBars3, _kWFImageCellularBars4,
+                            _kWFImageLock, _kWFImagePersonalHotspot,
+                            _kWFImageWiFiBars, _kWFImageWiFiBarsError,
+                            _kWFImageWiFiHeroImage, _kWFJoinCellIdentifier,
+                            _kWFJoinEnterprisePath, _kWFManageCellIdentifier,
                             _kWFNetworkPriorityChangesKeys,
                             _kWFNetworkQualityCellIdentifier,
                             _kWFOutrankCellIdentifier,
@@ -189,6 +189,7 @@ exports:
                             WFNetworkSettingsCellFactory,
                             WFNetworkSettingsConfig,
                             WFNetworkSettingsViewController,
+                            WFOtherNetworkHeaderView,
                             WFOtherNetworkViewController, WFPendingNetworkUpdate,
                             WFPickerViewController, WFPrivacyIssue,
                             WFPromptAlertController, WFProxyConfigViewController,

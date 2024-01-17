@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1848.2.1
+current-version:       1848.60.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AlgosPackScore, _AlgosUnpackScore,
                             _CLIPS_BASEBAND_MAV_MODULE, _CLIPS_BASEBAND_MODULE,
                             _CLIPS_COMMON_MODULE, _CLIPS_MAIN_MODULE,
@@ -46,7 +46,9 @@ exports:
                             _CTShimSubscriptionPreferredRATSelection,
                             _CTShimSubscriptionRATSelectionIsNR,
                             _CTShimSubscriptionRATSelectionMask,
-                            _CTShimSubscriptionSupports5G, _CTShimSubscriptions,
+                            _CTShimSubscriptionSupports5G,
+                            _CTShimSubscriptionWiFiEnableMmWaveSisOutrank,
+                            _CTShimSubscriptions,
                             _activate_symptom_evaluator_handling,
                             _activeTraceTargets, _apparentTime, _boottime_secs,
                             _client_transactions_release,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreMotion.framework/CoreMotion
-current-version:       2886.1.7
+current-version:       2890.4.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$sSo14CMOdometerDataC10CoreMotionE11maxAbsSlopeSdSgvg,
                             _$sSo14CMOdometerDataC10CoreMotionE11maxAbsSlopeSdSgvpMV,
                             _$sSo14CMOdometerDataC10CoreMotionE5slopeSdSgvg,
@@ -248,10 +248,11 @@ exports:
                             _CMPedometerEventKey,
                             _CMPedometerFetchRemoteCalibrations,
                             _CMPedometerSpeedSum, _CMPedometerStartTime,
-                            _CMPedometerStopTime,
+                            _CMPedometerStopTime, _CMPerceivedExertionData,
                             _CMPersistOrientationCallbackModeKey,
                             _CMPredictedWalkDistanceResetDateKey,
                             _CMProxPDPObject, _CMReturnCode,
+                            _CMSafetyAnomalyPropertiesKey,
                             _CMSedentaryTimerAlarmDataKey,
                             _CMSedentaryTimerAutoRescheduleKey,
                             _CMSedentaryTimerErrorMessageKey,
@@ -403,10 +404,10 @@ exports:
                             CMCallHandednessManager, CMCalorieData,
                             CMCalorieUserInfo, CMCalorieUtils, CMCameraBodyMetrics,
                             CMCameraFitnessMachineSample, CMCameraWorkoutEvent,
-                            CMCameraWorkoutSession, CMCatherineFeeder,
-                            CMContextConfigurationManager, CMDeviceMotion,
-                            CMDeviceMotionLite, CMDeviceOrientation,
-                            CMDeviceOrientationManager,
+                            CMCameraWorkoutSession, CMCatherineData,
+                            CMCatherineFeeder, CMContextConfigurationManager,
+                            CMDeviceMotion, CMDeviceMotionLite,
+                            CMDeviceOrientation, CMDeviceOrientationManager,
                             CMDistributedSensingManager,
                             CMDyskineticSymptomResult, CMElevation,
                             CMElevationData, CMExerciseMinute,
@@ -435,12 +436,12 @@ exports:
                             CMRecordedAccelerometerData, CMRecordedGyroData,
                             CMRecordedPressureData, CMRecordedRotationRateData,
                             CMRotationRateData, CMRunningMetricsManager,
-                            CMSWOLFSummary, CMSedentaryTimer, CMSedentaryTimerData,
-                            CMSensorDataList, CMSensorRecorder,
-                            CMSignificantElevationSample, CMSkeletonCollection,
-                            CMSkiData, CMSkiTracker, CMSleepData, CMSleepTracker,
-                            CMStepCounter, CMStrideCalibrationData,
-                            CMStrideCalibrationEntry,
+                            CMSWOLFSummary, CMSafetyAnomaly, CMSedentaryTimer,
+                            CMSedentaryTimerData, CMSensorDataList,
+                            CMSensorRecorder, CMSignificantElevationSample,
+                            CMSkeletonCollection, CMSkiData, CMSkiTracker,
+                            CMSleepData, CMSleepTracker, CMStepCounter,
+                            CMStrideCalibrationData, CMStrideCalibrationEntry,
                             CMStrideCalibrationEntryArray,
                             CMStrideCalibrationEntryInternal,
                             CMStrideCalibrationHistory, CMSuppressionEvent,

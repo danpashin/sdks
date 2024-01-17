@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FitnessCoaching.framework/FitnessCoaching
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV15FitnessCoaching16DefaultsStorableADMc,
                             _$s10Foundation4DataV15FitnessCoaching16DefaultsStorableADWP,
                             _$s10Foundation4DataV15FitnessCoachingE4read4from3keyACSgSo14NSUserDefaultsC_SStFZ,
@@ -1335,6 +1335,7 @@ exports:
                             _$s15FitnessCoaching3LogOMn,
                             _$s15FitnessCoaching3LogON,
                             _$s15FitnessCoaching8FeaturesV14sleepObservingACvgZ,
+                            _$s15FitnessCoaching8FeaturesV19notificationPostingACvgZ,
                             _$s15FitnessCoaching8FeaturesV20firstPickupObservingACvgZ,
                             _$s15FitnessCoaching8FeaturesV20multiRingFirstGlanceACvgZ,
                             _$s15FitnessCoaching8FeaturesV21singleRingFirstGlanceACvgZ,

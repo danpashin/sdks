@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NanoWeatherKitUICompanion.framework/NanoWeatherKitUICompanion
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation11MeasurementV25NanoWeatherKitUICompanionSo11NSUnitSpeedCRszrlE013formattedWindH06localeSSAA6LocaleV_tF,
                             _$s10Foundation11MeasurementV25NanoWeatherKitUICompanionSo11NSUnitSpeedCRszrlE013formattedWindH10Components6localeAcdFRszrlE0jhK0VyAF_GAA6LocaleV_tF,
                             _$s10Foundation11MeasurementV25NanoWeatherKitUICompanionSo11NSUnitSpeedCRszrlE04WindH10ComponentsV14accessibleUnitSSvg,
@@ -35,6 +35,8 @@ exports:
                             _$s10WeatherKit03DayA0V04NanoaB11UICompanion14UIDateEqualityADWP,
                             _$s10WeatherKit03DayA0V04NanoaB11UICompanionE06isTimecG0ySb10Foundation4DateVF,
                             _$s10WeatherKit03DayA0V04NanoaB11UICompanionE12timeIntervalSdvgZ,
+                            _$s10WeatherKit03DayA0V04NanoaB11UICompanionE26displayPrecipitationChanceSdvg,
+                            _$s10WeatherKit03DayA0V04NanoaB11UICompanionE26displayPrecipitationChanceSdvpMV,
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanion0A12TimelineDataADMc,
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanion0A12TimelineDataADWP,
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanion14UIDateEqualityADMc,
@@ -42,6 +44,8 @@ exports:
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanionE12timeIntervalSdvgZ,
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanionE17conditionIconName10coordinate4dateSSSgSo22CLLocationCoordinate2DV_10Foundation4DateVtF,
                             _$s10WeatherKit04HourA0V04NanoaB11UICompanionE17conditionIconName9isDaytimeSSSgSb_tF,
+                            _$s10WeatherKit04HourA0V04NanoaB11UICompanionE26displayPrecipitationChanceSdvg,
+                            _$s10WeatherKit04HourA0V04NanoaB11UICompanionE26displayPrecipitationChanceSdvpMV,
                             _$s10WeatherKit05WatchA0V04NanoaB11UICompanionE3day3forAA03DayA0VSg10Foundation4DateV_tF,
                             _$s10WeatherKit05WatchA0V04NanoaB11UICompanionE4days10startingAt4size0I9MustMatchSayAA03DayA0VG10Foundation4DateV_SiSbtF,
                             _$s10WeatherKit05WatchA0V04NanoaB11UICompanionE4hour3forAA04HourA0VSg10Foundation4DateV_tF,
@@ -59,10 +63,10 @@ exports:
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE08fallbackC0ACvpMV,
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE11iconHasRainSbvg,
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE11iconHasRainSbvpMV,
-                            _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE15isPrecipitationSbvg,
-                            _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE15isPrecipitationSbvpMV,
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE17conditionIconName11coordinates4dateSSSgSo22CLLocationCoordinate2DV_10Foundation4DateVtF,
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE17conditionIconName9isDaytimeSSSgSb_tF,
+                            _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE21nwkui_isPrecipitationSbvg,
+                            _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE21nwkui_isPrecipitationSbvpMV,
                             _$s10WeatherKit0A9ConditionO04NanoaB11UICompanionE27simplePrecipitationCondtionACSgyF,
                             _$s10WeatherKit10AirQualityV04NanoaB11UICompanion16UIExpirationDateADMc,
                             _$s10WeatherKit10AirQualityV04NanoaB11UICompanion16UIExpirationDateADWP,
@@ -567,7 +571,7 @@ exports:
                             _$s2os6LoggerV25NanoWeatherKitUICompanionE13stringForDateySS10Foundation0I0VFZ,
                             _$s7SwiftUI5ColorV25NanoWeatherKitUICompanionE5blend4withA2C_tF,
                             _$s7SwiftUI5ColorV25NanoWeatherKitUICompanionE5blend6color110intensity16color210intensity2A2C_12CoreGraphics7CGFloatVAcLtFZ,
-                            _$sSd25NanoWeatherKitUICompanionE2UIV13fourtyMinutesSdvgZ,
+                            _$sSd25NanoWeatherKitUICompanionE2UIV12fortyMinutesSdvgZ,
                             _$sSd25NanoWeatherKitUICompanionE2UIV13thirtyMinutesSdvgZ,
                             _$sSd25NanoWeatherKitUICompanionE2UIV13twentyMinutesSdvgZ,
                             _$sSd25NanoWeatherKitUICompanionE2UIV14fifteenMinutesSdvgZ,
@@ -583,17 +587,10 @@ exports:
                             _LinearGaugeView_EmptyGaugeValue, _NWKUIBundle,
                             _NWKUILocalizedString, _NWMColorForRGB,
                             _NWMColorForValueInIndices,
-                            _NWMInterpolateBetweenColors,
-                            _kNWKUINHPViewModelLabelMinutesCount,
-                            _kNWKUINHPViewModelLabelMinutesDiff ]
+                            _NWMInterpolateBetweenColors ]
     objc-classes:         [ NWKUIAQIFormatter, NWKUIAQILinearModel, NWKUIAQIModel,
                             NWKUIAQISegmentModel, NWKUIAQISegmentView,
                             NWKUIAQISegmentedModel, NWKUIAQISegmentedView,
                             NWKUIAirQualityColorIndex, NWKUIColorIndex,
-                            NWKUILinearGaugeView,
-                            NWKUINextHourPrecipitationViewModel,
-                            NWKUISeparatorView ]
-    objc-ivars:           [ NWKUINextHourPrecipitationViewModel._conditionText,
-                            NWKUINextHourPrecipitationViewModel._conditionTitleText,
-                            NWKUINextHourPrecipitationViewModel._nextHourPrecipitation ]
+                            NWKUILinearGaugeView, NWKUISeparatorView ]
 ...

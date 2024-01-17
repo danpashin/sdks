@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
@@ -7,7 +7,7 @@ current-version:       18
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CreateSQLExtensionsOnSqliteConnection,
                             _DestroySQLExtensions,
                             _ITDBPlaylistLimitFromSmartPlaylistLimit,
@@ -34,6 +34,8 @@ exports:
                             _ML3AlbumArtistPropertyName,
                             _ML3AlbumArtistPropertyPersistentID,
                             _ML3AlbumArtistPropertySortName,
+                            _ML3AlbumArtistPropertySortOrder,
+                            _ML3AlbumArtistPropertySortOrderSection,
                             _ML3AlbumArtistPropertyStoreID,
                             _ML3AlbumArtistPropertySyncID,
                             _ML3AlbumArtistRulesIdentityImportPropertyForSource,
@@ -149,6 +151,7 @@ exports:
                             _ML3ContainerPropertyCollaborationJoinRequestPending,
                             _ML3ContainerPropertyCollaborationMode,
                             _ML3ContainerPropertyCollaboratorPermissions,
+                            _ML3ContainerPropertyCollaboratorStatus,
                             _ML3ContainerPropertyContainedMediaType,
                             _ML3ContainerPropertyContainerPersistentId,
                             _ML3ContainerPropertyContainerType,
@@ -174,6 +177,7 @@ exports:
                             _ML3ContainerPropertyIsActiveOnTheGoPlaylist,
                             _ML3ContainerPropertyIsCollaborative,
                             _ML3ContainerPropertyIsContainerTypeActiveTarget,
+                            _ML3ContainerPropertyIsCurrentDeviceFavoriteSongsPlaylist,
                             _ML3ContainerPropertyIsCurrentDevicePurchasesPlaylist,
                             _ML3ContainerPropertyIsDeletable,
                             _ML3ContainerPropertyIsEditable,
@@ -341,6 +345,7 @@ exports:
                             _ML3NonQualifiedColumnNameFromProperty,
                             _ML3OfflineHLSFileExtensions,
                             _ML3PersonPropertyCloudID, _ML3PersonPropertyHandle,
+                            _ML3PersonPropertyHasLightweightProfile,
                             _ML3PersonPropertyImageToken,
                             _ML3PersonPropertyImageURL, _ML3PersonPropertyName,
                             _ML3PersonPropertyPersistentID,
@@ -885,6 +890,7 @@ exports:
                             MIPArtist._libraryIdentifiers, MIPArtist._likedState,
                             MIPArtist._likedStateChangedDate, MIPArtist._name,
                             MIPArtist._persistentId, MIPArtist._sortName,
+                            MIPArtist._sortOrder, MIPArtist._sortOrderSection,
                             MIPArtist._storeId, MIPAudiobook._album,
                             MIPAudiobook._artist, MIPAudiobook._audioFormat,
                             MIPAudiobook._composer, MIPAudiobook._discNumber,
@@ -966,8 +972,8 @@ exports:
                             MIPMovie._artist, MIPMovie._audioLanguage,
                             MIPMovie._audioTrackId, MIPMovie._audioTrackIndex,
                             MIPMovie._extendedContentName,
-                            MIPMovie._flattenedChapterData, MIPMovie._has,
-                            MIPMovie._hasAlternateAudio,
+                            MIPMovie._flattenedChapterData, MIPMovie._genre,
+                            MIPMovie._has, MIPMovie._hasAlternateAudio,
                             MIPMovie._hasChapterData, MIPMovie._hasSubtitles,
                             MIPMovie._movieInfo, MIPMovie._rental,
                             MIPMovie._rentalDuration,
@@ -1072,14 +1078,15 @@ exports:
                             MIPSong._lyricsChecksum, MIPSong._playbackInfo,
                             MIPSong._trackNumber, MIPSong._userRating,
                             MIPTVShow._artist, MIPTVShow._episodeId,
-                            MIPTVShow._episodeSortId, MIPTVShow._has,
-                            MIPTVShow._networkName, MIPTVShow._seasonNumber,
-                            MIPTVShow._series, MIPTVShow._videoQuality,
-                            ML3Entity._library, ML3Entity._persistentID,
-                            ML3Query._entityClass, ML3Query._library,
-                            ML3Query._nonDirectAggregateQuery, ML3Query._options,
-                            ML3Query._orderingTerms, ML3Query._predicate,
-                            ML3Query._propertyToCount, ML3Query._usingSections,
+                            MIPTVShow._episodeSortId, MIPTVShow._genre,
+                            MIPTVShow._has, MIPTVShow._networkName,
+                            MIPTVShow._seasonNumber, MIPTVShow._series,
+                            MIPTVShow._videoQuality, ML3Entity._library,
+                            ML3Entity._persistentID, ML3Query._entityClass,
+                            ML3Query._library, ML3Query._nonDirectAggregateQuery,
+                            ML3Query._options, ML3Query._orderingTerms,
+                            ML3Query._predicate, ML3Query._propertyToCount,
+                            ML3Query._usingSections,
                             MSPMediaSyncError._errorCode,
                             MSPMediaSyncError._errorDescription,
                             MSPMediaSyncError._has, MSPMediaSyncHeader._has,

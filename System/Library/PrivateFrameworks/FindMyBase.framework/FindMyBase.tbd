@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FindMyBase.framework/FindMyBase
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10FindMyBase10CodableBoxV4fromACyxGs7Decoder_p_tKcfC,
                             _$s10FindMyBase10CodableBoxV5ErrorO12decodeFailedyAEyx_GAGmSo8NSObjectCRbzSo14NSSecureCodingRzlFWC,
                             _$s10FindMyBase10CodableBoxV5ErrorO2eeoiySbAEyx_G_AGtFZ,
@@ -151,6 +151,7 @@ exports:
                             _$s10FindMyBase10SystemInfoO20LowPowerExpressModesVs25ExpressibleByArrayLiteralAAMc,
                             _$s10FindMyBase10SystemInfoO20LowPowerExpressModesVs9OptionSetAAMc,
                             _$s10FindMyBase10SystemInfoO29lowPowerExpressModesSupportedAC03LowghI0VvgZ,
+                            _$s10FindMyBase10SystemInfoO8hostUUID10Foundation0G0VvgZ,
                             _$s10FindMyBase10SystemInfoO8platformSSvgZ,
                             _$s10FindMyBase10SystemInfoO9deviceSKUSSSgvgZ,
                             _$s10FindMyBase10SystemInfoO9osVersionSSvgZ,
@@ -423,10 +424,18 @@ exports:
                             _$s10FindMyBase13WorkItemQueueC10identifierAC10Foundation4UUIDV_tcfCTj,
                             _$s10FindMyBase13WorkItemQueueC10identifierAC10Foundation4UUIDV_tcfCTq,
                             _$s10FindMyBase13WorkItemQueueC10identifierAC10Foundation4UUIDV_tcfc,
+                            _$s10FindMyBase13WorkItemQueueC11descriptionSSvg,
+                            _$s10FindMyBase13WorkItemQueueC11descriptionSSvpMV,
                             _$s10FindMyBase13WorkItemQueueC15unownedExecutorScevg,
                             _$s10FindMyBase13WorkItemQueueC15unownedExecutorScevpMV,
                             _$s10FindMyBase13WorkItemQueueC2id10Foundation4UUIDVvg,
                             _$s10FindMyBase13WorkItemQueueC2id10Foundation4UUIDVvpMV,
+                            _$s10FindMyBase13WorkItemQueueC4name10identifierACSS_10Foundation4UUIDVtcfC,
+                            _$s10FindMyBase13WorkItemQueueC4name10identifierACSS_10Foundation4UUIDVtcfCTj,
+                            _$s10FindMyBase13WorkItemQueueC4name10identifierACSS_10Foundation4UUIDVtcfCTq,
+                            _$s10FindMyBase13WorkItemQueueC4name10identifierACSS_10Foundation4UUIDVtcfc,
+                            _$s10FindMyBase13WorkItemQueueC4nameSSvg,
+                            _$s10FindMyBase13WorkItemQueueC4nameSSvpMV,
                             _$s10FindMyBase13WorkItemQueueC7enqueueyyAC0dE0CYaFTj,
                             _$s10FindMyBase13WorkItemQueueC7enqueueyyAC0dE0CYaFTjTu,
                             _$s10FindMyBase13WorkItemQueueC7enqueueyyAC0dE0CYaFTq,
@@ -440,6 +449,7 @@ exports:
                             _$s10FindMyBase13WorkItemQueueCfD,
                             _$s10FindMyBase13WorkItemQueueCfd,
                             _$s10FindMyBase13WorkItemQueueCs12IdentifiableAAMc,
+                            _$s10FindMyBase13WorkItemQueueCs23CustomStringConvertibleAAMc,
                             _$s10FindMyBase14ManagedDefaultV12wrappedValuexSgvM,
                             _$s10FindMyBase14ManagedDefaultV12wrappedValuexSgvg,
                             _$s10FindMyBase14ManagedDefaultV12wrappedValuexSgvpMV,
@@ -611,6 +621,17 @@ exports:
                             _$s10FindMyBase21XPCServiceDescriptionVMa,
                             _$s10FindMyBase21XPCServiceDescriptionVMn,
                             _$s10FindMyBase21XPCServiceDescriptionVN,
+                            _$s10FindMyBase23OnceCheckedContinuationC6resume4withys6ResultOyxq_G_tF,
+                            _$s10FindMyBase23OnceCheckedContinuationC6resume4withys6ResultOyxqd__G_ts5Error_pRs_sAIRd__lF,
+                            _$s10FindMyBase23OnceCheckedContinuationC6resume8throwingyq__tF,
+                            _$s10FindMyBase23OnceCheckedContinuationC6resume9returningyx_tF,
+                            _$s10FindMyBase23OnceCheckedContinuationC6resumeyyytRszrlF,
+                            _$s10FindMyBase23OnceCheckedContinuationCMa,
+                            _$s10FindMyBase23OnceCheckedContinuationCMn,
+                            _$s10FindMyBase23OnceCheckedContinuationCMo,
+                            _$s10FindMyBase23OnceCheckedContinuationCMu,
+                            _$s10FindMyBase23OnceCheckedContinuationCfD,
+                            _$s10FindMyBase23OnceCheckedContinuationCfd,
                             _$s10FindMyBase25DarwinNotificationHandlerC11asyncStream4nameScSyAA0dE0VGSS_tFTj,
                             _$s10FindMyBase25DarwinNotificationHandlerC11asyncStream4nameScSyAA0dE0VGSS_tFTq,
                             _$s10FindMyBase25DarwinNotificationHandlerC11asyncStream4nameScSyAA0dE0VGSS_tYaFZ,
@@ -709,6 +730,8 @@ exports:
                             _$s10FindMyBase31IsolatedCustomStringConvertibleP19isolatedDescriptionSSvgTq,
                             _$s10FindMyBase31IsolatedCustomStringConvertiblePScATb,
                             _$s10FindMyBase31IsolatedCustomStringConvertibleTL,
+                            _$s10FindMyBase35withOnceCheckedThrowingContinuation8function_xSS_yAA0efH0Cyxs5Error_pGYbXEtYaKlF,
+                            _$s10FindMyBase35withOnceCheckedThrowingContinuation8function_xSS_yAA0efH0Cyxs5Error_pGYbXEtYaKlFTu,
                             _$s10FindMyBase42withCancellableCheckedThrowingContinuationyxyScCyxs5Error_pGYbXEYaKs8SendableRzlF,
                             _$s10FindMyBase42withCancellableCheckedThrowingContinuationyxyScCyxs5Error_pGYbXEYaKs8SendableRzlFTu,
                             _$s10FindMyBase5retry5times0D5Delay11shouldRetry5blockxSi_s8DurationVSgSbs5Error_pXExyYaYbKctYaKlF,
@@ -825,6 +848,10 @@ exports:
                             _$s10FindMyBase9XPCClientTL,
                             _$s10Foundation12DataProtocolP10FindMyBaseE10stableUUIDAA0H0Vvg,
                             _$s10Foundation12DataProtocolP10FindMyBaseE10stableUUIDAA0H0VvpMV,
+                            _$s10Foundation12DataProtocolP10FindMyBaseE14nullTerminatedAaB_pvg,
+                            _$s10Foundation12DataProtocolP10FindMyBaseE14nullTerminatedAaB_pvpMV,
+                            _$s10Foundation12DataProtocolP10FindMyBaseE24nullTerminatedUTF8StringSSSgvg,
+                            _$s10Foundation12DataProtocolP10FindMyBaseE24nullTerminatedUTF8StringSSSgvpMV,
                             _$s10Foundation12DataProtocolP10FindMyBaseE4hash9algorithmAA0B0VAD13HashAlgorithmO_tF,
                             _$s10Foundation12DataProtocolP10FindMyBaseE4hmac3key9algorithmAA0B0VAI_AD13HMACAlgorithmOtF,
                             _$s10Foundation12DataProtocolP10FindMyBaseE5bytesSays5UInt8VGvg,
@@ -838,6 +865,7 @@ exports:
                             _$s10Foundation4DataV10FindMyBaseE11randomBytes5countACSi_tFZ,
                             _$s10Foundation4DataV10FindMyBaseE13stringLiteralACSS_tcfC,
                             _$s10Foundation4DataV10FindMyBaseE1loiySbAC_ACtFZ,
+                            _$s10Foundation4DataV10FindMyBaseE7chunked4intoSayACGSi_tF,
                             _$s10Foundation4DataV10FindMyBaseE9hexStringACSgx_tcSyRzlufC,
                             _$s10Foundation4DataVSL10FindMyBaseMc,
                             _$s10Foundation4DataVs26ExpressibleByStringLiteral10FindMyBaseMc,
@@ -904,7 +932,11 @@ exports:
                             _$sSayxG10FindMyBase17PropertyListValueA2bCRzlMc,
                             _$sSb10FindMyBase17PropertyListValueAAMc,
                             _$sSb10FindMyBase17PropertyListValueAAWP,
+                            _$sSci10FindMyBaseE5first7ElementQzSgyYaKF,
+                            _$sSci10FindMyBaseE5first7ElementQzSgyYaKFTu,
                             _$sSci10FindMyBaseE6unique2byAA27UniqueIndirectAsyncSequenceVyxqd__Gs7KeyPathCy7ElementQzqd__G_tSHRd__lF,
+                            _$sSci10FindMyBaseE7collectSay7ElementQzGyYaKF,
+                            _$sSci10FindMyBaseE7collectSay7ElementQzGyYaKFTu,
                             _$sSci10FindMyBaseSH7ElementRpzrlE6uniqueAA19UniqueAsyncSequenceVyxGyF,
                             _$sSd10FindMyBase17PropertyListValueAAMc,
                             _$sSd10FindMyBase17PropertyListValueAAWP,

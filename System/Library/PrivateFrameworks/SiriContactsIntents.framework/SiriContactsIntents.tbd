@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriContactsIntents.framework/SiriContactsIntents
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11SiriKitFlow11DisplayHintV0A15ContactsIntentsE11descriptionSSvg,
                             _$s11SiriKitFlow11DisplayHintV0A15ContactsIntentsE11descriptionSSvpMV,
                             _$s11SiriKitFlow11DisplayHintVs23CustomStringConvertible0A15ContactsIntentsMc,
@@ -191,6 +191,7 @@ exports:
                             _$s19SiriContactsIntents0A18KitGetEntityIntentP8fullNameSSSgvgTj,
                             _$s19SiriContactsIntents0A18KitGetEntityIntentP8fullNameSSSgvgTq,
                             _$s19SiriContactsIntents0A18KitGetEntityIntentPAA0ad7ContactG0Tb,
+                            _$s19SiriContactsIntents0A18KitGetEntityIntentPAAE18resolveAddressType4fromAA017SpecifyingContactiJ0OSg0A8Ontology03Usof8_common_mI0CSg_tFZ,
                             _$s19SiriContactsIntents0A18KitGetEntityIntentPAAE22runReferenceResolutionyy0aiJ027RRReferenceResolverProtocol_pF,
                             _$s19SiriContactsIntents0A18KitGetEntityIntentTL,
                             _$s19SiriContactsIntents0A21MatchResolutionResultC14JSONDictionary6intentACSgSDySSypG_So8INIntentCtcfC,
@@ -1078,6 +1079,12 @@ exports:
                             _$s19SiriContactsIntents28ModifyContactAttributeIntentC_17referenceResolverAcA0e4NLv3G0V_0A19ReferenceResolution011RRReferenceI8Protocol_ptcfC,
                             _$s19SiriContactsIntents28ModifyContactAttributeIntentCfD,
                             _$s19SiriContactsIntents28ModifyContactAttributeIntentCyACSg0A7KitFlow5ParseO16DirectInvocationVcfC,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeO06postalF0yACSSSg_tcACmFWC,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeO11phoneNumberyACSSSg_tcACmFWC,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeO5emailyACSSSg_tcACmFWC,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeOMa,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeOMn,
+                            _$s19SiriContactsIntents28SpecifyingContactAddressTypeON,
                             _$s19SiriContactsIntents29PostalAddressResolutionResultC14JSONDictionary6intentACSgSDySSypG_So8INIntentCtcfC,
                             _$s19SiriContactsIntents29PostalAddressResolutionResultC14JSONDictionary6intentACSgSDySSypG_So8INIntentCtcfc,
                             _$s19SiriContactsIntents29PostalAddressResolutionResultC14disambiguation4withACXDSayAA0dE0CG_tFZTj,

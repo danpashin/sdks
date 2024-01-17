@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Feedback.framework/Feedback
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s8Feedback13FBKDraftErrorO03_nsC6DomainSSvgZ,
                             _$s8Feedback13FBKDraftErrorO10Foundation021_ObjectiveCBridgeableC0AAMc,
                             _$s8Feedback13FBKDraftErrorO10Foundation15_BridgedNSErrorAAMc,
@@ -58,6 +58,20 @@ exports:
                             _$s8Feedback15FBKFeedbackFormC13addAttachment3url20localizedDescriptiony10Foundation3URLV_SSSgtFTq,
                             _$s8Feedback15FBKFeedbackFormC14answersSummarySSvg,
                             _$s8Feedback15FBKFeedbackFormC14answersSummarySSvpMV,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvMTj,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvMTq,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvgTj,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvgTq,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvpMV,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvsTj,
+                            _$s8Feedback15FBKFeedbackFormC16maxInlineChoicesSiSgvsTq,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvMTj,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvMTq,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvgTj,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvgTq,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvpMV,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvsTj,
+                            _$s8Feedback15FBKFeedbackFormC16useInlineChoicesSbvsTq,
                             _$s8Feedback15FBKFeedbackFormC18prefilledQuestionsSDyAC8QuestionOSaySSGGvgTj,
                             _$s8Feedback15FBKFeedbackFormC18prefilledQuestionsSDyAC8QuestionOSaySSGGvgTq,
                             _$s8Feedback15FBKFeedbackFormC18prefilledQuestionsSDyAC8QuestionOSaySSGGvpMV,
@@ -80,10 +94,32 @@ exports:
                             _$s8Feedback15FBKFeedbackFormC20authenticationMethodAC014AuthenticationE0OvpMV,
                             _$s8Feedback15FBKFeedbackFormC20authenticationMethodAC014AuthenticationE0OvsTj,
                             _$s8Feedback15FBKFeedbackFormC20authenticationMethodAC014AuthenticationE0OvsTq,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvMTj,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvMTq,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvgTj,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvgTq,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvpMV,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvsTj,
+                            _$s8Feedback15FBKFeedbackFormC20hideAttachmentButtonSbvsTq,
                             _$s8Feedback15FBKFeedbackFormC20supportsSecureCodingSbvgZ,
                             _$s8Feedback15FBKFeedbackFormC22setDiagnosticExtension20localizedDescription010diagnosticF10IdentifierySS_SStFTj,
                             _$s8Feedback15FBKFeedbackFormC22setDiagnosticExtension20localizedDescription010diagnosticF10IdentifierySS_SStFTq,
+                            _$s8Feedback15FBKFeedbackFormC23DefaultMaxInlineChoicesSivgZ,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvMTj,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvMTq,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvgTj,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvgTq,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvpMV,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvsTj,
+                            _$s8Feedback15FBKFeedbackFormC23disableAccountSwitchingSbvsTq,
                             _$s8Feedback15FBKFeedbackFormC25addSandboxExtensionToURLsSayAA8URLErrorVGyF,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvMTj,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvMTq,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvgTj,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvgTq,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvpMV,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvsTj,
+                            _$s8Feedback15FBKFeedbackFormC28alternateImagePreviewEnabledSbvsTq,
                             _$s8Feedback15FBKFeedbackFormC28localizedAttachmentLegalTextSSSgvMTj,
                             _$s8Feedback15FBKFeedbackFormC28localizedAttachmentLegalTextSSSgvMTq,
                             _$s8Feedback15FBKFeedbackFormC28localizedAttachmentLegalTextSSSgvgTj,

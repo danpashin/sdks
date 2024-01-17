@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SessionAssertion.framework/SessionAssertion
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s16SessionAssertion012PresentationB0C03snaA10IdentifierSSvgTj,
                             _$s16SessionAssertion012PresentationB0C03snaA10IdentifierSSvgTq,
                             _$s16SessionAssertion012PresentationB0C03snaA10IdentifierSSvpMV,
@@ -17,12 +17,20 @@ exports:
                             _$s16SessionAssertion012PresentationB0C11explanation18activityIdentifier17presentationState19invalidationHandlerACSS_SSSo09SNSessioncH0VyAC_s5Error_ptcSgtcfCTj,
                             _$s16SessionAssertion012PresentationB0C11explanation18activityIdentifier17presentationState19invalidationHandlerACSS_SSSo09SNSessioncH0VyAC_s5Error_ptcSgtcfCTq,
                             _$s16SessionAssertion012PresentationB0C11explanation18activityIdentifier17presentationState19invalidationHandlerACSS_SSSo09SNSessioncH0VyAC_s5Error_ptcSgtcfc,
+                            _$s16SessionAssertion012PresentationB0C11explanationSSvMTj,
+                            _$s16SessionAssertion012PresentationB0C11explanationSSvMTq,
                             _$s16SessionAssertion012PresentationB0C11explanationSSvgTj,
                             _$s16SessionAssertion012PresentationB0C11explanationSSvgTq,
                             _$s16SessionAssertion012PresentationB0C11explanationSSvpMV,
+                            _$s16SessionAssertion012PresentationB0C11explanationSSvsTj,
+                            _$s16SessionAssertion012PresentationB0C11explanationSSvsTq,
+                            _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvMTj,
+                            _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvMTq,
                             _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvgTj,
                             _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvgTq,
                             _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvpMV,
+                            _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvsTj,
+                            _$s16SessionAssertion012PresentationB0C18activityIdentifierSSvsTq,
                             _$s16SessionAssertion012PresentationB0C21snaInvalidationReasonSo015SNAInvalidationF0VvgTj,
                             _$s16SessionAssertion012PresentationB0C21snaInvalidationReasonSo015SNAInvalidationF0VvgTq,
                             _$s16SessionAssertion012PresentationB0C21snaInvalidationReasonSo015SNAInvalidationF0VvpMV,
@@ -49,12 +57,20 @@ exports:
                             _$s16SessionAssertion021ProminentPresentationB0C11explanation18activityIdentifier8duration19invalidationHandlerACSS_SSSdyAC_s5Error_ptcSgtcfCTj,
                             _$s16SessionAssertion021ProminentPresentationB0C11explanation18activityIdentifier8duration19invalidationHandlerACSS_SSSdyAC_s5Error_ptcSgtcfCTq,
                             _$s16SessionAssertion021ProminentPresentationB0C11explanation18activityIdentifier8duration19invalidationHandlerACSS_SSSdyAC_s5Error_ptcSgtcfc,
+                            _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvMTj,
+                            _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvMTq,
                             _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvgTj,
                             _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvgTq,
                             _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvpMV,
+                            _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvsTj,
+                            _$s16SessionAssertion021ProminentPresentationB0C11explanationSSvsTq,
+                            _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvMTj,
+                            _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvMTq,
                             _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvgTj,
                             _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvgTq,
                             _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvpMV,
+                            _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvsTj,
+                            _$s16SessionAssertion021ProminentPresentationB0C18activityIdentifierSSvsTq,
                             _$s16SessionAssertion021ProminentPresentationB0C21snaInvalidationReasonSo015SNAInvalidationG0VvgTj,
                             _$s16SessionAssertion021ProminentPresentationB0C21snaInvalidationReasonSo015SNAInvalidationG0VvgTq,
                             _$s16SessionAssertion021ProminentPresentationB0C21snaInvalidationReasonSo015SNAInvalidationG0VvpMV,
@@ -341,9 +357,13 @@ exports:
                             _$s16SessionAssertion0a7RequestB0C11explanation6target012invalidateOnaC019invalidationHandlerACSS_So18SNAAssertionTargetCSbyAC_s5Error_ptcSgtcfc,
                             _$s16SessionAssertion0a7RequestB0C11explanation6target7options19invalidationHandlerACSS_So18SNAAssertionTargetCAA0B7OptionsCyAC_s5Error_ptcSgtcfC,
                             _$s16SessionAssertion0a7RequestB0C11explanation6target7options19invalidationHandlerACSS_So18SNAAssertionTargetCAA0B7OptionsCyAC_s5Error_ptcSgtcfc,
+                            _$s16SessionAssertion0a7RequestB0C11explanationSSvMTj,
+                            _$s16SessionAssertion0a7RequestB0C11explanationSSvMTq,
                             _$s16SessionAssertion0a7RequestB0C11explanationSSvgTj,
                             _$s16SessionAssertion0a7RequestB0C11explanationSSvgTq,
                             _$s16SessionAssertion0a7RequestB0C11explanationSSvpMV,
+                            _$s16SessionAssertion0a7RequestB0C11explanationSSvsTj,
+                            _$s16SessionAssertion0a7RequestB0C11explanationSSvsTq,
                             _$s16SessionAssertion0a7RequestB0C18sessionIdentifiersSaySSGvgTj,
                             _$s16SessionAssertion0a7RequestB0C18sessionIdentifiersSaySSGvgTq,
                             _$s16SessionAssertion0a7RequestB0C18sessionIdentifiersSaySSGvpMV,
@@ -353,9 +373,13 @@ exports:
                             _$s16SessionAssertion0a7RequestB0C5stateAA09AttributeB0C5StateOvgTj,
                             _$s16SessionAssertion0a7RequestB0C5stateAA09AttributeB0C5StateOvgTq,
                             _$s16SessionAssertion0a7RequestB0C5stateAA09AttributeB0C5StateOvpMV,
+                            _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvMTj,
+                            _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvMTq,
                             _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvgTj,
                             _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvgTq,
                             _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvpMV,
+                            _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvsTj,
+                            _$s16SessionAssertion0a7RequestB0C6targetAA6TargetOvsTq,
                             _$s16SessionAssertion0a7RequestB0C8snaStateSo012SNAAssertionE0VvgTj,
                             _$s16SessionAssertion0a7RequestB0C8snaStateSo012SNAAssertionE0VvgTq,
                             _$s16SessionAssertion0a7RequestB0C8snaStateSo012SNAAssertionE0VvpMV,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaAnalysis.framework/MediaAnalysis
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _DeviceGeqD5x, _DeviceHasANE,
                             _HomeKitAnalysisServiceName,
                             _HomeKitSessionAnalysisServiceName,
@@ -286,7 +286,9 @@ exports:
                             _MediaAnalysisResultSettlingEffectFRCRecommendationAttributeKey,
                             _MediaAnalysisResultSettlingEffectFRCStatisticsAttributeKey,
                             _MediaAnalysisResultSettlingEffectInvalidTimeRangeKey,
+                            _MediaAnalysisResultSettlingEffectLivePhotoKeyFrameTimeOutOfBoundFailureKey,
                             _MediaAnalysisResultSettlingEffectMetadataIntegrityFailureKey,
+                            _MediaAnalysisResultSettlingEffectMinSettlingDurationThresholdFailureKey,
                             _MediaAnalysisResultSettlingEffectMissingMetadataKey,
                             _MediaAnalysisResultSettlingEffectStabilizationFailureKey,
                             _MediaAnalysisResultSettlingEffectStatusAttributeKey,
@@ -586,6 +588,7 @@ exports:
                             _VCPMediaAnalysisService_AllowStreamingOption,
                             _VCPMediaAnalysisService_CustomRetimingCurveOption,
                             _VCPMediaAnalysisService_InProcessOption,
+                            _VCPMediaAnalysisService_LivePhotoKeyFrameTimestampOption,
                             _VCPMediaAnalysisService_SceneprintRevisionOption,
                             _VCPMediaAnalysisService_TargetResultCount,
                             _VCPMediaAnalysisService_UserInitiatedModeOption,

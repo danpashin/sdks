@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleDepth.framework/AppleDepth
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/AppleDepthCore.framework/AppleDepthCore ]
     symbols:              [ _ADExecutorCalibrationAttachmentName,
                             _AdaptiveCorrection_applyDistortionModel,
@@ -174,6 +174,7 @@ exports:
                             __ZN16PixelBufferUtils13asPixelBufferEmmjPv,
                             __ZN16PixelBufferUtils13forEveryPixelEP10__CVBufferS1_U13block_pointerFvPvjS2_jEi,
                             __ZN16PixelBufferUtils13forEveryPixelEP10__CVBufferU13block_pointerFvPvjEi,
+                            __ZN16PixelBufferUtils13getTurboColorEfRfS0_S0_,
                             __ZN16PixelBufferUtils14asVImageBufferEP10__CVBuffer,
                             __ZN16PixelBufferUtils14asVImageBufferEP10__CVBufferm,
                             __ZN16PixelBufferUtils14copyAttachmentEP10__CVBufferPK10__CFStringP16CVAttachmentMode,
@@ -195,6 +196,7 @@ exports:
                             __ZN16PixelBufferUtils21createPixelBufferCopyEP10__CVBuffer,
                             __ZN16PixelBufferUtils21pixelFormatFromStringEPKc,
                             __ZN16PixelBufferUtils22pixelBufferFromCGImageEP7CGImagej,
+                            __ZN16PixelBufferUtils22pixelBufferFromRawFileEPKc,
                             __ZN16PixelBufferUtils22pixelBufferFromRawFileEPKcmmj,
                             __ZN16PixelBufferUtils22pixelBufferToImageFileEPKcP10__CVBufferPK10__CFString,
                             __ZN16PixelBufferUtils22savePlyFromDepthBufferEP10__CVBufferPKcf7CGPointfffbb,
@@ -311,7 +313,6 @@ exports:
                             _fmincon_spg,
                             _kADDeviceConfigurationKeyEnabledLoggers,
                             _kADDeviceConfigurationKeyJasperColorInFieldForceRun,
-                            _kADDeviceConfigurationKeyJasperColorInFieldFrameCropHeightThreshold,
                             _kADDeviceConfigurationKeyJasperColorInFieldMinRotationBetweenFrames,
                             _kADDeviceConfigurationKeyJasperColorInFieldOperationMode,
                             _kADDeviceConfigurationKeyJasperColorInfieldFrequency,

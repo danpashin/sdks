@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/EventKitUI.framework/EventKitUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10EventKitUI18EKEventViewSceneIDSSvg,
                             _$s10EventKitUI19EKRemoteUIUtilitiesC39combineHostWithRemoteObjectIDChangeMaps010hostTempToinJ5IDMap06remotea5Storeno9PermanentjP0SDySo10EKObjectIDCAHGAI_AItFZ,
                             _$s10EventKitUI19EKRemoteUIUtilitiesCACycfC,
@@ -353,6 +353,13 @@ exports:
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC10focusTitleyyFTq,
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC13cancelEditingyyFTj,
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC13cancelEditingyyFTq,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvMTj,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvMTq,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvgTj,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvgTq,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvpMV,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvsTj,
+                            _$s10EventKitUI32EKEventEditViewControllerOOPImplC15defaultCalendarSo10EKCalendarCSgvsTq,
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC17hasUnsavedChangesSbyFTj,
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC17hasUnsavedChangesSbyFTq,
                             _$s10EventKitUI32EKEventEditViewControllerOOPImplC19focusAndSelectTitleyyFTj,
@@ -399,6 +406,8 @@ exports:
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC19leftBarButtonTappedyySSFTq,
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC20rightBarButtonTappedyySSFTj,
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC20rightBarButtonTappedyySSFTq,
+                            _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC24bottomStatusButtonTappedyySo0dK13ButtonsActionVFTj,
+                            _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC24bottomStatusButtonTappedyySo0dK13ButtonsActionVFTq,
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC25oopContentBackgroundColorSo7UIColorCSgvMTj,
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC25oopContentBackgroundColorSo7UIColorCSgvMTq,
                             _$s10EventKitUI41EKEventGenericDetailViewControllerOOPImplC25oopContentBackgroundColorSo7UIColorCSgvgTj,
@@ -765,6 +774,7 @@ exports:
                             EKCalendarSubscriptionSpamCheckEditItem,
                             EKCalendarSubscriptionURLEditItem,
                             EKCalendarTitleEditItem, EKCalendarValidateEditItem,
+                            EKCalendarWrapper,
                             EKConferenceInformationInlineEditItem,
                             EKCurrentTimeMarkerView, EKCustomTitleView,
                             EKDateTimeCell, EKDayOccurrenceResizeHandleView,
@@ -937,7 +947,7 @@ exports:
                             PreferencesTwoPartValueCell, RowSeparatorView,
                             ScrollSpringFactory, ShouldShowBlockParameters,
                             SingleToolbarItemContainerView, SizeContext,
-                            SpringFactory, SubtitleCellWithAdditionalDetail,
+                            SpringFactory, SubtitleCellWithAdditionalIcon,
                             SwappableViewControllerImplementationFactory,
                             TUConversationMember_EventKit, TintColorUpdateView,
                             TodayCirclePulseBackground, TwoPartTextLabel,
@@ -987,7 +997,7 @@ exports:
                             PreferencesTwoPartValueCell._largePart2TextLabel,
                             PreferencesTwoPartValueCell._notifiedShort,
                             PreferencesTwoPartValueCell._twoPartLabel,
-                            SubtitleCellWithAdditionalDetail._additionalDetailLabel,
+                            SubtitleCellWithAdditionalIcon._icon,
                             TwoPartTextLabel._minPart2Width,
                             TwoPartTextLabel._part2Size,
                             TwoPartTextLabel._secondTextPart ]

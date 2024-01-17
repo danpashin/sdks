@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
-current-version:       1547
+current-version:       1547.1.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18CalendarFoundation0A12FeatureFlagsO05quickC6ToggleyA2CmFWC,
                             _$s18CalendarFoundation0A12FeatureFlagsO0cD00cD3KeyAAMc,
                             _$s18CalendarFoundation0A12FeatureFlagsO2eeoiySbAC_ACtFZ,
@@ -106,6 +106,7 @@ exports:
                             _CalApproximateContinuousTime, _CalBooleanAsString,
                             _CalCFTimeZoneCopyCalTimeZone,
                             _CalCachedObjectForKeyWithCalculateBlock,
+                            _CalChronometryTodayChangedNotification,
                             _CalColorStringRepresentation,
                             _CalColorsAreAlmostEqual,
                             _CalContactsProviderHistoryToken,

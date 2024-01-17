@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriRequestDispatcher.framework/SiriRequestDispatcher
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s16SiriMessageTypes010MUXContextB0C0A17RequestDispatcherE19userIdOfPrimaryUserAA0K2IDVSgyF,
                             _$s16SiriMessageTypes18XPCListeningBridgeP0A17RequestDispatcherEyxSS_AA0B10Publishing_pSo09AFRequestG13ServiceHelper_pSo17OS_dispatch_queueCAA28ConversationSessionsManaging_ptcfC,
                             _$s16SiriMessageTypes6BridgeP0A17RequestDispatcherE11aceCommands8forGroupSaySSGSS_tF,
@@ -273,6 +273,10 @@ exports:
                             _$s21SiriRequestDispatcher20ComponentIdGeneratorCN,
                             _$s21SiriRequestDispatcher20ComponentIdGeneratorCfD,
                             _$s21SiriRequestDispatcher20ComponentIdGeneratorCfd,
+                            _$s21SiriRequestDispatcher23ServerFallbackDisablingMp,
+                            _$s21SiriRequestDispatcher23ServerFallbackDisablingP013shouldDisabledE016isDomainDirected9requestId15siriInputLocaleS2b_S2SSgtFTj,
+                            _$s21SiriRequestDispatcher23ServerFallbackDisablingP013shouldDisabledE016isDomainDirected9requestId15siriInputLocaleS2b_S2SSgtFTq,
+                            _$s21SiriRequestDispatcher23ServerFallbackDisablingTL,
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseC06handleD0yy0aD5Types0dG0CFTj,
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseC06handleD0yy0aD5Types0dG0CFTq,
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseC08registerD7Handleryyyqd__Kcxc0aD5Types0dG0CRbd__lFTj,
@@ -314,6 +318,22 @@ exports:
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseCyACyxGSS_0aD5Types0D10Publishing_pSo09AFRequestC13ServiceHelper_pSo17OS_dispatch_queueCAE28ConversationSessionsManaging_ptcfCTq,
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseCyxG0aD5Types013QueueIsolatedF0AAMc,
                             _$s21SiriRequestDispatcher28MessageDispatchingBridgeBaseCyxG0aD5Types0F0AAMc,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsC013shouldDisabledE016isDomainDirected9requestId15siriInputLocaleS2b_S2SSgtFTj,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsC013shouldDisabledE016isDomainDirected9requestId15siriInputLocaleS2b_S2SSgtFTq,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCAA0deF0AAMc,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCAA0deF0AAWP,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCMa,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCMm,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCMn,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCMo,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCMu,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCN,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCfD,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCfd,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCyACSo13AFPreferencesCcfC,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCyACSo13AFPreferencesCcfCTj,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCyACSo13AFPreferencesCcfCTq,
+                            _$s21SiriRequestDispatcher28ServerFallbackDisablingUtilsCyACSo13AFPreferencesCcfc,
                             _$s21SiriRequestDispatcher40MessageDispatchingXPCListeningBridgeBaseCMa,
                             _$s21SiriRequestDispatcher40MessageDispatchingXPCListeningBridgeBaseCMn,
                             _$s21SiriRequestDispatcher40MessageDispatchingXPCListeningBridgeBaseCMo,

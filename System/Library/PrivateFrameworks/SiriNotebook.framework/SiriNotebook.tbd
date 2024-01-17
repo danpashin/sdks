@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriNotebook.framework/SiriNotebook
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12SiriNotebook0B12FlowProviderV04findC4ForX5parse0a3KitC00C12SearchResultVAF5ParseO_tF,
                             _$s12SiriNotebook0B12FlowProviderV04makeC3For5parse0a3KitC003AnyC0CSgAF5ParseO_tF,
                             _$s12SiriNotebook0B12FlowProviderV10taskParserAA0B4TaskO0F0Vvpfi,
@@ -19,6 +19,8 @@ exports:
                             _$s12SiriNotebook0B14FeatureManagerV13isNLv4EnabledSbvpMV,
                             _$s12SiriNotebook0B14FeatureManagerV20isCorrectionsEnabledSbvg,
                             _$s12SiriNotebook0B14FeatureManagerV20isCorrectionsEnabledSbvpMV,
+                            _$s12SiriNotebook0B14FeatureManagerV24isGroceryListTypeEnabledSbvg,
+                            _$s12SiriNotebook0B14FeatureManagerV24isGroceryListTypeEnabledSbvpMV,
                             _$s12SiriNotebook0B14FeatureManagerV26isResponseFrameworkEnabledSbvg,
                             _$s12SiriNotebook0B14FeatureManagerV26isResponseFrameworkEnabledSbvpMV,
                             _$s12SiriNotebook0B14FeatureManagerV27isReadingFlowOnModesEnabledSbvg,

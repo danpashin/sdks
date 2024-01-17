@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV14FamilyCircleUI22AllowedMetricValueTypeADMc,
                             _$s10Foundation4DataV14FamilyCircleUI22AllowedMetricValueTypeADWP,
                             _$s14FamilyCircleUI015PurchaseSharingA5CacheCMa,
@@ -212,8 +212,8 @@ exports:
                             _$s14FamilyCircleUI0A9AnalyticsC08sendStopa7SharingD5EventyyFTj,
                             _$s14FamilyCircleUI0A9AnalyticsC08sendStopa7SharingD5EventyyFTq,
                             _$s14FamilyCircleUI0A9AnalyticsC08testableaD015withEnvironment12sendFunctionAC0aB007RuntimeG0C_SbSS_SDySSSo8NSObjectCGSgyctcSgtFZ,
-                            _$s14FamilyCircleUI0A9AnalyticsC16sendLinkTapEvent4name10memberType10launchTime8rowOrder07sectionO024categoryCompletionStatus09triggeredM0ySS_S4iSbSitFTj,
-                            _$s14FamilyCircleUI0A9AnalyticsC16sendLinkTapEvent4name10memberType10launchTime8rowOrder07sectionO024categoryCompletionStatus09triggeredM0ySS_S4iSbSitFTq,
+                            _$s14FamilyCircleUI0A9AnalyticsC16sendLinkTapEvent4name20memberTypeBoundedInt10launchTime17rowOrderDimension07sectionqR024categoryCompletionStatus09triggeredO0ySS_S4iSbSitFTj,
+                            _$s14FamilyCircleUI0A9AnalyticsC16sendLinkTapEvent4name20memberTypeBoundedInt10launchTime17rowOrderDimension07sectionqR024categoryCompletionStatus09triggeredO0ySS_S4iSbSitFTq,
                             _$s14FamilyCircleUI0A9AnalyticsC18sendProviderStatus12providerName8statusOk6reasonySS_SbSSSgtFTj,
                             _$s14FamilyCircleUI0A9AnalyticsC18sendProviderStatus12providerName8statusOk6reasonySS_SbSSSgtFTq,
                             _$s14FamilyCircleUI0A9AnalyticsC23sendToggleGuardianEvent5valueySb_tFTj,
@@ -720,7 +720,34 @@ exports:
                             _$s14FamilyCircleUI35FASettingsPresetsTableViewDecoratorCMu,
                             _$s14FamilyCircleUI35FASettingsPresetsTableViewDecoratorCN,
                             _$s14FamilyCircleUI35FASettingsPresetsTableViewDecoratorCfD,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC11shouldMatchySbSo10RUIElementCFTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC11shouldMatchySbSo10RUIElementCFTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC11shouldMatchySbSo14RUIObjectModelCFTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC11shouldMatchySbSo14RUIObjectModelCFTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC14processElement_10attributes11objectModelSbSo10RUIElementC_SDys11AnyHashableVypGSo09RUIObjectL0CtYaKFTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC14processElement_10attributes11objectModelSbSo10RUIElementC_SDys11AnyHashableVypGSo09RUIObjectL0CtYaKFTjTu,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC14processElement_10attributes11objectModelSbSo10RUIElementC_SDys11AnyHashableVypGSo09RUIObjectL0CtYaKFTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC18processObjectModelySbSo09RUIObjectJ0CYaKFTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC18processObjectModelySbSo09RUIObjectJ0CYaKFTjTu,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC18processObjectModelySbSo09RUIObjectJ0CYaKFTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvMTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvMTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvgTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvgTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvpMV,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvsTj,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookC8delegateSo09RUIServerG8Delegate_pSgvsTq,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCACycfC,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCACycfc,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCMa,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCMn,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCMo,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCMu,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCN,
+                            _$s14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHookCfD,
                             _$s14FamilyCircleUI60FAApplyServiceApplicationsChangedDistributedNotificationTempSo18NSNotificationNameavg,
+                            _$s7SwiftUI4ViewP012FamilyCircleB0E14fa_availableIf9conditionQrSb_tF,
+                            _$s7SwiftUI4ViewP012FamilyCircleB0E14fa_availableIf9conditionQrSb_tFQOMQ,
                             _$sSS14FamilyCircleUI22AllowedMetricValueTypeAAMc,
                             _$sSS14FamilyCircleUI22AllowedMetricValueTypeAAWP,
                             _$sSb14FamilyCircleUI22AllowedMetricValueTypeAAMc,
@@ -878,7 +905,8 @@ exports:
                             _TtC14FamilyCircleUI32AppleCardFamilySettingsViewModel,
                             _TtC14FamilyCircleUI32FAFamilySettingsViewControllerV2,
                             _TtC14FamilyCircleUI34FASwiftUIHostingControllerProvider,
-                            _TtC14FamilyCircleUI35FASettingsPresetsTableViewDecorator ]
+                            _TtC14FamilyCircleUI35FASettingsPresetsTableViewDecorator,
+                            _TtC14FamilyCircleUI37FAPrivacyDisclosureAcknowledgmentHook ]
     objc-ivars:           [ FASettingsSpecifierProvider._didFailToGetFamilyDetails,
                             FASettingsSpecifierProvider._familyCircle ]
 ...

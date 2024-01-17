@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriUtilities.framework/SiriUtilities
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV13SiriUtilities12PluginFinderADMc,
                             _$s10Foundation3URLV13SiriUtilities12PluginFinderADWP,
                             _$s10Foundation3URLV13SiriUtilities13CacheDataSinkADMc,
@@ -1077,6 +1077,12 @@ exports:
                             _$s13SiriUtilities15InteractionTypeOSHAAMc,
                             _$s13SiriUtilities15InteractionTypeOSQAAMc,
                             _$s13SiriUtilities15InteractionTypeOSYAAMc,
+                            _$s13SiriUtilities15TailSpinManagerO06createcD4File8fileName05suiteI07options10completionySS_SSSDys11AnyHashableVypGSgySb_SSSgtctFZ,
+                            _$s13SiriUtilities15TailSpinManagerO06deletecD5Files9suiteNameySS_tFZ,
+                            _$s13SiriUtilities15TailSpinManagerO24tailspinDefaultDirectorySSvgZ,
+                            _$s13SiriUtilities15TailSpinManagerOMa,
+                            _$s13SiriUtilities15TailSpinManagerOMn,
+                            _$s13SiriUtilities15TailSpinManagerON,
                             _$s13SiriUtilities15TypeInformationV04baseC0AA0C10IdentifierVvg,
                             _$s13SiriUtilities15TypeInformationV04baseC0AA0C10IdentifierVvpMV,
                             _$s13SiriUtilities15TypeInformationV08originalC0AA0C10IdentifierVvg,
@@ -2126,5 +2132,5 @@ exports:
                             _$ss17CodingUserInfoKeyV13SiriUtilitiesE22catalogPackageInflatorABvgZ,
                             _$ss17CodingUserInfoKeyV13SiriUtilitiesE22catalogPackageInflatorABvpZ ]
     objc-classes:         [ SUCurrentProcess, SUIdleTracker, SUIdleTrackerActivity,
-                            SUNetworkReachability ]
+                            SUNetworkReachability, TailSpinHelper ]
 ...

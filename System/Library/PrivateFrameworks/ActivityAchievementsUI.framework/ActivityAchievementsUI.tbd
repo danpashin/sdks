@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivityAchievementsUI.framework/ActivityAchievementsUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s22ActivityAchievementsUI15AAUIAwardsQueryC10deactivateyyF,
                             _$s22ActivityAchievementsUI15AAUIAwardsQueryC10deactivateyyFTq,
                             _$s22ActivityAchievementsUI15AAUIAwardsQueryC20initialAwardsHandler05addedgH007removedgH007updatedgH0ACySaySo14ACHAchievementCGc_yAJcyAJcyAJctcfC,
@@ -21,7 +21,13 @@ exports:
                             _$s22ActivityAchievementsUI15AAUIAwardsQueryCMn,
                             _$s22ActivityAchievementsUI15AAUIAwardsQueryCN,
                             _$s22ActivityAchievementsUI15AAUIAwardsQueryCfD,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC018mostRecentlyEarnedB10PerSectionSDyAA0defK0OSaySo14ACHAchievementCGGvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC024clientMostRecentlyEarnedB10PerSectionSDyAA0defL0OSaySo14ACHAchievementCGGvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC03topB0SaySo14ACHAchievementCGvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC06clientB10PerSectionSDyAA0defI0OSaySo14ACHAchievementCGGvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC06clientB20PerWorkoutIdentifierSDySSSaySo14ACHAchievementCGGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC08topThreeB0SaySo14ACHAchievementCGyF,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC09clientTopB0SaySo14ACHAchievementCGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC11healthStore10layoutModeACSo08HKHealthH0C_So016AAUIAchievementsef6LayoutJ0VtcfC,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC11healthStore10layoutModeACSo08HKHealthH0C_So016AAUIAchievementsef6LayoutJ0VtcfCTq,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC11healthStore10layoutModeACSo08HKHealthH0C_So016AAUIAchievementsef6LayoutJ0Vtcfc,
@@ -30,16 +36,22 @@ exports:
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC12achievements20forWorkoutIdentifierSaySo14ACHAchievementCGSS_tF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC13otherSectionsSayAA0deF7SectionOGyF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC14topAchievement10forSectionSo14ACHAchievementCSgAA0defJ0O_tF,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC15orderedSectionsSayAA0deF7SectionOGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC16achievementCount10forSectionSiAA0defJ0O_tF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC16achievementStack10forSectionSaySo14ACHAchievementCGAA0defJ0O_tF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC17mostRecentSectionAA0defI0OSgyF,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC21clientOrderedSectionsSayAA0deF7SectionOGvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC22achievementsPerSectionSDyAA0defI0OSaySo14ACHAchievementCGGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC23isFitnessPlusSubscriberSbvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC27initialAwardsBatchDeliveredSbvpfi,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC32achievementsPerWorkoutIdentifierSDySSSaySo14ACHAchievementCGGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC3add8observeryAA0deF8Observer_p_tF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC5queryAA0D5QueryCSgvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC6remove8observeryAA0deF8Observer_p_tF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC8activate23isFitnessPlusSubscriberySb_tKF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC8activateyyKF,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC8sections7atIndexAA0deF7SectionOSgSi_tF,
+                            _$s22ActivityAchievementsUI22AAUIAwardsDataProviderC9observersSayypGvpfi,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderCAA0dE9ProvidingAAMc,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderCAA0dE9ProvidingAAWP,
                             _$s22ActivityAchievementsUI22AAUIAwardsDataProviderCACycfC,
@@ -104,8 +116,9 @@ exports:
                             AAUIAchievementsDataProvider, AAUIAwardsDataProvider,
                             AAUIBadge, AAUIBadgeImageFactory, AAUIBadgeModel,
                             AAUIBadgeModelConfiguration, AAUIBadgeView,
-                            AAUIMetalBadgeRenderer, AAUIMetalBadgeView,
-                            AAUIMockAchievementsDataProvider,
+                            AAUICommandQueueRegistry,
+                            AAUICommandQueueTransaction, AAUIMetalBadgeRenderer,
+                            AAUIMetalBadgeView, AAUIMockAchievementsDataProvider,
                             _TtC22ActivityAchievementsUI15AAUIAwardsQuery,
                             _TtC22ActivityAchievementsUI27AAUIActivityAwardsDateQuery ]
 ...

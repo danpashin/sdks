@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Coherence.framework/Coherence
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10CodingKeys9Coherence13CRValueStructPTl,
                             _$s10Foundation3URLV9Coherence13CRValueStructADMc,
                             _$s10Foundation3URLV9Coherence13CRValueStructADWP,
@@ -3317,10 +3317,11 @@ exports:
                             _$s9Coherence17CRDataStoreBundleCMn,
                             _$s9Coherence17CRDataStoreBundleCMo,
                             _$s9Coherence17CRDataStoreBundleCMu,
+                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormats08writableiJ0ACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGAXSgtcfC,
+                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormats08writableiJ0ACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGAXSgtcfCTj,
+                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormats08writableiJ0ACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGAXSgtcfCTq,
+                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormats08writableiJ0ACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGAXSgtcfc,
                             _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormatsACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGtcfC,
-                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormatsACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGtcfCTj,
-                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormatsACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGtcfCTq,
-                            _$s9Coherence17CRDataStoreBundleC_4sync2at16allowedEncodings0G10AppFormatsACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVSayAA16CRCodableVersionOGSays5Int16VGtcfc,
                             _$s9Coherence17CRDataStoreBundleC_4sync2at17fileFormatVersionACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVs5Int16VSgtcfC,
                             _$s9Coherence17CRDataStoreBundleC_4sync2at7version17fileFormatVersionACyxGAA9CRContextC_AA7CapsuleVyxGSg10Foundation3URLVAA09CRCodableJ0Os5Int16VSgtcfC,
                             _$s9Coherence17CRDataStoreBundleCfD,
@@ -3493,8 +3494,11 @@ exports:
                             _$s9Coherence18CRAttributedStringV5countSivg,
                             _$s9Coherence18CRAttributedStringV5countSivpMV,
                             _$s9Coherence18CRAttributedStringV5delta_4fromAC7PartialVyx_GSgAA9CRContextC_ACyxGtF,
+                            _$s9Coherence18CRAttributedStringV5index2ofSiSgAC6CursorVyx_G_tF,
                             _$s9Coherence18CRAttributedStringV5merge5deltaSbAC7PartialVyx_G_tF,
                             _$s9Coherence18CRAttributedStringV5mergeyyACyxGF,
+                            _$s9Coherence18CRAttributedStringV5range2ofSnySiGSgAA11CursorRangeVyAC0F0Vyx_GG_tF,
+                            _$s9Coherence18CRAttributedStringV5range2ofSnySiGSgAC6CursorVyx_G_AJt_tF,
                             _$s9Coherence18CRAttributedStringV6CursorV18finalizeTimestampsyyAA9CRContextCF,
                             _$s9Coherence18CRAttributedStringV6CursorV18minEncodingVersionAA09CRCodableG0Ovg,
                             _$s9Coherence18CRAttributedStringV6CursorV18minEncodingVersionAA09CRCodableG0OvpMV,
@@ -3512,6 +3516,9 @@ exports:
                             _$s9Coherence18CRAttributedStringV6CursorVyx_GAA9CRCodableAAWP,
                             _$s9Coherence18CRAttributedStringV6CursorVyx_GSQAAMc,
                             _$s9Coherence18CRAttributedStringV6appendyySSF,
+                            _$s9Coherence18CRAttributedStringV6cursor2at8affinityAC6CursorVyx_GSi_AA10CRAffinityOtF,
+                            _$s9Coherence18CRAttributedStringV6cursor5rangeAA11CursorRangeVyAC0F0Vyx_GGSnySiG_tF,
+                            _$s9Coherence18CRAttributedStringV6cursor5rangeAC6CursorVyx_G_AHtSnySiG_tF,
                             _$s9Coherence18CRAttributedStringV6encode2toyAA9CREncoderC_tKF,
                             _$s9Coherence18CRAttributedStringV6encode2toys7Encoder_p_tKF,
                             _$s9Coherence18CRAttributedStringV6insert10contentsOf2atySS_SitF,
@@ -4694,8 +4701,11 @@ exports:
                             _$s9Coherence8CRStringV5countSivg,
                             _$s9Coherence8CRStringV5countSivpMV,
                             _$s9Coherence8CRStringV5delta_4fromAC7PartialVSgAA9CRContextC_ACtF,
+                            _$s9Coherence8CRStringV5index2ofSiSgAC6CursorV_tF,
                             _$s9Coherence8CRStringV5merge5deltaSbAC7PartialV_tF,
                             _$s9Coherence8CRStringV5mergeyyACF,
+                            _$s9Coherence8CRStringV5range2ofSnySiGSgAA11CursorRangeVyAC0E0VG_tF,
+                            _$s9Coherence8CRStringV5range2ofSnySiGSgAC6CursorV_AIt_tF,
                             _$s9Coherence8CRStringV6CursorV18finalizeTimestampsyyAA9CRContextCF,
                             _$s9Coherence8CRStringV6CursorV18minEncodingVersionAA09CRCodableF0Ovg,
                             _$s9Coherence8CRStringV6CursorV18minEncodingVersionAA09CRCodableF0OvpMV,
@@ -4714,6 +4724,9 @@ exports:
                             _$s9Coherence8CRStringV6CursorVN,
                             _$s9Coherence8CRStringV6CursorVSQAAMc,
                             _$s9Coherence8CRStringV6appendyySSF,
+                            _$s9Coherence8CRStringV6cursor2at8affinityAC6CursorVSi_AA10CRAffinityOtF,
+                            _$s9Coherence8CRStringV6cursor5rangeAA11CursorRangeVyAC0E0VGSnySiG_tF,
+                            _$s9Coherence8CRStringV6cursor5rangeAC6CursorV_AGtSnySiG_tF,
                             _$s9Coherence8CRStringV6encode2toyAA9CREncoderC_tKF,
                             _$s9Coherence8CRStringV6encode2toys7Encoder_p_tKF,
                             _$s9Coherence8CRStringV6insert10contentsOf2atySS_SitF,

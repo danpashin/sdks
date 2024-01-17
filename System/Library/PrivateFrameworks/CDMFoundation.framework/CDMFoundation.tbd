@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CDMFoundation.framework/CDMFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s13CDMFoundation11BloomFilterC17falsePositiveRateSdvg,
                             _$s13CDMFoundation11BloomFilterC17falsePositiveRateSdvpMV,
                             _$s13CDMFoundation11BloomFilterC3add4datay10Foundation4DataV_tFTj,
@@ -514,11 +514,11 @@ exports:
                             CDMEmbeddingProtoService,
                             CDMEmbeddingResponseCommand,
                             CDMEmbeddingServiceGraph, CDMEmbeddingUtils,
-                            CDMFeatureFlags, CDMFeatureStoreUtils,
-                            CDMFoundationClient, CDMGenericSendCommand,
-                            CDMHelloWorldServiceGraph, CDMLVCRequestCommand,
-                            CDMLVCResponseCommand, CDMLVCService,
-                            CDMListGraphsRequestCommand,
+                            CDMExceptionUtils, CDMFeatureFlags,
+                            CDMFeatureStoreUtils, CDMFoundationClient,
+                            CDMGenericSendCommand, CDMHelloWorldServiceGraph,
+                            CDMLVCRequestCommand, CDMLVCResponseCommand,
+                            CDMLVCService, CDMListGraphsRequestCommand,
                             CDMListGraphsResponseCommand, CDMLogging,
                             CDMMDSServiceGraph, CDMMDSUaaPNLService, CDMMarisaTrie,
                             CDMMentionDetectorRequestCommand,
@@ -584,7 +584,7 @@ exports:
                             CDMVocSpanMatchService, CDMVocTrie,
                             CDMVocTrieProtoSpanMatcher, CDMVocUsoGraphMapper,
                             CDMWarmupRequestCommand, CDMWarmupResponseCommand,
-                            CDMXPCClient, CDMXPCDefines,
+                            CDMWrappedCppException, CDMXPCClient, CDMXPCDefines,
                             CDMXPCSystemEventTypeNames, CustomAsset,
                             DuplicateNodeNameException, Embedder, EmbeddingPaths,
                             EntityKey, IdentifierGroupingUtils,
@@ -611,7 +611,7 @@ exports:
                             _TtC13CDMFoundation23CDMUaaPNLOverridesProxy,
                             _TtC13CDMFoundation27BloomFilterObjectiveCHelper,
                             _TtC13CDMFoundation27CDMCcqrAerCbROverridesProxy ]
-    objc-eh-types:        [ DuplicateNodeNameException,
+    objc-eh-types:        [ CDMWrappedCppException, DuplicateNodeNameException,
                             IncompatibleInputTypeException,
                             InitializationFailedException,
                             InvalidMethodCalledException,

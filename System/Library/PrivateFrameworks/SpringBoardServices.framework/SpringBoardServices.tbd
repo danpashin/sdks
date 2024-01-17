@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
-current-version:       4416.11.7
+current-version:       4416.39.103
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _FBSDisplayOverscanCompensationForDisplayValue,
                             _NSStringFromAnalyticsEventType,
                             _NSStringFromAnalyticsQueryName,
@@ -176,7 +176,7 @@ exports:
                             _SBLogDisplayTransforming, _SBLogDoNotDisturbBedtime,
                             _SBLogDoNotDisturbWhileDriving, _SBLogDockRecents,
                             _SBLogFBDisplayManagerCallbacks, _SBLogFocusModes,
-                            _SBLogIconDragging, _SBLogIdleTimer,
+                            _SBLogHangTracer, _SBLogIconDragging, _SBLogIdleTimer,
                             _SBLogInCallPresentation, _SBLogInputUI,
                             _SBLogKeyboardDismissal, _SBLogKeyboardFocus,
                             _SBLogLiquidDetection,

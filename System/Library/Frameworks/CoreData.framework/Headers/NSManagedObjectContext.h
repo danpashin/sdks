@@ -81,7 +81,7 @@ typedef NS_ENUM(NSUInteger, NSManagedObjectContextConcurrencyType) {
 } API_AVAILABLE(macosx(10.7), ios(5.0));
 
 API_AVAILABLE(macosx(10.4),ios(3.0))
-#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST || TARGET_OS_VISION)
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
 #else
 @interface NSManagedObjectContext : NSObject <NSCoding> {
@@ -167,7 +167,7 @@ API_AVAILABLE(macosx(10.4),ios(3.0))
 /* calls -refreshObject:mergeChanges: on all currently registered objects with this context.  It handles dirtied objects and clearing the context reference queue */
 - (void)refreshAllObjects API_AVAILABLE(macosx(10.11),ios(8.3));
 
-#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST || TARGET_OS_VISION)
 - (void)lock API_DEPRECATED( "Use a queue style context and -performBlockAndWait: instead", macosx(10.4,10.10), ios(3.0,8.0));
 - (void)unlock API_DEPRECATED( "Use a queue style context and -performBlockAndWait: instead", macosx(10.4,10.10), ios(3.0,8.0));
 - (BOOL)tryLock API_DEPRECATED( "Use a queue style context and -performBlock: instead", macosx(10.4,10.10), ios(3.0,8.0));

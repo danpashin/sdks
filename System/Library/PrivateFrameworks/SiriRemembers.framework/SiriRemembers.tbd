@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriRemembers.framework/SiriRemembers
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DateV13SiriRemembers21QueryValueConvertibleADMc,
                             _$s10Foundation4DateV13SiriRemembers21QueryValueConvertibleADWP,
                             _$s10Foundation4DateV13SiriRemembersE10queryValueAD05QueryF0Ovg,
@@ -44,6 +44,11 @@ exports:
                             _$s13SiriRemembers0A25InteractionHistoryDonatorCN,
                             _$s13SiriRemembers0A25InteractionHistoryDonatorCfD,
                             _$s13SiriRemembers0A25InteractionHistoryDonatorCfd,
+                            _$s13SiriRemembers0A31SuggestionsBiomeEventBackFillerV07getLastF10FilledDate12userDefaults10Foundation0K0VSo06NSUserM0CSg_tF,
+                            _$s13SiriRemembers0A31SuggestionsBiomeEventBackFillerV8registeryyFZ,
+                            _$s13SiriRemembers0A31SuggestionsBiomeEventBackFillerVMa,
+                            _$s13SiriRemembers0A31SuggestionsBiomeEventBackFillerVMn,
+                            _$s13SiriRemembers0A31SuggestionsBiomeEventBackFillerVN,
                             _$s13SiriRemembers0A34AssistantSuggestionsHistoryDonatorCMa,
                             _$s13SiriRemembers0A34AssistantSuggestionsHistoryDonatorCMm,
                             _$s13SiriRemembers0A34AssistantSuggestionsHistoryDonatorCMn,
@@ -347,10 +352,13 @@ exports:
                             _$s13SiriRemembers16AppMatcherResultVMa,
                             _$s13SiriRemembers16AppMatcherResultVMn,
                             _$s13SiriRemembers16AppMatcherResultVN,
+                            _$s13SiriRemembers16InteractionQueryV10fetchStats_11useDistinctAA07HistoryF0VAA0C5StoreV_SbtKF,
+                            _$s13SiriRemembers16InteractionQueryV10fetchStats_7groupBy11useDistinctSDySSAA07HistoryF0VGAA0C5StoreV_SayAA0d5GroupH3KeyOGSbtKF,
                             _$s13SiriRemembers16InteractionQueryV10fetchStats_7groupBySDySSAA07HistoryF0VGAA0C5StoreV_SayAA0d5GroupH3KeyOGtKF,
                             _$s13SiriRemembers16InteractionQueryV10fetchStatsyAA07HistoryF0VAA0C5StoreVKF,
                             _$s13SiriRemembers16InteractionQueryV22fetchAllWithParametersySayAA0cgH0VGAA0C5StoreVKF,
                             _$s13SiriRemembers16InteractionQueryV25filterDirectDonationsOnlyACyF,
+                            _$s13SiriRemembers16InteractionQueryV28filterExcludeDirectDonationsACyF,
                             _$s13SiriRemembers16InteractionQueryV6filter011isDonatedByA0ACSb_tF,
                             _$s13SiriRemembers16InteractionQueryV6filter021includingEntitiesFromD0AcA06EntityD0V_tF,
                             _$s13SiriRemembers16InteractionQueryV6filter14handlingStatusAcA0D6FilterOyAA0c8HandlingG0OG_tF,
@@ -657,6 +665,7 @@ exports:
                             _$s13SiriRemembers9FTSFilterO5fieldyACSS_SStcACmFWC,
                             _$s13SiriRemembers9FTSFilterO5tokenyACSScACmFWC,
                             _$s13SiriRemembers9FTSFilterO6encode2toys7Encoder_p_tKF,
+                            _$s13SiriRemembers9FTSFilterO8rawQueryyACSScACmFWC,
                             _$s13SiriRemembers9FTSFilterOMa,
                             _$s13SiriRemembers9FTSFilterOMn,
                             _$s13SiriRemembers9FTSFilterON,

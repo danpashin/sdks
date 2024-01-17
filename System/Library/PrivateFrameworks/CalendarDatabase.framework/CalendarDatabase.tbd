@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CalendarDatabase.framework/CalendarDatabase
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CDBCommonEntityFunctionalityHandlerPropertyMethods,
                             _CDBEntityDestroy,
                             _CDBGetCommonEntityFunctionalityHandler,
@@ -437,6 +437,7 @@ exports:
                             _CalCalendarItemSetSuppressNotificationForChanges,
                             _CalCalendarItemSetURL,
                             _CalCalendarItemSetUniqueIdentifier,
+                            _CalCalendarItemSetupOrganizerAndSelfAttendeeForImportedItem,
                             _CalCalendarItemStatusFromICSStatus,
                             _CalCalendarItemStillExists,
                             _CalCalendarItemSuppressNotificationForChanges,
@@ -832,6 +833,7 @@ exports:
                             _CalDatabaseGetAuxDatabaseChangesSequence,
                             _CalDatabaseGetAuxilliaryDatabaseID,
                             _CalDatabaseGetCalendarDataContainerProvider,
+                            _CalDatabaseGetChangeReason,
                             _CalDatabaseGetChangedEKObjectsForClient,
                             _CalDatabaseGetChangedObjectIDsSinceSequenceNumberForClient,
                             _CalDatabaseGetChangedRecordIDsSinceSequenceNumberForClient,
@@ -932,6 +934,7 @@ exports:
                             _CalDatabaseSetAuxilliaryDatabaseID,
                             _CalDatabaseSetCalendarDataContainerProvider,
                             _CalDatabaseSetChangeLoggingEnabled,
+                            _CalDatabaseSetChangeReason,
                             _CalDatabaseSetClientIdentifier,
                             _CalDatabaseSetClientName,
                             _CalDatabaseSetDarwinNotificationPoster,
@@ -1119,6 +1122,7 @@ exports:
                             _CalEventSetAllDay, _CalEventSetAvailability,
                             _CalEventSetCanForward, _CalEventSetConferenceURL,
                             _CalEventSetContactIdentifier,
+                            _CalEventSetContactName,
                             _CalEventSetCreatorIdentityString,
                             _CalEventSetCreatorTeamIdentityString,
                             _CalEventSetDescription,
@@ -2081,6 +2085,7 @@ exports:
                             __CalCalendarCopySelfIdentityPhoneNumber,
                             __CalCalendarCopySharees, __CalCalendarCopyTitle,
                             __CalCalendarCopyType, __CalCalendarCopyUUID,
+                            __CalCalendarGetBirthdayCalendarId,
                             __CalCalendarGetCalendarSupportsExactlyOneEntityTypeInStore,
                             __CalCalendarGetDisplayOrder,
                             __CalCalendarGetRecordID,
@@ -2277,6 +2282,7 @@ exports:
                             __CalEventOccurrenceCacheStopTrackingUpdates,
                             __CalEventOccurrenceCacheStopTrackingUpdatesAndSave,
                             __CalEventSetContactIdentifier,
+                            __CalEventSetContactName,
                             __CalEventSetInvitationStatus,
                             __CalEventSetOriginalEvent, __CalEventSetTravelTime,
                             __CalExceptionDateCleanUpDanglingEntities,
@@ -2411,6 +2417,7 @@ exports:
                             _kCalCalendarIgnoreNeedsReply,
                             _kCalCalendarImportConvertInlineAttachmentsToManaged,
                             _kCalCalendarImportForMigration,
+                            _kCalCalendarImportIgnoreMethod,
                             _kCalCalendarImportRepliesForPreview,
                             _kCalCalendarImportTodos,
                             _kCalCalendarItemChangesCalendarIDKey,
@@ -2580,8 +2587,8 @@ exports:
     objc-classes:         [ CADObjectChangeID, CADObjectChangeIDHelper,
                             CADObjectID, CDBAttachmentInfo, CDBAttachmentMigrator,
                             CDBBundle, CDBCommonEntityFunctionalityHandler,
-                            CDBDataProtectionObserver, CDBPreferences,
-                            CDBRecurrenceGenerator, CDBiCalFixUps,
+                            CDBDataProtectionObserver, CDBDefaultAccountInfo,
+                            CDBPreferences, CDBRecurrenceGenerator, CDBiCalFixUps,
                             CalACMigrationAccount, CalACMigrationAccountStore,
                             CalAccountStoreChangeFilterDelegateForLegacyICBURestore,
                             CalAlarmMetadata,

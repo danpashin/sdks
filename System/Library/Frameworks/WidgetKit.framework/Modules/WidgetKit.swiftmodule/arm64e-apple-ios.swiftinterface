@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.123.204 clang-1500.0.37.1)
-// swift-module-flags: -target arm64e-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WidgetKit
-// swift-module-flags-ignorable: -enable-experimental-feature FreestandingMacros -enable-bare-slash-regex -user-module-version 401.1.107
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
+// swift-module-flags: -target arm64e-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WidgetKit
+// swift-module-flags-ignorable: -enable-experimental-feature FreestandingMacros -enable-bare-slash-regex -user-module-version 402.23
 import ActivityKit
 import AppIntents
 import Combine
@@ -672,7 +672,7 @@ extension SwiftUI.View {
 @available(tvOS, unavailable)
 @available(macOS, unavailable)
 @available(watchOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 extension DeveloperToolsSupport.Preview {
   #if compiler(>=5.3) && $AsyncAwait
   public init<Attributes>(_ name: Swift.String? = nil, as viewKind: WidgetKit.ActivityPreviewViewKind, using attributes: Attributes, widget: @escaping () -> some Widget, @WidgetKit.PreviewActivityBuilder<Attributes> contentStates: @escaping @_Concurrency.MainActor () async -> [Attributes.ContentState]) where Attributes : ActivityKit.ActivityAttributes
@@ -683,14 +683,14 @@ extension DeveloperToolsSupport.Preview {
 @available(tvOS, unavailable)
 @available(macOS, unavailable)
 @available(watchOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 @freestanding(declaration) public macro Preview<Widget, Attributes>(_ name: Swift.String? = nil, as viewKind: WidgetKit.ActivityPreviewViewKind, using attributes: Attributes, widget: @escaping () -> Widget, @WidgetKit.PreviewActivityBuilder<Attributes> contentStates: @escaping @_Concurrency.MainActor () async -> [Attributes.ContentState]) = #externalMacro(module: "PreviewsMacros", type: "Common") where Widget : SwiftUI.Widget, Attributes : ActivityKit.ActivityAttributes
 #endif
 @available(iOS 17.0, *)
 @available(tvOS, unavailable)
 @available(macOS, unavailable)
 @available(watchOS, unavailable)
-@available(xrOS, unavailable)
+@available(visionOS, unavailable)
 @_functionBuilder public struct PreviewActivityBuilder<A> where A : ActivityKit.ActivityAttributes {
   public static func buildExpression(_ contentState: A.ContentState) -> [A.ContentState]
   public static func buildPartialBlock(first: [A.ContentState]) -> [A.ContentState]

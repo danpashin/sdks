@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AUDeveloperSettings.framework/AUDeveloperSettings
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AUDeveloperSettingsAccessoryFusingStringToType,
                             _AUDeveloperSettingsAccessoryFusingTypeToString,
                             _AUDeveloperSettingsURLStringToType,
@@ -20,12 +20,14 @@ exports:
                             _UARPStringDynamicAssetsFilepath,
                             _UARPStringSupplementalAssetsFilepath,
                             _UARPStringTempFilesFilepath,
+                            _cleanupPersonalizedUpdateAvailable,
                             _configuredToDefaultAssetLocationForAccessory,
                             _getInfoForAccessory, _getURLForAssetURLType,
                             _kAUDeveloperSettingsAssetLocationPlistName,
                             _kAUDeveloperSettingsCustomerStagingOverride,
                             _kAUDeveloperSettingsDatabaseDefaultsSuite,
                             _kAUDeveloperSettingsOverridePlistName,
+                            _kAUObserverXpcServiceName,
                             _kAUSettingsAccessoriesFirmwareUpdate,
                             _kAUSettingsAccessoryAboutHeader,
                             _kAUSettingsAccessoryActiveVersion,
@@ -33,10 +35,18 @@ exports:
                             _kAUSettingsAccessoryAssetURLOverride,
                             _kAUSettingsAccessoryBuild,
                             _kAUSettingsAccessoryDisableOTAUpdates,
+                            _kAUSettingsAccessoryDownloadedVersion,
+                            _kAUSettingsAccessoryEnableAuthlisting,
                             _kAUSettingsAccessoryFusing,
+                            _kAUSettingsAccessoryHWRevision,
                             _kAUSettingsAccessoryModelNumber,
+                            _kAUSettingsAccessoryPersonalizationHeader,
                             _kAUSettingsAccessorySerialNumber,
-                            _kAUSettingsAccessoryTrain, _kAUSettingsAssetURL,
+                            _kAUSettingsAccessorySupplementalAssetLocation,
+                            _kAUSettingsAccessorySupplementalBuild,
+                            _kAUSettingsAccessorySupplementalTrain,
+                            _kAUSettingsAccessoryTrain,
+                            _kAUSettingsAccessoryUpdateNow, _kAUSettingsAssetURL,
                             _kAUSettingsCheckmark, _kAUSettingsCustomBasejumper,
                             _kAUSettingsCustomBasejumperBuild,
                             _kAUSettingsCustomBasejumperBuildGroup,
@@ -60,15 +70,26 @@ exports:
                             _kAUSettingsMesuStaging, _kAUSettingsPlistName,
                             _kAUSettingsPreReleaseBetaProgram,
                             _kAUSettingsProdFusing,
+                            _kAUSettingsProgressActiveSerialNumber,
+                            _kAUSettingsProgressActiveUpdate,
+                            _kAUSettingsProgressComplete,
+                            _kAUSettingsProgressKeyBuild,
+                            _kAUSettingsProgressKeyBytesSent,
+                            _kAUSettingsProgressKeyBytesTotal,
                             _kAUSettingsSelectBasejumperLocation,
                             _kAUSettingsSelectLocation,
+                            _kAUSettingsTableFooterText,
                             _kAUSettingsUnfusedFusing, _kActiveVersionKey,
                             _kAssetLocationKey, _kAssetURLOverrideKey,
-                            _kBasejumperBuildKey, _kBasejumperTrainKey,
-                            _kClientIndentifier, _kFusingKey,
+                            _kAuthListingEnabledKey, _kBasejumperBuildKey,
+                            _kBasejumperTrainKey, _kClientIndentifier,
+                            _kDownloadedVersionKey, _kFusingKey, _kHWRevisionKey,
                             _kInternalSettingsPaneURL, _kIsOTADisabledKey,
                             _kModelNumberKey, _kNameKey, _kPartnerSerialNumbersKey,
-                            _kSerialNumberKey,
+                            _kPersonalizationRequiredKey, _kSerialNumberKey,
+                            _kSupplementalAssetLocationKey,
+                            _kSupplementalBasejumperBuildKey,
+                            _kSupplementalBasejumperTrainKey,
                             _kUARPAssetLocationTypeMobileAssetServerBasejumperStr,
                             _kUARPAssetLocationTypeMobileAssetServerLivabilityStr,
                             _kUARPAssetLocationTypeMobileAssetServerMesuMacOSStr,
@@ -81,6 +102,7 @@ exports:
                             _kUARPPlistFolder, _kUARPPlistFolderEmbedded,
                             _kUARPPlistFolderInternal, _kUARPPlistInternal,
                             _kUARPPlistInternalFuture,
+                            _kUARPStandaloneFirmwareDirectory,
                             _kUARPStringBTLEServerUpdaterName,
                             _kUARPStringBsdNotificationCoreSpeechVoiceTriggerAssetChange,
                             _kUARPStringBsdNotificationPowerAdapter,
@@ -255,6 +277,7 @@ exports:
                             _kUARPStringUSBCLightningDisconnectNotification,
                             _kUARPStringUSBPDUpdaterName,
                             _kUARPStringVendorMetadataProductNumber,
+                            _kUARPSupportedAccessoryCaseModelNameIdentifier,
                             _kUARPSupportedAccessoryKeyAllowDownloadOnCellular,
                             _kUARPSupportedAccessoryKeyAppleModelNumber,
                             _kUARPSupportedAccessoryKeyAutoAppliesStagedFirmware,
@@ -265,6 +288,7 @@ exports:
                             _kUARPSupportedAccessoryKeyIsPowerSource,
                             _kUARPSupportedAccessoryKeyMobileAssetsModelNumber,
                             _kUARPSupportedAccessoryKeyModelName,
+                            _kUARPSupportedAccessoryKeyPersonalities,
                             _kUARPSupportedAccessoryKeyProductGroup,
                             _kUARPSupportedAccessoryKeyProductID,
                             _kUARPSupportedAccessoryKeyProductName,
@@ -299,6 +323,7 @@ exports:
                             _kUARPSupportedAccessoryKeyUSBPDLocationTypeSOPDoublePrime,
                             _kUARPSupportedAccessoryKeyUSBPDLocationTypeSOPPrime,
                             _kUARPSupportedAccessoryKeyUUID,
+                            _kUARPSupportedAccessoryKeyUpdateRequiresPowerAssertion,
                             _kUARPSupportedAccessoryKeyUpdaterName,
                             _kUARPSupportedAccessoryKeyVendorID,
                             _kUARPSupportedAccessoryKeyVendorName,
@@ -312,5 +337,7 @@ exports:
                             AUDeveloperSettingsTextEditingController,
                             AUHelperInstance, AUInternalSettingsController,
                             AUInternalSettingsDetailsController,
-                            AUInternalSettingsTableViewCell ]
+                            AUInternalSettingsInProgressTableCell,
+                            AUInternalSettingsTableViewCell, AUObserverXPC,
+                            UIProgressFooterView ]
 ...

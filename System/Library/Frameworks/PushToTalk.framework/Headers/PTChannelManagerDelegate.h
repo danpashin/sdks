@@ -83,6 +83,14 @@ API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(macos, macCatalyst, tvos, watchos)
 
 - (void)channelManager:(PTChannelManager *)channelManager failedToStopTransmittingInChannelWithUUID:(NSUUID *)channelUUID error:(NSError *)error NS_SWIFT_NAME(channelManager(_:failedToStopTransmittingInChannel:error:));
 
+/// This method is called for each incoming service update push. Use this method to extract service update data from the notification's payload and to
+/// perform the relevant task for that data. When you finish the task, execute the provided `completion` handler block to let PushToTalk know you are finished.
+///
+/// Service Update push notifications that are sent with high priority (priority=10) are subject to a budget of six per hour. Use the `remainingHighPriorityBudget`
+/// value to monitor the number of remaining high priority push notifications available to your app. Low-priority push notifications (priority<=5) are not subject
+/// to a budget limit and should be used whenever possible.
+- (void)incomingServiceUpdatePushForChannelManager:(PTChannelManager *)channelManager channelUUID:(NSUUID *)channelUUID pushPayload:(NSDictionary<NSString *, id> *)pushPayload isHighPriority:(BOOL)isHighPriority remainingHighPriorityBudget:(NSInteger)remainingHighPriorityBudget withCompletionHandler:(void (^)(void))completion API_AVAILABLE(ios(17.2)) API_UNAVAILABLE(macos, macCatalyst, tvos, watchos) NS_SWIFT_NAME(incomingServiceUpdatePush(channelManager:channelUUID:pushPayload:isHighPriority:remainingHighPriorityBudget:completion:));
+
 @end
 
 NS_ASSUME_NONNULL_END

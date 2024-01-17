@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PosterBoard.framework/PosterBoard
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11PosterBoard06SingleA19ConfigurationFilterC13configurationACSo08PRPosterD0C_tcfC,
                             _$s11PosterBoard06SingleA19ConfigurationFilterC13configurationACSo08PRPosterD0C_tcfCTq,
                             _$s11PosterBoard06SingleA19ConfigurationFilterC13configurationACSo08PRPosterD0C_tcfc,
@@ -213,6 +213,7 @@ exports:
                             _$s11PosterBoard0A28RackCollectionViewControllerC12dateProviderSo017PROverridableDateH0Cvpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC12dateProvider_9didUpdateySo15PRDateProviding_p_10Foundation4DateVtF,
                             _$s11PosterBoard0A28RackCollectionViewControllerC12dateProvider_9didUpdateySo15PRDateProviding_p_10Foundation4DateVtFTq,
+                            _$s11PosterBoard0A28RackCollectionViewControllerC12isFocusSetup33_D5DF376170FC49163D52DD3549B6CC17LLSbvpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC12posterFilterAcA0A22ConfigurationFiltering_p_tcfC,
                             _$s11PosterBoard0A28RackCollectionViewControllerC12posterFilterAcA0A22ConfigurationFiltering_p_tcfc,
                             _$s11PosterBoard0A28RackCollectionViewControllerC13focusSelector33_D5DF376170FC49163D52DD3549B6CC17LLSo018FCUIFocusSelectioneF0CSgvpfi,
@@ -257,7 +258,6 @@ exports:
                             _$s11PosterBoard0A28RackCollectionViewControllerC21leadingTopButtonFrameSo6CGRectVvsTq,
                             _$s11PosterBoard0A28RackCollectionViewControllerC21legacyMigrationHelper33_D5DF376170FC49163D52DD3549B6CC17LLSo09PBFLegacyahI0CSgvpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC21viewDidLayoutSubviewsyyF,
-                            _$s11PosterBoard0A28RackCollectionViewControllerC22currentFocusSetupState33_D5DF376170FC49163D52DD3549B6CC17LLAA0hiJ0Ovpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC22prefersStatusBarHiddenSbvg,
                             _$s11PosterBoard0A28RackCollectionViewControllerC22shouldDisplayAddButtonSbvM,
                             _$s11PosterBoard0A28RackCollectionViewControllerC22shouldDisplayAddButtonSbvMTq,
@@ -282,7 +282,7 @@ exports:
                             _$s11PosterBoard0A28RackCollectionViewControllerC23applicationStateMonitorSo014PBFApplicationhI0CyFTq,
                             _$s11PosterBoard0A28RackCollectionViewControllerC23editingIngestionManager_9didAccept10userChoiceyAA0a7EditinghI0C_So21PRPosterConfigurationCAA0an12Confirmationef4UserM0OtF,
                             _$s11PosterBoard0A28RackCollectionViewControllerC23editingIngestionManager_9didAccept10userChoiceyAA0a7EditinghI0C_So21PRPosterConfigurationCAA0an12Confirmationef4UserM0OtFTq,
-                            _$s11PosterBoard0A28RackCollectionViewControllerC23focusSetupStateProvider33_D5DF376170FC49163D52DD3549B6CC17LLAA05FocushI9Providing_pvpfi,
+                            _$s11PosterBoard0A28RackCollectionViewControllerC23focusUpdateSubscription33_D5DF376170FC49163D52DD3549B6CC17LLScTyyts5NeverOGSgvpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC23headerBottomEdgeSpacing33_D5DF376170FC49163D52DD3549B6CC17LL12CoreGraphics7CGFloatVvpfi,
                             _$s11PosterBoard0A28RackCollectionViewControllerC23sceneDidEnterBackgroundyyF,
                             _$s11PosterBoard0A28RackCollectionViewControllerC23sceneDidEnterBackgroundyyFTq,
@@ -524,6 +524,15 @@ exports:
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC012editingScenefG0_18userDidDismissWith20updatedConfiguration0N20ConfiguredProperties10completionySo09PREditingifG0C_So0sifG15DismissalActionVSo09PRMutableaO0CSgSo08PRPosterpQ0CSgys5Error_pSgctFTq,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC012editingScenefG0_25wantsRemotePresentationOf17contentScreenRectySo09PREditingifG0C_So06UIViewG0CSo6CGRectVtF,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC012editingScenefG0_25wantsRemotePresentationOf17contentScreenRectySo09PREditingifG0C_So06UIViewG0CSo6CGRectVtFTq,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvM,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvMTq,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvg,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvgTq,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvpMV,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvpWvd,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvpfi,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvs,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC017transitionOverlayF0So6UIViewCSgvsTq,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC019hasScrolledToActivea10ForInitialF6Layout33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSbvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC026$__lazy_storage_$_snapshotG033_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo019PRUISPosterSnapshotG0CSgvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC06activeA13Configuration33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo08PRPosterI0CSgvpfi,
@@ -546,6 +555,8 @@ exports:
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC09presentedd6RemoteF17ContentScreenRect33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo6CGRectVSgvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC09presentedd6RemotefG033_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo06UIViewG0CSgvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC10doneButton33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo013PREditingDoneI0CSgvpfi,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC10invalidateyyF,
+                            _$s11PosterBoard38AmbientEditingCollectionViewControllerC10invalidateyyFTq,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC11buttonWidth33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSdvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC11pageControl33_348C83FF8FFFC3B7AC49D1F8274E5EA3LLSo06UIPageI0CSgvpfi,
                             _$s11PosterBoard38AmbientEditingCollectionViewControllerC11viewDidLoadyyF,
@@ -634,7 +645,6 @@ exports:
                             _PBFDebug_os_unfair_lock_assert_owner,
                             _PBFDefaultUpdateIntervalForDataComponent,
                             _PBFDescriptorRefreshStrategyToString,
-                            _PBFDispatchAsyncWithCString,
                             _PBFDispatchAsyncWithString,
                             _PBFDispatchQualityOfServiceFromPBFPosterSnapshotRequestIntention,
                             _PBFForceLiveWallpapers, _PBFGeneralErrorDomain,
@@ -891,6 +901,7 @@ exports:
                             PBFPosterSnapshotContainer,
                             PBFPosterSnapshotCoordinator,
                             PBFPosterSnapshotDefinition,
+                            PBFPosterSnapshotFetchCompletionHandler,
                             PBFPosterSnapshotManager, PBFPosterSnapshotRequest,
                             PBFPosterSnapshotReservation, PBFPosterSnapshotter,
                             PBFPosterSnapshotterOperation, PBFPowerLogger,

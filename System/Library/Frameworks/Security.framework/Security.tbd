@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Security.framework/Security
-current-version:       61040.2.2
+current-version:       61040.62.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AES_CTR_HighHalf_Transform, _AES_CTR_IV0_Transform,
                             _CFArrayOfSOSPeerInfosSortByID, _CFDataCreateWithDER,
                             _CFPropertyListCreateDERData,
@@ -239,12 +239,12 @@ exports:
                             _SOSBSKBLoadAndUnlockWithPeerSecret,
                             _SOSBSKBLoadAndUnlockWithWrappingSecret,
                             _SOSBSKBLoadLocked, _SOSBSKBPeerIsInKeyBag,
+                            _SOSBSKBRemoveRecoveryKey,
                             _SOSBackupSliceKeyBagCreate,
                             _SOSBackupSliceKeyBagCreateDirect,
                             _SOSBackupSliceKeyBagCreateFromData,
                             _SOSBackupSliceKeyBagCreateWithAdditionalKeys,
                             _SOSCCAcceptApplicants,
-                            _SOSCCAccountGetAccountPrivateCredential,
                             _SOSCCAccountGetKeyCircleGeneration,
                             _SOSCCAccountGetPublicKey, _SOSCCAccountHasPublicKey,
                             _SOSCCAccountSetToNew,
@@ -283,7 +283,7 @@ exports:
                             _SOSCCProcessEnsurePeerRegistration,
                             _SOSCCProcessSyncWithAllPeers,
                             _SOSCCProcessSyncWithPeers,
-                            _SOSCCPurgeUserCredentials,
+                            _SOSCCPurgeUserCredentials, _SOSCCPushResetCircle,
                             _SOSCCRegisterRecoveryPublicKey,
                             _SOSCCRegisterSingleRecoverySecret,
                             _SOSCCRegisterUserCredentials,

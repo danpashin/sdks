@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NewsAds.framework/NewsAds
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10AdProvider7NewsAds0aB11FactoryTypePTl,
                             _$s11TeaSettings0B0C7NewsAdsE0D0V25PromotedContentParametersV20ContextPrefetchLimitC3key12defaultValue6accessAJSSSg_SbAA6AccessOtcfC,
                             _$s11TeaSettings0B0C7NewsAdsE0D0V25PromotedContentParametersV20ContextPrefetchLimitC3key12defaultValue6accessAJSSSg_SbAA6AccessOtcfc,
@@ -875,6 +875,7 @@ exports:
                             _$s7NewsAds15FeedGroupAdDataV4KindO16sportsOnboardingyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO16sportsTopStoriesyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO16tagRecentStoriesyA2EmFWC,
+                            _$s7NewsAds15FeedGroupAdDataV4KindO17puzzleFullArchiveyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO18audioDailyBriefingyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO19sportsEventArticlesyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO19sportsInjuryReportsyA2EmFWC,
@@ -889,6 +890,7 @@ exports:
                             _$s7NewsAds15FeedGroupAdDataV4KindO7curatedyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO7paywallyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO7weatheryA2EmFWC,
+                            _$s7NewsAds15FeedGroupAdDataV4KindO8affinityyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO8magazineyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO8mySportsyA2EmFWC,
                             _$s7NewsAds15FeedGroupAdDataV4KindO8trendingyA2EmFWC,
@@ -976,8 +978,8 @@ exports:
                             _$s7NewsAds15NativeAdContextV8providerAcA0dE13DataProviding_p_tKcfC,
                             _$s7NewsAds15NativeAdContextV8userDataAA04UserdG0Vvg,
                             _$s7NewsAds15NativeAdContextV8userDataAA04UserdG0VvpMV,
-                            _$s7NewsAds15NativeAdContextV9groupDataAA09FeedGroupdG0VSgvg,
-                            _$s7NewsAds15NativeAdContextV9groupDataAA09FeedGroupdG0VSgvpMV,
+                            _$s7NewsAds15NativeAdContextV9groupDataAA09FeedGroupdG0Vvg,
+                            _$s7NewsAds15NativeAdContextV9groupDataAA09FeedGroupdG0VvpMV,
                             _$s7NewsAds15NativeAdContextV9issueDataAA05IssuedG0VSgvg,
                             _$s7NewsAds15NativeAdContextV9issueDataAA05IssuedG0VSgvpMV,
                             _$s7NewsAds15NativeAdContextVAA0a12SupplementalE9ProvidingAAMc,
@@ -2153,6 +2155,8 @@ exports:
                             _$s7NewsAds25InterstitialViewInsertionV17missedOpportunityyyF,
                             _$s7NewsAds25InterstitialViewInsertionV19placementIdentifierSSvg,
                             _$s7NewsAds25InterstitialViewInsertionV19placementIdentifierSSvpMV,
+                            _$s7NewsAds25InterstitialViewInsertionV4sizeSo6CGSizeVvg,
+                            _$s7NewsAds25InterstitialViewInsertionV4sizeSo6CGSizeVvpMV,
                             _$s7NewsAds25InterstitialViewInsertionVMa,
                             _$s7NewsAds25InterstitialViewInsertionVMn,
                             _$s7NewsAds25JournalEntryProcessorTypeMp,
@@ -2608,8 +2612,6 @@ exports:
                             _$s7NewsAds8BannerAdVSQAAMc,
                             _$s7NewsAds8NativeAdO10identifierSSvg,
                             _$s7NewsAds8NativeAdO10identifierSSvpMV,
-                            _$s7NewsAds8NativeAdO10isUnfilledSbvg,
-                            _$s7NewsAds8NativeAdO10isUnfilledSbvpMV,
                             _$s7NewsAds8NativeAdO13TeaFoundation12IdentifiableAAMc,
                             _$s7NewsAds8NativeAdO13markPresentedyyF,
                             _$s7NewsAds8NativeAdO15desiredPosition15PromotedContent07DesiredF0Ovg,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RenderBox.framework/RenderBox
-current-version:       5.0.80
+current-version:       5.1.16
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _RBArchiveDelegate, _RBArchiveToFile,
                             _RBArchiveToFileWithMetadata, _RBCodableErrorDomain,
                             _RBColorBlack, _RBColorClear, _RBColorEqualToColor,
@@ -158,7 +158,6 @@ exports:
                             _RBSymbolAnimationTiming,
                             _RBSymbolAnimationVariableColorOptions,
                             _RBSymbolUpdateBoundingRect,
-                            _RBSymbolUpdateCopyDebugDescription,
                             _RBSymbolUpdateDrawWithStyleResolver,
                             _RBSymbolUpdateGroupCount, _RBSymbolUpdateGroupSize,
                             _RBSymbolUpdateLayerClip,

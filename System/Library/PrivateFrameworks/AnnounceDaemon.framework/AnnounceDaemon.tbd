@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AnnounceDaemon.framework/AnnounceDaemon
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s14AnnounceDaemon0A6ServerCACycfC,
                             _$s14AnnounceDaemon0A6ServerCACycfc,
                             _$s14AnnounceDaemon0A6ServerCMa,
@@ -53,6 +53,8 @@ exports:
                             _$sSo14AVAudioSessionC14AnnounceDaemonE05audioB0010proxyAudioB2ID08endpointH0ABs6UInt32V_10Foundation4UUIDVSgtKFZ,
                             _$sSo17OS_dispatch_queueC14AnnounceDaemonE14operationQueueSo011NSOperationG0Cvg,
                             _$sSo17OS_dispatch_queueC14AnnounceDaemonE14operationQueueSo011NSOperationG0CvpMV,
+                            _$sSo6HMRoomC14AnnounceDaemonE11descriptionSSvg,
+                            _$sSo6HMZoneC14AnnounceDaemonE11descriptionSSvg,
                             _ANAnalyticsEventNameAnnouncementAgeLimit,
                             _ANAnalyticsEventNameAnnouncementEntryAgeLimit,
                             _ANAnalyticsEventNameAnnouncementError,

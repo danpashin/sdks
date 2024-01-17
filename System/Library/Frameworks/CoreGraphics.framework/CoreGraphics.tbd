@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-current-version:       1774.0.1
+current-version:       1774.2.3
 compatibility-version: 64
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CGAccessSessionCreate,
                             _CGAccessSessionGetBytePointer,
                             _CGAccessSessionGetBytes, _CGAccessSessionGetChunks,
@@ -281,6 +281,7 @@ exports:
                             _CGColorTransformGetMD5, _CGColorTransformGetTypeID,
                             _CGColorTransformOptionsToColorSyncTransformOptions,
                             _CGColorTransformRelease, _CGColorTransformRetain,
+                            _CGColorTransformSupportsCalibratedColor,
                             _CGContainerGetRect, _CGContainerGetTypeID,
                             _CGContextAddArc, _CGContextAddArcToPoint,
                             _CGContextAddCurveToPoint,
@@ -865,6 +866,7 @@ exports:
                             _CGGradientPrint, _CGGradientRelease,
                             _CGGradientRetain,
                             _CGGradientUsesPremultipliedInterpolation,
+                            _CGHasRequiredColorSyncVersion,
                             _CGIOSurfaceContextCreate,
                             _CGIOSurfaceContextCreateImage,
                             _CGIOSurfaceContextCreateImageReference,
@@ -1127,7 +1129,6 @@ exports:
                             _CGPDFDocumentCopyIncrementalUpdatePositions,
                             _CGPDFDocumentCopyInfoDictionary,
                             _CGPDFDocumentCopyOutputIntents,
-                            _CGPDFDocumentCopyOwnerAndUserPasswordHash,
                             _CGPDFDocumentCopyPage,
                             _CGPDFDocumentCopyToConsumerWithChanges,
                             _CGPDFDocumentCreateLinearizedRangesForPage,
@@ -1142,6 +1143,7 @@ exports:
                             _CGPDFDocumentGetCatalog, _CGPDFDocumentGetCropBox,
                             _CGPDFDocumentGetDataProvider,
                             _CGPDFDocumentGetDestination,
+                            _CGPDFDocumentGetEncryptMetadata,
                             _CGPDFDocumentGetEncryptionVersion,
                             _CGPDFDocumentGetID, _CGPDFDocumentGetInfo,
                             _CGPDFDocumentGetLinearizedDictionary,
@@ -1181,6 +1183,7 @@ exports:
                             _CGPDFDocumentUnlockWithPassword,
                             _CGPDFDrawingContextCreateWithStream,
                             _CGPDFDrawingContextDraw,
+                            _CGPDFDrawingContextDrawWithContentTypes,
                             _CGPDFDrawingContextRelease, _CGPDFEncodingCreate,
                             _CGPDFEncodingGetGlyphVector,
                             _CGPDFEncodingGetGlyphVectorWithFont,
@@ -1576,6 +1579,7 @@ exports:
                             _CGPDFTaggedNodeGetTitleText,
                             _CGPDFTaggedNodeGetType, _CGPDFTaggedNodeGetTypeName,
                             _CGPDFTaggedNodeIsFromTaggedStructure,
+                            _CGPDFTaggedNodeIsImage,
                             _CGPDFTaggedNodeIsImageFigure, _CGPDFTaggedNodePrint,
                             _CGPDFTaggedNodeRelease, _CGPDFTaggedNodeRetain,
                             _CGPDFTaggedNodeTypeGetName,
@@ -1907,7 +1911,7 @@ exports:
                             _kCGContextStyleContentBegin,
                             _kCGContextStyleContentEnd, _kCGContextStyleEnd,
                             _kCGContextStyleType, _kCGContextSynchronize,
-                            _kCGContextWait,
+                            _kCGContextWait, _kCGConvertColorDataUseColorSync,
                             _kCGConvertColorDataUseColorSyncForHDR,
                             _kCGConvertColorDataUseColorSyncForToneMapping,
                             _kCGDataProviderHasHighLatency,
@@ -1975,6 +1979,7 @@ exports:
                             _kCGPDFContextCreatePDFA, _kCGPDFContextCreator,
                             _kCGPDFContextCropBox, _kCGPDFContextDate,
                             _kCGPDFContextDocumentID,
+                            _kCGPDFContextEncryptMetadata,
                             _kCGPDFContextEncryptionCipher,
                             _kCGPDFContextEncryptionCipherAESv2,
                             _kCGPDFContextEncryptionCipherAESv3,
@@ -1984,7 +1989,6 @@ exports:
                             _kCGPDFContextEncryptionHashedUserPassword,
                             _kCGPDFContextEncryptionKey,
                             _kCGPDFContextEncryptionKeyLength,
-                            _kCGPDFContextEncryptionOwnerAndUserPasswordsHash,
                             _kCGPDFContextEncryptionPermissions,
                             _kCGPDFContextJPEGCompressionQuality,
                             _kCGPDFContextKeywords, _kCGPDFContextMediaBox,

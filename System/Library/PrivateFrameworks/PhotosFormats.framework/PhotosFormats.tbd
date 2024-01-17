@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CAMUserPreferenceCaptureEncodingBehavior,
                             _CAMUserPreferenceSlomoConfiguration,
                             _CAMUserPreferenceVideoConfiguration,
@@ -86,7 +86,6 @@ exports:
                             _PFChecksumArchiveData,
                             _PFClientSideEncryptionManagerArchiveMetadataKeyCreationDateStringKey,
                             _PFClientSideEncryptionManagerArchiveMetadataVersionIdentifierKey,
-                            _PFClientSideEncryptionManagerErrorDomain,
                             _PFClientSideEncryptionManagerKeyMetadataCreationDate,
                             _PFClientSideEncryptionManagerProfileKeyApplicationLabel,
                             _PFClientSideEncryptionManagerProfileKeyKeychainAccessGroup,
@@ -102,6 +101,7 @@ exports:
                             _PFDateFromStringTimeZoneFormat,
                             _PFDefaultParallaxStyleKindForCategory,
                             _PFDeviceLockScreenApproximateTimeRectNormalized,
+                            _PFDeviceLockScreenApproximateTimeRectNormalized_SBS,
                             _PFDeviceLockScreenFocusAreaRectNormalized,
                             _PFDeviceNativeScreenSize, _PFDeviceScreenScale,
                             _PFDeviceScreenSize,
@@ -299,6 +299,7 @@ exports:
                             _PFPosterSettlingEffectGatingLevelDescription,
                             _PFPosterSettlingEffectGatingStatisticsAnalyticsPayload,
                             _PFPosterSettlingEffectStatisticsEvent,
+                            _PFPosterShuffleFavoriteAlbumCloudIdentifier,
                             _PFPosterShuffleFrequencyDescription,
                             _PFPosterShuffleFrequencyStringWithFrequency,
                             _PFPosterShuffleSmartAlbumsDescription,

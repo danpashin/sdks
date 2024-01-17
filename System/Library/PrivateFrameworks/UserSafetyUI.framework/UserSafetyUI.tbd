@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UserSafetyUI.framework/UserSafetyUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/SensitiveContentAnalysisUI.framework/SensitiveContentAnalysisUI ]
     symbols:              [ _$s12UserSafetyUI028USUIMoreHelpContextMenuSwiftC0V08USUIHelpG7ActionsV20messageSomeoneAction012blockContactM00n8ContactsM004moreeM009leaveChatM0AEyx_Gyyc_yycyycyycyyctcfC,
                             _$s12UserSafetyUI028USUIMoreHelpContextMenuSwiftC0V08USUIHelpG7ActionsVMa,
@@ -22,8 +22,6 @@ exports:
                             _$s12UserSafetyUI028USUIMoreHelpContextMenuSwiftC0VyxG0hC04ViewAAMc,
                             _$sSo21USUIMoreHelpMenuModelCs12Identifiable12UserSafetyUIMc,
                             _$sSo22USUIMoreHelpMenuActionCs12Identifiable12UserSafetyUIMc,
-                            _USUICurrentInterventionType,
-                            _USUIIsRunningInMacCatalyst,
                             _UserSafetyUIVersionNumber,
                             _UserSafetyUIVersionString ]
     objc-classes:         [ USUIContactParentsHelper,

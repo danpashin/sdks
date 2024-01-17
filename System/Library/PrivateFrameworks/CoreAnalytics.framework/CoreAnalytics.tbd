@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreAnalytics.framework/CoreAnalytics
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AnalyticsDisableAllTransformSampling,
                             _AnalyticsIsEventUsed,
                             _AnalyticsReenableAllTransformSampling,
@@ -18,8 +18,8 @@ exports:
                             _AnalyticsSendExplodingEventLazy,
                             _AnalyticsSetCallbackForQueriedEvent,
                             _AnalyticsSetCallbackForQueriedEventWithQueue,
-                            __Z17CAAssertAvailablev, __Z17CASetupLogDomainsv,
-                            __Z19analytics_tool_dumpv, __Z19analytics_tool_savev,
+                            __Z10CASPIEnterv, __Z19analytics_tool_dumpv,
+                            __Z19analytics_tool_savev,
                             __Z21analytics_tool_commitv,
                             __Z23analytics_tool_rolloverv,
                             __Z25analytics_tool_has_configv,

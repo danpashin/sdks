@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CloudKit.framework/CloudKit
-current-version:       2100.171
+current-version:       2130.14.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation3URLV8CloudKitE19ckMarkFilePurgeableyyKF,
                             _$s10Foundation4DataV8CloudKit21CKRecordValueProtocolADMc,
                             _$s10Foundation4DataV8CloudKit21CKRecordValueProtocolADWP,
@@ -144,6 +144,8 @@ exports:
                             _$s8CloudKit12CKSyncEngineC18SendChangesOptionsVMn,
                             _$s8CloudKit12CKSyncEngineC18SendChangesOptionsVN,
                             _$s8CloudKit12CKSyncEngineC18SendChangesOptionsVs23CustomStringConvertibleAAMc,
+                            _$s8CloudKit12CKSyncEngineC19FetchChangesContextV11descriptionSSvg,
+                            _$s8CloudKit12CKSyncEngineC19FetchChangesContextV11descriptionSSvpMV,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextV6reasonAC10SyncReasonOvg,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextV6reasonAC10SyncReasonOvpMV,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextV7optionsAC0eF7OptionsVvg,
@@ -151,6 +153,7 @@ exports:
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextVMa,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextVMn,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesContextVN,
+                            _$s8CloudKit12CKSyncEngineC19FetchChangesContextVs23CustomStringConvertibleAAMc,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV05forceeF0SbvM,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV05forceeF0Sbvg,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV05forceeF0SbvpMV,
@@ -188,6 +191,7 @@ exports:
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV24defaultZoneConfigurationAE0iJ0Vvs,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO11descriptionSSvg,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO11descriptionSSvpMV,
+                            _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO11scopeObjectSo0cdefH0CyF,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO12allExcludingyAGSaySo14CKRecordZoneIDCGcAGmFWC,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO2eeoiySbAG_AGtFZ,
                             _$s8CloudKit12CKSyncEngineC19FetchChangesOptionsV5ScopeO3allyA2GmFWC,
@@ -304,6 +308,8 @@ exports:
                             _$s8CloudKit12CKSyncEngineC5EventO14didSendChangesyA2E03DidgH0VcAEmFWC,
                             _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesV11descriptionSSvg,
                             _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesV11descriptionSSvpMV,
+                            _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesV7contextAC0gH7ContextVvg,
+                            _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesV7contextAC0gH7ContextVvpMV,
                             _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesVMa,
                             _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesVMn,
                             _$s8CloudKit12CKSyncEngineC5EventO15DidFetchChangesVN,
@@ -320,6 +326,8 @@ exports:
                             _$s8CloudKit12CKSyncEngineC5EventO15willSendChangesyA2E04WillgH0VcAEmFWC,
                             _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesV11descriptionSSvg,
                             _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesV11descriptionSSvpMV,
+                            _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesV7contextAC0gH7ContextVvg,
+                            _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesV7contextAC0gH7ContextVvpMV,
                             _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesVMa,
                             _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesVMn,
                             _$s8CloudKit12CKSyncEngineC5EventO16WillFetchChangesVN,
@@ -566,6 +574,7 @@ exports:
                             _$s8CloudKit17AssetStreamHandleC05inputD03forScsy10Foundation4DataVs5Error_pGSnySiG_tYaKFTu,
                             _$s8CloudKit17AssetStreamHandleC14serializedData10Foundation0G0VyKF,
                             _$s8CloudKit17AssetStreamHandleC16makeAVPlayerItem4with7optionsSo0gH0C10Foundation3URLVSg_SDySSypGSgtF,
+                            _$s8CloudKit17AssetStreamHandleC24makeAVAssetExportSession4with7options10presetNameSo0ghI0C10Foundation3URLVSg_SDySSypGSgSStF,
                             _$s8CloudKit17AssetStreamHandleC25useNetworkingDelegateLock2os017OSAllocatedUnfairI0VySbGvgZ,
                             _$s8CloudKit17AssetStreamHandleC4fromAC10Foundation4DataV_tKcfC,
                             _$s8CloudKit17AssetStreamHandleC4fromAC10Foundation4DataV_tKcfCTj,
@@ -1352,6 +1361,7 @@ exports:
                             _CKCurrentProcessLinkCheck5dbf91c3fd1d871f0bcfe60afeb451e3e708d350,
                             _CKCurrentProcessLinkCheck908c3403f5370f9fc0f790c790ce4de0669132c0,
                             _CKCurrentProcessLinkCheck92e3e8f8ec1a906754afb22d87eb36301b4f6760,
+                            _CKCurrentProcessLinkCheckc809671068f5f334951d6b3e996f193c,
                             _CKCurrentProcessLinkChecke0fc00bd437646efa0e6635c2beaaea9,
                             _CKCurrentQueueIsMainQueue,
                             _CKCurrentQueueQualityOfService,
@@ -1424,6 +1434,7 @@ exports:
                             _CKIsRunningInTestHost, _CKIsValidOperationForScope,
                             _CKLinkCheck32f5805a68adfc1b65f94a0de69aa32177c7cd24,
                             _CKLinkCheck48d9728e8c354416a38f82379cbb35e3,
+                            _CKLinkCheckc809671068f5f334951d6b3e996f193c,
                             _CKLocalizedString, _CKMainBundleIsAppleExecutable,
                             _CKMaxProtoOperationsPerHTTPRequest,
                             _CKMonotonicFastHostTime, _CKMonotonicHostTime,
@@ -1467,6 +1478,7 @@ exports:
                             _CKRetryAfterSecondsForError,
                             _CKRunningInClientProcess, _CKSDKVersion,
                             _CKSDKVersion32f5805a68adfc1b65f94a0de69aa32177c7cd24,
+                            _CKSDKVersionc809671068f5f334951d6b3e996f193c,
                             _CKSQLiteJournalSuffixes,
                             _CKSQLiteTOCTableEntryCreatingClassName,
                             _CKSQLiteTOCTableEntryDbTablePropertyName,

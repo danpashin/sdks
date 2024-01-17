@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _DeclarationsKey, _MCACMEErrorDomain,
                             _MCAIDAMutableServiceContextClass,
                             _MCAIDAServiceOwnersManagerClass,
@@ -73,9 +73,7 @@ exports:
                             _MCConfigurationProfilesSystemGroupContainer,
                             _MCContainingBundleIDForBundleID,
                             _MCCrashDetectionFilePath, _MCDAErrorDomain,
-                            _MCDMFWallpaperFilePath, _MCDNSProxyErrorDomain,
-                            _MCDNSSettingsErrorDomain,
-                            _MCDataMigrationContextFilePath,
+                            _MCDNSProxyErrorDomain, _MCDNSSettingsErrorDomain,
                             _MCDefaultsDidChangeNotification,
                             _MCDefaultsErrorDomain,
                             _MCDependencyDidChangeNotification,
@@ -186,6 +184,7 @@ exports:
                             _MCFeatureContactlessPaymentAllowed,
                             _MCFeatureContinuousPathKeyboardAllowed,
                             _MCFeatureControlCenterInAppsAllowed,
+                            _MCFeatureCrossSiteTrackingPreventionRelaxedApps,
                             _MCFeatureCrossSiteTrackingPreventionRelaxedDomains,
                             _MCFeatureDefinitionLookupAllowed,
                             _MCFeatureDelayedSoftwareUpdatesForced,
@@ -244,6 +243,7 @@ exports:
                             _MCFeatureKeyboardShortcutsAllowed,
                             _MCFeatureKnownAirPrintTargets,
                             _MCFeatureLimitAdTrackingForced,
+                            _MCFeatureLiveVoicemailAllowed,
                             _MCFeatureLockScreenControlCenterAllowed,
                             _MCFeatureLockScreenNotificationsViewAllowed,
                             _MCFeatureLockScreenTodayViewAllowed,
@@ -292,6 +292,7 @@ exports:
                             _MCFeaturePhotoStreamAllowed,
                             _MCFeaturePodcastsAllowed,
                             _MCFeaturePredictiveKeyboardAllowed,
+                            _MCFeaturePreserveESIMOnEraseForced,
                             _MCFeaturePromptErrorDomain,
                             _MCFeatureProximitySetupToNewDeviceAllowed,
                             _MCFeatureQuickNoteAllowed,
@@ -427,7 +428,6 @@ exports:
                             _MCHCUCopyHostCertificateForMappedLabel,
                             _MCHCUCreateCSR, _MCHCUPrivateKeyKey,
                             _MCHCUPublicKeyKey,
-                            _MCHCUSetCertificateDataForMappedLabel,
                             _MCHCUSetHostCertificateDataForMappedLabel,
                             _MCHTTPTransactionErrorDomain, _MCHasMDMMigrated,
                             _MCHasMigrated, _MCHealthBundleIdentifier,
@@ -522,8 +522,7 @@ exports:
                             _MCLogUnexpectedFileAccessError,
                             _MCLoggingInitialize, _MCLoggingSettingsErrorDomain,
                             _MCMAECopyActivationRecordWithError,
-                            _MCMAEGetActivationStateWithError,
-                            _MCMDMDirtyPersonaFilePath, _MCMDMErrorDomain,
+                            _MCMAEGetActivationStateWithError, _MCMDMErrorDomain,
                             _MCMDMFilePath, _MCMailAccountClass,
                             _MCMailAccountManagedTag, _MCMailBundleIdentifier,
                             _MCMailComposeBundleIdentifier,
@@ -538,7 +537,6 @@ exports:
                             _MCMaximumMoviesRatingThirdPartyQuery,
                             _MCMaximumTVShowsRatingThirdPartyQuery,
                             _MCMessagesBundleIdentifier,
-                            _MCMultiUserDeviceConfigurationFilePath,
                             _MCMusicBundleIdentifier, _MCNEProfileIngestionClass,
                             _MCNEProfileIngestionHandlerClassForPayload,
                             _MCNagUIMetaFilePath,
@@ -570,7 +568,6 @@ exports:
                             _MCPostSetupAutoInstallSetAsideProfilePath,
                             _MCPowerlogControlReadMode,
                             _MCPowerlogControlSwitchMode,
-                            _MCPowerlogSystemGroupContainerPath,
                             _MCPreferencesBundleIdentifier,
                             _MCProductBuildVersion, _MCProductVersion,
                             _MCProfileConnectionXPCProtocolInterface,
@@ -611,7 +608,7 @@ exports:
                             _MCSafariViewServiceBundleIdentifier,
                             _MCSafelyCopyItemAtPathToDestinationPath,
                             _MCSafelyCopyItemAtPathToDestinationPathFM,
-                            _MCScreenTimeWidgetBundleIdentifier, _MCSecTrustCopy,
+                            _MCScreenTimeWidgetBundleIdentifier,
                             _MCSelfSignedCertificateErrorDomain,
                             _MCSendActivationLockBypassCodeWasStoredNotification,
                             _MCSendActivationRecordStoredNotification,
@@ -694,8 +691,6 @@ exports:
                             _MCSystemUserSettingsFilePath,
                             _MCSystemWatchEnrollmentDataFilePath,
                             _MCSystemWebContentFilterCurrentUserBookmarksPath,
-                            _MCSystemWebContentFilterStashedAutoPermittedURLStringsPath,
-                            _MCSystemWebContentFilterStashedUserBlacklistURLStringsPath,
                             _MCSystemWebContentFilterStashedUserBookmarksPath,
                             _MCTVPreferencesBundleIdentifier,
                             _MCTagsMappingFilePath,
@@ -847,6 +842,7 @@ exports:
                             _kMCCCSkipSetupAppleID, _kMCCCSkipSetupAvatar,
                             _kMCCCSkipSetupBiometric,
                             _kMCCCSkipSetupCloudStorage,
+                            _kMCCCSkipSetupDeviceProtection,
                             _kMCCCSkipSetupDeviceToDeviceMigration,
                             _kMCCCSkipSetupDiagnostics,
                             _kMCCCSkipSetupDisplayTone,
@@ -854,7 +850,7 @@ exports:
                             _kMCCCSkipSetupHomeButtonSensitivity,
                             _kMCCCSkipSetupIntendedUser, _kMCCCSkipSetupKey,
                             _kMCCCSkipSetupKeyboard, _kMCCCSkipSetupLanguage,
-                            _kMCCCSkipSetupLocation,
+                            _kMCCCSkipSetupLocation, _kMCCCSkipSetupLockdownMode,
                             _kMCCCSkipSetupMessagingActivationUsingPhoneNumber,
                             _kMCCCSkipSetupOnBoarding, _kMCCCSkipSetupPasscode,
                             _kMCCCSkipSetupPayment,
@@ -1235,7 +1231,7 @@ exports:
                             MCFileAccessRepairTool, MCFontPayload, MCGeofenceInfo,
                             MCGizmoUtilities, MCGlobalEthernetPayload,
                             MCGlobalHTTPProxyPayload, MCGmailAccountPayload,
-                            MCHTTPTransaction, MCHacks, MCHoldingTankManifest,
+                            MCHacks, MCHoldingTankManifest,
                             MCHomeScreenLayoutPayload, MCInstallerReader,
                             MCKeyValue, MCKeyValueSection, MCKeychain,
                             MCLDAPAccountPayload, MCLazyInitializationUtilities,
@@ -1268,8 +1264,7 @@ exports:
                             MCUserNotificationQueueEntry, MCVPNPayload,
                             MCVPNPayloadBase, MCVersioningUtilities,
                             MCWAPIIdentityCertificatePayload, MCWebClipPayload,
-                            MCWebContentFilterPayload, MCWiFiPayload,
-                            MCWorkerThread ]
+                            MCWebContentFilterPayload, MCWiFiPayload ]
     objc-ivars:           [ MCAPNInfo._apnName, MCAPNInfo._password,
                             MCAPNInfo._proxy, MCAPNInfo._proxyPort,
                             MCAPNInfo._username, MCAPNPayload._apnInfos,

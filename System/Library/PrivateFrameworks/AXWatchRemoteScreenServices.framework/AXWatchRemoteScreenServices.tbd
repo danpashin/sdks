@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXWatchRemoteScreenServices.framework/AXWatchRemoteScreenServices
@@ -7,8 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s27AXWatchRemoteScreenServices010AXLogTwicebC02os6LoggerVvg,
+                            _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV10idsTimeoutSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV10systemLockSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV10touchEventSSvgZ,
                             _$s27AXWatchRemoteScreenServices07AXTwicebC10MessageKeyV3idsSSvgZ,
@@ -134,6 +135,7 @@ exports:
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO010gizmoCheckG0yAcA0e13BluetoothWifiG0O_tcACmFWC,
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO014companionCheckG0yAcA0e13BluetoothWifiG0O_tcACmFWC,
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO015airplayDataBlobG0yA2CmFWC,
+                            _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO016gizmoFirstUnlockG0yA2CmFWC,
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO023airplayDidStopStreamingG0yA2CmFWC,
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO03idsG0yA2CmFWC,
                             _$s27AXWatchRemoteScreenServices20AXTwiceInternalErrorO05gizmoG0yACSi_tcACmFWC,

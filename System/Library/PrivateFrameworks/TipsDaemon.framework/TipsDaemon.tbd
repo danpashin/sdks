@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TipsDaemon.framework/TipsDaemon
-current-version:       712
+current-version:       720.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10TipsDaemon16UserGuideManagerC10userGuidesSay0A4Core0cD0CGyFZ,
                             _$s10TipsDaemon16UserGuideManagerCACycfC,
                             _$s10TipsDaemon16UserGuideManagerCACycfc,
@@ -145,8 +145,7 @@ exports:
                             _TPSContextualEventSinceDateGracePeriod,
                             _TPSDeliveryPreconditionRootKey,
                             _TPSHMManagerSpeakersConfiguredChangedNotificationString,
-                            _TPSTipsManagerErrorDomain,
-                            _TPSWidgetAssertionCreated, _TipsDaemonVersionNumber,
+                            _TPSTipsManagerErrorDomain, _TipsDaemonVersionNumber,
                             _TipsDaemonVersionString, _kTPSBetaUser,
                             _kTPSCapabilityActiveSubscription,
                             _kTPSCapabilityAltAccountEnabled,
@@ -173,6 +172,7 @@ exports:
                             _kTPSCapabilityFamilyHasChildMember,
                             _kTPSCapabilityFamilyIsChildAccount,
                             _kTPSCapabilityFamilyOrganizer,
+                            _kTPSCapabilityHeadEnrollment,
                             _kTPSCapabilityHealthChecklistAvailable,
                             _kTPSCapabilityHealthKitFeatureStatus,
                             _kTPSCapabilityHealthRecordsAccountInfoStatus,
@@ -270,6 +270,7 @@ exports:
                             TPSHKFeatureStatusValidation,
                             TPSHRAccountInfoStatusValidation,
                             TPSHandwritingKeyboardValidation,
+                            TPSHeadEnrollmentValidation,
                             TPSHealthChecklistAvailableValidation,
                             TPSHealthKitDefines, TPSHeySiriAvailableValidation,
                             TPSHeySiriEnabledValidation,

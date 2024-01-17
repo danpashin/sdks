@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/ContactsAutocompleteUI
-current-version:       718.2
+current-version:       727
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CNAUIEllipsesCharacterSet,
                             _CNAUILocalizedAddressSeparator,
                             _CNAutocompleteContactKeyForRecentsKind,
@@ -27,6 +27,7 @@ exports:
                             _CNComposeApplicationPreferredContentSizeIsLargerThanLarge,
                             _CNComposeFirstIndexInRangePassingTest,
                             _CNComposeFontMetricCacheInvalidationNotification,
+                            _CNComposeIsAppDesignedForVisionOS,
                             _CNComposeLastIndexInRangePassingTest,
                             _CNComposeLastIndexPassingTest,
                             _CNComposeRecipientCollectionDragType,
@@ -49,6 +50,7 @@ exports:
     objc-classes:         [ CNAUIMessagesImagesFacade,
                             CNAtomCenteredTextAttachment, CNAtomIcon,
                             CNAtomTextView, CNAtomView,
+                            CNAutocompleteAvatarUtilities,
                             CNAutocompleteContactsSearchTaskContext,
                             CNAutocompleteDisambiguatingTableViewCell,
                             CNAutocompleteFontMetricCache,

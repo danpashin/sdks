@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Silex.framework/Silex
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CGSizeAspectFill, _CalculateColumnWidth,
                             _CalculateMargin, _CalculateMinimumColumnWidth,
                             _NSStringFromDependencyAttribute,
@@ -377,7 +377,8 @@ exports:
                             SXEventStoreProvider,
                             SXExposureComponentViewPostProcessor,
                             SXFadeComponentAnimation,
-                            SXFadeComponentAnimationHandler, SXFeatures,
+                            SXFadeComponentAnimationHandler,
+                            SXFallbackLiveActivityAttributesProvider, SXFeatures,
                             SXFeedNavigationAppearance,
                             SXFigureComponentClassification, SXFill,
                             SXFillPositioning, SXFillView,
@@ -428,7 +429,8 @@ exports:
                             SXHorizontalStackLayout,
                             SXHorizontalStackLayoutCalculator,
                             SXHorizontalStackLayouter, SXHostApplication,
-                            SXHostExtension, SXIdentifiableItemProvider,
+                            SXHostExtension, SXHoverStyleView,
+                            SXIdentifiableItemProvider,
                             SXIllustratorComponentClassification,
                             SXImage2Resource, SXImageComponent,
                             SXImageComponentAssembly, SXImageComponentSizer,
@@ -494,15 +496,16 @@ exports:
                             SXLinkAction, SXLinkActionActivityProvider,
                             SXLinkActionFactory, SXLinkActionSerializer,
                             SXLinkActionURLQualifier, SXLinkAddition,
-                            SXLinkButtonComponentClassification, SXLinkTapEvent,
-                            SXListStyle, SXLogoComponentClassification,
-                            SXManagerAssembly, SXMapComponent,
-                            SXMapComponentAnnotation, SXMapComponentAssembly,
-                            SXMapComponentSizer, SXMapComponentSizerFactory,
-                            SXMapComponentView, SXMapComponentViewFactory,
-                            SXMapItem, SXMapSnapShotter, SXMargin,
-                            SXMediaComponentView, SXMediaEngageCompleteEvent,
-                            SXMediaEngageEvent, SXMediaEvent, SXMediaExposureEvent,
+                            SXLinkButtonComponentClassification,
+                            SXLinkHoverStylingManager, SXLinkTapEvent, SXListStyle,
+                            SXLogoComponentClassification, SXManagerAssembly,
+                            SXMapComponent, SXMapComponentAnnotation,
+                            SXMapComponentAssembly, SXMapComponentSizer,
+                            SXMapComponentSizerFactory, SXMapComponentView,
+                            SXMapComponentViewFactory, SXMapItem, SXMapSnapShotter,
+                            SXMargin, SXMediaComponentView,
+                            SXMediaEngageCompleteEvent, SXMediaEngageEvent,
+                            SXMediaEvent, SXMediaExposureEvent,
                             SXMediaPlaybackController,
                             SXMediaSharingPolicyProvider, SXMediaViewEvent,
                             SXMetadata, SXMosaicGalleryCluster,

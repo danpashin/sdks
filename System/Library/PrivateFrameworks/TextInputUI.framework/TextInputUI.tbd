@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TextInputUI.framework/TextInputUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _TUIAnalyticsEmojiSearchCharactersDeleted,
                             _TUIAnalyticsEmojiSearchCharactersInserted,
                             _TUIAnalyticsEmojiSearchClearActions,
@@ -43,7 +43,8 @@ exports:
                             __TextInputBundlesRoot, __TextInputUIBundle,
                             _iPadVisualStyle, _iPhoneVisualStyle,
                             _kCandidateImageViewHorizontalPadding,
-                            _kMagnifyingGlassInsetAmount,
+                            _kCursorAccessoryCornerRadius, _kIconSize,
+                            _kIndicatorSize, _kMagnifyingGlassInsetAmount,
                             _kTUIBarButtonHorizontalMargins, _kTUIBarButtonWidth,
                             _kTUIFloatingAssistantBarButtonWidth,
                             _kTUIFloatingAssistantInterBarItemSpace,
@@ -85,6 +86,7 @@ exports:
                             TUIEmojiVariantSelectorView, TUIGlowEffect,
                             TUIInputAccessoryBackdropView,
                             TUIInputAccessoryViewDefaultTraits,
+                            TUIInputAccessoryViewInvisibleTraits,
                             TUIInputAssistantBackdropView,
                             TUIInputAssistantHostView, TUIInputModeAccessory,
                             TUIInputModeSwitcherAccessory,

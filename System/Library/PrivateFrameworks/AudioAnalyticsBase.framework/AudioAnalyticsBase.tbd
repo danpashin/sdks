@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioAnalyticsBase.framework/AudioAnalyticsBase
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18AudioAnalyticsBase10PreferenceV3setyyxSgF,
                             _$s18AudioAnalyticsBase10PreferenceV4infoAA0D11InformationVvg,
                             _$s18AudioAnalyticsBase10PreferenceV4infoAA0D11InformationVvpMV,
@@ -29,6 +29,7 @@ exports:
                             _$s18AudioAnalyticsBase10SimpleTypeO11initOrThrowyACypKFZ,
                             _$s18AudioAnalyticsBase10SimpleTypeO12arrayLiteralA2Cd_tcfC,
                             _$s18AudioAnalyticsBase10SimpleTypeO12floatLiteralACSd_tcfC,
+                            _$s18AudioAnalyticsBase10SimpleTypeO12unwrapToUInts6UInt64VSgyF,
                             _$s18AudioAnalyticsBase10SimpleTypeO13stringLiteralACSS_tcfC,
                             _$s18AudioAnalyticsBase10SimpleTypeO14booleanLiteralACSb_tcfC,
                             _$s18AudioAnalyticsBase10SimpleTypeO14integerLiteralACs5Int64V_tcfC,
@@ -94,6 +95,8 @@ exports:
                             _$s18AudioAnalyticsBase12RouterConfigVN,
                             _$s18AudioAnalyticsBase12ServerConfigV12commonFieldsAA06CommoneG0Vvg,
                             _$s18AudioAnalyticsBase12ServerConfigV12commonFieldsAA06CommoneG0VvpMV,
+                            _$s18AudioAnalyticsBase12ServerConfigV18skipPreviousFieldsSaySSGvg,
+                            _$s18AudioAnalyticsBase12ServerConfigV18skipPreviousFieldsSaySSGvpMV,
                             _$s18AudioAnalyticsBase12ServerConfigV24monitorClientConnectionsSbvg,
                             _$s18AudioAnalyticsBase12ServerConfigV24monitorClientConnectionsSbvpMV,
                             _$s18AudioAnalyticsBase12ServerConfigVMa,
@@ -131,6 +134,8 @@ exports:
                             _$s18AudioAnalyticsBase13SummaryConfigV26makeNewEventOnChangeFieldsSDySSAC8DataTypeOGSgvpMV,
                             _$s18AudioAnalyticsBase13SummaryConfigV30calculatedIncludeInEventFieldsSaySSGvg,
                             _$s18AudioAnalyticsBase13SummaryConfigV30calculatedIncludeInEventFieldsSaySSGvpMV,
+                            _$s18AudioAnalyticsBase13SummaryConfigV32requiredDynamicCreationKeyValuesSDySSAA10SimpleTypeOGvg,
+                            _$s18AudioAnalyticsBase13SummaryConfigV32requiredDynamicCreationKeyValuesSDySSAA10SimpleTypeOGvpMV,
                             _$s18AudioAnalyticsBase13SummaryConfigV8DataTypeO3intyA2EmFWC,
                             _$s18AudioAnalyticsBase13SummaryConfigV8DataTypeO4boolyA2EmFWC,
                             _$s18AudioAnalyticsBase13SummaryConfigV8DataTypeO5floatyA2EmFWC,
@@ -270,6 +275,8 @@ exports:
                             _$s18AudioAnalyticsBase15SessionProtocolP11serviceTypeSo0a7ServiceG0VvgTq,
                             _$s18AudioAnalyticsBase15SessionProtocolP11serviceTypeSo0a7ServiceG0VvsTj,
                             _$s18AudioAnalyticsBase15SessionProtocolP11serviceTypeSo0a7ServiceG0VvsTq,
+                            _$s18AudioAnalyticsBase15SessionProtocolP12processAsync7messageyAA7MessageV_tFTj,
+                            _$s18AudioAnalyticsBase15SessionProtocolP12processAsync7messageyAA7MessageV_tFTq,
                             _$s18AudioAnalyticsBase15SessionProtocolP13configurationSDySSAA10SimpleTypeOGvgTj,
                             _$s18AudioAnalyticsBase15SessionProtocolP13configurationSDySSAA10SimpleTypeOGvgTq,
                             _$s18AudioAnalyticsBase15SessionProtocolP14processOnQueue7messageSbAA7MessageV_tFTj,
@@ -550,6 +557,7 @@ exports:
                             _$s18AudioAnalyticsBase4KeysO8vpBypassyA2CmFWC,
                             _$s18AudioAnalyticsBase4KeysO9deviceUIDyA2CmFWC,
                             _$s18AudioAnalyticsBase4KeysO9macVolumeyA2CmFWC,
+                            _$s18AudioAnalyticsBase4KeysO9transportyA2CmFWC,
                             _$s18AudioAnalyticsBase4KeysO9vpVersionyA2CmFWC,
                             _$s18AudioAnalyticsBase4KeysOMa,
                             _$s18AudioAnalyticsBase4KeysOMn,
@@ -624,6 +632,7 @@ exports:
                             _$s18AudioAnalyticsBase6ConfigC20neededPreviousFieldsShySSGvs,
                             _$s18AudioAnalyticsBase6ConfigC20systemMonitorConfigsSayAA06SystemfD0VGvg,
                             _$s18AudioAnalyticsBase6ConfigC20systemMonitorConfigsSayAA06SystemfD0VGvpMV,
+                            _$s18AudioAnalyticsBase6ConfigC26updateNeededPreviousFields7workersySayAA14WorkerProtocol_pXpG_tF,
                             _$s18AudioAnalyticsBase6ConfigC2eeoiySbAC_ACtFZ,
                             _$s18AudioAnalyticsBase6ConfigCMa,
                             _$s18AudioAnalyticsBase6ConfigCMm,
@@ -824,6 +833,7 @@ exports:
                             _$s2os6LoggerV18AudioAnalyticsBaseE8tailspinACvgZ,
                             _$s2os6LoggerV18AudioAnalyticsBaseE9bluetoothACvgZ,
                             _$s2os6LoggerV18AudioAnalyticsBaseE9utilitiesACvgZ,
+                            _$sSD18AudioAnalyticsBaseAA4KeysORszAA10SimpleTypeORs_rlE15asStringKeyDictSDySSAEGyF,
                             _$sSD18AudioAnalyticsBaseSSRszAA10SimpleTypeORs_rlE11asStringAnySDySSypGyF,
                             _$sSD18AudioAnalyticsBaseSSRszAA10SimpleTypeORs_rlE3keyACSgAA4KeysO_tciM,
                             _$sSD18AudioAnalyticsBaseSSRszAA10SimpleTypeORs_rlE3keyACSgAA4KeysO_tcig,

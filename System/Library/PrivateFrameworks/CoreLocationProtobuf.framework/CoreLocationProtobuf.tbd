@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreLocationProtobuf.framework/CoreLocationProtobuf
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CLPAccessoryMetaReadFrom,
                             _CLPAltimeterCollectionRequestReadFrom,
                             _CLPAppCollectionRequestReadFrom,
@@ -68,6 +68,7 @@ exports:
                             _CLPMotionActivityReadFrom,
                             _CLPNRCellNeighborReadFrom,
                             _CLPNRCellTowerLocationReadFrom,
+                            _CLPOutdoorUpdateReadFrom,
                             _CLPPassCollectionRequestReadFrom,
                             _CLPPassCollectionResponseReadFrom,
                             _CLPPassLocationReadFrom,
@@ -133,11 +134,12 @@ exports:
                             CLPLocationProcessingPipelineMetadata,
                             CLPLteCellNeighbor, CLPLteCellTowerLocation, CLPMeta,
                             CLPMotionActivity, CLPNRCellNeighbor,
-                            CLPNRCellTowerLocation, CLPPassCollectionRequest,
-                            CLPPassCollectionResponse, CLPPassLocation,
-                            CLPPipelineDiagnosticReport, CLPPoiCollectionRequest,
-                            CLPPoiCollectionResponse, CLPPoiHarvest,
-                            CLPPoiTriggerEvent, CLPPoiWifiAccessPoint, CLPPressure,
+                            CLPNRCellTowerLocation, CLPOutdoorUpdate,
+                            CLPPassCollectionRequest, CLPPassCollectionResponse,
+                            CLPPassLocation, CLPPipelineDiagnosticReport,
+                            CLPPoiCollectionRequest, CLPPoiCollectionResponse,
+                            CLPPoiHarvest, CLPPoiTriggerEvent,
+                            CLPPoiWifiAccessPoint, CLPPressure,
                             CLPPressureCollectionRequest,
                             CLPPressureCollectionResponse,
                             CLPPrivacySanitization, CLPQuaternion, CLPRTVisit,
@@ -249,6 +251,7 @@ exports:
                             CLPCellTowerLocation._arfcn,
                             CLPCellTowerLocation._ci, CLPCellTowerLocation._ecn0,
                             CLPCellTowerLocation._has,
+                            CLPCellTowerLocation._hasWifiFallback,
                             CLPCellTowerLocation._isLimitedService,
                             CLPCellTowerLocation._lac,
                             CLPCellTowerLocation._location,
@@ -262,6 +265,7 @@ exports:
                             CLPCellTowerLocation._serverHash,
                             CLPCellTowerLocation._serviceProviderName,
                             CLPCellTowerLocation._transmit,
+                            CLPCellTowerLocation._uniqueCount,
                             CLPCellWifiCollectionRequest._cdmaCellTowerLocations,
                             CLPCellWifiCollectionRequest._cellOutOfServiceInfos,
                             CLPCellWifiCollectionRequest._cellTowerLocations,
@@ -305,6 +309,7 @@ exports:
                             CLPIndoorEvent._inertialOdometry,
                             CLPIndoorEvent._location,
                             CLPIndoorEvent._motionActivity,
+                            CLPIndoorEvent._outdoorUpdate,
                             CLPIndoorEvent._pressure, CLPIndoorEvent._type,
                             CLPIndoorEvent._vioEstimation,
                             CLPIndoorEvent._vlLocalizationResult,
@@ -523,6 +528,7 @@ exports:
                             CLPLteCellTowerLocation._downlinkBandwidth,
                             CLPLteCellTowerLocation._ecn0,
                             CLPLteCellTowerLocation._has,
+                            CLPLteCellTowerLocation._hasWifiFallback,
                             CLPLteCellTowerLocation._isLimitedService,
                             CLPLteCellTowerLocation._isStalled,
                             CLPLteCellTowerLocation._latency,
@@ -541,7 +547,8 @@ exports:
                             CLPLteCellTowerLocation._serviceProviderName,
                             CLPLteCellTowerLocation._tac,
                             CLPLteCellTowerLocation._timingAdvance,
-                            CLPLteCellTowerLocation._uarfcn, CLPMeta._has,
+                            CLPLteCellTowerLocation._uarfcn,
+                            CLPLteCellTowerLocation._uniqueCount, CLPMeta._has,
                             CLPMeta._probeId, CLPMeta._productId,
                             CLPMeta._softwareVersion, CLPMeta._submissionId,
                             CLPMotionActivity._confidence,
@@ -566,6 +573,7 @@ exports:
                             CLPNRCellTowerLocation._ecn0,
                             CLPNRCellTowerLocation._gscn,
                             CLPNRCellTowerLocation._has,
+                            CLPNRCellTowerLocation._hasWifiFallback,
                             CLPNRCellTowerLocation._isLimitedService,
                             CLPNRCellTowerLocation._isStalled,
                             CLPNRCellTowerLocation._latency,
@@ -586,6 +594,12 @@ exports:
                             CLPNRCellTowerLocation._serviceProviderName,
                             CLPNRCellTowerLocation._tac,
                             CLPNRCellTowerLocation._timingAdvance,
+                            CLPNRCellTowerLocation._uniqueCount,
+                            CLPOutdoorUpdate._confidence,
+                            CLPOutdoorUpdate._estimatedStateProbabilityOutdoor,
+                            CLPOutdoorUpdate._has,
+                            CLPOutdoorUpdate._mctTimestamp,
+                            CLPOutdoorUpdate._timestamp, CLPOutdoorUpdate._type,
                             CLPPassCollectionRequest._meta,
                             CLPPassCollectionRequest._passLocations,
                             CLPPassCollectionRequest._signature,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PreviewsFoundation.framework/PreviewsFoundation
-current-version:       21.0.58
+current-version:       21.20.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation12CharacterSetV08PreviewsA0E20c99IdentifierAllowedACvgZ,
                             _$s10Foundation3URLV08PreviewsA0E13appendingFileyACSSF,
                             _$s10Foundation3URLV08PreviewsA0E18appendingDirectoryyACSSF,
@@ -668,6 +668,7 @@ exports:
                             _$s18PreviewsFoundation12TimeoutTimerTL,
                             _$s18PreviewsFoundation12assertUnwrap_8callsitexSgAD_AA8CallsiteVtlF,
                             _$s18PreviewsFoundation12assertUnwrap_9dsoHandle4file4line6column8functionxSgAH_SVs12StaticStringVS2uAJtlF,
+                            _$s18PreviewsFoundation12isAutomationSbvg,
                             _$s18PreviewsFoundation13AnyComparableV1loiySbAC_ACtFZ,
                             _$s18PreviewsFoundation13AnyComparableV23__derived_struct_equalsySbAC_ACtFZ,
                             _$s18PreviewsFoundation13AnyComparableV4baseypvg,
@@ -705,7 +706,7 @@ exports:
                             _$s18PreviewsFoundation13ExecutionLaneV4mainACvau,
                             _$s18PreviewsFoundation13ExecutionLaneV4mainACvgZ,
                             _$s18PreviewsFoundation13ExecutionLaneV4mainACvpZ,
-                            _$s18PreviewsFoundation13ExecutionLaneV5queue5label3qosACSS_8Dispatch0H3QoSVtFZ,
+                            _$s18PreviewsFoundation13ExecutionLaneV5queue5label3qos10attributes6targetACSS_8Dispatch0J3QoSVSo012OS_dispatch_E0CAIE10AttributesVAMSgtFZ,
                             _$s18PreviewsFoundation13ExecutionLaneV7executeyyyycF,
                             _$s18PreviewsFoundation13ExecutionLaneVMa,
                             _$s18PreviewsFoundation13ExecutionLaneVMn,

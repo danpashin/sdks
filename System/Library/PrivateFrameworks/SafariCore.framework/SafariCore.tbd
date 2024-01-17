@@ -1,14 +1,24 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-current-version:       616.1.27
+current-version:       617.1.17
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _ProfileStartPageSectionCustomizedNotification,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s10SafariCore24WBSSymbolOfNewBeginningsC15findInspirationSSyFTj,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsC15findInspirationSSyFTq,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCACycfC,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCACycfc,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCMa,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCMn,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCMo,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCMu,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCN,
+                            _$s10SafariCore24WBSSymbolOfNewBeginningsCfD,
+                            _ProfileStartPageSectionCustomizedNotification,
                             _WBSABAddressProperty, _WBSABBirthdayProperty,
                             _WBSABEmailProperty, _WBSABInstantMessageProperty,
                             _WBSABOrganizationProperty, _WBSABPhoneProperty,
@@ -19,6 +29,8 @@ exports:
                             _WBSAppWasLaunchedAfterMajorOSUpgrade,
                             _WBSApplicationIdentifierFromAuditToken,
                             _WBSAriadneComponent, _WBSAuditTokenHasEntitlement,
+                            _WBSAuthenticationPolicyForCreditCards,
+                            _WBSAuthenticationPolicyForPasswordManager,
                             _WBSAuthenticationServicesAgentAutoFillServiceName,
                             _WBSAuthenticationServicesAgentCredentialSharingGroupsErrorDomain,
                             _WBSAuthenticationServicesAgentCredentialSharingGroupsServiceName,
@@ -143,6 +155,7 @@ exports:
                             _WBSPasswordWordListCommonPasscodesIdentifier,
                             _WBSPerSiteSettingSyncInitalSyncCompletedKey,
                             _WBSPerformBlockOnMainRunLoopWithCommonModes,
+                            _WBSPrimaryAppleAccountDidChangeNotification,
                             _WBSPrintf, _WBSPrivacyPreservingDescription,
                             _WBSProfileColorSettingKey, _WBSProfileIDKey,
                             _WBSProfileIdentifierForCurrentFocusModeKey,
@@ -201,6 +214,7 @@ exports:
                             _WBSTimeUntilNextWeeklyAnalyticsReportForKey,
                             _WBSTrialGroupManagerDidChangeGroupIdentifierNotification,
                             _WBSUnlocalizedStringFromPasswordBreachCheckResult,
+                            _WBSUseSTPPasskeyDaemonDefault,
                             _WBSiCloudDriveAppletBundleIdentifier,
                             __WBSGetLocalizableBundleFromAddress,
                             __WBSLocalizedString,
@@ -240,7 +254,7 @@ exports:
                             WBSAutoFillPasskey, WBSAutoFillQuirksManager,
                             WBSAutoFillQuirksSnapshot,
                             WBSAutoFillQuirksSnapshotTransformer,
-                            WBSChangePasswordURLManager,
+                            WBSBuildingLegacy, WBSChangePasswordURLManager,
                             WBSCloudBookmarksRemoteMigrationInfo,
                             WBSCloudKitContainerManateeObserver,
                             WBSCloudKitThrottler, WBSCoalescedAsynchronousWriter,
@@ -298,6 +312,7 @@ exports:
                             WBSPasswordWordList, WBSPasswordWordListCollection,
                             WBSPasswordWordListEntry,
                             WBSPersistentPropertyListStore,
+                            WBSPrimaryAppleAccountObserver,
                             WBSPublicKeyCredentialIdentifier,
                             WBSRecentlyDeletedAlertConfiguration,
                             WBSRemotePlistController, WBSRequiredPasswordRule,
@@ -316,9 +331,9 @@ exports:
                             WBSSavedPasswordChangeRequest, WBSSavedPasswordStore,
                             WBSScopeExitHandler,
                             WBSSearchEnginePreferenceObserver, WBSTOTPGenerator,
-                            WBSURLCredentialCache,
+                            WBSURLCredentialCache, WBSURLHostComponentEnumerator,
                             WBSUnifiedBarAnalyticsRecorder,
                             WBSUserDefaultObservation, WBSWebBrowserPasskey,
-                            _WBSOptimizedKeyValueObservingUserDefaults ]
+                            _TtC10SafariCore24WBSSymbolOfNewBeginnings ]
     objc-ivars:           [ WBSAnalyticsLogger._analyticsSynchronizationQueue ]
 ...

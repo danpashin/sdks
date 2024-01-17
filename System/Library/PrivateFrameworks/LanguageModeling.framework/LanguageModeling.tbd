@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LanguageModeling.framework/LanguageModeling
-current-version:       365
+current-version:       366.4.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _LMCreateMontrealIDsFromLMTokenIDSequence,
                             _LMEnumerateAssetDataItems, _LMLanguageContextCreate,
                             _LMLanguageContextSetFeatures,
@@ -477,6 +477,7 @@ exports:
                             _kLMLanguageModelInformalAppGenre,
                             _kLMLanguageModelLanguageLikelihoodModelEnabledKey,
                             _kLMLanguageModelLastDynamicTokenIDKey,
+                            _kLMLanguageModelLegacyGenericNameTokenKey,
                             _kLMLanguageModelLocaleKey,
                             _kLMLanguageModelMaxDynamicLexiconEntryCount,
                             _kLMLanguageModelMaxDynamicModelSizeKey,

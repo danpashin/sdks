@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ASTLogCommon, _ASTLogMouse,
                             _AXAccessibilityBundlesDirectory,
                             _AXAccessibilityMacCatalystBundlesDirectory,
@@ -65,8 +65,8 @@ exports:
                             _AXLogInvertColorsTraversal, _AXLogLiveTranscription,
                             _AXLogLoading, _AXLogLocCaptionPanel,
                             _AXLogLookingGlass, _AXLogLookingGlassUI, _AXLogMIDI,
-                            _AXLogMemoryProfile, _AXLogOpaqueElements,
-                            _AXLogOrator, _AXLogPerfTesting,
+                            _AXLogMemoryProfile, _AXLogMuseAccessibility,
+                            _AXLogOpaqueElements, _AXLogOrator, _AXLogPerfTesting,
                             _AXLogPhysicalInteraction, _AXLogPronunciations,
                             _AXLogPunctuationStorage, _AXLogRTT,
                             _AXLogRemoteElement, _AXLogScrollToVisible,
@@ -110,6 +110,7 @@ exports:
                             _AXRuntimeCheck_MediaAnalysisSupport,
                             _AXRuntimeCheck_PerVoiceSettings,
                             _AXRuntimeCheck_SiriSSEOnly,
+                            _AXRuntimeCheck_SupportsFocusEverywhere,
                             _AXRuntimeCheck_SupportsLiveCaptions,
                             _AXRuntimeCheck_SupportsMacAXV2,
                             _AXRuntimeCheck_SupportsNearbyDeviceControl,

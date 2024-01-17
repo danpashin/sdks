@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesAnalytics.framework/NotesAnalytics
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ICCoreAnalyticsNoteViewApproachIOSDeeplinkThumbnail,
                             _ICCoreAnalyticsNoteViewApproachIOSSafariMenuAffordance,
                             _ICCoreAnalyticsNoteViewApproachIOSSystemPaperShortcut,
@@ -22,6 +22,7 @@ exports:
                             _ICNAQAServerStringURL, _ICNARoundTo2SigFigs,
                             _ICNARoundTo2SigFigsInt,
                             _ICNASessionDidEndNotification,
+                            _ICNASessionFlushTimedDataNotification,
                             _ICNASessionTypeGlobal, _ICNASessionTypeNotes,
                             _ICNASessionTypeNotesAndPaper, _ICNASessionTypePaper,
                             _ICNASessionWillEndNotification,
@@ -206,6 +207,7 @@ exports:
                             ICASSessionDetailData, ICASSessionDetailType,
                             ICASSessionEndData, ICASSessionSummaryArrayItemData,
                             ICASSessionSummaryData, ICASSessionType,
+                            ICASShareFlowData, ICASShareFlowType,
                             ICASSharrowContextData, ICASSmartFolderCreationData,
                             ICASSmartFoldersItemData,
                             ICASSnapshotCompletionEvent, ICASSnapshotErrorData,

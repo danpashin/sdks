@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DateV7NotesUIE09formattedB11HeadersYearSSvg,
                             _$s10Foundation4DateV7NotesUIE09formattedB11HeadersYearSSvpMV,
                             _$s10Foundation4DateV7NotesUIE09formattedB12HeadersMonthSSvg,
@@ -1059,13 +1059,19 @@ exports:
                             _$s7NotesUI23ActivityStreamPanelViewVyxG05SwiftB00F0AAMc,
                             _$s7NotesUI24LinkSuggestionsContainerV03allD0Say0A6Shared0C10SuggestionVGvg,
                             _$s7NotesUI24LinkSuggestionsContainerV03allD0Say0A6Shared0C10SuggestionVGvpMV,
-                            _$s7NotesUI24LinkSuggestionsContainerV04noteD007websiteD011queryString17isMostRecentQueryACSay0A6Shared0C10SuggestionVG_AKSSSgSbtcfC,
+                            _$s7NotesUI24LinkSuggestionsContainerV04noteD007websiteD011queryString17isMostRecentQuery12wasCancelled11dateStarted0P8FinishedACSay0A6Shared0C10SuggestionVG_ANSSSgS2b10Foundation4DateVARSgtcfC,
                             _$s7NotesUI24LinkSuggestionsContainerV04noteD0Say0A6Shared0C10SuggestionVGvg,
                             _$s7NotesUI24LinkSuggestionsContainerV04noteD0Say0A6Shared0C10SuggestionVGvpMV,
                             _$s7NotesUI24LinkSuggestionsContainerV07websiteD0Say0A6Shared0C10SuggestionVGvg,
                             _$s7NotesUI24LinkSuggestionsContainerV07websiteD0Say0A6Shared0C10SuggestionVGvpMV,
+                            _$s7NotesUI24LinkSuggestionsContainerV11dateStarted10Foundation4DateVvg,
+                            _$s7NotesUI24LinkSuggestionsContainerV11dateStarted10Foundation4DateVvpMV,
                             _$s7NotesUI24LinkSuggestionsContainerV11queryStringSSSgvg,
                             _$s7NotesUI24LinkSuggestionsContainerV11queryStringSSSgvpMV,
+                            _$s7NotesUI24LinkSuggestionsContainerV12dateFinished10Foundation4DateVvg,
+                            _$s7NotesUI24LinkSuggestionsContainerV12dateFinished10Foundation4DateVvpMV,
+                            _$s7NotesUI24LinkSuggestionsContainerV12wasCancelledSbvg,
+                            _$s7NotesUI24LinkSuggestionsContainerV12wasCancelledSbvpMV,
                             _$s7NotesUI24LinkSuggestionsContainerV17isMostRecentQuerySbvg,
                             _$s7NotesUI24LinkSuggestionsContainerV17isMostRecentQuerySbvpMV,
                             _$s7NotesUI24LinkSuggestionsContainerV27autoCompleteSuggestionItemsSaySo06ICAutogD4ItemCGvg,
@@ -1075,6 +1081,11 @@ exports:
                             _$s7NotesUI24LinkSuggestionsContainerV5emptyACvgZ,
                             _$s7NotesUI24LinkSuggestionsContainerV5emptyACvpZ,
                             _$s7NotesUI24LinkSuggestionsContainerV5emptyACvsZ,
+                            _$s7NotesUI24LinkSuggestionsContainerV9cancelledACvMZ,
+                            _$s7NotesUI24LinkSuggestionsContainerV9cancelledACvau,
+                            _$s7NotesUI24LinkSuggestionsContainerV9cancelledACvgZ,
+                            _$s7NotesUI24LinkSuggestionsContainerV9cancelledACvpZ,
+                            _$s7NotesUI24LinkSuggestionsContainerV9cancelledACvsZ,
                             _$s7NotesUI24LinkSuggestionsContainerVMa,
                             _$s7NotesUI24LinkSuggestionsContainerVMn,
                             _$s7NotesUI24LinkSuggestionsContainerVN,
@@ -1260,6 +1271,7 @@ exports:
                             _$s7SwiftUI5ColorV05NotesB0E10backgroundACvgZ,
                             _$s7SwiftUI5ColorV05NotesB0E10quaternaryACvgZ,
                             _$s7SwiftUI5ColorV05NotesB0E15groupBackgroundACvgZ,
+                            _$s7SwiftUI5ColorV05NotesB0E4tintACvgZ,
                             _$s7SwiftUI5ColorV05NotesB0E8tertiaryACvgZ,
                             _$s7SwiftUI5ColorV05NotesB0EyACSo7UIColorCcfC,
                             _$s7SwiftUI5ImageV05NotesB0E10squareCropQryF,
@@ -1288,6 +1300,9 @@ exports:
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV03didE13PreferredSizeAEvau,
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV03didE13PreferredSizeAEvgZ,
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV03didE13PreferredSizeAEvpZ,
+                            _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV12mediaDidLoadAEvau,
+                            _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV12mediaDidLoadAEvgZ,
+                            _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV12mediaDidLoadAEvpZ,
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV3allSayAEGvau,
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV3allSayAEGvgZ,
                             _$sSo12ICAttachmentC7NotesUIE28AttachmentChangeNotificationV3allSayAEGvpZ,
@@ -1616,8 +1631,6 @@ exports:
                             _kICTTChangeInLengthNotificationKey,
                             _kICTTEditedMaskNotificationKey,
                             _kICTTEditedRangeNotificationKey,
-                            _kICTextViewDidMarkTextNotification,
-                            _kICTextViewDidUnmarkTextNotification,
                             _kMonostyledFontScale,
                             _kNotesBackgroundViewDebugInterfaceMargin,
                             _kTitleFontScale, _performAfterExistingTransaction ]

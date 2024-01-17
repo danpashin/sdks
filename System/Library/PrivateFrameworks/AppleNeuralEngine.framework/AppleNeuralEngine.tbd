@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleNeuralEngine.framework/AppleNeuralEngine
@@ -7,13 +7,14 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ANEGetValidateNetworkSupportedVersion,
                             _ANEValidateNetworkCreate,
                             _AppleNeuralEngineVersionNumber,
                             _AppleNeuralEngineVersionString,
                             __ANEDaemonInterface, __ANEDaemonInterfacePrivate,
                             _kANEFAOTCacheUrlIdentifierKey,
+                            _kANEFCompilationInitiatedByE5MLKey,
                             _kANEFCompilerOptionsFilenameKey,
                             _kANEFDisableIOFencesUseSharedEventsKey,
                             _kANEFEnableFWToFWSignal, _kANEFEnableLateLatchKey,
@@ -27,11 +28,13 @@ exports:
                             _kANEFModelCoreMLValue, _kANEFModelDescriptionKey,
                             _kANEFModelHasCacheURLIdentifierKey,
                             _kANEFModelIdentityStrKey,
+                            _kANEFModelInput16KAlignmentArrayKey,
                             _kANEFModelInputSymbolIndexArrayKey,
                             _kANEFModelInputSymbolsArrayKey,
                             _kANEFModelIsEncryptedKey,
                             _kANEFModelLoadPerformanceStatsKey,
                             _kANEFModelMILValue,
+                            _kANEFModelOutput16KAlignmentArrayKey,
                             _kANEFModelOutputSymbolIndexArrayKey,
                             _kANEFModelOutputSymbolsArrayKey,
                             _kANEFModelPreCompiledValue,

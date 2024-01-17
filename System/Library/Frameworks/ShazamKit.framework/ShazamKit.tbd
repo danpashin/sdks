@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/ShazamKit.framework/ShazamKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore ]
     symbols:              [ _SHCustomCatalogTrackingMaximumSignatureDuration,
                             _SHCustomCatalogTrackingMinimumSignatureDuration,
@@ -36,7 +36,9 @@ exports:
                             _SHMediaItemSyncedLyricsSnippet,
                             _SHMediaItemTimeRanges, _SHMediaItemTimeRangesSwift,
                             _SHMediaItemTitle, _SHMediaItemVideoURL,
-                            _SHMediaItemWebURL, _SHMediaLibraryErrorDomain,
+                            _SHMediaItemWebURL,
+                            _SHMediaLibraryAccountChangeNotification,
+                            _SHMediaLibraryErrorDomain,
                             _SHMediaLibraryRemoteChangeNotification,
                             _SHMediaLibrarySyncStartConditionInitialFetch,
                             _SHMediaLibrarySyncStartConditionInitialUpload,

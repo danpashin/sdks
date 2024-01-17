@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-current-version:       4002.113.5
+current-version:       4007.14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CAMApplicationMain,
                             _CAMApplyAnimationSensitiveGeometryToView,
                             _CAMAvailableSpaceIsEqualToSpace,
@@ -153,6 +153,7 @@ exports:
                             _CAMModeAndDeviceCommandMinimumExecutionTime,
                             _CAMModeAndDeviceCommandRequestID,
                             _CAMModeAndDeviceCommandResolvedConfiguration,
+                            _CAMMotionControllerCaptureDeviceOrientationChangedNotification,
                             _CAMMotionControllerCaptureOrientationChangedNotification,
                             _CAMMotionControllerDominantPhysicalCaptureButtonChangedNotification,
                             _CAMNonDestructiveCropAspectRatioKey,
@@ -266,6 +267,7 @@ exports:
                             _CAMTorchCommandTorchMode,
                             _CAMTransformCorrectingForOrientation,
                             _CAMURLUtilitiesConfigurationURLHost,
+                            _CAMUserDeviceListLastCheckDate,
                             _CAMUserPreferenceActionModeLowLightEnabled,
                             _CAMUserPreferenceAspectRatioCrop,
                             _CAMUserPreferenceAutoLowLightVideoEnabled,
@@ -305,6 +307,7 @@ exports:
                             _CAMUserPreferenceEnableResponsiveShutter,
                             _CAMUserPreferenceEnableResponsiveShutterMigrationFromCoreMedia,
                             _CAMUserPreferenceEnableSemanticDevelopment,
+                            _CAMUserPreferenceEnableSpatialVideoCaptureControl,
                             _CAMUserPreferenceEnableSuperWideAutoMacro,
                             _CAMUserPreferenceEnableVideoConfigurationControl,
                             _CAMUserPreferenceEnableViewOutsideTheFrame,
@@ -345,6 +348,7 @@ exports:
                             _CAMUserPreferencePreservePortraitZoom,
                             _CAMUserPreferencePreserveProRes,
                             _CAMUserPreferencePreserveRAW,
+                            _CAMUserPreferencePreserveSpatialVideoEnabled,
                             _CAMUserPreferencePreserveSuperWideAutoMacro,
                             _CAMUserPreferencePreserveVideoStabilization,
                             _CAMUserPreferencePreviewAspectModeForPhotoModes,
@@ -364,6 +368,7 @@ exports:
                             _CAMUserPreferenceShowHorizonLevelPlumb,
                             _CAMUserPreferenceShowImageAnalysis,
                             _CAMUserPreferenceShowQRCodeBanners,
+                            _CAMUserPreferenceSpatialVideoEnabled,
                             _CAMUserPreferenceSquareModeEffectFilterType,
                             _CAMUserPreferenceSquareModeLastCapturedEffectFilterType,
                             _CAMUserPreferenceTimerDuration,
@@ -441,7 +446,7 @@ exports:
                             _kCAMLibrarySelectionControllerAuthorizationStatusPending,
                             _kCAMPersistenceExtensionPrivateMetadata,
                             _moveInstructionsDelay, _speedInstructionsDelay ]
-    objc-classes:         [ CAMAnalyticsCaptureEvent,
+    objc-classes:         [ CAMAccountController, CAMAnalyticsCaptureEvent,
                             CAMAnalyticsControlDrawerEvent, CAMAnalyticsEvent,
                             CAMAnalyticsIgnoredShutterEvent,
                             CAMAnalyticsMessagesCaptureEvent,
@@ -607,6 +612,7 @@ exports:
                             CAMNonDestructiveCropAspectRatioCommand,
                             CAMNonDestructiveCropEnabledCommand,
                             CAMNonInteractiveContainer, CAMObservable,
+                            CAMOrientationInstructionView,
                             CAMOrientationUtilities, CAMPanoramaArrowView,
                             CAMPanoramaCaptureRequest, CAMPanoramaConfiguration,
                             CAMPanoramaConfigurationCommand,
@@ -690,6 +696,9 @@ exports:
                             CAMShutterButtonRingView, CAMShutterIndicatorView,
                             CAMShutterUtilities, CAMSlashContainer,
                             CAMSlashMaskView, CAMSlashView, CAMSnapshotView,
+                            CAMSpatialCaptureButton,
+                            CAMSpatialCaptureInstructionLabel,
+                            CAMSpatialCaptureRecordingIndicator,
                             CAMSpatialOverCaptureEnabledCommand, CAMSpring,
                             CAMStageLightAnimator, CAMStageLightOverlayView,
                             CAMStartPanoramaCommand,

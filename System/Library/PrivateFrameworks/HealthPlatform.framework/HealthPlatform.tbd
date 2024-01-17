@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthPlatform.framework/HealthPlatform
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Downstream14HealthPlatform18PendingValuesInnerPTl,
                             _$s12ContentState14HealthPlatform0aB7ManagerPTl,
                             _$s14HealthPlatform0A14PluginDelegateMp,
@@ -265,6 +265,19 @@ exports:
                             _$s14HealthPlatform14FavoritesErrorOMn,
                             _$s14HealthPlatform14FavoritesErrorON,
                             _$s14HealthPlatform14FavoritesErrorOs0D0AAMc,
+                            _$s14HealthPlatform14IgnoreEqualityV12wrappedValuexvM,
+                            _$s14HealthPlatform14IgnoreEqualityV12wrappedValuexvg,
+                            _$s14HealthPlatform14IgnoreEqualityV12wrappedValuexvpMV,
+                            _$s14HealthPlatform14IgnoreEqualityV12wrappedValuexvs,
+                            _$s14HealthPlatform14IgnoreEqualityV2eeoiySbACyxG_AEtFZ,
+                            _$s14HealthPlatform14IgnoreEqualityV4hash4intoys6HasherVz_tF,
+                            _$s14HealthPlatform14IgnoreEqualityV9hashValueSivg,
+                            _$s14HealthPlatform14IgnoreEqualityV9hashValueSivpMV,
+                            _$s14HealthPlatform14IgnoreEqualityVMa,
+                            _$s14HealthPlatform14IgnoreEqualityVMn,
+                            _$s14HealthPlatform14IgnoreEqualityVyACyxGxcfC,
+                            _$s14HealthPlatform14IgnoreEqualityVyxGSHAAMc,
+                            _$s14HealthPlatform14IgnoreEqualityVyxGSQAAMc,
                             _$s14HealthPlatform14PluginFeedItemV04usesB4ViewSbvM,
                             _$s14HealthPlatform14PluginFeedItemV04usesB4ViewSbvg,
                             _$s14HealthPlatform14PluginFeedItemV04usesB4ViewSbvpMV,
@@ -1013,7 +1026,7 @@ exports:
                             _$s14HealthPlatform19DateRangeFeatureTagVMn,
                             _$s14HealthPlatform19DateRangeFeatureTagVN,
                             _$s14HealthPlatform19DateRangeFeatureTagVyAcA08RelevantC8IntervalVSgcfC,
-                            _$s14HealthPlatform19PluginSharableModelV10identifier7version24authorizationIdentifiers11objectTypes4data14sourceTimeZone0M6LocaleACSS_AA0dE7VersionVSay0A12KitAdditions32HKSharingAuthorizationIdentifierOGSaySo12HKObjectTypeCG10Foundation4DataVAT0nO0VSgAT0P0VSgtcfC,
+                            _$s14HealthPlatform19PluginSharableModelV10identifier7version24authorizationIdentifiers11objectTypes4data14sourceTimeZone0M6Locale13sharedSummaryACSS_AA0dE7VersionVSay0A12KitAdditions32HKSharingAuthorizationIdentifierOGSaySo12HKObjectTypeCG10Foundation4DataVAU0nO0VSgAU0P0VSgSo08HKSharedR0CSgtcfC,
                             _$s14HealthPlatform19PluginSharableModelV10identifierSSvg,
                             _$s14HealthPlatform19PluginSharableModelV10identifierSSvpMV,
                             _$s14HealthPlatform19PluginSharableModelV11objectTypesSaySo12HKObjectTypeCGvM,
@@ -1024,6 +1037,10 @@ exports:
                             _$s14HealthPlatform19PluginSharableModelV12sourceLocale10Foundation0G0VSgvg,
                             _$s14HealthPlatform19PluginSharableModelV12sourceLocale10Foundation0G0VSgvpMV,
                             _$s14HealthPlatform19PluginSharableModelV12sourceLocale10Foundation0G0VSgvs,
+                            _$s14HealthPlatform19PluginSharableModelV13sharedSummarySo08HKSharedG0CSgvM,
+                            _$s14HealthPlatform19PluginSharableModelV13sharedSummarySo08HKSharedG0CSgvg,
+                            _$s14HealthPlatform19PluginSharableModelV13sharedSummarySo08HKSharedG0CSgvpMV,
+                            _$s14HealthPlatform19PluginSharableModelV13sharedSummarySo08HKSharedG0CSgvs,
                             _$s14HealthPlatform19PluginSharableModelV14sourceTimeZone10Foundation0gH0VSgvM,
                             _$s14HealthPlatform19PluginSharableModelV14sourceTimeZone10Foundation0gH0VSgvg,
                             _$s14HealthPlatform19PluginSharableModelV14sourceTimeZone10Foundation0gH0VSgvpMV,
@@ -1391,7 +1408,9 @@ exports:
                             _$s14HealthPlatform25PluginNotificationManagerTL,
                             _$s14HealthPlatform25PluginSharableModelChangeO14updateOrCreateyACSayAA0cdE0VG_tcACmFWC,
                             _$s14HealthPlatform25PluginSharableModelChangeO15deleteAllModelsyA2CmFWC,
+                            _$s14HealthPlatform25PluginSharableModelChangeO18updateMetadataOnlyyACSayAA0cdE0VG_tcACmFWC,
                             _$s14HealthPlatform25PluginSharableModelChangeO2eeoiySbAC_ACtFZ,
+                            _$s14HealthPlatform25PluginSharableModelChangeO5reuseyACSaySo15HKSharedSummaryCG_tcACmFWC,
                             _$s14HealthPlatform25PluginSharableModelChangeO6deleteyACSaySSG_tcACmFWC,
                             _$s14HealthPlatform25PluginSharableModelChangeO7initialyACSayAA0cdE0VG_tcACmFWC,
                             _$s14HealthPlatform25PluginSharableModelChangeOMa,

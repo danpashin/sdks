@@ -1,14 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TranslationUI.framework/TranslationUI
-current-version:       249.2
+current-version:       252.11
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _$s10Foundation3URLV13TranslationUIE016topLevelSettingsB0ACvgZ,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s10Foundation3URLV13TranslationUIE012translateAppB04withACSayAA12URLQueryItemVG_tFZ,
+                            _$s10Foundation3URLV13TranslationUIE012translateAppB0ACvgZ,
+                            _$s10Foundation3URLV13TranslationUIE016topLevelSettingsB0ACvgZ,
                             _$s10Foundation3URLV13TranslationUIE017downloadLanguagesB0ACvgZ,
                             _$s10Foundation3URLV13TranslationUIE017translateSettingsB0ACvgZ,
                             _$s10Foundation6LocaleV13TranslationUI21LanguagePickerElementADMc,
@@ -35,6 +37,8 @@ exports:
                             _$s10Foundation6LocaleV13TranslationUIE9isChineseSbvg,
                             _$s10Foundation6LocaleV13TranslationUIE9isChineseSbvpMV,
                             _$s10Foundation6LocaleV13TranslationUIE9ltCurrentACvgZ,
+                            _$s10Foundation6LocaleV8LanguageV13TranslationUIE5isRTLSbvg,
+                            _$s10Foundation6LocaleV8LanguageV13TranslationUIE5isRTLSbvpMV,
                             _$s13TranslationUI04TextA7ServiceO18detectSourceLocaleySayAA0C5ModelVGAGYaFZ,
                             _$s13TranslationUI04TextA7ServiceO18detectSourceLocaleySayAA0C5ModelVGAGYaFZTu,
                             _$s13TranslationUI04TextA7ServiceO20validateTargetLocaleySayAA0C5ModelVGAGYaFZ,
@@ -1253,6 +1257,10 @@ exports:
                             _$s13TranslationUI9TextModelVSLAAMc,
                             _$s13TranslationUI9TextModelVSQAAMc,
                             _$s13TranslationUI9TextModelVSeAAMc,
+                            _$s7SwiftUI17EnvironmentValuesV011TranslationB0E16unlockAndOpenURLAA0H9URLActionVvM,
+                            _$s7SwiftUI17EnvironmentValuesV011TranslationB0E16unlockAndOpenURLAA0H9URLActionVvg,
+                            _$s7SwiftUI17EnvironmentValuesV011TranslationB0E16unlockAndOpenURLAA0H9URLActionVvpMV,
+                            _$s7SwiftUI17EnvironmentValuesV011TranslationB0E16unlockAndOpenURLAA0H9URLActionVvs,
                             _$s7SwiftUI17EnvironmentValuesV011TranslationB0E20languageLabelContextAD011DisplayNameH0OvM,
                             _$s7SwiftUI17EnvironmentValuesV011TranslationB0E20languageLabelContextAD011DisplayNameH0Ovg,
                             _$s7SwiftUI17EnvironmentValuesV011TranslationB0E20languageLabelContextAD011DisplayNameH0OvpMV,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MDM.framework/MDM
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _MDMAnalyticsSendCommandEvent,
                             _MDMAnalyticsSendPushEvent,
                             _MDMKeybagCreateMDMEscrowWithPasscode,
@@ -32,6 +32,7 @@ exports:
                             _kInstalledApplicationListKeyIsValidated,
                             _kInstalledApplicationListKeyName,
                             _kInstalledApplicationListKeyShortVersion,
+                            _kInstalledApplicationListKeySource,
                             _kInstalledApplicationListKeyVersion,
                             _kInstalledApplicationListRequestKeyIdentifiers,
                             _kInstalledApplicationListRequestKeyItems,
@@ -50,6 +51,7 @@ exports:
                             _kMCDMDAppPropertyKeyIsDeviceBasedVPP,
                             _kMCDMDAppPropertyKeyIsValidated,
                             _kMCDMDAppPropertyKeyShortVersion,
+                            _kMCDMDAppPropertyKeySourceIdentifier,
                             _kMCDMDAppPropertyKeyStaticUsage,
                             _kMCDMDAppPropertyKeyStoreItemIdentifier,
                             _kMCDMDAppPropertyKeyVersion,

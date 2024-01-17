@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/UserNotifications.framework/UserNotifications
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _UNAuthorizationStatusString, _UNBundle,
                             _UNDoubleIsZero, _UNEqualBools, _UNEqualDoubles,
                             _UNEqualFloats, _UNEqualIntegers, _UNEqualObjects,
@@ -154,6 +154,7 @@ exports:
                             UNNotificationContent._shouldSuppressSyncDismissalWhenRemoved,
                             UNNotificationContent._shouldUseRequestIdentifierForDismissalSync,
                             UNNotificationContent._sound,
+                            UNNotificationContent._speechLanguage,
                             UNNotificationContent._subtitle,
                             UNNotificationContent._summaryArgument,
                             UNNotificationContent._summaryArgumentCount,

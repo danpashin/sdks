@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WatchControlSettings.framework/WatchControlSettings
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AXAssistiveTouchCursorColorForCursorColor,
                             _WCAXHandGestureEventUsageForGreyEvent,
                             _WCAXHandGestureEventUsageUnknown,
@@ -27,7 +27,8 @@ exports:
                             _WCImageForActionGroup, _WCImageForCustomAction,
                             _WCInputSourceTypeDefaultEnabledState,
                             _WCInputSourceTypeIsSupportedOnDevice,
-                            _WCLocalizedString, _WCLocalizedTitleForCustomAction,
+                            _WCLocalizedString, _WCLocalizedStringElton,
+                            _WCLocalizedTitleForCustomAction,
                             _WCMotionPointerEdgeNone, _WCNameForAction,
                             _WCNameForActionGroup, _WCNameForActionMenuPosition,
                             _WCNameForAutoMovementSpeed,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AdCore.framework/AdCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ADAdConnectionGetStringForValue, _ADAdsOptions,
                             _ADAnalyticsEventReadFrom,
                             _ADAttributionRequestReadFrom,
@@ -28,7 +28,6 @@ exports:
                             _ADMakeMutableSecQuery, _ADOptOutRequestReadFrom,
                             _ADOptOutResponseReadFrom, _ADParameterReadFrom,
                             _ADPrivacyDaemonIdentifier,
-                            _ADRoutingInfoMessageReadFrom,
                             _ADSaveToPromotedContentKeychain,
                             _ADSegmentUpdateRequestReadFrom,
                             _ADSegmentUpdateResponseReadFrom,
@@ -129,9 +128,6 @@ exports:
                             ADOptOutRequest._timezone,
                             ADOptOutRequest._transmitTimestamp, ADParameter._key,
                             ADParameter._value,
-                            ADRoutingInfoMessage._environmentURL,
-                            ADRoutingInfoMessage._protoVersion,
-                            ADRoutingInfoMessage._searchType,
                             ADSegmentUpdateRequest._accountStates,
                             ADSegmentUpdateRequest._accountTypes,
                             ADSegmentUpdateRequest._advertisingIdentifier,

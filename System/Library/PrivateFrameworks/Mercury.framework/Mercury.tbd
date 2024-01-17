@@ -1,19 +1,20 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Mercury.framework/Mercury
-current-version:       45
+current-version:       46
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation10POSIXErrorV7MercuryE13uncheckedCode8userInfoACs5Int32V_SDySSypGtcfC,
                             _$s10Foundation10POSIXErrorV7MercuryE7current2orACs5Int32V_tFZ,
                             _$s10Foundation10POSIXErrorV7MercuryE7currentACSgvgZ,
                             _$s10Foundation13CustomNSErrorP7MercuryE16underlyingErrorsSays5Error_pGvg,
                             _$s10Foundation13CustomNSErrorP7MercuryE16underlyingErrorsSays5Error_pGvpMV,
                             _$s10Foundation13CustomNSErrorP7MercuryE4wrapyys5Error_pSgF,
+                            _$s10Foundation13CustomNSErrorP7MercuryE8wrappingyxSays5Error_pGF,
                             _$s10Foundation13CustomNSErrorP7MercuryE8wrappingyxs5Error_pSgF,
                             _$s10Foundation9MachErrorV7MercuryE13uncheckedCode8userInfoACs5Int32V_SDySSypGtcfC,
                             _$s10Foundation9MachErrorV7MercuryE19errorCodeComponentsSi6system_Si9subsystemSi4codetSgvg,
@@ -1004,6 +1005,7 @@ exports:
                             _$s7Mercury6_ErrorPAAE4code8userInfoxSi_SDySSypGtcfC,
                             _$s7Mercury6_ErrorPAAE4code8userInfoxs5Int32V_SDySSypGtcfC,
                             _$s7Mercury6_ErrorPAAE4wrapyys0B0_pSgF,
+                            _$s7Mercury6_ErrorPAAE8wrappingyxSays0B0_pGF,
                             _$s7Mercury6_ErrorPAAE8wrappingyxs0B0_pSgF,
                             _$s7Mercury6_ErrorPAASERzrlE6encode2toys7Encoder_p_tKF,
                             _$s7Mercury6_ErrorPAASHRzrlE4hash4intoys6HasherVz_tF,

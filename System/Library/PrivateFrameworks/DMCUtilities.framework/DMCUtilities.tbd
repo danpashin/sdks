@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DMCUtilities.framework/DMCUtilities
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _DMCAIDAMutableServiceContextClass,
                             _DMCAIDAServiceOwnersManagerClass,
                             _DMCAIDAServiceTypeCloud,
@@ -62,6 +62,7 @@ exports:
                             _DMCDefaultsKeyESSOTestModeEnabled,
                             _DMCDefaultsKeyEnrollmentStepTimeout,
                             _DMCDefaultsKeyIgnoreEnrollmentMode,
+                            _DMCDefaultsKeyMDMAppInstallationSourceIDOverride,
                             _DMCDefaultsKeyMDMProfilePath,
                             _DMCDefaultsKeyMobileGestaltOverride,
                             _DMCDefaultsKeyModelNameOverride,
@@ -85,7 +86,10 @@ exports:
                             _DMCEnrollmentErrorDomain, _DMCErrorArray,
                             _DMCErrorTypeFatal, _DMCErrorTypeKey,
                             _DMCErrorTypeNeedsRetry, _DMCErrorTypeRetryable,
-                            _DMCErrorTypeSkippable,
+                            _DMCErrorTypeSkippable, _DMCEventsFilePath,
+                            _DMCEventsTopicAccounts, _DMCEventsTopicOrgToken,
+                            _DMCEventsTopicPersona, _DMCEventsTopicPushToken,
+                            _DMCEventsTopicServerResponse,
                             _DMCFixPermissionOfSystemGroupContainerFileFM,
                             _DMCFixPermissionsOfSystemGroupContainerDirectoryAndContents,
                             _DMCFixPermissionsOfSystemGroupContainerDirectoryAndContentsFM,
@@ -129,6 +133,7 @@ exports:
                             _DMCLocalizedString, _DMCLocalizedStringByDevice,
                             _DMCLocalizedStringForDevice,
                             _DMCLockdownSetDeviceName, _DMCLogObjects,
+                            _DMCLoggingDirectory,
                             _DMCMAECopyActivationRecordWithError,
                             _DMCMAEGetActivationStateWithError,
                             _DMCMultiUserDeviceConfigurationFilePath,
@@ -191,6 +196,7 @@ exports:
                             _certificatesFromDERCertificateDataArray,
                             _kDMCActivationRecordDeviceFlagsKey,
                             _kDMCAppleKeychainGroup,
+                            _kDMCDeclarativeDeviceManagement,
                             _kDMCErrorDetailsBuildVersionKey,
                             _kDMCErrorDetailsOSVersionKey,
                             _kDMCErrorDetailsPairingParametersKey,
@@ -209,7 +215,8 @@ exports:
                             DMCActivationUtilities, DMCAlert, DMCAlertManager,
                             DMCAuthKitUtilities, DMCBackgroundActivityManager,
                             DMCBacktraceLogger, DMCDaemonConnectionTracker,
-                            DMCDefaults, DMCDictionaryWriter, DMCFeatureFlags,
+                            DMCDateFormatterFactory, DMCDefaults,
+                            DMCDictionaryWriter, DMCEvents, DMCFeatureFlags,
                             DMCFeatureOverrides, DMCFileAccessRepairTool,
                             DMCHTTPLog, DMCHTTPRequestor, DMCHTTPTransaction,
                             DMCHangDetectionQueue, DMCJobQueue, DMCKeychain,
@@ -221,7 +228,7 @@ exports:
                             DMCProtocolWellKnownResponse_WellKnownResponseServer,
                             DMCSpringBoardUtilities, DMCSynchronous,
                             DMCTimerContext, DMCVersioningUtilities,
-                            DMCWorkerThread, MDMPowerAssertion ]
+                            MDMPowerAssertion ]
     objc-ivars:           [ DMCDictionaryWriter._repairTool,
                             DMCFileAccessRepairTool._fileManager ]
 ...

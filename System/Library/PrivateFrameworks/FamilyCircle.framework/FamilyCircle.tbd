@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12FamilyCircle0A12FeatureFlagsO0cD00cD3KeyAAMc,
                             _$s12FamilyCircle0A12FeatureFlagsO10easySignInyA2CmFWC,
                             _$s12FamilyCircle0A12FeatureFlagsO15cashIntegrationyA2CmFWC,
@@ -15,6 +15,7 @@ exports:
                             _$s12FamilyCircle0A12FeatureFlagsO15splitHouseholdsyA2CmFWC,
                             _$s12FamilyCircle0A12FeatureFlagsO20appleCardIntegrationyA2CmFWC,
                             _$s12FamilyCircle0A12FeatureFlagsO22parentalControlMacOnlyyA2CmFWC,
+                            _$s12FamilyCircle0A12FeatureFlagsO23familyPrivacyDisclosureyA2CmFWC,
                             _$s12FamilyCircle0A12FeatureFlagsO24familyProactiveChecklistyA2CmFWC,
                             _$s12FamilyCircle0A12FeatureFlagsO2eeoiySbAC_ACtFZ,
                             _$s12FamilyCircle0A12FeatureFlagsO4hash4intoys6HasherVz_tF,
@@ -751,6 +752,8 @@ exports:
                             __FAServerResponseMessageBubbleInviteAcceptedSubTitleSenderKey,
                             __FAServerResponseMessageBubbleInviteAcceptedTitleReceiverKey,
                             __FAServerResponseMessageBubbleInviteAcceptedTitleSenderKey,
+                            __FAServerResponseMessageBubbleInviteDeclineAlertSheetMessage,
+                            __FAServerResponseMessageBubbleInviteDeclineAlertSheetTitle,
                             __FAServerResponseMessageBubbleInviteDeclineButtonLabel,
                             __FAServerResponseMessageBubbleInviteDeclinedIconKey,
                             __FAServerResponseMessageBubbleInviteDeclinedSubTitleReceiverKey,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriPlaybackControlSupport.framework/SiriPlaybackControlSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s12SiriOntology028UsoEntityBuilder_common_UserD0C0A22PlaybackControlSupportE7addName07displayL0AA0c15PrimitiveStringE0CSS_tF,
                             _$s12SiriOntology13UsoIdentifierV0A22PlaybackControlSupportE010getHomePodi17AutomationServiceD0ACyFZ,
                             _$s12SiriOntology13UsoIdentifierV0A22PlaybackControlSupportE014getRoomHomeKitD0ACyFZ,
@@ -209,6 +209,12 @@ exports:
                             _$s26SiriPlaybackControlSupport0B11ControllingP8previous7devices011shouldStartB12AfterCommand4withySaySSG_Sbys6ResultOyytAA0bE5ErrorOGctFTj,
                             _$s26SiriPlaybackControlSupport0B11ControllingP8previous7devices011shouldStartB12AfterCommand4withySaySSG_Sbys6ResultOyytAA0bE5ErrorOGctFTq,
                             _$s26SiriPlaybackControlSupport0B11ControllingTL,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO021checkIntentReponseForF11Description14intentResponseSSSgSo08INIntentM0C_tFZ,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO021createUserActivityForF6Reason05errorK0So06NSUserI0CSS_tFZ,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO02mrF14RepresentationyACSS_ACtcACmFWC,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO07flattenbeF03pceA2C_tFZ,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO11descriptionSSvg,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO11descriptionSSvpMV,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO15noContentToPlayyA2CmFWC,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO15noNowPlayingAppyA2CmFWC,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO17skipLimitExceededyA2CmFWC,
@@ -218,18 +224,18 @@ exports:
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO20adSkippingDisallowedyA2CmFWC,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO24outputDeviceNotGroupableyA2CmFWC,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO26timedOutForCanBeNowPlayingyA2CmFWC,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO27createUserActivityForResult6result08fallbackF0So06NSUserI0CSgs0K0OyxACG_SSSgtlFZ,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO28requestParametersOutOfBoundsyA2CmFWC,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO2eeoiySbAC_ACtFZ,
-                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO4hash4intoys6HasherVz_tF,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO6reasonSSSgvg,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO6reasonSSSgvpMV,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorO7unknownyA2CmFWC,
-                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO9hashValueSivg,
-                            _$s26SiriPlaybackControlSupport0B16ControllingErrorO9hashValueSivpMV,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorOMa,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorOMn,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorON,
-                            _$s26SiriPlaybackControlSupport0B16ControllingErrorOSHAAMc,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorOSQAAMc,
                             _$s26SiriPlaybackControlSupport0B16ControllingErrorOs0F0AAMc,
+                            _$s26SiriPlaybackControlSupport0B16ControllingErrorOs23CustomStringConvertibleAAMc,
                             _$s26SiriPlaybackControlSupport0B23ControlsCommandProviderCMa,
                             _$s26SiriPlaybackControlSupport0B23ControlsCommandProviderCMm,
                             _$s26SiriPlaybackControlSupport0B23ControlsCommandProviderCMn,
@@ -478,6 +484,8 @@ exports:
                             _$s26SiriPlaybackControlSupport14DeviceCategoryVs23CustomStringConvertibleAAMc,
                             _$s26SiriPlaybackControlSupport14DeviceCategoryVs25ExpressibleByArrayLiteralAAMc,
                             _$s26SiriPlaybackControlSupport14DeviceCategoryVs9OptionSetAAMc,
+                            _$s26SiriPlaybackControlSupport14DeviceSelectorC18usersInCurrentHomeSiyFTj,
+                            _$s26SiriPlaybackControlSupport14DeviceSelectorC18usersInCurrentHomeSiyFTq,
                             _$s26SiriPlaybackControlSupport14DeviceSelectorC7currentACvgZ,
                             _$s26SiriPlaybackControlSupport14DeviceSelectorC7devices8matching10aceService4withySayAA18FilteringPredicateVG_0A7KitFlow03AceJ7Invoker_pySayAA0E0VGctFTj,
                             _$s26SiriPlaybackControlSupport14DeviceSelectorC7devices8matching10aceService4withySayAA18FilteringPredicateVG_0A7KitFlow03AceJ7Invoker_pySayAA0E0VGctFTq,
@@ -1035,6 +1043,8 @@ exports:
                             _$s26SiriPlaybackControlSupport4HomeV4nameSSvpMV,
                             _$s26SiriPlaybackControlSupport4HomeV5roomsSayAA4RoomVGvg,
                             _$s26SiriPlaybackControlSupport4HomeV5roomsSayAA4RoomVGvpMV,
+                            _$s26SiriPlaybackControlSupport4HomeV5usersSivg,
+                            _$s26SiriPlaybackControlSupport4HomeV5usersSivpMV,
                             _$s26SiriPlaybackControlSupport4HomeV5zonesSayAA4ZoneVGvg,
                             _$s26SiriPlaybackControlSupport4HomeV5zonesSayAA4ZoneVGvpMV,
                             _$s26SiriPlaybackControlSupport4HomeVAA0E7WrapperAAMc,

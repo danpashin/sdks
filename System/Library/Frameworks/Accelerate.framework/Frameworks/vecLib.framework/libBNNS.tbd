@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBNNS.dylib
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _BNNSAffineGridSample, _BNNSApplyMultiheadAttention,
                             _BNNSApplyMultiheadAttentionBackward,
                             _BNNSArithmeticFilterApplyBackwardBatch,
@@ -77,6 +77,7 @@ exports:
                             _BNNSGraphCompileOptionsDestroy,
                             _BNNSGraphCompileOptionsGetCompilationEnableSignposts,
                             _BNNSGraphCompileOptionsGetDownconvertMode,
+                            _BNNSGraphCompileOptionsGetFileWriteFSyncBarrier,
                             _BNNSGraphCompileOptionsGetGenerateDebugInfo,
                             _BNNSGraphCompileOptionsGetOptimizationPreference,
                             _BNNSGraphCompileOptionsGetOutputPath,
@@ -89,6 +90,7 @@ exports:
                             _BNNSGraphCompileOptionsMakeDefault,
                             _BNNSGraphCompileOptionsSetCompilationEnableSignposts,
                             _BNNSGraphCompileOptionsSetDownconvertMode,
+                            _BNNSGraphCompileOptionsSetFileWriteFSyncBarrier,
                             _BNNSGraphCompileOptionsSetGenerateDebugInfo,
                             _BNNSGraphCompileOptionsSetOptimizationPreference,
                             _BNNSGraphCompileOptionsSetOutputPath,
@@ -199,6 +201,7 @@ exports:
                             _BNNSRandomGeneratorStateSize,
                             _BNNSRecommendDataLayoutsContraction,
                             _BNNSRecommendDataLayoutsMultiHeadAttention,
+                            _BNNSSGemvDWS, _BNNSSGemvDiscontiguousDWS,
                             _BNNSScatter, _BNNSScatterND, _BNNSSetNetwork,
                             _BNNSSetup, _BNNSShuffle,
                             _BNNSSparseEmbeddingApplyBackward,

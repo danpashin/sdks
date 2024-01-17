@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/DockKit.framework/DockKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s7DockKit0A16AccessoryManagerC21accessoryStateChangesAA0aC0C0fG0VvgTj,
                             _$s7DockKit0A16AccessoryManagerC21accessoryStateChangesAA0aC0C0fG0VvgTq,
                             _$s7DockKit0A16AccessoryManagerC21accessoryStateChangesAA0aC0C0fG0VvpMV,
@@ -273,6 +273,7 @@ exports:
                             _$s7DockKit0aB5ErrorO14noSubjectFoundyA2CmFWC,
                             _$s7DockKit0aB5ErrorO15frameRateTooLowyA2CmFWC,
                             _$s7DockKit0aB5ErrorO16cameraTCCMissingyA2CmFWC,
+                            _$s7DockKit0aB5ErrorO16frameRateTooHighyA2CmFWC,
                             _$s7DockKit0aB5ErrorO16invalidParameteryA2CmFWC,
                             _$s7DockKit0aB5ErrorO20notSupportedByDeviceyA2CmFWC,
                             _$s7DockKit0aB5ErrorO2eeoiySbAC_ACtFZ,

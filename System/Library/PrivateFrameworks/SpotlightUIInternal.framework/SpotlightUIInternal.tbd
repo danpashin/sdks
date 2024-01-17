@@ -1,16 +1,17 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightUIInternal.framework/SpotlightUIInternal
-current-version:       73.1
+current-version:       77.2.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _SPUIBringingUpKB,
                             _SPUIExtendedEdgesDimensionConstant,
-                            _SPUIExtendedLaunchConstant,
+                            _SPUIExtendedLaunchConstant, _SPUIPPMFloatValue,
+                            _SPUIPPMScaledFloatValue,
                             _SPUIPlatterViewCornerRadius, _SPUIPreferencesDomain,
                             _SPUISuiteName, _SPUIZKWExpandedPreference,
                             _SpotlightScrollSearchResults,

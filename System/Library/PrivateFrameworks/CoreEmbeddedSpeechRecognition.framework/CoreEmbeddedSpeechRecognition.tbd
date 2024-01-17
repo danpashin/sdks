@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/CoreEmbeddedSpeechRecognition
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s29CoreEmbeddedSpeechRecognition18CESAContextualDataC18fetchNamedEntities12timeIntervalSay0C0010ContextualH6EntityVGSd_tYaKF,
                             _$s29CoreEmbeddedSpeechRecognition18CESAContextualDataC18fetchNamedEntities12timeIntervalSay0C0010ContextualH6EntityVGSd_tYaKFTq,
                             _$s29CoreEmbeddedSpeechRecognition18CESAContextualDataC18fetchNamedEntities12timeIntervalSay0C0010ContextualH6EntityVGSd_tYaKFTu,
@@ -21,7 +21,7 @@ exports:
                             _$s29CoreEmbeddedSpeechRecognition18CESAContextualDataCfD,
                             _$s29CoreEmbeddedSpeechRecognition18CESAContextualDataCfd,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE05pauseE0yyF,
-                            _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE05startcE04with23didStartHandlerWithInfoySo20CESRSpeechParametersC_ySo19CESRModelPropertiesCSg_So7NSErrorCSgtctF,
+                            _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE05startcE04with23didStartHandlerWithInfoySo20CESRSpeechParametersC_ySo19CESRModelPropertiesCSg_s5Error_pSgtctF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE06resumeE014withPrefixText07postfixI008selectedI0ySS_S2StF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE07preheatcE04with0F6Source16modelOverrideURLySo15CESRAssetConfigC_SSSg10Foundation0K0VSgtF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE10invalidateyyF,
@@ -30,6 +30,7 @@ exports:
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE14addAudioPacketyy10Foundation4DataVF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE17stopAudioDecodingyyF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE18requestEagerResultyyF,
+                            _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE19forceCooldownIfIdleyyFZ,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE25startMissingAssetDownloadyyF,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE8delegate12instanceUUIDABSo0abC18RecognizerDelegate_p_Spys5UInt8VGtcfC,
                             _$sSo26CoreEmbeddedSpeechAnalyzerC0abC11RecognitionE8delegate12instanceUUIDABSo0abC18RecognizerDelegate_p_Spys5UInt8VGtcfc,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthDomainsTools.framework/HealthDomainsTools
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DateV18HealthDomainsToolsE10startOfDayACvg,
                             _$s10Foundation4DateV18HealthDomainsToolsE10startOfDayACvpMV,
                             _$s10Foundation4DateV18HealthDomainsToolsE8endOfDayACvg,
@@ -215,15 +215,20 @@ exports:
                             _$s18HealthDomainsTools13SACommandFlowVN,
                             _$s18HealthDomainsTools14FlowTaskLoggerV10taskFailedyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV11taskPartialyyF,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV11unsupportedyyF,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV12genericErroryyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV12taskCanceledyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV13taskCompletedyyF,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV14federatedStats4kind14dataTypeStringyAA09FederatedE4KindO_SStF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV15taskUnsupportedyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV16taskDisambiguateyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV22taskNeedsAuthorizationyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV4nameAcA0eF5NamesO_tcfC,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV4task6reasonySo26FLOWSchemaFLOWStatusReasonV_tF,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV4task_4name6reasonySo23FLOWSchemaFLOWStateTypeV_SSSgSo0J16FLOWStatusReasonVSgtF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV4task_4nameySo23FLOWSchemaFLOWStateTypeV_AA0eF5NamesOtF,
-                            _$s18HealthDomainsTools14FlowTaskLoggerV4task_4nameySo23FLOWSchemaFLOWStateTypeV_SSSgtF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV4taskyySo23FLOWSchemaFLOWStateTypeVF,
+                            _$s18HealthDomainsTools14FlowTaskLoggerV7successyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerV9taskStartyyF,
                             _$s18HealthDomainsTools14FlowTaskLoggerVACycfC,
                             _$s18HealthDomainsTools14FlowTaskLoggerVMa,
@@ -285,6 +290,15 @@ exports:
                             _$s18HealthDomainsTools16findRemoteDevice4with23deviceResolutionService011SiriVirtualfI00F4UnitCSg0K9Utilities0F5IdiomO_AE0fI9Providing_ptYaF,
                             _$s18HealthDomainsTools16findRemoteDevice4with23deviceResolutionService011SiriVirtualfI00F4UnitCSg0K9Utilities0F5IdiomO_AE0fI9Providing_ptYaFTu,
                             _$s18HealthDomainsTools16getWorkoutEntity4from12SiriOntology03Usof8_common_E0CSgAD0J4TaskC_tF,
+                            _$s18HealthDomainsTools17FederatedTaskKindO8rawValueACSgSS_tcfC,
+                            _$s18HealthDomainsTools17FederatedTaskKindO8rawValueSSvg,
+                            _$s18HealthDomainsTools17FederatedTaskKindO8rawValueSSvpMV,
+                            _$s18HealthDomainsTools17FederatedTaskKindOMa,
+                            _$s18HealthDomainsTools17FederatedTaskKindOMn,
+                            _$s18HealthDomainsTools17FederatedTaskKindON,
+                            _$s18HealthDomainsTools17FederatedTaskKindOSHAAMc,
+                            _$s18HealthDomainsTools17FederatedTaskKindOSQAAMc,
+                            _$s18HealthDomainsTools17FederatedTaskKindOSYAAMc,
                             _$s18HealthDomainsTools17LocationProvidingMp,
                             _$s18HealthDomainsTools17LocationProvidingTL,
                             _$s18HealthDomainsTools17isExerciseRequest2inSb12SiriOntology017UsoEntity_common_A3LogCSg_tF,

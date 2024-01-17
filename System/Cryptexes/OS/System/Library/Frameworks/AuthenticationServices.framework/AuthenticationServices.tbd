@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices'
-current-version: 616.1.27
+current-version: 617.1.17
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -184,12 +184,23 @@ exports:
                        ASAuthorizationSingleSignOnCredential, ASAuthorizationSingleSignOnProvider, 
                        ASAuthorizationSingleSignOnRequest, ASAuthorizationViewController, 
                        ASCredentialIdentityStore, ASCredentialIdentityStoreState, 
-                       ASCredentialProviderExtensionContext, ASCredentialProviderViewController, 
-                       ASCredentialServiceIdentifier, ASPasskeyAssertionCredential, 
+                       ASCredentialPickerPaneViewController, ASCredentialProviderExtensionContext, 
+                       ASCredentialProviderViewController, ASCredentialRequestBasicPaneViewController, 
+                       ASCredentialRequestButton, ASCredentialRequestButtonContinue, 
+                       ASCredentialRequestCABLEClientViewController, ASCredentialRequestCABLEConnectingViewController, 
+                       ASCredentialRequestCABLEConsentViewController, ASCredentialRequestConfirmButtonSubPane, 
+                       ASCredentialRequestContainerViewController, ASCredentialRequestEnableBluetoothViewController, 
+                       ASCredentialRequestEnableICloudKeychainViewController, ASCredentialRequestIconGenerator, 
+                       ASCredentialRequestImageSubPane, ASCredentialRequestInfoLabelSubPane, 
+                       ASCredentialRequestLoginChoiceCell, ASCredentialRequestPaneContext, 
+                       ASCredentialRequestPaneViewController, ASCredentialRequestSecondaryButton, 
+                       ASCredentialRequestSecurityKeyStringUtilities, ASCredentialRequestSubPane, 
+                       ASCredentialServiceIdentifier, ASNavigationController, ASPasskeyAssertionCredential, 
                        ASPasskeyCredentialIdentity, ASPasskeyCredentialRequest, ASPasskeyCredentialRequestParameters, 
-                       ASPasskeyRegistrationCredential, ASPasswordCredential, ASPasswordCredentialIdentity, 
-                       ASPasswordCredentialRequest, ASPublicKeyCredentialClientData, 
-                       ASSettingsHelper, ASWebAuthenticationSession, _ASAccountAuthenticationModificationExtensionManager, 
+                       ASPasskeyRegistrationCredential, ASPasswordAuthenticationPaneViewController, 
+                       ASPasswordCredential, ASPasswordCredentialIdentity, ASPasswordCredentialRequest, 
+                       ASPublicKeyCredentialClientData, ASSettingsHelper, ASViewServiceInterfaceUtilities, 
+                       ASWebAuthenticationSession, _ASAccountAuthenticationModificationExtensionManager, 
                        _ASAccountAuthenticationModificationHostViewController, _ASAccountManagerTipContent, 
                        _ASAccountManagerTipManager, _ASAccountSharingGroupInvitationContent, 
                        _ASAccountSharingGroupMemberData, _ASAccountSharingGroupMemberDataManager, 

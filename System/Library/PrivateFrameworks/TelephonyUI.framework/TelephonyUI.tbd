@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s11TelephonyUI10SOSMiniTipV2idSSvg,
                             _$s11TelephonyUI10SOSMiniTipV2idSSvpMV,
                             _$s11TelephonyUI10SOSMiniTipV7actionsSay8TipsNext0fG4TypeO6ActionVGvg,
@@ -39,6 +39,13 @@ exports:
                             _$s11TelephonyUI12FavoritesTipVMn,
                             _$s11TelephonyUI12FavoritesTipVN,
                             _$s11TelephonyUI12FavoritesTipVs12IdentifiableAAMc,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvMTj,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvMTq,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvgTj,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvgTq,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvpMV,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvsTj,
+                            _$s11TelephonyUI12TPTipsHelperC10currentTipSDyAC5EntryV4KindO8TipsNext0F0_pGvsTq,
                             _$s11TelephonyUI12TPTipsHelperC13removeEntriesyyAC5EntryV4KindOFTj,
                             _$s11TelephonyUI12TPTipsHelperC13removeEntriesyyAC5EntryV4KindOFTq,
                             _$s11TelephonyUI12TPTipsHelperC17popoverControllerSo06UIViewF0CSgvMTj,
@@ -136,6 +143,10 @@ exports:
                             _$s11TelephonyUI15FaceTimeLinkTipVMn,
                             _$s11TelephonyUI15FaceTimeLinkTipVN,
                             _$s11TelephonyUI15FaceTimeLinkTipVs12IdentifiableAAMc,
+                            _$s11TelephonyUI15SpeakerphoneTipV14isAwayFromFaceSbvMZ,
+                            _$s11TelephonyUI15SpeakerphoneTipV14isAwayFromFaceSbvgZ,
+                            _$s11TelephonyUI15SpeakerphoneTipV14isAwayFromFaceSbvsZ,
+                            _$s11TelephonyUI15SpeakerphoneTipV15$isAwayFromFace8TipsNext0iJ4TypeO9ParameterVy_SbGvgZ,
                             _$s11TelephonyUI15SpeakerphoneTipV16speakerUsedEvent8TipsNext0hI4TypeO0G0Vy_s5NeverOGvgZ,
                             _$s11TelephonyUI15SpeakerphoneTipV2idSSvg,
                             _$s11TelephonyUI15SpeakerphoneTipV2idSSvpMV,
@@ -173,6 +184,30 @@ exports:
                             _$s11TelephonyUI15TPTipHeaderViewCMu,
                             _$s11TelephonyUI15TPTipHeaderViewCN,
                             _$s11TelephonyUI15TPTipHeaderViewCfD,
+                            _$s11TelephonyUI16LiveVoicemailTipV09hasOpenedE08TipsNext0hI4TypeO5EventVy_s5NeverOGvgZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV17callScreenedEvent8TipsNext0iJ4TypeO0H0Vy_s5NeverOGvgZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV20callScreeningEnabledSbvMZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV20callScreeningEnabledSbvgZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV20callScreeningEnabledSbvsZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV21$callScreeningEnabled8TipsNext0iJ4TypeO9ParameterVy_SbGvgZ,
+                            _$s11TelephonyUI16LiveVoicemailTipV2idSSvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV2idSSvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV5rulesSay8TipsNext0gH4TypeO4RuleVGvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV5rulesSay8TipsNext0gH4TypeO4RuleVGvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV5title05SwiftB04TextVvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV5title05SwiftB04TextVvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV7actionsSay8TipsNext0gH4TypeO6ActionVGvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV7actionsSay8TipsNext0gH4TypeO6ActionVGvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV7message05SwiftB04TextVvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV7message05SwiftB04TextVvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV7optionsSay8TipsNext0gH4TypeO6OptionVGvg,
+                            _$s11TelephonyUI16LiveVoicemailTipV7optionsSay8TipsNext0gH4TypeO6OptionVGvpMV,
+                            _$s11TelephonyUI16LiveVoicemailTipV8TipsNext0E0AAMc,
+                            _$s11TelephonyUI16LiveVoicemailTipVACycfC,
+                            _$s11TelephonyUI16LiveVoicemailTipVMa,
+                            _$s11TelephonyUI16LiveVoicemailTipVMn,
+                            _$s11TelephonyUI16LiveVoicemailTipVN,
+                            _$s11TelephonyUI16LiveVoicemailTipVs12IdentifiableAAMc,
                             _$s11TelephonyUI20AvatarViewControllerMp,
                             _$s11TelephonyUI20AvatarViewControllerP8contactsSaySo9CNContactCGvgTj,
                             _$s11TelephonyUI20AvatarViewControllerP8contactsSaySo9CNContactCGvgTq,

@@ -14,14 +14,14 @@ exports:
                        _getLocalEEPROMCalibrationData, _kCatacombCurrentDateKey, 
                        _kCatacombEnrollmentCountKey, _kCatacombIdentityListKey, _kCatacombTemplateListKey, 
                        _kCatacombVersionKey, _kCoreauthdBundleIdentifier, _kMesaAbcDomain, 
-                       _kMesaAbcProcess, _kMesaAbcTypeUnlockAttempt, _kMesaCABoundedFieldLimits, 
-                       _kMesaCADailyEventName, _kMesaCAEnrollEventName, _kMesaCAFingerLiftTimeEventName, 
-                       _kMesaCAFingerTouchTimeEventName, _kMesaCALogPrefix, _kMesaCAMatchEventName, 
-                       _kMesaCATemplateMatchCountsEventName, _kMesaCAUnlockEventName, 
-                       _kMesaCAWeeklyEventName, _kPurpleBuddyBundleIdentifier, _kSpringBoardBundleIdentifier, 
-                       _logQueueLabel, _mesaScanningStateNotificationCallback, _mobileKeyBagLockStatusNotificationCallback, 
-                       _openConnection, _powerSourceInterestNotificationCallback, 
-                       _readData, _writeData ]
+                       _kMesaAbcProcess, _kMesaAbcTypeMesaCA, _kMesaAbcTypeUnlockAttempt, 
+                       _kMesaCABoundedFieldLimits, _kMesaCADailyEventName, _kMesaCAEnrollEventName, 
+                       _kMesaCAFingerLiftTimeEventName, _kMesaCAFingerTouchTimeEventName, 
+                       _kMesaCALogPrefix, _kMesaCAMatchEventName, _kMesaCATemplateMatchCountsEventName, 
+                       _kMesaCAUnlockEventName, _kMesaCAWeeklyEventName, _kPurpleBuddyBundleIdentifier, 
+                       _kSpringBoardBundleIdentifier, _logQueueLabel, _mesaScanningStateNotificationCallback, 
+                       _mobileKeyBagLockStatusNotificationCallback, _openConnection, 
+                       _powerSourceInterestNotificationCallback, _readData, _writeData ]
     objc-classes:    [ BLHelper, BLTemplateList, BLTimeBox, BioLog, BioLogBase, BiometricKitDStatistics, 
                        BiometricKitXPCServerMesa, BiometricMatchOperationMesa, MesaAutoBugCapture, 
                        MesaCAImageInfo, MesaCoreAnalytics, MesaCoreAnalyticsDailyEvent, 
@@ -43,6 +43,7 @@ exports:
                        BioLogBase._powerSourceNotification, BioLogBase._rootPath, 
                        BioLogBase._server, BioLogBase._templateList, BioLogBase._timeBox, 
                        BioLogBase._timeZoneFormatter, BioLogBase._timestampFormatter, 
-                       MesaCoreAnalyticsEvent._bioLog, MesaCoreAnalyticsEvent._fingerOn, 
-                       MesaCoreAnalyticsEvent._lastBioDevice, MesaCoreAnalyticsEvent._previousDeviceType ]
+                       MesaCoreAnalyticsEvent._bioLog, MesaCoreAnalyticsEvent._biometricABC, 
+                       MesaCoreAnalyticsEvent._fingerOn, MesaCoreAnalyticsEvent._lastBioDevice, 
+                       MesaCoreAnalyticsEvent._previousDeviceType ]
 ...

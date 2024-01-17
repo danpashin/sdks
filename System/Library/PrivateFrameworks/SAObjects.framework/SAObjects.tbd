@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AceObjectAceIdPlistKey,
                             _AceObjectAceObjectForProperty,
                             _AceObjectBoolForProperty,
@@ -262,6 +262,7 @@ exports:
                             _SAAceViewItemTypePListKey,
                             _SAAceViewListenAfterSpeakingBehaviorPListKey,
                             _SAAceViewListenAfterSpeakingPListKey,
+                            _SAAceViewPreferredSpeakableTextVoicePListKey,
                             _SAAceViewPreserveResultSpaceIfPossiblePListKey,
                             _SAAceViewSpeakableContextInfoPListKey,
                             _SAAceViewSpeakableTextPListKey,
@@ -1238,6 +1239,8 @@ exports:
                             _SADeviceMyriadConfigurationDeviceTrumpDelayPListKey,
                             _SADeviceMyriadConfigurationDeviceVTEndtimeDistanceThresholdPListKey,
                             _SADeviceRestrictionCAR_DNDValue,
+                            _SADeviceRestrictionCAR_SUPPORTS_VEHICLE_DATAValue,
+                            _SADeviceRestrictionEYES_FREEValue,
                             _SADeviceRestrictionGUEST_MODEValue,
                             _SADeviceRestrictionPHONE_FEATURES_UNAVAILABLEValue,
                             _SADeviceRestrictionPIN_LOCKValue,
@@ -5287,6 +5290,7 @@ exports:
                             _SASetDynamiteClientStateClientStatePListKey,
                             _SASetHandoffPayloadClassIdentifier,
                             _SASetHandoffPayloadHandoffPayloadPListKey,
+                            _SASetHomeContextByPassServerFlowPListKey,
                             _SASetHomeContextClassIdentifier,
                             _SASetHomeContextCurrentHomesPListKey,
                             _SASetHomeContextEntitiesPListKey,
@@ -7089,6 +7093,7 @@ exports:
                             _SAUISayItListenAfterSpeakingPListKey,
                             _SAUISayItMessagePListKey,
                             _SAUISayItRepeatablePListKey,
+                            _SAUISayItVoiceNamePListKey,
                             _SAUISetMapsAnalyticsClassIdentifier,
                             _SAUISetMapsAnalyticsExtSessionGuidCreatedTimestampPListKey,
                             _SAUISetMapsAnalyticsExtSessionGuidPListKey,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/JetPack.framework/JetPack
@@ -7,21 +7,8 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _BrotliDecoderCreateInstance,
-                            _BrotliDecoderDecompress,
-                            _BrotliDecoderDecompressStream,
-                            _BrotliDecoderDestroyInstance,
-                            _BrotliDecoderErrorString,
-                            _BrotliDecoderGetErrorCode,
-                            _BrotliDecoderHasMoreOutput,
-                            _BrotliDecoderIsFinished, _BrotliDecoderIsUsed,
-                            _BrotliDecoderSetParameter, _BrotliDecoderTakeOutput,
-                            _BrotliDecoderVersion, _BrotliDefaultAllocFunc,
-                            _BrotliDefaultFreeFunc, _BrotliGetDictionary,
-                            _BrotliGetTransforms, _BrotliSetDictionaryData,
-                            _BrotliTransformDictionaryWord,
-                            _JetPackCreateDataStream, _JetPackCreateFileStream,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _JetPackCreateDataStream, _JetPackCreateFileStream,
                             _JetPackFileEntryGetPathname,
                             _JetPackFileEntryWriteToDirectory,
                             _JetPackReaderCreate, _JetPackReaderDestroy,
@@ -70,13 +57,6 @@ exports:
                             __ZN7JetPack16AESDecoderStream8positionEv,
                             __ZN7JetPack17readBrotliSegmentERNS_12ReaderConfigENSt3__110shared_ptrINS_10BaseStreamEEE,
                             __ZN7JetPack17readJetPackStreamERNS_12ReaderConfigENSt3__110shared_ptrINS_10BaseStreamEEEbNS3_INS_17SignatureVerifierEEE,
-                            __ZN7JetPack19BrotliDecoderStream10getDecoderEv,
-                            __ZN7JetPack19BrotliDecoderStream10isFinishedEv,
-                            __ZN7JetPack19BrotliDecoderStream15fillInputBufferEv,
-                            __ZN7JetPack19BrotliDecoderStream4readEPhm,
-                            __ZN7JetPack19BrotliDecoderStream8positionEv,
-                            __ZN7JetPack19BrotliDecoderStreamC1ENSt3__110shared_ptrINS_10BaseStreamEEEmNS1_10unique_ptrINS_29BrotliDecoderWrapperInterfaceENS1_14default_deleteIS6_EEEE,
-                            __ZN7JetPack19BrotliDecoderStreamC2ENSt3__110shared_ptrINS_10BaseStreamEEEmNS1_10unique_ptrINS_29BrotliDecoderWrapperInterfaceENS1_14default_deleteIS6_EEEE,
                             __ZN7JetPack19CommonCryptoBackend11keyFromDataENSt3__16vectorIhNS1_9allocatorIhEEEE,
                             __ZN7JetPack19CommonCryptoBackend12subjectEntryEPK10__CFStringS3_,
                             __ZN7JetPack19CommonCryptoBackend13aesGCMDecryptEPKhmS2_mS2_mS2_mPhS3_m,
@@ -95,10 +75,6 @@ exports:
                             __ZN7JetPack19SignedStreamDecoder15inputIsFinishedEv,
                             __ZN7JetPack19SignedStreamDecoder4fillEm,
                             __ZN7JetPack19SignedStreamDecoder9readBlockEv,
-                            __ZN7JetPack20BrotliDecoderWrapper10isFinishedEv,
-                            __ZN7JetPack20BrotliDecoderWrapper16decompressStreamEPmPPKhS1_PPhS1_,
-                            __ZN7JetPack20BrotliDecoderWrapperC1Ev,
-                            __ZN7JetPack20BrotliDecoderWrapperC2Ev,
                             __ZN7JetPack20FileEntryGetPathnameERNS_17DiagnosticContextEPv,
                             __ZN7JetPack20UnownedPartialStream10isFinishedEv,
                             __ZN7JetPack20UnownedPartialStream11seekForwardEm,
@@ -113,8 +89,16 @@ exports:
                             __ZN7JetPack22parseDataSegmentHeaderERNS_10BaseStreamERNS_17DiagnosticContextE,
                             __ZN7JetPack22parseRootDynamicRegionERNS_10BaseStreamERNS_17DiagnosticContextE,
                             __ZN7JetPack24readSerializationSegmentERNS_12ReaderConfigENSt3__110shared_ptrINS_10BaseStreamEEE,
+                            __ZN7JetPack24throwLibArchiveExceptionEP7archiveNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE,
                             __ZN7JetPack25FileEntryWriteToDirectoryERNS_17DiagnosticContextEPvRNS_13ArchiveStreamENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE,
                             __ZN7JetPack25readMultiSegmentContainerERNS_12ReaderConfigENSt3__110shared_ptrINS_10BaseStreamEEENS2_8functionIFbS1_S5_EEE,
+                            __ZN7JetPack27AppleDecompressionInterface10isFinishedEv,
+                            __ZN7JetPack27AppleDecompressionInterface7processEPmPPKhS1_PPhb,
+                            __ZN7JetPack27AppleDecompressionInterfaceC1Ev,
+                            __ZN7JetPack27AppleDecompressionInterfaceC2Ev,
+                            __ZN7JetPack27AppleDecompressionInterfaceD0Ev,
+                            __ZN7JetPack27AppleDecompressionInterfaceD1Ev,
+                            __ZN7JetPack27AppleDecompressionInterfaceD2Ev,
                             __ZN7JetPack27parseEncryptedSegmentHeaderERNS_10BaseStreamERNS_17DiagnosticContextE,
                             __ZN7JetPack27parseSegmentContainerHeaderENSt3__110shared_ptrINS_10BaseStreamEEERNS_17DiagnosticContextE,
                             __ZN7JetPack29CCKDFParametersDestroyWrapperEP15CCKDFParameters,
@@ -133,11 +117,10 @@ exports:
                             __ZTIN7JetPack14BufferedStreamE,
                             __ZTIN7JetPack14CallbackStreamE,
                             __ZTIN7JetPack16AESDecoderStreamE,
-                            __ZTIN7JetPack19BrotliDecoderStreamE,
                             __ZTIN7JetPack19CommonCryptoBackendE,
                             __ZTIN7JetPack19SignedStreamDecoderE,
-                            __ZTIN7JetPack20BrotliDecoderWrapperE,
                             __ZTIN7JetPack20UnownedPartialStreamE,
+                            __ZTIN7JetPack27AppleDecompressionInterfaceE,
                             __ZTIN7JetPack29CommonCryptoSignatureVerifierE,
                             __ZTIN7JetPack29UnsafeIgnoreSignatureVerifierE,
                             __ZTSN7JetPack10FileStreamE,
@@ -146,11 +129,10 @@ exports:
                             __ZTSN7JetPack14BufferedStreamE,
                             __ZTSN7JetPack14CallbackStreamE,
                             __ZTSN7JetPack16AESDecoderStreamE,
-                            __ZTSN7JetPack19BrotliDecoderStreamE,
                             __ZTSN7JetPack19CommonCryptoBackendE,
                             __ZTSN7JetPack19SignedStreamDecoderE,
-                            __ZTSN7JetPack20BrotliDecoderWrapperE,
                             __ZTSN7JetPack20UnownedPartialStreamE,
+                            __ZTSN7JetPack27AppleDecompressionInterfaceE,
                             __ZTSN7JetPack29CommonCryptoSignatureVerifierE,
                             __ZTSN7JetPack29UnsafeIgnoreSignatureVerifierE,
                             __ZTVN7JetPack10FileStreamE,
@@ -159,15 +141,13 @@ exports:
                             __ZTVN7JetPack14BufferedStreamE,
                             __ZTVN7JetPack14CallbackStreamE,
                             __ZTVN7JetPack16AESDecoderStreamE,
-                            __ZTVN7JetPack19BrotliDecoderStreamE,
                             __ZTVN7JetPack19CommonCryptoBackendE,
                             __ZTVN7JetPack19SignedStreamDecoderE,
-                            __ZTVN7JetPack20BrotliDecoderWrapperE,
                             __ZTVN7JetPack20UnownedPartialStreamE,
+                            __ZTVN7JetPack27AppleDecompressionInterfaceE,
                             __ZTVN7JetPack29CommonCryptoSignatureVerifierE,
                             __ZTVN7JetPack29UnsafeIgnoreSignatureVerifierE,
-                            __kBrotliContextLookupTable,
-                            __kBrotliPrefixCodeRanges, _readStreamCallback ]
+                            _readStreamCallback ]
     objc-classes:         [ JPCallbackStream, JPDataStream, JPFileEntry,
                             JPFileStream, JPReader, JPSignatureVerifier, JPStream ]
     weak-def-symbols:     [ __ZN7JetPack21CFReleaseIgnoringNullEPKv ]

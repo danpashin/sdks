@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PowerlogHelperdOperators.framework/PowerlogHelperdOperators
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ARSessionDidPauseDarwinNotification,
                             _ARSessionDidRunDarwinNotification,
                             _KPLBatteryAgentStringOVPCount, _KPSlope,
@@ -16,10 +16,10 @@ exports:
                             _PLLogCamera, _PLLogCommon, _PLLogDisplay,
                             _PLLogDuetServiceDAS, _PLLogDuetServiceLpmSource,
                             _PLLogNetwork, _PLLogPausedCharging, _PLLogPower,
-                            _PLLogPowerMetricMonitor, _PLLogProcessMonitor,
-                            _PLLogPush, _PLLogSMC, _PLLogSQLiteConnection,
-                            _PLLogScreenState, _PLLogSoC, _PLLogSubmission,
-                            _PLLogWifi, _PLLogXPC, _PLLogZlib,
+                            _PLLogPowerMetricMonitor, _PLLogPowerSignpost,
+                            _PLLogProcessMonitor, _PLLogPush, _PLLogSMC,
+                            _PLLogSQLiteConnection, _PLLogScreenState, _PLLogSoC,
+                            _PLLogSubmission, _PLLogWifi, _PLLogXPC, _PLLogZlib,
                             _PLSleepModeNotification, _PeakForce,
                             _PeakForceMajorRadius, _PeakForceMillimetersFromEdge,
                             _PeakForceMinorRadius, _PeakForceProximity,
@@ -123,6 +123,7 @@ exports:
                             _kPLApplicationAgentEventForwardNameHomeScreenConfiguration,
                             _kPLApplicationAgentEventForwardNameHomeScreenPresentation,
                             _kPLApplicationAgentEventForwardNameLiveActivityStats,
+                            _kPLApplicationAgentEventForwardNameMotionToWake,
                             _kPLApplicationAgentEventForwardNameSystemAperture,
                             _kPLApplicationAgentEventPointNameAppDocking,
                             _kPLApplicationAgentEventPointNameAppPrewarm,
@@ -652,7 +653,14 @@ exports:
                             _kPLJ86, _kPLJ86A, _kPLK94, _kPLKeyboardBrightness,
                             _kPLLocationAgentAddProcessesOfInterestNotificationName,
                             _kPLLocationAgentEventForwardGPSSubscription,
+                            _kPLLocationAgentEventForwardGnssSession,
+                            _kPLLocationAgentEventForwardNameSuppressionManagerClient,
+                            _kPLLocationAgentEventForwardNameViewObstructed,
                             _kPLLocationAgentEventForwardOdometry,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientEventKey,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientNumbersKey,
+                            _kPLLocationAgentEventForwardSuppressionManagerClientTypeKey,
+                            _kPLLocationAgentEventForwardViewObstructedVOEventKey,
                             _kPLLocationAgentEventIntervalNameMapsBusyness,
                             _kPLLocationAgentEventIntervalNameSeparationAlert,
                             _kPLLocationAgentEventIntervalPDR,
@@ -875,6 +883,7 @@ exports:
                             _kPLXPCAgentEventForwardNameAccessory,
                             _kPLXPCAgentEventForwardNameAccessoryMotion,
                             _kPLXPCAgentEventForwardNameAirDrop,
+                            _kPLXPCAgentEventForwardNameAirDropSession,
                             _kPLXPCAgentEventForwardNameAppAccessory,
                             _kPLXPCAgentEventForwardNameCallScreeningEnabled,
                             _kPLXPCAgentEventForwardNameCarPlay,

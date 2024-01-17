@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleDepthCore.framework/AppleDepthCore
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AppleDepthCoreVersionNumber,
                             _AppleDepthCoreVersionString,
                             __Z11isArrayType28ADArgumentParserArgumentType,
@@ -79,6 +79,7 @@ exports:
                             __ZN16PixelBufferUtils13asPixelBufferEmmjPv,
                             __ZN16PixelBufferUtils13forEveryPixelEP10__CVBufferS1_U13block_pointerFvPvjS2_jEi,
                             __ZN16PixelBufferUtils13forEveryPixelEP10__CVBufferU13block_pointerFvPvjEi,
+                            __ZN16PixelBufferUtils13getTurboColorEfRfS0_S0_,
                             __ZN16PixelBufferUtils14asVImageBufferEP10__CVBuffer,
                             __ZN16PixelBufferUtils14asVImageBufferEP10__CVBufferm,
                             __ZN16PixelBufferUtils14copyAttachmentEP10__CVBufferPK10__CFStringP16CVAttachmentMode,
@@ -100,6 +101,7 @@ exports:
                             __ZN16PixelBufferUtils21createPixelBufferCopyEP10__CVBuffer,
                             __ZN16PixelBufferUtils21pixelFormatFromStringEPKc,
                             __ZN16PixelBufferUtils22pixelBufferFromCGImageEP7CGImagej,
+                            __ZN16PixelBufferUtils22pixelBufferFromRawFileEPKc,
                             __ZN16PixelBufferUtils22pixelBufferFromRawFileEPKcmmj,
                             __ZN16PixelBufferUtils22pixelBufferToImageFileEPKcP10__CVBufferPK10__CFString,
                             __ZN16PixelBufferUtils22savePlyFromDepthBufferEP10__CVBufferPKcf7CGPointfffbb,

@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaLibraryCore.framework/MediaLibraryCore
 current-version:       1
 compatibility-version: 1
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AddStringToStringCache, _AppendCStringMax,
                             _AppendNestedSearchCriteriaList,
                             _AppendNumericSearchCriterion,
@@ -717,6 +717,7 @@ exports:
                             __ZN6mlcore22ItemPropertyDiscNumberEv,
                             __ZN6mlcore22ItemPropertyGenreOrderEv,
                             __ZN6mlcore22ItemPropertyIsExplicitEv,
+                            __ZN6mlcore22ItemPropertyIsPlayableEv,
                             __ZN6mlcore22ItemPropertyIsPreorderEv,
                             __ZN6mlcore22ItemPropertyLikedStateEv,
                             __ZN6mlcore22ItemPropertySampleRateEv,
@@ -1010,6 +1011,7 @@ exports:
                             __ZN6mlcore29TVEpisodePropertyPersistentIDEv,
                             __ZN6mlcore30AlbumPropertyGenrePersistentIDEv,
                             __ZN6mlcore30AlbumPropertyPreOrderItemCountEv,
+                            __ZN6mlcore30ArtistPropertyLibraryItemCountEv,
                             __ZN6mlcore30ArtworkTokenPropertyEntityTypeEv,
                             __ZN6mlcore30ArtworkTokenPropertySourceTypeEv,
                             __ZN6mlcore30DebugDescriptionFromSearchDataERKN13mediaplatform4DataE,
@@ -1052,6 +1054,7 @@ exports:
                             __ZN6mlcore31ItemPropertyVolumeNormalizationEv,
                             __ZN6mlcore31LibraryPropertyPropertySourceIDEv,
                             __ZN6mlcore31PlaylistAuthorPropertyIsPendingEv,
+                            __ZN6mlcore31PlaylistCategoryTypeIsEditorialEv,
                             __ZN6mlcore31PlaylistPropertyCloudAuthorNameEv,
                             __ZN6mlcore31PlaylistPropertyDatePlayedLocalEv,
                             __ZN6mlcore31PlaylistPropertyGroupingSortKeyEv,
@@ -1081,6 +1084,7 @@ exports:
                             __ZN6mlcore32ItemPropertyReportingStoreItemIDEv,
                             __ZN6mlcore32ItemPropertyShowComposerAsArtistEv,
                             __ZN6mlcore32ItemPropertyStoreLyricsAvailableEv,
+                            __ZN6mlcore32PlaylistCategoryTypeIsUserSharedEv,
                             __ZN6mlcore32PlaylistItemPropertyPersistentIDEv,
                             __ZN6mlcore32PlaylistItemPropertyPositionUUIDEv,
                             __ZN6mlcore32PlaylistItemReactionPropertyDateEv,
@@ -1125,6 +1129,7 @@ exports:
                             __ZN6mlcore34PlaylistItemsDifferenceQueryResultC2ENS_10MediaErrorE,
                             __ZN6mlcore34PlaylistItemsDifferenceQueryResultC2ERKNSt3__16vectorINS1_10shared_ptrINS_12PlaylistItemEEENS1_9allocatorIS5_EEEESA_,
                             __ZN6mlcore34PlaylistPropertyCloudAuthorStoreIDEv,
+                            __ZN6mlcore34PlaylistPropertyCollaboratorStatusEv,
                             __ZN6mlcore34PlaylistPropertyContainedMediaTypeEv,
                             __ZN6mlcore34PlaylistPropertyCoverArtworkRecipeEv,
                             __ZN6mlcore34PlaylistPropertyIsKeepLocalEnabledEv,
@@ -1145,6 +1150,7 @@ exports:
                             __ZN6mlcore35ItemPropertyPurchasePreferredAdamIDEv,
                             __ZN6mlcore35ItemPropertySubscriptionStoreItemIDEv,
                             __ZN6mlcore35LibraryPropertyPropertyPersistentIDEv,
+                            __ZN6mlcore35PersonPropertyHasLightweightProfileEv,
                             __ZN6mlcore35PlaylistPropertyCloudLastUpdateTimeEv,
                             __ZN6mlcore35TVSeasonPropertyLatestItemDateAddedEv,
                             __ZN6mlcore35comparisonUsingMultiSortDescriptorsERKNSt3__16vectorINS_19MultiSortDescriptorENS0_9allocatorIS2_EEEE,
@@ -1287,6 +1293,8 @@ exports:
                             __ZN6mlcore6Person13setImageTokenERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
                             __ZN6mlcore6Person15cloudIdentifierEv,
                             __ZN6mlcore6Person18setCloudIdentifierERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
+                            __ZN6mlcore6Person21hasLightweightProfileEv,
+                            __ZN6mlcore6Person24setHasLightweightProfileEi,
                             __ZN6mlcore6Person4nameEv,
                             __ZN6mlcore6Person6handleEv,
                             __ZN6mlcore6Person7setNameERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE,
@@ -1429,6 +1437,7 @@ exports:
                             __ZNK6mlcore11PersonTable16imageTokenColumnEv,
                             __ZNK6mlcore11PersonTable18persistentIDColumnEv,
                             __ZNK6mlcore11PersonTable21cloudIdentifierColumnEv,
+                            __ZNK6mlcore11PersonTable24lightweightProfileColumnEv,
                             __ZNK6mlcore11PersonTable7indicesEv,
                             __ZNK6mlcore11QueryResult5errorEv,
                             __ZNK6mlcore11Transaction10isReadOnlyEv,
@@ -1595,6 +1604,7 @@ exports:
                             __ZNK6mlcore14ContainerTable23hasCloudPlayOrderColumnEv,
                             __ZNK6mlcore14ContainerTable23workoutTemplateIDColumnEv,
                             __ZNK6mlcore14ContainerTable24cloudAuthorStoreIDColumnEv,
+                            __ZNK6mlcore14ContainerTable24collaboratorStatusColumnEv,
                             __ZNK6mlcore14ContainerTable24containedMediaTypeColumnEv,
                             __ZNK6mlcore14ContainerTable24coverArtworkRecipeColumnEv,
                             __ZNK6mlcore14ContainerTable24parentPersistentIDColumnEv,
@@ -1787,11 +1797,13 @@ exports:
                             __ZNK6mlcore16AlbumArtistTable13storeIDColumnEv,
                             __ZNK6mlcore16AlbumArtistTable14sortNameColumnEv,
                             __ZNK6mlcore16AlbumArtistTable15keepLocalColumnEv,
+                            __ZNK6mlcore16AlbumArtistTable15sortOrderColumnEv,
                             __ZNK6mlcore16AlbumArtistTable16likedStateColumnEv,
                             __ZNK6mlcore16AlbumArtistTable17cloudStatusColumnEv,
                             __ZNK6mlcore16AlbumArtistTable17groupingKeyColumnEv,
                             __ZNK6mlcore16AlbumArtistTable18persistentIDColumnEv,
                             __ZNK6mlcore16AlbumArtistTable21keepLocalStatusColumnEv,
+                            __ZNK6mlcore16AlbumArtistTable22sortOrderSectionColumnEv,
                             __ZNK6mlcore16AlbumArtistTable26keepLocalConstraintsColumnEv,
                             __ZNK6mlcore16AlbumArtistTable27keepLocalStatusReasonColumnEv,
                             __ZNK6mlcore16AlbumArtistTable27likedStateChangedDateColumnEv,

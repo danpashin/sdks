@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PosterKit.framework/PosterKit
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9PosterKit13VerticalLabelC17maximumTextLength3forSi12CoreGraphics7CGFloatV_tFZ,
                             _$s9PosterKit13VerticalLabelCACycfC,
                             _$s9PosterKit13VerticalLabelCACycfc,
@@ -74,7 +74,10 @@ exports:
                             _$s9PosterKit27IncomingCallTextViewAdapterC011displayNameE0SSvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC011displayNameE0SSvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC011displayNameE0SSvs,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC020setupOrTeardownEmojieF11IfNecessaryyyF,
                             _$s9PosterKit27IncomingCallTextViewAdapterC03sete16FontUsingDefaultI5Sizes03newI0ySo6UIFontC_tF,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC05emojiF10ControllerSo06UIViewI0CSgvg,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC05emojiF10ControllerSo06UIViewI0CSgvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC06statusE0SSSgvM,
                             _$s9PosterKit27IncomingCallTextViewAdapterC06statusE0SSSgvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC06statusE0SSSgvpMV,
@@ -83,6 +86,8 @@ exports:
                             _$s9PosterKit27IncomingCallTextViewAdapterC10statusFontSo6UIFontCSgvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC10statusFontSo6UIFontCSgvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC10statusFontSo6UIFontCSgvs,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC10tightFrameSo6CGRectVvg,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC10tightFrameSo6CGRectVvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC12callIsActiveSbvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC12callIsActiveSbvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC12sizeThatFits2inSo6CGSizeVAG_tF,
@@ -104,6 +109,7 @@ exports:
                             _$s9PosterKit27IncomingCallTextViewAdapterC17secondaryNameFontSo6UIFontCSgvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC17secondaryNameFontSo6UIFontCSgvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC17secondaryNameFontSo6UIFontCSgvs,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC17styleBoundingRectSo6CGRectVyF,
                             _$s9PosterKit27IncomingCallTextViewAdapterC18emphasizedNameFontSo6UIFontCvM,
                             _$s9PosterKit27IncomingCallTextViewAdapterC18emphasizedNameFontSo6UIFontCvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC18emphasizedNameFontSo6UIFontCvpMV,
@@ -113,6 +119,7 @@ exports:
                             _$s9PosterKit27IncomingCallTextViewAdapterC18preferredAlignmentSo013PRPosterTitleI0VvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC18preferredAlignmentSo013PRPosterTitleI0Vvs,
                             _$s9PosterKit27IncomingCallTextViewAdapterC19overrideTitleLayout4withySo08PRPosteriJ0V_tF,
+                            _$s9PosterKit27IncomingCallTextViewAdapterC22emojiHostingController33_A25E3DC5526DB441750BE7D216313464LL7SwiftUI09UIHostingJ0CyAA0cdeF0VGSgvpfi,
                             _$s9PosterKit27IncomingCallTextViewAdapterC24multilineNameIsDisplayedSbvg,
                             _$s9PosterKit27IncomingCallTextViewAdapterC24multilineNameIsDisplayedSbvpMV,
                             _$s9PosterKit27IncomingCallTextViewAdapterC25posterAppearanceDidChangeyySo08PRPosterI0CF,
@@ -168,6 +175,13 @@ exports:
                             _$s9PosterKit34AmbientEditingTitledViewControllerCMn,
                             _$s9PosterKit34AmbientEditingTitledViewControllerCN,
                             _$s9PosterKit34AmbientEditingTitledViewControllerCfD,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsC17idealSpaceBetween03topE00L4Font06bottomE00nM012CoreGraphics7CGFloatVSS_So6UIFontCSSAMtFZ,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCACycfC,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCACycfc,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCMa,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCMn,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCN,
+                            _$s9PosterKit40IncomingCallTextViewConfigurationMetricsCfD,
                             _$sSo26PRPosterSuggestionMetadataC9PosterKitE10encodeJSON10Foundation4DataVSgyF,
                             _$sSo26PRPosterSuggestionMetadataC9PosterKitE12decodeObject8withJSONABXDSg10Foundation4DataV_tFZ,
                             _$sSo26PRPosterSuggestionMetadataC9PosterKitE13attributeTypeSo0a13RoleAttributeG0avg,
@@ -231,6 +245,8 @@ exports:
                             _PREnumerateInterfaceOrientationsForMask,
                             _PRErrorCodeToDebugDescription,
                             _PRFontNameForTimeFontIdentifier,
+                            _PRGetMaximumMemoryUsageForCurrentProcess,
+                            _PRGetMemoryUsageForCurrentProcess,
                             _PRIconGridSizeClassForWidgetFamily,
                             _PRIconGridSizeClassMaskForWidgetFamilyMask,
                             _PRInlineComplicationGalleryBackgroundElementKind,
@@ -240,6 +256,7 @@ exports:
                             _PRInlineComplicationGalleryItemIconDimension,
                             _PRInlineComplicationGalleryItemIconToTextSpacing,
                             _PRInlineComplicationGalleryItemWidgetHeight,
+                            _PRInlineComplicationGallerySectionHorizontalInset,
                             _PRInlineComplicationGalleryTitleElementKind,
                             _PRInlineComplicationSuggestionsSectionIdentifier,
                             _PRIsDepthEffectDisallowed,
@@ -415,6 +432,7 @@ exports:
                             PREditingContentStylePickerComponentViewController,
                             PREditingDidDismissAction, PREditingDoneButton,
                             PREditingFontAndColorPickerViewController,
+                            PREditingFontAndContentStylePickerSelectionChange,
                             PREditingFontAndContentStylePickerViewController,
                             PREditingFontPickerCellView,
                             PREditingFontPickerComponentViewController,
@@ -481,6 +499,7 @@ exports:
                             PRIncomingCallMetricsProvider,
                             PRIncomingCallTextViewAdapter,
                             PRIncomingCallTextViewAdapterWrapper,
+                            PRIncomingCallTextViewConfigurationMetrics,
                             PRIncomingPosterConfiguration,
                             PRInlineComplicationContainerViewController,
                             PRInlineComplicationGalleryItemCell,
@@ -520,6 +539,7 @@ exports:
                             PRPosterContentGradientStyle,
                             PRPosterContentLUTStyle,
                             PRPosterContentStyleBackgroundRenderer,
+                            PRPosterContentStyleSerialization,
                             PRPosterContentStyleVibrantContentRenderer,
                             PRPosterContentVibrantMaterialStyle,
                             PRPosterContentVibrantMonochromeStyle,
@@ -566,7 +586,8 @@ exports:
                             PRRenderingEnvironmentViewController,
                             PRRenderingSceneViewController, PRRenderingSession,
                             PRRenderingView, PRSceneExtension,
-                            PRSceneViewController, PRSelectableEditingItemView,
+                            PRSceneInvalidationAction, PRSceneViewController,
+                            PRSelectableEditingItemView,
                             PRSidebarComplicationsSnapshotSceneSpecification,
                             PRSidebarComplicationsSnapshotViewController,
                             PRSidebarWidgetSuggestionsCollectionViewLayout,

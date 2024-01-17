@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriIdentityInternal.framework/SiriIdentityInternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s13IntentHandler20SiriIdentityInternal25InProcessHandlingStrategyPTl,
                             _$s13SiriUtilities0A11EnvironmentC0A16IdentityInternalE07getUserD00A7KitFlow0gD8ProviderCSgyFZ,
                             _$s20SiriIdentityInternal012UserIdentifyB16ResolutionResultC11unsupported9forReasonACXDAA0deb11UnsupportedJ0O_tFZ,
@@ -61,6 +61,7 @@ exports:
                             _$s20SiriIdentityInternal0B10NLv3IntentVN,
                             _$s20SiriIdentityInternal0B10NLv3IntentVs23CustomStringConvertibleAAMc,
                             _$s20SiriIdentityInternal0B12FlowProviderV04makeD03for0a3KitD003AnyD0CSgAF5ParseO_tF,
+                            _$s20SiriIdentityInternal0B12FlowProviderV17disallowInSharing33_BF5ED4D534832C3A2ED51F4BE1B0A22DLLSbvpfi,
                             _$s20SiriIdentityInternal0B12FlowProviderVACycfC,
                             _$s20SiriIdentityInternal0B12FlowProviderVMa,
                             _$s20SiriIdentityInternal0B12FlowProviderVMn,

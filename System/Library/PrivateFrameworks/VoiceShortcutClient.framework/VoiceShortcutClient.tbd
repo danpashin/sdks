@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VoiceShortcutClient.framework/VoiceShortcutClient
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s19VoiceShortcutClient10XPCMessageMp,
                             _$s19VoiceShortcutClient10XPCMessagePSETb,
                             _$s19VoiceShortcutClient10XPCMessagePSeTb,
@@ -381,6 +381,7 @@ exports:
                             _VCBundleIdentifierSpringBoard,
                             _VCBundleIdentifierStocks, _VCBundleIdentifierTV,
                             _VCBundleIdentifierTeaMinus,
+                            _VCBundleIdentifierTranslate,
                             _VCBundleIdentifierVoiceMemos,
                             _VCBundleIdentifierWallet,
                             _VCBundleIdentifierWeather,
@@ -499,7 +500,8 @@ exports:
                             _WFLogCategorySmartShortcutPicker,
                             _WFLogCategorySpotlightSync, _WFLogCategoryStaccato,
                             _WFLogCategoryStateMachine,
-                            _WFLogCategoryTestHarness, _WFLogCategoryTips,
+                            _WFLogCategoryTestHarness,
+                            _WFLogCategoryTestingLifecycle, _WFLogCategoryTips,
                             _WFLogCategoryTopHits,
                             _WFLogCategoryTriggerNotifications,
                             _WFLogCategoryTriggers,
@@ -530,6 +532,7 @@ exports:
                             _WFRotateImageLeftFilesActionIdentifier,
                             _WFRotateImageRightFilesActionIdentifier,
                             _WFRunSourceForExecutionContext,
+                            _WFRunSourceIsExemptFromOutputApproval,
                             _WFRunSourceIsSpotlight, _WFRunSourceIsSuggestion,
                             _WFRunnerDefaultMaxRunTimeSeconds,
                             _WFRunnerHomeResidentMaxRunTimeSeconds,
@@ -554,6 +557,7 @@ exports:
                             _WFSpotlightResultRunnableIsAppTopHitExclusive,
                             _WFSpotlightResultRunnablePrimaryPhrase,
                             _WFSpotlightResultRunnableSubtitle,
+                            _WFSpotlightResultRunnableTopHitBadge,
                             _WFSpotlightResultWorkflowRunnerClientAvailableActionsDidChangeNotificationName,
                             _WFSpringBoardWorkflowRunnerClientAppShortcutPrefix,
                             _WFStaccatoActionInteractionTypeLongPress,
@@ -638,12 +642,13 @@ exports:
                             _WFToggleSettingContextualActions,
                             _WFTopHitContextualActionErrorDomain,
                             _WFTopHitContextualActionTypeForBundleIdentifier,
-                            _WFTopHitLimitForType,
+                            _WFTopHitLimitForType, _WFTranslateActionIdentifier,
                             _WFViewServiceDismissalReasonBadState,
                             _WFViewServiceDismissalReasonNotification,
                             _WFViewServiceDismissalReasonSystemCancelled,
                             _WFViewServiceDismissalReasonUserCancelled,
                             _WFViewServiceDismissalReasonUserCancelledWithHomeButton,
+                            _WFVoiceMemosActionIdentifier,
                             _WFWebArchivePboardType,
                             _WFWorkflowControllerCurrentActionFractionCompletedKey,
                             _WFWorkflowControllerCurrentActionIndexKey,
@@ -675,6 +680,7 @@ exports:
                             _WFWorkflowRunSourceContextualActionSiri,
                             _WFWorkflowRunSourceContextualActionSpotlightPrediction,
                             _WFWorkflowRunSourceContextualActionSpotlightSearch,
+                            _WFWorkflowRunSourceContextualActionSpotlightTopHit,
                             _WFWorkflowRunSourceContextualActionSpotlightUnknown,
                             _WFWorkflowRunSourceDockMenu,
                             _WFWorkflowRunSourceDroplet,
@@ -686,6 +692,7 @@ exports:
                             _WFWorkflowRunSourceKeyboardShortcut,
                             _WFWorkflowRunSourceLockScreenPrediction,
                             _WFWorkflowRunSourceMenuBar,
+                            _WFWorkflowRunSourceMica,
                             _WFWorkflowRunSourceMyWorkflows,
                             _WFWorkflowRunSourcePersonalAutomation,
                             _WFWorkflowRunSourceRemoteExecution,
@@ -748,7 +755,8 @@ exports:
                             _getWFSmartShortcutPickerLogObject,
                             _getWFSpotlightSyncLogObject,
                             _getWFStaccatoLogObject, _getWFStateMachineLogObject,
-                            _getWFTestHarnessLogObject, _getWFTipsLogObject,
+                            _getWFTestHarnessLogObject,
+                            _getWFTestingLifecycleLogObject, _getWFTipsLogObject,
                             _getWFTopHitsLogObject,
                             _getWFTriggerNotificationsLogObject,
                             _getWFTriggersLogObject,
@@ -827,10 +835,10 @@ exports:
                             WFLinkActionWorkflowRunnerClient,
                             WFLinkContextualAction, WFListDisplayConfiguration,
                             WFMenuBarWorkflowRunnerClient,
-                            WFObservableArrayResult, WFObservableObjectResult,
-                            WFObservableResult, WFOnScreenContent,
-                            WFOnScreenContentExtractor, WFOnScreenContentNode,
-                            WFOnScreenContentService,
+                            WFMicaWorkflowRunnerClient, WFObservableArrayResult,
+                            WFObservableObjectResult, WFObservableResult,
+                            WFOnScreenContent, WFOnScreenContentExtractor,
+                            WFOnScreenContentNode, WFOnScreenContentService,
                             WFOnScreenContentServiceOptions,
                             WFOpenURLContextualAction,
                             WFOutOfProcessWorkflowController,

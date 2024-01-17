@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ICActiveUserIdentityDidChangeNotification,
                             _ICAgeVerificationStateDidChangeNotification,
                             _ICArtworkInfoKeyArtworkDictionary,
@@ -38,9 +38,11 @@ exports:
                             _ICCloudClientActiveUserIdentityDidChangeNotification,
                             _ICCloudClientArtworkDownloadsDidCompleteNotification,
                             _ICCloudClientCloudAddToPlaylistBehaviorDidChangeNotification,
+                            _ICCloudClientCloudFavoriteSongAddToLibraryBehaviorDidChangeNotification,
                             _ICCloudClientCreateArtworkInfoDictionary,
                             _ICCloudClientEnableCloudLibraryFailureTypeChangedNotification,
                             _ICCloudClientErrorDomain,
+                            _ICCloudClientGetStringForAddToLibraryBehavior,
                             _ICCloudClientGetStringForAddToPlaylistBehavior,
                             _ICCloudClientGetStringForRequestReason,
                             _ICCloudClientInitialCloudLibraryImportCompletedNotification,
@@ -303,6 +305,9 @@ exports:
                             _ICStoreHTTPHeaderKeyXAppleTimingApp,
                             _ICStoreHTTPHeaderKeyXAppleUseAMD,
                             _ICStoreHTTPHeaderKeyXCache,
+                            _ICStoreHTTPHeaderKeyXDAAPClientDebugFeatures,
+                            _ICStoreHTTPHeaderKeyXDAAPClientFeaturesVersion,
+                            _ICStoreHTTPHeaderKeyXDAAPSupportedFeatures,
                             _ICStoreHTTPHeaderKeyXDSID,
                             _ICStoreHTTPHeaderKeyXEnqueuerDSID,
                             _ICStoreHTTPHeaderKeyXGUID,
@@ -339,6 +344,8 @@ exports:
                             _ICStorePlatformPlatformIdentifierOmni,
                             _ICStoreServerErrorDomain,
                             _ICStoreURLQueryParameterKeyDeviceGUIDQueryParam,
+                            _ICStoreURLRequestHTTPStatusCodeUserInfoKey,
+                            _ICStoreURLRequestParsedBodyInfoKey,
                             _ICStoreVideoArtworkInfoBestSizesForSize,
                             _ICSubscriptionStatusOfferTypeHardware1,
                             _ICSubscriptionStatusOfferTypeHomePod,
@@ -527,6 +534,7 @@ exports:
                             ICAddToWishListResponse, ICAgeVerificationManager,
                             ICAgeVerificationState, ICAgeVerifier,
                             ICAsyncBlockOperation, ICAsyncOperation,
+                            ICAuthServiceClientTokenProviderDebugConfiguration,
                             ICAuthorizeMachineRequest,
                             ICAuthorizeMachineResponse, ICBook,
                             ICBuyProductRequest, ICClientInfo, ICCloudAddReferral,

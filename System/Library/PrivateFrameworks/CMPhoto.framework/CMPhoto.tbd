@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CMPhoto.framework/CMPhoto
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CMPhotoAsyncDispatcherCreate,
                             _CMPhotoAsyncDispatcherDispatchBlock,
                             _CMPhotoAsyncDispatcherDispatchBlockWithOrderedCompletion,
@@ -236,6 +236,8 @@ exports:
                             _CMPhotoGetImageType,
                             _CMPhotoGetPreferredDNGTileSizeForImageSize,
                             _CMPhotoGetPreferredHEIFTileSizeForImageSize,
+                            _CMPhotoInterchangeCompactDecode,
+                            _CMPhotoInterchangeCompactEncode,
                             _CMPhotoIs400EncodeAvailable,
                             _CMPhotoIs422EncodeAvailable,
                             _CMPhotoIs444EncodeAvailable,
@@ -739,5 +741,5 @@ exports:
                             _kCMPhotoTranscodePayload_SourceReference_Type,
                             _kFigPhotoSurfacePoolDefault,
                             _kFigPhotoSurfacePoolOneShot ]
-    objc-classes:         [ CMPhotoTiledLayer ]
+    objc-classes:         [ CMPhotoInterchangeCompactMetal, CMPhotoTiledLayer ]
 ...

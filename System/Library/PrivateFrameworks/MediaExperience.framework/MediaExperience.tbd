@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaExperience.framework/MediaExperience
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AVController_ActiveAudioRouteAttribute,
                             _AVController_PickableRouteType_Default,
                             _AVController_PickableRouteType_Override,
@@ -750,6 +750,7 @@ exports:
                             _kFigEndpointRemoteControlGroupProperty_SubEndpoints,
                             _kFigEndpointUIAgentNotificationPayloadKey_CopyPasswordFromKeychainContext,
                             _kFigEndpointUIAgentNotificationPayloadKey_CopyPasswordFromKeychainInfo,
+                            _kFigEndpointUIAgentNotificationPayloadKey_EchoedDictionary,
                             _kFigEndpointUIAgentNotificationPayloadKey_FinishedWithPromptInfo,
                             _kFigEndpointUIAgentNotificationPayloadKey_ShowAuthPromptInfo,
                             _kFigEndpointUIAgentNotificationPayloadKey_ShowErrorPromptInfo,
@@ -820,6 +821,8 @@ exports:
                             _kFigRoutingContextCreateOption_ContextType,
                             _kFigRoutingContextCreateOption_ContextUUID,
                             _kFigRoutingContextCreateOption_RemoteGroupID,
+                            _kFigRoutingContextGlobalModificationOption_PreemptivePortConnection,
+                            _kFigRoutingContextGlobalModificationOption_ShowErrorPromptDictionaryToEcho,
                             _kFigRoutingContextNotificationPayloadKey_CommChannelUUID,
                             _kFigRoutingContextNotificationPayloadKey_ConfigUpdateReasonEndedFailed_CurrentRoutes,
                             _kFigRoutingContextNotificationPayloadKey_ConfigUpdateReasonEndedFailed_DeviceID,
@@ -1136,6 +1139,7 @@ exports:
                             _kMXSessionNotificationKey_AudioModeDidChange_AudioMode,
                             _kMXSessionNotificationKey_AvailableFormatsDidChange_Formats,
                             _kMXSessionNotificationKey_AvailablePhysicalFormatsDidChange_Formats,
+                            _kMXSessionNotificationKey_BadgeTypeDidChange_BadgeType,
                             _kMXSessionNotificationKey_ForceSoundCheckDidChange_ForceSoundCheck,
                             _kMXSessionNotificationKey_InputGainAvailableDidChange_State,
                             _kMXSessionNotificationKey_InputGainScalarDidChange_Gain,
@@ -1147,8 +1151,10 @@ exports:
                             _kMXSessionNotificationKey_NumberOfOutputChannelsDidChange_ChannelCount,
                             _kMXSessionNotificationKey_OutputDestinationsDidChange_Destinations,
                             _kMXSessionNotificationKey_PiPIsPossibleDidChange_PiPPossible,
+                            _kMXSessionNotificationKey_PrefersConcurrentAirPlayAudio,
                             _kMXSessionNotificationKey_ReporterIDsDidChange_ReporterIDs,
                             _kMXSessionNotificationKey_SpeechDetectStyleDidChange_MXSessionSpeechDetectStyle,
+                            _kMXSessionNotificationKey_SupportedOutputChannelLayoutsDidChange_ChannelLayouts,
                             _kMXSessionNotificationKey_VoicePromptStyleDidChange_VoicePromptStyle,
                             _kMXSessionNotification_ActiveAudioRouteDidChange,
                             _kMXSessionNotification_AirPlayVideoWillBeInterrupted,
@@ -1160,6 +1166,7 @@ exports:
                             _kMXSessionNotification_AvailableFormatsDidChange,
                             _kMXSessionNotification_AvailablePhysicalFormatsDidChange,
                             _kMXSessionNotification_AvailableSampleRatesDidChange,
+                            _kMXSessionNotification_BadgeTypeDidChange,
                             _kMXSessionNotification_ForceSoundCheckDidChange,
                             _kMXSessionNotification_InputGainAvailableDidChange,
                             _kMXSessionNotification_InputGainScalarDidChange,
@@ -1173,10 +1180,12 @@ exports:
                             _kMXSessionNotification_OutputDestinationsDidChange,
                             _kMXSessionNotification_PiPIsPossibleDidChange,
                             _kMXSessionNotification_PickableRoutesDidChange,
+                            _kMXSessionNotification_PrefersConcurrentAirPlayAudioDidChange,
                             _kMXSessionNotification_ReporterIDsDidChange,
                             _kMXSessionNotification_RoutingContextDidChange,
                             _kMXSessionNotification_SomeOtherNonAmbientSessionIsPlayingDidChange,
                             _kMXSessionNotification_SpeechDetectStyleDidChange,
+                            _kMXSessionNotification_SupportedOutputChannelLayoutsDidChange,
                             _kMXSessionNotification_SystemHasAudioInputDeviceDidChange,
                             _kMXSessionNotification_SystemHasAudioInputDeviceExcludingBluetoothDidChange,
                             _kMXSessionNotification_VoicePromptStyleDidChange,
@@ -1203,6 +1212,7 @@ exports:
                             _kMXSessionProperty_AudioToolboxIsPlaying,
                             _kMXSessionProperty_AuditToken,
                             _kMXSessionProperty_AvailableOutputStreamFormats,
+                            _kMXSessionProperty_BadgeType,
                             _kMXSessionProperty_BestAvailableContentType,
                             _kMXSessionProperty_CameraParameters,
                             _kMXSessionProperty_CanBeginInterruption,
@@ -1230,6 +1240,7 @@ exports:
                             _kMXSessionProperty_CurrentOutputSampleRate,
                             _kMXSessionProperty_CurrentSpeechDetectionDeviceSampleRate,
                             _kMXSessionProperty_CurrentStereoInputOrientation,
+                            _kMXSessionProperty_CurrentlyPlayingBufferedAudioFormatInfo,
                             _kMXSessionProperty_CurrentlyPlayingContentIsEligibleForSpatialization,
                             _kMXSessionProperty_CurrentlyPlayingSourceFormatInfo,
                             _kMXSessionProperty_DefaultCalibratedOutputVolume,
@@ -1327,6 +1338,7 @@ exports:
                             _kMXSessionProperty_PreferredPersistentRoute,
                             _kMXSessionProperty_PreferredStereoInputOrientation,
                             _kMXSessionProperty_PrefersBluetoothAccessoryMuting,
+                            _kMXSessionProperty_PrefersConcurrentAirPlayAudio,
                             _kMXSessionProperty_PrefersInterruptionOnRouteDisconnect,
                             _kMXSessionProperty_PrefersMultichannelAudio,
                             _kMXSessionProperty_PrefersNoDucking,
@@ -1359,6 +1371,7 @@ exports:
                             _kMXSessionProperty_StarkFigEndpointCentralObject,
                             _kMXSessionProperty_StopsWhenDeviceLocks,
                             _kMXSessionProperty_SubscribeToNotifications,
+                            _kMXSessionProperty_SupportedOutputChannelLayouts,
                             _kMXSessionProperty_SystemHasAudioInputDevice,
                             _kMXSessionProperty_SystemHasAudioInputDeviceExcludingBluetooth,
                             _kMXSessionProperty_TemporaryAssertionEnabled,
@@ -1386,6 +1399,18 @@ exports:
                             _kMXSession_AudioQueueOptionsKey_FadeDuration,
                             _kMXSession_AudioQueueOptionsKey_IsMuted,
                             _kMXSession_AudioQueueOptionsKey_IsSilentMuted,
+                            _kMXSession_BadgeType_DolbyAtmos,
+                            _kMXSession_BadgeType_DolbyAudio,
+                            _kMXSession_BadgeType_NotApplicable,
+                            _kMXSession_BadgeType_SpatialAudio,
+                            _kMXSession_BadgeType_Stereo,
+                            _kMXSession_BadgeType_Surround,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfoKey_ContentType,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfo_ContentType_AppleSpatialAudio,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfo_ContentType_DolbyAtmos,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfo_ContentType_DolbyAudio,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfo_ContentType_Stereo,
+                            _kMXSession_CurrentlyPlayingBufferedAudioFormatInfo_ContentType_Surround,
                             _kMXSession_DataSourceDescriptionKey_ID,
                             _kMXSession_DataSourceDescriptionKey_MicrophoneOrientation,
                             _kMXSession_DataSourceDescriptionKey_MicrophonePolarPatterns,

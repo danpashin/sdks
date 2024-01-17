@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/EventKit.framework/EventKit
-current-version:       1870
+current-version:       1870.2.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s8EventKit26EKRemoteUIObjectSerializerC24serializedRepresentation8ekObject22obfuscateKeyPropertiesAA0c12UISerializedI0CSo8EKObjectC_SbtF,
                             _$s8EventKit26EKRemoteUIObjectSerializerC24serializedRepresentation8ekObjectAA0c12UISerializedI0CSo8EKObjectC_tF,
                             _$s8EventKit26EKRemoteUIObjectSerializerC26deserializedRepresentation20serializedDictionary019objectIDToChangeSetI3Map0jk10PersistentiN010eventStore14occurrenceDateAA0C20UIDeserializedObjectCSgSDySSypG_SDySo10EKObjectIDCAMGAPSo07EKEventQ0C10Foundation0S0VSgtF,
@@ -153,7 +153,6 @@ exports:
                             _EKHasAlarmsPropertyId,
                             _EKHasRecurrenceRulesPropertyId,
                             _EKICSImportErrorDomain,
-                            _EKInvitationNotificationsDisabledKey,
                             _EKParticipantStatusToCalAttendeeStatus,
                             _EKPreferences_Notification_AlertInviteeDeclines,
                             _EKPreferences_Notification_DeselectedCalendarIdentifiers,
@@ -163,7 +162,6 @@ exports:
                             _EKPreferences_Notification_UnselectedCalendarIdentifiersForFocusMode,
                             _EKPriorityPropertyId, _EKRecurrenceRulesPropertyId,
                             _EKRedaction, _EKReminderModifiedNotification,
-                            _EKSharedCalendarNotificationsDisabledKey,
                             _EKStorageUsageAttachmentsKey,
                             _EKStorageUsageEventsKey, _EKTitlePropertyId,
                             _EKTravelEngineLogHandle,

@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AudioAnalyticsExternal.framework/AudioAnalyticsExternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s22AudioAnalyticsExternal04CoreB6WorkerC0aB4Base0E8ProtocolAAMc,
                             _$s22AudioAnalyticsExternal04CoreB6WorkerC0aB4Base19StartOnFirstMessageAAMc,
                             _$s22AudioAnalyticsExternal04CoreB6WorkerC0aB4Base25RunOnSingleMessageSessionAAMc,
@@ -238,6 +238,7 @@ exports:
                             _$s22AudioAnalyticsExternal15TailspinManagerCfD,
                             _$s22AudioAnalyticsExternal15TailspinManagerCfd,
                             _$s22AudioAnalyticsExternal15TailspinOptionsV26ioCycleThresholdPreference0aB4Base0I0Vys6UInt32VGvpfi,
+                            _$s22AudioAnalyticsExternal15TailspinOptionsV28ignoreSilentOutputPreference0aB4Base0I0VySbGvpfi,
                             _$s22AudioAnalyticsExternal15TailspinOptionsV29ignoreSingleMessagePreference0aB4Base0I0VySbGvpfi,
                             _$s22AudioAnalyticsExternal15TailspinOptionsV29inputIgnoredDevicesPreference0aB4Base0I0VySSGvpfi,
                             _$s22AudioAnalyticsExternal15TailspinOptionsV30outputIgnoredDevicesPreference0aB4Base0I0VySSGvpfi,

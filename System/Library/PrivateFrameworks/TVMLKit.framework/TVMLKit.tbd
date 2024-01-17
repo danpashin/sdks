@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ActuallyVisibleView, _ImpressionVisibilityFactor,
                             _ImpressionableRectVisibleFactor,
                             _IsPerformanceLoggingEnabled,
@@ -385,6 +385,7 @@ exports:
                             _TVViewElementStyleTransitionInterval,
                             _TVViewElementStyleVisualEffect,
                             _TVViewElementStyleWidth,
+                            __TVAppDocumentDidUpdateNotification,
                             __TVAppNavigationDidDisplayViewControllerNotification,
                             __TVAppNavigationWillDisplayViewControllerNotification,
                             __TVAppTemplateImpressionableTestAndAddToMultableArray,

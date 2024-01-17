@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NotesSupport.framework/NotesSupport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DateV12NotesSupportE014briefFormattedB0SSvg,
                             _$s10Foundation4DateV12NotesSupportE014briefFormattedB0SSvpMV,
                             _$s10Foundation4DateV12NotesSupportE014briefFormattedB16ForAccessibilitySSvg,
@@ -109,11 +109,13 @@ exports:
                             _ICNotePersistentStoreName,
                             _ICNotesAppBundleIdentifier,
                             _ICObjectsAreEqualCheckingNil, _ICOldNoteModelName,
-                            _ICPNGDataFromCGImage, _ICPaperDocUTI,
+                            _ICPNGDataFromCGImage, _ICPPMCGFloat,
+                            _ICPPMScaledCGFloat, _ICPaperDocUTI,
                             _ICPersistentContainerDidUnlockDatabaseNotification,
                             _ICPersistentContainerWillLockDatabaseNotification,
-                            _ICProtocolCast, _ICRTCClientName,
-                            _ICRTCTelemetryServiceNameBasic,
+                            _ICProtocolCast,
+                            _ICQuickLookExtensionBundleIdentifier,
+                            _ICRTCClientName, _ICRTCTelemetryServiceNameBasic,
                             _ICRTCTelemetryServiceNameGeneral,
                             _ICRTCTelemetryServiceOneTimeEventTokensKey,
                             _ICRectEdgeAtIndex, _ICRectEdgeToIndex,
@@ -256,7 +258,8 @@ exports:
                             _TSUHSBFromCGColorRef, _TSUHSBToRGB, _TSUMix,
                             _TSURGBToHSB, _TSURangeEnclosesRange,
                             _TSUReverseSquare, _TSURound, _TSUSineMap,
-                            _catchingException, _dispatchMainAfterDelay,
+                            __ICPPMScaledCGFloat, _catchingException,
+                            _dispatchMainAfterDelay,
                             _kICAlwaysShowInlineSketchUI,
                             _kICDataMigratorDeleteLocalAccountGuardKey,
                             _kICDefaultToPaperKitAttachmentsDefaultsKey,

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpotlightDaemon.framework/SpotlightDaemon
-current-version:       2268.1.8
+current-version:       2274.8.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _BulkDeleteAttributes, _CSEnablePrivacyRedact,
                             _CSIndexAgentMachServiceName,
                             _CSIndexDelegateAgentMachServiceName,
@@ -81,10 +81,10 @@ exports:
                             SPConcreteCoreSpotlightIndexer._cancelPtr,
                             SPConcreteCoreSpotlightIndexer._checkedInClients,
                             SPConcreteCoreSpotlightIndexer._createCount,
-                            SPConcreteCoreSpotlightIndexer._knownClients,
                             SPConcreteCoreSpotlightIndexer._lastPreheat,
                             SPConcreteCoreSpotlightIndexer._lastTTLPass,
                             SPConcreteCoreSpotlightIndexer._maintenanceOperations,
+                            SPConcreteCoreSpotlightIndexer._readOnly,
                             SPConcreteCoreSpotlightIndexer._reindexAllDelegateBundleIDs,
                             SPConcreteCoreSpotlightIndexer._scheduledStringsCleanup,
                             SPConcreteCoreSpotlightIndexer._softSuspended,

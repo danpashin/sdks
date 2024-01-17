@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/PrivateFederatedLearning
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _BOUND_MAX, _FedStatsErrorDomain,
                             _PFLClientIsAllowedForIdentifier,
                             _PFLClientIsEntitled, _PFLFetchModelRequestReadFrom,
@@ -103,6 +103,9 @@ exports:
                             FedStatsCategoricalTypeSubcategory,
                             FedStatsCohortFactory,
                             FedStatsCohortQueryFieldGeneric,
+                            FedStatsCohortQueryInstalledApps,
+                            FedStatsCohortQueryInstalledAppsMedia,
+                            FedStatsCohortQueryInstalledAppsPhone,
                             FedStatsCohortQueryLocale, FedStatsCombinationType,
                             FedStatsDataCohort, FedStatsDataEncoder,
                             FedStatsDataEncoderDimensionalResult,
@@ -111,17 +114,17 @@ exports:
                             FedStatsInvalidDataType, FedStatsLog,
                             FedStatsSQLiteCategoryDatabase,
                             FedStatsSQLiteDatabase, PFLAnalyticsSubmitter,
-                            PFLBackgroundSession, PFLCKNetworkHandler,
-                            PFLCloudKitStorage, PFLCompletionContext,
-                            PFLDeviceResults, PFLDiagnosticReporting,
-                            PFLFetchModelRequest, PFLFetchModelResponse,
-                            PFLFetchPatchRequest, PFLFetchPatchResponse,
-                            PFLFetchTasksRequest, PFLFetchTasksResponse,
-                            PFLFileStorage, PFLForegroundSession,
-                            PFLInvernessService, PFLModelHandler,
-                            PFLNetworkResourceManager, PFLPartialSession,
-                            PFLSession, PFLTask, PFLTaskConfiguration,
-                            PFLTaskContainer, PFLTaskLocalPrivacyParams,
+                            PFLCKNetworkHandler, PFLCloudKitStorage,
+                            PFLCompletionContext, PFLDeviceResults,
+                            PFLDiagnosticReporting, PFLFetchModelRequest,
+                            PFLFetchModelResponse, PFLFetchPatchRequest,
+                            PFLFetchPatchResponse, PFLFetchTasksRequest,
+                            PFLFetchTasksResponse, PFLFileStorage,
+                            PFLForegroundSession, PFLInvernessService,
+                            PFLModelHandler, PFLNetworkResourceManager,
+                            PFLPartialSession, PFLSession, PFLTask,
+                            PFLTaskConfiguration, PFLTaskContainer,
+                            PFLTaskLocalPrivacyParams,
                             PFLTaskLocalTrainingParams,
                             PFLTaskStateCollectingMetrics,
                             PFLTaskStateCompilingModel,

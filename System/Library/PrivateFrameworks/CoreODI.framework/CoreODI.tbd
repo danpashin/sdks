@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreODI.framework/CoreODI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s7CoreODI18ODIBindingsManagerC8delegate33_DB4FB414490F49379D1F68CAF9723080LLAA0cD8Delegate_pSgvpfi,
                             _$s7CoreODI18ODIBindingsManagerC8geoCoder0A13ODIEssentials03GeoF0Cvpfi,
                             _$s7CoreODI18ODIBindingsManagerCMa,
@@ -84,6 +84,7 @@ exports:
                             _$s7CoreODI18ODISessionInternalC17serviceIdentifier11forDSIDType14locationBundle011andLocationjF0ACSgSo20ODIServiceProviderIda_So11ODITypeOfIDVSo8NSBundleCSgSSSgtcfc,
                             _$s7CoreODI18ODISessionInternalC18authorizedServicesSaySo20ODIServiceProviderIdaGvpfi,
                             _$s7CoreODI18ODISessionInternalC19authorizedDsidTypesSaySo11ODITypeOfIDVGvpfi,
+                            _$s7CoreODI18ODISessionInternalC20_startCollectingTask33_19AF22E69F4D48D7EA827242BB7F5AA2LLScTyyts5NeverOGSgvpfi,
                             _$s7CoreODI18ODISessionInternalC21cacheDeviceFieldsTask33_19AF22E69F4D48D7EA827242BB7F5AA2LLScTyyts5NeverOGSgvpfi,
                             _$s7CoreODI18ODISessionInternalC23_lastAssessmentTimedOut33_19AF22E69F4D48D7EA827242BB7F5AA2LLSbvpfi,
                             _$s7CoreODI18ODISessionInternalC23profileDeviceDataFields33_19AF22E69F4D48D7EA827242BB7F5AA2LLSay0A13ODIEssentials0fG5FieldVGSgvpfi,
@@ -185,11 +186,15 @@ exports:
                             _ODIServiceProviderIdAppleCare,
                             _ODIServiceProviderIdApplicationCreate,
                             _ODIServiceProviderIdApplicationSubmit,
+                            _ODIServiceProviderIdBCConsent,
+                            _ODIServiceProviderIdBCInitial,
+                            _ODIServiceProviderIdBCValidation,
                             _ODIServiceProviderIdCashACH,
                             _ODIServiceProviderIdCashCiP,
                             _ODIServiceProviderIdCashP2p,
                             _ODIServiceProviderIdCashTopUp,
                             _ODIServiceProviderIdEnhancedFraudProtection,
+                            _ODIServiceProviderIdEnhancedFraudProtectionTopup,
                             _ODIServiceProviderIdIdUpdate,
                             _ODIServiceProviderIdInstallmentRepaymentAuth,
                             _ODIServiceProviderIdInstallmentRepaymentChange,

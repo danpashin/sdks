@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NSPersistentStoreRequest;
 @class NSPersistentStoreCoordinator;
 
-#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST || TARGET_OS_VISION)
 @class NSCoreDataCoreSpotlightDelegate;
 #endif
 
@@ -74,7 +74,7 @@ API_AVAILABLE(macosx(10.5),ios(3.0))
 // before removal.
 - (void)willRemoveFromPersistentStoreCoordinator:(nullable NSPersistentStoreCoordinator *)coordinator;
 
-#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST)
+#if (TARGET_OS_OSX || TARGET_OS_IOS || TARGET_OS_MACCATALYST || TARGET_OS_VISION)
 /* Return the Core Spotlight exporter if one exists for this store. The exporter
     can be set as part of the store options when it is added to the coordinator. */
 @property (nonatomic, readonly) NSCoreDataCoreSpotlightDelegate *coreSpotlightExporter API_AVAILABLE(macosx(10.13),ios(11.0)) API_UNAVAILABLE(tvos,watchos);

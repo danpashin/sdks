@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
-current-version:       755.1.1
+current-version:       767.3.3
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _HMFAreStringsEqualIgnoringCase, _HMFBooleanToString,
                             _HMFCreateOsLogHandle, _HMFCurrentAsyncContext,
                             _HMFDataIsReversed, _HMFDescribeCollection,
@@ -34,6 +34,7 @@ exports:
                             _HMFMemoryMonitorProcessMemoryPressureNotification,
                             _HMFMemoryMonitorSystemMemoryStateDidChangeNotification,
                             _HMFMessageActivityPrefix, _HMFMessageFlowKey,
+                            _HMFMessageUntrustedClientIdentifierHeader,
                             _HMFMethodDescription, _HMFObjectDescription,
                             _HMFOperatingSystemVersionCompare,
                             _HMFPairingKeyLength, _HMFPowerLogEventTypeKey,
@@ -67,6 +68,8 @@ exports:
                             _HMFProductInfoCinarOSVersion,
                             _HMFProductInfoCoralOSVersion,
                             _HMFProductInfoCoyoteOSVersion,
+                            _HMFProductInfoDawnBOSVersion,
+                            _HMFProductInfoDawnCOSVersion,
                             _HMFProductInfoDawnOSVersion,
                             _HMFProductInfoDaytonaOSVersion,
                             _HMFProductInfoDonnerTideOSVersion,
@@ -119,6 +122,8 @@ exports:
                             _HMFProductInfoLibertyCOSVersion,
                             _HMFProductInfoLibertyGOSVersion,
                             _HMFProductInfoLibertyOSVersion,
+                            _HMFProductInfoLighthouseBOSVersion,
+                            _HMFProductInfoLighthouseCOSVersion,
                             _HMFProductInfoLighthouseOSVersion,
                             _HMFProductInfoMonarchOSVersion,
                             _HMFProductInfoParisBOSVersion,
@@ -154,7 +159,11 @@ exports:
                             _HMFProductInfoStarEOSVersion,
                             _HMFProductInfoStarFOSVersion,
                             _HMFProductInfoStarOSVersion,
+                            _HMFProductInfoStarlightBOSVersion,
+                            _HMFProductInfoStarlightCOSVersion,
                             _HMFProductInfoStarlightOSVersion,
+                            _HMFProductInfoSunburstBOSVersion,
+                            _HMFProductInfoSunburstCOSVersion,
                             _HMFProductInfoSunburstOSVersion,
                             _HMFProductInfoSydneyBOSVersion,
                             _HMFProductInfoSydneyCOSVersion,
@@ -268,9 +277,8 @@ exports:
                             HMFPowerLogger, HMFPowerManager, HMFPreference,
                             HMFPreferences, HMFPrivateObjectFormatter,
                             HMFProcessExitContext, HMFProcessInfo, HMFProductInfo,
-                            HMFPromise, HMFRingBuffer, HMFScheduler,
-                            HMFSoftwareVersion, HMFStagedValue,
-                            HMFStringIndentation, HMFSystemInfo,
+                            HMFPromise, HMFScheduler, HMFSoftwareVersion,
+                            HMFStagedValue, HMFStringIndentation, HMFSystemInfo,
                             HMFSystemPreference, HMFTimer, HMFTimerManager,
                             HMFUnfairLock, HMFVersion, HMFWeakObject, HMFWiFiManager,
                             HMFWiFiManagerDataSource, HMFWiFiNetworkInfo,

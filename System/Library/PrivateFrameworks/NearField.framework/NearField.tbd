@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/NearField.framework/NearField
@@ -7,9 +7,9 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CH_APP_NAME, _IsValueCBOREncodable,
-                            _MAX_HANDOVER_SELECT_DELAY,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _ACCELERATED_POLL_DURATION_IN_MS, _CH_APP_NAME,
+                            _IsValueCBOREncodable, _MAX_HANDOVER_SELECT_DELAY,
                             _NFSecureElementManagerSessionECDSACertificateKey,
                             _NFSecureElementManagerSessionRSAACertificateKey,
                             _NFSelectVASResponseKeyAppLabel,
@@ -79,6 +79,7 @@ exports:
                             NFReaderSession, NFReaderSessionCallbacks,
                             NFReaderSessionInterface,
                             NFReaderSessionInternalInterface,
+                            NFReaderSessionPollConfig,
                             NFRemoteAdminCardIngestionRequest,
                             NFRemoteAdminManager, NFRemoteAdminManagerCallbacks,
                             NFRemoteAdminManagerInterface, NFRunScriptParameters,

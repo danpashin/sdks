@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FMIPCore.framework/FMIPCore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s6Output8FMIPCore41FMIPAccessoryDiscoveryControllerCallbacksPTl,
                             _$s7Request8FMIPCore21FMImageCacheOperationPTl,
                             _$s8FMIPCore0A16PreferenceDomainSSvg,
@@ -267,6 +267,7 @@ exports:
                             _$s8FMIPCore11FMIPManagerC7enqueue23notificationPromptEventyAA020FMIPNotificationAutheF0V_tF,
                             _$s8FMIPCore11FMIPManagerC7enqueue28satelliteLocationUpdateEventyAA012FMFSatelliteefG0V_tF,
                             _$s8FMIPCore11FMIPManagerC7enqueue34satelliteLocationNotificationEventyAA012FMFSatelliteefG0V_tF,
+                            _$s8FMIPCore11FMIPManagerC7enqueue5eventyAA22FMIPPeopleFindingEventV_tF,
                             _$s8FMIPCore11FMIPManagerC7enqueue7UTEvent4itemyAA16FMIPUTAlertEventV_AA15FMIPUnknownItemVtF,
                             _$s8FMIPCore11FMIPManagerC7perform6action10completionyAA14FMIPItemActionC_yAA0fG6StatusO_SayAA0F0VGSgs5Error_pSgtctF,
                             _$s8FMIPCore11FMIPManagerC7perform6action10completionyAA16FMIPDeviceActionC_yAA16FMIPActionStatusO_SayAA0F0VGSgs5Error_pSgAHSgtctF,
@@ -339,6 +340,7 @@ exports:
                             _$s8FMIPCore12FMIPFeaturesV20isPinRequiredForWipeACvgZ,
                             _$s8FMIPCore12FMIPFeaturesV20isStopSoundSupportedACvgZ,
                             _$s8FMIPCore12FMIPFeaturesV21isRemoveUIv2SupportedACvgZ,
+                            _$s8FMIPCore12FMIPFeaturesV22isPendingRemoveCapableACvgZ,
                             _$s8FMIPCore12FMIPFeaturesV23isLocalWithYouSupportedACvgZ,
                             _$s8FMIPCore12FMIPFeaturesV23isLockAndMessageEnabledACvgZ,
                             _$s8FMIPCore12FMIPFeaturesV23isSavePreferenceEnabledACvgZ,
@@ -574,6 +576,7 @@ exports:
                             _$s8FMIPCore13FMIPAnalyticsV26itemGroupSpecificEventInfo6device0cD00C021primaryPartIdentifierSDySSSo8NSObjectCGAA10FMIPDeviceV_AA08FMIPItemD0VAA0N0VSSSgtFZ,
                             _$s8FMIPCore13FMIPAnalyticsV31sendNotificationAuthLaunchEvent5eventyAA016FMIPNotificationefG0V_tFZ,
                             _$s8FMIPCore13FMIPAnalyticsV31sendNotificationAuthPromptEvent5eventyAA016FMIPNotificationefG0V_tFZ,
+                            _$s8FMIPCore13FMIPAnalyticsV31sendPeopleFindingEventAnalytics5eventyAA010FMIPPeopleeF0V_tFZ,
                             _$s8FMIPCore13FMIPAnalyticsV32sendSatelliteLocationUpdateEvent5eventyAA012FMFSatelliteefG0V_tFZ,
                             _$s8FMIPCore13FMIPAnalyticsV38sendSatelliteLocationNotificationEvent5eventyAA012FMFSatelliteefG0V_tFZ,
                             _$s8FMIPCore13FMIPAnalyticsVMa,
@@ -2240,6 +2243,30 @@ exports:
                             _$s8FMIPCore22FMIPLostModeItemActionCN,
                             _$s8FMIPCore22FMIPLostModeItemActionCfD,
                             _$s8FMIPCore22FMIPLostModeItemActionCfd,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV17withinNearbyRangeSbvM,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV17withinNearbyRangeSbvg,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV17withinNearbyRangeSbvpMV,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV17withinNearbyRangeSbvs,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV18startedDiscoveringSbvM,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV18startedDiscoveringSbvg,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV18startedDiscoveringSbvpMV,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV18startedDiscoveringSbvs,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19availabilityLatencySdvM,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19availabilityLatencySdvg,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19availabilityLatencySdvpMV,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19availabilityLatencySdvs,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19findButtonAvailableSbvM,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19findButtonAvailableSbvg,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19findButtonAvailableSbvpMV,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV19findButtonAvailableSbvs,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV8hasToken19findButtonAvailable19availabilityLatency17withinNearbyRange18startedDiscoveringACSb_SbSdS2btcfC,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV8hasTokenSbvM,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV8hasTokenSbvg,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV8hasTokenSbvpMV,
+                            _$s8FMIPCore22FMIPPeopleFindingEventV8hasTokenSbvs,
+                            _$s8FMIPCore22FMIPPeopleFindingEventVMa,
+                            _$s8FMIPCore22FMIPPeopleFindingEventVMn,
+                            _$s8FMIPCore22FMIPPeopleFindingEventVN,
                             _$s8FMIPCore22FMIPProductInformationMp,
                             _$s8FMIPCore22FMIPProductInformationPAA014FMIPAnyProductC0Tb,
                             _$s8FMIPCore22FMIPProductInformationPSETb,

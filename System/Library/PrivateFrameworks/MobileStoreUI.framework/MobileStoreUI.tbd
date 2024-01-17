@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileStoreUI.framework/MobileStoreUI
@@ -7,8 +7,28 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CGRectWithFlippedOriginRelativeToBoundingRect,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s13MobileStoreUI26SUUIStopPageViewControllerC06isStopE23BagValueOverrideEnabled3forSbSS_tFZ,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC06isStopE7Enabled3forSbSS_tFZ,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC06lockupF033_F4F1B3F6B9CD510E9925332AAFD97B79LLAC04StopE6LockupAELLCSgvpfi,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC11viewDidLoadyyF,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC13tabIdentifier20replacementAppAdamId5title8subtitle16artworkDictionar11deeplinkUrl09purchasesS0ACSS_SSSgA2KSDySSypGSg10Foundation3URLVSgAQtcfC,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC13tabIdentifier20replacementAppAdamId5title8subtitle16artworkDictionar11deeplinkUrl09purchasesS0ACSS_SSSgA2KSDySSypGSg10Foundation3URLVSgAQtcfCTq,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC13tabIdentifier20replacementAppAdamId5title8subtitle16artworkDictionar11deeplinkUrl09purchasesS0ACSS_SSSgA2KSDySSypGSg10Foundation3URLVSgAQtcfc,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC21viewDidLayoutSubviewsyyF,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC24traitCollectionDidChangeyySo07UITraitI0CSgF,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfC,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerCMa,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerCMn,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerCN,
+                            _$s13MobileStoreUI26SUUIStopPageViewControllerCfD,
+                            _$sSo6CGSizeV13MobileStoreUIE16verticalFraction12CoreGraphics7CGFloatVvg,
+                            _$sSo6CGSizeV13MobileStoreUIE16verticalFraction12CoreGraphics7CGFloatVvpMV,
+                            _$sSo6CGSizeV13MobileStoreUIE18horizontalFraction12CoreGraphics7CGFloatVvg,
+                            _$sSo6CGSizeV13MobileStoreUIE18horizontalFraction12CoreGraphics7CGFloatVvpMV,
+                            _$sSo6CGSizeV13MobileStoreUIE7maxSize7fittingA2B_tF,
+                            _CGRectWithFlippedOriginRelativeToBoundingRect,
                             _SUUIAllowsLandscapePhone,
                             _SUUIAppearanceStyleBarButtonItem,
                             _SUUIAppearanceStyleNavigationBar,
@@ -35,6 +55,7 @@ exports:
                             _SUUIConfigurationKeyLocale,
                             _SUUIConfigurationKeyMonetaryGiftingEnabled,
                             _SUUIConfigurationKeyOffersInAppNoticeString,
+                            _SUUIConfigurationKeyStopPages,
                             _SUUIConfigurationKeyStorefrontSuffix,
                             _SUUIConfigurationKeyTabs,
                             _SUUIDecodeRestorableStateWithCoder,
@@ -433,7 +454,8 @@ exports:
                             SUUITrendingSearchTemplateElement, SUUIURL,
                             SUUIURLResolver, SUUIUber, SUUIViewController,
                             SUUIViewControllerFactory, SUUIViewElement,
-                            SUUIViewElementText, StoreScriptInterface ]
+                            SUUIViewElementText, StoreScriptInterface,
+                            _TtC13MobileStoreUI26SUUIStopPageViewController ]
     objc-ivars:           [ SUUIApplicationControllerOptions._bootstrapScriptFallbackEnabled,
                             SUUIApplicationControllerOptions._bootstrapScriptFallbackMaximumAge,
                             SUUIApplicationControllerOptions._bootstrapScriptTimeoutInterval,

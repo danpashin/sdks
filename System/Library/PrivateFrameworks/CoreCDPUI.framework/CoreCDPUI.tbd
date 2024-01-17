@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreCDPUI.framework/CoreCDPUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9CoreCDPUI20InformationLabelViewV4LinkV4text3urlAESS_SSSgtcfC,
                             _$s9CoreCDPUI20InformationLabelViewV4LinkVMa,
                             _$s9CoreCDPUI20InformationLabelViewV4LinkVMn,
@@ -98,12 +98,10 @@ exports:
                             CDPUIWalrusSwiftUIFactory,
                             CDPUIWebAccessStatusChangeModel, CDPUtilitiesBundle,
                             CDPWaitingApprovalViewController,
-                            CoreCDPUIAppleAccountContactsProvider,
                             CoreCDPUIPSListControllerPrivate,
                             _CDPExtensionHostContext, _CDPHostViewController,
                             _CDPUIUIAlertController ]
     objc-ivars:           [ CDPPassphraseEntryPane._containerView,
-                            CDPPassphraseEntryPane._deviceIdiom,
                             CDPPassphraseEntryPane._headerView,
                             CDPPassphraseEntryPane._keyboardOffset,
                             CDPUIBaseController._presentingViewController,

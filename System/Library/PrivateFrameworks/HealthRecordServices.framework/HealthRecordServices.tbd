@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HealthRecordServices.framework/HealthRecordServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _HDHRSClinicalItemPropertyKeyExtractionFailureInfo,
                             _HDHRSNotificationKeyValueDomainIdentifier,
                             _HDHRSNotificationKeyValueDomainKey,
@@ -54,6 +54,7 @@ exports:
                             _HKHealthRecordsNotificationSyncClientIdentifier,
                             _HKHealthRecordsSetEnvironment,
                             _HKMedicalDownloadableAttachmentMetadataInlineDataChecksumKey,
+                            _HKMedicalDownloadableAttachmentMetadataNeedsReIndexingKey,
                             _HKMedicalDownloadableAttachmentMetadataOriginalCreationDateKey,
                             _HKMedicalDownloadableAttachmentMetadataWebURLKey,
                             _HKMedicalDownloadableAttachmentStoreClientInterface,
@@ -117,7 +118,8 @@ exports:
                             HKClinicalGateway, HKClinicalGatewayEndpointSchema,
                             HKClinicalGatewayEndpointSchemaParameter,
                             HKClinicalGatewayFeature, HKClinicalGatewayReference,
-                            HKClinicalIngestionContext, HKClinicalProvider,
+                            HKClinicalIngestionContext, HKClinicalNoteSorter,
+                            HKClinicalProvider,
                             HKClinicalProviderSearchQueryDescription,
                             HKClinicalProviderSearchResult,
                             HKClinicalProviderSearchResultsPage,

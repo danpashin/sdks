@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PerfPowerMetricMonitor.framework/PerfPowerMetricMonitor
@@ -7,15 +7,21 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _PPSMetricMonitorLogHandleForCategory,
+                            _PPSTimeStringFromDate,
                             _PerfPowerMetricMonitorVersionNumber,
                             _PerfPowerMetricMonitorVersionString,
-                            _kPPSMMConfigModeKey, _kPPSMMConfigUpdateDelegateKey,
+                            _kPPSInducedThermalStateKey,
+                            _kPPSIsSystemPowerAvailableKey, _kPPSMMConfigModeKey,
+                            _kPPSMMConfigUpdateDelegateKey,
                             _kPPSMMConfigUpdateIntervalKey,
                             _kPPSMetricMonitorServiceName,
+                            _kPPSMetricTimestampKey, _kPPSMetricValueKey,
+                            _kPPSProcessMetricsKey, _kPPSThermalStateKey,
                             _kPerfPowerMetricMonitorErrorDomain ]
-    objc-classes:         [ PPSClient, PPSMetricMonitor,
+    objc-classes:         [ PPSClient, PPSMetricCollection, PPSMetricMonitor,
                             PPSMetricMonitorConfiguration,
-                            PPSMetricMonitorService ]
+                            PPSMetricMonitorService, PPSMetricSample,
+                            PPSProcessMetricCollection ]
 ...

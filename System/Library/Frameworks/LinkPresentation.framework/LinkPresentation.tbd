@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LinkPresentation.framework/LinkPresentation
-current-version:       235.2
+current-version:       240.3.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _LPErrorDomain, _LPLinkMetadataTypeIdentifier,
-                            _LPLogChannelFetching, _LPLogChannelPlugin,
+                            _LPLogChannelFetching, _LPLogChannelFilesystem,
+                            _LPLogChannelImage, _LPLogChannelPlugin,
                             _LPLogChannelSerialization,
                             _LPLogChannelSnapshotGenerator,
                             _LPLogChannelTranscoding, _LPLogChannelUI,
@@ -31,7 +32,8 @@ exports:
                             LPCaptionButtonCollapsedPresentationProperties,
                             LPCaptionButtonPresentationProperties,
                             LPCaptionPresentationProperties,
-                            LPCaptionRowPresentationProperties, LPEvent,
+                            LPCaptionRowPresentationProperties,
+                            LPCollaborationFooterPresentationProperties, LPEvent,
                             LPEventTimeline, LPFaceTimeInviteMetadata,
                             LPFileMetadata, LPGameCenterInvitationMetadata,
                             LPIconMetadata, LPImage, LPImageAttachmentSubstitute,

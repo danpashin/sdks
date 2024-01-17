@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ABMHelper.framework/ABMHelper
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ __Z15GetABMLogServerv,
                             __Z15GetGlobalLoggerNSt3__110shared_ptrIN3ctu9LogServerEEE,
                             __Z15GetOsLogContextv,
@@ -412,9 +412,9 @@ exports:
                             __ZN3abm17kTraceBasebandIPCE,
                             __ZN3abm17kTraceCompressionE,
                             __ZN3abm18AppMonitorInternal6createEN3ctu12OsLogContextE,
-                            __ZN3abm18CellularLoggingEUR10stopReaderEv,
+                            __ZN3abm18CellularLoggingEUR10stopReaderEb,
                             __ZN3abm18CellularLoggingEUR11getFileSizeEv,
-                            __ZN3abm18CellularLoggingEUR11startReaderEv,
+                            __ZN3abm18CellularLoggingEUR11startReaderEb,
                             __ZN3abm18CellularLoggingEUR13getConfigNameEv,
                             __ZN3abm18CellularLoggingEUR14getGUIDStringsENSt3__110shared_ptrI20ETLDIAGGUIDParameterEE,
                             __ZN3abm18CellularLoggingEUR15getCurrentIndexEv,
@@ -433,9 +433,9 @@ exports:
                             __ZN3abm18CellularLoggingEURD0Ev,
                             __ZN3abm18CellularLoggingEURD1Ev,
                             __ZN3abm18CellularLoggingEURD2Ev,
-                            __ZN3abm18CellularLoggingINT10stopReaderEv,
+                            __ZN3abm18CellularLoggingINT10stopReaderEb,
                             __ZN3abm18CellularLoggingINT11getFileSizeEv,
-                            __ZN3abm18CellularLoggingINT11startReaderEv,
+                            __ZN3abm18CellularLoggingINT11startReaderEb,
                             __ZN3abm18CellularLoggingINT13getConfigNameEv,
                             __ZN3abm18CellularLoggingINT15getCurrentIndexEv,
                             __ZN3abm18CellularLoggingINT16getFileExtensionEv,

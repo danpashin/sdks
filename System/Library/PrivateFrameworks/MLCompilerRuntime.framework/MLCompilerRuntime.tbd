@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MLCompilerRuntime.framework/MLCompilerRuntime
 current-version:       95
 compatibility-version: 95
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _mlc_binary_create, _mlc_binary_destroy,
                             _mlc_binary_drop_error, _mlc_binary_error,
                             _mlc_binary_execute, _mlc_binary_execute_sync,

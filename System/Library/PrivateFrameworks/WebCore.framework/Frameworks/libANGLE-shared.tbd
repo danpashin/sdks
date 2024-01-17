@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          "/System/Library/PrivateFrameworks/WebCore.framework/Frameworks/libANGLE-shared.dylib"
-current-version:       616.1.27
+current-version:       617.1.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ANGLEGetDisplayPlatform, _ANGLEResetDisplayPlatform,
-                            _EGL_BindAPI, _EGL_BindTexImage, _EGL_ChooseConfig,
+                            _EGL_AcquireExternalContextANGLE, _EGL_BindAPI,
+                            _EGL_BindTexImage, _EGL_ChooseConfig,
                             _EGL_ClientWaitSync, _EGL_ClientWaitSyncKHR,
                             _EGL_CopyBuffers, _EGL_CopyMetalSharedEventANGLE,
                             _EGL_CreateContext, _EGL_CreateDeviceANGLE,
@@ -64,6 +65,7 @@ exports:
                             _EGL_QuerySurfacePointerANGLE,
                             _EGL_ReacquireHighPowerGPUANGLE,
                             _EGL_ReleaseDeviceANGLE,
+                            _EGL_ReleaseExternalContextANGLE,
                             _EGL_ReleaseHighPowerGPUANGLE, _EGL_ReleaseTexImage,
                             _EGL_ReleaseThread, _EGL_SetBlobCacheFuncsANDROID,
                             _EGL_SetDamageRegionKHR, _EGL_SignalSyncKHR,

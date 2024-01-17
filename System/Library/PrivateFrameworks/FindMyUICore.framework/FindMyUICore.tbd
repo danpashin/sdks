@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FindMyUICore.framework/FindMyUICore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation11FormatStyleP12FindMyUICoreAD0de12RelativeDatebC0VRszrlE04findeG012presentation05unitsC06locale8calendar21capitalizationContext19preferredRecencyKeyAfA0H0V0gbC0V12PresentationV_AQ05UnitsC0VAA6LocaleVAA8CalendarVAA0bc14CapitalizationO0VAF0qR0OtFZ,
                             _$s12FindMyUICore0aB23RelativeDateFormatStyleV10Foundation0fG0AAMc,
                             _$s12FindMyUICore0aB23RelativeDateFormatStyleV10RecencyKeyO21__derived_enum_equalsySbAE_AEtFZ,
@@ -238,13 +238,15 @@ exports:
                             _$s12FindMyUICore27AsyncCombineLatest2SequenceVyxq_GSciAAMc,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV03areaB15FeaturesDisableSbvg,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV03areaB15FeaturesDisableSbvpMV,
-                            _$s12FindMyUICore27CompositeAppViewInitialInfoV12callerHandle7friends5state03areaB15FeaturesDisableAcA0J0VSg_SayAA6FriendVGAA0deF5StateOSbtcfC,
+                            _$s12FindMyUICore27CompositeAppViewInitialInfoV12callerHandle9groupName7friends5state03areaB15FeaturesDisableAcA0J0VSg_SSSgSayAA6FriendVGAA0deF5StateOSbtcfC,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV12callerHandleAA0J0VSgvg,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV12callerHandleAA0J0VSgvpMV,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV5stateAA0deF5StateOvg,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV5stateAA0deF5StateOvpMV,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV7friendsSayAA6FriendVGvg,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoV7friendsSayAA6FriendVGvpMV,
+                            _$s12FindMyUICore27CompositeAppViewInitialInfoV9groupNameSSSgvg,
+                            _$s12FindMyUICore27CompositeAppViewInitialInfoV9groupNameSSSgvpMV,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoVMa,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoVMn,
                             _$s12FindMyUICore27CompositeAppViewInitialInfoVN,
@@ -302,7 +304,9 @@ exports:
                             _$s12FindMyUICore28LocationDetailViewControllerC11viewOptionsAC0fI0Cvpfi,
                             _$s12FindMyUICore28LocationDetailViewControllerC13stopObservingyyF,
                             _$s12FindMyUICore28LocationDetailViewControllerC14navigationItemSo012UINavigationI0Cvg,
+                            _$s12FindMyUICore28LocationDetailViewControllerC14startObserving7handles4from9groupNameySaySSG_SSSgAItF,
                             _$s12FindMyUICore28LocationDetailViewControllerC14startObserving7handles4fromySaySSG_SSSgtF,
+                            _$s12FindMyUICore28LocationDetailViewControllerC14startObserving8contacts4from9groupNameySaySo9CNContactCG_SSSgAKtF,
                             _$s12FindMyUICore28LocationDetailViewControllerC14startObserving8contacts4fromySaySo9CNContactCG_SSSgtF,
                             _$s12FindMyUICore28LocationDetailViewControllerC14startObserving8contactsySaySo9CNContactCG_tF,
                             _$s12FindMyUICore28LocationDetailViewControllerC15viewIsAppearingyySbF,
@@ -345,6 +349,8 @@ exports:
                             _$s12FindMyUICore6HandleVSHAAMc,
                             _$s12FindMyUICore6HandleVSQAAMc,
                             _$s12FindMyUICore6HandleVyACSScfC,
+                            _$sSo14NSUserDefaultsC12FindMyUICoreE3set5value6forKeyyx_SStKSeRzSERzlF,
+                            _$sSo14NSUserDefaultsC12FindMyUICoreE7codable6forKeyxSgSS_tKSeRzSERzlF,
                             _$sSo9MSMessageC12FindMyUICoreE04findC20LocationShareMessage8durationAbC0G8DurationO_tFZ,
                             _$sSo9MSMessageC12FindMyUICoreE04findC22LocationRequestMessageAByFZ ]
     objc-classes:         [ FMUILocationDetailViewController,

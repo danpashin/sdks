@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DocumentManagerExecutables.framework/DocumentManagerExecutables
-current-version:       305.1.1
+current-version:       305.3.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation16AttributedStringV26DocumentManagerExecutablesE13doc_localized7options6locale7commentACSSAAE17LocalizationValueV_AC17FormattingOptionsVAA6LocaleVSgs06StaticC0VSgtcfC,
                             _$s10Foundation3URLV26DocumentManagerExecutablesE11contentType07UniformG11Identifiers6UTTypeVSgvg,
                             _$s10Foundation3URLV26DocumentManagerExecutablesE11contentType07UniformG11Identifiers6UTTypeVSgvpMV,
@@ -1582,6 +1582,7 @@ exports:
                             _$sSD26DocumentManagerExecutablesSQR_rlE12doc_firstKey8forValuexSgq__tF,
                             _$sSS26DocumentManagerExecutables33BidiDirectionalIsolationReturningAAMc,
                             _$sSS26DocumentManagerExecutables33BidiDirectionalIsolationReturningAAWP,
+                            _$sSS26DocumentManagerExecutablesE10asFpItemIDSo06FPItemG0CSgyF,
                             _$sSS26DocumentManagerExecutablesE15conformsToAnyOfySbSayAA21DOCDragPasteboardTypeOGF,
                             _$sSS26DocumentManagerExecutablesE15fileSuffixChainSSyF,
                             _$sSS26DocumentManagerExecutablesE16doc_editDistance4fromSiSS_tF,
@@ -1693,7 +1694,7 @@ exports:
                             _$sSo18NSNotificationNamea26DocumentManagerExecutablesE025DOCCollaborationHighlightD19HighlightsDidChangeABvau,
                             _$sSo18NSNotificationNamea26DocumentManagerExecutablesE025DOCCollaborationHighlightD19HighlightsDidChangeABvgZ,
                             _$sSo18NSNotificationNamea26DocumentManagerExecutablesE025DOCCollaborationHighlightD19HighlightsDidChangeABvpZ,
-                            _$sSo20NSNotificationCenterC26DocumentManagerExecutablesE15doc_observeOnce7forName6object5queue9predicate5usingySo0aJ0aSg_ypSgSo16NSOperationQueueCSgSb10Foundation12NotificationVcSgyASYbctF,
+                            _$sSo20NSNotificationCenterC26DocumentManagerExecutablesE15doc_observeOnce7forName6object5queue5usingySo0aJ0aSg_ypSgSo16NSOperationQueueCSgy10Foundation12NotificationVYbctF,
                             _$sSo20SYDocumentAttributesC26DocumentManagerExecutablesE015performReturnToC7RequestyyF,
                             _$sSo20SYDocumentAttributesC26DocumentManagerExecutablesE27performReplyToSenderRequest4withy10Foundation3URLV_tF,
                             _$sSo22DOCFileRenamingSupportC26DocumentManagerExecutablesE07_renameD05atURL7newName14hostIdentifier04roleM010completionySo22FPSandboxingURLWrapperC_S3SSgyAKSg_s5Error_pSgtctFZ,
@@ -1868,6 +1869,8 @@ exports:
                             _$sSo7NSErrorC26DocumentManagerExecutablesE32isProviderDomainNotAuthenticatedSbvg,
                             _$sSo7NSErrorC26DocumentManagerExecutablesE32isProviderDomainNotAuthenticatedSbvpMV,
                             _$sSo7UIImageC26DocumentManagerExecutablesE29doc_executablesFrameworkImage5namedABSgSS_tFZ,
+                            _$sSo8FPItemIDC26DocumentManagerExecutablesE16identifierStringSSvg,
+                            _$sSo8FPItemIDC26DocumentManagerExecutablesE16identifierStringSSvpMV,
                             _$sSo8NSStringC26DocumentManagerExecutables33BidiDirectionalIsolationReturningACMc,
                             _$sSo8NSStringC26DocumentManagerExecutables33BidiDirectionalIsolationReturningACWP,
                             _$sSo8NSStringC26DocumentManagerExecutablesE29wrappedInDirectionalIsolationyAbC10DOCUnicodeC0I15LayoutDirectionOF,

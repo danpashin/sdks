@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/SafariServices.framework/SafariServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _SFAdditionalArgumentsKey,
                             _SFAuthenticationErrorDomain,
                             _SFContentBlockerDidChangeDistributedNotification,
@@ -18,12 +18,11 @@ exports:
                             _SFErrorDomain, _SFExtensionMessageKey,
                             _SFExtensionProfileKey,
                             _SFFindOnPageMaximumNumberOfMatches,
-                            _SFMaximumRecentlyClosedTabCount,
                             _SFMediaCaptureUserActivityType,
-                            _SFRecentlyClosedTabsWereAddedNotification,
-                            _SFRecentlyClosedTabsWereRemovedNotification,
-                            _SFReloadUserActivityType, _SFRemovedTabStateDataKey,
+                            _SFReloadUserActivityType,
                             _SFToggleReaderUserActivityType,
+                            _SFViewControllerViewEmbeddedByPreviewController,
+                            _SFViewControllerViewIsVisible,
                             _SFWKFindOptionsDefault,
                             _SFWKFindOptionsForCompletionList,
                             _SSReadingListErrorDomain,
@@ -129,9 +128,7 @@ exports:
                             _SFBookmarkTextEntryTableViewCell,
                             _SFBookmarkTextEntryTableViewController,
                             _SFBrowserConfiguration,
-                            _SFBrowserContentViewController,
-                            _SFBrowserSavedState, _SFBrowserView,
-                            _SFBrowserWindowSettings, _SFBrowserWindowStateData,
+                            _SFBrowserContentViewController, _SFBrowserView,
                             _SFCalendarEventDetector,
                             _SFContactPreviewViewController,
                             _SFContentBlockersPreferenceManager,

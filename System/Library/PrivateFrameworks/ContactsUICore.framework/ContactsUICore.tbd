@@ -1,14 +1,28 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
-current-version:       3496.2
+current-version:       3506
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _CNContactsUIErrorDialRequestKey,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s14ContactsUICore12CNUINameDropC12fieldSummary7contactSaySSG7symbols_SS4textSS13secondaryLinetSo9CNContactC_tFZ,
+                            _$s14ContactsUICore12CNUINameDropC19getFieldPreferences3forSo9CNContactCAGSg_tFZ,
+                            _$s14ContactsUICore12CNUINameDropC19getFieldPreferencesSo9CNContactCyFZ,
+                            _$s14ContactsUICore12CNUINameDropC19vCardMergingContact_4with10Foundation4DataVSgSo9CNContactC_AKtFZ,
+                            _$s14ContactsUICore12CNUINameDropC20saveFieldPreferences3forySo9CNContactC_tFZ,
+                            _$s14ContactsUICore12CNUINameDropC25descriptorForRequiredKeysSaySo15CNKeyDescriptor_pGvau,
+                            _$s14ContactsUICore12CNUINameDropC25descriptorForRequiredKeysSaySo15CNKeyDescriptor_pGvgZ,
+                            _$s14ContactsUICore12CNUINameDropC25descriptorForRequiredKeysSaySo15CNKeyDescriptor_pGvpZ,
+                            _$s14ContactsUICore12CNUINameDropCACycfC,
+                            _$s14ContactsUICore12CNUINameDropCACycfc,
+                            _$s14ContactsUICore12CNUINameDropCMa,
+                            _$s14ContactsUICore12CNUINameDropCMn,
+                            _$s14ContactsUICore12CNUINameDropCN,
+                            _$s14ContactsUICore12CNUINameDropCfD,
+                            _CNContactsUIErrorDialRequestKey,
                             _CNContactsUIErrorDomain, _CNContactsUIErrorURLKey,
                             _CNContactsUIErrorUserActivityKey,
                             _CNTUCallProviderIdentifierSUIUNTool,
@@ -137,7 +151,7 @@ exports:
                             CNUIPlaceholderProviderFactory, CNUIRTTUtilities,
                             CNUIRemotePhotoFutures,
                             CNUIRenderedLikenessCacheEntry,
-                            CNUISnowglobeUtilities,
+                            CNUISnowglobeUtilities, CNUIStaticIdentity,
                             CNUIUserActionCacheKeyGenerator,
                             CNUIUserActionContext,
                             CNUIUserActionDisambiguationModelFinalizer,
@@ -191,5 +205,6 @@ exports:
                             _CNUIUserActionURLItem,
                             _CNUIUserActionUserActivityItem,
                             _CNUIUserActionUserActivityOpener,
-                            _CNUIUserActionWalletPayTarget ]
+                            _CNUIUserActionWalletPayTarget,
+                            _TtC14ContactsUICore12CNUINameDrop ]
 ...

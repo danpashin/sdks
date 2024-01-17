@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActivityUIServices.framework/ActivityUIServices
@@ -7,41 +7,8 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _$s18ActivityUIServices0A10ControllerC011subscribeToA13PlatterStream7Combine12AnyPublisherVyAA0A15UpdateProviding_ps5NeverOGyFTj,
-                            _$s18ActivityUIServices0A10ControllerC011subscribeToA13PlatterStream7Combine12AnyPublisherVyAA0A15UpdateProviding_ps5NeverOGyFTq,
-                            _$s18ActivityUIServices0A10ControllerC02isA6Active10identifierSbSS_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC02isA6Active10identifierSbSS_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC03endA014withIdentifierySS_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC03endA014withIdentifierySS_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC07observeA6Alerts7handlerSo15BSInvalidatable_pyAA0A14AlertProviding_pc_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC07observeA6Alerts7handlerSo15BSInvalidatable_pyAA0A14AlertProviding_pc_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC07observeA7Updates7handlerSo15BSInvalidatable_pyAA0A15UpdateProviding_pc_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC07observeA7Updates7handlerSo15BSInvalidatable_pyAA0A15UpdateProviding_pc_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC07observeA7UpdatesyyFTj,
-                            _$s18ActivityUIServices0A10ControllerC07observeA7UpdatesyyFTq,
-                            _$s18ActivityUIServices0A10ControllerC10descriptor10identifier0A3Kit0A10DescriptorVSgSS_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC10descriptor10identifier0A3Kit0A10DescriptorVSgSS_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC17disableActivities11forBundleIdySS_tFTj,
-                            _$s18ActivityUIServices0A10ControllerC17disableActivities11forBundleIdySS_tFTq,
-                            _$s18ActivityUIServices0A10ControllerC20areActivitiesEnabledSbvgTj,
-                            _$s18ActivityUIServices0A10ControllerC20areActivitiesEnabledSbvgTq,
-                            _$s18ActivityUIServices0A10ControllerC20areActivitiesEnabledSbvpMV,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvMTj,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvMTq,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvgTj,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvgTq,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvpMV,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvsTj,
-                            _$s18ActivityUIServices0A10ControllerC20systemMetricsRequestAA0aeF0CvsTq,
-                            _$s18ActivityUIServices0A10ControllerC6sharedACvgZ,
-                            _$s18ActivityUIServices0A10ControllerCMa,
-                            _$s18ActivityUIServices0A10ControllerCMn,
-                            _$s18ActivityUIServices0A10ControllerCMo,
-                            _$s18ActivityUIServices0A10ControllerCMu,
-                            _$s18ActivityUIServices0A10ControllerCN,
-                            _$s18ActivityUIServices0A10ControllerCfD,
-                            _$s18ActivityUIServices0A10EdgeInsetsC10bsxpcCoderACSgSo13BSXPCDecoding_p_tcfC,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s18ActivityUIServices0A10EdgeInsetsC10bsxpcCoderACSgSo13BSXPCDecoding_p_tcfC,
                             _$s18ActivityUIServices0A10EdgeInsetsC10bsxpcCoderACSgSo13BSXPCDecoding_p_tcfCTj,
                             _$s18ActivityUIServices0A10EdgeInsetsC10bsxpcCoderACSgSo13BSXPCDecoding_p_tcfCTq,
                             _$s18ActivityUIServices0A10EdgeInsetsC10bsxpcCoderACSgSo13BSXPCDecoding_p_tcfc,
@@ -737,7 +704,6 @@ exports:
                             _$s18ActivityUIServices0aB8CategoryO12backOffTimeryA2CmFWC,
                             _$s18ActivityUIServices0aB8CategoryO14viewControlleryA2CmFWC,
                             _$s18ActivityUIServices0aB8CategoryO15processResourceyA2CmFWC,
-                            _$s18ActivityUIServices0aB8CategoryO18activityControlleryA2CmFWC,
                             _$s18ActivityUIServices0aB8CategoryO5alertyA2CmFWC,
                             _$s18ActivityUIServices0aB8CategoryO5sceneyA2CmFWC,
                             _$s18ActivityUIServices0aB8CategoryO8rawValueACSgSS_tcfC,
@@ -1200,7 +1166,6 @@ exports:
                             _$s2os6LoggerV18ActivityUIServicesE12backOffTimerACvgZ,
                             _$s2os6LoggerV18ActivityUIServicesE14viewControllerACvgZ,
                             _$s2os6LoggerV18ActivityUIServicesE15processResourceACvgZ,
-                            _$s2os6LoggerV18ActivityUIServicesE18activityControllerACvgZ,
                             _$s2os6LoggerV18ActivityUIServicesE5alertACvgZ,
                             _$s2os6LoggerV18ActivityUIServicesE5sceneACvgZ,
                             _$s5Scope18ActivityUIServices13TypedSettingsPTl,
@@ -1217,7 +1182,7 @@ exports:
                             __sceneComponentLogger, _activitySceneType,
                             _acuisSceneType ]
     objc-classes:         [ ACUISActivityAlertClient, ACUISActivityAlertOptions,
-                            ACUISActivityAlertProvider, ACUISActivityController,
+                            ACUISActivityAlertProvider,
                             ACUISActivityHostViewController,
                             ACUISActivityHostViewControllerFactory,
                             ACUISActivityItemMetricsRequest,
@@ -1235,7 +1200,6 @@ exports:
                             ACUISSystemApertureMetricsRequest,
                             ACUISSystemApertureSceneHandle, ACUISWorkloop,
                             _TtC18ActivityUIServices13ActivityScene,
-                            _TtC18ActivityUIServices18ActivityController,
                             _TtC18ActivityUIServices18ActivityEdgeInsets,
                             _TtC18ActivityUIServices19ActivityAlertClient,
                             _TtC18ActivityUIServices20ActivitySceneMetrics,

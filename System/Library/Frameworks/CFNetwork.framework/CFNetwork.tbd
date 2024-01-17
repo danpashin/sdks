@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CFNetwork.framework/CFNetwork
-current-version:       1474
+current-version:       1490.0.4
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CFCachedURLResponseCopyReceiverDataArray,
                             _CFCachedURLResponseCreateWithData,
                             _CFCachedURLResponseGetReceiverData,
@@ -307,10 +307,13 @@ exports:
                             __CFCachedURLResponseSetBecameFileBackedCallBackBlock,
                             __CFErrorCreateWithStreamError,
                             __CFHTTPAuthenticationApplyProxyAuthorizationToRequest,
+                            __CFHTTPAuthenticationCopySortedAuthSchemes,
                             __CFHTTPAuthenticationCreateNTLMHeaderForRequest,
                             __CFHTTPAuthenticationCreateNegotiateHeaderForRequest,
                             __CFHTTPAuthenticationDisassociateConnection,
+                            __CFHTTPAuthenticationGetSchemesDict,
                             __CFHTTPAuthenticationPasswordInClear,
+                            __CFHTTPAuthenticationSetPreferredScheme,
                             __CFHTTPAuthenticationUpdateFromResponse,
                             __CFHTTPCookieCreateCookiesWithResponseMessage,
                             __CFHTTPCookieCreateWithStringAndPartition,
@@ -551,13 +554,14 @@ exports:
                             __kTCPKeepAliveParametersEnabled,
                             __kTCPKeepAliveParametersIdleTime,
                             __kTCPKeepAliveParametersInterval,
-                            _cfnTranslateCFError, _kCFDNSServiceFailureKey,
-                            _kCFErrorDomainCFNetwork, _kCFErrorDomainWinSock,
-                            _kCFFTPResourceGroup, _kCFFTPResourceLink,
-                            _kCFFTPResourceModDate, _kCFFTPResourceMode,
-                            _kCFFTPResourceName, _kCFFTPResourceOwner,
-                            _kCFFTPResourceSize, _kCFFTPResourceType,
-                            _kCFFTPStatusCodeKey, _kCFGetAddrInfoFailureKey,
+                            _cfnTranslateCFError, _estimatedPropertyListSize,
+                            _kCFDNSServiceFailureKey, _kCFErrorDomainCFNetwork,
+                            _kCFErrorDomainWinSock, _kCFFTPResourceGroup,
+                            _kCFFTPResourceLink, _kCFFTPResourceModDate,
+                            _kCFFTPResourceMode, _kCFFTPResourceName,
+                            _kCFFTPResourceOwner, _kCFFTPResourceSize,
+                            _kCFFTPResourceType, _kCFFTPStatusCodeKey,
+                            _kCFGetAddrInfoFailureKey,
                             _kCFHTTPAuthenticationAccountDomain,
                             _kCFHTTPAuthenticationPassword,
                             _kCFHTTPAuthenticationSchemeBasic,

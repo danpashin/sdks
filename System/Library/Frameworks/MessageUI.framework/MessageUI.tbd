@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MessageUI.framework/MessageUI
-current-version:       3774.100.2
+current-version:       3774.255.61
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9MessageUI010SwiftHelloaB0C5world9truncatedSSSi_tF,
                             _$s9MessageUI010SwiftHelloaB0C5worldSSvg,
                             _$s9MessageUI010SwiftHelloaB0C5worldSSvpMV,
@@ -515,6 +515,7 @@ exports:
                             MFMailComposeController._stillLoading,
                             MFMailComposeController._subject,
                             MFMailComposeController._subjectField,
+                            MFMailComposeController._systemImagePickerController,
                             MFMailComposeController._toAddresses,
                             MFMailComposeController._toField,
                             MFMailComposeController._useSuspended,

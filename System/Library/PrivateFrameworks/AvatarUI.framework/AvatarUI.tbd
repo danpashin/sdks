@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
-current-version:       333.6
+current-version:       340
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/AvatarPersistence.framework/AvatarPersistence ]
     symbols:              [ _AVTAvatarEditorPlaceholderSilhouette,
                             _AVTAvatarEditorSplashVideo,
@@ -19,6 +19,7 @@ exports:
                             _AVTAvatarSettingKindIdentifier, _AVTAvatarUIBundle,
                             _AVTCameraCellIdentifier, _AVTCameraStickerItem,
                             _AVTColorSettingKind, _AVTDeviceIsGreenTea,
+                            _AVTDeviceIsMacOrIPad,
                             _AVTDeviceResourceUnspecifiedDuration,
                             _AVTFlatSilhouetteImageForTraitCollection,
                             _AVTFlattenImageWithColor,
@@ -68,6 +69,7 @@ exports:
                             _kAVTCircularButtonEllipsisImageName,
                             _kAVTCircularButtonPlusImageName,
                             _kAVTCircularButtonTrashImageName,
+                            _kAVTCircularButtonUndoImageName,
                             _kAVTCircularButtonXImageName,
                             _kAVTCoreModelPickerDisplayModeColorHeaderAccessoryString,
                             _kAVTCoreModelPickerDisplayModeHighlightPickerString,
@@ -247,7 +249,8 @@ exports:
                             AVTCoalescingInvertingTaskScheduler,
                             AVTCollapsibleHeaderController,
                             AVTCollectionViewCell, AVTColorLayerProvider,
-                            AVTColorSlider, AVTColorWheelView, AVTComponentFactory,
+                            AVTColorSlider, AVTColorWheelView,
+                            AVTCombinedPickerViewController, AVTComponentFactory,
                             AVTConcurrentTransitionScheduler,
                             AVTConfigurationPreset, AVTCoreAnalyticsClient,
                             AVTCoreModel, AVTCoreModelCategory, AVTCoreModelColor,

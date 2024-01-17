@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriTimeAlarmInternal.framework/SiriTimeAlarmInternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s16SiriTimeInternal21HALAlarmDeviceContextV0ab5AlarmC0E08toSnoozeG6IntentAD0ig3HalJ0Cvg,
                             _$s16SiriTimeInternal21HALAlarmDeviceContextV0ab5AlarmC0E08toSnoozeG6IntentAD0ig3HalJ0CvpMV,
                             _$s16SiriTimeInternal21HALAlarmDeviceContextV0ab5AlarmC0E09toDismissG6IntentAD0ig3HalJ0Cvg,
@@ -213,6 +213,8 @@ exports:
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC14repeatScheduleSayAA0c6RepeatH0CGSgvpMV,
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC18isMeridianInferredSo8NSNumberCSgvpMV,
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC23relativeOffsetInMinutesSo8NSNumberCSgvpMV,
+                            _$s21SiriTimeAlarmInternal06CreateC6IntentC27eligibleForTimerReformationSbvg,
+                            _$s21SiriTimeAlarmInternal06CreateC6IntentC27eligibleForTimerReformationSbvpMV,
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC28shouldSkipDefaultSchemaCheckSbyFZ,
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC4time10Foundation14DateComponentsVSgvpMV,
                             _$s21SiriTimeAlarmInternal06CreateC6IntentC5coderACSgSo7NSCoderC_tcfC,

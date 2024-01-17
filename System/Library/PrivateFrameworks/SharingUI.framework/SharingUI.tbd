@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SharingUI.framework/SharingUI
-current-version:       1936.10.1
+current-version:       1936.30.51
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9SharingUI18SFAirDropUtilitiesC13FileLoadErrorO08couldNotG4ItemyAEs0H0_pcAEmFWC,
                             _$s9SharingUI18SFAirDropUtilitiesC13FileLoadErrorO11descriptionSSvg,
                             _$s9SharingUI18SFAirDropUtilitiesC13FileLoadErrorO11descriptionSSvpMV,
@@ -86,6 +86,8 @@ exports:
                             _SFSpringConvertMassStiffnessDampingToDampingRatioResponse,
                             _SFSpringConvertMassStiffnessDampingToStiffnessDamping,
                             _SFSpringConvertStiffnessDampingToDampingRatioResponse,
+                            _SFUILinkMetadataSerializationForLocalLowFidelityUseOnly,
+                            _SFUILinkMetadataSerializationForLocalUseOnly,
                             _SFVisualEffectViewWrapperForView,
                             _activityImageForCurrentTraitCollectionWithName ]
     objc-classes:         [ SFAdjustedImageView, SFAirDropActivityViewController,

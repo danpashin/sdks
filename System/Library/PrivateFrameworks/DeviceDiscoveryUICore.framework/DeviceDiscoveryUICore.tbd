@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceDiscoveryUICore.framework/DeviceDiscoveryUICore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s21DeviceDiscoveryUICore15ContactProviderMp,
                             _$s21DeviceDiscoveryUICore15ContactProviderTL,
                             _$s21DeviceDiscoveryUICore16NameDropIdentityC13fetchNicknameyyF,
@@ -39,10 +39,11 @@ exports:
                             _$s21DeviceDiscoveryUICore20vCardContactProviderVMa,
                             _$s21DeviceDiscoveryUICore20vCardContactProviderVMn,
                             _$s21DeviceDiscoveryUICore20vCardContactProviderVN,
-                            _$s21DeviceDiscoveryUICore23saveNameDropUserDefault6handleySS_tF,
                             _$sSo16CNMutableContactC21DeviceDiscoveryUICoreE06saveToB5StoreyyKF,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE15avatarImageData10Foundation0G0VSgvg,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE15avatarImageData10Foundation0G0VSgvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE15isNameDroppableSbvg,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE15isNameDroppableSbvpMV,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE15vCardForBooping4with10Foundation4DataVSgSaySSG_tF,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopDefaultHandleSSvg,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE17boopDefaultHandleSSvpMV,
@@ -56,6 +57,7 @@ exports:
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE22boopDefaultHandleIndexSivpMV,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE24boopDefaultHandleIsEmailSbvg,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE24boopDefaultHandleIsEmailSbvpMV,
+                            _$sSo9CNContactC21DeviceDiscoveryUICoreE26boopDefaultHandleAsContactAByF,
                             _$sSo9CNContactC21DeviceDiscoveryUICoreE28vCardForBoopingDefaultHandle10Foundation4DataVSgyF,
                             _DDUIBuildLocalizedKeyForDeviceTypes,
                             _DDUICoreLocalizedString, _DDUICorePrimaryQueue,

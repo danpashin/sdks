@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosGraph.framework/PhotosGraph
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10EntityType11PhotosGraph40ImportantEntitiesEngineContainerProtocolPTl,
                             _$s10Foundation4DateV11PhotosGraphE15dayTimeIntervalSdvgZ,
                             _$s10Foundation4DateV11PhotosGraphE16hourTimeIntervalSdvgZ,
@@ -1347,6 +1347,7 @@ exports:
                             _$s11PhotosGraph19MusicCatalogMonitorC05checkcD11Eligibility16progressReporterSbSo010MAProgressI0C_tFZ,
                             _$s11PhotosGraph19MusicCatalogMonitorC05cleardC04from16progressReporteryAA0C5CacheC_So010MAProgressI0CtKFZ,
                             _$s11PhotosGraph19MusicCatalogMonitorC05cleardC9FromCache12photoLibrary16progressReporterySo07PHPhotoJ0C_So010MAProgressL0CtKFZ,
+                            _$s11PhotosGraph19MusicCatalogMonitorC21canAccessMediaLibrarySbyFZ,
                             _$s11PhotosGraph19MusicCatalogMonitorCACycfC,
                             _$s11PhotosGraph19MusicCatalogMonitorCACycfc,
                             _$s11PhotosGraph19MusicCatalogMonitorCMa,
@@ -4066,6 +4067,7 @@ exports:
                             _PGGraphContactSuggestionConfidenceFilteredOut,
                             _PGGraphDataModelEnrichmentContextAsString,
                             _PGGraphDomainToString,
+                            _PGGraphHighlightNodePromotionScoreAverage,
                             _PGGraphHighlightNodePromotionScoreNumberOfExtendedAssetsNeededForPromotion,
                             _PGGraphHighlightNodePromotionScoreUserEdited,
                             _PGGraphHighlightNodePromotionScoreUtility,
@@ -4219,6 +4221,7 @@ exports:
                             _PGPeopleWallpaperSuggesterFilteringContextMinimumPersonImportance,
                             _PGPeopleWallpaperSuggesterFilteringContextNormalizedDeviationForImportantPersons,
                             _PGPeopleWallpaperSuggesterFilteringContextNormalizedDeviationForVeryImportantPersons,
+                            _PGPersonRelationshipTagNodeInferenceThreshold,
                             _PGPetWallpaperSuggesterFilteringContextIgnoreClockOverlap,
                             _PGPetWallpaperSuggesterFilteringContextMaximumCropZoomRatio,
                             _PGPetWallpaperSuggesterFilteringContextMaximumFaceSize,
@@ -4238,14 +4241,21 @@ exports:
                             _PGRelatedTypeDebugMatchedMomentName,
                             _PGRelatedTypeDebugReferenceMomentName,
                             _PGRelatedTypeDebugRelated, _PGRelatedTypeTimeMemory,
+                            _PGRelationshipQuestionLabelAlumni,
+                            _PGRelationshipQuestionLabelBrother,
                             _PGRelationshipQuestionLabelChild,
                             _PGRelationshipQuestionLabelCoworker,
+                            _PGRelationshipQuestionLabelDaughter,
                             _PGRelationshipQuestionLabelFamily,
+                            _PGRelationshipQuestionLabelFather,
                             _PGRelationshipQuestionLabelFriend,
                             _PGRelationshipQuestionLabelMe,
+                            _PGRelationshipQuestionLabelMother,
                             _PGRelationshipQuestionLabelParent,
                             _PGRelationshipQuestionLabelPartner,
                             _PGRelationshipQuestionLabelSibling,
+                            _PGRelationshipQuestionLabelSister,
+                            _PGRelationshipQuestionLabelSon,
                             _PGRelationshipTypeFromRelationshipLabel,
                             _PGSemanticalDeduperTimeClusteringMaximumDistance,
                             _PGSensitiveLocationBlocklistObfuscatedKeyEndDate,

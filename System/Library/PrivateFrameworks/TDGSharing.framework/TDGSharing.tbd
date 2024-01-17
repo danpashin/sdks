@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/TDGSharing.framework/TDGSharing
-current-version:       23
-compatibility-version: 17
+current-version:       25
+compatibility-version: 17.2
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10TDGSharing11WFSetupDataC016locationServicesC010Foundation0C0VSgvg,
                             _$s10TDGSharing11WFSetupDataC016locationServicesC010Foundation0C0VSgvpMV,
                             _$s10TDGSharing11WFSetupDataC016locationServicesC010Foundation0C0VSgvpWvd,
@@ -297,6 +297,7 @@ exports:
                             _$s10TDGSharing13WFSetupClientC14showPinHandlerys6UInt32V_SStcSgvpfi,
                             _$s10TDGSharing13WFSetupClientC14showPinHandlerys6UInt32V_SStcSgvs,
                             _$s10TDGSharing13WFSetupClientC14showPinHandlerys6UInt32V_SStcSgvsTq,
+                            _$s10TDGSharing13WFSetupClientC16analyticsManager33_D4A477780906BCC6388A9946F4595865LLAA09AnalyticsE0Cvpfi,
                             _$s10TDGSharing13WFSetupClientC17provisionAnisette10completionyySb_s5Error_pSgtcSg_tF,
                             _$s10TDGSharing13WFSetupClientC18legacyAnisetteData7forDSID14withCompletionySSSg_ySo010AKAnisetteF0CSg_s5Error_pSgtcSgtF,
                             _$s10TDGSharing13WFSetupClientC19interruptionHandleryycSgvM,
@@ -388,6 +389,7 @@ exports:
                             _$s10TDGSharing13WFSetupServerC13dispatchQueueSo03OS_D6_queueCvs,
                             _$s10TDGSharing13WFSetupServerC13dispatchQueueSo03OS_D6_queueCvsTq,
                             _$s10TDGSharing13WFSetupServerC13resumeAuthTag33_0F9370D4A0722B5CE32DB26B8EE7BA1ALLSo6NSDataCSgvpfi,
+                            _$s10TDGSharing13WFSetupServerC16analyticsManager33_0F9370D4A0722B5CE32DB26B8EE7BA1ALLAA09AnalyticsE0Cvpfi,
                             _$s10TDGSharing13WFSetupServerC17completionHandlerys5Error_pSgcSgvM,
                             _$s10TDGSharing13WFSetupServerC17completionHandlerys5Error_pSgcSgvMTq,
                             _$s10TDGSharing13WFSetupServerC17completionHandlerys5Error_pSgcSgvg,
@@ -463,6 +465,16 @@ exports:
                             _$s10TDGSharing13WFSetupServerCMn,
                             _$s10TDGSharing13WFSetupServerCN,
                             _$s10TDGSharing13WFSetupServerCfD,
+                            _$s10TDGSharing14AnalyticsErrorO21__derived_enum_equalsySbAC_ACtFZ,
+                            _$s10TDGSharing14AnalyticsErrorO4hash4intoys6HasherVz_tF,
+                            _$s10TDGSharing14AnalyticsErrorO9hashValueSivg,
+                            _$s10TDGSharing14AnalyticsErrorO9hashValueSivpMV,
+                            _$s10TDGSharing14AnalyticsErrorOMa,
+                            _$s10TDGSharing14AnalyticsErrorOMn,
+                            _$s10TDGSharing14AnalyticsErrorON,
+                            _$s10TDGSharing14AnalyticsErrorOSHAAMc,
+                            _$s10TDGSharing14AnalyticsErrorOSQAAMc,
+                            _$s10TDGSharing14AnalyticsErrorOs0C0AAMc,
                             _$s10TDGSharing17WFSetupRequestKeyO8rawValueACSgSS_tcfC,
                             _$s10TDGSharing17WFSetupRequestKeyO8rawValueSSvg,
                             _$s10TDGSharing17WFSetupRequestKeyO8rawValueSSvpMV,

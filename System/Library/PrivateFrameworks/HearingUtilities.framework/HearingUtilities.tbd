@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HearingUtilities.framework/HearingUtilities
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AXHACHearingAidCapabilities,
                             _AXHACHearingAidComplianceEnabled,
                             _AXHACHearingAidComplianceSetEnabled,
@@ -78,7 +78,7 @@ exports:
                             _cloudHearingAidDescriptionForDescription,
                             _compoundAttributeByAddingAttribute,
                             _compoundAttributeByRemovingAttribute,
-                            _compoundAttributeContainsAttribute,
+                            _compoundAttributeContainsAttribute, _getCallStatus,
                             _headphoneStreamSelected, _hearingAidReceivingAudio,
                             _hearingAidStreamAvailable,
                             _hearingAidStreamAvailableAsync,
@@ -159,7 +159,7 @@ exports:
                             HUNearbyLiveListenControllerWatch, HUNearbySettings,
                             HUNoiseController, HUNoiseSample, HUNoiseSettings,
                             HUNoiseSettingsListenerHelper, HUNoiseUtilities,
-                            HURoutesManager, HUUtilities ]
+                            HURoutesManager, HUSessionManager, HUUtilities ]
     objc-ivars:           [ AXFakeHearingAidDevice._leftFakePrograms,
                             AXFakeHearingAidDevice._rightFakePrograms,
                             AXFakePSAPDevice._leftFakePrograms,

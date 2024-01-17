@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignalCompression.framework/SignalCompression
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s17SignalCompression0A7DecoderC13encoderParamsAC10Foundation4DataV_tcfC,
                             _$s17SignalCompression0A7DecoderC13encoderParamsAC10Foundation4DataV_tcfCTj,
                             _$s17SignalCompression0A7DecoderC13encoderParamsAC10Foundation4DataV_tcfCTq,
@@ -90,8 +90,13 @@ exports:
                             __ZN3gcl6motion11EncoderImpl14encodeResidualEiPKiS3_iRKNS0_12BinarizationERNS0_9ACContextE,
                             __ZN3gcl6motion11EncoderImpl26encodeSequenceParameterSetEmmPhmRm,
                             __ZN3gcl6motion7Decoder11decodeFrameEPKhmRmPi,
+                            __ZN3gcl6motion7Decoder17getCurrentFrameQPEv,
+                            __ZN3gcl6motion7Decoder20getCurrentFrameFlagsEv,
+                            __ZN3gcl6motion7Decoder21getCurrentFrameNumberEv,
                             __ZN3gcl6motion7Decoder23setSequenceParameterSetERKNS1_13AttributeInfoE,
+                            __ZN3gcl6motion7Decoder25getlastDecodedFrameNumberEv,
                             __ZN3gcl6motion7Decoder26decodeSequenceParameterSetEPKhmRmRNS1_13AttributeInfoE,
+                            __ZN3gcl6motion7Decoder28getCurrentFramePayloadLengthEv,
                             __ZN3gcl6motion7DecoderC1Ev,
                             __ZN3gcl6motion7DecoderC2Ev,
                             __ZN3gcl6motion7DecoderD1Ev,

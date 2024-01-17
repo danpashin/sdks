@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppStoreComponents.framework/AppStoreComponents
@@ -7,10 +7,10 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18AppStoreComponents14ASCLayoutProxyC020lockupMediaPreferredG4Size7fitting3for4with3and2inSo6CGSizeVAK_So16ASCLockupContextaSgSo14ASCScreenshotsCSgSo11ASCTrailersCSgSo18UITraitEnvironment_ptFZ,
                             _$s18AppStoreComponents14ASCLayoutProxyC11descriptionSSvg,
-                            _$s18AppStoreComponents14ASCLayoutProxyC12lockupLayout6ofSize15traitCollection11artworkView11headingText05titleO008subtitleO005offerO00R6ButtonACSo09ASCLockupmI0a_So07UITraitK0CSo6UIViewCSo7UILabelCSgA2tuRtFZ,
+                            _$s18AppStoreComponents14ASCLayoutProxyC12lockupLayout6ofSize15traitCollection11artworkView11headingText05titleO008subtitleO005offerO00R6Button5badgeACSo09ASCLockupmI0a_So07UITraitK0CSo6UIViewCSo7UILabelCSgA2uv2SSgtFZ,
                             _$s18AppStoreComponents14ASCLayoutProxyC12measuredSize7fitting2inSo6CGSizeVAH_So18UITraitEnvironment_ptF,
                             _$s18AppStoreComponents14ASCLayoutProxyC13layoutMargins3for014existingLayoutG0So12UIEdgeInsetsVSo16ASCLockupContextaSg_AHtFZ,
                             _$s18AppStoreComponents14ASCLayoutProxyC13placeChildren10relativeTo2inySo6CGRectV_So18UITraitEnvironment_ptF,
@@ -53,6 +53,15 @@ exports:
                             _$s18AppStoreComponents14ASCLayoutProxyCMu,
                             _$s18AppStoreComponents14ASCLayoutProxyCN,
                             _$s18AppStoreComponents14ASCLayoutProxyCfD,
+                            _$s18AppStoreComponents3PPMC11scaledValue8original7updated12CoreGraphics7CGFloatVAI_AItFZ,
+                            _$s18AppStoreComponents3PPMC21unverifiedScaledValue8original12CoreGraphics7CGFloatVAH_tFZ,
+                            _$s18AppStoreComponents3PPMCACycfC,
+                            _$s18AppStoreComponents3PPMCACycfc,
+                            _$s18AppStoreComponents3PPMCMa,
+                            _$s18AppStoreComponents3PPMCMn,
+                            _$s18AppStoreComponents3PPMCMo,
+                            _$s18AppStoreComponents3PPMCN,
+                            _$s18AppStoreComponents3PPMCfD,
                             _$sSo8NSBundleC18AppStoreComponentsE15localizedString6forKey2in4withS2S_SSSgSStF,
                             _ASCAXStarRatingStringForRating,
                             _ASCAppLaunchTrampolineErrorDomain,
@@ -85,6 +94,7 @@ exports:
                             _ASCCollectionIDGamesForYou,
                             _ASCCollectionIDNewArcadeGames,
                             _ASCCollectionIDSharePlay,
+                            _ASCLocalizedStringFromBundle,
                             _ASCLockupContextAdGridWithLandscapeScreenshots,
                             _ASCLockupContextAdGridWithPortraitScreenshots,
                             _ASCLockupContextAdMaterialWithLandscapeScreenshots,
@@ -94,16 +104,19 @@ exports:
                             _ASCLockupContextAdWithPortraitScreenshots,
                             _ASCLockupContextAdWithPortraitVideo,
                             _ASCLockupContextAdWithText,
+                            _ASCLockupContextContingentPricing,
                             _ASCLockupContextGameCenter,
                             _ASCLockupContextGameCenterArcade,
                             _ASCLockupContextIsAdGridContext,
                             _ASCLockupContextIsAdMaterialContext,
                             _ASCLockupContextIsAdMaterialWithLandscapeScreenshotsContext,
+                            _ASCLockupContextIsContingentPricingContext,
                             _ASCLockupContextOfferOnly, _ASCLockupContextOverlay,
                             _ASCLockupContextOverlayClip,
                             _ASCLockupContextSafariExtension,
                             _ASCLockupContextSingleSignOn,
                             _ASCLockupContextStandard,
+                            _ASCLockupContextTVAppOpenIn,
                             _ASCLockupContextTVProvider, _ASCLockupContextWatch,
                             _ASCLockupKindApp, _ASCLockupKindAppBundle,
                             _ASCLockupKindInAppPurchase,
@@ -163,5 +176,5 @@ exports:
                             ASCSignpostPredicate, ASCSignpostSpan, ASCTrailers,
                             ASCVideo, ASCViewMetrics, ASCViewMetricsInstruction,
                             ASCViewRender, ASCWatchApps, _ASCLockupResponse,
-                            __ASCLayoutProxy ]
+                            _TtC18AppStoreComponents3PPM, __ASCLayoutProxy ]
 ...

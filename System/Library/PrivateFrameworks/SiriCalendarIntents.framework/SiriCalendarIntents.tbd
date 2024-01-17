@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SiriCalendarIntents.framework/SiriCalendarIntents
@@ -7,11 +7,8 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _$s11SiriKitFlow11DisplayHintV0A15CalendarIntentsE11descriptionSSvg,
-                            _$s11SiriKitFlow11DisplayHintV0A15CalendarIntentsE11descriptionSSvpMV,
-                            _$s11SiriKitFlow11DisplayHintVs23CustomStringConvertible0A15CalendarIntentsMc,
-                            _$s19SiriCalendarIntents0B10EventModelV4fromACs7Decoder_p_tKcfC,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s19SiriCalendarIntents0B10EventModelV4fromACs7Decoder_p_tKcfC,
                             _$s19SiriCalendarIntents0B10EventModelV4viewAA0bD4ViewVvg,
                             _$s19SiriCalendarIntents0B10EventModelV4viewAA0bD4ViewVvpMV,
                             _$s19SiriCalendarIntents0B10EventModelV6encode2toys7Encoder_p_tKF,
@@ -59,8 +56,6 @@ exports:
                             _$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvau,
                             _$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvgZ,
                             _$s2os6LoggerV19SiriCalendarIntentsE16calendarUIPluginACvpZ,
-                            _$s32SiriReferenceResolutionDataModel8RREntityV0A15CalendarIntentsE16isConversationalSbvg,
-                            _$s32SiriReferenceResolutionDataModel8RREntityV0A15CalendarIntentsE16isConversationalSbvpMV,
                             _$sSo15INCalendarEventC19SiriCalendarIntentsE1loiySbAB_ABtFZ,
                             _$sSo15INCalendarEventC19SiriCalendarIntentsE2idSSvg,
                             _$sSo15INCalendarEventC19SiriCalendarIntentsE2idSSvpMV,
@@ -69,6 +64,9 @@ exports:
                             _$sSo24INEventParticipantStatusV19SiriCalendarIntentsE11descriptionSSvg,
                             _$sSo24INEventParticipantStatusV19SiriCalendarIntentsE11descriptionSSvpMV,
                             _$sSo24INEventParticipantStatusVs23CustomStringConvertible19SiriCalendarIntentsMc,
+                            _$sSo31INUpdateEventIntentResponseCodeV19SiriCalendarIntentsE11descriptionSSvg,
+                            _$sSo31INUpdateEventIntentResponseCodeV19SiriCalendarIntentsE11descriptionSSvpMV,
+                            _$sSo31INUpdateEventIntentResponseCodeVs23CustomStringConvertible19SiriCalendarIntentsMc,
                             _$sSo33_INPBParticipantUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvg,
                             _$sSo33_INPBParticipantUnsupportedReasonV19SiriCalendarIntentsE11descriptionSSvpMV,
                             _$sSo33_INPBParticipantUnsupportedReasonVs23CustomStringConvertible19SiriCalendarIntentsMc,

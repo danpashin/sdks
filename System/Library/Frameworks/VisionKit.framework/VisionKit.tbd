@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/VisionKit.framework/VisionKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera ]
     symbols:              [ _$s9VisionKit13ImageAnalysisC10hasResults3forSbAA0C8AnalyzerC0D5TypesV_tF,
                             _$s9VisionKit13ImageAnalysisC10transcriptSSvg,

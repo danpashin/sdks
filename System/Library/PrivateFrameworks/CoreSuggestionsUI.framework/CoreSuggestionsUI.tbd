@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSuggestionsUI.framework/CoreSuggestionsUI
-current-version:       1226.0.1
+current-version:       1226.2.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s17CoreSuggestionsUI15SGBannerContentC10suggestionSo12SGSuggestion_pSgvMTj,
                             _$s17CoreSuggestionsUI15SGBannerContentC10suggestionSo12SGSuggestion_pSgvMTq,
                             _$s17CoreSuggestionsUI15SGBannerContentC10suggestionSo12SGSuggestion_pSgvgTj,
@@ -200,6 +200,8 @@ exports:
                             _$s17CoreSuggestionsUI19SGContactSuggestionC20suggestionCategoryIdSSyFTj,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC20suggestionCategoryIdSSyFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC21contactViewController_15didCompleteWithySo09CNContactgH0C_So0L0CSgtF,
+                            _$s17CoreSuggestionsUI19SGContactSuggestionC22suggestionIconSFSymbolSSSgyFTj,
+                            _$s17CoreSuggestionsUI19SGContactSuggestionC22suggestionIconSFSymbolSSSgyFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC23suggestionCategoryImageSo7UIImageCyFTj,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC23suggestionCategoryImageSo7UIImageCyFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC23suggestionCategoryTitle8forItemsSSSaySo12SGSuggestion_pG_tFTj,
@@ -214,6 +216,8 @@ exports:
                             _$s17CoreSuggestionsUI19SGContactSuggestionC26suggestionActionButtonTypeSo08SGBannerghI0VyFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC26suggestionCategorySubtitle8forItemsSSSgSaySo12SGSuggestion_pG_tFTj,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC26suggestionCategorySubtitle8forItemsSSSgSaySo12SGSuggestion_pG_tFTq,
+                            _$s17CoreSuggestionsUI19SGContactSuggestionC30suggestionCategoryIconSFSymbolSSSgyFTj,
+                            _$s17CoreSuggestionsUI19SGContactSuggestionC30suggestionCategoryIconSFSymbolSSSgyFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC32suggestionCategoryLocalizedCount7ofItemsSSSaySo12SGSuggestion_pG_tFTj,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC32suggestionCategoryLocalizedCount7ofItemsSSSaySo12SGSuggestion_pG_tFTq,
                             _$s17CoreSuggestionsUI19SGContactSuggestionC34suggestionCategoryActionButtonTypeSo08SGBannerhiJ0VyFTj,
@@ -464,6 +468,7 @@ exports:
                             _SGUIAccessibilityIdentifierCloseButton,
                             _SGUIAccessibilityIdentifierSubtitleLabel,
                             _SGUIAccessibilityIdentifierTitleLabel,
+                            _SGUserInterfaceIdiomToNSString,
                             __suggestionViewControllerPresenter,
                             _currentUIContext, _dateStringForDate,
                             _dispatchInContext, _getContactSuggestion,
@@ -495,6 +500,7 @@ exports:
     objc-ivars:           [ SGEventSuggestionBase._calendarImage,
                             SGEventSuggestionBase._eventKitEvent,
                             SGEventSuggestionBase._realtimeEvent,
+                            SGEventSuggestionBase.bannerForVisionDevice,
                             SGFoundInSuggestionGuardedData._mailService,
                             SGFoundInSuggestionGuardedData._messageService,
                             SGRadarSuggestionBase._sourceMessageId ]

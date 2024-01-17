@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/XavierNews.framework/XavierNews
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10XavierNews11UserContextC10subscribed13autofavorited5muted7ignored9groupable17subscriptionState7bundled9purchased4read8listened4seen8location15newlySubscribedACSaySSG_A4qA019PremiumSubscriptionK0OShySSGA4tA8LocationVSgATtcfC,
                             _$s10XavierNews11UserContextC10subscribed13autofavorited5muted7ignored9groupable17subscriptionState7bundled9purchased4read8listened4seen8location15newlySubscribedACSaySSG_A4qA019PremiumSubscriptionK0OShySSGA4tA8LocationVSgATtcfCTj,
                             _$s10XavierNews11UserContextC10subscribed13autofavorited5muted7ignored9groupable17subscriptionState7bundled9purchased4read8listened4seen8location15newlySubscribedACSaySSG_A4qA019PremiumSubscriptionK0OShySSGA4tA8LocationVSgATtcfCTq,
@@ -180,6 +180,8 @@ exports:
                             _$s10XavierNews16ClassicEventDataV11publisherIDSSvpMV,
                             _$s10XavierNews16ClassicEventDataV12adCategoriesSaySSGSgvg,
                             _$s10XavierNews16ClassicEventDataV12adCategoriesSaySSGSgvpMV,
+                            _$s10XavierNews16ClassicEventDataV12isBundlePaidSbvg,
+                            _$s10XavierNews16ClassicEventDataV12isBundlePaidSbvpMV,
                             _$s10XavierNews16ClassicEventDataV13articleLengths5Int64VSgvg,
                             _$s10XavierNews16ClassicEventDataV13articleLengths5Int64VSgvpMV,
                             _$s10XavierNews16ClassicEventDataV16debugDescriptionSSvg,
@@ -520,9 +522,11 @@ exports:
                             _$s10XavierNews18ClassicArticleDataV11publisherIDSSvpMV,
                             _$s10XavierNews18ClassicArticleDataV11tagMetadataSDySSAA0c3TagG0VGvg,
                             _$s10XavierNews18ClassicArticleDataV11tagMetadataSDySSAA0c3TagG0VGvpMV,
-                            _$s10XavierNews18ClassicArticleDataV12adCategories9articleID0H6Length8halfLife0kL8Override8hasVideo5isANF0P4Paid11publishDate09publisherI0010sourceFeedI08topicIDs7cohorts010conversionE00P5Audio8featured0P16FeatureCandidate0P9Evergreen11tagMetadata16reduceVisibility12webConvertedACSaySSGSg_SSs5Int64VSgS2dSgS2bSgSb10Foundation0T0VSgS2SSgAYSDyAA0C18HeadlineCohortTypeOSDySSAA0c14HeadlineCohortE0VGGA13_S4bSDySSAA0C11TagMetadataVGS2btcfC,
+                            _$s10XavierNews18ClassicArticleDataV12adCategories9articleID0H6Length8halfLife0kL8Override8hasVideo5isANF0P4Paid0p6BundleR011publishDate09publisherI0010sourceFeedI08topicIDs7cohorts010conversionE00P5Audio8featured0P16FeatureCandidate0P9Evergreen11tagMetadata16reduceVisibility12webConvertedACSaySSGSg_SSs5Int64VSgS2dSgS2bSgS2b10Foundation0U0VSgS2SSgAZSDyAA0C18HeadlineCohortTypeOSDySSAA0c14HeadlineCohortE0VGGA14_S4bSDySSAA0C11TagMetadataVGS2btcfC,
                             _$s10XavierNews18ClassicArticleDataV12adCategoriesSaySSGSgvg,
                             _$s10XavierNews18ClassicArticleDataV12adCategoriesSaySSGSgvpMV,
+                            _$s10XavierNews18ClassicArticleDataV12isBundlePaidSbvg,
+                            _$s10XavierNews18ClassicArticleDataV12isBundlePaidSbvpMV,
                             _$s10XavierNews18ClassicArticleDataV12sourceFeedIDSSSgvg,
                             _$s10XavierNews18ClassicArticleDataV12sourceFeedIDSSSgvpMV,
                             _$s10XavierNews18ClassicArticleDataV12webConvertedSbvg,
@@ -694,6 +698,8 @@ exports:
                             _$s10XavierNews22ClassicArticleDataTypeP11publisherIDSSvgTq,
                             _$s10XavierNews22ClassicArticleDataTypeP12adCategoriesSaySSGSgvgTj,
                             _$s10XavierNews22ClassicArticleDataTypeP12adCategoriesSaySSGSgvgTq,
+                            _$s10XavierNews22ClassicArticleDataTypeP12isBundlePaidSbvgTj,
+                            _$s10XavierNews22ClassicArticleDataTypeP12isBundlePaidSbvgTq,
                             _$s10XavierNews22ClassicArticleDataTypeP13articleLengths5Int64VSgvgTj,
                             _$s10XavierNews22ClassicArticleDataTypeP13articleLengths5Int64VSgvgTq,
                             _$s10XavierNews22ClassicArticleDataTypeP18isFeatureCandidateSbvgTj,
@@ -3231,9 +3237,9 @@ exports:
                             _$s10XavierNews7ClassicV17ArticleLengthTypeON,
                             _$s10XavierNews7ClassicV17ArticleLengthTypeOSHAAMc,
                             _$s10XavierNews7ClassicV17ArticleLengthTypeOSQAAMc,
-                            _$s10XavierNews7ClassicV17HeadlineClustererV7cluster9headlines4tags16clusteringConfig12topicConfigs7journal15sampleGeneratorAC0D16ClusteringResultVSayAA09GroupableD0VG_SayAA0R3TagVGAC13ConfigurationV0pT0VSDySSAV05TopicJ0VGAA0P7JournalCSdSNySdGctFZ,
-                            _$s10XavierNews7ClassicV17HeadlineClustererV9formGroup15sortedHeadlines14minClusterSize03maxkL05rules16bundlePaidQuotas7journal019selectedHardPaywallB16PlusArticleLimit0stubvW5Count15sampleGeneratorAC0D14GroupingResultVSgSayAA09GroupableD0VG_SiSgSiSayAC0D14ClusteringRuleOGAC13ConfigurationV23ClusteringConfigurationV0Q0VAA17ClusteringJournalCSgS2iSdSNySdGctFZ,
-                            _$s10XavierNews7ClassicV17HeadlineClustererV9formGroup15sortedHeadlines14minClusterSize03maxkL05rules16bundlePaidQuotas7journalAC0D14GroupingResultVSgSayAA09GroupableD0VG_SiSgSiSayAC0D14ClusteringRuleOGAC13ConfigurationV0vX0V0Q0VAA0V7JournalCSgtFZ,
+                            _$s10XavierNews7ClassicV17HeadlineClustererV7cluster9headlines4tags16clusteringConfig12topicConfigs7journal15sampleGenerator16bundleSubscribedAC0D16ClusteringResultVSayAA09GroupableD0VG_SayAA0T3TagVGAC13ConfigurationV0rV0VSDySSAW05TopicJ0VGAA0R7JournalCSdSNySdGcSbtFZ,
+                            _$s10XavierNews7ClassicV17HeadlineClustererV9formGroup15sortedHeadlines14minClusterSize03maxkL05rules16bundlePaidQuotas7journal019selectedHardPaywallB16PlusArticleLimit0stubvW5Count15sampleGenerator0O10SubscribedAC0D14GroupingResultVSgSayAA09GroupableD0VG_SiSgSiSayAC0D14ClusteringRuleOGAC13ConfigurationV23ClusteringConfigurationV0Q0VAA17ClusteringJournalCSgS2iSdSNySdGcSbtFZ,
+                            _$s10XavierNews7ClassicV17HeadlineClustererV9formGroup15sortedHeadlines14minClusterSize03maxkL05rules16bundlePaidQuotas7journal0O10SubscribedAC0D14GroupingResultVSgSayAA09GroupableD0VG_SiSgSiSayAC0D14ClusteringRuleOGAC13ConfigurationV0wY0V0Q0VAA0W7JournalCSgSbtFZ,
                             _$s10XavierNews7ClassicV17HeadlineClustererVMa,
                             _$s10XavierNews7ClassicV17HeadlineClustererVMn,
                             _$s10XavierNews7ClassicV17HeadlineClustererVN,
@@ -3317,6 +3323,8 @@ exports:
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC06serverE0SdvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC06serverE11CoefficientSdvg,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC06serverE11CoefficientSdvpMV,
+                            _$s10XavierNews7ClassicV20HeadlineScoreProfileC06serverE21DemocratizationFactorSdvg,
+                            _$s10XavierNews7ClassicV20HeadlineScoreProfileC06serverE21DemocratizationFactorSdvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC09embeddingE0SfSgvg,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC09embeddingE0SfSgvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC09rawServerE0Sdvg,
@@ -3367,6 +3375,8 @@ exports:
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC20bundlePaidMultiplierSdvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC20conversionMultiplierSdvg,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC20conversionMultiplierSdvpMV,
+                            _$s10XavierNews7ClassicV20HeadlineScoreProfileC21conversionCoefficientSdvg,
+                            _$s10XavierNews7ClassicV20HeadlineScoreProfileC21conversionCoefficientSdvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC21publisherFavorabilitySdvg,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC21publisherFavorabilitySdvpMV,
                             _$s10XavierNews7ClassicV20HeadlineScoreProfileC21qualitativeMultiplierSdvg,
@@ -3404,6 +3414,8 @@ exports:
                             _$s10XavierNews7ClassicV20UserCohortMembershipVMn,
                             _$s10XavierNews7ClassicV20UserCohortMembershipVN,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleO011hardPaywallB16PlusArticleLimityAESi_tcAEmFWC,
+                            _$s10XavierNews7ClassicV22HeadlineClusteringRuleO11descriptionSSvg,
+                            _$s10XavierNews7ClassicV22HeadlineClusteringRuleO11descriptionSSvpMV,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleO13accessibilityyAESi_tcAEmFWC,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleO14evergreenLimityAESi_tcAEmFWC,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleO14topicDiversityyAeC13ConfigurationV0eI0V05TopicH0VcAEmFWC,
@@ -3419,6 +3431,7 @@ exports:
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleOSEAAMc,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleOSQAAMc,
                             _$s10XavierNews7ClassicV22HeadlineClusteringRuleOSeAAMc,
+                            _$s10XavierNews7ClassicV22HeadlineClusteringRuleOs23CustomStringConvertibleAAMc,
                             _$s10XavierNews7ClassicV22HeadlineGroupingResultV8acceptedSayAA09GroupableD0VGvg,
                             _$s10XavierNews7ClassicV22HeadlineGroupingResultV8acceptedSayAA09GroupableD0VGvpMV,
                             _$s10XavierNews7ClassicV22HeadlineGroupingResultV8rejectedSayAA09GroupableD0VGvg,
@@ -3806,7 +3819,8 @@ exports:
                             _$sSd10XavierNewsE15ctrToMembershipyS2d_S3dtF,
                             _$sSd10XavierNewsE16coefficientDecay5count17initialMultiplier8halfLifeS2d_S2dtF,
                             _$sSd10XavierNewsE18exponentiallyDecay14newObservation0E11Impressions9decayRateS2d_S2dtF,
-                            _$sSd10XavierNewsE21linearImpressionCount9decayRateS2d_tF,
+                            _$sSd10XavierNewsE21linearImpressionCount9decayRate3maxS2d_SdtF,
+                            _$sSd10XavierNewsE5apply10priorValue0D11Impressions0D9DecayRate07currentF00igH019avoidDoubleCounting10multiplier0D19MaxLinearImpression0inoP0S2d_S4dSbS3dtF,
                             _$sSd10XavierNewsE9timeDecay8halfLife11coefficientS2d_SdtF,
                             _XavierNewsVersionNumber, _XavierNewsVersionString ]
 ...

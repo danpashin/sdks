@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AddressBookLegacy.framework/AddressBookLegacy
-current-version:       12691.1
+current-version:       12699
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ABAccountAddTypeToCache, _ABAccountCacheClear,
                             _ABAccountCachedTypeForAccountIdentifier,
                             _ABAccountClass, _ABAccountCopyIdentifier,
@@ -928,6 +928,7 @@ exports:
                             _kABCPersonPreferredChannelProperty,
                             _kABCPersonPreferredLikenessSourceProperty,
                             _kABCPersonPreferredPersonaIdentifierProperty,
+                            _kABCPersonSensitiveContentConfigurationProperty,
                             _kABCPersonSocialProfileProperty,
                             _kABCPersonStoreIDProperty,
                             _kABCPersonStoreReferenceProperty,
@@ -935,6 +936,7 @@ exports:
                             _kABCPersonThumbnailDataProperty,
                             _kABCPersonWallpaperMetadataProperty,
                             _kABCPersonWallpaperProperty,
+                            _kABCPersonWallpaperURIProperty,
                             _kABCPersonWatchWallpaperImageDataProperty,
                             _kABCPhoneProperty, _kABCPrefixProperty,
                             _kABCPreviousFamilyNameProperty,
@@ -1104,7 +1106,9 @@ exports:
                             _kABPersonPrefixProperty,
                             _kABPersonPreviousFamilyNameProperty,
                             _kABPersonRelatedNamesProperty,
-                            _kABPersonSearchProperty, _kABPersonSisterLabel,
+                            _kABPersonSearchProperty,
+                            _kABPersonSensitiveContentConfigurationProperty,
+                            _kABPersonSisterLabel,
                             _kABPersonSocialProfileDisplayNameKey,
                             _kABPersonSocialProfileProperty,
                             _kABPersonSocialProfileServiceFacebook,
@@ -1126,6 +1130,7 @@ exports:
                             _kABPersonURLProperty,
                             _kABPersonWallpaperMetadataProperty,
                             _kABPersonWallpaperProperty,
+                            _kABPersonWallpaperURIProperty,
                             _kABPersonWatchWallpaperImageDataProperty,
                             _kABPhoneLabel, _kABPostalAddressLabel,
                             _kABRefreshDidEnd, _kABRefreshDidStart,

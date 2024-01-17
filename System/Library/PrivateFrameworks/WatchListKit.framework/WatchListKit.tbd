@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _WLKAPIVersion, _WLKAPIVersionOverride,
                             _WLKAccountMonitorAccountDidChange,
                             _WLKAccountMontiorStoreFrontDidChange,
@@ -73,6 +73,7 @@ exports:
                             _WLKEntitlementSuppression, _WLKEntitlementWatchList,
                             _WLKError, _WLKErrorCodeCancelledDescription,
                             _WLKErrorDomain, _WLKFetchBaseURLWithCompletion,
+                            _WLKFetchIsSportsEnabled,
                             _WLKFetchNotificationCategories,
                             _WLKFetchNowPlayingEnabled,
                             _WLKFetchNowPlayingEnabledReturningError,
@@ -85,7 +86,6 @@ exports:
                             _WLKIsLocationEnabled, _WLKIsNewsApp,
                             _WLKIsRegulatedSKU, _WLKIsRunningTest, _WLKIsSandboxed,
                             _WLKIsSportsEnabled,
-                            _WLKIsSportsEnabledReturningError,
                             _WLKIsTVAllowedRestrictionClientType, _WLKIsTVApp,
                             _WLKIsTVAppEnabled, _WLKIsTool, _WLKIsWatchlisttool,
                             _WLKLaunchOptionsForPlayback,
@@ -126,6 +126,7 @@ exports:
                             _WLKNotificationsKeyNotificationSubType,
                             _WLKNotificationsKeySound,
                             _WLKNotificationsKeySource,
+                            _WLKNotificationsKeySymbolName,
                             _WLKNotificationsKeyThreadID,
                             _WLKNotificationsKeyTimeout,
                             _WLKNotificationsKeyTitle, _WLKNotificationsKeyType,
@@ -255,6 +256,7 @@ exports:
                             _WLKSubscriptionSyncLogObject, _WLKSystemLogObject,
                             _WLKTVAppBundleID, _WLKTVAppEnabledOverride,
                             _WLKTVAppGroupSharedContainer, _WLKTVDomain,
+                            _WLKUserSettingsResponseKeyBrandSidebarSettingsIsHidden,
                             _WLKViewServiceAccountNameKey,
                             _WLKViewServiceAppBundlesKey,
                             _WLKXPCSafeErrorFromError, _WLKshouldRetryError,
@@ -279,6 +281,7 @@ exports:
                             __WLKUserEnvironmentPlatformPad,
                             __WLKUserEnvironmentPlatformPhone,
                             __WLKUserEnvironmentPlatformTV,
+                            __WLKUserEnvironmentPlatformVision,
                             __WLKUserEnvironmentPlatformWatch,
                             ___WLKLocationManagerLocationDidChangeNotification,
                             ___WLKSettingsDidChangeNotification,
@@ -327,7 +330,7 @@ exports:
                             WLKBasicEpisodeMetadata, WLKBasicMovieMetadata,
                             WLKBasicSeasonMetadata, WLKBasicShowMetadata,
                             WLKBasicSportingEventMetadata, WLKBrowseItem, WLKCache,
-                            WLKCachedBagManager, WLKCanonicalContainerRequest,
+                            WLKCanonicalContainerRequest,
                             WLKCanonicalContainerRequestOperation,
                             WLKCanonicalContainerResponse,
                             WLKCanonicalPlayablesRequest,

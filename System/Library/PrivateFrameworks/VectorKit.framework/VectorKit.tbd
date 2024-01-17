@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
-current-version:       1899.30.7
+current-version:       1899.32.9
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _GEOMapRectEnclosingCameraProperties,
                             _GEOPDCameraPathFrameFromVKCameraFrame,
                             _VKAnimationCurveCubicEaseOut,
@@ -177,12 +177,12 @@ exports:
                             VKEVChargeStationRouteWaypoint, VKIconImage,
                             VKIconManager, VKIconModifiers, VKImage,
                             VKImageSourceKey, VKLabelExclusionRegion,
-                            VKLabelMarker, VKLabelMarkerShield, VKLogicDebugInfo,
-                            VKMapSnapshot, VKMapSnapshotCreator, VKMapView,
-                            VKMapViewDescriptor, VKMarker, VKMarkerFeatureHandle,
-                            VKMetrics, VKMetricsDescriptor, VKMuninJunction,
-                            VKMuninMarker, VKMuninRoad, VKNavContext,
-                            VKNavigationPuck,
+                            VKLabelMarker, VKLabelMarkerShield,
+                            VKLabelSelectionQuery, VKLogicDebugInfo, VKMapSnapshot,
+                            VKMapSnapshotCreator, VKMapView, VKMapViewDescriptor,
+                            VKMarker, VKMarkerFeatureHandle, VKMetrics,
+                            VKMetricsDescriptor, VKMuninJunction, VKMuninMarker,
+                            VKMuninRoad, VKNavContext, VKNavigationPuck,
                             VKNavigationPuckLocationTracingEvent,
                             VKObjectBoundsContext, VKOverlay, VKPlatform,
                             VKPolylineGroupOverlay, VKPolylineOverlay,

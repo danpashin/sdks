@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServicesCore.framework/PhotoLibraryServicesCore
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ALGetLibrarySizes, _ALGetPhotosAndVideosCount,
                             _ALPhotosAndVideosCountNotificationName,
                             _ALRegisterForPhotosAndVideosCount,
@@ -140,8 +140,6 @@ exports:
                             _PLCoreAnalyticsAnalysisStateEventProcessedPercentKey,
                             _PLCoreAnalyticsAnalysisStateEventUnavailablePercentKey,
                             _PLCoreAnalyticsAssetFinalizationEvent,
-                            _PLCoreAnalyticsAssetFinalizationGenerateAndStoreTimeDeltaKey,
-                            _PLCoreAnalyticsAssetFinalizationResourceTypeKey,
                             _PLCoreAnalyticsBundleIdentifierEvent,
                             _PLCoreAnalyticsBundleIdentifierEventALAssetsLibraryAssetImportBundleIdentifierKey,
                             _PLCoreAnalyticsBundleIdentifierEventALAssetsLibraryAssetImportUTIKey,
@@ -193,14 +191,15 @@ exports:
                             _PLCoreAnalyticsCollectionsStatisticsEventAvgNumAssetsKey,
                             _PLCoreAnalyticsCollectionsStatisticsEventMedianNumAssetsKey,
                             _PLCoreAnalyticsCollectionsStatisticsEventNumberOfCollectionsKey,
-                            _PLCoreAnalyticsDeferredMediadProcessingAssetDurationKey,
                             _PLCoreAnalyticsDeferredMediadProcessingAssetKind,
                             _PLCoreAnalyticsDeferredMediadProcessingDeferredProcessingNeededKey,
+                            _PLCoreAnalyticsDeferredMediadProcessingDimensions,
                             _PLCoreAnalyticsDeferredMediadProcessingDurationKey,
                             _PLCoreAnalyticsDeferredMediadProcessingErrorKey,
-                            _PLCoreAnalyticsDeferredMediadProcessingEvent,
                             _PLCoreAnalyticsDeferredMediadProcessingIsRenderKey,
                             _PLCoreAnalyticsDeferredMediadProcessingKindSubtypeKey,
+                            _PLCoreAnalyticsDeferredMediadProcessingQoS,
+                            _PLCoreAnalyticsDeferredMediadProcessingQueueEntryPosition,
                             _PLCoreAnalyticsDeferredProcessingEvent,
                             _PLCoreAnalyticsDeferredProcessingEventAdjustmentAndCreationDifferenceKey,
                             _PLCoreAnalyticsDeferredProcessingEventAssetDurationKey,
@@ -591,6 +590,7 @@ exports:
                             _PLIsErrorEqualToCode, _PLIsErrorEqualToSQLiteCode,
                             _PLIsErrorFileNotFound,
                             _PLIsErrorOrUnderlyingErrorFileExists,
+                            _PLIsErrorOrUnderlyingErrorFileNotFound,
                             _PLIsErrorSQLiteDiskFull,
                             _PLIsErrorXPCConnectionInvalid,
                             _PLIsFeaturedContentAllowed,
@@ -747,7 +747,6 @@ exports:
                             _PLPlatformCloudFeedSupported,
                             _PLPlatformCloudPhotosPrefetchSupported,
                             _PLPlatformCloudPhotosPrimarySyncSupported,
-                            _PLPlatformDupeAnalysisSupported,
                             _PLPlatformEagerlyFetchFaceRegions,
                             _PLPlatformExtendedAttributesSupported,
                             _PLPlatformHighlightsSupported,
@@ -1123,8 +1122,6 @@ exports:
                             _kPLImageWriterJobTypeEnablePhotoStream,
                             _kPLImageWriterJobTypeImage,
                             _kPLImageWriterJobTypeProcessSyncClientJobs,
-                            _kPLImageWriterJobTypeReenqueueAssetUUIDsToPhotoStream,
-                            _kPLImageWriterJobTypeSavePhotoStreamImageToCameraRoll,
                             _kPLImageWriterJobTypeSyncedVideoSave,
                             _kPLImageWriterJobTypeVideoAssetMayExist,
                             _kPLImageWriterJobTypeVideoCapture,
@@ -1150,20 +1147,8 @@ exports:
                             _kPLImageWriterPhotoSourcePath,
                             _kPLImageWriterPhotoSpatialOverCaptureContentDiagnosticPath,
                             _kPLImageWriterPhotoSpatialOverCaptureContentSourcePath,
-                            _kPLImageWriterPhotoStreamAssetFileHashKey,
-                            _kPLImageWriterPhotoStreamAssetMetadataKey,
-                            _kPLImageWriterPhotoStreamAssetUUIDsToDeleteKey,
-                            _kPLImageWriterPhotoStreamDeleteAllStreamAssetsOnly,
-                            _kPLImageWriterPhotoStreamDeleteAllStreams,
-                            _kPLImageWriterPhotoStreamDerivedAssetPathKey,
-                            _kPLImageWriterPhotoStreamIDKey,
                             _kPLImageWriterPhotoStreamImageForPublishing,
-                            _kPLImageWriterPhotoStreamImageFromSubscription,
-                            _kPLImageWriterPhotoStreamImageFromSubscriptionOriginalPath,
-                            _kPLImageWriterPhotoStreamImagePathKey,
-                            _kPLImageWriterPhotoStreamReenqueAssetUUIDsKey,
                             _kPLImageWriterPhotoStreamVideoForPublishing,
-                            _kPLImageWriterPhotoStreamVideoFromSubscription,
                             _kPLImageWriterPlaceholderVideoHeight,
                             _kPLImageWriterPlaceholderVideoWidth,
                             _kPLImageWriterPreviewImageData,
@@ -1186,13 +1171,6 @@ exports:
                             _kPLPhotoSavingFullSizeImageData,
                             _kPLPhotoSavingMetadata,
                             _kPLPhotoSavingOriginalImageData,
-                            _kPLPhotoStreamAssetCollectionUUID,
-                            _kPLPhotoStreamDateCreatedKey,
-                            _kPLPhotoStreamDerivedAssetHashKey,
-                            _kPLPhotoStreamMasterAssetHashKey,
-                            _kPLPhotoStreamMasterAssetMetadataKey,
-                            _kPLPhotoStreamModifiedDateKey,
-                            _kPLPhotoStreamServerUploadedDateKey,
                             _kPLQuery_comparator, _kPLQuery_conjunction,
                             _kPLQuery_firstQuery, _kPLQuery_firstValue,
                             _kPLQuery_key, _kPLQuery_queries,

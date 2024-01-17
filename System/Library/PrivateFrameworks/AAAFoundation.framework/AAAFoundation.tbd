@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AAAFoundation.framework/AAAFoundation
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _AAAFoundationVersionNumber,
                             _AAAFoundationVersionString,
                             _AAFNumberofUnderlyingError,
@@ -32,6 +32,7 @@ exports:
                             _AFUtilitiesUsersAndGroupsBundleID,
                             _TapToRadarKitLibrary, _TapToRadarKitLibraryCore,
                             __AAFLogSystem, __AAFLogSystemAnalytics,
+                            __AFTTRAutoDiagnosticsFullLogArchive,
                             __AFTTRAutoDiagnosticsKey,
                             __AFTTRAutoDiagnosticsPhone,
                             __AFTTRClassificationKey,
@@ -54,9 +55,9 @@ exports:
                             AAFAnalyticsTransportRTC,
                             AAFCertificateTrustValidator, AAFDefaultSerializer,
                             AAFDeviceInfo, AAFFuture, AAFImage, AAFJsonSerializer,
-                            AAFKeychainItem, AAFKeychainItemDescriptor,
-                            AAFKeychainManager, AAFPlistSerializer, AAFPromise,
-                            AAFSerialization, AAFService, AAFTapToRadarHelper,
-                            AAFTapToRadarRequest, AAFXPCSession,
-                            AAFXPCSessionConfig, AFUtilities ]
+                            AAFKeybagLockAssertion, AAFKeychainItem,
+                            AAFKeychainItemDescriptor, AAFKeychainManager,
+                            AAFPlistSerializer, AAFPromise, AAFSerialization,
+                            AAFService, AAFTapToRadarHelper, AAFTapToRadarRequest,
+                            AAFXPCSession, AAFXPCSessionConfig, AFUtilities ]
 ...

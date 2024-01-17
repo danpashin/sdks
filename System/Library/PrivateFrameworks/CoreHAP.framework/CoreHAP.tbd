@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
-current-version:       1054.1.7
+current-version:       1092.3.10
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _HAP2AccessoryServerDiscoveryBonjourHAPServiceTypeAirPlay,
                             _HAP2TLVThreadOperationTypeAsString,
                             _HAP2UnpairedAccessoryServerPermissionTypeToString,
@@ -27,6 +27,9 @@ exports:
                             _HAPAccessoryPingFailedCount,
                             _HAPAccessoryPingSuccessCount, _HAPAccessoryProduct,
                             _HAPAccessoryReachable, _HAPAccessoryReason,
+                            _HAPAccessoryServerConnectionMethodToString,
+                            _HAPAccessoryServerDiscoveryMethod,
+                            _HAPAccessoryServerDiscoveryMethodToString,
                             _HAPAccessoryServerPairSetupTypeToString,
                             _HAPAccessoryServerSessionTypesFromString,
                             _HAPAccessoryService,
@@ -431,12 +434,14 @@ exports:
                             HAPAccessCodeResponseStatusWrapper, HAPAccessory,
                             HAPAccessoryInfo, HAPAccessoryPairingRequest,
                             HAPAccessoryServer, HAPAccessoryServerBTLE,
+                            HAPAccessoryServerBookkeeping,
                             HAPAccessoryServerBrowser,
                             HAPAccessoryServerBrowserBTLE,
                             HAPAccessoryServerBrowserHAP2Adapter,
                             HAPAccessoryServerBrowserIP,
                             HAPAccessoryServerBrowserWiProxBTLE,
                             HAPAccessoryServerHAP2Adapter, HAPAccessoryServerIP,
+                            HAPAccessoryServerIPConnectionStatistics,
                             HAPAccessoryWakeTuple, HAPArrayWrapper,
                             HAPAudioCodecBitRateWrapper,
                             HAPAudioCodecSampleRateWrapper,
@@ -496,6 +501,7 @@ exports:
                             HAPMetadataCharacteristicValue,
                             HAPMetadataConstraints, HAPMetadataProperty,
                             HAPMetadataService, HAPMetadataTuple, HAPMetadataUnit,
+                            HAPMetricsBonjourIncorrrectStateLogEvent,
                             HAPMetricsDispatcher, HAPMetricsPairVerifyEvent,
                             HAPMutableKeychainItem, HAPNFCAccessControl,
                             HAPNFCAccessDeviceCredentialKeyRequest,
@@ -521,7 +527,8 @@ exports:
                             HAPSecuritySessionDelegateAdditionalDerivedKeyTuple,
                             HAPSecuritySessionEncryption,
                             HAPSelectedAudioStreamConfiguration, HAPService,
-                            HAPStagingNotReadyReasonsWrapper, HAPStringWrapper,
+                            HAPSocketInfo, HAPStagingNotReadyReasonsWrapper,
+                            HAPStringWrapper,
                             HAPSupportedAudioStreamConfigurations,
                             HAPSupportedCharacteristicValueTransition,
                             HAPSupportedCharacteristicValueTransitionConfiguration,

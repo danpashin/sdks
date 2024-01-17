@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DMCApps.framework/DMCApps
@@ -7,12 +7,16 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s7DMCApps0A6ClientV10connectionACSo13DMFConnectionC_tcfC,
+                            _$s7DMCApps0A6ClientV16organizationNameSSSgvg,
+                            _$s7DMCApps0A6ClientV16organizationNameSSSgvpMV,
                             _$s7DMCApps0A6ClientV21didInstallApplication_7optionsSbAA19DMCAppBackupControl_AA0G4BaseAA0g12DocumentSyncI0AA0g7RemovalI0p_SDySSypGSgtYaKF,
                             _$s7DMCApps0A6ClientV21didInstallApplication_7optionsSbAA19DMCAppBackupControl_AA0G4BaseAA0g12DocumentSyncI0AA0g7RemovalI0p_SDySSypGSgtYaKFTu,
                             _$s7DMCApps0A6ClientV22willInstallApplication_7optionsSbAA19DMCAppBackupControl_AA0G4BaseAA0g12DocumentSyncI0AA0g7RemovalI0p_SDySSypGSgtYaKF,
                             _$s7DMCApps0A6ClientV22willInstallApplication_7optionsSbAA19DMCAppBackupControl_AA0G4BaseAA0g12DocumentSyncI0AA0g7RemovalI0p_SDySSypGSgtYaKFTu,
+                            _$s7DMCApps0A6ClientV29shouldPromptForInstallConsent3forSbs6UInt64VSg_tYaF,
+                            _$s7DMCApps0A6ClientV29shouldPromptForInstallConsent3forSbs6UInt64VSg_tYaFTu,
                             _$s7DMCApps0A6ClientV9isManaged8bundleID7personaSbSS_SSSgtYaKF,
                             _$s7DMCApps0A6ClientV9isManaged8bundleID7personaSbSS_SSSgtYaKFTu,
                             _$s7DMCApps0A6ClientV9updateApp_7optionsSbAA19DMCAppBackupControl_AA0F4BaseAA0f12DocumentSyncH0AA0f7RemovalH0p_SDySSypGSgtYaKF,
@@ -21,6 +25,10 @@ exports:
                             _$s7DMCApps0A6ClientVAA20DMCAppStateReportingAAWP,
                             _$s7DMCApps0A6ClientVAA21DMCAppStateReporting2AAMc,
                             _$s7DMCApps0A6ClientVAA21DMCAppStateReporting2AAWP,
+                            _$s7DMCApps0A6ClientVAA21DMCAppStateReporting3AAMc,
+                            _$s7DMCApps0A6ClientVAA21DMCAppStateReporting3AAWP,
+                            _$s7DMCApps0A6ClientVAA21DMCAppStateReporting4AAMc,
+                            _$s7DMCApps0A6ClientVAA21DMCAppStateReporting4AAWP,
                             _$s7DMCApps0A6ClientVACycfC, _$s7DMCApps0A6ClientVMa,
                             _$s7DMCApps0A6ClientVMn, _$s7DMCApps0A6ClientVN,
                             _$s7DMCApps10DMCAppBaseMp, _$s7DMCApps10DMCAppBaseTL,
@@ -102,6 +110,12 @@ exports:
                             _$s7DMCApps21DMCAppStateReporting2Mp,
                             _$s7DMCApps21DMCAppStateReporting2PAA0bC9ReportingTb,
                             _$s7DMCApps21DMCAppStateReporting2TL,
+                            _$s7DMCApps21DMCAppStateReporting3Mp,
+                            _$s7DMCApps21DMCAppStateReporting3PAA0bC10Reporting2Tb,
+                            _$s7DMCApps21DMCAppStateReporting3TL,
+                            _$s7DMCApps21DMCAppStateReporting4Mp,
+                            _$s7DMCApps21DMCAppStateReporting4PAA0bC10Reporting3Tb,
+                            _$s7DMCApps21DMCAppStateReporting4TL,
                             _$s7DMCApps25DMCAppDocumentSyncControlMp,
                             _$s7DMCApps25DMCAppDocumentSyncControlTL,
                             _$s7DMCApps25DMCAppInstallationControlMp,

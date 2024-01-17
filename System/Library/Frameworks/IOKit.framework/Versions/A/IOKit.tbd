@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
@@ -7,7 +7,7 @@ current-version:       275
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _IOAVAudioFormatString,
                             _IOAVAudioGetChannelAllocation,
                             _IOAVAudioGetChannelAllocationDefault,
@@ -581,6 +581,7 @@ exports:
                             _IOHIDEventSystemConnectionGetTypeID,
                             _IOHIDEventSystemConnectionGetTypeString,
                             _IOHIDEventSystemConnectionGetUUID,
+                            _IOHIDEventSystemConnectionHasEntitlement,
                             _IOHIDEventSystemCopyConnections,
                             _IOHIDEventSystemCopyEvent,
                             _IOHIDEventSystemCopyMatchingServices,
@@ -660,6 +661,7 @@ exports:
                             _IOHIDQueueSetDispatchQueue, _IOHIDQueueStart,
                             _IOHIDQueueStop, _IOHIDQueueUnscheduleFromRunLoop,
                             _IOHIDRegisterVirtualDisplay, _IOHIDRequestAccess,
+                            _IOHIDServiceCheckEntitlements,
                             _IOHIDServiceClientConformsTo,
                             _IOHIDServiceClientCopyDescription,
                             _IOHIDServiceClientCopyEvent,
@@ -1424,6 +1426,7 @@ exports:
                             ___IOHIDEventSystemClientServiceRefreshRemovedServiceCallback,
                             ___IOHIDEventSystemClientServiceReplaceCallback,
                             ___IOHIDEventSystemConnectionActivityNotification,
+                            ___IOHIDEventSystemConnectionCheckServerStatus,
                             ___IOHIDEventSystemConnectionUpdateActivityState,
                             ___IOHIDEventSystem_debug, ___IOHIDLoadElementSet,
                             ___IOHIDManagerGetRootKey,

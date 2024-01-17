@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _MSVArchivedDataWithRootObject,
                             _MSVArtworkAssetFileExtensions,
                             _MSVArtworkServiceErrorDomain,
@@ -48,6 +48,7 @@ exports:
                             _MSVDeviceSupportsSideLoadedMediaContent,
                             _MSVDeviceSupportsVocalAttenuation, _MSVErrorDomain,
                             _MSVGetCurrentThreadPriority,
+                            _MSVGetDeviceHardwarePlatform,
                             _MSVGetDeviceProductType, _MSVGetDiskUsageForPath,
                             _MSVGetKernelBootTime, _MSVGetMaximumScreenScale,
                             _MSVGetMaximumScreenSize, _MSVGetProcessLaunchTime,
@@ -140,8 +141,10 @@ exports:
                             MSVBidirectionalDictionary, MSVBlockGuard,
                             MSVBloomFilter, MSVCallback, MSVDefaultDictionary,
                             MSVDistributedNotificationObserver,
-                            MSVEntitlementUtilities, MSVFileBufferedPipe,
-                            MSVFinally, MSVFrameworkDescription, MSVLRUDictionary,
+                            MSVEntitlementUtilities,
+                            MSVExtendableBackgroundTaskProvider,
+                            MSVFileBufferedPipe, MSVFinally,
+                            MSVFrameworkDescription, MSVLRUDictionary,
                             MSVLyricsAgent, MSVLyricsElement, MSVLyricsLine,
                             MSVLyricsSection, MSVLyricsSongInfo,
                             MSVLyricsSongWriter, MSVLyricsTTMLParser,

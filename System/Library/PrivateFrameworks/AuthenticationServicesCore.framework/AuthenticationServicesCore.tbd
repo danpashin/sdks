@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AuthenticationServicesCore.framework/AuthenticationServicesCore
-current-version:       616.1.27
+current-version:       617.1.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s26AuthenticationServicesCore13ASCABLEClientC07performA9Operation_25forRelyingPartyIdentifier17completionHandleryAC0F4TypeO_SSySo21ASCCredentialProtocol_pSg_s5Error_pSgtctFTj,
                             _$s26AuthenticationServicesCore13ASCABLEClientC07performA9Operation_25forRelyingPartyIdentifier17completionHandleryAC0F4TypeO_SSySo21ASCCredentialProtocol_pSg_s5Error_pSgtctFTq,
                             _$s26AuthenticationServicesCore13ASCABLEClientC11ClientErrorO03_nsF6DomainSSvgZ,
@@ -270,7 +270,6 @@ exports:
                             _ASCAuthorizationPresenterClientEntitlementName,
                             _ASFIDOAuthenticatorAttachmentCrossPlatform,
                             _ASFIDOAuthenticatorAttachmentPlatform,
-                            _ASKeychainSyncStatusMayHaveChangedNotification,
                             _ASPasskeyTCCService,
                             _ASViewServiceClientEntitlement,
                             _ASViewServiceProcess,

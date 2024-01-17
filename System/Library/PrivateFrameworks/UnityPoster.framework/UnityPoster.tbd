@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/UnityPoster.framework/UnityPoster
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _UPBeierGetPointOnLine,
                             _UPBezierExtrapolatePointOnLine,
                             _UPBezierPathAddRoundedCorner,
@@ -24,6 +24,8 @@ exports:
                             _UPTangentialInterceptingFractionOnLine,
                             _UPTangentialPointFromLine,
                             _UnityPosterVersionNumber, _UnityPosterVersionString ]
-    objc-classes:         [ UPBezierPathElement, UPQuiltConfiguration, UPQuiltView,
+    objc-classes:         [ UPBezierPathElement, UPQuiltConfiguration,
+                            UPQuiltConfigurationPad, UPQuiltConfigurationPhone,
+                            UPQuiltView, UPQuiltViewPad, UPQuiltViewPhone,
                             UPSeededRandomizer, UnityOptions ]
 ...

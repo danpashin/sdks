@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppleBasebandManager.framework/AppleBasebandManager
@@ -7,7 +7,7 @@ current-version:       0
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ __Z15GetGlobalLoggerNSt3__110shared_ptrIN3ctu9LogServerEEE,
                             __Z15GetOsLogContextv, __Z20ABMGetProjectVersionv,
                             __Z23ABMGetRootVersionStringv,
@@ -231,7 +231,6 @@ exports:
                             __ZN3abm21kCommandResetBasebandE,
                             __ZN3abm21kCommandSetAudioStateE,
                             __ZN3abm21kE75TypeGenericStringE,
-                            __ZN3abm21kEventBasebandVersionE,
                             __ZN3abm21kKeyABMDomainBootArgsE,
                             __ZN3abm21kKeyAWDAccessoryStateE,
                             __ZN3abm21kKeyAWDNVMSyncSuccessE,

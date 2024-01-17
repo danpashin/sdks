@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
-current-version:       4416.11.7
+current-version:       4416.39.103
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CAFilterForSBUILegibilityShadowCompositingFilter,
                             _DebugStringForSBUIFaceIDCoachingCondition,
                             _NSDictionaryFromSBUILegibilityShadowSettings,
@@ -282,6 +282,7 @@ exports:
                             SBSUIMutableLoginUISceneClientSettings,
                             SBSUIMutableStarkNotificationsSceneClientSettings,
                             SBSUIMutableStarkNotificationsSceneSettings,
+                            SBSUIProxReaderSceneExtension,
                             SBSUIProxReaderSceneRequestBuilder,
                             SBSUIProxReaderSceneSpecification,
                             SBSUIRemoteAlertClientSettingsExtension,
@@ -298,6 +299,7 @@ exports:
                             SBSUIStarkNotificationsSceneSettings,
                             SBSUIStarkNotificationsSceneSpecification,
                             SBSUIStarkNotificationsSceneTransitionContext,
+                            SBSUIStatusBarSceneHostComponent,
                             SBSUISystemNotesSceneSpecification,
                             SBSUISystemNotesWindowScene,
                             SBSUISystemNotesWindowSceneBSActionsHandler,

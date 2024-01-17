@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/APTransport.framework/APTransport
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _APAdvertiserInfoCopy,
                             _APAdvertiserInfoCopyAirPlayData,
                             _APAdvertiserInfoCopyAirPlayDataWithNANServiceType,
@@ -57,6 +57,7 @@ exports:
                             _APBrokerManagerAuthenticateBrokerGroup,
                             _APBrokerManagerCreate,
                             _APBrokerManagerCreateWithDiscoveryDelegate,
+                            _APBrokerManagerGetInfoFromBrokerGroup,
                             _APBrokerManagerGetTypeID,
                             _APBrokerManagerInvalidate,
                             _APBrokerManagerResolveBrokeredReceiverDNSName,
@@ -66,11 +67,13 @@ exports:
                             _APBrokeredReceiverCopyInfoFromDNSName,
                             _APBrokeredReceiverCreateDNSName,
                             _APBrokeredReceiverCreateWithTXTRecordBase64,
+                            _APBrokeredReceiverGetBrokerGroupID,
+                            _APBrokeredReceiverGetDeviceID,
+                            _APBrokeredReceiverGetLTPKHash,
                             _APBrokeredReceiverGetPublicReceiverUUID,
                             _APBrokeredReceiverGetReceiverGroupUUID,
                             _APBrokeredReceiverGetServiceType,
                             _APBrokeredReceiverGetTypeID,
-                            _APBrokeredReceiverIsSameReceiver,
                             _APBrowserBTLEManagerCopyShowInfo,
                             _APBrowserBTLEManagerCreate,
                             _APBrowserBTLEManagerGetMode,
@@ -179,6 +182,7 @@ exports:
                             _APTransportConnectionTCPUnbufferedCreate,
                             _APTransportConnectionTCPUnbufferedNWCreate,
                             _APTransportConnectionUDPNWCreate,
+                            _APTransportDeviceCopyBrokeredReceiverInfo,
                             _APTransportDeviceCopyCUDNSNames,
                             _APTransportDeviceCopyNANDataSession,
                             _APTransportDeviceCopyProximityData,
@@ -370,10 +374,12 @@ exports:
                             _kAPBrokerGetBrokeredReceiversResponseKey_BrokerTimeoutSecs,
                             _kAPBrokerGetBrokeredReceiversResponseKey_BrokeredReceivers,
                             _kAPBrokerGetReceiverConnectivityInfoCallbackResponseKey_Addresses,
+                            _kAPBrokerGetReceiverConnectivityInfoCallbackResponseKey_IfIndex,
                             _kAPBrokerGetReceiverConnectivityInfoCallbackResponseKey_Port,
                             _kAPBrokerHTTPSendRequestOption_SSLCertificateHostName,
                             _kAPBrokerHTTPSendRequestOption_UseHTTPS,
                             _kAPBrokerManagerAuthenticateBrokerGroupCallbackResponseKey_AuthTargetReceiverDeviceID,
+                            _kAPBrokerManagerGetInfoFromBrokerGroupCallbackResponseKey_BrokerGroupInfo,
                             _kAPBrowserBTLECreationOptions_BrowseForAltReceivers,
                             _kAPBrowserBTLEDeviceKey_BonjourDeviceID,
                             _kAPBrowserBTLEDeviceKey_DeviceID,

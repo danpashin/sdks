@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GameCenterUICore.framework/GameCenterUICore
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation15AttributeScopesO16GameCenterUICoreE26ExtendedMarkdownAttributesV05colorB0AcDE0gh5StyleI0V5ColorOvg,
                             _$s10Foundation15AttributeScopesO16GameCenterUICoreE26ExtendedMarkdownAttributesV05colorB0AcDE0gh5StyleI0V5ColorOvpMV,
                             _$s10Foundation15AttributeScopesO16GameCenterUICoreE26ExtendedMarkdownAttributesVAA0B5ScopeADMc,
@@ -42,15 +42,39 @@ exports:
                             _$s10Foundation15AttributeScopesO16GameCenterUICoreE31ExtendedMarkdownStyleAttributesVMn,
                             _$s10Foundation15AttributeScopesO16GameCenterUICoreE31ExtendedMarkdownStyleAttributesVN,
                             _$s16GameCenterUICore20GCUILocalizedStringsC11GAME_CENTERSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC15PRERELEASE_ITEMSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC16READY_FOR_REVIEWSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC20SIGN_IN_BANNER_TITLESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC20SIGN_IN_BUTTON_TITLESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC21FRIENDS_WHO_HAVE_THISSSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC21NO_ACHIEVEMENT_RARITY10Foundation16AttributedStringVvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC21SIGN_IN_TITLE_MESSAGESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC23SIGN_IN_BANNER_SUBTITLESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC25PLAYER_CARD_BUTTON_INVITESSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC26ACHIEVEMENT_RARITY_PERCENTy10Foundation16AttributedStringVSSFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC27SIGN_IN_PROMPT_MESSAGE_TEXTSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC28ACHIEVEMENT_PENDING_APPROVALSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC28LEADERBOARD_PENDING_APPROVALSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC30FRIEND_WHO_EARNED_THIS_DAY_AGO3daySSSi_tFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC30FRIEND_WHO_EARNED_THIS_MIN_AGO3minSSSi_tFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC30FRIEND_WHO_EARNED_THIS_SEC_AGO3secSSSi_tFZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC31ACHIEVEMENT_RARITY_PERCENT_ONLYy10Foundation16AttributedStringVSSFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC31FRIEND_WHO_EARNED_THIS_HOUR_AGO2hrSSSi_tFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC31FRIEND_WHO_EARNED_THIS_WEEK_AGO4weekSSSi_tFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC33SIGN_IN_WITH_APPLEID_BUTTON_TITLESSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC34NO_FRIENDS_EMPTY_STATE_DESCRIPTIONSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC35FRIEND_WHO_EARNED_THIS_AVATAR_COUNT0K0SSSi_tFZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC35GAME_CENTER_FRIEND_REQUEST_ACCEPTEDSSvgZ,
-                            _$s16GameCenterUICore20GCUILocalizedStringsC35PLAYER_CARD_BUTTON_INVITE_TITLECASESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC40SIGN_IN_PROMPT_MESSAGE_TEXT_WITH_APPLEIDSSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC42FRIEND_INVITE_CODE_FETCH_IN_PROGRESS_ERRORSSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC45ACHIEVEMENT_RARITY_PERCENT_LESS_THAN_FRACTIONy10Foundation16AttributedStringVSSFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC46FRIEND_WHO_EARNED_THIS_SECTION_SHOW_LESS_TITLESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC46FRIEND_WHO_EARNED_THIS_SECTION_SHOW_MORE_TITLESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC46LEADERBOARD_LIST_ITEM_SUBTITLE_FRIENDS_PLAYING5COUNTSSSi_tFZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC50PLAYER_PICKER_NEARBY_OR_BOOP_INSTRUCTIONAL_MESSAGESSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC55PLAYER_PICKER_NEARBY_OR_BOOP_INSTRUCTIONAL_MESSAGE_WLANSSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsC5RETRYSSvgZ,
+                            _$s16GameCenterUICore20GCUILocalizedStringsC9DEVELOPERSSvgZ,
                             _$s16GameCenterUICore20GCUILocalizedStringsCMa,
                             _$s16GameCenterUICore20GCUILocalizedStringsCMn,
                             _$s16GameCenterUICore20GCUILocalizedStringsCMo,
@@ -58,14 +82,18 @@ exports:
                             _$s16GameCenterUICore20GCUILocalizedStringsCfD,
                             _GKCurrentMedusaMode, _GKHostUsesXRUIIdiom,
                             _GKIsAvatarEditingSupported, _GKIsXRUIIdiom,
+                            _GKIsXRUIIdiomShouldUsePadUI,
+                            _GKIsXRUIIdiomShouldUsePhoneUI,
                             _GKRectDivideYIntoThreeConsumingMiddle,
                             _GKRectEnforceMinimumHeight, _GKRectsCenterXInRect,
                             _GKRectsCenterYInRect, _GKSetHostUserInterfaceIdiom,
                             _GKShouldLayoutRTL, __GKIsClientAppUsingRTL,
                             __GKIsRemoteUIUsingPadIdiom ]
-    objc-classes:         [ GKAvatarImage, GKAvatarImageBrush,
-                            GKBackgroundTileImageView, GKBadgedGameIconBrush,
-                            GKBrush, GKBrushList, GKCircleImageBrush, GKColorPalette,
+    objc-classes:         [ GCUILocalizedStrings, GKAppLevelSignInVisibility,
+                            GKAppLevelSignInVisibilityData, GKAvatarImage,
+                            GKAvatarImageBrush, GKBackgroundTileImageView,
+                            GKBadgedGameIconBrush, GKBrush, GKBrushList,
+                            GKCircleImageBrush, GKColorPalette,
                             GKComposedImageBrush, GKConditionBrush,
                             GKDebugHighlightView, GKFocusableDarkColorPalette,
                             GKGameMessagesBrush, GKGradient, GKImageBrush,
@@ -78,8 +106,7 @@ exports:
                             GKTextStyleFocus, GKTextStylePad, GKTextStylePhone,
                             GKThemeBrush, GKUITheme, GKWelcomeBannerVisibility,
                             GKiOSAppIconBrush, GKiOSAppIconBrushShare,
-                            SortHueEntry,
-                            _TtC16GameCenterUICore20GCUILocalizedStrings ]
+                            SortHueEntry ]
     objc-ivars:           [ GKLocalPlayerAuthenticator._alertMessage,
                             GKLocalPlayerAuthenticator._alertTitle,
                             GKLocalPlayerAuthenticator._authenticated,

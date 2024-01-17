@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosUIPrivate.framework/PhotosUIPrivate
-current-version:       608.1.119
+current-version:       622.0.130
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s15PhotosUIPrivate016StoryMusicEditorD6SourceO04flexD6ByMoodyA2CmFWC,
                             _$s15PhotosUIPrivate016StoryMusicEditorD6SourceO07curatedD11SuggestionsyA2CmFWC,
                             _$s15PhotosUIPrivate016StoryMusicEditorD6SourceO2eeoiySbAC_ACtFZ,
@@ -502,6 +502,8 @@ exports:
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C05fetchE0So07PHFetchE0CySo7PHAssetCGSgvpMV,
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C10suggestion0A2UI0cD0_pvg,
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C10suggestion0A2UI0cD0_pvpMV,
+                            _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C13analyticsNameSSvg,
+                            _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C13analyticsNameSSvpMV,
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C20posterClassificationSo08PFPosterH0Vvg,
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C20posterClassificationSo08PFPosterH0VvpMV,
                             _$s15PhotosUIPrivate29PickerSuggestionResultFetcherC0E0C22allowedColumnsOverrideSaySiGSgvg,
@@ -857,7 +859,6 @@ exports:
                             _PUPhotosFileProviderTypeIdentifierLivePhotoBundle,
                             _PUPhotosGridDownloadHelperCancelledCode,
                             _PUPickerAssetPreparationOptionsFromAdditionalSelectionState,
-                            _PUPickerConfigurationFractionExpandedUndefined,
                             _PUPixelSizeFromPointSize, _PUPixelWidth, _PUPointAdd,
                             _PUPointApplyPerspectiveTransform,
                             _PUPointByLinearlyInterpolatingPoints,
@@ -976,6 +977,7 @@ exports:
                             PUAlbumListViewControllerPhoneImagePickerSpec,
                             PUAlbumListViewControllerPhoneSpec,
                             PUAlbumListViewControllerSpec,
+                            PUAlbumListViewControllerVisionOSSpec,
                             PUAlbumPickerSessionInfo, PUAlbumsGadgetProvider,
                             PUAlbumsGadgetViewController,
                             PUAmbientPhotoFrameSettings, PUAngleValueFilter,
@@ -1137,6 +1139,7 @@ exports:
                             PUViewControllerTransition, PUViewModel,
                             PUViewModelChange, PUWallpaperConfigurationUpdater,
                             PUWallpaperHelper, PUWallpaperPosterController,
+                            PUWallpaperPosterEditModel,
                             PUWallpaperPosterEditViewModel,
                             PUWallpaperPosterEditorController,
                             PUWallpaperPosterMigrator,

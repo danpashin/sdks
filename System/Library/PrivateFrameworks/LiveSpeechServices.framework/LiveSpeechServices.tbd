@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LiveSpeechServices.framework/LiveSpeechServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s18LiveSpeechServices0aB18UIServiceMessageIDO04stopaB0yA2CmFWC,
                             _$s18LiveSpeechServices0aB18UIServiceMessageIDO05startaB0yA2CmFWC,
                             _$s18LiveSpeechServices0aB18UIServiceMessageIDO8rawValueACSgSi_tcfC,
@@ -41,6 +41,8 @@ exports:
                             _$s18LiveSpeechServices0aB7ServiceC13phraseTextKeySSvpMV,
                             _$s18LiveSpeechServices0aB7ServiceC15favoritePhrasesSaySDyS2SGGvg,
                             _$s18LiveSpeechServices0aB7ServiceC15favoritePhrasesSaySDyS2SGGvpMV,
+                            _$s18LiveSpeechServices0aB7ServiceC16phraseInputIDKeySSvg,
+                            _$s18LiveSpeechServices0aB7ServiceC16phraseInputIDKeySSvpMV,
                             _$s18LiveSpeechServices0aB7ServiceC17addFavoritePhraseyySDyS2SGF,
                             _$s18LiveSpeechServices0aB7ServiceC17phraseShortcutKeySSvg,
                             _$s18LiveSpeechServices0aB7ServiceC17phraseShortcutKeySSvpMV,

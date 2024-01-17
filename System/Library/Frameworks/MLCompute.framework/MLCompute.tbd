@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MLCompute.framework/MLCompute
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ANE_ANECDataTypeToMLCDataType,
                             _ANE_ApplyPaddingSizes, _ANE_BuildArithmeticParams,
                             _ANE_BuildConvolutionParams, _ANE_BuildNeuronParams,

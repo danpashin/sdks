@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _ADCreateRequestLinkInfo,
                             _ADEmitRequestLinkEventMessage,
                             _AFASRSharedUserInfoKey, _AFAbcAssetsMissingSubType,
@@ -90,7 +90,16 @@ exports:
                             _AFBTProductIDSupportsFauxIED,
                             _AFBTProductIDSupportsIED,
                             _AFBackedUpPreferencesSynchronize,
+                            _AFBluetoothDeviceBooleanSettingResponseKey,
                             _AFBluetoothDeviceInfoKey,
+                            _AFBluetoothDeviceSettingBooleanValueGetFromName,
+                            _AFBluetoothDeviceSettingBooleanValueGetIsValid,
+                            _AFBluetoothDeviceSettingBooleanValueGetIsValidAndSpecified,
+                            _AFBluetoothDeviceSettingBooleanValueGetName,
+                            _AFBluetoothDeviceSettingResponseStatusGetFromName,
+                            _AFBluetoothDeviceSettingResponseStatusGetIsValid,
+                            _AFBluetoothDeviceSettingResponseStatusGetIsValidAndSpecified,
+                            _AFBluetoothDeviceSettingResponseStatusGetName,
                             _AFBluetoothHeadphoneEarbudSideGetFromName,
                             _AFBluetoothHeadphoneEarbudSideGetIsValid,
                             _AFBluetoothHeadphoneEarbudSideGetIsValidAndSpecified,
@@ -340,8 +349,8 @@ exports:
                             _AFHasCellularTelephony, _AFHasGPS, _AFHasHapticEngine,
                             _AFHasPairedBTDeviceForSpokenMessages,
                             _AFHasPearlCameraCapability, _AFHasRMVCapableAppleTV,
-                            _AFHasRingerSwitch, _AFHasUnlockedSinceBoot,
-                            _AFHomeAccessoryInfoKey,
+                            _AFHasRingerButton, _AFHasRingerSwitch,
+                            _AFHasUnlockedSinceBoot, _AFHomeAccessoryInfoKey,
                             _AFHomeAccessorySiriDataSharingChangeLogEventKey,
                             _AFHomeAccessorySiriDataSharingPropagationEventGetFromName,
                             _AFHomeAccessorySiriDataSharingPropagationEventGetIsValid,
@@ -490,6 +499,7 @@ exports:
                             _AFMyriadEmitSelfMetrics,
                             _AFMyriadForceNoActivityNotifyStateObserver,
                             _AFMyriadForceNoActivityNotifyStatePublisher,
+                            _AFMyriadGoodnessComputeExponentialBoost,
                             _AFMyriadGoodnessScoreBumpReasonGetFromName,
                             _AFMyriadGoodnessScoreBumpReasonGetIsValid,
                             _AFMyriadGoodnessScoreBumpReasonGetIsValidAndSpecified,
@@ -508,6 +518,7 @@ exports:
                             _AFMyriadPreheatGetWaitTime,
                             _AFMyriadReadDefaultsNotificationName,
                             _AFMyriadSessionKey,
+                            _AFMyriadTrialBoostsUpdatedNotification,
                             _AFNanoDeviceHasDedicatedSiriResources,
                             _AFNanoPreferencesDidChangeNotification,
                             _AFNavigationStateIsNavigating,
@@ -1356,8 +1367,8 @@ exports:
                             _kAFOutputLevelKey, _kAFOutputVoice,
                             _kAFPreferencesDidChangeDarwinNotification,
                             _kAFRecognizeMyVoiceSettingChangedDarwinNotification,
-                            _kAFRespectsSystemMuteKey, _kAFSessionLanguage,
-                            _kAFSessionLanguageForceRTL,
+                            _kAFRespectsSystemMuteKey, _kAFServerOverride,
+                            _kAFSessionLanguage, _kAFSessionLanguageForceRTL,
                             _kAFShowAppsBehindSiriInCarPlayKey,
                             _kAFSiriAndDictationHistoryDeletionRequestedDarwinNotification,
                             _kAFSiriConfigOverrides,
@@ -1490,6 +1501,7 @@ exports:
                             AFAudioSessionCoordinationDeviceInfo,
                             AFAudioSessionCoordinationSnapshot,
                             AFAudioSessionCoordinationSystemInfo, AFAudioState,
+                            AFBluetoothDeviceBooleanSettingResponse,
                             AFBluetoothDeviceInfo,
                             AFBluetoothHeadphoneInEarDetectionState,
                             AFBluetoothWirelessSplitterSessionInfo,
@@ -1685,6 +1697,7 @@ exports:
                             _AFAudioSessionCoordinationDeviceInfoMutation,
                             _AFAudioSessionCoordinationSnapshotMutation,
                             _AFAudioSessionCoordinationSystemInfoMutation,
+                            _AFBluetoothDeviceBooleanSettingResponseMutation,
                             _AFBluetoothDeviceInfoMutation,
                             _AFBluetoothHeadphoneInEarDetectionStateMutation,
                             _AFBluetoothWirelessSplitterSessionInfoMutation,

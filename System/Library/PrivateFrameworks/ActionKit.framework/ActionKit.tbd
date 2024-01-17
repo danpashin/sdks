@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ActionKit.framework/ActionKit
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s9ActionKit010OpenCameraA0V10AppIntents09_SupportsE12DependenciesAAMc,
                             _$s9ActionKit010OpenCameraA0V10AppIntents0E14IntentInternalAAMc,
                             _$s9ActionKit010OpenCameraA0V10AppIntents0E6IntentAAMc,
@@ -338,6 +338,8 @@ exports:
                             _$s9ActionKit16ShortcutsContactV25typeDisplayRepresentation10AppIntents04TypefG0VvsZ,
                             _$s9ActionKit16ShortcutsContactV2idSSvg,
                             _$s9ActionKit16ShortcutsContactV2idSSvpMV,
+                            _$s9ActionKit16ShortcutsContactV5badgeSo24WFAppShortcutEntityBadgeVvg,
+                            _$s9ActionKit16ShortcutsContactV5badgeSo24WFAppShortcutEntityBadgeVvpMV,
                             _$s9ActionKit16ShortcutsContactVAA17PersistableEntityAAMc,
                             _$s9ActionKit16ShortcutsContactVAA17PersistableEntityAAWP,
                             _$s9ActionKit16ShortcutsContactVMa,
@@ -370,6 +372,10 @@ exports:
                             _$s9ActionKit17PersistableEntityP17encodedParameters10Foundation4DataVvgTq,
                             _$s9ActionKit17PersistableEntityP2idSSvgTj,
                             _$s9ActionKit17PersistableEntityP2idSSvgTq,
+                            _$s9ActionKit17PersistableEntityP5badgeSo013WFAppShortcutD5BadgeVvgTj,
+                            _$s9ActionKit17PersistableEntityP5badgeSo013WFAppShortcutD5BadgeVvgTq,
+                            _$s9ActionKit17PersistableEntityPAAE5badgeSo013WFAppShortcutD5BadgeVvg,
+                            _$s9ActionKit17PersistableEntityPAAE5badgeSo013WFAppShortcutD5BadgeVvpMV,
                             _$s9ActionKit17PersistableEntityTL,
                             _$s9ActionKit22RecentsOptionsProviderV10AppIntents07DynamicdE0AAMc,
                             _$s9ActionKit22RecentsOptionsProviderV10AppIntents09_SupportsF12DependenciesAAMc,
@@ -413,6 +419,8 @@ exports:
                             _$s9ActionKit24ShortcutsFaceTimeContactV25typeDisplayRepresentation10AppIntents04TypehI0VvsZ,
                             _$s9ActionKit24ShortcutsFaceTimeContactV2idSSvg,
                             _$s9ActionKit24ShortcutsFaceTimeContactV2idSSvpMV,
+                            _$s9ActionKit24ShortcutsFaceTimeContactV5badgeSo24WFAppShortcutEntityBadgeVvg,
+                            _$s9ActionKit24ShortcutsFaceTimeContactV5badgeSo24WFAppShortcutEntityBadgeVvpMV,
                             _$s9ActionKit24ShortcutsFaceTimeContactVAA17PersistableEntityAAMc,
                             _$s9ActionKit24ShortcutsFaceTimeContactVAA17PersistableEntityAAWP,
                             _$s9ActionKit24ShortcutsFaceTimeContactVMa,
@@ -3108,8 +3116,9 @@ exports:
                             WFQuantityUnitPickerParameter, WFQuickLookAction,
                             WFRSSFeedAction, WFRSSFeedExtractAction,
                             WFRadiosPreferencesSettingsClient,
-                            WFRandomNumberAction, WFRecordAudioAction,
-                            WFRecordingStatusManager, WFReminderAccessResource,
+                            WFRandomNumberAction, WFRecognizeMusicAction,
+                            WFRecordAudioAction, WFRecordingStatusManager,
+                            WFReminderAccessResource,
                             WFRemoveCalendarItemsAction,
                             WFRemovePhotoFromAlbumAction, WFRenameFileAction,
                             WFReplaceTextAction, WFRequestPaymentAccessResource,

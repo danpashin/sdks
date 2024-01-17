@@ -1,15 +1,14 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BookLibraryCore.framework/BookLibraryCore
-current-version:       969
+current-version:       1062
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
-    symbols:              [ _BLAudiobookBookletAutoMigrationEnabled,
-                            _BLAudiobookMLImporterLog,
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _BLAudiobookMLImporterLog,
                             _BLAudiobookStreamingEnabled, _BLAudiobookSyncLog,
                             _BLBookCacheDeleteLog, _BLBookInstallLog,
                             _BLBookManifestPropertyAlbum,
@@ -253,7 +252,7 @@ exports:
                             BLJaliscoServerInfo, BLJaliscoServerItem,
                             BLJaliscoServerSource, BLJaliscoVersion, BLLibrary,
                             BLLibraryUtility, BLLockFile, BLM3U8Parser,
-                            BLMetadataStore, BLPurchaseDAAPItem,
+                            BLMetadataStore, BLPrivacyInfo, BLPurchaseDAAPItem,
                             BLPurchaseDAAPParser, BLPurchaseDAAPServer,
                             BLPurchaseRequest, BLPurchaseResponse,
                             BLPurchaseResponseItem, BLRequest,

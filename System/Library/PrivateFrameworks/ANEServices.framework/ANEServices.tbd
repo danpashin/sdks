@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ANEServices.framework/ANEServices
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _H11ANECheckPrivilegedVMAccess, _H11ANEDeviceClose,
                             _H11ANEDeviceOpen, _H11ANEDeviceUpdateParameters,
                             _H11ANEHandleDeviceOpen,
@@ -116,6 +116,8 @@ exports:
                             __ZN6H11ANE12H11ANEDevice27ANE_ProgramMemoryMapRequestEP27H11ANEMemoryMapParamsStructb,
                             __ZN6H11ANE12H11ANEDevice27ANE_ProgramOutputSetEnqueueEP35H11ANEBufferSetEnqueueRequestStruct,
                             __ZN6H11ANE12H11ANEDevice27ANE_SetThrottlingPercentageEj,
+                            __ZN6H11ANE12H11ANEDevice28ANE_ExclaveReadPropertyValueEjPj,
+                            __ZN6H11ANE12H11ANEDevice29ANE_ExclaveWritePropertyValueEjj,
                             __ZN6H11ANE12H11ANEDevice29ANE_FWSharedEventDoorbellRingEv,
                             __ZN6H11ANE12H11ANEDevice29ANE_FlushInactiveDARTMappingsEv,
                             __ZN6H11ANE12H11ANEDevice29ANE_ProgramMemoryUnMapRequestEP27H11ANEMemoryMapParamsStruct,

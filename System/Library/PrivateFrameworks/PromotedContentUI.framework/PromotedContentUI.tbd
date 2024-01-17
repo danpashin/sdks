@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PromotedContentUI.framework/PromotedContentUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s10Foundation4DataV17PromotedContentUIE14randomOfLengthACSi_tcfC,
                             _$s15PromotedContent19PromotableUIContextP0aB2UIE06nativeaB4View4info07contentG04size8positionAD07MetricsG0CAA0aB4InfoC_AD0aB8Viewable_So6UIViewCXcSo6CGSizeVSo6CGRectVtF,
                             _$s15PromotedContent19PromotableUIContextP0aB2UIE06nativeaB4View4info07contentG04sizeAD07MetricsG0CAA0aB4InfoC_AD0aB8Viewable_So6UIViewCXcSo6CGSizeVtF,
@@ -307,6 +307,7 @@ exports:
                             _$s17PromotedContentUI19AppStoreRequestTaskCfD,
                             _$s17PromotedContentUI19AppStoreRequestTaskCfd,
                             _$s17PromotedContentUI21AppStoreMetricManagerC03getD0_11buttonState10completionySS_So08ADButtonJ0VyycSgtF,
+                            _$s17PromotedContentUI21AppStoreMetricManagerC10interacted_4type10completionySS_AA0dE15InteractionTypeOyycSgtF,
                             _$s17PromotedContentUI21AppStoreMetricManagerC10interactedyySSF,
                             _$s17PromotedContentUI21AppStoreMetricManagerC14sharedInstanceACvgZ,
                             _$s17PromotedContentUI21AppStoreMetricManagerC15trackVisibility_9thresholdySS_SitF,
@@ -327,6 +328,27 @@ exports:
                             _$s17PromotedContentUI21AppStoreMetricManagerCN,
                             _$s17PromotedContentUI21AppStoreMetricManagerCfD,
                             _$s17PromotedContentUI21AppStoreMetricManagerCfd,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO11adButtonGetyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO12adButtonOpenyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO13adButtonCloudyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO14adButtonCancelyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO14adButtonUpdateyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO16adButtonPurchaseyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO17adButtonGetArcadeyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO19adButtonGetPreorderyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO24adButtonPurchasePreorderyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO2eeoiySbAC_ACtFZ,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO4hash4intoys6HasherVz_tF,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO6normalyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO7unknownyA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO8adMarkeryA2CmFWC,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO9hashValueSivg,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeO9hashValueSivpMV,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeOMa,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeOMn,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeON,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeOSHAAMc,
+                            _$s17PromotedContentUI23AppStoreInteractionTypeOSQAAMc,
                             _$s17PromotedContentUI24AppStoreAdUnfilledReasonO12noAdsInCacheyA2CmFWC,
                             _$s17PromotedContentUI24AppStoreAdUnfilledReasonO14notInitializedyA2CmFWC,
                             _$s17PromotedContentUI24AppStoreAdUnfilledReasonO2eeoiySbAC_ACtFZ,
@@ -342,6 +364,8 @@ exports:
                             _$s17PromotedContentUI24AppStoreMetricManageableMp,
                             _$s17PromotedContentUI24AppStoreMetricManageableP03getD0_11buttonState10completionySS_So08ADButtonJ0VyycSgtFTj,
                             _$s17PromotedContentUI24AppStoreMetricManageableP03getD0_11buttonState10completionySS_So08ADButtonJ0VyycSgtFTq,
+                            _$s17PromotedContentUI24AppStoreMetricManageableP10interacted_4type10completionySS_AA0dE15InteractionTypeOyycSgtFTj,
+                            _$s17PromotedContentUI24AppStoreMetricManageableP10interacted_4type10completionySS_AA0dE15InteractionTypeOyycSgtFTq,
                             _$s17PromotedContentUI24AppStoreMetricManageableP10interactedyySSFTj,
                             _$s17PromotedContentUI24AppStoreMetricManageableP10interactedyySSFTq,
                             _$s17PromotedContentUI24AppStoreMetricManageableP15trackVisibility_9thresholdySS_SitFTj,

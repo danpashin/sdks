@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SystemStatusUI.framework/SystemStatusUI
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerC06statusegB15DomainPublisher33_33FE539E6FBB1F8C2AFE6AA847BD3267LLSo08STStatusegbkL0Cvpfi,
                             _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerC06statusegB6Domain33_33FE539E6FBB1F8C2AFE6AA847BD3267LLSo08STStatusegbK0Cvpfi,
                             _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerC09overridesI033_33FE539E6FBB1F8C2AFE6AA847BD3267LL05SwiftC009UIHostingI0CyAA0befgH0VGSgvpfi,
@@ -20,6 +20,7 @@ exports:
                             _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerCMn,
                             _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerCN,
                             _$s14SystemStatusUI40STUIStatusBarDataOverridesViewControllerCfD,
+                            _DashBoardFrameworkBundle,
                             _STUIBackgroundActivityIdentiferRepresentsStyleOverride,
                             _STUIBackgroundActivityIdentifierForStyleOverride,
                             _STUIBackgroundActivityIdentifiersForStyleOverrides,
@@ -37,6 +38,8 @@ exports:
                             _STUIStatusBarAddDefaultAnimationReposition,
                             _STUIStatusBarAddLumaView,
                             _STUIStatusBarBSSettingsRepositionAnimation,
+                            _STUIStatusBarCarPlayDualLayoutDriverKey,
+                            _STUIStatusBarCarPlayDualLayoutPassengerKey,
                             _STUIStatusBarCarPlayHorizontalLayoutKey,
                             _STUIStatusBarDefaultAnimation,
                             _STUIStatusBarDefaultRepositionAnimation,
@@ -109,6 +112,8 @@ exports:
                             __STUIStatusBarCycleAnimationStateDescription,
                             __STUIStatusBar_BackgroundActivity_Log,
                             __STUIStatusBar_Log,
+                            __STUIStringFromStatusBarLegacyStyle,
+                            __STUIStringFromUILegibilityStyle,
                             __UIBackgroundLuminanceLevelForStyle,
                             __UIDebugShowLayoutItem,
                             __UIStatusBarResolvedStyleDescription,
@@ -233,6 +238,8 @@ exports:
                             STUIStatusBarVPNDisconnectItem,
                             STUIStatusBarVPNDisconnectView, STUIStatusBarVPNItem,
                             STUIStatusBarVisualProvider_CarPlay,
+                            STUIStatusBarVisualProvider_CarPlayDualDriver,
+                            STUIStatusBarVisualProvider_CarPlayDualPassenger,
                             STUIStatusBarVisualProvider_CarPlayHorizontal,
                             STUIStatusBarVisualProvider_CarPlayVertical,
                             STUIStatusBarVisualProvider_DynamicSplit,

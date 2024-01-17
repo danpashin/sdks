@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s21AppPredictionInternal12SportsServerC26$__lazy_storage_$_listener33_6935EC552B119DB7A21C62480B43C2CBLLSo13NSXPCListenerCSgvpfi,
                             _$s21AppPredictionInternal12SportsServerC26requestedSchedulesForTeamsSo17ATXSportsResponseCyYaKF,
                             _$s21AppPredictionInternal12SportsServerC26requestedSchedulesForTeamsSo17ATXSportsResponseCyYaKFTq,
@@ -573,8 +573,8 @@ exports:
                             ATXAppDirectoryOverrideList, ATXAppDirectoryServer,
                             ATXAppEntityFeatures, ATXAppFeaturizer,
                             ATXAppGroupedNotificationDigestRanker,
-                            ATXAppIconStateLogger, ATXAppIntentDuetDataProvider,
-                            ATXAppIntentDuetEvent, ATXAppIntentMonitor,
+                            ATXAppIntentDuetDataProvider, ATXAppIntentDuetEvent,
+                            ATXAppIntentMonitor,
                             ATXAppInterruptionsEventProvider,
                             ATXAppLaunchBasedInferredActivityBiomeStream,
                             ATXAppLaunchDuetDataProvider, ATXAppLaunchDuetEvent,
@@ -702,6 +702,7 @@ exports:
                             ATXComplicationSuggestionCacheGuardedData,
                             ATXComplicationSuggestionGenerator,
                             ATXComplicationSuggestionHeuristics,
+                            ATXComplicationSuggestionHeuristicsCache,
                             ATXComplicationSuggestionParameters,
                             ATXComplicationSuggestionScorer,
                             ATXComplicationWidgetPersonalities,
@@ -1031,7 +1032,6 @@ exports:
                             ATXNotificationsContentAnalyzer,
                             ATXNotificationsDedupeTracker,
                             ATXNotificationsEventProvider,
-                            ATXNotificationsLogger,
                             ATXNotificationsLoggingServer,
                             ATXNotificationsMatchScore,
                             ATXNotificationsPBAggregateData,
@@ -1093,7 +1093,7 @@ exports:
                             ATXPOICategoryVisitDuetDataProvider,
                             ATXPOICategoryVisitDuetEvent,
                             ATXPartialIntentHandlingContext, ATXPeopleDiscovery,
-                            ATXPeriodicLogger, ATXPosterConfigurationCache,
+                            ATXPosterConfigurationCache,
                             ATXPosterConfigurationCacheGuardedData,
                             ATXPosterDescriptorCache,
                             ATXPosterDescriptorCacheGuardedData,
@@ -1325,8 +1325,8 @@ exports:
                             _ATXModePosterCandidate, _ATXMovingAverage,
                             _ATXNeuralNetwork, _ATXNeuralNetworkBuilder,
                             _ATXNopLocationDelegate, _ATXNotificationDuetEvent,
-                            _ATXObjectLogger, _ATXPredictionModelDetails,
-                            _ATXRecentInstallCache, _ATXScoreInterpreter,
+                            _ATXPredictionModelDetails, _ATXRecentInstallCache,
+                            _ATXScoreInterpreter,
                             _ATXScoreInterpreterCoreMLModel,
                             _ATXScoreInterpreterCoreMLModelFeature,
                             _ATXScoreInterpreterCtx, _ATXScoreTypes,

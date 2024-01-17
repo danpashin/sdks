@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreUARP.framework/CoreUARP
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _CoreUARPVersionNumber, _CoreUARPVersionString,
                             _InternalStorageDirectoryPath,
                             _UARPAccessoryCapabilityToString,
@@ -59,9 +59,9 @@ exports:
                             _UARPUSBPDDeviceClassToString,
                             _UARPUtilsBuildURLForTemporaryFile,
                             _appendFirstUarpFilenameToFilepath,
-                            _currentTrainName, _isDynamicAssetAnalytics,
-                            _isDynamicAssetHeySiri, _isDynamicAssetLogs,
-                            _isDynamicAssetPersonalization,
+                            _createPowerAssertion, _currentTrainName,
+                            _isDynamicAssetAnalytics, _isDynamicAssetHeySiri,
+                            _isDynamicAssetLogs, _isDynamicAssetPersonalization,
                             _isDynamicAssetVoiceAssist, _kFTABSubfileACIB,
                             _kFTABSubfileAOPF, _kFTABSubfileIM4M,
                             _kFTABSubfileLPDA, _kFTABSubfilePHYB,
@@ -80,6 +80,7 @@ exports:
                             _kUARPPlistCustomer, _kUARPPlistFolder,
                             _kUARPPlistFolderEmbedded, _kUARPPlistFolderInternal,
                             _kUARPPlistInternal, _kUARPPlistInternalFuture,
+                            _kUARPStandaloneFirmwareDirectory,
                             _kUARPStringBTLEServerUpdaterName,
                             _kUARPStringBsdNotificationCoreSpeechVoiceTriggerAssetChange,
                             _kUARPStringBsdNotificationPowerAdapter,
@@ -254,6 +255,7 @@ exports:
                             _kUARPStringUSBCLightningDisconnectNotification,
                             _kUARPStringUSBPDUpdaterName,
                             _kUARPStringVendorMetadataProductNumber,
+                            _kUARPSupportedAccessoryCaseModelNameIdentifier,
                             _kUARPSupportedAccessoryKeyAllowDownloadOnCellular,
                             _kUARPSupportedAccessoryKeyAppleModelNumber,
                             _kUARPSupportedAccessoryKeyAutoAppliesStagedFirmware,
@@ -264,6 +266,7 @@ exports:
                             _kUARPSupportedAccessoryKeyIsPowerSource,
                             _kUARPSupportedAccessoryKeyMobileAssetsModelNumber,
                             _kUARPSupportedAccessoryKeyModelName,
+                            _kUARPSupportedAccessoryKeyPersonalities,
                             _kUARPSupportedAccessoryKeyProductGroup,
                             _kUARPSupportedAccessoryKeyProductID,
                             _kUARPSupportedAccessoryKeyProductName,
@@ -298,15 +301,18 @@ exports:
                             _kUARPSupportedAccessoryKeyUSBPDLocationTypeSOPDoublePrime,
                             _kUARPSupportedAccessoryKeyUSBPDLocationTypeSOPPrime,
                             _kUARPSupportedAccessoryKeyUUID,
+                            _kUARPSupportedAccessoryKeyUpdateRequiresPowerAssertion,
                             _kUARPSupportedAccessoryKeyUpdaterName,
                             _kUARPSupportedAccessoryKeyVendorID,
                             _kUARPSupportedAccessoryKeyVendorName,
                             _kUARPSupportedAccessoryKeyVendorNameApple,
-                            _nullableObjectsEqual, _uarpDynamicAssetComponentURL,
-                            _uarpDynamicAssetURL, _uarpUtilsConcatenateURLs,
+                            _nullableObjectsEqual, _releasePowerAssertion,
+                            _uarpDynamicAssetComponentURL, _uarpDynamicAssetURL,
+                            _uarpFirmwareForAccessory, _uarpUtilsConcatenateURLs,
                             _uarpVersionCompareStrings ]
     objc-classes:         [ BloodhoundPacketDumper, FTABFile, FTABSubfile,
-                            UARPAccessory, UARPAccessoryHardwareB2PHID,
+                            UARPAccessory, UARPAccessoryHIDPersonality,
+                            UARPAccessoryHardwareB2PHID,
                             UARPAccessoryHardwareBluetooth,
                             UARPAccessoryHardwareCHIP, UARPAccessoryHardwareHDS,
                             UARPAccessoryHardwareHID, UARPAccessoryHardwareID,

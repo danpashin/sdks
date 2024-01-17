@@ -1,5 +1,5 @@
 --- !tapi-tbd-v3
-archs:                 [ armv7, armv7s, arm64, arm64e ]
+archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Announce.framework/Announce
@@ -7,7 +7,7 @@ current-version:       1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
-  - archs:                [ armv7, armv7s, arm64, arm64e ]
+  - archs:                [ arm64, arm64e ]
     symbols:              [ _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvgTj,
                             _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvgTq,
                             _$s8Announce10XPCManagerC10connectionSo15NSXPCConnectionCvpMV,
@@ -175,8 +175,7 @@ exports:
                             _kANPlaybackCommandOperation,
                             _kANPlaybackCommandOptions, _kANPlaybackDeadline,
                             _kANProductType, _kANProductTypeOverride,
-                            _kANRapportID, _kANReceiptTimestamp, _kANSUAudioData,
-                            _kANSUHandler, _kANSUUUIDString, _kANSender,
+                            _kANRapportID, _kANReceiptTimestamp, _kANSender,
                             _kANSenderID, _kANSenderIDType, _kANSource,
                             _kANStatusFlags, _kANType, _kANUserID,
                             _kAnnounceClientIdEntitlement, _kAnnounceEntitlement,
