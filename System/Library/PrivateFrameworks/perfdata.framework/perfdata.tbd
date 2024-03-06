@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/perfdata.framework/perfdata
-current-version:       108.60.1
+current-version:       117
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -55,15 +55,15 @@ exports:
                             _pdunit_cJ, _pdunit_cW, _pdunit_cWh, _pdunit_centihertz,
                             _pdunit_centijoules, _pdunit_centiseconds,
                             _pdunit_centiseconds_cpu, _pdunit_centiwatt_hours,
-                            _pdunit_centiwatts, _pdunit_cs, _pdunit_csCPU,
-                            _pdunit_cycles, _pdunit_cycles_per_instruction,
-                            _pdunit_dHz, _pdunit_dJ, _pdunit_dW, _pdunit_dWh,
-                            _pdunit_daB, _pdunit_daBps, _pdunit_daFLOPS,
-                            _pdunit_daHz, _pdunit_daIPS, _pdunit_daJ, _pdunit_daW,
-                            _pdunit_daWh, _pdunit_dab, _pdunit_dabps,
-                            _pdunit_decabits, _pdunit_decabits_per_second,
-                            _pdunit_decabytes, _pdunit_decabytes_per_second,
-                            _pdunit_decacycles,
+                            _pdunit_centiwatts, _pdunit_create, _pdunit_cs,
+                            _pdunit_csCPU, _pdunit_cycles,
+                            _pdunit_cycles_per_instruction, _pdunit_dHz,
+                            _pdunit_dJ, _pdunit_dW, _pdunit_dWh, _pdunit_daB,
+                            _pdunit_daBps, _pdunit_daFLOPS, _pdunit_daHz,
+                            _pdunit_daIPS, _pdunit_daJ, _pdunit_daW, _pdunit_daWh,
+                            _pdunit_dab, _pdunit_dabps, _pdunit_decabits,
+                            _pdunit_decabits_per_second, _pdunit_decabytes,
+                            _pdunit_decabytes_per_second, _pdunit_decacycles,
                             _pdunit_decafloating_point_operations_per_second,
                             _pdunit_decahertz, _pdunit_decainstructions,
                             _pdunit_decainstructions_per_second,
@@ -73,9 +73,10 @@ exports:
                             _pdunit_deciseconds_cpu, _pdunit_deciwatt_hours,
                             _pdunit_deciwatts, _pdunit_degrees_celsius,
                             _pdunit_degrees_fahrenheit, _pdunit_degrees_kelvin,
-                            _pdunit_ds, _pdunit_dsCPU, _pdunit_exabits,
-                            _pdunit_exabits_per_second, _pdunit_exabytes,
-                            _pdunit_exabytes_per_second, _pdunit_exacycles,
+                            _pdunit_destroy, _pdunit_ds, _pdunit_dsCPU,
+                            _pdunit_exabits, _pdunit_exabits_per_second,
+                            _pdunit_exabytes, _pdunit_exabytes_per_second,
+                            _pdunit_exacycles,
                             _pdunit_exafloating_point_operations_per_second,
                             _pdunit_exahertz, _pdunit_exainstructions,
                             _pdunit_exainstructions_per_second,
@@ -200,9 +201,10 @@ exports:
                             _pdunit_zettawatts, _pdunit_zs, _pdunit_zsCPU,
                             _pdwriter_apply_variable_dbl,
                             _pdwriter_apply_variable_str, _pdwriter_close,
-                            _pdwriter_end_extension, _pdwriter_name,
-                            _pdwriter_new_group, _pdwriter_new_stats,
-                            _pdwriter_new_value, _pdwriter_open, _pdwriter_open_fd,
+                            _pdwriter_end_extension, _pdwriter_flush,
+                            _pdwriter_name, _pdwriter_new_group,
+                            _pdwriter_new_stats, _pdwriter_new_value,
+                            _pdwriter_open, _pdwriter_open_fd,
                             _pdwriter_open_stream, _pdwriter_open_tmp,
                             _pdwriter_record_bucket, _pdwriter_record_label_dbl,
                             _pdwriter_record_label_str,

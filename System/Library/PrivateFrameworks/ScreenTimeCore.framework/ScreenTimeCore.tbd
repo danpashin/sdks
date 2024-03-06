@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ScreenTimeCore.framework/ScreenTimeCore
-current-version:       503.2.1
+current-version:       503.4.14
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -28,12 +28,16 @@ exports:
                             _$s14ScreenTimeCore11SynchronousVMa,
                             _$s14ScreenTimeCore11SynchronousVMn,
                             _$s14ScreenTimeCore11SynchronousVN,
+                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC014downloadRemoteF0yyFZ,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceC018deviceIdentifierByc4DuetI0SDyS2SGvgZ,
+                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC021refreshAndUploadLocalF09sinceDate17completionHandlery10Foundation0M0VSg_ys5Error_pSgctFZ,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceC05fetchF07segment0I8Interval19coreDuetIdentifiers11userAltDSIDSay06DeviceE001_qeF0V0E7SegmentVGSgAI0qE6FilterV0rJ0O_AI01_rJ0OSaySSGSSSgtYaKFZ,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceC05fetchF07segment0I8Interval19coreDuetIdentifiers11userAltDSIDSay06DeviceE001_qeF0V0E7SegmentVGSgAI0qE6FilterV0rJ0O_AI01_rJ0OSaySSGSSSgtYaKFZTu,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceC14setGenesisDateyy10Foundation0J0VFZ,
-                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC25weeklyNotificationPayload19coreDuetIdentifiers11userAltDSID17completionHandlerySaySSG_SSSgySo8NSNumberCSg_ALs5Error_pSgtctFZ,
+                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC15lastUpdatedDate3for10Foundation0J0VSgAF0J8IntervalV_tFZ,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceC30deviceIdentifiersByUserAltDSIDSDySSSaySSGGvgZ,
+                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC31allLocallyUsedBundleIdentifiersSaySSGvgZ,
+                            _$s14ScreenTimeCore26STDeviceActivityDataSourceC34totalWeeklyUsageDuringDateInterval_11userAltDSIDSo8NSNumberC10Foundation0lM0V_SSSgtKFZ,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceCAA06DeviceefG8ProtocolAAMc,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceCAA06DeviceefG8ProtocolAAWP,
                             _$s14ScreenTimeCore26STDeviceActivityDataSourceCACycfC,
@@ -179,13 +183,15 @@ exports:
                             _STUserNotificationWeeklyReportCategoryIdentifier,
                             _STUserNotificationWeeklyReportPrimaryActionIdentifier,
                             _STXPCSafeErrorFromCoreDataError ]
-    objc-classes:         [ STAdminPersistenceController,
+    objc-classes:         [ STAMSClient, STAdminPersistenceController,
                             STAgePresetsResetCoreAnalyticsEvent,
                             STAgePresetsSkippedCoreAnalyticsEvent,
-                            STAgePresetsViewedCoreAnalyticsEvent, STAppInfo,
-                            STAppInfoCache,
+                            STAgePresetsViewedCoreAnalyticsEvent,
+                            STAppAndWebsiteActivityEnabledUserNotificationContext,
+                            STAppInfo, STAppInfoCache,
                             STAppLimitWarningUserNotificationContext,
-                            STAskClient, STAskForTimeApplicationResource,
+                            STAppMetadata, STAskClient,
+                            STAskForTimeApplicationResource,
                             STAskForTimeApprovedResponseReceivedUserNotificationContext,
                             STAskForTimeCategoryResource, STAskForTimeClient,
                             STAskForTimeNotApprovedResponseReceivedUserNotificationContext,
@@ -239,6 +245,8 @@ exports:
                             STFamilyOrganizationSettings, STFetchResultsRequest,
                             STGroupFetchedResultsController, STInstalledApp,
                             STIntroductionModel, STLocalOrganization,
+                            STLocationServicesLockedUserNotificationContext,
+                            STLocationServicesUnlockedUserNotificationContext,
                             STLocationSharingModificationClient, STLocations,
                             STLog, STManagementState, STManagementStateObserver,
                             STOpaquePasscode, STPINController,
@@ -257,6 +265,8 @@ exports:
                             STScreenTimeEnablementCoreAnalyticsEvent,
                             STScreenTimeSettings, STSettingsServiceClient,
                             STSetupClient, STSetupConfiguration,
+                            STShareMyLocationLockedUserNotificationContext,
+                            STShareMyLocationUnlockedUserNotificationContext,
                             STTestSyncableObject, STTestSyncableSubObject,
                             STUnifiedTransportPayloadDestination, STUnique,
                             STUniquedManagedObject, STUsage, STUsageBlock,

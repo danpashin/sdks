@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/MPSNDArray
-current-version:       127.1.3
+current-version:       127.4.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -24,6 +24,7 @@ exports:
                             MPSNDArrayAbsoluteGradient, MPSNDArrayAddition,
                             MPSNDArrayAdditionPrimaryGradient,
                             MPSNDArrayAdditionSecondaryGradient,
+                            MPSNDArrayAffineInt4Dequantize,
                             MPSNDArrayAffineQuantizationDescriptor,
                             MPSNDArrayArgSort, MPSNDArrayBandPart,
                             MPSNDArrayBinaryKernel,
@@ -81,6 +82,8 @@ exports:
                             MPSNDArrayIsFinite, MPSNDArrayIsFiniteGradient,
                             MPSNDArrayIsInfinite, MPSNDArrayIsInfiniteGradient,
                             MPSNDArrayIsNaN, MPSNDArrayIsNaNGradient,
+                            MPSNDArrayLUTDequantize, MPSNDArrayLUTGEMV,
+                            MPSNDArrayLUTQuantizationDescriptor,
                             MPSNDArrayLessThan, MPSNDArrayLessThanOrEqualTo,
                             MPSNDArrayLessThanOrEqualToPrimaryGradient,
                             MPSNDArrayLessThanOrEqualToSecondaryGradient,
@@ -93,6 +96,7 @@ exports:
                             MPSNDArrayLogarithmBase2,
                             MPSNDArrayLogarithmBase2Gradient,
                             MPSNDArrayLogarithmGradient,
+                            MPSNDArrayMaterializeSparseTensor,
                             MPSNDArrayMathBinaryKernel,
                             MPSNDArrayMathBinaryPrimaryGradient,
                             MPSNDArrayMathBinarySecondaryGradient,
@@ -152,7 +156,8 @@ exports:
                             MPSNDArrayReverseSquareRoot,
                             MPSNDArrayReverseSquareRootGradient, MPSNDArrayRint,
                             MPSNDArrayRintGradient, MPSNDArrayRound,
-                            MPSNDArrayRoundGradient, MPSNDArrayScan,
+                            MPSNDArrayRoundGradient,
+                            MPSNDArrayScaledDotProductAttention, MPSNDArrayScan,
                             MPSNDArrayScanGradient, MPSNDArrayScatter,
                             MPSNDArrayScatterGradient, MPSNDArraySelect,
                             MPSNDArraySelectPrimaryGradient,
@@ -166,7 +171,11 @@ exports:
                             MPSNDArraySort, MPSNDArraySquare,
                             MPSNDArraySquareGradient, MPSNDArraySquareRoot,
                             MPSNDArraySquareRootGradient,
-                            MPSNDArrayStencilKernel, MPSNDArrayStridedSlice,
+                            MPSNDArrayStencilKernel, MPSNDArrayStitchedReduction,
+                            MPSNDArrayStitchedReductionDescriptor,
+                            MPSNDArrayStitchedReductionRMSNorm,
+                            MPSNDArrayStitchedReductionSoftmax,
+                            MPSNDArrayStridedSlice,
                             MPSNDArrayStridedSliceGradient,
                             MPSNDArraySubtraction,
                             MPSNDArraySubtractionPrimaryGradient,

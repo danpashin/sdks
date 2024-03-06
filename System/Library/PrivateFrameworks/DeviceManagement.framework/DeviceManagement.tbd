@@ -3,13 +3,14 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
-current-version:       171
+current-version:       183
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
     re-exports:           [ /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst ]
     symbols:              [ _DMFAllConfigurationOrganizationTypes, _DMFAppLog,
+                            _DMFAppRatingAllApps, _DMFAppRatingUnrated,
                             _DMFAppStatusDidChangeNotificationName,
                             _DMFAtomicFileWritingLog,
                             _DMFBundleIdentifierErrorKey, _DMFCEMReasonCodeBad,

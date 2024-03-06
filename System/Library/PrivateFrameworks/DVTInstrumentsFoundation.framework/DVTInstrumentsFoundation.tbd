@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DVTInstrumentsFoundation.framework/DVTInstrumentsFoundation
-current-version:       64562.3.1
+current-version:       64565.70.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -204,7 +204,10 @@ exports:
                             _DTFetchAtLaunchOptionKey,
                             _DTFileTransferServiceCapability,
                             _DTFileTransferServiceOpenInDebugInboxCapability,
-                            _DTFillDefaultKDebugBacktraceFilter, _DTGetCoreCount,
+                            _DTFillDefaultKDebugBacktraceFilter,
+                            _DTGPUCountersCapabilityName,
+                            _DTGPUGeneralServiceCapabilityName,
+                            _DTGPUShaderProfilerCapabilityName, _DTGetCoreCount,
                             _DTGetPhysicalMemorySize, _DTHostInDeveloperMode,
                             _DTIDEServiceLoggingEnabledKey,
                             _DTIntegerSysctlByName, _DTKDebugFilterMatchesEvent,
@@ -226,6 +229,7 @@ exports:
                             _DTNStatSourceMapRemoveSource,
                             _DTNetworkInterfaceNameAtIndex,
                             _DTNetworkLastInterfaceIndex,
+                            _DTProcessAddLegacyLaunchOptions,
                             _DTProcessControlEventData_AppClipPayload,
                             _DTProcessControlEventData_BundleIdentifierKey,
                             _DTProcessControlEventData_NotificationPayload,
@@ -254,6 +258,7 @@ exports:
                             _DTProcessControlServiceOption_Allow64Bit,
                             _DTProcessControlServiceOption_AppExtensionHoldContainerBundleIDKey,
                             _DTProcessControlServiceOption_AppExtensionHoldContainerURLKey,
+                            _DTProcessControlServiceOption_CaptureOutputKey,
                             _DTProcessControlServiceOption_DisableBacklightAssertionKey,
                             _DTProcessControlServiceOption_DisableMemoryLimitsKey,
                             _DTProcessControlServiceOption_DisableTALAutomaticTerminationKey,
@@ -263,13 +268,13 @@ exports:
                             _DTProcessControlServiceOption_KillExistingKey,
                             _DTProcessControlServiceOption_LeaveSuspendedKey,
                             _DTProcessControlServiceOption_OnceOnlyKey,
-                            _DTProcessControlServiceOption_OutputRedirectionKey,
                             _DTProcessControlServiceOption_RequestingPidKey,
                             _DTProcessControlServiceOption_WorkingDirectory,
                             _DTProcessControlService_RequestingPidKey_PidSentinelForLaunchDServiceType,
                             _DTProcessControl_SBWidgetFamilyKey,
                             _DTProcessControl_SBWidgetKindKey, _DTProcessIs64Bit,
                             _DTProcessIsSigStopped, _DTProcessIsTranslated,
+                            _DTProcessShouldCaptureOutputWithOptions,
                             _DTSKServiceErrorByAppendingDescription,
                             _DTSKServiceErrorWithDescription,
                             _DTStoreKitServiceCapability,
@@ -352,7 +357,7 @@ exports:
                             _XRApplicationTypeSystemApplication,
                             _XRApplicationTypeUserApplication,
                             _XRApplicationVendedAppExtensionUUIDsKey,
-                            _XRApplicationVersionKey,
+                            _XRApplicationVersionKey, _XRGPUServiceChannelName,
                             _XRRegionTypeDescriptionForTagShareProtAndPager,
                             _XRVMAllRegionAggregateName, _XRVMCommpagePath,
                             _XRVMDirtyRegionAggregateName, _XRVMGPUCarveoutPath,

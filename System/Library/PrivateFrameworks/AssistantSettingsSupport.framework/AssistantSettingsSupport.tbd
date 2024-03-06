@@ -34,12 +34,15 @@ exports:
                             AssistantAppClipSettingsController,
                             AssistantAudioFeedbackController, AssistantCell,
                             AssistantController, AssistantDetailController,
+                            AssistantDetailListController,
                             AssistantHistoryViewController,
                             AssistantIntentsController,
                             AssistantLanguageController, AssistantMetrics,
+                            AssistantMultilingualDetailController,
                             AssistantPseudoHeaderHyperlinkView,
                             AssistantSettingsSignalEmitter,
                             AssistantSiriInCallController,
+                            AssistantSubtitleTableViewCell,
                             AssistantThinFooterView, AssistantUtilities,
                             AssistantVoiceActivationController,
                             AssistantVoiceController,
@@ -54,5 +57,8 @@ exports:
                             SiriAppsFooterView, SiriFooterView,
                             SiriInCallSettingConfig, SiriModalTextViewController ]
     objc-ivars:           [ AssistantController._assistantSettings,
-                            AssistantController._settingsConnection ]
+                            AssistantController._settingsConnection,
+                            AssistantDetailListController._groupSpecifier,
+                            AssistantDetailListController._previousSelectedSpecifier,
+                            AssistantDetailListController._supportsMultilingualResponses ]
 ...

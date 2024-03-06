@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FRC.framework/FRC
-current-version:       178
+current-version:       189
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -51,8 +51,8 @@ exports:
                             _isBufferYUV, _isPackedRGBA, _isYUV420, _loadTexture,
                             _loadTextureArray, _loadTextureInterleaved, _readBGRA,
                             _readBuffer, _readBufferInterlaeved, _readData,
-                            _readData32, _readFlo, _readPNG, _readYUVPlanar,
-                            _saveTensorBuffer,
+                            _readData32, _readFlo, _readPNG, _readYUV10bit,
+                            _readYUVPlanar, _saveTensorBuffer,
                             _saveTensorBufferWithChannelOffset,
                             _saveTextureArray, _saveTextureBufferFlt32,
                             _saveTextureInterleaved, _swapWidthAndHeight,
@@ -61,7 +61,7 @@ exports:
                             _writeBufferInterlaeved,
                             _writeBufferWithVerticalOffset, _writeData,
                             _writeData32, _writeFlo, _writeGrayscaldTiff, _writePNG,
-                            _writeYUVPlanar ]
+                            _writeYUV10bit, _writeYUVPlanar ]
     objc-classes:         [ Backwarp, BodyPoint, Correlation, EspressoModel,
                             FRCBodyBoundingBoxDetector, FRCFaceHandLegBlock,
                             FRCFaceHandLegRectangle, FRCFrame,
@@ -73,10 +73,10 @@ exports:
                             FRCLivePhotoMetadataReader, FRCMetalBase,
                             FRCOpticalFlowEstimator, FRCScaler, FeatureExtractor,
                             FlowAdaptationDecoder,
-                            FlowAdaptationFeatureExtractor, FlowEstimate, Forwarp,
-                            GPUSynthesis, LiteSynthesis, Normalization, OpticalFlow,
-                            OpticalFlowAnalyzer, Pyramid, Synthesis,
-                            SynthesisGridNet, Tiling ]
+                            FlowAdaptationFeatureExtractor, FlowConsistencyMap,
+                            FlowEstimate, Forwarp, GPUSynthesis, LiteSynthesis,
+                            Normalization, OpticalFlow, OpticalFlowAnalyzer, Pyramid,
+                            Synthesis, SynthesisGridNet, Tiling ]
     objc-ivars:           [ EspressoModel._callbackQueue, EspressoModel._context,
                             EspressoModel._engine, EspressoModel._net,
                             EspressoModel._plan, FRCMetalBase._commandQueue,

@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/DesktopServicesPriv
-current-version:       1631.2.2
+current-version:       1632.4.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -1037,7 +1037,9 @@ exports:
                             __ZN23TFileCoordinationRecordD2Ev,
                             __ZN23TSystemNotificationTask12gBusyFoldersE,
                             __ZN23TSystemNotificationTask13HandleFSEventEmPvPKjb,
+                            __ZN23TSystemNotificationTask15MakeStreamQueueEv,
                             __ZN23TSystemNotificationTask17EventCanBeIgnoredERK7TString,
+                            __ZN23TSystemNotificationTask17SystemStreamQueueEv,
                             __ZN23TSystemNotificationTask20HandleAllFileChangesEPK15__FSEventStreamPvmS3_PKjPKy,
                             __ZN23TSystemNotificationTask20gHandleFolderManagerE,
                             __ZN23TSystemNotificationTask21MakeNotificationQueueEv,
@@ -1341,7 +1343,7 @@ exports:
                             __ZN7TFSInfo18SetTotalFinderInfoERK15TotalFinderInfo,
                             __ZN7TFSInfo18SynchronizeCatalogERKNSt3__110shared_ptrIS_EERNS0_3setI8PropertyNS0_4lessIS6_EENS0_9allocatorIS6_EEEE,
                             __ZN7TFSInfo18SynchronizeNetworkERKNSt3__110shared_ptrIS_EERNS0_3setI8PropertyNS0_4lessIS6_EENS0_9allocatorIS6_EEEE,
-                            __ZN7TFSInfo18UpdateFileProviderEv,
+                            __ZN7TFSInfo18UpdateFileProviderEP16FPProviderDomain,
                             __ZN7TFSInfo18gAirDropBrowserRefE,
                             __ZN7TFSInfo19SFNodeFromSFBrowserE17FSInfoVirtualTypePK7__CFURLb,
                             __ZN7TFSInfo19SetBladeRunnerFlagsE18DSBladeRunnerFlags,
@@ -1808,6 +1810,7 @@ exports:
                             __ZNK5TNode23ModifyPermissionsIfBusyER11Permissions,
                             __ZNK5TNode23RemoveServerFromSidebarEP17OpaqueNodeRequest18NodeRequestOptions,
                             __ZNK5TNode23SyncSpotlightAttributesEv,
+                            __ZNK5TNode24FPItemsCollectionFromURLEv,
                             __ZNK5TNode24RecursiveChildrenAndSelfEb,
                             __ZNK5TNode24UserCanChangePermissionsEv,
                             __ZNK5TNode24UserCanWriteResourceForkEv,
@@ -2091,6 +2094,7 @@ exports:
                             _gInitializationCount, _gInitializeStartTime,
                             _gListenerSerialID, _gOperationPaused,
                             _gPendingCoordinations, _gSystemNotificationGCDQueue,
+                            _gSystemNotificationStreamGCDQueue,
                             _kFinderTagColorKey, _kFinderTagIsPinnedKey,
                             _kFinderTagIsVisibleKey, _kFinderTagNameKey,
                             _kLSSharedFileListItemBundleID,
@@ -2162,4 +2166,5 @@ exports:
                             FIFolderSize._totalItems,
                             FIFolderSize._userVisibleItems, FINodeEvent._event,
                             FINodeTask._nodeTask, FIReplicaNode._node ]
+    weak-def-symbols:     [ __ZNSt3__119piecewise_constructE ]
 ...

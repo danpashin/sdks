@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/AddressBookLegacy.framework/AddressBookLegacy
-current-version:       12699
+current-version:       12701.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -90,6 +90,7 @@ exports:
                             _ABAddressBookCopySectionIndices,
                             _ABAddressBookCopySectionNameTransform,
                             _ABAddressBookCopySourceWithAccountAndExternalIdentifiers,
+                            _ABAddressBookCopySourceWithProviderIdentifier,
                             _ABAddressBookCopySourcesWithUUIDs,
                             _ABAddressBookCopyUniqueIdentifier,
                             _ABAddressBookCopyValue,
@@ -953,6 +954,8 @@ exports:
                             _kABCSourceLastSyncDateProperty,
                             _kABCSourceMeIdentifierProperty,
                             _kABCSourceNameProperty, _kABCSourcePolicyProperty,
+                            _kABCSourceProviderIdentifierProperty,
+                            _kABCSourceProviderMetadataProperty,
                             _kABCSourceSyncDataProperty, _kABCSourceTypeProperty,
                             _kABCSubgroupsProperty, _kABCSuffixProperty,
                             _kABCSyntheticPropertiesReset, _kABCURLProperty,
@@ -1146,8 +1149,10 @@ exports:
                             _kABSourceInternalUUIDProperty,
                             _kABSourceLastSyncDateProperty,
                             _kABSourceMeIdentifierProperty,
-                            _kABSourceNameProperty, _kABSourceSyncDataProperty,
-                            _kABSourceTypeProperty,
+                            _kABSourceNameProperty,
+                            _kABSourceProviderIdentifierProperty,
+                            _kABSourceProviderMetadataProperty,
+                            _kABSourceSyncDataProperty, _kABSourceTypeProperty,
                             _kABSyncClientBeginningMultiSave,
                             _kABSyncClientFinishedMultiSave,
                             _kABUse21vCardFormat,

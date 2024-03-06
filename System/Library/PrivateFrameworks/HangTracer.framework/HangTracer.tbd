@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HangTracer.framework/HangTracer
-current-version:       281
+current-version:       288
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -22,13 +22,13 @@ exports:
                             _HTAppActivationGenerateAppIdentifier,
                             _HTBeginNonResponsiveTaskWithNameAndExpiration,
                             _HTBeginNonResponsiveTaskWithNameAndExpirationAtTime,
-                            _HTCheckForHangForHTMonitor,
+                            _HTCAQueue, _HTCheckForHangForHTMonitor,
                             _HTCollectHangLogsBundle, _HTConnectToHTMonitor,
                             _HTDaemonStateChangedNotification,
                             _HTEnabledStateChangedNotification,
                             _HTEnabledUserInfoKey, _HTEndNonResponsiveTask,
                             _HTEndNonResponsiveTaskAtTime,
-                            _HTEventTypeFromServiceName,
+                            _HTEventTypeFromServiceName, _HTGetHomeDirectoryURL,
                             _HTGetNSDateFromMachAbsoluteTime,
                             _HTHangEventAddUserActionCaptureCallback,
                             _HTHangEventCreate, _HTHangEventCreateWithBundleID,
@@ -103,11 +103,17 @@ exports:
                             _kHTCoreAnalyticsAppExitHang,
                             _kHTCoreAnalyticsDaemonEnabled,
                             _kHTCoreAnalyticsDebuggerHang,
+                            _kHTCoreAnalyticsDiskAvailableBytes,
+                            _kHTCoreAnalyticsDiskAvailablePercent,
                             _kHTCoreAnalyticsHangBundleID,
                             _kHTCoreAnalyticsHangDuration,
                             _kHTCoreAnalyticsHangType,
+                            _kHTCoreAnalyticsHaveNonDefaultFeatureFlags,
+                            _kHTCoreAnalyticsHaveSerialLoggingEnabled,
                             _kHTCoreAnalyticsLaunchOverlap,
                             _kHTCoreAnalyticsMode,
+                            _kHTCoreAnalyticsNandIndirectionTableAvailablePercent,
+                            _kHTCoreAnalyticsNumOSCryptexFileExtents,
                             _kHTCoreAnalyticsReportGenerated,
                             _kHTDebuggerAttachedHang,
                             _kHTDidSaveTailspinNotification,

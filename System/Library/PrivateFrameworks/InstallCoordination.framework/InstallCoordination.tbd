@@ -23,6 +23,8 @@ exports:
                             _IXIsAppExtensionForPlaceholderType,
                             _IXItemExistsAtURL,
                             _IXNotificationPayloadPersonaUniqueStringKey,
+                            _IXNotificationPayloadRemovabilityStoreClockKey,
+                            _IXNotificationPayloadRemovabilityValueKey,
                             _IXPathArgumentErrorKey,
                             _IXPresentErrorHighlightingLocalizedAppName,
                             _IXRemoveItemAtURL, _IXSourceFileLineErrorKey,
@@ -35,9 +37,12 @@ exports:
                             _IXStringForUninstallDisposition,
                             _IXUrlsForItemsInDirectoryAtURL,
                             _IXUserPresentableErrorCodeIsHardError,
-                            _IXUserPresentableErrorDomain ]
+                            _IXUserPresentableErrorDomain,
+                            _kIXNotificationPayloadDataStoreClockGUIDKey,
+                            _kIXNotificationPayloadDataStoreClockSequenceNumberKey ]
     objc-classes:         [ IXAppInstallCoordinator, IXAppInstallObserver,
-                            IXApplicationIdentity, IXDataPromise,
+                            IXAppRemovabilityMetadata, IXApplicationIdentity,
+                            IXDataPromise, IXDataStoreClock,
                             IXDemotingAppInstallCoordinator, IXFileManager,
                             IXGizmoInstallingAppInstallCoordinator,
                             IXGlobalConfiguration,

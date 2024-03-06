@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
-current-version:       2008.60.8
+current-version:       2125.102.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -11,9 +11,9 @@ exports:
     symbols:              [ _MBAcquireRestoreLock, _MBAssert,
                             _MBBackgroundRestoreSignpostHandle,
                             _MBBackupMetadataFilenames, _MBBackupReasonIsManual,
-                            _MBBackupReasonIsScheduled, _MBBackupTypeIsFull,
-                            _MBBuildIsSeed, _MBBuildVersion, _MBBytesWithString,
-                            _MBCompareVersionStrings,
+                            _MBBackupReasonIsScheduled, _MBBuildIsSeed,
+                            _MBBuildVersion, _MBBytesWithString,
+                            _MBCKStringForBackupState, _MBCompareVersionStrings,
                             _MBCreateTemporaryFilePathIn,
                             _MBD2DSnapshotMountPoints, _MBDataWithString,
                             _MBDefaultDebugContext, _MBDefaultOptions,
@@ -45,6 +45,7 @@ exports:
                             _MBLogStashLogs, _MBLogStringForNSQualityOfService,
                             _MBMarketingName, _MBMobileFileAttributes,
                             _MBMobileUID, _MBNobodyUID, _MBPathHasVolumePrefix,
+                            _MBPeakProcessMemoryUsage,
                             _MBPrebuddyFollowUpFinishedFlowKey,
                             _MBPrebuddyFollowUpIsManualSignalKey, _MBProductType,
                             _MBProductVersion, _MBPurgeDiskSpace,
@@ -54,16 +55,20 @@ exports:
                             _MBSQLiteJournalSuffixes, _MBSQLitePathExtensions,
                             _MBSemaphoreWaitForever, _MBSerialNumber,
                             _MBSetBackupDir, _MBSetIsRunningInDaemon,
-                            _MBSnapshotName, _MBSnapshotNameWithCurrentDate,
-                            _MBSnapshotPathFromLivePath, _MBStandardizePath,
-                            _MBStringForBackupReason, _MBStringForBackupType,
-                            _MBStringForContainerType, _MBStringWithArray,
-                            _MBStringWithBytes, _MBStringWithData,
-                            _MBStringWithDate, _MBStringWithDictionary,
-                            _MBStringWithLimitedArray, _MBStringWithNibbles,
-                            _MBStringWithObject, _MBStringWithSet,
-                            _MBStringWithSizeInBytes, _MBStringWithXPCObject,
-                            _MBSupportedProtocolVersions, _MBTemporaryPath,
+                            _MBSnapshotFormatContainsFileLists,
+                            _MBSnapshotFormatForString, _MBSnapshotName,
+                            _MBSnapshotNameWithCurrentDate,
+                            _MBSnapshotPathFromLivePath, _MBSnapshotTypeIsFull,
+                            _MBStandardizePath, _MBStringForBackupPolicy,
+                            _MBStringForBackupReason, _MBStringForContainerType,
+                            _MBStringForSnapshotFormat, _MBStringForSnapshotType,
+                            _MBStringWithArray, _MBStringWithBytes,
+                            _MBStringWithData, _MBStringWithDate,
+                            _MBStringWithDictionary, _MBStringWithLimitedArray,
+                            _MBStringWithNibbles, _MBStringWithObject,
+                            _MBStringWithSet, _MBStringWithSizeInBytes,
+                            _MBStringWithXPCObject, _MBSupportedProtocolVersions,
+                            _MBTemporaryPath,
                             _MBUniqueIntegerFilenameWithDirectory,
                             _MBUsedDiskSpaceForVolume,
                             _MBVolumeTypeFromMountPoint, _MBVolumeTypeFromPath,

@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/MultitouchSupport.framework/MultitouchSupport
-current-version:       7000.38
+current-version:       7140.17
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -18,6 +18,8 @@ exports:
                             _MTActuatorGetTransportMethod, _MTActuatorGetTypeID,
                             _MTActuatorIsOpen, _MTActuatorLoadActuations,
                             _MTActuatorOpen, _MTActuatorReclaimHostClickControl,
+                            _MTActuatorRelinquishHostClickControl,
+                            _MTActuatorRequestHostClickControl,
                             _MTActuatorSetFirmwareClicks, _MTActuatorSetReport,
                             _MTActuatorSetSystemActuationsEnabled, _MTBreakpoint,
                             _MTContact_getCentroidPixel,

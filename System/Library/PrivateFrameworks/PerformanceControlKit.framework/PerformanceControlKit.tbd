@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PerformanceControlKit.framework/PerformanceControlKit
-current-version:       994.60.5
+current-version:       994.100.46
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -70,10 +70,12 @@ exports:
                             CLPCReportingClient.configured_stat_ids,
                             CLPCReportingClient.num_ane_clusters,
                             CLPCReportingClient.num_cpu_clusters,
+                            CLPCReportingClient.num_cpu_cores,
                             CLPCReportingClient.num_package_zones,
                             CLPCReportingClient.prev_sample_list,
                             CLPCReportingClient.reporting_channels,
                             CLPCReportingClient.reporting_subscription,
                             CLPCReportingClient.schema_column_maps,
                             CLPCReportingClient.schemas, CLPCUserClient.clpc ]
+    weak-def-symbols:     [ __ZNSt3__119piecewise_constructE ]
 ...

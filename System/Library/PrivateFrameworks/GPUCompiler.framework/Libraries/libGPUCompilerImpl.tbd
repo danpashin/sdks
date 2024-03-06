@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUCompiler.framework/Libraries/libGPUCompilerImpl.dylib
-current-version:       32023.98
+current-version:       32023.157
 compatibility-version: 1
 exports:
   - archs:                [ arm64, arm64e ]
@@ -293,6 +293,10 @@ exports:
                             __ZN4llvm3air10AITypeQual7classofEPKNS_8MetadataE,
                             __ZN4llvm3air10AITypeQual7classofEPKNS_8MetadataENS_9StringRefE,
                             __ZN4llvm3air10AIUserAttr7getImplERNS_11LLVMContextENS_9StringRefENS_8Metadata11StorageTypeEb,
+                            __ZN4llvm3air10APITrackerC1EPKc,
+                            __ZN4llvm3air10APITrackerC2EPKc,
+                            __ZN4llvm3air10APITrackerD1Ev,
+                            __ZN4llvm3air10APITrackerD2Ev,
                             __ZN4llvm3air10ExportFile6createENS_15MemoryBufferRefE,
                             __ZN4llvm3air10Reflection6createENS_15MemoryBufferRefE,
                             __ZN4llvm3air10Reflection6createERKNS_6ModuleE,
@@ -1477,6 +1481,7 @@ exports:
                             __ZN7metalfe12METADatabase16INSTALL_NAME_KEYE,
                             __ZN7metalfe12METADatabase16PRODUCT_KIND_KEYE,
                             __ZN7metalfe12METADatabase19ACTIVE_PLATFORM_KEYE,
+                            __ZNSt3__119piecewise_constructE,
                             __ZTVN4llvm2cl12basic_parserINSt3__14pairINS_9StringRefES4_EEEE,
                             __ZZN11flatbuffers4dataIN13AirReflection6NodeIdENSt3__19allocatorIS2_EEEEPKT_RKNS3_6vectorIS6_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN3Air13FunctionGroupEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,

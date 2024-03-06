@@ -8,13 +8,15 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _CRErrorDomain, __logHandler, _handleForCategory ]
+    symbols:              [ _CRErrorDomain, _CRGenerateRepairReport, __logHandler,
+                            _handleForCategory ]
     objc-classes:         [ CRAttestationHandler, CRCAttestationManager,
                             CRCCertificate, CRChallengeObject, CRChallengeResponse,
                             CREANController, CRFDRBaseDeviceHandler,
                             CRFDRDeviceController, CRFDRSeal, CRFDRUtils,
                             CRFileSystemController, CRNVRAMController,
                             CRPersonalizationElement, CRPersonalizationManager,
-                            CRRepairHistory, CRRepairStatusLite, CRStrongComponent,
-                            CRSysConfig, CRUtils, CoreRepairHelper ]
+                            CRRepairHistory, CRRepairReport, CRRepairStatusLite,
+                            CRStrongComponent, CRSysConfig, CRUtils,
+                            CoreRepairHelper ]
 ...

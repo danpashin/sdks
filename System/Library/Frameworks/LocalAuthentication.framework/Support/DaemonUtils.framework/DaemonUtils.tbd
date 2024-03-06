@@ -3,13 +3,13 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils
-current-version:       1394.62.1
+current-version:       1394.100.151
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
     symbols:              [ _LAAnalyticsAuthenticationTypeFromEvent,
-                            _LAEventFromBKDevice,
+                            _LAEventFromBKDevice, _LAEventFromBiometryType,
                             _LANVRAMNamespaceStartupManager,
                             _NSStringFromBKDevice, _NSStringFromBKLockoutState,
                             _NSStringFromBKMatchFailReason,
@@ -19,7 +19,7 @@ exports:
                             Caller, CredentialRequest, DaemonUtils,
                             DarwinNotificationInvalidationSource,
                             EvaluationRequest, InstalledAppsCache, LAAnalytics,
-                            LAAnalyticsEvaluation,
+                            LAAnalyticsDTO, LAAnalyticsEvaluation,
                             LAAnalyticsPasscodeFallbackPeriod, LANVRAM,
                             NotificationCenterInvalidationSource,
                             PasscodeInvalidationSource, PreflightCache,

@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
-current-version:       4416.39.103
+current-version:       4416.132.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -218,9 +218,11 @@ exports:
                             _SBFIsExpansionBoardAvailable,
                             _SBFIsMoreForegroundAppsAvailable,
                             _SBFIsPrototypeClamshellMirroringAvailable,
-                            _SBFIsReducedQualityDevice, _SBFIsSymbolicLinkAtPath,
-                            _SBFLocalizedStringForKey, _SBFMKBErrorCodePolicy,
-                            _SBFMKBErrorDomain, _SBFMagicWallpaperEnumeration,
+                            _SBFIsReducedQualityDevice,
+                            _SBFIsSAEHungryHomeAffordanceAvailable,
+                            _SBFIsSymbolicLinkAtPath, _SBFLocalizedStringForKey,
+                            _SBFMKBErrorCodePolicy, _SBFMKBErrorDomain,
+                            _SBFMagicWallpaperEnumeration,
                             _SBFMagicWallpaperRepresentativeThumbnailForClass,
                             _SBFMagicWallpaperThumbnail, _SBFMainScreenScale,
                             _SBFModificationDateForPath,
@@ -274,6 +276,7 @@ exports:
                             _SBFTestWithExpansionBoard,
                             _SBFTestWithMoreForegroundApps,
                             _SBFTestWithPrototypeClamshellMirroring,
+                            _SBFTestWithSAEHungryHomeAffordance,
                             _SBFTimeLabelTextSize,
                             _SBFTransformForScalingAboutPointInSuperview,
                             _SBFTransformFromOrientationToOrientation,
@@ -445,9 +448,8 @@ exports:
                             SBFSpringLoadedInteractionEffect,
                             SBFStatusBarLegibilityView,
                             SBFSteppedAnimationTimingFunctionCalculator,
-                            SBFTapToWakeGestureRecognizer, SBFTapticEngine,
-                            SBFTestUtilities, SBFTodayGestureDomain,
-                            SBFTodayGestureSettings,
+                            SBFTapToWakeGestureRecognizer, SBFTestUtilities,
+                            SBFTodayGestureDomain, SBFTodayGestureSettings,
                             SBFTouchPassThroughClippingView,
                             SBFTouchPassThroughView,
                             SBFTouchPassThroughViewController,

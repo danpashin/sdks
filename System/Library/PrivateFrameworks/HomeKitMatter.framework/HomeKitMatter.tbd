@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeKitMatter.framework/HomeKitMatter
-current-version:       1092.3.10
+current-version:       1124.5.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -115,19 +115,23 @@ exports:
                             HMMTRAccessoryServerDiagnosticsEvent,
                             HMMTRAccessoryServerFactory,
                             HMMTRAccessorySetupPayload,
-                            HMMTRAttestationDataStore, HMMTRAttributeTimer,
+                            HMMTRAttestationDataStore,
+                            HMMTRAttributeReportDistributor,
+                            HMMTRAttributeReportDistributorRegistry,
+                            HMMTRAttributeTimer,
                             HMMTRCachedFabricCertificateData,
                             HMMTRCharacteristicWriteRequestTuple,
                             HMMTRClusterDescription, HMMTRColorControl,
                             HMMTRColorControlColorTemperatureAttributes,
-                            HMMTRControllerFactory, HMMTRControllerWrapper,
-                            HMMTRCredentialUserTuple,
+                            HMMTRControllerData, HMMTRControllerFactory,
+                            HMMTRControllerWrapper, HMMTRCredentialUserTuple,
                             HMMTRDescriptorClusterManager, HMMTRDeviceCredential,
-                            HMMTRDeviceTopology, HMMTRDoorLock, HMMTRDuration,
-                            HMMTRFabric, HMMTRFabricControllerStore,
-                            HMMTRFanControl, HMMTRFeatures, HMMTRFileManager,
-                            HMMTRHAPAccessoryInfo, HMMTRHAPDescriptionAtEndpoint,
-                            HMMTRHAPEnumerator, HMMTRHAPServiceDescription,
+                            HMMTRDeviceReader, HMMTRDeviceTopology, HMMTRDoorLock,
+                            HMMTRDuration, HMMTRFabric, HMMTRFabricControllerStore,
+                            HMMTRFabricData, HMMTRFanControl, HMMTRFeatures,
+                            HMMTRFileManager, HMMTRHAPAccessoryInfo,
+                            HMMTRHAPDescriptionAtEndpoint, HMMTRHAPEnumerator,
+                            HMMTRHAPService, HMMTRHAPServiceDescription,
                             HMMTRIdentifyDevice, HMMTRMetricBundle,
                             HMMTRMutableAccessorySetupPayload,
                             HMMTRMutableDeviceTopology,
@@ -135,7 +139,8 @@ exports:
                             HMMTRMutableVendorMetadataProduct,
                             HMMTRMutableVendorMetadataVendor,
                             HMMTROperationWithPriority, HMMTRPairing,
-                            HMMTRProtocolMap, HMMTRProtocolOperation,
+                            HMMTRPairingWindowInfoTable, HMMTRProtocolMap,
+                            HMMTRProtocolOperation,
                             HMMTRProtocolOperationManager, HMMTRRegulatoryInfo,
                             HMMTRResidentStateManager,
                             HMMTRSoftwareUpdateProvider,
@@ -152,8 +157,9 @@ exports:
                             HMMTRSystemCommissionerPairingManager,
                             HMMTRThermostat, HMMTRThreadRadioManager,
                             HMMTRUIDialogPresenter, HMMTRUtilities,
-                            HMMTRVendorMetadata, HMMTRVendorMetadataProduct,
-                            HMMTRVendorMetadataStore, HMMTRVendorMetadataVendor,
+                            HMMTRVendorMetadata, HMMTRVendorMetadataFileStore,
+                            HMMTRVendorMetadataProduct,
+                            HMMTRVendorMetadataVendor,
                             HMMTRWiFiNetworkAssociation, HMMTRWiFiScanResult,
                             HMMTRWindowCovering, HomeUserSlotResults ]
 ...

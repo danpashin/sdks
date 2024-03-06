@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServicesCore.framework/PhotoLibraryServicesCore
-current-version:       622.0.130
+current-version:       646.1.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -915,11 +915,13 @@ exports:
                             _PLThumbnailsDirectoryName, _PLThumbnailsGetLog,
                             _PLThumbnailsV2DirectoryName,
                             _PLThumbnailsVideoKeyFramesDirectoryName,
-                            _PLTimelineGetLog, _PLTransformForImageOrientation,
-                            _PLTungstenGetLog, _PLUBFOnDCIMDirectoryName,
-                            _PLUIActionsGetLog, _PLUIGetLog,
-                            _PLURLForResourceProperties, _PLURLFromXPCDictionary,
-                            _PLUUIDBytesFromString, _PLUUIDDataFromString,
+                            _PLTimelineGetLog,
+                            _PLTopLevelErrorAndAllUnderlyingErrors,
+                            _PLTransformForImageOrientation, _PLTungstenGetLog,
+                            _PLUBFOnDCIMDirectoryName, _PLUIActionsGetLog,
+                            _PLUIGetLog, _PLURLForResourceProperties,
+                            _PLURLFromXPCDictionary, _PLUUIDBytesFromString,
+                            _PLUUIDDataFromString,
                             _PLUUIDFromLocalMercuryLocalIdentifier,
                             _PLUnSetIsAssetsdProxyService,
                             _PLUnarchiveUUIDStringsSetFromData,
@@ -985,6 +987,7 @@ exports:
                             __PLIsNotificationTypeEnabledForKey,
                             __PLResetNotificationTypeEnabledKey,
                             __PLSandboxedURLKey, __PLSandboxedURLTokenKey,
+                            __ValidatedClientLogFromDictionary,
                             __localizedStringFromTableInBundle,
                             _circularRegionFromData, _convertToData,
                             _createImageByRemovingBlackBarsFromPreviewImage,

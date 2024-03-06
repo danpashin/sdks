@@ -3,25 +3,38 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FileProviderDaemon.framework/FileProviderDaemon
-current-version:       0
+current-version:       1835.102.2
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
     symbols:              [ _FPDAppStoreServiceName,
                             _FPDAppStoreServiceXPCInterface,
+                            _FPDFPCKServiceXPCInterface,
+                            _FPVolumeRoleTelemetryField,
                             _defaultsKeyForErrorInjectionCategory,
                             _errorInjectionCategoryByName,
-                            _errorInjectionPointEnabled ]
-    objc-classes:         [ FPDAccessControlStore, FPDActionOperation,
+                            _errorInjectionPointEnabled,
+                            _errorInjectionUnknownDBVersionEnabled,
+                            _getFPCKTaskClass, _getFPDDomainFPFSBackendClass,
+                            _getFPDPurgerClass, _getFPFSSQLBackupManagerClass,
+                            _getFPFSSQLRestoreManagerClass ]
+    objc-classes:         [ FPCKTask, FPDAccessControlStore, FPDActionOperation,
                             FPDActionOperationQueue, FPDAppMonitor,
+                            FPDCacheDeleteService,
+                            FPDCacheDeleteServiceForTesting,
                             FPDConfigurationStore, FPDDomain,
                             FPDDomainCleanupResult, FPDDomainExtensionBackend,
                             FPDDomainIndexer, FPDDomainIndexerSchedulerAssertion,
                             FPDDownloadOperation, FPDDownloader, FPDExtension,
-                            FPDFetchAppLibraryIconOperation, FPDMoveAtom,
-                            FPDMoveOperation, FPDMoveReader, FPDMoveWriter,
-                            FPDProcessMonitor, FPDProvider, FPDProviderDescriptor,
-                            FPDRequest, FPDServer, FPDSharedScheduler, FPDVolume,
-                            FPDVolumeManager ]
+                            FPDExtensionManager, FPDFetchAppLibraryIconOperation,
+                            FPDMoveAtom, FPDMoveOperation, FPDMoveReader,
+                            FPDMoveWriter, FPDProcessMonitor, FPDProvider,
+                            FPDProviderDescriptor, FPDRequest, FPDServer,
+                            FPDSharedScheduler, FPDSyncBubble, FPDVolume,
+                            FPDVolumeManager, FPDXPCServicer ]
+    objc-ivars:           [ FPDCacheDeleteService._cacheDeleteCacheable,
+                            FPDCacheDeleteService._cacheDeleteServiceName,
+                            FPDCacheDeleteService._cdNotificationsHandlers,
+                            FPDCacheDeleteService._notificationsHandlersQueue ]
 ...

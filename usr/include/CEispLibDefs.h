@@ -26,12 +26,12 @@ extern "C" {
  */
 #pragma pack(push,4)
 
-#define   EISPLIBVERS   "Eisp-81.0.21.1"
+#define   EISPLIBVERS   "Eisp-84.0.28"
 /**
  * Debug Info Definition version number
   */
 
-#define CEISPLIB_DEBUG_INFO_VERSION (0x00000069)
+#define CEISPLIB_DEBUG_INFO_VERSION (0x0000006A)
 
 /**
  * FW Common Debug Info Definition version number
@@ -85,7 +85,7 @@ extern "C" {
  * PDE Debug Info Definition version number
  */
 
-#define CEISPLIB_DEBUG_INFO_FW_PDE_VERSION (0x00000009)
+#define CEISPLIB_DEBUG_INFO_FW_PDE_VERSION (0x0000000A)
 
 /**
  * Algorithm Debug Info Definition version number
@@ -231,8 +231,13 @@ typedef struct _sEispLibDbgInfoShared
 #define CEISPLIB_NUMBER_OF_TRACE_PER_FRAME            (256)
 #define CEISPLIB_MAX_TRACE_BUFFER_ITEM_SIZE           (128)
 
+#if defined(SENSOR_NURI)
+#define CEISPLIB_SPARSE_DXY_WIDTH                     (504)
+#define CEISPLIB_SPARSE_DXY_HEIGHT                    (504)
+#else
 #define CEISPLIB_SPARSE_DXY_WIDTH                     (488)
 #define CEISPLIB_SPARSE_DXY_HEIGHT                    (528)
+#endif
 #define CEISPLIB_DENSE_DXY_WIDTH                      (608)
 #define CEISPLIB_DENSE_DXY_HEIGHT                     (656)
 #define CEISPLIB_DXY_STRIDE                           (1216)
@@ -244,6 +249,7 @@ typedef struct _sEispLibDbgInfoShared
 #define CEISPLIB_NUM_AS_TEMPLATEIMPL                  (1)
 
 #define CEISPLIB_PPD_HISTORY_BUFFER_SIZE              (8020)
+#define CEISPLIB_PPD_MAX_EMITTER_COUNT                (40)
 
 #define   CEISPLIB_UUID_SIZE 16
 #ifndef UUID_DEFINED
@@ -1168,8 +1174,8 @@ typedef struct _sEispLibDbgInfoFwPde {
   //regDump blob - placeholder
   uint8_t regDump[24*1024];
 
-  //in SMP emitter count is 20, in pearl1  10
-  double  ppdEmittersScores[20];
+  //In Nuri emitter count is 40, in SMP emitter count is 20, in pearl1  10
+  double  ppdEmittersScores[CEISPLIB_PPD_MAX_EMITTER_COUNT];
   uint32_t numOfValidScores;
   double  ppdSoftScores[32];
   uint32_t numOfValidSoftScores;

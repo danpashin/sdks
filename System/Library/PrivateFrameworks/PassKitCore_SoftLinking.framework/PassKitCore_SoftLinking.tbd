@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:                 [ arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/PassKitCore_SoftLinking.framework/PassKitCore_SoftLinking
+current-version:       1
+compatibility-version: 1
+objc-constraint:       retain_release
+exports:
+  - archs:                [ arm64, arm64e ]
+    symbols:              [ _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterC03getgH16ProvisioningInfo10auditToken5nonce10completionySo0M8_token_ta_10Foundation4DataVyALSgctFZ,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCACycfC,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCACycfc,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCMa,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCMn,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCMo,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCN,
+                            _$s23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapterCfD ]
+    objc-classes:         [ PKPassbookFairPlayEvaluator,
+                            _TtC23PassKitCore_SoftLinking26_PKPassbookFairPlayAdapter ]
+...

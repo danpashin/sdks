@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebGPU.framework/WebGPU
-current-version:       617.1.17
+current-version:       618.1.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -41,11 +41,9 @@ exports:
                             _wgpuCommandEncoderResolveQuerySet,
                             _wgpuCommandEncoderSetLabel,
                             _wgpuCommandEncoderWriteTimestamp,
-                            _wgpuComputePassEncoderBeginPipelineStatisticsQuery,
                             _wgpuComputePassEncoderDispatchWorkgroups,
                             _wgpuComputePassEncoderDispatchWorkgroupsIndirect,
                             _wgpuComputePassEncoderEnd,
-                            _wgpuComputePassEncoderEndPipelineStatisticsQuery,
                             _wgpuComputePassEncoderInsertDebugMarker,
                             _wgpuComputePassEncoderPopDebugGroup,
                             _wgpuComputePassEncoderPushDebugGroup,
@@ -78,6 +76,8 @@ exports:
                             _wgpuDeviceImportExternalTexture,
                             _wgpuDevicePopErrorScope, _wgpuDevicePushErrorScope,
                             _wgpuDeviceReference, _wgpuDeviceRelease,
+                            _wgpuDeviceSetDeviceLostCallback,
+                            _wgpuDeviceSetDeviceLostCallbackWithBlock,
                             _wgpuDeviceSetLabel,
                             _wgpuDeviceSetUncapturedErrorCallback,
                             _wgpuExternalTextureReference,
@@ -105,6 +105,7 @@ exports:
                             _wgpuRenderBundleEncoderReference,
                             _wgpuRenderBundleEncoderRelease,
                             _wgpuRenderBundleEncoderSetBindGroup,
+                            _wgpuRenderBundleEncoderSetBindGroupWithDynamicOffsets,
                             _wgpuRenderBundleEncoderSetIndexBuffer,
                             _wgpuRenderBundleEncoderSetLabel,
                             _wgpuRenderBundleEncoderSetPipeline,
@@ -112,14 +113,12 @@ exports:
                             _wgpuRenderBundleReference, _wgpuRenderBundleRelease,
                             _wgpuRenderBundleSetLabel,
                             _wgpuRenderPassEncoderBeginOcclusionQuery,
-                            _wgpuRenderPassEncoderBeginPipelineStatisticsQuery,
                             _wgpuRenderPassEncoderDraw,
                             _wgpuRenderPassEncoderDrawIndexed,
                             _wgpuRenderPassEncoderDrawIndexedIndirect,
                             _wgpuRenderPassEncoderDrawIndirect,
                             _wgpuRenderPassEncoderEnd,
                             _wgpuRenderPassEncoderEndOcclusionQuery,
-                            _wgpuRenderPassEncoderEndPipelineStatisticsQuery,
                             _wgpuRenderPassEncoderExecuteBundles,
                             _wgpuRenderPassEncoderInsertDebugMarker,
                             _wgpuRenderPassEncoderPopDebugGroup,

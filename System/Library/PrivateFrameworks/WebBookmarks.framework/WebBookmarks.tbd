@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
-current-version:       617.1.17
+current-version:       618.1.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -75,6 +75,7 @@ exports:
                             _WebBookmarksRootBookmarkTitle,
                             _WebBookmarksSQLiteErrorDomain,
                             _WebBookmarksServerMachServiceName,
+                            _WebBookmarksShowIconOnlyAttributeKey,
                             _WebBookmarksSpecialFoldersDidChangeNotification,
                             _WebBookmarksTabFolderContentsDidChangeNotification,
                             _WebBookmarksToMigrationStateKey,
@@ -138,8 +139,8 @@ exports:
                             WBTabCollection, WBTabCyclerCommandHandler, WBTabGroup,
                             WBTabGroupManager, WBTabGroupSyncAgent,
                             WBTabGroupSyncAgentProxy, WBWebFilterSettings,
-                            WBWebsiteDataRecord, WBWindow, WBWindowState,
-                            WebBookmark, WebBookmarkChange, WebBookmarkChangeSet,
+                            WBWebsiteDataRecord, WBWindowState, WebBookmark,
+                            WebBookmarkChange, WebBookmarkChangeSet,
                             WebBookmarkCollection,
                             WebBookmarkDebugSafariTabCollection,
                             WebBookmarkDeviceIdentifier, WebBookmarkList,

@@ -3,23 +3,43 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WorkflowResponsiveness.framework/WorkflowResponsiveness
-current-version:       341.1
+current-version:       357
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _WRSignpostCategoryKey,
+    symbols:              [ _WRDiagnosticGatherTailspinKey, _WRDiagnosticNameKey,
+                            _WRDiagnosticOptionReportOmitNetworkBoundIntervalsKey,
+                            _WRDiagnosticOptionReportOtherSignpostWithNameKey,
+                            _WRDiagnosticOptionReportProcessesWithNameKey,
+                            _WRDiagnosticOptionTailspinIncludesOSLogsKey,
+                            _WRDiagnosticReportSpindumpForDispatchQueueWithLabelKey,
+                            _WRDiagnosticReportSpindumpForMainThreadKey,
+                            _WRDiagnosticReportSpindumpForThisDispatchQueueKey,
+                            _WRDiagnosticReportSpindumpForThisThreadKey,
+                            _WRDiagnosticReportSpindumpForThreadWithNameKey,
+                            _WRDiagnosticTriggerEventTimeoutKey,
+                            _WRDiagnosticTriggerThresholdCountKey,
+                            _WRDiagnosticTriggerThresholdDurationSingleKey,
+                            _WRDiagnosticTriggerThresholdDurationSumKey,
+                            _WRDiagnosticTriggerThresholdDurationUnionKey,
+                            _WRErrorDomain, _WRIsDisabledWorkflow,
+                            _WRSanitizeForCA, _WRSignpostCategoryKey,
+                            _WRSignpostDiagnosticsKey,
                             _WRSignpostDiagnosticsThresholdCountKey,
                             _WRSignpostDiagnosticsThresholdIntervalKey,
                             _WRSignpostEnvironmentFieldNamesKey,
                             _WRSignpostEventEndGroupKey, _WRSignpostEventEndKey,
+                            _WRSignpostEventIdentifierFieldNameKey,
                             _WRSignpostEventOverallIntervalKey,
                             _WRSignpostEventStartKey,
                             _WRSignpostIndividuationFieldNameKey,
-                            _WRSignpostNameKey, _WRSignpostSubsystemKey,
+                            _WRSignpostNameKey, _WRSignpostNetworkBoundKey,
+                            _WRSignpostSubsystemKey, _WRWorkflowDiagnosticsKey,
                             _WRWorkflowEndMachContTimeNSKey,
                             _WRWorkflowEndSignpostKey, _WRWorkflowEndThreadIDKey,
-                            _WRWorkflowEnvironmentKey, _WRWorkflowNameKey,
+                            _WRWorkflowEnvironmentKey,
+                            _WRWorkflowMaximumDurationKey, _WRWorkflowNameKey,
                             _WRWorkflowSignpostCountKey,
                             _WRWorkflowSignpostDurationSecondsKey,
                             _WRWorkflowSignpostEmitMachContTimeNSKey,
@@ -40,7 +60,7 @@ exports:
                             _WRWorkflowStartSignpostKey,
                             _WRWorkflowStartThreadIDKey,
                             _WRWorkflowThresholdDurationSecondsKey ]
-    objc-classes:         [ WRIntervalAndThreads, WRSignpost, WRSignpostTracker,
-                            WRTimestampAndThread, WRWorkflow,
+    objc-classes:         [ WRDiagnostic, WRIntervalAndThreads, WRSignpost,
+                            WRSignpostTracker, WRTimestampAndThread, WRWorkflow,
                             WRWorkflowEventTracker, WRWorkflowProvider ]
 ...

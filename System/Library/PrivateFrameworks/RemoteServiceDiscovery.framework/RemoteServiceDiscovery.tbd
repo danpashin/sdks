@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/RemoteServiceDiscovery
-current-version:       127.40.2
+current-version:       131.102.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -63,6 +63,7 @@ exports:
                             _remote_device_get_messaging_protocol_version,
                             _remote_device_get_name, _remote_device_get_state,
                             _remote_device_get_type,
+                            _remote_device_get_xpc_remote_connection_mode_flags,
                             _remote_device_get_xpc_remote_connection_version_flags,
                             _remote_device_heartbeat, _remote_device_reset,
                             _remote_device_set_alias,
@@ -76,6 +77,7 @@ exports:
                             _remote_device_type_is_trusted,
                             _remote_device_type_parse,
                             _remote_service_connect_socket,
+                            _remote_service_copy_device,
                             _remote_service_copy_properties,
                             _remote_service_copy_property,
                             _remote_service_create_connected_socket,

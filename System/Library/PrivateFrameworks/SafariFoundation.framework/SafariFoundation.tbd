@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
-current-version:       617.1.17
+current-version:       618.1.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -34,6 +34,7 @@ exports:
                             _SFExternalCredentialIdentityStoreErrorDomain,
                             _SFPasswordGenerationNoLengthLimit,
                             _SFSharablePasswordURLSchemeForAirDrop,
+                            _SFStringFromCredentialIdentityType,
                             _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
     objc-classes:         [ SFAppAutoFillOneTimeCodeProvider,
                             SFAppAutoFillPasskeyProvider,
@@ -49,9 +50,10 @@ exports:
                             SFExternalCredentialIdentityStore,
                             SFExternalCredentialIdentityStoreManager,
                             SFPasskeyCredentialIdentity,
-                            SFPasswordCredentialIdentity, SFSafariCredential,
-                            SFSafariCredentialStore, SFSafariCreditCardStore,
-                            SFSharablePassword, SFSharablePasswordReceiver,
+                            SFPasswordCredentialIdentity, SFPasswordManagerURL,
+                            SFSafariCredential, SFSafariCredentialStore,
+                            SFSafariCreditCardStore, SFSharablePassword,
+                            SFSharablePasswordReceiver,
                             SFSharedWebCredentialsDatabaseEntry,
                             SFStrongPasswordGenerator, SFSuggestedUser,
                             SFSuggestedUserProvider ]

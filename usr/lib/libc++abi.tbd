@@ -2,7 +2,7 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/usr/lib/libc++abi.dylib'
-current-version: 1600.157
+current-version: 1700.255
 exports:
   - targets:         [ armv7-ios, armv7s-ios ]
     symbols:         [ __ZNKSt16bad_array_length4whatEv, __ZNSt16bad_array_lengthC1Ev, 
@@ -110,10 +110,14 @@ exports:
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __ZTIDu, __ZTIPDu, __ZTIPKDu, __ZTSDu, __ZTSPDu, __ZTSPKDu, 
                        ___gxx_personality_v0 ]
-    weak-symbols:    [ __ZdaPvSt11align_val_t, __ZdaPvSt11align_val_tRKSt9nothrow_t, 
-                       __ZdaPvm, __ZdaPvmSt11align_val_t, __ZdlPvSt11align_val_t, 
-                       __ZdlPvSt11align_val_tRKSt9nothrow_t, __ZdlPvm, __ZdlPvmSt11align_val_t, 
-                       __ZnamSt11align_val_t, __ZnamSt11align_val_tRKSt9nothrow_t, 
-                       __ZnamSt19__type_descriptor_t, __ZnwmSt11align_val_t, __ZnwmSt11align_val_tRKSt9nothrow_t, 
-                       __ZnwmSt19__type_descriptor_t ]
+    weak-symbols:    [ __ZdaPvRKSt9nothrow_tSt19__type_descriptor_t, __ZdaPvSt11align_val_t, 
+                       __ZdaPvSt11align_val_tRKSt9nothrow_t, __ZdaPvSt19__type_descriptor_t, 
+                       __ZdaPvm, __ZdaPvmSt11align_val_t, __ZdaPvmSt19__type_descriptor_t, 
+                       __ZdlPvRKSt9nothrow_tSt19__type_descriptor_t, __ZdlPvSt11align_val_t, 
+                       __ZdlPvSt11align_val_tRKSt9nothrow_t, __ZdlPvSt19__type_descriptor_t, 
+                       __ZdlPvm, __ZdlPvmSt11align_val_t, __ZdlPvmSt19__type_descriptor_t, 
+                       __ZnamRKSt9nothrow_tSt19__type_descriptor_t, __ZnamSt11align_val_t, 
+                       __ZnamSt11align_val_tRKSt9nothrow_t, __ZnamSt19__type_descriptor_t, 
+                       __ZnwmRKSt9nothrow_tSt19__type_descriptor_t, __ZnwmSt11align_val_t, 
+                       __ZnwmSt11align_val_tRKSt9nothrow_t, __ZnwmSt19__type_descriptor_t ]
 ...

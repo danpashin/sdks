@@ -8,10 +8,13 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _BGSystemTaskSchedulerErrorDomain ]
+    symbols:              [ _BGSystemTaskCustomCheckpointMax,
+                            _BGSystemTaskCustomCheckpointMin,
+                            _BGSystemTaskSchedulerErrorDomain ]
     objc-classes:         [ BGNonRepeatingSystemTask,
                             BGNonRepeatingSystemTaskRequest,
                             BGRepeatingSystemTask, BGRepeatingSystemTaskRequest,
-                            BGSystemTask, BGSystemTaskRequest,
-                            BGSystemTaskScheduler, BGSystemTaskStatus ]
+                            BGSystemTask, BGSystemTaskCheckpoints,
+                            BGSystemTaskRequest, BGSystemTaskScheduler,
+                            BGSystemTaskStatus, BGSystemTaskWorkload ]
 ...

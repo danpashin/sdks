@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SafariSharedUI.framework/SafariSharedUI
-current-version:       617.1.17
+current-version:       618.1.15
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -53,15 +53,6 @@ exports:
                             _WBSParsecAuxiliaryInfoTextColorGreen,
                             _WBSParsecAuxiliaryInfoTextColorRed,
                             _WBSParsecDefaultTimeoutValueInMs,
-                            _WBSParsecEngagementActionArea,
-                            _WBSParsecEngagementActionAreaCard,
-                            _WBSParsecEngagementActionAreaResult,
-                            _WBSParsecEngagementActionCardType,
-                            _WBSParsecEngagementActionDestination,
-                            _WBSParsecEngagementActionTarget,
-                            _WBSParsecEngagementActionTargetPlayButton,
-                            _WBSParsecEngagementActionType,
-                            _WBSParsecEngagementActionTypeEnterKey,
                             _WBSParsecGlobalFeedbackIsEnabled,
                             _WBSParsecSearchCompletionResultSetErrorDomain,
                             _WBSParsecSearchCompletionResultSetStatusCached,
@@ -111,7 +102,6 @@ exports:
                             _WBSRoundFloatToPixelsInContext,
                             _WBSSearchProviderBaiduTrackingCodeIPadKey,
                             _WBSSearchProviderBaiduTrackingCodeIPhoneKey,
-                            _WBSSearchProviderBaiduTrackingCodeIPodTouchKey,
                             _WBSSearchProviderBaiduTrackingCodeMacKey,
                             _WBSSearchProviderBaiduTrackingCodeTemplateParameterValues,
                             _WBSSearchProviderDefaultTopLevelDomainKey,
@@ -135,7 +125,6 @@ exports:
                             _WBSSearchProviderDefinitionSearchURLTemplateChinaKey,
                             _WBSSearchProviderDefinitionSearchURLTemplateIPadKey,
                             _WBSSearchProviderDefinitionSearchURLTemplateIPhoneKey,
-                            _WBSSearchProviderDefinitionSearchURLTemplateIPodTouchKey,
                             _WBSSearchProviderDefinitionSearchURLTemplateKey,
                             _WBSSearchProviderDefinitionSearchURLTemplateMacKey,
                             _WBSSearchProviderDefinitionShortNameKey,
@@ -933,8 +922,6 @@ exports:
                             WBSAvailableAppWithExtension,
                             WBSBookmarkFolderTouchIconConfiguration,
                             WBSBookmarkFolderTouchIconProvider,
-                            WBSBookmarkFolderTouchIconProviderInfo,
-                            WBSBookmarkFolderTouchIconProviderRequestInfo,
                             WBSBundleWebExtension,
                             WBSBundleWebExtensionBrowsingContext,
                             WBSBundleWebExtensionsController,
@@ -974,7 +961,7 @@ exports:
                             WBSLeadImageSaver, WBSLinkPresentationIconCache,
                             WBSLocalAssetController, WBSLocalePair,
                             WBSMetadataExtractor, WBSMobileAssetController,
-                            WBSOnDiskDataCache, WBSParsecActionButton,
+                            WBSOnDiskDataCache, WBSPageContextDataFetcher,
                             WBSParsecAuxiliaryInfo, WBSParsecDFeedbackDispatcher,
                             WBSParsecDSession, WBSParsecFormattedText,
                             WBSParsecHiddenResultInfo,
@@ -987,7 +974,6 @@ exports:
                             WBSParsecSearchResponse, WBSParsecSearchResult,
                             WBSParsecSearchResultCache,
                             WBSParsecSearchSimpleResult,
-                            WBSParsecSearchSportsAttributionExtraCompletionItem,
                             WBSParsecSearchUtilities, WBSParsecSportsImage,
                             WBSParsecSportsScoreSummary,
                             WBSParsecSubscriptionInfo,
@@ -1019,7 +1005,8 @@ exports:
                             WBSSVGImageRenderingResponse, WBSSafariExtension,
                             WBSSafariExtensionStateObserver,
                             WBSSavePermissionsToStorageInformation,
-                            WBSSearchProvider, WBSSearchSuggestionsFetcher,
+                            WBSSchemaDataExtractor, WBSSearchProvider,
+                            WBSSearchSuggestionsFetcher,
                             WBSSiriIntelligenceHistorySearch,
                             WBSSiteIconKeyColorExtractor,
                             WBSSiteIconKeyColorExtractorCache,
@@ -1037,7 +1024,7 @@ exports:
                             WBSSystemNoteTakingLinkMetadataFetcher,
                             WBSTabBarUIString, WBSTabGroupConfirmationAlert,
                             WBSTabGroupIconRequest, WBSTabGroupTouchIconProvider,
-                            WBSTemplateIconCache,
+                            WBSTemplateIconCache, WBSTemplateIconCacheRecord,
                             WBSTemplateIconMonogramConfiguration,
                             WBSTemplateIconMonogramGenerator,
                             WBSTemplateIconRequest, WBSTemplateIconResponse,
@@ -1126,11 +1113,14 @@ exports:
                             WBSWebExtensionsControllerSelectorForwarder,
                             WBSWebProcessPlugIn,
                             WBSWebProcessPlugInPageController,
-                            WBSWebViewMetadataFetchOperation, _WBSFaviconRecord,
+                            WBSWebViewMetadataFetchOperation,
+                            _WBSBookmarkFolderTouchIconProviderInfo,
+                            _WBSBookmarkFolderTouchIconProviderRequestInfo,
+                            _WBSFaviconRecord,
                             _WBSParsecSubscriptionInfoKeyValueStringParser,
                             _WBSSearchFoundationFeedbackGenerator,
                             _WBSSiteMetadataRequestInfo, _WBSSiteMetadataToken,
-                            _WBSTabGroupIconMetadata ]
+                            _WBSWKApplicationManifestExtrasUtilities ]
     objc-ivars:           [ WBSExtensionsController._baseURIHostToExtensionIdentifier,
                             WBSExtensionsController._blockedExtensions,
                             WBSExtensionsController._delegate,

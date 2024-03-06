@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-current-version:       2202
+current-version:       2420
 compatibility-version: 150
 objc-constraint:       retain_release
 exports:
@@ -1061,6 +1061,7 @@ exports:
                             __CFCharacterSetGetKeyedCodingType,
                             __CFCharacterSetIsInverted,
                             __CFCharacterSetIsMutable,
+                            __CFCharacterSetIsValidRange,
                             __CFCharacterSetSetIsInverted,
                             __CFCopyServerVersionDictionary,
                             __CFCopySupplementalVersionDictionary,
@@ -1082,12 +1083,15 @@ exports:
                             __CFDiscorporateMemoryDematerialize,
                             __CFDiscorporateMemoryMaterialize,
                             __CFDoExceptionOperation, __CFDoubledStringCreate,
-                            __CFEnableZombies, __CFErrorCreateDebugDescription,
+                            __CFEnableZombies,
+                            __CFErrorCreateCallStackReturnAddresses,
+                            __CFErrorCreateDebugDescription,
                             __CFErrorCreateLocalizedDescription,
                             __CFErrorCreateLocalizedFailureReason,
                             __CFErrorCreateLocalizedRecoverySuggestion,
                             __CFErrorCreateRedactedDescription,
                             __CFErrorCreateUnlocalizedDebugDescription,
+                            __CFErrorSetCallStackCaptureEnabled,
                             __CFExecutableLinkedOnOrAfter,
                             __CFExtensionIsValidToAppend,
                             __CFExtensionUniCharsIsValidToAppend,

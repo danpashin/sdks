@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
-current-version:       64561.91.2
+current-version:       64565.70.2
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -13,6 +13,7 @@ exports:
                             _VMUDirectedGraphCompatibilityVersionNumberInGraphKey,
                             _VMUDirectedGraphToolCompatibilityVersionKey,
                             _VMUEnumerateVMAnnotatedMallocObjectsWithBlock,
+                            _VMUExclaveOrDarwinRegionTypeDescriptionForTagShareProtAndPager,
                             _VMUGetFlagsForAllVMRegionStatistics,
                             _VMUGraphNodeTypeDescription,
                             _VMUGraphNodeType_IsAddressValid,
@@ -118,6 +119,7 @@ exports:
                             VMUStackLogReaderBase._task,
                             VMUStackLogReaderBase._usesCoreFile,
                             VMUStackLogReaderBase._usesLiteMode,
+                            VMUStackLogReaderBase._vmuTask,
                             VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerMask,
                             VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerValue,
                             VMUSwiftRuntimeInfo._nativeWeakReferencePointerIsSideTable,
@@ -132,7 +134,9 @@ exports:
                             VMUSwiftRuntimeInfo._sideTablePointerRightShift,
                             VMUSwiftRuntimeInfo._unownedExtraDataLayout,
                             VMUVMRegion.coalesced_region_count,
-                            VMUVMRegion.dirty_size, VMUVMRegion.external_pager,
+                            VMUVMRegion.dirty_size, VMUVMRegion.exclaveFlags,
+                            VMUVMRegion.external_pager,
+                            VMUVMRegion.isExclaveRegion,
                             VMUVMRegion.is_macho_region, VMUVMRegion.is_submap,
                             VMUVMRegion.is_unused_data_page_shared_with_active_content,
                             VMUVMRegion.is_unused_data_region,

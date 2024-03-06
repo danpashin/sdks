@@ -95,7 +95,7 @@ exports:
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/System/Library/PrivateFrameworks/ktrace.framework/ktrace'
-current-version: 590.0.3
+current-version: 599.100.6
 swift-abi-version: 7
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
@@ -147,13 +147,23 @@ exports:
                        '_$s6ktrace8AmendingV6notifyyyAA13AmendmentNoteOcvpMV', '_$s6ktrace8AmendingV8toolName11interactive6notifyACSS_SbyAA13AmendmentNoteOctcfC', 
                        '_$s6ktrace8AmendingV8toolNameSSvg', '_$s6ktrace8AmendingV8toolNameSSvpMV', 
                        '_$s6ktrace8AmendingVMa', '_$s6ktrace8AmendingVMn', '_$s6ktrace8AmendingVN', 
+                       '_$s6ktrace8TrimNoteO11interruptedyA2CmFWC', '_$s6ktrace8TrimNoteO13errorOccurredyACs5Error_pcACmFWC', 
+                       '_$s6ktrace8TrimNoteO13helpRequestedyACSScACmFWC', '_$s6ktrace8TrimNoteO8completeyAC6System8FilePathVcACmFWC', 
+                       '_$s6ktrace8TrimNoteO8startingyACSS_S2StcACmFWC', '_$s6ktrace8TrimNoteOMa', 
+                       '_$s6ktrace8TrimNoteOMn', '_$s6ktrace8TrimNoteON', '_$s6ktrace8TrimmingV11interactiveSbvg', 
+                       '_$s6ktrace8TrimmingV11interactiveSbvpMV', '_$s6ktrace8TrimmingV4trim9argumentsySaySSG_tKF', 
+                       '_$s6ktrace8TrimmingV6notifyyyAA8TrimNoteOcvg', '_$s6ktrace8TrimmingV6notifyyyAA8TrimNoteOcvpMV', 
+                       '_$s6ktrace8TrimmingV8toolName11interactive6notifyACSS_SbyAA8TrimNoteOctcfC', 
+                       '_$s6ktrace8TrimmingV8toolNameSSvg', '_$s6ktrace8TrimmingV8toolNameSSvpMV', 
+                       '_$s6ktrace8TrimmingVMa', '_$s6ktrace8TrimmingVMn', '_$s6ktrace8TrimmingVN', 
                        '_$ss12StaticStringV6ktraceE7charPtrSPys4Int8VGvg', '_$ss12StaticStringV6ktraceE7charPtrSPys4Int8VGvpMV', 
-                       _ktrace_add_client, _ktrace_add_codes_file, _ktrace_add_stackshot_flags, 
-                       _ktrace_capture_live_stackshot, _ktrace_catalog_close, _ktrace_catalog_get_timestamp, 
-                       _ktrace_catalog_iterate_lostevents, _ktrace_catalog_iterate_processes, 
-                       _ktrace_catalog_iterate_threads, _ktrace_catalog_open, _ktrace_chunk_copy_cfdata, 
-                       _ktrace_chunk_copy_data, _ktrace_chunk_copy_plist, _ktrace_chunk_destroy, 
-                       _ktrace_chunk_has_subchunks, _ktrace_chunk_is_64_bit, _ktrace_chunk_iterate_subchunks, 
+                       _ktrace_abort, _ktrace_add_client, _ktrace_add_codes_file, 
+                       _ktrace_add_stackshot_flags, _ktrace_capture_live_stackshot, 
+                       _ktrace_catalog_close, _ktrace_catalog_get_timestamp, _ktrace_catalog_iterate_lostevents, 
+                       _ktrace_catalog_iterate_processes, _ktrace_catalog_iterate_threads, 
+                       _ktrace_catalog_open, _ktrace_chunk_copy_cfdata, _ktrace_chunk_copy_data, 
+                       _ktrace_chunk_copy_plist, _ktrace_chunk_destroy, _ktrace_chunk_has_subchunks, 
+                       _ktrace_chunk_is_64_bit, _ktrace_chunk_iterate_subchunks, 
                        _ktrace_chunk_map_data, _ktrace_chunk_overwrite, _ktrace_chunk_size, 
                        _ktrace_chunk_size_t, _ktrace_chunk_tag, _ktrace_chunk_unmap_data, 
                        _ktrace_chunk_version_major, _ktrace_chunk_version_minor, 
@@ -275,12 +285,13 @@ exports:
                        _ktrace_machine_min_kernel_vaddr, _ktrace_machine_model, _ktrace_machine_name, 
                        _ktrace_machine_os_build, _ktrace_machine_os_name, _ktrace_machine_os_version, 
                        _ktrace_machine_os_version_extra, _ktrace_machine_physical_cpus, 
-                       _ktrace_machine_print_description, _ktrace_machine_root_volume_size, 
-                       _ktrace_machine_vm_page_size, _ktrace_machine_vm_pages, _ktrace_machine_vm_size, 
-                       _ktrace_name_for_eventid, _ktrace_only_do_time_sensitive_postprocess, 
-                       _ktrace_parse_arg, _ktrace_parse_args, _ktrace_plausible_kernel_address, 
-                       _ktrace_postprocess_file, _ktrace_print_csv_header, _ktrace_print_trace_point, 
-                       _ktrace_process_id, _ktrace_process_iterate_threads, _ktrace_process_last_name, 
+                       _ktrace_machine_print_description, _ktrace_machine_product, 
+                       _ktrace_machine_root_volume_size, _ktrace_machine_vm_page_size, 
+                       _ktrace_machine_vm_pages, _ktrace_machine_vm_size, _ktrace_name_for_eventid, 
+                       _ktrace_only_do_time_sensitive_postprocess, _ktrace_parse_arg, 
+                       _ktrace_parse_args, _ktrace_plausible_kernel_address, _ktrace_postprocess_file, 
+                       _ktrace_print_csv_header, _ktrace_print_trace_point, _ktrace_process_id, 
+                       _ktrace_process_iterate_threads, _ktrace_process_last_name, 
                        _ktrace_process_main_thread, _ktrace_process_unique_id, _ktrace_record, 
                        _ktrace_recording_create, _ktrace_recording_destroy, _ktrace_recording_follow_notifications, 
                        _ktrace_recording_override_default_plan, _ktrace_recording_override_plan_path, 

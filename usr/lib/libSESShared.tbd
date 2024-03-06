@@ -2,9 +2,6 @@
 tbd-version:     4
 targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
 install-name:    '/usr/lib/libSESShared.dylib'
-allowable-clients:
-  - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
-    clients:         [ SEService, SEServiceXCTests, seservicectl, seserviced ]
 exports:
   - targets:         [ armv7-ios, armv7s-ios, arm64-ios, arm64e-ios ]
     symbols:         [ _All, _Any, _DERDecodeAdvance, _ECDSASigValueSpec, _ECIES_V1, 
@@ -14,8 +11,9 @@ exports:
                        _decryptPrivacyData, _encodeDERItem, _encodeItem, _encodeNSData, 
                        _encryptPrivacyData, _getCertificatePublicKey, _getCertificateSubjectCN, 
                        _getPublicKeyBytes, _getSecKeyPublicBytes ]
-    objc-classes:    [ CALogger, KmlRoutingInformation, SESAlarm, SESAtomicArray, 
-                       SESBootUUID, SESConfigDCK, SESTLV, SESTapToRadar, SESXPCEventListener ]
+    objc-classes:    [ CALogger, CertificationLogging, KmlRoutingInformation, SESAlarm, 
+                       SESAtomicArray, SESBootUUID, SESConfigDCK, SESTLV, SESTapToRadar, 
+                       SESXPCEventListener ]
   - targets:         [ arm64-ios, arm64e-ios ]
     symbols:         [ __Z13DERDecodeDataP6NSData, __Z13DERDecodeDataP6NSDataP14DERDecodedInfo, 
                        __Z13DERDecodeDataP6NSDatay, __Z13DERDecodeDataPK7DERItem, 

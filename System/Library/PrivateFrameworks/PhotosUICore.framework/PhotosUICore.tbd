@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
-current-version:       622.0.130
+current-version:       646.1.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -3134,6 +3134,7 @@ exports:
                             _PXAssetActionTypePickAsset, _PXAssetActionTypePrint,
                             _PXAssetActionTypeQuickLook,
                             _PXAssetActionTypeRemove,
+                            _PXAssetActionTypeRemoveNoConfirm,
                             _PXAssetActionTypeRemoveSharingSuggestion,
                             _PXAssetActionTypeReply, _PXAssetActionTypeRestore,
                             _PXAssetActionTypeRevertAdjustments,
@@ -3439,6 +3440,7 @@ exports:
                             _PXCloudQuotaOfferDebugDescription,
                             _PXCloudQuotaOfferSerialQueue,
                             _PXCloudQuotaSendAnalyticsForOfferChange,
+                            _PXCloudQuotaUpsellSheetManagerActivationOptionsForSceneConnectionOptions,
                             _PXCollectionActionMenuForCollection,
                             _PXCollectionDeleteConfirmationTitle,
                             _PXCollectionDeletionAlertControllerForCollection,
@@ -4463,6 +4465,8 @@ exports:
                             _PXPreferencesSetSharedLibrarySuggestionsEnabled,
                             _PXPreferencesSetValue,
                             _PXPreferencesSetVideoAutoplayEnabled,
+                            _PXPreferencesSetWelcomeViewLastPresentationDate,
+                            _PXPreferencesWelcomeViewLastPresentationDate,
                             _PXPreferredContentSizeCategoryFromUITraitCollection,
                             _PXPreferredContentSizeCategoryIsAccessibility,
                             _PXPreferredDistanceFromContentTopToImageTop,
@@ -5641,6 +5645,7 @@ exports:
                             PXAppleMusicImageProvider, PXAppleMusicMediaProvider,
                             PXAppleMusicPreviewAsset,
                             PXAppleMusicPreviewAudioSession,
+                            PXAppleMusicPrompter,
                             PXApplicationDisabledIdleTimerToken,
                             PXApplicationSettings, PXApplicationState,
                             PXArrayChangeDetails, PXArrayDataSection,
@@ -5810,9 +5815,9 @@ exports:
                             PXCloudQuotaOfferProvider,
                             PXCloudQuotaPremiumOfferController,
                             PXCloudQuotaPremiumOfferProvider,
-                            PXCloudQuotaTileView, PXCloudQuotaView,
-                            PXCollageLayoutPerformer, PXCollageView,
-                            PXCollectionFetchOperation,
+                            PXCloudQuotaTileView, PXCloudQuotaUpsellSheetManager,
+                            PXCloudQuotaView, PXCollageLayoutPerformer,
+                            PXCollageView, PXCollectionFetchOperation,
                             PXCollectionListActionPerformer,
                             PXCollectionSortMenuItemConfiguration,
                             PXCollectionSortOrderMenuBuilder,
@@ -6761,6 +6766,7 @@ exports:
                             PXPhotoKitPersonSuggestion,
                             PXPhotoKitPrintAssetActionPerformer,
                             PXPhotoKitRemoveAssetActionPerformer,
+                            PXPhotoKitRemoveNoConfirmAssetActionPerformer,
                             PXPhotoKitRemoveSharingSuggestionAssetActionPerformer,
                             PXPhotoKitRemoveSharingSuggestionAssetCollectionActionPerformer,
                             PXPhotoKitRestoreAssetActionPerformer,

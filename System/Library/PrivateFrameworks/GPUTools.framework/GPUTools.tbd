@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/GPUTools.framework/GPUTools
-current-version:       240.9
+current-version:       270.12
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -30,9 +30,10 @@ exports:
                             _DYTextureChannelGetString,
                             _DYTextureChannelMappingsCopyString,
                             _DYTextureChannelMappingsMerge, _DYZlibErrorDomain,
-                            _GTErrorDomain, _GTErrorKeyCallStack,
-                            _GTErrorKeyCrashDate, _GTErrorKeyCrashLogPath,
-                            _GTErrorKeyFenum, _GTErrorKeyFile, _GTErrorKeyFunction,
+                            _GTCaptureErrorDomain, _GTErrorDomain,
+                            _GTErrorKeyCallStack, _GTErrorKeyCrashDate,
+                            _GTErrorKeyCrashLogPath, _GTErrorKeyFenum,
+                            _GTErrorKeyFile, _GTErrorKeyFunction,
                             _GTErrorKeyFunctionIndex, _GTErrorKeyGputracePath,
                             _GTErrorKeyInternalReason, _GTErrorKeyLine,
                             _GTErrorKeyMTLCommandBuffer,
@@ -46,8 +47,8 @@ exports:
                             _GTErrorKeyResourceUnused, _GTErrorKeyTraceStreamID,
                             _GTErrorKeyUnderlyingErrors,
                             _GTMTLReplayerErrorDomain, _GetAppURL,
-                            _GetXcodeSelectDeveloperPath, _MetalPluginTarget,
-                            _PrettifyFenumString, __Z12plist_filterPKv,
+                            _MetalPluginTarget, _PrettifyFenumString,
+                            __Z12plist_filterPKv,
                             __Z18plist_filter_arrayP9__CFArray,
                             __Z20is_valid_plist_arrayPK9__CFArray,
                             __Z20is_valid_plist_valuePKv,

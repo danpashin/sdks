@@ -3,8 +3,8 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Recon3D.framework/Recon3D
-current-version:       6.31.53
-compatibility-version: 6.31.53
+current-version:       6.55.1
+compatibility-version: 6.55.1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
@@ -179,6 +179,8 @@ exports:
                             _CV3DReconFrameBundleRelease,
                             _CV3DReconFrameBundleRetain,
                             _CV3DReconFrameBundleSetActiveDepthFoVMask,
+                            _CV3DReconFrameBundleSetAnalyticsMetadata,
+                            _CV3DReconFrameBundleSetCameraMetadata,
                             _CV3DReconFrameBundleSetClippingPointLux,
                             _CV3DReconFrameBundleSetColorImage,
                             _CV3DReconFrameBundleSetDGain,
@@ -215,6 +217,7 @@ exports:
                             _CV3DReconKeyframeCreateMaterialLabelImage,
                             _CV3DReconKeyframeCreatePointCloud,
                             _CV3DReconKeyframeCreateSemanticLabelImage,
+                            _CV3DReconKeyframeGetCameraMetadata,
                             _CV3DReconKeyframeGetClippingPointLux,
                             _CV3DReconKeyframeGetCreationTime,
                             _CV3DReconKeyframeGetHeight,
@@ -281,6 +284,7 @@ exports:
                             _CV3DReconLoggingHandleEnableInternal,
                             _CV3DReconLoggingHandleEnableInternalWithConfigurationFile,
                             _CV3DReconLoggingHandleRelease,
+                            _CV3DReconLoggingHandleStartLoggingToConsole,
                             _CV3DReconLoggingHandleStartLoggingToConsoleInternal,
                             _CV3DReconMatchFPFH,
                             _CV3DReconMaterialLabelGetClassName,
@@ -448,6 +452,9 @@ exports:
                             _CV3DReconPlaneDetectionRemoveKeyframePlaneDataUUIDs,
                             _CV3DReconPlaneDetectionRestoredHallucinatedPlaneUUIDs,
                             _CV3DReconPlaneDetectionRestoredPlaneUUIDs,
+                            _CV3DReconPlaneDetectionStatefulLoggerCreate,
+                            _CV3DReconPlaneDetectionStatefulLoggerPushLogDict,
+                            _CV3DReconPlaneDetectionStatefulLoggerRelease,
                             _CV3DReconPlaneDetectionUpdateGetHallucinatedPlanes,
                             _CV3DReconPlaneDetectionUpdateGetUpdatedPlanes,
                             _CV3DReconPlaneDetectionUpdateHallucinatedPlanes,
@@ -538,7 +545,6 @@ exports:
                             _CV3DReconSessionConfigurationEnablePersonMasking,
                             _CV3DReconSessionConfigurationEnableSynchronousScheduling,
                             _CV3DReconSessionConfigurationEnableVisibilityMap,
-                            _CV3DReconSessionConfigurationGetDownsampleFactor,
                             _CV3DReconSessionConfigurationGetMinDepthConfidence,
                             _CV3DReconSessionConfigurationGetVisibilityMapMaxDistance,
                             _CV3DReconSessionConfigurationHasConsumeVIOMetadata,
@@ -698,6 +704,7 @@ exports:
                             _kCV3DPlaneDetectionPlaneDesiredOrientationOther,
                             _kCV3DPlaneDetectionPlaneDesiredOrientationVertical,
                             _kCV3DPlaneDetectionPlaneOrientationHorizontal,
+                            _kCV3DPlaneDetectionPlaneOrientationOther,
                             _kCV3DPlaneDetectionPlaneOrientationVertical,
                             _kCV3DPlaneDetectionPolicyDepth,
                             _kCV3DPlaneDetectionPolicyMesh,

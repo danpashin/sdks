@@ -3,12 +3,28 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/LocalAuthenticationEmbeddedUI.framework/LocalAuthenticationEmbeddedUI
-current-version:       1394.62.1
+current-version:       1394.100.151
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _LAAuthenticatorServiceConfigurationRequirementInvalid,
+    symbols:              [ _$s29LocalAuthenticationEmbeddedUI17LAContextProviderC13createContextSo10LACContext_pyF,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderC13createContextSo10LACContext_pyFTj,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderC13createContextSo10LACContext_pyFTq,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCACycfC,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCACycfc,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCMa,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCMn,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCMo,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCMu,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCN,
+                            _$s29LocalAuthenticationEmbeddedUI17LAContextProviderCfD,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE10invalidateyyF,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE15evaluateAndShowyyF,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE18evaluateAndPresentyyF,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE4make4with13configurationABXDSDys11AnyHashableVypG_So0abC13ConfigurationCtFZ,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE4make4withABXDSDys11AnyHashableVypG_tFZ,
+                            _$sSo23LARatchetViewControllerC29LocalAuthenticationEmbeddedUIE5cleanyyF,
                             _LACustomPasswordTypeAlphanumeric,
                             _LACustomPasswordTypeCustomDigits,
                             _LACustomPasswordTypeFourDigits,
@@ -23,16 +39,11 @@ exports:
                             _LAPasscodeChangeErrorDomain,
                             _LAPasscodeRecoveryErrorDomain,
                             _LAViewControllerForPresentationContext,
-                            _NSStringFromLAAuthenticatorServiceConfigurationRequirement,
-                            _NSStringFromLAAuthorizationViewMode,
-                            _NSStringFromLAAuthorizationViewStyle,
                             _NSStringFromLAPSPasscodeTypeIdentifier ]
-    objc-classes:         [ LAAuthenticatorServiceConfiguration,
-                            LAAuthenticatorServiceConfigurationRequirementBuilder,
-                            LAAuthorizationViewController,
-                            LAAvailableMechanismsWrapper, LACapsuleLabel,
-                            LAContainerViewController, LAContextUIHelper,
-                            LAContextUITrampoline, LACustomPasswordController,
+    objc-classes:         [ LAAuthorizationViewController, LACapsuleLabel,
+                            LAContainerViewController, LAContextHelper,
+                            LAContextUIHelper, LAContextUITrampoline,
+                            LACustomPasswordController,
                             LACustomPasswordControllerConfiguration,
                             LACustomPasswordControllerStyle, LADecriptionBuilder,
                             LALocalizedString, LAPSCurrentPasscodeService,
@@ -82,7 +93,9 @@ exports:
                             LAPasscodeRecoveryEnvironment,
                             LAPasscodeRecoveryEnvironmentConfig,
                             LAPasscodeRecoveryErrorBuilder,
-                            LAPasscodeRecoveryService,
+                            LAPasscodeRecoveryService, LARatchetViewController,
+                            LARatchetViewControllerConfiguration,
                             LARemoteViewControllerParameters, LAUITextField,
-                            LAView, _AuthorizationRemoteViewControllerHost ]
+                            LAView, _AuthorizationRemoteViewControllerHost,
+                            _TtC29LocalAuthenticationEmbeddedUI17LAContextProvider ]
 ...

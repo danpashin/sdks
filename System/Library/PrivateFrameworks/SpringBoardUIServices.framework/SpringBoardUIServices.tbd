@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
-current-version:       4416.39.103
+current-version:       4416.132.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -103,7 +103,7 @@ exports:
                             _SBSUIWallpaperSetVideoWithWallpaperMode,
                             _SBSUIWindowSceneSessionRoleInCall,
                             _SBSUIWindowSceneSessionRoleLiquidDetection,
-                            _SBSUIWindowSceneSessionRoleProxReader,
+                            _SBSUIWindowSceneSessionRoleProximityReader,
                             _SBSUIWindowSceneSessionRoleRemoteAlert,
                             _SBSUIWindowSceneSessionRoleSystemNotes,
                             _SBSizeEqualsSize, _SBSizeGreaterThanOrEqualToSize,
@@ -162,6 +162,7 @@ exports:
                             _SBUIRemoteAlertActivationReasonActivatingForUILock,
                             _SBUIRemoteAlertServiceButtonEventDescription,
                             _SBUIScaledFontSizeWithMaxSizeCategory,
+                            _SBUIServiceButtonEventDescription,
                             _SBUIStringForPhoneUnlockWithWatchErrorCode,
                             _SBUIStringFromPresentableButtonEvent,
                             _SBUISystemApertureCommandDescription,
@@ -252,11 +253,14 @@ exports:
                             SBLockOverlayStylePropertiesFactory,
                             SBNumberPadWithDelegate, SBPasscodeKeyboardAnimator,
                             SBPasscodeNumberPadButton,
+                            SBSUIFeaturePolicyClientSettingsExtension,
+                            SBSUIFeaturePolicyHostComponent,
                             SBSUIHandleDeviceLockSceneAction,
                             SBSUIHandleDeviceLockSceneActionResponse,
                             SBSUIHardwareButtonEventSceneAction,
                             SBSUIHardwareButtonEventSceneActionResponse,
                             SBSUIHomeScreenSilhouetteViewBuilder,
+                            SBSUIIdleTimerSceneHostComponent,
                             SBSUIInCallDestroySceneAction,
                             SBSUIInCallRequestPresentationModeAction,
                             SBSUIInCallSceneClientSettings,
@@ -282,9 +286,10 @@ exports:
                             SBSUIMutableLoginUISceneClientSettings,
                             SBSUIMutableStarkNotificationsSceneClientSettings,
                             SBSUIMutableStarkNotificationsSceneSettings,
-                            SBSUIProxReaderSceneExtension,
-                            SBSUIProxReaderSceneRequestBuilder,
                             SBSUIProxReaderSceneSpecification,
+                            SBSUIProximityReaderSceneExtension,
+                            SBSUIProximityReaderSceneRequestBuilder,
+                            SBSUIProximityReaderSceneSpecification,
                             SBSUIRemoteAlertClientSettingsExtension,
                             SBSUIRemoteAlertClientTransitionContextExtension,
                             SBSUIRemoteAlertHostTransitionContextExtension,
@@ -310,7 +315,7 @@ exports:
                             SBSUIWallpaperServiceInterfaceSpecification,
                             SBSearchBar, SBSimplePasscodeEntryFieldButton,
                             SBUIAlphanumericPasscodeEntryField,
-                            SBUIAppleLogoView,
+                            SBUIAppleLogoView, SBUIBackgroundActivityAction,
                             SBUIBackgroundContentActionHandler,
                             SBUIBackgroundContentScene,
                             SBUIBackgroundContentSceneSpecification,
@@ -319,8 +324,8 @@ exports:
                             SBUIBannerSceneClientSettings,
                             SBUIBannerSourceApplicationNonAffectingAppLifecycleSceneSpecification,
                             SBUIBannerSourceApplicationSceneSpecification,
-                            SBUIBiometricResource, SBUIButton,
-                            SBUICallToActionLabel,
+                            SBUIBiometricResource, SBUIButton, SBUIButtonAction,
+                            SBUIButtonActionResponse, SBUICallToActionLabel,
                             SBUIDependencyGestureRecognizer,
                             SBUIEmergencyCallHostViewController,
                             SBUIEmergencyCallServiceViewController,

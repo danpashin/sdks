@@ -830,6 +830,15 @@ eEISPLibErrorCode EISPLibRunSNEProgram(EISPHandle libHandle,
                                        uint32_t programId);
 
 /**
+ * This API is used to test depth generation in FIDPCE
+ */
+eEISPLibErrorCode EISPLibRunPCEDepth(EISPHandle libHandle,
+                                     eispMemObjId_t meta,
+                                     eispMemObjId_t raw,
+                                     eispMemObjId_t ref,
+                                     eispMemObjId_t depth);
+
+/**
  * This API is used to control the Eisp Hardware
  *
  */

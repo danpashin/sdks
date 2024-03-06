@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ShazamCore.framework/ShazamCore
-current-version:       236.12
+current-version:       238.15
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
@@ -29,16 +29,17 @@ exports:
                             _SHCoreErrorDomain, _SHDefaultWorkerTimeout,
                             _SHLookupDefaultMaxAgeValue,
                             _SHRecordingIntermissionDefaultValue,
+                            _SHRecordingSignatureOffsetDefaultValue,
                             _SHShazamKitInternalClientEntitlement,
                             _SHShazamKitTCCEntitlement,
                             _SHShazamKitTCCEntitlementMediaLibrary,
                             _SHShazamKitTCCEntitlementMicrophone, _sh_log_object ]
-    objc-classes:         [ SHAnalytics, SHBagContract, SHCacheValues,
-                            SHCampaignTokens, SHCompression, SHCoreError,
-                            SHDefaultConfigurationValues, SHEndpoints,
+    objc-classes:         [ SHAMPConfiguration, SHAnalytics, SHBagContract,
+                            SHCacheValues, SHCampaignTokens, SHCompression,
+                            SHCoreError, SHDefaultConfigurationValues, SHEndpoints,
                             SHEntitlements, SHFeatureFlags, SHHost,
                             SHJSONLFileReader, SHJSONLFileWriter, SHLocalization,
                             SHMusicSubscriptionStatus, SHOffers,
                             SHRecorderConfiguration, SHRemoteConfiguration,
-                            SHStorefront, SHTokenizedURL ]
+                            SHStorefront, SHStreamingProviders, SHTokenizedURL ]
 ...

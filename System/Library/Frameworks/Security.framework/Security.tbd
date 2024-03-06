@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Security.framework/Security
-current-version:       61040.62.1
+current-version:       61123.100.169
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -682,6 +682,7 @@ exports:
                             _SecCMSVerifySignedData,
                             _SecCertificateAppendToXPCArray,
                             _SecCertificateArrayCopyXPCArray,
+                            _SecCertificateCopyAppleCorporateRoots,
                             _SecCertificateCopyAppleExternalRoots,
                             _SecCertificateCopyAttributeDictionary,
                             _SecCertificateCopyCTLogForKeyID,
@@ -1153,7 +1154,7 @@ exports:
                             _SecPolicyCreateConfigurationProfileSigner,
                             _SecPolicyCreateDemoDigitalCatalogSigning,
                             _SecPolicyCreateDeveloperIDInstaller,
-                            _SecPolicyCreateEAP,
+                            _SecPolicyCreateEAP, _SecPolicyCreateEDPSigning,
                             _SecPolicyCreateEscrowServiceIdKeySigning,
                             _SecPolicyCreateEscrowServiceSigner,
                             _SecPolicyCreateFactoryDeviceCertificate,
@@ -1213,6 +1214,7 @@ exports:
                             _SecRequestSharedWebCredential,
                             _SecRequirementCopyData, _SecRequirementCopyString,
                             _SecRequirementCreateWithData,
+                            _SecRequirementCreateWithLightweightCodeRequirementData,
                             _SecRequirementCreateWithString,
                             _SecRequirementCreateWithStringAndErrors,
                             _SecRequirementGetTypeID, _SecSCEPCertifyRequest,
@@ -1254,6 +1256,7 @@ exports:
                             _SecTaskCreateWithXPCMessage,
                             _SecTaskEntitlementsValidated,
                             _SecTaskGetCodeSignStatus, _SecTaskGetTypeID,
+                            _SecTaskValidateForLightweightCodeRequirementData,
                             _SecTokenItemValueCopy,
                             _SecTrustAddToInputCertificates,
                             _SecTrustCopyCertificateChain,
@@ -1571,7 +1574,8 @@ exports:
                             _kSecAsn1UnsignedIntegerTemplate,
                             _kSecAsn1ValidityTemplate,
                             _kSecAsn1VisibleStringTemplate,
-                            _kSecAttestationIdentity, _kSecAttestationOids,
+                            _kSecAttestationChain, _kSecAttestationIdentity,
+                            _kSecAttestationKey, _kSecAttestationOids,
                             _kSecAttrAFPServerSignature, _kSecAttrAccessControl,
                             _kSecAttrAccessGroup, _kSecAttrAccessGroupToken,
                             _kSecAttrAccessible,
@@ -1971,7 +1975,7 @@ exports:
                             _kSecPolicyAppleDemoDigitalCatalog,
                             _kSecPolicyAppleDeveloperIDInstaller,
                             _kSecPolicyAppleDeveloperIDPlusTicket,
-                            _kSecPolicyAppleEAP,
+                            _kSecPolicyAppleEAP, _kSecPolicyAppleEDPSigning,
                             _kSecPolicyAppleEscrowProxyCompatibilityServerAuth,
                             _kSecPolicyAppleEscrowProxyServerAuth,
                             _kSecPolicyAppleEscrowService,

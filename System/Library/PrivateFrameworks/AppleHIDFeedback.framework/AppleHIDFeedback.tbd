@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:                 [ arm64, arm64e ]
+platform:              ios
+flags:                 [ flat_namespace ]
+install-name:          /System/Library/PrivateFrameworks/AppleHIDFeedback.framework/AppleHIDFeedback
+current-version:       0
+compatibility-version: 0
+objc-constraint:       retain_release
+exports:
+  - archs:                [ arm64, arm64e ]
+    objc-classes:         [ AHFManager, AHFTrackpadController ]
+...

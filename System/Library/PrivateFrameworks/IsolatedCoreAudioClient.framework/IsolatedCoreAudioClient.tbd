@@ -8,6 +8,8 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _RegisterForIsolatedAudio, _RequestIsolatedAudio,
-                            _StartIsolatedAudio, _StopIsolatedAudio ]
+    symbols:              [ _CreateIsolatedAudioServicePortal,
+                            _RegisterForIsolatedAudio, _RequestIsolatedAudio,
+                            _SetAudioLapseHandler, _StartIsolatedAudio,
+                            _StartIsolatedAudioAtTime, _StopIsolatedAudio ]
 ...

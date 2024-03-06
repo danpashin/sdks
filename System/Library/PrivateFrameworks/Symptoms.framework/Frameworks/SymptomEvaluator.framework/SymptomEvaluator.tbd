@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
-current-version:       1848.60.8
+current-version:       1871.100.22
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -286,6 +286,10 @@ exports:
                             _lowInternetModeScoresDL, _lowInternetModeScoresUL,
                             _machAbsoluteTimeFromNanoseconds,
                             _machAbsoluteTime_secs, _machContinuousTime_secs,
+                            _microsecondsFromMachAbsoluteTime,
+                            _millisecondsFromBaselineMachAbsoluteTime,
+                            _millisecondsFromBaselineNanosecondTime,
+                            _millisecondsFromMachAbsoluteTime,
                             _nanosecondsFromMachAbsoluteTime,
                             _outrankHandlerEventToString,
                             _secondsFromMachAbsoluteTime, _setApparentTime,

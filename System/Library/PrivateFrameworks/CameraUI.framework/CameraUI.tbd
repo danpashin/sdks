@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-current-version:       4007.14
+current-version:       4009.19
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -267,7 +267,6 @@ exports:
                             _CAMTorchCommandTorchMode,
                             _CAMTransformCorrectingForOrientation,
                             _CAMURLUtilitiesConfigurationURLHost,
-                            _CAMUserDeviceListLastCheckDate,
                             _CAMUserPreferenceActionModeLowLightEnabled,
                             _CAMUserPreferenceAspectRatioCrop,
                             _CAMUserPreferenceAutoLowLightVideoEnabled,
@@ -288,6 +287,7 @@ exports:
                             _CAMUserPreferenceDesiredPhotoModeEffectFilterType,
                             _CAMUserPreferenceDesiredProResVideoMode,
                             _CAMUserPreferenceDidAcknowledgeDepthInPhotoModeDescription,
+                            _CAMUserPreferenceDidAcknowledgeSpatialVideoOverlayDescription,
                             _CAMUserPreferenceDidMigrate,
                             _CAMUserPreferenceDidPerformHorizonLevelUpgrade,
                             _CAMUserPreferenceDidPerformPortraitModeTripleCameraUpgrade,
@@ -446,7 +446,7 @@ exports:
                             _kCAMLibrarySelectionControllerAuthorizationStatusPending,
                             _kCAMPersistenceExtensionPrivateMetadata,
                             _moveInstructionsDelay, _speedInstructionsDelay ]
-    objc-classes:         [ CAMAccountController, CAMAnalyticsCaptureEvent,
+    objc-classes:         [ CAMAnalyticsCaptureEvent,
                             CAMAnalyticsControlDrawerEvent, CAMAnalyticsEvent,
                             CAMAnalyticsIgnoredShutterEvent,
                             CAMAnalyticsMessagesCaptureEvent,
@@ -699,7 +699,8 @@ exports:
                             CAMSpatialCaptureButton,
                             CAMSpatialCaptureInstructionLabel,
                             CAMSpatialCaptureRecordingIndicator,
-                            CAMSpatialOverCaptureEnabledCommand, CAMSpring,
+                            CAMSpatialOverCaptureEnabledCommand,
+                            CAMSpatialVideoDescriptionOverlayView, CAMSpring,
                             CAMStageLightAnimator, CAMStageLightOverlayView,
                             CAMStartPanoramaCommand,
                             CAMStartVideoRecordingCommand,

@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.11 clang-1500.1.0.2.2)
-// swift-module-flags: -target arm64-apple-ios17.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name WorkoutKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex -user-module-version 749.20
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.12.5 clang-1500.3.9.1.1)
+// swift-module-flags: -target arm64-apple-ios17.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-bare-slash-regex -user-module-version 749.36 -module-name WorkoutKit
 import Foundation
 import HealthKit
 import Swift
@@ -308,8 +307,12 @@ public struct PowerThresholdAlert : WorkoutKit.WorkoutAlert {
   public var target: Foundation.Measurement<Foundation.UnitPower>
   public var metric: WorkoutKit.WorkoutAlertMetric {
     get
+    @available(iOS 17.4, watchOS 10.4, *)
+    set
   }
   public init(target: Foundation.Measurement<Foundation.UnitPower>)
+  @available(iOS 17.4, watchOS 10.4, *)
+  public init(target: Foundation.Measurement<Foundation.UnitPower>, metric: WorkoutKit.WorkoutAlertMetric)
   public var targetQuantity: HealthKit.HKQuantity {
     get
   }
@@ -322,14 +325,20 @@ public struct PowerThresholdAlert : WorkoutKit.WorkoutAlert {
 @available(iOS 17.0, watchOS 10.0, *)
 extension WorkoutKit.WorkoutAlert where Self == WorkoutKit.PowerThresholdAlert {
   public static func power(_ value: Swift.Double, unit: Foundation.UnitPower) -> Self
+  @available(iOS 17.4, watchOS 10.4, *)
+  public static func power(_ value: Swift.Double, unit: Foundation.UnitPower, metric: WorkoutKit.WorkoutAlertMetric) -> Self
 }
 @available(iOS 17.0, watchOS 10.0, *)
 public struct PowerRangeAlert : WorkoutKit.WorkoutAlert {
   public var target: Swift.ClosedRange<Foundation.Measurement<Foundation.UnitPower>>
   public var metric: WorkoutKit.WorkoutAlertMetric {
     get
+    @available(iOS 17.4, watchOS 10.4, *)
+    set
   }
   public init(target: Swift.ClosedRange<Foundation.Measurement<Foundation.UnitPower>>)
+  @available(iOS 17.4, watchOS 10.4, *)
+  public init(target: Swift.ClosedRange<Foundation.Measurement<Foundation.UnitPower>>, metric: WorkoutKit.WorkoutAlertMetric)
   public var targetQuantityLowerBound: HealthKit.HKQuantity {
     get
   }
@@ -345,6 +354,8 @@ public struct PowerRangeAlert : WorkoutKit.WorkoutAlert {
 @available(iOS 17.0, watchOS 10.0, *)
 extension WorkoutKit.WorkoutAlert where Self == WorkoutKit.PowerRangeAlert {
   public static func power(_ range: Swift.ClosedRange<Swift.Double>, unit: Foundation.UnitPower) -> Self
+  @available(iOS 17.4, watchOS 10.4, *)
+  public static func power(_ range: Swift.ClosedRange<Swift.Double>, unit: Foundation.UnitPower, metric: WorkoutKit.WorkoutAlertMetric) -> Self
 }
 @available(iOS 17.0, watchOS 10.0, *)
 public struct PowerZoneAlert : WorkoutKit.WorkoutAlert {

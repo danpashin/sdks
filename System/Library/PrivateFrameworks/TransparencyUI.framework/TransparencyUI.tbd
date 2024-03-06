@@ -8,10 +8,9 @@ compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _PSDetailTextColorKey, _PSDetailTextLabelKey,
-                            _ffKTAccountKeyUI, _ffKTIneligibleDevicesRemoteUI,
-                            _ffKTReportToApple, _ffKTResetButtonUI,
-                            _ffKTStateManagerUI, _ffKTStaticId,
+    symbols:              [ _ffKTAccountKeyUI, _ffKTIneligibleDevicesRemoteUI,
+                            _ffKTOldVerifyContactsBehavior, _ffKTReportToApple,
+                            _ffKTResetButtonUI, _ffKTStateManagerUI, _ffKTStaticId,
                             _ffKTSystemFailureUI,
                             _kIDSKeyTransparencyVerifierErrorDomain,
                             _kTUIAccessibilityIdentifierOptInSwitch,
@@ -31,8 +30,9 @@ exports:
                             _kTUIOBKProtocolPropertyTitleKey,
                             _kTUIPublicVerificationCodeLearnMoreURL,
                             _kTUIReportToAppleLearnMoreURL,
-                            _kTUISetupFlowSheetHeight, _kTUISetupFlowSheetWidth,
-                            _kTUITapToRadarURL,
+                            _kTUISetupFlowSheetHeight,
+                            _kTUISetupFlowSheetHeightLowResolution,
+                            _kTUISetupFlowSheetWidth, _kTUITapToRadarURL,
                             _kTUITrustedDeviceListSettingsURL,
                             _kTUIUnknownDeviceIconURL,
                             _kTransparencyAnalyticsEventIneligibleDevicesUI ]
@@ -49,7 +49,7 @@ exports:
                             TUIKTLearnMorePresenter, TUIKTPaneViewController,
                             TUIKTReportToAppleContext,
                             TUIKTReportToAppleViewController,
-                            TUIKTSingleAccountViewController,
+                            TUIKTSingleAccountViewController, TUIKTStatusCell,
                             TUIMismatchedAppleIDModel, TUIMissingAppleIDModel,
                             TUINetworkMonitor, TUIOBMismatchedAppleIDViewModel,
                             TUIOBMissingAppleIDViewModel,
@@ -67,6 +67,5 @@ exports:
                             TUIStaticIdentitySpecifierProvider,
                             TUIUpdateDevicesModel, TUIUtils,
                             TUIWelcomeControllerModel,
-                            TUIWelcomeSplashScreenModel,
-                            _TUIKTErrorAttributedtextCell ]
+                            TUIWelcomeSplashScreenModel ]
 ...

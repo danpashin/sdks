@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/WebCore.framework/Frameworks/libwebrtc.dylib
-current-version:       617.1.17
+current-version:       618.1.15
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -35,8 +35,7 @@ exports:
                             __ZN3rtc14VideoSinkWantsC1Ev,
                             __ZN3rtc14VideoSinkWantsD1Ev,
                             __ZN3rtc16InterfaceAddressaSERKS0_,
-                            __ZN3rtc17AsyncPacketSocket14SubscribeCloseEPKvNSt3__18functionIFvPS0_iEEE,
-                            __ZN3rtc17AsyncPacketSocketC2Ev,
+                            __ZN3rtc17AsyncPacketSocket19SubscribeCloseEventEPKvNSt3__18functionIFvPS0_iEEE,
                             __ZN3rtc17AsyncPacketSocketD2Ev,
                             __ZN3rtc17CopyOnWriteBuffer24UnshareAndEnsureCapacityEm,
                             __ZN3rtc17CopyOnWriteBufferC1ERKS0_,
@@ -133,6 +132,7 @@ exports:
                             __ZN6webrtc10VP8Decoder6CreateEv,
                             __ZN6webrtc10VP8Encoder6CreateEv,
                             __ZN6webrtc10VP9Decoder6CreateEv,
+                            __ZN6webrtc10VP9Encoder6CreateERKN7cricket5CodecE,
                             __ZN6webrtc10VP9Encoder6CreateEv,
                             __ZN6webrtc10VideoCodec3VP8Ev,
                             __ZN6webrtc10VideoCodec3VP9Ev,
@@ -200,7 +200,7 @@ exports:
                             __ZN6webrtc18RtpTransceiverInitD1Ev,
                             __ZN6webrtc18callback_list_impl21CallbackListReceivers7ForeachEN3rtc12FunctionViewIFvRNS_15UntypedFunctionEEEE,
                             __ZN6webrtc18callback_list_impl21CallbackListReceiversC1Ev,
-                            __ZN6webrtc18createLocalEncoderERKNS_14SdpVideoFormatEbNS_27LocalEncoderScalabilityModeEU13block_pointerFvPKhmRKNS_22WebKitEncodedFrameInfoEEU13block_pointerFvS5_mE,
+                            __ZN6webrtc18createLocalEncoderERKNS_14SdpVideoFormatEbNS_27LocalEncoderScalabilityModeEU13block_pointerFvPKhmRKNS_22WebKitEncodedFrameInfoEEU13block_pointerFvS5_mEU13block_pointerFvbE,
                             __ZN6webrtc18pixelBufferToFrameEP10__CVBuffer,
                             __ZN6webrtc19AudioTrackInterface14GetSignalLevelEPi,
                             __ZN6webrtc19AudioTrackInterface17GetAudioProcessorEv,
@@ -212,8 +212,9 @@ exports:
                             __ZN6webrtc19releaseLocalEncoderEPv,
                             __ZN6webrtc19setDecoderFrameSizeEPvtt,
                             __ZN6webrtc20DataChannelInterface9SendAsyncENS_10DataBufferEN4absl12AnyInvocableIFvNS_8RTCErrorEOEEE,
-                            __ZN6webrtc20DecodedImageCallback7DecodedERNS_10VideoFrameEN4absl8optionalIiEENS4_IhEE,
+                            __ZN6webrtc20DecodedImageCallback7DecodedERNS_10VideoFrameENSt3__18optionalIiEENS4_IhEE,
                             __ZN6webrtc20DecodedImageCallback7DecodedERNS_10VideoFrameEx,
+                            __ZN6webrtc20RTCAudioPlayoutStats5kTypeE,
                             __ZN6webrtc20RtpReceiverInterface17SetFrameDecryptorEN3rtc13scoped_refptrINS_23FrameDecryptorInterfaceEEE,
                             __ZN6webrtc20RtpReceiverInterface40SetDepacketizerToDecoderFrameTransformerEN3rtc13scoped_refptrINS_25FrameTransformerInterfaceEEE,
                             __ZN6webrtc20VideoFrameBufferPool16CreateI420BufferEii,
@@ -232,6 +233,7 @@ exports:
                             __ZN6webrtc22VideoBitrateAllocation10SetBitrateEmmj,
                             __ZN6webrtc22VideoBitrateAllocationC1Ev,
                             __ZN6webrtc22createLocalH264DecoderEU13block_pointerFvP10__CVBufferxxE,
+                            __ZN6webrtc22createLocalH265DecoderEU13block_pointerFvP10__CVBufferxxE,
                             __ZN6webrtc22initializeLocalEncoderEPvttjjjj,
                             __ZN6webrtc23PeerConnectionInterface16RTCConfigurationC1ERKS1_,
                             __ZN6webrtc23PeerConnectionInterface16RTCConfigurationC1Ev,
@@ -278,6 +280,7 @@ exports:
                             __ZN6webrtc30PeerConnectionFactoryInterface20CreatePeerConnectionERKNS_23PeerConnectionInterface16RTCConfigurationENSt3__110unique_ptrIN7cricket13PortAllocatorENS5_14default_deleteIS8_EEEENS6_IN3rtc32RTCCertificateGeneratorInterfaceENS9_ISD_EEEEPNS_22PeerConnectionObserverE,
                             __ZN6webrtc30PeerConnectionFactoryInterface27CreatePeerConnectionOrErrorERKNS_23PeerConnectionInterface16RTCConfigurationENS_26PeerConnectionDependenciesE,
                             __ZN6webrtc30RTCRemoteInboundRtpStreamStats5kTypeE,
+                            __ZN6webrtc31RTCRemoteOutboundRtpStreamStats5kTypeE,
                             __ZN6webrtc31createPixelBufferFromI420BufferEPKhmmmNS_16I420BufferLayoutE,
                             __ZN6webrtc32CreateBuiltinAudioDecoderFactoryEv,
                             __ZN6webrtc32CreateBuiltinAudioEncoderFactoryEv,
@@ -286,11 +289,17 @@ exports:
                             __ZN6webrtc32webrtc_sequence_checker_internal19SequenceCheckerImplC2Eb,
                             __ZN6webrtc7CpuInfo19DetectNumberOfCoresEv,
                             __ZN6webrtc8RTCError2OKEv,
+                            __ZN6webrtc8RtpCodecC1ERKS0_,
                             __ZN6webrtc8RtpCodecC2ERKS0_,
+                            __ZN6webrtc8RtpCodecD1Ev,
                             __ZN7cricket12AudioOptionsD1Ev,
+                            __ZN7cricket13kVp9CodecNameE,
+                            __ZN7cricket16CreateVideoCodecERKN6webrtc14SdpVideoFormatE,
                             __ZN7cricket17MediaTypeToStringENS_9MediaTypeE,
                             __ZN7cricket18BasicPortAllocatorC1EPN3rtc14NetworkManagerEPNS1_19PacketSocketFactoryEPN6webrtc14TurnCustomizerEPNS_25RelayPortFactoryInterfaceEPKNS6_15FieldTrialsViewE,
                             __ZN7cricket27ICE_CANDIDATE_COMPONENT_RTPE,
+                            __ZN7cricket5CodecC1ERKN6webrtc14SdpVideoFormatE,
+                            __ZN7cricket5CodecD1Ev, __ZN7cricket5CodecD2Ev,
                             __ZN7cricket9CandidateC1Ev,
                             __ZN7cricket9CandidateD1Ev,
                             __ZNK3rtc13SocketAddress14IsUnresolvedIPEv,
@@ -355,12 +364,12 @@ exports:
                             __ZNK6webrtc27SessionDescriptionInterface7GetTypeEv,
                             __ZNK6webrtc30PeerConnectionFactoryInterface24GetRtpSenderCapabilitiesEN7cricket9MediaTypeE,
                             __ZNK6webrtc30PeerConnectionFactoryInterface26GetRtpReceiverCapabilitiesEN7cricket9MediaTypeE,
-                            __ZNK6webrtc32webrtc_sequence_checker_internal19SequenceCheckerImpl19ExpectationToStringEv,
                             __ZNK6webrtc32webrtc_sequence_checker_internal19SequenceCheckerImpl9IsCurrentEv,
                             __ZNK6webrtc8RTCError7messageEv,
                             __ZNK6webrtc8RTCStats6ToJsonEv,
                             __ZNK7cricket9Candidate16ToStringInternalEb,
                             __ZTVN3rtc14NetworkManagerE,
+                            __ZTVN3rtc17AsyncPacketSocketE,
                             __ZTVN3rtc18NetworkManagerBaseE,
                             __ZTVN4webm10FileReaderE, __ZTVN4webm12BufferReaderE,
                             __ZTVN4webm13IstreamReaderE, __ZTVN4webm8CallbackE,
@@ -378,5 +387,6 @@ exports:
                             __ZTVN6webrtc23RtpTransceiverInterfaceE,
                             __ZTVN6webrtc27SessionDescriptionInterfaceE,
                             __ZTVN6webrtc30PeerConnectionFactoryInterfaceE,
-                            __ZTVN6webrtc30WrappingAsyncDnsResolverResultE ]
+                            __ZTVN6webrtc30WrappingAsyncDnsResolverResultE,
+                            __ZTVN7cricket5CodecE ]
 ...

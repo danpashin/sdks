@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
-current-version:       622.0.130
+current-version:       646.1.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -878,7 +878,6 @@ exports:
                             _PLResourceLocalAvailabilityTargetName,
                             _PLResourcePTPTrashedStateName,
                             _PLResourceRecipeIDIsCPLImageDerivative,
-                            _PLResourceRecipeIDIsDeferredProcessing,
                             _PLResourceRecipeIDIsTableThumbnailRecipeID,
                             _PLResourceRecipeIsFullSizeDeferredProcessingPreview,
                             _PLResourceReciprocalImageScale,
@@ -1479,7 +1478,9 @@ exports:
                             _PLShortDescriptionForAnalysisState,
                             _PLShortDescriptionForVerifiedType,
                             _PLShortDescriptionForWorkerType,
-                            _PLShortObjectIDFromURL, _PLShouldCacheIOSurfaces,
+                            _PLShortObjectIDFromURL,
+                            _PLShouldBoostLogLevelForResourceRecipeID,
+                            _PLShouldCacheIOSurfaces,
                             _PLShouldConstructDisplayNameForAppBundle,
                             _PLShouldLogImageDecodeTime,
                             _PLShouldPrepareDatabaseForOTARestoreWithMigrationType,
@@ -2167,9 +2168,11 @@ exports:
                             PLModelMigrationAction_PopulateExtendedAttributes,
                             PLModelMigrationAction_PopulateInitialActiveLibraryScopeParticipationState,
                             PLModelMigrationAction_PopulateInitialSharedAssetCollectionStats,
+                            PLModelMigrationAction_PopulatePersonCloudDetectionType,
                             PLModelMigrationAction_PromoteLeftoverDeferredAssets,
                             PLModelMigrationAction_PushAssetsWithPetSyncableFaces,
                             PLModelMigrationAction_RebuildHighlights,
+                            PLModelMigrationAction_ReevaluateAllowedForAnalysisForMontageAssets,
                             PLModelMigrationAction_ReevaluatePanoramaImageAssets,
                             PLModelMigrationAction_RelocateBundleScopeData,
                             PLModelMigrationAction_RemoveAdjustedAssetsFromDuplicateAlbums,
@@ -2603,7 +2606,8 @@ exports:
                             PLPTPAsset._fingerprint,
                             PLPTPAsset._fullDirectoryPath, PLPTPAsset._groupUUID,
                             PLPTPAsset._highFrameRateVideo,
-                            PLPTPAsset._imagePixSize, PLPTPAsset._locationString,
+                            PLPTPAsset._imagePixSize, PLPTPAsset._isHDR,
+                            PLPTPAsset._locationString,
                             PLPTPAsset._modificationDateString,
                             PLPTPAsset._objectCompressedSize,
                             PLPTPAsset._originalFilename,

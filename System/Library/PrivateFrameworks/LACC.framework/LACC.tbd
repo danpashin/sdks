@@ -3,21 +3,19 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/LACC.framework/LACC
-current-version:       6.19.1
-compatibility-version: 6.19.1
+current-version:       7.0.1
+compatibility-version: 7.0.1
 exports:
   - archs:                [ arm64, arm64e ]
     symbols:              [ __ZN13lacc_hardware12LaccHardware12arch_versionEv,
                             __ZN13lacc_hardware12LaccHardware9supportedEv,
                             __ZN13lacc_hardware12LaccHardwareC1Ev,
                             __ZN13lacc_hardware12LaccHardwareC2Ev,
-                            __ZN13lacc_hardware12LaccHardwarecvRN4lacc13CallInterfaceEEv,
-                            __ZN13lacc_hardware12LaccHardwarecvRN4lacc15ConfigInterfaceEEv,
-                            __ZN13lacc_hardware12LaccHardwarecvRNS_6LaccHwEEv,
                             __ZN4lacc6Counts9read_fromERNS_13CallInterfaceE,
                             __ZN4lacc7LaccABI10get_returnEPvj,
                             __ZN4lacc7LaccABI13read_registerERNS_13CallInterfaceEiPvRj,
                             __ZN4lacc7LaccABI14allocate_stackEv,
+                            __ZN4lacc7LaccABI14dump_registersERNS_13CallInterfaceE,
                             __ZN4lacc7LaccABI14get_return_u32Ev,
                             __ZN4lacc7LaccABI14get_return_vd4Ev,
                             __ZN4lacc7LaccABI14get_return_vf8Ev,
@@ -91,6 +89,9 @@ exports:
                             __ZN4lacc9ELFLoader4openENSt3__117basic_string_viewIcNS1_11char_traitsIcEEEE,
                             __ZN4lacc9ELFLoader8dma_readERNS_13ProgramLoaderEymPh,
                             __ZN4lacc9ELFLoader9dma_writeERNS_13ProgramLoaderEymPKh,
+                            __ZNK13lacc_hardware12LaccHardwarecvRN4lacc13CallInterfaceEEv,
+                            __ZNK13lacc_hardware12LaccHardwarecvRN4lacc15ConfigInterfaceEEv,
+                            __ZNK13lacc_hardware12LaccHardwarecvRNS_6LaccHwEEv,
                             __ZNK4lacc9ELFLoader11lookup_sizeENSt3__117basic_string_viewIcNS1_11char_traitsIcEEEE,
                             __ZNK4lacc9ELFLoader12arch_versionEv,
                             __ZNK4lacc9ELFLoader21get_text_segment_sizeEv,

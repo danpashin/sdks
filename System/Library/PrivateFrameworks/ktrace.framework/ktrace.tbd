@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/ktrace.framework/ktrace
-current-version:       590.0.3
+current-version:       599.100.6
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -83,6 +83,23 @@ exports:
                             _$s6ktrace8AmendingV8toolNameSSvpMV,
                             _$s6ktrace8AmendingVMa, _$s6ktrace8AmendingVMn,
                             _$s6ktrace8AmendingVN,
+                            _$s6ktrace8TrimNoteO11interruptedyA2CmFWC,
+                            _$s6ktrace8TrimNoteO13errorOccurredyACs5Error_pcACmFWC,
+                            _$s6ktrace8TrimNoteO13helpRequestedyACSScACmFWC,
+                            _$s6ktrace8TrimNoteO8completeyAC6System8FilePathVcACmFWC,
+                            _$s6ktrace8TrimNoteO8startingyACSS_S2StcACmFWC,
+                            _$s6ktrace8TrimNoteOMa, _$s6ktrace8TrimNoteOMn,
+                            _$s6ktrace8TrimNoteON,
+                            _$s6ktrace8TrimmingV11interactiveSbvg,
+                            _$s6ktrace8TrimmingV11interactiveSbvpMV,
+                            _$s6ktrace8TrimmingV4trim9argumentsySaySSG_tKF,
+                            _$s6ktrace8TrimmingV6notifyyyAA8TrimNoteOcvg,
+                            _$s6ktrace8TrimmingV6notifyyyAA8TrimNoteOcvpMV,
+                            _$s6ktrace8TrimmingV8toolName11interactive6notifyACSS_SbyAA8TrimNoteOctcfC,
+                            _$s6ktrace8TrimmingV8toolNameSSvg,
+                            _$s6ktrace8TrimmingV8toolNameSSvpMV,
+                            _$s6ktrace8TrimmingVMa, _$s6ktrace8TrimmingVMn,
+                            _$s6ktrace8TrimmingVN,
                             _$ss12StaticStringV6ktraceE7charPtrSPys4Int8VGvg,
                             _$ss12StaticStringV6ktraceE7charPtrSPys4Int8VGvpMV,
                             _CFArrayApplierTrampoline,
@@ -170,8 +187,8 @@ exports:
                             _kthmap_tid_is_main_thread, _kthmap_uniqueid_for_tid,
                             _kthmap_update, _kthmap_update_stackshot,
                             _ktraceVersionNumber, _ktraceVersionString,
-                            _ktrace_add_client, _ktrace_add_codes_file,
-                            _ktrace_add_stackshot_flags,
+                            _ktrace_abort, _ktrace_add_client,
+                            _ktrace_add_codes_file, _ktrace_add_stackshot_flags,
                             _ktrace_callback_list_add,
                             _ktrace_callback_list_reset,
                             _ktrace_callback_list_sort,
@@ -430,6 +447,7 @@ exports:
                             _ktrace_machine_os_version_extra,
                             _ktrace_machine_physical_cpus,
                             _ktrace_machine_print_description,
+                            _ktrace_machine_product,
                             _ktrace_machine_root_volume_size,
                             _ktrace_machine_vm_page_size,
                             _ktrace_machine_vm_pages, _ktrace_machine_vm_size,
@@ -621,6 +639,7 @@ exports:
                             _vnode_path_map_update ]
     objc-classes:         [ KtraceLoggingDataSource, _TtC6ktrace12ProviderList ]
     weak-def-symbols:     [ __ZN11flatbuffers25flatbuffer_version_stringE,
+                            __ZNSt3__119piecewise_constructE,
                             __ZZN11flatbuffers4dataINS_6OffsetIN17FlatbufferSymbols11SymbolOwnerEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN17FlatbufferSymbols12SymbolicatorEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,
                             __ZZN11flatbuffers4dataINS_6OffsetIN17FlatbufferSymbols7SegmentEEENSt3__19allocatorIS4_EEEEPKT_RKNS5_6vectorIS8_T0_EEE1t,

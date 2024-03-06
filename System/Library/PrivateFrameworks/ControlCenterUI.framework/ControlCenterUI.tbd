@@ -8,7 +8,17 @@ compatibility-version: 1
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
-    symbols:              [ _CCUIFixSpecialAttributions,
+    symbols:              [ _CCUIAnalyticsControlCenterInvocation,
+                            _CCUIAnalyticsControlCenterInvocationActiveDuration,
+                            _CCUIAnalyticsControlCenterInvocationSessionIdentifier,
+                            _CCUIAnalyticsControlCenterModuleExpansion,
+                            _CCUIAnalyticsControlCenterModuleExpansionModuleIdentifier,
+                            _CCUIAnalyticsControlCenterModuleExpansionSessionID,
+                            _CCUIAnalyticsControlCenterModuleOrganization,
+                            _CCUIAnalyticsControlCenterModuleOrganizationModuleIdentifier,
+                            _CCUIAnalyticsControlCenterModuleOrganizationModuleRanking,
+                            _CCUIAnalyticsDomainControlCenter,
+                            _CCUIFixSpecialAttributions,
                             _CCUIGenericIconImageForSize,
                             _CCUIIconImageForApplicationIdentifier,
                             _CCUIIconImageForUntreatedImage,
@@ -42,7 +52,8 @@ exports:
                             __CCUIPortraitStatusBarBaselineToTopOffsetHeight,
                             _gSignpostListener, _kCCUILayoutPointObjCType,
                             _kCCUILayoutRectObjCType, _kCCUILayoutSizeObjCType ]
-    objc-classes:         [ CCUIAnimation, CCUIAnimationBatch,
+    objc-classes:         [ CCUIAnalyticsEventsController, CCUIAnimation,
+                            CCUIAnimationBatch,
                             CCUIAnimationCustomTimingFunctionParameters,
                             CCUIAnimationRunner, CCUIC2AnimationParameters,
                             CCUICABasicAnimationFactory,

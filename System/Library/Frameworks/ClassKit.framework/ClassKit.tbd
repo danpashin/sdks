@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/ClassKit.framework/ClassKit
-current-version:       149.0.37
+current-version:       149.4.57
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,7 +20,7 @@ exports:
                             _CLSAuthenticationStateInteger,
                             _CLSAuthorizationStatusFromString,
                             _CLSBinaryValueTypeFromString, _CLSBlobPropertyData,
-                            _CLSBlobPropertyType,
+                            _CLSBlobPropertyType, _CLSBootstrapModeFromString,
                             _CLSClassKitCatalogEnvironmentChangedDarwinNotificationName,
                             _CLSClassKitCatalogEnvironmentFromString,
                             _CLSClassKitCatalogEnvironmentInteger,
@@ -36,7 +36,7 @@ exports:
                             _CLSCollaborationStateClasses,
                             _CLSCollectionItemTypeFromString,
                             _CLSCollectionTypeFromString, _CLSConfigFileName,
-                            _CLSContextPropertyAssignable,
+                            _CLSContextClasses, _CLSContextPropertyAssignable,
                             _CLSContextPropertyContentStoreIdentifier,
                             _CLSContextPropertyCurrentActivityID,
                             _CLSContextPropertyCustomTypeName,
@@ -209,7 +209,6 @@ exports:
                             _CLSUbiquitousContainerID,
                             _CLSUserActivityActionType,
                             _CLSUserActivityItemIdentifier,
-                            _CLSUserDefaultEnableAssessments,
                             _CLSUserDefaultEnableResponseStreaming,
                             _CLSUserDefaultEnableVerboseLogging,
                             _CLSUserDefaultRestoreCurrentDefaults,
@@ -223,6 +222,7 @@ exports:
                             _DefaultNameFromContextType,
                             _NSStringFromAuthorizationStatus,
                             _NSStringFromBinaryValueType,
+                            _NSStringFromBootstrapMode,
                             _NSStringFromCLSASMPrivilegeType,
                             _NSStringFromCLSAnswerAction,
                             _NSStringFromCLSAnswerState,

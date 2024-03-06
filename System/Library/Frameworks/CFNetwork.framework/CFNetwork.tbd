@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/CFNetwork.framework/CFNetwork
-current-version:       1490.0.4
+current-version:       1494.0.7
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -307,10 +307,13 @@ exports:
                             __CFCachedURLResponseSetBecameFileBackedCallBackBlock,
                             __CFErrorCreateWithStreamError,
                             __CFHTTPAuthenticationApplyProxyAuthorizationToRequest,
+                            __CFHTTPAuthenticationCheckOriginAllowedAsThirdParty,
                             __CFHTTPAuthenticationCopySortedAuthSchemes,
                             __CFHTTPAuthenticationCreateNTLMHeaderForRequest,
                             __CFHTTPAuthenticationCreateNegotiateHeaderForRequest,
                             __CFHTTPAuthenticationDisassociateConnection,
+                            __CFHTTPAuthenticationGetPATAuthHeaders,
+                            __CFHTTPAuthenticationGetPATSchemes,
                             __CFHTTPAuthenticationGetSchemesDict,
                             __CFHTTPAuthenticationPasswordInClear,
                             __CFHTTPAuthenticationSetPreferredScheme,

@@ -296,9 +296,9 @@ API_AVAILABLE(ios(8.0), tvos(9.0), visionos(1.0)) API_UNAVAILABLE(watchos) API_U
 /*!
 	@property	contextualActionsInfoView
 	@abstract	A view shown adjacent to the contextual actions suitable for showing related information.
-	@discussion	Use this view to add additional metadata, information and/or artwork as subviews.
+	@discussion	Use this view to add additional metadata, information and/or artwork as subviews. This property is only supported when the receiver has been configured to have playback controls. Changing the configuration to remove the playback controls will invalidate this view..
  */
-@property (nonatomic, readonly) UIView *contextualActionsInfoView API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(ios, tvos, watchos, macCatalyst);
+@property (nonatomic, readonly) UIView *contextualActionsInfoView API_AVAILABLE(visionos(1.0)) API_UNAVAILABLE(tvos) API_UNAVAILABLE(ios, watchos, macCatalyst);
 
 /*!
 	@property	contextualActionsPreviewImage

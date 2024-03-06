@@ -3,10 +3,12 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/FileProviderTelemetry.framework/FileProviderTelemetry
-current-version:       0
+current-version:       1835.102.2
 compatibility-version: 0
 objc-constraint:       retain_release
 exports:
   - archs:                [ arm64, arm64e ]
+    symbols:              [ _FPTelemetrySessionPropertyProviderIDKey,
+                            _FPTelemetrySessionPropertyProviderVersionKey ]
     objc-classes:         [ FPRTCReportingSession, FPRTCReportingSessionManager ]
 ...

@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/HomeKitMetrics.framework/HomeKitMetrics
-current-version:       1092.3.10
+current-version:       1124.5.8
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -20,15 +20,18 @@ exports:
                             _HMMSafeHomeUUIDFromLogEvent, _HMM_ERROR_CODE,
                             _HMM_ERROR_DOMAIN, _HMM_UNDERLYING_ERROR_CODE,
                             _HMM_UNDERLYING_ERROR_DOMAIN ]
-    objc-classes:         [ HMMCoreAnalyticsLogEventObserver,
+    objc-classes:         [ HMMBufferingLogEventSubmitter,
+                            HMMCoreAnalyticsLogEventObserver,
                             HMMCoreAnalyticsTagObserver, HMMCounterStatistics,
                             HMMCountersManager, HMMDateProvider, HMMHomeLogEvent,
                             HMMInterval, HMMIntervalMapper, HMMLogEvent,
                             HMMLogEventDispatcher, HMMLogEventTagProcessor,
-                            HMMNullRTCSession, HMMRTCSession, HMMRTCSessionFactory,
+                            HMMManagedEphemeralContainer, HMMNullRTCSession,
+                            HMMRTCSession, HMMRTCSessionFactory,
                             HMMRTCSessionManager, HMMRTCSessionVoucher,
                             HMMSiriSELFLogEventObserver, HMMStateData,
                             HMMStateTracker, HMMTagDispatcher, HMMTagManager,
                             HMMTagProcessorCreatorObserver,
-                            HMMTagSessionProcessorList, HMMTaggedEvent ]
+                            HMMTagSessionProcessorList, HMMTaggedEvent,
+                            HMMUptimeProvider ]
 ...

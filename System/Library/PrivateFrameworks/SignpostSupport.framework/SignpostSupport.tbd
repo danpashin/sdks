@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
-current-version:       121
+current-version:       125
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -53,7 +53,21 @@ exports:
                             _StringPassesSignpostReporterStringAllowlist,
                             __SignpostSerializeableObjectFromSerializedObjectDictionary,
                             __SignpostSupportSerializationDataFromObjectArray,
-                            __signpost_debug_log,
+                            __combinedStdDev, __signpost_debug_log,
+                            _kAggAverageDurationNsKey, _kAggAverageKey,
+                            _kAggBeginTimeDateKey, _kAggBeginTimeMCTKey,
+                            _kAggBeginTimeNsKey, _kAggCategoryKey,
+                            _kAggDescriptionKey, _kAggDurationDictKey,
+                            _kAggDurationNsKey, _kAggDurationStdDevNsKey,
+                            _kAggEndTimeDateKey, _kAggEndTimeMCTKey,
+                            _kAggEndTimeNsKey, _kAggGroupNameKey,
+                            _kAggGroupNameToGroupKey, _kAggMaxDurationNsKey,
+                            _kAggMaxValueKey, _kAggMeasuredValueDictKey,
+                            _kAggMinDurationNsKey, _kAggMinValueKey, _kAggNameKey,
+                            _kAggSubsystemKey, _kAggTelemetryEnabledKey,
+                            _kAggTimeRangeArrayKey, _kAggTotalDurationNsKey,
+                            _kAggTotalKey, _kAggTypeKey, _kAggUnitOfMeasureKey,
+                            _kAggValueStdDevKey,
                             _kCAFieldValue_DynamicDescription,
                             _kCAFieldValue_WindowDuration,
                             _kSSMetadataSegmentPlaceholderTokenNameKey,
@@ -65,6 +79,8 @@ exports:
                             SignpostAggregationAccumulatorEntry,
                             SignpostAggregationGroup,
                             SignpostAggregationGroupDuration,
+                            SignpostAggregationGroupMeasuredValue,
+                            SignpostAggregationValueStats,
                             SignpostAnimationAccumulatedState,
                             SignpostAnimationInterval,
                             SignpostAnimationSubInterval,
@@ -118,5 +134,6 @@ exports:
                             SignpostSupportUniquePIDBlacklist,
                             SignpostSupportUniquePIDBlocklist,
                             SignpostSupportUniquePIDFilter,
-                            SignpostSupportUniquePIDWhitelist ]
+                            SignpostSupportUniquePIDWhitelist,
+                            _SignpostAggregationValueSegmentParser ]
 ...

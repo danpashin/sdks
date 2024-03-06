@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/Frameworks/Photos.framework/Photos
-current-version:       622.0.130
+current-version:       646.1.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -739,7 +739,8 @@ exports:
                             PHCPAnalyticsMediaPropertyProvider,
                             PHCachingImageManager, PHCameraSmartSharingIdentity,
                             PHCameraSmartSharingMetadata, PHChange,
-                            PHChangeBuilder, PHChangeRequest,
+                            PHChangeBuilder, PHChangeHandlingDebugEvent,
+                            PHChangeHandlingDebugger, PHChangeRequest,
                             PHChangeRequestHelper, PHChangeValidationController,
                             PHClientLinkedAgainst, PHCloudIdentifier,
                             PHCloudIdentifierLookup, PHCloudIdentifierMapping,
@@ -840,7 +841,8 @@ exports:
                             PHPersonReference, PHPersonResetManager,
                             PHPersonSuggestion, PHPersonUserFeedbackProperties,
                             PHPhotoLibrary, PHPhotoLibraryAppPrivateData,
-                            PHPhotosHighlight, PHPhotosHighlightChangeRequest,
+                            PHPhotoLibraryObserverRegistrar, PHPhotosHighlight,
+                            PHPhotosHighlightChangeRequest,
                             PHPhotosHighlightDeleteRequest,
                             PHPlaceholderImageHelper,
                             PHProgressContainerForRetryableRequest, PHProject,

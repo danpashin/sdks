@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/CoreSymbolication.framework/CoreSymbolication
-current-version:       64561.101.1
+current-version:       64565.74.2
 compatibility-version: 1
 exports:
   - archs:                [ arm64, arm64e ]
@@ -36,13 +36,16 @@ exports:
                             _CSExceptionSafeThreadRunBlockWithHandler,
                             _CSFileIsCoreFile, _CSFileIsFlatbuffer,
                             _CSFileIsKnownSignature, _CSFileIsSuitableForCS,
+                            _CSGetBinaryPathForExclaveWithUUIDBytes,
                             _CSGetDebugLoggingLevel, _CSGetForceSafeMachVMReads,
                             _CSGetRetainCount, _CSIsNull,
                             _CSMMapArchiveCacheCopyMMapArchive,
                             _CSMMapArchiveCacheReleaseMMapArchive,
                             _CSMMapArchiveCacheSetShouldStoreToDaemon,
                             _CSPlatformForTask, _CSRangeContainsRange,
-                            _CSRangeIntersectsRange,
+                            _CSRangeIntersectionRange, _CSRangeIntersectsRange,
+                            _CSRangeOfDyldSharedCacheInCurrentProcess,
+                            _CSRangeOfDyldSharedCacheInTask,
                             _CSRegionCopyDescriptionWithIndent,
                             _CSRegionForeachSourceInfo, _CSRegionForeachSymbol,
                             _CSRegionGetName, _CSRegionGetRange,
@@ -170,6 +173,7 @@ exports:
                             _CSSymbolOwnerSetUnloadTimestamp,
                             _CSSymbolOwnerUsesCPlusPlus, _CSSymbolReleaseMemory,
                             _CSSymbolicationSessionCopyDescriptionWithIndent,
+                            _CSSymbolicationSessionCreateNonFaultingSymbolicatorForPid,
                             _CSSymbolicationSessionCreateSymbolicatorForPidWithFlags,
                             _CSSymbolicationSessionCreateWithFlags,
                             _CSSymbolicationSessionProcessATRCKernelChunk,
@@ -191,6 +195,7 @@ exports:
                             _CSSymbolicatorCreateWithBinaryImageListPidAndSharedCacheUUID,
                             _CSSymbolicatorCreateWithCoreFilePathAndFlags,
                             _CSSymbolicatorCreateWithDyldProcessSnapshotPidAndFlags,
+                            _CSSymbolicatorCreateWithExclaveUUIDAndFlags,
                             _CSSymbolicatorCreateWithMachKernel,
                             _CSSymbolicatorCreateWithMachKernelExcludingSearchPaths,
                             _CSSymbolicatorCreateWithMachKernelFlagsAndNotification,
@@ -217,6 +222,8 @@ exports:
                             _CSSymbolicatorForEachAotImage,
                             _CSSymbolicatorForceFullSymbolExtraction,
                             _CSSymbolicatorForceNonFaultingFlags,
+                            _CSSymbolicatorForeachExclaveCoreSymbolicator,
+                            _CSSymbolicatorForeachExclaveCoreSymbolicatorWithFlags,
                             _CSSymbolicatorForeachFlatbufferSymbolicatorInSignature,
                             _CSSymbolicatorForeachRegionAtTime,
                             _CSSymbolicatorForeachRegionWithNameAtTime,
@@ -250,6 +257,7 @@ exports:
                             _CSSymbolicatorGetFlagsForNListOnlyData,
                             _CSSymbolicatorGetFlagsForNoDataExceptFromTheCache,
                             _CSSymbolicatorGetFlagsForNoSymbolOrSourceInfoData,
+                            _CSSymbolicatorGetFlagsForNonFaultingBehavior,
                             _CSSymbolicatorGetGroupKey, _CSSymbolicatorGetPid,
                             _CSSymbolicatorGetRegionCountAtTime,
                             _CSSymbolicatorGetRegionWithAddressAtTime,
@@ -313,6 +321,7 @@ exports:
                             _mapped_memory_core_file_get_argslen,
                             _mapped_memory_core_file_get_dirty_flags,
                             _mapped_memory_core_file_get_dyld_all_image_infos_addr,
+                            _mapped_memory_core_file_get_exclave_vm_flags_for_address,
                             _mapped_memory_core_file_get_ledger_alternate_accounting,
                             _mapped_memory_core_file_get_ledger_alternate_compressed,
                             _mapped_memory_core_file_get_ledger_graphics_footprint,
@@ -347,6 +356,8 @@ exports:
                             _mapped_memory_core_file_get_udata_ptrs,
                             _mapped_memory_core_file_get_userstack,
                             _mapped_memory_core_file_has_info_for_memory_analysis,
+                            _mapped_memory_core_file_is_exclave,
+                            _mapped_memory_core_file_is_exclavecore,
                             _mapped_memory_core_file_mach_vm_page_range_query,
                             _mapped_memory_core_file_mach_vm_purgable_control,
                             _mapped_memory_core_file_mach_vm_region_recurse_submap_short_64,

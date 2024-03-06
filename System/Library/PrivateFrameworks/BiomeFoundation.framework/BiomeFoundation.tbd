@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/BiomeFoundation.framework/BiomeFoundation
-current-version:       123.2.7
+current-version:       123.5.23
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -15,6 +15,7 @@ exports:
                             _BMAbsoluteTimeSetSyntheticStartFromRemoteTime,
                             _BMAbsoluteTimeToCFAbsoluteTime,
                             _BMAccessErrorDomain,
+                            _BMAccessModeFromEntitlementAccessModeString,
                             _BMAccessModePrintableDescription,
                             _BMAnyClientUseCaseAllowList,
                             _BMAppleInternalPrunerEntitlement,
@@ -35,6 +36,7 @@ exports:
                             _BMEntitlementIsAppleInternal,
                             _BMFileAccessModeFromOFlags,
                             _BMFlexibleStorageResource, _BMIdentifierIsPathSafe,
+                            _BMLegacyBiomeClientIdentifierEntitlement,
                             _BMMachServiceNameLegacyAccessService,
                             _BMMachServiceNameSystemAccessService,
                             _BMMachServiceNameUserAccessService,
@@ -43,17 +45,19 @@ exports:
                             _BMPrunerEntitlement, _BMReadOnlyEntitlement,
                             _BMReadWriteEntitlement,
                             _BMRegularVariantOfAppleInternalEntitlement,
+                            _BMResourceDescriptorErrorDomain,
                             _BMResourceTypeFromEntitlementResourceTypeString,
                             _BMSandboxReadOperation, _BMSandboxWriteOperation,
-                            _BMServiceDomainForResource,
-                            _BMServiceDomainForStream, _BMShouldRetry,
+                            _BMServiceDomainForResource, _BMServiceDomainForSet,
+                            _BMServiceDomainForStream, _BMSetsResource,
+                            _BMSharedSyncResource, _BMShouldRetry,
                             _BMStorageErrorDomain, _BMStorageErrorGetErrno,
                             _BMStringForServiceDomain, _BMSyncResource,
                             _BMUseCaseComputeSubscriptionPassthrough,
                             _BMUseCaseConnectionProxy,
                             _BMUseCaseIncrementalViews, _BMUseCaseInternalTool,
-                            _BMUseCaseLegacy, _BMUseCaseNone, _BMUseCasePruner,
-                            _BMUseCaseSync, _BMUseCaseWriter,
+                            _BMUseCaseLegacy, _BMUseCaseLegacyKoa, _BMUseCaseNone,
+                            _BMUseCasePruner, _BMUseCaseSync, _BMUseCaseWriter,
                             _BMUseCasesEntitlement, _BMValidatePath,
                             _BMValidatedPathKeyAccountIDHash,
                             _BMValidatedPathKeyArtifactIdentifier,
@@ -87,14 +91,16 @@ exports:
                             BMAccessControlPolicy, BMAccessDaemon,
                             BMAccessDescriptor, BMAccessServer,
                             BMAccessServiceListener, BMAccessTracker, BMAccount,
-                            BMCache, BMCoreAnalyticsEvents, BMDataProtection,
-                            BMDeviceMetadataUtils, BMFileAttributes, BMFileHandle,
-                            BMFileManager, BMFileServer, BMIndirectHeap,
-                            BMPathEnumerator, BMPaths, BMProcess, BMProcessCurrent,
-                            BMPublicStreamUtilities, BMResourceSpecifier,
-                            BMStoreDirectory, BMStreamMigrations, BMXPCActivity,
-                            BMXPCConnectionCacheKey, BMXPCConnectionWrapper,
-                            _BMAccessAssertion, _BMAccessAssertionNotApplicable,
+                            BMAccountManager, BMCache, BMCoreAnalyticsEvents,
+                            BMDataProtection, BMDeviceMetadataUtils,
+                            BMFileAttributes, BMFileHandle, BMFileManager,
+                            BMFileServer, BMIndirectHeap, BMPathEnumerator, BMPaths,
+                            BMProcess, BMProcessCurrent, BMPublicStreamUtilities,
+                            BMResourceDescriptor, BMResourceSpecifier,
+                            BMStoreDirectory, BMStreamMigrations, BMWeakProxy,
+                            BMXPCActivity, BMXPCConnectionCacheKey,
+                            BMXPCConnectionWrapper, _BMAccessAssertion,
+                            _BMAccessAssertionNotApplicable,
                             _BMAccessTrackerGuardedData, _BMDirectFileManager,
                             _BMXPCFileManager ]
     objc-ivars:           [ BMFileManager._cachingOptions,

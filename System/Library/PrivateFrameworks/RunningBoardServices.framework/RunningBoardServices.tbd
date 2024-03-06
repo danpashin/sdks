@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/RunningBoardServices.framework/RunningBoardServices
-current-version:       858.60.5
+current-version:       874.102.1
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -76,6 +76,7 @@ exports:
                             _RBSServiceInitialize,
                             _RBSServiceMessageAssertionIdentifierKey,
                             _RBSServiceMessageErrorKey,
+                            _RBSServiceMessageManagedEndpointByLaunchIdentifierKey,
                             _RBSServiceMessageProcessIdentifierKey,
                             _RBSServiceMessageProcessStatesKey,
                             _RBSServiceMessageReturnValueKey, _RBSStringForKey,
@@ -113,24 +114,30 @@ exports:
                             RBSCPUMinimumUsageGrant, RBSCompoundAllPredicate,
                             RBSCompoundAnyPredicate, RBSConditionAttribute,
                             RBSConnection, RBSConstraintsAttribute, RBSDebugGrant,
-                            RBSDefineRelativeStartTimeGrant, RBSDomainAttribute,
-                            RBSDurationAttribute, RBSEndowmentGrant,
-                            RBSEndowmentLink, RBSEndowmentTree,
+                            RBSDefineRelativeStartTimeGrant,
+                            RBSDextProcessIdentity, RBSDomainAttribute,
+                            RBSDurationAttribute, RBSEmbeddedAppProcessIdentity,
+                            RBSEndowmentGrant, RBSEndowmentLink, RBSEndowmentTree,
                             RBSForceRoleManageAttribute, RBSGPUAccessGrant,
                             RBSGrant, RBSHandshakeRequest, RBSHandshakeResponse,
                             RBSHereditaryGrant, RBSInheritance,
                             RBSInheritanceChangeSet,
                             RBSInvalidateUnderConditionAttribute,
                             RBSJetsamPriorityGrant, RBSLaunchContext,
-                            RBSLaunchGrant, RBSLaunchRequest, RBSLegacyAttribute,
-                            RBSLimitation, RBSMachPort, RBSMachPortTaskNameRight,
+                            RBSLaunchGrant, RBSLaunchRequest, RBSLaunchResponse,
+                            RBSLegacyAttribute, RBSLimitation,
+                            RBSMacAppProcessIdentity, RBSMachEndpoint, RBSMachPort,
+                            RBSMachPortTaskNameRight,
                             RBSMimicTaskSuspensionAttribute, RBSNotPredicate,
-                            RBSPersistentAttribute, RBSPreserveBaseMemoryGrant,
-                            RBSPreventIdleSleepGrant, RBSPreventLaunchLimitation,
-                            RBSPrewarmAttribute, RBSProcessApplicationPredicate,
+                            RBSOSServiceProcessIdentity,
+                            RBSOpaqueProcessIdentity, RBSPersistentAttribute,
+                            RBSPreserveBaseMemoryGrant, RBSPreventIdleSleepGrant,
+                            RBSPreventLaunchLimitation, RBSPrewarmAttribute,
+                            RBSProcessApplicationPredicate,
                             RBSProcessAssertionInfo,
                             RBSProcessBKSLegacyPredicate, RBSProcessBundle,
                             RBSProcessCollectionPredicateImpl,
+                            RBSProcessEndowmentInfo,
                             RBSProcessEverythingPredicate, RBSProcessExitContext,
                             RBSProcessExitEvent, RBSProcessExitStatus,
                             RBSProcessHandle, RBSProcessIdentifier,
@@ -151,7 +158,7 @@ exports:
                             RBSTerminationAssertion, RBSWorkloop, RBSWrappedLSInfo,
                             RBSXPCCoder, RBSXPCMessage, RBSXPCMessageContext,
                             RBSXPCMessageReply, RBSXPCServiceDefinition,
-                            RBSXPCServiceIdentity ]
+                            RBSXPCServiceIdentity, RBSXPCServiceProcessIdentity ]
     objc-ivars:           [ RBSProcessCollectionPredicateImpl._identifiers,
                             RBSProcessIdentity._description,
                             RBSProcessIdentity._hash, RBSProcessIdentity._pid,

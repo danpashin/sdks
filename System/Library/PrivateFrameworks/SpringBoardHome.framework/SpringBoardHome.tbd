@@ -3,7 +3,7 @@ archs:                 [ arm64, arm64e ]
 platform:              ios
 flags:                 [ flat_namespace ]
 install-name:          /System/Library/PrivateFrameworks/SpringBoardHome.framework/SpringBoardHome
-current-version:       4416.39.103
+current-version:       4416.132.102
 compatibility-version: 1
 objc-constraint:       retain_release
 exports:
@@ -27,6 +27,24 @@ exports:
                             _SBHAddWidgetSheetCompactViewIconMetricsForScale,
                             _SBHAddWidgetSheetSplitViewIconMetricsForScale,
                             _SBHAlignSizeInRectUsingBaseline,
+                            _SBHAnalyticsControlCenterInvocation,
+                            _SBHAnalyticsControlCenterInvocationActiveDuration,
+                            _SBHAnalyticsControlCenterInvocationSessionID,
+                            _SBHAnalyticsControlCenterModuleExpansion,
+                            _SBHAnalyticsControlCenterModuleExpansionModuleIdentifier,
+                            _SBHAnalyticsControlCenterModuleExpansionSessionID,
+                            _SBHAnalyticsControlCenterModuleOrganization,
+                            _SBHAnalyticsControlCenterModuleOrganizationModuleIdentifier,
+                            _SBHAnalyticsControlCenterModuleOrganizationModuleRanking,
+                            _SBHAnalyticsDomainControlCenter,
+                            _SBHAnalyticsDomainHomeScreenIconLayouts,
+                            _SBHAnalyticsDomainHomeScreenLayoutOptimizedHomeScreen,
+                            _SBHAnalyticsDomainHomeScreenLayoutOptimizedHomeScreenAppsResidentInHomePercentage,
+                            _SBHAnalyticsDomainHomeScreenLayoutOptimizedHomeScreenNewlyDownloadedAppsToLibraryOnly,
+                            _SBHAnalyticsDomainSpotlight,
+                            _SBHAnalyticsSpotlightInvocation,
+                            _SBHAnalyticsSpotlightInvocationLocation,
+                            _SBHAnalyticsSpotlightInvocationMethod,
                             _SBHBatteryWidgetFamilyFromIconGridSizeClass,
                             _SBHBundle, _SBHCGRectIntersectionAsPercentage,
                             _SBHCacheIconImagesForApplications,
@@ -513,7 +531,7 @@ exports:
                             SBHAddWidgetSheetViewController,
                             SBHAddWidgetSheetViewControllerBase,
                             SBHAdjustableRootIconListLayoutProvider,
-                            SBHAppLibrarySettings,
+                            SBHAnalyticsEventsController, SBHAppLibrarySettings,
                             SBHAppLibraryVisualConfiguration,
                             SBHAppPredictionsElement, SBHApplicationDataSource,
                             SBHApplicationIcon, SBHApplicationWidgetCollection,
